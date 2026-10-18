@@ -8,93 +8,132 @@ part of 'shared_beta_server.dart';
 class BetaServerToolCaller {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `tool_id` wire field.
   final String toolId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaServerToolCallerType type_;
 
   const BetaServerToolCaller({required this.toolId, required this.type_});
 
-  BetaServerToolCaller Function({String toolId, BetaServerToolCallerType type_}) get copyWith => _copyWith;
+  BetaServerToolCaller Function({String toolId, BetaServerToolCallerType type_})
+      get copyWith => _copyWith;
 
-  BetaServerToolCaller _copyWith({Object? toolId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaServerToolCaller(
-    toolId: identical(toolId, sdkOmittedValue) ? this.toolId : toolId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaServerToolCallerType,
-  );
+  BetaServerToolCaller _copyWith(
+          {Object? toolId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaServerToolCaller(
+        toolId:
+            identical(toolId, sdkOmittedValue) ? this.toolId : toolId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaServerToolCallerType,
+      );
 
-  factory BetaServerToolCaller.fromJson(Map<String, dynamic> json) => BetaServerToolCaller(
-    toolId: (json['tool_id'] as String?)!,
-    type_: (json['type'] != null ? BetaServerToolCallerType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaServerToolCaller.fromJson(Map<String, dynamic> json) =>
+      BetaServerToolCaller(
+        toolId: (json['tool_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaServerToolCallerType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'tool_id': toolId,
-    'type': type_.toJson(),
-  };
+        'tool_id': toolId,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaServerToolCaller_20260120` API schema.
 class BetaServerToolCaller20260120 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `tool_id` wire field.
   final String toolId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaServerToolCaller20260120Type type_;
 
-  const BetaServerToolCaller20260120({required this.toolId, required this.type_});
+  const BetaServerToolCaller20260120(
+      {required this.toolId, required this.type_});
 
-  BetaServerToolCaller20260120 Function({String toolId, BetaServerToolCaller20260120Type type_}) get copyWith => _copyWith;
+  BetaServerToolCaller20260120 Function(
+      {String toolId,
+      BetaServerToolCaller20260120Type type_}) get copyWith => _copyWith;
 
-  BetaServerToolCaller20260120 _copyWith({Object? toolId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaServerToolCaller20260120(
-    toolId: identical(toolId, sdkOmittedValue) ? this.toolId : toolId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaServerToolCaller20260120Type,
-  );
+  BetaServerToolCaller20260120 _copyWith(
+          {Object? toolId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaServerToolCaller20260120(
+        toolId:
+            identical(toolId, sdkOmittedValue) ? this.toolId : toolId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaServerToolCaller20260120Type,
+      );
 
-  factory BetaServerToolCaller20260120.fromJson(Map<String, dynamic> json) => BetaServerToolCaller20260120(
-    toolId: (json['tool_id'] as String?)!,
-    type_: (json['type'] != null ? BetaServerToolCaller20260120Type.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaServerToolCaller20260120.fromJson(Map<String, dynamic> json) =>
+      BetaServerToolCaller20260120(
+        toolId: (json['tool_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaServerToolCaller20260120Type.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'tool_id': toolId,
-    'type': type_.toJson(),
-  };
+        'tool_id': toolId,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaServerToolUsage` API schema.
 class BetaServerToolUsage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of web fetch tool requests.
   final int webFetchRequests;
+
   /// The number of web search tool requests.
   final int webSearchRequests;
 
-  const BetaServerToolUsage({required this.webFetchRequests, required this.webSearchRequests});
+  const BetaServerToolUsage(
+      {required this.webFetchRequests, required this.webSearchRequests});
 
-  BetaServerToolUsage Function({int webFetchRequests, int webSearchRequests}) get copyWith => _copyWith;
+  BetaServerToolUsage Function({int webFetchRequests, int webSearchRequests})
+      get copyWith => _copyWith;
 
-  BetaServerToolUsage _copyWith({Object? webFetchRequests = sdkOmittedValue, Object? webSearchRequests = sdkOmittedValue}) => BetaServerToolUsage(
-    webFetchRequests: identical(webFetchRequests, sdkOmittedValue) ? this.webFetchRequests : webFetchRequests as int,
-    webSearchRequests: identical(webSearchRequests, sdkOmittedValue) ? this.webSearchRequests : webSearchRequests as int,
-  );
+  BetaServerToolUsage _copyWith(
+          {Object? webFetchRequests = sdkOmittedValue,
+          Object? webSearchRequests = sdkOmittedValue}) =>
+      BetaServerToolUsage(
+        webFetchRequests: identical(webFetchRequests, sdkOmittedValue)
+            ? this.webFetchRequests
+            : webFetchRequests as int,
+        webSearchRequests: identical(webSearchRequests, sdkOmittedValue)
+            ? this.webSearchRequests
+            : webSearchRequests as int,
+      );
 
-  factory BetaServerToolUsage.fromJson(Map<String, dynamic> json) => BetaServerToolUsage(
-    webFetchRequests: ((json['web_fetch_requests'] as num?)?.toInt())!,
-    webSearchRequests: ((json['web_search_requests'] as num?)?.toInt())!,
-  );
+  factory BetaServerToolUsage.fromJson(Map<String, dynamic> json) =>
+      BetaServerToolUsage(
+        webFetchRequests: ((json['web_fetch_requests'] as num?)?.toInt())!,
+        webSearchRequests: ((json['web_search_requests'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'web_fetch_requests': webFetchRequests,
-    'web_search_requests': webSearchRequests,
-  };
+        'web_fetch_requests': webFetchRequests,
+        'web_search_requests': webSearchRequests,
+      };
 }
 
 /// Typed representation of the `BetaServerToolUse` API schema.
 class BetaServerToolUse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of web search requests made.
   final int webSearchRequests;
 
@@ -102,15 +141,19 @@ class BetaServerToolUse {
 
   BetaServerToolUse Function({int webSearchRequests}) get copyWith => _copyWith;
 
-  BetaServerToolUse _copyWith({Object? webSearchRequests = sdkOmittedValue}) => BetaServerToolUse(
-    webSearchRequests: identical(webSearchRequests, sdkOmittedValue) ? this.webSearchRequests : webSearchRequests as int,
-  );
+  BetaServerToolUse _copyWith({Object? webSearchRequests = sdkOmittedValue}) =>
+      BetaServerToolUse(
+        webSearchRequests: identical(webSearchRequests, sdkOmittedValue)
+            ? this.webSearchRequests
+            : webSearchRequests as int,
+      );
 
-  factory BetaServerToolUse.fromJson(Map<String, dynamic> json) => BetaServerToolUse(
-    webSearchRequests: ((json['web_search_requests'] as num?)?.toInt())!,
-  );
+  factory BetaServerToolUse.fromJson(Map<String, dynamic> json) =>
+      BetaServerToolUse(
+        webSearchRequests: ((json['web_search_requests'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'web_search_requests': webSearchRequests,
-  };
+        'web_search_requests': webSearchRequests,
+      };
 }

@@ -10,14 +10,17 @@ enum BetaWorkspaceMemberSchemaType {
 
   static BetaWorkspaceMemberSchemaType fromJson(String value) {
     switch (value) {
-      case 'workspace_member': return BetaWorkspaceMemberSchemaType.workspaceMember;
-      default: throw ArgumentError('Unknown BetaWorkspaceMemberSchemaType: $value');
+      case 'workspace_member':
+        return BetaWorkspaceMemberSchemaType.workspaceMember;
+      default:
+        throw ArgumentError('Unknown BetaWorkspaceMemberSchemaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWorkspaceMemberSchemaType.workspaceMember: return 'workspace_member';
+      case BetaWorkspaceMemberSchemaType.workspaceMember:
+        return 'workspace_member';
     }
   }
 
@@ -27,12 +30,12 @@ enum BetaWorkspaceMemberSchemaType {
 
 /// The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`.
 final class BetaWorkspaceRateLimitGroupType {
-
   final String value;
 
   const BetaWorkspaceRateLimitGroupType._(this.value);
 
-  factory BetaWorkspaceRateLimitGroupType.fromJson(String value) => BetaWorkspaceRateLimitGroupType._(value);
+  factory BetaWorkspaceRateLimitGroupType.fromJson(String value) =>
+      BetaWorkspaceRateLimitGroupType._(value);
 
   static const batch = BetaWorkspaceRateLimitGroupType._('batch');
   static const files = BetaWorkspaceRateLimitGroupType._('files');
@@ -43,12 +46,15 @@ final class BetaWorkspaceRateLimitGroupType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaWorkspaceRateLimitGroupType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaWorkspaceRateLimitGroupType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Object type. Always `workspace_rate_limit` for workspace rate-limit entries.
@@ -57,14 +63,17 @@ enum BetaWorkspaceRateLimitType {
 
   static BetaWorkspaceRateLimitType fromJson(String value) {
     switch (value) {
-      case 'workspace_rate_limit': return BetaWorkspaceRateLimitType.workspaceRateLimit;
-      default: throw ArgumentError('Unknown BetaWorkspaceRateLimitType: $value');
+      case 'workspace_rate_limit':
+        return BetaWorkspaceRateLimitType.workspaceRateLimit;
+      default:
+        throw ArgumentError('Unknown BetaWorkspaceRateLimitType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWorkspaceRateLimitType.workspaceRateLimit: return 'workspace_rate_limit';
+      case BetaWorkspaceRateLimitType.workspaceRateLimit:
+        return 'workspace_rate_limit';
     }
   }
 
@@ -78,14 +87,17 @@ enum BillingErrorType {
 
   static BillingErrorType fromJson(String value) {
     switch (value) {
-      case 'billing_error': return BillingErrorType.billingError;
-      default: throw ArgumentError('Unknown BillingErrorType: $value');
+      case 'billing_error':
+        return BillingErrorType.billingError;
+      default:
+        throw ArgumentError('Unknown BillingErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BillingErrorType.billingError: return 'billing_error';
+      case BillingErrorType.billingError:
+        return 'billing_error';
     }
   }
 
@@ -99,14 +111,18 @@ enum BrowserStateChangeDownloadCompletedType {
 
   static BrowserStateChangeDownloadCompletedType fromJson(String value) {
     switch (value) {
-      case 'download_completed': return BrowserStateChangeDownloadCompletedType.downloadCompleted;
-      default: throw ArgumentError('Unknown BrowserStateChangeDownloadCompletedType: $value');
+      case 'download_completed':
+        return BrowserStateChangeDownloadCompletedType.downloadCompleted;
+      default:
+        throw ArgumentError(
+            'Unknown BrowserStateChangeDownloadCompletedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BrowserStateChangeDownloadCompletedType.downloadCompleted: return 'download_completed';
+      case BrowserStateChangeDownloadCompletedType.downloadCompleted:
+        return 'download_completed';
     }
   }
 
@@ -120,14 +136,18 @@ enum BrowserStateChangeDownloadFailedType {
 
   static BrowserStateChangeDownloadFailedType fromJson(String value) {
     switch (value) {
-      case 'download_failed': return BrowserStateChangeDownloadFailedType.downloadFailed;
-      default: throw ArgumentError('Unknown BrowserStateChangeDownloadFailedType: $value');
+      case 'download_failed':
+        return BrowserStateChangeDownloadFailedType.downloadFailed;
+      default:
+        throw ArgumentError(
+            'Unknown BrowserStateChangeDownloadFailedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BrowserStateChangeDownloadFailedType.downloadFailed: return 'download_failed';
+      case BrowserStateChangeDownloadFailedType.downloadFailed:
+        return 'download_failed';
     }
   }
 
@@ -141,14 +161,18 @@ enum BrowserStateChangeDownloadStartedType {
 
   static BrowserStateChangeDownloadStartedType fromJson(String value) {
     switch (value) {
-      case 'download_started': return BrowserStateChangeDownloadStartedType.downloadStarted;
-      default: throw ArgumentError('Unknown BrowserStateChangeDownloadStartedType: $value');
+      case 'download_started':
+        return BrowserStateChangeDownloadStartedType.downloadStarted;
+      default:
+        throw ArgumentError(
+            'Unknown BrowserStateChangeDownloadStartedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BrowserStateChangeDownloadStartedType.downloadStarted: return 'download_started';
+      case BrowserStateChangeDownloadStartedType.downloadStarted:
+        return 'download_started';
     }
   }
 
@@ -162,14 +186,17 @@ enum BrowserStateChangeTabOpenedType {
 
   static BrowserStateChangeTabOpenedType fromJson(String value) {
     switch (value) {
-      case 'tab_opened': return BrowserStateChangeTabOpenedType.tabOpened;
-      default: throw ArgumentError('Unknown BrowserStateChangeTabOpenedType: $value');
+      case 'tab_opened':
+        return BrowserStateChangeTabOpenedType.tabOpened;
+      default:
+        throw ArgumentError('Unknown BrowserStateChangeTabOpenedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BrowserStateChangeTabOpenedType.tabOpened: return 'tab_opened';
+      case BrowserStateChangeTabOpenedType.tabOpened:
+        return 'tab_opened';
     }
   }
 
@@ -183,14 +210,17 @@ enum BrowserToolset20260801Type {
 
   static BrowserToolset20260801Type fromJson(String value) {
     switch (value) {
-      case 'browser_toolset_20260801': return BrowserToolset20260801Type.browserToolset20260801;
-      default: throw ArgumentError('Unknown BrowserToolset20260801Type: $value');
+      case 'browser_toolset_20260801':
+        return BrowserToolset20260801Type.browserToolset20260801;
+      default:
+        throw ArgumentError('Unknown BrowserToolset20260801Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BrowserToolset20260801Type.browserToolset20260801: return 'browser_toolset_20260801';
+      case BrowserToolset20260801Type.browserToolset20260801:
+        return 'browser_toolset_20260801';
     }
   }
 
@@ -200,24 +230,27 @@ enum BrowserToolset20260801Type {
 
 /// The time-to-live for the cache control breakpoint. This may be one the following values: - `5m`: 5 minutes - `1h`: 1 hour Defaults to `5m`. See [prompt caching pricing](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) for details.
 final class CacheControlEphemeralTtl {
-
   final String value;
 
   const CacheControlEphemeralTtl._(this.value);
 
-  factory CacheControlEphemeralTtl.fromJson(String value) => CacheControlEphemeralTtl._(value);
+  factory CacheControlEphemeralTtl.fromJson(String value) =>
+      CacheControlEphemeralTtl._(value);
 
   static const v5m = CacheControlEphemeralTtl._('5m');
   static const v1h = CacheControlEphemeralTtl._('1h');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CacheControlEphemeralTtl && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CacheControlEphemeralTtl && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -226,14 +259,17 @@ enum CacheControlEphemeralType {
 
   static CacheControlEphemeralType fromJson(String value) {
     switch (value) {
-      case 'ephemeral': return CacheControlEphemeralType.ephemeral;
-      default: throw ArgumentError('Unknown CacheControlEphemeralType: $value');
+      case 'ephemeral':
+        return CacheControlEphemeralType.ephemeral;
+      default:
+        throw ArgumentError('Unknown CacheControlEphemeralType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CacheControlEphemeralType.ephemeral: return 'ephemeral';
+      case CacheControlEphemeralType.ephemeral:
+        return 'ephemeral';
     }
   }
 
@@ -247,14 +283,17 @@ enum CanceledResultType {
 
   static CanceledResultType fromJson(String value) {
     switch (value) {
-      case 'canceled': return CanceledResultType.canceled;
-      default: throw ArgumentError('Unknown CanceledResultType: $value');
+      case 'canceled':
+        return CanceledResultType.canceled;
+      default:
+        throw ArgumentError('Unknown CanceledResultType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CanceledResultType.canceled: return 'canceled';
+      case CanceledResultType.canceled:
+        return 'canceled';
     }
   }
 
@@ -268,14 +307,17 @@ enum CitationsDeltaType {
 
   static CitationsDeltaType fromJson(String value) {
     switch (value) {
-      case 'citations_delta': return CitationsDeltaType.citationsDelta;
-      default: throw ArgumentError('Unknown CitationsDeltaType: $value');
+      case 'citations_delta':
+        return CitationsDeltaType.citationsDelta;
+      default:
+        throw ArgumentError('Unknown CitationsDeltaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CitationsDeltaType.citationsDelta: return 'citations_delta';
+      case CitationsDeltaType.citationsDelta:
+        return 'citations_delta';
     }
   }
 

@@ -10,14 +10,17 @@ enum BetaResponseThinkingBlockType {
 
   static BetaResponseThinkingBlockType fromJson(String value) {
     switch (value) {
-      case 'thinking': return BetaResponseThinkingBlockType.thinking;
-      default: throw ArgumentError('Unknown BetaResponseThinkingBlockType: $value');
+      case 'thinking':
+        return BetaResponseThinkingBlockType.thinking;
+      default:
+        throw ArgumentError('Unknown BetaResponseThinkingBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseThinkingBlockType.thinking: return 'thinking';
+      case BetaResponseThinkingBlockType.thinking:
+        return 'thinking';
     }
   }
 
@@ -31,14 +34,18 @@ enum BetaResponseToolReferenceBlockType {
 
   static BetaResponseToolReferenceBlockType fromJson(String value) {
     switch (value) {
-      case 'tool_reference': return BetaResponseToolReferenceBlockType.toolReference;
-      default: throw ArgumentError('Unknown BetaResponseToolReferenceBlockType: $value');
+      case 'tool_reference':
+        return BetaResponseToolReferenceBlockType.toolReference;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseToolReferenceBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseToolReferenceBlockType.toolReference: return 'tool_reference';
+      case BetaResponseToolReferenceBlockType.toolReference:
+        return 'tool_reference';
     }
   }
 
@@ -52,14 +59,18 @@ enum BetaResponseToolSearchToolResultBlockType {
 
   static BetaResponseToolSearchToolResultBlockType fromJson(String value) {
     switch (value) {
-      case 'tool_search_tool_result': return BetaResponseToolSearchToolResultBlockType.toolSearchToolResult;
-      default: throw ArgumentError('Unknown BetaResponseToolSearchToolResultBlockType: $value');
+      case 'tool_search_tool_result':
+        return BetaResponseToolSearchToolResultBlockType.toolSearchToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseToolSearchToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseToolSearchToolResultBlockType.toolSearchToolResult: return 'tool_search_tool_result';
+      case BetaResponseToolSearchToolResultBlockType.toolSearchToolResult:
+        return 'tool_search_tool_result';
     }
   }
 
@@ -73,14 +84,19 @@ enum BetaResponseToolSearchToolResultErrorType {
 
   static BetaResponseToolSearchToolResultErrorType fromJson(String value) {
     switch (value) {
-      case 'tool_search_tool_result_error': return BetaResponseToolSearchToolResultErrorType.toolSearchToolResultError;
-      default: throw ArgumentError('Unknown BetaResponseToolSearchToolResultErrorType: $value');
+      case 'tool_search_tool_result_error':
+        return BetaResponseToolSearchToolResultErrorType
+            .toolSearchToolResultError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseToolSearchToolResultErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseToolSearchToolResultErrorType.toolSearchToolResultError: return 'tool_search_tool_result_error';
+      case BetaResponseToolSearchToolResultErrorType.toolSearchToolResultError:
+        return 'tool_search_tool_result_error';
     }
   }
 
@@ -92,16 +108,23 @@ enum BetaResponseToolSearchToolResultErrorType {
 enum BetaResponseToolSearchToolSearchResultBlockType {
   toolSearchToolSearchResult;
 
-  static BetaResponseToolSearchToolSearchResultBlockType fromJson(String value) {
+  static BetaResponseToolSearchToolSearchResultBlockType fromJson(
+      String value) {
     switch (value) {
-      case 'tool_search_tool_search_result': return BetaResponseToolSearchToolSearchResultBlockType.toolSearchToolSearchResult;
-      default: throw ArgumentError('Unknown BetaResponseToolSearchToolSearchResultBlockType: $value');
+      case 'tool_search_tool_search_result':
+        return BetaResponseToolSearchToolSearchResultBlockType
+            .toolSearchToolSearchResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseToolSearchToolSearchResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseToolSearchToolSearchResultBlockType.toolSearchToolSearchResult: return 'tool_search_tool_search_result';
+      case BetaResponseToolSearchToolSearchResultBlockType
+            .toolSearchToolSearchResult:
+        return 'tool_search_tool_search_result';
     }
   }
 
@@ -115,14 +138,17 @@ enum BetaResponseToolUseBlockType {
 
   static BetaResponseToolUseBlockType fromJson(String value) {
     switch (value) {
-      case 'tool_use': return BetaResponseToolUseBlockType.toolUse;
-      default: throw ArgumentError('Unknown BetaResponseToolUseBlockType: $value');
+      case 'tool_use':
+        return BetaResponseToolUseBlockType.toolUse;
+      default:
+        throw ArgumentError('Unknown BetaResponseToolUseBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseToolUseBlockType.toolUse: return 'tool_use';
+      case BetaResponseToolUseBlockType.toolUse:
+        return 'tool_use';
     }
   }
 
@@ -136,14 +162,18 @@ enum BetaResponseWebFetchResultBlockType {
 
   static BetaResponseWebFetchResultBlockType fromJson(String value) {
     switch (value) {
-      case 'web_fetch_result': return BetaResponseWebFetchResultBlockType.webFetchResult;
-      default: throw ArgumentError('Unknown BetaResponseWebFetchResultBlockType: $value');
+      case 'web_fetch_result':
+        return BetaResponseWebFetchResultBlockType.webFetchResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseWebFetchResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseWebFetchResultBlockType.webFetchResult: return 'web_fetch_result';
+      case BetaResponseWebFetchResultBlockType.webFetchResult:
+        return 'web_fetch_result';
     }
   }
 
@@ -157,14 +187,18 @@ enum BetaResponseWebFetchToolResultBlockType {
 
   static BetaResponseWebFetchToolResultBlockType fromJson(String value) {
     switch (value) {
-      case 'web_fetch_tool_result': return BetaResponseWebFetchToolResultBlockType.webFetchToolResult;
-      default: throw ArgumentError('Unknown BetaResponseWebFetchToolResultBlockType: $value');
+      case 'web_fetch_tool_result':
+        return BetaResponseWebFetchToolResultBlockType.webFetchToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseWebFetchToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseWebFetchToolResultBlockType.webFetchToolResult: return 'web_fetch_tool_result';
+      case BetaResponseWebFetchToolResultBlockType.webFetchToolResult:
+        return 'web_fetch_tool_result';
     }
   }
 
@@ -178,14 +212,18 @@ enum BetaResponseWebFetchToolResultErrorType {
 
   static BetaResponseWebFetchToolResultErrorType fromJson(String value) {
     switch (value) {
-      case 'web_fetch_tool_result_error': return BetaResponseWebFetchToolResultErrorType.webFetchToolResultError;
-      default: throw ArgumentError('Unknown BetaResponseWebFetchToolResultErrorType: $value');
+      case 'web_fetch_tool_result_error':
+        return BetaResponseWebFetchToolResultErrorType.webFetchToolResultError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseWebFetchToolResultErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseWebFetchToolResultErrorType.webFetchToolResultError: return 'web_fetch_tool_result_error';
+      case BetaResponseWebFetchToolResultErrorType.webFetchToolResultError:
+        return 'web_fetch_tool_result_error';
     }
   }
 
@@ -199,14 +237,18 @@ enum BetaResponseWebSearchResultBlockType {
 
   static BetaResponseWebSearchResultBlockType fromJson(String value) {
     switch (value) {
-      case 'web_search_result': return BetaResponseWebSearchResultBlockType.webSearchResult;
-      default: throw ArgumentError('Unknown BetaResponseWebSearchResultBlockType: $value');
+      case 'web_search_result':
+        return BetaResponseWebSearchResultBlockType.webSearchResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseWebSearchResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseWebSearchResultBlockType.webSearchResult: return 'web_search_result';
+      case BetaResponseWebSearchResultBlockType.webSearchResult:
+        return 'web_search_result';
     }
   }
 
@@ -218,16 +260,23 @@ enum BetaResponseWebSearchResultBlockType {
 enum BetaResponseWebSearchResultLocationCitationType {
   webSearchResultLocation;
 
-  static BetaResponseWebSearchResultLocationCitationType fromJson(String value) {
+  static BetaResponseWebSearchResultLocationCitationType fromJson(
+      String value) {
     switch (value) {
-      case 'web_search_result_location': return BetaResponseWebSearchResultLocationCitationType.webSearchResultLocation;
-      default: throw ArgumentError('Unknown BetaResponseWebSearchResultLocationCitationType: $value');
+      case 'web_search_result_location':
+        return BetaResponseWebSearchResultLocationCitationType
+            .webSearchResultLocation;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseWebSearchResultLocationCitationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseWebSearchResultLocationCitationType.webSearchResultLocation: return 'web_search_result_location';
+      case BetaResponseWebSearchResultLocationCitationType
+            .webSearchResultLocation:
+        return 'web_search_result_location';
     }
   }
 
@@ -241,14 +290,18 @@ enum BetaResponseWebSearchToolResultBlockType {
 
   static BetaResponseWebSearchToolResultBlockType fromJson(String value) {
     switch (value) {
-      case 'web_search_tool_result': return BetaResponseWebSearchToolResultBlockType.webSearchToolResult;
-      default: throw ArgumentError('Unknown BetaResponseWebSearchToolResultBlockType: $value');
+      case 'web_search_tool_result':
+        return BetaResponseWebSearchToolResultBlockType.webSearchToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseWebSearchToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseWebSearchToolResultBlockType.webSearchToolResult: return 'web_search_tool_result';
+      case BetaResponseWebSearchToolResultBlockType.webSearchToolResult:
+        return 'web_search_tool_result';
     }
   }
 
@@ -262,14 +315,19 @@ enum BetaResponseWebSearchToolResultErrorType {
 
   static BetaResponseWebSearchToolResultErrorType fromJson(String value) {
     switch (value) {
-      case 'web_search_tool_result_error': return BetaResponseWebSearchToolResultErrorType.webSearchToolResultError;
-      default: throw ArgumentError('Unknown BetaResponseWebSearchToolResultErrorType: $value');
+      case 'web_search_tool_result_error':
+        return BetaResponseWebSearchToolResultErrorType
+            .webSearchToolResultError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseWebSearchToolResultErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseWebSearchToolResultErrorType.webSearchToolResultError: return 'web_search_tool_result_error';
+      case BetaResponseWebSearchToolResultErrorType.webSearchToolResultError:
+        return 'web_search_tool_result_error';
     }
   }
 

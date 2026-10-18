@@ -10,14 +10,20 @@ enum BetaManagedAgentsMcpConnectionFailedErrorType {
 
   static BetaManagedAgentsMcpConnectionFailedErrorType fromJson(String value) {
     switch (value) {
-      case 'mcp_connection_failed_error': return BetaManagedAgentsMcpConnectionFailedErrorType.mcpConnectionFailedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMcpConnectionFailedErrorType: $value');
+      case 'mcp_connection_failed_error':
+        return BetaManagedAgentsMcpConnectionFailedErrorType
+            .mcpConnectionFailedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMcpConnectionFailedErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMcpConnectionFailedErrorType.mcpConnectionFailedError: return 'mcp_connection_failed_error';
+      case BetaManagedAgentsMcpConnectionFailedErrorType
+            .mcpConnectionFailedError:
+        return 'mcp_connection_failed_error';
     }
   }
 
@@ -29,16 +35,23 @@ enum BetaManagedAgentsMcpConnectionFailedErrorType {
 enum BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType {
   mcpEgressBlockedError;
 
-  static BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType fromJson(String value) {
+  static BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType
+      fromJson(String value) {
     switch (value) {
-      case 'mcp_egress_blocked_error': return BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType.mcpEgressBlockedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType: $value');
+      case 'mcp_egress_blocked_error':
+        return BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType
+            .mcpEgressBlockedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType.mcpEgressBlockedError: return 'mcp_egress_blocked_error';
+      case BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType
+            .mcpEgressBlockedError:
+        return 'mcp_egress_blocked_error';
     }
   }
 
@@ -52,14 +65,19 @@ enum BetaManagedAgentsMcpEgressBlockedRunErrorType {
 
   static BetaManagedAgentsMcpEgressBlockedRunErrorType fromJson(String value) {
     switch (value) {
-      case 'mcp_egress_blocked_error': return BetaManagedAgentsMcpEgressBlockedRunErrorType.mcpEgressBlockedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMcpEgressBlockedRunErrorType: $value');
+      case 'mcp_egress_blocked_error':
+        return BetaManagedAgentsMcpEgressBlockedRunErrorType
+            .mcpEgressBlockedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMcpEgressBlockedRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMcpEgressBlockedRunErrorType.mcpEgressBlockedError: return 'mcp_egress_blocked_error';
+      case BetaManagedAgentsMcpEgressBlockedRunErrorType.mcpEgressBlockedError:
+        return 'mcp_egress_blocked_error';
     }
   }
 
@@ -73,14 +91,18 @@ enum BetaManagedAgentsMcpOauthAuthResponseType {
 
   static BetaManagedAgentsMcpOauthAuthResponseType fromJson(String value) {
     switch (value) {
-      case 'mcp_oauth': return BetaManagedAgentsMcpOauthAuthResponseType.mcpOauth;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMcpOauthAuthResponseType: $value');
+      case 'mcp_oauth':
+        return BetaManagedAgentsMcpOauthAuthResponseType.mcpOauth;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMcpOauthAuthResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMcpOauthAuthResponseType.mcpOauth: return 'mcp_oauth';
+      case BetaManagedAgentsMcpOauthAuthResponseType.mcpOauth:
+        return 'mcp_oauth';
     }
   }
 
@@ -94,14 +116,18 @@ enum BetaManagedAgentsMcpOauthCreateParamsType {
 
   static BetaManagedAgentsMcpOauthCreateParamsType fromJson(String value) {
     switch (value) {
-      case 'mcp_oauth': return BetaManagedAgentsMcpOauthCreateParamsType.mcpOauth;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMcpOauthCreateParamsType: $value');
+      case 'mcp_oauth':
+        return BetaManagedAgentsMcpOauthCreateParamsType.mcpOauth;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMcpOauthCreateParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMcpOauthCreateParamsType.mcpOauth: return 'mcp_oauth';
+      case BetaManagedAgentsMcpOauthCreateParamsType.mcpOauth:
+        return 'mcp_oauth';
     }
   }
 
@@ -115,14 +141,18 @@ enum BetaManagedAgentsMcpOauthUpdateParamsType {
 
   static BetaManagedAgentsMcpOauthUpdateParamsType fromJson(String value) {
     switch (value) {
-      case 'mcp_oauth': return BetaManagedAgentsMcpOauthUpdateParamsType.mcpOauth;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMcpOauthUpdateParamsType: $value');
+      case 'mcp_oauth':
+        return BetaManagedAgentsMcpOauthUpdateParamsType.mcpOauth;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMcpOauthUpdateParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMcpOauthUpdateParamsType.mcpOauth: return 'mcp_oauth';
+      case BetaManagedAgentsMcpOauthUpdateParamsType.mcpOauth:
+        return 'mcp_oauth';
     }
   }
 
@@ -136,14 +166,18 @@ enum BetaManagedAgentsMCPServerURLDefinitionType {
 
   static BetaManagedAgentsMCPServerURLDefinitionType fromJson(String value) {
     switch (value) {
-      case 'url': return BetaManagedAgentsMCPServerURLDefinitionType.url;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMCPServerURLDefinitionType: $value');
+      case 'url':
+        return BetaManagedAgentsMCPServerURLDefinitionType.url;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMCPServerURLDefinitionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMCPServerURLDefinitionType.url: return 'url';
+      case BetaManagedAgentsMCPServerURLDefinitionType.url:
+        return 'url';
     }
   }
 
@@ -157,14 +191,17 @@ enum BetaManagedAgentsMCPToolsetType {
 
   static BetaManagedAgentsMCPToolsetType fromJson(String value) {
     switch (value) {
-      case 'mcp_toolset': return BetaManagedAgentsMCPToolsetType.mcpToolset;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMCPToolsetType: $value');
+      case 'mcp_toolset':
+        return BetaManagedAgentsMCPToolsetType.mcpToolset;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsMCPToolsetType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMCPToolsetType.mcpToolset: return 'mcp_toolset';
+      case BetaManagedAgentsMCPToolsetType.mcpToolset:
+        return 'mcp_toolset';
     }
   }
 
@@ -178,14 +215,18 @@ enum BetaManagedAgentsMCPToolsetParamsType {
 
   static BetaManagedAgentsMCPToolsetParamsType fromJson(String value) {
     switch (value) {
-      case 'mcp_toolset': return BetaManagedAgentsMCPToolsetParamsType.mcpToolset;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMCPToolsetParamsType: $value');
+      case 'mcp_toolset':
+        return BetaManagedAgentsMCPToolsetParamsType.mcpToolset;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMCPToolsetParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMCPToolsetParamsType.mcpToolset: return 'mcp_toolset';
+      case BetaManagedAgentsMCPToolsetParamsType.mcpToolset:
+        return 'mcp_toolset';
     }
   }
 
@@ -199,14 +240,17 @@ enum BetaManagedAgentsMemoryType {
 
   static BetaManagedAgentsMemoryType fromJson(String value) {
     switch (value) {
-      case 'memory': return BetaManagedAgentsMemoryType.memory;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryType: $value');
+      case 'memory':
+        return BetaManagedAgentsMemoryType.memory;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsMemoryType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMemoryType.memory: return 'memory';
+      case BetaManagedAgentsMemoryType.memory:
+        return 'memory';
     }
   }
 
@@ -220,14 +264,19 @@ enum BetaManagedAgentsMemoryPathConflictErrorType {
 
   static BetaManagedAgentsMemoryPathConflictErrorType fromJson(String value) {
     switch (value) {
-      case 'memory_path_conflict_error': return BetaManagedAgentsMemoryPathConflictErrorType.memoryPathConflictError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryPathConflictErrorType: $value');
+      case 'memory_path_conflict_error':
+        return BetaManagedAgentsMemoryPathConflictErrorType
+            .memoryPathConflictError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMemoryPathConflictErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMemoryPathConflictErrorType.memoryPathConflictError: return 'memory_path_conflict_error';
+      case BetaManagedAgentsMemoryPathConflictErrorType.memoryPathConflictError:
+        return 'memory_path_conflict_error';
     }
   }
 
@@ -239,16 +288,23 @@ enum BetaManagedAgentsMemoryPathConflictErrorType {
 enum BetaManagedAgentsMemoryPreconditionFailedErrorType {
   memoryPreconditionFailedError;
 
-  static BetaManagedAgentsMemoryPreconditionFailedErrorType fromJson(String value) {
+  static BetaManagedAgentsMemoryPreconditionFailedErrorType fromJson(
+      String value) {
     switch (value) {
-      case 'memory_precondition_failed_error': return BetaManagedAgentsMemoryPreconditionFailedErrorType.memoryPreconditionFailedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryPreconditionFailedErrorType: $value');
+      case 'memory_precondition_failed_error':
+        return BetaManagedAgentsMemoryPreconditionFailedErrorType
+            .memoryPreconditionFailedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMemoryPreconditionFailedErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMemoryPreconditionFailedErrorType.memoryPreconditionFailedError: return 'memory_precondition_failed_error';
+      case BetaManagedAgentsMemoryPreconditionFailedErrorType
+            .memoryPreconditionFailedError:
+        return 'memory_precondition_failed_error';
     }
   }
 
@@ -262,14 +318,18 @@ enum BetaManagedAgentsMemoryPrefixType {
 
   static BetaManagedAgentsMemoryPrefixType fromJson(String value) {
     switch (value) {
-      case 'memory_prefix': return BetaManagedAgentsMemoryPrefixType.memoryPrefix;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryPrefixType: $value');
+      case 'memory_prefix':
+        return BetaManagedAgentsMemoryPrefixType.memoryPrefix;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMemoryPrefixType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMemoryPrefixType.memoryPrefix: return 'memory_prefix';
+      case BetaManagedAgentsMemoryPrefixType.memoryPrefix:
+        return 'memory_prefix';
     }
   }
 

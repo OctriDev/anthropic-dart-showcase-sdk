@@ -8,230 +8,408 @@ sealed class BetaManagedAgentsMcpOauthRefreshParamsResource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMcpOauthRefreshParamsResource();
-  factory BetaManagedAgentsMcpOauthRefreshParamsResource.fromJson(Object? json) {
-    if (json is String) { return BetaManagedAgentsMcpOauthRefreshParamsResourceString(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsMcpOauthRefreshParamsResource");
+  factory BetaManagedAgentsMcpOauthRefreshParamsResource.fromJson(
+      Object? json) {
+    if (json is String) {
+      return BetaManagedAgentsMcpOauthRefreshParamsResourceString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsMcpOauthRefreshParamsResource");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMcpOauthRefreshParamsResourceString extends BetaManagedAgentsMcpOauthRefreshParamsResource {
+final class BetaManagedAgentsMcpOauthRefreshParamsResourceString
+    extends BetaManagedAgentsMcpOauthRefreshParamsResource {
   final String value;
   const BetaManagedAgentsMcpOauthRefreshParamsResourceString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// OAuth refresh token parameters for creating a credential with refresh support.
 class BetaManagedAgentsMcpOauthRefreshParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// OAuth refresh token.
   final String refreshToken;
+
   /// Token endpoint URL used to refresh the access token.
   final String tokenEndpoint;
+
   /// OAuth client ID.
   final String clientId;
+
   /// OAuth scope for the refresh request.
   final SdkOptional<String?> scope;
+
   /// OAuth resource indicator.
   final SdkOptional<String?> resource;
+
   /// Required object value serialized in the `token_endpoint_auth` wire field.
-  final BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth tokenEndpointAuth;
+  final BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth
+      tokenEndpointAuth;
 
-  const BetaManagedAgentsMcpOauthRefreshParams({required this.refreshToken, required this.tokenEndpoint, required this.clientId, this.scope = const SdkOmitted(), this.resource = const SdkOmitted(), required this.tokenEndpointAuth});
+  const BetaManagedAgentsMcpOauthRefreshParams(
+      {required this.refreshToken,
+      required this.tokenEndpoint,
+      required this.clientId,
+      this.scope = const SdkOmitted(),
+      this.resource = const SdkOmitted(),
+      required this.tokenEndpointAuth});
 
-  BetaManagedAgentsMcpOauthRefreshParams Function({String refreshToken, String tokenEndpoint, String clientId, SdkOptional<String?> scope, SdkOptional<String?> resource, BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth tokenEndpointAuth}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpOauthRefreshParams Function(
+      {String refreshToken,
+      String tokenEndpoint,
+      String clientId,
+      SdkOptional<String?> scope,
+      SdkOptional<String?> resource,
+      BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth
+          tokenEndpointAuth}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpOauthRefreshParams _copyWith({Object? refreshToken = sdkOmittedValue, Object? tokenEndpoint = sdkOmittedValue, Object? clientId = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? resource = sdkOmittedValue, Object? tokenEndpointAuth = sdkOmittedValue}) => BetaManagedAgentsMcpOauthRefreshParams(
-    refreshToken: identical(refreshToken, sdkOmittedValue) ? this.refreshToken : refreshToken as String,
-    tokenEndpoint: identical(tokenEndpoint, sdkOmittedValue) ? this.tokenEndpoint : tokenEndpoint as String,
-    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as String,
-    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as SdkOptional<String?>,
-    resource: identical(resource, sdkOmittedValue) ? this.resource : resource as SdkOptional<String?>,
-    tokenEndpointAuth: identical(tokenEndpointAuth, sdkOmittedValue) ? this.tokenEndpointAuth : tokenEndpointAuth as BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth,
-  );
+  BetaManagedAgentsMcpOauthRefreshParams _copyWith(
+          {Object? refreshToken = sdkOmittedValue,
+          Object? tokenEndpoint = sdkOmittedValue,
+          Object? clientId = sdkOmittedValue,
+          Object? scope = sdkOmittedValue,
+          Object? resource = sdkOmittedValue,
+          Object? tokenEndpointAuth = sdkOmittedValue}) =>
+      BetaManagedAgentsMcpOauthRefreshParams(
+        refreshToken: identical(refreshToken, sdkOmittedValue)
+            ? this.refreshToken
+            : refreshToken as String,
+        tokenEndpoint: identical(tokenEndpoint, sdkOmittedValue)
+            ? this.tokenEndpoint
+            : tokenEndpoint as String,
+        clientId: identical(clientId, sdkOmittedValue)
+            ? this.clientId
+            : clientId as String,
+        scope: identical(scope, sdkOmittedValue)
+            ? this.scope
+            : scope as SdkOptional<String?>,
+        resource: identical(resource, sdkOmittedValue)
+            ? this.resource
+            : resource as SdkOptional<String?>,
+        tokenEndpointAuth: identical(tokenEndpointAuth, sdkOmittedValue)
+            ? this.tokenEndpointAuth
+            : tokenEndpointAuth
+                as BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth,
+      );
 
-  factory BetaManagedAgentsMcpOauthRefreshParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpOauthRefreshParams(
-    refreshToken: (json['refresh_token'] as String?)!,
-    tokenEndpoint: (json['token_endpoint'] as String?)!,
-    clientId: (json['client_id'] as String?)!,
-    scope: json.containsKey('scope') ? SdkPresent(json['scope'] as String?) : const SdkOmitted(),
-    resource: json.containsKey('resource') ? SdkPresent(json['resource'] as String?) : const SdkOmitted(),
-    tokenEndpointAuth: (json['token_endpoint_auth'] != null ? BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth.fromJson(json['token_endpoint_auth']) : null)!,
-  );
+  factory BetaManagedAgentsMcpOauthRefreshParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMcpOauthRefreshParams(
+        refreshToken: (json['refresh_token'] as String?)!,
+        tokenEndpoint: (json['token_endpoint'] as String?)!,
+        clientId: (json['client_id'] as String?)!,
+        scope: json.containsKey('scope')
+            ? SdkPresent(json['scope'] as String?)
+            : const SdkOmitted(),
+        resource: json.containsKey('resource')
+            ? SdkPresent(json['resource'] as String?)
+            : const SdkOmitted(),
+        tokenEndpointAuth: (json['token_endpoint_auth'] != null
+            ? BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth.fromJson(
+                json['token_endpoint_auth'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'refresh_token': refreshToken,
-    'token_endpoint': tokenEndpoint,
-    'client_id': clientId,
-    ...switch (scope) {
-      SdkPresent<String?>(value: final value) => {'scope': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (resource) {
-      SdkPresent<String?>(value: final value) => {'resource': value,},
-      _ => const <String, dynamic>{},
-    },
-    'token_endpoint_auth': tokenEndpointAuth.toJson(),
-  };
+        'refresh_token': refreshToken,
+        'token_endpoint': tokenEndpoint,
+        'client_id': clientId,
+        ...switch (scope) {
+          SdkPresent<String?>(value: final value) => {
+              'scope': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (resource) {
+          SdkPresent<String?>(value: final value) => {
+              'resource': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'token_endpoint_auth': tokenEndpointAuth.toJson(),
+      };
 }
 
 sealed class BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth();
-  factory BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth.fromJson(Object? json) {
+  factory BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth.fromJson(
+      Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsTokenEndpointAuthNoneParam.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneParam(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsTokenEndpointAuthBasicParam.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicParam(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsTokenEndpointAuthPostParam.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostParam(value); } } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsTokenEndpointAuthNoneParam.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneParam(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsTokenEndpointAuthBasicParam.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicParam(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsTokenEndpointAuthPostParam.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostParam(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneParam(BetaManagedAgentsTokenEndpointAuthNoneParam.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicParam(BetaManagedAgentsTokenEndpointAuthBasicParam.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostParam(BetaManagedAgentsTokenEndpointAuthPostParam.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"none", "client_secret_basic", "client_secret_post"}.contains(json["type"])) { return UnknownBetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth");
+    try {
+      return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneParam(
+          BetaManagedAgentsTokenEndpointAuthNoneParam.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicParam(
+          BetaManagedAgentsTokenEndpointAuthBasicParam.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostParam(
+          BetaManagedAgentsTokenEndpointAuthPostParam.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"none", "client_secret_basic", "client_secret_post"}
+            .contains(json["type"])) {
+      return UnknownBetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(
+          json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneParam extends BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth {
+final class BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneParam
+    extends BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth {
   final BetaManagedAgentsTokenEndpointAuthNoneParam value;
-  const BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneParam(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneParam(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicParam extends BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth {
+final class BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicParam
+    extends BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth {
   final BetaManagedAgentsTokenEndpointAuthBasicParam value;
-  const BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicParam(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicParam(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostParam extends BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth {
+final class BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostParam
+    extends BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth {
   final BetaManagedAgentsTokenEndpointAuthPostParam value;
-  const BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostParam(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostParam(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth extends BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth {
+final class UnknownBetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth
+    extends BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth {
   final Map<String, dynamic> raw;
-  const UnknownBetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(this.raw);
-  @override Object? toJson() => raw;
+  const UnknownBetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(
+      this.raw);
+  @override
+  Object? toJson() => raw;
 }
 
 /// Parameters for creating a static bearer token credential.
 class BetaManagedAgentsStaticBearerCreateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsStaticBearerCreateParamsType type_;
+
   /// Static bearer token value.
   final String token;
+
   /// URL of the MCP server this credential authenticates against.
   final String mcpServerUrl;
 
-  const BetaManagedAgentsStaticBearerCreateParams({required this.type_, required this.token, required this.mcpServerUrl});
+  const BetaManagedAgentsStaticBearerCreateParams(
+      {required this.type_, required this.token, required this.mcpServerUrl});
 
-  BetaManagedAgentsStaticBearerCreateParams Function({BetaManagedAgentsStaticBearerCreateParamsType type_, String token, String mcpServerUrl}) get copyWith => _copyWith;
+  BetaManagedAgentsStaticBearerCreateParams Function(
+      {BetaManagedAgentsStaticBearerCreateParamsType type_,
+      String token,
+      String mcpServerUrl}) get copyWith => _copyWith;
 
-  BetaManagedAgentsStaticBearerCreateParams _copyWith({Object? type_ = sdkOmittedValue, Object? token = sdkOmittedValue, Object? mcpServerUrl = sdkOmittedValue}) => BetaManagedAgentsStaticBearerCreateParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsStaticBearerCreateParamsType,
-    token: identical(token, sdkOmittedValue) ? this.token : token as String,
-    mcpServerUrl: identical(mcpServerUrl, sdkOmittedValue) ? this.mcpServerUrl : mcpServerUrl as String,
-  );
+  BetaManagedAgentsStaticBearerCreateParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? token = sdkOmittedValue,
+          Object? mcpServerUrl = sdkOmittedValue}) =>
+      BetaManagedAgentsStaticBearerCreateParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsStaticBearerCreateParamsType,
+        token: identical(token, sdkOmittedValue) ? this.token : token as String,
+        mcpServerUrl: identical(mcpServerUrl, sdkOmittedValue)
+            ? this.mcpServerUrl
+            : mcpServerUrl as String,
+      );
 
-  factory BetaManagedAgentsStaticBearerCreateParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsStaticBearerCreateParams(
-    type_: (json['type'] != null ? BetaManagedAgentsStaticBearerCreateParamsType.fromJson(json['type'] as String) : null)!,
-    token: (json['token'] as String?)!,
-    mcpServerUrl: (json['mcp_server_url'] as String?)!,
-  );
+  factory BetaManagedAgentsStaticBearerCreateParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsStaticBearerCreateParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsStaticBearerCreateParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        token: (json['token'] as String?)!,
+        mcpServerUrl: (json['mcp_server_url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'token': token,
-    'mcp_server_url': mcpServerUrl,
-  };
+        'type': type_.toJson(),
+        'token': token,
+        'mcp_server_url': mcpServerUrl,
+      };
 }
 
 /// Token endpoint uses HTTP Basic authentication with client credentials.
 class BetaManagedAgentsTokenEndpointAuthBasicParam {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTokenEndpointAuthBasicParamType type_;
+
   /// OAuth client secret.
   final String clientSecret;
 
-  const BetaManagedAgentsTokenEndpointAuthBasicParam({required this.type_, required this.clientSecret});
+  const BetaManagedAgentsTokenEndpointAuthBasicParam(
+      {required this.type_, required this.clientSecret});
 
-  BetaManagedAgentsTokenEndpointAuthBasicParam Function({BetaManagedAgentsTokenEndpointAuthBasicParamType type_, String clientSecret}) get copyWith => _copyWith;
+  BetaManagedAgentsTokenEndpointAuthBasicParam Function(
+      {BetaManagedAgentsTokenEndpointAuthBasicParamType type_,
+      String clientSecret}) get copyWith => _copyWith;
 
-  BetaManagedAgentsTokenEndpointAuthBasicParam _copyWith({Object? type_ = sdkOmittedValue, Object? clientSecret = sdkOmittedValue}) => BetaManagedAgentsTokenEndpointAuthBasicParam(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTokenEndpointAuthBasicParamType,
-    clientSecret: identical(clientSecret, sdkOmittedValue) ? this.clientSecret : clientSecret as String,
-  );
+  BetaManagedAgentsTokenEndpointAuthBasicParam _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? clientSecret = sdkOmittedValue}) =>
+      BetaManagedAgentsTokenEndpointAuthBasicParam(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsTokenEndpointAuthBasicParamType,
+        clientSecret: identical(clientSecret, sdkOmittedValue)
+            ? this.clientSecret
+            : clientSecret as String,
+      );
 
-  factory BetaManagedAgentsTokenEndpointAuthBasicParam.fromJson(Map<String, dynamic> json) => BetaManagedAgentsTokenEndpointAuthBasicParam(
-    type_: (json['type'] != null ? BetaManagedAgentsTokenEndpointAuthBasicParamType.fromJson(json['type'] as String) : null)!,
-    clientSecret: (json['client_secret'] as String?)!,
-  );
+  factory BetaManagedAgentsTokenEndpointAuthBasicParam.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsTokenEndpointAuthBasicParam(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsTokenEndpointAuthBasicParamType.fromJson(
+                json['type'] as String)
+            : null)!,
+        clientSecret: (json['client_secret'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'client_secret': clientSecret,
-  };
+        'type': type_.toJson(),
+        'client_secret': clientSecret,
+      };
 }
 
 /// Token endpoint requires no client authentication.
 class BetaManagedAgentsTokenEndpointAuthNoneParam {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTokenEndpointAuthNoneParamType type_;
 
   const BetaManagedAgentsTokenEndpointAuthNoneParam({required this.type_});
 
-  BetaManagedAgentsTokenEndpointAuthNoneParam Function({BetaManagedAgentsTokenEndpointAuthNoneParamType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsTokenEndpointAuthNoneParam Function(
+          {BetaManagedAgentsTokenEndpointAuthNoneParamType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsTokenEndpointAuthNoneParam _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsTokenEndpointAuthNoneParam(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTokenEndpointAuthNoneParamType,
-  );
+  BetaManagedAgentsTokenEndpointAuthNoneParam _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsTokenEndpointAuthNoneParam(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsTokenEndpointAuthNoneParamType,
+      );
 
-  factory BetaManagedAgentsTokenEndpointAuthNoneParam.fromJson(Map<String, dynamic> json) => BetaManagedAgentsTokenEndpointAuthNoneParam(
-    type_: (json['type'] != null ? BetaManagedAgentsTokenEndpointAuthNoneParamType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsTokenEndpointAuthNoneParam.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsTokenEndpointAuthNoneParam(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsTokenEndpointAuthNoneParamType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// Token endpoint uses POST body authentication with client credentials.
 class BetaManagedAgentsTokenEndpointAuthPostParam {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTokenEndpointAuthPostParamType type_;
+
   /// OAuth client secret.
   final String clientSecret;
 
-  const BetaManagedAgentsTokenEndpointAuthPostParam({required this.type_, required this.clientSecret});
+  const BetaManagedAgentsTokenEndpointAuthPostParam(
+      {required this.type_, required this.clientSecret});
 
-  BetaManagedAgentsTokenEndpointAuthPostParam Function({BetaManagedAgentsTokenEndpointAuthPostParamType type_, String clientSecret}) get copyWith => _copyWith;
+  BetaManagedAgentsTokenEndpointAuthPostParam Function(
+      {BetaManagedAgentsTokenEndpointAuthPostParamType type_,
+      String clientSecret}) get copyWith => _copyWith;
 
-  BetaManagedAgentsTokenEndpointAuthPostParam _copyWith({Object? type_ = sdkOmittedValue, Object? clientSecret = sdkOmittedValue}) => BetaManagedAgentsTokenEndpointAuthPostParam(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTokenEndpointAuthPostParamType,
-    clientSecret: identical(clientSecret, sdkOmittedValue) ? this.clientSecret : clientSecret as String,
-  );
+  BetaManagedAgentsTokenEndpointAuthPostParam _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? clientSecret = sdkOmittedValue}) =>
+      BetaManagedAgentsTokenEndpointAuthPostParam(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsTokenEndpointAuthPostParamType,
+        clientSecret: identical(clientSecret, sdkOmittedValue)
+            ? this.clientSecret
+            : clientSecret as String,
+      );
 
-  factory BetaManagedAgentsTokenEndpointAuthPostParam.fromJson(Map<String, dynamic> json) => BetaManagedAgentsTokenEndpointAuthPostParam(
-    type_: (json['type'] != null ? BetaManagedAgentsTokenEndpointAuthPostParamType.fromJson(json['type'] as String) : null)!,
-    clientSecret: (json['client_secret'] as String?)!,
-  );
+  factory BetaManagedAgentsTokenEndpointAuthPostParam.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsTokenEndpointAuthPostParam(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsTokenEndpointAuthPostParamType.fromJson(
+                json['type'] as String)
+            : null)!,
+        clientSecret: (json['client_secret'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'client_secret': clientSecret,
-  };
+        'type': type_.toJson(),
+        'client_secret': clientSecret,
+      };
 }

@@ -8,150 +8,272 @@ sealed class BetaDataResidencyUpdateParamsAllowedInferenceGeos {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaDataResidencyUpdateParamsAllowedInferenceGeos();
-  factory BetaDataResidencyUpdateParamsAllowedInferenceGeos.fromJson(Object? json) {
-    try { return BetaDataResidencyUpdateParamsAllowedInferenceGeosBetaAllowedInferenceGeo(BetaAllowedInferenceGeo.fromJson(json as String)); } catch (_) {}
-    try { return BetaDataResidencyUpdateParamsAllowedInferenceGeosUnrestricted678896b2(Unrestricted678896b2.fromJson(json as String)); } catch (_) {}
-    throw FormatException("No variant matched for BetaDataResidencyUpdateParamsAllowedInferenceGeos");
+  factory BetaDataResidencyUpdateParamsAllowedInferenceGeos.fromJson(
+      Object? json) {
+    try {
+      return BetaDataResidencyUpdateParamsAllowedInferenceGeosBetaAllowedInferenceGeo(
+          BetaAllowedInferenceGeo.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaDataResidencyUpdateParamsAllowedInferenceGeosUnrestricted678896b2(
+          Unrestricted678896b2.fromJson(json as String));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for BetaDataResidencyUpdateParamsAllowedInferenceGeos");
   }
   Object? toJson();
 }
 
-final class BetaDataResidencyUpdateParamsAllowedInferenceGeosBetaAllowedInferenceGeo extends BetaDataResidencyUpdateParamsAllowedInferenceGeos {
+final class BetaDataResidencyUpdateParamsAllowedInferenceGeosBetaAllowedInferenceGeo
+    extends BetaDataResidencyUpdateParamsAllowedInferenceGeos {
   final BetaAllowedInferenceGeo value;
-  const BetaDataResidencyUpdateParamsAllowedInferenceGeosBetaAllowedInferenceGeo(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaDataResidencyUpdateParamsAllowedInferenceGeosBetaAllowedInferenceGeo(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaDataResidencyUpdateParamsAllowedInferenceGeosUnrestricted678896b2 extends BetaDataResidencyUpdateParamsAllowedInferenceGeos {
+final class BetaDataResidencyUpdateParamsAllowedInferenceGeosUnrestricted678896b2
+    extends BetaDataResidencyUpdateParamsAllowedInferenceGeos {
   final Unrestricted678896b2 value;
-  const BetaDataResidencyUpdateParamsAllowedInferenceGeosUnrestricted678896b2(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaDataResidencyUpdateParamsAllowedInferenceGeosUnrestricted678896b2(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `BetaDataResidencyUpdateParams` API schema.
 class BetaDataResidencyUpdateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Permitted inference geo values. Use 'unrestricted' to allow all geos, or a list of specific geos.
   final SdkOptional<dynamic> allowedInferenceGeos;
+
   /// Default inference geo applied when requests omit the parameter. Must be a member of `allowed_inference_geos` unless `allowed_inference_geos` is `"unrestricted"`.
   final SdkOptional<BetaInferenceGeo?> defaultInferenceGeo;
 
-  const BetaDataResidencyUpdateParams({this.allowedInferenceGeos = const SdkOmitted(), this.defaultInferenceGeo = const SdkOmitted()});
+  const BetaDataResidencyUpdateParams(
+      {this.allowedInferenceGeos = const SdkOmitted(),
+      this.defaultInferenceGeo = const SdkOmitted()});
 
-  BetaDataResidencyUpdateParams Function({SdkOptional<dynamic> allowedInferenceGeos, SdkOptional<BetaInferenceGeo?> defaultInferenceGeo}) get copyWith => _copyWith;
+  BetaDataResidencyUpdateParams Function(
+          {SdkOptional<dynamic> allowedInferenceGeos,
+          SdkOptional<BetaInferenceGeo?> defaultInferenceGeo})
+      get copyWith => _copyWith;
 
-  BetaDataResidencyUpdateParams _copyWith({Object? allowedInferenceGeos = sdkOmittedValue, Object? defaultInferenceGeo = sdkOmittedValue}) => BetaDataResidencyUpdateParams(
-    allowedInferenceGeos: identical(allowedInferenceGeos, sdkOmittedValue) ? this.allowedInferenceGeos : allowedInferenceGeos as SdkOptional<dynamic>,
-    defaultInferenceGeo: identical(defaultInferenceGeo, sdkOmittedValue) ? this.defaultInferenceGeo : defaultInferenceGeo as SdkOptional<BetaInferenceGeo?>,
-  );
+  BetaDataResidencyUpdateParams _copyWith(
+          {Object? allowedInferenceGeos = sdkOmittedValue,
+          Object? defaultInferenceGeo = sdkOmittedValue}) =>
+      BetaDataResidencyUpdateParams(
+        allowedInferenceGeos: identical(allowedInferenceGeos, sdkOmittedValue)
+            ? this.allowedInferenceGeos
+            : allowedInferenceGeos as SdkOptional<dynamic>,
+        defaultInferenceGeo: identical(defaultInferenceGeo, sdkOmittedValue)
+            ? this.defaultInferenceGeo
+            : defaultInferenceGeo as SdkOptional<BetaInferenceGeo?>,
+      );
 
-  factory BetaDataResidencyUpdateParams.fromJson(Map<String, dynamic> json) => BetaDataResidencyUpdateParams(
-    allowedInferenceGeos: json.containsKey('allowed_inference_geos') ? SdkPresent(json['allowed_inference_geos']) : const SdkOmitted(),
-    defaultInferenceGeo: json.containsKey('default_inference_geo') ? SdkPresent(json['default_inference_geo'] != null ? BetaInferenceGeo.fromJson(json['default_inference_geo'] as String) : null) : const SdkOmitted(),
-  );
+  factory BetaDataResidencyUpdateParams.fromJson(Map<String, dynamic> json) =>
+      BetaDataResidencyUpdateParams(
+        allowedInferenceGeos: json.containsKey('allowed_inference_geos')
+            ? SdkPresent(json['allowed_inference_geos'])
+            : const SdkOmitted(),
+        defaultInferenceGeo: json.containsKey('default_inference_geo')
+            ? SdkPresent(json['default_inference_geo'] != null
+                ? BetaInferenceGeo.fromJson(
+                    json['default_inference_geo'] as String)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (allowedInferenceGeos) {
-      SdkPresent<dynamic>(value: final value) => {'allowed_inference_geos': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (defaultInferenceGeo) {
-      SdkPresent<BetaInferenceGeo?>(value: final value) => {'default_inference_geo': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (allowedInferenceGeos) {
+          SdkPresent<dynamic>(value: final value) => {
+              'allowed_inference_geos': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (defaultInferenceGeo) {
+          SdkPresent<BetaInferenceGeo?>(value: final value) => {
+              'default_inference_geo': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `BetaRemoveFederationRuleWorkspaceResponse` API schema.
 class BetaRemoveFederationRuleWorkspaceResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Tagged ID of the federation rule.
   final String federationRuleId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRemoveFederationRuleWorkspaceResponseType type_;
+
   /// Tagged ID of the workspace named in the delete request. Removal is idempotent.
   final String workspaceId;
 
-  const BetaRemoveFederationRuleWorkspaceResponse({required this.federationRuleId, required this.type_, required this.workspaceId});
+  const BetaRemoveFederationRuleWorkspaceResponse(
+      {required this.federationRuleId,
+      required this.type_,
+      required this.workspaceId});
 
-  BetaRemoveFederationRuleWorkspaceResponse Function({String federationRuleId, BetaRemoveFederationRuleWorkspaceResponseType type_, String workspaceId}) get copyWith => _copyWith;
+  BetaRemoveFederationRuleWorkspaceResponse Function(
+      {String federationRuleId,
+      BetaRemoveFederationRuleWorkspaceResponseType type_,
+      String workspaceId}) get copyWith => _copyWith;
 
-  BetaRemoveFederationRuleWorkspaceResponse _copyWith({Object? federationRuleId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaRemoveFederationRuleWorkspaceResponse(
-    federationRuleId: identical(federationRuleId, sdkOmittedValue) ? this.federationRuleId : federationRuleId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRemoveFederationRuleWorkspaceResponseType,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaRemoveFederationRuleWorkspaceResponse _copyWith(
+          {Object? federationRuleId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaRemoveFederationRuleWorkspaceResponse(
+        federationRuleId: identical(federationRuleId, sdkOmittedValue)
+            ? this.federationRuleId
+            : federationRuleId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRemoveFederationRuleWorkspaceResponseType,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaRemoveFederationRuleWorkspaceResponse.fromJson(Map<String, dynamic> json) => BetaRemoveFederationRuleWorkspaceResponse(
-    federationRuleId: (json['federation_rule_id'] as String?)!,
-    type_: (json['type'] != null ? BetaRemoveFederationRuleWorkspaceResponseType.fromJson(json['type'] as String) : null)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaRemoveFederationRuleWorkspaceResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRemoveFederationRuleWorkspaceResponse(
+        federationRuleId: (json['federation_rule_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaRemoveFederationRuleWorkspaceResponseType.fromJson(
+                json['type'] as String)
+            : null)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'federation_rule_id': federationRuleId,
-    'type': type_.toJson(),
-    'workspace_id': workspaceId,
-  };
+        'federation_rule_id': federationRuleId,
+        'type': type_.toJson(),
+        'workspace_id': workspaceId,
+      };
 }
 
 /// Partial update — omitted fields are unchanged.
 class BetaWorkspaceUpdateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Data residency configuration for the workspace.
   final SdkOptional<BetaDataResidencyUpdateParams?> dataResidency;
+
   /// Hex color code representing the Workspace in the Anthropic Console.
   final SdkOptional<String> displayColor;
+
   /// ID of the customer-managed encryption key (CMEK) configuration to use for this Workspace. Setting this field requires CMEK to be enabled for your organization. When set, data stored for this Workspace is encrypted with the referenced key. Create key configurations with the External Keys API. On Claude Platform on AWS the value is the AWS KMS key ARN, and the key must be a single-Region key in the same AWS account and Region as the Workspace. On that platform the key is validated against this Workspace when it is attached, so a key-policy problem is reported as an error on this request. This field is write-once: once a key is attached to a Workspace it cannot be detached or replaced. To rotate key material, rotate the underlying key on your cloud KMS; the `external_key_id` stays the same.
   final SdkOptional<String> externalKeyId;
+
   /// Name of the Workspace.
   final SdkOptional<String> name;
+
   /// User-defined tags as string key-value pairs. Keys may not begin with `anthropic`.
   final SdkOptional<Map<String, String>?> tags;
 
-  const BetaWorkspaceUpdateParams({this.dataResidency = const SdkOmitted(), this.displayColor = const SdkOmitted(), this.externalKeyId = const SdkOmitted(), this.name = const SdkOmitted(), this.tags = const SdkOmitted()});
+  const BetaWorkspaceUpdateParams(
+      {this.dataResidency = const SdkOmitted(),
+      this.displayColor = const SdkOmitted(),
+      this.externalKeyId = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.tags = const SdkOmitted()});
 
-  BetaWorkspaceUpdateParams Function({SdkOptional<BetaDataResidencyUpdateParams?> dataResidency, SdkOptional<String> displayColor, SdkOptional<String> externalKeyId, SdkOptional<String> name, SdkOptional<Map<String, String>?> tags}) get copyWith => _copyWith;
+  BetaWorkspaceUpdateParams Function(
+      {SdkOptional<BetaDataResidencyUpdateParams?> dataResidency,
+      SdkOptional<String> displayColor,
+      SdkOptional<String> externalKeyId,
+      SdkOptional<String> name,
+      SdkOptional<Map<String, String>?> tags}) get copyWith => _copyWith;
 
-  BetaWorkspaceUpdateParams _copyWith({Object? dataResidency = sdkOmittedValue, Object? displayColor = sdkOmittedValue, Object? externalKeyId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? tags = sdkOmittedValue}) => BetaWorkspaceUpdateParams(
-    dataResidency: identical(dataResidency, sdkOmittedValue) ? this.dataResidency : dataResidency as SdkOptional<BetaDataResidencyUpdateParams?>,
-    displayColor: identical(displayColor, sdkOmittedValue) ? this.displayColor : displayColor as SdkOptional<String>,
-    externalKeyId: identical(externalKeyId, sdkOmittedValue) ? this.externalKeyId : externalKeyId as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    tags: identical(tags, sdkOmittedValue) ? this.tags : tags as SdkOptional<Map<String, String>?>,
-  );
+  BetaWorkspaceUpdateParams _copyWith(
+          {Object? dataResidency = sdkOmittedValue,
+          Object? displayColor = sdkOmittedValue,
+          Object? externalKeyId = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? tags = sdkOmittedValue}) =>
+      BetaWorkspaceUpdateParams(
+        dataResidency: identical(dataResidency, sdkOmittedValue)
+            ? this.dataResidency
+            : dataResidency as SdkOptional<BetaDataResidencyUpdateParams?>,
+        displayColor: identical(displayColor, sdkOmittedValue)
+            ? this.displayColor
+            : displayColor as SdkOptional<String>,
+        externalKeyId: identical(externalKeyId, sdkOmittedValue)
+            ? this.externalKeyId
+            : externalKeyId as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        tags: identical(tags, sdkOmittedValue)
+            ? this.tags
+            : tags as SdkOptional<Map<String, String>?>,
+      );
 
-  factory BetaWorkspaceUpdateParams.fromJson(Map<String, dynamic> json) => BetaWorkspaceUpdateParams(
-    dataResidency: json.containsKey('data_residency') ? SdkPresent(json['data_residency'] != null ? BetaDataResidencyUpdateParams.fromJson(json['data_residency'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    displayColor: json['display_color'] != null ? SdkPresent((json['display_color'] as String?)!) : const SdkOmitted(),
-    externalKeyId: json['external_key_id'] != null ? SdkPresent((json['external_key_id'] as String?)!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    tags: json.containsKey('tags') ? SdkPresent(json['tags'] == null ? null : Map<String, dynamic>.from(json['tags'] as Map).map((key, value) => MapEntry(key, value as String))) : const SdkOmitted(),
-  );
+  factory BetaWorkspaceUpdateParams.fromJson(Map<String, dynamic> json) =>
+      BetaWorkspaceUpdateParams(
+        dataResidency: json.containsKey('data_residency')
+            ? SdkPresent(json['data_residency'] != null
+                ? BetaDataResidencyUpdateParams.fromJson(
+                    json['data_residency'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        displayColor: json['display_color'] != null
+            ? SdkPresent((json['display_color'] as String?)!)
+            : const SdkOmitted(),
+        externalKeyId: json['external_key_id'] != null
+            ? SdkPresent((json['external_key_id'] as String?)!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        tags: json.containsKey('tags')
+            ? SdkPresent(json['tags'] == null
+                ? null
+                : Map<String, dynamic>.from(json['tags'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (dataResidency) {
-      SdkPresent<BetaDataResidencyUpdateParams?>(value: final value) => {'data_residency': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (displayColor) {
-      SdkPresent<String>(value: final value) => {'display_color': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (externalKeyId) {
-      SdkPresent<String>(value: final value) => {'external_key_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (tags) {
-      SdkPresent<Map<String, String>?>(value: final value) => {'tags': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (dataResidency) {
+          SdkPresent<BetaDataResidencyUpdateParams?>(value: final value) => {
+              'data_residency': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (displayColor) {
+          SdkPresent<String>(value: final value) => {
+              'display_color': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (externalKeyId) {
+          SdkPresent<String>(value: final value) => {
+              'external_key_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (tags) {
+          SdkPresent<Map<String, String>?>(value: final value) => {
+              'tags': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

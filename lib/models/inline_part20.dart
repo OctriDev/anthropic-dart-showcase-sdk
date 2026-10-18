@@ -10,14 +10,18 @@ enum BetaManagedAgentsFileDocumentSourceType {
 
   static BetaManagedAgentsFileDocumentSourceType fromJson(String value) {
     switch (value) {
-      case 'file': return BetaManagedAgentsFileDocumentSourceType.file;
-      default: throw ArgumentError('Unknown BetaManagedAgentsFileDocumentSourceType: $value');
+      case 'file':
+        return BetaManagedAgentsFileDocumentSourceType.file;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsFileDocumentSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsFileDocumentSourceType.file: return 'file';
+      case BetaManagedAgentsFileDocumentSourceType.file:
+        return 'file';
     }
   }
 
@@ -31,14 +35,18 @@ enum BetaManagedAgentsFileImageSourceType {
 
   static BetaManagedAgentsFileImageSourceType fromJson(String value) {
     switch (value) {
-      case 'file': return BetaManagedAgentsFileImageSourceType.file;
-      default: throw ArgumentError('Unknown BetaManagedAgentsFileImageSourceType: $value');
+      case 'file':
+        return BetaManagedAgentsFileImageSourceType.file;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsFileImageSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsFileImageSourceType.file: return 'file';
+      case BetaManagedAgentsFileImageSourceType.file:
+        return 'file';
     }
   }
 
@@ -50,16 +58,23 @@ enum BetaManagedAgentsFileImageSourceType {
 enum BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType {
   fileNotFoundError;
 
-  static BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType fromJson(String value) {
+  static BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType fromJson(
+      String value) {
     switch (value) {
-      case 'file_not_found_error': return BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType.fileNotFoundError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType: $value');
+      case 'file_not_found_error':
+        return BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType
+            .fileNotFoundError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType.fileNotFoundError: return 'file_not_found_error';
+      case BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType
+            .fileNotFoundError:
+        return 'file_not_found_error';
     }
   }
 
@@ -73,14 +88,18 @@ enum BetaManagedAgentsFileNotFoundRunErrorType {
 
   static BetaManagedAgentsFileNotFoundRunErrorType fromJson(String value) {
     switch (value) {
-      case 'file_not_found_error': return BetaManagedAgentsFileNotFoundRunErrorType.fileNotFoundError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsFileNotFoundRunErrorType: $value');
+      case 'file_not_found_error':
+        return BetaManagedAgentsFileNotFoundRunErrorType.fileNotFoundError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsFileNotFoundRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsFileNotFoundRunErrorType.fileNotFoundError: return 'file_not_found_error';
+      case BetaManagedAgentsFileNotFoundRunErrorType.fileNotFoundError:
+        return 'file_not_found_error';
     }
   }
 
@@ -94,14 +113,18 @@ enum BetaManagedAgentsFileResourceType {
 
   static BetaManagedAgentsFileResourceType fromJson(String value) {
     switch (value) {
-      case 'file': return BetaManagedAgentsFileResourceType.file;
-      default: throw ArgumentError('Unknown BetaManagedAgentsFileResourceType: $value');
+      case 'file':
+        return BetaManagedAgentsFileResourceType.file;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsFileResourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsFileResourceType.file: return 'file';
+      case BetaManagedAgentsFileResourceType.file:
+        return 'file';
     }
   }
 
@@ -115,14 +138,18 @@ enum BetaManagedAgentsFileResourceConfigType {
 
   static BetaManagedAgentsFileResourceConfigType fromJson(String value) {
     switch (value) {
-      case 'file': return BetaManagedAgentsFileResourceConfigType.file;
-      default: throw ArgumentError('Unknown BetaManagedAgentsFileResourceConfigType: $value');
+      case 'file':
+        return BetaManagedAgentsFileResourceConfigType.file;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsFileResourceConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsFileResourceConfigType.file: return 'file';
+      case BetaManagedAgentsFileResourceConfigType.file:
+        return 'file';
     }
   }
 
@@ -136,14 +163,18 @@ enum BetaManagedAgentsFileResourceParamsType {
 
   static BetaManagedAgentsFileResourceParamsType fromJson(String value) {
     switch (value) {
-      case 'file': return BetaManagedAgentsFileResourceParamsType.file;
-      default: throw ArgumentError('Unknown BetaManagedAgentsFileResourceParamsType: $value');
+      case 'file':
+        return BetaManagedAgentsFileResourceParamsType.file;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsFileResourceParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsFileResourceParamsType.file: return 'file';
+      case BetaManagedAgentsFileResourceParamsType.file:
+        return 'file';
     }
   }
 
@@ -157,14 +188,17 @@ enum BetaManagedAgentsFileRubricType {
 
   static BetaManagedAgentsFileRubricType fromJson(String value) {
     switch (value) {
-      case 'file': return BetaManagedAgentsFileRubricType.file;
-      default: throw ArgumentError('Unknown BetaManagedAgentsFileRubricType: $value');
+      case 'file':
+        return BetaManagedAgentsFileRubricType.file;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsFileRubricType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsFileRubricType.file: return 'file';
+      case BetaManagedAgentsFileRubricType.file:
+        return 'file';
     }
   }
 
@@ -178,14 +212,18 @@ enum BetaManagedAgentsFileRubricParamsType {
 
   static BetaManagedAgentsFileRubricParamsType fromJson(String value) {
     switch (value) {
-      case 'file': return BetaManagedAgentsFileRubricParamsType.file;
-      default: throw ArgumentError('Unknown BetaManagedAgentsFileRubricParamsType: $value');
+      case 'file':
+        return BetaManagedAgentsFileRubricParamsType.file;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsFileRubricParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsFileRubricParamsType.file: return 'file';
+      case BetaManagedAgentsFileRubricParamsType.file:
+        return 'file';
     }
   }
 
@@ -199,14 +237,18 @@ enum BetaManagedAgentsGitHubRepositoryResourceType {
 
   static BetaManagedAgentsGitHubRepositoryResourceType fromJson(String value) {
     switch (value) {
-      case 'github_repository': return BetaManagedAgentsGitHubRepositoryResourceType.githubRepository;
-      default: throw ArgumentError('Unknown BetaManagedAgentsGitHubRepositoryResourceType: $value');
+      case 'github_repository':
+        return BetaManagedAgentsGitHubRepositoryResourceType.githubRepository;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsGitHubRepositoryResourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsGitHubRepositoryResourceType.githubRepository: return 'github_repository';
+      case BetaManagedAgentsGitHubRepositoryResourceType.githubRepository:
+        return 'github_repository';
     }
   }
 
@@ -218,16 +260,22 @@ enum BetaManagedAgentsGitHubRepositoryResourceType {
 enum BetaManagedAgentsGitHubRepositoryResourceConfigType {
   githubRepository;
 
-  static BetaManagedAgentsGitHubRepositoryResourceConfigType fromJson(String value) {
+  static BetaManagedAgentsGitHubRepositoryResourceConfigType fromJson(
+      String value) {
     switch (value) {
-      case 'github_repository': return BetaManagedAgentsGitHubRepositoryResourceConfigType.githubRepository;
-      default: throw ArgumentError('Unknown BetaManagedAgentsGitHubRepositoryResourceConfigType: $value');
+      case 'github_repository':
+        return BetaManagedAgentsGitHubRepositoryResourceConfigType
+            .githubRepository;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsGitHubRepositoryResourceConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsGitHubRepositoryResourceConfigType.githubRepository: return 'github_repository';
+      case BetaManagedAgentsGitHubRepositoryResourceConfigType.githubRepository:
+        return 'github_repository';
     }
   }
 
@@ -239,16 +287,22 @@ enum BetaManagedAgentsGitHubRepositoryResourceConfigType {
 enum BetaManagedAgentsGitHubRepositoryResourceParamsType {
   githubRepository;
 
-  static BetaManagedAgentsGitHubRepositoryResourceParamsType fromJson(String value) {
+  static BetaManagedAgentsGitHubRepositoryResourceParamsType fromJson(
+      String value) {
     switch (value) {
-      case 'github_repository': return BetaManagedAgentsGitHubRepositoryResourceParamsType.githubRepository;
-      default: throw ArgumentError('Unknown BetaManagedAgentsGitHubRepositoryResourceParamsType: $value');
+      case 'github_repository':
+        return BetaManagedAgentsGitHubRepositoryResourceParamsType
+            .githubRepository;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsGitHubRepositoryResourceParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsGitHubRepositoryResourceParamsType.githubRepository: return 'github_repository';
+      case BetaManagedAgentsGitHubRepositoryResourceParamsType.githubRepository:
+        return 'github_repository';
     }
   }
 
@@ -262,14 +316,18 @@ enum BetaManagedAgentsGlobToolConfigName {
 
   static BetaManagedAgentsGlobToolConfigName fromJson(String value) {
     switch (value) {
-      case 'glob': return BetaManagedAgentsGlobToolConfigName.glob;
-      default: throw ArgumentError('Unknown BetaManagedAgentsGlobToolConfigName: $value');
+      case 'glob':
+        return BetaManagedAgentsGlobToolConfigName.glob;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsGlobToolConfigName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsGlobToolConfigName.glob: return 'glob';
+      case BetaManagedAgentsGlobToolConfigName.glob:
+        return 'glob';
     }
   }
 

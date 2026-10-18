@@ -8,291 +8,543 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsManualDeploymentPausedReason {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsManualDeploymentPausedReasonType type_;
 
   const BetaManagedAgentsManualDeploymentPausedReason({required this.type_});
 
-  BetaManagedAgentsManualDeploymentPausedReason Function({BetaManagedAgentsManualDeploymentPausedReasonType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsManualDeploymentPausedReason Function(
+          {BetaManagedAgentsManualDeploymentPausedReasonType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsManualDeploymentPausedReason _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsManualDeploymentPausedReason(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsManualDeploymentPausedReasonType,
-  );
+  BetaManagedAgentsManualDeploymentPausedReason _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsManualDeploymentPausedReason(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsManualDeploymentPausedReasonType,
+      );
 
-  factory BetaManagedAgentsManualDeploymentPausedReason.fromJson(Map<String, dynamic> json) => BetaManagedAgentsManualDeploymentPausedReason(
-    type_: (json['type'] != null ? BetaManagedAgentsManualDeploymentPausedReasonType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsManualDeploymentPausedReason.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsManualDeploymentPausedReason(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsManualDeploymentPausedReasonType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// The run was started manually by creating a session directly against the deployment.
 class BetaManagedAgentsManualTriggerContext {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsManualTriggerContextType type_;
 
   const BetaManagedAgentsManualTriggerContext({required this.type_});
 
-  BetaManagedAgentsManualTriggerContext Function({BetaManagedAgentsManualTriggerContextType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsManualTriggerContext Function(
+          {BetaManagedAgentsManualTriggerContextType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsManualTriggerContext _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsManualTriggerContext(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsManualTriggerContextType,
-  );
+  BetaManagedAgentsManualTriggerContext _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsManualTriggerContext(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsManualTriggerContextType,
+      );
 
-  factory BetaManagedAgentsManualTriggerContext.fromJson(Map<String, dynamic> json) => BetaManagedAgentsManualTriggerContext(
-    type_: (json['type'] != null ? BetaManagedAgentsManualTriggerContextType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsManualTriggerContext.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsManualTriggerContext(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsManualTriggerContextType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// Authentication to an MCP server failed.
 class BetaManagedAgentsMcpAuthenticationFailedError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMcpAuthenticationFailedErrorType type_;
+
   /// Human-readable error description.
   final String message;
+
   /// What the client should do next.
   final BetaManagedAgentsRetryStatus retryStatus;
+
   /// Name of the MCP server that failed authentication.
   final String mcpServerName;
 
-  const BetaManagedAgentsMcpAuthenticationFailedError({required this.type_, required this.message, required this.retryStatus, required this.mcpServerName});
+  const BetaManagedAgentsMcpAuthenticationFailedError(
+      {required this.type_,
+      required this.message,
+      required this.retryStatus,
+      required this.mcpServerName});
 
-  BetaManagedAgentsMcpAuthenticationFailedError Function({BetaManagedAgentsMcpAuthenticationFailedErrorType type_, String message, BetaManagedAgentsRetryStatus retryStatus, String mcpServerName}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpAuthenticationFailedError Function(
+      {BetaManagedAgentsMcpAuthenticationFailedErrorType type_,
+      String message,
+      BetaManagedAgentsRetryStatus retryStatus,
+      String mcpServerName}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpAuthenticationFailedError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue, Object? retryStatus = sdkOmittedValue, Object? mcpServerName = sdkOmittedValue}) => BetaManagedAgentsMcpAuthenticationFailedError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMcpAuthenticationFailedErrorType,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    retryStatus: identical(retryStatus, sdkOmittedValue) ? this.retryStatus : retryStatus as BetaManagedAgentsRetryStatus,
-    mcpServerName: identical(mcpServerName, sdkOmittedValue) ? this.mcpServerName : mcpServerName as String,
-  );
+  BetaManagedAgentsMcpAuthenticationFailedError _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? retryStatus = sdkOmittedValue,
+          Object? mcpServerName = sdkOmittedValue}) =>
+      BetaManagedAgentsMcpAuthenticationFailedError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsMcpAuthenticationFailedErrorType,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        retryStatus: identical(retryStatus, sdkOmittedValue)
+            ? this.retryStatus
+            : retryStatus as BetaManagedAgentsRetryStatus,
+        mcpServerName: identical(mcpServerName, sdkOmittedValue)
+            ? this.mcpServerName
+            : mcpServerName as String,
+      );
 
-  factory BetaManagedAgentsMcpAuthenticationFailedError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpAuthenticationFailedError(
-    type_: (json['type'] != null ? BetaManagedAgentsMcpAuthenticationFailedErrorType.fromJson(json['type'] as String) : null)!,
-    message: (json['message'] as String?)!,
-    retryStatus: (json['retry_status'] != null ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status']) : null)!,
-    mcpServerName: (json['mcp_server_name'] as String?)!,
-  );
+  factory BetaManagedAgentsMcpAuthenticationFailedError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMcpAuthenticationFailedError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsMcpAuthenticationFailedErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+        message: (json['message'] as String?)!,
+        retryStatus: (json['retry_status'] != null
+            ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status'])
+            : null)!,
+        mcpServerName: (json['mcp_server_name'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'message': message,
-    'retry_status': retryStatus.toJson(),
-    'mcp_server_name': mcpServerName,
-  };
+        'type': type_.toJson(),
+        'message': message,
+        'retry_status': retryStatus.toJson(),
+        'mcp_server_name': mcpServerName,
+      };
 }
 
 /// Failed to connect to an MCP server.
 class BetaManagedAgentsMcpConnectionFailedError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMcpConnectionFailedErrorType type_;
+
   /// Human-readable error description.
   final String message;
+
   /// What the client should do next.
   final BetaManagedAgentsRetryStatus retryStatus;
+
   /// Name of the MCP server that failed to connect.
   final String mcpServerName;
 
-  const BetaManagedAgentsMcpConnectionFailedError({required this.type_, required this.message, required this.retryStatus, required this.mcpServerName});
+  const BetaManagedAgentsMcpConnectionFailedError(
+      {required this.type_,
+      required this.message,
+      required this.retryStatus,
+      required this.mcpServerName});
 
-  BetaManagedAgentsMcpConnectionFailedError Function({BetaManagedAgentsMcpConnectionFailedErrorType type_, String message, BetaManagedAgentsRetryStatus retryStatus, String mcpServerName}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpConnectionFailedError Function(
+      {BetaManagedAgentsMcpConnectionFailedErrorType type_,
+      String message,
+      BetaManagedAgentsRetryStatus retryStatus,
+      String mcpServerName}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpConnectionFailedError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue, Object? retryStatus = sdkOmittedValue, Object? mcpServerName = sdkOmittedValue}) => BetaManagedAgentsMcpConnectionFailedError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMcpConnectionFailedErrorType,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    retryStatus: identical(retryStatus, sdkOmittedValue) ? this.retryStatus : retryStatus as BetaManagedAgentsRetryStatus,
-    mcpServerName: identical(mcpServerName, sdkOmittedValue) ? this.mcpServerName : mcpServerName as String,
-  );
+  BetaManagedAgentsMcpConnectionFailedError _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? retryStatus = sdkOmittedValue,
+          Object? mcpServerName = sdkOmittedValue}) =>
+      BetaManagedAgentsMcpConnectionFailedError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsMcpConnectionFailedErrorType,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        retryStatus: identical(retryStatus, sdkOmittedValue)
+            ? this.retryStatus
+            : retryStatus as BetaManagedAgentsRetryStatus,
+        mcpServerName: identical(mcpServerName, sdkOmittedValue)
+            ? this.mcpServerName
+            : mcpServerName as String,
+      );
 
-  factory BetaManagedAgentsMcpConnectionFailedError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpConnectionFailedError(
-    type_: (json['type'] != null ? BetaManagedAgentsMcpConnectionFailedErrorType.fromJson(json['type'] as String) : null)!,
-    message: (json['message'] as String?)!,
-    retryStatus: (json['retry_status'] != null ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status']) : null)!,
-    mcpServerName: (json['mcp_server_name'] as String?)!,
-  );
+  factory BetaManagedAgentsMcpConnectionFailedError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMcpConnectionFailedError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsMcpConnectionFailedErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+        message: (json['message'] as String?)!,
+        retryStatus: (json['retry_status'] != null
+            ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status'])
+            : null)!,
+        mcpServerName: (json['mcp_server_name'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'message': message,
-    'retry_status': retryStatus.toJson(),
-    'mcp_server_name': mcpServerName,
-  };
+        'type': type_.toJson(),
+        'message': message,
+        'retry_status': retryStatus.toJson(),
+        'mcp_server_name': mcpServerName,
+      };
 }
 
 /// An MCP server host used by the deployment's agent is blocked by the environment's network policy.
 class BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType type_;
 
-  const BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError({required this.type_});
+  const BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
+      {required this.type_});
 
-  BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError Function({BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError Function(
+      {BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType
+          type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType,
-  );
+  BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType,
+      );
 
-  factory BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
-    type_: (json['type'] != null ? BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType
+                .fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// An MCP server host used by the deployment's agent is blocked by the environment's network policy.
 class BetaManagedAgentsMcpEgressBlockedRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMcpEgressBlockedRunErrorType type_;
+
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsMcpEgressBlockedRunError({required this.type_, required this.message});
+  const BetaManagedAgentsMcpEgressBlockedRunError(
+      {required this.type_, required this.message});
 
-  BetaManagedAgentsMcpEgressBlockedRunError Function({BetaManagedAgentsMcpEgressBlockedRunErrorType type_, String message}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpEgressBlockedRunError Function(
+      {BetaManagedAgentsMcpEgressBlockedRunErrorType type_,
+      String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpEgressBlockedRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsMcpEgressBlockedRunError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMcpEgressBlockedRunErrorType,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-  );
+  BetaManagedAgentsMcpEgressBlockedRunError _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? message = sdkOmittedValue}) =>
+      BetaManagedAgentsMcpEgressBlockedRunError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsMcpEgressBlockedRunErrorType,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+      );
 
-  factory BetaManagedAgentsMcpEgressBlockedRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpEgressBlockedRunError(
-    type_: (json['type'] != null ? BetaManagedAgentsMcpEgressBlockedRunErrorType.fromJson(json['type'] as String) : null)!,
-    message: (json['message'] as String?)!,
-  );
+  factory BetaManagedAgentsMcpEgressBlockedRunError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMcpEgressBlockedRunError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsMcpEgressBlockedRunErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+        message: (json['message'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'message': message,
-  };
+        'type': type_.toJson(),
+        'message': message,
+      };
 }
 
 /// OAuth credential details for an MCP server.
 class BetaManagedAgentsMcpOauthAuthResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMcpOauthAuthResponseType type_;
+
   /// URL of the MCP server this credential authenticates against.
   final String mcpServerUrl;
+
   /// Optional API value serialized in the `expires_at` wire field.
   final SdkOptional<String?> expiresAt;
+
   /// Refresh token configuration, if the credential supports token refresh.
   final SdkOptional<BetaManagedAgentsMcpOauthRefreshResponse?> refresh;
 
-  const BetaManagedAgentsMcpOauthAuthResponse({required this.type_, required this.mcpServerUrl, this.expiresAt = const SdkOmitted(), this.refresh = const SdkOmitted()});
+  const BetaManagedAgentsMcpOauthAuthResponse(
+      {required this.type_,
+      required this.mcpServerUrl,
+      this.expiresAt = const SdkOmitted(),
+      this.refresh = const SdkOmitted()});
 
-  BetaManagedAgentsMcpOauthAuthResponse Function({BetaManagedAgentsMcpOauthAuthResponseType type_, String mcpServerUrl, SdkOptional<String?> expiresAt, SdkOptional<BetaManagedAgentsMcpOauthRefreshResponse?> refresh}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpOauthAuthResponse Function(
+          {BetaManagedAgentsMcpOauthAuthResponseType type_,
+          String mcpServerUrl,
+          SdkOptional<String?> expiresAt,
+          SdkOptional<BetaManagedAgentsMcpOauthRefreshResponse?> refresh})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpOauthAuthResponse _copyWith({Object? type_ = sdkOmittedValue, Object? mcpServerUrl = sdkOmittedValue, Object? expiresAt = sdkOmittedValue, Object? refresh = sdkOmittedValue}) => BetaManagedAgentsMcpOauthAuthResponse(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMcpOauthAuthResponseType,
-    mcpServerUrl: identical(mcpServerUrl, sdkOmittedValue) ? this.mcpServerUrl : mcpServerUrl as String,
-    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as SdkOptional<String?>,
-    refresh: identical(refresh, sdkOmittedValue) ? this.refresh : refresh as SdkOptional<BetaManagedAgentsMcpOauthRefreshResponse?>,
-  );
+  BetaManagedAgentsMcpOauthAuthResponse _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? mcpServerUrl = sdkOmittedValue,
+          Object? expiresAt = sdkOmittedValue,
+          Object? refresh = sdkOmittedValue}) =>
+      BetaManagedAgentsMcpOauthAuthResponse(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsMcpOauthAuthResponseType,
+        mcpServerUrl: identical(mcpServerUrl, sdkOmittedValue)
+            ? this.mcpServerUrl
+            : mcpServerUrl as String,
+        expiresAt: identical(expiresAt, sdkOmittedValue)
+            ? this.expiresAt
+            : expiresAt as SdkOptional<String?>,
+        refresh: identical(refresh, sdkOmittedValue)
+            ? this.refresh
+            : refresh as SdkOptional<BetaManagedAgentsMcpOauthRefreshResponse?>,
+      );
 
-  factory BetaManagedAgentsMcpOauthAuthResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpOauthAuthResponse(
-    type_: (json['type'] != null ? BetaManagedAgentsMcpOauthAuthResponseType.fromJson(json['type'] as String) : null)!,
-    mcpServerUrl: (json['mcp_server_url'] as String?)!,
-    expiresAt: json.containsKey('expires_at') ? SdkPresent(json['expires_at'] as String?) : const SdkOmitted(),
-    refresh: json.containsKey('refresh') ? SdkPresent(json['refresh'] != null ? BetaManagedAgentsMcpOauthRefreshResponse.fromJson(json['refresh'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsMcpOauthAuthResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMcpOauthAuthResponse(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsMcpOauthAuthResponseType.fromJson(
+                json['type'] as String)
+            : null)!,
+        mcpServerUrl: (json['mcp_server_url'] as String?)!,
+        expiresAt: json.containsKey('expires_at')
+            ? SdkPresent(json['expires_at'] as String?)
+            : const SdkOmitted(),
+        refresh: json.containsKey('refresh')
+            ? SdkPresent(json['refresh'] != null
+                ? BetaManagedAgentsMcpOauthRefreshResponse.fromJson(
+                    json['refresh'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'mcp_server_url': mcpServerUrl,
-    ...switch (expiresAt) {
-      SdkPresent<String?>(value: final value) => {'expires_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (refresh) {
-      SdkPresent<BetaManagedAgentsMcpOauthRefreshResponse?>(value: final value) => {'refresh': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        'mcp_server_url': mcpServerUrl,
+        ...switch (expiresAt) {
+          SdkPresent<String?>(value: final value) => {
+              'expires_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (refresh) {
+          SdkPresent<BetaManagedAgentsMcpOauthRefreshResponse?>(
+            value: final value
+          ) =>
+            {
+              'refresh': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// OAuth refresh token configuration returned in credential responses.
 class BetaManagedAgentsMcpOauthRefreshResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Token endpoint URL used to refresh the access token.
   final String tokenEndpoint;
+
   /// OAuth client ID.
   final String clientId;
+
   /// OAuth resource indicator.
   final SdkOptional<String?> resource;
+
   /// OAuth scope for the refresh request.
   final SdkOptional<String?> scope;
+
   /// Required object value serialized in the `token_endpoint_auth` wire field.
-  final BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth tokenEndpointAuth;
+  final BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth
+      tokenEndpointAuth;
 
-  const BetaManagedAgentsMcpOauthRefreshResponse({required this.tokenEndpoint, required this.clientId, this.resource = const SdkOmitted(), this.scope = const SdkOmitted(), required this.tokenEndpointAuth});
+  const BetaManagedAgentsMcpOauthRefreshResponse(
+      {required this.tokenEndpoint,
+      required this.clientId,
+      this.resource = const SdkOmitted(),
+      this.scope = const SdkOmitted(),
+      required this.tokenEndpointAuth});
 
-  BetaManagedAgentsMcpOauthRefreshResponse Function({String tokenEndpoint, String clientId, SdkOptional<String?> resource, SdkOptional<String?> scope, BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth tokenEndpointAuth}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpOauthRefreshResponse Function(
+      {String tokenEndpoint,
+      String clientId,
+      SdkOptional<String?> resource,
+      SdkOptional<String?> scope,
+      BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth
+          tokenEndpointAuth}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpOauthRefreshResponse _copyWith({Object? tokenEndpoint = sdkOmittedValue, Object? clientId = sdkOmittedValue, Object? resource = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? tokenEndpointAuth = sdkOmittedValue}) => BetaManagedAgentsMcpOauthRefreshResponse(
-    tokenEndpoint: identical(tokenEndpoint, sdkOmittedValue) ? this.tokenEndpoint : tokenEndpoint as String,
-    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as String,
-    resource: identical(resource, sdkOmittedValue) ? this.resource : resource as SdkOptional<String?>,
-    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as SdkOptional<String?>,
-    tokenEndpointAuth: identical(tokenEndpointAuth, sdkOmittedValue) ? this.tokenEndpointAuth : tokenEndpointAuth as BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth,
-  );
+  BetaManagedAgentsMcpOauthRefreshResponse _copyWith(
+          {Object? tokenEndpoint = sdkOmittedValue,
+          Object? clientId = sdkOmittedValue,
+          Object? resource = sdkOmittedValue,
+          Object? scope = sdkOmittedValue,
+          Object? tokenEndpointAuth = sdkOmittedValue}) =>
+      BetaManagedAgentsMcpOauthRefreshResponse(
+        tokenEndpoint: identical(tokenEndpoint, sdkOmittedValue)
+            ? this.tokenEndpoint
+            : tokenEndpoint as String,
+        clientId: identical(clientId, sdkOmittedValue)
+            ? this.clientId
+            : clientId as String,
+        resource: identical(resource, sdkOmittedValue)
+            ? this.resource
+            : resource as SdkOptional<String?>,
+        scope: identical(scope, sdkOmittedValue)
+            ? this.scope
+            : scope as SdkOptional<String?>,
+        tokenEndpointAuth: identical(tokenEndpointAuth, sdkOmittedValue)
+            ? this.tokenEndpointAuth
+            : tokenEndpointAuth
+                as BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth,
+      );
 
-  factory BetaManagedAgentsMcpOauthRefreshResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpOauthRefreshResponse(
-    tokenEndpoint: (json['token_endpoint'] as String?)!,
-    clientId: (json['client_id'] as String?)!,
-    resource: json.containsKey('resource') ? SdkPresent(json['resource'] as String?) : const SdkOmitted(),
-    scope: json.containsKey('scope') ? SdkPresent(json['scope'] as String?) : const SdkOmitted(),
-    tokenEndpointAuth: (json['token_endpoint_auth'] != null ? BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth.fromJson(json['token_endpoint_auth']) : null)!,
-  );
+  factory BetaManagedAgentsMcpOauthRefreshResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMcpOauthRefreshResponse(
+        tokenEndpoint: (json['token_endpoint'] as String?)!,
+        clientId: (json['client_id'] as String?)!,
+        resource: json.containsKey('resource')
+            ? SdkPresent(json['resource'] as String?)
+            : const SdkOmitted(),
+        scope: json.containsKey('scope')
+            ? SdkPresent(json['scope'] as String?)
+            : const SdkOmitted(),
+        tokenEndpointAuth: (json['token_endpoint_auth'] != null
+            ? BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth
+                .fromJson(json['token_endpoint_auth'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'token_endpoint': tokenEndpoint,
-    'client_id': clientId,
-    ...switch (resource) {
-      SdkPresent<String?>(value: final value) => {'resource': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (scope) {
-      SdkPresent<String?>(value: final value) => {'scope': value,},
-      _ => const <String, dynamic>{},
-    },
-    'token_endpoint_auth': tokenEndpointAuth.toJson(),
-  };
+        'token_endpoint': tokenEndpoint,
+        'client_id': clientId,
+        ...switch (resource) {
+          SdkPresent<String?>(value: final value) => {
+              'resource': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (scope) {
+          SdkPresent<String?>(value: final value) => {
+              'scope': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'token_endpoint_auth': tokenEndpointAuth.toJson(),
+      };
 }
 
 sealed class BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth();
-  factory BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth.fromJson(Object? json) {
+  factory BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth.fromJson(
+      Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsTokenEndpointAuthNoneResponse.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsTokenEndpointAuthBasicResponse.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsTokenEndpointAuthPostResponse.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse(value); } } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsTokenEndpointAuthNoneResponse.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsTokenEndpointAuthBasicResponse.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsTokenEndpointAuthPostResponse.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse(BetaManagedAgentsTokenEndpointAuthNoneResponse.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse(BetaManagedAgentsTokenEndpointAuthBasicResponse.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse(BetaManagedAgentsTokenEndpointAuthPostResponse.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"none", "client_secret_basic", "client_secret_post"}.contains(json["type"])) { return UnknownBetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth");
+    try {
+      return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse(
+          BetaManagedAgentsTokenEndpointAuthNoneResponse.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse(
+          BetaManagedAgentsTokenEndpointAuthBasicResponse.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse(
+          BetaManagedAgentsTokenEndpointAuthPostResponse.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"none", "client_secret_basic", "client_secret_post"}
+            .contains(json["type"])) {
+      return UnknownBetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(
+          json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth");
   }
   Object? toJson();
 }

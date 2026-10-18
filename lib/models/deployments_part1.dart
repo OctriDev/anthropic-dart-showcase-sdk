@@ -8,114 +8,248 @@ sealed class BetaManagedAgentsUpdateDeploymentParamsDescription {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsUpdateDeploymentParamsDescription();
-  factory BetaManagedAgentsUpdateDeploymentParamsDescription.fromJson(Object? json) {
-    if (json is String) { return BetaManagedAgentsUpdateDeploymentParamsDescriptionString(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsUpdateDeploymentParamsDescription");
+  factory BetaManagedAgentsUpdateDeploymentParamsDescription.fromJson(
+      Object? json) {
+    if (json is String) {
+      return BetaManagedAgentsUpdateDeploymentParamsDescriptionString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsUpdateDeploymentParamsDescription");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsUpdateDeploymentParamsDescriptionString extends BetaManagedAgentsUpdateDeploymentParamsDescription {
+final class BetaManagedAgentsUpdateDeploymentParamsDescriptionString
+    extends BetaManagedAgentsUpdateDeploymentParamsDescription {
   final String value;
   const BetaManagedAgentsUpdateDeploymentParamsDescriptionString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Request parameters for updating a `deployment`. Omit a field to preserve its current value.
 class BetaManagedAgentsUpdateDeploymentParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Human-readable name. Must be non-empty. Omit to preserve. Cannot be cleared.
   final SdkOptional<String> name;
+
   /// Description. Omit to preserve; send empty string or null to clear.
   final SdkOptional<String?> description;
+
   /// Agent to deploy. Accepts the `agent` ID string, which re-pins to the latest version, or an `agent` object with both id and version specified. Omit to preserve. Cannot be cleared.
   final SdkOptional<BetaManagedAgentsAgentUnionParams> agent;
+
   /// ID of the `environment` where sessions run. Omit to preserve. Cannot be cleared.
   final SdkOptional<String> environmentId;
+
   /// Vault IDs. Full replacement. Omit to preserve; send empty array or null to clear. Maximum 50.
   final SdkOptional<List<String>?> vaultIds;
+
   /// Initial events. Full replacement. Omit to preserve. Cannot be cleared. At least 1, maximum 50.
-  final SdkOptional<List<BetaManagedAgentsDeploymentInitialEventParams>> initialEvents;
+  final SdkOptional<List<BetaManagedAgentsDeploymentInitialEventParams>>
+      initialEvents;
+
   /// Session resources. Full replacement. Omit to preserve; send empty array or null to clear. Maximum 500.
   final SdkOptional<List<BetaManagedAgentsSessionResourceParams>?> resources;
+
   /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
   final SdkOptional<Map<String, String>?> metadata;
+
   /// Cron schedule. Full replacement. Omit to preserve; send null to clear (revert to manual-only).
   final SdkOptional<BetaManagedAgentsScheduleParams?> schedule;
+
   /// Spend ceiling for future sessions. Full replacement. Omit to preserve; send null to clear (sessions created afterwards are uncapped). The deployment agent's model must have a public list price, or the request is rejected; a multiagent roster is re-validated in full when each fire copies the cap, which fails closed the same way.
   final SdkOptional<BetaManagedAgentsBudget?> budget;
 
-  const BetaManagedAgentsUpdateDeploymentParams({this.name = const SdkOmitted(), this.description = const SdkOmitted(), this.agent = const SdkOmitted(), this.environmentId = const SdkOmitted(), this.vaultIds = const SdkOmitted(), this.initialEvents = const SdkOmitted(), this.resources = const SdkOmitted(), this.metadata = const SdkOmitted(), this.schedule = const SdkOmitted(), this.budget = const SdkOmitted()});
+  const BetaManagedAgentsUpdateDeploymentParams(
+      {this.name = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.agent = const SdkOmitted(),
+      this.environmentId = const SdkOmitted(),
+      this.vaultIds = const SdkOmitted(),
+      this.initialEvents = const SdkOmitted(),
+      this.resources = const SdkOmitted(),
+      this.metadata = const SdkOmitted(),
+      this.schedule = const SdkOmitted(),
+      this.budget = const SdkOmitted()});
 
-  BetaManagedAgentsUpdateDeploymentParams Function({SdkOptional<String> name, SdkOptional<String?> description, SdkOptional<BetaManagedAgentsAgentUnionParams> agent, SdkOptional<String> environmentId, SdkOptional<List<String>?> vaultIds, SdkOptional<List<BetaManagedAgentsDeploymentInitialEventParams>> initialEvents, SdkOptional<List<BetaManagedAgentsSessionResourceParams>?> resources, SdkOptional<Map<String, String>?> metadata, SdkOptional<BetaManagedAgentsScheduleParams?> schedule, SdkOptional<BetaManagedAgentsBudget?> budget}) get copyWith => _copyWith;
+  BetaManagedAgentsUpdateDeploymentParams Function(
+      {SdkOptional<String> name,
+      SdkOptional<String?> description,
+      SdkOptional<BetaManagedAgentsAgentUnionParams> agent,
+      SdkOptional<String> environmentId,
+      SdkOptional<List<String>?> vaultIds,
+      SdkOptional<List<BetaManagedAgentsDeploymentInitialEventParams>>
+          initialEvents,
+      SdkOptional<List<BetaManagedAgentsSessionResourceParams>?> resources,
+      SdkOptional<Map<String, String>?> metadata,
+      SdkOptional<BetaManagedAgentsScheduleParams?> schedule,
+      SdkOptional<BetaManagedAgentsBudget?> budget}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUpdateDeploymentParams _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? agent = sdkOmittedValue, Object? environmentId = sdkOmittedValue, Object? vaultIds = sdkOmittedValue, Object? initialEvents = sdkOmittedValue, Object? resources = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? schedule = sdkOmittedValue, Object? budget = sdkOmittedValue}) => BetaManagedAgentsUpdateDeploymentParams(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    agent: identical(agent, sdkOmittedValue) ? this.agent : agent as SdkOptional<BetaManagedAgentsAgentUnionParams>,
-    environmentId: identical(environmentId, sdkOmittedValue) ? this.environmentId : environmentId as SdkOptional<String>,
-    vaultIds: identical(vaultIds, sdkOmittedValue) ? this.vaultIds : vaultIds as SdkOptional<List<String>?>,
-    initialEvents: identical(initialEvents, sdkOmittedValue) ? this.initialEvents : initialEvents as SdkOptional<List<BetaManagedAgentsDeploymentInitialEventParams>>,
-    resources: identical(resources, sdkOmittedValue) ? this.resources : resources as SdkOptional<List<BetaManagedAgentsSessionResourceParams>?>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, String>?>,
-    schedule: identical(schedule, sdkOmittedValue) ? this.schedule : schedule as SdkOptional<BetaManagedAgentsScheduleParams?>,
-    budget: identical(budget, sdkOmittedValue) ? this.budget : budget as SdkOptional<BetaManagedAgentsBudget?>,
-  );
+  BetaManagedAgentsUpdateDeploymentParams _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? agent = sdkOmittedValue,
+          Object? environmentId = sdkOmittedValue,
+          Object? vaultIds = sdkOmittedValue,
+          Object? initialEvents = sdkOmittedValue,
+          Object? resources = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue,
+          Object? schedule = sdkOmittedValue,
+          Object? budget = sdkOmittedValue}) =>
+      BetaManagedAgentsUpdateDeploymentParams(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        agent: identical(agent, sdkOmittedValue)
+            ? this.agent
+            : agent as SdkOptional<BetaManagedAgentsAgentUnionParams>,
+        environmentId: identical(environmentId, sdkOmittedValue)
+            ? this.environmentId
+            : environmentId as SdkOptional<String>,
+        vaultIds: identical(vaultIds, sdkOmittedValue)
+            ? this.vaultIds
+            : vaultIds as SdkOptional<List<String>?>,
+        initialEvents: identical(initialEvents, sdkOmittedValue)
+            ? this.initialEvents
+            : initialEvents as SdkOptional<
+                List<BetaManagedAgentsDeploymentInitialEventParams>>,
+        resources: identical(resources, sdkOmittedValue)
+            ? this.resources
+            : resources
+                as SdkOptional<List<BetaManagedAgentsSessionResourceParams>?>,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as SdkOptional<Map<String, String>?>,
+        schedule: identical(schedule, sdkOmittedValue)
+            ? this.schedule
+            : schedule as SdkOptional<BetaManagedAgentsScheduleParams?>,
+        budget: identical(budget, sdkOmittedValue)
+            ? this.budget
+            : budget as SdkOptional<BetaManagedAgentsBudget?>,
+      );
 
-  factory BetaManagedAgentsUpdateDeploymentParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUpdateDeploymentParams(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    agent: json['agent'] != null ? SdkPresent((json['agent'] != null ? BetaManagedAgentsAgentUnionParams.fromJson(json['agent']) : null)!) : const SdkOmitted(),
-    environmentId: json['environment_id'] != null ? SdkPresent((json['environment_id'] as String?)!) : const SdkOmitted(),
-    vaultIds: json.containsKey('vault_ids') ? SdkPresent((json['vault_ids'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
-    initialEvents: json['initial_events'] != null ? SdkPresent(((json['initial_events'] as List?)?.map((e) => BetaManagedAgentsDeploymentInitialEventParams.fromJson(e)).toList())!) : const SdkOmitted(),
-    resources: json.containsKey('resources') ? SdkPresent((json['resources'] as List?)?.map((e) => BetaManagedAgentsSessionResourceParams.fromJson(e)).toList()) : const SdkOmitted(),
-    metadata: json.containsKey('metadata') ? SdkPresent(json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String))) : const SdkOmitted(),
-    schedule: json.containsKey('schedule') ? SdkPresent(json['schedule'] != null ? BetaManagedAgentsScheduleParams.fromJson(json['schedule']) : null) : const SdkOmitted(),
-    budget: json.containsKey('budget') ? SdkPresent(json['budget'] != null ? BetaManagedAgentsBudget.fromJson(json['budget']) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsUpdateDeploymentParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUpdateDeploymentParams(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        agent: json['agent'] != null
+            ? SdkPresent((json['agent'] != null
+                ? BetaManagedAgentsAgentUnionParams.fromJson(json['agent'])
+                : null)!)
+            : const SdkOmitted(),
+        environmentId: json['environment_id'] != null
+            ? SdkPresent((json['environment_id'] as String?)!)
+            : const SdkOmitted(),
+        vaultIds: json.containsKey('vault_ids')
+            ? SdkPresent(
+                (json['vault_ids'] as List?)?.map((e) => e as String).toList())
+            : const SdkOmitted(),
+        initialEvents: json['initial_events'] != null
+            ? SdkPresent(((json['initial_events'] as List?)
+                ?.map((e) =>
+                    BetaManagedAgentsDeploymentInitialEventParams.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+        resources: json.containsKey('resources')
+            ? SdkPresent((json['resources'] as List?)
+                ?.map((e) => BetaManagedAgentsSessionResourceParams.fromJson(e))
+                .toList())
+            : const SdkOmitted(),
+        metadata: json.containsKey('metadata')
+            ? SdkPresent(json['metadata'] == null
+                ? null
+                : Map<String, dynamic>.from(json['metadata'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))
+            : const SdkOmitted(),
+        schedule: json.containsKey('schedule')
+            ? SdkPresent(json['schedule'] != null
+                ? BetaManagedAgentsScheduleParams.fromJson(json['schedule'])
+                : null)
+            : const SdkOmitted(),
+        budget: json.containsKey('budget')
+            ? SdkPresent(json['budget'] != null
+                ? BetaManagedAgentsBudget.fromJson(json['budget'])
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (agent) {
-      SdkPresent<BetaManagedAgentsAgentUnionParams>(value: final value) => {'agent': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (environmentId) {
-      SdkPresent<String>(value: final value) => {'environment_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (vaultIds) {
-      SdkPresent<List<String>?>(value: final value) => {'vault_ids': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (initialEvents) {
-      SdkPresent<List<BetaManagedAgentsDeploymentInitialEventParams>>(value: final value) => {'initial_events': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (resources) {
-      SdkPresent<List<BetaManagedAgentsSessionResourceParams>?>(value: final value) => {'resources': value?.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (metadata) {
-      SdkPresent<Map<String, String>?>(value: final value) => {'metadata': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (schedule) {
-      SdkPresent<BetaManagedAgentsScheduleParams?>(value: final value) => {'schedule': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (budget) {
-      SdkPresent<BetaManagedAgentsBudget?>(value: final value) => {'budget': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (agent) {
+          SdkPresent<BetaManagedAgentsAgentUnionParams>(value: final value) => {
+              'agent': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environmentId) {
+          SdkPresent<String>(value: final value) => {
+              'environment_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (vaultIds) {
+          SdkPresent<List<String>?>(value: final value) => {
+              'vault_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (initialEvents) {
+          SdkPresent<List<BetaManagedAgentsDeploymentInitialEventParams>>(
+            value: final value
+          ) =>
+            {
+              'initial_events': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (resources) {
+          SdkPresent<List<BetaManagedAgentsSessionResourceParams>?>(
+            value: final value
+          ) =>
+            {
+              'resources': value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (metadata) {
+          SdkPresent<Map<String, String>?>(value: final value) => {
+              'metadata': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (schedule) {
+          SdkPresent<BetaManagedAgentsScheduleParams?>(value: final value) => {
+              'schedule': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (budget) {
+          SdkPresent<BetaManagedAgentsBudget?>(value: final value) => {
+              'budget': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

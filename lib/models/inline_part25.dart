@@ -10,14 +10,18 @@ enum BetaManagedAgentsMultiagentSelfParamsType {
 
   static BetaManagedAgentsMultiagentSelfParamsType fromJson(String value) {
     switch (value) {
-      case 'self': return BetaManagedAgentsMultiagentSelfParamsType.self;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMultiagentSelfParamsType: $value');
+      case 'self':
+        return BetaManagedAgentsMultiagentSelfParamsType.self;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMultiagentSelfParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMultiagentSelfParamsType.self: return 'self';
+      case BetaManagedAgentsMultiagentSelfParamsType.self:
+        return 'self';
     }
   }
 
@@ -29,16 +33,23 @@ enum BetaManagedAgentsMultiagentSelfParamsType {
 enum BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType {
   organizationDisabledError;
 
-  static BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType fromJson(String value) {
+  static BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
+      fromJson(String value) {
     switch (value) {
-      case 'organization_disabled_error': return BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType.organizationDisabledError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType: $value');
+      case 'organization_disabled_error':
+        return BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
+            .organizationDisabledError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType.organizationDisabledError: return 'organization_disabled_error';
+      case BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
+            .organizationDisabledError:
+        return 'organization_disabled_error';
     }
   }
 
@@ -50,16 +61,23 @@ enum BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType {
 enum BetaManagedAgentsOrganizationDisabledRunErrorType {
   organizationDisabledError;
 
-  static BetaManagedAgentsOrganizationDisabledRunErrorType fromJson(String value) {
+  static BetaManagedAgentsOrganizationDisabledRunErrorType fromJson(
+      String value) {
     switch (value) {
-      case 'organization_disabled_error': return BetaManagedAgentsOrganizationDisabledRunErrorType.organizationDisabledError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsOrganizationDisabledRunErrorType: $value');
+      case 'organization_disabled_error':
+        return BetaManagedAgentsOrganizationDisabledRunErrorType
+            .organizationDisabledError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsOrganizationDisabledRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsOrganizationDisabledRunErrorType.organizationDisabledError: return 'organization_disabled_error';
+      case BetaManagedAgentsOrganizationDisabledRunErrorType
+            .organizationDisabledError:
+        return 'organization_disabled_error';
     }
   }
 
@@ -69,44 +87,56 @@ enum BetaManagedAgentsOrganizationDisabledRunErrorType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsOutcomeEvaluationResourceType {
-
   final String value;
 
   const BetaManagedAgentsOutcomeEvaluationResourceType._(this.value);
 
-  factory BetaManagedAgentsOutcomeEvaluationResourceType.fromJson(String value) => BetaManagedAgentsOutcomeEvaluationResourceType._(value);
+  factory BetaManagedAgentsOutcomeEvaluationResourceType.fromJson(
+          String value) =>
+      BetaManagedAgentsOutcomeEvaluationResourceType._(value);
 
-  static const outcomeEvaluation = BetaManagedAgentsOutcomeEvaluationResourceType._('outcome_evaluation');
+  static const outcomeEvaluation =
+      BetaManagedAgentsOutcomeEvaluationResourceType._('outcome_evaluation');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsOutcomeEvaluationResourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsOutcomeEvaluationResourceType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// MIME type of the text content. Must be "text/plain".
 final class BetaManagedAgentsPlainTextDocumentSourceMediaType {
-
   final String value;
 
   const BetaManagedAgentsPlainTextDocumentSourceMediaType._(this.value);
 
-  factory BetaManagedAgentsPlainTextDocumentSourceMediaType.fromJson(String value) => BetaManagedAgentsPlainTextDocumentSourceMediaType._(value);
+  factory BetaManagedAgentsPlainTextDocumentSourceMediaType.fromJson(
+          String value) =>
+      BetaManagedAgentsPlainTextDocumentSourceMediaType._(value);
 
-  static const textPlain = BetaManagedAgentsPlainTextDocumentSourceMediaType._('text/plain');
+  static const textPlain =
+      BetaManagedAgentsPlainTextDocumentSourceMediaType._('text/plain');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsPlainTextDocumentSourceMediaType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsPlainTextDocumentSourceMediaType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -115,14 +145,18 @@ enum BetaManagedAgentsPlainTextDocumentSourceType {
 
   static BetaManagedAgentsPlainTextDocumentSourceType fromJson(String value) {
     switch (value) {
-      case 'text': return BetaManagedAgentsPlainTextDocumentSourceType.text;
-      default: throw ArgumentError('Unknown BetaManagedAgentsPlainTextDocumentSourceType: $value');
+      case 'text':
+        return BetaManagedAgentsPlainTextDocumentSourceType.text;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsPlainTextDocumentSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsPlainTextDocumentSourceType.text: return 'text';
+      case BetaManagedAgentsPlainTextDocumentSourceType.text:
+        return 'text';
     }
   }
 
@@ -136,14 +170,18 @@ enum BetaManagedAgentsReadToolConfigName {
 
   static BetaManagedAgentsReadToolConfigName fromJson(String value) {
     switch (value) {
-      case 'read': return BetaManagedAgentsReadToolConfigName.read;
-      default: throw ArgumentError('Unknown BetaManagedAgentsReadToolConfigName: $value');
+      case 'read':
+        return BetaManagedAgentsReadToolConfigName.read;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsReadToolConfigName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsReadToolConfigName.read: return 'read';
+      case BetaManagedAgentsReadToolConfigName.read:
+        return 'read';
     }
   }
 
@@ -157,14 +195,18 @@ enum BetaManagedAgentsReadToolConfigType {
 
   static BetaManagedAgentsReadToolConfigType fromJson(String value) {
     switch (value) {
-      case 'read': return BetaManagedAgentsReadToolConfigType.read;
-      default: throw ArgumentError('Unknown BetaManagedAgentsReadToolConfigType: $value');
+      case 'read':
+        return BetaManagedAgentsReadToolConfigType.read;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsReadToolConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsReadToolConfigType.read: return 'read';
+      case BetaManagedAgentsReadToolConfigType.read:
+        return 'read';
     }
   }
 
@@ -178,14 +220,18 @@ enum BetaManagedAgentsReadToolConfigParamsName {
 
   static BetaManagedAgentsReadToolConfigParamsName fromJson(String value) {
     switch (value) {
-      case 'read': return BetaManagedAgentsReadToolConfigParamsName.read;
-      default: throw ArgumentError('Unknown BetaManagedAgentsReadToolConfigParamsName: $value');
+      case 'read':
+        return BetaManagedAgentsReadToolConfigParamsName.read;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsReadToolConfigParamsName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsReadToolConfigParamsName.read: return 'read';
+      case BetaManagedAgentsReadToolConfigParamsName.read:
+        return 'read';
     }
   }
 
@@ -199,14 +245,18 @@ enum BetaManagedAgentsReadToolConfigParamsType {
 
   static BetaManagedAgentsReadToolConfigParamsType fromJson(String value) {
     switch (value) {
-      case 'read': return BetaManagedAgentsReadToolConfigParamsType.read;
-      default: throw ArgumentError('Unknown BetaManagedAgentsReadToolConfigParamsType: $value');
+      case 'read':
+        return BetaManagedAgentsReadToolConfigParamsType.read;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsReadToolConfigParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsReadToolConfigParamsType.read: return 'read';
+      case BetaManagedAgentsReadToolConfigParamsType.read:
+        return 'read';
     }
   }
 
@@ -220,14 +270,18 @@ enum BetaManagedAgentsRedactedBlockType {
 
   static BetaManagedAgentsRedactedBlockType fromJson(String value) {
     switch (value) {
-      case 'redacted': return BetaManagedAgentsRedactedBlockType.redacted;
-      default: throw ArgumentError('Unknown BetaManagedAgentsRedactedBlockType: $value');
+      case 'redacted':
+        return BetaManagedAgentsRedactedBlockType.redacted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsRedactedBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsRedactedBlockType.redacted: return 'redacted';
+      case BetaManagedAgentsRedactedBlockType.redacted:
+        return 'redacted';
     }
   }
 
@@ -241,14 +295,18 @@ enum BetaManagedAgentsRetryStatusExhaustedType {
 
   static BetaManagedAgentsRetryStatusExhaustedType fromJson(String value) {
     switch (value) {
-      case 'exhausted': return BetaManagedAgentsRetryStatusExhaustedType.exhausted;
-      default: throw ArgumentError('Unknown BetaManagedAgentsRetryStatusExhaustedType: $value');
+      case 'exhausted':
+        return BetaManagedAgentsRetryStatusExhaustedType.exhausted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsRetryStatusExhaustedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsRetryStatusExhaustedType.exhausted: return 'exhausted';
+      case BetaManagedAgentsRetryStatusExhaustedType.exhausted:
+        return 'exhausted';
     }
   }
 
@@ -262,14 +320,18 @@ enum BetaManagedAgentsRetryStatusRetryingType {
 
   static BetaManagedAgentsRetryStatusRetryingType fromJson(String value) {
     switch (value) {
-      case 'retrying': return BetaManagedAgentsRetryStatusRetryingType.retrying;
-      default: throw ArgumentError('Unknown BetaManagedAgentsRetryStatusRetryingType: $value');
+      case 'retrying':
+        return BetaManagedAgentsRetryStatusRetryingType.retrying;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsRetryStatusRetryingType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsRetryStatusRetryingType.retrying: return 'retrying';
+      case BetaManagedAgentsRetryStatusRetryingType.retrying:
+        return 'retrying';
     }
   }
 

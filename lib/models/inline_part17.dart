@@ -10,14 +10,18 @@ enum BetaManagedAgentsCustomSkillParamsType {
 
   static BetaManagedAgentsCustomSkillParamsType fromJson(String value) {
     switch (value) {
-      case 'custom': return BetaManagedAgentsCustomSkillParamsType.custom;
-      default: throw ArgumentError('Unknown BetaManagedAgentsCustomSkillParamsType: $value');
+      case 'custom':
+        return BetaManagedAgentsCustomSkillParamsType.custom;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsCustomSkillParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsCustomSkillParamsType.custom: return 'custom';
+      case BetaManagedAgentsCustomSkillParamsType.custom:
+        return 'custom';
     }
   }
 
@@ -31,14 +35,17 @@ enum BetaManagedAgentsCustomToolType {
 
   static BetaManagedAgentsCustomToolType fromJson(String value) {
     switch (value) {
-      case 'custom': return BetaManagedAgentsCustomToolType.custom;
-      default: throw ArgumentError('Unknown BetaManagedAgentsCustomToolType: $value');
+      case 'custom':
+        return BetaManagedAgentsCustomToolType.custom;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsCustomToolType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsCustomToolType.custom: return 'custom';
+      case BetaManagedAgentsCustomToolType.custom:
+        return 'custom';
     }
   }
 
@@ -52,14 +59,18 @@ enum BetaManagedAgentsCustomToolInputSchemaType {
 
   static BetaManagedAgentsCustomToolInputSchemaType fromJson(String value) {
     switch (value) {
-      case 'object': return BetaManagedAgentsCustomToolInputSchemaType.object;
-      default: throw ArgumentError('Unknown BetaManagedAgentsCustomToolInputSchemaType: $value');
+      case 'object':
+        return BetaManagedAgentsCustomToolInputSchemaType.object;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsCustomToolInputSchemaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsCustomToolInputSchemaType.object: return 'object';
+      case BetaManagedAgentsCustomToolInputSchemaType.object:
+        return 'object';
     }
   }
 
@@ -73,14 +84,18 @@ enum BetaManagedAgentsCustomToolParamsType {
 
   static BetaManagedAgentsCustomToolParamsType fromJson(String value) {
     switch (value) {
-      case 'custom': return BetaManagedAgentsCustomToolParamsType.custom;
-      default: throw ArgumentError('Unknown BetaManagedAgentsCustomToolParamsType: $value');
+      case 'custom':
+        return BetaManagedAgentsCustomToolParamsType.custom;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsCustomToolParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsCustomToolParamsType.custom: return 'custom';
+      case BetaManagedAgentsCustomToolParamsType.custom:
+        return 'custom';
     }
   }
 
@@ -90,44 +105,52 @@ enum BetaManagedAgentsCustomToolParamsType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsDeletedCredentialType {
-
   final String value;
 
   const BetaManagedAgentsDeletedCredentialType._(this.value);
 
-  factory BetaManagedAgentsDeletedCredentialType.fromJson(String value) => BetaManagedAgentsDeletedCredentialType._(value);
+  factory BetaManagedAgentsDeletedCredentialType.fromJson(String value) =>
+      BetaManagedAgentsDeletedCredentialType._(value);
 
-  static const vaultCredentialDeleted = BetaManagedAgentsDeletedCredentialType._('vault_credential_deleted');
+  static const vaultCredentialDeleted =
+      BetaManagedAgentsDeletedCredentialType._('vault_credential_deleted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsDeletedCredentialType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsDeletedCredentialType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsDeletedMemoryType {
-
   final String value;
 
   const BetaManagedAgentsDeletedMemoryType._(this.value);
 
-  factory BetaManagedAgentsDeletedMemoryType.fromJson(String value) => BetaManagedAgentsDeletedMemoryType._(value);
+  factory BetaManagedAgentsDeletedMemoryType.fromJson(String value) =>
+      BetaManagedAgentsDeletedMemoryType._(value);
 
-  static const memoryDeleted = BetaManagedAgentsDeletedMemoryType._('memory_deleted');
+  static const memoryDeleted =
+      BetaManagedAgentsDeletedMemoryType._('memory_deleted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsDeletedMemoryType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsDeletedMemoryType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -136,14 +159,18 @@ enum BetaManagedAgentsDeletedMemoryStoreType {
 
   static BetaManagedAgentsDeletedMemoryStoreType fromJson(String value) {
     switch (value) {
-      case 'memory_store_deleted': return BetaManagedAgentsDeletedMemoryStoreType.memoryStoreDeleted;
-      default: throw ArgumentError('Unknown BetaManagedAgentsDeletedMemoryStoreType: $value');
+      case 'memory_store_deleted':
+        return BetaManagedAgentsDeletedMemoryStoreType.memoryStoreDeleted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsDeletedMemoryStoreType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsDeletedMemoryStoreType.memoryStoreDeleted: return 'memory_store_deleted';
+      case BetaManagedAgentsDeletedMemoryStoreType.memoryStoreDeleted:
+        return 'memory_store_deleted';
     }
   }
 
@@ -153,123 +180,148 @@ enum BetaManagedAgentsDeletedMemoryStoreType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsDeletedSessionType {
-
   final String value;
 
   const BetaManagedAgentsDeletedSessionType._(this.value);
 
-  factory BetaManagedAgentsDeletedSessionType.fromJson(String value) => BetaManagedAgentsDeletedSessionType._(value);
+  factory BetaManagedAgentsDeletedSessionType.fromJson(String value) =>
+      BetaManagedAgentsDeletedSessionType._(value);
 
-  static const sessionDeleted = BetaManagedAgentsDeletedSessionType._('session_deleted');
+  static const sessionDeleted =
+      BetaManagedAgentsDeletedSessionType._('session_deleted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsDeletedSessionType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsDeletedSessionType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsDeletedVaultType {
-
   final String value;
 
   const BetaManagedAgentsDeletedVaultType._(this.value);
 
-  factory BetaManagedAgentsDeletedVaultType.fromJson(String value) => BetaManagedAgentsDeletedVaultType._(value);
+  factory BetaManagedAgentsDeletedVaultType.fromJson(String value) =>
+      BetaManagedAgentsDeletedVaultType._(value);
 
-  static const vaultDeleted = BetaManagedAgentsDeletedVaultType._('vault_deleted');
+  static const vaultDeleted =
+      BetaManagedAgentsDeletedVaultType._('vault_deleted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsDeletedVaultType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsDeletedVaultType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsDeleteSessionResourceType {
-
   final String value;
 
   const BetaManagedAgentsDeleteSessionResourceType._(this.value);
 
-  factory BetaManagedAgentsDeleteSessionResourceType.fromJson(String value) => BetaManagedAgentsDeleteSessionResourceType._(value);
+  factory BetaManagedAgentsDeleteSessionResourceType.fromJson(String value) =>
+      BetaManagedAgentsDeleteSessionResourceType._(value);
 
-  static const sessionResourceDeleted = BetaManagedAgentsDeleteSessionResourceType._('session_resource_deleted');
+  static const sessionResourceDeleted =
+      BetaManagedAgentsDeleteSessionResourceType._('session_resource_deleted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsDeleteSessionResourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsDeleteSessionResourceType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsDeploymentType {
-
   final String value;
 
   const BetaManagedAgentsDeploymentType._(this.value);
 
-  factory BetaManagedAgentsDeploymentType.fromJson(String value) => BetaManagedAgentsDeploymentType._(value);
+  factory BetaManagedAgentsDeploymentType.fromJson(String value) =>
+      BetaManagedAgentsDeploymentType._(value);
 
   static const deployment = BetaManagedAgentsDeploymentType._('deployment');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsDeploymentType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsDeploymentType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsDeploymentRunType {
-
   final String value;
 
   const BetaManagedAgentsDeploymentRunType._(this.value);
 
-  factory BetaManagedAgentsDeploymentRunType.fromJson(String value) => BetaManagedAgentsDeploymentRunType._(value);
+  factory BetaManagedAgentsDeploymentRunType.fromJson(String value) =>
+      BetaManagedAgentsDeploymentRunType._(value);
 
-  static const deploymentRun = BetaManagedAgentsDeploymentRunType._('deployment_run');
+  static const deploymentRun =
+      BetaManagedAgentsDeploymentRunType._('deployment_run');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsDeploymentRunType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsDeploymentRunType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsDeploymentSystemMessageEventType {
   systemMessage;
 
-  static BetaManagedAgentsDeploymentSystemMessageEventType fromJson(String value) {
+  static BetaManagedAgentsDeploymentSystemMessageEventType fromJson(
+      String value) {
     switch (value) {
-      case 'system.message': return BetaManagedAgentsDeploymentSystemMessageEventType.systemMessage;
-      default: throw ArgumentError('Unknown BetaManagedAgentsDeploymentSystemMessageEventType: $value');
+      case 'system.message':
+        return BetaManagedAgentsDeploymentSystemMessageEventType.systemMessage;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsDeploymentSystemMessageEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsDeploymentSystemMessageEventType.systemMessage: return 'system.message';
+      case BetaManagedAgentsDeploymentSystemMessageEventType.systemMessage:
+        return 'system.message';
     }
   }
 

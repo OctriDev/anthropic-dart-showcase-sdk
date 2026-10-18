@@ -5,202 +5,289 @@ part of 'inline.dart';
 
 // Inline operation models (part 74)
 final class ListBetaOrganizationsApiKeysStatusVariant0 {
-
   final String value;
 
   const ListBetaOrganizationsApiKeysStatusVariant0._(this.value);
 
-  factory ListBetaOrganizationsApiKeysStatusVariant0.fromJson(String value) => ListBetaOrganizationsApiKeysStatusVariant0._(value);
+  factory ListBetaOrganizationsApiKeysStatusVariant0.fromJson(String value) =>
+      ListBetaOrganizationsApiKeysStatusVariant0._(value);
 
   static const active = ListBetaOrganizationsApiKeysStatusVariant0._('active');
-  static const archived = ListBetaOrganizationsApiKeysStatusVariant0._('archived');
-  static const expired = ListBetaOrganizationsApiKeysStatusVariant0._('expired');
-  static const inactive = ListBetaOrganizationsApiKeysStatusVariant0._('inactive');
+  static const archived =
+      ListBetaOrganizationsApiKeysStatusVariant0._('archived');
+  static const expired =
+      ListBetaOrganizationsApiKeysStatusVariant0._('expired');
+  static const inactive =
+      ListBetaOrganizationsApiKeysStatusVariant0._('inactive');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ListBetaOrganizationsApiKeysStatusVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ListBetaOrganizationsApiKeysStatusVariant0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ListBetaOrganizationsInvitesStatusesItem {
-
   final String value;
 
   const ListBetaOrganizationsInvitesStatusesItem._(this.value);
 
-  factory ListBetaOrganizationsInvitesStatusesItem.fromJson(String value) => ListBetaOrganizationsInvitesStatusesItem._(value);
+  factory ListBetaOrganizationsInvitesStatusesItem.fromJson(String value) =>
+      ListBetaOrganizationsInvitesStatusesItem._(value);
 
-  static const accepted = ListBetaOrganizationsInvitesStatusesItem._('accepted');
+  static const accepted =
+      ListBetaOrganizationsInvitesStatusesItem._('accepted');
   static const expired = ListBetaOrganizationsInvitesStatusesItem._('expired');
   static const pending = ListBetaOrganizationsInvitesStatusesItem._('pending');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ListBetaOrganizationsInvitesStatusesItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ListBetaOrganizationsInvitesStatusesItem && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ListBetaOrganizationsRateLimitsGroupTypeVariant0 {
-
   final String value;
 
   const ListBetaOrganizationsRateLimitsGroupTypeVariant0._(this.value);
 
-  factory ListBetaOrganizationsRateLimitsGroupTypeVariant0.fromJson(String value) => ListBetaOrganizationsRateLimitsGroupTypeVariant0._(value);
+  factory ListBetaOrganizationsRateLimitsGroupTypeVariant0.fromJson(
+          String value) =>
+      ListBetaOrganizationsRateLimitsGroupTypeVariant0._(value);
 
-  static const batch = ListBetaOrganizationsRateLimitsGroupTypeVariant0._('batch');
-  static const files = ListBetaOrganizationsRateLimitsGroupTypeVariant0._('files');
-  static const modelGroup = ListBetaOrganizationsRateLimitsGroupTypeVariant0._('model_group');
-  static const skills = ListBetaOrganizationsRateLimitsGroupTypeVariant0._('skills');
-  static const tokenCount = ListBetaOrganizationsRateLimitsGroupTypeVariant0._('token_count');
-  static const webSearch = ListBetaOrganizationsRateLimitsGroupTypeVariant0._('web_search');
+  static const batch =
+      ListBetaOrganizationsRateLimitsGroupTypeVariant0._('batch');
+  static const files =
+      ListBetaOrganizationsRateLimitsGroupTypeVariant0._('files');
+  static const modelGroup =
+      ListBetaOrganizationsRateLimitsGroupTypeVariant0._('model_group');
+  static const skills =
+      ListBetaOrganizationsRateLimitsGroupTypeVariant0._('skills');
+  static const tokenCount =
+      ListBetaOrganizationsRateLimitsGroupTypeVariant0._('token_count');
+  static const webSearch =
+      ListBetaOrganizationsRateLimitsGroupTypeVariant0._('web_search');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ListBetaOrganizationsRateLimitsGroupTypeVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ListBetaOrganizationsRateLimitsGroupTypeVariant0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem {
-
   final String value;
 
   const ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem._(this.value);
 
-  factory ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem.fromJson(String value) => ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem._(value);
+  factory ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem.fromJson(
+          String value) =>
+      ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem._(value);
 
-  static const approved = ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem._('approved');
-  static const denied = ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem._('denied');
-  static const pending = ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem._('pending');
+  static const approved =
+      ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem._('approved');
+  static const denied =
+      ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem._('denied');
+  static const pending =
+      ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem._('pending');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem {
-
   final String value;
 
   const RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem._(this.value);
 
-  factory RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem.fromJson(String value) => RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem._(value);
+  factory RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem.fromJson(
+          String value) =>
+      RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem._(value);
 
-  static const daily = RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem._('daily');
-  static const monthly = RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem._('monthly');
-  static const weekly = RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem._('weekly');
+  static const daily =
+      RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem._('daily');
+  static const monthly =
+      RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem._('monthly');
+  static const weekly =
+      RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem._('weekly');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0 {
-
   final String value;
 
-  const ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._(this.value);
+  const ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._(
+      this.value);
 
-  factory ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0.fromJson(String value) => ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._(value);
+  factory ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0.fromJson(
+          String value) =>
+      ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._(value);
 
-  static const batch = ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._('batch');
-  static const files = ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._('files');
-  static const modelGroup = ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._('model_group');
-  static const skills = ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._('skills');
-  static const tokenCount = ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._('token_count');
-  static const webSearch = ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._('web_search');
+  static const batch =
+      ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._('batch');
+  static const files =
+      ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._('files');
+  static const modelGroup =
+      ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._(
+          'model_group');
+  static const skills =
+      ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._('skills');
+  static const tokenCount =
+      ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._(
+          'token_count');
+  static const webSearch =
+      ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0._(
+          'web_search');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ListBetaOrganizationsWorkspacesRateLimitsGroupTypeVariant0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 class UploadFilesRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The file to upload. Only the final path component of the part's `filename` is kept; an absent or empty `filename` is replaced with `unnamed` plus the extension for the file's stored `mime_type`, when known.
   final List<int> file;
+
   /// Seconds from upload until the file expires and its bytes become permanently unavailable. Must be between 3600 (one hour) and 7776000 (ninety days).
   final SdkOptional<int> expiresInSeconds;
 
-  const UploadFilesRequestBody({required this.file, this.expiresInSeconds = const SdkOmitted()});
+  const UploadFilesRequestBody(
+      {required this.file, this.expiresInSeconds = const SdkOmitted()});
 
-  UploadFilesRequestBody Function({List<int> file, SdkOptional<int> expiresInSeconds}) get copyWith => _copyWith;
+  UploadFilesRequestBody Function(
+      {List<int> file,
+      SdkOptional<int> expiresInSeconds}) get copyWith => _copyWith;
 
-  UploadFilesRequestBody _copyWith({Object? file = sdkOmittedValue, Object? expiresInSeconds = sdkOmittedValue}) => UploadFilesRequestBody(
-    file: identical(file, sdkOmittedValue) ? this.file : file as List<int>,
-    expiresInSeconds: identical(expiresInSeconds, sdkOmittedValue) ? this.expiresInSeconds : expiresInSeconds as SdkOptional<int>,
-  );
+  UploadFilesRequestBody _copyWith(
+          {Object? file = sdkOmittedValue,
+          Object? expiresInSeconds = sdkOmittedValue}) =>
+      UploadFilesRequestBody(
+        file: identical(file, sdkOmittedValue) ? this.file : file as List<int>,
+        expiresInSeconds: identical(expiresInSeconds, sdkOmittedValue)
+            ? this.expiresInSeconds
+            : expiresInSeconds as SdkOptional<int>,
+      );
 
-  factory UploadFilesRequestBody.fromJson(Map<String, dynamic> json) => UploadFilesRequestBody(
-    file: (json['file'] != null ? base64Decode(json['file'] as String) : null)!,
-    expiresInSeconds: json['expires_in_seconds'] != null ? SdkPresent(((json['expires_in_seconds'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory UploadFilesRequestBody.fromJson(Map<String, dynamic> json) =>
+      UploadFilesRequestBody(
+        file: (json['file'] != null
+            ? base64Decode(json['file'] as String)
+            : null)!,
+        expiresInSeconds: json['expires_in_seconds'] != null
+            ? SdkPresent(((json['expires_in_seconds'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'file': base64Encode(file),
-    ...switch (expiresInSeconds) {
-      SdkPresent<int>(value: final value) => {'expires_in_seconds': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'file': base64Encode(file),
+        ...switch (expiresInSeconds) {
+          SdkPresent<int>(value: final value) => {
+              'expires_in_seconds': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class UploadBetaFilesRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The file to upload. Only the final path component of the part's `filename` is kept; an absent or empty `filename` is replaced with `unnamed` plus the extension for the file's stored `mime_type`, when known.
   final List<int> file;
+
   /// Seconds from upload until the file expires and its bytes become permanently unavailable. Must be between 3600 (one hour) and 7776000 (ninety days).
   final SdkOptional<int> expiresInSeconds;
 
-  const UploadBetaFilesRequestBody({required this.file, this.expiresInSeconds = const SdkOmitted()});
+  const UploadBetaFilesRequestBody(
+      {required this.file, this.expiresInSeconds = const SdkOmitted()});
 
-  UploadBetaFilesRequestBody Function({List<int> file, SdkOptional<int> expiresInSeconds}) get copyWith => _copyWith;
+  UploadBetaFilesRequestBody Function(
+      {List<int> file,
+      SdkOptional<int> expiresInSeconds}) get copyWith => _copyWith;
 
-  UploadBetaFilesRequestBody _copyWith({Object? file = sdkOmittedValue, Object? expiresInSeconds = sdkOmittedValue}) => UploadBetaFilesRequestBody(
-    file: identical(file, sdkOmittedValue) ? this.file : file as List<int>,
-    expiresInSeconds: identical(expiresInSeconds, sdkOmittedValue) ? this.expiresInSeconds : expiresInSeconds as SdkOptional<int>,
-  );
+  UploadBetaFilesRequestBody _copyWith(
+          {Object? file = sdkOmittedValue,
+          Object? expiresInSeconds = sdkOmittedValue}) =>
+      UploadBetaFilesRequestBody(
+        file: identical(file, sdkOmittedValue) ? this.file : file as List<int>,
+        expiresInSeconds: identical(expiresInSeconds, sdkOmittedValue)
+            ? this.expiresInSeconds
+            : expiresInSeconds as SdkOptional<int>,
+      );
 
-  factory UploadBetaFilesRequestBody.fromJson(Map<String, dynamic> json) => UploadBetaFilesRequestBody(
-    file: (json['file'] != null ? base64Decode(json['file'] as String) : null)!,
-    expiresInSeconds: json['expires_in_seconds'] != null ? SdkPresent(((json['expires_in_seconds'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory UploadBetaFilesRequestBody.fromJson(Map<String, dynamic> json) =>
+      UploadBetaFilesRequestBody(
+        file: (json['file'] != null
+            ? base64Decode(json['file'] as String)
+            : null)!,
+        expiresInSeconds: json['expires_in_seconds'] != null
+            ? SdkPresent(((json['expires_in_seconds'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'file': base64Encode(file),
-    ...switch (expiresInSeconds) {
-      SdkPresent<int>(value: final value) => {'expires_in_seconds': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'file': base64Encode(file),
+        ...switch (expiresInSeconds) {
+          SdkPresent<int>(value: final value) => {
+              'expires_in_seconds': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

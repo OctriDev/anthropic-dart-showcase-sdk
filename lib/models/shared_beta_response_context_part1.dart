@@ -8,24 +8,36 @@ part of 'shared_beta_response_context.dart';
 class BetaResponseContextManagement {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// List of context management edits that were applied.
   final List<BetaResponseContextManagementAppliedEditsItem> appliedEdits;
 
   const BetaResponseContextManagement({required this.appliedEdits});
 
-  BetaResponseContextManagement Function({List<BetaResponseContextManagementAppliedEditsItem> appliedEdits}) get copyWith => _copyWith;
+  BetaResponseContextManagement Function(
+          {List<BetaResponseContextManagementAppliedEditsItem> appliedEdits})
+      get copyWith => _copyWith;
 
-  BetaResponseContextManagement _copyWith({Object? appliedEdits = sdkOmittedValue}) => BetaResponseContextManagement(
-    appliedEdits: identical(appliedEdits, sdkOmittedValue) ? this.appliedEdits : appliedEdits as List<BetaResponseContextManagementAppliedEditsItem>,
-  );
+  BetaResponseContextManagement _copyWith(
+          {Object? appliedEdits = sdkOmittedValue}) =>
+      BetaResponseContextManagement(
+        appliedEdits: identical(appliedEdits, sdkOmittedValue)
+            ? this.appliedEdits
+            : appliedEdits
+                as List<BetaResponseContextManagementAppliedEditsItem>,
+      );
 
-  factory BetaResponseContextManagement.fromJson(Map<String, dynamic> json) => BetaResponseContextManagement(
-    appliedEdits: ((json['applied_edits'] as List?)?.map((e) => BetaResponseContextManagementAppliedEditsItem.fromJson(e)).toList())!,
-  );
+  factory BetaResponseContextManagement.fromJson(Map<String, dynamic> json) =>
+      BetaResponseContextManagement(
+        appliedEdits: ((json['applied_edits'] as List?)
+            ?.map((e) =>
+                BetaResponseContextManagementAppliedEditsItem.fromJson(e))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'applied_edits': appliedEdits.map((item) => item.toJson()).toList(),
-  };
+        'applied_edits': appliedEdits.map((item) => item.toJson()).toList(),
+      };
 }
 
 sealed class BetaResponseContextManagementAppliedEditsItem {
@@ -34,32 +46,66 @@ sealed class BetaResponseContextManagementAppliedEditsItem {
   const BetaResponseContextManagementAppliedEditsItem();
   factory BetaResponseContextManagementAppliedEditsItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaResponseClearToolUses20250919Edit.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseContextManagementAppliedEditsItemBetaResponseClearToolUses20250919Edit(value); } } catch (_) {}
-      try { final value = BetaResponseClearThinking20251015Edit.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseContextManagementAppliedEditsItemBetaResponseClearThinking20251015Edit(value); } } catch (_) {}
+      try {
+        final value = BetaResponseClearToolUses20250919Edit.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseContextManagementAppliedEditsItemBetaResponseClearToolUses20250919Edit(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaResponseClearThinking20251015Edit.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseContextManagementAppliedEditsItemBetaResponseClearThinking20251015Edit(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaResponseContextManagementAppliedEditsItemBetaResponseClearToolUses20250919Edit(BetaResponseClearToolUses20250919Edit.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaResponseContextManagementAppliedEditsItemBetaResponseClearThinking20251015Edit(BetaResponseClearThinking20251015Edit.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"clear_thinking_20251015", "clear_tool_uses_20250919"}.contains(json["type"])) { return UnknownBetaResponseContextManagementAppliedEditsItem(json); }
-    throw FormatException("No variant matched for BetaResponseContextManagementAppliedEditsItem");
+    try {
+      return BetaResponseContextManagementAppliedEditsItemBetaResponseClearToolUses20250919Edit(
+          BetaResponseClearToolUses20250919Edit.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaResponseContextManagementAppliedEditsItemBetaResponseClearThinking20251015Edit(
+          BetaResponseClearThinking20251015Edit.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"clear_thinking_20251015", "clear_tool_uses_20250919"}
+            .contains(json["type"])) {
+      return UnknownBetaResponseContextManagementAppliedEditsItem(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaResponseContextManagementAppliedEditsItem");
   }
   Object? toJson();
 }
 
-final class BetaResponseContextManagementAppliedEditsItemBetaResponseClearToolUses20250919Edit extends BetaResponseContextManagementAppliedEditsItem {
+final class BetaResponseContextManagementAppliedEditsItemBetaResponseClearToolUses20250919Edit
+    extends BetaResponseContextManagementAppliedEditsItem {
   final BetaResponseClearToolUses20250919Edit value;
-  const BetaResponseContextManagementAppliedEditsItemBetaResponseClearToolUses20250919Edit(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaResponseContextManagementAppliedEditsItemBetaResponseClearToolUses20250919Edit(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaResponseContextManagementAppliedEditsItemBetaResponseClearThinking20251015Edit extends BetaResponseContextManagementAppliedEditsItem {
+final class BetaResponseContextManagementAppliedEditsItemBetaResponseClearThinking20251015Edit
+    extends BetaResponseContextManagementAppliedEditsItem {
   final BetaResponseClearThinking20251015Edit value;
-  const BetaResponseContextManagementAppliedEditsItemBetaResponseClearThinking20251015Edit(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaResponseContextManagementAppliedEditsItemBetaResponseClearThinking20251015Edit(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaResponseContextManagementAppliedEditsItem] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaResponseContextManagementAppliedEditsItem extends BetaResponseContextManagementAppliedEditsItem {
+final class UnknownBetaResponseContextManagementAppliedEditsItem
+    extends BetaResponseContextManagementAppliedEditsItem {
   final Map<String, dynamic> raw;
   const UnknownBetaResponseContextManagementAppliedEditsItem(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

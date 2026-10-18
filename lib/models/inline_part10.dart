@@ -10,14 +10,17 @@ enum BetaDeleteUserResponseType {
 
   static BetaDeleteUserResponseType fromJson(String value) {
     switch (value) {
-      case 'user_deleted': return BetaDeleteUserResponseType.userDeleted;
-      default: throw ArgumentError('Unknown BetaDeleteUserResponseType: $value');
+      case 'user_deleted':
+        return BetaDeleteUserResponseType.userDeleted;
+      default:
+        throw ArgumentError('Unknown BetaDeleteUserResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDeleteUserResponseType.userDeleted: return 'user_deleted';
+      case BetaDeleteUserResponseType.userDeleted:
+        return 'user_deleted';
     }
   }
 
@@ -31,14 +34,18 @@ enum BetaDeleteWorkspaceMemberResponseType {
 
   static BetaDeleteWorkspaceMemberResponseType fromJson(String value) {
     switch (value) {
-      case 'workspace_member_deleted': return BetaDeleteWorkspaceMemberResponseType.workspaceMemberDeleted;
-      default: throw ArgumentError('Unknown BetaDeleteWorkspaceMemberResponseType: $value');
+      case 'workspace_member_deleted':
+        return BetaDeleteWorkspaceMemberResponseType.workspaceMemberDeleted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaDeleteWorkspaceMemberResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDeleteWorkspaceMemberResponseType.workspaceMemberDeleted: return 'workspace_member_deleted';
+      case BetaDeleteWorkspaceMemberResponseType.workspaceMemberDeleted:
+        return 'workspace_member_deleted';
     }
   }
 
@@ -52,14 +59,17 @@ enum BetaDirectCallerType {
 
   static BetaDirectCallerType fromJson(String value) {
     switch (value) {
-      case 'direct': return BetaDirectCallerType.direct;
-      default: throw ArgumentError('Unknown BetaDirectCallerType: $value');
+      case 'direct':
+        return BetaDirectCallerType.direct;
+      default:
+        throw ArgumentError('Unknown BetaDirectCallerType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDirectCallerType.direct: return 'direct';
+      case BetaDirectCallerType.direct:
+        return 'direct';
     }
   }
 
@@ -69,7 +79,6 @@ enum BetaDirectCallerType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaDreamType {
-
   final String value;
 
   const BetaDreamType._(this.value);
@@ -80,12 +89,15 @@ final class BetaDreamType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaDreamType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaDreamType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Always "error" for error responses
@@ -94,14 +106,17 @@ enum BetaDreamingErrorResponseType {
 
   static BetaDreamingErrorResponseType fromJson(String value) {
     switch (value) {
-      case 'error': return BetaDreamingErrorResponseType.error;
-      default: throw ArgumentError('Unknown BetaDreamingErrorResponseType: $value');
+      case 'error':
+        return BetaDreamingErrorResponseType.error;
+      default:
+        throw ArgumentError('Unknown BetaDreamingErrorResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDreamingErrorResponseType.error: return 'error';
+      case BetaDreamingErrorResponseType.error:
+        return 'error';
     }
   }
 
@@ -115,14 +130,17 @@ enum BetaDreamMemoryStoreInputType {
 
   static BetaDreamMemoryStoreInputType fromJson(String value) {
     switch (value) {
-      case 'memory_store': return BetaDreamMemoryStoreInputType.memoryStore;
-      default: throw ArgumentError('Unknown BetaDreamMemoryStoreInputType: $value');
+      case 'memory_store':
+        return BetaDreamMemoryStoreInputType.memoryStore;
+      default:
+        throw ArgumentError('Unknown BetaDreamMemoryStoreInputType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDreamMemoryStoreInputType.memoryStore: return 'memory_store';
+      case BetaDreamMemoryStoreInputType.memoryStore:
+        return 'memory_store';
     }
   }
 
@@ -136,14 +154,17 @@ enum BetaDreamMemoryStoreOutputType {
 
   static BetaDreamMemoryStoreOutputType fromJson(String value) {
     switch (value) {
-      case 'memory_store': return BetaDreamMemoryStoreOutputType.memoryStore;
-      default: throw ArgumentError('Unknown BetaDreamMemoryStoreOutputType: $value');
+      case 'memory_store':
+        return BetaDreamMemoryStoreOutputType.memoryStore;
+      default:
+        throw ArgumentError('Unknown BetaDreamMemoryStoreOutputType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDreamMemoryStoreOutputType.memoryStore: return 'memory_store';
+      case BetaDreamMemoryStoreOutputType.memoryStore:
+        return 'memory_store';
     }
   }
 
@@ -157,14 +178,17 @@ enum BetaDreamSessionsInputType {
 
   static BetaDreamSessionsInputType fromJson(String value) {
     switch (value) {
-      case 'sessions': return BetaDreamSessionsInputType.sessions;
-      default: throw ArgumentError('Unknown BetaDreamSessionsInputType: $value');
+      case 'sessions':
+        return BetaDreamSessionsInputType.sessions;
+      default:
+        throw ArgumentError('Unknown BetaDreamSessionsInputType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDreamSessionsInputType.sessions: return 'sessions';
+      case BetaDreamSessionsInputType.sessions:
+        return 'sessions';
     }
   }
 
@@ -174,45 +198,51 @@ enum BetaDreamSessionsInputType {
 
 /// Object type. Always `enrollment_url`.
 final class BetaEnrollmentUrlType {
-
   final String value;
 
   const BetaEnrollmentUrlType._(this.value);
 
-  factory BetaEnrollmentUrlType.fromJson(String value) => BetaEnrollmentUrlType._(value);
+  factory BetaEnrollmentUrlType.fromJson(String value) =>
+      BetaEnrollmentUrlType._(value);
 
   static const enrollmentUrl = BetaEnrollmentUrlType._('enrollment_url');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaEnrollmentUrlType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaEnrollmentUrlType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The visibility scope for this environment. 'organization' means visible to all accounts. 'account' means visible only to the owning account.
 final class BetaEnvironmentScope {
-
   final String value;
 
   const BetaEnvironmentScope._(this.value);
 
-  factory BetaEnvironmentScope.fromJson(String value) => BetaEnvironmentScope._(value);
+  factory BetaEnvironmentScope.fromJson(String value) =>
+      BetaEnvironmentScope._(value);
 
   static const organization = BetaEnvironmentScope._('organization');
   static const account = BetaEnvironmentScope._('account');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaEnvironmentScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaEnvironmentScope && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of object (always 'environment')
@@ -221,14 +251,17 @@ enum BetaEnvironmentType {
 
   static BetaEnvironmentType fromJson(String value) {
     switch (value) {
-      case 'environment': return BetaEnvironmentType.environment;
-      default: throw ArgumentError('Unknown BetaEnvironmentType: $value');
+      case 'environment':
+        return BetaEnvironmentType.environment;
+      default:
+        throw ArgumentError('Unknown BetaEnvironmentType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaEnvironmentType.environment: return 'environment';
+      case BetaEnvironmentType.environment:
+        return 'environment';
     }
   }
 
@@ -238,23 +271,27 @@ enum BetaEnvironmentType {
 
 /// The type of response
 final class BetaEnvironmentDeleteResponseType {
-
   final String value;
 
   const BetaEnvironmentDeleteResponseType._(this.value);
 
-  factory BetaEnvironmentDeleteResponseType.fromJson(String value) => BetaEnvironmentDeleteResponseType._(value);
+  factory BetaEnvironmentDeleteResponseType.fromJson(String value) =>
+      BetaEnvironmentDeleteResponseType._(value);
 
-  static const environmentDeleted = BetaEnvironmentDeleteResponseType._('environment_deleted');
+  static const environmentDeleted =
+      BetaEnvironmentDeleteResponseType._('environment_deleted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaEnvironmentDeleteResponseType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaEnvironmentDeleteResponseType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -263,14 +300,17 @@ enum BetaErroredResultType {
 
   static BetaErroredResultType fromJson(String value) {
     switch (value) {
-      case 'errored': return BetaErroredResultType.errored;
-      default: throw ArgumentError('Unknown BetaErroredResultType: $value');
+      case 'errored':
+        return BetaErroredResultType.errored;
+      default:
+        throw ArgumentError('Unknown BetaErroredResultType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaErroredResultType.errored: return 'errored';
+      case BetaErroredResultType.errored:
+        return 'errored';
     }
   }
 

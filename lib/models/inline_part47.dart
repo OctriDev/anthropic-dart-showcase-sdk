@@ -10,14 +10,17 @@ enum BetaSpendLimitType {
 
   static BetaSpendLimitType fromJson(String value) {
     switch (value) {
-      case 'spend_limit': return BetaSpendLimitType.spendLimit;
-      default: throw ArgumentError('Unknown BetaSpendLimitType: $value');
+      case 'spend_limit':
+        return BetaSpendLimitType.spendLimit;
+      default:
+        throw ArgumentError('Unknown BetaSpendLimitType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaSpendLimitType.spendLimit: return 'spend_limit';
+      case BetaSpendLimitType.spendLimit:
+        return 'spend_limit';
     }
   }
 
@@ -27,12 +30,12 @@ enum BetaSpendLimitType {
 
 /// Required enumerated value serialized in the `period` wire field.
 final class BetaSpendLimitIncreaseRequestSchemaPeriod {
-
   final String value;
 
   const BetaSpendLimitIncreaseRequestSchemaPeriod._(this.value);
 
-  factory BetaSpendLimitIncreaseRequestSchemaPeriod.fromJson(String value) => BetaSpendLimitIncreaseRequestSchemaPeriod._(value);
+  factory BetaSpendLimitIncreaseRequestSchemaPeriod.fromJson(String value) =>
+      BetaSpendLimitIncreaseRequestSchemaPeriod._(value);
 
   static const daily = BetaSpendLimitIncreaseRequestSchemaPeriod._('daily');
   static const monthly = BetaSpendLimitIncreaseRequestSchemaPeriod._('monthly');
@@ -40,35 +43,44 @@ final class BetaSpendLimitIncreaseRequestSchemaPeriod {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaSpendLimitIncreaseRequestSchemaPeriod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaSpendLimitIncreaseRequestSchemaPeriod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `status` wire field.
 final class BetaSpendLimitIncreaseRequestSchemaStatus {
-
   final String value;
 
   const BetaSpendLimitIncreaseRequestSchemaStatus._(this.value);
 
-  factory BetaSpendLimitIncreaseRequestSchemaStatus.fromJson(String value) => BetaSpendLimitIncreaseRequestSchemaStatus._(value);
+  factory BetaSpendLimitIncreaseRequestSchemaStatus.fromJson(String value) =>
+      BetaSpendLimitIncreaseRequestSchemaStatus._(value);
 
-  static const approved = BetaSpendLimitIncreaseRequestSchemaStatus._('approved');
+  static const approved =
+      BetaSpendLimitIncreaseRequestSchemaStatus._('approved');
   static const denied = BetaSpendLimitIncreaseRequestSchemaStatus._('denied');
   static const pending = BetaSpendLimitIncreaseRequestSchemaStatus._('pending');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaSpendLimitIncreaseRequestSchemaStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaSpendLimitIncreaseRequestSchemaStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -77,14 +89,19 @@ enum BetaSpendLimitIncreaseRequestSchemaType {
 
   static BetaSpendLimitIncreaseRequestSchemaType fromJson(String value) {
     switch (value) {
-      case 'spend_limit_increase_request': return BetaSpendLimitIncreaseRequestSchemaType.spendLimitIncreaseRequest;
-      default: throw ArgumentError('Unknown BetaSpendLimitIncreaseRequestSchemaType: $value');
+      case 'spend_limit_increase_request':
+        return BetaSpendLimitIncreaseRequestSchemaType
+            .spendLimitIncreaseRequest;
+      default:
+        throw ArgumentError(
+            'Unknown BetaSpendLimitIncreaseRequestSchemaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaSpendLimitIncreaseRequestSchemaType.spendLimitIncreaseRequest: return 'spend_limit_increase_request';
+      case BetaSpendLimitIncreaseRequestSchemaType.spendLimitIncreaseRequest:
+        return 'spend_limit_increase_request';
     }
   }
 
@@ -94,12 +111,12 @@ enum BetaSpendLimitIncreaseRequestSchemaType {
 
 /// Period this row's effective limit and spend are reported for.
 final class BetaSpendSummaryPeriod {
-
   final String value;
 
   const BetaSpendSummaryPeriod._(this.value);
 
-  factory BetaSpendSummaryPeriod.fromJson(String value) => BetaSpendSummaryPeriod._(value);
+  factory BetaSpendSummaryPeriod.fromJson(String value) =>
+      BetaSpendSummaryPeriod._(value);
 
   static const daily = BetaSpendSummaryPeriod._('daily');
   static const monthly = BetaSpendSummaryPeriod._('monthly');
@@ -107,12 +124,15 @@ final class BetaSpendSummaryPeriod {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaSpendSummaryPeriod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaSpendSummaryPeriod && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -121,14 +141,17 @@ enum BetaSucceededResultType {
 
   static BetaSucceededResultType fromJson(String value) {
     switch (value) {
-      case 'succeeded': return BetaSucceededResultType.succeeded;
-      default: throw ArgumentError('Unknown BetaSucceededResultType: $value');
+      case 'succeeded':
+        return BetaSucceededResultType.succeeded;
+      default:
+        throw ArgumentError('Unknown BetaSucceededResultType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaSucceededResultType.succeeded: return 'succeeded';
+      case BetaSucceededResultType.succeeded:
+        return 'succeeded';
     }
   }
 
@@ -142,14 +165,17 @@ enum BetaTargetStoreHeldErrorType {
 
   static BetaTargetStoreHeldErrorType fromJson(String value) {
     switch (value) {
-      case 'conflict_error': return BetaTargetStoreHeldErrorType.conflictError;
-      default: throw ArgumentError('Unknown BetaTargetStoreHeldErrorType: $value');
+      case 'conflict_error':
+        return BetaTargetStoreHeldErrorType.conflictError;
+      default:
+        throw ArgumentError('Unknown BetaTargetStoreHeldErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTargetStoreHeldErrorType.conflictError: return 'conflict_error';
+      case BetaTargetStoreHeldErrorType.conflictError:
+        return 'conflict_error';
     }
   }
 
@@ -163,14 +189,17 @@ enum BetaTextContentBlockDeltaType {
 
   static BetaTextContentBlockDeltaType fromJson(String value) {
     switch (value) {
-      case 'text_delta': return BetaTextContentBlockDeltaType.textDelta;
-      default: throw ArgumentError('Unknown BetaTextContentBlockDeltaType: $value');
+      case 'text_delta':
+        return BetaTextContentBlockDeltaType.textDelta;
+      default:
+        throw ArgumentError('Unknown BetaTextContentBlockDeltaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTextContentBlockDeltaType.textDelta: return 'text_delta';
+      case BetaTextContentBlockDeltaType.textDelta:
+        return 'text_delta';
     }
   }
 
@@ -184,14 +213,17 @@ enum BetaTextEditor20241022Name {
 
   static BetaTextEditor20241022Name fromJson(String value) {
     switch (value) {
-      case 'str_replace_editor': return BetaTextEditor20241022Name.strReplaceEditor;
-      default: throw ArgumentError('Unknown BetaTextEditor20241022Name: $value');
+      case 'str_replace_editor':
+        return BetaTextEditor20241022Name.strReplaceEditor;
+      default:
+        throw ArgumentError('Unknown BetaTextEditor20241022Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTextEditor20241022Name.strReplaceEditor: return 'str_replace_editor';
+      case BetaTextEditor20241022Name.strReplaceEditor:
+        return 'str_replace_editor';
     }
   }
 
@@ -205,14 +237,17 @@ enum BetaTextEditor20241022Type {
 
   static BetaTextEditor20241022Type fromJson(String value) {
     switch (value) {
-      case 'text_editor_20241022': return BetaTextEditor20241022Type.textEditor20241022;
-      default: throw ArgumentError('Unknown BetaTextEditor20241022Type: $value');
+      case 'text_editor_20241022':
+        return BetaTextEditor20241022Type.textEditor20241022;
+      default:
+        throw ArgumentError('Unknown BetaTextEditor20241022Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTextEditor20241022Type.textEditor20241022: return 'text_editor_20241022';
+      case BetaTextEditor20241022Type.textEditor20241022:
+        return 'text_editor_20241022';
     }
   }
 
@@ -226,14 +261,17 @@ enum BetaTextEditor20250124Name {
 
   static BetaTextEditor20250124Name fromJson(String value) {
     switch (value) {
-      case 'str_replace_editor': return BetaTextEditor20250124Name.strReplaceEditor;
-      default: throw ArgumentError('Unknown BetaTextEditor20250124Name: $value');
+      case 'str_replace_editor':
+        return BetaTextEditor20250124Name.strReplaceEditor;
+      default:
+        throw ArgumentError('Unknown BetaTextEditor20250124Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTextEditor20250124Name.strReplaceEditor: return 'str_replace_editor';
+      case BetaTextEditor20250124Name.strReplaceEditor:
+        return 'str_replace_editor';
     }
   }
 
@@ -247,14 +285,17 @@ enum BetaTextEditor20250124Type {
 
   static BetaTextEditor20250124Type fromJson(String value) {
     switch (value) {
-      case 'text_editor_20250124': return BetaTextEditor20250124Type.textEditor20250124;
-      default: throw ArgumentError('Unknown BetaTextEditor20250124Type: $value');
+      case 'text_editor_20250124':
+        return BetaTextEditor20250124Type.textEditor20250124;
+      default:
+        throw ArgumentError('Unknown BetaTextEditor20250124Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTextEditor20250124Type.textEditor20250124: return 'text_editor_20250124';
+      case BetaTextEditor20250124Type.textEditor20250124:
+        return 'text_editor_20250124';
     }
   }
 
@@ -268,14 +309,17 @@ enum BetaTextEditor20250429Name {
 
   static BetaTextEditor20250429Name fromJson(String value) {
     switch (value) {
-      case 'str_replace_based_edit_tool': return BetaTextEditor20250429Name.strReplaceBasedEditTool;
-      default: throw ArgumentError('Unknown BetaTextEditor20250429Name: $value');
+      case 'str_replace_based_edit_tool':
+        return BetaTextEditor20250429Name.strReplaceBasedEditTool;
+      default:
+        throw ArgumentError('Unknown BetaTextEditor20250429Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTextEditor20250429Name.strReplaceBasedEditTool: return 'str_replace_based_edit_tool';
+      case BetaTextEditor20250429Name.strReplaceBasedEditTool:
+        return 'str_replace_based_edit_tool';
     }
   }
 

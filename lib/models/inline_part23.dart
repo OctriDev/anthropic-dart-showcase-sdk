@@ -10,14 +10,17 @@ enum BetaManagedAgentsMemoryStoreType {
 
   static BetaManagedAgentsMemoryStoreType fromJson(String value) {
     switch (value) {
-      case 'memory_store': return BetaManagedAgentsMemoryStoreType.memoryStore;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryStoreType: $value');
+      case 'memory_store':
+        return BetaManagedAgentsMemoryStoreType.memoryStore;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsMemoryStoreType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMemoryStoreType.memoryStore: return 'memory_store';
+      case BetaManagedAgentsMemoryStoreType.memoryStore:
+        return 'memory_store';
     }
   }
 
@@ -29,16 +32,23 @@ enum BetaManagedAgentsMemoryStoreType {
 enum BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType {
   memoryStoreArchivedError;
 
-  static BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType fromJson(String value) {
+  static BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
+      fromJson(String value) {
     switch (value) {
-      case 'memory_store_archived_error': return BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType.memoryStoreArchivedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType: $value');
+      case 'memory_store_archived_error':
+        return BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
+            .memoryStoreArchivedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType.memoryStoreArchivedError: return 'memory_store_archived_error';
+      case BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
+            .memoryStoreArchivedError:
+        return 'memory_store_archived_error';
     }
   }
 
@@ -50,16 +60,23 @@ enum BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType {
 enum BetaManagedAgentsMemoryStoreArchivedRunErrorType {
   memoryStoreArchivedError;
 
-  static BetaManagedAgentsMemoryStoreArchivedRunErrorType fromJson(String value) {
+  static BetaManagedAgentsMemoryStoreArchivedRunErrorType fromJson(
+      String value) {
     switch (value) {
-      case 'memory_store_archived_error': return BetaManagedAgentsMemoryStoreArchivedRunErrorType.memoryStoreArchivedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryStoreArchivedRunErrorType: $value');
+      case 'memory_store_archived_error':
+        return BetaManagedAgentsMemoryStoreArchivedRunErrorType
+            .memoryStoreArchivedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMemoryStoreArchivedRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMemoryStoreArchivedRunErrorType.memoryStoreArchivedError: return 'memory_store_archived_error';
+      case BetaManagedAgentsMemoryStoreArchivedRunErrorType
+            .memoryStoreArchivedError:
+        return 'memory_store_archived_error';
     }
   }
 
@@ -73,14 +90,18 @@ enum BetaManagedAgentsMemoryStoreResourceType {
 
   static BetaManagedAgentsMemoryStoreResourceType fromJson(String value) {
     switch (value) {
-      case 'memory_store': return BetaManagedAgentsMemoryStoreResourceType.memoryStore;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryStoreResourceType: $value');
+      case 'memory_store':
+        return BetaManagedAgentsMemoryStoreResourceType.memoryStore;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMemoryStoreResourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMemoryStoreResourceType.memoryStore: return 'memory_store';
+      case BetaManagedAgentsMemoryStoreResourceType.memoryStore:
+        return 'memory_store';
     }
   }
 
@@ -94,14 +115,18 @@ enum BetaManagedAgentsMemoryStoreResourceConfigType {
 
   static BetaManagedAgentsMemoryStoreResourceConfigType fromJson(String value) {
     switch (value) {
-      case 'memory_store': return BetaManagedAgentsMemoryStoreResourceConfigType.memoryStore;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryStoreResourceConfigType: $value');
+      case 'memory_store':
+        return BetaManagedAgentsMemoryStoreResourceConfigType.memoryStore;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMemoryStoreResourceConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMemoryStoreResourceConfigType.memoryStore: return 'memory_store';
+      case BetaManagedAgentsMemoryStoreResourceConfigType.memoryStore:
+        return 'memory_store';
     }
   }
 
@@ -115,14 +140,18 @@ enum BetaManagedAgentsMemoryStoreResourceParamType {
 
   static BetaManagedAgentsMemoryStoreResourceParamType fromJson(String value) {
     switch (value) {
-      case 'memory_store': return BetaManagedAgentsMemoryStoreResourceParamType.memoryStore;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryStoreResourceParamType: $value');
+      case 'memory_store':
+        return BetaManagedAgentsMemoryStoreResourceParamType.memoryStore;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMemoryStoreResourceParamType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMemoryStoreResourceParamType.memoryStore: return 'memory_store';
+      case BetaManagedAgentsMemoryStoreResourceParamType.memoryStore:
+        return 'memory_store';
     }
   }
 
@@ -132,23 +161,27 @@ enum BetaManagedAgentsMemoryStoreResourceParamType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsMemoryVersionType {
-
   final String value;
 
   const BetaManagedAgentsMemoryVersionType._(this.value);
 
-  factory BetaManagedAgentsMemoryVersionType.fromJson(String value) => BetaManagedAgentsMemoryVersionType._(value);
+  factory BetaManagedAgentsMemoryVersionType.fromJson(String value) =>
+      BetaManagedAgentsMemoryVersionType._(value);
 
-  static const memoryVersion = BetaManagedAgentsMemoryVersionType._('memory_version');
+  static const memoryVersion =
+      BetaManagedAgentsMemoryVersionType._('memory_version');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsMemoryVersionType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsMemoryVersionType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
@@ -157,14 +190,17 @@ enum BetaManagedAgentsModelVariant1 {
 
   static BetaManagedAgentsModelVariant1 fromJson(String value) {
     switch (value) {
-      case 'claude-fable-5-1': return BetaManagedAgentsModelVariant1.claudeFable51;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant1: $value');
+      case 'claude-fable-5-1':
+        return BetaManagedAgentsModelVariant1.claudeFable51;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant1: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant1.claudeFable51: return 'claude-fable-5-1';
+      case BetaManagedAgentsModelVariant1.claudeFable51:
+        return 'claude-fable-5-1';
     }
   }
 
@@ -178,14 +214,17 @@ enum BetaManagedAgentsModelVariant10 {
 
   static BetaManagedAgentsModelVariant10 fromJson(String value) {
     switch (value) {
-      case 'claude-haiku-4-5-20251001': return BetaManagedAgentsModelVariant10.claudeHaiku4520251001;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant10: $value');
+      case 'claude-haiku-4-5-20251001':
+        return BetaManagedAgentsModelVariant10.claudeHaiku4520251001;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant10: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant10.claudeHaiku4520251001: return 'claude-haiku-4-5-20251001';
+      case BetaManagedAgentsModelVariant10.claudeHaiku4520251001:
+        return 'claude-haiku-4-5-20251001';
     }
   }
 
@@ -199,14 +238,17 @@ enum BetaManagedAgentsModelVariant11 {
 
   static BetaManagedAgentsModelVariant11 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-4-5': return BetaManagedAgentsModelVariant11.claudeOpus45;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant11: $value');
+      case 'claude-opus-4-5':
+        return BetaManagedAgentsModelVariant11.claudeOpus45;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant11: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant11.claudeOpus45: return 'claude-opus-4-5';
+      case BetaManagedAgentsModelVariant11.claudeOpus45:
+        return 'claude-opus-4-5';
     }
   }
 
@@ -220,14 +262,17 @@ enum BetaManagedAgentsModelVariant12 {
 
   static BetaManagedAgentsModelVariant12 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-4-5-20251101': return BetaManagedAgentsModelVariant12.claudeOpus4520251101;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant12: $value');
+      case 'claude-opus-4-5-20251101':
+        return BetaManagedAgentsModelVariant12.claudeOpus4520251101;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant12: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant12.claudeOpus4520251101: return 'claude-opus-4-5-20251101';
+      case BetaManagedAgentsModelVariant12.claudeOpus4520251101:
+        return 'claude-opus-4-5-20251101';
     }
   }
 
@@ -241,14 +286,17 @@ enum BetaManagedAgentsModelVariant13 {
 
   static BetaManagedAgentsModelVariant13 fromJson(String value) {
     switch (value) {
-      case 'claude-sonnet-4-5': return BetaManagedAgentsModelVariant13.claudeSonnet45;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant13: $value');
+      case 'claude-sonnet-4-5':
+        return BetaManagedAgentsModelVariant13.claudeSonnet45;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant13: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant13.claudeSonnet45: return 'claude-sonnet-4-5';
+      case BetaManagedAgentsModelVariant13.claudeSonnet45:
+        return 'claude-sonnet-4-5';
     }
   }
 
@@ -262,14 +310,17 @@ enum BetaManagedAgentsModelVariant14 {
 
   static BetaManagedAgentsModelVariant14 fromJson(String value) {
     switch (value) {
-      case 'claude-sonnet-4-5-20250929': return BetaManagedAgentsModelVariant14.claudeSonnet4520250929;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant14: $value');
+      case 'claude-sonnet-4-5-20250929':
+        return BetaManagedAgentsModelVariant14.claudeSonnet4520250929;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant14: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant14.claudeSonnet4520250929: return 'claude-sonnet-4-5-20250929';
+      case BetaManagedAgentsModelVariant14.claudeSonnet4520250929:
+        return 'claude-sonnet-4-5-20250929';
     }
   }
 

@@ -10,14 +10,17 @@ enum BetaManagedAgentsModelVariant2 {
 
   static BetaManagedAgentsModelVariant2 fromJson(String value) {
     switch (value) {
-      case 'claude-sonnet-5': return BetaManagedAgentsModelVariant2.claudeSonnet5;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant2: $value');
+      case 'claude-sonnet-5':
+        return BetaManagedAgentsModelVariant2.claudeSonnet5;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant2: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant2.claudeSonnet5: return 'claude-sonnet-5';
+      case BetaManagedAgentsModelVariant2.claudeSonnet5:
+        return 'claude-sonnet-5';
     }
   }
 
@@ -31,14 +34,17 @@ enum BetaManagedAgentsModelVariant3 {
 
   static BetaManagedAgentsModelVariant3 fromJson(String value) {
     switch (value) {
-      case 'claude-fable-5': return BetaManagedAgentsModelVariant3.claudeFable5;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant3: $value');
+      case 'claude-fable-5':
+        return BetaManagedAgentsModelVariant3.claudeFable5;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant3: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant3.claudeFable5: return 'claude-fable-5';
+      case BetaManagedAgentsModelVariant3.claudeFable5:
+        return 'claude-fable-5';
     }
   }
 
@@ -52,14 +58,17 @@ enum BetaManagedAgentsModelVariant4 {
 
   static BetaManagedAgentsModelVariant4 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-5': return BetaManagedAgentsModelVariant4.claudeOpus5;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant4: $value');
+      case 'claude-opus-5':
+        return BetaManagedAgentsModelVariant4.claudeOpus5;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant4: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant4.claudeOpus5: return 'claude-opus-5';
+      case BetaManagedAgentsModelVariant4.claudeOpus5:
+        return 'claude-opus-5';
     }
   }
 
@@ -73,14 +82,17 @@ enum BetaManagedAgentsModelVariant5 {
 
   static BetaManagedAgentsModelVariant5 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-4-8': return BetaManagedAgentsModelVariant5.claudeOpus48;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant5: $value');
+      case 'claude-opus-4-8':
+        return BetaManagedAgentsModelVariant5.claudeOpus48;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant5: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant5.claudeOpus48: return 'claude-opus-4-8';
+      case BetaManagedAgentsModelVariant5.claudeOpus48:
+        return 'claude-opus-4-8';
     }
   }
 
@@ -94,14 +106,17 @@ enum BetaManagedAgentsModelVariant6 {
 
   static BetaManagedAgentsModelVariant6 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-4-7': return BetaManagedAgentsModelVariant6.claudeOpus47;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant6: $value');
+      case 'claude-opus-4-7':
+        return BetaManagedAgentsModelVariant6.claudeOpus47;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant6: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant6.claudeOpus47: return 'claude-opus-4-7';
+      case BetaManagedAgentsModelVariant6.claudeOpus47:
+        return 'claude-opus-4-7';
     }
   }
 
@@ -115,14 +130,17 @@ enum BetaManagedAgentsModelVariant7 {
 
   static BetaManagedAgentsModelVariant7 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-4-6': return BetaManagedAgentsModelVariant7.claudeOpus46;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant7: $value');
+      case 'claude-opus-4-6':
+        return BetaManagedAgentsModelVariant7.claudeOpus46;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant7: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant7.claudeOpus46: return 'claude-opus-4-6';
+      case BetaManagedAgentsModelVariant7.claudeOpus46:
+        return 'claude-opus-4-6';
     }
   }
 
@@ -136,14 +154,17 @@ enum BetaManagedAgentsModelVariant8 {
 
   static BetaManagedAgentsModelVariant8 fromJson(String value) {
     switch (value) {
-      case 'claude-sonnet-4-6': return BetaManagedAgentsModelVariant8.claudeSonnet46;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant8: $value');
+      case 'claude-sonnet-4-6':
+        return BetaManagedAgentsModelVariant8.claudeSonnet46;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant8: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant8.claudeSonnet46: return 'claude-sonnet-4-6';
+      case BetaManagedAgentsModelVariant8.claudeSonnet46:
+        return 'claude-sonnet-4-6';
     }
   }
 
@@ -157,14 +178,17 @@ enum BetaManagedAgentsModelVariant9 {
 
   static BetaManagedAgentsModelVariant9 fromJson(String value) {
     switch (value) {
-      case 'claude-haiku-4-5': return BetaManagedAgentsModelVariant9.claudeHaiku45;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelVariant9: $value');
+      case 'claude-haiku-4-5':
+        return BetaManagedAgentsModelVariant9.claudeHaiku45;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant9: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelVariant9.claudeHaiku45: return 'claude-haiku-4-5';
+      case BetaManagedAgentsModelVariant9.claudeHaiku45:
+        return 'claude-haiku-4-5';
     }
   }
 
@@ -178,14 +202,18 @@ enum BetaManagedAgentsModelOverloadedErrorType {
 
   static BetaManagedAgentsModelOverloadedErrorType fromJson(String value) {
     switch (value) {
-      case 'model_overloaded_error': return BetaManagedAgentsModelOverloadedErrorType.modelOverloadedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelOverloadedErrorType: $value');
+      case 'model_overloaded_error':
+        return BetaManagedAgentsModelOverloadedErrorType.modelOverloadedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsModelOverloadedErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelOverloadedErrorType.modelOverloadedError: return 'model_overloaded_error';
+      case BetaManagedAgentsModelOverloadedErrorType.modelOverloadedError:
+        return 'model_overloaded_error';
     }
   }
 
@@ -199,14 +227,18 @@ enum BetaManagedAgentsModelRateLimitedErrorType {
 
   static BetaManagedAgentsModelRateLimitedErrorType fromJson(String value) {
     switch (value) {
-      case 'model_rate_limited_error': return BetaManagedAgentsModelRateLimitedErrorType.modelRateLimitedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelRateLimitedErrorType: $value');
+      case 'model_rate_limited_error':
+        return BetaManagedAgentsModelRateLimitedErrorType.modelRateLimitedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsModelRateLimitedErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelRateLimitedErrorType.modelRateLimitedError: return 'model_rate_limited_error';
+      case BetaManagedAgentsModelRateLimitedErrorType.modelRateLimitedError:
+        return 'model_rate_limited_error';
     }
   }
 
@@ -220,14 +252,19 @@ enum BetaManagedAgentsModelRequestFailedErrorType {
 
   static BetaManagedAgentsModelRequestFailedErrorType fromJson(String value) {
     switch (value) {
-      case 'model_request_failed_error': return BetaManagedAgentsModelRequestFailedErrorType.modelRequestFailedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsModelRequestFailedErrorType: $value');
+      case 'model_request_failed_error':
+        return BetaManagedAgentsModelRequestFailedErrorType
+            .modelRequestFailedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsModelRequestFailedErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsModelRequestFailedErrorType.modelRequestFailedError: return 'model_request_failed_error';
+      case BetaManagedAgentsModelRequestFailedErrorType.modelRequestFailedError:
+        return 'model_request_failed_error';
     }
   }
 
@@ -241,14 +278,18 @@ enum BetaManagedAgentsMultiagentCoordinatorType {
 
   static BetaManagedAgentsMultiagentCoordinatorType fromJson(String value) {
     switch (value) {
-      case 'coordinator': return BetaManagedAgentsMultiagentCoordinatorType.coordinator;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMultiagentCoordinatorType: $value');
+      case 'coordinator':
+        return BetaManagedAgentsMultiagentCoordinatorType.coordinator;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMultiagentCoordinatorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMultiagentCoordinatorType.coordinator: return 'coordinator';
+      case BetaManagedAgentsMultiagentCoordinatorType.coordinator:
+        return 'coordinator';
     }
   }
 
@@ -260,16 +301,21 @@ enum BetaManagedAgentsMultiagentCoordinatorType {
 enum BetaManagedAgentsMultiagentCoordinatorParamsType {
   coordinator;
 
-  static BetaManagedAgentsMultiagentCoordinatorParamsType fromJson(String value) {
+  static BetaManagedAgentsMultiagentCoordinatorParamsType fromJson(
+      String value) {
     switch (value) {
-      case 'coordinator': return BetaManagedAgentsMultiagentCoordinatorParamsType.coordinator;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMultiagentCoordinatorParamsType: $value');
+      case 'coordinator':
+        return BetaManagedAgentsMultiagentCoordinatorParamsType.coordinator;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMultiagentCoordinatorParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsMultiagentCoordinatorParamsType.coordinator: return 'coordinator';
+      case BetaManagedAgentsMultiagentCoordinatorParamsType.coordinator:
+        return 'coordinator';
     }
   }
 

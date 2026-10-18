@@ -5,273 +5,404 @@ part of 'inline.dart';
 
 // Inline operation models (part 73)
 final class ListBetaOrganizationsAnalyticsSkillsOrderVariant0 {
-
   final String value;
 
   const ListBetaOrganizationsAnalyticsSkillsOrderVariant0._(this.value);
 
-  factory ListBetaOrganizationsAnalyticsSkillsOrderVariant0.fromJson(String value) => ListBetaOrganizationsAnalyticsSkillsOrderVariant0._(value);
+  factory ListBetaOrganizationsAnalyticsSkillsOrderVariant0.fromJson(
+          String value) =>
+      ListBetaOrganizationsAnalyticsSkillsOrderVariant0._(value);
 
   static const asc = ListBetaOrganizationsAnalyticsSkillsOrderVariant0._('asc');
-  static const desc = ListBetaOrganizationsAnalyticsSkillsOrderVariant0._('desc');
+  static const desc =
+      ListBetaOrganizationsAnalyticsSkillsOrderVariant0._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ListBetaOrganizationsAnalyticsSkillsOrderVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ListBetaOrganizationsAnalyticsSkillsOrderVariant0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem {
-
   final String value;
 
   const RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._(this.value);
 
-  factory RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem.fromJson(String value) => RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._(value);
+  factory RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem.fromJson(
+          String value) =>
+      RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._(value);
 
-  static const contextWindow = RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._('context_window');
-  static const inferenceGeo = RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._('inference_geo');
-  static const model = RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._('model');
-  static const product = RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._('product');
-  static const rbacGroupId = RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._('rbac_group_id');
-  static const slackChannelId = RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._('slack_channel_id');
-  static const speed = RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._('speed');
+  static const contextWindow =
+      RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._(
+          'context_window');
+  static const inferenceGeo =
+      RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._(
+          'inference_geo');
+  static const model =
+      RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._('model');
+  static const product =
+      RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._('product');
+  static const rbacGroupId =
+      RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._(
+          'rbac_group_id');
+  static const slackChannelId =
+      RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._(
+          'slack_channel_id');
+  static const speed =
+      RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem._('speed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Time bucket granularity.
 final class RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth {
-
   final String value;
 
   const RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth._(this.value);
 
-  factory RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth.fromJson(String value) => RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth._(value);
+  factory RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth.fromJson(
+          String value) =>
+      RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth._(value);
 
-  static const v1d = RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth._('1d');
-  static const v1h = RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth._('1h');
-  static const v1m = RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth._('1m');
+  static const v1d =
+      RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth._('1d');
+  static const v1h =
+      RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth._('1h');
+  static const v1m =
+      RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth._('1m');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem {
-
   final String value;
 
   const RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem._(this.value);
 
-  factory RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem.fromJson(String value) => RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem._(value);
+  factory RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem.fromJson(
+          String value) =>
+      RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem._(value);
 
-  static const fast = RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem._('fast');
-  static const standard = RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem._('standard');
+  static const fast =
+      RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem._('fast');
+  static const standard =
+      RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem._('standard');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0 {
-
   final String value;
 
-  const RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0._(this.value);
+  const RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0._(
+      this.value);
 
-  factory RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0.fromJson(String value) => RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0._(value);
+  factory RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0.fromJson(
+          String value) =>
+      RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0._(
+          value);
 
-  static const v1d = RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0._('1d');
-  static const v1h = RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0._('1h');
-  static const v1m = RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0._('1m');
+  static const v1d =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0._(
+          '1d');
+  static const v1h =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0._(
+          '1h');
+  static const v1m =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0._(
+          '1m');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is RetrieveBetaOrganizationsAnalyticsUserCostReportBucketWidthVariant0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem {
-
   final String value;
 
-  const RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._(this.value);
+  const RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._(
+      this.value);
 
-  factory RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem.fromJson(String value) => RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._(value);
+  factory RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem.fromJson(
+          String value) =>
+      RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._(value);
 
-  static const contextWindow = RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('context_window');
-  static const costType = RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('cost_type');
-  static const inferenceGeo = RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('inference_geo');
-  static const model = RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('model');
-  static const product = RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('product');
-  static const rbacGroupId = RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('rbac_group_id');
-  static const slackChannelId = RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('slack_channel_id');
-  static const speed = RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('speed');
-  static const tokenType = RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('token_type');
+  static const contextWindow =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._(
+          'context_window');
+  static const costType =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._(
+          'cost_type');
+  static const inferenceGeo =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._(
+          'inference_geo');
+  static const model =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('model');
+  static const product =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('product');
+  static const rbacGroupId =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._(
+          'rbac_group_id');
+  static const slackChannelId =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._(
+          'slack_channel_id');
+  static const speed =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._('speed');
+  static const tokenType =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem._(
+          'token_type');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem {
-
   final String value;
 
-  const RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem._(this.value);
+  const RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem._(
+      this.value);
 
-  factory RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem.fromJson(String value) => RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem._(value);
+  factory RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem.fromJson(
+          String value) =>
+      RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem._(value);
 
-  static const fast = RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem._('fast');
-  static const standard = RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem._('standard');
+  static const fast =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem._('fast');
+  static const standard =
+      RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem._('standard');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0 {
-
   final String value;
 
-  const RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0._(this.value);
+  const RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0._(
+      this.value);
 
-  factory RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0.fromJson(String value) => RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0._(value);
+  factory RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0.fromJson(
+          String value) =>
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0._(
+          value);
 
-  static const v1d = RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0._('1d');
-  static const v1h = RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0._('1h');
-  static const v1m = RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0._('1m');
+  static const v1d =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0._(
+          '1d');
+  static const v1h =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0._(
+          '1h');
+  static const v1m =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0._(
+          '1m');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is RetrieveBetaOrganizationsAnalyticsUserUsageReportBucketWidthVariant0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem {
-
   final String value;
 
-  const RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._(this.value);
+  const RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._(
+      this.value);
 
-  factory RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem.fromJson(String value) => RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._(value);
+  factory RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem.fromJson(
+          String value) =>
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._(value);
 
-  static const contextWindow = RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._('context_window');
-  static const inferenceGeo = RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._('inference_geo');
-  static const model = RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._('model');
-  static const product = RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._('product');
-  static const rbacGroupId = RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._('rbac_group_id');
-  static const slackChannelId = RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._('slack_channel_id');
-  static const speed = RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._('speed');
+  static const contextWindow =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._(
+          'context_window');
+  static const inferenceGeo =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._(
+          'inference_geo');
+  static const model =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._('model');
+  static const product =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._('product');
+  static const rbacGroupId =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._(
+          'rbac_group_id');
+  static const slackChannelId =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._(
+          'slack_channel_id');
+  static const speed =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem._('speed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem {
-
   final String value;
 
-  const RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem._(this.value);
+  const RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem._(
+      this.value);
 
-  factory RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem.fromJson(String value) => RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem._(value);
+  factory RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem.fromJson(
+          String value) =>
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem._(value);
 
-  static const fast = RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem._('fast');
-  static const standard = RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem._('standard');
+  static const fast =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem._('fast');
+  static const standard =
+      RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem._('standard');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ListBetaOrganizationsAnalyticsUsersGroupByItem {
-
   final String value;
 
   const ListBetaOrganizationsAnalyticsUsersGroupByItem._(this.value);
 
-  factory ListBetaOrganizationsAnalyticsUsersGroupByItem.fromJson(String value) => ListBetaOrganizationsAnalyticsUsersGroupByItem._(value);
+  factory ListBetaOrganizationsAnalyticsUsersGroupByItem.fromJson(
+          String value) =>
+      ListBetaOrganizationsAnalyticsUsersGroupByItem._(value);
 
-  static const rbacGroupId = ListBetaOrganizationsAnalyticsUsersGroupByItem._('rbac_group_id');
+  static const rbacGroupId =
+      ListBetaOrganizationsAnalyticsUsersGroupByItem._('rbac_group_id');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ListBetaOrganizationsAnalyticsUsersGroupByItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ListBetaOrganizationsAnalyticsUsersGroupByItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ListBetaOrganizationsAnalyticsUsersOrderVariant0 {
-
   final String value;
 
   const ListBetaOrganizationsAnalyticsUsersOrderVariant0._(this.value);
 
-  factory ListBetaOrganizationsAnalyticsUsersOrderVariant0.fromJson(String value) => ListBetaOrganizationsAnalyticsUsersOrderVariant0._(value);
+  factory ListBetaOrganizationsAnalyticsUsersOrderVariant0.fromJson(
+          String value) =>
+      ListBetaOrganizationsAnalyticsUsersOrderVariant0._(value);
 
   static const asc = ListBetaOrganizationsAnalyticsUsersOrderVariant0._('asc');
-  static const desc = ListBetaOrganizationsAnalyticsUsersOrderVariant0._('desc');
+  static const desc =
+      ListBetaOrganizationsAnalyticsUsersOrderVariant0._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ListBetaOrganizationsAnalyticsUsersOrderVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ListBetaOrganizationsAnalyticsUsersOrderVariant0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

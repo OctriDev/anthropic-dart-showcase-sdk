@@ -8,107 +8,246 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsDeployment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsDeploymentType type_;
+
   /// Unique identifier for this deployment.
   final String id;
+
   /// Human-readable name.
   final String name;
+
   /// Description of what the deployment does.
   final String? description;
+
   /// Reference to the agent this deployment runs, resolved to a concrete version.
   final BetaManagedAgentsAgentReference agent;
+
   /// ID of the `environment` where sessions run.
   final String environmentId;
+
   /// Vault IDs supplying stored credentials for sessions created from this deployment.
   final List<String> vaultIds;
+
   /// Events sent to each session immediately after creation.
   final List<BetaManagedAgentsDeploymentInitialEvent> initialEvents;
+
   /// Resources attached to sessions created from this deployment. Echoes the input minus write-only credentials.
   final List<BetaManagedAgentsSessionResourceConfig> resources;
+
   /// Arbitrary key-value metadata. Maximum 16 pairs.
   final Map<String, String> metadata;
+
   /// Recurring cron schedule. Presence enables scheduled execution; null means manual-only. Includes computed timestamps (next fire times, last run) on the cron variant.
   final BetaManagedAgentsSchedule? schedule;
+
   /// Computed status of the deployment: `active` or `paused`. Archived deployments report `active` with `archived_at` set.
   final BetaManagedAgentsDeploymentStatus status;
+
   /// Why the deployment is `paused`. Non-null exactly when `status` is `paused`; null otherwise.
   final BetaManagedAgentsDeploymentPausedReason? pausedReason;
+
   /// Spend ceiling stamped onto each session created from this deployment. Absent when no budget is set.
   final SdkOptional<BetaManagedAgentsBudget?> budget;
+
   /// Time the deployment was created.
   final String createdAt;
+
   /// Time the deployment was last updated.
   final String updatedAt;
+
   /// Time the deployment was archived. Null if not archived.
   final String? archivedAt;
 
-  const BetaManagedAgentsDeployment({required this.type_, required this.id, required this.name, required this.description, required this.agent, required this.environmentId, required this.vaultIds, required this.initialEvents, required this.resources, required this.metadata, required this.schedule, required this.status, required this.pausedReason, this.budget = const SdkOmitted(), required this.createdAt, required this.updatedAt, required this.archivedAt});
+  const BetaManagedAgentsDeployment(
+      {required this.type_,
+      required this.id,
+      required this.name,
+      required this.description,
+      required this.agent,
+      required this.environmentId,
+      required this.vaultIds,
+      required this.initialEvents,
+      required this.resources,
+      required this.metadata,
+      required this.schedule,
+      required this.status,
+      required this.pausedReason,
+      this.budget = const SdkOmitted(),
+      required this.createdAt,
+      required this.updatedAt,
+      required this.archivedAt});
 
-  BetaManagedAgentsDeployment Function({BetaManagedAgentsDeploymentType type_, String id, String name, String? description, BetaManagedAgentsAgentReference agent, String environmentId, List<String> vaultIds, List<BetaManagedAgentsDeploymentInitialEvent> initialEvents, List<BetaManagedAgentsSessionResourceConfig> resources, Map<String, String> metadata, BetaManagedAgentsSchedule? schedule, BetaManagedAgentsDeploymentStatus status, BetaManagedAgentsDeploymentPausedReason? pausedReason, SdkOptional<BetaManagedAgentsBudget?> budget, String createdAt, String updatedAt, String? archivedAt}) get copyWith => _copyWith;
+  BetaManagedAgentsDeployment Function(
+      {BetaManagedAgentsDeploymentType type_,
+      String id,
+      String name,
+      String? description,
+      BetaManagedAgentsAgentReference agent,
+      String environmentId,
+      List<String> vaultIds,
+      List<BetaManagedAgentsDeploymentInitialEvent> initialEvents,
+      List<BetaManagedAgentsSessionResourceConfig> resources,
+      Map<String, String> metadata,
+      BetaManagedAgentsSchedule? schedule,
+      BetaManagedAgentsDeploymentStatus status,
+      BetaManagedAgentsDeploymentPausedReason? pausedReason,
+      SdkOptional<BetaManagedAgentsBudget?> budget,
+      String createdAt,
+      String updatedAt,
+      String? archivedAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsDeployment _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? agent = sdkOmittedValue, Object? environmentId = sdkOmittedValue, Object? vaultIds = sdkOmittedValue, Object? initialEvents = sdkOmittedValue, Object? resources = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? schedule = sdkOmittedValue, Object? status = sdkOmittedValue, Object? pausedReason = sdkOmittedValue, Object? budget = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? archivedAt = sdkOmittedValue}) => BetaManagedAgentsDeployment(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsDeploymentType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    agent: identical(agent, sdkOmittedValue) ? this.agent : agent as BetaManagedAgentsAgentReference,
-    environmentId: identical(environmentId, sdkOmittedValue) ? this.environmentId : environmentId as String,
-    vaultIds: identical(vaultIds, sdkOmittedValue) ? this.vaultIds : vaultIds as List<String>,
-    initialEvents: identical(initialEvents, sdkOmittedValue) ? this.initialEvents : initialEvents as List<BetaManagedAgentsDeploymentInitialEvent>,
-    resources: identical(resources, sdkOmittedValue) ? this.resources : resources as List<BetaManagedAgentsSessionResourceConfig>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as Map<String, String>,
-    schedule: identical(schedule, sdkOmittedValue) ? this.schedule : schedule as BetaManagedAgentsSchedule?,
-    status: identical(status, sdkOmittedValue) ? this.status : status as BetaManagedAgentsDeploymentStatus,
-    pausedReason: identical(pausedReason, sdkOmittedValue) ? this.pausedReason : pausedReason as BetaManagedAgentsDeploymentPausedReason?,
-    budget: identical(budget, sdkOmittedValue) ? this.budget : budget as SdkOptional<BetaManagedAgentsBudget?>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
-  );
+  BetaManagedAgentsDeployment _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? agent = sdkOmittedValue,
+          Object? environmentId = sdkOmittedValue,
+          Object? vaultIds = sdkOmittedValue,
+          Object? initialEvents = sdkOmittedValue,
+          Object? resources = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue,
+          Object? schedule = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? pausedReason = sdkOmittedValue,
+          Object? budget = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? archivedAt = sdkOmittedValue}) =>
+      BetaManagedAgentsDeployment(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsDeploymentType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        agent: identical(agent, sdkOmittedValue)
+            ? this.agent
+            : agent as BetaManagedAgentsAgentReference,
+        environmentId: identical(environmentId, sdkOmittedValue)
+            ? this.environmentId
+            : environmentId as String,
+        vaultIds: identical(vaultIds, sdkOmittedValue)
+            ? this.vaultIds
+            : vaultIds as List<String>,
+        initialEvents: identical(initialEvents, sdkOmittedValue)
+            ? this.initialEvents
+            : initialEvents as List<BetaManagedAgentsDeploymentInitialEvent>,
+        resources: identical(resources, sdkOmittedValue)
+            ? this.resources
+            : resources as List<BetaManagedAgentsSessionResourceConfig>,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as Map<String, String>,
+        schedule: identical(schedule, sdkOmittedValue)
+            ? this.schedule
+            : schedule as BetaManagedAgentsSchedule?,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as BetaManagedAgentsDeploymentStatus,
+        pausedReason: identical(pausedReason, sdkOmittedValue)
+            ? this.pausedReason
+            : pausedReason as BetaManagedAgentsDeploymentPausedReason?,
+        budget: identical(budget, sdkOmittedValue)
+            ? this.budget
+            : budget as SdkOptional<BetaManagedAgentsBudget?>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as String?,
+      );
 
-  factory BetaManagedAgentsDeployment.fromJson(Map<String, dynamic> json) => BetaManagedAgentsDeployment(
-    type_: (json['type'] != null ? BetaManagedAgentsDeploymentType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    name: (json['name'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    agent: (json['agent'] != null ? BetaManagedAgentsAgentReference.fromJson(json['agent'] as Map<String, dynamic>) : null)!,
-    environmentId: (json['environment_id'] as String?)!,
-    vaultIds: ((json['vault_ids'] as List?)?.map((e) => e as String).toList())!,
-    initialEvents: ((json['initial_events'] as List?)?.map((e) => BetaManagedAgentsDeploymentInitialEvent.fromJson(e)).toList())!,
-    resources: ((json['resources'] as List?)?.map((e) => BetaManagedAgentsSessionResourceConfig.fromJson(e)).toList())!,
-    metadata: (json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String)))!,
-    schedule: json.containsKey('schedule') ? json['schedule'] != null ? BetaManagedAgentsSchedule.fromJson(json['schedule']) : null : throw ArgumentError.value(null, 'schedule', 'Required property is missing'),
-    status: (json['status'] != null ? BetaManagedAgentsDeploymentStatus.fromJson(json['status'] as String) : null)!,
-    pausedReason: json.containsKey('paused_reason') ? json['paused_reason'] != null ? BetaManagedAgentsDeploymentPausedReason.fromJson(json['paused_reason']) : null : throw ArgumentError.value(null, 'paused_reason', 'Required property is missing'),
-    budget: json.containsKey('budget') ? SdkPresent(json['budget'] != null ? BetaManagedAgentsBudget.fromJson(json['budget']) : null) : const SdkOmitted(),
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
-  );
+  factory BetaManagedAgentsDeployment.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsDeployment(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsDeploymentType.fromJson(json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        name: (json['name'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        agent: (json['agent'] != null
+            ? BetaManagedAgentsAgentReference.fromJson(
+                json['agent'] as Map<String, dynamic>)
+            : null)!,
+        environmentId: (json['environment_id'] as String?)!,
+        vaultIds:
+            ((json['vault_ids'] as List?)?.map((e) => e as String).toList())!,
+        initialEvents: ((json['initial_events'] as List?)
+            ?.map((e) => BetaManagedAgentsDeploymentInitialEvent.fromJson(e))
+            .toList())!,
+        resources: ((json['resources'] as List?)
+            ?.map((e) => BetaManagedAgentsSessionResourceConfig.fromJson(e))
+            .toList())!,
+        metadata: (json['metadata'] == null
+            ? null
+            : Map<String, dynamic>.from(json['metadata'] as Map)
+                .map((key, value) => MapEntry(key, value as String)))!,
+        schedule: json.containsKey('schedule')
+            ? json['schedule'] != null
+                ? BetaManagedAgentsSchedule.fromJson(json['schedule'])
+                : null
+            : throw ArgumentError.value(
+                null, 'schedule', 'Required property is missing'),
+        status: (json['status'] != null
+            ? BetaManagedAgentsDeploymentStatus.fromJson(
+                json['status'] as String)
+            : null)!,
+        pausedReason: json.containsKey('paused_reason')
+            ? json['paused_reason'] != null
+                ? BetaManagedAgentsDeploymentPausedReason.fromJson(
+                    json['paused_reason'])
+                : null
+            : throw ArgumentError.value(
+                null, 'paused_reason', 'Required property is missing'),
+        budget: json.containsKey('budget')
+            ? SdkPresent(json['budget'] != null
+                ? BetaManagedAgentsBudget.fromJson(json['budget'])
+                : null)
+            : const SdkOmitted(),
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        archivedAt: json.containsKey('archived_at')
+            ? json['archived_at'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_at', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'name': name,
-    'description': description,
-    'agent': agent.toJson(),
-    'environment_id': environmentId,
-    'vault_ids': vaultIds,
-    'initial_events': initialEvents.map((item) => item.toJson()).toList(),
-    'resources': resources.map((item) => item.toJson()).toList(),
-    'metadata': metadata,
-    'schedule': schedule?.toJson(),
-    'status': status.toJson(),
-    'paused_reason': pausedReason?.toJson(),
-    ...switch (budget) {
-      SdkPresent<BetaManagedAgentsBudget?>(value: final value) => {'budget': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'archived_at': archivedAt,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'name': name,
+        'description': description,
+        'agent': agent.toJson(),
+        'environment_id': environmentId,
+        'vault_ids': vaultIds,
+        'initial_events': initialEvents.map((item) => item.toJson()).toList(),
+        'resources': resources.map((item) => item.toJson()).toList(),
+        'metadata': metadata,
+        'schedule': schedule?.toJson(),
+        'status': status.toJson(),
+        'paused_reason': pausedReason?.toJson(),
+        ...switch (budget) {
+          SdkPresent<BetaManagedAgentsBudget?>(value: final value) => {
+              'budget': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'archived_at': archivedAt,
+      };
 }
 
 sealed class BetaManagedAgentsDeploymentInitialEvent {
@@ -117,42 +256,92 @@ sealed class BetaManagedAgentsDeploymentInitialEvent {
   const BetaManagedAgentsDeploymentInitialEvent();
   factory BetaManagedAgentsDeploymentInitialEvent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsDeploymentUserMessageEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsDeploymentUserDefineOutcomeEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsDeploymentSystemMessageEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(value); } } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsDeploymentUserMessageEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsDeploymentUserDefineOutcomeEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsDeploymentSystemMessageEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(BetaManagedAgentsDeploymentUserMessageEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(BetaManagedAgentsDeploymentUserDefineOutcomeEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(BetaManagedAgentsDeploymentSystemMessageEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"user.message", "user.define_outcome", "system.message"}.contains(json["type"])) { return UnknownBetaManagedAgentsDeploymentInitialEvent(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsDeploymentInitialEvent");
+    try {
+      return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(
+          BetaManagedAgentsDeploymentUserMessageEvent.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(
+          BetaManagedAgentsDeploymentUserDefineOutcomeEvent.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(
+          BetaManagedAgentsDeploymentSystemMessageEvent.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"user.message", "user.define_outcome", "system.message"}
+            .contains(json["type"])) {
+      return UnknownBetaManagedAgentsDeploymentInitialEvent(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsDeploymentInitialEvent");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent extends BetaManagedAgentsDeploymentInitialEvent {
+final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent
+    extends BetaManagedAgentsDeploymentInitialEvent {
   final BetaManagedAgentsDeploymentUserMessageEvent value;
-  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent extends BetaManagedAgentsDeploymentInitialEvent {
+final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent
+    extends BetaManagedAgentsDeploymentInitialEvent {
   final BetaManagedAgentsDeploymentUserDefineOutcomeEvent value;
-  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent extends BetaManagedAgentsDeploymentInitialEvent {
+final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent
+    extends BetaManagedAgentsDeploymentInitialEvent {
   final BetaManagedAgentsDeploymentSystemMessageEvent value;
-  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsDeploymentInitialEvent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsDeploymentInitialEvent extends BetaManagedAgentsDeploymentInitialEvent {
+final class UnknownBetaManagedAgentsDeploymentInitialEvent
+    extends BetaManagedAgentsDeploymentInitialEvent {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsDeploymentInitialEvent(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsDeploymentInitialEventParams {
@@ -161,42 +350,90 @@ sealed class BetaManagedAgentsDeploymentInitialEventParams {
   const BetaManagedAgentsDeploymentInitialEventParams();
   factory BetaManagedAgentsDeploymentInitialEventParams.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsUserMessageEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserMessageEventParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSystemMessageEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsSystemMessageEventParams(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsUserMessageEventParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserMessageEventParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsSystemMessageEventParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsSystemMessageEventParams(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserMessageEventParams(BetaManagedAgentsUserMessageEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsSystemMessageEventParams(BetaManagedAgentsSystemMessageEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"user.message", "user.define_outcome", "system.message"}.contains(json["type"])) { return UnknownBetaManagedAgentsDeploymentInitialEventParams(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsDeploymentInitialEventParams");
+    try {
+      return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserMessageEventParams(
+          BetaManagedAgentsUserMessageEventParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(
+          BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsSystemMessageEventParams(
+          BetaManagedAgentsSystemMessageEventParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"user.message", "user.define_outcome", "system.message"}
+            .contains(json["type"])) {
+      return UnknownBetaManagedAgentsDeploymentInitialEventParams(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsDeploymentInitialEventParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserMessageEventParams extends BetaManagedAgentsDeploymentInitialEventParams {
+final class BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserMessageEventParams
+    extends BetaManagedAgentsDeploymentInitialEventParams {
   final BetaManagedAgentsUserMessageEventParams value;
-  const BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserMessageEventParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserMessageEventParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams extends BetaManagedAgentsDeploymentInitialEventParams {
+final class BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams
+    extends BetaManagedAgentsDeploymentInitialEventParams {
   final BetaManagedAgentsUserDefineOutcomeEventParams value;
-  const BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsSystemMessageEventParams extends BetaManagedAgentsDeploymentInitialEventParams {
+final class BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsSystemMessageEventParams
+    extends BetaManagedAgentsDeploymentInitialEventParams {
   final BetaManagedAgentsSystemMessageEventParams value;
-  const BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsSystemMessageEventParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentInitialEventParamsBetaManagedAgentsSystemMessageEventParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsDeploymentInitialEventParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsDeploymentInitialEventParams extends BetaManagedAgentsDeploymentInitialEventParams {
+final class UnknownBetaManagedAgentsDeploymentInitialEventParams
+    extends BetaManagedAgentsDeploymentInitialEventParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsDeploymentInitialEventParams(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsDeploymentPausedReason {
@@ -205,34 +442,69 @@ sealed class BetaManagedAgentsDeploymentPausedReason {
   const BetaManagedAgentsDeploymentPausedReason();
   factory BetaManagedAgentsDeploymentPausedReason.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsManualDeploymentPausedReason.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsErrorDeploymentPausedReason.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(value); } } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsManualDeploymentPausedReason.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsErrorDeploymentPausedReason.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(BetaManagedAgentsManualDeploymentPausedReason.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(BetaManagedAgentsErrorDeploymentPausedReason.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"manual", "error"}.contains(json["type"])) { return UnknownBetaManagedAgentsDeploymentPausedReason(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsDeploymentPausedReason");
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(
+          BetaManagedAgentsManualDeploymentPausedReason.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(
+          BetaManagedAgentsErrorDeploymentPausedReason.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"manual", "error"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsDeploymentPausedReason(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsDeploymentPausedReason");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason extends BetaManagedAgentsDeploymentPausedReason {
+final class BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason
+    extends BetaManagedAgentsDeploymentPausedReason {
   final BetaManagedAgentsManualDeploymentPausedReason value;
-  const BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason extends BetaManagedAgentsDeploymentPausedReason {
+final class BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason
+    extends BetaManagedAgentsDeploymentPausedReason {
   final BetaManagedAgentsErrorDeploymentPausedReason value;
-  const BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsDeploymentPausedReason] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsDeploymentPausedReason extends BetaManagedAgentsDeploymentPausedReason {
+final class UnknownBetaManagedAgentsDeploymentPausedReason
+    extends BetaManagedAgentsDeploymentPausedReason {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsDeploymentPausedReason(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsDeploymentPausedReasonError {
@@ -241,49 +513,242 @@ sealed class BetaManagedAgentsDeploymentPausedReasonError {
   const BetaManagedAgentsDeploymentPausedReasonError();
   factory BetaManagedAgentsDeploymentPausedReasonError.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsAgentArchivedDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsAgentArchivedDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsVaultNotFoundDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsVaultNotFoundDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsFileNotFoundDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsFileNotFoundDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSkillNotFoundDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsVaultArchivedDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsVaultArchivedDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsUnknownDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsUnknownDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(value); } } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsAgentArchivedDeploymentPausedReasonError.fromJson(
+                json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsAgentArchivedDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsVaultNotFoundDeploymentPausedReasonError.fromJson(
+                json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsVaultNotFoundDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsFileNotFoundDeploymentPausedReasonError.fromJson(
+                json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsFileNotFoundDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError.fromJson(
+                json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSkillNotFoundDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsVaultArchivedDeploymentPausedReasonError.fromJson(
+                json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsVaultArchivedDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsUnknownDeploymentPausedReasonError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsUnknownDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError(BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsAgentArchivedDeploymentPausedReasonError(BetaManagedAgentsAgentArchivedDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError(BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsVaultNotFoundDeploymentPausedReasonError(BetaManagedAgentsVaultNotFoundDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsFileNotFoundDeploymentPausedReasonError(BetaManagedAgentsFileNotFoundDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError(BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError(BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSkillNotFoundDeploymentPausedReasonError(BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsVaultArchivedDeploymentPausedReasonError(BetaManagedAgentsVaultArchivedDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsUnknownDeploymentPausedReasonError(BetaManagedAgentsUnknownDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"environment_archived_error", "agent_archived_error", "environment_not_found_error", "vault_not_found_error", "file_not_found_error", "session_resource_not_found_error", "workspace_archived_error", "organization_disabled_error", "memory_store_archived_error", "skill_not_found_error", "vault_archived_error", "unknown_error", "self_hosted_resources_unsupported_error", "mcp_egress_blocked_error"}.contains(json["type"])) { return UnknownBetaManagedAgentsDeploymentPausedReasonError(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsDeploymentPausedReasonError");
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError(
+          BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError
+              .fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsAgentArchivedDeploymentPausedReasonError(
+          BetaManagedAgentsAgentArchivedDeploymentPausedReasonError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError(
+          BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError
+              .fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsVaultNotFoundDeploymentPausedReasonError(
+          BetaManagedAgentsVaultNotFoundDeploymentPausedReasonError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsFileNotFoundDeploymentPausedReasonError(
+          BetaManagedAgentsFileNotFoundDeploymentPausedReasonError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError(
+          BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError
+              .fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError(
+          BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError
+              .fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
+          BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError
+              .fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
+          BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError
+              .fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSkillNotFoundDeploymentPausedReasonError(
+          BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsVaultArchivedDeploymentPausedReasonError(
+          BetaManagedAgentsVaultArchivedDeploymentPausedReasonError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsUnknownDeploymentPausedReasonError(
+          BetaManagedAgentsUnknownDeploymentPausedReasonError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
+          BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError
+              .fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
+          BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "environment_archived_error",
+          "agent_archived_error",
+          "environment_not_found_error",
+          "vault_not_found_error",
+          "file_not_found_error",
+          "session_resource_not_found_error",
+          "workspace_archived_error",
+          "organization_disabled_error",
+          "memory_store_archived_error",
+          "skill_not_found_error",
+          "vault_archived_error",
+          "unknown_error",
+          "self_hosted_resources_unsupported_error",
+          "mcp_egress_blocked_error"
+        }.contains(json["type"])) {
+      return UnknownBetaManagedAgentsDeploymentPausedReasonError(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsDeploymentPausedReasonError");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError extends BetaManagedAgentsDeploymentPausedReasonError {
+final class BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError
+    extends BetaManagedAgentsDeploymentPausedReasonError {
   final BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError value;
-  const BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsAgentArchivedDeploymentPausedReasonError extends BetaManagedAgentsDeploymentPausedReasonError {
+final class BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsAgentArchivedDeploymentPausedReasonError
+    extends BetaManagedAgentsDeploymentPausedReasonError {
   final BetaManagedAgentsAgentArchivedDeploymentPausedReasonError value;
-  const BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsAgentArchivedDeploymentPausedReasonError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentPausedReasonErrorBetaManagedAgentsAgentArchivedDeploymentPausedReasonError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

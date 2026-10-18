@@ -8,69 +8,144 @@ part of 'shared.dart';
 class MemoryTool20250818 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<AllowedCaller>> allowedCallers;
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
+
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
+
   /// Optional array value serialized in the `input_examples` wire field.
   final SdkOptional<List<Map<String, dynamic>>> inputExamples;
+
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final MemoryTool20250818Name name;
+
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
+
   /// Required `string` value serialized in the `type` wire field.
   final MemoryTool20250818Type type_;
 
-  const MemoryTool20250818({this.allowedCallers = const SdkOmitted(), this.cacheControl = const SdkOmitted(), this.deferLoading = const SdkOmitted(), this.inputExamples = const SdkOmitted(), required this.name, this.strict = const SdkOmitted(), required this.type_});
+  const MemoryTool20250818(
+      {this.allowedCallers = const SdkOmitted(),
+      this.cacheControl = const SdkOmitted(),
+      this.deferLoading = const SdkOmitted(),
+      this.inputExamples = const SdkOmitted(),
+      required this.name,
+      this.strict = const SdkOmitted(),
+      required this.type_});
 
-  MemoryTool20250818 Function({SdkOptional<List<AllowedCaller>> allowedCallers, SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<bool> deferLoading, SdkOptional<List<Map<String, dynamic>>> inputExamples, MemoryTool20250818Name name, SdkOptional<bool> strict, MemoryTool20250818Type type_}) get copyWith => _copyWith;
+  MemoryTool20250818 Function(
+      {SdkOptional<List<AllowedCaller>> allowedCallers,
+      SdkOptional<CacheControlEphemeral?> cacheControl,
+      SdkOptional<bool> deferLoading,
+      SdkOptional<List<Map<String, dynamic>>> inputExamples,
+      MemoryTool20250818Name name,
+      SdkOptional<bool> strict,
+      MemoryTool20250818Type type_}) get copyWith => _copyWith;
 
-  MemoryTool20250818 _copyWith({Object? allowedCallers = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? inputExamples = sdkOmittedValue, Object? name = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => MemoryTool20250818(
-    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<AllowedCaller>>,
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
-    inputExamples: identical(inputExamples, sdkOmittedValue) ? this.inputExamples : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as MemoryTool20250818Name,
-    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as MemoryTool20250818Type,
-  );
+  MemoryTool20250818 _copyWith(
+          {Object? allowedCallers = sdkOmittedValue,
+          Object? cacheControl = sdkOmittedValue,
+          Object? deferLoading = sdkOmittedValue,
+          Object? inputExamples = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? strict = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      MemoryTool20250818(
+        allowedCallers: identical(allowedCallers, sdkOmittedValue)
+            ? this.allowedCallers
+            : allowedCallers as SdkOptional<List<AllowedCaller>>,
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<CacheControlEphemeral?>,
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool>,
+        inputExamples: identical(inputExamples, sdkOmittedValue)
+            ? this.inputExamples
+            : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as MemoryTool20250818Name,
+        strict: identical(strict, sdkOmittedValue)
+            ? this.strict
+            : strict as SdkOptional<bool>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as MemoryTool20250818Type,
+      );
 
-  factory MemoryTool20250818.fromJson(Map<String, dynamic> json) => MemoryTool20250818(
-    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => AllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
-    inputExamples: json['input_examples'] != null ? SdkPresent(((json['input_examples'] as List?)?.map((e) => e as Map<String, dynamic>).toList())!) : const SdkOmitted(),
-    name: (json['name'] != null ? MemoryTool20250818Name.fromJson(json['name'] as String) : null)!,
-    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
-    type_: (json['type'] != null ? MemoryTool20250818Type.fromJson(json['type'] as String) : null)!,
-  );
+  factory MemoryTool20250818.fromJson(Map<String, dynamic> json) =>
+      MemoryTool20250818(
+        allowedCallers: json['allowed_callers'] != null
+            ? SdkPresent(((json['allowed_callers'] as List?)
+                ?.map((e) => AllowedCaller.fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? CacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        deferLoading: json['defer_loading'] != null
+            ? SdkPresent((json['defer_loading'] as bool?)!)
+            : const SdkOmitted(),
+        inputExamples: json['input_examples'] != null
+            ? SdkPresent(((json['input_examples'] as List?)
+                ?.map((e) => e as Map<String, dynamic>)
+                .toList())!)
+            : const SdkOmitted(),
+        name: (json['name'] != null
+            ? MemoryTool20250818Name.fromJson(json['name'] as String)
+            : null)!,
+        strict: json['strict'] != null
+            ? SdkPresent((json['strict'] as bool?)!)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? MemoryTool20250818Type.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (allowedCallers) {
-      SdkPresent<List<AllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (cacheControl) {
-      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deferLoading) {
-      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (inputExamples) {
-      SdkPresent<List<Map<String, dynamic>>>(value: final value) => {'input_examples': value,},
-      _ => const <String, dynamic>{},
-    },
-    'name': name.toJson(),
-    ...switch (strict) {
-      SdkPresent<bool>(value: final value) => {'strict': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (allowedCallers) {
+          SdkPresent<List<AllowedCaller>>(value: final value) => {
+              'allowed_callers': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cacheControl) {
+          SdkPresent<CacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deferLoading) {
+          SdkPresent<bool>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (inputExamples) {
+          SdkPresent<List<Map<String, dynamic>>>(value: final value) => {
+              'input_examples': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name.toJson(),
+        ...switch (strict) {
+          SdkPresent<bool>(value: final value) => {
+              'strict': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }
 
 sealed class MetadataUserId {
@@ -78,7 +153,9 @@ sealed class MetadataUserId {
   static const String constructionSurface = 'named';
   const MetadataUserId();
   factory MetadataUserId.fromJson(Object? json) {
-    if (json is String) { return MetadataUserIdString(json); }
+    if (json is String) {
+      return MetadataUserIdString(json);
+    }
     throw FormatException("No variant matched for MetadataUserId");
   }
   Object? toJson();
@@ -87,13 +164,15 @@ sealed class MetadataUserId {
 final class MetadataUserIdString extends MetadataUserId {
   final String value;
   const MetadataUserIdString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `Metadata` API schema.
 class Metadata {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// An external identifier for the user who is associated with the request. This should be a uuid, hash value, or other opaque identifier. Anthropic may use this id to help detect abuse. Do not include any identifying information such as name, email address, or phone number.
   final SdkOptional<String?> userId;
 
@@ -102,19 +181,25 @@ class Metadata {
   Metadata Function({SdkOptional<String?> userId}) get copyWith => _copyWith;
 
   Metadata _copyWith({Object? userId = sdkOmittedValue}) => Metadata(
-    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as SdkOptional<String?>,
-  );
+        userId: identical(userId, sdkOmittedValue)
+            ? this.userId
+            : userId as SdkOptional<String?>,
+      );
 
   factory Metadata.fromJson(Map<String, dynamic> json) => Metadata(
-    userId: json.containsKey('user_id') ? SdkPresent(json['user_id'] as String?) : const SdkOmitted(),
-  );
+        userId: json.containsKey('user_id')
+            ? SdkPresent(json['user_id'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (userId) {
-      SdkPresent<String?>(value: final value) => {'user_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (userId) {
+          SdkPresent<String?>(value: final value) => {
+              'user_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class Model {
@@ -122,24 +207,60 @@ sealed class Model {
   static const String constructionSurface = 'named';
   const Model();
   factory Model.fromJson(Object? json) {
-    if (json is String) { return ModelString(json); }
-    try { return ModelModelVariant1(ModelVariant1.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant2(ModelVariant2.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant3(ModelVariant3.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant4(ModelVariant4.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant5(ModelVariant5.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant6(ModelVariant6.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant7(ModelVariant7.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant8(ModelVariant8.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant9(ModelVariant9.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant10(ModelVariant10.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant11(ModelVariant11.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant12(ModelVariant12.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant13(ModelVariant13.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant14(ModelVariant14.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant15(ModelVariant15.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant16(ModelVariant16.fromJson(json as String)); } catch (_) {}
-    try { return ModelModelVariant17(ModelVariant17.fromJson(json as String)); } catch (_) {}
+    if (json is String) {
+      return ModelString(json);
+    }
+    try {
+      return ModelModelVariant1(ModelVariant1.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant2(ModelVariant2.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant3(ModelVariant3.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant4(ModelVariant4.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant5(ModelVariant5.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant6(ModelVariant6.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant7(ModelVariant7.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant8(ModelVariant8.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant9(ModelVariant9.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant10(ModelVariant10.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant11(ModelVariant11.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant12(ModelVariant12.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant13(ModelVariant13.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant14(ModelVariant14.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant15(ModelVariant15.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant16(ModelVariant16.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return ModelModelVariant17(ModelVariant17.fromJson(json as String));
+    } catch (_) {}
     throw FormatException("No variant matched for Model");
   }
   Object? toJson();
@@ -148,136 +269,166 @@ sealed class Model {
 final class ModelString extends Model {
   final String value;
   const ModelString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 final class ModelModelVariant1 extends Model {
   final ModelVariant1 value;
   const ModelModelVariant1(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant2 extends Model {
   final ModelVariant2 value;
   const ModelModelVariant2(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant3 extends Model {
   final ModelVariant3 value;
   const ModelModelVariant3(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant4 extends Model {
   final ModelVariant4 value;
   const ModelModelVariant4(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant5 extends Model {
   final ModelVariant5 value;
   const ModelModelVariant5(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant6 extends Model {
   final ModelVariant6 value;
   const ModelModelVariant6(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant7 extends Model {
   final ModelVariant7 value;
   const ModelModelVariant7(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant8 extends Model {
   final ModelVariant8 value;
   const ModelModelVariant8(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant9 extends Model {
   final ModelVariant9 value;
   const ModelModelVariant9(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant10 extends Model {
   final ModelVariant10 value;
   const ModelModelVariant10(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant11 extends Model {
   final ModelVariant11 value;
   const ModelModelVariant11(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant12 extends Model {
   final ModelVariant12 value;
   const ModelModelVariant12(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant13 extends Model {
   final ModelVariant13 value;
   const ModelModelVariant13(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant14 extends Model {
   final ModelVariant14 value;
   const ModelModelVariant14(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant15 extends Model {
   final ModelVariant15 value;
   const ModelModelVariant15(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant16 extends Model {
   final ModelVariant16 value;
   const ModelModelVariant16(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ModelModelVariant17 extends Model {
   final ModelVariant17 value;
   const ModelModelVariant17(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `NotFoundError` API schema.
 class NotFoundError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final NotFoundErrorType type_;
 
   const NotFoundError({required this.message, required this.type_});
 
-  NotFoundError Function({String message, NotFoundErrorType type_}) get copyWith => _copyWith;
+  NotFoundError Function({String message, NotFoundErrorType type_})
+      get copyWith => _copyWith;
 
-  NotFoundError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => NotFoundError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as NotFoundErrorType,
-  );
+  NotFoundError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      NotFoundError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as NotFoundErrorType,
+      );
 
   factory NotFoundError.fromJson(Map<String, dynamic> json) => NotFoundError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? NotFoundErrorType.fromJson(json['type'] as String) : null)!,
-  );
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? NotFoundErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }

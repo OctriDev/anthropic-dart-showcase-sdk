@@ -10,14 +10,17 @@ enum Default {
 
   static Default fromJson(String value) {
     switch (value) {
-      case 'default': return Default.default_;
-      default: throw ArgumentError('Unknown Default: $value');
+      case 'default':
+        return Default.default_;
+      default:
+        throw ArgumentError('Unknown Default: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case Default.default_: return 'default';
+      case Default.default_:
+        return 'default';
     }
   }
 
@@ -27,24 +30,28 @@ enum Default {
 
 /// Determines whether to use priority capacity (if available) or standard capacity for this request. Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/service-tiers) for details.
 final class BetaCreateMessageParamsServiceTier {
-
   final String value;
 
   const BetaCreateMessageParamsServiceTier._(this.value);
 
-  factory BetaCreateMessageParamsServiceTier.fromJson(String value) => BetaCreateMessageParamsServiceTier._(value);
+  factory BetaCreateMessageParamsServiceTier.fromJson(String value) =>
+      BetaCreateMessageParamsServiceTier._(value);
 
   static const auto = BetaCreateMessageParamsServiceTier._('auto');
-  static const standardOnly = BetaCreateMessageParamsServiceTier._('standard_only');
+  static const standardOnly =
+      BetaCreateMessageParamsServiceTier._('standard_only');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaCreateMessageParamsServiceTier && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaCreateMessageParamsServiceTier && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `allowed_inference_geos` wire field.
@@ -53,14 +60,17 @@ enum Unrestricted {
 
   static Unrestricted fromJson(String value) {
     switch (value) {
-      case 'unrestricted': return Unrestricted.unrestricted;
-      default: throw ArgumentError('Unknown Unrestricted: $value');
+      case 'unrestricted':
+        return Unrestricted.unrestricted;
+      default:
+        throw ArgumentError('Unknown Unrestricted: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case Unrestricted.unrestricted: return 'unrestricted';
+      case Unrestricted.unrestricted:
+        return 'unrestricted';
     }
   }
 
@@ -74,14 +84,17 @@ enum Unrestricted918b8666 {
 
   static Unrestricted918b8666 fromJson(String value) {
     switch (value) {
-      case 'unrestricted': return Unrestricted918b8666.unrestricted;
-      default: throw ArgumentError('Unknown Unrestricted918b8666: $value');
+      case 'unrestricted':
+        return Unrestricted918b8666.unrestricted;
+      default:
+        throw ArgumentError('Unknown Unrestricted918b8666: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case Unrestricted918b8666.unrestricted: return 'unrestricted';
+      case Unrestricted918b8666.unrestricted:
+        return 'unrestricted';
     }
   }
 
@@ -95,14 +108,17 @@ enum Unrestricted678896b2 {
 
   static Unrestricted678896b2 fromJson(String value) {
     switch (value) {
-      case 'unrestricted': return Unrestricted678896b2.unrestricted;
-      default: throw ArgumentError('Unknown Unrestricted678896b2: $value');
+      case 'unrestricted':
+        return Unrestricted678896b2.unrestricted;
+      default:
+        throw ArgumentError('Unknown Unrestricted678896b2: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case Unrestricted678896b2.unrestricted: return 'unrestricted';
+      case Unrestricted678896b2.unrestricted:
+        return 'unrestricted';
     }
   }
 
@@ -116,14 +132,17 @@ enum BetaDeletedSkillType {
 
   static BetaDeletedSkillType fromJson(String value) {
     switch (value) {
-      case 'skill_deleted': return BetaDeletedSkillType.skillDeleted;
-      default: throw ArgumentError('Unknown BetaDeletedSkillType: $value');
+      case 'skill_deleted':
+        return BetaDeletedSkillType.skillDeleted;
+      default:
+        throw ArgumentError('Unknown BetaDeletedSkillType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDeletedSkillType.skillDeleted: return 'skill_deleted';
+      case BetaDeletedSkillType.skillDeleted:
+        return 'skill_deleted';
     }
   }
 
@@ -137,14 +156,17 @@ enum BetaDeletedSkillVersionType {
 
   static BetaDeletedSkillVersionType fromJson(String value) {
     switch (value) {
-      case 'skill_version_deleted': return BetaDeletedSkillVersionType.skillVersionDeleted;
-      default: throw ArgumentError('Unknown BetaDeletedSkillVersionType: $value');
+      case 'skill_version_deleted':
+        return BetaDeletedSkillVersionType.skillVersionDeleted;
+      default:
+        throw ArgumentError('Unknown BetaDeletedSkillVersionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDeletedSkillVersionType.skillVersionDeleted: return 'skill_version_deleted';
+      case BetaDeletedSkillVersionType.skillVersionDeleted:
+        return 'skill_version_deleted';
     }
   }
 
@@ -158,14 +180,18 @@ enum BetaDeleteExternalKeyResponseType {
 
   static BetaDeleteExternalKeyResponseType fromJson(String value) {
     switch (value) {
-      case 'external_key_deleted': return BetaDeleteExternalKeyResponseType.externalKeyDeleted;
-      default: throw ArgumentError('Unknown BetaDeleteExternalKeyResponseType: $value');
+      case 'external_key_deleted':
+        return BetaDeleteExternalKeyResponseType.externalKeyDeleted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaDeleteExternalKeyResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDeleteExternalKeyResponseType.externalKeyDeleted: return 'external_key_deleted';
+      case BetaDeleteExternalKeyResponseType.externalKeyDeleted:
+        return 'external_key_deleted';
     }
   }
 
@@ -179,14 +205,17 @@ enum BetaDeleteInviteResponseType {
 
   static BetaDeleteInviteResponseType fromJson(String value) {
     switch (value) {
-      case 'invite_deleted': return BetaDeleteInviteResponseType.inviteDeleted;
-      default: throw ArgumentError('Unknown BetaDeleteInviteResponseType: $value');
+      case 'invite_deleted':
+        return BetaDeleteInviteResponseType.inviteDeleted;
+      default:
+        throw ArgumentError('Unknown BetaDeleteInviteResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDeleteInviteResponseType.inviteDeleted: return 'invite_deleted';
+      case BetaDeleteInviteResponseType.inviteDeleted:
+        return 'invite_deleted';
     }
   }
 
@@ -200,14 +229,18 @@ enum BetaDeleteMessageBatchResponseType {
 
   static BetaDeleteMessageBatchResponseType fromJson(String value) {
     switch (value) {
-      case 'message_batch_deleted': return BetaDeleteMessageBatchResponseType.messageBatchDeleted;
-      default: throw ArgumentError('Unknown BetaDeleteMessageBatchResponseType: $value');
+      case 'message_batch_deleted':
+        return BetaDeleteMessageBatchResponseType.messageBatchDeleted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaDeleteMessageBatchResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDeleteMessageBatchResponseType.messageBatchDeleted: return 'message_batch_deleted';
+      case BetaDeleteMessageBatchResponseType.messageBatchDeleted:
+        return 'message_batch_deleted';
     }
   }
 
@@ -221,14 +254,18 @@ enum BetaDeleteRbacGroupMemberResponseType {
 
   static BetaDeleteRbacGroupMemberResponseType fromJson(String value) {
     switch (value) {
-      case 'rbac_group_member_deleted': return BetaDeleteRbacGroupMemberResponseType.rbacGroupMemberDeleted;
-      default: throw ArgumentError('Unknown BetaDeleteRbacGroupMemberResponseType: $value');
+      case 'rbac_group_member_deleted':
+        return BetaDeleteRbacGroupMemberResponseType.rbacGroupMemberDeleted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaDeleteRbacGroupMemberResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDeleteRbacGroupMemberResponseType.rbacGroupMemberDeleted: return 'rbac_group_member_deleted';
+      case BetaDeleteRbacGroupMemberResponseType.rbacGroupMemberDeleted:
+        return 'rbac_group_member_deleted';
     }
   }
 
@@ -242,14 +279,17 @@ enum BetaDeleteRbacGroupResponseType {
 
   static BetaDeleteRbacGroupResponseType fromJson(String value) {
     switch (value) {
-      case 'rbac_group_deleted': return BetaDeleteRbacGroupResponseType.rbacGroupDeleted;
-      default: throw ArgumentError('Unknown BetaDeleteRbacGroupResponseType: $value');
+      case 'rbac_group_deleted':
+        return BetaDeleteRbacGroupResponseType.rbacGroupDeleted;
+      default:
+        throw ArgumentError('Unknown BetaDeleteRbacGroupResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDeleteRbacGroupResponseType.rbacGroupDeleted: return 'rbac_group_deleted';
+      case BetaDeleteRbacGroupResponseType.rbacGroupDeleted:
+        return 'rbac_group_deleted';
     }
   }
 
@@ -263,14 +303,17 @@ enum BetaDeleteSpendLimitResponseType {
 
   static BetaDeleteSpendLimitResponseType fromJson(String value) {
     switch (value) {
-      case 'spend_limit_deleted': return BetaDeleteSpendLimitResponseType.spendLimitDeleted;
-      default: throw ArgumentError('Unknown BetaDeleteSpendLimitResponseType: $value');
+      case 'spend_limit_deleted':
+        return BetaDeleteSpendLimitResponseType.spendLimitDeleted;
+      default:
+        throw ArgumentError('Unknown BetaDeleteSpendLimitResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaDeleteSpendLimitResponseType.spendLimitDeleted: return 'spend_limit_deleted';
+      case BetaDeleteSpendLimitResponseType.spendLimitDeleted:
+        return 'spend_limit_deleted';
     }
   }
 

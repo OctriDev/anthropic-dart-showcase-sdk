@@ -10,14 +10,17 @@ enum BetaErrorResponseType {
 
   static BetaErrorResponseType fromJson(String value) {
     switch (value) {
-      case 'error': return BetaErrorResponseType.error;
-      default: throw ArgumentError('Unknown BetaErrorResponseType: $value');
+      case 'error':
+        return BetaErrorResponseType.error;
+      default:
+        throw ArgumentError('Unknown BetaErrorResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaErrorResponseType.error: return 'error';
+      case BetaErrorResponseType.error:
+        return 'error';
     }
   }
 
@@ -31,14 +34,17 @@ enum BetaExpiredResultType {
 
   static BetaExpiredResultType fromJson(String value) {
     switch (value) {
-      case 'expired': return BetaExpiredResultType.expired;
-      default: throw ArgumentError('Unknown BetaExpiredResultType: $value');
+      case 'expired':
+        return BetaExpiredResultType.expired;
+      default:
+        throw ArgumentError('Unknown BetaExpiredResultType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaExpiredResultType.expired: return 'expired';
+      case BetaExpiredResultType.expired:
+        return 'expired';
     }
   }
 
@@ -52,14 +58,17 @@ enum BetaExternalKeyType {
 
   static BetaExternalKeyType fromJson(String value) {
     switch (value) {
-      case 'external_key': return BetaExternalKeyType.externalKey;
-      default: throw ArgumentError('Unknown BetaExternalKeyType: $value');
+      case 'external_key':
+        return BetaExternalKeyType.externalKey;
+      default:
+        throw ArgumentError('Unknown BetaExternalKeyType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaExternalKeyType.externalKey: return 'external_key';
+      case BetaExternalKeyType.externalKey:
+        return 'external_key';
     }
   }
 
@@ -73,14 +82,17 @@ enum BetaExternalKeyCreateParamsGeo {
 
   static BetaExternalKeyCreateParamsGeo fromJson(String value) {
     switch (value) {
-      case 'us': return BetaExternalKeyCreateParamsGeo.us;
-      default: throw ArgumentError('Unknown BetaExternalKeyCreateParamsGeo: $value');
+      case 'us':
+        return BetaExternalKeyCreateParamsGeo.us;
+      default:
+        throw ArgumentError('Unknown BetaExternalKeyCreateParamsGeo: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaExternalKeyCreateParamsGeo.us: return 'us';
+      case BetaExternalKeyCreateParamsGeo.us:
+        return 'us';
     }
   }
 
@@ -94,14 +106,18 @@ enum BetaExternalKeyUpdateParamsGeoVariant0 {
 
   static BetaExternalKeyUpdateParamsGeoVariant0 fromJson(String value) {
     switch (value) {
-      case 'us': return BetaExternalKeyUpdateParamsGeoVariant0.us;
-      default: throw ArgumentError('Unknown BetaExternalKeyUpdateParamsGeoVariant0: $value');
+      case 'us':
+        return BetaExternalKeyUpdateParamsGeoVariant0.us;
+      default:
+        throw ArgumentError(
+            'Unknown BetaExternalKeyUpdateParamsGeoVariant0: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaExternalKeyUpdateParamsGeoVariant0.us: return 'us';
+      case BetaExternalKeyUpdateParamsGeoVariant0.us:
+        return 'us';
     }
   }
 
@@ -111,34 +127,47 @@ enum BetaExternalKeyUpdateParamsGeoVariant0 {
 
 /// Why the reprice was not applied. A closed enum; additions to the redemption-check vocabulary arrive as deliberate schema updates.
 final class BetaFallbackCreditNotAppliedReason {
-
   final String value;
 
   const BetaFallbackCreditNotAppliedReason._(this.value);
 
-  factory BetaFallbackCreditNotAppliedReason.fromJson(String value) => BetaFallbackCreditNotAppliedReason._(value);
+  factory BetaFallbackCreditNotAppliedReason.fromJson(String value) =>
+      BetaFallbackCreditNotAppliedReason._(value);
 
-  static const bodyMismatch = BetaFallbackCreditNotAppliedReason._('body_mismatch');
-  static const continuationExcluded = BetaFallbackCreditNotAppliedReason._('continuation_excluded');
-  static const continuationOnly = BetaFallbackCreditNotAppliedReason._('continuation_only');
+  static const bodyMismatch =
+      BetaFallbackCreditNotAppliedReason._('body_mismatch');
+  static const continuationExcluded =
+      BetaFallbackCreditNotAppliedReason._('continuation_excluded');
+  static const continuationOnly =
+      BetaFallbackCreditNotAppliedReason._('continuation_only');
   static const expired = BetaFallbackCreditNotAppliedReason._('expired');
-  static const invalidTargetModel = BetaFallbackCreditNotAppliedReason._('invalid_target_model');
+  static const invalidTargetModel =
+      BetaFallbackCreditNotAppliedReason._('invalid_target_model');
   static const notEnabled = BetaFallbackCreditNotAppliedReason._('not_enabled');
-  static const repriceUnavailable = BetaFallbackCreditNotAppliedReason._('reprice_unavailable');
-  static const temporarilyUnavailable = BetaFallbackCreditNotAppliedReason._('temporarily_unavailable');
-  static const variantFieldsPresent = BetaFallbackCreditNotAppliedReason._('variant_fields_present');
-  static const wrongOrganization = BetaFallbackCreditNotAppliedReason._('wrong_organization');
-  static const wrongPlatform = BetaFallbackCreditNotAppliedReason._('wrong_platform');
-  static const wrongWorkspace = BetaFallbackCreditNotAppliedReason._('wrong_workspace');
+  static const repriceUnavailable =
+      BetaFallbackCreditNotAppliedReason._('reprice_unavailable');
+  static const temporarilyUnavailable =
+      BetaFallbackCreditNotAppliedReason._('temporarily_unavailable');
+  static const variantFieldsPresent =
+      BetaFallbackCreditNotAppliedReason._('variant_fields_present');
+  static const wrongOrganization =
+      BetaFallbackCreditNotAppliedReason._('wrong_organization');
+  static const wrongPlatform =
+      BetaFallbackCreditNotAppliedReason._('wrong_platform');
+  static const wrongWorkspace =
+      BetaFallbackCreditNotAppliedReason._('wrong_workspace');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaFallbackCreditNotAppliedReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaFallbackCreditNotAppliedReason && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -147,14 +176,17 @@ enum BetaFallbackCreditNotAppliedType {
 
   static BetaFallbackCreditNotAppliedType fromJson(String value) {
     switch (value) {
-      case 'not_applied': return BetaFallbackCreditNotAppliedType.notApplied;
-      default: throw ArgumentError('Unknown BetaFallbackCreditNotAppliedType: $value');
+      case 'not_applied':
+        return BetaFallbackCreditNotAppliedType.notApplied;
+      default:
+        throw ArgumentError('Unknown BetaFallbackCreditNotAppliedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFallbackCreditNotAppliedType.notApplied: return 'not_applied';
+      case BetaFallbackCreditNotAppliedType.notApplied:
+        return 'not_applied';
     }
   }
 
@@ -168,14 +200,17 @@ enum BetaFallbackCreditRedeemedType {
 
   static BetaFallbackCreditRedeemedType fromJson(String value) {
     switch (value) {
-      case 'redeemed': return BetaFallbackCreditRedeemedType.redeemed;
-      default: throw ArgumentError('Unknown BetaFallbackCreditRedeemedType: $value');
+      case 'redeemed':
+        return BetaFallbackCreditRedeemedType.redeemed;
+      default:
+        throw ArgumentError('Unknown BetaFallbackCreditRedeemedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFallbackCreditRedeemedType.redeemed: return 'redeemed';
+      case BetaFallbackCreditRedeemedType.redeemed:
+        return 'redeemed';
     }
   }
 
@@ -185,24 +220,27 @@ enum BetaFallbackCreditRedeemedType {
 
 /// How a failing token affects the retry. `strict` (the default, and the bare-string behavior): a failing redemption is a 400 and the retry is not served. `best_effort`: the retry is served either way — a token-layer failure no longer rejects the request; the retry proceeds at normal price and the outcome is reported on the response's `usage.fallback_credit`. Two failures stay hard in both modes: a malformed token, and combining `fallback_credit_token` with `fallbacks`.
 final class BetaFallbackCreditTokenParamMode {
-
   final String value;
 
   const BetaFallbackCreditTokenParamMode._(this.value);
 
-  factory BetaFallbackCreditTokenParamMode.fromJson(String value) => BetaFallbackCreditTokenParamMode._(value);
+  factory BetaFallbackCreditTokenParamMode.fromJson(String value) =>
+      BetaFallbackCreditTokenParamMode._(value);
 
   static const strict = BetaFallbackCreditTokenParamMode._('strict');
   static const bestEffort = BetaFallbackCreditTokenParamMode._('best_effort');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaFallbackCreditTokenParamMode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaFallbackCreditTokenParamMode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Usage for the fallback-model attempt that served the response
@@ -211,14 +249,18 @@ enum BetaFallbackMessageIterationUsageType {
 
   static BetaFallbackMessageIterationUsageType fromJson(String value) {
     switch (value) {
-      case 'fallback_message': return BetaFallbackMessageIterationUsageType.fallbackMessage;
-      default: throw ArgumentError('Unknown BetaFallbackMessageIterationUsageType: $value');
+      case 'fallback_message':
+        return BetaFallbackMessageIterationUsageType.fallbackMessage;
+      default:
+        throw ArgumentError(
+            'Unknown BetaFallbackMessageIterationUsageType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFallbackMessageIterationUsageType.fallbackMessage: return 'fallback_message';
+      case BetaFallbackMessageIterationUsageType.fallbackMessage:
+        return 'fallback_message';
     }
   }
 
@@ -232,14 +274,17 @@ enum BetaFallbackRefusalTriggerType {
 
   static BetaFallbackRefusalTriggerType fromJson(String value) {
     switch (value) {
-      case 'refusal': return BetaFallbackRefusalTriggerType.refusal;
-      default: throw ArgumentError('Unknown BetaFallbackRefusalTriggerType: $value');
+      case 'refusal':
+        return BetaFallbackRefusalTriggerType.refusal;
+      default:
+        throw ArgumentError('Unknown BetaFallbackRefusalTriggerType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFallbackRefusalTriggerType.refusal: return 'refusal';
+      case BetaFallbackRefusalTriggerType.refusal:
+        return 'refusal';
     }
   }
 
@@ -253,14 +298,17 @@ enum BetaFederationIssuerType {
 
   static BetaFederationIssuerType fromJson(String value) {
     switch (value) {
-      case 'federation_issuer': return BetaFederationIssuerType.federationIssuer;
-      default: throw ArgumentError('Unknown BetaFederationIssuerType: $value');
+      case 'federation_issuer':
+        return BetaFederationIssuerType.federationIssuer;
+      default:
+        throw ArgumentError('Unknown BetaFederationIssuerType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFederationIssuerType.federationIssuer: return 'federation_issuer';
+      case BetaFederationIssuerType.federationIssuer:
+        return 'federation_issuer';
     }
   }
 
@@ -274,14 +322,17 @@ enum BetaFederationRuleType {
 
   static BetaFederationRuleType fromJson(String value) {
     switch (value) {
-      case 'federation_rule': return BetaFederationRuleType.federationRule;
-      default: throw ArgumentError('Unknown BetaFederationRuleType: $value');
+      case 'federation_rule':
+        return BetaFederationRuleType.federationRule;
+      default:
+        throw ArgumentError('Unknown BetaFederationRuleType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFederationRuleType.federationRule: return 'federation_rule';
+      case BetaFederationRuleType.federationRule:
+        return 'federation_rule';
     }
   }
 

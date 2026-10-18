@@ -8,169 +8,255 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsUnrestrictedCredentialNetworkingParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType type_;
 
-  const BetaManagedAgentsUnrestrictedCredentialNetworkingParams({required this.type_});
+  const BetaManagedAgentsUnrestrictedCredentialNetworkingParams(
+      {required this.type_});
 
-  BetaManagedAgentsUnrestrictedCredentialNetworkingParams Function({BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsUnrestrictedCredentialNetworkingParams Function(
+          {BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsUnrestrictedCredentialNetworkingParams _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsUnrestrictedCredentialNetworkingParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType,
-  );
+  BetaManagedAgentsUnrestrictedCredentialNetworkingParams _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsUnrestrictedCredentialNetworkingParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType,
+      );
 
-  factory BetaManagedAgentsUnrestrictedCredentialNetworkingParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUnrestrictedCredentialNetworkingParams(
-    type_: (json['type'] != null ? BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsUnrestrictedCredentialNetworkingParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUnrestrictedCredentialNetworkingParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType
+                .fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// The secret is substituted on any host the session's Environment network policy permits egress to.
 class BetaManagedAgentsUnrestrictedCredentialNetworkingResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType type_;
 
-  const BetaManagedAgentsUnrestrictedCredentialNetworkingResponse({required this.type_});
+  const BetaManagedAgentsUnrestrictedCredentialNetworkingResponse(
+      {required this.type_});
 
-  BetaManagedAgentsUnrestrictedCredentialNetworkingResponse Function({BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsUnrestrictedCredentialNetworkingResponse Function(
+          {BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsUnrestrictedCredentialNetworkingResponse _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsUnrestrictedCredentialNetworkingResponse(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType,
-  );
+  BetaManagedAgentsUnrestrictedCredentialNetworkingResponse _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsUnrestrictedCredentialNetworkingResponse(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType,
+      );
 
-  factory BetaManagedAgentsUnrestrictedCredentialNetworkingResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUnrestrictedCredentialNetworkingResponse(
-    type_: (json['type'] != null ? BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsUnrestrictedCredentialNetworkingResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUnrestrictedCredentialNetworkingResponse(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType
+                .fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// Document referenced by URL.
 class BetaManagedAgentsURLDocumentSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsURLDocumentSourceType type_;
+
   /// URL of the document to fetch.
   final String url;
 
-  const BetaManagedAgentsURLDocumentSource({required this.type_, required this.url});
+  const BetaManagedAgentsURLDocumentSource(
+      {required this.type_, required this.url});
 
-  BetaManagedAgentsURLDocumentSource Function({BetaManagedAgentsURLDocumentSourceType type_, String url}) get copyWith => _copyWith;
+  BetaManagedAgentsURLDocumentSource Function(
+      {BetaManagedAgentsURLDocumentSourceType type_,
+      String url}) get copyWith => _copyWith;
 
-  BetaManagedAgentsURLDocumentSource _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaManagedAgentsURLDocumentSource(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsURLDocumentSourceType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BetaManagedAgentsURLDocumentSource _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      BetaManagedAgentsURLDocumentSource(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsURLDocumentSourceType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BetaManagedAgentsURLDocumentSource.fromJson(Map<String, dynamic> json) => BetaManagedAgentsURLDocumentSource(
-    type_: (json['type'] != null ? BetaManagedAgentsURLDocumentSourceType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BetaManagedAgentsURLDocumentSource.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsURLDocumentSource(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsURLDocumentSourceType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'type': type_.toJson(),
+        'url': url,
+      };
 }
 
 /// Image referenced by URL.
 class BetaManagedAgentsURLImageSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsURLImageSourceType type_;
+
   /// URL of the image to fetch.
   final String url;
 
-  const BetaManagedAgentsURLImageSource({required this.type_, required this.url});
+  const BetaManagedAgentsURLImageSource(
+      {required this.type_, required this.url});
 
-  BetaManagedAgentsURLImageSource Function({BetaManagedAgentsURLImageSourceType type_, String url}) get copyWith => _copyWith;
+  BetaManagedAgentsURLImageSource Function(
+      {BetaManagedAgentsURLImageSourceType type_,
+      String url}) get copyWith => _copyWith;
 
-  BetaManagedAgentsURLImageSource _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaManagedAgentsURLImageSource(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsURLImageSourceType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BetaManagedAgentsURLImageSource _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      BetaManagedAgentsURLImageSource(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsURLImageSourceType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BetaManagedAgentsURLImageSource.fromJson(Map<String, dynamic> json) => BetaManagedAgentsURLImageSource(
-    type_: (json['type'] != null ? BetaManagedAgentsURLImageSourceType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BetaManagedAgentsURLImageSource.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsURLImageSource(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsURLImageSourceType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'type': type_.toJson(),
+        'url': url,
+      };
 }
 
 /// URL-based MCP server connection.
 class BetaManagedAgentsURLMCPServerParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsURLMCPServerParamsType type_;
+
   /// Unique name for this server, referenced by mcp_toolset configurations. 1-255 characters.
   final String name;
+
   /// Endpoint URL for the MCP server.
   final String url;
 
-  const BetaManagedAgentsURLMCPServerParams({required this.type_, required this.name, required this.url});
+  const BetaManagedAgentsURLMCPServerParams(
+      {required this.type_, required this.name, required this.url});
 
-  BetaManagedAgentsURLMCPServerParams Function({BetaManagedAgentsURLMCPServerParamsType type_, String name, String url}) get copyWith => _copyWith;
+  BetaManagedAgentsURLMCPServerParams Function(
+      {BetaManagedAgentsURLMCPServerParamsType type_,
+      String name,
+      String url}) get copyWith => _copyWith;
 
-  BetaManagedAgentsURLMCPServerParams _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaManagedAgentsURLMCPServerParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsURLMCPServerParamsType,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BetaManagedAgentsURLMCPServerParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      BetaManagedAgentsURLMCPServerParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsURLMCPServerParamsType,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BetaManagedAgentsURLMCPServerParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsURLMCPServerParams(
-    type_: (json['type'] != null ? BetaManagedAgentsURLMCPServerParamsType.fromJson(json['type'] as String) : null)!,
-    name: (json['name'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BetaManagedAgentsURLMCPServerParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsURLMCPServerParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsURLMCPServerParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        name: (json['name'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'name': name,
-    'url': url,
-  };
+        'type': type_.toJson(),
+        'name': name,
+        'url': url,
+      };
 }
 
 /// Attribution for a write made by a human user through the Anthropic Console.
 class BetaManagedAgentsUserActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUserActorType type_;
+
   /// ID of the user who performed the write (a `user_...` value).
   final String userId;
 
   const BetaManagedAgentsUserActor({required this.type_, required this.userId});
 
-  BetaManagedAgentsUserActor Function({BetaManagedAgentsUserActorType type_, String userId}) get copyWith => _copyWith;
+  BetaManagedAgentsUserActor Function(
+      {BetaManagedAgentsUserActorType type_,
+      String userId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUserActor _copyWith({Object? type_ = sdkOmittedValue, Object? userId = sdkOmittedValue}) => BetaManagedAgentsUserActor(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUserActorType,
-    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as String,
-  );
+  BetaManagedAgentsUserActor _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? userId = sdkOmittedValue}) =>
+      BetaManagedAgentsUserActor(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsUserActorType,
+        userId:
+            identical(userId, sdkOmittedValue) ? this.userId : userId as String,
+      );
 
-  factory BetaManagedAgentsUserActor.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUserActor(
-    type_: (json['type'] != null ? BetaManagedAgentsUserActorType.fromJson(json['type'] as String) : null)!,
-    userId: (json['user_id'] as String?)!,
-  );
+  factory BetaManagedAgentsUserActor.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsUserActor(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUserActorType.fromJson(json['type'] as String)
+            : null)!,
+        userId: (json['user_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'user_id': userId,
-  };
+        'type': type_.toJson(),
+        'user_id': userId,
+      };
 }
 
 sealed class BetaManagedAgentsUserContentBlock {
@@ -179,114 +265,240 @@ sealed class BetaManagedAgentsUserContentBlock {
   const BetaManagedAgentsUserContentBlock();
   factory BetaManagedAgentsUserContentBlock.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsTextBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsImageBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsDocumentBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsRedactedBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsTextBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsImageBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsDocumentBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsRedactedBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock(BetaManagedAgentsTextBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(BetaManagedAgentsImageBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(BetaManagedAgentsDocumentBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(BetaManagedAgentsRedactedBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"text", "image", "document", "redacted"}.contains(json["type"])) { return UnknownBetaManagedAgentsUserContentBlock(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsUserContentBlock");
+    try {
+      return BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock(
+          BetaManagedAgentsTextBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(
+          BetaManagedAgentsImageBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(
+          BetaManagedAgentsDocumentBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(
+          BetaManagedAgentsRedactedBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"text", "image", "document", "redacted"}
+            .contains(json["type"])) {
+      return UnknownBetaManagedAgentsUserContentBlock(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsUserContentBlock");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock extends BetaManagedAgentsUserContentBlock {
+final class BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock
+    extends BetaManagedAgentsUserContentBlock {
   final BetaManagedAgentsTextBlock value;
   const BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock extends BetaManagedAgentsUserContentBlock {
+final class BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock
+    extends BetaManagedAgentsUserContentBlock {
   final BetaManagedAgentsImageBlock value;
-  const BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock extends BetaManagedAgentsUserContentBlock {
+final class BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock
+    extends BetaManagedAgentsUserContentBlock {
   final BetaManagedAgentsDocumentBlock value;
-  const BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock extends BetaManagedAgentsUserContentBlock {
+final class BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock
+    extends BetaManagedAgentsUserContentBlock {
   final BetaManagedAgentsRedactedBlock value;
-  const BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsUserContentBlock] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsUserContentBlock extends BetaManagedAgentsUserContentBlock {
+final class UnknownBetaManagedAgentsUserContentBlock
+    extends BetaManagedAgentsUserContentBlock {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsUserContentBlock(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Event sent by the client providing the result of a custom tool execution.
 class BetaManagedAgentsUserCustomToolResultEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUserCustomToolResultEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
   final String customToolUseId;
+
   /// The result content returned by the tool.
   final SdkOptional<List<BetaManagedAgentsToolResultContentBlock>> content;
+
   /// Whether the tool execution resulted in an error.
   final SdkOptional<bool?> isError;
+
   /// Timestamp when this result was processed.
   final SdkOptional<String?> processedAt;
+
   /// Routes this result to a subagent thread. Copy from the `agent.custom_tool_use` event's `session_thread_id`.
   final SdkOptional<String?> sessionThreadId;
 
-  const BetaManagedAgentsUserCustomToolResultEvent({required this.type_, required this.id, required this.customToolUseId, this.content = const SdkOmitted(), this.isError = const SdkOmitted(), this.processedAt = const SdkOmitted(), this.sessionThreadId = const SdkOmitted()});
+  const BetaManagedAgentsUserCustomToolResultEvent(
+      {required this.type_,
+      required this.id,
+      required this.customToolUseId,
+      this.content = const SdkOmitted(),
+      this.isError = const SdkOmitted(),
+      this.processedAt = const SdkOmitted(),
+      this.sessionThreadId = const SdkOmitted()});
 
-  BetaManagedAgentsUserCustomToolResultEvent Function({BetaManagedAgentsUserCustomToolResultEventType type_, String id, String customToolUseId, SdkOptional<List<BetaManagedAgentsToolResultContentBlock>> content, SdkOptional<bool?> isError, SdkOptional<String?> processedAt, SdkOptional<String?> sessionThreadId}) get copyWith => _copyWith;
+  BetaManagedAgentsUserCustomToolResultEvent Function(
+      {BetaManagedAgentsUserCustomToolResultEventType type_,
+      String id,
+      String customToolUseId,
+      SdkOptional<List<BetaManagedAgentsToolResultContentBlock>> content,
+      SdkOptional<bool?> isError,
+      SdkOptional<String?> processedAt,
+      SdkOptional<String?> sessionThreadId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUserCustomToolResultEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? customToolUseId = sdkOmittedValue, Object? content = sdkOmittedValue, Object? isError = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? sessionThreadId = sdkOmittedValue}) => BetaManagedAgentsUserCustomToolResultEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUserCustomToolResultEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    customToolUseId: identical(customToolUseId, sdkOmittedValue) ? this.customToolUseId : customToolUseId as String,
-    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<List<BetaManagedAgentsToolResultContentBlock>>,
-    isError: identical(isError, sdkOmittedValue) ? this.isError : isError as SdkOptional<bool?>,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as SdkOptional<String?>,
-    sessionThreadId: identical(sessionThreadId, sdkOmittedValue) ? this.sessionThreadId : sessionThreadId as SdkOptional<String?>,
-  );
+  BetaManagedAgentsUserCustomToolResultEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? customToolUseId = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? isError = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue,
+          Object? sessionThreadId = sdkOmittedValue}) =>
+      BetaManagedAgentsUserCustomToolResultEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsUserCustomToolResultEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        customToolUseId: identical(customToolUseId, sdkOmittedValue)
+            ? this.customToolUseId
+            : customToolUseId as String,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content
+                as SdkOptional<List<BetaManagedAgentsToolResultContentBlock>>,
+        isError: identical(isError, sdkOmittedValue)
+            ? this.isError
+            : isError as SdkOptional<bool?>,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as SdkOptional<String?>,
+        sessionThreadId: identical(sessionThreadId, sdkOmittedValue)
+            ? this.sessionThreadId
+            : sessionThreadId as SdkOptional<String?>,
+      );
 
-  factory BetaManagedAgentsUserCustomToolResultEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUserCustomToolResultEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsUserCustomToolResultEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    customToolUseId: (json['custom_tool_use_id'] as String?)!,
-    content: json['content'] != null ? SdkPresent(((json['content'] as List?)?.map((e) => BetaManagedAgentsToolResultContentBlock.fromJson(e)).toList())!) : const SdkOmitted(),
-    isError: json.containsKey('is_error') ? SdkPresent(json['is_error'] as bool?) : const SdkOmitted(),
-    processedAt: json.containsKey('processed_at') ? SdkPresent(json['processed_at'] as String?) : const SdkOmitted(),
-    sessionThreadId: json.containsKey('session_thread_id') ? SdkPresent(json['session_thread_id'] as String?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsUserCustomToolResultEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUserCustomToolResultEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUserCustomToolResultEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        customToolUseId: (json['custom_tool_use_id'] as String?)!,
+        content: json['content'] != null
+            ? SdkPresent(((json['content'] as List?)
+                ?.map(
+                    (e) => BetaManagedAgentsToolResultContentBlock.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+        isError: json.containsKey('is_error')
+            ? SdkPresent(json['is_error'] as bool?)
+            : const SdkOmitted(),
+        processedAt: json.containsKey('processed_at')
+            ? SdkPresent(json['processed_at'] as String?)
+            : const SdkOmitted(),
+        sessionThreadId: json.containsKey('session_thread_id')
+            ? SdkPresent(json['session_thread_id'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'custom_tool_use_id': customToolUseId,
-    ...switch (content) {
-      SdkPresent<List<BetaManagedAgentsToolResultContentBlock>>(value: final value) => {'content': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (isError) {
-      SdkPresent<bool?>(value: final value) => {'is_error': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (processedAt) {
-      SdkPresent<String?>(value: final value) => {'processed_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sessionThreadId) {
-      SdkPresent<String?>(value: final value) => {'session_thread_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'custom_tool_use_id': customToolUseId,
+        ...switch (content) {
+          SdkPresent<List<BetaManagedAgentsToolResultContentBlock>>(
+            value: final value
+          ) =>
+            {
+              'content': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (isError) {
+          SdkPresent<bool?>(value: final value) => {
+              'is_error': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (processedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'processed_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sessionThreadId) {
+          SdkPresent<String?>(value: final value) => {
+              'session_thread_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

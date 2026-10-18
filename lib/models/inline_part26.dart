@@ -10,14 +10,18 @@ enum BetaManagedAgentsRetryStatusTerminalType {
 
   static BetaManagedAgentsRetryStatusTerminalType fromJson(String value) {
     switch (value) {
-      case 'terminal': return BetaManagedAgentsRetryStatusTerminalType.terminal;
-      default: throw ArgumentError('Unknown BetaManagedAgentsRetryStatusTerminalType: $value');
+      case 'terminal':
+        return BetaManagedAgentsRetryStatusTerminalType.terminal;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsRetryStatusTerminalType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsRetryStatusTerminalType.terminal: return 'terminal';
+      case BetaManagedAgentsRetryStatusTerminalType.terminal:
+        return 'terminal';
     }
   }
 
@@ -31,14 +35,18 @@ enum BetaManagedAgentsScheduleTriggerContextType {
 
   static BetaManagedAgentsScheduleTriggerContextType fromJson(String value) {
     switch (value) {
-      case 'schedule': return BetaManagedAgentsScheduleTriggerContextType.schedule;
-      default: throw ArgumentError('Unknown BetaManagedAgentsScheduleTriggerContextType: $value');
+      case 'schedule':
+        return BetaManagedAgentsScheduleTriggerContextType.schedule;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsScheduleTriggerContextType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsScheduleTriggerContextType.schedule: return 'schedule';
+      case BetaManagedAgentsScheduleTriggerContextType.schedule:
+        return 'schedule';
     }
   }
 
@@ -52,14 +60,18 @@ enum BetaManagedAgentsSearchResultBlockType {
 
   static BetaManagedAgentsSearchResultBlockType fromJson(String value) {
     switch (value) {
-      case 'search_result': return BetaManagedAgentsSearchResultBlockType.searchResult;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSearchResultBlockType: $value');
+      case 'search_result':
+        return BetaManagedAgentsSearchResultBlockType.searchResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSearchResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSearchResultBlockType.searchResult: return 'search_result';
+      case BetaManagedAgentsSearchResultBlockType.searchResult:
+        return 'search_result';
     }
   }
 
@@ -69,39 +81,49 @@ enum BetaManagedAgentsSearchResultBlockType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsSearchResultContentType {
-
   final String value;
 
   const BetaManagedAgentsSearchResultContentType._(this.value);
 
-  factory BetaManagedAgentsSearchResultContentType.fromJson(String value) => BetaManagedAgentsSearchResultContentType._(value);
+  factory BetaManagedAgentsSearchResultContentType.fromJson(String value) =>
+      BetaManagedAgentsSearchResultContentType._(value);
 
   static const text = BetaManagedAgentsSearchResultContentType._('text');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsSearchResultContentType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsSearchResultContentType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType {
   selfHostedResourcesUnsupportedError;
 
-  static BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType fromJson(String value) {
+  static BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType
+      fromJson(String value) {
     switch (value) {
-      case 'self_hosted_resources_unsupported_error': return BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType.selfHostedResourcesUnsupportedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType: $value');
+      case 'self_hosted_resources_unsupported_error':
+        return BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType
+            .selfHostedResourcesUnsupportedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType.selfHostedResourcesUnsupportedError: return 'self_hosted_resources_unsupported_error';
+      case BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType
+            .selfHostedResourcesUnsupportedError:
+        return 'self_hosted_resources_unsupported_error';
     }
   }
 
@@ -113,16 +135,23 @@ enum BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorT
 enum BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType {
   selfHostedResourcesUnsupportedError;
 
-  static BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType fromJson(String value) {
+  static BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType fromJson(
+      String value) {
     switch (value) {
-      case 'self_hosted_resources_unsupported_error': return BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType.selfHostedResourcesUnsupportedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType: $value');
+      case 'self_hosted_resources_unsupported_error':
+        return BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType
+            .selfHostedResourcesUnsupportedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType.selfHostedResourcesUnsupportedError: return 'self_hosted_resources_unsupported_error';
+      case BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType
+            .selfHostedResourcesUnsupportedError:
+        return 'self_hosted_resources_unsupported_error';
     }
   }
 
@@ -136,14 +165,18 @@ enum BetaManagedAgentsServiceAccountActorType {
 
   static BetaManagedAgentsServiceAccountActorType fromJson(String value) {
     switch (value) {
-      case 'service_account_actor': return BetaManagedAgentsServiceAccountActorType.serviceAccountActor;
-      default: throw ArgumentError('Unknown BetaManagedAgentsServiceAccountActorType: $value');
+      case 'service_account_actor':
+        return BetaManagedAgentsServiceAccountActorType.serviceAccountActor;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsServiceAccountActorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsServiceAccountActorType.serviceAccountActor: return 'service_account_actor';
+      case BetaManagedAgentsServiceAccountActorType.serviceAccountActor:
+        return 'service_account_actor';
     }
   }
 
@@ -153,23 +186,26 @@ enum BetaManagedAgentsServiceAccountActorType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsSessionType {
-
   final String value;
 
   const BetaManagedAgentsSessionType._(this.value);
 
-  factory BetaManagedAgentsSessionType.fromJson(String value) => BetaManagedAgentsSessionType._(value);
+  factory BetaManagedAgentsSessionType.fromJson(String value) =>
+      BetaManagedAgentsSessionType._(value);
 
   static const session = BetaManagedAgentsSessionType._('session');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsSessionType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsSessionType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -178,14 +214,18 @@ enum BetaManagedAgentsSessionActorType {
 
   static BetaManagedAgentsSessionActorType fromJson(String value) {
     switch (value) {
-      case 'session_actor': return BetaManagedAgentsSessionActorType.sessionActor;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionActorType: $value');
+      case 'session_actor':
+        return BetaManagedAgentsSessionActorType.sessionActor;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSessionActorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSessionActorType.sessionActor: return 'session_actor';
+      case BetaManagedAgentsSessionActorType.sessionActor:
+        return 'session_actor';
     }
   }
 
@@ -195,23 +235,26 @@ enum BetaManagedAgentsSessionActorType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsSessionAgentType {
-
   final String value;
 
   const BetaManagedAgentsSessionAgentType._(this.value);
 
-  factory BetaManagedAgentsSessionAgentType.fromJson(String value) => BetaManagedAgentsSessionAgentType._(value);
+  factory BetaManagedAgentsSessionAgentType.fromJson(String value) =>
+      BetaManagedAgentsSessionAgentType._(value);
 
   static const agent = BetaManagedAgentsSessionAgentType._('agent');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsSessionAgentType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsSessionAgentType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -220,14 +263,18 @@ enum BetaManagedAgentsSessionBudgetReachedType {
 
   static BetaManagedAgentsSessionBudgetReachedType fromJson(String value) {
     switch (value) {
-      case 'budget_reached': return BetaManagedAgentsSessionBudgetReachedType.budgetReached;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionBudgetReachedType: $value');
+      case 'budget_reached':
+        return BetaManagedAgentsSessionBudgetReachedType.budgetReached;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSessionBudgetReachedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSessionBudgetReachedType.budgetReached: return 'budget_reached';
+      case BetaManagedAgentsSessionBudgetReachedType.budgetReached:
+        return 'budget_reached';
     }
   }
 
@@ -239,16 +286,23 @@ enum BetaManagedAgentsSessionBudgetReachedType {
 enum BetaManagedAgentsSessionCreationRejectedRunErrorType {
   sessionCreationRejectedError;
 
-  static BetaManagedAgentsSessionCreationRejectedRunErrorType fromJson(String value) {
+  static BetaManagedAgentsSessionCreationRejectedRunErrorType fromJson(
+      String value) {
     switch (value) {
-      case 'session_creation_rejected_error': return BetaManagedAgentsSessionCreationRejectedRunErrorType.sessionCreationRejectedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionCreationRejectedRunErrorType: $value');
+      case 'session_creation_rejected_error':
+        return BetaManagedAgentsSessionCreationRejectedRunErrorType
+            .sessionCreationRejectedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSessionCreationRejectedRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSessionCreationRejectedRunErrorType.sessionCreationRejectedError: return 'session_creation_rejected_error';
+      case BetaManagedAgentsSessionCreationRejectedRunErrorType
+            .sessionCreationRejectedError:
+        return 'session_creation_rejected_error';
     }
   }
 
@@ -262,14 +316,18 @@ enum BetaManagedAgentsSessionDeletedEventType {
 
   static BetaManagedAgentsSessionDeletedEventType fromJson(String value) {
     switch (value) {
-      case 'session.deleted': return BetaManagedAgentsSessionDeletedEventType.sessionDeleted;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionDeletedEventType: $value');
+      case 'session.deleted':
+        return BetaManagedAgentsSessionDeletedEventType.sessionDeleted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSessionDeletedEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSessionDeletedEventType.sessionDeleted: return 'session.deleted';
+      case BetaManagedAgentsSessionDeletedEventType.sessionDeleted:
+        return 'session.deleted';
     }
   }
 

@@ -10,14 +10,18 @@ enum BetaWebhookSessionPendingEventDataType {
 
   static BetaWebhookSessionPendingEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.pending': return BetaWebhookSessionPendingEventDataType.sessionPending;
-      default: throw ArgumentError('Unknown BetaWebhookSessionPendingEventDataType: $value');
+      case 'session.pending':
+        return BetaWebhookSessionPendingEventDataType.sessionPending;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionPendingEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionPendingEventDataType.sessionPending: return 'session.pending';
+      case BetaWebhookSessionPendingEventDataType.sessionPending:
+        return 'session.pending';
     }
   }
 
@@ -31,14 +35,19 @@ enum BetaWebhookSessionRequiresActionEventDataType {
 
   static BetaWebhookSessionRequiresActionEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.requires_action': return BetaWebhookSessionRequiresActionEventDataType.sessionRequiresAction;
-      default: throw ArgumentError('Unknown BetaWebhookSessionRequiresActionEventDataType: $value');
+      case 'session.requires_action':
+        return BetaWebhookSessionRequiresActionEventDataType
+            .sessionRequiresAction;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionRequiresActionEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionRequiresActionEventDataType.sessionRequiresAction: return 'session.requires_action';
+      case BetaWebhookSessionRequiresActionEventDataType.sessionRequiresAction:
+        return 'session.requires_action';
     }
   }
 
@@ -52,14 +61,18 @@ enum BetaWebhookSessionRunningEventDataType {
 
   static BetaWebhookSessionRunningEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.running': return BetaWebhookSessionRunningEventDataType.sessionRunning;
-      default: throw ArgumentError('Unknown BetaWebhookSessionRunningEventDataType: $value');
+      case 'session.running':
+        return BetaWebhookSessionRunningEventDataType.sessionRunning;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionRunningEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionRunningEventDataType.sessionRunning: return 'session.running';
+      case BetaWebhookSessionRunningEventDataType.sessionRunning:
+        return 'session.running';
     }
   }
 
@@ -73,14 +86,18 @@ enum BetaWebhookSessionStatusIdledEventDataType {
 
   static BetaWebhookSessionStatusIdledEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.status_idled': return BetaWebhookSessionStatusIdledEventDataType.sessionStatusIdled;
-      default: throw ArgumentError('Unknown BetaWebhookSessionStatusIdledEventDataType: $value');
+      case 'session.status_idled':
+        return BetaWebhookSessionStatusIdledEventDataType.sessionStatusIdled;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionStatusIdledEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionStatusIdledEventDataType.sessionStatusIdled: return 'session.status_idled';
+      case BetaWebhookSessionStatusIdledEventDataType.sessionStatusIdled:
+        return 'session.status_idled';
     }
   }
 
@@ -92,16 +109,23 @@ enum BetaWebhookSessionStatusIdledEventDataType {
 enum BetaWebhookSessionStatusRescheduledEventDataType {
   sessionStatusRescheduled;
 
-  static BetaWebhookSessionStatusRescheduledEventDataType fromJson(String value) {
+  static BetaWebhookSessionStatusRescheduledEventDataType fromJson(
+      String value) {
     switch (value) {
-      case 'session.status_rescheduled': return BetaWebhookSessionStatusRescheduledEventDataType.sessionStatusRescheduled;
-      default: throw ArgumentError('Unknown BetaWebhookSessionStatusRescheduledEventDataType: $value');
+      case 'session.status_rescheduled':
+        return BetaWebhookSessionStatusRescheduledEventDataType
+            .sessionStatusRescheduled;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionStatusRescheduledEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionStatusRescheduledEventDataType.sessionStatusRescheduled: return 'session.status_rescheduled';
+      case BetaWebhookSessionStatusRescheduledEventDataType
+            .sessionStatusRescheduled:
+        return 'session.status_rescheduled';
     }
   }
 
@@ -113,16 +137,23 @@ enum BetaWebhookSessionStatusRescheduledEventDataType {
 enum BetaWebhookSessionStatusRunStartedEventDataType {
   sessionStatusRunStarted;
 
-  static BetaWebhookSessionStatusRunStartedEventDataType fromJson(String value) {
+  static BetaWebhookSessionStatusRunStartedEventDataType fromJson(
+      String value) {
     switch (value) {
-      case 'session.status_run_started': return BetaWebhookSessionStatusRunStartedEventDataType.sessionStatusRunStarted;
-      default: throw ArgumentError('Unknown BetaWebhookSessionStatusRunStartedEventDataType: $value');
+      case 'session.status_run_started':
+        return BetaWebhookSessionStatusRunStartedEventDataType
+            .sessionStatusRunStarted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionStatusRunStartedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionStatusRunStartedEventDataType.sessionStatusRunStarted: return 'session.status_run_started';
+      case BetaWebhookSessionStatusRunStartedEventDataType
+            .sessionStatusRunStarted:
+        return 'session.status_run_started';
     }
   }
 
@@ -134,16 +165,23 @@ enum BetaWebhookSessionStatusRunStartedEventDataType {
 enum BetaWebhookSessionStatusTerminatedEventDataType {
   sessionStatusTerminated;
 
-  static BetaWebhookSessionStatusTerminatedEventDataType fromJson(String value) {
+  static BetaWebhookSessionStatusTerminatedEventDataType fromJson(
+      String value) {
     switch (value) {
-      case 'session.status_terminated': return BetaWebhookSessionStatusTerminatedEventDataType.sessionStatusTerminated;
-      default: throw ArgumentError('Unknown BetaWebhookSessionStatusTerminatedEventDataType: $value');
+      case 'session.status_terminated':
+        return BetaWebhookSessionStatusTerminatedEventDataType
+            .sessionStatusTerminated;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionStatusTerminatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionStatusTerminatedEventDataType.sessionStatusTerminated: return 'session.status_terminated';
+      case BetaWebhookSessionStatusTerminatedEventDataType
+            .sessionStatusTerminated:
+        return 'session.status_terminated';
     }
   }
 
@@ -157,14 +195,19 @@ enum BetaWebhookSessionThreadCreatedEventDataType {
 
   static BetaWebhookSessionThreadCreatedEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.thread_created': return BetaWebhookSessionThreadCreatedEventDataType.sessionThreadCreated;
-      default: throw ArgumentError('Unknown BetaWebhookSessionThreadCreatedEventDataType: $value');
+      case 'session.thread_created':
+        return BetaWebhookSessionThreadCreatedEventDataType
+            .sessionThreadCreated;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionThreadCreatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionThreadCreatedEventDataType.sessionThreadCreated: return 'session.thread_created';
+      case BetaWebhookSessionThreadCreatedEventDataType.sessionThreadCreated:
+        return 'session.thread_created';
     }
   }
 
@@ -178,14 +221,18 @@ enum BetaWebhookSessionThreadIdledEventDataType {
 
   static BetaWebhookSessionThreadIdledEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.thread_idled': return BetaWebhookSessionThreadIdledEventDataType.sessionThreadIdled;
-      default: throw ArgumentError('Unknown BetaWebhookSessionThreadIdledEventDataType: $value');
+      case 'session.thread_idled':
+        return BetaWebhookSessionThreadIdledEventDataType.sessionThreadIdled;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionThreadIdledEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionThreadIdledEventDataType.sessionThreadIdled: return 'session.thread_idled';
+      case BetaWebhookSessionThreadIdledEventDataType.sessionThreadIdled:
+        return 'session.thread_idled';
     }
   }
 
@@ -197,16 +244,23 @@ enum BetaWebhookSessionThreadIdledEventDataType {
 enum BetaWebhookSessionThreadTerminatedEventDataType {
   sessionThreadTerminated;
 
-  static BetaWebhookSessionThreadTerminatedEventDataType fromJson(String value) {
+  static BetaWebhookSessionThreadTerminatedEventDataType fromJson(
+      String value) {
     switch (value) {
-      case 'session.thread_terminated': return BetaWebhookSessionThreadTerminatedEventDataType.sessionThreadTerminated;
-      default: throw ArgumentError('Unknown BetaWebhookSessionThreadTerminatedEventDataType: $value');
+      case 'session.thread_terminated':
+        return BetaWebhookSessionThreadTerminatedEventDataType
+            .sessionThreadTerminated;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionThreadTerminatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionThreadTerminatedEventDataType.sessionThreadTerminated: return 'session.thread_terminated';
+      case BetaWebhookSessionThreadTerminatedEventDataType
+            .sessionThreadTerminated:
+        return 'session.thread_terminated';
     }
   }
 
@@ -220,14 +274,18 @@ enum BetaWebhookSessionUpdatedEventDataType {
 
   static BetaWebhookSessionUpdatedEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.updated': return BetaWebhookSessionUpdatedEventDataType.sessionUpdated;
-      default: throw ArgumentError('Unknown BetaWebhookSessionUpdatedEventDataType: $value');
+      case 'session.updated':
+        return BetaWebhookSessionUpdatedEventDataType.sessionUpdated;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionUpdatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionUpdatedEventDataType.sessionUpdated: return 'session.updated';
+      case BetaWebhookSessionUpdatedEventDataType.sessionUpdated:
+        return 'session.updated';
     }
   }
 
@@ -241,14 +299,18 @@ enum BetaWebhookVaultArchivedEventDataType {
 
   static BetaWebhookVaultArchivedEventDataType fromJson(String value) {
     switch (value) {
-      case 'vault.archived': return BetaWebhookVaultArchivedEventDataType.vaultArchived;
-      default: throw ArgumentError('Unknown BetaWebhookVaultArchivedEventDataType: $value');
+      case 'vault.archived':
+        return BetaWebhookVaultArchivedEventDataType.vaultArchived;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookVaultArchivedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookVaultArchivedEventDataType.vaultArchived: return 'vault.archived';
+      case BetaWebhookVaultArchivedEventDataType.vaultArchived:
+        return 'vault.archived';
     }
   }
 
@@ -262,14 +324,18 @@ enum BetaWebhookVaultCreatedEventDataType {
 
   static BetaWebhookVaultCreatedEventDataType fromJson(String value) {
     switch (value) {
-      case 'vault.created': return BetaWebhookVaultCreatedEventDataType.vaultCreated;
-      default: throw ArgumentError('Unknown BetaWebhookVaultCreatedEventDataType: $value');
+      case 'vault.created':
+        return BetaWebhookVaultCreatedEventDataType.vaultCreated;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookVaultCreatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookVaultCreatedEventDataType.vaultCreated: return 'vault.created';
+      case BetaWebhookVaultCreatedEventDataType.vaultCreated:
+        return 'vault.created';
     }
   }
 

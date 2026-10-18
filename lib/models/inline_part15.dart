@@ -8,16 +8,22 @@ part of 'inline.dart';
 enum BetaManagedAgentsAgentToolset20260401ParamsType {
   agentToolset20260401;
 
-  static BetaManagedAgentsAgentToolset20260401ParamsType fromJson(String value) {
+  static BetaManagedAgentsAgentToolset20260401ParamsType fromJson(
+      String value) {
     switch (value) {
-      case 'agent_toolset_20260401': return BetaManagedAgentsAgentToolset20260401ParamsType.agentToolset20260401;
-      default: throw ArgumentError('Unknown BetaManagedAgentsAgentToolset20260401ParamsType: $value');
+      case 'agent_toolset_20260401':
+        return BetaManagedAgentsAgentToolset20260401ParamsType
+            .agentToolset20260401;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsAgentToolset20260401ParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentToolset20260401ParamsType.agentToolset20260401: return 'agent_toolset_20260401';
+      case BetaManagedAgentsAgentToolset20260401ParamsType.agentToolset20260401:
+        return 'agent_toolset_20260401';
     }
   }
 
@@ -31,14 +37,18 @@ enum BetaManagedAgentsAgentToolUseEventType {
 
   static BetaManagedAgentsAgentToolUseEventType fromJson(String value) {
     switch (value) {
-      case 'agent.tool_use': return BetaManagedAgentsAgentToolUseEventType.agentToolUse;
-      default: throw ArgumentError('Unknown BetaManagedAgentsAgentToolUseEventType: $value');
+      case 'agent.tool_use':
+        return BetaManagedAgentsAgentToolUseEventType.agentToolUse;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsAgentToolUseEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentToolUseEventType.agentToolUse: return 'agent.tool_use';
+      case BetaManagedAgentsAgentToolUseEventType.agentToolUse:
+        return 'agent.tool_use';
     }
   }
 
@@ -52,14 +62,18 @@ enum BetaManagedAgentsAgentWithOverridesParamsType {
 
   static BetaManagedAgentsAgentWithOverridesParamsType fromJson(String value) {
     switch (value) {
-      case 'agent_with_overrides': return BetaManagedAgentsAgentWithOverridesParamsType.agentWithOverrides;
-      default: throw ArgumentError('Unknown BetaManagedAgentsAgentWithOverridesParamsType: $value');
+      case 'agent_with_overrides':
+        return BetaManagedAgentsAgentWithOverridesParamsType.agentWithOverrides;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsAgentWithOverridesParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentWithOverridesParamsType.agentWithOverrides: return 'agent_with_overrides';
+      case BetaManagedAgentsAgentWithOverridesParamsType.agentWithOverrides:
+        return 'agent_with_overrides';
     }
   }
 
@@ -73,14 +87,18 @@ enum BetaManagedAgentsAlwaysAllowPolicyType {
 
   static BetaManagedAgentsAlwaysAllowPolicyType fromJson(String value) {
     switch (value) {
-      case 'always_allow': return BetaManagedAgentsAlwaysAllowPolicyType.alwaysAllow;
-      default: throw ArgumentError('Unknown BetaManagedAgentsAlwaysAllowPolicyType: $value');
+      case 'always_allow':
+        return BetaManagedAgentsAlwaysAllowPolicyType.alwaysAllow;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsAlwaysAllowPolicyType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAlwaysAllowPolicyType.alwaysAllow: return 'always_allow';
+      case BetaManagedAgentsAlwaysAllowPolicyType.alwaysAllow:
+        return 'always_allow';
     }
   }
 
@@ -94,14 +112,18 @@ enum BetaManagedAgentsAlwaysAskPolicyType {
 
   static BetaManagedAgentsAlwaysAskPolicyType fromJson(String value) {
     switch (value) {
-      case 'always_ask': return BetaManagedAgentsAlwaysAskPolicyType.alwaysAsk;
-      default: throw ArgumentError('Unknown BetaManagedAgentsAlwaysAskPolicyType: $value');
+      case 'always_ask':
+        return BetaManagedAgentsAlwaysAskPolicyType.alwaysAsk;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsAlwaysAskPolicyType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAlwaysAskPolicyType.alwaysAsk: return 'always_ask';
+      case BetaManagedAgentsAlwaysAskPolicyType.alwaysAsk:
+        return 'always_ask';
     }
   }
 
@@ -115,14 +137,18 @@ enum BetaManagedAgentsAnthropicSkillType {
 
   static BetaManagedAgentsAnthropicSkillType fromJson(String value) {
     switch (value) {
-      case 'anthropic': return BetaManagedAgentsAnthropicSkillType.anthropic;
-      default: throw ArgumentError('Unknown BetaManagedAgentsAnthropicSkillType: $value');
+      case 'anthropic':
+        return BetaManagedAgentsAnthropicSkillType.anthropic;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsAnthropicSkillType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAnthropicSkillType.anthropic: return 'anthropic';
+      case BetaManagedAgentsAnthropicSkillType.anthropic:
+        return 'anthropic';
     }
   }
 
@@ -136,14 +162,18 @@ enum BetaManagedAgentsAnthropicSkillParamsType {
 
   static BetaManagedAgentsAnthropicSkillParamsType fromJson(String value) {
     switch (value) {
-      case 'anthropic': return BetaManagedAgentsAnthropicSkillParamsType.anthropic;
-      default: throw ArgumentError('Unknown BetaManagedAgentsAnthropicSkillParamsType: $value');
+      case 'anthropic':
+        return BetaManagedAgentsAnthropicSkillParamsType.anthropic;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsAnthropicSkillParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAnthropicSkillParamsType.anthropic: return 'anthropic';
+      case BetaManagedAgentsAnthropicSkillParamsType.anthropic:
+        return 'anthropic';
     }
   }
 
@@ -157,14 +187,17 @@ enum BetaManagedAgentsApiActorType {
 
   static BetaManagedAgentsApiActorType fromJson(String value) {
     switch (value) {
-      case 'api_actor': return BetaManagedAgentsApiActorType.apiActor;
-      default: throw ArgumentError('Unknown BetaManagedAgentsApiActorType: $value');
+      case 'api_actor':
+        return BetaManagedAgentsApiActorType.apiActor;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsApiActorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsApiActorType.apiActor: return 'api_actor';
+      case BetaManagedAgentsApiActorType.apiActor:
+        return 'api_actor';
     }
   }
 
@@ -178,14 +211,18 @@ enum BetaManagedAgentsBase64DocumentSourceType {
 
   static BetaManagedAgentsBase64DocumentSourceType fromJson(String value) {
     switch (value) {
-      case 'base64': return BetaManagedAgentsBase64DocumentSourceType.base64;
-      default: throw ArgumentError('Unknown BetaManagedAgentsBase64DocumentSourceType: $value');
+      case 'base64':
+        return BetaManagedAgentsBase64DocumentSourceType.base64;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsBase64DocumentSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsBase64DocumentSourceType.base64: return 'base64';
+      case BetaManagedAgentsBase64DocumentSourceType.base64:
+        return 'base64';
     }
   }
 
@@ -199,14 +236,18 @@ enum BetaManagedAgentsBase64ImageSourceType {
 
   static BetaManagedAgentsBase64ImageSourceType fromJson(String value) {
     switch (value) {
-      case 'base64': return BetaManagedAgentsBase64ImageSourceType.base64;
-      default: throw ArgumentError('Unknown BetaManagedAgentsBase64ImageSourceType: $value');
+      case 'base64':
+        return BetaManagedAgentsBase64ImageSourceType.base64;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsBase64ImageSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsBase64ImageSourceType.base64: return 'base64';
+      case BetaManagedAgentsBase64ImageSourceType.base64:
+        return 'base64';
     }
   }
 
@@ -220,14 +261,18 @@ enum BetaManagedAgentsBashToolConfigName {
 
   static BetaManagedAgentsBashToolConfigName fromJson(String value) {
     switch (value) {
-      case 'bash': return BetaManagedAgentsBashToolConfigName.bash;
-      default: throw ArgumentError('Unknown BetaManagedAgentsBashToolConfigName: $value');
+      case 'bash':
+        return BetaManagedAgentsBashToolConfigName.bash;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsBashToolConfigName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsBashToolConfigName.bash: return 'bash';
+      case BetaManagedAgentsBashToolConfigName.bash:
+        return 'bash';
     }
   }
 
@@ -241,14 +286,18 @@ enum BetaManagedAgentsBashToolConfigType {
 
   static BetaManagedAgentsBashToolConfigType fromJson(String value) {
     switch (value) {
-      case 'bash': return BetaManagedAgentsBashToolConfigType.bash;
-      default: throw ArgumentError('Unknown BetaManagedAgentsBashToolConfigType: $value');
+      case 'bash':
+        return BetaManagedAgentsBashToolConfigType.bash;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsBashToolConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsBashToolConfigType.bash: return 'bash';
+      case BetaManagedAgentsBashToolConfigType.bash:
+        return 'bash';
     }
   }
 
@@ -262,14 +311,18 @@ enum BetaManagedAgentsBashToolConfigParamsName {
 
   static BetaManagedAgentsBashToolConfigParamsName fromJson(String value) {
     switch (value) {
-      case 'bash': return BetaManagedAgentsBashToolConfigParamsName.bash;
-      default: throw ArgumentError('Unknown BetaManagedAgentsBashToolConfigParamsName: $value');
+      case 'bash':
+        return BetaManagedAgentsBashToolConfigParamsName.bash;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsBashToolConfigParamsName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsBashToolConfigParamsName.bash: return 'bash';
+      case BetaManagedAgentsBashToolConfigParamsName.bash:
+        return 'bash';
     }
   }
 

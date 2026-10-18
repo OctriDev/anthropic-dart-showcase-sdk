@@ -10,14 +10,17 @@ enum BetaFederationRuleWorkspaceType {
 
   static BetaFederationRuleWorkspaceType fromJson(String value) {
     switch (value) {
-      case 'federation_rule_workspace': return BetaFederationRuleWorkspaceType.federationRuleWorkspace;
-      default: throw ArgumentError('Unknown BetaFederationRuleWorkspaceType: $value');
+      case 'federation_rule_workspace':
+        return BetaFederationRuleWorkspaceType.federationRuleWorkspace;
+      default:
+        throw ArgumentError('Unknown BetaFederationRuleWorkspaceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFederationRuleWorkspaceType.federationRuleWorkspace: return 'federation_rule_workspace';
+      case BetaFederationRuleWorkspaceType.federationRuleWorkspace:
+        return 'federation_rule_workspace';
     }
   }
 
@@ -31,14 +34,17 @@ enum BetaFileDeleteResponseType {
 
   static BetaFileDeleteResponseType fromJson(String value) {
     switch (value) {
-      case 'file_deleted': return BetaFileDeleteResponseType.fileDeleted;
-      default: throw ArgumentError('Unknown BetaFileDeleteResponseType: $value');
+      case 'file_deleted':
+        return BetaFileDeleteResponseType.fileDeleted;
+      default:
+        throw ArgumentError('Unknown BetaFileDeleteResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFileDeleteResponseType.fileDeleted: return 'file_deleted';
+      case BetaFileDeleteResponseType.fileDeleted:
+        return 'file_deleted';
     }
   }
 
@@ -52,14 +58,17 @@ enum BetaFileDocumentSourceType {
 
   static BetaFileDocumentSourceType fromJson(String value) {
     switch (value) {
-      case 'file': return BetaFileDocumentSourceType.file;
-      default: throw ArgumentError('Unknown BetaFileDocumentSourceType: $value');
+      case 'file':
+        return BetaFileDocumentSourceType.file;
+      default:
+        throw ArgumentError('Unknown BetaFileDocumentSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFileDocumentSourceType.file: return 'file';
+      case BetaFileDocumentSourceType.file:
+        return 'file';
     }
   }
 
@@ -73,14 +82,17 @@ enum BetaFileImageSourceType {
 
   static BetaFileImageSourceType fromJson(String value) {
     switch (value) {
-      case 'file': return BetaFileImageSourceType.file;
-      default: throw ArgumentError('Unknown BetaFileImageSourceType: $value');
+      case 'file':
+        return BetaFileImageSourceType.file;
+      default:
+        throw ArgumentError('Unknown BetaFileImageSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFileImageSourceType.file: return 'file';
+      case BetaFileImageSourceType.file:
+        return 'file';
     }
   }
 
@@ -94,14 +106,17 @@ enum BetaFileMetadataSchemaType {
 
   static BetaFileMetadataSchemaType fromJson(String value) {
     switch (value) {
-      case 'file': return BetaFileMetadataSchemaType.file;
-      default: throw ArgumentError('Unknown BetaFileMetadataSchemaType: $value');
+      case 'file':
+        return BetaFileMetadataSchemaType.file;
+      default:
+        throw ArgumentError('Unknown BetaFileMetadataSchemaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFileMetadataSchemaType.file: return 'file';
+      case BetaFileMetadataSchemaType.file:
+        return 'file';
     }
   }
 
@@ -115,14 +130,17 @@ enum BetaFileScopeType {
 
   static BetaFileScopeType fromJson(String value) {
     switch (value) {
-      case 'session': return BetaFileScopeType.session;
-      default: throw ArgumentError('Unknown BetaFileScopeType: $value');
+      case 'session':
+        return BetaFileScopeType.session;
+      default:
+        throw ArgumentError('Unknown BetaFileScopeType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaFileScopeType.session: return 'session';
+      case BetaFileScopeType.session:
+        return 'session';
     }
   }
 
@@ -136,14 +154,17 @@ enum BetaGatewayTimeoutErrorType {
 
   static BetaGatewayTimeoutErrorType fromJson(String value) {
     switch (value) {
-      case 'timeout_error': return BetaGatewayTimeoutErrorType.timeoutError;
-      default: throw ArgumentError('Unknown BetaGatewayTimeoutErrorType: $value');
+      case 'timeout_error':
+        return BetaGatewayTimeoutErrorType.timeoutError;
+      default:
+        throw ArgumentError('Unknown BetaGatewayTimeoutErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaGatewayTimeoutErrorType.timeoutError: return 'timeout_error';
+      case BetaGatewayTimeoutErrorType.timeoutError:
+        return 'timeout_error';
     }
   }
 
@@ -157,14 +178,17 @@ enum BetaGcpExternalKeyConfigType {
 
   static BetaGcpExternalKeyConfigType fromJson(String value) {
     switch (value) {
-      case 'gcp': return BetaGcpExternalKeyConfigType.gcp;
-      default: throw ArgumentError('Unknown BetaGcpExternalKeyConfigType: $value');
+      case 'gcp':
+        return BetaGcpExternalKeyConfigType.gcp;
+      default:
+        throw ArgumentError('Unknown BetaGcpExternalKeyConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaGcpExternalKeyConfigType.gcp: return 'gcp';
+      case BetaGcpExternalKeyConfigType.gcp:
+        return 'gcp';
     }
   }
 
@@ -178,14 +202,18 @@ enum BetaInputJsonContentBlockDeltaType {
 
   static BetaInputJsonContentBlockDeltaType fromJson(String value) {
     switch (value) {
-      case 'input_json_delta': return BetaInputJsonContentBlockDeltaType.inputJsonDelta;
-      default: throw ArgumentError('Unknown BetaInputJsonContentBlockDeltaType: $value');
+      case 'input_json_delta':
+        return BetaInputJsonContentBlockDeltaType.inputJsonDelta;
+      default:
+        throw ArgumentError(
+            'Unknown BetaInputJsonContentBlockDeltaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaInputJsonContentBlockDeltaType.inputJsonDelta: return 'input_json_delta';
+      case BetaInputJsonContentBlockDeltaType.inputJsonDelta:
+        return 'input_json_delta';
     }
   }
 
@@ -195,34 +223,38 @@ enum BetaInputJsonContentBlockDeltaType {
 
 /// Optional enumerated value serialized in the `clear_at` wire field.
 final class BetaInputMessageClearAtVariant0 {
-
   final String value;
 
   const BetaInputMessageClearAtVariant0._(this.value);
 
-  factory BetaInputMessageClearAtVariant0.fromJson(String value) => BetaInputMessageClearAtVariant0._(value);
+  factory BetaInputMessageClearAtVariant0.fromJson(String value) =>
+      BetaInputMessageClearAtVariant0._(value);
 
-  static const nextUserMessage = BetaInputMessageClearAtVariant0._('next_user_message');
+  static const nextUserMessage =
+      BetaInputMessageClearAtVariant0._('next_user_message');
   static const never = BetaInputMessageClearAtVariant0._('never');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaInputMessageClearAtVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaInputMessageClearAtVariant0 && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `role` wire field.
 final class BetaInputMessageRole {
-
   final String value;
 
   const BetaInputMessageRole._(this.value);
 
-  factory BetaInputMessageRole.fromJson(String value) => BetaInputMessageRole._(value);
+  factory BetaInputMessageRole.fromJson(String value) =>
+      BetaInputMessageRole._(value);
 
   static const user = BetaInputMessageRole._('user');
   static const assistant = BetaInputMessageRole._('assistant');
@@ -230,12 +262,15 @@ final class BetaInputMessageRole {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaInputMessageRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaInputMessageRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -244,14 +279,17 @@ enum BetaInputSchemaType {
 
   static BetaInputSchemaType fromJson(String value) {
     switch (value) {
-      case 'object': return BetaInputSchemaType.object;
-      default: throw ArgumentError('Unknown BetaInputSchemaType: $value');
+      case 'object':
+        return BetaInputSchemaType.object;
+      default:
+        throw ArgumentError('Unknown BetaInputSchemaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaInputSchemaType.object: return 'object';
+      case BetaInputSchemaType.object:
+        return 'object';
     }
   }
 
@@ -265,14 +303,17 @@ enum BetaInputTokensClearAtLeastType {
 
   static BetaInputTokensClearAtLeastType fromJson(String value) {
     switch (value) {
-      case 'input_tokens': return BetaInputTokensClearAtLeastType.inputTokens;
-      default: throw ArgumentError('Unknown BetaInputTokensClearAtLeastType: $value');
+      case 'input_tokens':
+        return BetaInputTokensClearAtLeastType.inputTokens;
+      default:
+        throw ArgumentError('Unknown BetaInputTokensClearAtLeastType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaInputTokensClearAtLeastType.inputTokens: return 'input_tokens';
+      case BetaInputTokensClearAtLeastType.inputTokens:
+        return 'input_tokens';
     }
   }
 

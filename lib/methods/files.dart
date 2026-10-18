@@ -30,7 +30,8 @@ Future<FileMetadataSchema> uploadFiles(ClientConfig config,
     SdkOptional<int> expiresInSeconds = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   if (expiresInSeconds is SdkPresent<int>) {
-    validateRange('expires_in_seconds', expiresInSeconds.value, min: 3600, max: 7776000);
+    validateRange('expires_in_seconds', expiresInSeconds.value,
+        min: 3600, max: 7776000);
   }
 
   return (await sdkRequest<FileMetadataSchema>('POST', '/v1/files',
@@ -41,14 +42,51 @@ Future<FileMetadataSchema> uploadFiles(ClientConfig config,
           },
           contentType: 'multipart/form-data',
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'uploadFiles',
-          fromJsonRaw: (value) => FileMetadataSchema.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              FileMetadataSchema.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists file metadata for the authenticated user in the selected Workspace. Use `page` and `limit` to paginate the results, or use `ids[]` to request specific files; `ids[]` cannot be combined with either parameter and returns a single page. IDs that do not resolve to visible files are omitted.
 ///
@@ -83,20 +121,59 @@ Future<FileListResponse> listFiles(ClientConfig config,
   return (await sdkRequest<FileListResponse>('GET', '/v1/files',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'ids[]': SdkQueryValue(SdkUtils.unwrapOptional(ids), style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'ids[]': SdkQueryValue(SdkUtils.unwrapOptional(ids),
+                style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'listFiles',
-          fromJsonRaw: (value) => FileListResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              FileListResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                ErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// Lists file metadata for the authenticated user in the selected Workspace. Use `page` and `limit` to paginate the results, or use `ids[]` to request specific files; `ids[]` cannot be combined with either parameter and returns a single page. IDs that do not resolve to visible files are omitted.
 ///
@@ -117,23 +194,66 @@ Future<FileListResponse> listFiles(ClientConfig config,
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Stream<FileMetadataSchema> listFilesPaginated(ClientConfig config, {String? page, List<String>? ids, int? limit, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<FileMetadataSchema> listFilesPaginated(ClientConfig config,
+    {String? page,
+    List<String>? ids,
+    int? limit,
+    String? anthropicVersion,
+    String? anthropicWorkspaceId,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listFiles(config, page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), ids: ids == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(ids), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listFiles(config,
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        ids: ids == null
+            ? const SdkOmitted<List<String>?>()
+            : SdkPresent<List<String>?>(ids),
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage.valueOrNull;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<FileListResponse, FileMetadataSchema>> listFilesPages(ClientConfig config, {String? page, List<String>? ids, int? limit, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<SdkPage<FileListResponse, FileMetadataSchema>> listFilesPages(
+    ClientConfig config,
+    {String? page,
+    List<String>? ids,
+    int? limit,
+    String? anthropicVersion,
+    String? anthropicWorkspaceId,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listFiles(config, page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), ids: ids == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(ids), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listFiles(config,
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        ids: ids == null
+            ? const SdkOmitted<List<String>?>()
+            : SdkPresent<List<String>?>(ids),
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage.valueOrNull;
@@ -143,7 +263,6 @@ Stream<SdkPage<FileListResponse, FileMetadataSchema>> listFilesPages(ClientConfi
     sdkCursor = sdkNext;
   }
 }
-
 
 /// Retrieves metadata for a specific file. Use `file_id` to identify the file whose metadata you need, including its filename, MIME type, size, and availability. The response also includes the file's expiration time when applicable.
 ///
@@ -165,14 +284,35 @@ Future<FileMetadataSchema> retrieveFiles(ClientConfig config,
           'GET', '/v1/files/${Uri.encodeComponent(fileId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'retrieveFiles',
-          fromJsonRaw: (value) => FileMetadataSchema.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              FileMetadataSchema.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Deletes a specific file. Supply the file's `file_id` to remove it from the Files API. A successful response identifies the deleted file.
 ///
@@ -194,14 +334,35 @@ Future<FileDeleteResponse> deleteFiles(ClientConfig config,
           'DELETE', '/v1/files/${Uri.encodeComponent(fileId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'deleteFiles',
-          fromJsonRaw: (value) => FileDeleteResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              FileDeleteResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Retrieves the file bytes for a specific file. Supply `file_id` for the file whose content you want to download. The response contains the file content as an octet stream.
 ///
@@ -223,7 +384,11 @@ Future<List<int>> downloadFiles(ClientConfig config,
           'GET', '/v1/files/${Uri.encodeComponent(fileId.toString())}/content',
           config: config,
           decoder: SdkResponseDecoder.bytes,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'downloadFiles',
           options: requestOptions))
       .data;

@@ -8,29 +8,43 @@ part of 'shared_beta.dart';
 class BetaInvalidRequestError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaInvalidRequestErrorType type_;
 
   const BetaInvalidRequestError({required this.message, required this.type_});
 
-  BetaInvalidRequestError Function({String message, BetaInvalidRequestErrorType type_}) get copyWith => _copyWith;
+  BetaInvalidRequestError Function(
+      {String message,
+      BetaInvalidRequestErrorType type_}) get copyWith => _copyWith;
 
-  BetaInvalidRequestError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaInvalidRequestError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaInvalidRequestErrorType,
-  );
+  BetaInvalidRequestError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaInvalidRequestError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaInvalidRequestErrorType,
+      );
 
-  factory BetaInvalidRequestError.fromJson(Map<String, dynamic> json) => BetaInvalidRequestError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? BetaInvalidRequestErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaInvalidRequestError.fromJson(Map<String, dynamic> json) =>
+      BetaInvalidRequestError(
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaInvalidRequestErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaIssuerPollStatusLastFetchedAt {
@@ -38,16 +52,21 @@ sealed class BetaIssuerPollStatusLastFetchedAt {
   static const String constructionSurface = 'named';
   const BetaIssuerPollStatusLastFetchedAt();
   factory BetaIssuerPollStatusLastFetchedAt.fromJson(Object? json) {
-    if (json is String) { return BetaIssuerPollStatusLastFetchedAtString(json); }
-    throw FormatException("No variant matched for BetaIssuerPollStatusLastFetchedAt");
+    if (json is String) {
+      return BetaIssuerPollStatusLastFetchedAtString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaIssuerPollStatusLastFetchedAt");
   }
   Object? toJson();
 }
 
-final class BetaIssuerPollStatusLastFetchedAtString extends BetaIssuerPollStatusLastFetchedAt {
+final class BetaIssuerPollStatusLastFetchedAtString
+    extends BetaIssuerPollStatusLastFetchedAt {
   final String value;
   const BetaIssuerPollStatusLastFetchedAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BetaIssuerPollStatusNextPollAt {
@@ -55,50 +74,81 @@ sealed class BetaIssuerPollStatusNextPollAt {
   static const String constructionSurface = 'named';
   const BetaIssuerPollStatusNextPollAt();
   factory BetaIssuerPollStatusNextPollAt.fromJson(Object? json) {
-    if (json is String) { return BetaIssuerPollStatusNextPollAtString(json); }
-    throw FormatException("No variant matched for BetaIssuerPollStatusNextPollAt");
+    if (json is String) {
+      return BetaIssuerPollStatusNextPollAtString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaIssuerPollStatusNextPollAt");
   }
   Object? toJson();
 }
 
-final class BetaIssuerPollStatusNextPollAtString extends BetaIssuerPollStatusNextPollAt {
+final class BetaIssuerPollStatusNextPollAtString
+    extends BetaIssuerPollStatusNextPollAt {
   final String value;
   const BetaIssuerPollStatusNextPollAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Status of automatic JWKS polling for a federation issuer. Anthropic periodically fetches the issuer's signing keys in the background. These fields summarize the most recent fetches so the health of the JWKS endpoint can be monitored.
 class BetaIssuerPollStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Consecutive fetch failures since the last success.
   final int consecutiveFailures;
+
   /// When the last successful fetch completed.
   final String? lastFetchedAt;
+
   /// When the next fetch is scheduled. Null if paused.
   final String? nextPollAt;
 
-  const BetaIssuerPollStatus({required this.consecutiveFailures, required this.lastFetchedAt, required this.nextPollAt});
+  const BetaIssuerPollStatus(
+      {required this.consecutiveFailures,
+      required this.lastFetchedAt,
+      required this.nextPollAt});
 
-  BetaIssuerPollStatus Function({int consecutiveFailures, String? lastFetchedAt, String? nextPollAt}) get copyWith => _copyWith;
+  BetaIssuerPollStatus Function(
+      {int consecutiveFailures,
+      String? lastFetchedAt,
+      String? nextPollAt}) get copyWith => _copyWith;
 
-  BetaIssuerPollStatus _copyWith({Object? consecutiveFailures = sdkOmittedValue, Object? lastFetchedAt = sdkOmittedValue, Object? nextPollAt = sdkOmittedValue}) => BetaIssuerPollStatus(
-    consecutiveFailures: identical(consecutiveFailures, sdkOmittedValue) ? this.consecutiveFailures : consecutiveFailures as int,
-    lastFetchedAt: identical(lastFetchedAt, sdkOmittedValue) ? this.lastFetchedAt : lastFetchedAt as String?,
-    nextPollAt: identical(nextPollAt, sdkOmittedValue) ? this.nextPollAt : nextPollAt as String?,
-  );
+  BetaIssuerPollStatus _copyWith(
+          {Object? consecutiveFailures = sdkOmittedValue,
+          Object? lastFetchedAt = sdkOmittedValue,
+          Object? nextPollAt = sdkOmittedValue}) =>
+      BetaIssuerPollStatus(
+        consecutiveFailures: identical(consecutiveFailures, sdkOmittedValue)
+            ? this.consecutiveFailures
+            : consecutiveFailures as int,
+        lastFetchedAt: identical(lastFetchedAt, sdkOmittedValue)
+            ? this.lastFetchedAt
+            : lastFetchedAt as String?,
+        nextPollAt: identical(nextPollAt, sdkOmittedValue)
+            ? this.nextPollAt
+            : nextPollAt as String?,
+      );
 
-  factory BetaIssuerPollStatus.fromJson(Map<String, dynamic> json) => BetaIssuerPollStatus(
-    consecutiveFailures: ((json['consecutive_failures'] as num?)?.toInt())!,
-    lastFetchedAt: json.containsKey('last_fetched_at') ? json['last_fetched_at'] as String? : throw ArgumentError.value(null, 'last_fetched_at', 'Required property is missing'),
-    nextPollAt: json.containsKey('next_poll_at') ? json['next_poll_at'] as String? : throw ArgumentError.value(null, 'next_poll_at', 'Required property is missing'),
-  );
+  factory BetaIssuerPollStatus.fromJson(Map<String, dynamic> json) =>
+      BetaIssuerPollStatus(
+        consecutiveFailures: ((json['consecutive_failures'] as num?)?.toInt())!,
+        lastFetchedAt: json.containsKey('last_fetched_at')
+            ? json['last_fetched_at'] as String?
+            : throw ArgumentError.value(
+                null, 'last_fetched_at', 'Required property is missing'),
+        nextPollAt: json.containsKey('next_poll_at')
+            ? json['next_poll_at'] as String?
+            : throw ArgumentError.value(
+                null, 'next_poll_at', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'consecutive_failures': consecutiveFailures,
-    'last_fetched_at': lastFetchedAt,
-    'next_poll_at': nextPollAt,
-  };
+        'consecutive_failures': consecutiveFailures,
+        'last_fetched_at': lastFetchedAt,
+        'next_poll_at': nextPollAt,
+      };
 }
 
 // BetaIterationsUsage = List<BetaUsageIterationsItem>
@@ -108,77 +158,146 @@ sealed class BetaMCPToolsetCacheControl {
   static const String constructionSurface = 'named';
   const BetaMCPToolsetCacheControl();
   factory BetaMCPToolsetCacheControl.fromJson(Object? json) {
-    try { return BetaMCPToolsetCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaMCPToolsetCacheControl(json); }
+    try {
+      return BetaMCPToolsetCacheControlBetaCacheControlEphemeral(
+          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownBetaMCPToolsetCacheControl(json);
+    }
     throw FormatException("No variant matched for BetaMCPToolsetCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaMCPToolsetCacheControlBetaCacheControlEphemeral extends BetaMCPToolsetCacheControl {
+final class BetaMCPToolsetCacheControlBetaCacheControlEphemeral
+    extends BetaMCPToolsetCacheControl {
   final BetaCacheControlEphemeral value;
   const BetaMCPToolsetCacheControlBetaCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaMCPToolsetCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaMCPToolsetCacheControl extends BetaMCPToolsetCacheControl {
+final class UnknownBetaMCPToolsetCacheControl
+    extends BetaMCPToolsetCacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaMCPToolsetCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Configuration for a group of tools from an MCP server. Allows configuring enabled status and defer_loading for all tools from an MCP server, with optional per-tool overrides.
 class BetaMCPToolset {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
+
   /// Configuration overrides for specific tools, keyed by tool name
   final SdkOptional<Map<String, BetaMCPToolConfig>?> configs;
+
   /// Default configuration applied to all tools from this server
   final SdkOptional<BetaMCPToolDefaultConfig> defaultConfig;
+
   /// Name of the MCP server to configure tools for
   final String mcpServerName;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaMCPToolsetType type_;
 
-  const BetaMCPToolset({this.cacheControl = const SdkOmitted(), this.configs = const SdkOmitted(), this.defaultConfig = const SdkOmitted(), required this.mcpServerName, required this.type_});
+  const BetaMCPToolset(
+      {this.cacheControl = const SdkOmitted(),
+      this.configs = const SdkOmitted(),
+      this.defaultConfig = const SdkOmitted(),
+      required this.mcpServerName,
+      required this.type_});
 
-  BetaMCPToolset Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<Map<String, BetaMCPToolConfig>?> configs, SdkOptional<BetaMCPToolDefaultConfig> defaultConfig, String mcpServerName, BetaMCPToolsetType type_}) get copyWith => _copyWith;
+  BetaMCPToolset Function(
+      {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
+      SdkOptional<Map<String, BetaMCPToolConfig>?> configs,
+      SdkOptional<BetaMCPToolDefaultConfig> defaultConfig,
+      String mcpServerName,
+      BetaMCPToolsetType type_}) get copyWith => _copyWith;
 
-  BetaMCPToolset _copyWith({Object? cacheControl = sdkOmittedValue, Object? configs = sdkOmittedValue, Object? defaultConfig = sdkOmittedValue, Object? mcpServerName = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaMCPToolset(
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-    configs: identical(configs, sdkOmittedValue) ? this.configs : configs as SdkOptional<Map<String, BetaMCPToolConfig>?>,
-    defaultConfig: identical(defaultConfig, sdkOmittedValue) ? this.defaultConfig : defaultConfig as SdkOptional<BetaMCPToolDefaultConfig>,
-    mcpServerName: identical(mcpServerName, sdkOmittedValue) ? this.mcpServerName : mcpServerName as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaMCPToolsetType,
-  );
+  BetaMCPToolset _copyWith(
+          {Object? cacheControl = sdkOmittedValue,
+          Object? configs = sdkOmittedValue,
+          Object? defaultConfig = sdkOmittedValue,
+          Object? mcpServerName = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaMCPToolset(
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+        configs: identical(configs, sdkOmittedValue)
+            ? this.configs
+            : configs as SdkOptional<Map<String, BetaMCPToolConfig>?>,
+        defaultConfig: identical(defaultConfig, sdkOmittedValue)
+            ? this.defaultConfig
+            : defaultConfig as SdkOptional<BetaMCPToolDefaultConfig>,
+        mcpServerName: identical(mcpServerName, sdkOmittedValue)
+            ? this.mcpServerName
+            : mcpServerName as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaMCPToolsetType,
+      );
 
   factory BetaMCPToolset.fromJson(Map<String, dynamic> json) => BetaMCPToolset(
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    configs: json.containsKey('configs') ? SdkPresent(json['configs'] == null ? null : Map<String, dynamic>.from(json['configs'] as Map).map((key, value) => MapEntry(key, BetaMCPToolConfig.fromJson(value as Map<String, dynamic>)))) : const SdkOmitted(),
-    defaultConfig: json['default_config'] != null ? SdkPresent((json['default_config'] != null ? BetaMCPToolDefaultConfig.fromJson(json['default_config'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    mcpServerName: (json['mcp_server_name'] as String?)!,
-    type_: (json['type'] != null ? BetaMCPToolsetType.fromJson(json['type'] as String) : null)!,
-  );
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? BetaCacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        configs: json.containsKey('configs')
+            ? SdkPresent(json['configs'] == null
+                ? null
+                : Map<String, dynamic>.from(json['configs'] as Map).map(
+                    (key, value) => MapEntry(
+                        key,
+                        BetaMCPToolConfig.fromJson(
+                            value as Map<String, dynamic>))))
+            : const SdkOmitted(),
+        defaultConfig: json['default_config'] != null
+            ? SdkPresent((json['default_config'] != null
+                ? BetaMCPToolDefaultConfig.fromJson(
+                    json['default_config'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        mcpServerName: (json['mcp_server_name'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaMCPToolsetType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (cacheControl) {
-      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (configs) {
-      SdkPresent<Map<String, BetaMCPToolConfig>?>(value: final value) => {'configs': value?.map((key, value) => MapEntry(key, value.toJson())),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (defaultConfig) {
-      SdkPresent<BetaMCPToolDefaultConfig>(value: final value) => {'default_config': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'mcp_server_name': mcpServerName,
-    'type': type_.toJson(),
-  };
+        ...switch (cacheControl) {
+          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (configs) {
+          SdkPresent<Map<String, BetaMCPToolConfig>?>(value: final value) => {
+              'configs':
+                  value?.map((key, value) => MapEntry(key, value.toJson())),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (defaultConfig) {
+          SdkPresent<BetaMCPToolDefaultConfig>(value: final value) => {
+              'default_config': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'mcp_server_name': mcpServerName,
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaMemoryTool20250818CacheControl {
@@ -186,91 +305,178 @@ sealed class BetaMemoryTool20250818CacheControl {
   static const String constructionSurface = 'named';
   const BetaMemoryTool20250818CacheControl();
   factory BetaMemoryTool20250818CacheControl.fromJson(Object? json) {
-    try { return BetaMemoryTool20250818CacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaMemoryTool20250818CacheControl(json); }
-    throw FormatException("No variant matched for BetaMemoryTool20250818CacheControl");
+    try {
+      return BetaMemoryTool20250818CacheControlBetaCacheControlEphemeral(
+          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownBetaMemoryTool20250818CacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaMemoryTool20250818CacheControl");
   }
   Object? toJson();
 }
 
-final class BetaMemoryTool20250818CacheControlBetaCacheControlEphemeral extends BetaMemoryTool20250818CacheControl {
+final class BetaMemoryTool20250818CacheControlBetaCacheControlEphemeral
+    extends BetaMemoryTool20250818CacheControl {
   final BetaCacheControlEphemeral value;
   const BetaMemoryTool20250818CacheControlBetaCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaMemoryTool20250818CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaMemoryTool20250818CacheControl extends BetaMemoryTool20250818CacheControl {
+final class UnknownBetaMemoryTool20250818CacheControl
+    extends BetaMemoryTool20250818CacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaMemoryTool20250818CacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaMemoryTool_20250818` API schema.
 class BetaMemoryTool20250818 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<BetaAllowedCaller>> allowedCallers;
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
+
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
+
   /// Optional array value serialized in the `input_examples` wire field.
   final SdkOptional<List<Map<String, dynamic>>> inputExamples;
+
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final BetaMemoryTool20250818Name name;
+
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaMemoryTool20250818Type type_;
 
-  const BetaMemoryTool20250818({this.allowedCallers = const SdkOmitted(), this.cacheControl = const SdkOmitted(), this.deferLoading = const SdkOmitted(), this.inputExamples = const SdkOmitted(), required this.name, this.strict = const SdkOmitted(), required this.type_});
+  const BetaMemoryTool20250818(
+      {this.allowedCallers = const SdkOmitted(),
+      this.cacheControl = const SdkOmitted(),
+      this.deferLoading = const SdkOmitted(),
+      this.inputExamples = const SdkOmitted(),
+      required this.name,
+      this.strict = const SdkOmitted(),
+      required this.type_});
 
-  BetaMemoryTool20250818 Function({SdkOptional<List<BetaAllowedCaller>> allowedCallers, SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<bool> deferLoading, SdkOptional<List<Map<String, dynamic>>> inputExamples, BetaMemoryTool20250818Name name, SdkOptional<bool> strict, BetaMemoryTool20250818Type type_}) get copyWith => _copyWith;
+  BetaMemoryTool20250818 Function(
+      {SdkOptional<List<BetaAllowedCaller>> allowedCallers,
+      SdkOptional<BetaCacheControlEphemeral?> cacheControl,
+      SdkOptional<bool> deferLoading,
+      SdkOptional<List<Map<String, dynamic>>> inputExamples,
+      BetaMemoryTool20250818Name name,
+      SdkOptional<bool> strict,
+      BetaMemoryTool20250818Type type_}) get copyWith => _copyWith;
 
-  BetaMemoryTool20250818 _copyWith({Object? allowedCallers = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? inputExamples = sdkOmittedValue, Object? name = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaMemoryTool20250818(
-    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<BetaAllowedCaller>>,
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
-    inputExamples: identical(inputExamples, sdkOmittedValue) ? this.inputExamples : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as BetaMemoryTool20250818Name,
-    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaMemoryTool20250818Type,
-  );
+  BetaMemoryTool20250818 _copyWith(
+          {Object? allowedCallers = sdkOmittedValue,
+          Object? cacheControl = sdkOmittedValue,
+          Object? deferLoading = sdkOmittedValue,
+          Object? inputExamples = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? strict = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaMemoryTool20250818(
+        allowedCallers: identical(allowedCallers, sdkOmittedValue)
+            ? this.allowedCallers
+            : allowedCallers as SdkOptional<List<BetaAllowedCaller>>,
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool>,
+        inputExamples: identical(inputExamples, sdkOmittedValue)
+            ? this.inputExamples
+            : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as BetaMemoryTool20250818Name,
+        strict: identical(strict, sdkOmittedValue)
+            ? this.strict
+            : strict as SdkOptional<bool>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaMemoryTool20250818Type,
+      );
 
-  factory BetaMemoryTool20250818.fromJson(Map<String, dynamic> json) => BetaMemoryTool20250818(
-    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => BetaAllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
-    inputExamples: json['input_examples'] != null ? SdkPresent(((json['input_examples'] as List?)?.map((e) => e as Map<String, dynamic>).toList())!) : const SdkOmitted(),
-    name: (json['name'] != null ? BetaMemoryTool20250818Name.fromJson(json['name'] as String) : null)!,
-    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaMemoryTool20250818Type.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaMemoryTool20250818.fromJson(Map<String, dynamic> json) =>
+      BetaMemoryTool20250818(
+        allowedCallers: json['allowed_callers'] != null
+            ? SdkPresent(((json['allowed_callers'] as List?)
+                ?.map((e) => BetaAllowedCaller.fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? BetaCacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        deferLoading: json['defer_loading'] != null
+            ? SdkPresent((json['defer_loading'] as bool?)!)
+            : const SdkOmitted(),
+        inputExamples: json['input_examples'] != null
+            ? SdkPresent(((json['input_examples'] as List?)
+                ?.map((e) => e as Map<String, dynamic>)
+                .toList())!)
+            : const SdkOmitted(),
+        name: (json['name'] != null
+            ? BetaMemoryTool20250818Name.fromJson(json['name'] as String)
+            : null)!,
+        strict: json['strict'] != null
+            ? SdkPresent((json['strict'] as bool?)!)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaMemoryTool20250818Type.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (allowedCallers) {
-      SdkPresent<List<BetaAllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (cacheControl) {
-      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deferLoading) {
-      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (inputExamples) {
-      SdkPresent<List<Map<String, dynamic>>>(value: final value) => {'input_examples': value,},
-      _ => const <String, dynamic>{},
-    },
-    'name': name.toJson(),
-    ...switch (strict) {
-      SdkPresent<bool>(value: final value) => {'strict': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (allowedCallers) {
+          SdkPresent<List<BetaAllowedCaller>>(value: final value) => {
+              'allowed_callers': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cacheControl) {
+          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deferLoading) {
+          SdkPresent<bool>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (inputExamples) {
+          SdkPresent<List<Map<String, dynamic>>>(value: final value) => {
+              'input_examples': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name.toJson(),
+        ...switch (strict) {
+          SdkPresent<bool>(value: final value) => {
+              'strict': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

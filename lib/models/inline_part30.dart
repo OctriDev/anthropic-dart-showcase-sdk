@@ -8,16 +8,21 @@ part of 'inline.dart';
 enum BetaManagedAgentsTokenEndpointAuthNoneParamType {
   none;
 
-  static BetaManagedAgentsTokenEndpointAuthNoneParamType fromJson(String value) {
+  static BetaManagedAgentsTokenEndpointAuthNoneParamType fromJson(
+      String value) {
     switch (value) {
-      case 'none': return BetaManagedAgentsTokenEndpointAuthNoneParamType.none;
-      default: throw ArgumentError('Unknown BetaManagedAgentsTokenEndpointAuthNoneParamType: $value');
+      case 'none':
+        return BetaManagedAgentsTokenEndpointAuthNoneParamType.none;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsTokenEndpointAuthNoneParamType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsTokenEndpointAuthNoneParamType.none: return 'none';
+      case BetaManagedAgentsTokenEndpointAuthNoneParamType.none:
+        return 'none';
     }
   }
 
@@ -29,16 +34,21 @@ enum BetaManagedAgentsTokenEndpointAuthNoneParamType {
 enum BetaManagedAgentsTokenEndpointAuthNoneResponseType {
   none;
 
-  static BetaManagedAgentsTokenEndpointAuthNoneResponseType fromJson(String value) {
+  static BetaManagedAgentsTokenEndpointAuthNoneResponseType fromJson(
+      String value) {
     switch (value) {
-      case 'none': return BetaManagedAgentsTokenEndpointAuthNoneResponseType.none;
-      default: throw ArgumentError('Unknown BetaManagedAgentsTokenEndpointAuthNoneResponseType: $value');
+      case 'none':
+        return BetaManagedAgentsTokenEndpointAuthNoneResponseType.none;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsTokenEndpointAuthNoneResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsTokenEndpointAuthNoneResponseType.none: return 'none';
+      case BetaManagedAgentsTokenEndpointAuthNoneResponseType.none:
+        return 'none';
     }
   }
 
@@ -50,16 +60,21 @@ enum BetaManagedAgentsTokenEndpointAuthNoneResponseType {
 enum BetaManagedAgentsTokenEndpointAuthPostParamType {
   clientSecretPost;
 
-  static BetaManagedAgentsTokenEndpointAuthPostParamType fromJson(String value) {
+  static BetaManagedAgentsTokenEndpointAuthPostParamType fromJson(
+      String value) {
     switch (value) {
-      case 'client_secret_post': return BetaManagedAgentsTokenEndpointAuthPostParamType.clientSecretPost;
-      default: throw ArgumentError('Unknown BetaManagedAgentsTokenEndpointAuthPostParamType: $value');
+      case 'client_secret_post':
+        return BetaManagedAgentsTokenEndpointAuthPostParamType.clientSecretPost;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsTokenEndpointAuthPostParamType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsTokenEndpointAuthPostParamType.clientSecretPost: return 'client_secret_post';
+      case BetaManagedAgentsTokenEndpointAuthPostParamType.clientSecretPost:
+        return 'client_secret_post';
     }
   }
 
@@ -71,16 +86,22 @@ enum BetaManagedAgentsTokenEndpointAuthPostParamType {
 enum BetaManagedAgentsTokenEndpointAuthPostResponseType {
   clientSecretPost;
 
-  static BetaManagedAgentsTokenEndpointAuthPostResponseType fromJson(String value) {
+  static BetaManagedAgentsTokenEndpointAuthPostResponseType fromJson(
+      String value) {
     switch (value) {
-      case 'client_secret_post': return BetaManagedAgentsTokenEndpointAuthPostResponseType.clientSecretPost;
-      default: throw ArgumentError('Unknown BetaManagedAgentsTokenEndpointAuthPostResponseType: $value');
+      case 'client_secret_post':
+        return BetaManagedAgentsTokenEndpointAuthPostResponseType
+            .clientSecretPost;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsTokenEndpointAuthPostResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsTokenEndpointAuthPostResponseType.clientSecretPost: return 'client_secret_post';
+      case BetaManagedAgentsTokenEndpointAuthPostResponseType.clientSecretPost:
+        return 'client_secret_post';
     }
   }
 
@@ -92,16 +113,23 @@ enum BetaManagedAgentsTokenEndpointAuthPostResponseType {
 enum BetaManagedAgentsTokenEndpointAuthPostUpdateParamType {
   clientSecretPost;
 
-  static BetaManagedAgentsTokenEndpointAuthPostUpdateParamType fromJson(String value) {
+  static BetaManagedAgentsTokenEndpointAuthPostUpdateParamType fromJson(
+      String value) {
     switch (value) {
-      case 'client_secret_post': return BetaManagedAgentsTokenEndpointAuthPostUpdateParamType.clientSecretPost;
-      default: throw ArgumentError('Unknown BetaManagedAgentsTokenEndpointAuthPostUpdateParamType: $value');
+      case 'client_secret_post':
+        return BetaManagedAgentsTokenEndpointAuthPostUpdateParamType
+            .clientSecretPost;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsTokenEndpointAuthPostUpdateParamType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsTokenEndpointAuthPostUpdateParamType.clientSecretPost: return 'client_secret_post';
+      case BetaManagedAgentsTokenEndpointAuthPostUpdateParamType
+            .clientSecretPost:
+        return 'client_secret_post';
     }
   }
 
@@ -113,16 +141,22 @@ enum BetaManagedAgentsTokenEndpointAuthPostUpdateParamType {
 enum BetaManagedAgentsUnknownDeploymentPausedReasonErrorType {
   unknownError;
 
-  static BetaManagedAgentsUnknownDeploymentPausedReasonErrorType fromJson(String value) {
+  static BetaManagedAgentsUnknownDeploymentPausedReasonErrorType fromJson(
+      String value) {
     switch (value) {
-      case 'unknown_error': return BetaManagedAgentsUnknownDeploymentPausedReasonErrorType.unknownError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsUnknownDeploymentPausedReasonErrorType: $value');
+      case 'unknown_error':
+        return BetaManagedAgentsUnknownDeploymentPausedReasonErrorType
+            .unknownError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsUnknownDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUnknownDeploymentPausedReasonErrorType.unknownError: return 'unknown_error';
+      case BetaManagedAgentsUnknownDeploymentPausedReasonErrorType.unknownError:
+        return 'unknown_error';
     }
   }
 
@@ -136,14 +170,18 @@ enum BetaManagedAgentsUnknownErrorType {
 
   static BetaManagedAgentsUnknownErrorType fromJson(String value) {
     switch (value) {
-      case 'unknown_error': return BetaManagedAgentsUnknownErrorType.unknownError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsUnknownErrorType: $value');
+      case 'unknown_error':
+        return BetaManagedAgentsUnknownErrorType.unknownError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsUnknownErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUnknownErrorType.unknownError: return 'unknown_error';
+      case BetaManagedAgentsUnknownErrorType.unknownError:
+        return 'unknown_error';
     }
   }
 
@@ -157,14 +195,18 @@ enum BetaManagedAgentsUnknownRunErrorType {
 
   static BetaManagedAgentsUnknownRunErrorType fromJson(String value) {
     switch (value) {
-      case 'unknown_error': return BetaManagedAgentsUnknownRunErrorType.unknownError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsUnknownRunErrorType: $value');
+      case 'unknown_error':
+        return BetaManagedAgentsUnknownRunErrorType.unknownError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsUnknownRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUnknownRunErrorType.unknownError: return 'unknown_error';
+      case BetaManagedAgentsUnknownRunErrorType.unknownError:
+        return 'unknown_error';
     }
   }
 
@@ -176,16 +218,23 @@ enum BetaManagedAgentsUnknownRunErrorType {
 enum BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType {
   unrestricted;
 
-  static BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType fromJson(String value) {
+  static BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType fromJson(
+      String value) {
     switch (value) {
-      case 'unrestricted': return BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType.unrestricted;
-      default: throw ArgumentError('Unknown BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType: $value');
+      case 'unrestricted':
+        return BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType
+            .unrestricted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType.unrestricted: return 'unrestricted';
+      case BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType
+            .unrestricted:
+        return 'unrestricted';
     }
   }
 
@@ -197,16 +246,23 @@ enum BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType {
 enum BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType {
   unrestricted;
 
-  static BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType fromJson(String value) {
+  static BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType fromJson(
+      String value) {
     switch (value) {
-      case 'unrestricted': return BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType.unrestricted;
-      default: throw ArgumentError('Unknown BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType: $value');
+      case 'unrestricted':
+        return BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType
+            .unrestricted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType.unrestricted: return 'unrestricted';
+      case BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType
+            .unrestricted:
+        return 'unrestricted';
     }
   }
 
@@ -220,14 +276,18 @@ enum BetaManagedAgentsURLDocumentSourceType {
 
   static BetaManagedAgentsURLDocumentSourceType fromJson(String value) {
     switch (value) {
-      case 'url': return BetaManagedAgentsURLDocumentSourceType.url;
-      default: throw ArgumentError('Unknown BetaManagedAgentsURLDocumentSourceType: $value');
+      case 'url':
+        return BetaManagedAgentsURLDocumentSourceType.url;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsURLDocumentSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsURLDocumentSourceType.url: return 'url';
+      case BetaManagedAgentsURLDocumentSourceType.url:
+        return 'url';
     }
   }
 
@@ -241,14 +301,18 @@ enum BetaManagedAgentsURLImageSourceType {
 
   static BetaManagedAgentsURLImageSourceType fromJson(String value) {
     switch (value) {
-      case 'url': return BetaManagedAgentsURLImageSourceType.url;
-      default: throw ArgumentError('Unknown BetaManagedAgentsURLImageSourceType: $value');
+      case 'url':
+        return BetaManagedAgentsURLImageSourceType.url;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsURLImageSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsURLImageSourceType.url: return 'url';
+      case BetaManagedAgentsURLImageSourceType.url:
+        return 'url';
     }
   }
 
@@ -262,14 +326,18 @@ enum BetaManagedAgentsURLMCPServerParamsType {
 
   static BetaManagedAgentsURLMCPServerParamsType fromJson(String value) {
     switch (value) {
-      case 'url': return BetaManagedAgentsURLMCPServerParamsType.url;
-      default: throw ArgumentError('Unknown BetaManagedAgentsURLMCPServerParamsType: $value');
+      case 'url':
+        return BetaManagedAgentsURLMCPServerParamsType.url;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsURLMCPServerParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsURLMCPServerParamsType.url: return 'url';
+      case BetaManagedAgentsURLMCPServerParamsType.url:
+        return 'url';
     }
   }
 

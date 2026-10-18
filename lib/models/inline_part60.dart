@@ -10,14 +10,17 @@ enum MessageBatchType {
 
   static MessageBatchType fromJson(String value) {
     switch (value) {
-      case 'message_batch': return MessageBatchType.messageBatch;
-      default: throw ArgumentError('Unknown MessageBatchType: $value');
+      case 'message_batch':
+        return MessageBatchType.messageBatch;
+      default:
+        throw ArgumentError('Unknown MessageBatchType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case MessageBatchType.messageBatch: return 'message_batch';
+      case MessageBatchType.messageBatch:
+        return 'message_batch';
     }
   }
 
@@ -31,14 +34,17 @@ enum MessageDeltaEventType {
 
   static MessageDeltaEventType fromJson(String value) {
     switch (value) {
-      case 'message_delta': return MessageDeltaEventType.messageDelta;
-      default: throw ArgumentError('Unknown MessageDeltaEventType: $value');
+      case 'message_delta':
+        return MessageDeltaEventType.messageDelta;
+      default:
+        throw ArgumentError('Unknown MessageDeltaEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case MessageDeltaEventType.messageDelta: return 'message_delta';
+      case MessageDeltaEventType.messageDelta:
+        return 'message_delta';
     }
   }
 
@@ -52,14 +58,17 @@ enum MessageStartEventType {
 
   static MessageStartEventType fromJson(String value) {
     switch (value) {
-      case 'message_start': return MessageStartEventType.messageStart;
-      default: throw ArgumentError('Unknown MessageStartEventType: $value');
+      case 'message_start':
+        return MessageStartEventType.messageStart;
+      default:
+        throw ArgumentError('Unknown MessageStartEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case MessageStartEventType.messageStart: return 'message_start';
+      case MessageStartEventType.messageStart:
+        return 'message_start';
     }
   }
 
@@ -73,14 +82,17 @@ enum MessageStopEventType {
 
   static MessageStopEventType fromJson(String value) {
     switch (value) {
-      case 'message_stop': return MessageStopEventType.messageStop;
-      default: throw ArgumentError('Unknown MessageStopEventType: $value');
+      case 'message_stop':
+        return MessageStopEventType.messageStop;
+      default:
+        throw ArgumentError('Unknown MessageStopEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case MessageStopEventType.messageStop: return 'message_stop';
+      case MessageStopEventType.messageStop:
+        return 'message_stop';
     }
   }
 
@@ -94,14 +106,17 @@ enum ModelVariant1 {
 
   static ModelVariant1 fromJson(String value) {
     switch (value) {
-      case 'claude-fable-5-1': return ModelVariant1.claudeFable51;
-      default: throw ArgumentError('Unknown ModelVariant1: $value');
+      case 'claude-fable-5-1':
+        return ModelVariant1.claudeFable51;
+      default:
+        throw ArgumentError('Unknown ModelVariant1: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant1.claudeFable51: return 'claude-fable-5-1';
+      case ModelVariant1.claudeFable51:
+        return 'claude-fable-5-1';
     }
   }
 
@@ -115,14 +130,17 @@ enum ModelVariant10 {
 
   static ModelVariant10 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-4-6': return ModelVariant10.claudeOpus46;
-      default: throw ArgumentError('Unknown ModelVariant10: $value');
+      case 'claude-opus-4-6':
+        return ModelVariant10.claudeOpus46;
+      default:
+        throw ArgumentError('Unknown ModelVariant10: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant10.claudeOpus46: return 'claude-opus-4-6';
+      case ModelVariant10.claudeOpus46:
+        return 'claude-opus-4-6';
     }
   }
 
@@ -136,14 +154,17 @@ enum ModelVariant11 {
 
   static ModelVariant11 fromJson(String value) {
     switch (value) {
-      case 'claude-sonnet-4-6': return ModelVariant11.claudeSonnet46;
-      default: throw ArgumentError('Unknown ModelVariant11: $value');
+      case 'claude-sonnet-4-6':
+        return ModelVariant11.claudeSonnet46;
+      default:
+        throw ArgumentError('Unknown ModelVariant11: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant11.claudeSonnet46: return 'claude-sonnet-4-6';
+      case ModelVariant11.claudeSonnet46:
+        return 'claude-sonnet-4-6';
     }
   }
 
@@ -157,14 +178,17 @@ enum ModelVariant12 {
 
   static ModelVariant12 fromJson(String value) {
     switch (value) {
-      case 'claude-haiku-4-5': return ModelVariant12.claudeHaiku45;
-      default: throw ArgumentError('Unknown ModelVariant12: $value');
+      case 'claude-haiku-4-5':
+        return ModelVariant12.claudeHaiku45;
+      default:
+        throw ArgumentError('Unknown ModelVariant12: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant12.claudeHaiku45: return 'claude-haiku-4-5';
+      case ModelVariant12.claudeHaiku45:
+        return 'claude-haiku-4-5';
     }
   }
 
@@ -178,14 +202,17 @@ enum ModelVariant13 {
 
   static ModelVariant13 fromJson(String value) {
     switch (value) {
-      case 'claude-haiku-4-5-20251001': return ModelVariant13.claudeHaiku4520251001;
-      default: throw ArgumentError('Unknown ModelVariant13: $value');
+      case 'claude-haiku-4-5-20251001':
+        return ModelVariant13.claudeHaiku4520251001;
+      default:
+        throw ArgumentError('Unknown ModelVariant13: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant13.claudeHaiku4520251001: return 'claude-haiku-4-5-20251001';
+      case ModelVariant13.claudeHaiku4520251001:
+        return 'claude-haiku-4-5-20251001';
     }
   }
 
@@ -199,14 +226,17 @@ enum ModelVariant14 {
 
   static ModelVariant14 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-4-5': return ModelVariant14.claudeOpus45;
-      default: throw ArgumentError('Unknown ModelVariant14: $value');
+      case 'claude-opus-4-5':
+        return ModelVariant14.claudeOpus45;
+      default:
+        throw ArgumentError('Unknown ModelVariant14: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant14.claudeOpus45: return 'claude-opus-4-5';
+      case ModelVariant14.claudeOpus45:
+        return 'claude-opus-4-5';
     }
   }
 
@@ -220,14 +250,17 @@ enum ModelVariant15 {
 
   static ModelVariant15 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-4-5-20251101': return ModelVariant15.claudeOpus4520251101;
-      default: throw ArgumentError('Unknown ModelVariant15: $value');
+      case 'claude-opus-4-5-20251101':
+        return ModelVariant15.claudeOpus4520251101;
+      default:
+        throw ArgumentError('Unknown ModelVariant15: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant15.claudeOpus4520251101: return 'claude-opus-4-5-20251101';
+      case ModelVariant15.claudeOpus4520251101:
+        return 'claude-opus-4-5-20251101';
     }
   }
 
@@ -241,14 +274,17 @@ enum ModelVariant16 {
 
   static ModelVariant16 fromJson(String value) {
     switch (value) {
-      case 'claude-sonnet-4-5': return ModelVariant16.claudeSonnet45;
-      default: throw ArgumentError('Unknown ModelVariant16: $value');
+      case 'claude-sonnet-4-5':
+        return ModelVariant16.claudeSonnet45;
+      default:
+        throw ArgumentError('Unknown ModelVariant16: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant16.claudeSonnet45: return 'claude-sonnet-4-5';
+      case ModelVariant16.claudeSonnet45:
+        return 'claude-sonnet-4-5';
     }
   }
 
@@ -262,14 +298,17 @@ enum ModelVariant17 {
 
   static ModelVariant17 fromJson(String value) {
     switch (value) {
-      case 'claude-sonnet-4-5-20250929': return ModelVariant17.claudeSonnet4520250929;
-      default: throw ArgumentError('Unknown ModelVariant17: $value');
+      case 'claude-sonnet-4-5-20250929':
+        return ModelVariant17.claudeSonnet4520250929;
+      default:
+        throw ArgumentError('Unknown ModelVariant17: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant17.claudeSonnet4520250929: return 'claude-sonnet-4-5-20250929';
+      case ModelVariant17.claudeSonnet4520250929:
+        return 'claude-sonnet-4-5-20250929';
     }
   }
 

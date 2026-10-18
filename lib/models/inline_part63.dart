@@ -10,14 +10,17 @@ enum RequestContainerUploadBlockType {
 
   static RequestContainerUploadBlockType fromJson(String value) {
     switch (value) {
-      case 'container_upload': return RequestContainerUploadBlockType.containerUpload;
-      default: throw ArgumentError('Unknown RequestContainerUploadBlockType: $value');
+      case 'container_upload':
+        return RequestContainerUploadBlockType.containerUpload;
+      default:
+        throw ArgumentError('Unknown RequestContainerUploadBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestContainerUploadBlockType.containerUpload: return 'container_upload';
+      case RequestContainerUploadBlockType.containerUpload:
+        return 'container_upload';
     }
   }
 
@@ -31,14 +34,18 @@ enum RequestContentBlockLocationCitationType {
 
   static RequestContentBlockLocationCitationType fromJson(String value) {
     switch (value) {
-      case 'content_block_location': return RequestContentBlockLocationCitationType.contentBlockLocation;
-      default: throw ArgumentError('Unknown RequestContentBlockLocationCitationType: $value');
+      case 'content_block_location':
+        return RequestContentBlockLocationCitationType.contentBlockLocation;
+      default:
+        throw ArgumentError(
+            'Unknown RequestContentBlockLocationCitationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestContentBlockLocationCitationType.contentBlockLocation: return 'content_block_location';
+      case RequestContentBlockLocationCitationType.contentBlockLocation:
+        return 'content_block_location';
     }
   }
 
@@ -52,14 +59,17 @@ enum RequestDocumentBlockType {
 
   static RequestDocumentBlockType fromJson(String value) {
     switch (value) {
-      case 'document': return RequestDocumentBlockType.document;
-      default: throw ArgumentError('Unknown RequestDocumentBlockType: $value');
+      case 'document':
+        return RequestDocumentBlockType.document;
+      default:
+        throw ArgumentError('Unknown RequestDocumentBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestDocumentBlockType.document: return 'document';
+      case RequestDocumentBlockType.document:
+        return 'document';
     }
   }
 
@@ -73,14 +83,20 @@ enum RequestEncryptedCodeExecutionResultBlockType {
 
   static RequestEncryptedCodeExecutionResultBlockType fromJson(String value) {
     switch (value) {
-      case 'encrypted_code_execution_result': return RequestEncryptedCodeExecutionResultBlockType.encryptedCodeExecutionResult;
-      default: throw ArgumentError('Unknown RequestEncryptedCodeExecutionResultBlockType: $value');
+      case 'encrypted_code_execution_result':
+        return RequestEncryptedCodeExecutionResultBlockType
+            .encryptedCodeExecutionResult;
+      default:
+        throw ArgumentError(
+            'Unknown RequestEncryptedCodeExecutionResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestEncryptedCodeExecutionResultBlockType.encryptedCodeExecutionResult: return 'encrypted_code_execution_result';
+      case RequestEncryptedCodeExecutionResultBlockType
+            .encryptedCodeExecutionResult:
+        return 'encrypted_code_execution_result';
     }
   }
 
@@ -94,14 +110,17 @@ enum RequestImageBlockType {
 
   static RequestImageBlockType fromJson(String value) {
     switch (value) {
-      case 'image': return RequestImageBlockType.image;
-      default: throw ArgumentError('Unknown RequestImageBlockType: $value');
+      case 'image':
+        return RequestImageBlockType.image;
+      default:
+        throw ArgumentError('Unknown RequestImageBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestImageBlockType.image: return 'image';
+      case RequestImageBlockType.image:
+        return 'image';
     }
   }
 
@@ -111,24 +130,29 @@ enum RequestImageBlockType {
 
 /// What the server does when this image exceeds the model's maximum image size. `"downsize"` (the default) scales the image down to fit, which changes the dimensions the model observes without telling you. `"error"` instead rejects the request with a 400 error naming the image's dimensions and the largest dimensions that fit, so you can scale the image deliberately — your image is never silently scaled down.
 final class RequestImageTransformationsOversizedImage {
-
   final String value;
 
   const RequestImageTransformationsOversizedImage._(this.value);
 
-  factory RequestImageTransformationsOversizedImage.fromJson(String value) => RequestImageTransformationsOversizedImage._(value);
+  factory RequestImageTransformationsOversizedImage.fromJson(String value) =>
+      RequestImageTransformationsOversizedImage._(value);
 
-  static const downsize = RequestImageTransformationsOversizedImage._('downsize');
+  static const downsize =
+      RequestImageTransformationsOversizedImage._('downsize');
   static const error = RequestImageTransformationsOversizedImage._('error');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RequestImageTransformationsOversizedImage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RequestImageTransformationsOversizedImage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -137,14 +161,17 @@ enum RequestPageLocationCitationType {
 
   static RequestPageLocationCitationType fromJson(String value) {
     switch (value) {
-      case 'page_location': return RequestPageLocationCitationType.pageLocation;
-      default: throw ArgumentError('Unknown RequestPageLocationCitationType: $value');
+      case 'page_location':
+        return RequestPageLocationCitationType.pageLocation;
+      default:
+        throw ArgumentError('Unknown RequestPageLocationCitationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestPageLocationCitationType.pageLocation: return 'page_location';
+      case RequestPageLocationCitationType.pageLocation:
+        return 'page_location';
     }
   }
 
@@ -158,14 +185,17 @@ enum RequestRedactedThinkingBlockType {
 
   static RequestRedactedThinkingBlockType fromJson(String value) {
     switch (value) {
-      case 'redacted_thinking': return RequestRedactedThinkingBlockType.redactedThinking;
-      default: throw ArgumentError('Unknown RequestRedactedThinkingBlockType: $value');
+      case 'redacted_thinking':
+        return RequestRedactedThinkingBlockType.redactedThinking;
+      default:
+        throw ArgumentError('Unknown RequestRedactedThinkingBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestRedactedThinkingBlockType.redactedThinking: return 'redacted_thinking';
+      case RequestRedactedThinkingBlockType.redactedThinking:
+        return 'redacted_thinking';
     }
   }
 
@@ -179,14 +209,17 @@ enum RequestSearchResultBlockType {
 
   static RequestSearchResultBlockType fromJson(String value) {
     switch (value) {
-      case 'search_result': return RequestSearchResultBlockType.searchResult;
-      default: throw ArgumentError('Unknown RequestSearchResultBlockType: $value');
+      case 'search_result':
+        return RequestSearchResultBlockType.searchResult;
+      default:
+        throw ArgumentError('Unknown RequestSearchResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestSearchResultBlockType.searchResult: return 'search_result';
+      case RequestSearchResultBlockType.searchResult:
+        return 'search_result';
     }
   }
 
@@ -200,14 +233,18 @@ enum RequestSearchResultLocationCitationType {
 
   static RequestSearchResultLocationCitationType fromJson(String value) {
     switch (value) {
-      case 'search_result_location': return RequestSearchResultLocationCitationType.searchResultLocation;
-      default: throw ArgumentError('Unknown RequestSearchResultLocationCitationType: $value');
+      case 'search_result_location':
+        return RequestSearchResultLocationCitationType.searchResultLocation;
+      default:
+        throw ArgumentError(
+            'Unknown RequestSearchResultLocationCitationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestSearchResultLocationCitationType.searchResultLocation: return 'search_result_location';
+      case RequestSearchResultLocationCitationType.searchResultLocation:
+        return 'search_result_location';
     }
   }
 
@@ -217,29 +254,37 @@ enum RequestSearchResultLocationCitationType {
 
 /// Required enumerated value serialized in the `name` wire field.
 final class RequestServerToolUseBlockName {
-
   final String value;
 
   const RequestServerToolUseBlockName._(this.value);
 
-  factory RequestServerToolUseBlockName.fromJson(String value) => RequestServerToolUseBlockName._(value);
+  factory RequestServerToolUseBlockName.fromJson(String value) =>
+      RequestServerToolUseBlockName._(value);
 
   static const webSearch = RequestServerToolUseBlockName._('web_search');
   static const webFetch = RequestServerToolUseBlockName._('web_fetch');
-  static const codeExecution = RequestServerToolUseBlockName._('code_execution');
-  static const bashCodeExecution = RequestServerToolUseBlockName._('bash_code_execution');
-  static const textEditorCodeExecution = RequestServerToolUseBlockName._('text_editor_code_execution');
-  static const toolSearchToolRegex = RequestServerToolUseBlockName._('tool_search_tool_regex');
-  static const toolSearchToolBm25 = RequestServerToolUseBlockName._('tool_search_tool_bm25');
+  static const codeExecution =
+      RequestServerToolUseBlockName._('code_execution');
+  static const bashCodeExecution =
+      RequestServerToolUseBlockName._('bash_code_execution');
+  static const textEditorCodeExecution =
+      RequestServerToolUseBlockName._('text_editor_code_execution');
+  static const toolSearchToolRegex =
+      RequestServerToolUseBlockName._('tool_search_tool_regex');
+  static const toolSearchToolBm25 =
+      RequestServerToolUseBlockName._('tool_search_tool_bm25');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RequestServerToolUseBlockName && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RequestServerToolUseBlockName && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -248,14 +293,17 @@ enum RequestServerToolUseBlockType {
 
   static RequestServerToolUseBlockType fromJson(String value) {
     switch (value) {
-      case 'server_tool_use': return RequestServerToolUseBlockType.serverToolUse;
-      default: throw ArgumentError('Unknown RequestServerToolUseBlockType: $value');
+      case 'server_tool_use':
+        return RequestServerToolUseBlockType.serverToolUse;
+      default:
+        throw ArgumentError('Unknown RequestServerToolUseBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestServerToolUseBlockType.serverToolUse: return 'server_tool_use';
+      case RequestServerToolUseBlockType.serverToolUse:
+        return 'server_tool_use';
     }
   }
 
@@ -269,14 +317,17 @@ enum RequestTextBlockType {
 
   static RequestTextBlockType fromJson(String value) {
     switch (value) {
-      case 'text': return RequestTextBlockType.text;
-      default: throw ArgumentError('Unknown RequestTextBlockType: $value');
+      case 'text':
+        return RequestTextBlockType.text;
+      default:
+        throw ArgumentError('Unknown RequestTextBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestTextBlockType.text: return 'text';
+      case RequestTextBlockType.text:
+        return 'text';
     }
   }
 

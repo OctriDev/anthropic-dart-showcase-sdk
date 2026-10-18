@@ -8,83 +8,133 @@ part of 'versions_beta_true.dart';
 class BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Files to upload for the skill. All files must be in the same top-level directory and must include a SKILL.md file at the root of that directory.
   final List<List<int>> files;
 
-  const BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost({required this.files});
+  const BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost(
+      {required this.files});
 
-  BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost Function({List<List<int>> files}) get copyWith => _copyWith;
+  BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost Function(
+      {List<List<int>> files}) get copyWith => _copyWith;
 
-  BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost _copyWith({Object? files = sdkOmittedValue}) => BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost(
-    files: identical(files, sdkOmittedValue) ? this.files : files as List<List<int>>,
-  );
+  BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost _copyWith(
+          {Object? files = sdkOmittedValue}) =>
+      BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost(
+        files: identical(files, sdkOmittedValue)
+            ? this.files
+            : files as List<List<int>>,
+      );
 
-  factory BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost.fromJson(Map<String, dynamic> json) => BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost(
-    files: ((json['files'] as List?)?.map((e) => base64Decode(e as String)).toList())!,
-  );
+  factory BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost.fromJson(
+          Map<String, dynamic> json) =>
+      BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost(
+        files: ((json['files'] as List?)
+            ?.map((e) => base64Decode(e as String))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'files': files.map(base64Encode).toList(),
-  };
+        'files': files.map(base64Encode).toList(),
+      };
 }
 
 /// Typed representation of the `BetaListSkillVersionsResponse` API schema.
 class BetaListSkillVersionsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// List of skills.
   final List<BetaSkillVersion> data;
+
   /// Token for fetching the next page of results. If `null`, there are no more results available. Pass this value to the `page` parameter in the next request to get the next page.
   final String? nextPage;
 
-  const BetaListSkillVersionsResponse({required this.data, required this.nextPage});
+  const BetaListSkillVersionsResponse(
+      {required this.data, required this.nextPage});
 
-  BetaListSkillVersionsResponse Function({List<BetaSkillVersion> data, String? nextPage}) get copyWith => _copyWith;
+  BetaListSkillVersionsResponse Function(
+      {List<BetaSkillVersion> data,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaListSkillVersionsResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaListSkillVersionsResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaSkillVersion>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaListSkillVersionsResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaListSkillVersionsResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaSkillVersion>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaListSkillVersionsResponse.fromJson(Map<String, dynamic> json) => BetaListSkillVersionsResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaSkillVersion.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  );
+  factory BetaListSkillVersionsResponse.fromJson(Map<String, dynamic> json) =>
+      BetaListSkillVersionsResponse(
+        data: ((json['data'] as List?)
+            ?.map((e) => BetaSkillVersion.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        nextPage: json.containsKey('next_page')
+            ? json['next_page'] as String?
+            : throw ArgumentError.value(
+                null, 'next_page', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'next_page': nextPage,
+      };
 }
 
 /// Paginated list of agent versions.
 class BetaManagedAgentsListAgentVersions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Agent versions.
   final List<BetaManagedAgentsAgent> data;
+
   /// Opaque cursor for the next page. Null when no more results.
   final SdkOptional<String?> nextPage;
 
-  const BetaManagedAgentsListAgentVersions({required this.data, this.nextPage = const SdkOmitted()});
+  const BetaManagedAgentsListAgentVersions(
+      {required this.data, this.nextPage = const SdkOmitted()});
 
-  BetaManagedAgentsListAgentVersions Function({List<BetaManagedAgentsAgent> data, SdkOptional<String?> nextPage}) get copyWith => _copyWith;
+  BetaManagedAgentsListAgentVersions Function(
+      {List<BetaManagedAgentsAgent> data,
+      SdkOptional<String?> nextPage}) get copyWith => _copyWith;
 
-  BetaManagedAgentsListAgentVersions _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaManagedAgentsListAgentVersions(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaManagedAgentsAgent>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as SdkOptional<String?>,
-  );
+  BetaManagedAgentsListAgentVersions _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaManagedAgentsListAgentVersions(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaManagedAgentsAgent>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as SdkOptional<String?>,
+      );
 
-  factory BetaManagedAgentsListAgentVersions.fromJson(Map<String, dynamic> json) => BetaManagedAgentsListAgentVersions(
-    data: ((json['data'] as List?)?.map((e) => BetaManagedAgentsAgent.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? SdkPresent(json['next_page'] as String?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsListAgentVersions.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsListAgentVersions(
+        data: ((json['data'] as List?)
+            ?.map((e) =>
+                BetaManagedAgentsAgent.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        nextPage: json.containsKey('next_page')
+            ? SdkPresent(json['next_page'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    ...switch (nextPage) {
-      SdkPresent<String?>(value: final value) => {'next_page': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        ...switch (nextPage) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

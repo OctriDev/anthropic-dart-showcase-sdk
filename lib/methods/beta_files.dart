@@ -34,7 +34,8 @@ Future<BetaFileMetadataSchema> uploadBetaFiles(ClientConfig config,
     SdkOptional<int> expiresInSeconds = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   if (expiresInSeconds is SdkPresent<int>) {
-    validateRange('expires_in_seconds', expiresInSeconds.value, min: 3600, max: 7776000);
+    validateRange('expires_in_seconds', expiresInSeconds.value,
+        min: 3600, max: 7776000);
   }
 
   return (await sdkRequest<BetaFileMetadataSchema>(
@@ -46,14 +47,52 @@ Future<BetaFileMetadataSchema> uploadBetaFiles(ClientConfig config,
           },
           contentType: 'multipart/form-data',
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'uploadBetaFiles',
-          fromJsonRaw: (value) => BetaFileMetadataSchema.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaFileMetadataSchema.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists file metadata available to the authenticated user. Use `scope_id` to filter by scope, or `ids[]` to retrieve specific files; `ids[]` cannot be combined with `page` or `limit`, and returns a single page. Use `page` and `limit` to paginate the results.
 ///
@@ -95,21 +134,62 @@ Future<BetaFileListResponse> listBetaFiles(ClientConfig config,
   return (await sdkRequest<BetaFileListResponse>('GET', '/v1/files?beta=true',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'ids[]': SdkQueryValue(SdkUtils.unwrapOptional(ids), style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'scope_id': SdkQueryValue(SdkUtils.unwrapOptional(scopeId), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'ids[]': SdkQueryValue(SdkUtils.unwrapOptional(ids),
+                style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'scope_id': SdkQueryValue(SdkUtils.unwrapOptional(scopeId),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'listBetaFiles',
-          fromJsonRaw: (value) => BetaFileListResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaFileListResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// Lists file metadata available to the authenticated user. Use `scope_id` to filter by scope, or `ids[]` to retrieve specific files; `ids[]` cannot be combined with `page` or `limit`, and returns a single page. Use `page` and `limit` to paginate the results.
 ///
@@ -135,23 +215,82 @@ Future<BetaFileListResponse> listBetaFiles(ClientConfig config,
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Stream<BetaFileMetadataSchema> listBetaFilesPaginated(ClientConfig config, {String? page, List<String>? ids, int? limit, String? scopeId, List<String>? anthropicBeta, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<BetaFileMetadataSchema> listBetaFilesPaginated(ClientConfig config,
+    {String? page,
+    List<String>? ids,
+    int? limit,
+    String? scopeId,
+    List<String>? anthropicBeta,
+    String? anthropicVersion,
+    String? anthropicWorkspaceId,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaFiles(config, page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), ids: ids == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(ids), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), scopeId: scopeId == null ? const SdkOmitted<String>() : SdkPresent<String>(scopeId), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listBetaFiles(config,
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        ids: ids == null
+            ? const SdkOmitted<List<String>?>()
+            : SdkPresent<List<String>?>(ids),
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        scopeId: scopeId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(scopeId),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage.valueOrNull;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaFileListResponse, BetaFileMetadataSchema>> listBetaFilesPages(ClientConfig config, {String? page, List<String>? ids, int? limit, String? scopeId, List<String>? anthropicBeta, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaFileListResponse, BetaFileMetadataSchema>>
+    listBetaFilesPages(ClientConfig config,
+        {String? page,
+        List<String>? ids,
+        int? limit,
+        String? scopeId,
+        List<String>? anthropicBeta,
+        String? anthropicVersion,
+        String? anthropicWorkspaceId,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaFiles(config, page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), ids: ids == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(ids), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), scopeId: scopeId == null ? const SdkOmitted<String>() : SdkPresent<String>(scopeId), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listBetaFiles(config,
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        ids: ids == null
+            ? const SdkOmitted<List<String>?>()
+            : SdkPresent<List<String>?>(ids),
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        scopeId: scopeId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(scopeId),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage.valueOrNull;
@@ -161,7 +300,6 @@ Stream<SdkPage<BetaFileListResponse, BetaFileMetadataSchema>> listBetaFilesPages
     sdkCursor = sdkNext;
   }
 }
-
 
 /// Retrieves metadata for a file by its ID. Use this operation to inspect details such as the file's name, MIME type, size, scope, and expiration time. Provide an API key and, when needed, a Workspace ID that matches the credential's Workspace.
 ///
@@ -187,14 +325,52 @@ Future<BetaFileMetadataSchema> retrieveBetaFiles(ClientConfig config,
           '/v1/files/${Uri.encodeComponent(fileId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'retrieveBetaFiles',
-          fromJsonRaw: (value) => BetaFileMetadataSchema.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaFileMetadataSchema.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Deletes a file by its ID. Use this operation when you no longer need the file; deletion removes it from the files available to you. Provide an API key and, when needed, a Workspace ID that matches the credential's Workspace.
 ///
@@ -220,14 +396,52 @@ Future<BetaFileDeleteResponse> deleteBetaFiles(ClientConfig config,
           '/v1/files/${Uri.encodeComponent(fileId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'deleteBetaFiles',
-          fromJsonRaw: (value) => BetaFileDeleteResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaFileDeleteResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Retrieves the contents of a file by its ID. Use this operation when you need the file bytes rather than its metadata. Provide an API key and, when needed, a Workspace ID that matches the credential's Workspace.
 ///
@@ -253,7 +467,12 @@ Future<List<int>> downloadBetaFiles(ClientConfig config,
           '/v1/files/${Uri.encodeComponent(fileId.toString())}/content?beta=true',
           config: config,
           decoder: SdkResponseDecoder.bytes,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'downloadBetaFiles',
           options: requestOptions))
       .data;

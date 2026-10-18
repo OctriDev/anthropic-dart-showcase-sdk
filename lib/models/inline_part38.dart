@@ -10,14 +10,18 @@ enum BetaRequestCodeExecutionResultBlockType {
 
   static BetaRequestCodeExecutionResultBlockType fromJson(String value) {
     switch (value) {
-      case 'code_execution_result': return BetaRequestCodeExecutionResultBlockType.codeExecutionResult;
-      default: throw ArgumentError('Unknown BetaRequestCodeExecutionResultBlockType: $value');
+      case 'code_execution_result':
+        return BetaRequestCodeExecutionResultBlockType.codeExecutionResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaRequestCodeExecutionResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestCodeExecutionResultBlockType.codeExecutionResult: return 'code_execution_result';
+      case BetaRequestCodeExecutionResultBlockType.codeExecutionResult:
+        return 'code_execution_result';
     }
   }
 
@@ -31,14 +35,19 @@ enum BetaRequestCodeExecutionToolResultBlockType {
 
   static BetaRequestCodeExecutionToolResultBlockType fromJson(String value) {
     switch (value) {
-      case 'code_execution_tool_result': return BetaRequestCodeExecutionToolResultBlockType.codeExecutionToolResult;
-      default: throw ArgumentError('Unknown BetaRequestCodeExecutionToolResultBlockType: $value');
+      case 'code_execution_tool_result':
+        return BetaRequestCodeExecutionToolResultBlockType
+            .codeExecutionToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaRequestCodeExecutionToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestCodeExecutionToolResultBlockType.codeExecutionToolResult: return 'code_execution_tool_result';
+      case BetaRequestCodeExecutionToolResultBlockType.codeExecutionToolResult:
+        return 'code_execution_tool_result';
     }
   }
 
@@ -52,14 +61,20 @@ enum BetaRequestCodeExecutionToolResultErrorType {
 
   static BetaRequestCodeExecutionToolResultErrorType fromJson(String value) {
     switch (value) {
-      case 'code_execution_tool_result_error': return BetaRequestCodeExecutionToolResultErrorType.codeExecutionToolResultError;
-      default: throw ArgumentError('Unknown BetaRequestCodeExecutionToolResultErrorType: $value');
+      case 'code_execution_tool_result_error':
+        return BetaRequestCodeExecutionToolResultErrorType
+            .codeExecutionToolResultError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaRequestCodeExecutionToolResultErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestCodeExecutionToolResultErrorType.codeExecutionToolResultError: return 'code_execution_tool_result_error';
+      case BetaRequestCodeExecutionToolResultErrorType
+            .codeExecutionToolResultError:
+        return 'code_execution_tool_result_error';
     }
   }
 
@@ -73,14 +88,17 @@ enum BetaRequestCompactionBlockType {
 
   static BetaRequestCompactionBlockType fromJson(String value) {
     switch (value) {
-      case 'compaction': return BetaRequestCompactionBlockType.compaction;
-      default: throw ArgumentError('Unknown BetaRequestCompactionBlockType: $value');
+      case 'compaction':
+        return BetaRequestCompactionBlockType.compaction;
+      default:
+        throw ArgumentError('Unknown BetaRequestCompactionBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestCompactionBlockType.compaction: return 'compaction';
+      case BetaRequestCompactionBlockType.compaction:
+        return 'compaction';
     }
   }
 
@@ -94,14 +112,18 @@ enum BetaRequestContainerUploadBlockType {
 
   static BetaRequestContainerUploadBlockType fromJson(String value) {
     switch (value) {
-      case 'container_upload': return BetaRequestContainerUploadBlockType.containerUpload;
-      default: throw ArgumentError('Unknown BetaRequestContainerUploadBlockType: $value');
+      case 'container_upload':
+        return BetaRequestContainerUploadBlockType.containerUpload;
+      default:
+        throw ArgumentError(
+            'Unknown BetaRequestContainerUploadBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestContainerUploadBlockType.containerUpload: return 'container_upload';
+      case BetaRequestContainerUploadBlockType.containerUpload:
+        return 'container_upload';
     }
   }
 
@@ -115,14 +137,18 @@ enum BetaRequestContentBlockLocationCitationType {
 
   static BetaRequestContentBlockLocationCitationType fromJson(String value) {
     switch (value) {
-      case 'content_block_location': return BetaRequestContentBlockLocationCitationType.contentBlockLocation;
-      default: throw ArgumentError('Unknown BetaRequestContentBlockLocationCitationType: $value');
+      case 'content_block_location':
+        return BetaRequestContentBlockLocationCitationType.contentBlockLocation;
+      default:
+        throw ArgumentError(
+            'Unknown BetaRequestContentBlockLocationCitationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestContentBlockLocationCitationType.contentBlockLocation: return 'content_block_location';
+      case BetaRequestContentBlockLocationCitationType.contentBlockLocation:
+        return 'content_block_location';
     }
   }
 
@@ -136,14 +162,17 @@ enum BetaRequestDocumentBlockType {
 
   static BetaRequestDocumentBlockType fromJson(String value) {
     switch (value) {
-      case 'document': return BetaRequestDocumentBlockType.document;
-      default: throw ArgumentError('Unknown BetaRequestDocumentBlockType: $value');
+      case 'document':
+        return BetaRequestDocumentBlockType.document;
+      default:
+        throw ArgumentError('Unknown BetaRequestDocumentBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestDocumentBlockType.document: return 'document';
+      case BetaRequestDocumentBlockType.document:
+        return 'document';
     }
   }
 
@@ -155,16 +184,23 @@ enum BetaRequestDocumentBlockType {
 enum BetaRequestEncryptedCodeExecutionResultBlockType {
   encryptedCodeExecutionResult;
 
-  static BetaRequestEncryptedCodeExecutionResultBlockType fromJson(String value) {
+  static BetaRequestEncryptedCodeExecutionResultBlockType fromJson(
+      String value) {
     switch (value) {
-      case 'encrypted_code_execution_result': return BetaRequestEncryptedCodeExecutionResultBlockType.encryptedCodeExecutionResult;
-      default: throw ArgumentError('Unknown BetaRequestEncryptedCodeExecutionResultBlockType: $value');
+      case 'encrypted_code_execution_result':
+        return BetaRequestEncryptedCodeExecutionResultBlockType
+            .encryptedCodeExecutionResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaRequestEncryptedCodeExecutionResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestEncryptedCodeExecutionResultBlockType.encryptedCodeExecutionResult: return 'encrypted_code_execution_result';
+      case BetaRequestEncryptedCodeExecutionResultBlockType
+            .encryptedCodeExecutionResult:
+        return 'encrypted_code_execution_result';
     }
   }
 
@@ -178,14 +214,17 @@ enum BetaRequestFallbackBlockType {
 
   static BetaRequestFallbackBlockType fromJson(String value) {
     switch (value) {
-      case 'fallback': return BetaRequestFallbackBlockType.fallback;
-      default: throw ArgumentError('Unknown BetaRequestFallbackBlockType: $value');
+      case 'fallback':
+        return BetaRequestFallbackBlockType.fallback;
+      default:
+        throw ArgumentError('Unknown BetaRequestFallbackBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestFallbackBlockType.fallback: return 'fallback';
+      case BetaRequestFallbackBlockType.fallback:
+        return 'fallback';
     }
   }
 
@@ -199,14 +238,17 @@ enum BetaRequestImageBlockType {
 
   static BetaRequestImageBlockType fromJson(String value) {
     switch (value) {
-      case 'image': return BetaRequestImageBlockType.image;
-      default: throw ArgumentError('Unknown BetaRequestImageBlockType: $value');
+      case 'image':
+        return BetaRequestImageBlockType.image;
+      default:
+        throw ArgumentError('Unknown BetaRequestImageBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestImageBlockType.image: return 'image';
+      case BetaRequestImageBlockType.image:
+        return 'image';
     }
   }
 
@@ -216,24 +258,30 @@ enum BetaRequestImageBlockType {
 
 /// What the server does when this image exceeds the model's maximum image size. `"downsize"` (the default) scales the image down to fit, which changes the dimensions the model observes without telling you. `"error"` instead rejects the request with a 400 error naming the image's dimensions and the largest dimensions that fit, so you can scale the image deliberately — your image is never silently scaled down.
 final class BetaRequestImageTransformationsOversizedImage {
-
   final String value;
 
   const BetaRequestImageTransformationsOversizedImage._(this.value);
 
-  factory BetaRequestImageTransformationsOversizedImage.fromJson(String value) => BetaRequestImageTransformationsOversizedImage._(value);
+  factory BetaRequestImageTransformationsOversizedImage.fromJson(
+          String value) =>
+      BetaRequestImageTransformationsOversizedImage._(value);
 
-  static const downsize = BetaRequestImageTransformationsOversizedImage._('downsize');
+  static const downsize =
+      BetaRequestImageTransformationsOversizedImage._('downsize');
   static const error = BetaRequestImageTransformationsOversizedImage._('error');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaRequestImageTransformationsOversizedImage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaRequestImageTransformationsOversizedImage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -242,14 +290,18 @@ enum BetaRequestMCPServerURLDefinitionType {
 
   static BetaRequestMCPServerURLDefinitionType fromJson(String value) {
     switch (value) {
-      case 'url': return BetaRequestMCPServerURLDefinitionType.url;
-      default: throw ArgumentError('Unknown BetaRequestMCPServerURLDefinitionType: $value');
+      case 'url':
+        return BetaRequestMCPServerURLDefinitionType.url;
+      default:
+        throw ArgumentError(
+            'Unknown BetaRequestMCPServerURLDefinitionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestMCPServerURLDefinitionType.url: return 'url';
+      case BetaRequestMCPServerURLDefinitionType.url:
+        return 'url';
     }
   }
 
@@ -263,14 +315,18 @@ enum BetaRequestMCPToolResultBlockType {
 
   static BetaRequestMCPToolResultBlockType fromJson(String value) {
     switch (value) {
-      case 'mcp_tool_result': return BetaRequestMCPToolResultBlockType.mcpToolResult;
-      default: throw ArgumentError('Unknown BetaRequestMCPToolResultBlockType: $value');
+      case 'mcp_tool_result':
+        return BetaRequestMCPToolResultBlockType.mcpToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaRequestMCPToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRequestMCPToolResultBlockType.mcpToolResult: return 'mcp_tool_result';
+      case BetaRequestMCPToolResultBlockType.mcpToolResult:
+        return 'mcp_tool_result';
     }
   }
 

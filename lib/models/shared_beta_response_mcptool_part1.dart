@@ -9,104 +9,176 @@ sealed class BetaResponseMCPToolResultBlockContent {
   static const String constructionSurface = 'named';
   const BetaResponseMCPToolResultBlockContent();
   factory BetaResponseMCPToolResultBlockContent.fromJson(Object? json) {
-    if (json is String) { return BetaResponseMCPToolResultBlockContentString(json); }
-    try { return BetaResponseMCPToolResultBlockContentBetaResponseTextBlock(BetaResponseTextBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for BetaResponseMCPToolResultBlockContent");
+    if (json is String) {
+      return BetaResponseMCPToolResultBlockContentString(json);
+    }
+    try {
+      return BetaResponseMCPToolResultBlockContentBetaResponseTextBlock(
+          BetaResponseTextBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for BetaResponseMCPToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class BetaResponseMCPToolResultBlockContentString extends BetaResponseMCPToolResultBlockContent {
+final class BetaResponseMCPToolResultBlockContentString
+    extends BetaResponseMCPToolResultBlockContent {
   final String value;
   const BetaResponseMCPToolResultBlockContentString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class BetaResponseMCPToolResultBlockContentBetaResponseTextBlock extends BetaResponseMCPToolResultBlockContent {
+final class BetaResponseMCPToolResultBlockContentBetaResponseTextBlock
+    extends BetaResponseMCPToolResultBlockContent {
   final BetaResponseTextBlock value;
   const BetaResponseMCPToolResultBlockContentBetaResponseTextBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `BetaResponseMCPToolResultBlock` API schema.
 class BetaResponseMCPToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required API value serialized in the `content` wire field.
   final dynamic content;
+
   /// Required `boolean` value serialized in the `is_error` wire field.
   final bool isError;
+
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseMCPToolResultBlockType type_;
 
-  const BetaResponseMCPToolResultBlock({required this.content, required this.isError, required this.toolUseId, required this.type_});
+  const BetaResponseMCPToolResultBlock(
+      {required this.content,
+      required this.isError,
+      required this.toolUseId,
+      required this.type_});
 
-  BetaResponseMCPToolResultBlock Function({dynamic content, bool isError, String toolUseId, BetaResponseMCPToolResultBlockType type_}) get copyWith => _copyWith;
+  BetaResponseMCPToolResultBlock Function(
+      {dynamic content,
+      bool isError,
+      String toolUseId,
+      BetaResponseMCPToolResultBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseMCPToolResultBlock _copyWith({Object? content = sdkOmittedValue, Object? isError = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseMCPToolResultBlock(
-    content: identical(content, sdkOmittedValue) ? this.content : content as dynamic,
-    isError: identical(isError, sdkOmittedValue) ? this.isError : isError as bool,
-    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseMCPToolResultBlockType,
-  );
+  BetaResponseMCPToolResultBlock _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? isError = sdkOmittedValue,
+          Object? toolUseId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseMCPToolResultBlock(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as dynamic,
+        isError: identical(isError, sdkOmittedValue)
+            ? this.isError
+            : isError as bool,
+        toolUseId: identical(toolUseId, sdkOmittedValue)
+            ? this.toolUseId
+            : toolUseId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseMCPToolResultBlockType,
+      );
 
-  factory BetaResponseMCPToolResultBlock.fromJson(Map<String, dynamic> json) => BetaResponseMCPToolResultBlock(
-    content: (json['content'])!,
-    isError: (json['is_error'] as bool?)!,
-    toolUseId: (json['tool_use_id'] as String?)!,
-    type_: (json['type'] != null ? BetaResponseMCPToolResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseMCPToolResultBlock.fromJson(Map<String, dynamic> json) =>
+      BetaResponseMCPToolResultBlock(
+        content: (json['content'])!,
+        isError: (json['is_error'] as bool?)!,
+        toolUseId: (json['tool_use_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaResponseMCPToolResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content,
-    'is_error': isError,
-    'tool_use_id': toolUseId,
-    'type': type_.toJson(),
-  };
+        'content': content,
+        'is_error': isError,
+        'tool_use_id': toolUseId,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaResponseMCPToolUseBlock` API schema.
 class BetaResponseMCPToolUseBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `id` wire field.
   final String id;
+
   /// Required object value serialized in the `input` wire field.
   final Map<String, Object?> input;
+
   /// The name of the MCP tool
   final String name;
+
   /// The name of the MCP server
   final String serverName;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseMCPToolUseBlockType type_;
 
-  const BetaResponseMCPToolUseBlock({required this.id, required this.input, required this.name, required this.serverName, required this.type_});
+  const BetaResponseMCPToolUseBlock(
+      {required this.id,
+      required this.input,
+      required this.name,
+      required this.serverName,
+      required this.type_});
 
-  BetaResponseMCPToolUseBlock Function({String id, Map<String, Object?> input, String name, String serverName, BetaResponseMCPToolUseBlockType type_}) get copyWith => _copyWith;
+  BetaResponseMCPToolUseBlock Function(
+      {String id,
+      Map<String, Object?> input,
+      String name,
+      String serverName,
+      BetaResponseMCPToolUseBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseMCPToolUseBlock _copyWith({Object? id = sdkOmittedValue, Object? input = sdkOmittedValue, Object? name = sdkOmittedValue, Object? serverName = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseMCPToolUseBlock(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    input: identical(input, sdkOmittedValue) ? this.input : input as Map<String, Object?>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    serverName: identical(serverName, sdkOmittedValue) ? this.serverName : serverName as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseMCPToolUseBlockType,
-  );
+  BetaResponseMCPToolUseBlock _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? input = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? serverName = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseMCPToolUseBlock(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        input: identical(input, sdkOmittedValue)
+            ? this.input
+            : input as Map<String, Object?>,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        serverName: identical(serverName, sdkOmittedValue)
+            ? this.serverName
+            : serverName as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseMCPToolUseBlockType,
+      );
 
-  factory BetaResponseMCPToolUseBlock.fromJson(Map<String, dynamic> json) => BetaResponseMCPToolUseBlock(
-    id: (json['id'] as String?)!,
-    input: (json['input'] == null ? null : Map<String, dynamic>.from(json['input'] as Map).map((key, value) => MapEntry(key, value)))!,
-    name: (json['name'] as String?)!,
-    serverName: (json['server_name'] as String?)!,
-    type_: (json['type'] != null ? BetaResponseMCPToolUseBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseMCPToolUseBlock.fromJson(Map<String, dynamic> json) =>
+      BetaResponseMCPToolUseBlock(
+        id: (json['id'] as String?)!,
+        input: (json['input'] == null
+            ? null
+            : Map<String, dynamic>.from(json['input'] as Map)
+                .map((key, value) => MapEntry(key, value)))!,
+        name: (json['name'] as String?)!,
+        serverName: (json['server_name'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaResponseMCPToolUseBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'input': input,
-    'name': name,
-    'server_name': serverName,
-    'type': type_.toJson(),
-  };
+        'id': id,
+        'input': input,
+        'name': name,
+        'server_name': serverName,
+        'type': type_.toJson(),
+      };
 }

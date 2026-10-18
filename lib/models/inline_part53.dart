@@ -10,14 +10,18 @@ enum BetaWebhookEnvironmentCreatedEventDataType {
 
   static BetaWebhookEnvironmentCreatedEventDataType fromJson(String value) {
     switch (value) {
-      case 'environment.created': return BetaWebhookEnvironmentCreatedEventDataType.environmentCreated;
-      default: throw ArgumentError('Unknown BetaWebhookEnvironmentCreatedEventDataType: $value');
+      case 'environment.created':
+        return BetaWebhookEnvironmentCreatedEventDataType.environmentCreated;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookEnvironmentCreatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookEnvironmentCreatedEventDataType.environmentCreated: return 'environment.created';
+      case BetaWebhookEnvironmentCreatedEventDataType.environmentCreated:
+        return 'environment.created';
     }
   }
 
@@ -31,14 +35,18 @@ enum BetaWebhookEnvironmentDeletedEventDataType {
 
   static BetaWebhookEnvironmentDeletedEventDataType fromJson(String value) {
     switch (value) {
-      case 'environment.deleted': return BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted;
-      default: throw ArgumentError('Unknown BetaWebhookEnvironmentDeletedEventDataType: $value');
+      case 'environment.deleted':
+        return BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookEnvironmentDeletedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted: return 'environment.deleted';
+      case BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted:
+        return 'environment.deleted';
     }
   }
 
@@ -52,14 +60,18 @@ enum BetaWebhookEnvironmentUpdatedEventDataType {
 
   static BetaWebhookEnvironmentUpdatedEventDataType fromJson(String value) {
     switch (value) {
-      case 'environment.updated': return BetaWebhookEnvironmentUpdatedEventDataType.environmentUpdated;
-      default: throw ArgumentError('Unknown BetaWebhookEnvironmentUpdatedEventDataType: $value');
+      case 'environment.updated':
+        return BetaWebhookEnvironmentUpdatedEventDataType.environmentUpdated;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookEnvironmentUpdatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookEnvironmentUpdatedEventDataType.environmentUpdated: return 'environment.updated';
+      case BetaWebhookEnvironmentUpdatedEventDataType.environmentUpdated:
+        return 'environment.updated';
     }
   }
 
@@ -73,14 +85,17 @@ enum BetaWebhookEventType {
 
   static BetaWebhookEventType fromJson(String value) {
     switch (value) {
-      case 'event': return BetaWebhookEventType.event;
-      default: throw ArgumentError('Unknown BetaWebhookEventType: $value');
+      case 'event':
+        return BetaWebhookEventType.event;
+      default:
+        throw ArgumentError('Unknown BetaWebhookEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookEventType.event: return 'event';
+      case BetaWebhookEventType.event:
+        return 'event';
     }
   }
 
@@ -94,14 +109,18 @@ enum BetaWebhookMemoryStoreArchivedEventDataType {
 
   static BetaWebhookMemoryStoreArchivedEventDataType fromJson(String value) {
     switch (value) {
-      case 'memory_store.archived': return BetaWebhookMemoryStoreArchivedEventDataType.memoryStoreArchived;
-      default: throw ArgumentError('Unknown BetaWebhookMemoryStoreArchivedEventDataType: $value');
+      case 'memory_store.archived':
+        return BetaWebhookMemoryStoreArchivedEventDataType.memoryStoreArchived;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookMemoryStoreArchivedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookMemoryStoreArchivedEventDataType.memoryStoreArchived: return 'memory_store.archived';
+      case BetaWebhookMemoryStoreArchivedEventDataType.memoryStoreArchived:
+        return 'memory_store.archived';
     }
   }
 
@@ -115,14 +134,18 @@ enum BetaWebhookMemoryStoreCreatedEventDataType {
 
   static BetaWebhookMemoryStoreCreatedEventDataType fromJson(String value) {
     switch (value) {
-      case 'memory_store.created': return BetaWebhookMemoryStoreCreatedEventDataType.memoryStoreCreated;
-      default: throw ArgumentError('Unknown BetaWebhookMemoryStoreCreatedEventDataType: $value');
+      case 'memory_store.created':
+        return BetaWebhookMemoryStoreCreatedEventDataType.memoryStoreCreated;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookMemoryStoreCreatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookMemoryStoreCreatedEventDataType.memoryStoreCreated: return 'memory_store.created';
+      case BetaWebhookMemoryStoreCreatedEventDataType.memoryStoreCreated:
+        return 'memory_store.created';
     }
   }
 
@@ -136,14 +159,18 @@ enum BetaWebhookMemoryStoreDeletedEventDataType {
 
   static BetaWebhookMemoryStoreDeletedEventDataType fromJson(String value) {
     switch (value) {
-      case 'memory_store.deleted': return BetaWebhookMemoryStoreDeletedEventDataType.memoryStoreDeleted;
-      default: throw ArgumentError('Unknown BetaWebhookMemoryStoreDeletedEventDataType: $value');
+      case 'memory_store.deleted':
+        return BetaWebhookMemoryStoreDeletedEventDataType.memoryStoreDeleted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookMemoryStoreDeletedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookMemoryStoreDeletedEventDataType.memoryStoreDeleted: return 'memory_store.deleted';
+      case BetaWebhookMemoryStoreDeletedEventDataType.memoryStoreDeleted:
+        return 'memory_store.deleted';
     }
   }
 
@@ -157,14 +184,18 @@ enum BetaWebhookSessionArchivedEventDataType {
 
   static BetaWebhookSessionArchivedEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.archived': return BetaWebhookSessionArchivedEventDataType.sessionArchived;
-      default: throw ArgumentError('Unknown BetaWebhookSessionArchivedEventDataType: $value');
+      case 'session.archived':
+        return BetaWebhookSessionArchivedEventDataType.sessionArchived;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionArchivedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionArchivedEventDataType.sessionArchived: return 'session.archived';
+      case BetaWebhookSessionArchivedEventDataType.sessionArchived:
+        return 'session.archived';
     }
   }
 
@@ -178,14 +209,19 @@ enum BetaWebhookSessionBudgetReachedEventDataType {
 
   static BetaWebhookSessionBudgetReachedEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.budget_reached': return BetaWebhookSessionBudgetReachedEventDataType.sessionBudgetReached;
-      default: throw ArgumentError('Unknown BetaWebhookSessionBudgetReachedEventDataType: $value');
+      case 'session.budget_reached':
+        return BetaWebhookSessionBudgetReachedEventDataType
+            .sessionBudgetReached;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionBudgetReachedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionBudgetReachedEventDataType.sessionBudgetReached: return 'session.budget_reached';
+      case BetaWebhookSessionBudgetReachedEventDataType.sessionBudgetReached:
+        return 'session.budget_reached';
     }
   }
 
@@ -199,14 +235,18 @@ enum BetaWebhookSessionCreatedEventDataType {
 
   static BetaWebhookSessionCreatedEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.created': return BetaWebhookSessionCreatedEventDataType.sessionCreated;
-      default: throw ArgumentError('Unknown BetaWebhookSessionCreatedEventDataType: $value');
+      case 'session.created':
+        return BetaWebhookSessionCreatedEventDataType.sessionCreated;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionCreatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionCreatedEventDataType.sessionCreated: return 'session.created';
+      case BetaWebhookSessionCreatedEventDataType.sessionCreated:
+        return 'session.created';
     }
   }
 
@@ -220,14 +260,18 @@ enum BetaWebhookSessionDeletedEventDataType {
 
   static BetaWebhookSessionDeletedEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.deleted': return BetaWebhookSessionDeletedEventDataType.sessionDeleted;
-      default: throw ArgumentError('Unknown BetaWebhookSessionDeletedEventDataType: $value');
+      case 'session.deleted':
+        return BetaWebhookSessionDeletedEventDataType.sessionDeleted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionDeletedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionDeletedEventDataType.sessionDeleted: return 'session.deleted';
+      case BetaWebhookSessionDeletedEventDataType.sessionDeleted:
+        return 'session.deleted';
     }
   }
 
@@ -241,14 +285,18 @@ enum BetaWebhookSessionIdledEventDataType {
 
   static BetaWebhookSessionIdledEventDataType fromJson(String value) {
     switch (value) {
-      case 'session.idled': return BetaWebhookSessionIdledEventDataType.sessionIdled;
-      default: throw ArgumentError('Unknown BetaWebhookSessionIdledEventDataType: $value');
+      case 'session.idled':
+        return BetaWebhookSessionIdledEventDataType.sessionIdled;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionIdledEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionIdledEventDataType.sessionIdled: return 'session.idled';
+      case BetaWebhookSessionIdledEventDataType.sessionIdled:
+        return 'session.idled';
     }
   }
 
@@ -260,16 +308,23 @@ enum BetaWebhookSessionIdledEventDataType {
 enum BetaWebhookSessionOutcomeEvaluationEndedEventDataType {
   sessionOutcomeEvaluationEnded;
 
-  static BetaWebhookSessionOutcomeEvaluationEndedEventDataType fromJson(String value) {
+  static BetaWebhookSessionOutcomeEvaluationEndedEventDataType fromJson(
+      String value) {
     switch (value) {
-      case 'session.outcome_evaluation_ended': return BetaWebhookSessionOutcomeEvaluationEndedEventDataType.sessionOutcomeEvaluationEnded;
-      default: throw ArgumentError('Unknown BetaWebhookSessionOutcomeEvaluationEndedEventDataType: $value');
+      case 'session.outcome_evaluation_ended':
+        return BetaWebhookSessionOutcomeEvaluationEndedEventDataType
+            .sessionOutcomeEvaluationEnded;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookSessionOutcomeEvaluationEndedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookSessionOutcomeEvaluationEndedEventDataType.sessionOutcomeEvaluationEnded: return 'session.outcome_evaluation_ended';
+      case BetaWebhookSessionOutcomeEvaluationEndedEventDataType
+            .sessionOutcomeEvaluationEnded:
+        return 'session.outcome_evaluation_ended';
     }
   }
 

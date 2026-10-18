@@ -8,177 +8,356 @@ sealed class BetaApproveSpendLimitIncreaseRequestParamsPeriod {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaApproveSpendLimitIncreaseRequestParamsPeriod();
-  factory BetaApproveSpendLimitIncreaseRequestParamsPeriod.fromJson(Object? json) {
-    try { return BetaApproveSpendLimitIncreaseRequestParamsPeriodBetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0(BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0.fromJson(json as String)); } catch (_) {}
-    throw FormatException("No variant matched for BetaApproveSpendLimitIncreaseRequestParamsPeriod");
+  factory BetaApproveSpendLimitIncreaseRequestParamsPeriod.fromJson(
+      Object? json) {
+    try {
+      return BetaApproveSpendLimitIncreaseRequestParamsPeriodBetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0(
+          BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0.fromJson(
+              json as String));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for BetaApproveSpendLimitIncreaseRequestParamsPeriod");
   }
   Object? toJson();
 }
 
-final class BetaApproveSpendLimitIncreaseRequestParamsPeriodBetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0 extends BetaApproveSpendLimitIncreaseRequestParamsPeriod {
+final class BetaApproveSpendLimitIncreaseRequestParamsPeriodBetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0
+    extends BetaApproveSpendLimitIncreaseRequestParamsPeriod {
   final BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0 value;
-  const BetaApproveSpendLimitIncreaseRequestParamsPeriodBetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaApproveSpendLimitIncreaseRequestParamsPeriodBetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `BetaApproveSpendLimitIncreaseRequestParams` API schema.
 class BetaApproveSpendLimitIncreaseRequestParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// New per-user spend limit as a non-negative integer decimal string (minor units).
   final String amount;
+
   /// Optional API value serialized in the `period` wire field.
-  final SdkOptional<BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0?> period;
+  final SdkOptional<BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0?>
+      period;
+
   /// Optional `boolean` value serialized in the `suppress_notification` wire field.
   final SdkOptional<bool> suppressNotification;
 
-  const BetaApproveSpendLimitIncreaseRequestParams({required this.amount, this.period = const SdkOmitted(), this.suppressNotification = const SdkOmitted()});
+  const BetaApproveSpendLimitIncreaseRequestParams(
+      {required this.amount,
+      this.period = const SdkOmitted(),
+      this.suppressNotification = const SdkOmitted()});
 
-  BetaApproveSpendLimitIncreaseRequestParams Function({String amount, SdkOptional<BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0?> period, SdkOptional<bool> suppressNotification}) get copyWith => _copyWith;
+  BetaApproveSpendLimitIncreaseRequestParams Function(
+      {String amount,
+      SdkOptional<BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0?>
+          period,
+      SdkOptional<bool> suppressNotification}) get copyWith => _copyWith;
 
-  BetaApproveSpendLimitIncreaseRequestParams _copyWith({Object? amount = sdkOmittedValue, Object? period = sdkOmittedValue, Object? suppressNotification = sdkOmittedValue}) => BetaApproveSpendLimitIncreaseRequestParams(
-    amount: identical(amount, sdkOmittedValue) ? this.amount : amount as String,
-    period: identical(period, sdkOmittedValue) ? this.period : period as SdkOptional<BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0?>,
-    suppressNotification: identical(suppressNotification, sdkOmittedValue) ? this.suppressNotification : suppressNotification as SdkOptional<bool>,
-  );
+  BetaApproveSpendLimitIncreaseRequestParams _copyWith(
+          {Object? amount = sdkOmittedValue,
+          Object? period = sdkOmittedValue,
+          Object? suppressNotification = sdkOmittedValue}) =>
+      BetaApproveSpendLimitIncreaseRequestParams(
+        amount:
+            identical(amount, sdkOmittedValue) ? this.amount : amount as String,
+        period: identical(period, sdkOmittedValue)
+            ? this.period
+            : period as SdkOptional<
+                BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0?>,
+        suppressNotification: identical(suppressNotification, sdkOmittedValue)
+            ? this.suppressNotification
+            : suppressNotification as SdkOptional<bool>,
+      );
 
-  factory BetaApproveSpendLimitIncreaseRequestParams.fromJson(Map<String, dynamic> json) => BetaApproveSpendLimitIncreaseRequestParams(
-    amount: (json['amount'] as String?)!,
-    period: json.containsKey('period') ? SdkPresent(json['period'] != null ? BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0.fromJson(json['period'] as String) : null) : const SdkOmitted(),
-    suppressNotification: json['suppress_notification'] != null ? SdkPresent((json['suppress_notification'] as bool?)!) : const SdkOmitted(),
-  );
+  factory BetaApproveSpendLimitIncreaseRequestParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaApproveSpendLimitIncreaseRequestParams(
+        amount: (json['amount'] as String?)!,
+        period: json.containsKey('period')
+            ? SdkPresent(json['period'] != null
+                ? BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0
+                    .fromJson(json['period'] as String)
+                : null)
+            : const SdkOmitted(),
+        suppressNotification: json['suppress_notification'] != null
+            ? SdkPresent((json['suppress_notification'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'amount': amount,
-    ...switch (period) {
-      SdkPresent<BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0?>(value: final value) => {'period': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (suppressNotification) {
-      SdkPresent<bool>(value: final value) => {'suppress_notification': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'amount': amount,
+        ...switch (period) {
+          SdkPresent<BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0?>(
+            value: final value
+          ) =>
+            {
+              'period': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (suppressNotification) {
+          SdkPresent<bool>(value: final value) => {
+              'suppress_notification': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class BetaApproveSpendLimitIncreaseRequestResponseResolvedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaApproveSpendLimitIncreaseRequestResponseResolvedAt();
-  factory BetaApproveSpendLimitIncreaseRequestResponseResolvedAt.fromJson(Object? json) {
-    if (json is String) { return BetaApproveSpendLimitIncreaseRequestResponseResolvedAtString(json); }
-    throw FormatException("No variant matched for BetaApproveSpendLimitIncreaseRequestResponseResolvedAt");
+  factory BetaApproveSpendLimitIncreaseRequestResponseResolvedAt.fromJson(
+      Object? json) {
+    if (json is String) {
+      return BetaApproveSpendLimitIncreaseRequestResponseResolvedAtString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaApproveSpendLimitIncreaseRequestResponseResolvedAt");
   }
   Object? toJson();
 }
 
-final class BetaApproveSpendLimitIncreaseRequestResponseResolvedAtString extends BetaApproveSpendLimitIncreaseRequestResponseResolvedAt {
+final class BetaApproveSpendLimitIncreaseRequestResponseResolvedAtString
+    extends BetaApproveSpendLimitIncreaseRequestResponseResolvedAt {
   final String value;
-  const BetaApproveSpendLimitIncreaseRequestResponseResolvedAtString(this.value);
-  @override Object? toJson() => value;
+  const BetaApproveSpendLimitIncreaseRequestResponseResolvedAtString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaApproveSpendLimitIncreaseRequestResponse` API schema.
 class BetaApproveSpendLimitIncreaseRequestResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A user within the organization. `name` and `email_address` are null when the underlying account is unavailable or has been deleted; `deleted` is true only for deleted accounts.
   final BetaUserActorSchema actor;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `string` value serialized in the `id` wire field.
   final String id;
+
   /// Required enumerated value serialized in the `period` wire field.
   final BetaApproveSpendLimitIncreaseRequestResponsePeriod period;
+
   /// Required API value serialized in the `resolved_at` wire field.
   final String? resolvedAt;
+
   /// Required API value serialized in the `resolved_by` wire field.
   final BetaApproveSpendLimitIncreaseRequestResponseResolvedBy? resolvedBy;
+
   /// A configured spend limit: a cap on metered spend for one scope and period.
   final BetaSpendLimit spendLimit;
+
   /// Required API value serialized in the `spend_summary` wire field.
   final BetaSpendSummary? spendSummary;
+
   /// Required enumerated value serialized in the `status` wire field.
   final BetaApproveSpendLimitIncreaseRequestResponseStatus status;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaApproveSpendLimitIncreaseRequestResponseType type_;
 
-  const BetaApproveSpendLimitIncreaseRequestResponse({required this.actor, required this.createdAt, required this.id, required this.period, required this.resolvedAt, required this.resolvedBy, required this.spendLimit, required this.spendSummary, required this.status, required this.type_});
+  const BetaApproveSpendLimitIncreaseRequestResponse(
+      {required this.actor,
+      required this.createdAt,
+      required this.id,
+      required this.period,
+      required this.resolvedAt,
+      required this.resolvedBy,
+      required this.spendLimit,
+      required this.spendSummary,
+      required this.status,
+      required this.type_});
 
-  BetaApproveSpendLimitIncreaseRequestResponse Function({BetaUserActorSchema actor, String createdAt, String id, BetaApproveSpendLimitIncreaseRequestResponsePeriod period, String? resolvedAt, BetaApproveSpendLimitIncreaseRequestResponseResolvedBy? resolvedBy, BetaSpendLimit spendLimit, BetaSpendSummary? spendSummary, BetaApproveSpendLimitIncreaseRequestResponseStatus status, BetaApproveSpendLimitIncreaseRequestResponseType type_}) get copyWith => _copyWith;
+  BetaApproveSpendLimitIncreaseRequestResponse Function(
+          {BetaUserActorSchema actor,
+          String createdAt,
+          String id,
+          BetaApproveSpendLimitIncreaseRequestResponsePeriod period,
+          String? resolvedAt,
+          BetaApproveSpendLimitIncreaseRequestResponseResolvedBy? resolvedBy,
+          BetaSpendLimit spendLimit,
+          BetaSpendSummary? spendSummary,
+          BetaApproveSpendLimitIncreaseRequestResponseStatus status,
+          BetaApproveSpendLimitIncreaseRequestResponseType type_})
+      get copyWith => _copyWith;
 
-  BetaApproveSpendLimitIncreaseRequestResponse _copyWith({Object? actor = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? id = sdkOmittedValue, Object? period = sdkOmittedValue, Object? resolvedAt = sdkOmittedValue, Object? resolvedBy = sdkOmittedValue, Object? spendLimit = sdkOmittedValue, Object? spendSummary = sdkOmittedValue, Object? status = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaApproveSpendLimitIncreaseRequestResponse(
-    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as BetaUserActorSchema,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    period: identical(period, sdkOmittedValue) ? this.period : period as BetaApproveSpendLimitIncreaseRequestResponsePeriod,
-    resolvedAt: identical(resolvedAt, sdkOmittedValue) ? this.resolvedAt : resolvedAt as String?,
-    resolvedBy: identical(resolvedBy, sdkOmittedValue) ? this.resolvedBy : resolvedBy as BetaApproveSpendLimitIncreaseRequestResponseResolvedBy?,
-    spendLimit: identical(spendLimit, sdkOmittedValue) ? this.spendLimit : spendLimit as BetaSpendLimit,
-    spendSummary: identical(spendSummary, sdkOmittedValue) ? this.spendSummary : spendSummary as BetaSpendSummary?,
-    status: identical(status, sdkOmittedValue) ? this.status : status as BetaApproveSpendLimitIncreaseRequestResponseStatus,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaApproveSpendLimitIncreaseRequestResponseType,
-  );
+  BetaApproveSpendLimitIncreaseRequestResponse _copyWith(
+          {Object? actor = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? period = sdkOmittedValue,
+          Object? resolvedAt = sdkOmittedValue,
+          Object? resolvedBy = sdkOmittedValue,
+          Object? spendLimit = sdkOmittedValue,
+          Object? spendSummary = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaApproveSpendLimitIncreaseRequestResponse(
+        actor: identical(actor, sdkOmittedValue)
+            ? this.actor
+            : actor as BetaUserActorSchema,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        period: identical(period, sdkOmittedValue)
+            ? this.period
+            : period as BetaApproveSpendLimitIncreaseRequestResponsePeriod,
+        resolvedAt: identical(resolvedAt, sdkOmittedValue)
+            ? this.resolvedAt
+            : resolvedAt as String?,
+        resolvedBy: identical(resolvedBy, sdkOmittedValue)
+            ? this.resolvedBy
+            : resolvedBy
+                as BetaApproveSpendLimitIncreaseRequestResponseResolvedBy?,
+        spendLimit: identical(spendLimit, sdkOmittedValue)
+            ? this.spendLimit
+            : spendLimit as BetaSpendLimit,
+        spendSummary: identical(spendSummary, sdkOmittedValue)
+            ? this.spendSummary
+            : spendSummary as BetaSpendSummary?,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as BetaApproveSpendLimitIncreaseRequestResponseStatus,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaApproveSpendLimitIncreaseRequestResponseType,
+      );
 
-  factory BetaApproveSpendLimitIncreaseRequestResponse.fromJson(Map<String, dynamic> json) => BetaApproveSpendLimitIncreaseRequestResponse(
-    actor: (json['actor'] != null ? BetaUserActorSchema.fromJson(json['actor'] as Map<String, dynamic>) : null)!,
-    createdAt: (json['created_at'] as String?)!,
-    id: (json['id'] as String?)!,
-    period: (json['period'] != null ? BetaApproveSpendLimitIncreaseRequestResponsePeriod.fromJson(json['period'] as String) : null)!,
-    resolvedAt: json.containsKey('resolved_at') ? json['resolved_at'] as String? : throw ArgumentError.value(null, 'resolved_at', 'Required property is missing'),
-    resolvedBy: json.containsKey('resolved_by') ? json['resolved_by'] != null ? BetaApproveSpendLimitIncreaseRequestResponseResolvedBy.fromJson(json['resolved_by']) : null : throw ArgumentError.value(null, 'resolved_by', 'Required property is missing'),
-    spendLimit: (json['spend_limit'] != null ? BetaSpendLimit.fromJson(json['spend_limit'] as Map<String, dynamic>) : null)!,
-    spendSummary: json.containsKey('spend_summary') ? json['spend_summary'] != null ? BetaSpendSummary.fromJson(json['spend_summary'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'spend_summary', 'Required property is missing'),
-    status: (json['status'] != null ? BetaApproveSpendLimitIncreaseRequestResponseStatus.fromJson(json['status'] as String) : null)!,
-    type_: (json['type'] != null ? BetaApproveSpendLimitIncreaseRequestResponseType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaApproveSpendLimitIncreaseRequestResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaApproveSpendLimitIncreaseRequestResponse(
+        actor: (json['actor'] != null
+            ? BetaUserActorSchema.fromJson(
+                json['actor'] as Map<String, dynamic>)
+            : null)!,
+        createdAt: (json['created_at'] as String?)!,
+        id: (json['id'] as String?)!,
+        period: (json['period'] != null
+            ? BetaApproveSpendLimitIncreaseRequestResponsePeriod.fromJson(
+                json['period'] as String)
+            : null)!,
+        resolvedAt: json.containsKey('resolved_at')
+            ? json['resolved_at'] as String?
+            : throw ArgumentError.value(
+                null, 'resolved_at', 'Required property is missing'),
+        resolvedBy: json.containsKey('resolved_by')
+            ? json['resolved_by'] != null
+                ? BetaApproveSpendLimitIncreaseRequestResponseResolvedBy
+                    .fromJson(json['resolved_by'])
+                : null
+            : throw ArgumentError.value(
+                null, 'resolved_by', 'Required property is missing'),
+        spendLimit: (json['spend_limit'] != null
+            ? BetaSpendLimit.fromJson(
+                json['spend_limit'] as Map<String, dynamic>)
+            : null)!,
+        spendSummary: json.containsKey('spend_summary')
+            ? json['spend_summary'] != null
+                ? BetaSpendSummary.fromJson(
+                    json['spend_summary'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'spend_summary', 'Required property is missing'),
+        status: (json['status'] != null
+            ? BetaApproveSpendLimitIncreaseRequestResponseStatus.fromJson(
+                json['status'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaApproveSpendLimitIncreaseRequestResponseType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'actor': actor.toJson(),
-    'created_at': createdAt,
-    'id': id,
-    'period': period.toJson(),
-    'resolved_at': resolvedAt,
-    'resolved_by': resolvedBy?.toJson(),
-    'spend_limit': spendLimit.toJson(),
-    'spend_summary': spendSummary?.toJson(),
-    'status': status.toJson(),
-    'type': type_.toJson(),
-  };
+        'actor': actor.toJson(),
+        'created_at': createdAt,
+        'id': id,
+        'period': period.toJson(),
+        'resolved_at': resolvedAt,
+        'resolved_by': resolvedBy?.toJson(),
+        'spend_limit': spendLimit.toJson(),
+        'spend_summary': spendSummary?.toJson(),
+        'status': status.toJson(),
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaApproveSpendLimitIncreaseRequestResponseResolvedBy {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaApproveSpendLimitIncreaseRequestResponseResolvedBy();
-  factory BetaApproveSpendLimitIncreaseRequestResponseResolvedBy.fromJson(Object? json) {
+  factory BetaApproveSpendLimitIncreaseRequestResponseResolvedBy.fromJson(
+      Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaUserActorSchema.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaUserActorSchema(value); } } catch (_) {}
-      try { final value = BetaScopedApiKeyActorSchema.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaScopedApiKeyActorSchema(value); } } catch (_) {}
+      try {
+        final value = BetaUserActorSchema.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaUserActorSchema(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaScopedApiKeyActorSchema.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaScopedApiKeyActorSchema(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaUserActorSchema(BetaUserActorSchema.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaScopedApiKeyActorSchema(BetaScopedApiKeyActorSchema.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"scoped_api_key_actor", "user_actor"}.contains(json["type"])) { return UnknownBetaApproveSpendLimitIncreaseRequestResponseResolvedBy(json); }
-    throw FormatException("No variant matched for BetaApproveSpendLimitIncreaseRequestResponseResolvedBy");
+    try {
+      return BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaUserActorSchema(
+          BetaUserActorSchema.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaScopedApiKeyActorSchema(
+          BetaScopedApiKeyActorSchema.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"scoped_api_key_actor", "user_actor"}.contains(json["type"])) {
+      return UnknownBetaApproveSpendLimitIncreaseRequestResponseResolvedBy(
+          json);
+    }
+    throw FormatException(
+        "No variant matched for BetaApproveSpendLimitIncreaseRequestResponseResolvedBy");
   }
   Object? toJson();
 }
 
-final class BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaUserActorSchema extends BetaApproveSpendLimitIncreaseRequestResponseResolvedBy {
+final class BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaUserActorSchema
+    extends BetaApproveSpendLimitIncreaseRequestResponseResolvedBy {
   final BetaUserActorSchema value;
-  const BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaUserActorSchema(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaUserActorSchema(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaScopedApiKeyActorSchema extends BetaApproveSpendLimitIncreaseRequestResponseResolvedBy {
+final class BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaScopedApiKeyActorSchema
+    extends BetaApproveSpendLimitIncreaseRequestResponseResolvedBy {
   final BetaScopedApiKeyActorSchema value;
-  const BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaScopedApiKeyActorSchema(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaApproveSpendLimitIncreaseRequestResponseResolvedByBetaScopedApiKeyActorSchema(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaApproveSpendLimitIncreaseRequestResponseResolvedBy] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaApproveSpendLimitIncreaseRequestResponseResolvedBy extends BetaApproveSpendLimitIncreaseRequestResponseResolvedBy {
+final class UnknownBetaApproveSpendLimitIncreaseRequestResponseResolvedBy
+    extends BetaApproveSpendLimitIncreaseRequestResponseResolvedBy {
   final Map<String, dynamic> raw;
   const UnknownBetaApproveSpendLimitIncreaseRequestResponseResolvedBy(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

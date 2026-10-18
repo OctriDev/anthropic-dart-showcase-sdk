@@ -10,14 +10,17 @@ enum BetaPlainTextSourceMediaType {
 
   static BetaPlainTextSourceMediaType fromJson(String value) {
     switch (value) {
-      case 'text/plain': return BetaPlainTextSourceMediaType.textPlain;
-      default: throw ArgumentError('Unknown BetaPlainTextSourceMediaType: $value');
+      case 'text/plain':
+        return BetaPlainTextSourceMediaType.textPlain;
+      default:
+        throw ArgumentError('Unknown BetaPlainTextSourceMediaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaPlainTextSourceMediaType.textPlain: return 'text/plain';
+      case BetaPlainTextSourceMediaType.textPlain:
+        return 'text/plain';
     }
   }
 
@@ -31,14 +34,17 @@ enum BetaPlainTextSourceType {
 
   static BetaPlainTextSourceType fromJson(String value) {
     switch (value) {
-      case 'text': return BetaPlainTextSourceType.text;
-      default: throw ArgumentError('Unknown BetaPlainTextSourceType: $value');
+      case 'text':
+        return BetaPlainTextSourceType.text;
+      default:
+        throw ArgumentError('Unknown BetaPlainTextSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaPlainTextSourceType.text: return 'text';
+      case BetaPlainTextSourceType.text:
+        return 'text';
     }
   }
 
@@ -48,56 +54,70 @@ enum BetaPlainTextSourceType {
 
 /// Optional enumerated value serialized in the `scope` wire field.
 final class BetaPublicEnvironmentCreateRequestScopeVariant0 {
-
   final String value;
 
   const BetaPublicEnvironmentCreateRequestScopeVariant0._(this.value);
 
-  factory BetaPublicEnvironmentCreateRequestScopeVariant0.fromJson(String value) => BetaPublicEnvironmentCreateRequestScopeVariant0._(value);
+  factory BetaPublicEnvironmentCreateRequestScopeVariant0.fromJson(
+          String value) =>
+      BetaPublicEnvironmentCreateRequestScopeVariant0._(value);
 
-  static const organization = BetaPublicEnvironmentCreateRequestScopeVariant0._('organization');
-  static const account = BetaPublicEnvironmentCreateRequestScopeVariant0._('account');
+  static const organization =
+      BetaPublicEnvironmentCreateRequestScopeVariant0._('organization');
+  static const account =
+      BetaPublicEnvironmentCreateRequestScopeVariant0._('account');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaPublicEnvironmentCreateRequestScopeVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaPublicEnvironmentCreateRequestScopeVariant0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `scope` wire field.
 final class BetaPublicEnvironmentUpdateRequestScopeVariant0 {
-
   final String value;
 
   const BetaPublicEnvironmentUpdateRequestScopeVariant0._(this.value);
 
-  factory BetaPublicEnvironmentUpdateRequestScopeVariant0.fromJson(String value) => BetaPublicEnvironmentUpdateRequestScopeVariant0._(value);
+  factory BetaPublicEnvironmentUpdateRequestScopeVariant0.fromJson(
+          String value) =>
+      BetaPublicEnvironmentUpdateRequestScopeVariant0._(value);
 
-  static const organization = BetaPublicEnvironmentUpdateRequestScopeVariant0._('organization');
-  static const account = BetaPublicEnvironmentUpdateRequestScopeVariant0._('account');
+  static const organization =
+      BetaPublicEnvironmentUpdateRequestScopeVariant0._('organization');
+  static const account =
+      BetaPublicEnvironmentUpdateRequestScopeVariant0._('account');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaPublicEnvironmentUpdateRequestScopeVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaPublicEnvironmentUpdateRequestScopeVariant0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`.
 final class BetaRateLimitGroupType {
-
   final String value;
 
   const BetaRateLimitGroupType._(this.value);
 
-  factory BetaRateLimitGroupType.fromJson(String value) => BetaRateLimitGroupType._(value);
+  factory BetaRateLimitGroupType.fromJson(String value) =>
+      BetaRateLimitGroupType._(value);
 
   static const batch = BetaRateLimitGroupType._('batch');
   static const files = BetaRateLimitGroupType._('files');
@@ -108,12 +128,15 @@ final class BetaRateLimitGroupType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaRateLimitGroupType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaRateLimitGroupType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Object type. Always `rate_limit` for organization rate-limit entries.
@@ -122,14 +145,17 @@ enum BetaRateLimitType {
 
   static BetaRateLimitType fromJson(String value) {
     switch (value) {
-      case 'rate_limit': return BetaRateLimitType.rateLimit;
-      default: throw ArgumentError('Unknown BetaRateLimitType: $value');
+      case 'rate_limit':
+        return BetaRateLimitType.rateLimit;
+      default:
+        throw ArgumentError('Unknown BetaRateLimitType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRateLimitType.rateLimit: return 'rate_limit';
+      case BetaRateLimitType.rateLimit:
+        return 'rate_limit';
     }
   }
 
@@ -143,14 +169,17 @@ enum BetaRateLimitErrorType {
 
   static BetaRateLimitErrorType fromJson(String value) {
     switch (value) {
-      case 'rate_limit_error': return BetaRateLimitErrorType.rateLimitError;
-      default: throw ArgumentError('Unknown BetaRateLimitErrorType: $value');
+      case 'rate_limit_error':
+        return BetaRateLimitErrorType.rateLimitError;
+      default:
+        throw ArgumentError('Unknown BetaRateLimitErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRateLimitErrorType.rateLimitError: return 'rate_limit_error';
+      case BetaRateLimitErrorType.rateLimitError:
+        return 'rate_limit_error';
     }
   }
 
@@ -160,24 +189,27 @@ enum BetaRateLimitErrorType {
 
 /// How the RBAC Group was created: `"direct"` for groups created directly (for example, in the organization's admin settings), `"scim"` for groups provisioned by the identity provider.
 final class BetaRbacGroupSourceType {
-
   final String value;
 
   const BetaRbacGroupSourceType._(this.value);
 
-  factory BetaRbacGroupSourceType.fromJson(String value) => BetaRbacGroupSourceType._(value);
+  factory BetaRbacGroupSourceType.fromJson(String value) =>
+      BetaRbacGroupSourceType._(value);
 
   static const direct = BetaRbacGroupSourceType._('direct');
   static const scim = BetaRbacGroupSourceType._('scim');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaRbacGroupSourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaRbacGroupSourceType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Object type. For RBAC Groups, this is always `"rbac_group"`.
@@ -186,14 +218,17 @@ enum BetaRbacGroupType {
 
   static BetaRbacGroupType fromJson(String value) {
     switch (value) {
-      case 'rbac_group': return BetaRbacGroupType.rbacGroup;
-      default: throw ArgumentError('Unknown BetaRbacGroupType: $value');
+      case 'rbac_group':
+        return BetaRbacGroupType.rbacGroup;
+      default:
+        throw ArgumentError('Unknown BetaRbacGroupType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRbacGroupType.rbacGroup: return 'rbac_group';
+      case BetaRbacGroupType.rbacGroup:
+        return 'rbac_group';
     }
   }
 
@@ -207,14 +242,17 @@ enum BetaRbacGroupMemberType {
 
   static BetaRbacGroupMemberType fromJson(String value) {
     switch (value) {
-      case 'rbac_group_member': return BetaRbacGroupMemberType.rbacGroupMember;
-      default: throw ArgumentError('Unknown BetaRbacGroupMemberType: $value');
+      case 'rbac_group_member':
+        return BetaRbacGroupMemberType.rbacGroupMember;
+      default:
+        throw ArgumentError('Unknown BetaRbacGroupMemberType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRbacGroupMemberType.rbacGroupMember: return 'rbac_group_member';
+      case BetaRbacGroupMemberType.rbacGroupMember:
+        return 'rbac_group_member';
     }
   }
 
@@ -228,14 +266,17 @@ enum BetaRbacGroupScopeType {
 
   static BetaRbacGroupScopeType fromJson(String value) {
     switch (value) {
-      case 'rbac_group': return BetaRbacGroupScopeType.rbacGroup;
-      default: throw ArgumentError('Unknown BetaRbacGroupScopeType: $value');
+      case 'rbac_group':
+        return BetaRbacGroupScopeType.rbacGroup;
+      default:
+        throw ArgumentError('Unknown BetaRbacGroupScopeType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRbacGroupScopeType.rbacGroup: return 'rbac_group';
+      case BetaRbacGroupScopeType.rbacGroup:
+        return 'rbac_group';
     }
   }
 
@@ -249,14 +290,17 @@ enum BetaRbacRoleType {
 
   static BetaRbacRoleType fromJson(String value) {
     switch (value) {
-      case 'rbac_role': return BetaRbacRoleType.rbacRole;
-      default: throw ArgumentError('Unknown BetaRbacRoleType: $value');
+      case 'rbac_role':
+        return BetaRbacRoleType.rbacRole;
+      default:
+        throw ArgumentError('Unknown BetaRbacRoleType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRbacRoleType.rbacRole: return 'rbac_role';
+      case BetaRbacRoleType.rbacRole:
+        return 'rbac_role';
     }
   }
 
@@ -270,14 +314,17 @@ enum BetaRbacRolePermissionType {
 
   static BetaRbacRolePermissionType fromJson(String value) {
     switch (value) {
-      case 'rbac_role_permission': return BetaRbacRolePermissionType.rbacRolePermission;
-      default: throw ArgumentError('Unknown BetaRbacRolePermissionType: $value');
+      case 'rbac_role_permission':
+        return BetaRbacRolePermissionType.rbacRolePermission;
+      default:
+        throw ArgumentError('Unknown BetaRbacRolePermissionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaRbacRolePermissionType.rbacRolePermission: return 'rbac_role_permission';
+      case BetaRbacRolePermissionType.rbacRolePermission:
+        return 'rbac_role_permission';
     }
   }
 

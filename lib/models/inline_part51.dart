@@ -10,14 +10,17 @@ enum BetaUserScopeType {
 
   static BetaUserScopeType fromJson(String value) {
     switch (value) {
-      case 'user': return BetaUserScopeType.user;
-      default: throw ArgumentError('Unknown BetaUserScopeType: $value');
+      case 'user':
+        return BetaUserScopeType.user;
+      default:
+        throw ArgumentError('Unknown BetaUserScopeType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaUserScopeType.user: return 'user';
+      case BetaUserScopeType.user:
+        return 'user';
     }
   }
 
@@ -27,24 +30,27 @@ enum BetaUserScopeType {
 
 /// `success` — encrypt/decrypt roundtrip succeeded. `failure` — the roundtrip failed or timed out; see `error`.
 final class BetaValidateExternalKeyResponseStatus {
-
   final String value;
 
   const BetaValidateExternalKeyResponseStatus._(this.value);
 
-  factory BetaValidateExternalKeyResponseStatus.fromJson(String value) => BetaValidateExternalKeyResponseStatus._(value);
+  factory BetaValidateExternalKeyResponseStatus.fromJson(String value) =>
+      BetaValidateExternalKeyResponseStatus._(value);
 
   static const failure = BetaValidateExternalKeyResponseStatus._('failure');
   static const success = BetaValidateExternalKeyResponseStatus._('success');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaValidateExternalKeyResponseStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaValidateExternalKeyResponseStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -53,14 +59,18 @@ enum BetaValidateExternalKeyResponseType {
 
   static BetaValidateExternalKeyResponseType fromJson(String value) {
     switch (value) {
-      case 'external_key_validation': return BetaValidateExternalKeyResponseType.externalKeyValidation;
-      default: throw ArgumentError('Unknown BetaValidateExternalKeyResponseType: $value');
+      case 'external_key_validation':
+        return BetaValidateExternalKeyResponseType.externalKeyValidation;
+      default:
+        throw ArgumentError(
+            'Unknown BetaValidateExternalKeyResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaValidateExternalKeyResponseType.externalKeyValidation: return 'external_key_validation';
+      case BetaValidateExternalKeyResponseType.externalKeyValidation:
+        return 'external_key_validation';
     }
   }
 
@@ -74,14 +84,17 @@ enum BetaWebFetchTool20250910Name {
 
   static BetaWebFetchTool20250910Name fromJson(String value) {
     switch (value) {
-      case 'web_fetch': return BetaWebFetchTool20250910Name.webFetch;
-      default: throw ArgumentError('Unknown BetaWebFetchTool20250910Name: $value');
+      case 'web_fetch':
+        return BetaWebFetchTool20250910Name.webFetch;
+      default:
+        throw ArgumentError('Unknown BetaWebFetchTool20250910Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebFetchTool20250910Name.webFetch: return 'web_fetch';
+      case BetaWebFetchTool20250910Name.webFetch:
+        return 'web_fetch';
     }
   }
 
@@ -95,14 +108,17 @@ enum BetaWebFetchTool20250910Type {
 
   static BetaWebFetchTool20250910Type fromJson(String value) {
     switch (value) {
-      case 'web_fetch_20250910': return BetaWebFetchTool20250910Type.webFetch20250910;
-      default: throw ArgumentError('Unknown BetaWebFetchTool20250910Type: $value');
+      case 'web_fetch_20250910':
+        return BetaWebFetchTool20250910Type.webFetch20250910;
+      default:
+        throw ArgumentError('Unknown BetaWebFetchTool20250910Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebFetchTool20250910Type.webFetch20250910: return 'web_fetch_20250910';
+      case BetaWebFetchTool20250910Type.webFetch20250910:
+        return 'web_fetch_20250910';
     }
   }
 
@@ -116,14 +132,17 @@ enum BetaWebFetchTool20260209Name {
 
   static BetaWebFetchTool20260209Name fromJson(String value) {
     switch (value) {
-      case 'web_fetch': return BetaWebFetchTool20260209Name.webFetch;
-      default: throw ArgumentError('Unknown BetaWebFetchTool20260209Name: $value');
+      case 'web_fetch':
+        return BetaWebFetchTool20260209Name.webFetch;
+      default:
+        throw ArgumentError('Unknown BetaWebFetchTool20260209Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebFetchTool20260209Name.webFetch: return 'web_fetch';
+      case BetaWebFetchTool20260209Name.webFetch:
+        return 'web_fetch';
     }
   }
 
@@ -137,14 +156,17 @@ enum BetaWebFetchTool20260209Type {
 
   static BetaWebFetchTool20260209Type fromJson(String value) {
     switch (value) {
-      case 'web_fetch_20260209': return BetaWebFetchTool20260209Type.webFetch20260209;
-      default: throw ArgumentError('Unknown BetaWebFetchTool20260209Type: $value');
+      case 'web_fetch_20260209':
+        return BetaWebFetchTool20260209Type.webFetch20260209;
+      default:
+        throw ArgumentError('Unknown BetaWebFetchTool20260209Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebFetchTool20260209Type.webFetch20260209: return 'web_fetch_20260209';
+      case BetaWebFetchTool20260209Type.webFetch20260209:
+        return 'web_fetch_20260209';
     }
   }
 
@@ -158,14 +180,17 @@ enum BetaWebFetchTool20260309Name {
 
   static BetaWebFetchTool20260309Name fromJson(String value) {
     switch (value) {
-      case 'web_fetch': return BetaWebFetchTool20260309Name.webFetch;
-      default: throw ArgumentError('Unknown BetaWebFetchTool20260309Name: $value');
+      case 'web_fetch':
+        return BetaWebFetchTool20260309Name.webFetch;
+      default:
+        throw ArgumentError('Unknown BetaWebFetchTool20260309Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebFetchTool20260309Name.webFetch: return 'web_fetch';
+      case BetaWebFetchTool20260309Name.webFetch:
+        return 'web_fetch';
     }
   }
 
@@ -179,14 +204,17 @@ enum BetaWebFetchTool20260309Type {
 
   static BetaWebFetchTool20260309Type fromJson(String value) {
     switch (value) {
-      case 'web_fetch_20260309': return BetaWebFetchTool20260309Type.webFetch20260309;
-      default: throw ArgumentError('Unknown BetaWebFetchTool20260309Type: $value');
+      case 'web_fetch_20260309':
+        return BetaWebFetchTool20260309Type.webFetch20260309;
+      default:
+        throw ArgumentError('Unknown BetaWebFetchTool20260309Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebFetchTool20260309Type.webFetch20260309: return 'web_fetch_20260309';
+      case BetaWebFetchTool20260309Type.webFetch20260309:
+        return 'web_fetch_20260309';
     }
   }
 
@@ -200,14 +228,17 @@ enum BetaWebFetchTool20260318Name {
 
   static BetaWebFetchTool20260318Name fromJson(String value) {
     switch (value) {
-      case 'web_fetch': return BetaWebFetchTool20260318Name.webFetch;
-      default: throw ArgumentError('Unknown BetaWebFetchTool20260318Name: $value');
+      case 'web_fetch':
+        return BetaWebFetchTool20260318Name.webFetch;
+      default:
+        throw ArgumentError('Unknown BetaWebFetchTool20260318Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebFetchTool20260318Name.webFetch: return 'web_fetch';
+      case BetaWebFetchTool20260318Name.webFetch:
+        return 'web_fetch';
     }
   }
 
@@ -217,24 +248,29 @@ enum BetaWebFetchTool20260318Name {
 
 /// How this tool's result blocks appear in the API response when the result was consumed by a completed code_execution call in the same turn. 'full' returns the complete content (default). 'excluded' drops the nested server_tool_use and result block pair entirely. Results from direct calls, or from code_execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
 final class BetaWebFetchTool20260318ResponseInclusion {
-
   final String value;
 
   const BetaWebFetchTool20260318ResponseInclusion._(this.value);
 
-  factory BetaWebFetchTool20260318ResponseInclusion.fromJson(String value) => BetaWebFetchTool20260318ResponseInclusion._(value);
+  factory BetaWebFetchTool20260318ResponseInclusion.fromJson(String value) =>
+      BetaWebFetchTool20260318ResponseInclusion._(value);
 
   static const full = BetaWebFetchTool20260318ResponseInclusion._('full');
-  static const excluded = BetaWebFetchTool20260318ResponseInclusion._('excluded');
+  static const excluded =
+      BetaWebFetchTool20260318ResponseInclusion._('excluded');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaWebFetchTool20260318ResponseInclusion && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaWebFetchTool20260318ResponseInclusion &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -243,14 +279,17 @@ enum BetaWebFetchTool20260318Type {
 
   static BetaWebFetchTool20260318Type fromJson(String value) {
     switch (value) {
-      case 'web_fetch_20260318': return BetaWebFetchTool20260318Type.webFetch20260318;
-      default: throw ArgumentError('Unknown BetaWebFetchTool20260318Type: $value');
+      case 'web_fetch_20260318':
+        return BetaWebFetchTool20260318Type.webFetch20260318;
+      default:
+        throw ArgumentError('Unknown BetaWebFetchTool20260318Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebFetchTool20260318Type.webFetch20260318: return 'web_fetch_20260318';
+      case BetaWebFetchTool20260318Type.webFetch20260318:
+        return 'web_fetch_20260318';
     }
   }
 
@@ -264,14 +303,18 @@ enum BetaWebhookAgentArchivedEventDataType {
 
   static BetaWebhookAgentArchivedEventDataType fromJson(String value) {
     switch (value) {
-      case 'agent.archived': return BetaWebhookAgentArchivedEventDataType.agentArchived;
-      default: throw ArgumentError('Unknown BetaWebhookAgentArchivedEventDataType: $value');
+      case 'agent.archived':
+        return BetaWebhookAgentArchivedEventDataType.agentArchived;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookAgentArchivedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookAgentArchivedEventDataType.agentArchived: return 'agent.archived';
+      case BetaWebhookAgentArchivedEventDataType.agentArchived:
+        return 'agent.archived';
     }
   }
 

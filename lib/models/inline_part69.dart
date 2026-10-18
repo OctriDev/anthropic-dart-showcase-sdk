@@ -10,14 +10,17 @@ enum SucceededResultType {
 
   static SucceededResultType fromJson(String value) {
     switch (value) {
-      case 'succeeded': return SucceededResultType.succeeded;
-      default: throw ArgumentError('Unknown SucceededResultType: $value');
+      case 'succeeded':
+        return SucceededResultType.succeeded;
+      default:
+        throw ArgumentError('Unknown SucceededResultType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case SucceededResultType.succeeded: return 'succeeded';
+      case SucceededResultType.succeeded:
+        return 'succeeded';
     }
   }
 
@@ -31,14 +34,17 @@ enum TextContentBlockDeltaType {
 
   static TextContentBlockDeltaType fromJson(String value) {
     switch (value) {
-      case 'text_delta': return TextContentBlockDeltaType.textDelta;
-      default: throw ArgumentError('Unknown TextContentBlockDeltaType: $value');
+      case 'text_delta':
+        return TextContentBlockDeltaType.textDelta;
+      default:
+        throw ArgumentError('Unknown TextContentBlockDeltaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case TextContentBlockDeltaType.textDelta: return 'text_delta';
+      case TextContentBlockDeltaType.textDelta:
+        return 'text_delta';
     }
   }
 
@@ -52,14 +58,17 @@ enum TextEditor20250124Name {
 
   static TextEditor20250124Name fromJson(String value) {
     switch (value) {
-      case 'str_replace_editor': return TextEditor20250124Name.strReplaceEditor;
-      default: throw ArgumentError('Unknown TextEditor20250124Name: $value');
+      case 'str_replace_editor':
+        return TextEditor20250124Name.strReplaceEditor;
+      default:
+        throw ArgumentError('Unknown TextEditor20250124Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case TextEditor20250124Name.strReplaceEditor: return 'str_replace_editor';
+      case TextEditor20250124Name.strReplaceEditor:
+        return 'str_replace_editor';
     }
   }
 
@@ -73,14 +82,17 @@ enum TextEditor20250124Type {
 
   static TextEditor20250124Type fromJson(String value) {
     switch (value) {
-      case 'text_editor_20250124': return TextEditor20250124Type.textEditor20250124;
-      default: throw ArgumentError('Unknown TextEditor20250124Type: $value');
+      case 'text_editor_20250124':
+        return TextEditor20250124Type.textEditor20250124;
+      default:
+        throw ArgumentError('Unknown TextEditor20250124Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case TextEditor20250124Type.textEditor20250124: return 'text_editor_20250124';
+      case TextEditor20250124Type.textEditor20250124:
+        return 'text_editor_20250124';
     }
   }
 
@@ -94,14 +106,17 @@ enum TextEditor20250429Name {
 
   static TextEditor20250429Name fromJson(String value) {
     switch (value) {
-      case 'str_replace_based_edit_tool': return TextEditor20250429Name.strReplaceBasedEditTool;
-      default: throw ArgumentError('Unknown TextEditor20250429Name: $value');
+      case 'str_replace_based_edit_tool':
+        return TextEditor20250429Name.strReplaceBasedEditTool;
+      default:
+        throw ArgumentError('Unknown TextEditor20250429Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case TextEditor20250429Name.strReplaceBasedEditTool: return 'str_replace_based_edit_tool';
+      case TextEditor20250429Name.strReplaceBasedEditTool:
+        return 'str_replace_based_edit_tool';
     }
   }
 
@@ -115,14 +130,17 @@ enum TextEditor20250429Type {
 
   static TextEditor20250429Type fromJson(String value) {
     switch (value) {
-      case 'text_editor_20250429': return TextEditor20250429Type.textEditor20250429;
-      default: throw ArgumentError('Unknown TextEditor20250429Type: $value');
+      case 'text_editor_20250429':
+        return TextEditor20250429Type.textEditor20250429;
+      default:
+        throw ArgumentError('Unknown TextEditor20250429Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case TextEditor20250429Type.textEditor20250429: return 'text_editor_20250429';
+      case TextEditor20250429Type.textEditor20250429:
+        return 'text_editor_20250429';
     }
   }
 
@@ -136,14 +154,17 @@ enum TextEditor20250728Name {
 
   static TextEditor20250728Name fromJson(String value) {
     switch (value) {
-      case 'str_replace_based_edit_tool': return TextEditor20250728Name.strReplaceBasedEditTool;
-      default: throw ArgumentError('Unknown TextEditor20250728Name: $value');
+      case 'str_replace_based_edit_tool':
+        return TextEditor20250728Name.strReplaceBasedEditTool;
+      default:
+        throw ArgumentError('Unknown TextEditor20250728Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case TextEditor20250728Name.strReplaceBasedEditTool: return 'str_replace_based_edit_tool';
+      case TextEditor20250728Name.strReplaceBasedEditTool:
+        return 'str_replace_based_edit_tool';
     }
   }
 
@@ -157,14 +178,17 @@ enum TextEditor20250728Type {
 
   static TextEditor20250728Type fromJson(String value) {
     switch (value) {
-      case 'text_editor_20250728': return TextEditor20250728Type.textEditor20250728;
-      default: throw ArgumentError('Unknown TextEditor20250728Type: $value');
+      case 'text_editor_20250728':
+        return TextEditor20250728Type.textEditor20250728;
+      default:
+        throw ArgumentError('Unknown TextEditor20250728Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case TextEditor20250728Type.textEditor20250728: return 'text_editor_20250728';
+      case TextEditor20250728Type.textEditor20250728:
+        return 'text_editor_20250728';
     }
   }
 
@@ -178,14 +202,17 @@ enum ThinkingConfigAdaptiveType {
 
   static ThinkingConfigAdaptiveType fromJson(String value) {
     switch (value) {
-      case 'adaptive': return ThinkingConfigAdaptiveType.adaptive;
-      default: throw ArgumentError('Unknown ThinkingConfigAdaptiveType: $value');
+      case 'adaptive':
+        return ThinkingConfigAdaptiveType.adaptive;
+      default:
+        throw ArgumentError('Unknown ThinkingConfigAdaptiveType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ThinkingConfigAdaptiveType.adaptive: return 'adaptive';
+      case ThinkingConfigAdaptiveType.adaptive:
+        return 'adaptive';
     }
   }
 
@@ -199,14 +226,17 @@ enum ThinkingConfigDisabledType {
 
   static ThinkingConfigDisabledType fromJson(String value) {
     switch (value) {
-      case 'disabled': return ThinkingConfigDisabledType.disabled;
-      default: throw ArgumentError('Unknown ThinkingConfigDisabledType: $value');
+      case 'disabled':
+        return ThinkingConfigDisabledType.disabled;
+      default:
+        throw ArgumentError('Unknown ThinkingConfigDisabledType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ThinkingConfigDisabledType.disabled: return 'disabled';
+      case ThinkingConfigDisabledType.disabled:
+        return 'disabled';
     }
   }
 
@@ -220,14 +250,17 @@ enum ThinkingConfigEnabledType {
 
   static ThinkingConfigEnabledType fromJson(String value) {
     switch (value) {
-      case 'enabled': return ThinkingConfigEnabledType.enabled;
-      default: throw ArgumentError('Unknown ThinkingConfigEnabledType: $value');
+      case 'enabled':
+        return ThinkingConfigEnabledType.enabled;
+      default:
+        throw ArgumentError('Unknown ThinkingConfigEnabledType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ThinkingConfigEnabledType.enabled: return 'enabled';
+      case ThinkingConfigEnabledType.enabled:
+        return 'enabled';
     }
   }
 
@@ -241,14 +274,17 @@ enum ThinkingContentBlockDeltaType {
 
   static ThinkingContentBlockDeltaType fromJson(String value) {
     switch (value) {
-      case 'thinking_delta': return ThinkingContentBlockDeltaType.thinkingDelta;
-      default: throw ArgumentError('Unknown ThinkingContentBlockDeltaType: $value');
+      case 'thinking_delta':
+        return ThinkingContentBlockDeltaType.thinkingDelta;
+      default:
+        throw ArgumentError('Unknown ThinkingContentBlockDeltaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ThinkingContentBlockDeltaType.thinkingDelta: return 'thinking_delta';
+      case ThinkingContentBlockDeltaType.thinkingDelta:
+        return 'thinking_delta';
     }
   }
 
@@ -262,14 +298,17 @@ enum ToolTypeVariant1 {
 
   static ToolTypeVariant1 fromJson(String value) {
     switch (value) {
-      case 'custom': return ToolTypeVariant1.custom;
-      default: throw ArgumentError('Unknown ToolTypeVariant1: $value');
+      case 'custom':
+        return ToolTypeVariant1.custom;
+      default:
+        throw ArgumentError('Unknown ToolTypeVariant1: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ToolTypeVariant1.custom: return 'custom';
+      case ToolTypeVariant1.custom:
+        return 'custom';
     }
   }
 

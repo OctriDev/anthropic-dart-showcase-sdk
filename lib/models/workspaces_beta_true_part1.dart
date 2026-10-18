@@ -8,237 +8,413 @@ part of 'workspaces_beta_true.dart';
 class BetaAddFederationRuleWorkspaceParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Tagged ID of the workspace to enable this rule for.
   final String workspaceId;
 
   const BetaAddFederationRuleWorkspaceParams({required this.workspaceId});
 
-  BetaAddFederationRuleWorkspaceParams Function({String workspaceId}) get copyWith => _copyWith;
+  BetaAddFederationRuleWorkspaceParams Function({String workspaceId})
+      get copyWith => _copyWith;
 
-  BetaAddFederationRuleWorkspaceParams _copyWith({Object? workspaceId = sdkOmittedValue}) => BetaAddFederationRuleWorkspaceParams(
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaAddFederationRuleWorkspaceParams _copyWith(
+          {Object? workspaceId = sdkOmittedValue}) =>
+      BetaAddFederationRuleWorkspaceParams(
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaAddFederationRuleWorkspaceParams.fromJson(Map<String, dynamic> json) => BetaAddFederationRuleWorkspaceParams(
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaAddFederationRuleWorkspaceParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaAddFederationRuleWorkspaceParams(
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'workspace_id': workspaceId,
-  };
+        'workspace_id': workspaceId,
+      };
 }
 
 sealed class BetaDataResidencyCreateParamsAllowedInferenceGeos {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaDataResidencyCreateParamsAllowedInferenceGeos();
-  factory BetaDataResidencyCreateParamsAllowedInferenceGeos.fromJson(Object? json) {
-    try { return BetaDataResidencyCreateParamsAllowedInferenceGeosBetaAllowedInferenceGeo(BetaAllowedInferenceGeo.fromJson(json as String)); } catch (_) {}
-    try { return BetaDataResidencyCreateParamsAllowedInferenceGeosUnrestricted918b8666(Unrestricted918b8666.fromJson(json as String)); } catch (_) {}
-    throw FormatException("No variant matched for BetaDataResidencyCreateParamsAllowedInferenceGeos");
+  factory BetaDataResidencyCreateParamsAllowedInferenceGeos.fromJson(
+      Object? json) {
+    try {
+      return BetaDataResidencyCreateParamsAllowedInferenceGeosBetaAllowedInferenceGeo(
+          BetaAllowedInferenceGeo.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaDataResidencyCreateParamsAllowedInferenceGeosUnrestricted918b8666(
+          Unrestricted918b8666.fromJson(json as String));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for BetaDataResidencyCreateParamsAllowedInferenceGeos");
   }
   Object? toJson();
 }
 
-final class BetaDataResidencyCreateParamsAllowedInferenceGeosBetaAllowedInferenceGeo extends BetaDataResidencyCreateParamsAllowedInferenceGeos {
+final class BetaDataResidencyCreateParamsAllowedInferenceGeosBetaAllowedInferenceGeo
+    extends BetaDataResidencyCreateParamsAllowedInferenceGeos {
   final BetaAllowedInferenceGeo value;
-  const BetaDataResidencyCreateParamsAllowedInferenceGeosBetaAllowedInferenceGeo(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaDataResidencyCreateParamsAllowedInferenceGeosBetaAllowedInferenceGeo(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaDataResidencyCreateParamsAllowedInferenceGeosUnrestricted918b8666 extends BetaDataResidencyCreateParamsAllowedInferenceGeos {
+final class BetaDataResidencyCreateParamsAllowedInferenceGeosUnrestricted918b8666
+    extends BetaDataResidencyCreateParamsAllowedInferenceGeos {
   final Unrestricted918b8666 value;
-  const BetaDataResidencyCreateParamsAllowedInferenceGeosUnrestricted918b8666(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaDataResidencyCreateParamsAllowedInferenceGeosUnrestricted918b8666(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `BetaDataResidencyCreateParams` API schema.
 class BetaDataResidencyCreateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Permitted inference geo values. Defaults to 'unrestricted' if omitted, which allows all geos. Use the string 'unrestricted' to allow all geos, or a list of specific geos.
   final SdkOptional<dynamic> allowedInferenceGeos;
+
   /// Default inference geo applied when requests omit the parameter. Defaults to 'global' if omitted. Must be a member of `allowed_inference_geos` unless `allowed_inference_geos` is `"unrestricted"`.
   final SdkOptional<BetaInferenceGeo?> defaultInferenceGeo;
+
   /// Geographic region for workspace data storage. Immutable after creation. Defaults to 'us' if omitted.
   final SdkOptional<BetaWorkspaceGeo?> workspaceGeo;
 
-  const BetaDataResidencyCreateParams({this.allowedInferenceGeos = const SdkOmitted(), this.defaultInferenceGeo = const SdkOmitted(), this.workspaceGeo = const SdkOmitted()});
+  const BetaDataResidencyCreateParams(
+      {this.allowedInferenceGeos = const SdkOmitted(),
+      this.defaultInferenceGeo = const SdkOmitted(),
+      this.workspaceGeo = const SdkOmitted()});
 
-  BetaDataResidencyCreateParams Function({SdkOptional<dynamic> allowedInferenceGeos, SdkOptional<BetaInferenceGeo?> defaultInferenceGeo, SdkOptional<BetaWorkspaceGeo?> workspaceGeo}) get copyWith => _copyWith;
+  BetaDataResidencyCreateParams Function(
+      {SdkOptional<dynamic> allowedInferenceGeos,
+      SdkOptional<BetaInferenceGeo?> defaultInferenceGeo,
+      SdkOptional<BetaWorkspaceGeo?> workspaceGeo}) get copyWith => _copyWith;
 
-  BetaDataResidencyCreateParams _copyWith({Object? allowedInferenceGeos = sdkOmittedValue, Object? defaultInferenceGeo = sdkOmittedValue, Object? workspaceGeo = sdkOmittedValue}) => BetaDataResidencyCreateParams(
-    allowedInferenceGeos: identical(allowedInferenceGeos, sdkOmittedValue) ? this.allowedInferenceGeos : allowedInferenceGeos as SdkOptional<dynamic>,
-    defaultInferenceGeo: identical(defaultInferenceGeo, sdkOmittedValue) ? this.defaultInferenceGeo : defaultInferenceGeo as SdkOptional<BetaInferenceGeo?>,
-    workspaceGeo: identical(workspaceGeo, sdkOmittedValue) ? this.workspaceGeo : workspaceGeo as SdkOptional<BetaWorkspaceGeo?>,
-  );
+  BetaDataResidencyCreateParams _copyWith(
+          {Object? allowedInferenceGeos = sdkOmittedValue,
+          Object? defaultInferenceGeo = sdkOmittedValue,
+          Object? workspaceGeo = sdkOmittedValue}) =>
+      BetaDataResidencyCreateParams(
+        allowedInferenceGeos: identical(allowedInferenceGeos, sdkOmittedValue)
+            ? this.allowedInferenceGeos
+            : allowedInferenceGeos as SdkOptional<dynamic>,
+        defaultInferenceGeo: identical(defaultInferenceGeo, sdkOmittedValue)
+            ? this.defaultInferenceGeo
+            : defaultInferenceGeo as SdkOptional<BetaInferenceGeo?>,
+        workspaceGeo: identical(workspaceGeo, sdkOmittedValue)
+            ? this.workspaceGeo
+            : workspaceGeo as SdkOptional<BetaWorkspaceGeo?>,
+      );
 
-  factory BetaDataResidencyCreateParams.fromJson(Map<String, dynamic> json) => BetaDataResidencyCreateParams(
-    allowedInferenceGeos: json.containsKey('allowed_inference_geos') ? SdkPresent(json['allowed_inference_geos']) : const SdkOmitted(),
-    defaultInferenceGeo: json.containsKey('default_inference_geo') ? SdkPresent(json['default_inference_geo'] != null ? BetaInferenceGeo.fromJson(json['default_inference_geo'] as String) : null) : const SdkOmitted(),
-    workspaceGeo: json.containsKey('workspace_geo') ? SdkPresent(json['workspace_geo'] != null ? BetaWorkspaceGeo.fromJson(json['workspace_geo'] as String) : null) : const SdkOmitted(),
-  );
+  factory BetaDataResidencyCreateParams.fromJson(Map<String, dynamic> json) =>
+      BetaDataResidencyCreateParams(
+        allowedInferenceGeos: json.containsKey('allowed_inference_geos')
+            ? SdkPresent(json['allowed_inference_geos'])
+            : const SdkOmitted(),
+        defaultInferenceGeo: json.containsKey('default_inference_geo')
+            ? SdkPresent(json['default_inference_geo'] != null
+                ? BetaInferenceGeo.fromJson(
+                    json['default_inference_geo'] as String)
+                : null)
+            : const SdkOmitted(),
+        workspaceGeo: json.containsKey('workspace_geo')
+            ? SdkPresent(json['workspace_geo'] != null
+                ? BetaWorkspaceGeo.fromJson(json['workspace_geo'] as String)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (allowedInferenceGeos) {
-      SdkPresent<dynamic>(value: final value) => {'allowed_inference_geos': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (defaultInferenceGeo) {
-      SdkPresent<BetaInferenceGeo?>(value: final value) => {'default_inference_geo': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (workspaceGeo) {
-      SdkPresent<BetaWorkspaceGeo?>(value: final value) => {'workspace_geo': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (allowedInferenceGeos) {
+          SdkPresent<dynamic>(value: final value) => {
+              'allowed_inference_geos': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (defaultInferenceGeo) {
+          SdkPresent<BetaInferenceGeo?>(value: final value) => {
+              'default_inference_geo': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (workspaceGeo) {
+          SdkPresent<BetaWorkspaceGeo?>(value: final value) => {
+              'workspace_geo': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `BetaFederationRuleWorkspace` API schema.
 class BetaFederationRuleWorkspace {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// When this workspace was enabled for the rule.
   final String createdAt;
+
   /// Tagged ID (`user_...` or `svac_...`) of the actor that enabled this workspace for the rule, if known.
   final String? createdByActorId;
+
   /// Tagged ID of the federation rule.
   final String federationRuleId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaFederationRuleWorkspaceType type_;
+
   /// Tagged ID of the workspace this rule is enabled for.
   final String workspaceId;
+
   /// Workspace display name. Populated when listing; null in the enable response.
   final String? workspaceName;
 
-  const BetaFederationRuleWorkspace({required this.createdAt, required this.createdByActorId, required this.federationRuleId, required this.type_, required this.workspaceId, required this.workspaceName});
+  const BetaFederationRuleWorkspace(
+      {required this.createdAt,
+      required this.createdByActorId,
+      required this.federationRuleId,
+      required this.type_,
+      required this.workspaceId,
+      required this.workspaceName});
 
-  BetaFederationRuleWorkspace Function({String createdAt, String? createdByActorId, String federationRuleId, BetaFederationRuleWorkspaceType type_, String workspaceId, String? workspaceName}) get copyWith => _copyWith;
+  BetaFederationRuleWorkspace Function(
+      {String createdAt,
+      String? createdByActorId,
+      String federationRuleId,
+      BetaFederationRuleWorkspaceType type_,
+      String workspaceId,
+      String? workspaceName}) get copyWith => _copyWith;
 
-  BetaFederationRuleWorkspace _copyWith({Object? createdAt = sdkOmittedValue, Object? createdByActorId = sdkOmittedValue, Object? federationRuleId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? workspaceId = sdkOmittedValue, Object? workspaceName = sdkOmittedValue}) => BetaFederationRuleWorkspace(
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    createdByActorId: identical(createdByActorId, sdkOmittedValue) ? this.createdByActorId : createdByActorId as String?,
-    federationRuleId: identical(federationRuleId, sdkOmittedValue) ? this.federationRuleId : federationRuleId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaFederationRuleWorkspaceType,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-    workspaceName: identical(workspaceName, sdkOmittedValue) ? this.workspaceName : workspaceName as String?,
-  );
+  BetaFederationRuleWorkspace _copyWith(
+          {Object? createdAt = sdkOmittedValue,
+          Object? createdByActorId = sdkOmittedValue,
+          Object? federationRuleId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue,
+          Object? workspaceName = sdkOmittedValue}) =>
+      BetaFederationRuleWorkspace(
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        createdByActorId: identical(createdByActorId, sdkOmittedValue)
+            ? this.createdByActorId
+            : createdByActorId as String?,
+        federationRuleId: identical(federationRuleId, sdkOmittedValue)
+            ? this.federationRuleId
+            : federationRuleId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaFederationRuleWorkspaceType,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+        workspaceName: identical(workspaceName, sdkOmittedValue)
+            ? this.workspaceName
+            : workspaceName as String?,
+      );
 
-  factory BetaFederationRuleWorkspace.fromJson(Map<String, dynamic> json) => BetaFederationRuleWorkspace(
-    createdAt: (json['created_at'] as String?)!,
-    createdByActorId: json.containsKey('created_by_actor_id') ? json['created_by_actor_id'] as String? : throw ArgumentError.value(null, 'created_by_actor_id', 'Required property is missing'),
-    federationRuleId: (json['federation_rule_id'] as String?)!,
-    type_: (json['type'] != null ? BetaFederationRuleWorkspaceType.fromJson(json['type'] as String) : null)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-    workspaceName: json.containsKey('workspace_name') ? json['workspace_name'] as String? : throw ArgumentError.value(null, 'workspace_name', 'Required property is missing'),
-  );
+  factory BetaFederationRuleWorkspace.fromJson(Map<String, dynamic> json) =>
+      BetaFederationRuleWorkspace(
+        createdAt: (json['created_at'] as String?)!,
+        createdByActorId: json.containsKey('created_by_actor_id')
+            ? json['created_by_actor_id'] as String?
+            : throw ArgumentError.value(
+                null, 'created_by_actor_id', 'Required property is missing'),
+        federationRuleId: (json['federation_rule_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaFederationRuleWorkspaceType.fromJson(json['type'] as String)
+            : null)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+        workspaceName: json.containsKey('workspace_name')
+            ? json['workspace_name'] as String?
+            : throw ArgumentError.value(
+                null, 'workspace_name', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'created_at': createdAt,
-    'created_by_actor_id': createdByActorId,
-    'federation_rule_id': federationRuleId,
-    'type': type_.toJson(),
-    'workspace_id': workspaceId,
-    'workspace_name': workspaceName,
-  };
+        'created_at': createdAt,
+        'created_by_actor_id': createdByActorId,
+        'federation_rule_id': federationRuleId,
+        'type': type_.toJson(),
+        'workspace_id': workspaceId,
+        'workspace_name': workspaceName,
+      };
 }
 
 /// Typed representation of the `BetaFederationRuleWorkspaceListResponse` API schema.
 class BetaFederationRuleWorkspaceListResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `data` wire field.
   final List<BetaFederationRuleWorkspace> data;
+
   /// Opaque cursor for the next page; null when there are no more results.
   final String? nextPage;
 
-  const BetaFederationRuleWorkspaceListResponse({required this.data, required this.nextPage});
+  const BetaFederationRuleWorkspaceListResponse(
+      {required this.data, required this.nextPage});
 
-  BetaFederationRuleWorkspaceListResponse Function({List<BetaFederationRuleWorkspace> data, String? nextPage}) get copyWith => _copyWith;
+  BetaFederationRuleWorkspaceListResponse Function(
+      {List<BetaFederationRuleWorkspace> data,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaFederationRuleWorkspaceListResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaFederationRuleWorkspaceListResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaFederationRuleWorkspace>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaFederationRuleWorkspaceListResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaFederationRuleWorkspaceListResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaFederationRuleWorkspace>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaFederationRuleWorkspaceListResponse.fromJson(Map<String, dynamic> json) => BetaFederationRuleWorkspaceListResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaFederationRuleWorkspace.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  );
+  factory BetaFederationRuleWorkspaceListResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaFederationRuleWorkspaceListResponse(
+        data: ((json['data'] as List?)
+            ?.map((e) =>
+                BetaFederationRuleWorkspace.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        nextPage: json.containsKey('next_page')
+            ? json['next_page'] as String?
+            : throw ArgumentError.value(
+                null, 'next_page', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'next_page': nextPage,
+      };
 }
 
 /// Typed representation of the `BetaListResponse_Workspace_` API schema.
 class BetaListResponseWorkspace {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `data` wire field.
   final List<BetaWorkspace> data;
+
   /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
   final String? firstId;
+
   /// Indicates if there are more results in the requested page direction.
   final bool hasMore;
+
   /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
   final String? lastId;
 
-  const BetaListResponseWorkspace({required this.data, required this.firstId, required this.hasMore, required this.lastId});
+  const BetaListResponseWorkspace(
+      {required this.data,
+      required this.firstId,
+      required this.hasMore,
+      required this.lastId});
 
-  BetaListResponseWorkspace Function({List<BetaWorkspace> data, String? firstId, bool hasMore, String? lastId}) get copyWith => _copyWith;
+  BetaListResponseWorkspace Function(
+      {List<BetaWorkspace> data,
+      String? firstId,
+      bool hasMore,
+      String? lastId}) get copyWith => _copyWith;
 
-  BetaListResponseWorkspace _copyWith({Object? data = sdkOmittedValue, Object? firstId = sdkOmittedValue, Object? hasMore = sdkOmittedValue, Object? lastId = sdkOmittedValue}) => BetaListResponseWorkspace(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaWorkspace>,
-    firstId: identical(firstId, sdkOmittedValue) ? this.firstId : firstId as String?,
-    hasMore: identical(hasMore, sdkOmittedValue) ? this.hasMore : hasMore as bool,
-    lastId: identical(lastId, sdkOmittedValue) ? this.lastId : lastId as String?,
-  );
+  BetaListResponseWorkspace _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? firstId = sdkOmittedValue,
+          Object? hasMore = sdkOmittedValue,
+          Object? lastId = sdkOmittedValue}) =>
+      BetaListResponseWorkspace(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaWorkspace>,
+        firstId: identical(firstId, sdkOmittedValue)
+            ? this.firstId
+            : firstId as String?,
+        hasMore: identical(hasMore, sdkOmittedValue)
+            ? this.hasMore
+            : hasMore as bool,
+        lastId: identical(lastId, sdkOmittedValue)
+            ? this.lastId
+            : lastId as String?,
+      );
 
-  factory BetaListResponseWorkspace.fromJson(Map<String, dynamic> json) => BetaListResponseWorkspace(
-    data: ((json['data'] as List?)?.map((e) => BetaWorkspace.fromJson(e as Map<String, dynamic>)).toList())!,
-    firstId: json.containsKey('first_id') ? json['first_id'] as String? : throw ArgumentError.value(null, 'first_id', 'Required property is missing'),
-    hasMore: (json['has_more'] as bool?)!,
-    lastId: json.containsKey('last_id') ? json['last_id'] as String? : throw ArgumentError.value(null, 'last_id', 'Required property is missing'),
-  );
+  factory BetaListResponseWorkspace.fromJson(Map<String, dynamic> json) =>
+      BetaListResponseWorkspace(
+        data: ((json['data'] as List?)
+            ?.map((e) => BetaWorkspace.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        firstId: json.containsKey('first_id')
+            ? json['first_id'] as String?
+            : throw ArgumentError.value(
+                null, 'first_id', 'Required property is missing'),
+        hasMore: (json['has_more'] as bool?)!,
+        lastId: json.containsKey('last_id')
+            ? json['last_id'] as String?
+            : throw ArgumentError.value(
+                null, 'last_id', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'first_id': firstId,
-    'has_more': hasMore,
-    'last_id': lastId,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'first_id': firstId,
+        'has_more': hasMore,
+        'last_id': lastId,
+      };
 }
 
 /// Typed representation of the `BetaServiceAccountWorkspaceMemberCreateFromSAParams` API schema.
 class BetaServiceAccountWorkspaceMemberCreateFromSAParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Tagged workspace ID to add the service account to.
   final String workspaceId;
+
   /// Role to assign to the service account in this workspace.
   final BetaNoBillingWorkspaceRoleSchema workspaceRole;
 
-  const BetaServiceAccountWorkspaceMemberCreateFromSAParams({required this.workspaceId, required this.workspaceRole});
+  const BetaServiceAccountWorkspaceMemberCreateFromSAParams(
+      {required this.workspaceId, required this.workspaceRole});
 
-  BetaServiceAccountWorkspaceMemberCreateFromSAParams Function({String workspaceId, BetaNoBillingWorkspaceRoleSchema workspaceRole}) get copyWith => _copyWith;
+  BetaServiceAccountWorkspaceMemberCreateFromSAParams Function(
+          {String workspaceId, BetaNoBillingWorkspaceRoleSchema workspaceRole})
+      get copyWith => _copyWith;
 
-  BetaServiceAccountWorkspaceMemberCreateFromSAParams _copyWith({Object? workspaceId = sdkOmittedValue, Object? workspaceRole = sdkOmittedValue}) => BetaServiceAccountWorkspaceMemberCreateFromSAParams(
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-    workspaceRole: identical(workspaceRole, sdkOmittedValue) ? this.workspaceRole : workspaceRole as BetaNoBillingWorkspaceRoleSchema,
-  );
+  BetaServiceAccountWorkspaceMemberCreateFromSAParams _copyWith(
+          {Object? workspaceId = sdkOmittedValue,
+          Object? workspaceRole = sdkOmittedValue}) =>
+      BetaServiceAccountWorkspaceMemberCreateFromSAParams(
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+        workspaceRole: identical(workspaceRole, sdkOmittedValue)
+            ? this.workspaceRole
+            : workspaceRole as BetaNoBillingWorkspaceRoleSchema,
+      );
 
-  factory BetaServiceAccountWorkspaceMemberCreateFromSAParams.fromJson(Map<String, dynamic> json) => BetaServiceAccountWorkspaceMemberCreateFromSAParams(
-    workspaceId: (json['workspace_id'] as String?)!,
-    workspaceRole: (json['workspace_role'] != null ? BetaNoBillingWorkspaceRoleSchema.fromJson(json['workspace_role'] as String) : null)!,
-  );
+  factory BetaServiceAccountWorkspaceMemberCreateFromSAParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaServiceAccountWorkspaceMemberCreateFromSAParams(
+        workspaceId: (json['workspace_id'] as String?)!,
+        workspaceRole: (json['workspace_role'] != null
+            ? BetaNoBillingWorkspaceRoleSchema.fromJson(
+                json['workspace_role'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'workspace_id': workspaceId,
-    'workspace_role': workspaceRole.toJson(),
-  };
+        'workspace_id': workspaceId,
+        'workspace_role': workspaceRole.toJson(),
+      };
 }
 
 sealed class BetaWorkspaceCreateParamsDisplayColor {
@@ -246,14 +422,19 @@ sealed class BetaWorkspaceCreateParamsDisplayColor {
   static const String constructionSurface = 'named';
   const BetaWorkspaceCreateParamsDisplayColor();
   factory BetaWorkspaceCreateParamsDisplayColor.fromJson(Object? json) {
-    if (json is String) { return BetaWorkspaceCreateParamsDisplayColorString(json); }
-    throw FormatException("No variant matched for BetaWorkspaceCreateParamsDisplayColor");
+    if (json is String) {
+      return BetaWorkspaceCreateParamsDisplayColorString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaWorkspaceCreateParamsDisplayColor");
   }
   Object? toJson();
 }
 
-final class BetaWorkspaceCreateParamsDisplayColorString extends BetaWorkspaceCreateParamsDisplayColor {
+final class BetaWorkspaceCreateParamsDisplayColorString
+    extends BetaWorkspaceCreateParamsDisplayColor {
   final String value;
   const BetaWorkspaceCreateParamsDisplayColorString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
