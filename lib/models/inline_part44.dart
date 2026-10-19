@@ -5,55 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 44)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaResponseThinkingBlockType {
-  thinking;
-
-  static BetaResponseThinkingBlockType fromJson(String value) {
-    switch (value) {
-      case 'thinking':
-        return BetaResponseThinkingBlockType.thinking;
-      default:
-        throw ArgumentError('Unknown BetaResponseThinkingBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaResponseThinkingBlockType.thinking:
-        return 'thinking';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaResponseToolReferenceBlockType {
-  toolReference;
-
-  static BetaResponseToolReferenceBlockType fromJson(String value) {
-    switch (value) {
-      case 'tool_reference':
-        return BetaResponseToolReferenceBlockType.toolReference;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseToolReferenceBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaResponseToolReferenceBlockType.toolReference:
-        return 'tool_reference';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaResponseToolSearchToolResultBlockType {
   toolSearchToolResult;
 
@@ -328,6 +279,54 @@ enum BetaResponseWebSearchToolResultErrorType {
     switch (this) {
       case BetaResponseWebSearchToolResultErrorType.webSearchToolResultError:
         return 'web_search_tool_result_error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaScopedApiKeyActorSchemaType {
+  scopedApiKeyActor;
+
+  static BetaScopedApiKeyActorSchemaType fromJson(String value) {
+    switch (value) {
+      case 'scoped_api_key_actor':
+        return BetaScopedApiKeyActorSchemaType.scopedApiKeyActor;
+      default:
+        throw ArgumentError('Unknown BetaScopedApiKeyActorSchemaType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaScopedApiKeyActorSchemaType.scopedApiKeyActor:
+        return 'scoped_api_key_actor';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaSeatTierScopeType {
+  seatTier;
+
+  static BetaSeatTierScopeType fromJson(String value) {
+    switch (value) {
+      case 'seat_tier':
+        return BetaSeatTierScopeType.seatTier;
+      default:
+        throw ArgumentError('Unknown BetaSeatTierScopeType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaSeatTierScopeType.seatTier:
+        return 'seat_tier';
     }
   }
 

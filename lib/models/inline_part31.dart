@@ -5,56 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 31)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsUserActorType {
-  userActor;
-
-  static BetaManagedAgentsUserActorType fromJson(String value) {
-    switch (value) {
-      case 'user_actor':
-        return BetaManagedAgentsUserActorType.userActor;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsUserActorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsUserActorType.userActor:
-        return 'user_actor';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsUserCustomToolResultEventType {
-  userCustomToolResult;
-
-  static BetaManagedAgentsUserCustomToolResultEventType fromJson(String value) {
-    switch (value) {
-      case 'user.custom_tool_result':
-        return BetaManagedAgentsUserCustomToolResultEventType
-            .userCustomToolResult;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserCustomToolResultEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsUserCustomToolResultEventType.userCustomToolResult:
-        return 'user.custom_tool_result';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsUserCustomToolResultEventParamsType {
   userCustomToolResult;
 
@@ -336,4 +286,53 @@ enum BetaManagedAgentsUserToolResultEventType {
 
   @override
   String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsUserToolResultEventParamsType {
+  userToolResult;
+
+  static BetaManagedAgentsUserToolResultEventParamsType fromJson(String value) {
+    switch (value) {
+      case 'user.tool_result':
+        return BetaManagedAgentsUserToolResultEventParamsType.userToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsUserToolResultEventParamsType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsUserToolResultEventParamsType.userToolResult:
+        return 'user.tool_result';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+final class BetaManagedAgentsVaultType {
+  final String value;
+
+  const BetaManagedAgentsVaultType._(this.value);
+
+  factory BetaManagedAgentsVaultType.fromJson(String value) =>
+      BetaManagedAgentsVaultType._(value);
+
+  static const vault = BetaManagedAgentsVaultType._('vault');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsVaultType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
 }

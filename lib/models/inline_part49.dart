@@ -5,55 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 49)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaToolChangeMCPToolsetReferenceType {
-  mcpToolsetReference;
-
-  static BetaToolChangeMCPToolsetReferenceType fromJson(String value) {
-    switch (value) {
-      case 'mcp_toolset_reference':
-        return BetaToolChangeMCPToolsetReferenceType.mcpToolsetReference;
-      default:
-        throw ArgumentError(
-            'Unknown BetaToolChangeMCPToolsetReferenceType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaToolChangeMCPToolsetReferenceType.mcpToolsetReference:
-        return 'mcp_toolset_reference';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaToolChangeToolReferenceType {
-  toolReference;
-
-  static BetaToolChangeToolReferenceType fromJson(String value) {
-    switch (value) {
-      case 'tool_reference':
-        return BetaToolChangeToolReferenceType.toolReference;
-      default:
-        throw ArgumentError('Unknown BetaToolChangeToolReferenceType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaToolChangeToolReferenceType.toolReference:
-        return 'tool_reference';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaToolChoiceAnyType {
   any;
 
@@ -318,6 +269,54 @@ enum BetaTunnelType {
     switch (this) {
       case BetaTunnelType.tunnel:
         return 'tunnel';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaTunnelCertificateType {
+  tunnelCertificate;
+
+  static BetaTunnelCertificateType fromJson(String value) {
+    switch (value) {
+      case 'tunnel_certificate':
+        return BetaTunnelCertificateType.tunnelCertificate;
+      default:
+        throw ArgumentError('Unknown BetaTunnelCertificateType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaTunnelCertificateType.tunnelCertificate:
+        return 'tunnel_certificate';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaTunnelTokenType {
+  tunnelToken;
+
+  static BetaTunnelTokenType fromJson(String value) {
+    switch (value) {
+      case 'tunnel_token':
+        return BetaTunnelTokenType.tunnelToken;
+      default:
+        throw ArgumentError('Unknown BetaTunnelTokenType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaTunnelTokenType.tunnelToken:
+        return 'tunnel_token';
     }
   }
 

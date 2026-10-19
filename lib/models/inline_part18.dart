@@ -5,60 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 18)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsDeploymentUserDefineOutcomeEventType {
-  userDefineOutcome;
-
-  static BetaManagedAgentsDeploymentUserDefineOutcomeEventType fromJson(
-      String value) {
-    switch (value) {
-      case 'user.define_outcome':
-        return BetaManagedAgentsDeploymentUserDefineOutcomeEventType
-            .userDefineOutcome;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsDeploymentUserDefineOutcomeEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsDeploymentUserDefineOutcomeEventType
-            .userDefineOutcome:
-        return 'user.define_outcome';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsDeploymentUserMessageEventType {
-  userMessage;
-
-  static BetaManagedAgentsDeploymentUserMessageEventType fromJson(
-      String value) {
-    switch (value) {
-      case 'user.message':
-        return BetaManagedAgentsDeploymentUserMessageEventType.userMessage;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsDeploymentUserMessageEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsDeploymentUserMessageEventType.userMessage:
-        return 'user.message';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsDocumentBlockType {
   document;
 
@@ -325,6 +271,62 @@ enum BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType {
       case BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType
             .environmentArchivedError:
         return 'environment_archived_error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsEnvironmentArchivedRunErrorType {
+  environmentArchivedError;
+
+  static BetaManagedAgentsEnvironmentArchivedRunErrorType fromJson(
+      String value) {
+    switch (value) {
+      case 'environment_archived_error':
+        return BetaManagedAgentsEnvironmentArchivedRunErrorType
+            .environmentArchivedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsEnvironmentArchivedRunErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsEnvironmentArchivedRunErrorType
+            .environmentArchivedError:
+        return 'environment_archived_error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType {
+  environmentNotFoundError;
+
+  static BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType
+      fromJson(String value) {
+    switch (value) {
+      case 'environment_not_found_error':
+        return BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType
+            .environmentNotFoundError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType
+            .environmentNotFoundError:
+        return 'environment_not_found_error';
     }
   }
 

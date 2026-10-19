@@ -4,54 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 61)
-/// Our most capable model for cybersecurity and biology research, available through trusted access programs
-enum ModelVariant2 {
-  claudeMythos51;
-
-  static ModelVariant2 fromJson(String value) {
-    switch (value) {
-      case 'claude-mythos-5-1':
-        return ModelVariant2.claudeMythos51;
-      default:
-        throw ArgumentError('Unknown ModelVariant2: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case ModelVariant2.claudeMythos51:
-        return 'claude-mythos-5-1';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// High-performance model for coding and agents
-enum ModelVariant3 {
-  claudeSonnet5;
-
-  static ModelVariant3 fromJson(String value) {
-    switch (value) {
-      case 'claude-sonnet-5':
-        return ModelVariant3.claudeSonnet5;
-      default:
-        throw ArgumentError('Unknown ModelVariant3: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case ModelVariant3.claudeSonnet5:
-        return 'claude-sonnet-5';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Next generation of intelligence for the hardest knowledge work and coding problems
 enum ModelVariant4 {
   claudeFable5;
@@ -309,6 +261,54 @@ enum PlainTextSourceMediaType {
     switch (this) {
       case PlainTextSourceMediaType.textPlain:
         return 'text/plain';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum PlainTextSourceType {
+  text;
+
+  static PlainTextSourceType fromJson(String value) {
+    switch (value) {
+      case 'text':
+        return PlainTextSourceType.text;
+      default:
+        throw ArgumentError('Unknown PlainTextSourceType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case PlainTextSourceType.text:
+        return 'text';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum RateLimitErrorType {
+  rateLimitError;
+
+  static RateLimitErrorType fromJson(String value) {
+    switch (value) {
+      case 'rate_limit_error':
+        return RateLimitErrorType.rateLimitError;
+      default:
+        throw ArgumentError('Unknown RateLimitErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RateLimitErrorType.rateLimitError:
+        return 'rate_limit_error';
     }
   }
 

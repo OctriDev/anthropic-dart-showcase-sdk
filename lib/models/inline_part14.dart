@@ -5,56 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 14)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsAgentArchivedRunErrorType {
-  agentArchivedError;
-
-  static BetaManagedAgentsAgentArchivedRunErrorType fromJson(String value) {
-    switch (value) {
-      case 'agent_archived_error':
-        return BetaManagedAgentsAgentArchivedRunErrorType.agentArchivedError;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentArchivedRunErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsAgentArchivedRunErrorType.agentArchivedError:
-        return 'agent_archived_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsAgentCustomToolUseEventType {
-  agentCustomToolUse;
-
-  static BetaManagedAgentsAgentCustomToolUseEventType fromJson(String value) {
-    switch (value) {
-      case 'agent.custom_tool_use':
-        return BetaManagedAgentsAgentCustomToolUseEventType.agentCustomToolUse;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentCustomToolUseEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsAgentCustomToolUseEventType.agentCustomToolUse:
-        return 'agent.custom_tool_use';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsAgentMcpToolResultEventType {
   agentMcpToolResult;
 
@@ -330,6 +280,58 @@ enum BetaManagedAgentsAgentToolset20260401Type {
     switch (this) {
       case BetaManagedAgentsAgentToolset20260401Type.agentToolset20260401:
         return 'agent_toolset_20260401';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsAgentToolset20260401ParamsType {
+  agentToolset20260401;
+
+  static BetaManagedAgentsAgentToolset20260401ParamsType fromJson(
+      String value) {
+    switch (value) {
+      case 'agent_toolset_20260401':
+        return BetaManagedAgentsAgentToolset20260401ParamsType
+            .agentToolset20260401;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsAgentToolset20260401ParamsType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsAgentToolset20260401ParamsType.agentToolset20260401:
+        return 'agent_toolset_20260401';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsAgentToolUseEventType {
+  agentToolUse;
+
+  static BetaManagedAgentsAgentToolUseEventType fromJson(String value) {
+    switch (value) {
+      case 'agent.tool_use':
+        return BetaManagedAgentsAgentToolUseEventType.agentToolUse;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsAgentToolUseEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsAgentToolUseEventType.agentToolUse:
+        return 'agent.tool_use';
     }
   }
 

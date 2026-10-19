@@ -4,54 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 24)
-/// High-performance model for coding and agents
-enum BetaManagedAgentsModelVariant2 {
-  claudeSonnet5;
-
-  static BetaManagedAgentsModelVariant2 fromJson(String value) {
-    switch (value) {
-      case 'claude-sonnet-5':
-        return BetaManagedAgentsModelVariant2.claudeSonnet5;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsModelVariant2: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsModelVariant2.claudeSonnet5:
-        return 'claude-sonnet-5';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Next generation of intelligence for the hardest knowledge work and coding problems
-enum BetaManagedAgentsModelVariant3 {
-  claudeFable5;
-
-  static BetaManagedAgentsModelVariant3 fromJson(String value) {
-    switch (value) {
-      case 'claude-fable-5':
-        return BetaManagedAgentsModelVariant3.claudeFable5;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsModelVariant3: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsModelVariant3.claudeFable5:
-        return 'claude-fable-5';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Powerful intelligence for long-running agents and coding
 enum BetaManagedAgentsModelVariant4 {
   claudeOpus5;
@@ -316,6 +268,59 @@ enum BetaManagedAgentsMultiagentCoordinatorParamsType {
     switch (this) {
       case BetaManagedAgentsMultiagentCoordinatorParamsType.coordinator:
         return 'coordinator';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsMultiagentSelfParamsType {
+  self;
+
+  static BetaManagedAgentsMultiagentSelfParamsType fromJson(String value) {
+    switch (value) {
+      case 'self':
+        return BetaManagedAgentsMultiagentSelfParamsType.self;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMultiagentSelfParamsType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsMultiagentSelfParamsType.self:
+        return 'self';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType {
+  organizationDisabledError;
+
+  static BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
+      fromJson(String value) {
+    switch (value) {
+      case 'organization_disabled_error':
+        return BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
+            .organizationDisabledError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
+            .organizationDisabledError:
+        return 'organization_disabled_error';
     }
   }
 

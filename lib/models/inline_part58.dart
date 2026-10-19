@@ -4,54 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 58)
-/// Required `string` value serialized in the `type` wire field.
-enum ContentBlockStartEventType {
-  contentBlockStart;
-
-  static ContentBlockStartEventType fromJson(String value) {
-    switch (value) {
-      case 'content_block_start':
-        return ContentBlockStartEventType.contentBlockStart;
-      default:
-        throw ArgumentError('Unknown ContentBlockStartEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case ContentBlockStartEventType.contentBlockStart:
-        return 'content_block_start';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum ContentBlockStopEventType {
-  contentBlockStop;
-
-  static ContentBlockStopEventType fromJson(String value) {
-    switch (value) {
-      case 'content_block_stop':
-        return ContentBlockStopEventType.contentBlockStop;
-      default:
-        throw ArgumentError('Unknown ContentBlockStopEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case ContentBlockStopEventType.contentBlockStop:
-        return 'content_block_stop';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Determines whether to use priority capacity (if available) or standard capacity for this request. Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/service-tiers) for details.
 final class CreateMessageParamsServiceTier {
   final String value;
@@ -312,6 +264,54 @@ enum FileDocumentSourceType {
   String toJson() {
     switch (this) {
       case FileDocumentSourceType.file:
+        return 'file';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum FileImageSourceType {
+  file;
+
+  static FileImageSourceType fromJson(String value) {
+    switch (value) {
+      case 'file':
+        return FileImageSourceType.file;
+      default:
+        throw ArgumentError('Unknown FileImageSourceType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case FileImageSourceType.file:
+        return 'file';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Object type. For files, this is always `"file"`.
+enum FileMetadataSchemaType {
+  file;
+
+  static FileMetadataSchemaType fromJson(String value) {
+    switch (value) {
+      case 'file':
+        return FileMetadataSchemaType.file;
+      default:
+        throw ArgumentError('Unknown FileMetadataSchemaType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case FileMetadataSchemaType.file:
         return 'file';
     }
   }

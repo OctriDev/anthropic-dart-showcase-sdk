@@ -5,57 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 28)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsSessionThreadAgentType {
-  agent;
-
-  static BetaManagedAgentsSessionThreadAgentType fromJson(String value) {
-    switch (value) {
-      case 'agent':
-        return BetaManagedAgentsSessionThreadAgentType.agent;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsSessionThreadAgentType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsSessionThreadAgentType.agent:
-        return 'agent';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsSessionThreadCreatedEventType {
-  sessionThreadCreated;
-
-  static BetaManagedAgentsSessionThreadCreatedEventType fromJson(String value) {
-    switch (value) {
-      case 'session.thread_created':
-        return BetaManagedAgentsSessionThreadCreatedEventType
-            .sessionThreadCreated;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsSessionThreadCreatedEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsSessionThreadCreatedEventType.sessionThreadCreated:
-        return 'session.thread_created';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsSessionThreadStatusIdleEventType {
   sessionThreadStatusIdle;
 
@@ -345,6 +294,62 @@ enum BetaManagedAgentsSpanOutcomeEvaluationEndEventType {
       case BetaManagedAgentsSpanOutcomeEvaluationEndEventType
             .spanOutcomeEvaluationEnd:
         return 'span.outcome_evaluation_end';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType {
+  spanOutcomeEvaluationOngoing;
+
+  static BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType fromJson(
+      String value) {
+    switch (value) {
+      case 'span.outcome_evaluation_ongoing':
+        return BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType
+            .spanOutcomeEvaluationOngoing;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType
+            .spanOutcomeEvaluationOngoing:
+        return 'span.outcome_evaluation_ongoing';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsSpanOutcomeEvaluationStartEventType {
+  spanOutcomeEvaluationStart;
+
+  static BetaManagedAgentsSpanOutcomeEvaluationStartEventType fromJson(
+      String value) {
+    switch (value) {
+      case 'span.outcome_evaluation_start':
+        return BetaManagedAgentsSpanOutcomeEvaluationStartEventType
+            .spanOutcomeEvaluationStart;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSpanOutcomeEvaluationStartEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsSpanOutcomeEvaluationStartEventType
+            .spanOutcomeEvaluationStart:
+        return 'span.outcome_evaluation_start';
     }
   }
 

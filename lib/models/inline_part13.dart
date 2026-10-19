@@ -4,54 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 13)
-/// Required `string` value serialized in the `type` wire field.
-enum BetaInputTokensTriggerType {
-  inputTokens;
-
-  static BetaInputTokensTriggerType fromJson(String value) {
-    switch (value) {
-      case 'input_tokens':
-        return BetaInputTokensTriggerType.inputTokens;
-      default:
-        throw ArgumentError('Unknown BetaInputTokensTriggerType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaInputTokensTriggerType.inputTokens:
-        return 'input_tokens';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaInvalidRequestErrorType {
-  invalidRequestError;
-
-  static BetaInvalidRequestErrorType fromJson(String value) {
-    switch (value) {
-      case 'invalid_request_error':
-        return BetaInvalidRequestErrorType.invalidRequestError;
-      default:
-        throw ArgumentError('Unknown BetaInvalidRequestErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaInvalidRequestErrorType.invalidRequestError:
-        return 'invalid_request_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Object type. For Invites, this is always `"invite"`.
 enum BetaInviteSchemaType {
   invite;
@@ -314,6 +266,56 @@ enum BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType {
       case BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType
             .agentArchivedError:
         return 'agent_archived_error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsAgentArchivedRunErrorType {
+  agentArchivedError;
+
+  static BetaManagedAgentsAgentArchivedRunErrorType fromJson(String value) {
+    switch (value) {
+      case 'agent_archived_error':
+        return BetaManagedAgentsAgentArchivedRunErrorType.agentArchivedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsAgentArchivedRunErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsAgentArchivedRunErrorType.agentArchivedError:
+        return 'agent_archived_error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsAgentCustomToolUseEventType {
+  agentCustomToolUse;
+
+  static BetaManagedAgentsAgentCustomToolUseEventType fromJson(String value) {
+    switch (value) {
+      case 'agent.custom_tool_use':
+        return BetaManagedAgentsAgentCustomToolUseEventType.agentCustomToolUse;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsAgentCustomToolUseEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsAgentCustomToolUseEventType.agentCustomToolUse:
+        return 'agent.custom_tool_use';
     }
   }
 

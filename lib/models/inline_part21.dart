@@ -4,56 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 21)
-/// Required `string` value serialized in the `type` wire field.
-enum BetaManagedAgentsGlobToolConfigType {
-  glob;
-
-  static BetaManagedAgentsGlobToolConfigType fromJson(String value) {
-    switch (value) {
-      case 'glob':
-        return BetaManagedAgentsGlobToolConfigType.glob;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsGlobToolConfigType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsGlobToolConfigType.glob:
-        return 'glob';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Must be "glob".
-enum BetaManagedAgentsGlobToolConfigParamsName {
-  glob;
-
-  static BetaManagedAgentsGlobToolConfigParamsName fromJson(String value) {
-    switch (value) {
-      case 'glob':
-        return BetaManagedAgentsGlobToolConfigParamsName.glob;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsGlobToolConfigParamsName: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsGlobToolConfigParamsName.glob:
-        return 'glob';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Optional `string` value serialized in the `type` wire field.
 enum BetaManagedAgentsGlobToolConfigParamsType {
   glob;
@@ -327,6 +277,61 @@ enum BetaManagedAgentsMcpAuthenticationFailedErrorType {
       case BetaManagedAgentsMcpAuthenticationFailedErrorType
             .mcpAuthenticationFailedError:
         return 'mcp_authentication_failed_error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsMcpConnectionFailedErrorType {
+  mcpConnectionFailedError;
+
+  static BetaManagedAgentsMcpConnectionFailedErrorType fromJson(String value) {
+    switch (value) {
+      case 'mcp_connection_failed_error':
+        return BetaManagedAgentsMcpConnectionFailedErrorType
+            .mcpConnectionFailedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMcpConnectionFailedErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsMcpConnectionFailedErrorType
+            .mcpConnectionFailedError:
+        return 'mcp_connection_failed_error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType {
+  mcpEgressBlockedError;
+
+  static BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType
+      fromJson(String value) {
+    switch (value) {
+      case 'mcp_egress_blocked_error':
+        return BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType
+            .mcpEgressBlockedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType
+            .mcpEgressBlockedError:
+        return 'mcp_egress_blocked_error';
     }
   }
 

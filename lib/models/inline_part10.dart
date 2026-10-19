@@ -4,55 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 10)
-/// Deleted object type. For Users, this is always `"user_deleted"`.
-enum BetaDeleteUserResponseType {
-  userDeleted;
-
-  static BetaDeleteUserResponseType fromJson(String value) {
-    switch (value) {
-      case 'user_deleted':
-        return BetaDeleteUserResponseType.userDeleted;
-      default:
-        throw ArgumentError('Unknown BetaDeleteUserResponseType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaDeleteUserResponseType.userDeleted:
-        return 'user_deleted';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Deleted object type. For Workspace Members, this is always `"workspace_member_deleted"`.
-enum BetaDeleteWorkspaceMemberResponseType {
-  workspaceMemberDeleted;
-
-  static BetaDeleteWorkspaceMemberResponseType fromJson(String value) {
-    switch (value) {
-      case 'workspace_member_deleted':
-        return BetaDeleteWorkspaceMemberResponseType.workspaceMemberDeleted;
-      default:
-        throw ArgumentError(
-            'Unknown BetaDeleteWorkspaceMemberResponseType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaDeleteWorkspaceMemberResponseType.workspaceMemberDeleted:
-        return 'workspace_member_deleted';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Required `string` value serialized in the `type` wire field.
 enum BetaDirectCallerType {
   direct;
@@ -311,6 +262,54 @@ enum BetaErroredResultType {
     switch (this) {
       case BetaErroredResultType.errored:
         return 'errored';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaErrorResponseType {
+  error;
+
+  static BetaErrorResponseType fromJson(String value) {
+    switch (value) {
+      case 'error':
+        return BetaErrorResponseType.error;
+      default:
+        throw ArgumentError('Unknown BetaErrorResponseType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaErrorResponseType.error:
+        return 'error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaExpiredResultType {
+  expired;
+
+  static BetaExpiredResultType fromJson(String value) {
+    switch (value) {
+      case 'expired':
+        return BetaExpiredResultType.expired;
+      default:
+        throw ArgumentError('Unknown BetaExpiredResultType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaExpiredResultType.expired:
+        return 'expired';
     }
   }
 
