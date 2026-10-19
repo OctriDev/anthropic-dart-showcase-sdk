@@ -8,356 +8,212 @@ part of 'rate_limits_beta_true.dart';
 class BetaRateLimit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`.
   final BetaRateLimitGroupType groupType;
-
   /// Stable identifier for this rate-limit group within the organization.
   final String id;
-
   /// The limiter values that apply to this group.
   final List<BetaRateLimitValue> limits;
-
   /// Model names this entry's limits apply to, including aliases. `null` when `group_type` is not `"model_group"`.
   final List<String>? models;
-
   /// Object type. Always `rate_limit` for organization rate-limit entries.
   final BetaRateLimitType type_;
 
-  const BetaRateLimit(
-      {required this.groupType,
-      required this.id,
-      required this.limits,
-      required this.models,
-      required this.type_});
+  const BetaRateLimit({required this.groupType, required this.id, required this.limits, required this.models, required this.type_});
 
-  BetaRateLimit Function(
-      {BetaRateLimitGroupType groupType,
-      String id,
-      List<BetaRateLimitValue> limits,
-      List<String>? models,
-      BetaRateLimitType type_}) get copyWith => _copyWith;
+  BetaRateLimit Function({BetaRateLimitGroupType groupType, String id, List<BetaRateLimitValue> limits, List<String>? models, BetaRateLimitType type_}) get copyWith => _copyWith;
 
-  BetaRateLimit _copyWith(
-          {Object? groupType = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? limits = sdkOmittedValue,
-          Object? models = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaRateLimit(
-        groupType: identical(groupType, sdkOmittedValue)
-            ? this.groupType
-            : groupType as BetaRateLimitGroupType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        limits: identical(limits, sdkOmittedValue)
-            ? this.limits
-            : limits as List<BetaRateLimitValue>,
-        models: identical(models, sdkOmittedValue)
-            ? this.models
-            : models as List<String>?,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaRateLimitType,
-      );
+  BetaRateLimit _copyWith({Object? groupType = sdkOmittedValue, Object? id = sdkOmittedValue, Object? limits = sdkOmittedValue, Object? models = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRateLimit(
+    groupType: identical(groupType, sdkOmittedValue) ? this.groupType : groupType as BetaRateLimitGroupType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    limits: identical(limits, sdkOmittedValue) ? this.limits : limits as List<BetaRateLimitValue>,
+    models: identical(models, sdkOmittedValue) ? this.models : models as List<String>?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRateLimitType,
+  );
 
   factory BetaRateLimit.fromJson(Map<String, dynamic> json) => BetaRateLimit(
-        groupType: (json['group_type'] != null
-            ? BetaRateLimitGroupType.fromJson(json['group_type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        limits: ((json['limits'] as List?)
-            ?.map((e) => BetaRateLimitValue.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        models: json.containsKey('models')
-            ? (json['models'] as List?)?.map((e) => e as String).toList()
-            : throw ArgumentError.value(
-                null, 'models', 'Required property is missing'),
-        type_: (json['type'] != null
-            ? BetaRateLimitType.fromJson(json['type'] as String)
-            : null)!,
-      );
+    groupType: (json['group_type'] != null ? BetaRateLimitGroupType.fromJson(json['group_type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    limits: ((json['limits'] as List?)?.map((e) => BetaRateLimitValue.fromJson(e as Map<String, dynamic>)).toList())!,
+    models: json.containsKey('models') ? (json['models'] as List?)?.map((e) => e as String).toList() : throw ArgumentError.value(null, 'models', 'Required property is missing'),
+    type_: (json['type'] != null ? BetaRateLimitType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'group_type': groupType.toJson(),
-        'id': id,
-        'limits': limits.map((item) => item.toJson()).toList(),
-        'models': models,
-        'type': type_.toJson(),
-      };
+    'group_type': groupType.toJson(),
+    'id': id,
+    'limits': limits.map((item) => item.toJson()).toList(),
+    'models': models,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaRateLimitListResponse` API schema.
 class BetaRateLimitListResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Rate-limit entries for the organization, one per group.
   final List<BetaRateLimit> data;
-
   /// Opaque cursor for the next page of results, or `null` when no entries remain beyond this response.
   final String? nextPage;
 
   const BetaRateLimitListResponse({required this.data, required this.nextPage});
 
-  BetaRateLimitListResponse Function(
-      {List<BetaRateLimit> data, String? nextPage}) get copyWith => _copyWith;
+  BetaRateLimitListResponse Function({List<BetaRateLimit> data, String? nextPage}) get copyWith => _copyWith;
 
-  BetaRateLimitListResponse _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaRateLimitListResponse(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<BetaRateLimit>,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as String?,
-      );
+  BetaRateLimitListResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaRateLimitListResponse(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaRateLimit>,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
+  );
 
-  factory BetaRateLimitListResponse.fromJson(Map<String, dynamic> json) =>
-      BetaRateLimitListResponse(
-        data: ((json['data'] as List?)
-            ?.map((e) => BetaRateLimit.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        nextPage: json.containsKey('next_page')
-            ? json['next_page'] as String?
-            : throw ArgumentError.value(
-                null, 'next_page', 'Required property is missing'),
-      );
+  factory BetaRateLimitListResponse.fromJson(Map<String, dynamic> json) => BetaRateLimitListResponse(
+    data: ((json['data'] as List?)?.map((e) => BetaRateLimit.fromJson(e as Map<String, dynamic>)).toList())!,
+    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'next_page': nextPage,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'next_page': nextPage,
+  };
 }
 
 /// Typed representation of the `BetaRateLimitValue` API schema.
 class BetaRateLimitValue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute`).
   final String type_;
-
   /// The configured limit value for this limiter type.
   final int value;
 
   const BetaRateLimitValue({required this.type_, required this.value});
 
-  BetaRateLimitValue Function({String type_, int value}) get copyWith =>
-      _copyWith;
+  BetaRateLimitValue Function({String type_, int value}) get copyWith => _copyWith;
 
-  BetaRateLimitValue _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
-      BetaRateLimitValue(
-        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-        value: identical(value, sdkOmittedValue) ? this.value : value as int,
-      );
+  BetaRateLimitValue _copyWith({Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) => BetaRateLimitValue(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+    value: identical(value, sdkOmittedValue) ? this.value : value as int,
+  );
 
-  factory BetaRateLimitValue.fromJson(Map<String, dynamic> json) =>
-      BetaRateLimitValue(
-        type_: (json['type'] as String?)!,
-        value: ((json['value'] as num?)?.toInt())!,
-      );
+  factory BetaRateLimitValue.fromJson(Map<String, dynamic> json) => BetaRateLimitValue(
+    type_: (json['type'] as String?)!,
+    value: ((json['value'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_,
-        'value': value,
-      };
+    'type': type_,
+    'value': value,
+  };
 }
 
 /// Typed representation of the `BetaWorkspaceRateLimit` API schema.
 class BetaWorkspaceRateLimit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`.
   final BetaWorkspaceRateLimitGroupType groupType;
-
   /// The limiter values overridden for this group in this workspace. Limiter types without a workspace override are omitted and inherit the organization value.
   final List<BetaWorkspaceRateLimitValue> limits;
-
   /// Model names this entry's limits apply to, including aliases. `null` when `group_type` is not `"model_group"`.
   final List<String>? models;
-
   /// The `id` of the RateLimit group this override applies to.
   final String rateLimitId;
-
   /// Object type. Always `workspace_rate_limit` for workspace rate-limit entries.
   final BetaWorkspaceRateLimitType type_;
-
   /// ID of the Workspace this override applies to.
   final String workspaceId;
 
-  const BetaWorkspaceRateLimit(
-      {required this.groupType,
-      required this.limits,
-      required this.models,
-      required this.rateLimitId,
-      required this.type_,
-      required this.workspaceId});
+  const BetaWorkspaceRateLimit({required this.groupType, required this.limits, required this.models, required this.rateLimitId, required this.type_, required this.workspaceId});
 
-  BetaWorkspaceRateLimit Function(
-      {BetaWorkspaceRateLimitGroupType groupType,
-      List<BetaWorkspaceRateLimitValue> limits,
-      List<String>? models,
-      String rateLimitId,
-      BetaWorkspaceRateLimitType type_,
-      String workspaceId}) get copyWith => _copyWith;
+  BetaWorkspaceRateLimit Function({BetaWorkspaceRateLimitGroupType groupType, List<BetaWorkspaceRateLimitValue> limits, List<String>? models, String rateLimitId, BetaWorkspaceRateLimitType type_, String workspaceId}) get copyWith => _copyWith;
 
-  BetaWorkspaceRateLimit _copyWith(
-          {Object? groupType = sdkOmittedValue,
-          Object? limits = sdkOmittedValue,
-          Object? models = sdkOmittedValue,
-          Object? rateLimitId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? workspaceId = sdkOmittedValue}) =>
-      BetaWorkspaceRateLimit(
-        groupType: identical(groupType, sdkOmittedValue)
-            ? this.groupType
-            : groupType as BetaWorkspaceRateLimitGroupType,
-        limits: identical(limits, sdkOmittedValue)
-            ? this.limits
-            : limits as List<BetaWorkspaceRateLimitValue>,
-        models: identical(models, sdkOmittedValue)
-            ? this.models
-            : models as List<String>?,
-        rateLimitId: identical(rateLimitId, sdkOmittedValue)
-            ? this.rateLimitId
-            : rateLimitId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaWorkspaceRateLimitType,
-        workspaceId: identical(workspaceId, sdkOmittedValue)
-            ? this.workspaceId
-            : workspaceId as String,
-      );
+  BetaWorkspaceRateLimit _copyWith({Object? groupType = sdkOmittedValue, Object? limits = sdkOmittedValue, Object? models = sdkOmittedValue, Object? rateLimitId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaWorkspaceRateLimit(
+    groupType: identical(groupType, sdkOmittedValue) ? this.groupType : groupType as BetaWorkspaceRateLimitGroupType,
+    limits: identical(limits, sdkOmittedValue) ? this.limits : limits as List<BetaWorkspaceRateLimitValue>,
+    models: identical(models, sdkOmittedValue) ? this.models : models as List<String>?,
+    rateLimitId: identical(rateLimitId, sdkOmittedValue) ? this.rateLimitId : rateLimitId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWorkspaceRateLimitType,
+    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
+  );
 
-  factory BetaWorkspaceRateLimit.fromJson(Map<String, dynamic> json) =>
-      BetaWorkspaceRateLimit(
-        groupType: (json['group_type'] != null
-            ? BetaWorkspaceRateLimitGroupType.fromJson(
-                json['group_type'] as String)
-            : null)!,
-        limits: ((json['limits'] as List?)
-            ?.map((e) =>
-                BetaWorkspaceRateLimitValue.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        models: json.containsKey('models')
-            ? (json['models'] as List?)?.map((e) => e as String).toList()
-            : throw ArgumentError.value(
-                null, 'models', 'Required property is missing'),
-        rateLimitId: (json['rate_limit_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaWorkspaceRateLimitType.fromJson(json['type'] as String)
-            : null)!,
-        workspaceId: (json['workspace_id'] as String?)!,
-      );
+  factory BetaWorkspaceRateLimit.fromJson(Map<String, dynamic> json) => BetaWorkspaceRateLimit(
+    groupType: (json['group_type'] != null ? BetaWorkspaceRateLimitGroupType.fromJson(json['group_type'] as String) : null)!,
+    limits: ((json['limits'] as List?)?.map((e) => BetaWorkspaceRateLimitValue.fromJson(e as Map<String, dynamic>)).toList())!,
+    models: json.containsKey('models') ? (json['models'] as List?)?.map((e) => e as String).toList() : throw ArgumentError.value(null, 'models', 'Required property is missing'),
+    rateLimitId: (json['rate_limit_id'] as String?)!,
+    type_: (json['type'] != null ? BetaWorkspaceRateLimitType.fromJson(json['type'] as String) : null)!,
+    workspaceId: (json['workspace_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'group_type': groupType.toJson(),
-        'limits': limits.map((item) => item.toJson()).toList(),
-        'models': models,
-        'rate_limit_id': rateLimitId,
-        'type': type_.toJson(),
-        'workspace_id': workspaceId,
-      };
+    'group_type': groupType.toJson(),
+    'limits': limits.map((item) => item.toJson()).toList(),
+    'models': models,
+    'rate_limit_id': rateLimitId,
+    'type': type_.toJson(),
+    'workspace_id': workspaceId,
+  };
 }
 
 /// Typed representation of the `BetaWorkspaceRateLimitListResponse` API schema.
 class BetaWorkspaceRateLimitListResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Rate-limit entries for the workspace, one per group that has at least one override.
   final List<BetaWorkspaceRateLimit> data;
-
   /// Opaque cursor for the next page of results, or `null` when no entries remain beyond this response.
   final String? nextPage;
 
-  const BetaWorkspaceRateLimitListResponse(
-      {required this.data, required this.nextPage});
+  const BetaWorkspaceRateLimitListResponse({required this.data, required this.nextPage});
 
-  BetaWorkspaceRateLimitListResponse Function(
-      {List<BetaWorkspaceRateLimit> data,
-      String? nextPage}) get copyWith => _copyWith;
+  BetaWorkspaceRateLimitListResponse Function({List<BetaWorkspaceRateLimit> data, String? nextPage}) get copyWith => _copyWith;
 
-  BetaWorkspaceRateLimitListResponse _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaWorkspaceRateLimitListResponse(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<BetaWorkspaceRateLimit>,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as String?,
-      );
+  BetaWorkspaceRateLimitListResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaWorkspaceRateLimitListResponse(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaWorkspaceRateLimit>,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
+  );
 
-  factory BetaWorkspaceRateLimitListResponse.fromJson(
-          Map<String, dynamic> json) =>
-      BetaWorkspaceRateLimitListResponse(
-        data: ((json['data'] as List?)
-            ?.map((e) =>
-                BetaWorkspaceRateLimit.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        nextPage: json.containsKey('next_page')
-            ? json['next_page'] as String?
-            : throw ArgumentError.value(
-                null, 'next_page', 'Required property is missing'),
-      );
+  factory BetaWorkspaceRateLimitListResponse.fromJson(Map<String, dynamic> json) => BetaWorkspaceRateLimitListResponse(
+    data: ((json['data'] as List?)?.map((e) => BetaWorkspaceRateLimit.fromJson(e as Map<String, dynamic>)).toList())!,
+    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'next_page': nextPage,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'next_page': nextPage,
+  };
 }
 
 /// Typed representation of the `BetaWorkspaceRateLimitValue` API schema.
 class BetaWorkspaceRateLimitValue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The organization-level value for the same limiter type, for reference. `null` when the organization has no limit configured for this limiter type.
   final int? orgLimit;
-
   /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute`).
   final String type_;
-
   /// The workspace-level override value for this limiter type.
   final int value;
 
-  const BetaWorkspaceRateLimitValue(
-      {required this.orgLimit, required this.type_, required this.value});
+  const BetaWorkspaceRateLimitValue({required this.orgLimit, required this.type_, required this.value});
 
-  BetaWorkspaceRateLimitValue Function({int? orgLimit, String type_, int value})
-      get copyWith => _copyWith;
+  BetaWorkspaceRateLimitValue Function({int? orgLimit, String type_, int value}) get copyWith => _copyWith;
 
-  BetaWorkspaceRateLimitValue _copyWith(
-          {Object? orgLimit = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? value = sdkOmittedValue}) =>
-      BetaWorkspaceRateLimitValue(
-        orgLimit: identical(orgLimit, sdkOmittedValue)
-            ? this.orgLimit
-            : orgLimit as int?,
-        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-        value: identical(value, sdkOmittedValue) ? this.value : value as int,
-      );
+  BetaWorkspaceRateLimitValue _copyWith({Object? orgLimit = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) => BetaWorkspaceRateLimitValue(
+    orgLimit: identical(orgLimit, sdkOmittedValue) ? this.orgLimit : orgLimit as int?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+    value: identical(value, sdkOmittedValue) ? this.value : value as int,
+  );
 
-  factory BetaWorkspaceRateLimitValue.fromJson(Map<String, dynamic> json) =>
-      BetaWorkspaceRateLimitValue(
-        orgLimit: json.containsKey('org_limit')
-            ? (json['org_limit'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'org_limit', 'Required property is missing'),
-        type_: (json['type'] as String?)!,
-        value: ((json['value'] as num?)?.toInt())!,
-      );
+  factory BetaWorkspaceRateLimitValue.fromJson(Map<String, dynamic> json) => BetaWorkspaceRateLimitValue(
+    orgLimit: json.containsKey('org_limit') ? (json['org_limit'] as num?)?.toInt() : throw ArgumentError.value(null, 'org_limit', 'Required property is missing'),
+    type_: (json['type'] as String?)!,
+    value: ((json['value'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'org_limit': orgLimit,
-        'type': type_,
-        'value': value,
-      };
+    'org_limit': orgLimit,
+    'type': type_,
+    'value': value,
+  };
 }

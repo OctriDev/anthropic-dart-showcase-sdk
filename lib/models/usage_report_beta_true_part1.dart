@@ -8,109 +8,61 @@ sealed class BetaAnalyticsUsageBucketedResponseDataRefreshedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaAnalyticsUsageBucketedResponseDataRefreshedAt();
-  factory BetaAnalyticsUsageBucketedResponseDataRefreshedAt.fromJson(
-      Object? json) {
-    if (json is String) {
-      return BetaAnalyticsUsageBucketedResponseDataRefreshedAtString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaAnalyticsUsageBucketedResponseDataRefreshedAt");
+  factory BetaAnalyticsUsageBucketedResponseDataRefreshedAt.fromJson(Object? json) {
+    if (json is String) { return BetaAnalyticsUsageBucketedResponseDataRefreshedAtString(json); }
+    throw FormatException("No variant matched for BetaAnalyticsUsageBucketedResponseDataRefreshedAt");
   }
   Object? toJson();
 }
 
-final class BetaAnalyticsUsageBucketedResponseDataRefreshedAtString
-    extends BetaAnalyticsUsageBucketedResponseDataRefreshedAt {
+final class BetaAnalyticsUsageBucketedResponseDataRefreshedAtString extends BetaAnalyticsUsageBucketedResponseDataRefreshedAt {
   final String value;
   const BetaAnalyticsUsageBucketedResponseDataRefreshedAtString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaAnalyticsUsageBucketedResponse` API schema.
 class BetaAnalyticsUsageBucketedResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Time buckets for this page, oldest first: one per `bucket_width` interval, including intervals with no data (their `results` list is empty). A page holds at most `limit` buckets.
   final List<BetaAnalyticsUsageReportTimeBucket> data;
-
   /// RFC 3339 timestamp of the export this response was served from. Null when no export yet covers any part of the requested range, in which case every bucket's `results` list is empty. Buckets beyond this watermark are incomplete; for stable results, set `ending_at` to this value or earlier. Data is typically refreshed every 4 hours but not final until about 30 days after the usage date (late-arriving events, reconciliation adjustments).
   final String? dataRefreshedAt;
-
   /// Whether another page is available. When true, pass `next_page` as the `page` parameter to fetch it.
   final bool hasMore;
-
   /// Opaque cursor for the next page, or null when `has_more` is false. Pass it as the `page` parameter, keeping the other parameters unchanged. A cursor can expire after the underlying data refreshes; the request then returns HTTP 410 and pagination must restart from the first page.
   final String? nextPage;
-
   /// ID of the Organization.
   final String organizationId;
 
-  const BetaAnalyticsUsageBucketedResponse(
-      {required this.data,
-      required this.dataRefreshedAt,
-      required this.hasMore,
-      required this.nextPage,
-      required this.organizationId});
+  const BetaAnalyticsUsageBucketedResponse({required this.data, required this.dataRefreshedAt, required this.hasMore, required this.nextPage, required this.organizationId});
 
-  BetaAnalyticsUsageBucketedResponse Function(
-      {List<BetaAnalyticsUsageReportTimeBucket> data,
-      String? dataRefreshedAt,
-      bool hasMore,
-      String? nextPage,
-      String organizationId}) get copyWith => _copyWith;
+  BetaAnalyticsUsageBucketedResponse Function({List<BetaAnalyticsUsageReportTimeBucket> data, String? dataRefreshedAt, bool hasMore, String? nextPage, String organizationId}) get copyWith => _copyWith;
 
-  BetaAnalyticsUsageBucketedResponse _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? dataRefreshedAt = sdkOmittedValue,
-          Object? hasMore = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue,
-          Object? organizationId = sdkOmittedValue}) =>
-      BetaAnalyticsUsageBucketedResponse(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<BetaAnalyticsUsageReportTimeBucket>,
-        dataRefreshedAt: identical(dataRefreshedAt, sdkOmittedValue)
-            ? this.dataRefreshedAt
-            : dataRefreshedAt as String?,
-        hasMore: identical(hasMore, sdkOmittedValue)
-            ? this.hasMore
-            : hasMore as bool,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as String?,
-        organizationId: identical(organizationId, sdkOmittedValue)
-            ? this.organizationId
-            : organizationId as String,
-      );
+  BetaAnalyticsUsageBucketedResponse _copyWith({Object? data = sdkOmittedValue, Object? dataRefreshedAt = sdkOmittedValue, Object? hasMore = sdkOmittedValue, Object? nextPage = sdkOmittedValue, Object? organizationId = sdkOmittedValue}) => BetaAnalyticsUsageBucketedResponse(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaAnalyticsUsageReportTimeBucket>,
+    dataRefreshedAt: identical(dataRefreshedAt, sdkOmittedValue) ? this.dataRefreshedAt : dataRefreshedAt as String?,
+    hasMore: identical(hasMore, sdkOmittedValue) ? this.hasMore : hasMore as bool,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
+    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
+  );
 
-  factory BetaAnalyticsUsageBucketedResponse.fromJson(
-          Map<String, dynamic> json) =>
-      BetaAnalyticsUsageBucketedResponse(
-        data: ((json['data'] as List?)
-            ?.map((e) => BetaAnalyticsUsageReportTimeBucket.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        dataRefreshedAt: json.containsKey('data_refreshed_at')
-            ? json['data_refreshed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'data_refreshed_at', 'Required property is missing'),
-        hasMore: (json['has_more'] as bool?)!,
-        nextPage: json.containsKey('next_page')
-            ? json['next_page'] as String?
-            : throw ArgumentError.value(
-                null, 'next_page', 'Required property is missing'),
-        organizationId: (json['organization_id'] as String?)!,
-      );
+  factory BetaAnalyticsUsageBucketedResponse.fromJson(Map<String, dynamic> json) => BetaAnalyticsUsageBucketedResponse(
+    data: ((json['data'] as List?)?.map((e) => BetaAnalyticsUsageReportTimeBucket.fromJson(e as Map<String, dynamic>)).toList())!,
+    dataRefreshedAt: json.containsKey('data_refreshed_at') ? json['data_refreshed_at'] as String? : throw ArgumentError.value(null, 'data_refreshed_at', 'Required property is missing'),
+    hasMore: (json['has_more'] as bool?)!,
+    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
+    organizationId: (json['organization_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'data_refreshed_at': dataRefreshedAt,
-        'has_more': hasMore,
-        'next_page': nextPage,
-        'organization_id': organizationId,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'data_refreshed_at': dataRefreshedAt,
+    'has_more': hasMore,
+    'next_page': nextPage,
+    'organization_id': organizationId,
+  };
 }
 
 sealed class BetaAnalyticsUsageBucketedResultSpeed {
@@ -118,284 +70,132 @@ sealed class BetaAnalyticsUsageBucketedResultSpeed {
   static const String constructionSurface = 'named';
   const BetaAnalyticsUsageBucketedResultSpeed();
   factory BetaAnalyticsUsageBucketedResultSpeed.fromJson(Object? json) {
-    try {
-      return BetaAnalyticsUsageBucketedResultSpeedBetaAnalyticsUsageBucketedResultSpeedVariant0(
-          BetaAnalyticsUsageBucketedResultSpeedVariant0.fromJson(
-              json as String));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for BetaAnalyticsUsageBucketedResultSpeed");
+    try { return BetaAnalyticsUsageBucketedResultSpeedBetaAnalyticsUsageBucketedResultSpeedVariant0(BetaAnalyticsUsageBucketedResultSpeedVariant0.fromJson(json as String)); } catch (_) {}
+    throw FormatException("No variant matched for BetaAnalyticsUsageBucketedResultSpeed");
   }
   Object? toJson();
 }
 
-final class BetaAnalyticsUsageBucketedResultSpeedBetaAnalyticsUsageBucketedResultSpeedVariant0
-    extends BetaAnalyticsUsageBucketedResultSpeed {
+final class BetaAnalyticsUsageBucketedResultSpeedBetaAnalyticsUsageBucketedResultSpeedVariant0 extends BetaAnalyticsUsageBucketedResultSpeed {
   final BetaAnalyticsUsageBucketedResultSpeedVariant0 value;
-  const BetaAnalyticsUsageBucketedResultSpeedBetaAnalyticsUsageBucketedResultSpeedVariant0(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaAnalyticsUsageBucketedResultSpeedBetaAnalyticsUsageBucketedResultSpeedVariant0(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `BetaAnalyticsUsageBucketedResult` API schema.
 class BetaAnalyticsUsageBucketedResult {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The number of input tokens for cache creation.
   final BetaCacheCreation cacheCreation;
-
   /// The number of input tokens read from the cache.
   final int cacheReadInputTokens;
-
   /// Context-window pricing tier of the usage or cost. Null unless `context_window` is in `group_by[]`; it can also be null on grouped rows with no context-window tier, such as code execution.
   final BetaMessagesUsageReportContextWindow? contextWindow;
-
   /// Inference region of the usage or cost. Null unless `inference_geo` is in `group_by[]`; it can also be null on grouped rows where the region is not set (the rows that `inference_geos[]=not_available` matches).
   final BetaInferenceGeo? inferenceGeo;
-
   /// Model that produced the usage or cost, as a model name in the form the `models[]` filter accepts (for example, `claude-opus-5`). Null unless `model` is in `group_by[]`; it can also be null on grouped rows whose usage or cost is not attributed to a specific model, such as code execution.
   final String? model;
-
   /// The number of output tokens generated.
   final int outputTokens;
-
   /// Product surface that produced the usage or cost. Null unless product is in `group_by[]`; it can also be null on grouped rows whose usage cannot be attributed to a known surface. Values include `chat`, `claude_code`, `cowork`, `office_agent`, `claude_in_chrome`, `claude_design`, and `claude-tag`. `claude-tag` is Claude Tag, the Claude product in Slack. Some unattributed usage is reported as "other".
   final String? product;
-
   /// RBAC group (team) the usage is attributed to, in the public tagged `rbac_group_...` spelling — the same spelling the activity resources use for this key, so the same team has one id across resources and it round-trips as an `rbac_group_ids[]` filter value. Populated only when `rbac_group_id` is in `group_by[]`. Any-membership semantics: a user in several groups contributes their full usage to each of those groups' rows, so the named-group rows overlap and their sum can exceed the org total. A null value is the single unassigned row: users in no group on that (UTC) day. For the true org total, run the same query without `group_by[]`.
   final String? rbacGroupId;
-
   /// Number of API requests in this row's scope. For sandbox / code-execution events, this counts execution spans rather than HTTP requests (these rows surface with `product: null`).
   final int? requests;
-
   /// Server-side tool usage metrics.
   final BetaServerToolUse serverToolUse;
-
   /// Slack channel the usage originated from. Populated only when `slack_channel_id` is in `group_by[]`; null for usage outside Slack (and for rows recorded before channel attribution was enabled).
   final String? slackChannelId;
-
   /// Inference speed mode of the usage or cost: `fast` or `standard`. Null unless `speed` is in `group_by[]`.
   final BetaAnalyticsUsageBucketedResultSpeedVariant0? speed;
-
   /// The number of uncached input tokens processed.
   final int uncachedInputTokens;
 
-  const BetaAnalyticsUsageBucketedResult(
-      {required this.cacheCreation,
-      required this.cacheReadInputTokens,
-      required this.contextWindow,
-      required this.inferenceGeo,
-      required this.model,
-      required this.outputTokens,
-      required this.product,
-      required this.rbacGroupId,
-      required this.requests,
-      required this.serverToolUse,
-      required this.slackChannelId,
-      required this.speed,
-      required this.uncachedInputTokens});
+  const BetaAnalyticsUsageBucketedResult({required this.cacheCreation, required this.cacheReadInputTokens, required this.contextWindow, required this.inferenceGeo, required this.model, required this.outputTokens, required this.product, required this.rbacGroupId, required this.requests, required this.serverToolUse, required this.slackChannelId, required this.speed, required this.uncachedInputTokens});
 
-  BetaAnalyticsUsageBucketedResult Function(
-      {BetaCacheCreation cacheCreation,
-      int cacheReadInputTokens,
-      BetaMessagesUsageReportContextWindow? contextWindow,
-      BetaInferenceGeo? inferenceGeo,
-      String? model,
-      int outputTokens,
-      String? product,
-      String? rbacGroupId,
-      int? requests,
-      BetaServerToolUse serverToolUse,
-      String? slackChannelId,
-      BetaAnalyticsUsageBucketedResultSpeedVariant0? speed,
-      int uncachedInputTokens}) get copyWith => _copyWith;
+  BetaAnalyticsUsageBucketedResult Function({BetaCacheCreation cacheCreation, int cacheReadInputTokens, BetaMessagesUsageReportContextWindow? contextWindow, BetaInferenceGeo? inferenceGeo, String? model, int outputTokens, String? product, String? rbacGroupId, int? requests, BetaServerToolUse serverToolUse, String? slackChannelId, BetaAnalyticsUsageBucketedResultSpeedVariant0? speed, int uncachedInputTokens}) get copyWith => _copyWith;
 
-  BetaAnalyticsUsageBucketedResult _copyWith(
-          {Object? cacheCreation = sdkOmittedValue,
-          Object? cacheReadInputTokens = sdkOmittedValue,
-          Object? contextWindow = sdkOmittedValue,
-          Object? inferenceGeo = sdkOmittedValue,
-          Object? model = sdkOmittedValue,
-          Object? outputTokens = sdkOmittedValue,
-          Object? product = sdkOmittedValue,
-          Object? rbacGroupId = sdkOmittedValue,
-          Object? requests = sdkOmittedValue,
-          Object? serverToolUse = sdkOmittedValue,
-          Object? slackChannelId = sdkOmittedValue,
-          Object? speed = sdkOmittedValue,
-          Object? uncachedInputTokens = sdkOmittedValue}) =>
-      BetaAnalyticsUsageBucketedResult(
-        cacheCreation: identical(cacheCreation, sdkOmittedValue)
-            ? this.cacheCreation
-            : cacheCreation as BetaCacheCreation,
-        cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue)
-            ? this.cacheReadInputTokens
-            : cacheReadInputTokens as int,
-        contextWindow: identical(contextWindow, sdkOmittedValue)
-            ? this.contextWindow
-            : contextWindow as BetaMessagesUsageReportContextWindow?,
-        inferenceGeo: identical(inferenceGeo, sdkOmittedValue)
-            ? this.inferenceGeo
-            : inferenceGeo as BetaInferenceGeo?,
-        model:
-            identical(model, sdkOmittedValue) ? this.model : model as String?,
-        outputTokens: identical(outputTokens, sdkOmittedValue)
-            ? this.outputTokens
-            : outputTokens as int,
-        product: identical(product, sdkOmittedValue)
-            ? this.product
-            : product as String?,
-        rbacGroupId: identical(rbacGroupId, sdkOmittedValue)
-            ? this.rbacGroupId
-            : rbacGroupId as String?,
-        requests: identical(requests, sdkOmittedValue)
-            ? this.requests
-            : requests as int?,
-        serverToolUse: identical(serverToolUse, sdkOmittedValue)
-            ? this.serverToolUse
-            : serverToolUse as BetaServerToolUse,
-        slackChannelId: identical(slackChannelId, sdkOmittedValue)
-            ? this.slackChannelId
-            : slackChannelId as String?,
-        speed: identical(speed, sdkOmittedValue)
-            ? this.speed
-            : speed as BetaAnalyticsUsageBucketedResultSpeedVariant0?,
-        uncachedInputTokens: identical(uncachedInputTokens, sdkOmittedValue)
-            ? this.uncachedInputTokens
-            : uncachedInputTokens as int,
-      );
+  BetaAnalyticsUsageBucketedResult _copyWith({Object? cacheCreation = sdkOmittedValue, Object? cacheReadInputTokens = sdkOmittedValue, Object? contextWindow = sdkOmittedValue, Object? inferenceGeo = sdkOmittedValue, Object? model = sdkOmittedValue, Object? outputTokens = sdkOmittedValue, Object? product = sdkOmittedValue, Object? rbacGroupId = sdkOmittedValue, Object? requests = sdkOmittedValue, Object? serverToolUse = sdkOmittedValue, Object? slackChannelId = sdkOmittedValue, Object? speed = sdkOmittedValue, Object? uncachedInputTokens = sdkOmittedValue}) => BetaAnalyticsUsageBucketedResult(
+    cacheCreation: identical(cacheCreation, sdkOmittedValue) ? this.cacheCreation : cacheCreation as BetaCacheCreation,
+    cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue) ? this.cacheReadInputTokens : cacheReadInputTokens as int,
+    contextWindow: identical(contextWindow, sdkOmittedValue) ? this.contextWindow : contextWindow as BetaMessagesUsageReportContextWindow?,
+    inferenceGeo: identical(inferenceGeo, sdkOmittedValue) ? this.inferenceGeo : inferenceGeo as BetaInferenceGeo?,
+    model: identical(model, sdkOmittedValue) ? this.model : model as String?,
+    outputTokens: identical(outputTokens, sdkOmittedValue) ? this.outputTokens : outputTokens as int,
+    product: identical(product, sdkOmittedValue) ? this.product : product as String?,
+    rbacGroupId: identical(rbacGroupId, sdkOmittedValue) ? this.rbacGroupId : rbacGroupId as String?,
+    requests: identical(requests, sdkOmittedValue) ? this.requests : requests as int?,
+    serverToolUse: identical(serverToolUse, sdkOmittedValue) ? this.serverToolUse : serverToolUse as BetaServerToolUse,
+    slackChannelId: identical(slackChannelId, sdkOmittedValue) ? this.slackChannelId : slackChannelId as String?,
+    speed: identical(speed, sdkOmittedValue) ? this.speed : speed as BetaAnalyticsUsageBucketedResultSpeedVariant0?,
+    uncachedInputTokens: identical(uncachedInputTokens, sdkOmittedValue) ? this.uncachedInputTokens : uncachedInputTokens as int,
+  );
 
-  factory BetaAnalyticsUsageBucketedResult.fromJson(
-          Map<String, dynamic> json) =>
-      BetaAnalyticsUsageBucketedResult(
-        cacheCreation: (json['cache_creation'] != null
-            ? BetaCacheCreation.fromJson(
-                json['cache_creation'] as Map<String, dynamic>)
-            : null)!,
-        cacheReadInputTokens:
-            ((json['cache_read_input_tokens'] as num?)?.toInt())!,
-        contextWindow: json.containsKey('context_window')
-            ? json['context_window'] != null
-                ? BetaMessagesUsageReportContextWindow.fromJson(
-                    json['context_window'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'context_window', 'Required property is missing'),
-        inferenceGeo: json.containsKey('inference_geo')
-            ? json['inference_geo'] != null
-                ? BetaInferenceGeo.fromJson(json['inference_geo'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'inference_geo', 'Required property is missing'),
-        model: json.containsKey('model')
-            ? json['model'] as String?
-            : throw ArgumentError.value(
-                null, 'model', 'Required property is missing'),
-        outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
-        product: json.containsKey('product')
-            ? json['product'] as String?
-            : throw ArgumentError.value(
-                null, 'product', 'Required property is missing'),
-        rbacGroupId: json.containsKey('rbac_group_id')
-            ? json['rbac_group_id'] as String?
-            : throw ArgumentError.value(
-                null, 'rbac_group_id', 'Required property is missing'),
-        requests: json.containsKey('requests')
-            ? (json['requests'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'requests', 'Required property is missing'),
-        serverToolUse: (json['server_tool_use'] != null
-            ? BetaServerToolUse.fromJson(
-                json['server_tool_use'] as Map<String, dynamic>)
-            : null)!,
-        slackChannelId: json.containsKey('slack_channel_id')
-            ? json['slack_channel_id'] as String?
-            : throw ArgumentError.value(
-                null, 'slack_channel_id', 'Required property is missing'),
-        speed: json.containsKey('speed')
-            ? json['speed'] != null
-                ? BetaAnalyticsUsageBucketedResultSpeedVariant0.fromJson(
-                    json['speed'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'speed', 'Required property is missing'),
-        uncachedInputTokens:
-            ((json['uncached_input_tokens'] as num?)?.toInt())!,
-      );
+  factory BetaAnalyticsUsageBucketedResult.fromJson(Map<String, dynamic> json) => BetaAnalyticsUsageBucketedResult(
+    cacheCreation: (json['cache_creation'] != null ? BetaCacheCreation.fromJson(json['cache_creation'] as Map<String, dynamic>) : null)!,
+    cacheReadInputTokens: ((json['cache_read_input_tokens'] as num?)?.toInt())!,
+    contextWindow: json.containsKey('context_window') ? json['context_window'] != null ? BetaMessagesUsageReportContextWindow.fromJson(json['context_window'] as String) : null : throw ArgumentError.value(null, 'context_window', 'Required property is missing'),
+    inferenceGeo: json.containsKey('inference_geo') ? json['inference_geo'] != null ? BetaInferenceGeo.fromJson(json['inference_geo'] as String) : null : throw ArgumentError.value(null, 'inference_geo', 'Required property is missing'),
+    model: json.containsKey('model') ? json['model'] as String? : throw ArgumentError.value(null, 'model', 'Required property is missing'),
+    outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
+    product: json.containsKey('product') ? json['product'] as String? : throw ArgumentError.value(null, 'product', 'Required property is missing'),
+    rbacGroupId: json.containsKey('rbac_group_id') ? json['rbac_group_id'] as String? : throw ArgumentError.value(null, 'rbac_group_id', 'Required property is missing'),
+    requests: json.containsKey('requests') ? (json['requests'] as num?)?.toInt() : throw ArgumentError.value(null, 'requests', 'Required property is missing'),
+    serverToolUse: (json['server_tool_use'] != null ? BetaServerToolUse.fromJson(json['server_tool_use'] as Map<String, dynamic>) : null)!,
+    slackChannelId: json.containsKey('slack_channel_id') ? json['slack_channel_id'] as String? : throw ArgumentError.value(null, 'slack_channel_id', 'Required property is missing'),
+    speed: json.containsKey('speed') ? json['speed'] != null ? BetaAnalyticsUsageBucketedResultSpeedVariant0.fromJson(json['speed'] as String) : null : throw ArgumentError.value(null, 'speed', 'Required property is missing'),
+    uncachedInputTokens: ((json['uncached_input_tokens'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'cache_creation': cacheCreation.toJson(),
-        'cache_read_input_tokens': cacheReadInputTokens,
-        'context_window': contextWindow?.toJson(),
-        'inference_geo': inferenceGeo?.toJson(),
-        'model': model,
-        'output_tokens': outputTokens,
-        'product': product,
-        'rbac_group_id': rbacGroupId,
-        'requests': requests,
-        'server_tool_use': serverToolUse.toJson(),
-        'slack_channel_id': slackChannelId,
-        'speed': speed?.toJson(),
-        'uncached_input_tokens': uncachedInputTokens,
-      };
+    'cache_creation': cacheCreation.toJson(),
+    'cache_read_input_tokens': cacheReadInputTokens,
+    'context_window': contextWindow?.toJson(),
+    'inference_geo': inferenceGeo?.toJson(),
+    'model': model,
+    'output_tokens': outputTokens,
+    'product': product,
+    'rbac_group_id': rbacGroupId,
+    'requests': requests,
+    'server_tool_use': serverToolUse.toJson(),
+    'slack_channel_id': slackChannelId,
+    'speed': speed?.toJson(),
+    'uncached_input_tokens': uncachedInputTokens,
+  };
 }
 
 /// Typed representation of the `BetaAnalyticsUsageReportTimeBucket` API schema.
 class BetaAnalyticsUsageReportTimeBucket {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// End of the time bucket (exclusive) in RFC 3339 format.
   final String endingAt;
-
   /// Rows for this time bucket. Empty when the bucket has no data; otherwise a single combined row when `group_by[]` is omitted, or one row per group (subject to the per-bucket group cap described on the `group_by[]` parameter).
   final List<BetaAnalyticsUsageBucketedResult> results;
-
   /// Start of the time bucket (inclusive) in RFC 3339 format.
   final String startingAt;
 
-  const BetaAnalyticsUsageReportTimeBucket(
-      {required this.endingAt,
-      required this.results,
-      required this.startingAt});
+  const BetaAnalyticsUsageReportTimeBucket({required this.endingAt, required this.results, required this.startingAt});
 
-  BetaAnalyticsUsageReportTimeBucket Function(
-      {String endingAt,
-      List<BetaAnalyticsUsageBucketedResult> results,
-      String startingAt}) get copyWith => _copyWith;
+  BetaAnalyticsUsageReportTimeBucket Function({String endingAt, List<BetaAnalyticsUsageBucketedResult> results, String startingAt}) get copyWith => _copyWith;
 
-  BetaAnalyticsUsageReportTimeBucket _copyWith(
-          {Object? endingAt = sdkOmittedValue,
-          Object? results = sdkOmittedValue,
-          Object? startingAt = sdkOmittedValue}) =>
-      BetaAnalyticsUsageReportTimeBucket(
-        endingAt: identical(endingAt, sdkOmittedValue)
-            ? this.endingAt
-            : endingAt as String,
-        results: identical(results, sdkOmittedValue)
-            ? this.results
-            : results as List<BetaAnalyticsUsageBucketedResult>,
-        startingAt: identical(startingAt, sdkOmittedValue)
-            ? this.startingAt
-            : startingAt as String,
-      );
+  BetaAnalyticsUsageReportTimeBucket _copyWith({Object? endingAt = sdkOmittedValue, Object? results = sdkOmittedValue, Object? startingAt = sdkOmittedValue}) => BetaAnalyticsUsageReportTimeBucket(
+    endingAt: identical(endingAt, sdkOmittedValue) ? this.endingAt : endingAt as String,
+    results: identical(results, sdkOmittedValue) ? this.results : results as List<BetaAnalyticsUsageBucketedResult>,
+    startingAt: identical(startingAt, sdkOmittedValue) ? this.startingAt : startingAt as String,
+  );
 
-  factory BetaAnalyticsUsageReportTimeBucket.fromJson(
-          Map<String, dynamic> json) =>
-      BetaAnalyticsUsageReportTimeBucket(
-        endingAt: (json['ending_at'] as String?)!,
-        results: ((json['results'] as List?)
-            ?.map((e) => BetaAnalyticsUsageBucketedResult.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        startingAt: (json['starting_at'] as String?)!,
-      );
+  factory BetaAnalyticsUsageReportTimeBucket.fromJson(Map<String, dynamic> json) => BetaAnalyticsUsageReportTimeBucket(
+    endingAt: (json['ending_at'] as String?)!,
+    results: ((json['results'] as List?)?.map((e) => BetaAnalyticsUsageBucketedResult.fromJson(e as Map<String, dynamic>)).toList())!,
+    startingAt: (json['starting_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'ending_at': endingAt,
-        'results': results.map((item) => item.toJson()).toList(),
-        'starting_at': startingAt,
-      };
+    'ending_at': endingAt,
+    'results': results.map((item) => item.toJson()).toList(),
+    'starting_at': startingAt,
+  };
 }

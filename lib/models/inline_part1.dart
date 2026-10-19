@@ -10,17 +10,14 @@ enum APIErrorType {
 
   static APIErrorType fromJson(String value) {
     switch (value) {
-      case 'api_error':
-        return APIErrorType.apiError;
-      default:
-        throw ArgumentError('Unknown APIErrorType: $value');
+      case 'api_error': return APIErrorType.apiError;
+      default: throw ArgumentError('Unknown APIErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case APIErrorType.apiError:
-        return 'api_error';
+      case APIErrorType.apiError: return 'api_error';
     }
   }
 
@@ -34,17 +31,14 @@ enum AuthenticationErrorType {
 
   static AuthenticationErrorType fromJson(String value) {
     switch (value) {
-      case 'authentication_error':
-        return AuthenticationErrorType.authenticationError;
-      default:
-        throw ArgumentError('Unknown AuthenticationErrorType: $value');
+      case 'authentication_error': return AuthenticationErrorType.authenticationError;
+      default: throw ArgumentError('Unknown AuthenticationErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case AuthenticationErrorType.authenticationError:
-        return 'authentication_error';
+      case AuthenticationErrorType.authenticationError: return 'authentication_error';
     }
   }
 
@@ -54,12 +48,12 @@ enum AuthenticationErrorType {
 
 /// Required enumerated value serialized in the `media_type` wire field.
 final class Base64ImageSourceMediaType {
+
   final String value;
 
   const Base64ImageSourceMediaType._(this.value);
 
-  factory Base64ImageSourceMediaType.fromJson(String value) =>
-      Base64ImageSourceMediaType._(value);
+  factory Base64ImageSourceMediaType.fromJson(String value) => Base64ImageSourceMediaType._(value);
 
   static const imageJpeg = Base64ImageSourceMediaType._('image/jpeg');
   static const imagePng = Base64ImageSourceMediaType._('image/png');
@@ -68,15 +62,12 @@ final class Base64ImageSourceMediaType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is Base64ImageSourceMediaType && other.value == value;
+  @override bool operator ==(Object other) => other is Base64ImageSourceMediaType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -85,17 +76,14 @@ enum Base64ImageSourceType {
 
   static Base64ImageSourceType fromJson(String value) {
     switch (value) {
-      case 'base64':
-        return Base64ImageSourceType.base64;
-      default:
-        throw ArgumentError('Unknown Base64ImageSourceType: $value');
+      case 'base64': return Base64ImageSourceType.base64;
+      default: throw ArgumentError('Unknown Base64ImageSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case Base64ImageSourceType.base64:
-        return 'base64';
+      case Base64ImageSourceType.base64: return 'base64';
     }
   }
 
@@ -109,17 +97,14 @@ enum Base64PDFSourceMediaType {
 
   static Base64PDFSourceMediaType fromJson(String value) {
     switch (value) {
-      case 'application/pdf':
-        return Base64PDFSourceMediaType.applicationPdf;
-      default:
-        throw ArgumentError('Unknown Base64PDFSourceMediaType: $value');
+      case 'application/pdf': return Base64PDFSourceMediaType.applicationPdf;
+      default: throw ArgumentError('Unknown Base64PDFSourceMediaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case Base64PDFSourceMediaType.applicationPdf:
-        return 'application/pdf';
+      case Base64PDFSourceMediaType.applicationPdf: return 'application/pdf';
     }
   }
 
@@ -133,17 +118,14 @@ enum Base64PDFSourceType {
 
   static Base64PDFSourceType fromJson(String value) {
     switch (value) {
-      case 'base64':
-        return Base64PDFSourceType.base64;
-      default:
-        throw ArgumentError('Unknown Base64PDFSourceType: $value');
+      case 'base64': return Base64PDFSourceType.base64;
+      default: throw ArgumentError('Unknown Base64PDFSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case Base64PDFSourceType.base64:
-        return 'base64';
+      case Base64PDFSourceType.base64: return 'base64';
     }
   }
 
@@ -157,17 +139,14 @@ enum BashTool20250124Name {
 
   static BashTool20250124Name fromJson(String value) {
     switch (value) {
-      case 'bash':
-        return BashTool20250124Name.bash;
-      default:
-        throw ArgumentError('Unknown BashTool20250124Name: $value');
+      case 'bash': return BashTool20250124Name.bash;
+      default: throw ArgumentError('Unknown BashTool20250124Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BashTool20250124Name.bash:
-        return 'bash';
+      case BashTool20250124Name.bash: return 'bash';
     }
   }
 
@@ -181,17 +160,14 @@ enum BashTool20250124Type {
 
   static BashTool20250124Type fromJson(String value) {
     switch (value) {
-      case 'bash_20250124':
-        return BashTool20250124Type.bash20250124;
-      default:
-        throw ArgumentError('Unknown BashTool20250124Type: $value');
+      case 'bash_20250124': return BashTool20250124Type.bash20250124;
+      default: throw ArgumentError('Unknown BashTool20250124Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BashTool20250124Type.bash20250124:
-        return 'bash_20250124';
+      case BashTool20250124Type.bash20250124: return 'bash_20250124';
     }
   }
 
@@ -205,18 +181,14 @@ enum BetaAdvisorMessageIterationUsageType {
 
   static BetaAdvisorMessageIterationUsageType fromJson(String value) {
     switch (value) {
-      case 'advisor_message':
-        return BetaAdvisorMessageIterationUsageType.advisorMessage;
-      default:
-        throw ArgumentError(
-            'Unknown BetaAdvisorMessageIterationUsageType: $value');
+      case 'advisor_message': return BetaAdvisorMessageIterationUsageType.advisorMessage;
+      default: throw ArgumentError('Unknown BetaAdvisorMessageIterationUsageType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAdvisorMessageIterationUsageType.advisorMessage:
-        return 'advisor_message';
+      case BetaAdvisorMessageIterationUsageType.advisorMessage: return 'advisor_message';
     }
   }
 
@@ -230,17 +202,14 @@ enum BetaAdvisorTool20260301Name {
 
   static BetaAdvisorTool20260301Name fromJson(String value) {
     switch (value) {
-      case 'advisor':
-        return BetaAdvisorTool20260301Name.advisor;
-      default:
-        throw ArgumentError('Unknown BetaAdvisorTool20260301Name: $value');
+      case 'advisor': return BetaAdvisorTool20260301Name.advisor;
+      default: throw ArgumentError('Unknown BetaAdvisorTool20260301Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAdvisorTool20260301Name.advisor:
-        return 'advisor';
+      case BetaAdvisorTool20260301Name.advisor: return 'advisor';
     }
   }
 
@@ -254,17 +223,14 @@ enum BetaAdvisorTool20260301Type {
 
   static BetaAdvisorTool20260301Type fromJson(String value) {
     switch (value) {
-      case 'advisor_20260301':
-        return BetaAdvisorTool20260301Type.advisor20260301;
-      default:
-        throw ArgumentError('Unknown BetaAdvisorTool20260301Type: $value');
+      case 'advisor_20260301': return BetaAdvisorTool20260301Type.advisor20260301;
+      default: throw ArgumentError('Unknown BetaAdvisorTool20260301Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAdvisorTool20260301Type.advisor20260301:
-        return 'advisor_20260301';
+      case BetaAdvisorTool20260301Type.advisor20260301: return 'advisor_20260301';
     }
   }
 
@@ -278,18 +244,14 @@ enum BetaAllConnectorsPermissionResourceType {
 
   static BetaAllConnectorsPermissionResourceType fromJson(String value) {
     switch (value) {
-      case 'all_connectors':
-        return BetaAllConnectorsPermissionResourceType.allConnectors;
-      default:
-        throw ArgumentError(
-            'Unknown BetaAllConnectorsPermissionResourceType: $value');
+      case 'all_connectors': return BetaAllConnectorsPermissionResourceType.allConnectors;
+      default: throw ArgumentError('Unknown BetaAllConnectorsPermissionResourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAllConnectorsPermissionResourceType.allConnectors:
-        return 'all_connectors';
+      case BetaAllConnectorsPermissionResourceType.allConnectors: return 'all_connectors';
     }
   }
 
@@ -303,17 +265,14 @@ enum BetaAllThinkingTurnsType {
 
   static BetaAllThinkingTurnsType fromJson(String value) {
     switch (value) {
-      case 'all':
-        return BetaAllThinkingTurnsType.all;
-      default:
-        throw ArgumentError('Unknown BetaAllThinkingTurnsType: $value');
+      case 'all': return BetaAllThinkingTurnsType.all;
+      default: throw ArgumentError('Unknown BetaAllThinkingTurnsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAllThinkingTurnsType.all:
-        return 'all';
+      case BetaAllThinkingTurnsType.all: return 'all';
     }
   }
 

@@ -8,110 +8,64 @@ part of 'sessions.dart';
 class BetaManagedAgentsDeletedSession {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsDeletedSessionType type_;
-
   /// Required `string` value serialized in the `id` wire field.
   final String id;
 
-  const BetaManagedAgentsDeletedSession(
-      {required this.type_, required this.id});
+  const BetaManagedAgentsDeletedSession({required this.type_, required this.id});
 
-  BetaManagedAgentsDeletedSession Function(
-      {BetaManagedAgentsDeletedSessionType type_,
-      String id}) get copyWith => _copyWith;
+  BetaManagedAgentsDeletedSession Function({BetaManagedAgentsDeletedSessionType type_, String id}) get copyWith => _copyWith;
 
-  BetaManagedAgentsDeletedSession _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue}) =>
-      BetaManagedAgentsDeletedSession(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsDeletedSessionType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-      );
+  BetaManagedAgentsDeletedSession _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue}) => BetaManagedAgentsDeletedSession(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsDeletedSessionType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+  );
 
-  factory BetaManagedAgentsDeletedSession.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsDeletedSession(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsDeletedSessionType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-      );
+  factory BetaManagedAgentsDeletedSession.fromJson(Map<String, dynamic> json) => BetaManagedAgentsDeletedSession(
+    type_: (json['type'] != null ? BetaManagedAgentsDeletedSessionType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-      };
+    'type': type_.toJson(),
+    'id': id,
+  };
 }
 
 /// Mid-session agent configuration update. Only `tools` and `mcp_servers` are updatable. Full replacement: the provided array becomes the new value. To preserve existing entries, GET the session, modify the array, and POST it back.
 class BetaManagedAgentsSessionAgentUpdate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Replacement tool list. Full replacement: the provided array becomes the new value. Send an empty array to clear; omit to preserve.
   final SdkOptional<List<BetaManagedAgentsAgentToolParams>> tools;
-
   /// Replacement MCP server list. Full replacement: the provided array becomes the new value. Send an empty array to clear; omit to preserve.
   final SdkOptional<List<BetaManagedAgentsMCPServerParams>> mcpServers;
 
-  const BetaManagedAgentsSessionAgentUpdate(
-      {this.tools = const SdkOmitted(), this.mcpServers = const SdkOmitted()});
+  const BetaManagedAgentsSessionAgentUpdate({this.tools = const SdkOmitted(), this.mcpServers = const SdkOmitted()});
 
-  BetaManagedAgentsSessionAgentUpdate Function(
-          {SdkOptional<List<BetaManagedAgentsAgentToolParams>> tools,
-          SdkOptional<List<BetaManagedAgentsMCPServerParams>> mcpServers})
-      get copyWith => _copyWith;
+  BetaManagedAgentsSessionAgentUpdate Function({SdkOptional<List<BetaManagedAgentsAgentToolParams>> tools, SdkOptional<List<BetaManagedAgentsMCPServerParams>> mcpServers}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionAgentUpdate _copyWith(
-          {Object? tools = sdkOmittedValue,
-          Object? mcpServers = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionAgentUpdate(
-        tools: identical(tools, sdkOmittedValue)
-            ? this.tools
-            : tools as SdkOptional<List<BetaManagedAgentsAgentToolParams>>,
-        mcpServers: identical(mcpServers, sdkOmittedValue)
-            ? this.mcpServers
-            : mcpServers as SdkOptional<List<BetaManagedAgentsMCPServerParams>>,
-      );
+  BetaManagedAgentsSessionAgentUpdate _copyWith({Object? tools = sdkOmittedValue, Object? mcpServers = sdkOmittedValue}) => BetaManagedAgentsSessionAgentUpdate(
+    tools: identical(tools, sdkOmittedValue) ? this.tools : tools as SdkOptional<List<BetaManagedAgentsAgentToolParams>>,
+    mcpServers: identical(mcpServers, sdkOmittedValue) ? this.mcpServers : mcpServers as SdkOptional<List<BetaManagedAgentsMCPServerParams>>,
+  );
 
-  factory BetaManagedAgentsSessionAgentUpdate.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionAgentUpdate(
-        tools: json['tools'] != null
-            ? SdkPresent(((json['tools'] as List?)
-                ?.map((e) => BetaManagedAgentsAgentToolParams.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-        mcpServers: json['mcp_servers'] != null
-            ? SdkPresent(((json['mcp_servers'] as List?)
-                ?.map((e) => BetaManagedAgentsMCPServerParams.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsSessionAgentUpdate.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionAgentUpdate(
+    tools: json['tools'] != null ? SdkPresent(((json['tools'] as List?)?.map((e) => BetaManagedAgentsAgentToolParams.fromJson(e)).toList())!) : const SdkOmitted(),
+    mcpServers: json['mcp_servers'] != null ? SdkPresent(((json['mcp_servers'] as List?)?.map((e) => BetaManagedAgentsMCPServerParams.fromJson(e)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (tools) {
-          SdkPresent<List<BetaManagedAgentsAgentToolParams>>(
-            value: final value
-          ) =>
-            {
-              'tools': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (mcpServers) {
-          SdkPresent<List<BetaManagedAgentsMCPServerParams>>(
-            value: final value
-          ) =>
-            {
-              'mcp_servers': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (tools) {
+      SdkPresent<List<BetaManagedAgentsAgentToolParams>>(value: final value) => {'tools': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mcpServers) {
+      SdkPresent<List<BetaManagedAgentsMCPServerParams>>(value: final value) => {'mcp_servers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class BetaManagedAgentsUpdateSessionParamsTitle {
@@ -119,142 +73,73 @@ sealed class BetaManagedAgentsUpdateSessionParamsTitle {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsUpdateSessionParamsTitle();
   factory BetaManagedAgentsUpdateSessionParamsTitle.fromJson(Object? json) {
-    if (json is String) {
-      return BetaManagedAgentsUpdateSessionParamsTitleString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsUpdateSessionParamsTitle");
+    if (json is String) { return BetaManagedAgentsUpdateSessionParamsTitleString(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsUpdateSessionParamsTitle");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsUpdateSessionParamsTitleString
-    extends BetaManagedAgentsUpdateSessionParamsTitle {
+final class BetaManagedAgentsUpdateSessionParamsTitleString extends BetaManagedAgentsUpdateSessionParamsTitle {
   final String value;
   const BetaManagedAgentsUpdateSessionParamsTitleString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Request parameters for updating a `session`. Omit a field to preserve its current value.
 class BetaManagedAgentsUpdateSessionParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Human-readable session title.
   final SdkOptional<String?> title;
-
   /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve.
   final SdkOptional<Map<String, String>?> metadata;
-
   /// Vault IDs (`vlt_*`) to attach to the session. Not yet supported; requests setting this field are rejected. Reserved for future use.
   final SdkOptional<List<String>> vaultIds;
-
   /// Agent configuration update. Only `tools` and `mcp_servers` are updatable mid-session. Only valid for sessions created from an agent or deployment reference. The session must not be running.
   final SdkOptional<BetaManagedAgentsSessionAgentUpdate> agent;
-
   /// Enforced spend ceiling for the session. Set an object to replace the budget of a session that was created with one, or `null` to remove it; omit to preserve. A budget cannot be added to a session created without one (rejected with reason `budget_create_only`), and a removed budget cannot be re-added. Allowed in any non-terminated status. Lowering `max_list_cost` to at or below the session's consumed list cost is rejected with reason `budget_not_raised`, and every model the session can run must have a public list price or the request is rejected with reason `model_not_budgetable`.
   final SdkOptional<BetaManagedAgentsBudget?> budget;
 
-  const BetaManagedAgentsUpdateSessionParams(
-      {this.title = const SdkOmitted(),
-      this.metadata = const SdkOmitted(),
-      this.vaultIds = const SdkOmitted(),
-      this.agent = const SdkOmitted(),
-      this.budget = const SdkOmitted()});
+  const BetaManagedAgentsUpdateSessionParams({this.title = const SdkOmitted(), this.metadata = const SdkOmitted(), this.vaultIds = const SdkOmitted(), this.agent = const SdkOmitted(), this.budget = const SdkOmitted()});
 
-  BetaManagedAgentsUpdateSessionParams Function(
-      {SdkOptional<String?> title,
-      SdkOptional<Map<String, String>?> metadata,
-      SdkOptional<List<String>> vaultIds,
-      SdkOptional<BetaManagedAgentsSessionAgentUpdate> agent,
-      SdkOptional<BetaManagedAgentsBudget?> budget}) get copyWith => _copyWith;
+  BetaManagedAgentsUpdateSessionParams Function({SdkOptional<String?> title, SdkOptional<Map<String, String>?> metadata, SdkOptional<List<String>> vaultIds, SdkOptional<BetaManagedAgentsSessionAgentUpdate> agent, SdkOptional<BetaManagedAgentsBudget?> budget}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUpdateSessionParams _copyWith(
-          {Object? title = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue,
-          Object? vaultIds = sdkOmittedValue,
-          Object? agent = sdkOmittedValue,
-          Object? budget = sdkOmittedValue}) =>
-      BetaManagedAgentsUpdateSessionParams(
-        title: identical(title, sdkOmittedValue)
-            ? this.title
-            : title as SdkOptional<String?>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<Map<String, String>?>,
-        vaultIds: identical(vaultIds, sdkOmittedValue)
-            ? this.vaultIds
-            : vaultIds as SdkOptional<List<String>>,
-        agent: identical(agent, sdkOmittedValue)
-            ? this.agent
-            : agent as SdkOptional<BetaManagedAgentsSessionAgentUpdate>,
-        budget: identical(budget, sdkOmittedValue)
-            ? this.budget
-            : budget as SdkOptional<BetaManagedAgentsBudget?>,
-      );
+  BetaManagedAgentsUpdateSessionParams _copyWith({Object? title = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? vaultIds = sdkOmittedValue, Object? agent = sdkOmittedValue, Object? budget = sdkOmittedValue}) => BetaManagedAgentsUpdateSessionParams(
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String?>,
+    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, String>?>,
+    vaultIds: identical(vaultIds, sdkOmittedValue) ? this.vaultIds : vaultIds as SdkOptional<List<String>>,
+    agent: identical(agent, sdkOmittedValue) ? this.agent : agent as SdkOptional<BetaManagedAgentsSessionAgentUpdate>,
+    budget: identical(budget, sdkOmittedValue) ? this.budget : budget as SdkOptional<BetaManagedAgentsBudget?>,
+  );
 
-  factory BetaManagedAgentsUpdateSessionParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsUpdateSessionParams(
-        title: json.containsKey('title')
-            ? SdkPresent(json['title'] as String?)
-            : const SdkOmitted(),
-        metadata: json.containsKey('metadata')
-            ? SdkPresent(json['metadata'] == null
-                ? null
-                : Map<String, dynamic>.from(json['metadata'] as Map)
-                    .map((key, value) => MapEntry(key, value as String)))
-            : const SdkOmitted(),
-        vaultIds: json['vault_ids'] != null
-            ? SdkPresent(((json['vault_ids'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        agent: json['agent'] != null
-            ? SdkPresent((json['agent'] != null
-                ? BetaManagedAgentsSessionAgentUpdate.fromJson(
-                    json['agent'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        budget: json.containsKey('budget')
-            ? SdkPresent(json['budget'] != null
-                ? BetaManagedAgentsBudget.fromJson(json['budget'])
-                : null)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsUpdateSessionParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUpdateSessionParams(
+    title: json.containsKey('title') ? SdkPresent(json['title'] as String?) : const SdkOmitted(),
+    metadata: json.containsKey('metadata') ? SdkPresent(json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String))) : const SdkOmitted(),
+    vaultIds: json['vault_ids'] != null ? SdkPresent(((json['vault_ids'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    agent: json['agent'] != null ? SdkPresent((json['agent'] != null ? BetaManagedAgentsSessionAgentUpdate.fromJson(json['agent'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    budget: json.containsKey('budget') ? SdkPresent(json['budget'] != null ? BetaManagedAgentsBudget.fromJson(json['budget']) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (title) {
-          SdkPresent<String?>(value: final value) => {
-              'title': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (metadata) {
-          SdkPresent<Map<String, String>?>(value: final value) => {
-              'metadata': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (vaultIds) {
-          SdkPresent<List<String>>(value: final value) => {
-              'vault_ids': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (agent) {
-          SdkPresent<BetaManagedAgentsSessionAgentUpdate>(value: final value) =>
-            {
-              'agent': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (budget) {
-          SdkPresent<BetaManagedAgentsBudget?>(value: final value) => {
-              'budget': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (title) {
+      SdkPresent<String?>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (metadata) {
+      SdkPresent<Map<String, String>?>(value: final value) => {'metadata': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (vaultIds) {
+      SdkPresent<List<String>>(value: final value) => {'vault_ids': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (agent) {
+      SdkPresent<BetaManagedAgentsSessionAgentUpdate>(value: final value) => {'agent': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (budget) {
+      SdkPresent<BetaManagedAgentsBudget?>(value: final value) => {'budget': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

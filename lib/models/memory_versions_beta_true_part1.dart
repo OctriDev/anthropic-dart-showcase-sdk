@@ -8,61 +8,33 @@ part of 'memory_versions_beta_true.dart';
 class BetaManagedAgentsListMemoryVersionsResult {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// One page of `memory_version` objects, ordered by `created_at` descending (newest first), with `id` as tiebreak.
   final SdkOptional<List<BetaManagedAgentsMemoryVersion>> data;
-
   /// Opaque cursor for the next page (a `page_...` value), or `null` if there are no more results. Pass as `page` on the next request.
   final SdkOptional<String?> nextPage;
 
-  const BetaManagedAgentsListMemoryVersionsResult(
-      {this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
+  const BetaManagedAgentsListMemoryVersionsResult({this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
 
-  BetaManagedAgentsListMemoryVersionsResult Function(
-      {SdkOptional<List<BetaManagedAgentsMemoryVersion>> data,
-      SdkOptional<String?> nextPage}) get copyWith => _copyWith;
+  BetaManagedAgentsListMemoryVersionsResult Function({SdkOptional<List<BetaManagedAgentsMemoryVersion>> data, SdkOptional<String?> nextPage}) get copyWith => _copyWith;
 
-  BetaManagedAgentsListMemoryVersionsResult _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaManagedAgentsListMemoryVersionsResult(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as SdkOptional<List<BetaManagedAgentsMemoryVersion>>,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as SdkOptional<String?>,
-      );
+  BetaManagedAgentsListMemoryVersionsResult _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaManagedAgentsListMemoryVersionsResult(
+    data: identical(data, sdkOmittedValue) ? this.data : data as SdkOptional<List<BetaManagedAgentsMemoryVersion>>,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as SdkOptional<String?>,
+  );
 
-  factory BetaManagedAgentsListMemoryVersionsResult.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsListMemoryVersionsResult(
-        data: json['data'] != null
-            ? SdkPresent(((json['data'] as List?)
-                ?.map((e) => BetaManagedAgentsMemoryVersion.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        nextPage: json.containsKey('next_page')
-            ? SdkPresent(json['next_page'] as String?)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsListMemoryVersionsResult.fromJson(Map<String, dynamic> json) => BetaManagedAgentsListMemoryVersionsResult(
+    data: json['data'] != null ? SdkPresent(((json['data'] as List?)?.map((e) => BetaManagedAgentsMemoryVersion.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    nextPage: json.containsKey('next_page') ? SdkPresent(json['next_page'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (data) {
-          SdkPresent<List<BetaManagedAgentsMemoryVersion>>(
-            value: final value
-          ) =>
-            {
-              'data': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPage) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (data) {
+      SdkPresent<List<BetaManagedAgentsMemoryVersion>>(value: final value) => {'data': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPage) {
+      SdkPresent<String?>(value: final value) => {'next_page': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

@@ -9,21 +9,16 @@ sealed class BetaUpdateUserProfileRequestBodyExternalId {
   static const String constructionSurface = 'named';
   const BetaUpdateUserProfileRequestBodyExternalId();
   factory BetaUpdateUserProfileRequestBodyExternalId.fromJson(Object? json) {
-    if (json is String) {
-      return BetaUpdateUserProfileRequestBodyExternalIdString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaUpdateUserProfileRequestBodyExternalId");
+    if (json is String) { return BetaUpdateUserProfileRequestBodyExternalIdString(json); }
+    throw FormatException("No variant matched for BetaUpdateUserProfileRequestBodyExternalId");
   }
   Object? toJson();
 }
 
-final class BetaUpdateUserProfileRequestBodyExternalIdString
-    extends BetaUpdateUserProfileRequestBodyExternalId {
+final class BetaUpdateUserProfileRequestBodyExternalIdString extends BetaUpdateUserProfileRequestBodyExternalId {
   final String value;
   const BetaUpdateUserProfileRequestBodyExternalIdString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 sealed class BetaUpdateUserProfileRequestBodyName {
@@ -31,138 +26,73 @@ sealed class BetaUpdateUserProfileRequestBodyName {
   static const String constructionSurface = 'named';
   const BetaUpdateUserProfileRequestBodyName();
   factory BetaUpdateUserProfileRequestBodyName.fromJson(Object? json) {
-    if (json is String) {
-      return BetaUpdateUserProfileRequestBodyNameString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaUpdateUserProfileRequestBodyName");
+    if (json is String) { return BetaUpdateUserProfileRequestBodyNameString(json); }
+    throw FormatException("No variant matched for BetaUpdateUserProfileRequestBodyName");
   }
   Object? toJson();
 }
 
-final class BetaUpdateUserProfileRequestBodyNameString
-    extends BetaUpdateUserProfileRequestBodyName {
+final class BetaUpdateUserProfileRequestBodyNameString extends BetaUpdateUserProfileRequestBodyName {
   final String value;
   const BetaUpdateUserProfileRequestBodyNameString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaUpdateUserProfileRequestBody` API schema.
 class BetaUpdateUserProfileRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// If present, replaces the stored external_id. Omit to leave unchanged. Maximum 255 characters.
   final SdkOptional<String?> externalId;
-
   /// Key-value pairs to merge into the stored metadata. Keys provided overwrite existing values. To remove a key, set its value to an empty string. Keys not provided are left unchanged. Maximum 16 keys, with keys up to 64 characters and values up to 512 characters.
   final SdkOptional<Map<String, String>> metadata;
-
   /// If present, replaces the stored name. Omit to leave unchanged. Maximum 255 characters.
   final SdkOptional<String?> name;
-
   /// If present, replaces the stored access type. Omit to leave unchanged.
   final SdkOptional<BetaUserProfileAccessType?> accessType;
-
   /// If present, replaces the stored account creation time. Omit to leave unchanged; once set, the value cannot be cleared and `null` is rejected. Must be a complete RFC 3339 timestamp no more than 1 minute in the future.
   final SdkOptional<String> externalUserOnboardedAt;
 
-  const BetaUpdateUserProfileRequestBody(
-      {this.externalId = const SdkOmitted(),
-      this.metadata = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.accessType = const SdkOmitted(),
-      this.externalUserOnboardedAt = const SdkOmitted()});
+  const BetaUpdateUserProfileRequestBody({this.externalId = const SdkOmitted(), this.metadata = const SdkOmitted(), this.name = const SdkOmitted(), this.accessType = const SdkOmitted(), this.externalUserOnboardedAt = const SdkOmitted()});
 
-  BetaUpdateUserProfileRequestBody Function(
-      {SdkOptional<String?> externalId,
-      SdkOptional<Map<String, String>> metadata,
-      SdkOptional<String?> name,
-      SdkOptional<BetaUserProfileAccessType?> accessType,
-      SdkOptional<String> externalUserOnboardedAt}) get copyWith => _copyWith;
+  BetaUpdateUserProfileRequestBody Function({SdkOptional<String?> externalId, SdkOptional<Map<String, String>> metadata, SdkOptional<String?> name, SdkOptional<BetaUserProfileAccessType?> accessType, SdkOptional<String> externalUserOnboardedAt}) get copyWith => _copyWith;
 
-  BetaUpdateUserProfileRequestBody _copyWith(
-          {Object? externalId = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? accessType = sdkOmittedValue,
-          Object? externalUserOnboardedAt = sdkOmittedValue}) =>
-      BetaUpdateUserProfileRequestBody(
-        externalId: identical(externalId, sdkOmittedValue)
-            ? this.externalId
-            : externalId as SdkOptional<String?>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<Map<String, String>>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String?>,
-        accessType: identical(accessType, sdkOmittedValue)
-            ? this.accessType
-            : accessType as SdkOptional<BetaUserProfileAccessType?>,
-        externalUserOnboardedAt:
-            identical(externalUserOnboardedAt, sdkOmittedValue)
-                ? this.externalUserOnboardedAt
-                : externalUserOnboardedAt as SdkOptional<String>,
-      );
+  BetaUpdateUserProfileRequestBody _copyWith({Object? externalId = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? name = sdkOmittedValue, Object? accessType = sdkOmittedValue, Object? externalUserOnboardedAt = sdkOmittedValue}) => BetaUpdateUserProfileRequestBody(
+    externalId: identical(externalId, sdkOmittedValue) ? this.externalId : externalId as SdkOptional<String?>,
+    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, String>>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
+    accessType: identical(accessType, sdkOmittedValue) ? this.accessType : accessType as SdkOptional<BetaUserProfileAccessType?>,
+    externalUserOnboardedAt: identical(externalUserOnboardedAt, sdkOmittedValue) ? this.externalUserOnboardedAt : externalUserOnboardedAt as SdkOptional<String>,
+  );
 
-  factory BetaUpdateUserProfileRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      BetaUpdateUserProfileRequestBody(
-        externalId: json.containsKey('external_id')
-            ? SdkPresent(json['external_id'] as String?)
-            : const SdkOmitted(),
-        metadata: json['metadata'] != null
-            ? SdkPresent((json['metadata'] == null
-                ? null
-                : Map<String, dynamic>.from(json['metadata'] as Map)
-                    .map((key, value) => MapEntry(key, value as String)))!)
-            : const SdkOmitted(),
-        name: json.containsKey('name')
-            ? SdkPresent(json['name'] as String?)
-            : const SdkOmitted(),
-        accessType: json.containsKey('access_type')
-            ? SdkPresent(json['access_type'] != null
-                ? BetaUserProfileAccessType.fromJson(
-                    json['access_type'] as String)
-                : null)
-            : const SdkOmitted(),
-        externalUserOnboardedAt: json['external_user_onboarded_at'] != null
-            ? SdkPresent((json['external_user_onboarded_at'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory BetaUpdateUserProfileRequestBody.fromJson(Map<String, dynamic> json) => BetaUpdateUserProfileRequestBody(
+    externalId: json.containsKey('external_id') ? SdkPresent(json['external_id'] as String?) : const SdkOmitted(),
+    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
+    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
+    accessType: json.containsKey('access_type') ? SdkPresent(json['access_type'] != null ? BetaUserProfileAccessType.fromJson(json['access_type'] as String) : null) : const SdkOmitted(),
+    externalUserOnboardedAt: json['external_user_onboarded_at'] != null ? SdkPresent((json['external_user_onboarded_at'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (externalId) {
-          SdkPresent<String?>(value: final value) => {
-              'external_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (metadata) {
-          SdkPresent<Map<String, String>>(value: final value) => {
-              'metadata': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String?>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (accessType) {
-          SdkPresent<BetaUserProfileAccessType?>(value: final value) => {
-              'access_type': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (externalUserOnboardedAt) {
-          SdkPresent<String>(value: final value) => {
-              'external_user_onboarded_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (externalId) {
+      SdkPresent<String?>(value: final value) => {'external_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (metadata) {
+      SdkPresent<Map<String, String>>(value: final value) => {'metadata': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String?>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (accessType) {
+      SdkPresent<BetaUserProfileAccessType?>(value: final value) => {'access_type': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (externalUserOnboardedAt) {
+      SdkPresent<String>(value: final value) => {'external_user_onboarded_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

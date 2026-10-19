@@ -41,60 +41,19 @@ Future<ListResponseModelInfo> listModels(ClientConfig config,
   return (await sdkRequest<ListResponseModelInfo>('GET', '/v1/models',
           config: config,
           query: {
-            'before_id': SdkQueryValue(SdkUtils.unwrapOptional(beforeId),
-                style: 'form', explode: true),
-            'after_id': SdkQueryValue(SdkUtils.unwrapOptional(afterId),
-                style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true)
+            'before_id': SdkQueryValue(SdkUtils.unwrapOptional(beforeId), style: 'form', explode: true),
+            'after_id': SdkQueryValue(SdkUtils.unwrapOptional(afterId), style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'listModels',
-          fromJsonRaw: (value) =>
-              ListResponseModelInfo.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListResponseModelInfo.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Get a specific model. The Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.
 ///
@@ -120,33 +79,10 @@ Future<ModelInfo> retrieveModels(ClientConfig config,
           'GET', '/v1/models/${Uri.encodeComponent(modelId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'retrieveModels',
-          fromJsonRaw: (value) =>
-              ModelInfo.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ModelInfo.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

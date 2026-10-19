@@ -34,50 +34,14 @@ Future<BetaManagedAgentsVault> createBetaVaults(ClientConfig config,
             'metadata': SdkUtils.unwrapOptional(metadata)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'createBetaVaults',
-          fromJsonRaw: (value) =>
-              BetaManagedAgentsVault.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsVault.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists vaults available in the selected workspace, with optional pagination and archived-vault inclusion. Use `include_archived` to include archived vaults and pass `page` from a previous response to continue through the results.
 ///
@@ -102,60 +66,20 @@ Future<BetaManagedAgentsListVaultsResponse> listBetaVaults(ClientConfig config,
           'GET', '/v1/vaults?beta=true',
           config: config,
           query: {
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'include_archived': SdkQueryValue(
-                SdkUtils.unwrapOptional(includeArchived),
-                style: 'form',
-                explode: true)
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'include_archived': SdkQueryValue(SdkUtils.unwrapOptional(includeArchived), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'listBetaVaults',
-          fromJsonRaw: (value) => BetaManagedAgentsListVaultsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsListVaultsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
+
 
 /// Lists vaults available in the selected workspace, with optional pagination and archived-vault inclusion. Use `include_archived` to include archived vaults and pass `page` from a previous response to continue through the results.
 ///
@@ -168,74 +92,23 @@ Future<BetaManagedAgentsListVaultsResponse> listBetaVaults(ClientConfig config,
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Stream<BetaManagedAgentsVault> listBetaVaultsPaginated(ClientConfig config,
-    {int? limit,
-    String? page,
-    bool? includeArchived,
-    String? anthropicVersion,
-    List<String>? anthropicBeta,
-    String? anthropicWorkspaceId,
-    RequestOptions? requestOptions}) async* {
+Stream<BetaManagedAgentsVault> listBetaVaultsPaginated(ClientConfig config, {int? limit, String? page, bool? includeArchived, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaVaults(config,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(sdkCursor),
-        includeArchived: includeArchived == null
-            ? const SdkOmitted<bool>()
-            : SdkPresent<bool>(includeArchived),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicWorkspaceId: anthropicWorkspaceId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicWorkspaceId),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaVaults(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), includeArchived: includeArchived == null ? const SdkOmitted<bool>() : SdkPresent<bool>(includeArchived), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
     final sdkItems = sdkPage.data.valueOrNull ?? [];
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) {
-      yield sdkItem;
-    }
+    for (final sdkItem in sdkItems) { yield sdkItem; }
     final sdkNext = sdkPage.nextPage.valueOrNull;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaManagedAgentsListVaultsResponse, BetaManagedAgentsVault>>
-    listBetaVaultsPages(ClientConfig config,
-        {int? limit,
-        String? page,
-        bool? includeArchived,
-        String? anthropicVersion,
-        List<String>? anthropicBeta,
-        String? anthropicWorkspaceId,
-        RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaManagedAgentsListVaultsResponse, BetaManagedAgentsVault>> listBetaVaultsPages(ClientConfig config, {int? limit, String? page, bool? includeArchived, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaVaults(config,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(sdkCursor),
-        includeArchived: includeArchived == null
-            ? const SdkOmitted<bool>()
-            : SdkPresent<bool>(includeArchived),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicWorkspaceId: anthropicWorkspaceId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicWorkspaceId),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaVaults(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), includeArchived: includeArchived == null ? const SdkOmitted<bool>() : SdkPresent<bool>(includeArchived), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
     final sdkItems = sdkPage.data.valueOrNull ?? [];
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage.valueOrNull;
@@ -245,6 +118,7 @@ Stream<SdkPage<BetaManagedAgentsListVaultsResponse, BetaManagedAgentsVault>>
     sdkCursor = sdkNext;
   }
 }
+
 
 /// Retrieves a vault that stores credentials for use by agents during sessions. Use `vault_id` to identify the vault; the response includes its display name, metadata, timestamps, and archive state.
 ///
@@ -264,50 +138,14 @@ Future<BetaManagedAgentsVault> retrieveBetaVaults(ClientConfig config,
           '/v1/vaults/${Uri.encodeComponent(vaultId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'retrieveBetaVaults',
-          fromJsonRaw: (value) =>
-              BetaManagedAgentsVault.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsVault.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates a vault's human-readable name or metadata. Send `display_name` to change the name, or use `metadata` to add, replace, or delete individual keys; omitted metadata keys are preserved. The `anthropic-workspace-id` header must match the credential's Workspace when you use it.
 ///
@@ -336,50 +174,14 @@ Future<BetaManagedAgentsVault> updateBetaVaults(ClientConfig config,
             'metadata': SdkUtils.unwrapOptional(metadata)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'updateBetaVaults',
-          fromJsonRaw: (value) =>
-              BetaManagedAgentsVault.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsVault.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a vault. Use `vault_id` to identify the vault to remove, and send `anthropic-workspace-id` only when your credential can act on more than one Workspace. The response confirms deletion and includes the deleted vault's identifier.
 ///
@@ -399,50 +201,14 @@ Future<BetaManagedAgentsDeletedVault> deleteBetaVaults(ClientConfig config,
           '/v1/vaults/${Uri.encodeComponent(vaultId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'deleteBetaVaults',
-          fromJsonRaw: (value) => BetaManagedAgentsDeletedVault.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsDeletedVault.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Archives a vault so it is no longer active for use by agents during sessions. Use `vault_id` to select the vault, and provide `anthropic-workspace-id` when a multi-Workspace credential needs to target a specific Workspace. The response includes the vault's updated archive timestamp.
 ///
@@ -462,47 +228,10 @@ Future<BetaManagedAgentsVault> archiveBetaVaults(ClientConfig config,
           '/v1/vaults/${Uri.encodeComponent(vaultId.toString())}/archive?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'archiveBetaVaults',
-          fromJsonRaw: (value) =>
-              BetaManagedAgentsVault.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsVault.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

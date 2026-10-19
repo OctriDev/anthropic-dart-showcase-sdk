@@ -9,95 +9,56 @@ sealed class BetaExternalKeyCreateParamsDisplayName {
   static const String constructionSurface = 'named';
   const BetaExternalKeyCreateParamsDisplayName();
   factory BetaExternalKeyCreateParamsDisplayName.fromJson(Object? json) {
-    if (json is String) {
-      return BetaExternalKeyCreateParamsDisplayNameString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaExternalKeyCreateParamsDisplayName");
+    if (json is String) { return BetaExternalKeyCreateParamsDisplayNameString(json); }
+    throw FormatException("No variant matched for BetaExternalKeyCreateParamsDisplayName");
   }
   Object? toJson();
 }
 
-final class BetaExternalKeyCreateParamsDisplayNameString
-    extends BetaExternalKeyCreateParamsDisplayName {
+final class BetaExternalKeyCreateParamsDisplayNameString extends BetaExternalKeyCreateParamsDisplayName {
   final String value;
   const BetaExternalKeyCreateParamsDisplayNameString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaExternalKeyCreateParams` API schema.
 class BetaExternalKeyCreateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Human-friendly display name.
   final SdkOptional<String?> displayName;
-
   /// Data residency geo. Only `us` is supported.
   final SdkOptional<BetaExternalKeyCreateParamsGeo> geo;
-
   /// KMS provider identity and auth coordinates.
   final BetaExternalKeyCreateParamsProviderConfig providerConfig;
 
-  const BetaExternalKeyCreateParams(
-      {this.displayName = const SdkOmitted(),
-      this.geo = const SdkOmitted(),
-      required this.providerConfig});
+  const BetaExternalKeyCreateParams({this.displayName = const SdkOmitted(), this.geo = const SdkOmitted(), required this.providerConfig});
 
-  BetaExternalKeyCreateParams Function(
-          {SdkOptional<String?> displayName,
-          SdkOptional<BetaExternalKeyCreateParamsGeo> geo,
-          BetaExternalKeyCreateParamsProviderConfig providerConfig})
-      get copyWith => _copyWith;
+  BetaExternalKeyCreateParams Function({SdkOptional<String?> displayName, SdkOptional<BetaExternalKeyCreateParamsGeo> geo, BetaExternalKeyCreateParamsProviderConfig providerConfig}) get copyWith => _copyWith;
 
-  BetaExternalKeyCreateParams _copyWith(
-          {Object? displayName = sdkOmittedValue,
-          Object? geo = sdkOmittedValue,
-          Object? providerConfig = sdkOmittedValue}) =>
-      BetaExternalKeyCreateParams(
-        displayName: identical(displayName, sdkOmittedValue)
-            ? this.displayName
-            : displayName as SdkOptional<String?>,
-        geo: identical(geo, sdkOmittedValue)
-            ? this.geo
-            : geo as SdkOptional<BetaExternalKeyCreateParamsGeo>,
-        providerConfig: identical(providerConfig, sdkOmittedValue)
-            ? this.providerConfig
-            : providerConfig as BetaExternalKeyCreateParamsProviderConfig,
-      );
+  BetaExternalKeyCreateParams _copyWith({Object? displayName = sdkOmittedValue, Object? geo = sdkOmittedValue, Object? providerConfig = sdkOmittedValue}) => BetaExternalKeyCreateParams(
+    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as SdkOptional<String?>,
+    geo: identical(geo, sdkOmittedValue) ? this.geo : geo as SdkOptional<BetaExternalKeyCreateParamsGeo>,
+    providerConfig: identical(providerConfig, sdkOmittedValue) ? this.providerConfig : providerConfig as BetaExternalKeyCreateParamsProviderConfig,
+  );
 
-  factory BetaExternalKeyCreateParams.fromJson(Map<String, dynamic> json) =>
-      BetaExternalKeyCreateParams(
-        displayName: json.containsKey('display_name')
-            ? SdkPresent(json['display_name'] as String?)
-            : const SdkOmitted(),
-        geo: json['geo'] != null
-            ? SdkPresent((json['geo'] != null
-                ? BetaExternalKeyCreateParamsGeo.fromJson(json['geo'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        providerConfig: (json['provider_config'] != null
-            ? BetaExternalKeyCreateParamsProviderConfig.fromJson(
-                json['provider_config'])
-            : null)!,
-      );
+  factory BetaExternalKeyCreateParams.fromJson(Map<String, dynamic> json) => BetaExternalKeyCreateParams(
+    displayName: json.containsKey('display_name') ? SdkPresent(json['display_name'] as String?) : const SdkOmitted(),
+    geo: json['geo'] != null ? SdkPresent((json['geo'] != null ? BetaExternalKeyCreateParamsGeo.fromJson(json['geo'] as String) : null)!) : const SdkOmitted(),
+    providerConfig: (json['provider_config'] != null ? BetaExternalKeyCreateParamsProviderConfig.fromJson(json['provider_config']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (displayName) {
-          SdkPresent<String?>(value: final value) => {
-              'display_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (geo) {
-          SdkPresent<BetaExternalKeyCreateParamsGeo>(value: final value) => {
-              'geo': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'provider_config': providerConfig.toJson(),
-      };
+    ...switch (displayName) {
+      SdkPresent<String?>(value: final value) => {'display_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (geo) {
+      SdkPresent<BetaExternalKeyCreateParamsGeo>(value: final value) => {'geo': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'provider_config': providerConfig.toJson(),
+  };
 }
 
 sealed class BetaExternalKeyCreateParamsProviderConfig {
@@ -106,130 +67,69 @@ sealed class BetaExternalKeyCreateParamsProviderConfig {
   const BetaExternalKeyCreateParamsProviderConfig();
   factory BetaExternalKeyCreateParamsProviderConfig.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaAwsExternalKeyConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaExternalKeyCreateParamsProviderConfigBetaAwsExternalKeyConfig(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaGcpExternalKeyConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaExternalKeyCreateParamsProviderConfigBetaGcpExternalKeyConfig(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaAzureExternalKeyConfigParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaExternalKeyCreateParamsProviderConfigBetaAzureExternalKeyConfigParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaAwsExternalKeyConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaExternalKeyCreateParamsProviderConfigBetaAwsExternalKeyConfig(value); } } catch (_) {}
+      try { final value = BetaGcpExternalKeyConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaExternalKeyCreateParamsProviderConfigBetaGcpExternalKeyConfig(value); } } catch (_) {}
+      try { final value = BetaAzureExternalKeyConfigParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaExternalKeyCreateParamsProviderConfigBetaAzureExternalKeyConfigParams(value); } } catch (_) {}
     }
-    try {
-      return BetaExternalKeyCreateParamsProviderConfigBetaAwsExternalKeyConfig(
-          BetaAwsExternalKeyConfig.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaExternalKeyCreateParamsProviderConfigBetaGcpExternalKeyConfig(
-          BetaGcpExternalKeyConfig.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaExternalKeyCreateParamsProviderConfigBetaAzureExternalKeyConfigParams(
-          BetaAzureExternalKeyConfigParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"aws", "azure", "gcp"}.contains(json["type"])) {
-      return UnknownBetaExternalKeyCreateParamsProviderConfig(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaExternalKeyCreateParamsProviderConfig");
+    try { return BetaExternalKeyCreateParamsProviderConfigBetaAwsExternalKeyConfig(BetaAwsExternalKeyConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaExternalKeyCreateParamsProviderConfigBetaGcpExternalKeyConfig(BetaGcpExternalKeyConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaExternalKeyCreateParamsProviderConfigBetaAzureExternalKeyConfigParams(BetaAzureExternalKeyConfigParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"aws", "azure", "gcp"}.contains(json["type"])) { return UnknownBetaExternalKeyCreateParamsProviderConfig(json); }
+    throw FormatException("No variant matched for BetaExternalKeyCreateParamsProviderConfig");
   }
   Object? toJson();
 }
 
-final class BetaExternalKeyCreateParamsProviderConfigBetaAwsExternalKeyConfig
-    extends BetaExternalKeyCreateParamsProviderConfig {
+final class BetaExternalKeyCreateParamsProviderConfigBetaAwsExternalKeyConfig extends BetaExternalKeyCreateParamsProviderConfig {
   final BetaAwsExternalKeyConfig value;
-  const BetaExternalKeyCreateParamsProviderConfigBetaAwsExternalKeyConfig(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaExternalKeyCreateParamsProviderConfigBetaAwsExternalKeyConfig(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaExternalKeyCreateParamsProviderConfigBetaGcpExternalKeyConfig
-    extends BetaExternalKeyCreateParamsProviderConfig {
+final class BetaExternalKeyCreateParamsProviderConfigBetaGcpExternalKeyConfig extends BetaExternalKeyCreateParamsProviderConfig {
   final BetaGcpExternalKeyConfig value;
-  const BetaExternalKeyCreateParamsProviderConfigBetaGcpExternalKeyConfig(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaExternalKeyCreateParamsProviderConfigBetaGcpExternalKeyConfig(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaExternalKeyCreateParamsProviderConfigBetaAzureExternalKeyConfigParams
-    extends BetaExternalKeyCreateParamsProviderConfig {
+final class BetaExternalKeyCreateParamsProviderConfigBetaAzureExternalKeyConfigParams extends BetaExternalKeyCreateParamsProviderConfig {
   final BetaAzureExternalKeyConfigParams value;
-  const BetaExternalKeyCreateParamsProviderConfigBetaAzureExternalKeyConfigParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaExternalKeyCreateParamsProviderConfigBetaAzureExternalKeyConfigParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaExternalKeyCreateParamsProviderConfig] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaExternalKeyCreateParamsProviderConfig
-    extends BetaExternalKeyCreateParamsProviderConfig {
+final class UnknownBetaExternalKeyCreateParamsProviderConfig extends BetaExternalKeyCreateParamsProviderConfig {
   final Map<String, dynamic> raw;
   const UnknownBetaExternalKeyCreateParamsProviderConfig(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Opaque-cursor page of external keys, ordered by creation time (newest first).
 class BetaExternalKeyListResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `data` wire field.
   final List<BetaExternalKey> data;
-
   /// Opaque cursor for the next page, or null if no more results. Pass as `?page=` to fetch the next page.
   final String? nextPage;
 
-  const BetaExternalKeyListResponse(
-      {required this.data, required this.nextPage});
+  const BetaExternalKeyListResponse({required this.data, required this.nextPage});
 
-  BetaExternalKeyListResponse Function(
-      {List<BetaExternalKey> data, String? nextPage}) get copyWith => _copyWith;
+  BetaExternalKeyListResponse Function({List<BetaExternalKey> data, String? nextPage}) get copyWith => _copyWith;
 
-  BetaExternalKeyListResponse _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaExternalKeyListResponse(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<BetaExternalKey>,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as String?,
-      );
+  BetaExternalKeyListResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaExternalKeyListResponse(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaExternalKey>,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
+  );
 
-  factory BetaExternalKeyListResponse.fromJson(Map<String, dynamic> json) =>
-      BetaExternalKeyListResponse(
-        data: ((json['data'] as List?)
-            ?.map((e) => BetaExternalKey.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        nextPage: json.containsKey('next_page')
-            ? json['next_page'] as String?
-            : throw ArgumentError.value(
-                null, 'next_page', 'Required property is missing'),
-      );
+  factory BetaExternalKeyListResponse.fromJson(Map<String, dynamic> json) => BetaExternalKeyListResponse(
+    data: ((json['data'] as List?)?.map((e) => BetaExternalKey.fromJson(e as Map<String, dynamic>)).toList())!,
+    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'next_page': nextPage,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'next_page': nextPage,
+  };
 }

@@ -10,17 +10,14 @@ enum WebFetchTool20260209Type {
 
   static WebFetchTool20260209Type fromJson(String value) {
     switch (value) {
-      case 'web_fetch_20260209':
-        return WebFetchTool20260209Type.webFetch20260209;
-      default:
-        throw ArgumentError('Unknown WebFetchTool20260209Type: $value');
+      case 'web_fetch_20260209': return WebFetchTool20260209Type.webFetch20260209;
+      default: throw ArgumentError('Unknown WebFetchTool20260209Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebFetchTool20260209Type.webFetch20260209:
-        return 'web_fetch_20260209';
+      case WebFetchTool20260209Type.webFetch20260209: return 'web_fetch_20260209';
     }
   }
 
@@ -34,17 +31,14 @@ enum WebFetchTool20260309Name {
 
   static WebFetchTool20260309Name fromJson(String value) {
     switch (value) {
-      case 'web_fetch':
-        return WebFetchTool20260309Name.webFetch;
-      default:
-        throw ArgumentError('Unknown WebFetchTool20260309Name: $value');
+      case 'web_fetch': return WebFetchTool20260309Name.webFetch;
+      default: throw ArgumentError('Unknown WebFetchTool20260309Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebFetchTool20260309Name.webFetch:
-        return 'web_fetch';
+      case WebFetchTool20260309Name.webFetch: return 'web_fetch';
     }
   }
 
@@ -58,17 +52,14 @@ enum WebFetchTool20260309Type {
 
   static WebFetchTool20260309Type fromJson(String value) {
     switch (value) {
-      case 'web_fetch_20260309':
-        return WebFetchTool20260309Type.webFetch20260309;
-      default:
-        throw ArgumentError('Unknown WebFetchTool20260309Type: $value');
+      case 'web_fetch_20260309': return WebFetchTool20260309Type.webFetch20260309;
+      default: throw ArgumentError('Unknown WebFetchTool20260309Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebFetchTool20260309Type.webFetch20260309:
-        return 'web_fetch_20260309';
+      case WebFetchTool20260309Type.webFetch20260309: return 'web_fetch_20260309';
     }
   }
 
@@ -82,17 +73,14 @@ enum WebFetchTool20260318Name {
 
   static WebFetchTool20260318Name fromJson(String value) {
     switch (value) {
-      case 'web_fetch':
-        return WebFetchTool20260318Name.webFetch;
-      default:
-        throw ArgumentError('Unknown WebFetchTool20260318Name: $value');
+      case 'web_fetch': return WebFetchTool20260318Name.webFetch;
+      default: throw ArgumentError('Unknown WebFetchTool20260318Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebFetchTool20260318Name.webFetch:
-        return 'web_fetch';
+      case WebFetchTool20260318Name.webFetch: return 'web_fetch';
     }
   }
 
@@ -102,27 +90,24 @@ enum WebFetchTool20260318Name {
 
 /// How this tool's result blocks appear in the API response when the result was consumed by a completed code_execution call in the same turn. 'full' returns the complete content (default). 'excluded' drops the nested server_tool_use and result block pair entirely. Results from direct calls, or from code_execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
 final class WebFetchTool20260318ResponseInclusion {
+
   final String value;
 
   const WebFetchTool20260318ResponseInclusion._(this.value);
 
-  factory WebFetchTool20260318ResponseInclusion.fromJson(String value) =>
-      WebFetchTool20260318ResponseInclusion._(value);
+  factory WebFetchTool20260318ResponseInclusion.fromJson(String value) => WebFetchTool20260318ResponseInclusion._(value);
 
   static const full = WebFetchTool20260318ResponseInclusion._('full');
   static const excluded = WebFetchTool20260318ResponseInclusion._('excluded');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebFetchTool20260318ResponseInclusion && other.value == value;
+  @override bool operator ==(Object other) => other is WebFetchTool20260318ResponseInclusion && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -131,17 +116,14 @@ enum WebFetchTool20260318Type {
 
   static WebFetchTool20260318Type fromJson(String value) {
     switch (value) {
-      case 'web_fetch_20260318':
-        return WebFetchTool20260318Type.webFetch20260318;
-      default:
-        throw ArgumentError('Unknown WebFetchTool20260318Type: $value');
+      case 'web_fetch_20260318': return WebFetchTool20260318Type.webFetch20260318;
+      default: throw ArgumentError('Unknown WebFetchTool20260318Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebFetchTool20260318Type.webFetch20260318:
-        return 'web_fetch_20260318';
+      case WebFetchTool20260318Type.webFetch20260318: return 'web_fetch_20260318';
     }
   }
 
@@ -155,17 +137,14 @@ enum WebSearchTool20250305Name {
 
   static WebSearchTool20250305Name fromJson(String value) {
     switch (value) {
-      case 'web_search':
-        return WebSearchTool20250305Name.webSearch;
-      default:
-        throw ArgumentError('Unknown WebSearchTool20250305Name: $value');
+      case 'web_search': return WebSearchTool20250305Name.webSearch;
+      default: throw ArgumentError('Unknown WebSearchTool20250305Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebSearchTool20250305Name.webSearch:
-        return 'web_search';
+      case WebSearchTool20250305Name.webSearch: return 'web_search';
     }
   }
 
@@ -179,17 +158,14 @@ enum WebSearchTool20250305Type {
 
   static WebSearchTool20250305Type fromJson(String value) {
     switch (value) {
-      case 'web_search_20250305':
-        return WebSearchTool20250305Type.webSearch20250305;
-      default:
-        throw ArgumentError('Unknown WebSearchTool20250305Type: $value');
+      case 'web_search_20250305': return WebSearchTool20250305Type.webSearch20250305;
+      default: throw ArgumentError('Unknown WebSearchTool20250305Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebSearchTool20250305Type.webSearch20250305:
-        return 'web_search_20250305';
+      case WebSearchTool20250305Type.webSearch20250305: return 'web_search_20250305';
     }
   }
 
@@ -203,17 +179,14 @@ enum WebSearchTool20260209Name {
 
   static WebSearchTool20260209Name fromJson(String value) {
     switch (value) {
-      case 'web_search':
-        return WebSearchTool20260209Name.webSearch;
-      default:
-        throw ArgumentError('Unknown WebSearchTool20260209Name: $value');
+      case 'web_search': return WebSearchTool20260209Name.webSearch;
+      default: throw ArgumentError('Unknown WebSearchTool20260209Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebSearchTool20260209Name.webSearch:
-        return 'web_search';
+      case WebSearchTool20260209Name.webSearch: return 'web_search';
     }
   }
 
@@ -227,17 +200,14 @@ enum WebSearchTool20260209Type {
 
   static WebSearchTool20260209Type fromJson(String value) {
     switch (value) {
-      case 'web_search_20260209':
-        return WebSearchTool20260209Type.webSearch20260209;
-      default:
-        throw ArgumentError('Unknown WebSearchTool20260209Type: $value');
+      case 'web_search_20260209': return WebSearchTool20260209Type.webSearch20260209;
+      default: throw ArgumentError('Unknown WebSearchTool20260209Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebSearchTool20260209Type.webSearch20260209:
-        return 'web_search_20260209';
+      case WebSearchTool20260209Type.webSearch20260209: return 'web_search_20260209';
     }
   }
 
@@ -251,17 +221,14 @@ enum WebSearchTool20260318Name {
 
   static WebSearchTool20260318Name fromJson(String value) {
     switch (value) {
-      case 'web_search':
-        return WebSearchTool20260318Name.webSearch;
-      default:
-        throw ArgumentError('Unknown WebSearchTool20260318Name: $value');
+      case 'web_search': return WebSearchTool20260318Name.webSearch;
+      default: throw ArgumentError('Unknown WebSearchTool20260318Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebSearchTool20260318Name.webSearch:
-        return 'web_search';
+      case WebSearchTool20260318Name.webSearch: return 'web_search';
     }
   }
 
@@ -271,27 +238,24 @@ enum WebSearchTool20260318Name {
 
 /// How this tool's result blocks appear in the API response when the result was consumed by a completed code_execution call in the same turn. 'full' returns the complete content (default). 'excluded' drops the nested server_tool_use and result block pair entirely. Results from direct calls, or from code_execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
 final class WebSearchTool20260318ResponseInclusion {
+
   final String value;
 
   const WebSearchTool20260318ResponseInclusion._(this.value);
 
-  factory WebSearchTool20260318ResponseInclusion.fromJson(String value) =>
-      WebSearchTool20260318ResponseInclusion._(value);
+  factory WebSearchTool20260318ResponseInclusion.fromJson(String value) => WebSearchTool20260318ResponseInclusion._(value);
 
   static const full = WebSearchTool20260318ResponseInclusion._('full');
   static const excluded = WebSearchTool20260318ResponseInclusion._('excluded');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebSearchTool20260318ResponseInclusion && other.value == value;
+  @override bool operator ==(Object other) => other is WebSearchTool20260318ResponseInclusion && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -300,17 +264,14 @@ enum WebSearchTool20260318Type {
 
   static WebSearchTool20260318Type fromJson(String value) {
     switch (value) {
-      case 'web_search_20260318':
-        return WebSearchTool20260318Type.webSearch20260318;
-      default:
-        throw ArgumentError('Unknown WebSearchTool20260318Type: $value');
+      case 'web_search_20260318': return WebSearchTool20260318Type.webSearch20260318;
+      default: throw ArgumentError('Unknown WebSearchTool20260318Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebSearchTool20260318Type.webSearch20260318:
-        return 'web_search_20260318';
+      case WebSearchTool20260318Type.webSearch20260318: return 'web_search_20260318';
     }
   }
 

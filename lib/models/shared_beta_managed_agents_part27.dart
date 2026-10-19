@@ -4,110 +4,77 @@
 part of 'shared_beta_managed_agents.dart';
 
 // shared_beta_managed_agents domain models (part 27)
-final class BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError
-    extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError extends BetaManagedAgentsRunError {
   final BetaManagedAgentsFileNotFoundRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError
-    extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError extends BetaManagedAgentsRunError {
   final BetaManagedAgentsMemoryStoreArchivedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError
-    extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError extends BetaManagedAgentsRunError {
   final BetaManagedAgentsSkillNotFoundRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError
-    extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError extends BetaManagedAgentsRunError {
   final BetaManagedAgentsSessionResourceNotFoundRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError
-    extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError extends BetaManagedAgentsRunError {
   final BetaManagedAgentsWorkspaceArchivedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError
-    extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError extends BetaManagedAgentsRunError {
   final BetaManagedAgentsOrganizationDisabledRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError
-    extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError extends BetaManagedAgentsRunError {
   final BetaManagedAgentsSessionRateLimitedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError
-    extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError extends BetaManagedAgentsRunError {
   final BetaManagedAgentsSessionCreationRejectedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsUnknownRunError
-    extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsUnknownRunError extends BetaManagedAgentsRunError {
   final BetaManagedAgentsUnknownRunError value;
   const BetaManagedAgentsRunErrorBetaManagedAgentsUnknownRunError(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError
-    extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError extends BetaManagedAgentsRunError {
   final BetaManagedAgentsSelfHostedResourcesUnsupportedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError
-    extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError extends BetaManagedAgentsRunError {
   final BetaManagedAgentsMcpEgressBlockedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsRunError] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaManagedAgentsRunError extends BetaManagedAgentsRunError {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsRunError(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsSchedule {
@@ -115,34 +82,24 @@ sealed class BetaManagedAgentsSchedule {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsSchedule();
   factory BetaManagedAgentsSchedule.fromJson(Object? json) {
-    try {
-      return BetaManagedAgentsScheduleBetaManagedAgentsCronSchedule(
-          BetaManagedAgentsCronSchedule.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"cron"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsSchedule(json);
-    }
+    try { return BetaManagedAgentsScheduleBetaManagedAgentsCronSchedule(BetaManagedAgentsCronSchedule.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"cron"}.contains(json["type"])) { return UnknownBetaManagedAgentsSchedule(json); }
     throw FormatException("No variant matched for BetaManagedAgentsSchedule");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsScheduleBetaManagedAgentsCronSchedule
-    extends BetaManagedAgentsSchedule {
+final class BetaManagedAgentsScheduleBetaManagedAgentsCronSchedule extends BetaManagedAgentsSchedule {
   final BetaManagedAgentsCronSchedule value;
   const BetaManagedAgentsScheduleBetaManagedAgentsCronSchedule(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSchedule] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaManagedAgentsSchedule extends BetaManagedAgentsSchedule {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSchedule(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsScheduleParams {
@@ -150,280 +107,172 @@ sealed class BetaManagedAgentsScheduleParams {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsScheduleParams();
   factory BetaManagedAgentsScheduleParams.fromJson(Object? json) {
-    try {
-      return BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams(
-          BetaManagedAgentsCronScheduleParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"cron"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsScheduleParams(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsScheduleParams");
+    try { return BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams(BetaManagedAgentsCronScheduleParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"cron"}.contains(json["type"])) { return UnknownBetaManagedAgentsScheduleParams(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsScheduleParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams
-    extends BetaManagedAgentsScheduleParams {
+final class BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams extends BetaManagedAgentsScheduleParams {
   final BetaManagedAgentsCronScheduleParams value;
-  const BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsScheduleParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsScheduleParams
-    extends BetaManagedAgentsScheduleParams {
+final class UnknownBetaManagedAgentsScheduleParams extends BetaManagedAgentsScheduleParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsScheduleParams(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// The run was fired by the deployment's cron schedule.
 class BetaManagedAgentsScheduleTriggerContext {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsScheduleTriggerContextType type_;
-
   /// The UTC instant at which the cron expression matched in the configured timezone, before jitter is applied. At most one run is recorded per (`deployment_id`, `scheduled_at`) pair.
   final String scheduledAt;
 
-  const BetaManagedAgentsScheduleTriggerContext(
-      {required this.type_, required this.scheduledAt});
+  const BetaManagedAgentsScheduleTriggerContext({required this.type_, required this.scheduledAt});
 
-  BetaManagedAgentsScheduleTriggerContext Function(
-      {BetaManagedAgentsScheduleTriggerContextType type_,
-      String scheduledAt}) get copyWith => _copyWith;
+  BetaManagedAgentsScheduleTriggerContext Function({BetaManagedAgentsScheduleTriggerContextType type_, String scheduledAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsScheduleTriggerContext _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? scheduledAt = sdkOmittedValue}) =>
-      BetaManagedAgentsScheduleTriggerContext(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsScheduleTriggerContextType,
-        scheduledAt: identical(scheduledAt, sdkOmittedValue)
-            ? this.scheduledAt
-            : scheduledAt as String,
-      );
+  BetaManagedAgentsScheduleTriggerContext _copyWith({Object? type_ = sdkOmittedValue, Object? scheduledAt = sdkOmittedValue}) => BetaManagedAgentsScheduleTriggerContext(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsScheduleTriggerContextType,
+    scheduledAt: identical(scheduledAt, sdkOmittedValue) ? this.scheduledAt : scheduledAt as String,
+  );
 
-  factory BetaManagedAgentsScheduleTriggerContext.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsScheduleTriggerContext(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsScheduleTriggerContextType.fromJson(
-                json['type'] as String)
-            : null)!,
-        scheduledAt: (json['scheduled_at'] as String?)!,
-      );
+  factory BetaManagedAgentsScheduleTriggerContext.fromJson(Map<String, dynamic> json) => BetaManagedAgentsScheduleTriggerContext(
+    type_: (json['type'] != null ? BetaManagedAgentsScheduleTriggerContextType.fromJson(json['type'] as String) : null)!,
+    scheduledAt: (json['scheduled_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'scheduled_at': scheduledAt,
-      };
+    'type': type_.toJson(),
+    'scheduled_at': scheduledAt,
+  };
 }
 
 /// A block containing a web search result.
 class BetaManagedAgentsSearchResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSearchResultBlockType type_;
-
   /// The URL source of the search result.
   final String source;
-
   /// The title of the search result.
   final String title;
-
   /// Array of text content blocks from the search result.
   final List<BetaManagedAgentsSearchResultContent> content;
-
   /// Citation settings for this search result.
   final BetaManagedAgentsSearchResultCitations citations;
 
-  const BetaManagedAgentsSearchResultBlock(
-      {required this.type_,
-      required this.source,
-      required this.title,
-      required this.content,
-      required this.citations});
+  const BetaManagedAgentsSearchResultBlock({required this.type_, required this.source, required this.title, required this.content, required this.citations});
 
-  BetaManagedAgentsSearchResultBlock Function(
-          {BetaManagedAgentsSearchResultBlockType type_,
-          String source,
-          String title,
-          List<BetaManagedAgentsSearchResultContent> content,
-          BetaManagedAgentsSearchResultCitations citations})
-      get copyWith => _copyWith;
+  BetaManagedAgentsSearchResultBlock Function({BetaManagedAgentsSearchResultBlockType type_, String source, String title, List<BetaManagedAgentsSearchResultContent> content, BetaManagedAgentsSearchResultCitations citations}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSearchResultBlock _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? source = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? citations = sdkOmittedValue}) =>
-      BetaManagedAgentsSearchResultBlock(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSearchResultBlockType,
-        source:
-            identical(source, sdkOmittedValue) ? this.source : source as String,
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as List<BetaManagedAgentsSearchResultContent>,
-        citations: identical(citations, sdkOmittedValue)
-            ? this.citations
-            : citations as BetaManagedAgentsSearchResultCitations,
-      );
+  BetaManagedAgentsSearchResultBlock _copyWith({Object? type_ = sdkOmittedValue, Object? source = sdkOmittedValue, Object? title = sdkOmittedValue, Object? content = sdkOmittedValue, Object? citations = sdkOmittedValue}) => BetaManagedAgentsSearchResultBlock(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSearchResultBlockType,
+    source: identical(source, sdkOmittedValue) ? this.source : source as String,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    content: identical(content, sdkOmittedValue) ? this.content : content as List<BetaManagedAgentsSearchResultContent>,
+    citations: identical(citations, sdkOmittedValue) ? this.citations : citations as BetaManagedAgentsSearchResultCitations,
+  );
 
-  factory BetaManagedAgentsSearchResultBlock.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSearchResultBlock(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSearchResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-        source: (json['source'] as String?)!,
-        title: (json['title'] as String?)!,
-        content: ((json['content'] as List?)
-            ?.map((e) => BetaManagedAgentsSearchResultContent.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        citations: (json['citations'] != null
-            ? BetaManagedAgentsSearchResultCitations.fromJson(
-                json['citations'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory BetaManagedAgentsSearchResultBlock.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSearchResultBlock(
+    type_: (json['type'] != null ? BetaManagedAgentsSearchResultBlockType.fromJson(json['type'] as String) : null)!,
+    source: (json['source'] as String?)!,
+    title: (json['title'] as String?)!,
+    content: ((json['content'] as List?)?.map((e) => BetaManagedAgentsSearchResultContent.fromJson(e as Map<String, dynamic>)).toList())!,
+    citations: (json['citations'] != null ? BetaManagedAgentsSearchResultCitations.fromJson(json['citations'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'source': source,
-        'title': title,
-        'content': content.map((item) => item.toJson()).toList(),
-        'citations': citations.toJson(),
-      };
+    'type': type_.toJson(),
+    'source': source,
+    'title': title,
+    'content': content.map((item) => item.toJson()).toList(),
+    'citations': citations.toJson(),
+  };
 }
 
 /// Citation settings for a search result.
 class BetaManagedAgentsSearchResultCitations {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether citations are enabled for this search result.
   final bool enabled;
 
   const BetaManagedAgentsSearchResultCitations({required this.enabled});
 
-  BetaManagedAgentsSearchResultCitations Function({bool enabled})
-      get copyWith => _copyWith;
+  BetaManagedAgentsSearchResultCitations Function({bool enabled}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSearchResultCitations _copyWith(
-          {Object? enabled = sdkOmittedValue}) =>
-      BetaManagedAgentsSearchResultCitations(
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as bool,
-      );
+  BetaManagedAgentsSearchResultCitations _copyWith({Object? enabled = sdkOmittedValue}) => BetaManagedAgentsSearchResultCitations(
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
+  );
 
-  factory BetaManagedAgentsSearchResultCitations.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSearchResultCitations(
-        enabled: (json['enabled'] as bool?)!,
-      );
+  factory BetaManagedAgentsSearchResultCitations.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSearchResultCitations(
+    enabled: (json['enabled'] as bool?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'enabled': enabled,
-      };
+    'enabled': enabled,
+  };
 }
 
 /// Text content within a search result.
 class BetaManagedAgentsSearchResultContent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSearchResultContentType type_;
-
   /// The text content.
   final String text;
 
-  const BetaManagedAgentsSearchResultContent(
-      {required this.type_, required this.text});
+  const BetaManagedAgentsSearchResultContent({required this.type_, required this.text});
 
-  BetaManagedAgentsSearchResultContent Function(
-      {BetaManagedAgentsSearchResultContentType type_,
-      String text}) get copyWith => _copyWith;
+  BetaManagedAgentsSearchResultContent Function({BetaManagedAgentsSearchResultContentType type_, String text}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSearchResultContent _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? text = sdkOmittedValue}) =>
-      BetaManagedAgentsSearchResultContent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSearchResultContentType,
-        text: identical(text, sdkOmittedValue) ? this.text : text as String,
-      );
+  BetaManagedAgentsSearchResultContent _copyWith({Object? type_ = sdkOmittedValue, Object? text = sdkOmittedValue}) => BetaManagedAgentsSearchResultContent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSearchResultContentType,
+    text: identical(text, sdkOmittedValue) ? this.text : text as String,
+  );
 
-  factory BetaManagedAgentsSearchResultContent.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSearchResultContent(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSearchResultContentType.fromJson(
-                json['type'] as String)
-            : null)!,
-        text: (json['text'] as String?)!,
-      );
+  factory BetaManagedAgentsSearchResultContent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSearchResultContent(
+    type_: (json['type'] != null ? BetaManagedAgentsSearchResultContentType.fromJson(json['type'] as String) : null)!,
+    text: (json['text'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'text': text,
-      };
+    'type': type_.toJson(),
+    'text': text,
+  };
 }
 
 /// The deployment configures resources, but its environment is self-hosted and cannot mount them.
 class BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
-  final BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType
-      type_;
+  final BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType type_;
 
-  const BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
-      {required this.type_});
+  const BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError({required this.type_});
 
-  BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError Function(
-      {BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType
-          type_}) get copyWith => _copyWith;
+  BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError Function({BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError
-      _copyWith({Object? type_ = sdkOmittedValue}) =>
-          BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
-            type_: identical(type_, sdkOmittedValue)
-                ? this.type_
-                : type_
-                    as BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType,
-          );
+  BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType,
+  );
 
-  factory BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType
-                .fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
+    type_: (json['type'] != null ? BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

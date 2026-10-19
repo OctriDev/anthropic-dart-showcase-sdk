@@ -10,17 +10,14 @@ enum BetaInviteSchemaType {
 
   static BetaInviteSchemaType fromJson(String value) {
     switch (value) {
-      case 'invite':
-        return BetaInviteSchemaType.invite;
-      default:
-        throw ArgumentError('Unknown BetaInviteSchemaType: $value');
+      case 'invite': return BetaInviteSchemaType.invite;
+      default: throw ArgumentError('Unknown BetaInviteSchemaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaInviteSchemaType.invite:
-        return 'invite';
+      case BetaInviteSchemaType.invite: return 'invite';
     }
   }
 
@@ -34,17 +31,14 @@ enum BetaJsonOutputFormatType {
 
   static BetaJsonOutputFormatType fromJson(String value) {
     switch (value) {
-      case 'json_schema':
-        return BetaJsonOutputFormatType.jsonSchema;
-      default:
-        throw ArgumentError('Unknown BetaJsonOutputFormatType: $value');
+      case 'json_schema': return BetaJsonOutputFormatType.jsonSchema;
+      default: throw ArgumentError('Unknown BetaJsonOutputFormatType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaJsonOutputFormatType.jsonSchema:
-        return 'json_schema';
+      case BetaJsonOutputFormatType.jsonSchema: return 'json_schema';
     }
   }
 
@@ -58,17 +52,14 @@ enum BetaJwksDiscoveryType {
 
   static BetaJwksDiscoveryType fromJson(String value) {
     switch (value) {
-      case 'discovery':
-        return BetaJwksDiscoveryType.discovery;
-      default:
-        throw ArgumentError('Unknown BetaJwksDiscoveryType: $value');
+      case 'discovery': return BetaJwksDiscoveryType.discovery;
+      default: throw ArgumentError('Unknown BetaJwksDiscoveryType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaJwksDiscoveryType.discovery:
-        return 'discovery';
+      case BetaJwksDiscoveryType.discovery: return 'discovery';
     }
   }
 
@@ -82,17 +73,14 @@ enum BetaJwksExplicitUrlType {
 
   static BetaJwksExplicitUrlType fromJson(String value) {
     switch (value) {
-      case 'explicit_url':
-        return BetaJwksExplicitUrlType.explicitUrl;
-      default:
-        throw ArgumentError('Unknown BetaJwksExplicitUrlType: $value');
+      case 'explicit_url': return BetaJwksExplicitUrlType.explicitUrl;
+      default: throw ArgumentError('Unknown BetaJwksExplicitUrlType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaJwksExplicitUrlType.explicitUrl:
-        return 'explicit_url';
+      case BetaJwksExplicitUrlType.explicitUrl: return 'explicit_url';
     }
   }
 
@@ -106,17 +94,14 @@ enum BetaJwksInlineType {
 
   static BetaJwksInlineType fromJson(String value) {
     switch (value) {
-      case 'inline':
-        return BetaJwksInlineType.inline;
-      default:
-        throw ArgumentError('Unknown BetaJwksInlineType: $value');
+      case 'inline': return BetaJwksInlineType.inline;
+      default: throw ArgumentError('Unknown BetaJwksInlineType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaJwksInlineType.inline:
-        return 'inline';
+      case BetaJwksInlineType.inline: return 'inline';
     }
   }
 
@@ -130,17 +115,14 @@ enum BetaLimitedNetworkType {
 
   static BetaLimitedNetworkType fromJson(String value) {
     switch (value) {
-      case 'limited':
-        return BetaLimitedNetworkType.limited;
-      default:
-        throw ArgumentError('Unknown BetaLimitedNetworkType: $value');
+      case 'limited': return BetaLimitedNetworkType.limited;
+      default: throw ArgumentError('Unknown BetaLimitedNetworkType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaLimitedNetworkType.limited:
-        return 'limited';
+      case BetaLimitedNetworkType.limited: return 'limited';
     }
   }
 
@@ -154,17 +136,14 @@ enum BetaLimitedNetworkParamsType {
 
   static BetaLimitedNetworkParamsType fromJson(String value) {
     switch (value) {
-      case 'limited':
-        return BetaLimitedNetworkParamsType.limited;
-      default:
-        throw ArgumentError('Unknown BetaLimitedNetworkParamsType: $value');
+      case 'limited': return BetaLimitedNetworkParamsType.limited;
+      default: throw ArgumentError('Unknown BetaLimitedNetworkParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaLimitedNetworkParamsType.limited:
-        return 'limited';
+      case BetaLimitedNetworkParamsType.limited: return 'limited';
     }
   }
 
@@ -178,17 +157,14 @@ enum BetaManagedAgentsAdvisorType {
 
   static BetaManagedAgentsAdvisorType fromJson(String value) {
     switch (value) {
-      case 'advisor':
-        return BetaManagedAgentsAdvisorType.advisor;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsAdvisorType: $value');
+      case 'advisor': return BetaManagedAgentsAdvisorType.advisor;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAdvisorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAdvisorType.advisor:
-        return 'advisor';
+      case BetaManagedAgentsAdvisorType.advisor: return 'advisor';
     }
   }
 
@@ -202,18 +178,14 @@ enum BetaManagedAgentsAdvisorParamsType {
 
   static BetaManagedAgentsAdvisorParamsType fromJson(String value) {
     switch (value) {
-      case 'advisor':
-        return BetaManagedAgentsAdvisorParamsType.advisor;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAdvisorParamsType: $value');
+      case 'advisor': return BetaManagedAgentsAdvisorParamsType.advisor;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAdvisorParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAdvisorParamsType.advisor:
-        return 'advisor';
+      case BetaManagedAgentsAdvisorParamsType.advisor: return 'advisor';
     }
   }
 
@@ -223,49 +195,39 @@ enum BetaManagedAgentsAdvisorParamsType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsAgentType {
+
   final String value;
 
   const BetaManagedAgentsAgentType._(this.value);
 
-  factory BetaManagedAgentsAgentType.fromJson(String value) =>
-      BetaManagedAgentsAgentType._(value);
+  factory BetaManagedAgentsAgentType.fromJson(String value) => BetaManagedAgentsAgentType._(value);
 
   static const agent = BetaManagedAgentsAgentType._('agent');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaManagedAgentsAgentType && other.value == value;
+  @override bool operator ==(Object other) => other is BetaManagedAgentsAgentType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType {
   agentArchivedError;
 
-  static BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType fromJson(
-      String value) {
+  static BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType fromJson(String value) {
     switch (value) {
-      case 'agent_archived_error':
-        return BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType
-            .agentArchivedError;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType: $value');
+      case 'agent_archived_error': return BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType.agentArchivedError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType
-            .agentArchivedError:
-        return 'agent_archived_error';
+      case BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType.agentArchivedError: return 'agent_archived_error';
     }
   }
 
@@ -279,18 +241,14 @@ enum BetaManagedAgentsAgentArchivedRunErrorType {
 
   static BetaManagedAgentsAgentArchivedRunErrorType fromJson(String value) {
     switch (value) {
-      case 'agent_archived_error':
-        return BetaManagedAgentsAgentArchivedRunErrorType.agentArchivedError;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentArchivedRunErrorType: $value');
+      case 'agent_archived_error': return BetaManagedAgentsAgentArchivedRunErrorType.agentArchivedError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentArchivedRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentArchivedRunErrorType.agentArchivedError:
-        return 'agent_archived_error';
+      case BetaManagedAgentsAgentArchivedRunErrorType.agentArchivedError: return 'agent_archived_error';
     }
   }
 
@@ -304,18 +262,14 @@ enum BetaManagedAgentsAgentCustomToolUseEventType {
 
   static BetaManagedAgentsAgentCustomToolUseEventType fromJson(String value) {
     switch (value) {
-      case 'agent.custom_tool_use':
-        return BetaManagedAgentsAgentCustomToolUseEventType.agentCustomToolUse;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentCustomToolUseEventType: $value');
+      case 'agent.custom_tool_use': return BetaManagedAgentsAgentCustomToolUseEventType.agentCustomToolUse;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentCustomToolUseEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentCustomToolUseEventType.agentCustomToolUse:
-        return 'agent.custom_tool_use';
+      case BetaManagedAgentsAgentCustomToolUseEventType.agentCustomToolUse: return 'agent.custom_tool_use';
     }
   }
 

@@ -4,74 +4,56 @@
 part of 'count_tokens.dart';
 
 // count_tokens domain models (part 2)
-final class CountMessageTokensParamsToolsItemWebFetchTool20260309
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebFetchTool20260309 extends CountMessageTokensParamsToolsItem {
   final WebFetchTool20260309 value;
   const CountMessageTokensParamsToolsItemWebFetchTool20260309(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebSearchTool20260318
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebSearchTool20260318 extends CountMessageTokensParamsToolsItem {
   final WebSearchTool20260318 value;
   const CountMessageTokensParamsToolsItemWebSearchTool20260318(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebFetchTool20260318
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebFetchTool20260318 extends CountMessageTokensParamsToolsItem {
   final WebFetchTool20260318 value;
   const CountMessageTokensParamsToolsItemWebFetchTool20260318(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemToolSearchToolBM2520251119
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemToolSearchToolBM2520251119 extends CountMessageTokensParamsToolsItem {
   final ToolSearchToolBM2520251119 value;
   const CountMessageTokensParamsToolsItemToolSearchToolBM2520251119(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemToolSearchToolRegex20251119
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemToolSearchToolRegex20251119 extends CountMessageTokensParamsToolsItem {
   final ToolSearchToolRegex20251119 value;
-  const CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `CountMessageTokensResponse` API schema.
 class CountMessageTokensResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The total number of tokens across the provided list of messages, system prompt, and tools.
   final int inputTokens;
 
   const CountMessageTokensResponse({required this.inputTokens});
 
-  CountMessageTokensResponse Function({int inputTokens}) get copyWith =>
-      _copyWith;
+  CountMessageTokensResponse Function({int inputTokens}) get copyWith => _copyWith;
 
-  CountMessageTokensResponse _copyWith(
-          {Object? inputTokens = sdkOmittedValue}) =>
-      CountMessageTokensResponse(
-        inputTokens: identical(inputTokens, sdkOmittedValue)
-            ? this.inputTokens
-            : inputTokens as int,
-      );
+  CountMessageTokensResponse _copyWith({Object? inputTokens = sdkOmittedValue}) => CountMessageTokensResponse(
+    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as int,
+  );
 
-  factory CountMessageTokensResponse.fromJson(Map<String, dynamic> json) =>
-      CountMessageTokensResponse(
-        inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
-      );
+  factory CountMessageTokensResponse.fromJson(Map<String, dynamic> json) => CountMessageTokensResponse(
+    inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'input_tokens': inputTokens,
-      };
+    'input_tokens': inputTokens,
+  };
 }

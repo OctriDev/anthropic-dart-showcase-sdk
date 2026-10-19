@@ -8,23 +8,16 @@ part of 'inline.dart';
 enum BetaManagedAgentsUserCustomToolResultEventParamsType {
   userCustomToolResult;
 
-  static BetaManagedAgentsUserCustomToolResultEventParamsType fromJson(
-      String value) {
+  static BetaManagedAgentsUserCustomToolResultEventParamsType fromJson(String value) {
     switch (value) {
-      case 'user.custom_tool_result':
-        return BetaManagedAgentsUserCustomToolResultEventParamsType
-            .userCustomToolResult;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserCustomToolResultEventParamsType: $value');
+      case 'user.custom_tool_result': return BetaManagedAgentsUserCustomToolResultEventParamsType.userCustomToolResult;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserCustomToolResultEventParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserCustomToolResultEventParamsType
-            .userCustomToolResult:
-        return 'user.custom_tool_result';
+      case BetaManagedAgentsUserCustomToolResultEventParamsType.userCustomToolResult: return 'user.custom_tool_result';
     }
   }
 
@@ -38,18 +31,14 @@ enum BetaManagedAgentsUserDefineOutcomeEventType {
 
   static BetaManagedAgentsUserDefineOutcomeEventType fromJson(String value) {
     switch (value) {
-      case 'user.define_outcome':
-        return BetaManagedAgentsUserDefineOutcomeEventType.userDefineOutcome;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserDefineOutcomeEventType: $value');
+      case 'user.define_outcome': return BetaManagedAgentsUserDefineOutcomeEventType.userDefineOutcome;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserDefineOutcomeEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserDefineOutcomeEventType.userDefineOutcome:
-        return 'user.define_outcome';
+      case BetaManagedAgentsUserDefineOutcomeEventType.userDefineOutcome: return 'user.define_outcome';
     }
   }
 
@@ -61,22 +50,16 @@ enum BetaManagedAgentsUserDefineOutcomeEventType {
 enum BetaManagedAgentsUserDefineOutcomeEventParamsType {
   userDefineOutcome;
 
-  static BetaManagedAgentsUserDefineOutcomeEventParamsType fromJson(
-      String value) {
+  static BetaManagedAgentsUserDefineOutcomeEventParamsType fromJson(String value) {
     switch (value) {
-      case 'user.define_outcome':
-        return BetaManagedAgentsUserDefineOutcomeEventParamsType
-            .userDefineOutcome;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserDefineOutcomeEventParamsType: $value');
+      case 'user.define_outcome': return BetaManagedAgentsUserDefineOutcomeEventParamsType.userDefineOutcome;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserDefineOutcomeEventParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserDefineOutcomeEventParamsType.userDefineOutcome:
-        return 'user.define_outcome';
+      case BetaManagedAgentsUserDefineOutcomeEventParamsType.userDefineOutcome: return 'user.define_outcome';
     }
   }
 
@@ -90,18 +73,14 @@ enum BetaManagedAgentsUserInterruptEventType {
 
   static BetaManagedAgentsUserInterruptEventType fromJson(String value) {
     switch (value) {
-      case 'user.interrupt':
-        return BetaManagedAgentsUserInterruptEventType.userInterrupt;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserInterruptEventType: $value');
+      case 'user.interrupt': return BetaManagedAgentsUserInterruptEventType.userInterrupt;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserInterruptEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserInterruptEventType.userInterrupt:
-        return 'user.interrupt';
+      case BetaManagedAgentsUserInterruptEventType.userInterrupt: return 'user.interrupt';
     }
   }
 
@@ -115,18 +94,14 @@ enum BetaManagedAgentsUserInterruptEventParamsType {
 
   static BetaManagedAgentsUserInterruptEventParamsType fromJson(String value) {
     switch (value) {
-      case 'user.interrupt':
-        return BetaManagedAgentsUserInterruptEventParamsType.userInterrupt;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserInterruptEventParamsType: $value');
+      case 'user.interrupt': return BetaManagedAgentsUserInterruptEventParamsType.userInterrupt;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserInterruptEventParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserInterruptEventParamsType.userInterrupt:
-        return 'user.interrupt';
+      case BetaManagedAgentsUserInterruptEventParamsType.userInterrupt: return 'user.interrupt';
     }
   }
 
@@ -140,18 +115,14 @@ enum BetaManagedAgentsUserLocationType {
 
   static BetaManagedAgentsUserLocationType fromJson(String value) {
     switch (value) {
-      case 'approximate':
-        return BetaManagedAgentsUserLocationType.approximate;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserLocationType: $value');
+      case 'approximate': return BetaManagedAgentsUserLocationType.approximate;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserLocationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserLocationType.approximate:
-        return 'approximate';
+      case BetaManagedAgentsUserLocationType.approximate: return 'approximate';
     }
   }
 
@@ -165,18 +136,14 @@ enum BetaManagedAgentsUserMessageEventType {
 
   static BetaManagedAgentsUserMessageEventType fromJson(String value) {
     switch (value) {
-      case 'user.message':
-        return BetaManagedAgentsUserMessageEventType.userMessage;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserMessageEventType: $value');
+      case 'user.message': return BetaManagedAgentsUserMessageEventType.userMessage;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserMessageEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserMessageEventType.userMessage:
-        return 'user.message';
+      case BetaManagedAgentsUserMessageEventType.userMessage: return 'user.message';
     }
   }
 
@@ -190,18 +157,14 @@ enum BetaManagedAgentsUserMessageEventParamsType {
 
   static BetaManagedAgentsUserMessageEventParamsType fromJson(String value) {
     switch (value) {
-      case 'user.message':
-        return BetaManagedAgentsUserMessageEventParamsType.userMessage;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserMessageEventParamsType: $value');
+      case 'user.message': return BetaManagedAgentsUserMessageEventParamsType.userMessage;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserMessageEventParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserMessageEventParamsType.userMessage:
-        return 'user.message';
+      case BetaManagedAgentsUserMessageEventParamsType.userMessage: return 'user.message';
     }
   }
 
@@ -215,19 +178,14 @@ enum BetaManagedAgentsUserToolConfirmationEventType {
 
   static BetaManagedAgentsUserToolConfirmationEventType fromJson(String value) {
     switch (value) {
-      case 'user.tool_confirmation':
-        return BetaManagedAgentsUserToolConfirmationEventType
-            .userToolConfirmation;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserToolConfirmationEventType: $value');
+      case 'user.tool_confirmation': return BetaManagedAgentsUserToolConfirmationEventType.userToolConfirmation;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserToolConfirmationEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserToolConfirmationEventType.userToolConfirmation:
-        return 'user.tool_confirmation';
+      case BetaManagedAgentsUserToolConfirmationEventType.userToolConfirmation: return 'user.tool_confirmation';
     }
   }
 
@@ -239,23 +197,16 @@ enum BetaManagedAgentsUserToolConfirmationEventType {
 enum BetaManagedAgentsUserToolConfirmationEventParamsType {
   userToolConfirmation;
 
-  static BetaManagedAgentsUserToolConfirmationEventParamsType fromJson(
-      String value) {
+  static BetaManagedAgentsUserToolConfirmationEventParamsType fromJson(String value) {
     switch (value) {
-      case 'user.tool_confirmation':
-        return BetaManagedAgentsUserToolConfirmationEventParamsType
-            .userToolConfirmation;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserToolConfirmationEventParamsType: $value');
+      case 'user.tool_confirmation': return BetaManagedAgentsUserToolConfirmationEventParamsType.userToolConfirmation;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserToolConfirmationEventParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserToolConfirmationEventParamsType
-            .userToolConfirmation:
-        return 'user.tool_confirmation';
+      case BetaManagedAgentsUserToolConfirmationEventParamsType.userToolConfirmation: return 'user.tool_confirmation';
     }
   }
 
@@ -269,18 +220,14 @@ enum BetaManagedAgentsUserToolResultEventType {
 
   static BetaManagedAgentsUserToolResultEventType fromJson(String value) {
     switch (value) {
-      case 'user.tool_result':
-        return BetaManagedAgentsUserToolResultEventType.userToolResult;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserToolResultEventType: $value');
+      case 'user.tool_result': return BetaManagedAgentsUserToolResultEventType.userToolResult;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserToolResultEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserToolResultEventType.userToolResult:
-        return 'user.tool_result';
+      case BetaManagedAgentsUserToolResultEventType.userToolResult: return 'user.tool_result';
     }
   }
 
@@ -294,18 +241,14 @@ enum BetaManagedAgentsUserToolResultEventParamsType {
 
   static BetaManagedAgentsUserToolResultEventParamsType fromJson(String value) {
     switch (value) {
-      case 'user.tool_result':
-        return BetaManagedAgentsUserToolResultEventParamsType.userToolResult;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsUserToolResultEventParamsType: $value');
+      case 'user.tool_result': return BetaManagedAgentsUserToolResultEventParamsType.userToolResult;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserToolResultEventParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsUserToolResultEventParamsType.userToolResult:
-        return 'user.tool_result';
+      case BetaManagedAgentsUserToolResultEventParamsType.userToolResult: return 'user.tool_result';
     }
   }
 
@@ -315,24 +258,21 @@ enum BetaManagedAgentsUserToolResultEventParamsType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsVaultType {
+
   final String value;
 
   const BetaManagedAgentsVaultType._(this.value);
 
-  factory BetaManagedAgentsVaultType.fromJson(String value) =>
-      BetaManagedAgentsVaultType._(value);
+  factory BetaManagedAgentsVaultType.fromJson(String value) => BetaManagedAgentsVaultType._(value);
 
   static const vault = BetaManagedAgentsVaultType._('vault');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaManagedAgentsVaultType && other.value == value;
+  @override bool operator ==(Object other) => other is BetaManagedAgentsVaultType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

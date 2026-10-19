@@ -152,8 +152,7 @@ Future<Message> createMessages(ClientConfig config,
     SdkOptional<String?> inferenceGeo = const SdkOmitted(),
     SdkOptional<Metadata> metadata = const SdkOmitted(),
     SdkOptional<OutputConfig> outputConfig = const SdkOmitted(),
-    SdkOptional<CreateMessageParamsServiceTier> serviceTier =
-        const SdkOmitted(),
+    SdkOptional<CreateMessageParamsServiceTier> serviceTier = const SdkOmitted(),
     SdkOptional<List<String>> stopSequences = const SdkOmitted(),
     SdkOptional<bool> stream = const SdkOmitted(),
     SdkOptional<dynamic> system = const SdkOmitted(),
@@ -198,53 +197,14 @@ Future<Message> createMessages(ClientConfig config,
             'top_p': SdkUtils.unwrapOptional(topP)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-user-profile-id':
-                SdkUtils.unwrapOptional(anthropicUserProfileId),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-user-profile-id': SdkUtils.unwrapOptional(anthropicUserProfileId), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'createMessages',
-          fromJsonRaw: (value) =>
-              Message.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Message.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Count the number of tokens in a Message. The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it. Learn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)
 ///
@@ -347,8 +307,7 @@ Future<CountMessageTokensResponse> countMessagesTokens(ClientConfig config,
     SdkOptional<dynamic> system = const SdkOmitted(),
     SdkOptional<ThinkingConfigParam> thinking = const SdkOmitted(),
     SdkOptional<ToolChoice> toolChoice = const SdkOmitted(),
-    SdkOptional<List<CountMessageTokensParamsToolsItem>> tools =
-        const SdkOmitted(),
+    SdkOptional<List<CountMessageTokensParamsToolsItem>> tools = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<CountMessageTokensResponse>(
           'POST', '/v1/messages/count_tokens',
@@ -364,50 +323,10 @@ Future<CountMessageTokensResponse> countMessagesTokens(ClientConfig config,
             'tools': SdkUtils.unwrapOptional(tools)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-user-profile-id':
-                SdkUtils.unwrapOptional(anthropicUserProfileId),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-user-profile-id': SdkUtils.unwrapOptional(anthropicUserProfileId), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'countMessagesTokens',
-          fromJsonRaw: (value) => CountMessageTokensResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CountMessageTokensResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

@@ -10,18 +10,14 @@ enum BetaWebhookAgentUpdatedEventDataType {
 
   static BetaWebhookAgentUpdatedEventDataType fromJson(String value) {
     switch (value) {
-      case 'agent.updated':
-        return BetaWebhookAgentUpdatedEventDataType.agentUpdated;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookAgentUpdatedEventDataType: $value');
+      case 'agent.updated': return BetaWebhookAgentUpdatedEventDataType.agentUpdated;
+      default: throw ArgumentError('Unknown BetaWebhookAgentUpdatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookAgentUpdatedEventDataType.agentUpdated:
-        return 'agent.updated';
+      case BetaWebhookAgentUpdatedEventDataType.agentUpdated: return 'agent.updated';
     }
   }
 
@@ -35,18 +31,14 @@ enum BetaWebhookDeploymentArchivedEventDataType {
 
   static BetaWebhookDeploymentArchivedEventDataType fromJson(String value) {
     switch (value) {
-      case 'deployment.archived':
-        return BetaWebhookDeploymentArchivedEventDataType.deploymentArchived;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookDeploymentArchivedEventDataType: $value');
+      case 'deployment.archived': return BetaWebhookDeploymentArchivedEventDataType.deploymentArchived;
+      default: throw ArgumentError('Unknown BetaWebhookDeploymentArchivedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookDeploymentArchivedEventDataType.deploymentArchived:
-        return 'deployment.archived';
+      case BetaWebhookDeploymentArchivedEventDataType.deploymentArchived: return 'deployment.archived';
     }
   }
 
@@ -60,18 +52,14 @@ enum BetaWebhookDeploymentCreatedEventDataType {
 
   static BetaWebhookDeploymentCreatedEventDataType fromJson(String value) {
     switch (value) {
-      case 'deployment.created':
-        return BetaWebhookDeploymentCreatedEventDataType.deploymentCreated;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookDeploymentCreatedEventDataType: $value');
+      case 'deployment.created': return BetaWebhookDeploymentCreatedEventDataType.deploymentCreated;
+      default: throw ArgumentError('Unknown BetaWebhookDeploymentCreatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookDeploymentCreatedEventDataType.deploymentCreated:
-        return 'deployment.created';
+      case BetaWebhookDeploymentCreatedEventDataType.deploymentCreated: return 'deployment.created';
     }
   }
 
@@ -85,18 +73,14 @@ enum BetaWebhookDeploymentDeletedEventDataType {
 
   static BetaWebhookDeploymentDeletedEventDataType fromJson(String value) {
     switch (value) {
-      case 'deployment.deleted':
-        return BetaWebhookDeploymentDeletedEventDataType.deploymentDeleted;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookDeploymentDeletedEventDataType: $value');
+      case 'deployment.deleted': return BetaWebhookDeploymentDeletedEventDataType.deploymentDeleted;
+      default: throw ArgumentError('Unknown BetaWebhookDeploymentDeletedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookDeploymentDeletedEventDataType.deploymentDeleted:
-        return 'deployment.deleted';
+      case BetaWebhookDeploymentDeletedEventDataType.deploymentDeleted: return 'deployment.deleted';
     }
   }
 
@@ -110,18 +94,14 @@ enum BetaWebhookDeploymentPausedEventDataType {
 
   static BetaWebhookDeploymentPausedEventDataType fromJson(String value) {
     switch (value) {
-      case 'deployment.paused':
-        return BetaWebhookDeploymentPausedEventDataType.deploymentPaused;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookDeploymentPausedEventDataType: $value');
+      case 'deployment.paused': return BetaWebhookDeploymentPausedEventDataType.deploymentPaused;
+      default: throw ArgumentError('Unknown BetaWebhookDeploymentPausedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookDeploymentPausedEventDataType.deploymentPaused:
-        return 'deployment.paused';
+      case BetaWebhookDeploymentPausedEventDataType.deploymentPaused: return 'deployment.paused';
     }
   }
 
@@ -135,18 +115,14 @@ enum BetaWebhookDeploymentRunFailedEventDataType {
 
   static BetaWebhookDeploymentRunFailedEventDataType fromJson(String value) {
     switch (value) {
-      case 'deployment_run.failed':
-        return BetaWebhookDeploymentRunFailedEventDataType.deploymentRunFailed;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookDeploymentRunFailedEventDataType: $value');
+      case 'deployment_run.failed': return BetaWebhookDeploymentRunFailedEventDataType.deploymentRunFailed;
+      default: throw ArgumentError('Unknown BetaWebhookDeploymentRunFailedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookDeploymentRunFailedEventDataType.deploymentRunFailed:
-        return 'deployment_run.failed';
+      case BetaWebhookDeploymentRunFailedEventDataType.deploymentRunFailed: return 'deployment_run.failed';
     }
   }
 
@@ -160,19 +136,14 @@ enum BetaWebhookDeploymentRunStartedEventDataType {
 
   static BetaWebhookDeploymentRunStartedEventDataType fromJson(String value) {
     switch (value) {
-      case 'deployment_run.started':
-        return BetaWebhookDeploymentRunStartedEventDataType
-            .deploymentRunStarted;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookDeploymentRunStartedEventDataType: $value');
+      case 'deployment_run.started': return BetaWebhookDeploymentRunStartedEventDataType.deploymentRunStarted;
+      default: throw ArgumentError('Unknown BetaWebhookDeploymentRunStartedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookDeploymentRunStartedEventDataType.deploymentRunStarted:
-        return 'deployment_run.started';
+      case BetaWebhookDeploymentRunStartedEventDataType.deploymentRunStarted: return 'deployment_run.started';
     }
   }
 
@@ -186,20 +157,14 @@ enum BetaWebhookDeploymentRunSucceededEventDataType {
 
   static BetaWebhookDeploymentRunSucceededEventDataType fromJson(String value) {
     switch (value) {
-      case 'deployment_run.succeeded':
-        return BetaWebhookDeploymentRunSucceededEventDataType
-            .deploymentRunSucceeded;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookDeploymentRunSucceededEventDataType: $value');
+      case 'deployment_run.succeeded': return BetaWebhookDeploymentRunSucceededEventDataType.deploymentRunSucceeded;
+      default: throw ArgumentError('Unknown BetaWebhookDeploymentRunSucceededEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookDeploymentRunSucceededEventDataType
-            .deploymentRunSucceeded:
-        return 'deployment_run.succeeded';
+      case BetaWebhookDeploymentRunSucceededEventDataType.deploymentRunSucceeded: return 'deployment_run.succeeded';
     }
   }
 
@@ -213,18 +178,14 @@ enum BetaWebhookDeploymentUnpausedEventDataType {
 
   static BetaWebhookDeploymentUnpausedEventDataType fromJson(String value) {
     switch (value) {
-      case 'deployment.unpaused':
-        return BetaWebhookDeploymentUnpausedEventDataType.deploymentUnpaused;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookDeploymentUnpausedEventDataType: $value');
+      case 'deployment.unpaused': return BetaWebhookDeploymentUnpausedEventDataType.deploymentUnpaused;
+      default: throw ArgumentError('Unknown BetaWebhookDeploymentUnpausedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookDeploymentUnpausedEventDataType.deploymentUnpaused:
-        return 'deployment.unpaused';
+      case BetaWebhookDeploymentUnpausedEventDataType.deploymentUnpaused: return 'deployment.unpaused';
     }
   }
 
@@ -238,18 +199,14 @@ enum BetaWebhookDeploymentUpdatedEventDataType {
 
   static BetaWebhookDeploymentUpdatedEventDataType fromJson(String value) {
     switch (value) {
-      case 'deployment.updated':
-        return BetaWebhookDeploymentUpdatedEventDataType.deploymentUpdated;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookDeploymentUpdatedEventDataType: $value');
+      case 'deployment.updated': return BetaWebhookDeploymentUpdatedEventDataType.deploymentUpdated;
+      default: throw ArgumentError('Unknown BetaWebhookDeploymentUpdatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookDeploymentUpdatedEventDataType.deploymentUpdated:
-        return 'deployment.updated';
+      case BetaWebhookDeploymentUpdatedEventDataType.deploymentUpdated: return 'deployment.updated';
     }
   }
 
@@ -263,18 +220,14 @@ enum BetaWebhookEnvironmentArchivedEventDataType {
 
   static BetaWebhookEnvironmentArchivedEventDataType fromJson(String value) {
     switch (value) {
-      case 'environment.archived':
-        return BetaWebhookEnvironmentArchivedEventDataType.environmentArchived;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookEnvironmentArchivedEventDataType: $value');
+      case 'environment.archived': return BetaWebhookEnvironmentArchivedEventDataType.environmentArchived;
+      default: throw ArgumentError('Unknown BetaWebhookEnvironmentArchivedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookEnvironmentArchivedEventDataType.environmentArchived:
-        return 'environment.archived';
+      case BetaWebhookEnvironmentArchivedEventDataType.environmentArchived: return 'environment.archived';
     }
   }
 
@@ -288,18 +241,14 @@ enum BetaWebhookEnvironmentCreatedEventDataType {
 
   static BetaWebhookEnvironmentCreatedEventDataType fromJson(String value) {
     switch (value) {
-      case 'environment.created':
-        return BetaWebhookEnvironmentCreatedEventDataType.environmentCreated;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookEnvironmentCreatedEventDataType: $value');
+      case 'environment.created': return BetaWebhookEnvironmentCreatedEventDataType.environmentCreated;
+      default: throw ArgumentError('Unknown BetaWebhookEnvironmentCreatedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookEnvironmentCreatedEventDataType.environmentCreated:
-        return 'environment.created';
+      case BetaWebhookEnvironmentCreatedEventDataType.environmentCreated: return 'environment.created';
     }
   }
 
@@ -313,18 +262,14 @@ enum BetaWebhookEnvironmentDeletedEventDataType {
 
   static BetaWebhookEnvironmentDeletedEventDataType fromJson(String value) {
     switch (value) {
-      case 'environment.deleted':
-        return BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookEnvironmentDeletedEventDataType: $value');
+      case 'environment.deleted': return BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted;
+      default: throw ArgumentError('Unknown BetaWebhookEnvironmentDeletedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted:
-        return 'environment.deleted';
+      case BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted: return 'environment.deleted';
     }
   }
 

@@ -8,47 +8,27 @@ part of 'spend_limit_increase_requests_beta_true.dart';
 class BetaSpendLimitIncreaseRequestListResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `data` wire field.
   final List<BetaSpendLimitIncreaseRequestSchema> data;
-
   /// Required `string` value serialized in the `next_page` wire field.
   final String? nextPage;
 
-  const BetaSpendLimitIncreaseRequestListResponse(
-      {required this.data, required this.nextPage});
+  const BetaSpendLimitIncreaseRequestListResponse({required this.data, required this.nextPage});
 
-  BetaSpendLimitIncreaseRequestListResponse Function(
-      {List<BetaSpendLimitIncreaseRequestSchema> data,
-      String? nextPage}) get copyWith => _copyWith;
+  BetaSpendLimitIncreaseRequestListResponse Function({List<BetaSpendLimitIncreaseRequestSchema> data, String? nextPage}) get copyWith => _copyWith;
 
-  BetaSpendLimitIncreaseRequestListResponse _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaSpendLimitIncreaseRequestListResponse(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<BetaSpendLimitIncreaseRequestSchema>,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as String?,
-      );
+  BetaSpendLimitIncreaseRequestListResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaSpendLimitIncreaseRequestListResponse(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaSpendLimitIncreaseRequestSchema>,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
+  );
 
-  factory BetaSpendLimitIncreaseRequestListResponse.fromJson(
-          Map<String, dynamic> json) =>
-      BetaSpendLimitIncreaseRequestListResponse(
-        data: ((json['data'] as List?)
-            ?.map((e) => BetaSpendLimitIncreaseRequestSchema.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        nextPage: json.containsKey('next_page')
-            ? json['next_page'] as String?
-            : throw ArgumentError.value(
-                null, 'next_page', 'Required property is missing'),
-      );
+  factory BetaSpendLimitIncreaseRequestListResponse.fromJson(Map<String, dynamic> json) => BetaSpendLimitIncreaseRequestListResponse(
+    data: ((json['data'] as List?)?.map((e) => BetaSpendLimitIncreaseRequestSchema.fromJson(e as Map<String, dynamic>)).toList())!,
+    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'next_page': nextPage,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'next_page': nextPage,
+  };
 }

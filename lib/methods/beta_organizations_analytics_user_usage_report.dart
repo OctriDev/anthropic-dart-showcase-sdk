@@ -55,17 +55,11 @@ Future<BetaAnalyticsUsageUsersResponse>
     retrieveBetaOrganizationsAnalyticsUserUsageReport(ClientConfig config,
         {required String startingAt,
         SdkOptional<String?> endingAt = const SdkOmitted(),
-        SdkOptional<List<BetaAnalyticsProductFilter>?> products =
-            const SdkOmitted(),
+        SdkOptional<List<BetaAnalyticsProductFilter>?> products = const SdkOmitted(),
         SdkOptional<List<String>?> models = const SdkOmitted(),
-        SdkOptional<List<BetaMessagesUsageReportContextWindow>?>
-            contextWindows = const SdkOmitted(),
-        SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos =
-            const SdkOmitted(),
-        SdkOptional<
-                List<
-                    RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>
-            speeds = const SdkOmitted(),
+        SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindows = const SdkOmitted(),
+        SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos = const SdkOmitted(),
+        SdkOptional<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?> speeds = const SdkOmitted(),
         SdkOptional<List<String>?> slackChannelIds = const SdkOmitted(),
         SdkOptional<List<String>?> rbacGroupIds = const SdkOmitted(),
         SdkOptional<List<String>?> userIds = const SdkOmitted(),
@@ -74,12 +68,8 @@ Future<BetaAnalyticsUsageUsersResponse>
         SdkOptional<bool> excludeDeletedUsers = const SdkOmitted(),
         SdkOptional<int> limit = const SdkOmitted(),
         SdkOptional<String?> page = const SdkOmitted(),
-        SdkOptional<BetaAnalyticsUsageUsersOrderBy> orderBy =
-            const SdkOmitted(),
-        SdkOptional<
-                List<
-                    RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>
-            groupBy = const SdkOmitted(),
+        SdkOptional<BetaAnalyticsUsageUsersOrderBy> orderBy = const SdkOmitted(),
+        SdkOptional<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?> groupBy = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   sdkValidateDateTime('starting_at', startingAt);
   if (products is SdkPresent<List<BetaAnalyticsProductFilter>?>) {
@@ -94,8 +84,7 @@ Future<BetaAnalyticsUsageUsersResponse>
       validateItems('models[]', modelsValue, max: 100);
     }
   }
-  if (contextWindows
-      is SdkPresent<List<BetaMessagesUsageReportContextWindow>?>) {
+  if (contextWindows is SdkPresent<List<BetaMessagesUsageReportContextWindow>?>) {
     final contextWindowsValue = contextWindows.value;
     if (contextWindowsValue != null) {
       validateItems('context_windows[]', contextWindowsValue, max: 100);
@@ -107,8 +96,7 @@ Future<BetaAnalyticsUsageUsersResponse>
       validateItems('inference_geos[]', inferenceGeosValue, max: 100);
     }
   }
-  if (speeds is SdkPresent<
-      List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>) {
+  if (speeds is SdkPresent<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>) {
     final speedsValue = speeds.value;
     if (speedsValue != null) {
       validateItems('speeds[]', speedsValue, max: 100);
@@ -135,8 +123,7 @@ Future<BetaAnalyticsUsageUsersResponse>
   if (limit is SdkPresent<int>) {
     validateRange('limit', limit.value, min: 1, max: 1000);
   }
-  if (groupBy is SdkPresent<
-      List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>) {
+  if (groupBy is SdkPresent<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>) {
     final groupByValue = groupBy.value;
     if (groupByValue != null) {
       validateItems('group_by[]', groupByValue, max: 100);
@@ -147,92 +134,33 @@ Future<BetaAnalyticsUsageUsersResponse>
           'GET', '/v1/organizations/analytics/user_usage_report?beta=true',
           config: config,
           query: {
-            'starting_at':
-                SdkQueryValue(startingAt, style: 'form', explode: true),
-            'ending_at': SdkQueryValue(SdkUtils.unwrapOptional(endingAt),
-                style: 'form', explode: true),
-            'products[]': SdkQueryValue(SdkUtils.unwrapOptional(products),
-                style: 'form', explode: true),
-            'models[]': SdkQueryValue(SdkUtils.unwrapOptional(models),
-                style: 'form', explode: true),
-            'context_windows[]': SdkQueryValue(
-                SdkUtils.unwrapOptional(contextWindows),
-                style: 'form',
-                explode: true),
-            'inference_geos[]': SdkQueryValue(
-                SdkUtils.unwrapOptional(inferenceGeos),
-                style: 'form',
-                explode: true),
-            'speeds[]': SdkQueryValue(SdkUtils.unwrapOptional(speeds),
-                style: 'form', explode: true),
-            'slack_channel_ids[]': SdkQueryValue(
-                SdkUtils.unwrapOptional(slackChannelIds),
-                style: 'form',
-                explode: true),
-            'rbac_group_ids[]': SdkQueryValue(
-                SdkUtils.unwrapOptional(rbacGroupIds),
-                style: 'form',
-                explode: true),
-            'user_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(userIds),
-                style: 'form', explode: true),
-            'bucket_width': SdkQueryValue(SdkUtils.unwrapOptional(bucketWidth),
-                style: 'form', explode: true),
-            'order': SdkQueryValue(SdkUtils.unwrapOptional(order),
-                style: 'form', explode: true),
-            'exclude_deleted_users': SdkQueryValue(
-                SdkUtils.unwrapOptional(excludeDeletedUsers),
-                style: 'form',
-                explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'order_by': SdkQueryValue(SdkUtils.unwrapOptional(orderBy),
-                style: 'form', explode: true),
-            'group_by[]': SdkQueryValue(SdkUtils.unwrapOptional(groupBy),
-                style: 'form', explode: true)
+            'starting_at': SdkQueryValue(startingAt, style: 'form', explode: true),
+            'ending_at': SdkQueryValue(SdkUtils.unwrapOptional(endingAt), style: 'form', explode: true),
+            'products[]': SdkQueryValue(SdkUtils.unwrapOptional(products), style: 'form', explode: true),
+            'models[]': SdkQueryValue(SdkUtils.unwrapOptional(models), style: 'form', explode: true),
+            'context_windows[]': SdkQueryValue(SdkUtils.unwrapOptional(contextWindows), style: 'form', explode: true),
+            'inference_geos[]': SdkQueryValue(SdkUtils.unwrapOptional(inferenceGeos), style: 'form', explode: true),
+            'speeds[]': SdkQueryValue(SdkUtils.unwrapOptional(speeds), style: 'form', explode: true),
+            'slack_channel_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(slackChannelIds), style: 'form', explode: true),
+            'rbac_group_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(rbacGroupIds), style: 'form', explode: true),
+            'user_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(userIds), style: 'form', explode: true),
+            'bucket_width': SdkQueryValue(SdkUtils.unwrapOptional(bucketWidth), style: 'form', explode: true),
+            'order': SdkQueryValue(SdkUtils.unwrapOptional(order), style: 'form', explode: true),
+            'exclude_deleted_users': SdkQueryValue(SdkUtils.unwrapOptional(excludeDeletedUsers), style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'order_by': SdkQueryValue(SdkUtils.unwrapOptional(orderBy), style: 'form', explode: true),
+            'group_by[]': SdkQueryValue(SdkUtils.unwrapOptional(groupBy), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'retrieveBetaOrganizationsAnalyticsUserUsageReport',
-          fromJsonRaw: (value) => BetaAnalyticsUsageUsersResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaAnalyticsUsageUsersResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
+
 
 /// Get per-user token usage across a date range. Returns one row per user, ranked by the chosen token metric. Use this to see which users consume the most tokens. Only usage attributable to a seat user is included; for organization-wide totals including direct API-key and automation traffic, use the bucketed `/v1/organizations/analytics/usage_report` endpoint. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
 ///
@@ -278,90 +206,13 @@ Future<BetaAnalyticsUsageUsersResponse>
 ///   same values as the bucketed `/usage_report` endpoint. `limit` bounds (actor
 ///   × time bucket × dimension) rows — with dimensions or `bucket_width` present,
 ///   one actor may span several rows.
-Stream<BetaAnalyticsUsageUsersItem>
-    retrieveBetaOrganizationsAnalyticsUserUsageReportPaginated(
-        ClientConfig config,
-        {required String startingAt,
-        String? endingAt,
-        List<BetaAnalyticsProductFilter>? products,
-        List<String>? models,
-        List<BetaMessagesUsageReportContextWindow>? contextWindows,
-        List<BetaInferenceGeoFilter>? inferenceGeos,
-        List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?
-            speeds,
-        List<String>? slackChannelIds,
-        List<String>? rbacGroupIds,
-        List<String>? userIds,
-        String? bucketWidth,
-        BetaAnalyticsSortOrder? order,
-        bool? excludeDeletedUsers,
-        int? limit,
-        String? page,
-        BetaAnalyticsUsageUsersOrderBy? orderBy,
-        List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?
-            groupBy,
-        RequestOptions? requestOptions}) async* {
+Stream<BetaAnalyticsUsageUsersItem> retrieveBetaOrganizationsAnalyticsUserUsageReportPaginated(ClientConfig config, {required String startingAt, String? endingAt, List<BetaAnalyticsProductFilter>? products, List<String>? models, List<BetaMessagesUsageReportContextWindow>? contextWindows, List<BetaInferenceGeoFilter>? inferenceGeos, List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>? speeds, List<String>? slackChannelIds, List<String>? rbacGroupIds, List<String>? userIds, String? bucketWidth, BetaAnalyticsSortOrder? order, bool? excludeDeletedUsers, int? limit, String? page, BetaAnalyticsUsageUsersOrderBy? orderBy, List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>? groupBy, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await retrieveBetaOrganizationsAnalyticsUserUsageReport(config,
-        startingAt: startingAt,
-        endingAt: endingAt == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(endingAt),
-        products: products == null
-            ? const SdkOmitted<List<BetaAnalyticsProductFilter>?>()
-            : SdkPresent<List<BetaAnalyticsProductFilter>?>(products),
-        models: models == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(models),
-        contextWindows: contextWindows == null
-            ? const SdkOmitted<List<BetaMessagesUsageReportContextWindow>?>()
-            : SdkPresent<List<BetaMessagesUsageReportContextWindow>?>(
-                contextWindows),
-        inferenceGeos: inferenceGeos == null
-            ? const SdkOmitted<List<BetaInferenceGeoFilter>?>()
-            : SdkPresent<List<BetaInferenceGeoFilter>?>(inferenceGeos),
-        speeds: speeds == null
-            ? const SdkOmitted<
-                List<
-                    RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>()
-            : SdkPresent<
-                    List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>(
-                speeds),
-        slackChannelIds: slackChannelIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(slackChannelIds),
-        rbacGroupIds: rbacGroupIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(rbacGroupIds),
-        userIds: userIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(userIds),
-        bucketWidth: bucketWidth == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(bucketWidth),
-        order: order == null
-            ? const SdkOmitted<BetaAnalyticsSortOrder>()
-            : SdkPresent<BetaAnalyticsSortOrder>(order),
-        excludeDeletedUsers: excludeDeletedUsers == null
-            ? const SdkOmitted<bool>()
-            : SdkPresent<bool>(excludeDeletedUsers),
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        orderBy: orderBy == null
-            ? const SdkOmitted<BetaAnalyticsUsageUsersOrderBy>()
-            : SdkPresent<BetaAnalyticsUsageUsersOrderBy>(orderBy),
-        groupBy: groupBy == null
-            ? const SdkOmitted<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>()
-            : SdkPresent<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>(groupBy),
-        requestOptions: requestOptions);
+    final sdkPage = await retrieveBetaOrganizationsAnalyticsUserUsageReport(config, startingAt: startingAt, endingAt: endingAt == null ? const SdkOmitted<String?>() : SdkPresent<String?>(endingAt), products: products == null ? const SdkOmitted<List<BetaAnalyticsProductFilter>?>() : SdkPresent<List<BetaAnalyticsProductFilter>?>(products), models: models == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(models), contextWindows: contextWindows == null ? const SdkOmitted<List<BetaMessagesUsageReportContextWindow>?>() : SdkPresent<List<BetaMessagesUsageReportContextWindow>?>(contextWindows), inferenceGeos: inferenceGeos == null ? const SdkOmitted<List<BetaInferenceGeoFilter>?>() : SdkPresent<List<BetaInferenceGeoFilter>?>(inferenceGeos), speeds: speeds == null ? const SdkOmitted<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>() : SdkPresent<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>(speeds), slackChannelIds: slackChannelIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(slackChannelIds), rbacGroupIds: rbacGroupIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(rbacGroupIds), userIds: userIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(userIds), bucketWidth: bucketWidth == null ? const SdkOmitted<String?>() : SdkPresent<String?>(bucketWidth), order: order == null ? const SdkOmitted<BetaAnalyticsSortOrder>() : SdkPresent<BetaAnalyticsSortOrder>(order), excludeDeletedUsers: excludeDeletedUsers == null ? const SdkOmitted<bool>() : SdkPresent<bool>(excludeDeletedUsers), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), orderBy: orderBy == null ? const SdkOmitted<BetaAnalyticsUsageUsersOrderBy>() : SdkPresent<BetaAnalyticsUsageUsersOrderBy>(orderBy), groupBy: groupBy == null ? const SdkOmitted<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>() : SdkPresent<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>(groupBy), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) {
-      yield sdkItem;
-    }
+    for (final sdkItem in sdkItems) { yield sdkItem; }
     if (sdkPage.hasMore != true) return;
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
@@ -369,84 +220,10 @@ Stream<BetaAnalyticsUsageUsersItem>
   }
 }
 
-Stream<SdkPage<BetaAnalyticsUsageUsersResponse, BetaAnalyticsUsageUsersItem>>
-    retrieveBetaOrganizationsAnalyticsUserUsageReportPages(ClientConfig config,
-        {required String startingAt,
-        String? endingAt,
-        List<BetaAnalyticsProductFilter>? products,
-        List<String>? models,
-        List<BetaMessagesUsageReportContextWindow>? contextWindows,
-        List<BetaInferenceGeoFilter>? inferenceGeos,
-        List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?
-            speeds,
-        List<String>? slackChannelIds,
-        List<String>? rbacGroupIds,
-        List<String>? userIds,
-        String? bucketWidth,
-        BetaAnalyticsSortOrder? order,
-        bool? excludeDeletedUsers,
-        int? limit,
-        String? page,
-        BetaAnalyticsUsageUsersOrderBy? orderBy,
-        List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?
-            groupBy,
-        RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaAnalyticsUsageUsersResponse, BetaAnalyticsUsageUsersItem>> retrieveBetaOrganizationsAnalyticsUserUsageReportPages(ClientConfig config, {required String startingAt, String? endingAt, List<BetaAnalyticsProductFilter>? products, List<String>? models, List<BetaMessagesUsageReportContextWindow>? contextWindows, List<BetaInferenceGeoFilter>? inferenceGeos, List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>? speeds, List<String>? slackChannelIds, List<String>? rbacGroupIds, List<String>? userIds, String? bucketWidth, BetaAnalyticsSortOrder? order, bool? excludeDeletedUsers, int? limit, String? page, BetaAnalyticsUsageUsersOrderBy? orderBy, List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>? groupBy, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await retrieveBetaOrganizationsAnalyticsUserUsageReport(config,
-        startingAt: startingAt,
-        endingAt: endingAt == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(endingAt),
-        products: products == null
-            ? const SdkOmitted<List<BetaAnalyticsProductFilter>?>()
-            : SdkPresent<List<BetaAnalyticsProductFilter>?>(products),
-        models: models == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(models),
-        contextWindows: contextWindows == null
-            ? const SdkOmitted<List<BetaMessagesUsageReportContextWindow>?>()
-            : SdkPresent<List<BetaMessagesUsageReportContextWindow>?>(
-                contextWindows),
-        inferenceGeos: inferenceGeos == null
-            ? const SdkOmitted<List<BetaInferenceGeoFilter>?>()
-            : SdkPresent<List<BetaInferenceGeoFilter>?>(inferenceGeos),
-        speeds: speeds == null
-            ? const SdkOmitted<
-                List<
-                    RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>()
-            : SdkPresent<
-                    List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>(
-                speeds),
-        slackChannelIds: slackChannelIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(slackChannelIds),
-        rbacGroupIds: rbacGroupIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(rbacGroupIds),
-        userIds: userIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(userIds),
-        bucketWidth: bucketWidth == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(bucketWidth),
-        order: order == null
-            ? const SdkOmitted<BetaAnalyticsSortOrder>()
-            : SdkPresent<BetaAnalyticsSortOrder>(order),
-        excludeDeletedUsers: excludeDeletedUsers == null
-            ? const SdkOmitted<bool>()
-            : SdkPresent<bool>(excludeDeletedUsers),
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        orderBy: orderBy == null
-            ? const SdkOmitted<BetaAnalyticsUsageUsersOrderBy>()
-            : SdkPresent<BetaAnalyticsUsageUsersOrderBy>(orderBy),
-        groupBy: groupBy == null
-            ? const SdkOmitted<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>()
-            : SdkPresent<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>(groupBy),
-        requestOptions: requestOptions);
+    final sdkPage = await retrieveBetaOrganizationsAnalyticsUserUsageReport(config, startingAt: startingAt, endingAt: endingAt == null ? const SdkOmitted<String?>() : SdkPresent<String?>(endingAt), products: products == null ? const SdkOmitted<List<BetaAnalyticsProductFilter>?>() : SdkPresent<List<BetaAnalyticsProductFilter>?>(products), models: models == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(models), contextWindows: contextWindows == null ? const SdkOmitted<List<BetaMessagesUsageReportContextWindow>?>() : SdkPresent<List<BetaMessagesUsageReportContextWindow>?>(contextWindows), inferenceGeos: inferenceGeos == null ? const SdkOmitted<List<BetaInferenceGeoFilter>?>() : SdkPresent<List<BetaInferenceGeoFilter>?>(inferenceGeos), speeds: speeds == null ? const SdkOmitted<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>() : SdkPresent<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>(speeds), slackChannelIds: slackChannelIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(slackChannelIds), rbacGroupIds: rbacGroupIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(rbacGroupIds), userIds: userIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(userIds), bucketWidth: bucketWidth == null ? const SdkOmitted<String?>() : SdkPresent<String?>(bucketWidth), order: order == null ? const SdkOmitted<BetaAnalyticsSortOrder>() : SdkPresent<BetaAnalyticsSortOrder>(order), excludeDeletedUsers: excludeDeletedUsers == null ? const SdkOmitted<bool>() : SdkPresent<bool>(excludeDeletedUsers), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), orderBy: orderBy == null ? const SdkOmitted<BetaAnalyticsUsageUsersOrderBy>() : SdkPresent<BetaAnalyticsUsageUsersOrderBy>(orderBy), groupBy: groupBy == null ? const SdkOmitted<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>() : SdkPresent<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>(groupBy), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;

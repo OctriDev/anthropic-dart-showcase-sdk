@@ -8,191 +8,86 @@ part of 'beta_message.dart';
 class BetaMessageDelta {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Information about the container used in this request. This will be non-null if a container tool (e.g. code execution) was used.
   final BetaContainer? container;
-
   /// Structured information about why model output stopped. This is `null` when the `stop_reason` has no additional detail to report.
   final BetaRefusalStopDetails? stopDetails;
-
   /// Required API value serialized in the `stop_reason` wire field.
   final BetaStopReason? stopReason;
-
   /// Required `string` value serialized in the `stop_sequence` wire field.
   final String? stopSequence;
 
-  const BetaMessageDelta(
-      {required this.container,
-      required this.stopDetails,
-      required this.stopReason,
-      required this.stopSequence});
+  const BetaMessageDelta({required this.container, required this.stopDetails, required this.stopReason, required this.stopSequence});
 
-  BetaMessageDelta Function(
-      {BetaContainer? container,
-      BetaRefusalStopDetails? stopDetails,
-      BetaStopReason? stopReason,
-      String? stopSequence}) get copyWith => _copyWith;
+  BetaMessageDelta Function({BetaContainer? container, BetaRefusalStopDetails? stopDetails, BetaStopReason? stopReason, String? stopSequence}) get copyWith => _copyWith;
 
-  BetaMessageDelta _copyWith(
-          {Object? container = sdkOmittedValue,
-          Object? stopDetails = sdkOmittedValue,
-          Object? stopReason = sdkOmittedValue,
-          Object? stopSequence = sdkOmittedValue}) =>
-      BetaMessageDelta(
-        container: identical(container, sdkOmittedValue)
-            ? this.container
-            : container as BetaContainer?,
-        stopDetails: identical(stopDetails, sdkOmittedValue)
-            ? this.stopDetails
-            : stopDetails as BetaRefusalStopDetails?,
-        stopReason: identical(stopReason, sdkOmittedValue)
-            ? this.stopReason
-            : stopReason as BetaStopReason?,
-        stopSequence: identical(stopSequence, sdkOmittedValue)
-            ? this.stopSequence
-            : stopSequence as String?,
-      );
+  BetaMessageDelta _copyWith({Object? container = sdkOmittedValue, Object? stopDetails = sdkOmittedValue, Object? stopReason = sdkOmittedValue, Object? stopSequence = sdkOmittedValue}) => BetaMessageDelta(
+    container: identical(container, sdkOmittedValue) ? this.container : container as BetaContainer?,
+    stopDetails: identical(stopDetails, sdkOmittedValue) ? this.stopDetails : stopDetails as BetaRefusalStopDetails?,
+    stopReason: identical(stopReason, sdkOmittedValue) ? this.stopReason : stopReason as BetaStopReason?,
+    stopSequence: identical(stopSequence, sdkOmittedValue) ? this.stopSequence : stopSequence as String?,
+  );
 
-  factory BetaMessageDelta.fromJson(Map<String, dynamic> json) =>
-      BetaMessageDelta(
-        container: json.containsKey('container')
-            ? json['container'] != null
-                ? BetaContainer.fromJson(
-                    json['container'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'container', 'Required property is missing'),
-        stopDetails: json.containsKey('stop_details')
-            ? json['stop_details'] != null
-                ? BetaRefusalStopDetails.fromJson(
-                    json['stop_details'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'stop_details', 'Required property is missing'),
-        stopReason: json.containsKey('stop_reason')
-            ? json['stop_reason'] != null
-                ? BetaStopReason.fromJson(json['stop_reason'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'stop_reason', 'Required property is missing'),
-        stopSequence: json.containsKey('stop_sequence')
-            ? json['stop_sequence'] as String?
-            : throw ArgumentError.value(
-                null, 'stop_sequence', 'Required property is missing'),
-      );
+  factory BetaMessageDelta.fromJson(Map<String, dynamic> json) => BetaMessageDelta(
+    container: json.containsKey('container') ? json['container'] != null ? BetaContainer.fromJson(json['container'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'container', 'Required property is missing'),
+    stopDetails: json.containsKey('stop_details') ? json['stop_details'] != null ? BetaRefusalStopDetails.fromJson(json['stop_details'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'stop_details', 'Required property is missing'),
+    stopReason: json.containsKey('stop_reason') ? json['stop_reason'] != null ? BetaStopReason.fromJson(json['stop_reason'] as String) : null : throw ArgumentError.value(null, 'stop_reason', 'Required property is missing'),
+    stopSequence: json.containsKey('stop_sequence') ? json['stop_sequence'] as String? : throw ArgumentError.value(null, 'stop_sequence', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'container': container?.toJson(),
-        'stop_details': stopDetails?.toJson(),
-        'stop_reason': stopReason?.toJson(),
-        'stop_sequence': stopSequence,
-      };
+    'container': container?.toJson(),
+    'stop_details': stopDetails?.toJson(),
+    'stop_reason': stopReason?.toJson(),
+    'stop_sequence': stopSequence,
+  };
 }
 
 /// Typed representation of the `BetaMessageDeltaEvent` API schema.
 class BetaMessageDeltaEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Information about context management strategies applied during the request
   final BetaResponseContextManagement? contextManagement;
-
   /// Required object value serialized in the `delta` wire field.
   final BetaMessageDelta delta;
-
   /// Changes the API made to the request's input before showing it to the model: one entry per change, in request order. Today the only entry type is `thinking_dropped` — a `thinking`, `redacted_thinking` or `connector_text` block from the request's `messages` that was removed from the prompt instead of being shown to the model because it failed a binding check. More entry types may be added over time; ignore types you do not recognize. Requires `anthropic-beta: thinking-binding-controls-2026-08-01`. Present on every such response from a model that supports extended thinking, as `[]` when nothing was changed; without the beta, blocks are removed all the same but nothing is reported. Removed blocks contribute nothing to `usage.input_tokens`. When streaming, the array is final in `message_start`; the final `message_delta` event carries it only when a server-side model fallback happened mid-stream, in which case it holds the serving model's entries and replaces the one in `message_start`.
-  final SdkOptional<List<BetaThinkingDroppedInputTransformation>?>
-      inputTransformations;
-
+  final SdkOptional<List<BetaThinkingDroppedInputTransformation>?> inputTransformations;
   /// Required `string` value serialized in the `type` wire field.
   final BetaMessageDeltaEventType type_;
-
   /// Billing and rate-limit usage. Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems. Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response. For example, `output_tokens` will be non-zero, even for an empty string response from Claude. Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
   final BetaMessageDeltaUsage usage;
 
-  const BetaMessageDeltaEvent(
-      {required this.contextManagement,
-      required this.delta,
-      this.inputTransformations = const SdkOmitted(),
-      required this.type_,
-      required this.usage});
+  const BetaMessageDeltaEvent({required this.contextManagement, required this.delta, this.inputTransformations = const SdkOmitted(), required this.type_, required this.usage});
 
-  BetaMessageDeltaEvent Function(
-      {BetaResponseContextManagement? contextManagement,
-      BetaMessageDelta delta,
-      SdkOptional<List<BetaThinkingDroppedInputTransformation>?>
-          inputTransformations,
-      BetaMessageDeltaEventType type_,
-      BetaMessageDeltaUsage usage}) get copyWith => _copyWith;
+  BetaMessageDeltaEvent Function({BetaResponseContextManagement? contextManagement, BetaMessageDelta delta, SdkOptional<List<BetaThinkingDroppedInputTransformation>?> inputTransformations, BetaMessageDeltaEventType type_, BetaMessageDeltaUsage usage}) get copyWith => _copyWith;
 
-  BetaMessageDeltaEvent _copyWith(
-          {Object? contextManagement = sdkOmittedValue,
-          Object? delta = sdkOmittedValue,
-          Object? inputTransformations = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? usage = sdkOmittedValue}) =>
-      BetaMessageDeltaEvent(
-        contextManagement: identical(contextManagement, sdkOmittedValue)
-            ? this.contextManagement
-            : contextManagement as BetaResponseContextManagement?,
-        delta: identical(delta, sdkOmittedValue)
-            ? this.delta
-            : delta as BetaMessageDelta,
-        inputTransformations: identical(inputTransformations, sdkOmittedValue)
-            ? this.inputTransformations
-            : inputTransformations
-                as SdkOptional<List<BetaThinkingDroppedInputTransformation>?>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaMessageDeltaEventType,
-        usage: identical(usage, sdkOmittedValue)
-            ? this.usage
-            : usage as BetaMessageDeltaUsage,
-      );
+  BetaMessageDeltaEvent _copyWith({Object? contextManagement = sdkOmittedValue, Object? delta = sdkOmittedValue, Object? inputTransformations = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? usage = sdkOmittedValue}) => BetaMessageDeltaEvent(
+    contextManagement: identical(contextManagement, sdkOmittedValue) ? this.contextManagement : contextManagement as BetaResponseContextManagement?,
+    delta: identical(delta, sdkOmittedValue) ? this.delta : delta as BetaMessageDelta,
+    inputTransformations: identical(inputTransformations, sdkOmittedValue) ? this.inputTransformations : inputTransformations as SdkOptional<List<BetaThinkingDroppedInputTransformation>?>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaMessageDeltaEventType,
+    usage: identical(usage, sdkOmittedValue) ? this.usage : usage as BetaMessageDeltaUsage,
+  );
 
-  factory BetaMessageDeltaEvent.fromJson(Map<String, dynamic> json) =>
-      BetaMessageDeltaEvent(
-        contextManagement: json.containsKey('context_management')
-            ? json['context_management'] != null
-                ? BetaResponseContextManagement.fromJson(
-                    json['context_management'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'context_management', 'Required property is missing'),
-        delta: (json['delta'] != null
-            ? BetaMessageDelta.fromJson(json['delta'] as Map<String, dynamic>)
-            : null)!,
-        inputTransformations: json.containsKey('input_transformations')
-            ? SdkPresent((json['input_transformations'] as List?)
-                ?.map((e) => BetaThinkingDroppedInputTransformation.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? BetaMessageDeltaEventType.fromJson(json['type'] as String)
-            : null)!,
-        usage: (json['usage'] != null
-            ? BetaMessageDeltaUsage.fromJson(
-                json['usage'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory BetaMessageDeltaEvent.fromJson(Map<String, dynamic> json) => BetaMessageDeltaEvent(
+    contextManagement: json.containsKey('context_management') ? json['context_management'] != null ? BetaResponseContextManagement.fromJson(json['context_management'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'context_management', 'Required property is missing'),
+    delta: (json['delta'] != null ? BetaMessageDelta.fromJson(json['delta'] as Map<String, dynamic>) : null)!,
+    inputTransformations: json.containsKey('input_transformations') ? SdkPresent((json['input_transformations'] as List?)?.map((e) => BetaThinkingDroppedInputTransformation.fromJson(e as Map<String, dynamic>)).toList()) : const SdkOmitted(),
+    type_: (json['type'] != null ? BetaMessageDeltaEventType.fromJson(json['type'] as String) : null)!,
+    usage: (json['usage'] != null ? BetaMessageDeltaUsage.fromJson(json['usage'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'context_management': contextManagement?.toJson(),
-        'delta': delta.toJson(),
-        ...switch (inputTransformations) {
-          SdkPresent<List<BetaThinkingDroppedInputTransformation>?>(
-            value: final value
-          ) =>
-            {
-              'input_transformations':
-                  value?.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-        'usage': usage.toJson(),
-      };
+    'context_management': contextManagement?.toJson(),
+    'delta': delta.toJson(),
+    ...switch (inputTransformations) {
+      SdkPresent<List<BetaThinkingDroppedInputTransformation>?>(value: final value) => {'input_transformations': value?.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+    'usage': usage.toJson(),
+  };
 }
 
 sealed class BetaMessageDeltaUsageCacheCreationInputTokens {
@@ -200,21 +95,16 @@ sealed class BetaMessageDeltaUsageCacheCreationInputTokens {
   static const String constructionSurface = 'named';
   const BetaMessageDeltaUsageCacheCreationInputTokens();
   factory BetaMessageDeltaUsageCacheCreationInputTokens.fromJson(Object? json) {
-    if (json is num) {
-      return BetaMessageDeltaUsageCacheCreationInputTokensInt(json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for BetaMessageDeltaUsageCacheCreationInputTokens");
+    if (json is num) { return BetaMessageDeltaUsageCacheCreationInputTokensInt(json.toInt()); }
+    throw FormatException("No variant matched for BetaMessageDeltaUsageCacheCreationInputTokens");
   }
   Object? toJson();
 }
 
-final class BetaMessageDeltaUsageCacheCreationInputTokensInt
-    extends BetaMessageDeltaUsageCacheCreationInputTokens {
+final class BetaMessageDeltaUsageCacheCreationInputTokensInt extends BetaMessageDeltaUsageCacheCreationInputTokens {
   final int value;
   const BetaMessageDeltaUsageCacheCreationInputTokensInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 sealed class BetaMessageDeltaUsageCacheReadInputTokens {
@@ -222,21 +112,16 @@ sealed class BetaMessageDeltaUsageCacheReadInputTokens {
   static const String constructionSurface = 'named';
   const BetaMessageDeltaUsageCacheReadInputTokens();
   factory BetaMessageDeltaUsageCacheReadInputTokens.fromJson(Object? json) {
-    if (json is num) {
-      return BetaMessageDeltaUsageCacheReadInputTokensInt(json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for BetaMessageDeltaUsageCacheReadInputTokens");
+    if (json is num) { return BetaMessageDeltaUsageCacheReadInputTokensInt(json.toInt()); }
+    throw FormatException("No variant matched for BetaMessageDeltaUsageCacheReadInputTokens");
   }
   Object? toJson();
 }
 
-final class BetaMessageDeltaUsageCacheReadInputTokensInt
-    extends BetaMessageDeltaUsageCacheReadInputTokens {
+final class BetaMessageDeltaUsageCacheReadInputTokensInt extends BetaMessageDeltaUsageCacheReadInputTokens {
   final int value;
   const BetaMessageDeltaUsageCacheReadInputTokensInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 sealed class BetaMessageDeltaUsageInputTokens {
@@ -244,241 +129,128 @@ sealed class BetaMessageDeltaUsageInputTokens {
   static const String constructionSurface = 'named';
   const BetaMessageDeltaUsageInputTokens();
   factory BetaMessageDeltaUsageInputTokens.fromJson(Object? json) {
-    if (json is num) {
-      return BetaMessageDeltaUsageInputTokensInt(json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for BetaMessageDeltaUsageInputTokens");
+    if (json is num) { return BetaMessageDeltaUsageInputTokensInt(json.toInt()); }
+    throw FormatException("No variant matched for BetaMessageDeltaUsageInputTokens");
   }
   Object? toJson();
 }
 
-final class BetaMessageDeltaUsageInputTokensInt
-    extends BetaMessageDeltaUsageInputTokens {
+final class BetaMessageDeltaUsageInputTokensInt extends BetaMessageDeltaUsageInputTokens {
   final int value;
   const BetaMessageDeltaUsageInputTokensInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaMessageDeltaUsage` API schema.
 class BetaMessageDeltaUsage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The cumulative number of input tokens used to create the cache entry.
   final int? cacheCreationInputTokens;
-
   /// The cumulative number of input tokens read from the cache.
   final int? cacheReadInputTokens;
-
   /// Outcome of the `fallback_credit_token` presented on this request. Present on every response to a non-batch request that carried a `fallback_credit_token`, in either redemption mode; absent otherwise (batch items accept and ignore the token and carry no outcome object).
   final BetaFallbackCreditUsage? fallbackCredit;
-
   /// The cumulative number of input tokens which were used.
   final int? inputTokens;
-
   /// Per-iteration token usage breakdown. Each entry represents one sampling iteration, with its own input/output token counts and cache statistics, discriminated by `type`. For `message` entries (model sampling iterations, such as the turns of a server-side tool use loop), this allows you to: - Determine which iterations exceeded long context thresholds (&gt;=200k tokens) - Calculate the context window size from the last `message` entry - Understand token accumulation across server-side tool use loops A `compaction` entry reports the token usage of the compaction operation itself — the server-side request that summarizes the context being closed — NOT the size of the context that was compacted away, and its token counts can be much smaller than that closed context (for example, a compaction that closes a ~200k-token context can report only a few thousand tokens). Do not derive the context window size from a `compaction` entry, even when it is the last entry. A `compaction` entry's tokens are not included in the top-level `usage` fields. When an input-token trigger is in effect (the default — 150,000 tokens unless configured otherwise), each `compaction` entry closes a context that had reached at least that threshold, though the context can exceed it by the final iteration's output and tool results.
   final List<BetaUsageIterationsItem>? iterations;
-
   /// The cumulative number of output tokens which were used.
   final int outputTokens;
-
   /// Breakdown of output tokens by category. `output_tokens` remains the inclusive, authoritative total used for billing. This object provides a read-only decomposition for observability — for example, how many of the billed output tokens were spent on internal reasoning that may have been summarized before being returned to you.
   final BetaOutputTokensDetails? outputTokensDetails;
-
   /// The number of server tool requests.
   final BetaServerToolUsage? serverToolUse;
 
-  const BetaMessageDeltaUsage(
-      {required this.cacheCreationInputTokens,
-      required this.cacheReadInputTokens,
-      required this.fallbackCredit,
-      required this.inputTokens,
-      required this.iterations,
-      required this.outputTokens,
-      required this.outputTokensDetails,
-      required this.serverToolUse});
+  const BetaMessageDeltaUsage({required this.cacheCreationInputTokens, required this.cacheReadInputTokens, required this.fallbackCredit, required this.inputTokens, required this.iterations, required this.outputTokens, required this.outputTokensDetails, required this.serverToolUse});
 
-  BetaMessageDeltaUsage Function(
-      {int? cacheCreationInputTokens,
-      int? cacheReadInputTokens,
-      BetaFallbackCreditUsage? fallbackCredit,
-      int? inputTokens,
-      List<BetaUsageIterationsItem>? iterations,
-      int outputTokens,
-      BetaOutputTokensDetails? outputTokensDetails,
-      BetaServerToolUsage? serverToolUse}) get copyWith => _copyWith;
+  BetaMessageDeltaUsage Function({int? cacheCreationInputTokens, int? cacheReadInputTokens, BetaFallbackCreditUsage? fallbackCredit, int? inputTokens, List<BetaUsageIterationsItem>? iterations, int outputTokens, BetaOutputTokensDetails? outputTokensDetails, BetaServerToolUsage? serverToolUse}) get copyWith => _copyWith;
 
-  BetaMessageDeltaUsage _copyWith(
-          {Object? cacheCreationInputTokens = sdkOmittedValue,
-          Object? cacheReadInputTokens = sdkOmittedValue,
-          Object? fallbackCredit = sdkOmittedValue,
-          Object? inputTokens = sdkOmittedValue,
-          Object? iterations = sdkOmittedValue,
-          Object? outputTokens = sdkOmittedValue,
-          Object? outputTokensDetails = sdkOmittedValue,
-          Object? serverToolUse = sdkOmittedValue}) =>
-      BetaMessageDeltaUsage(
-        cacheCreationInputTokens:
-            identical(cacheCreationInputTokens, sdkOmittedValue)
-                ? this.cacheCreationInputTokens
-                : cacheCreationInputTokens as int?,
-        cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue)
-            ? this.cacheReadInputTokens
-            : cacheReadInputTokens as int?,
-        fallbackCredit: identical(fallbackCredit, sdkOmittedValue)
-            ? this.fallbackCredit
-            : fallbackCredit as BetaFallbackCreditUsage?,
-        inputTokens: identical(inputTokens, sdkOmittedValue)
-            ? this.inputTokens
-            : inputTokens as int?,
-        iterations: identical(iterations, sdkOmittedValue)
-            ? this.iterations
-            : iterations as List<BetaUsageIterationsItem>?,
-        outputTokens: identical(outputTokens, sdkOmittedValue)
-            ? this.outputTokens
-            : outputTokens as int,
-        outputTokensDetails: identical(outputTokensDetails, sdkOmittedValue)
-            ? this.outputTokensDetails
-            : outputTokensDetails as BetaOutputTokensDetails?,
-        serverToolUse: identical(serverToolUse, sdkOmittedValue)
-            ? this.serverToolUse
-            : serverToolUse as BetaServerToolUsage?,
-      );
+  BetaMessageDeltaUsage _copyWith({Object? cacheCreationInputTokens = sdkOmittedValue, Object? cacheReadInputTokens = sdkOmittedValue, Object? fallbackCredit = sdkOmittedValue, Object? inputTokens = sdkOmittedValue, Object? iterations = sdkOmittedValue, Object? outputTokens = sdkOmittedValue, Object? outputTokensDetails = sdkOmittedValue, Object? serverToolUse = sdkOmittedValue}) => BetaMessageDeltaUsage(
+    cacheCreationInputTokens: identical(cacheCreationInputTokens, sdkOmittedValue) ? this.cacheCreationInputTokens : cacheCreationInputTokens as int?,
+    cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue) ? this.cacheReadInputTokens : cacheReadInputTokens as int?,
+    fallbackCredit: identical(fallbackCredit, sdkOmittedValue) ? this.fallbackCredit : fallbackCredit as BetaFallbackCreditUsage?,
+    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as int?,
+    iterations: identical(iterations, sdkOmittedValue) ? this.iterations : iterations as List<BetaUsageIterationsItem>?,
+    outputTokens: identical(outputTokens, sdkOmittedValue) ? this.outputTokens : outputTokens as int,
+    outputTokensDetails: identical(outputTokensDetails, sdkOmittedValue) ? this.outputTokensDetails : outputTokensDetails as BetaOutputTokensDetails?,
+    serverToolUse: identical(serverToolUse, sdkOmittedValue) ? this.serverToolUse : serverToolUse as BetaServerToolUsage?,
+  );
 
-  factory BetaMessageDeltaUsage.fromJson(Map<String, dynamic> json) =>
-      BetaMessageDeltaUsage(
-        cacheCreationInputTokens:
-            json.containsKey('cache_creation_input_tokens')
-                ? (json['cache_creation_input_tokens'] as num?)?.toInt()
-                : throw ArgumentError.value(null, 'cache_creation_input_tokens',
-                    'Required property is missing'),
-        cacheReadInputTokens: json.containsKey('cache_read_input_tokens')
-            ? (json['cache_read_input_tokens'] as num?)?.toInt()
-            : throw ArgumentError.value(null, 'cache_read_input_tokens',
-                'Required property is missing'),
-        fallbackCredit: json.containsKey('fallback_credit')
-            ? json['fallback_credit'] != null
-                ? BetaFallbackCreditUsage.fromJson(
-                    json['fallback_credit'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'fallback_credit', 'Required property is missing'),
-        inputTokens: json.containsKey('input_tokens')
-            ? (json['input_tokens'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'input_tokens', 'Required property is missing'),
-        iterations: json.containsKey('iterations')
-            ? (json['iterations'] as List?)
-                ?.map((e) => BetaUsageIterationsItem.fromJson(e))
-                .toList()
-            : throw ArgumentError.value(
-                null, 'iterations', 'Required property is missing'),
-        outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
-        outputTokensDetails: json.containsKey('output_tokens_details')
-            ? json['output_tokens_details'] != null
-                ? BetaOutputTokensDetails.fromJson(
-                    json['output_tokens_details'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'output_tokens_details', 'Required property is missing'),
-        serverToolUse: json.containsKey('server_tool_use')
-            ? json['server_tool_use'] != null
-                ? BetaServerToolUsage.fromJson(
-                    json['server_tool_use'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'server_tool_use', 'Required property is missing'),
-      );
+  factory BetaMessageDeltaUsage.fromJson(Map<String, dynamic> json) => BetaMessageDeltaUsage(
+    cacheCreationInputTokens: json.containsKey('cache_creation_input_tokens') ? (json['cache_creation_input_tokens'] as num?)?.toInt() : throw ArgumentError.value(null, 'cache_creation_input_tokens', 'Required property is missing'),
+    cacheReadInputTokens: json.containsKey('cache_read_input_tokens') ? (json['cache_read_input_tokens'] as num?)?.toInt() : throw ArgumentError.value(null, 'cache_read_input_tokens', 'Required property is missing'),
+    fallbackCredit: json.containsKey('fallback_credit') ? json['fallback_credit'] != null ? BetaFallbackCreditUsage.fromJson(json['fallback_credit'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'fallback_credit', 'Required property is missing'),
+    inputTokens: json.containsKey('input_tokens') ? (json['input_tokens'] as num?)?.toInt() : throw ArgumentError.value(null, 'input_tokens', 'Required property is missing'),
+    iterations: json.containsKey('iterations') ? (json['iterations'] as List?)?.map((e) => BetaUsageIterationsItem.fromJson(e)).toList() : throw ArgumentError.value(null, 'iterations', 'Required property is missing'),
+    outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
+    outputTokensDetails: json.containsKey('output_tokens_details') ? json['output_tokens_details'] != null ? BetaOutputTokensDetails.fromJson(json['output_tokens_details'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'output_tokens_details', 'Required property is missing'),
+    serverToolUse: json.containsKey('server_tool_use') ? json['server_tool_use'] != null ? BetaServerToolUsage.fromJson(json['server_tool_use'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'server_tool_use', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'cache_creation_input_tokens': cacheCreationInputTokens,
-        'cache_read_input_tokens': cacheReadInputTokens,
-        'fallback_credit': fallbackCredit?.toJson(),
-        'input_tokens': inputTokens,
-        'iterations': iterations?.map((item) => item.toJson()).toList(),
-        'output_tokens': outputTokens,
-        'output_tokens_details': outputTokensDetails?.toJson(),
-        'server_tool_use': serverToolUse?.toJson(),
-      };
+    'cache_creation_input_tokens': cacheCreationInputTokens,
+    'cache_read_input_tokens': cacheReadInputTokens,
+    'fallback_credit': fallbackCredit?.toJson(),
+    'input_tokens': inputTokens,
+    'iterations': iterations?.map((item) => item.toJson()).toList(),
+    'output_tokens': outputTokens,
+    'output_tokens_details': outputTokensDetails?.toJson(),
+    'server_tool_use': serverToolUse?.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaMessageStartEvent` API schema.
 class BetaMessageStartEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `message` wire field.
   final BetaMessage message;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaMessageStartEventType type_;
 
   const BetaMessageStartEvent({required this.message, required this.type_});
 
-  BetaMessageStartEvent Function(
-      {BetaMessage message,
-      BetaMessageStartEventType type_}) get copyWith => _copyWith;
+  BetaMessageStartEvent Function({BetaMessage message, BetaMessageStartEventType type_}) get copyWith => _copyWith;
 
-  BetaMessageStartEvent _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaMessageStartEvent(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as BetaMessage,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaMessageStartEventType,
-      );
+  BetaMessageStartEvent _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaMessageStartEvent(
+    message: identical(message, sdkOmittedValue) ? this.message : message as BetaMessage,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaMessageStartEventType,
+  );
 
-  factory BetaMessageStartEvent.fromJson(Map<String, dynamic> json) =>
-      BetaMessageStartEvent(
-        message: (json['message'] != null
-            ? BetaMessage.fromJson(json['message'] as Map<String, dynamic>)
-            : null)!,
-        type_: (json['type'] != null
-            ? BetaMessageStartEventType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaMessageStartEvent.fromJson(Map<String, dynamic> json) => BetaMessageStartEvent(
+    message: (json['message'] != null ? BetaMessage.fromJson(json['message'] as Map<String, dynamic>) : null)!,
+    type_: (json['type'] != null ? BetaMessageStartEventType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message.toJson(),
-        'type': type_.toJson(),
-      };
+    'message': message.toJson(),
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaMessageStopEvent` API schema.
 class BetaMessageStopEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaMessageStopEventType type_;
 
   const BetaMessageStopEvent({required this.type_});
 
-  BetaMessageStopEvent Function({BetaMessageStopEventType type_})
-      get copyWith => _copyWith;
+  BetaMessageStopEvent Function({BetaMessageStopEventType type_}) get copyWith => _copyWith;
 
-  BetaMessageStopEvent _copyWith({Object? type_ = sdkOmittedValue}) =>
-      BetaMessageStopEvent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaMessageStopEventType,
-      );
+  BetaMessageStopEvent _copyWith({Object? type_ = sdkOmittedValue}) => BetaMessageStopEvent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaMessageStopEventType,
+  );
 
-  factory BetaMessageStopEvent.fromJson(Map<String, dynamic> json) =>
-      BetaMessageStopEvent(
-        type_: (json['type'] != null
-            ? BetaMessageStopEventType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaMessageStopEvent.fromJson(Map<String, dynamic> json) => BetaMessageStopEvent(
+    type_: (json['type'] != null ? BetaMessageStopEventType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 sealed class BetaMessageStreamEvent {
@@ -487,96 +259,33 @@ sealed class BetaMessageStreamEvent {
   const BetaMessageStreamEvent();
   factory BetaMessageStreamEvent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaMessageStartEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaMessageStreamEventBetaMessageStartEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaMessageDeltaEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaMessageStreamEventBetaMessageDeltaEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaMessageStopEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaMessageStreamEventBetaMessageStopEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaContentBlockStartEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaMessageStreamEventBetaContentBlockStartEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaContentBlockDeltaEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaMessageStreamEventBetaContentBlockDeltaEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaContentBlockStopEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaMessageStreamEventBetaContentBlockStopEvent(value);
-        }
-      } catch (_) {}
+      try { final value = BetaMessageStartEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMessageStreamEventBetaMessageStartEvent(value); } } catch (_) {}
+      try { final value = BetaMessageDeltaEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMessageStreamEventBetaMessageDeltaEvent(value); } } catch (_) {}
+      try { final value = BetaMessageStopEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMessageStreamEventBetaMessageStopEvent(value); } } catch (_) {}
+      try { final value = BetaContentBlockStartEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMessageStreamEventBetaContentBlockStartEvent(value); } } catch (_) {}
+      try { final value = BetaContentBlockDeltaEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMessageStreamEventBetaContentBlockDeltaEvent(value); } } catch (_) {}
+      try { final value = BetaContentBlockStopEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMessageStreamEventBetaContentBlockStopEvent(value); } } catch (_) {}
     }
-    try {
-      return BetaMessageStreamEventBetaMessageStartEvent(
-          BetaMessageStartEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaMessageStreamEventBetaMessageDeltaEvent(
-          BetaMessageDeltaEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaMessageStreamEventBetaMessageStopEvent(
-          BetaMessageStopEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaMessageStreamEventBetaContentBlockStartEvent(
-          BetaContentBlockStartEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaMessageStreamEventBetaContentBlockDeltaEvent(
-          BetaContentBlockDeltaEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaMessageStreamEventBetaContentBlockStopEvent(
-          BetaContentBlockStopEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "content_block_delta",
-          "content_block_start",
-          "content_block_stop",
-          "message_delta",
-          "message_start",
-          "message_stop"
-        }.contains(json["type"])) {
-      return UnknownBetaMessageStreamEvent(json);
-    }
+    try { return BetaMessageStreamEventBetaMessageStartEvent(BetaMessageStartEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaMessageStreamEventBetaMessageDeltaEvent(BetaMessageDeltaEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaMessageStreamEventBetaMessageStopEvent(BetaMessageStopEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaMessageStreamEventBetaContentBlockStartEvent(BetaContentBlockStartEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaMessageStreamEventBetaContentBlockDeltaEvent(BetaContentBlockDeltaEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaMessageStreamEventBetaContentBlockStopEvent(BetaContentBlockStopEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"content_block_delta", "content_block_start", "content_block_stop", "message_delta", "message_start", "message_stop"}.contains(json["type"])) { return UnknownBetaMessageStreamEvent(json); }
     throw FormatException("No variant matched for BetaMessageStreamEvent");
   }
   Object? toJson();
 }
 
-final class BetaMessageStreamEventBetaMessageStartEvent
-    extends BetaMessageStreamEvent {
+final class BetaMessageStreamEventBetaMessageStartEvent extends BetaMessageStreamEvent {
   final BetaMessageStartEvent value;
   const BetaMessageStreamEventBetaMessageStartEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaMessageStreamEventBetaMessageDeltaEvent
-    extends BetaMessageStreamEvent {
+final class BetaMessageStreamEventBetaMessageDeltaEvent extends BetaMessageStreamEvent {
   final BetaMessageDeltaEvent value;
   const BetaMessageStreamEventBetaMessageDeltaEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }

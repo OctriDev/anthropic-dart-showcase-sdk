@@ -10,20 +10,14 @@ enum BetaManagedAgentsWorkspaceArchivedRunErrorType {
 
   static BetaManagedAgentsWorkspaceArchivedRunErrorType fromJson(String value) {
     switch (value) {
-      case 'workspace_archived_error':
-        return BetaManagedAgentsWorkspaceArchivedRunErrorType
-            .workspaceArchivedError;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsWorkspaceArchivedRunErrorType: $value');
+      case 'workspace_archived_error': return BetaManagedAgentsWorkspaceArchivedRunErrorType.workspaceArchivedError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsWorkspaceArchivedRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWorkspaceArchivedRunErrorType
-            .workspaceArchivedError:
-        return 'workspace_archived_error';
+      case BetaManagedAgentsWorkspaceArchivedRunErrorType.workspaceArchivedError: return 'workspace_archived_error';
     }
   }
 
@@ -37,18 +31,14 @@ enum BetaManagedAgentsWriteToolConfigName {
 
   static BetaManagedAgentsWriteToolConfigName fromJson(String value) {
     switch (value) {
-      case 'write':
-        return BetaManagedAgentsWriteToolConfigName.write;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsWriteToolConfigName: $value');
+      case 'write': return BetaManagedAgentsWriteToolConfigName.write;
+      default: throw ArgumentError('Unknown BetaManagedAgentsWriteToolConfigName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWriteToolConfigName.write:
-        return 'write';
+      case BetaManagedAgentsWriteToolConfigName.write: return 'write';
     }
   }
 
@@ -62,18 +52,14 @@ enum BetaManagedAgentsWriteToolConfigType {
 
   static BetaManagedAgentsWriteToolConfigType fromJson(String value) {
     switch (value) {
-      case 'write':
-        return BetaManagedAgentsWriteToolConfigType.write;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsWriteToolConfigType: $value');
+      case 'write': return BetaManagedAgentsWriteToolConfigType.write;
+      default: throw ArgumentError('Unknown BetaManagedAgentsWriteToolConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWriteToolConfigType.write:
-        return 'write';
+      case BetaManagedAgentsWriteToolConfigType.write: return 'write';
     }
   }
 
@@ -87,18 +73,14 @@ enum BetaManagedAgentsWriteToolConfigParamsName {
 
   static BetaManagedAgentsWriteToolConfigParamsName fromJson(String value) {
     switch (value) {
-      case 'write':
-        return BetaManagedAgentsWriteToolConfigParamsName.write;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsWriteToolConfigParamsName: $value');
+      case 'write': return BetaManagedAgentsWriteToolConfigParamsName.write;
+      default: throw ArgumentError('Unknown BetaManagedAgentsWriteToolConfigParamsName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWriteToolConfigParamsName.write:
-        return 'write';
+      case BetaManagedAgentsWriteToolConfigParamsName.write: return 'write';
     }
   }
 
@@ -112,18 +94,14 @@ enum BetaManagedAgentsWriteToolConfigParamsType {
 
   static BetaManagedAgentsWriteToolConfigParamsType fromJson(String value) {
     switch (value) {
-      case 'write':
-        return BetaManagedAgentsWriteToolConfigParamsType.write;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsWriteToolConfigParamsType: $value');
+      case 'write': return BetaManagedAgentsWriteToolConfigParamsType.write;
+      default: throw ArgumentError('Unknown BetaManagedAgentsWriteToolConfigParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWriteToolConfigParamsType.write:
-        return 'write';
+      case BetaManagedAgentsWriteToolConfigParamsType.write: return 'write';
     }
   }
 
@@ -137,17 +115,14 @@ enum BetaMCPToolsetType {
 
   static BetaMCPToolsetType fromJson(String value) {
     switch (value) {
-      case 'mcp_toolset':
-        return BetaMCPToolsetType.mcpToolset;
-      default:
-        throw ArgumentError('Unknown BetaMCPToolsetType: $value');
+      case 'mcp_toolset': return BetaMCPToolsetType.mcpToolset;
+      default: throw ArgumentError('Unknown BetaMCPToolsetType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMCPToolsetType.mcpToolset:
-        return 'mcp_toolset';
+      case BetaMCPToolsetType.mcpToolset: return 'mcp_toolset';
     }
   }
 
@@ -161,18 +136,14 @@ enum BetaMemoryTool20250818CreateCommandCommand {
 
   static BetaMemoryTool20250818CreateCommandCommand fromJson(String value) {
     switch (value) {
-      case 'create':
-        return BetaMemoryTool20250818CreateCommandCommand.create;
-      default:
-        throw ArgumentError(
-            'Unknown BetaMemoryTool20250818CreateCommandCommand: $value');
+      case 'create': return BetaMemoryTool20250818CreateCommandCommand.create;
+      default: throw ArgumentError('Unknown BetaMemoryTool20250818CreateCommandCommand: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMemoryTool20250818CreateCommandCommand.create:
-        return 'create';
+      case BetaMemoryTool20250818CreateCommandCommand.create: return 'create';
     }
   }
 
@@ -186,18 +157,14 @@ enum BetaMemoryTool20250818DeleteCommandCommand {
 
   static BetaMemoryTool20250818DeleteCommandCommand fromJson(String value) {
     switch (value) {
-      case 'delete':
-        return BetaMemoryTool20250818DeleteCommandCommand.delete;
-      default:
-        throw ArgumentError(
-            'Unknown BetaMemoryTool20250818DeleteCommandCommand: $value');
+      case 'delete': return BetaMemoryTool20250818DeleteCommandCommand.delete;
+      default: throw ArgumentError('Unknown BetaMemoryTool20250818DeleteCommandCommand: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMemoryTool20250818DeleteCommandCommand.delete:
-        return 'delete';
+      case BetaMemoryTool20250818DeleteCommandCommand.delete: return 'delete';
     }
   }
 
@@ -211,18 +178,14 @@ enum BetaMemoryTool20250818InsertCommandCommand {
 
   static BetaMemoryTool20250818InsertCommandCommand fromJson(String value) {
     switch (value) {
-      case 'insert':
-        return BetaMemoryTool20250818InsertCommandCommand.insert;
-      default:
-        throw ArgumentError(
-            'Unknown BetaMemoryTool20250818InsertCommandCommand: $value');
+      case 'insert': return BetaMemoryTool20250818InsertCommandCommand.insert;
+      default: throw ArgumentError('Unknown BetaMemoryTool20250818InsertCommandCommand: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMemoryTool20250818InsertCommandCommand.insert:
-        return 'insert';
+      case BetaMemoryTool20250818InsertCommandCommand.insert: return 'insert';
     }
   }
 
@@ -236,18 +199,14 @@ enum BetaMemoryTool20250818RenameCommandCommand {
 
   static BetaMemoryTool20250818RenameCommandCommand fromJson(String value) {
     switch (value) {
-      case 'rename':
-        return BetaMemoryTool20250818RenameCommandCommand.rename;
-      default:
-        throw ArgumentError(
-            'Unknown BetaMemoryTool20250818RenameCommandCommand: $value');
+      case 'rename': return BetaMemoryTool20250818RenameCommandCommand.rename;
+      default: throw ArgumentError('Unknown BetaMemoryTool20250818RenameCommandCommand: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMemoryTool20250818RenameCommandCommand.rename:
-        return 'rename';
+      case BetaMemoryTool20250818RenameCommandCommand.rename: return 'rename';
     }
   }
 
@@ -261,18 +220,14 @@ enum BetaMemoryTool20250818StrReplaceCommandCommand {
 
   static BetaMemoryTool20250818StrReplaceCommandCommand fromJson(String value) {
     switch (value) {
-      case 'str_replace':
-        return BetaMemoryTool20250818StrReplaceCommandCommand.strReplace;
-      default:
-        throw ArgumentError(
-            'Unknown BetaMemoryTool20250818StrReplaceCommandCommand: $value');
+      case 'str_replace': return BetaMemoryTool20250818StrReplaceCommandCommand.strReplace;
+      default: throw ArgumentError('Unknown BetaMemoryTool20250818StrReplaceCommandCommand: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMemoryTool20250818StrReplaceCommandCommand.strReplace:
-        return 'str_replace';
+      case BetaMemoryTool20250818StrReplaceCommandCommand.strReplace: return 'str_replace';
     }
   }
 
@@ -286,18 +241,14 @@ enum BetaMemoryTool20250818ViewCommandCommand {
 
   static BetaMemoryTool20250818ViewCommandCommand fromJson(String value) {
     switch (value) {
-      case 'view':
-        return BetaMemoryTool20250818ViewCommandCommand.view;
-      default:
-        throw ArgumentError(
-            'Unknown BetaMemoryTool20250818ViewCommandCommand: $value');
+      case 'view': return BetaMemoryTool20250818ViewCommandCommand.view;
+      default: throw ArgumentError('Unknown BetaMemoryTool20250818ViewCommandCommand: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMemoryTool20250818ViewCommandCommand.view:
-        return 'view';
+      case BetaMemoryTool20250818ViewCommandCommand.view: return 'view';
     }
   }
 
@@ -311,17 +262,14 @@ enum BetaMemoryTool20250818Name {
 
   static BetaMemoryTool20250818Name fromJson(String value) {
     switch (value) {
-      case 'memory':
-        return BetaMemoryTool20250818Name.memory;
-      default:
-        throw ArgumentError('Unknown BetaMemoryTool20250818Name: $value');
+      case 'memory': return BetaMemoryTool20250818Name.memory;
+      default: throw ArgumentError('Unknown BetaMemoryTool20250818Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMemoryTool20250818Name.memory:
-        return 'memory';
+      case BetaMemoryTool20250818Name.memory: return 'memory';
     }
   }
 

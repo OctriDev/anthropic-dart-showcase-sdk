@@ -26,16 +26,16 @@ import '../types.dart';
 /// [maxJwtLifetimeSeconds] Maximum allowed iat→exp spread for assertions from
 ///   this issuer (1-176400 seconds, i.e. up to 49h). Defaults to 3600 (1h).
 ///   Assertions must carry both `iat` and `exp`; a missing `iat` is rejected.
-Future<BetaFederationIssuer> createBetaOrganizationsFederationIssuers(
-    ClientConfig config,
-    {required String issuerUrl,
-    required String name,
-    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-    SdkOptional<String> anthropicVersion = const SdkOmitted(),
-    SdkOptional<bool?> checkJti = const SdkOmitted(),
-    SdkOptional<BetaFederationIssuerCreateParamsJwks> jwks = const SdkOmitted(),
-    SdkOptional<int?> maxJwtLifetimeSeconds = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BetaFederationIssuer>
+    createBetaOrganizationsFederationIssuers(ClientConfig config,
+        {required String issuerUrl,
+        required String name,
+        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+        SdkOptional<String> anthropicVersion = const SdkOmitted(),
+        SdkOptional<bool?> checkJti = const SdkOmitted(),
+        SdkOptional<BetaFederationIssuerCreateParamsJwks> jwks = const SdkOmitted(),
+        SdkOptional<int?> maxJwtLifetimeSeconds = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('issuer_url', issuerUrl, min: 1);
   validateLength('name', name, min: 1, max: 255);
 
@@ -47,54 +47,17 @@ Future<BetaFederationIssuer> createBetaOrganizationsFederationIssuers(
             'name': name,
             'check_jti': SdkUtils.unwrapOptional(checkJti),
             'jwks': SdkUtils.unwrapOptional(jwks),
-            'max_jwt_lifetime_seconds':
-                SdkUtils.unwrapOptional(maxJwtLifetimeSeconds)
+            'max_jwt_lifetime_seconds': SdkUtils.unwrapOptional(maxJwtLifetimeSeconds)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
           operationId: 'createBetaOrganizationsFederationIssuers',
-          fromJsonRaw: (value) =>
-              BetaFederationIssuer.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaFederationIssuer.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List federation issuers in your organization. Archived issuers are excluded unless `include_archived=true`.
 ///
@@ -107,14 +70,14 @@ Future<BetaFederationIssuer> createBetaOrganizationsFederationIssuers(
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Future<BetaFederationIssuerListResponse> listBetaOrganizationsFederationIssuers(
-    ClientConfig config,
-    {SdkOptional<int> limit = const SdkOmitted(),
-    SdkOptional<String?> page = const SdkOmitted(),
-    SdkOptional<bool> includeArchived = const SdkOmitted(),
-    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-    SdkOptional<String> anthropicVersion = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BetaFederationIssuerListResponse>
+    listBetaOrganizationsFederationIssuers(ClientConfig config,
+        {SdkOptional<int> limit = const SdkOmitted(),
+        SdkOptional<String?> page = const SdkOmitted(),
+        SdkOptional<bool> includeArchived = const SdkOmitted(),
+        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+        SdkOptional<String> anthropicVersion = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (limit is SdkPresent<int>) {
     validateRange('limit', limit.value, min: 1, max: 100);
   }
@@ -123,60 +86,20 @@ Future<BetaFederationIssuerListResponse> listBetaOrganizationsFederationIssuers(
           'GET', '/v1/organizations/federation_issuers?beta=true',
           config: config,
           query: {
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'include_archived': SdkQueryValue(
-                SdkUtils.unwrapOptional(includeArchived),
-                style: 'form',
-                explode: true)
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'include_archived': SdkQueryValue(SdkUtils.unwrapOptional(includeArchived), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
           operationId: 'listBetaOrganizationsFederationIssuers',
-          fromJsonRaw: (value) => BetaFederationIssuerListResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaFederationIssuerListResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
+
 
 /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List federation issuers in your organization. Archived issuers are excluded unless `include_archived=true`.
 ///
@@ -189,67 +112,23 @@ Future<BetaFederationIssuerListResponse> listBetaOrganizationsFederationIssuers(
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Stream<BetaFederationIssuer> listBetaOrganizationsFederationIssuersPaginated(
-    ClientConfig config,
-    {int? limit,
-    String? page,
-    bool? includeArchived,
-    List<String>? anthropicBeta,
-    String? anthropicVersion,
-    RequestOptions? requestOptions}) async* {
+Stream<BetaFederationIssuer> listBetaOrganizationsFederationIssuersPaginated(ClientConfig config, {int? limit, String? page, bool? includeArchived, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsFederationIssuers(config,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        includeArchived: includeArchived == null
-            ? const SdkOmitted<bool>()
-            : SdkPresent<bool>(includeArchived),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsFederationIssuers(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), includeArchived: includeArchived == null ? const SdkOmitted<bool>() : SdkPresent<bool>(includeArchived), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) {
-      yield sdkItem;
-    }
+    for (final sdkItem in sdkItems) { yield sdkItem; }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaFederationIssuerListResponse, BetaFederationIssuer>>
-    listBetaOrganizationsFederationIssuersPages(ClientConfig config,
-        {int? limit,
-        String? page,
-        bool? includeArchived,
-        List<String>? anthropicBeta,
-        String? anthropicVersion,
-        RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaFederationIssuerListResponse, BetaFederationIssuer>> listBetaOrganizationsFederationIssuersPages(ClientConfig config, {int? limit, String? page, bool? includeArchived, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsFederationIssuers(config,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        includeArchived: includeArchived == null
-            ? const SdkOmitted<bool>()
-            : SdkPresent<bool>(includeArchived),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsFederationIssuers(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), includeArchived: includeArchived == null ? const SdkOmitted<bool>() : SdkPresent<bool>(includeArchived), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;
@@ -260,6 +139,7 @@ Stream<SdkPage<BetaFederationIssuerListResponse, BetaFederationIssuer>>
   }
 }
 
+
 /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Retrieve a federation issuer by its ID (`fdis_...`).
 ///
 /// [federationIssuerId] ID of the federation issuer.
@@ -269,60 +149,24 @@ Stream<SdkPage<BetaFederationIssuerListResponse, BetaFederationIssuer>>
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Future<BetaFederationIssuer> retrieveBetaOrganizationsFederationIssuers(
-    ClientConfig config,
-    {required String federationIssuerId,
-    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-    SdkOptional<String> anthropicVersion = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BetaFederationIssuer>
+    retrieveBetaOrganizationsFederationIssuers(ClientConfig config,
+        {required String federationIssuerId,
+        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+        SdkOptional<String> anthropicVersion = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaFederationIssuer>('GET',
           '/v1/organizations/federation_issuers/${Uri.encodeComponent(federationIssuerId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
           operationId: 'retrieveBetaOrganizationsFederationIssuers',
-          fromJsonRaw: (value) =>
-              BetaFederationIssuer.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaFederationIssuer.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '529': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Partially update a federation issuer. Setting `jwks` replaces the full JWKS shape at once. Archived issuers cannot be updated; this returns 400. Create a new issuer instead. Updating an issuer that backs a rule with a scope outside `workspace:developer` or `workspace:inference` requires a Console session.
 ///
@@ -352,19 +196,18 @@ Future<BetaFederationIssuer> retrieveBetaOrganizationsFederationIssuers(
 ///   `iat` and `exp`; a missing `iat` is rejected.
 /// [name] Replaces the slug identifier (lowercase, digits, hyphens). Unique
 ///   within the organization; a duplicate name returns 409.
-Future<BetaFederationIssuer> updateBetaOrganizationsFederationIssuers(
-    ClientConfig config,
-    {required String federationIssuerId,
-    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-    SdkOptional<String> anthropicVersion = const SdkOmitted(),
-    SdkOptional<bool?> checkJti = const SdkOmitted(),
-    SdkOptional<String?> issuerUrl = const SdkOmitted(),
-    SdkOptional<BetaFederationIssuerUpdateParamsJwks?> jwks =
-        const SdkOmitted(),
-    SdkOptional<bool?> jwksPollingDisabled = const SdkOmitted(),
-    SdkOptional<int?> maxJwtLifetimeSeconds = const SdkOmitted(),
-    SdkOptional<String?> name = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BetaFederationIssuer>
+    updateBetaOrganizationsFederationIssuers(ClientConfig config,
+        {required String federationIssuerId,
+        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+        SdkOptional<String> anthropicVersion = const SdkOmitted(),
+        SdkOptional<bool?> checkJti = const SdkOmitted(),
+        SdkOptional<String?> issuerUrl = const SdkOmitted(),
+        SdkOptional<BetaFederationIssuerUpdateParamsJwks?> jwks = const SdkOmitted(),
+        SdkOptional<bool?> jwksPollingDisabled = const SdkOmitted(),
+        SdkOptional<int?> maxJwtLifetimeSeconds = const SdkOmitted(),
+        SdkOptional<String?> name = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaFederationIssuer>('POST',
           '/v1/organizations/federation_issuers/${Uri.encodeComponent(federationIssuerId.toString())}?beta=true',
           config: config,
@@ -372,57 +215,19 @@ Future<BetaFederationIssuer> updateBetaOrganizationsFederationIssuers(
             'check_jti': SdkUtils.unwrapOptional(checkJti),
             'issuer_url': SdkUtils.unwrapOptional(issuerUrl),
             'jwks': SdkUtils.unwrapOptional(jwks),
-            'jwks_polling_disabled':
-                SdkUtils.unwrapOptional(jwksPollingDisabled),
-            'max_jwt_lifetime_seconds':
-                SdkUtils.unwrapOptional(maxJwtLifetimeSeconds),
+            'jwks_polling_disabled': SdkUtils.unwrapOptional(jwksPollingDisabled),
+            'max_jwt_lifetime_seconds': SdkUtils.unwrapOptional(maxJwtLifetimeSeconds),
             'name': SdkUtils.unwrapOptional(name)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
           operationId: 'updateBetaOrganizationsFederationIssuers',
-          fromJsonRaw: (value) =>
-              BetaFederationIssuer.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaFederationIssuer.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Archive a federation issuer. Idempotent; re-archiving returns the issuer with its original `archived_at`. Rejected with 400 if any live (non-archived) federation rule still references the issuer; archive those rules first (a rule's issuer cannot be changed), or recreate them against another issuer.
 ///
@@ -433,57 +238,20 @@ Future<BetaFederationIssuer> updateBetaOrganizationsFederationIssuers(
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Future<BetaFederationIssuer> archiveBetaOrganizationsFederationIssuers(
-    ClientConfig config,
-    {required String federationIssuerId,
-    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-    SdkOptional<String> anthropicVersion = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BetaFederationIssuer>
+    archiveBetaOrganizationsFederationIssuers(ClientConfig config,
+        {required String federationIssuerId,
+        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+        SdkOptional<String> anthropicVersion = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaFederationIssuer>('POST',
           '/v1/organizations/federation_issuers/${Uri.encodeComponent(federationIssuerId.toString())}/archive?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
           operationId: 'archiveBetaOrganizationsFederationIssuers',
-          fromJsonRaw: (value) =>
-              BetaFederationIssuer.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaFederationIssuer.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '529': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

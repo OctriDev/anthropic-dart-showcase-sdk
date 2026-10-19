@@ -10,18 +10,14 @@ enum BetaAnalyticsCostBucketedResultCurrency {
 
   static BetaAnalyticsCostBucketedResultCurrency fromJson(String value) {
     switch (value) {
-      case 'USD':
-        return BetaAnalyticsCostBucketedResultCurrency.usd;
-      default:
-        throw ArgumentError(
-            'Unknown BetaAnalyticsCostBucketedResultCurrency: $value');
+      case 'USD': return BetaAnalyticsCostBucketedResultCurrency.usd;
+      default: throw ArgumentError('Unknown BetaAnalyticsCostBucketedResultCurrency: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAnalyticsCostBucketedResultCurrency.usd:
-        return 'USD';
+      case BetaAnalyticsCostBucketedResultCurrency.usd: return 'USD';
     }
   }
 
@@ -31,29 +27,24 @@ enum BetaAnalyticsCostBucketedResultCurrency {
 
 /// Required enumerated value serialized in the `speed` wire field.
 final class BetaAnalyticsCostBucketedResultSpeedVariant0 {
+
   final String value;
 
   const BetaAnalyticsCostBucketedResultSpeedVariant0._(this.value);
 
-  factory BetaAnalyticsCostBucketedResultSpeedVariant0.fromJson(String value) =>
-      BetaAnalyticsCostBucketedResultSpeedVariant0._(value);
+  factory BetaAnalyticsCostBucketedResultSpeedVariant0.fromJson(String value) => BetaAnalyticsCostBucketedResultSpeedVariant0._(value);
 
   static const fast = BetaAnalyticsCostBucketedResultSpeedVariant0._('fast');
-  static const standard =
-      BetaAnalyticsCostBucketedResultSpeedVariant0._('standard');
+  static const standard = BetaAnalyticsCostBucketedResultSpeedVariant0._('standard');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaAnalyticsCostBucketedResultSpeedVariant0 &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is BetaAnalyticsCostBucketedResultSpeedVariant0 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Currency code for the cost amount. Currently always `"USD"`.
@@ -62,18 +53,14 @@ enum BetaAnalyticsCostUsersItemCurrency {
 
   static BetaAnalyticsCostUsersItemCurrency fromJson(String value) {
     switch (value) {
-      case 'USD':
-        return BetaAnalyticsCostUsersItemCurrency.usd;
-      default:
-        throw ArgumentError(
-            'Unknown BetaAnalyticsCostUsersItemCurrency: $value');
+      case 'USD': return BetaAnalyticsCostUsersItemCurrency.usd;
+      default: throw ArgumentError('Unknown BetaAnalyticsCostUsersItemCurrency: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAnalyticsCostUsersItemCurrency.usd:
-        return 'USD';
+      case BetaAnalyticsCostUsersItemCurrency.usd: return 'USD';
     }
   }
 
@@ -83,27 +70,24 @@ enum BetaAnalyticsCostUsersItemCurrency {
 
 /// Required enumerated value serialized in the `speed` wire field.
 final class BetaAnalyticsCostUsersItemSpeedVariant0 {
+
   final String value;
 
   const BetaAnalyticsCostUsersItemSpeedVariant0._(this.value);
 
-  factory BetaAnalyticsCostUsersItemSpeedVariant0.fromJson(String value) =>
-      BetaAnalyticsCostUsersItemSpeedVariant0._(value);
+  factory BetaAnalyticsCostUsersItemSpeedVariant0.fromJson(String value) => BetaAnalyticsCostUsersItemSpeedVariant0._(value);
 
   static const fast = BetaAnalyticsCostUsersItemSpeedVariant0._('fast');
   static const standard = BetaAnalyticsCostUsersItemSpeedVariant0._('standard');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaAnalyticsCostUsersItemSpeedVariant0 && other.value == value;
+  @override bool operator ==(Object other) => other is BetaAnalyticsCostUsersItemSpeedVariant0 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional `string` value serialized in the `currency` wire field.
@@ -112,18 +96,14 @@ enum BetaAnalyticsSkillActivityCurrencyVariant0 {
 
   static BetaAnalyticsSkillActivityCurrencyVariant0 fromJson(String value) {
     switch (value) {
-      case 'USD':
-        return BetaAnalyticsSkillActivityCurrencyVariant0.usd;
-      default:
-        throw ArgumentError(
-            'Unknown BetaAnalyticsSkillActivityCurrencyVariant0: $value');
+      case 'USD': return BetaAnalyticsSkillActivityCurrencyVariant0.usd;
+      default: throw ArgumentError('Unknown BetaAnalyticsSkillActivityCurrencyVariant0: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAnalyticsSkillActivityCurrencyVariant0.usd:
-        return 'USD';
+      case BetaAnalyticsSkillActivityCurrencyVariant0.usd: return 'USD';
     }
   }
 
@@ -133,87 +113,69 @@ enum BetaAnalyticsSkillActivityCurrencyVariant0 {
 
 /// Optional enumerated value serialized in the `share_status` wire field.
 final class BetaAnalyticsSkillActivityShareStatusVariant0 {
+
   final String value;
 
   const BetaAnalyticsSkillActivityShareStatusVariant0._(this.value);
 
-  factory BetaAnalyticsSkillActivityShareStatusVariant0.fromJson(
-          String value) =>
-      BetaAnalyticsSkillActivityShareStatusVariant0._(value);
+  factory BetaAnalyticsSkillActivityShareStatusVariant0.fromJson(String value) => BetaAnalyticsSkillActivityShareStatusVariant0._(value);
 
-  static const organization =
-      BetaAnalyticsSkillActivityShareStatusVariant0._('organization');
-  static const private =
-      BetaAnalyticsSkillActivityShareStatusVariant0._('private');
-  static const public =
-      BetaAnalyticsSkillActivityShareStatusVariant0._('public');
+  static const organization = BetaAnalyticsSkillActivityShareStatusVariant0._('organization');
+  static const private = BetaAnalyticsSkillActivityShareStatusVariant0._('private');
+  static const public = BetaAnalyticsSkillActivityShareStatusVariant0._('public');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaAnalyticsSkillActivityShareStatusVariant0 &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is BetaAnalyticsSkillActivityShareStatusVariant0 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `speed` wire field.
 final class BetaAnalyticsUsageBucketedResultSpeedVariant0 {
+
   final String value;
 
   const BetaAnalyticsUsageBucketedResultSpeedVariant0._(this.value);
 
-  factory BetaAnalyticsUsageBucketedResultSpeedVariant0.fromJson(
-          String value) =>
-      BetaAnalyticsUsageBucketedResultSpeedVariant0._(value);
+  factory BetaAnalyticsUsageBucketedResultSpeedVariant0.fromJson(String value) => BetaAnalyticsUsageBucketedResultSpeedVariant0._(value);
 
   static const fast = BetaAnalyticsUsageBucketedResultSpeedVariant0._('fast');
-  static const standard =
-      BetaAnalyticsUsageBucketedResultSpeedVariant0._('standard');
+  static const standard = BetaAnalyticsUsageBucketedResultSpeedVariant0._('standard');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaAnalyticsUsageBucketedResultSpeedVariant0 &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is BetaAnalyticsUsageBucketedResultSpeedVariant0 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `speed` wire field.
 final class BetaAnalyticsUsageUsersItemSpeedVariant0 {
+
   final String value;
 
   const BetaAnalyticsUsageUsersItemSpeedVariant0._(this.value);
 
-  factory BetaAnalyticsUsageUsersItemSpeedVariant0.fromJson(String value) =>
-      BetaAnalyticsUsageUsersItemSpeedVariant0._(value);
+  factory BetaAnalyticsUsageUsersItemSpeedVariant0.fromJson(String value) => BetaAnalyticsUsageUsersItemSpeedVariant0._(value);
 
   static const fast = BetaAnalyticsUsageUsersItemSpeedVariant0._('fast');
-  static const standard =
-      BetaAnalyticsUsageUsersItemSpeedVariant0._('standard');
+  static const standard = BetaAnalyticsUsageUsersItemSpeedVariant0._('standard');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaAnalyticsUsageUsersItemSpeedVariant0 && other.value == value;
+  @override bool operator ==(Object other) => other is BetaAnalyticsUsageUsersItemSpeedVariant0 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Object type. Always `user`.
@@ -222,17 +184,14 @@ enum BetaAnalyticsUserType {
 
   static BetaAnalyticsUserType fromJson(String value) {
     switch (value) {
-      case 'user':
-        return BetaAnalyticsUserType.user;
-      default:
-        throw ArgumentError('Unknown BetaAnalyticsUserType: $value');
+      case 'user': return BetaAnalyticsUserType.user;
+      default: throw ArgumentError('Unknown BetaAnalyticsUserType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAnalyticsUserType.user:
-        return 'user';
+      case BetaAnalyticsUserType.user: return 'user';
     }
   }
 
@@ -246,17 +205,14 @@ enum BetaAnalyticsUserActorType {
 
   static BetaAnalyticsUserActorType fromJson(String value) {
     switch (value) {
-      case 'user_actor':
-        return BetaAnalyticsUserActorType.userActor;
-      default:
-        throw ArgumentError('Unknown BetaAnalyticsUserActorType: $value');
+      case 'user_actor': return BetaAnalyticsUserActorType.userActor;
+      default: throw ArgumentError('Unknown BetaAnalyticsUserActorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAnalyticsUserActorType.userActor:
-        return 'user_actor';
+      case BetaAnalyticsUserActorType.userActor: return 'user_actor';
     }
   }
 
@@ -270,17 +226,14 @@ enum BetaAPIErrorType {
 
   static BetaAPIErrorType fromJson(String value) {
     switch (value) {
-      case 'api_error':
-        return BetaAPIErrorType.apiError;
-      default:
-        throw ArgumentError('Unknown BetaAPIErrorType: $value');
+      case 'api_error': return BetaAPIErrorType.apiError;
+      default: throw ArgumentError('Unknown BetaAPIErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAPIErrorType.apiError:
-        return 'api_error';
+      case BetaAPIErrorType.apiError: return 'api_error';
     }
   }
 
@@ -290,6 +243,7 @@ enum BetaAPIErrorType {
 
 /// Status of the API key.
 final class BetaApiKeyStatus {
+
   final String value;
 
   const BetaApiKeyStatus._(this.value);
@@ -303,15 +257,12 @@ final class BetaApiKeyStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaApiKeyStatus && other.value == value;
+  @override bool operator ==(Object other) => other is BetaApiKeyStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Object type. For API Keys, this is always `"api_key"`.
@@ -320,17 +271,14 @@ enum BetaApiKeyType {
 
   static BetaApiKeyType fromJson(String value) {
     switch (value) {
-      case 'api_key':
-        return BetaApiKeyType.apiKey;
-      default:
-        throw ArgumentError('Unknown BetaApiKeyType: $value');
+      case 'api_key': return BetaApiKeyType.apiKey;
+      default: throw ArgumentError('Unknown BetaApiKeyType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaApiKeyType.apiKey:
-        return 'api_key';
+      case BetaApiKeyType.apiKey: return 'api_key';
     }
   }
 

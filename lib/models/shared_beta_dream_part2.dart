@@ -8,48 +8,34 @@ part of 'shared_beta_dream.dart';
 class BetaDreamSessionsInput {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaDreamSessionsInputType type_;
-
   /// Required array value serialized in the `session_ids` wire field.
   final List<String> sessionIds;
 
   const BetaDreamSessionsInput({required this.type_, required this.sessionIds});
 
-  BetaDreamSessionsInput Function(
-      {BetaDreamSessionsInputType type_,
-      List<String> sessionIds}) get copyWith => _copyWith;
+  BetaDreamSessionsInput Function({BetaDreamSessionsInputType type_, List<String> sessionIds}) get copyWith => _copyWith;
 
-  BetaDreamSessionsInput _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? sessionIds = sdkOmittedValue}) =>
-      BetaDreamSessionsInput(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaDreamSessionsInputType,
-        sessionIds: identical(sessionIds, sdkOmittedValue)
-            ? this.sessionIds
-            : sessionIds as List<String>,
-      );
+  BetaDreamSessionsInput _copyWith({Object? type_ = sdkOmittedValue, Object? sessionIds = sdkOmittedValue}) => BetaDreamSessionsInput(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaDreamSessionsInputType,
+    sessionIds: identical(sessionIds, sdkOmittedValue) ? this.sessionIds : sessionIds as List<String>,
+  );
 
-  factory BetaDreamSessionsInput.fromJson(Map<String, dynamic> json) =>
-      BetaDreamSessionsInput(
-        type_: (json['type'] != null
-            ? BetaDreamSessionsInputType.fromJson(json['type'] as String)
-            : null)!,
-        sessionIds:
-            ((json['session_ids'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory BetaDreamSessionsInput.fromJson(Map<String, dynamic> json) => BetaDreamSessionsInput(
+    type_: (json['type'] != null ? BetaDreamSessionsInputType.fromJson(json['type'] as String) : null)!,
+    sessionIds: ((json['session_ids'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'session_ids': sessionIds,
-      };
+    'type': type_.toJson(),
+    'session_ids': sessionIds,
+  };
 }
 
 /// Lifecycle status of a Dream.
 final class BetaDreamStatus {
+
   final String value;
 
   const BetaDreamStatus._(this.value);
@@ -64,80 +50,49 @@ final class BetaDreamStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaDreamStatus && other.value == value;
+  @override bool operator ==(Object other) => other is BetaDreamStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Cumulative token usage for the dream across every pipeline stage.
 class BetaDreamUsage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Total uncached input tokens consumed across every pipeline stage.
   final int inputTokens;
-
   /// Total output tokens generated across every pipeline stage.
   final int outputTokens;
-
   /// Total tokens read from prompt cache.
   final int cacheReadInputTokens;
-
   /// Total tokens used to create prompt-cache entries (sum of all TTL tiers).
   final int cacheCreationInputTokens;
 
-  const BetaDreamUsage(
-      {required this.inputTokens,
-      required this.outputTokens,
-      required this.cacheReadInputTokens,
-      required this.cacheCreationInputTokens});
+  const BetaDreamUsage({required this.inputTokens, required this.outputTokens, required this.cacheReadInputTokens, required this.cacheCreationInputTokens});
 
-  BetaDreamUsage Function(
-      {int inputTokens,
-      int outputTokens,
-      int cacheReadInputTokens,
-      int cacheCreationInputTokens}) get copyWith => _copyWith;
+  BetaDreamUsage Function({int inputTokens, int outputTokens, int cacheReadInputTokens, int cacheCreationInputTokens}) get copyWith => _copyWith;
 
-  BetaDreamUsage _copyWith(
-          {Object? inputTokens = sdkOmittedValue,
-          Object? outputTokens = sdkOmittedValue,
-          Object? cacheReadInputTokens = sdkOmittedValue,
-          Object? cacheCreationInputTokens = sdkOmittedValue}) =>
-      BetaDreamUsage(
-        inputTokens: identical(inputTokens, sdkOmittedValue)
-            ? this.inputTokens
-            : inputTokens as int,
-        outputTokens: identical(outputTokens, sdkOmittedValue)
-            ? this.outputTokens
-            : outputTokens as int,
-        cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue)
-            ? this.cacheReadInputTokens
-            : cacheReadInputTokens as int,
-        cacheCreationInputTokens:
-            identical(cacheCreationInputTokens, sdkOmittedValue)
-                ? this.cacheCreationInputTokens
-                : cacheCreationInputTokens as int,
-      );
+  BetaDreamUsage _copyWith({Object? inputTokens = sdkOmittedValue, Object? outputTokens = sdkOmittedValue, Object? cacheReadInputTokens = sdkOmittedValue, Object? cacheCreationInputTokens = sdkOmittedValue}) => BetaDreamUsage(
+    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as int,
+    outputTokens: identical(outputTokens, sdkOmittedValue) ? this.outputTokens : outputTokens as int,
+    cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue) ? this.cacheReadInputTokens : cacheReadInputTokens as int,
+    cacheCreationInputTokens: identical(cacheCreationInputTokens, sdkOmittedValue) ? this.cacheCreationInputTokens : cacheCreationInputTokens as int,
+  );
 
   factory BetaDreamUsage.fromJson(Map<String, dynamic> json) => BetaDreamUsage(
-        inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
-        outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
-        cacheReadInputTokens:
-            ((json['cache_read_input_tokens'] as num?)?.toInt())!,
-        cacheCreationInputTokens:
-            ((json['cache_creation_input_tokens'] as num?)?.toInt())!,
-      );
+    inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
+    outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
+    cacheReadInputTokens: ((json['cache_read_input_tokens'] as num?)?.toInt())!,
+    cacheCreationInputTokens: ((json['cache_creation_input_tokens'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'input_tokens': inputTokens,
-        'output_tokens': outputTokens,
-        'cache_read_input_tokens': cacheReadInputTokens,
-        'cache_creation_input_tokens': cacheCreationInputTokens,
-      };
+    'input_tokens': inputTokens,
+    'output_tokens': outputTokens,
+    'cache_read_input_tokens': cacheReadInputTokens,
+    'cache_creation_input_tokens': cacheCreationInputTokens,
+  };
 }

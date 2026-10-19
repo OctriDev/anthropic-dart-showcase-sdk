@@ -8,203 +8,93 @@ part of 'shared_beta_web.dart';
 class BetaWebSearchTool20250305 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<BetaAllowedCaller>> allowedCallers;
-
   /// If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
   final SdkOptional<List<String>?> allowedDomains;
-
   /// If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
   final SdkOptional<List<String>?> blockedDomains;
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
-
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
-
   /// Maximum number of times the tool can be used in the API request.
   final SdkOptional<int?> maxUses;
-
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final BetaWebSearchTool20250305Name name;
-
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebSearchTool20250305Type type_;
-
   /// Parameters for the user's location. Used to provide more relevant search results.
   final SdkOptional<BetaUserLocation?> userLocation;
 
-  const BetaWebSearchTool20250305(
-      {this.allowedCallers = const SdkOmitted(),
-      this.allowedDomains = const SdkOmitted(),
-      this.blockedDomains = const SdkOmitted(),
-      this.cacheControl = const SdkOmitted(),
-      this.deferLoading = const SdkOmitted(),
-      this.maxUses = const SdkOmitted(),
-      required this.name,
-      this.strict = const SdkOmitted(),
-      required this.type_,
-      this.userLocation = const SdkOmitted()});
+  const BetaWebSearchTool20250305({this.allowedCallers = const SdkOmitted(), this.allowedDomains = const SdkOmitted(), this.blockedDomains = const SdkOmitted(), this.cacheControl = const SdkOmitted(), this.deferLoading = const SdkOmitted(), this.maxUses = const SdkOmitted(), required this.name, this.strict = const SdkOmitted(), required this.type_, this.userLocation = const SdkOmitted()});
 
-  BetaWebSearchTool20250305 Function(
-      {SdkOptional<List<BetaAllowedCaller>> allowedCallers,
-      SdkOptional<List<String>?> allowedDomains,
-      SdkOptional<List<String>?> blockedDomains,
-      SdkOptional<BetaCacheControlEphemeral?> cacheControl,
-      SdkOptional<bool> deferLoading,
-      SdkOptional<int?> maxUses,
-      BetaWebSearchTool20250305Name name,
-      SdkOptional<bool> strict,
-      BetaWebSearchTool20250305Type type_,
-      SdkOptional<BetaUserLocation?> userLocation}) get copyWith => _copyWith;
+  BetaWebSearchTool20250305 Function({SdkOptional<List<BetaAllowedCaller>> allowedCallers, SdkOptional<List<String>?> allowedDomains, SdkOptional<List<String>?> blockedDomains, SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<bool> deferLoading, SdkOptional<int?> maxUses, BetaWebSearchTool20250305Name name, SdkOptional<bool> strict, BetaWebSearchTool20250305Type type_, SdkOptional<BetaUserLocation?> userLocation}) get copyWith => _copyWith;
 
-  BetaWebSearchTool20250305 _copyWith(
-          {Object? allowedCallers = sdkOmittedValue,
-          Object? allowedDomains = sdkOmittedValue,
-          Object? blockedDomains = sdkOmittedValue,
-          Object? cacheControl = sdkOmittedValue,
-          Object? deferLoading = sdkOmittedValue,
-          Object? maxUses = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? strict = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? userLocation = sdkOmittedValue}) =>
-      BetaWebSearchTool20250305(
-        allowedCallers: identical(allowedCallers, sdkOmittedValue)
-            ? this.allowedCallers
-            : allowedCallers as SdkOptional<List<BetaAllowedCaller>>,
-        allowedDomains: identical(allowedDomains, sdkOmittedValue)
-            ? this.allowedDomains
-            : allowedDomains as SdkOptional<List<String>?>,
-        blockedDomains: identical(blockedDomains, sdkOmittedValue)
-            ? this.blockedDomains
-            : blockedDomains as SdkOptional<List<String>?>,
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-        deferLoading: identical(deferLoading, sdkOmittedValue)
-            ? this.deferLoading
-            : deferLoading as SdkOptional<bool>,
-        maxUses: identical(maxUses, sdkOmittedValue)
-            ? this.maxUses
-            : maxUses as SdkOptional<int?>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as BetaWebSearchTool20250305Name,
-        strict: identical(strict, sdkOmittedValue)
-            ? this.strict
-            : strict as SdkOptional<bool>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaWebSearchTool20250305Type,
-        userLocation: identical(userLocation, sdkOmittedValue)
-            ? this.userLocation
-            : userLocation as SdkOptional<BetaUserLocation?>,
-      );
+  BetaWebSearchTool20250305 _copyWith({Object? allowedCallers = sdkOmittedValue, Object? allowedDomains = sdkOmittedValue, Object? blockedDomains = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? maxUses = sdkOmittedValue, Object? name = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? userLocation = sdkOmittedValue}) => BetaWebSearchTool20250305(
+    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<BetaAllowedCaller>>,
+    allowedDomains: identical(allowedDomains, sdkOmittedValue) ? this.allowedDomains : allowedDomains as SdkOptional<List<String>?>,
+    blockedDomains: identical(blockedDomains, sdkOmittedValue) ? this.blockedDomains : blockedDomains as SdkOptional<List<String>?>,
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
+    maxUses: identical(maxUses, sdkOmittedValue) ? this.maxUses : maxUses as SdkOptional<int?>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as BetaWebSearchTool20250305Name,
+    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebSearchTool20250305Type,
+    userLocation: identical(userLocation, sdkOmittedValue) ? this.userLocation : userLocation as SdkOptional<BetaUserLocation?>,
+  );
 
-  factory BetaWebSearchTool20250305.fromJson(Map<String, dynamic> json) =>
-      BetaWebSearchTool20250305(
-        allowedCallers: json['allowed_callers'] != null
-            ? SdkPresent(((json['allowed_callers'] as List?)
-                ?.map((e) => BetaAllowedCaller.fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        allowedDomains: json.containsKey('allowed_domains')
-            ? SdkPresent((json['allowed_domains'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-        blockedDomains: json.containsKey('blocked_domains')
-            ? SdkPresent((json['blocked_domains'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? BetaCacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        deferLoading: json['defer_loading'] != null
-            ? SdkPresent((json['defer_loading'] as bool?)!)
-            : const SdkOmitted(),
-        maxUses: json.containsKey('max_uses')
-            ? SdkPresent((json['max_uses'] as num?)?.toInt())
-            : const SdkOmitted(),
-        name: (json['name'] != null
-            ? BetaWebSearchTool20250305Name.fromJson(json['name'] as String)
-            : null)!,
-        strict: json['strict'] != null
-            ? SdkPresent((json['strict'] as bool?)!)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? BetaWebSearchTool20250305Type.fromJson(json['type'] as String)
-            : null)!,
-        userLocation: json.containsKey('user_location')
-            ? SdkPresent(json['user_location'] != null
-                ? BetaUserLocation.fromJson(
-                    json['user_location'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory BetaWebSearchTool20250305.fromJson(Map<String, dynamic> json) => BetaWebSearchTool20250305(
+    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => BetaAllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
+    allowedDomains: json.containsKey('allowed_domains') ? SdkPresent((json['allowed_domains'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    blockedDomains: json.containsKey('blocked_domains') ? SdkPresent((json['blocked_domains'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
+    maxUses: json.containsKey('max_uses') ? SdkPresent((json['max_uses'] as num?)?.toInt()) : const SdkOmitted(),
+    name: (json['name'] != null ? BetaWebSearchTool20250305Name.fromJson(json['name'] as String) : null)!,
+    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
+    type_: (json['type'] != null ? BetaWebSearchTool20250305Type.fromJson(json['type'] as String) : null)!,
+    userLocation: json.containsKey('user_location') ? SdkPresent(json['user_location'] != null ? BetaUserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (allowedCallers) {
-          SdkPresent<List<BetaAllowedCaller>>(value: final value) => {
-              'allowed_callers': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowedDomains) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'allowed_domains': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (blockedDomains) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'blocked_domains': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cacheControl) {
-          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deferLoading) {
-          SdkPresent<bool>(value: final value) => {
-              'defer_loading': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maxUses) {
-          SdkPresent<int?>(value: final value) => {
-              'max_uses': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name.toJson(),
-        ...switch (strict) {
-          SdkPresent<bool>(value: final value) => {
-              'strict': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-        ...switch (userLocation) {
-          SdkPresent<BetaUserLocation?>(value: final value) => {
-              'user_location': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (allowedCallers) {
+      SdkPresent<List<BetaAllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowedDomains) {
+      SdkPresent<List<String>?>(value: final value) => {'allowed_domains': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (blockedDomains) {
+      SdkPresent<List<String>?>(value: final value) => {'blocked_domains': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cacheControl) {
+      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deferLoading) {
+      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (maxUses) {
+      SdkPresent<int?>(value: final value) => {'max_uses': value,},
+      _ => const <String, dynamic>{},
+    },
+    'name': name.toJson(),
+    ...switch (strict) {
+      SdkPresent<bool>(value: final value) => {'strict': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+    ...switch (userLocation) {
+      SdkPresent<BetaUserLocation?>(value: final value) => {'user_location': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class BetaWebSearchTool20260209CacheControl {
@@ -212,37 +102,24 @@ sealed class BetaWebSearchTool20260209CacheControl {
   static const String constructionSurface = 'named';
   const BetaWebSearchTool20260209CacheControl();
   factory BetaWebSearchTool20260209CacheControl.fromJson(Object? json) {
-    try {
-      return BetaWebSearchTool20260209CacheControlBetaCacheControlEphemeral(
-          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownBetaWebSearchTool20260209CacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaWebSearchTool20260209CacheControl");
+    try { return BetaWebSearchTool20260209CacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaWebSearchTool20260209CacheControl(json); }
+    throw FormatException("No variant matched for BetaWebSearchTool20260209CacheControl");
   }
   Object? toJson();
 }
 
-final class BetaWebSearchTool20260209CacheControlBetaCacheControlEphemeral
-    extends BetaWebSearchTool20260209CacheControl {
+final class BetaWebSearchTool20260209CacheControlBetaCacheControlEphemeral extends BetaWebSearchTool20260209CacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaWebSearchTool20260209CacheControlBetaCacheControlEphemeral(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaWebSearchTool20260209CacheControlBetaCacheControlEphemeral(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaWebSearchTool20260209CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaWebSearchTool20260209CacheControl
-    extends BetaWebSearchTool20260209CacheControl {
+final class UnknownBetaWebSearchTool20260209CacheControl extends BetaWebSearchTool20260209CacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaWebSearchTool20260209CacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class BetaWebSearchTool20260209MaxUses {
@@ -250,224 +127,109 @@ sealed class BetaWebSearchTool20260209MaxUses {
   static const String constructionSurface = 'named';
   const BetaWebSearchTool20260209MaxUses();
   factory BetaWebSearchTool20260209MaxUses.fromJson(Object? json) {
-    if (json is num) {
-      return BetaWebSearchTool20260209MaxUsesInt(json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for BetaWebSearchTool20260209MaxUses");
+    if (json is num) { return BetaWebSearchTool20260209MaxUsesInt(json.toInt()); }
+    throw FormatException("No variant matched for BetaWebSearchTool20260209MaxUses");
   }
   Object? toJson();
 }
 
-final class BetaWebSearchTool20260209MaxUsesInt
-    extends BetaWebSearchTool20260209MaxUses {
+final class BetaWebSearchTool20260209MaxUsesInt extends BetaWebSearchTool20260209MaxUses {
   final int value;
   const BetaWebSearchTool20260209MaxUsesInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaWebSearchTool_20260209` API schema.
 class BetaWebSearchTool20260209 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<BetaAllowedCaller>> allowedCallers;
-
   /// If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
   final SdkOptional<List<String>?> allowedDomains;
-
   /// If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
   final SdkOptional<List<String>?> blockedDomains;
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
-
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
-
   /// Maximum number of times the tool can be used in the API request.
   final SdkOptional<int?> maxUses;
-
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final BetaWebSearchTool20260209Name name;
-
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebSearchTool20260209Type type_;
-
   /// Parameters for the user's location. Used to provide more relevant search results.
   final SdkOptional<BetaUserLocation?> userLocation;
 
-  const BetaWebSearchTool20260209(
-      {this.allowedCallers = const SdkOmitted(),
-      this.allowedDomains = const SdkOmitted(),
-      this.blockedDomains = const SdkOmitted(),
-      this.cacheControl = const SdkOmitted(),
-      this.deferLoading = const SdkOmitted(),
-      this.maxUses = const SdkOmitted(),
-      required this.name,
-      this.strict = const SdkOmitted(),
-      required this.type_,
-      this.userLocation = const SdkOmitted()});
+  const BetaWebSearchTool20260209({this.allowedCallers = const SdkOmitted(), this.allowedDomains = const SdkOmitted(), this.blockedDomains = const SdkOmitted(), this.cacheControl = const SdkOmitted(), this.deferLoading = const SdkOmitted(), this.maxUses = const SdkOmitted(), required this.name, this.strict = const SdkOmitted(), required this.type_, this.userLocation = const SdkOmitted()});
 
-  BetaWebSearchTool20260209 Function(
-      {SdkOptional<List<BetaAllowedCaller>> allowedCallers,
-      SdkOptional<List<String>?> allowedDomains,
-      SdkOptional<List<String>?> blockedDomains,
-      SdkOptional<BetaCacheControlEphemeral?> cacheControl,
-      SdkOptional<bool> deferLoading,
-      SdkOptional<int?> maxUses,
-      BetaWebSearchTool20260209Name name,
-      SdkOptional<bool> strict,
-      BetaWebSearchTool20260209Type type_,
-      SdkOptional<BetaUserLocation?> userLocation}) get copyWith => _copyWith;
+  BetaWebSearchTool20260209 Function({SdkOptional<List<BetaAllowedCaller>> allowedCallers, SdkOptional<List<String>?> allowedDomains, SdkOptional<List<String>?> blockedDomains, SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<bool> deferLoading, SdkOptional<int?> maxUses, BetaWebSearchTool20260209Name name, SdkOptional<bool> strict, BetaWebSearchTool20260209Type type_, SdkOptional<BetaUserLocation?> userLocation}) get copyWith => _copyWith;
 
-  BetaWebSearchTool20260209 _copyWith(
-          {Object? allowedCallers = sdkOmittedValue,
-          Object? allowedDomains = sdkOmittedValue,
-          Object? blockedDomains = sdkOmittedValue,
-          Object? cacheControl = sdkOmittedValue,
-          Object? deferLoading = sdkOmittedValue,
-          Object? maxUses = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? strict = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? userLocation = sdkOmittedValue}) =>
-      BetaWebSearchTool20260209(
-        allowedCallers: identical(allowedCallers, sdkOmittedValue)
-            ? this.allowedCallers
-            : allowedCallers as SdkOptional<List<BetaAllowedCaller>>,
-        allowedDomains: identical(allowedDomains, sdkOmittedValue)
-            ? this.allowedDomains
-            : allowedDomains as SdkOptional<List<String>?>,
-        blockedDomains: identical(blockedDomains, sdkOmittedValue)
-            ? this.blockedDomains
-            : blockedDomains as SdkOptional<List<String>?>,
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-        deferLoading: identical(deferLoading, sdkOmittedValue)
-            ? this.deferLoading
-            : deferLoading as SdkOptional<bool>,
-        maxUses: identical(maxUses, sdkOmittedValue)
-            ? this.maxUses
-            : maxUses as SdkOptional<int?>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as BetaWebSearchTool20260209Name,
-        strict: identical(strict, sdkOmittedValue)
-            ? this.strict
-            : strict as SdkOptional<bool>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaWebSearchTool20260209Type,
-        userLocation: identical(userLocation, sdkOmittedValue)
-            ? this.userLocation
-            : userLocation as SdkOptional<BetaUserLocation?>,
-      );
+  BetaWebSearchTool20260209 _copyWith({Object? allowedCallers = sdkOmittedValue, Object? allowedDomains = sdkOmittedValue, Object? blockedDomains = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? maxUses = sdkOmittedValue, Object? name = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? userLocation = sdkOmittedValue}) => BetaWebSearchTool20260209(
+    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<BetaAllowedCaller>>,
+    allowedDomains: identical(allowedDomains, sdkOmittedValue) ? this.allowedDomains : allowedDomains as SdkOptional<List<String>?>,
+    blockedDomains: identical(blockedDomains, sdkOmittedValue) ? this.blockedDomains : blockedDomains as SdkOptional<List<String>?>,
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
+    maxUses: identical(maxUses, sdkOmittedValue) ? this.maxUses : maxUses as SdkOptional<int?>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as BetaWebSearchTool20260209Name,
+    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebSearchTool20260209Type,
+    userLocation: identical(userLocation, sdkOmittedValue) ? this.userLocation : userLocation as SdkOptional<BetaUserLocation?>,
+  );
 
-  factory BetaWebSearchTool20260209.fromJson(Map<String, dynamic> json) =>
-      BetaWebSearchTool20260209(
-        allowedCallers: json['allowed_callers'] != null
-            ? SdkPresent(((json['allowed_callers'] as List?)
-                ?.map((e) => BetaAllowedCaller.fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        allowedDomains: json.containsKey('allowed_domains')
-            ? SdkPresent((json['allowed_domains'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-        blockedDomains: json.containsKey('blocked_domains')
-            ? SdkPresent((json['blocked_domains'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? BetaCacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        deferLoading: json['defer_loading'] != null
-            ? SdkPresent((json['defer_loading'] as bool?)!)
-            : const SdkOmitted(),
-        maxUses: json.containsKey('max_uses')
-            ? SdkPresent((json['max_uses'] as num?)?.toInt())
-            : const SdkOmitted(),
-        name: (json['name'] != null
-            ? BetaWebSearchTool20260209Name.fromJson(json['name'] as String)
-            : null)!,
-        strict: json['strict'] != null
-            ? SdkPresent((json['strict'] as bool?)!)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? BetaWebSearchTool20260209Type.fromJson(json['type'] as String)
-            : null)!,
-        userLocation: json.containsKey('user_location')
-            ? SdkPresent(json['user_location'] != null
-                ? BetaUserLocation.fromJson(
-                    json['user_location'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory BetaWebSearchTool20260209.fromJson(Map<String, dynamic> json) => BetaWebSearchTool20260209(
+    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => BetaAllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
+    allowedDomains: json.containsKey('allowed_domains') ? SdkPresent((json['allowed_domains'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    blockedDomains: json.containsKey('blocked_domains') ? SdkPresent((json['blocked_domains'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
+    maxUses: json.containsKey('max_uses') ? SdkPresent((json['max_uses'] as num?)?.toInt()) : const SdkOmitted(),
+    name: (json['name'] != null ? BetaWebSearchTool20260209Name.fromJson(json['name'] as String) : null)!,
+    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
+    type_: (json['type'] != null ? BetaWebSearchTool20260209Type.fromJson(json['type'] as String) : null)!,
+    userLocation: json.containsKey('user_location') ? SdkPresent(json['user_location'] != null ? BetaUserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (allowedCallers) {
-          SdkPresent<List<BetaAllowedCaller>>(value: final value) => {
-              'allowed_callers': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowedDomains) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'allowed_domains': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (blockedDomains) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'blocked_domains': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cacheControl) {
-          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deferLoading) {
-          SdkPresent<bool>(value: final value) => {
-              'defer_loading': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maxUses) {
-          SdkPresent<int?>(value: final value) => {
-              'max_uses': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name.toJson(),
-        ...switch (strict) {
-          SdkPresent<bool>(value: final value) => {
-              'strict': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-        ...switch (userLocation) {
-          SdkPresent<BetaUserLocation?>(value: final value) => {
-              'user_location': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (allowedCallers) {
+      SdkPresent<List<BetaAllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowedDomains) {
+      SdkPresent<List<String>?>(value: final value) => {'allowed_domains': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (blockedDomains) {
+      SdkPresent<List<String>?>(value: final value) => {'blocked_domains': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cacheControl) {
+      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deferLoading) {
+      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (maxUses) {
+      SdkPresent<int?>(value: final value) => {'max_uses': value,},
+      _ => const <String, dynamic>{},
+    },
+    'name': name.toJson(),
+    ...switch (strict) {
+      SdkPresent<bool>(value: final value) => {'strict': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+    ...switch (userLocation) {
+      SdkPresent<BetaUserLocation?>(value: final value) => {'user_location': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class BetaWebSearchTool20260318CacheControl {
@@ -475,37 +237,24 @@ sealed class BetaWebSearchTool20260318CacheControl {
   static const String constructionSurface = 'named';
   const BetaWebSearchTool20260318CacheControl();
   factory BetaWebSearchTool20260318CacheControl.fromJson(Object? json) {
-    try {
-      return BetaWebSearchTool20260318CacheControlBetaCacheControlEphemeral(
-          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownBetaWebSearchTool20260318CacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaWebSearchTool20260318CacheControl");
+    try { return BetaWebSearchTool20260318CacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaWebSearchTool20260318CacheControl(json); }
+    throw FormatException("No variant matched for BetaWebSearchTool20260318CacheControl");
   }
   Object? toJson();
 }
 
-final class BetaWebSearchTool20260318CacheControlBetaCacheControlEphemeral
-    extends BetaWebSearchTool20260318CacheControl {
+final class BetaWebSearchTool20260318CacheControlBetaCacheControlEphemeral extends BetaWebSearchTool20260318CacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaWebSearchTool20260318CacheControlBetaCacheControlEphemeral(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaWebSearchTool20260318CacheControlBetaCacheControlEphemeral(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaWebSearchTool20260318CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaWebSearchTool20260318CacheControl
-    extends BetaWebSearchTool20260318CacheControl {
+final class UnknownBetaWebSearchTool20260318CacheControl extends BetaWebSearchTool20260318CacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaWebSearchTool20260318CacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class BetaWebSearchTool20260318MaxUses {
@@ -513,19 +262,14 @@ sealed class BetaWebSearchTool20260318MaxUses {
   static const String constructionSurface = 'named';
   const BetaWebSearchTool20260318MaxUses();
   factory BetaWebSearchTool20260318MaxUses.fromJson(Object? json) {
-    if (json is num) {
-      return BetaWebSearchTool20260318MaxUsesInt(json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for BetaWebSearchTool20260318MaxUses");
+    if (json is num) { return BetaWebSearchTool20260318MaxUsesInt(json.toInt()); }
+    throw FormatException("No variant matched for BetaWebSearchTool20260318MaxUses");
   }
   Object? toJson();
 }
 
-final class BetaWebSearchTool20260318MaxUsesInt
-    extends BetaWebSearchTool20260318MaxUses {
+final class BetaWebSearchTool20260318MaxUsesInt extends BetaWebSearchTool20260318MaxUses {
   final int value;
   const BetaWebSearchTool20260318MaxUsesInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }

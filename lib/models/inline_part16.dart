@@ -10,18 +10,14 @@ enum BetaManagedAgentsBranchCheckoutType {
 
   static BetaManagedAgentsBranchCheckoutType fromJson(String value) {
     switch (value) {
-      case 'branch':
-        return BetaManagedAgentsBranchCheckoutType.branch;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsBranchCheckoutType: $value');
+      case 'branch': return BetaManagedAgentsBranchCheckoutType.branch;
+      default: throw ArgumentError('Unknown BetaManagedAgentsBranchCheckoutType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsBranchCheckoutType.branch:
-        return 'branch';
+      case BetaManagedAgentsBranchCheckoutType.branch: return 'branch';
     }
   }
 
@@ -35,17 +31,14 @@ enum BetaManagedAgentsBudgetLimitType {
 
   static BetaManagedAgentsBudgetLimitType fromJson(String value) {
     switch (value) {
-      case 'limit':
-        return BetaManagedAgentsBudgetLimitType.limit;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsBudgetLimitType: $value');
+      case 'limit': return BetaManagedAgentsBudgetLimitType.limit;
+      default: throw ArgumentError('Unknown BetaManagedAgentsBudgetLimitType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsBudgetLimitType.limit:
-        return 'limit';
+      case BetaManagedAgentsBudgetLimitType.limit: return 'limit';
     }
   }
 
@@ -59,18 +52,14 @@ enum BetaManagedAgentsCommitCheckoutType {
 
   static BetaManagedAgentsCommitCheckoutType fromJson(String value) {
     switch (value) {
-      case 'commit':
-        return BetaManagedAgentsCommitCheckoutType.commit;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsCommitCheckoutType: $value');
+      case 'commit': return BetaManagedAgentsCommitCheckoutType.commit;
+      default: throw ArgumentError('Unknown BetaManagedAgentsCommitCheckoutType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsCommitCheckoutType.commit:
-        return 'commit';
+      case BetaManagedAgentsCommitCheckoutType.commit: return 'commit';
     }
   }
 
@@ -84,18 +73,14 @@ enum BetaManagedAgentsConflictErrorType {
 
   static BetaManagedAgentsConflictErrorType fromJson(String value) {
     switch (value) {
-      case 'conflict_error':
-        return BetaManagedAgentsConflictErrorType.conflictError;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsConflictErrorType: $value');
+      case 'conflict_error': return BetaManagedAgentsConflictErrorType.conflictError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsConflictErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsConflictErrorType.conflictError:
-        return 'conflict_error';
+      case BetaManagedAgentsConflictErrorType.conflictError: return 'conflict_error';
     }
   }
 
@@ -109,18 +94,14 @@ enum BetaManagedAgentsContentSha256PreconditionType {
 
   static BetaManagedAgentsContentSha256PreconditionType fromJson(String value) {
     switch (value) {
-      case 'content_sha256':
-        return BetaManagedAgentsContentSha256PreconditionType.contentSha256;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsContentSha256PreconditionType: $value');
+      case 'content_sha256': return BetaManagedAgentsContentSha256PreconditionType.contentSha256;
+      default: throw ArgumentError('Unknown BetaManagedAgentsContentSha256PreconditionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsContentSha256PreconditionType.contentSha256:
-        return 'content_sha256';
+      case BetaManagedAgentsContentSha256PreconditionType.contentSha256: return 'content_sha256';
     }
   }
 
@@ -130,50 +111,39 @@ enum BetaManagedAgentsContentSha256PreconditionType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsCredentialType {
+
   final String value;
 
   const BetaManagedAgentsCredentialType._(this.value);
 
-  factory BetaManagedAgentsCredentialType.fromJson(String value) =>
-      BetaManagedAgentsCredentialType._(value);
+  factory BetaManagedAgentsCredentialType.fromJson(String value) => BetaManagedAgentsCredentialType._(value);
 
-  static const vaultCredential =
-      BetaManagedAgentsCredentialType._('vault_credential');
+  static const vaultCredential = BetaManagedAgentsCredentialType._('vault_credential');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaManagedAgentsCredentialType && other.value == value;
+  @override bool operator ==(Object other) => other is BetaManagedAgentsCredentialType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsCredentialHostUnreachableErrorType {
   credentialHostUnreachableError;
 
-  static BetaManagedAgentsCredentialHostUnreachableErrorType fromJson(
-      String value) {
+  static BetaManagedAgentsCredentialHostUnreachableErrorType fromJson(String value) {
     switch (value) {
-      case 'credential_host_unreachable_error':
-        return BetaManagedAgentsCredentialHostUnreachableErrorType
-            .credentialHostUnreachableError;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsCredentialHostUnreachableErrorType: $value');
+      case 'credential_host_unreachable_error': return BetaManagedAgentsCredentialHostUnreachableErrorType.credentialHostUnreachableError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsCredentialHostUnreachableErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsCredentialHostUnreachableErrorType
-            .credentialHostUnreachableError:
-        return 'credential_host_unreachable_error';
+      case BetaManagedAgentsCredentialHostUnreachableErrorType.credentialHostUnreachableError: return 'credential_host_unreachable_error';
     }
   }
 
@@ -183,29 +153,23 @@ enum BetaManagedAgentsCredentialHostUnreachableErrorType {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaManagedAgentsCredentialValidationType {
+
   final String value;
 
   const BetaManagedAgentsCredentialValidationType._(this.value);
 
-  factory BetaManagedAgentsCredentialValidationType.fromJson(String value) =>
-      BetaManagedAgentsCredentialValidationType._(value);
+  factory BetaManagedAgentsCredentialValidationType.fromJson(String value) => BetaManagedAgentsCredentialValidationType._(value);
 
-  static const vaultCredentialValidation =
-      BetaManagedAgentsCredentialValidationType._(
-          'vault_credential_validation');
+  static const vaultCredentialValidation = BetaManagedAgentsCredentialValidationType._('vault_credential_validation');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaManagedAgentsCredentialValidationType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is BetaManagedAgentsCredentialValidationType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -214,18 +178,14 @@ enum BetaManagedAgentsCronScheduleType {
 
   static BetaManagedAgentsCronScheduleType fromJson(String value) {
     switch (value) {
-      case 'cron':
-        return BetaManagedAgentsCronScheduleType.cron;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsCronScheduleType: $value');
+      case 'cron': return BetaManagedAgentsCronScheduleType.cron;
+      default: throw ArgumentError('Unknown BetaManagedAgentsCronScheduleType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsCronScheduleType.cron:
-        return 'cron';
+      case BetaManagedAgentsCronScheduleType.cron: return 'cron';
     }
   }
 
@@ -239,18 +199,14 @@ enum BetaManagedAgentsCronScheduleParamsType {
 
   static BetaManagedAgentsCronScheduleParamsType fromJson(String value) {
     switch (value) {
-      case 'cron':
-        return BetaManagedAgentsCronScheduleParamsType.cron;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsCronScheduleParamsType: $value');
+      case 'cron': return BetaManagedAgentsCronScheduleParamsType.cron;
+      default: throw ArgumentError('Unknown BetaManagedAgentsCronScheduleParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsCronScheduleParamsType.cron:
-        return 'cron';
+      case BetaManagedAgentsCronScheduleParamsType.cron: return 'cron';
     }
   }
 
@@ -264,17 +220,14 @@ enum BetaManagedAgentsCustomSkillType {
 
   static BetaManagedAgentsCustomSkillType fromJson(String value) {
     switch (value) {
-      case 'custom':
-        return BetaManagedAgentsCustomSkillType.custom;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsCustomSkillType: $value');
+      case 'custom': return BetaManagedAgentsCustomSkillType.custom;
+      default: throw ArgumentError('Unknown BetaManagedAgentsCustomSkillType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsCustomSkillType.custom:
-        return 'custom';
+      case BetaManagedAgentsCustomSkillType.custom: return 'custom';
     }
   }
 
@@ -288,18 +241,14 @@ enum BetaManagedAgentsCustomSkillParamsType {
 
   static BetaManagedAgentsCustomSkillParamsType fromJson(String value) {
     switch (value) {
-      case 'custom':
-        return BetaManagedAgentsCustomSkillParamsType.custom;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsCustomSkillParamsType: $value');
+      case 'custom': return BetaManagedAgentsCustomSkillParamsType.custom;
+      default: throw ArgumentError('Unknown BetaManagedAgentsCustomSkillParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsCustomSkillParamsType.custom:
-        return 'custom';
+      case BetaManagedAgentsCustomSkillParamsType.custom: return 'custom';
     }
   }
 
@@ -313,17 +262,14 @@ enum BetaManagedAgentsCustomToolType {
 
   static BetaManagedAgentsCustomToolType fromJson(String value) {
     switch (value) {
-      case 'custom':
-        return BetaManagedAgentsCustomToolType.custom;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsCustomToolType: $value');
+      case 'custom': return BetaManagedAgentsCustomToolType.custom;
+      default: throw ArgumentError('Unknown BetaManagedAgentsCustomToolType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsCustomToolType.custom:
-        return 'custom';
+      case BetaManagedAgentsCustomToolType.custom: return 'custom';
     }
   }
 

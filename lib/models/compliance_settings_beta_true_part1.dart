@@ -8,44 +8,29 @@ part of 'compliance_settings_beta_true.dart';
 class BetaComplianceSettings {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether the Compliance API is enabled for this organization.
   final BetaComplianceSettingsState state;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaComplianceSettingsType type_;
 
   const BetaComplianceSettings({required this.state, required this.type_});
 
-  BetaComplianceSettings Function(
-      {BetaComplianceSettingsState state,
-      BetaComplianceSettingsType type_}) get copyWith => _copyWith;
+  BetaComplianceSettings Function({BetaComplianceSettingsState state, BetaComplianceSettingsType type_}) get copyWith => _copyWith;
 
-  BetaComplianceSettings _copyWith(
-          {Object? state = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
-      BetaComplianceSettings(
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as BetaComplianceSettingsState,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaComplianceSettingsType,
-      );
+  BetaComplianceSettings _copyWith({Object? state = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaComplianceSettings(
+    state: identical(state, sdkOmittedValue) ? this.state : state as BetaComplianceSettingsState,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaComplianceSettingsType,
+  );
 
-  factory BetaComplianceSettings.fromJson(Map<String, dynamic> json) =>
-      BetaComplianceSettings(
-        state: (json['state'] != null
-            ? BetaComplianceSettingsState.fromJson(json['state'])
-            : null)!,
-        type_: (json['type'] != null
-            ? BetaComplianceSettingsType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaComplianceSettings.fromJson(Map<String, dynamic> json) => BetaComplianceSettings(
+    state: (json['state'] != null ? BetaComplianceSettingsState.fromJson(json['state']) : null)!,
+    type_: (json['type'] != null ? BetaComplianceSettingsType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'state': state.toJson(),
-        'type': type_.toJson(),
-      };
+    'state': state.toJson(),
+    'type': type_.toJson(),
+  };
 }
 
 sealed class BetaComplianceSettingsState {
@@ -54,244 +39,154 @@ sealed class BetaComplianceSettingsState {
   const BetaComplianceSettingsState();
   factory BetaComplianceSettingsState.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaComplianceSettingsStateEnabled.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaComplianceSettingsStateBetaComplianceSettingsStateEnabled(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaComplianceSettingsStateDisabled.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaComplianceSettingsStateBetaComplianceSettingsStateDisabled(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaComplianceSettingsStateEnabled.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaComplianceSettingsStateBetaComplianceSettingsStateEnabled(value); } } catch (_) {}
+      try { final value = BetaComplianceSettingsStateDisabled.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaComplianceSettingsStateBetaComplianceSettingsStateDisabled(value); } } catch (_) {}
     }
-    try {
-      return BetaComplianceSettingsStateBetaComplianceSettingsStateEnabled(
-          BetaComplianceSettingsStateEnabled.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaComplianceSettingsStateBetaComplianceSettingsStateDisabled(
-          BetaComplianceSettingsStateDisabled.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"disabled", "enabled"}.contains(json["type"])) {
-      return UnknownBetaComplianceSettingsState(json);
-    }
+    try { return BetaComplianceSettingsStateBetaComplianceSettingsStateEnabled(BetaComplianceSettingsStateEnabled.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaComplianceSettingsStateBetaComplianceSettingsStateDisabled(BetaComplianceSettingsStateDisabled.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"disabled", "enabled"}.contains(json["type"])) { return UnknownBetaComplianceSettingsState(json); }
     throw FormatException("No variant matched for BetaComplianceSettingsState");
   }
   Object? toJson();
 }
 
-final class BetaComplianceSettingsStateBetaComplianceSettingsStateEnabled
-    extends BetaComplianceSettingsState {
+final class BetaComplianceSettingsStateBetaComplianceSettingsStateEnabled extends BetaComplianceSettingsState {
   final BetaComplianceSettingsStateEnabled value;
-  const BetaComplianceSettingsStateBetaComplianceSettingsStateEnabled(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaComplianceSettingsStateBetaComplianceSettingsStateEnabled(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaComplianceSettingsStateBetaComplianceSettingsStateDisabled
-    extends BetaComplianceSettingsState {
+final class BetaComplianceSettingsStateBetaComplianceSettingsStateDisabled extends BetaComplianceSettingsState {
   final BetaComplianceSettingsStateDisabled value;
-  const BetaComplianceSettingsStateBetaComplianceSettingsStateDisabled(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaComplianceSettingsStateBetaComplianceSettingsStateDisabled(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaComplianceSettingsState] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaComplianceSettingsState
-    extends BetaComplianceSettingsState {
+final class UnknownBetaComplianceSettingsState extends BetaComplianceSettingsState {
   final Map<String, dynamic> raw;
   const UnknownBetaComplianceSettingsState(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaComplianceSettingsStateDisabled` API schema.
 class BetaComplianceSettingsStateDisabled {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaComplianceSettingsStateDisabledType type_;
 
   const BetaComplianceSettingsStateDisabled({required this.type_});
 
-  BetaComplianceSettingsStateDisabled Function(
-          {BetaComplianceSettingsStateDisabledType type_})
-      get copyWith => _copyWith;
+  BetaComplianceSettingsStateDisabled Function({BetaComplianceSettingsStateDisabledType type_}) get copyWith => _copyWith;
 
-  BetaComplianceSettingsStateDisabled _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaComplianceSettingsStateDisabled(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaComplianceSettingsStateDisabledType,
-      );
+  BetaComplianceSettingsStateDisabled _copyWith({Object? type_ = sdkOmittedValue}) => BetaComplianceSettingsStateDisabled(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaComplianceSettingsStateDisabledType,
+  );
 
-  factory BetaComplianceSettingsStateDisabled.fromJson(
-          Map<String, dynamic> json) =>
-      BetaComplianceSettingsStateDisabled(
-        type_: (json['type'] != null
-            ? BetaComplianceSettingsStateDisabledType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaComplianceSettingsStateDisabled.fromJson(Map<String, dynamic> json) => BetaComplianceSettingsStateDisabled(
+    type_: (json['type'] != null ? BetaComplianceSettingsStateDisabledType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaComplianceSettingsStateDisabledParams` API schema.
 class BetaComplianceSettingsStateDisabledParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaComplianceSettingsStateDisabledParamsType type_;
 
   const BetaComplianceSettingsStateDisabledParams({required this.type_});
 
-  BetaComplianceSettingsStateDisabledParams Function(
-          {BetaComplianceSettingsStateDisabledParamsType type_})
-      get copyWith => _copyWith;
+  BetaComplianceSettingsStateDisabledParams Function({BetaComplianceSettingsStateDisabledParamsType type_}) get copyWith => _copyWith;
 
-  BetaComplianceSettingsStateDisabledParams _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaComplianceSettingsStateDisabledParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaComplianceSettingsStateDisabledParamsType,
-      );
+  BetaComplianceSettingsStateDisabledParams _copyWith({Object? type_ = sdkOmittedValue}) => BetaComplianceSettingsStateDisabledParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaComplianceSettingsStateDisabledParamsType,
+  );
 
-  factory BetaComplianceSettingsStateDisabledParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaComplianceSettingsStateDisabledParams(
-        type_: (json['type'] != null
-            ? BetaComplianceSettingsStateDisabledParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaComplianceSettingsStateDisabledParams.fromJson(Map<String, dynamic> json) => BetaComplianceSettingsStateDisabledParams(
+    type_: (json['type'] != null ? BetaComplianceSettingsStateDisabledParamsType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaComplianceSettingsStateEnabled` API schema.
 class BetaComplianceSettingsStateEnabled {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaComplianceSettingsStateEnabledType type_;
 
   const BetaComplianceSettingsStateEnabled({required this.type_});
 
-  BetaComplianceSettingsStateEnabled Function(
-      {BetaComplianceSettingsStateEnabledType type_}) get copyWith => _copyWith;
+  BetaComplianceSettingsStateEnabled Function({BetaComplianceSettingsStateEnabledType type_}) get copyWith => _copyWith;
 
-  BetaComplianceSettingsStateEnabled _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaComplianceSettingsStateEnabled(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaComplianceSettingsStateEnabledType,
-      );
+  BetaComplianceSettingsStateEnabled _copyWith({Object? type_ = sdkOmittedValue}) => BetaComplianceSettingsStateEnabled(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaComplianceSettingsStateEnabledType,
+  );
 
-  factory BetaComplianceSettingsStateEnabled.fromJson(
-          Map<String, dynamic> json) =>
-      BetaComplianceSettingsStateEnabled(
-        type_: (json['type'] != null
-            ? BetaComplianceSettingsStateEnabledType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaComplianceSettingsStateEnabled.fromJson(Map<String, dynamic> json) => BetaComplianceSettingsStateEnabled(
+    type_: (json['type'] != null ? BetaComplianceSettingsStateEnabledType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaComplianceSettingsStateEnabledParams` API schema.
 class BetaComplianceSettingsStateEnabledParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaComplianceSettingsStateEnabledParamsType type_;
 
   const BetaComplianceSettingsStateEnabledParams({required this.type_});
 
-  BetaComplianceSettingsStateEnabledParams Function(
-          {BetaComplianceSettingsStateEnabledParamsType type_})
-      get copyWith => _copyWith;
+  BetaComplianceSettingsStateEnabledParams Function({BetaComplianceSettingsStateEnabledParamsType type_}) get copyWith => _copyWith;
 
-  BetaComplianceSettingsStateEnabledParams _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaComplianceSettingsStateEnabledParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaComplianceSettingsStateEnabledParamsType,
-      );
+  BetaComplianceSettingsStateEnabledParams _copyWith({Object? type_ = sdkOmittedValue}) => BetaComplianceSettingsStateEnabledParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaComplianceSettingsStateEnabledParamsType,
+  );
 
-  factory BetaComplianceSettingsStateEnabledParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaComplianceSettingsStateEnabledParams(
-        type_: (json['type'] != null
-            ? BetaComplianceSettingsStateEnabledParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaComplianceSettingsStateEnabledParams.fromJson(Map<String, dynamic> json) => BetaComplianceSettingsStateEnabledParams(
+    type_: (json['type'] != null ? BetaComplianceSettingsStateEnabledParamsType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaComplianceSettingsUpdateParams` API schema.
 class BetaComplianceSettingsUpdateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Desired state. Accepts the string shorthand "enabled" or "disabled" in place of the object form; the response always returns the canonical object form.
   final BetaComplianceSettingsUpdateParamsState state;
 
   const BetaComplianceSettingsUpdateParams({required this.state});
 
-  BetaComplianceSettingsUpdateParams Function(
-          {BetaComplianceSettingsUpdateParamsState state})
-      get copyWith => _copyWith;
+  BetaComplianceSettingsUpdateParams Function({BetaComplianceSettingsUpdateParamsState state}) get copyWith => _copyWith;
 
-  BetaComplianceSettingsUpdateParams _copyWith(
-          {Object? state = sdkOmittedValue}) =>
-      BetaComplianceSettingsUpdateParams(
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as BetaComplianceSettingsUpdateParamsState,
-      );
+  BetaComplianceSettingsUpdateParams _copyWith({Object? state = sdkOmittedValue}) => BetaComplianceSettingsUpdateParams(
+    state: identical(state, sdkOmittedValue) ? this.state : state as BetaComplianceSettingsUpdateParamsState,
+  );
 
-  factory BetaComplianceSettingsUpdateParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaComplianceSettingsUpdateParams(
-        state: (json['state'] != null
-            ? BetaComplianceSettingsUpdateParamsState.fromJson(json['state'])
-            : null)!,
-      );
+  factory BetaComplianceSettingsUpdateParams.fromJson(Map<String, dynamic> json) => BetaComplianceSettingsUpdateParams(
+    state: (json['state'] != null ? BetaComplianceSettingsUpdateParamsState.fromJson(json['state']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'state': state.toJson(),
-      };
+    'state': state.toJson(),
+  };
 }
 
 sealed class BetaComplianceSettingsUpdateParamsState {
@@ -300,65 +195,32 @@ sealed class BetaComplianceSettingsUpdateParamsState {
   const BetaComplianceSettingsUpdateParamsState();
   factory BetaComplianceSettingsUpdateParamsState.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaComplianceSettingsStateEnabledParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateEnabledParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaComplianceSettingsStateDisabledParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateDisabledParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaComplianceSettingsStateEnabledParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateEnabledParams(value); } } catch (_) {}
+      try { final value = BetaComplianceSettingsStateDisabledParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateDisabledParams(value); } } catch (_) {}
     }
-    try {
-      return BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateEnabledParams(
-          BetaComplianceSettingsStateEnabledParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateDisabledParams(
-          BetaComplianceSettingsStateDisabledParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"disabled", "enabled"}.contains(json["type"])) {
-      return UnknownBetaComplianceSettingsUpdateParamsState(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaComplianceSettingsUpdateParamsState");
+    try { return BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateEnabledParams(BetaComplianceSettingsStateEnabledParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateDisabledParams(BetaComplianceSettingsStateDisabledParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"disabled", "enabled"}.contains(json["type"])) { return UnknownBetaComplianceSettingsUpdateParamsState(json); }
+    throw FormatException("No variant matched for BetaComplianceSettingsUpdateParamsState");
   }
   Object? toJson();
 }
 
-final class BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateEnabledParams
-    extends BetaComplianceSettingsUpdateParamsState {
+final class BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateEnabledParams extends BetaComplianceSettingsUpdateParamsState {
   final BetaComplianceSettingsStateEnabledParams value;
-  const BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateEnabledParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateEnabledParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateDisabledParams
-    extends BetaComplianceSettingsUpdateParamsState {
+final class BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateDisabledParams extends BetaComplianceSettingsUpdateParamsState {
   final BetaComplianceSettingsStateDisabledParams value;
-  const BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateDisabledParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaComplianceSettingsUpdateParamsStateBetaComplianceSettingsStateDisabledParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaComplianceSettingsUpdateParamsState] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaComplianceSettingsUpdateParamsState
-    extends BetaComplianceSettingsUpdateParamsState {
+final class UnknownBetaComplianceSettingsUpdateParamsState extends BetaComplianceSettingsUpdateParamsState {
   final Map<String, dynamic> raw;
   const UnknownBetaComplianceSettingsUpdateParamsState(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

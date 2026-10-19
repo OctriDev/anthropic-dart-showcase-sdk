@@ -8,38 +8,25 @@ part of 'deny_beta_true.dart';
 class BetaDenySpendLimitIncreaseRequestParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `boolean` value serialized in the `suppress_notification` wire field.
   final SdkOptional<bool> suppressNotification;
 
-  const BetaDenySpendLimitIncreaseRequestParams(
-      {this.suppressNotification = const SdkOmitted()});
+  const BetaDenySpendLimitIncreaseRequestParams({this.suppressNotification = const SdkOmitted()});
 
-  BetaDenySpendLimitIncreaseRequestParams Function(
-      {SdkOptional<bool> suppressNotification}) get copyWith => _copyWith;
+  BetaDenySpendLimitIncreaseRequestParams Function({SdkOptional<bool> suppressNotification}) get copyWith => _copyWith;
 
-  BetaDenySpendLimitIncreaseRequestParams _copyWith(
-          {Object? suppressNotification = sdkOmittedValue}) =>
-      BetaDenySpendLimitIncreaseRequestParams(
-        suppressNotification: identical(suppressNotification, sdkOmittedValue)
-            ? this.suppressNotification
-            : suppressNotification as SdkOptional<bool>,
-      );
+  BetaDenySpendLimitIncreaseRequestParams _copyWith({Object? suppressNotification = sdkOmittedValue}) => BetaDenySpendLimitIncreaseRequestParams(
+    suppressNotification: identical(suppressNotification, sdkOmittedValue) ? this.suppressNotification : suppressNotification as SdkOptional<bool>,
+  );
 
-  factory BetaDenySpendLimitIncreaseRequestParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaDenySpendLimitIncreaseRequestParams(
-        suppressNotification: json['suppress_notification'] != null
-            ? SdkPresent((json['suppress_notification'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory BetaDenySpendLimitIncreaseRequestParams.fromJson(Map<String, dynamic> json) => BetaDenySpendLimitIncreaseRequestParams(
+    suppressNotification: json['suppress_notification'] != null ? SdkPresent((json['suppress_notification'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (suppressNotification) {
-          SdkPresent<bool>(value: final value) => {
-              'suppress_notification': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (suppressNotification) {
+      SdkPresent<bool>(value: final value) => {'suppress_notification': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

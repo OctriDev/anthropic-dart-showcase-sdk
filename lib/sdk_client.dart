@@ -30,20 +30,14 @@ const _errorEnvelopes = <String, (String, Object?, String?)>{};
 const _streamSelectors = <String, (String, Object?, bool)>{};
 
 /// [body] with its stream flag set for a stream call, or dropped for a plain one.
-Object? _withStreamSelector(
-    Object? body, String operationId, String contentType) {
+Object? _withStreamSelector(Object? body, String operationId, String contentType) {
   final selector = _streamSelectors[operationId];
-  if (selector == null ||
-      body == null ||
-      identical(body, sdkOmittedValue) ||
-      body is List<int>) {
+  if (selector == null || body == null || identical(body, sdkOmittedValue) || body is List<int>) {
     return body;
   }
   final (name, value, streaming) = selector;
   final wire = _formFields(body) ??
-      (contentType.contains('json')
-          ? jsonDecode(SdkUtils.encodeJson(body))
-          : null);
+      (contentType.contains('json') ? jsonDecode(SdkUtils.encodeJson(body)) : null);
   if (wire is! Map<String, Object?>) return body;
   final fields = Map<String, Object?>.of(wire);
   if (streaming) {
@@ -53,7 +47,6 @@ Object? _withStreamSelector(
   }
   return fields;
 }
-
 const _jsonSequenceMediaTypes = {
   'application/x-ndjson',
   'application/ndjson',
@@ -70,9 +63,8 @@ const _jsonSequenceMediaTypes = {
 String _encodeJsonBody(Object body, String contentType) {
   final mediaType = contentType.split(';').first.trim().toLowerCase();
   if (body is String && !mediaType.contains('json')) return body;
-  final fields = mediaType == 'application/x-www-form-urlencoded'
-      ? _formFields(body)
-      : null;
+  final fields =
+      mediaType == 'application/x-www-form-urlencoded' ? _formFields(body) : null;
   if (fields != null) return _encodeFormBody(fields);
   if (!_jsonSequenceMediaTypes.contains(mediaType)) {
     return SdkUtils.encodeJson(body);
@@ -157,24 +149,24 @@ Future<SdkResponse<T>> sdkRequest<T>(
   final cfg = config ?? SdkConfig.getConfig();
   final retry = options?.retry ?? cfg.retry ?? RetryConfig();
   final idem = cfg.idempotency ?? IdempotencyConfig();
-  final timeout =
-      options?.timeout ?? cfg.timeout ?? const Duration(seconds: 30);
+  final timeout = options?.timeout ?? cfg.timeout ?? const Duration(seconds: 30);
   final rng = Random();
   final upperMethod = method.toUpperCase();
 
   // Absolute URLs (url-style pagination follow links) bypass baseUrl.
   final isAbsolute = path.startsWith('http://') || path.startsWith('https://');
-  var url = isAbsolute
-      ? path
-      : '${cfg.baseUrl ?? _operationServers[operationId] ?? SdkConfig.defaultBaseUrl}$path';
+  var url = isAbsolute ? path : '${cfg.baseUrl ?? _operationServers[operationId] ?? SdkConfig.defaultBaseUrl}$path';
 
   // Pre-resolve auth (OAuth2 fetch happens here, once per request).
   final authResolved = await _resolveAuth(cfg, operationId);
-  final mergedQuery =
-      authResolved.query.isEmpty ? query : {...?query, ...authResolved.query};
+  final mergedQuery = authResolved.query.isEmpty
+      ? query
+      : {...?query, ...authResolved.query};
   if (mergedQuery != null && mergedQuery.isNotEmpty) {
     final queryString = SdkUtils.buildQueryString(mergedQuery);
-    url += url.contains('?') ? '&${queryString.substring(1)}' : queryString;
+    url += url.contains('?')
+        ? '&${queryString.substring(1)}'
+        : queryString;
   }
 
   // Raw binary bodies (e.g. application/octet-stream) are sent verbatim;
@@ -198,8 +190,7 @@ Future<SdkResponse<T>> sdkRequest<T>(
   }
 
   // One idempotency key per logical request — reused across retries.
-  final idempotencyKey =
-      _resolveIdempotencyKey(options, idem, upperMethod, rng);
+  final idempotencyKey = _resolveIdempotencyKey(options, idem, upperMethod, rng);
 
   // Compose middleware around the terminal HTTP handler.
   SdkNext dispatch = _composeMiddleware(cfg.middleware, (req) async {
@@ -298,8 +289,7 @@ Future<SdkResponse<T>> sdkRequest<T>(
   }
 
   if (lastError != null) {
-    throw _logError(
-        cfg, upperMethod, path, operationId, SdkNetworkError(lastError));
+    throw _logError(cfg, upperMethod, path, operationId, SdkNetworkError(lastError));
   }
   throw _logError(
     cfg,
@@ -348,8 +338,7 @@ T _decodeSdkResponse<T>(
   }
 }
 
-void _raiseErrorEnvelope(
-    SdkRawResponse raw, Object? decoded, String operationId) {
+void _raiseErrorEnvelope(SdkRawResponse raw, Object? decoded, String operationId) {
   final envelope = _errorEnvelopes[operationId];
   if (envelope == null || decoded is! Map) return;
   final (field, equals, code) = envelope;
@@ -369,8 +358,7 @@ T sdkDecode<T>(T Function() decode) {
   try {
     return decode();
   } on SdkValidationError catch (error) {
-    throw SdkResponseDecodeError(error.message,
-        statusCode: 200, field: error.field);
+    throw SdkResponseDecodeError(error.message, statusCode: 200, field: error.field);
   } on SdkError {
     rethrow;
   } catch (error) {
@@ -380,6 +368,8 @@ T sdkDecode<T>(T Function() decode) {
     );
   }
 }
+
+
 
 /// Fires the error logger (when configured) and returns the error unchanged so
 /// terminal failures can be wrapped inline at each throw site. Delivery is
@@ -560,9 +550,7 @@ List<int> _encodeMultipart(Map<String, Object?> fields, String boundary) {
     } else {
       final wireValue = SdkUtils.toJsonValue(value);
       payload = utf8.encode(
-        wireValue is bool
-            ? (wireValue ? 'true' : 'false')
-            : wireValue.toString(),
+        wireValue is bool ? (wireValue ? 'true' : 'false') : wireValue.toString(),
       );
     }
     out.addAll(utf8.encode('$disposition\r\n'));
@@ -573,7 +561,6 @@ List<int> _encodeMultipart(Map<String, Object?> fields, String boundary) {
     out.addAll(payload);
     out.addAll(utf8.encode('\r\n'));
   }
-
   fields.forEach(append);
   out.addAll(utf8.encode('--$boundary--\r\n'));
   return out;
@@ -587,16 +574,13 @@ Future<SdkRawResponse> _coreTransport(SdkRequest req, Duration timeout) async {
     var method = req.method;
     var url = Uri.parse(req.url);
     var headers = req.headers;
-    var body =
-        req.bodyBytes ?? (req.body != null ? utf8.encode(req.body!) : null);
+    var body = req.bodyBytes ?? (req.body != null ? utf8.encode(req.body!) : null);
     var resp = await _send(client, method, url, headers, body, timeout);
     // Redirects are followed by the rules browsers use. A 3xx without a
     // Location (GitHub declares its 301 with a BasicError body) is an answer.
     for (var hops = 0; hops < _maxRedirects; hops++) {
       final location = resp.headers.value(HttpHeaders.locationHeader);
-      if (!_redirectStatuses.contains(resp.statusCode) ||
-          location == null ||
-          location.isEmpty) {
+      if (!_redirectStatuses.contains(resp.statusCode) || location == null || location.isEmpty) {
         break;
       }
       final target = url.resolve(location);
@@ -604,20 +588,13 @@ Future<SdkRawResponse> _coreTransport(SdkRequest req, Duration timeout) async {
         break;
       }
       // A 303 asks for a GET; a 301 or 302 turns only a POST into one.
-      final dropsBody =
-          (resp.statusCode == 303 && method != 'GET' && method != 'HEAD') ||
-              ((resp.statusCode == 301 || resp.statusCode == 302) &&
-                  method == 'POST');
-      final sameOrigin = url.scheme == target.scheme &&
-          url.host == target.host &&
-          url.port == target.port;
+      final dropsBody = (resp.statusCode == 303 && method != 'GET' && method != 'HEAD') ||
+          ((resp.statusCode == 301 || resp.statusCode == 302) && method == 'POST');
+      final sameOrigin = url.scheme == target.scheme && url.host == target.host && url.port == target.port;
       headers = {
         for (final entry in headers.entries)
-          if ((sameOrigin ||
-                  !_credentialHeaders.contains(entry.key.toLowerCase())) &&
-              !(dropsBody &&
-                  const {'content-type', 'content-length'}
-                      .contains(entry.key.toLowerCase())))
+          if ((sameOrigin || !_credentialHeaders.contains(entry.key.toLowerCase())) &&
+              !(dropsBody && const {'content-type', 'content-length'}.contains(entry.key.toLowerCase())))
             entry.key: entry.value,
       };
       await resp.drain<void>();
@@ -626,8 +603,7 @@ Future<SdkRawResponse> _coreTransport(SdkRequest req, Duration timeout) async {
       url = target;
       resp = await _send(client, method, url, headers, body, timeout);
     }
-    final respBody =
-        await resp.fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
+    final respBody = await resp.fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
     stopwatch.stop();
     final respHeaders = _flatHeaders(resp);
     String? requestId;
@@ -658,12 +634,7 @@ Future<SdkRawResponse> _coreTransport(SdkRequest req, Duration timeout) async {
 const _redirectStatuses = {301, 302, 303, 307, 308};
 const _maxRedirects = 5;
 // Headers another origin never sees when a redirect is followed.
-const _credentialHeaders = {
-  'authorization',
-  'proxy-authorization',
-  'cookie',
-  'undefined'
-};
+const _credentialHeaders = {'authorization', 'proxy-authorization', 'cookie', 'undefined'};
 
 /// Sends one request; [_coreTransport] follows any redirect itself.
 Future<HttpClientResponse> _send(
@@ -680,8 +651,7 @@ Future<HttpClientResponse> _send(
     httpReq.headers.set(entry.key, entry.value);
   }
   if (body != null) {
-    httpReq.headers
-        .set(HttpHeaders.contentLengthHeader, body.length.toString());
+    httpReq.headers.set(HttpHeaders.contentLengthHeader, body.length.toString());
     httpReq.add(body);
   }
   return httpReq.close().timeout(timeout);
@@ -713,8 +683,7 @@ String? _resolveIdempotencyKey(
       : null;
 }
 
-Map<String, String> _authHeadersFor(
-    ClientConfig cfg, Map<String, String> resolved) {
+Map<String, String> _authHeadersFor(ClientConfig cfg, Map<String, String> resolved) {
   final headers = <String, String>{};
   cfg.auth?.headers?.forEach((k, v) => headers[k] = v);
   resolved.forEach((k, v) => headers[k] = v);
@@ -738,740 +707,251 @@ class _AuthResolved {
   final Map<String, dynamic> query;
   _AuthResolved(this.headers, this.query);
 }
-
 const _selectedOperationSecurity = <String, List<List<String>>>{
-  "createMessages": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createCompletions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listModels": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveModels": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "cancelMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "resultsMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "countMessagesTokens": [
-    <String>["ApiKeyAuth"]
-  ],
-  "uploadFiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listFiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveFiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteFiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "downloadFiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createSkills": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listSkills": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveSkills": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteSkills": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createSkillsVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listSkillsVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveSkillsVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteSkillsVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaMessages": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaModels": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaModels": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "cancelBetaMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "resultsBetaMessagesBatches": [
-    <String>["ApiKeyAuth"]
-  ],
-  "countBetaMessagesTokens": [
-    <String>["ApiKeyAuth"]
-  ],
-  "uploadBetaFiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaFiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaFiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaFiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "downloadBetaFiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaSkills": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaSkills": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaSkills": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaSkills": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaSkillsVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaSkillsVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaSkillsVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaSkillsVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "downloadBetaSkillsVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaEnvironments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaEnvironments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaEnvironments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaEnvironments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaEnvironments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaEnvironments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaEnvironmentsWorkStats": [
-    <String>["ApiKeyAuth"]
-  ],
-  "pollBetaEnvironmentsWork": [
-    <String>["ApiKeyAuth"]
-  ],
-  "ackBetaEnvironmentsWork": [
-    <String>["ApiKeyAuth"]
-  ],
-  "heartbeatBetaEnvironmentsWork": [
-    <String>["ApiKeyAuth"]
-  ],
-  "stopBetaEnvironmentsWork": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaEnvironmentsWork": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaEnvironmentsWork": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaEnvironmentsWork": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaSessions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaSessions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaSessions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaSessions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaSessions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaSessionsEvents": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaSessionsEvents": [
-    <String>["ApiKeyAuth"]
-  ],
-  "streamBetaSessionsEvents": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaSessions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaSessionsThreads": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaSessionsThreads": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaSessionsThreadsEvents": [
-    <String>["ApiKeyAuth"]
-  ],
-  "streamBetaSessionsThreads": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaSessionsThreads": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaSessionsResources": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaSessionsResources": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaSessionsResources": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaSessionsResources": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaSessionsResources": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaAgents": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaAgents": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaAgents": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaAgents": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaAgents": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaAgentsVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaDeployments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaDeployments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaDeployments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaDeployments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaDeployments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "pauseBetaDeployments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "unpauseBetaDeployments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "runBetaDeployments": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaDeploymentRuns": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaDeploymentRuns": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaVaults": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaVaults": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaVaults": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaVaults": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaVaults": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaVaults": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaVaultsCredentials": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaVaultsCredentials": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaVaultsCredentials": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaVaultsCredentials": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaVaultsCredentials": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaVaultsCredentials": [
-    <String>["ApiKeyAuth"]
-  ],
-  "validateBetaVaultsCredentialsMcpOauth": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaMemoryStoresMemories": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaMemoryStoresMemories": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaMemoryStoresMemories": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaMemoryStoresMemories": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaMemoryStoresMemories": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaMemoryStoresMemoryVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaMemoryStoresMemoryVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "redactBetaMemoryStoresMemoryVersions": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaMemoryStores": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaMemoryStores": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaMemoryStores": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaMemoryStores": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaMemoryStores": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaMemoryStores": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaUserProfiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaUserProfiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaUserProfiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaUserProfiles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaUserProfilesEnrollmentUrl": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaTunnels": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaTunnels": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaTunnels": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaTunnels": [
-    <String>["ApiKeyAuth"]
-  ],
-  "revealBetaTunnelsToken": [
-    <String>["ApiKeyAuth"]
-  ],
-  "rotateBetaTunnelsToken": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaTunnelsCertificates": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaTunnelsCertificates": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaTunnelsCertificates": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaTunnelsCertificates": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaDreams": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaDreams": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaDreams": [
-    <String>["ApiKeyAuth"]
-  ],
-  "cancelBetaDreams": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaDreams": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsInvites": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsInvites": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsInvites": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaOrganizationsInvites": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsUsers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaOrganizationsUsers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaOrganizationsUsers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsUsers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsWorkspaces": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaOrganizationsWorkspaces": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsWorkspaces": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsWorkspaces": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaOrganizationsWorkspaces": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsWorkspacesMembers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaOrganizationsWorkspacesMembers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaOrganizationsWorkspacesMembers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsWorkspacesMembers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsWorkspacesMembers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsApiKeys": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaOrganizationsApiKeys": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsApiKeys": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsUsageReportMessages": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsUsageReportClaudeCode": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsCostReport": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsMe": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsExternalKeys": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsExternalKeys": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsExternalKeys": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaOrganizationsExternalKeys": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaOrganizationsExternalKeys": [
-    <String>["ApiKeyAuth"]
-  ],
-  "validateBetaOrganizationsExternalKeys": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsComplianceSettings": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsComplianceSettings": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsRateLimits": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsWorkspacesRateLimits": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsSpendLimitsEffective": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsSpendLimits": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaOrganizationsSpendLimits": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsSpendLimits": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsServiceAccounts": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsServiceAccounts": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsServiceAccounts": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaOrganizationsServiceAccounts": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaOrganizationsServiceAccounts": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsWorkspacesServiceAccounts": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsWorkspacesServiceAccounts": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsWorkspacesServiceAccounts": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaOrganizationsWorkspacesServiceAccounts": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaOrganizationsWorkspacesServiceAccounts": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsServiceAccountsWorkspaces": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsServiceAccountsWorkspaces": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaOrganizationsServiceAccountsWorkspaces": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsFederationIssuers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsFederationIssuers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsFederationIssuers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaOrganizationsFederationIssuers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaOrganizationsFederationIssuers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsFederationRules": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsFederationRules": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsFederationRules": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaOrganizationsFederationRules": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaOrganizationsFederationRules": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsFederationRulesWorkspaces": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsFederationRulesWorkspaces": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaOrganizationsFederationRulesWorkspaces": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsSpendLimitIncreaseRequests": [
-    <String>["ApiKeyAuth"]
-  ],
-  "denyBetaOrganizationsSpendLimitIncreaseRequests": [
-    <String>["ApiKeyAuth"]
-  ],
-  "approveBetaOrganizationsSpendLimitIncreaseRequests": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsSpendLimitIncreaseRequests": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsTunnels": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsTunnels": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaOrganizationsTunnels": [
-    <String>["ApiKeyAuth"]
-  ],
-  "revealBetaOrganizationsTunnelsToken": [
-    <String>["ApiKeyAuth"]
-  ],
-  "rotateBetaOrganizationsTunnelsToken": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsTunnelsCertificates": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsTunnelsCertificates": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsTunnelsCertificates": [
-    <String>["ApiKeyAuth"]
-  ],
-  "archiveBetaOrganizationsTunnelsCertificates": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsRbacGroups": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsRbacGroups": [
-    <String>["ApiKeyAuth"]
-  ],
-  "updateBetaOrganizationsRbacGroups": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaOrganizationsRbacGroups": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsRbacGroups": [
-    <String>["ApiKeyAuth"]
-  ],
-  "deleteBetaOrganizationsRbacGroupsMembers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsRbacGroupsMembers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "createBetaOrganizationsRbacGroupsMembers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsRbacRoles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsRbacRoles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "permissionsBetaOrganizationsRbacRoles": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsAnalyticsUserUsageReport": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsAnalyticsUserCostReport": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsAnalyticsUsageReport": [
-    <String>["ApiKeyAuth"]
-  ],
-  "retrieveBetaOrganizationsAnalyticsCostReport": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsAnalyticsSummaries": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsAnalyticsUsers": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsAnalyticsAppsChatProjects": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsAnalyticsSkills": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsAnalyticsConnectors": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsAnalyticsPlugins": [
-    <String>["ApiKeyAuth"]
-  ],
-  "listBetaOrganizationsAnalyticsArtifacts": [
-    <String>["ApiKeyAuth"]
-  ],
+  "createMessages": [<String>["ApiKeyAuth"]],
+  "createCompletions": [<String>["ApiKeyAuth"]],
+  "listModels": [<String>["ApiKeyAuth"]],
+  "retrieveModels": [<String>["ApiKeyAuth"]],
+  "createMessagesBatches": [<String>["ApiKeyAuth"]],
+  "listMessagesBatches": [<String>["ApiKeyAuth"]],
+  "retrieveMessagesBatches": [<String>["ApiKeyAuth"]],
+  "deleteMessagesBatches": [<String>["ApiKeyAuth"]],
+  "cancelMessagesBatches": [<String>["ApiKeyAuth"]],
+  "resultsMessagesBatches": [<String>["ApiKeyAuth"]],
+  "countMessagesTokens": [<String>["ApiKeyAuth"]],
+  "uploadFiles": [<String>["ApiKeyAuth"]],
+  "listFiles": [<String>["ApiKeyAuth"]],
+  "retrieveFiles": [<String>["ApiKeyAuth"]],
+  "deleteFiles": [<String>["ApiKeyAuth"]],
+  "downloadFiles": [<String>["ApiKeyAuth"]],
+  "createSkills": [<String>["ApiKeyAuth"]],
+  "listSkills": [<String>["ApiKeyAuth"]],
+  "retrieveSkills": [<String>["ApiKeyAuth"]],
+  "deleteSkills": [<String>["ApiKeyAuth"]],
+  "createSkillsVersions": [<String>["ApiKeyAuth"]],
+  "listSkillsVersions": [<String>["ApiKeyAuth"]],
+  "retrieveSkillsVersions": [<String>["ApiKeyAuth"]],
+  "deleteSkillsVersions": [<String>["ApiKeyAuth"]],
+  "createBetaMessages": [<String>["ApiKeyAuth"]],
+  "listBetaModels": [<String>["ApiKeyAuth"]],
+  "retrieveBetaModels": [<String>["ApiKeyAuth"]],
+  "createBetaMessagesBatches": [<String>["ApiKeyAuth"]],
+  "listBetaMessagesBatches": [<String>["ApiKeyAuth"]],
+  "retrieveBetaMessagesBatches": [<String>["ApiKeyAuth"]],
+  "deleteBetaMessagesBatches": [<String>["ApiKeyAuth"]],
+  "cancelBetaMessagesBatches": [<String>["ApiKeyAuth"]],
+  "resultsBetaMessagesBatches": [<String>["ApiKeyAuth"]],
+  "countBetaMessagesTokens": [<String>["ApiKeyAuth"]],
+  "uploadBetaFiles": [<String>["ApiKeyAuth"]],
+  "listBetaFiles": [<String>["ApiKeyAuth"]],
+  "retrieveBetaFiles": [<String>["ApiKeyAuth"]],
+  "deleteBetaFiles": [<String>["ApiKeyAuth"]],
+  "downloadBetaFiles": [<String>["ApiKeyAuth"]],
+  "createBetaSkills": [<String>["ApiKeyAuth"]],
+  "listBetaSkills": [<String>["ApiKeyAuth"]],
+  "retrieveBetaSkills": [<String>["ApiKeyAuth"]],
+  "deleteBetaSkills": [<String>["ApiKeyAuth"]],
+  "createBetaSkillsVersions": [<String>["ApiKeyAuth"]],
+  "listBetaSkillsVersions": [<String>["ApiKeyAuth"]],
+  "retrieveBetaSkillsVersions": [<String>["ApiKeyAuth"]],
+  "deleteBetaSkillsVersions": [<String>["ApiKeyAuth"]],
+  "downloadBetaSkillsVersions": [<String>["ApiKeyAuth"]],
+  "createBetaEnvironments": [<String>["ApiKeyAuth"]],
+  "listBetaEnvironments": [<String>["ApiKeyAuth"]],
+  "retrieveBetaEnvironments": [<String>["ApiKeyAuth"]],
+  "updateBetaEnvironments": [<String>["ApiKeyAuth"]],
+  "deleteBetaEnvironments": [<String>["ApiKeyAuth"]],
+  "archiveBetaEnvironments": [<String>["ApiKeyAuth"]],
+  "retrieveBetaEnvironmentsWorkStats": [<String>["ApiKeyAuth"]],
+  "pollBetaEnvironmentsWork": [<String>["ApiKeyAuth"]],
+  "ackBetaEnvironmentsWork": [<String>["ApiKeyAuth"]],
+  "heartbeatBetaEnvironmentsWork": [<String>["ApiKeyAuth"]],
+  "stopBetaEnvironmentsWork": [<String>["ApiKeyAuth"]],
+  "retrieveBetaEnvironmentsWork": [<String>["ApiKeyAuth"]],
+  "updateBetaEnvironmentsWork": [<String>["ApiKeyAuth"]],
+  "listBetaEnvironmentsWork": [<String>["ApiKeyAuth"]],
+  "createBetaSessions": [<String>["ApiKeyAuth"]],
+  "listBetaSessions": [<String>["ApiKeyAuth"]],
+  "retrieveBetaSessions": [<String>["ApiKeyAuth"]],
+  "updateBetaSessions": [<String>["ApiKeyAuth"]],
+  "deleteBetaSessions": [<String>["ApiKeyAuth"]],
+  "listBetaSessionsEvents": [<String>["ApiKeyAuth"]],
+  "createBetaSessionsEvents": [<String>["ApiKeyAuth"]],
+  "streamBetaSessionsEvents": [<String>["ApiKeyAuth"]],
+  "archiveBetaSessions": [<String>["ApiKeyAuth"]],
+  "listBetaSessionsThreads": [<String>["ApiKeyAuth"]],
+  "retrieveBetaSessionsThreads": [<String>["ApiKeyAuth"]],
+  "listBetaSessionsThreadsEvents": [<String>["ApiKeyAuth"]],
+  "streamBetaSessionsThreads": [<String>["ApiKeyAuth"]],
+  "archiveBetaSessionsThreads": [<String>["ApiKeyAuth"]],
+  "listBetaSessionsResources": [<String>["ApiKeyAuth"]],
+  "createBetaSessionsResources": [<String>["ApiKeyAuth"]],
+  "retrieveBetaSessionsResources": [<String>["ApiKeyAuth"]],
+  "deleteBetaSessionsResources": [<String>["ApiKeyAuth"]],
+  "updateBetaSessionsResources": [<String>["ApiKeyAuth"]],
+  "createBetaAgents": [<String>["ApiKeyAuth"]],
+  "listBetaAgents": [<String>["ApiKeyAuth"]],
+  "retrieveBetaAgents": [<String>["ApiKeyAuth"]],
+  "updateBetaAgents": [<String>["ApiKeyAuth"]],
+  "archiveBetaAgents": [<String>["ApiKeyAuth"]],
+  "listBetaAgentsVersions": [<String>["ApiKeyAuth"]],
+  "createBetaDeployments": [<String>["ApiKeyAuth"]],
+  "listBetaDeployments": [<String>["ApiKeyAuth"]],
+  "retrieveBetaDeployments": [<String>["ApiKeyAuth"]],
+  "updateBetaDeployments": [<String>["ApiKeyAuth"]],
+  "archiveBetaDeployments": [<String>["ApiKeyAuth"]],
+  "pauseBetaDeployments": [<String>["ApiKeyAuth"]],
+  "unpauseBetaDeployments": [<String>["ApiKeyAuth"]],
+  "runBetaDeployments": [<String>["ApiKeyAuth"]],
+  "listBetaDeploymentRuns": [<String>["ApiKeyAuth"]],
+  "retrieveBetaDeploymentRuns": [<String>["ApiKeyAuth"]],
+  "createBetaVaults": [<String>["ApiKeyAuth"]],
+  "listBetaVaults": [<String>["ApiKeyAuth"]],
+  "retrieveBetaVaults": [<String>["ApiKeyAuth"]],
+  "updateBetaVaults": [<String>["ApiKeyAuth"]],
+  "deleteBetaVaults": [<String>["ApiKeyAuth"]],
+  "archiveBetaVaults": [<String>["ApiKeyAuth"]],
+  "createBetaVaultsCredentials": [<String>["ApiKeyAuth"]],
+  "listBetaVaultsCredentials": [<String>["ApiKeyAuth"]],
+  "retrieveBetaVaultsCredentials": [<String>["ApiKeyAuth"]],
+  "updateBetaVaultsCredentials": [<String>["ApiKeyAuth"]],
+  "deleteBetaVaultsCredentials": [<String>["ApiKeyAuth"]],
+  "archiveBetaVaultsCredentials": [<String>["ApiKeyAuth"]],
+  "validateBetaVaultsCredentialsMcpOauth": [<String>["ApiKeyAuth"]],
+  "createBetaMemoryStoresMemories": [<String>["ApiKeyAuth"]],
+  "listBetaMemoryStoresMemories": [<String>["ApiKeyAuth"]],
+  "retrieveBetaMemoryStoresMemories": [<String>["ApiKeyAuth"]],
+  "updateBetaMemoryStoresMemories": [<String>["ApiKeyAuth"]],
+  "deleteBetaMemoryStoresMemories": [<String>["ApiKeyAuth"]],
+  "listBetaMemoryStoresMemoryVersions": [<String>["ApiKeyAuth"]],
+  "retrieveBetaMemoryStoresMemoryVersions": [<String>["ApiKeyAuth"]],
+  "redactBetaMemoryStoresMemoryVersions": [<String>["ApiKeyAuth"]],
+  "createBetaMemoryStores": [<String>["ApiKeyAuth"]],
+  "listBetaMemoryStores": [<String>["ApiKeyAuth"]],
+  "retrieveBetaMemoryStores": [<String>["ApiKeyAuth"]],
+  "updateBetaMemoryStores": [<String>["ApiKeyAuth"]],
+  "deleteBetaMemoryStores": [<String>["ApiKeyAuth"]],
+  "archiveBetaMemoryStores": [<String>["ApiKeyAuth"]],
+  "createBetaUserProfiles": [<String>["ApiKeyAuth"]],
+  "listBetaUserProfiles": [<String>["ApiKeyAuth"]],
+  "retrieveBetaUserProfiles": [<String>["ApiKeyAuth"]],
+  "updateBetaUserProfiles": [<String>["ApiKeyAuth"]],
+  "createBetaUserProfilesEnrollmentUrl": [<String>["ApiKeyAuth"]],
+  "createBetaTunnels": [<String>["ApiKeyAuth"]],
+  "listBetaTunnels": [<String>["ApiKeyAuth"]],
+  "retrieveBetaTunnels": [<String>["ApiKeyAuth"]],
+  "archiveBetaTunnels": [<String>["ApiKeyAuth"]],
+  "revealBetaTunnelsToken": [<String>["ApiKeyAuth"]],
+  "rotateBetaTunnelsToken": [<String>["ApiKeyAuth"]],
+  "createBetaTunnelsCertificates": [<String>["ApiKeyAuth"]],
+  "listBetaTunnelsCertificates": [<String>["ApiKeyAuth"]],
+  "retrieveBetaTunnelsCertificates": [<String>["ApiKeyAuth"]],
+  "archiveBetaTunnelsCertificates": [<String>["ApiKeyAuth"]],
+  "createBetaDreams": [<String>["ApiKeyAuth"]],
+  "listBetaDreams": [<String>["ApiKeyAuth"]],
+  "retrieveBetaDreams": [<String>["ApiKeyAuth"]],
+  "cancelBetaDreams": [<String>["ApiKeyAuth"]],
+  "archiveBetaDreams": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsInvites": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsInvites": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsInvites": [<String>["ApiKeyAuth"]],
+  "deleteBetaOrganizationsInvites": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsUsers": [<String>["ApiKeyAuth"]],
+  "updateBetaOrganizationsUsers": [<String>["ApiKeyAuth"]],
+  "deleteBetaOrganizationsUsers": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsUsers": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsWorkspaces": [<String>["ApiKeyAuth"]],
+  "updateBetaOrganizationsWorkspaces": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsWorkspaces": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsWorkspaces": [<String>["ApiKeyAuth"]],
+  "archiveBetaOrganizationsWorkspaces": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsWorkspacesMembers": [<String>["ApiKeyAuth"]],
+  "updateBetaOrganizationsWorkspacesMembers": [<String>["ApiKeyAuth"]],
+  "deleteBetaOrganizationsWorkspacesMembers": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsWorkspacesMembers": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsWorkspacesMembers": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsApiKeys": [<String>["ApiKeyAuth"]],
+  "updateBetaOrganizationsApiKeys": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsApiKeys": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsUsageReportMessages": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsUsageReportClaudeCode": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsCostReport": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsMe": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsExternalKeys": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsExternalKeys": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsExternalKeys": [<String>["ApiKeyAuth"]],
+  "updateBetaOrganizationsExternalKeys": [<String>["ApiKeyAuth"]],
+  "deleteBetaOrganizationsExternalKeys": [<String>["ApiKeyAuth"]],
+  "validateBetaOrganizationsExternalKeys": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsComplianceSettings": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsComplianceSettings": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsRateLimits": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsWorkspacesRateLimits": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsSpendLimitsEffective": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsSpendLimits": [<String>["ApiKeyAuth"]],
+  "deleteBetaOrganizationsSpendLimits": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsSpendLimits": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsServiceAccounts": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsServiceAccounts": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsServiceAccounts": [<String>["ApiKeyAuth"]],
+  "updateBetaOrganizationsServiceAccounts": [<String>["ApiKeyAuth"]],
+  "archiveBetaOrganizationsServiceAccounts": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsWorkspacesServiceAccounts": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsWorkspacesServiceAccounts": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsWorkspacesServiceAccounts": [<String>["ApiKeyAuth"]],
+  "updateBetaOrganizationsWorkspacesServiceAccounts": [<String>["ApiKeyAuth"]],
+  "deleteBetaOrganizationsWorkspacesServiceAccounts": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsServiceAccountsWorkspaces": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsServiceAccountsWorkspaces": [<String>["ApiKeyAuth"]],
+  "deleteBetaOrganizationsServiceAccountsWorkspaces": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsFederationIssuers": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsFederationIssuers": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsFederationIssuers": [<String>["ApiKeyAuth"]],
+  "updateBetaOrganizationsFederationIssuers": [<String>["ApiKeyAuth"]],
+  "archiveBetaOrganizationsFederationIssuers": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsFederationRules": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsFederationRules": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsFederationRules": [<String>["ApiKeyAuth"]],
+  "updateBetaOrganizationsFederationRules": [<String>["ApiKeyAuth"]],
+  "archiveBetaOrganizationsFederationRules": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsFederationRulesWorkspaces": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsFederationRulesWorkspaces": [<String>["ApiKeyAuth"]],
+  "deleteBetaOrganizationsFederationRulesWorkspaces": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsSpendLimitIncreaseRequests": [<String>["ApiKeyAuth"]],
+  "denyBetaOrganizationsSpendLimitIncreaseRequests": [<String>["ApiKeyAuth"]],
+  "approveBetaOrganizationsSpendLimitIncreaseRequests": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsSpendLimitIncreaseRequests": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsTunnels": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsTunnels": [<String>["ApiKeyAuth"]],
+  "archiveBetaOrganizationsTunnels": [<String>["ApiKeyAuth"]],
+  "revealBetaOrganizationsTunnelsToken": [<String>["ApiKeyAuth"]],
+  "rotateBetaOrganizationsTunnelsToken": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsTunnelsCertificates": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsTunnelsCertificates": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsTunnelsCertificates": [<String>["ApiKeyAuth"]],
+  "archiveBetaOrganizationsTunnelsCertificates": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsRbacGroups": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsRbacGroups": [<String>["ApiKeyAuth"]],
+  "updateBetaOrganizationsRbacGroups": [<String>["ApiKeyAuth"]],
+  "deleteBetaOrganizationsRbacGroups": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsRbacGroups": [<String>["ApiKeyAuth"]],
+  "deleteBetaOrganizationsRbacGroupsMembers": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsRbacGroupsMembers": [<String>["ApiKeyAuth"]],
+  "createBetaOrganizationsRbacGroupsMembers": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsRbacRoles": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsRbacRoles": [<String>["ApiKeyAuth"]],
+  "permissionsBetaOrganizationsRbacRoles": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsAnalyticsUserUsageReport": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsAnalyticsUserCostReport": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsAnalyticsUsageReport": [<String>["ApiKeyAuth"]],
+  "retrieveBetaOrganizationsAnalyticsCostReport": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsAnalyticsSummaries": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsAnalyticsUsers": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsAnalyticsAppsChatProjects": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsAnalyticsSkills": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsAnalyticsConnectors": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsAnalyticsPlugins": [<String>["ApiKeyAuth"]],
+  "listBetaOrganizationsAnalyticsArtifacts": [<String>["ApiKeyAuth"]],
 };
 
 bool _isSelectedScheme(String name) {
@@ -1552,6 +1032,8 @@ Future<_AuthResolved> _resolveAuth(ClientConfig cfg, String operationId) async {
   return _AuthResolved(headers, query);
 }
 
+
+
 bool _shouldRetry(String method, int statusCode, List<int> retryOn) {
   if (!retryOn.contains(statusCode)) return false;
   if (_idempotentMethods.contains(method)) return true;
@@ -1593,6 +1075,8 @@ Future<void> _sleepBackoff(
   await Future<void>.delayed(delay);
 }
 
+
+
 /// One Server-Sent Event yielded by [sdkStream]. [data] is JSON-decoded when
 /// the payload looks like JSON ({...} or [...]) and stays a raw string
 /// otherwise — sentinels like `[DONE]` arrive as strings so consumers can
@@ -1603,8 +1087,7 @@ class SdkStreamEvent {
   final String? id;
   final int? retry;
 
-  const SdkStreamEvent(
-      {required this.event, required this.data, this.id, this.retry});
+  const SdkStreamEvent({required this.event, required this.data, this.id, this.retry});
 }
 
 /// Opens an SSE connection and returns a Stream of parsed events. Bypasses
@@ -1628,16 +1111,17 @@ Stream<SdkStreamEvent> sdkStream(
   final cfg = config ?? SdkConfig.getConfig();
   final timeout = cfg.timeout ?? const Duration(seconds: 30);
   final isAbsolute = path.startsWith('http://') || path.startsWith('https://');
-  var url = isAbsolute
-      ? path
-      : '${cfg.baseUrl ?? _operationServers[operationId] ?? SdkConfig.defaultBaseUrl}$path';
+  var url = isAbsolute ? path : '${cfg.baseUrl ?? _operationServers[operationId] ?? SdkConfig.defaultBaseUrl}$path';
 
   final authResolved = await _resolveAuth(cfg, operationId);
-  final mergedQuery =
-      authResolved.query.isEmpty ? query : {...?query, ...authResolved.query};
+  final mergedQuery = authResolved.query.isEmpty
+      ? query
+      : {...?query, ...authResolved.query};
   if (mergedQuery != null && mergedQuery.isNotEmpty) {
     final queryString = SdkUtils.buildQueryString(mergedQuery);
-    url += url.contains('?') ? '&${queryString.substring(1)}' : queryString;
+    url += url.contains('?')
+        ? '&${queryString.substring(1)}'
+        : queryString;
   }
 
   // Use the same body encoder as unary requests so multipart streams receive a
@@ -1676,15 +1160,13 @@ Stream<SdkStreamEvent> sdkStream(
       req.headers.set(entry.key, entry.value);
     }
     if (outBytes != null) {
-      req.headers
-          .set(HttpHeaders.contentLengthHeader, outBytes.length.toString());
+      req.headers.set(HttpHeaders.contentLengthHeader, outBytes.length.toString());
       req.add(outBytes);
     }
 
     final resp = await req.close();
     if (resp.statusCode < 200 || resp.statusCode >= 300) {
-      final body = await resp
-          .fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
+      final body = await resp.fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
       final respHeaders = _flatHeaders(resp);
       throw SdkHttpError.forStatus(
         resp.statusCode,
@@ -1698,10 +1180,8 @@ Stream<SdkStreamEvent> sdkStream(
     // event parser would read as no events at all.
     final answerType = resp.headers.value(HttpHeaders.contentTypeHeader) ?? '';
     final mediaType = answerType.split(';').first.trim().toLowerCase();
-    if (streamFormat == 'sse' &&
-        (mediaType == 'application/json' || mediaType.endsWith('+json'))) {
-      final body = await resp
-          .fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
+    if (streamFormat == 'sse' && (mediaType == 'application/json' || mediaType.endsWith('+json'))) {
+      final body = await resp.fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
       final respHeaders = _flatHeaders(resp);
       throw SdkResponseDecodeError(
         'Expected an event stream, received $answerType',
@@ -1723,8 +1203,7 @@ Stream<SdkStreamEvent> sdkStream(
     }
 
     if (streamFormat == 'ndjson') {
-      await for (final line
-          in resp.transform(utf8.decoder).transform(const LineSplitter())) {
+      await for (final line in resp.transform(utf8.decoder).transform(const LineSplitter())) {
         if (line.trim().isNotEmpty) {
           // A JSON text sequence record also starts with RS.
           yield SdkStreamEvent(
@@ -1749,8 +1228,7 @@ Stream<SdkStreamEvent> sdkStream(
       return raw;
     }
 
-    await for (final line
-        in resp.transform(utf8.decoder).transform(const LineSplitter())) {
+    await for (final line in resp.transform(utf8.decoder).transform(const LineSplitter())) {
       if (line.isEmpty) {
         if (dataLines.isNotEmpty) {
           yield SdkStreamEvent(

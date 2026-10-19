@@ -27,21 +27,21 @@ import '../types.dart';
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaManagedAgentsListDeploymentRunsData> listBetaDeploymentRuns(
-    ClientConfig config,
-    {SdkOptional<int> limit = const SdkOmitted(),
-    SdkOptional<String> page = const SdkOmitted(),
-    SdkOptional<String> deploymentId = const SdkOmitted(),
-    SdkOptional<BetaManagedAgentsTriggerType> triggerType = const SdkOmitted(),
-    SdkOptional<bool> hasError = const SdkOmitted(),
-    SdkOptional<String> createdAtGte = const SdkOmitted(),
-    SdkOptional<String> createdAtLte = const SdkOmitted(),
-    SdkOptional<String> createdAtGt = const SdkOmitted(),
-    SdkOptional<String> createdAtLt = const SdkOmitted(),
-    SdkOptional<String> anthropicVersion = const SdkOmitted(),
-    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsListDeploymentRunsData>
+    listBetaDeploymentRuns(ClientConfig config,
+        {SdkOptional<int> limit = const SdkOmitted(),
+        SdkOptional<String> page = const SdkOmitted(),
+        SdkOptional<String> deploymentId = const SdkOmitted(),
+        SdkOptional<BetaManagedAgentsTriggerType> triggerType = const SdkOmitted(),
+        SdkOptional<bool> hasError = const SdkOmitted(),
+        SdkOptional<String> createdAtGte = const SdkOmitted(),
+        SdkOptional<String> createdAtLte = const SdkOmitted(),
+        SdkOptional<String> createdAtGt = const SdkOmitted(),
+        SdkOptional<String> createdAtLt = const SdkOmitted(),
+        SdkOptional<String> anthropicVersion = const SdkOmitted(),
+        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (createdAtGte is SdkPresent<String>) {
     sdkValidateDateTime('created_at[gte]', createdAtGte.value);
   }
@@ -59,81 +59,26 @@ Future<BetaManagedAgentsListDeploymentRunsData> listBetaDeploymentRuns(
           'GET', '/v1/deployment_runs?beta=true',
           config: config,
           query: {
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'deployment_id': SdkQueryValue(
-                SdkUtils.unwrapOptional(deploymentId),
-                style: 'form',
-                explode: true),
-            'trigger_type': SdkQueryValue(SdkUtils.unwrapOptional(triggerType),
-                style: 'form', explode: true),
-            'has_error': SdkQueryValue(SdkUtils.unwrapOptional(hasError),
-                style: 'form', explode: true),
-            'created_at[gte]': SdkQueryValue(
-                SdkUtils.unwrapOptional(createdAtGte),
-                style: 'form',
-                explode: true),
-            'created_at[lte]': SdkQueryValue(
-                SdkUtils.unwrapOptional(createdAtLte),
-                style: 'form',
-                explode: true),
-            'created_at[gt]': SdkQueryValue(
-                SdkUtils.unwrapOptional(createdAtGt),
-                style: 'form',
-                explode: true),
-            'created_at[lt]': SdkQueryValue(
-                SdkUtils.unwrapOptional(createdAtLt),
-                style: 'form',
-                explode: true)
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'deployment_id': SdkQueryValue(SdkUtils.unwrapOptional(deploymentId), style: 'form', explode: true),
+            'trigger_type': SdkQueryValue(SdkUtils.unwrapOptional(triggerType), style: 'form', explode: true),
+            'has_error': SdkQueryValue(SdkUtils.unwrapOptional(hasError), style: 'form', explode: true),
+            'created_at[gte]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtGte), style: 'form', explode: true),
+            'created_at[lte]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtLte), style: 'form', explode: true),
+            'created_at[gt]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtGt), style: 'form', explode: true),
+            'created_at[lt]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtLt), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'listBetaDeploymentRuns',
-          fromJsonRaw: (value) =>
-              BetaManagedAgentsListDeploymentRunsData.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsListDeploymentRunsData.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
+
 
 /// Lists deployment runs, sorted from newest to oldest, with optional filters for deployment, trigger type, outcome, and creation time. Use `page` as the opaque cursor from the previous response's `next_page` field, and set `limit` to control the page size.
 ///
@@ -155,125 +100,23 @@ Future<BetaManagedAgentsListDeploymentRunsData> listBetaDeploymentRuns(
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Stream<BetaManagedAgentsDeploymentRun> listBetaDeploymentRunsPaginated(
-    ClientConfig config,
-    {int? limit,
-    String? page,
-    String? deploymentId,
-    BetaManagedAgentsTriggerType? triggerType,
-    bool? hasError,
-    String? createdAtGte,
-    String? createdAtLte,
-    String? createdAtGt,
-    String? createdAtLt,
-    String? anthropicVersion,
-    List<String>? anthropicBeta,
-    String? anthropicWorkspaceId,
-    RequestOptions? requestOptions}) async* {
+Stream<BetaManagedAgentsDeploymentRun> listBetaDeploymentRunsPaginated(ClientConfig config, {int? limit, String? page, String? deploymentId, BetaManagedAgentsTriggerType? triggerType, bool? hasError, String? createdAtGte, String? createdAtLte, String? createdAtGt, String? createdAtLt, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaDeploymentRuns(config,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(sdkCursor),
-        deploymentId: deploymentId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(deploymentId),
-        triggerType: triggerType == null
-            ? const SdkOmitted<BetaManagedAgentsTriggerType>()
-            : SdkPresent<BetaManagedAgentsTriggerType>(triggerType),
-        hasError: hasError == null
-            ? const SdkOmitted<bool>()
-            : SdkPresent<bool>(hasError),
-        createdAtGte: createdAtGte == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtGte),
-        createdAtLte: createdAtLte == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtLte),
-        createdAtGt: createdAtGt == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtGt),
-        createdAtLt: createdAtLt == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtLt),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicWorkspaceId: anthropicWorkspaceId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicWorkspaceId),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaDeploymentRuns(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), deploymentId: deploymentId == null ? const SdkOmitted<String>() : SdkPresent<String>(deploymentId), triggerType: triggerType == null ? const SdkOmitted<BetaManagedAgentsTriggerType>() : SdkPresent<BetaManagedAgentsTriggerType>(triggerType), hasError: hasError == null ? const SdkOmitted<bool>() : SdkPresent<bool>(hasError), createdAtGte: createdAtGte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGte), createdAtLte: createdAtLte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLte), createdAtGt: createdAtGt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGt), createdAtLt: createdAtLt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLt), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) {
-      yield sdkItem;
-    }
+    for (final sdkItem in sdkItems) { yield sdkItem; }
     final sdkNext = sdkPage.nextPage.valueOrNull;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<
-    SdkPage<BetaManagedAgentsListDeploymentRunsData,
-        BetaManagedAgentsDeploymentRun>> listBetaDeploymentRunsPages(
-    ClientConfig config,
-    {int? limit,
-    String? page,
-    String? deploymentId,
-    BetaManagedAgentsTriggerType? triggerType,
-    bool? hasError,
-    String? createdAtGte,
-    String? createdAtLte,
-    String? createdAtGt,
-    String? createdAtLt,
-    String? anthropicVersion,
-    List<String>? anthropicBeta,
-    String? anthropicWorkspaceId,
-    RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaManagedAgentsListDeploymentRunsData, BetaManagedAgentsDeploymentRun>> listBetaDeploymentRunsPages(ClientConfig config, {int? limit, String? page, String? deploymentId, BetaManagedAgentsTriggerType? triggerType, bool? hasError, String? createdAtGte, String? createdAtLte, String? createdAtGt, String? createdAtLt, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaDeploymentRuns(config,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(sdkCursor),
-        deploymentId: deploymentId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(deploymentId),
-        triggerType: triggerType == null
-            ? const SdkOmitted<BetaManagedAgentsTriggerType>()
-            : SdkPresent<BetaManagedAgentsTriggerType>(triggerType),
-        hasError: hasError == null
-            ? const SdkOmitted<bool>()
-            : SdkPresent<bool>(hasError),
-        createdAtGte: createdAtGte == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtGte),
-        createdAtLte: createdAtLte == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtLte),
-        createdAtGt: createdAtGt == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtGt),
-        createdAtLt: createdAtLt == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtLt),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicWorkspaceId: anthropicWorkspaceId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicWorkspaceId),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaDeploymentRuns(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), deploymentId: deploymentId == null ? const SdkOmitted<String>() : SdkPresent<String>(deploymentId), triggerType: triggerType == null ? const SdkOmitted<BetaManagedAgentsTriggerType>() : SdkPresent<BetaManagedAgentsTriggerType>(triggerType), hasError: hasError == null ? const SdkOmitted<bool>() : SdkPresent<bool>(hasError), createdAtGte: createdAtGte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGte), createdAtLte: createdAtLte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLte), createdAtGt: createdAtGt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGt), createdAtLt: createdAtLt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLt), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage.valueOrNull;
@@ -284,6 +127,7 @@ Stream<
   }
 }
 
+
 /// Retrieves the record for a single deployment run, including whether session creation succeeded or failed. Use `deployment_run_id` to select the run and inspect `session_id` or `error` for its creation outcome.
 ///
 /// [deploymentRunId] Path parameter deployment_run_id
@@ -292,58 +136,21 @@ Stream<
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaManagedAgentsDeploymentRun> retrieveBetaDeploymentRuns(
-    ClientConfig config,
-    {required String deploymentRunId,
-    SdkOptional<String> anthropicVersion = const SdkOmitted(),
-    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsDeploymentRun>
+    retrieveBetaDeploymentRuns(ClientConfig config,
+        {required String deploymentRunId,
+        SdkOptional<String> anthropicVersion = const SdkOmitted(),
+        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaManagedAgentsDeploymentRun>('GET',
           '/v1/deployment_runs/${Uri.encodeComponent(deploymentRunId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'retrieveBetaDeploymentRuns',
-          fromJsonRaw: (value) => BetaManagedAgentsDeploymentRun.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsDeploymentRun.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

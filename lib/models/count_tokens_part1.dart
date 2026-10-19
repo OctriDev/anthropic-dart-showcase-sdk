@@ -9,36 +9,24 @@ sealed class CountMessageTokensParamsCacheControl {
   static const String constructionSurface = 'named';
   const CountMessageTokensParamsCacheControl();
   factory CountMessageTokensParamsCacheControl.fromJson(Object? json) {
-    try {
-      return CountMessageTokensParamsCacheControlCacheControlEphemeral(
-          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownCountMessageTokensParamsCacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for CountMessageTokensParamsCacheControl");
+    try { return CountMessageTokensParamsCacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownCountMessageTokensParamsCacheControl(json); }
+    throw FormatException("No variant matched for CountMessageTokensParamsCacheControl");
   }
   Object? toJson();
 }
 
-final class CountMessageTokensParamsCacheControlCacheControlEphemeral
-    extends CountMessageTokensParamsCacheControl {
+final class CountMessageTokensParamsCacheControlCacheControlEphemeral extends CountMessageTokensParamsCacheControl {
   final CacheControlEphemeral value;
   const CountMessageTokensParamsCacheControlCacheControlEphemeral(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [CountMessageTokensParamsCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownCountMessageTokensParamsCacheControl
-    extends CountMessageTokensParamsCacheControl {
+final class UnknownCountMessageTokensParamsCacheControl extends CountMessageTokensParamsCacheControl {
   final Map<String, dynamic> raw;
   const UnknownCountMessageTokensParamsCacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class CountMessageTokensParamsSystem {
@@ -46,200 +34,100 @@ sealed class CountMessageTokensParamsSystem {
   static const String constructionSurface = 'named';
   const CountMessageTokensParamsSystem();
   factory CountMessageTokensParamsSystem.fromJson(Object? json) {
-    if (json is String) {
-      return CountMessageTokensParamsSystemString(json);
-    }
-    try {
-      return CountMessageTokensParamsSystemRequestTextBlock(
-          RequestTextBlock.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for CountMessageTokensParamsSystem");
+    if (json is String) { return CountMessageTokensParamsSystemString(json); }
+    try { return CountMessageTokensParamsSystemRequestTextBlock(RequestTextBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for CountMessageTokensParamsSystem");
   }
   Object? toJson();
 }
 
-final class CountMessageTokensParamsSystemString
-    extends CountMessageTokensParamsSystem {
+final class CountMessageTokensParamsSystemString extends CountMessageTokensParamsSystem {
   final String value;
   const CountMessageTokensParamsSystemString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class CountMessageTokensParamsSystemRequestTextBlock
-    extends CountMessageTokensParamsSystem {
+final class CountMessageTokensParamsSystemRequestTextBlock extends CountMessageTokensParamsSystem {
   final RequestTextBlock value;
   const CountMessageTokensParamsSystemRequestTextBlock(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `CountMessageTokensParams` API schema.
 class CountMessageTokensParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
-
   /// Input messages. Our models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn. Each input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages. If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response. Example with a single `user` message: ```json [{"role": "user", "content": "Hello, Claude"}] ``` Example with multiple conversational turns: ```json [ {"role": "user", "content": "Hello there."}, {"role": "assistant", "content": "Hi, I'm Claude. How can I help you?"}, {"role": "user", "content": "Can you explain LLMs in plain English?"}, ] ``` Example with a partially-filled response from Claude: ```json [ {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"}, {"role": "assistant", "content": "The best answer is ("}, ] ``` Each input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `"text"`. The following input messages are equivalent: ```json {"role": "user", "content": "Hello, Claude"} ``` ```json {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]} ``` See [input examples](https://platform.claude.com/docs/en/build-with-claude/working-with-messages). Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API. There is a limit of 100,000 messages in a single request.
   final List<InputMessage> messages;
-
   /// The model that will complete your prompt. See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
   final Model model;
-
   /// Configuration options for the model's output, such as the output format.
   final SdkOptional<OutputConfig> outputConfig;
-
   /// System prompt. A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role).
   final SdkOptional<dynamic> system;
-
   /// Configuration for enabling Claude's extended thinking. When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit. See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) for details.
   final SdkOptional<ThinkingConfigParam> thinking;
-
   /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
   final SdkOptional<ToolChoice> toolChoice;
-
   /// Definitions of tools that the model may use. If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks. There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)). Each tool definition includes: * `name`: Name of the tool. * `description`: Optional, but strongly-recommended description of the tool. * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks. For example, if you defined `tools` as: ```json [ { "name": "get_stock_price", "description": "Get the current stock price for a given ticker symbol.", "input_schema": { "type": "object", "properties": { "ticker": { "type": "string", "description": "The stock ticker symbol, e.g. AAPL for Apple Inc." } }, "required": ["ticker"] } } ] ``` And then asked the model "What's the S&P 500 at today?", the model might produce `tool_use` content blocks in the response like this: ```json [ { "type": "tool_use", "id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV", "name": "get_stock_price", "input": { "ticker": "^GSPC" } } ] ``` You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an input, and return the following back to the model in a subsequent `user` message: ```json [ { "type": "tool_result", "tool_use_id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV", "content": "259.75 USD" } ] ``` Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output. See our [guide](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview) for more details.
   final SdkOptional<List<CountMessageTokensParamsToolsItem>> tools;
 
-  const CountMessageTokensParams(
-      {this.cacheControl = const SdkOmitted(),
-      required this.messages,
-      required this.model,
-      this.outputConfig = const SdkOmitted(),
-      this.system = const SdkOmitted(),
-      this.thinking = const SdkOmitted(),
-      this.toolChoice = const SdkOmitted(),
-      this.tools = const SdkOmitted()});
+  const CountMessageTokensParams({this.cacheControl = const SdkOmitted(), required this.messages, required this.model, this.outputConfig = const SdkOmitted(), this.system = const SdkOmitted(), this.thinking = const SdkOmitted(), this.toolChoice = const SdkOmitted(), this.tools = const SdkOmitted()});
 
-  CountMessageTokensParams Function(
-          {SdkOptional<CacheControlEphemeral?> cacheControl,
-          List<InputMessage> messages,
-          Model model,
-          SdkOptional<OutputConfig> outputConfig,
-          SdkOptional<dynamic> system,
-          SdkOptional<ThinkingConfigParam> thinking,
-          SdkOptional<ToolChoice> toolChoice,
-          SdkOptional<List<CountMessageTokensParamsToolsItem>> tools})
-      get copyWith => _copyWith;
+  CountMessageTokensParams Function({SdkOptional<CacheControlEphemeral?> cacheControl, List<InputMessage> messages, Model model, SdkOptional<OutputConfig> outputConfig, SdkOptional<dynamic> system, SdkOptional<ThinkingConfigParam> thinking, SdkOptional<ToolChoice> toolChoice, SdkOptional<List<CountMessageTokensParamsToolsItem>> tools}) get copyWith => _copyWith;
 
-  CountMessageTokensParams _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? messages = sdkOmittedValue,
-          Object? model = sdkOmittedValue,
-          Object? outputConfig = sdkOmittedValue,
-          Object? system = sdkOmittedValue,
-          Object? thinking = sdkOmittedValue,
-          Object? toolChoice = sdkOmittedValue,
-          Object? tools = sdkOmittedValue}) =>
-      CountMessageTokensParams(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<CacheControlEphemeral?>,
-        messages: identical(messages, sdkOmittedValue)
-            ? this.messages
-            : messages as List<InputMessage>,
-        model: identical(model, sdkOmittedValue) ? this.model : model as Model,
-        outputConfig: identical(outputConfig, sdkOmittedValue)
-            ? this.outputConfig
-            : outputConfig as SdkOptional<OutputConfig>,
-        system: identical(system, sdkOmittedValue)
-            ? this.system
-            : system as SdkOptional<dynamic>,
-        thinking: identical(thinking, sdkOmittedValue)
-            ? this.thinking
-            : thinking as SdkOptional<ThinkingConfigParam>,
-        toolChoice: identical(toolChoice, sdkOmittedValue)
-            ? this.toolChoice
-            : toolChoice as SdkOptional<ToolChoice>,
-        tools: identical(tools, sdkOmittedValue)
-            ? this.tools
-            : tools as SdkOptional<List<CountMessageTokensParamsToolsItem>>,
-      );
+  CountMessageTokensParams _copyWith({Object? cacheControl = sdkOmittedValue, Object? messages = sdkOmittedValue, Object? model = sdkOmittedValue, Object? outputConfig = sdkOmittedValue, Object? system = sdkOmittedValue, Object? thinking = sdkOmittedValue, Object? toolChoice = sdkOmittedValue, Object? tools = sdkOmittedValue}) => CountMessageTokensParams(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
+    messages: identical(messages, sdkOmittedValue) ? this.messages : messages as List<InputMessage>,
+    model: identical(model, sdkOmittedValue) ? this.model : model as Model,
+    outputConfig: identical(outputConfig, sdkOmittedValue) ? this.outputConfig : outputConfig as SdkOptional<OutputConfig>,
+    system: identical(system, sdkOmittedValue) ? this.system : system as SdkOptional<dynamic>,
+    thinking: identical(thinking, sdkOmittedValue) ? this.thinking : thinking as SdkOptional<ThinkingConfigParam>,
+    toolChoice: identical(toolChoice, sdkOmittedValue) ? this.toolChoice : toolChoice as SdkOptional<ToolChoice>,
+    tools: identical(tools, sdkOmittedValue) ? this.tools : tools as SdkOptional<List<CountMessageTokensParamsToolsItem>>,
+  );
 
-  factory CountMessageTokensParams.fromJson(Map<String, dynamic> json) =>
-      CountMessageTokensParams(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? CacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        messages: ((json['messages'] as List?)
-            ?.map((e) => InputMessage.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
-        outputConfig: json['output_config'] != null
-            ? SdkPresent((json['output_config'] != null
-                ? OutputConfig.fromJson(
-                    json['output_config'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        system: json['system'] != null
-            ? SdkPresent((json['system'])!)
-            : const SdkOmitted(),
-        thinking: json['thinking'] != null
-            ? SdkPresent((json['thinking'] != null
-                ? ThinkingConfigParam.fromJson(json['thinking'])
-                : null)!)
-            : const SdkOmitted(),
-        toolChoice: json['tool_choice'] != null
-            ? SdkPresent((json['tool_choice'] != null
-                ? ToolChoice.fromJson(json['tool_choice'])
-                : null)!)
-            : const SdkOmitted(),
-        tools: json['tools'] != null
-            ? SdkPresent(((json['tools'] as List?)
-                ?.map((e) => CountMessageTokensParamsToolsItem.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory CountMessageTokensParams.fromJson(Map<String, dynamic> json) => CountMessageTokensParams(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    messages: ((json['messages'] as List?)?.map((e) => InputMessage.fromJson(e as Map<String, dynamic>)).toList())!,
+    model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
+    outputConfig: json['output_config'] != null ? SdkPresent((json['output_config'] != null ? OutputConfig.fromJson(json['output_config'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    system: json['system'] != null ? SdkPresent((json['system'])!) : const SdkOmitted(),
+    thinking: json['thinking'] != null ? SdkPresent((json['thinking'] != null ? ThinkingConfigParam.fromJson(json['thinking']) : null)!) : const SdkOmitted(),
+    toolChoice: json['tool_choice'] != null ? SdkPresent((json['tool_choice'] != null ? ToolChoice.fromJson(json['tool_choice']) : null)!) : const SdkOmitted(),
+    tools: json['tools'] != null ? SdkPresent(((json['tools'] as List?)?.map((e) => CountMessageTokensParamsToolsItem.fromJson(e)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<CacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'messages': messages.map((item) => item.toJson()).toList(),
-        'model': model.toJson(),
-        ...switch (outputConfig) {
-          SdkPresent<OutputConfig>(value: final value) => {
-              'output_config': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (system) {
-          SdkPresent<dynamic>(value: final value) => {
-              'system': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (thinking) {
-          SdkPresent<ThinkingConfigParam>(value: final value) => {
-              'thinking': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (toolChoice) {
-          SdkPresent<ToolChoice>(value: final value) => {
-              'tool_choice': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (tools) {
-          SdkPresent<List<CountMessageTokensParamsToolsItem>>(
-            value: final value
-          ) =>
-            {
-              'tools': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (cacheControl) {
+      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'messages': messages.map((item) => item.toJson()).toList(),
+    'model': model.toJson(),
+    ...switch (outputConfig) {
+      SdkPresent<OutputConfig>(value: final value) => {'output_config': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (system) {
+      SdkPresent<dynamic>(value: final value) => {'system': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (thinking) {
+      SdkPresent<ThinkingConfigParam>(value: final value) => {'thinking': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (toolChoice) {
+      SdkPresent<ToolChoice>(value: final value) => {'tool_choice': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (tools) {
+      SdkPresent<List<CountMessageTokensParamsToolsItem>>(value: final value) => {'tools': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class CountMessageTokensParamsToolsItem {
@@ -248,354 +136,146 @@ sealed class CountMessageTokensParamsToolsItem {
   const CountMessageTokensParamsToolsItem();
   factory CountMessageTokensParamsToolsItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = Tool.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemTool(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BashTool20250124.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemBashTool20250124(value);
-        }
-      } catch (_) {}
-      try {
-        final value = CodeExecutionTool20250522.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemCodeExecutionTool20250522(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = CodeExecutionTool20250825.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemCodeExecutionTool20250825(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = CodeExecutionTool20260120.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemCodeExecutionTool20260120(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = CodeExecutionTool20260521.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemCodeExecutionTool20260521(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BrowserToolset20260801.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemBrowserToolset20260801(value);
-        }
-      } catch (_) {}
-      try {
-        final value = MemoryTool20250818.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemMemoryTool20250818(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ComputerToolset20260801.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemComputerToolset20260801(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = TextEditor20250124.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemTextEditor20250124(value);
-        }
-      } catch (_) {}
-      try {
-        final value = TextEditor20250429.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemTextEditor20250429(value);
-        }
-      } catch (_) {}
-      try {
-        final value = TextEditor20250728.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemTextEditor20250728(value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebSearchTool20250305.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemWebSearchTool20250305(value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebFetchTool20250910.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemWebFetchTool20250910(value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebSearchTool20260209.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemWebSearchTool20260209(value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebFetchTool20260209.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemWebFetchTool20260209(value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebFetchTool20260309.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemWebFetchTool20260309(value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebSearchTool20260318.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemWebSearchTool20260318(value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebFetchTool20260318.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemWebFetchTool20260318(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ToolSearchToolBM2520251119.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemToolSearchToolBM2520251119(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ToolSearchToolRegex20251119.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(
-              value);
-        }
-      } catch (_) {}
+      try { final value = Tool.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemTool(value); } } catch (_) {}
+      try { final value = BashTool20250124.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemBashTool20250124(value); } } catch (_) {}
+      try { final value = CodeExecutionTool20250522.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemCodeExecutionTool20250522(value); } } catch (_) {}
+      try { final value = CodeExecutionTool20250825.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemCodeExecutionTool20250825(value); } } catch (_) {}
+      try { final value = CodeExecutionTool20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemCodeExecutionTool20260120(value); } } catch (_) {}
+      try { final value = CodeExecutionTool20260521.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemCodeExecutionTool20260521(value); } } catch (_) {}
+      try { final value = BrowserToolset20260801.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemBrowserToolset20260801(value); } } catch (_) {}
+      try { final value = MemoryTool20250818.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemMemoryTool20250818(value); } } catch (_) {}
+      try { final value = ComputerToolset20260801.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemComputerToolset20260801(value); } } catch (_) {}
+      try { final value = TextEditor20250124.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemTextEditor20250124(value); } } catch (_) {}
+      try { final value = TextEditor20250429.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemTextEditor20250429(value); } } catch (_) {}
+      try { final value = TextEditor20250728.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemTextEditor20250728(value); } } catch (_) {}
+      try { final value = WebSearchTool20250305.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebSearchTool20250305(value); } } catch (_) {}
+      try { final value = WebFetchTool20250910.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebFetchTool20250910(value); } } catch (_) {}
+      try { final value = WebSearchTool20260209.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebSearchTool20260209(value); } } catch (_) {}
+      try { final value = WebFetchTool20260209.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebFetchTool20260209(value); } } catch (_) {}
+      try { final value = WebFetchTool20260309.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebFetchTool20260309(value); } } catch (_) {}
+      try { final value = WebSearchTool20260318.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebSearchTool20260318(value); } } catch (_) {}
+      try { final value = WebFetchTool20260318.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebFetchTool20260318(value); } } catch (_) {}
+      try { final value = ToolSearchToolBM2520251119.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemToolSearchToolBM2520251119(value); } } catch (_) {}
+      try { final value = ToolSearchToolRegex20251119.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(value); } } catch (_) {}
     }
-    try {
-      return CountMessageTokensParamsToolsItemTool(
-          Tool.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemBashTool20250124(
-          BashTool20250124.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemCodeExecutionTool20250522(
-          CodeExecutionTool20250522.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemCodeExecutionTool20250825(
-          CodeExecutionTool20250825.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemCodeExecutionTool20260120(
-          CodeExecutionTool20260120.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemCodeExecutionTool20260521(
-          CodeExecutionTool20260521.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemBrowserToolset20260801(
-          BrowserToolset20260801.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemMemoryTool20250818(
-          MemoryTool20250818.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemComputerToolset20260801(
-          ComputerToolset20260801.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemTextEditor20250124(
-          TextEditor20250124.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemTextEditor20250429(
-          TextEditor20250429.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemTextEditor20250728(
-          TextEditor20250728.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemWebSearchTool20250305(
-          WebSearchTool20250305.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemWebFetchTool20250910(
-          WebFetchTool20250910.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemWebSearchTool20260209(
-          WebSearchTool20260209.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemWebFetchTool20260209(
-          WebFetchTool20260209.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemWebFetchTool20260309(
-          WebFetchTool20260309.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemWebSearchTool20260318(
-          WebSearchTool20260318.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemWebFetchTool20260318(
-          WebFetchTool20260318.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemToolSearchToolBM2520251119(
-          ToolSearchToolBM2520251119.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(
-          ToolSearchToolRegex20251119.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for CountMessageTokensParamsToolsItem");
+    try { return CountMessageTokensParamsToolsItemTool(Tool.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemBashTool20250124(BashTool20250124.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemCodeExecutionTool20250522(CodeExecutionTool20250522.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemCodeExecutionTool20250825(CodeExecutionTool20250825.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemCodeExecutionTool20260120(CodeExecutionTool20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemCodeExecutionTool20260521(CodeExecutionTool20260521.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemBrowserToolset20260801(BrowserToolset20260801.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemMemoryTool20250818(MemoryTool20250818.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemComputerToolset20260801(ComputerToolset20260801.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemTextEditor20250124(TextEditor20250124.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemTextEditor20250429(TextEditor20250429.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemTextEditor20250728(TextEditor20250728.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemWebSearchTool20250305(WebSearchTool20250305.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemWebFetchTool20250910(WebFetchTool20250910.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemWebSearchTool20260209(WebSearchTool20260209.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemWebFetchTool20260209(WebFetchTool20260209.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemWebFetchTool20260309(WebFetchTool20260309.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemWebSearchTool20260318(WebSearchTool20260318.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemWebFetchTool20260318(WebFetchTool20260318.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemToolSearchToolBM2520251119(ToolSearchToolBM2520251119.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(ToolSearchToolRegex20251119.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for CountMessageTokensParamsToolsItem");
   }
   Object? toJson();
 }
 
-final class CountMessageTokensParamsToolsItemTool
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemTool extends CountMessageTokensParamsToolsItem {
   final Tool value;
   const CountMessageTokensParamsToolsItemTool(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemBashTool20250124
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemBashTool20250124 extends CountMessageTokensParamsToolsItem {
   final BashTool20250124 value;
   const CountMessageTokensParamsToolsItemBashTool20250124(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemCodeExecutionTool20250522
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemCodeExecutionTool20250522 extends CountMessageTokensParamsToolsItem {
   final CodeExecutionTool20250522 value;
   const CountMessageTokensParamsToolsItemCodeExecutionTool20250522(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemCodeExecutionTool20250825
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemCodeExecutionTool20250825 extends CountMessageTokensParamsToolsItem {
   final CodeExecutionTool20250825 value;
   const CountMessageTokensParamsToolsItemCodeExecutionTool20250825(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemCodeExecutionTool20260120
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemCodeExecutionTool20260120 extends CountMessageTokensParamsToolsItem {
   final CodeExecutionTool20260120 value;
   const CountMessageTokensParamsToolsItemCodeExecutionTool20260120(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemCodeExecutionTool20260521
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemCodeExecutionTool20260521 extends CountMessageTokensParamsToolsItem {
   final CodeExecutionTool20260521 value;
   const CountMessageTokensParamsToolsItemCodeExecutionTool20260521(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemBrowserToolset20260801
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemBrowserToolset20260801 extends CountMessageTokensParamsToolsItem {
   final BrowserToolset20260801 value;
   const CountMessageTokensParamsToolsItemBrowserToolset20260801(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemMemoryTool20250818
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemMemoryTool20250818 extends CountMessageTokensParamsToolsItem {
   final MemoryTool20250818 value;
   const CountMessageTokensParamsToolsItemMemoryTool20250818(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemComputerToolset20260801
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemComputerToolset20260801 extends CountMessageTokensParamsToolsItem {
   final ComputerToolset20260801 value;
   const CountMessageTokensParamsToolsItemComputerToolset20260801(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemTextEditor20250124
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemTextEditor20250124 extends CountMessageTokensParamsToolsItem {
   final TextEditor20250124 value;
   const CountMessageTokensParamsToolsItemTextEditor20250124(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemTextEditor20250429
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemTextEditor20250429 extends CountMessageTokensParamsToolsItem {
   final TextEditor20250429 value;
   const CountMessageTokensParamsToolsItemTextEditor20250429(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemTextEditor20250728
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemTextEditor20250728 extends CountMessageTokensParamsToolsItem {
   final TextEditor20250728 value;
   const CountMessageTokensParamsToolsItemTextEditor20250728(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebSearchTool20250305
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebSearchTool20250305 extends CountMessageTokensParamsToolsItem {
   final WebSearchTool20250305 value;
   const CountMessageTokensParamsToolsItemWebSearchTool20250305(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebFetchTool20250910
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebFetchTool20250910 extends CountMessageTokensParamsToolsItem {
   final WebFetchTool20250910 value;
   const CountMessageTokensParamsToolsItemWebFetchTool20250910(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebSearchTool20260209
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebSearchTool20260209 extends CountMessageTokensParamsToolsItem {
   final WebSearchTool20260209 value;
   const CountMessageTokensParamsToolsItemWebSearchTool20260209(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebFetchTool20260209
-    extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebFetchTool20260209 extends CountMessageTokensParamsToolsItem {
   final WebFetchTool20260209 value;
   const CountMessageTokensParamsToolsItemWebFetchTool20260209(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }

@@ -8,405 +8,197 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionUsage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Total input tokens consumed across all turns.
   final SdkOptional<int> inputTokens;
-
   /// Total output tokens generated across all turns.
   final SdkOptional<int> outputTokens;
-
   /// Total tokens read from prompt cache.
   final SdkOptional<int> cacheReadInputTokens;
-
   /// Tokens used to create prompt cache entries, broken down by cache TTL.
   final SdkOptional<BetaManagedAgentsCacheCreationUsage> cacheCreation;
-
   /// Cumulative list cost of the session across all turns, priced at public list rates. Absent until cost tracking is available for the session.
   final SdkOptional<BetaMonetaryAmount?> listCost;
-
   /// Cumulative server-executed tool usage across all turns. Absent until server-tool tracking is available for the session.
   final SdkOptional<BetaManagedAgentsServerToolUsage?> serverToolUse;
-
   /// Cumulative time in seconds during which the session had at least one thread in running status. Overlapping activity from concurrent threads is counted once, unlike `stats.active_seconds`, which sums each thread's own active time. This is the duration the session's runtime cost is priced on.
   final SdkOptional<double> activeSeconds;
 
-  const BetaManagedAgentsSessionUsage(
-      {this.inputTokens = const SdkOmitted(),
-      this.outputTokens = const SdkOmitted(),
-      this.cacheReadInputTokens = const SdkOmitted(),
-      this.cacheCreation = const SdkOmitted(),
-      this.listCost = const SdkOmitted(),
-      this.serverToolUse = const SdkOmitted(),
-      this.activeSeconds = const SdkOmitted()});
+  const BetaManagedAgentsSessionUsage({this.inputTokens = const SdkOmitted(), this.outputTokens = const SdkOmitted(), this.cacheReadInputTokens = const SdkOmitted(), this.cacheCreation = const SdkOmitted(), this.listCost = const SdkOmitted(), this.serverToolUse = const SdkOmitted(), this.activeSeconds = const SdkOmitted()});
 
-  BetaManagedAgentsSessionUsage Function(
-      {SdkOptional<int> inputTokens,
-      SdkOptional<int> outputTokens,
-      SdkOptional<int> cacheReadInputTokens,
-      SdkOptional<BetaManagedAgentsCacheCreationUsage> cacheCreation,
-      SdkOptional<BetaMonetaryAmount?> listCost,
-      SdkOptional<BetaManagedAgentsServerToolUsage?> serverToolUse,
-      SdkOptional<double> activeSeconds}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionUsage Function({SdkOptional<int> inputTokens, SdkOptional<int> outputTokens, SdkOptional<int> cacheReadInputTokens, SdkOptional<BetaManagedAgentsCacheCreationUsage> cacheCreation, SdkOptional<BetaMonetaryAmount?> listCost, SdkOptional<BetaManagedAgentsServerToolUsage?> serverToolUse, SdkOptional<double> activeSeconds}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionUsage _copyWith(
-          {Object? inputTokens = sdkOmittedValue,
-          Object? outputTokens = sdkOmittedValue,
-          Object? cacheReadInputTokens = sdkOmittedValue,
-          Object? cacheCreation = sdkOmittedValue,
-          Object? listCost = sdkOmittedValue,
-          Object? serverToolUse = sdkOmittedValue,
-          Object? activeSeconds = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionUsage(
-        inputTokens: identical(inputTokens, sdkOmittedValue)
-            ? this.inputTokens
-            : inputTokens as SdkOptional<int>,
-        outputTokens: identical(outputTokens, sdkOmittedValue)
-            ? this.outputTokens
-            : outputTokens as SdkOptional<int>,
-        cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue)
-            ? this.cacheReadInputTokens
-            : cacheReadInputTokens as SdkOptional<int>,
-        cacheCreation: identical(cacheCreation, sdkOmittedValue)
-            ? this.cacheCreation
-            : cacheCreation as SdkOptional<BetaManagedAgentsCacheCreationUsage>,
-        listCost: identical(listCost, sdkOmittedValue)
-            ? this.listCost
-            : listCost as SdkOptional<BetaMonetaryAmount?>,
-        serverToolUse: identical(serverToolUse, sdkOmittedValue)
-            ? this.serverToolUse
-            : serverToolUse as SdkOptional<BetaManagedAgentsServerToolUsage?>,
-        activeSeconds: identical(activeSeconds, sdkOmittedValue)
-            ? this.activeSeconds
-            : activeSeconds as SdkOptional<double>,
-      );
+  BetaManagedAgentsSessionUsage _copyWith({Object? inputTokens = sdkOmittedValue, Object? outputTokens = sdkOmittedValue, Object? cacheReadInputTokens = sdkOmittedValue, Object? cacheCreation = sdkOmittedValue, Object? listCost = sdkOmittedValue, Object? serverToolUse = sdkOmittedValue, Object? activeSeconds = sdkOmittedValue}) => BetaManagedAgentsSessionUsage(
+    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as SdkOptional<int>,
+    outputTokens: identical(outputTokens, sdkOmittedValue) ? this.outputTokens : outputTokens as SdkOptional<int>,
+    cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue) ? this.cacheReadInputTokens : cacheReadInputTokens as SdkOptional<int>,
+    cacheCreation: identical(cacheCreation, sdkOmittedValue) ? this.cacheCreation : cacheCreation as SdkOptional<BetaManagedAgentsCacheCreationUsage>,
+    listCost: identical(listCost, sdkOmittedValue) ? this.listCost : listCost as SdkOptional<BetaMonetaryAmount?>,
+    serverToolUse: identical(serverToolUse, sdkOmittedValue) ? this.serverToolUse : serverToolUse as SdkOptional<BetaManagedAgentsServerToolUsage?>,
+    activeSeconds: identical(activeSeconds, sdkOmittedValue) ? this.activeSeconds : activeSeconds as SdkOptional<double>,
+  );
 
-  factory BetaManagedAgentsSessionUsage.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionUsage(
-        inputTokens: json['input_tokens'] != null
-            ? SdkPresent(((json['input_tokens'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        outputTokens: json['output_tokens'] != null
-            ? SdkPresent(((json['output_tokens'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        cacheReadInputTokens: json['cache_read_input_tokens'] != null
-            ? SdkPresent(((json['cache_read_input_tokens'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        cacheCreation: json['cache_creation'] != null
-            ? SdkPresent((json['cache_creation'] != null
-                ? BetaManagedAgentsCacheCreationUsage.fromJson(
-                    json['cache_creation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        listCost: json.containsKey('list_cost')
-            ? SdkPresent(json['list_cost'] != null
-                ? BetaMonetaryAmount.fromJson(
-                    json['list_cost'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        serverToolUse: json.containsKey('server_tool_use')
-            ? SdkPresent(json['server_tool_use'] != null
-                ? BetaManagedAgentsServerToolUsage.fromJson(
-                    json['server_tool_use'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        activeSeconds: json['active_seconds'] != null
-            ? SdkPresent(((json['active_seconds'] as num?)?.toDouble())!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsSessionUsage.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionUsage(
+    inputTokens: json['input_tokens'] != null ? SdkPresent(((json['input_tokens'] as num?)?.toInt())!) : const SdkOmitted(),
+    outputTokens: json['output_tokens'] != null ? SdkPresent(((json['output_tokens'] as num?)?.toInt())!) : const SdkOmitted(),
+    cacheReadInputTokens: json['cache_read_input_tokens'] != null ? SdkPresent(((json['cache_read_input_tokens'] as num?)?.toInt())!) : const SdkOmitted(),
+    cacheCreation: json['cache_creation'] != null ? SdkPresent((json['cache_creation'] != null ? BetaManagedAgentsCacheCreationUsage.fromJson(json['cache_creation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    listCost: json.containsKey('list_cost') ? SdkPresent(json['list_cost'] != null ? BetaMonetaryAmount.fromJson(json['list_cost'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    serverToolUse: json.containsKey('server_tool_use') ? SdkPresent(json['server_tool_use'] != null ? BetaManagedAgentsServerToolUsage.fromJson(json['server_tool_use'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    activeSeconds: json['active_seconds'] != null ? SdkPresent(((json['active_seconds'] as num?)?.toDouble())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (inputTokens) {
-          SdkPresent<int>(value: final value) => {
-              'input_tokens': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (outputTokens) {
-          SdkPresent<int>(value: final value) => {
-              'output_tokens': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cacheReadInputTokens) {
-          SdkPresent<int>(value: final value) => {
-              'cache_read_input_tokens': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cacheCreation) {
-          SdkPresent<BetaManagedAgentsCacheCreationUsage>(value: final value) =>
-            {
-              'cache_creation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (listCost) {
-          SdkPresent<BetaMonetaryAmount?>(value: final value) => {
-              'list_cost': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (serverToolUse) {
-          SdkPresent<BetaManagedAgentsServerToolUsage?>(value: final value) => {
-              'server_tool_use': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (activeSeconds) {
-          SdkPresent<double>(value: final value) => {
-              'active_seconds': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (inputTokens) {
+      SdkPresent<int>(value: final value) => {'input_tokens': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (outputTokens) {
+      SdkPresent<int>(value: final value) => {'output_tokens': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cacheReadInputTokens) {
+      SdkPresent<int>(value: final value) => {'cache_read_input_tokens': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cacheCreation) {
+      SdkPresent<BetaManagedAgentsCacheCreationUsage>(value: final value) => {'cache_creation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (listCost) {
+      SdkPresent<BetaMonetaryAmount?>(value: final value) => {'list_cost': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (serverToolUse) {
+      SdkPresent<BetaManagedAgentsServerToolUsage?>(value: final value) => {'server_tool_use': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (activeSeconds) {
+      SdkPresent<double>(value: final value) => {'active_seconds': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Periodic snapshot of the session's cumulative usage and tracked list cost.
 class BetaManagedAgentsSessionUsageEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionUsageEventType type_;
-
   /// Unique identifier for this event.
   final String id;
-
   /// Timestamp when the snapshot was taken.
   final String processedAt;
-
   /// The session's cumulative usage at the snapshot time.
   final BetaManagedAgentsSessionUsageSnapshot usage;
-
   /// The session's configured budget at the snapshot time, or null when the session has no budget.
   final SdkOptional<BetaManagedAgentsBudget?> budget;
 
-  const BetaManagedAgentsSessionUsageEvent(
-      {required this.type_,
-      required this.id,
-      required this.processedAt,
-      required this.usage,
-      this.budget = const SdkOmitted()});
+  const BetaManagedAgentsSessionUsageEvent({required this.type_, required this.id, required this.processedAt, required this.usage, this.budget = const SdkOmitted()});
 
-  BetaManagedAgentsSessionUsageEvent Function(
-      {BetaManagedAgentsSessionUsageEventType type_,
-      String id,
-      String processedAt,
-      BetaManagedAgentsSessionUsageSnapshot usage,
-      SdkOptional<BetaManagedAgentsBudget?> budget}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionUsageEvent Function({BetaManagedAgentsSessionUsageEventType type_, String id, String processedAt, BetaManagedAgentsSessionUsageSnapshot usage, SdkOptional<BetaManagedAgentsBudget?> budget}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionUsageEvent _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? processedAt = sdkOmittedValue,
-          Object? usage = sdkOmittedValue,
-          Object? budget = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionUsageEvent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSessionUsageEventType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        processedAt: identical(processedAt, sdkOmittedValue)
-            ? this.processedAt
-            : processedAt as String,
-        usage: identical(usage, sdkOmittedValue)
-            ? this.usage
-            : usage as BetaManagedAgentsSessionUsageSnapshot,
-        budget: identical(budget, sdkOmittedValue)
-            ? this.budget
-            : budget as SdkOptional<BetaManagedAgentsBudget?>,
-      );
+  BetaManagedAgentsSessionUsageEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? usage = sdkOmittedValue, Object? budget = sdkOmittedValue}) => BetaManagedAgentsSessionUsageEvent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionUsageEventType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
+    usage: identical(usage, sdkOmittedValue) ? this.usage : usage as BetaManagedAgentsSessionUsageSnapshot,
+    budget: identical(budget, sdkOmittedValue) ? this.budget : budget as SdkOptional<BetaManagedAgentsBudget?>,
+  );
 
-  factory BetaManagedAgentsSessionUsageEvent.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionUsageEvent(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSessionUsageEventType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        processedAt: (json['processed_at'] as String?)!,
-        usage: (json['usage'] != null
-            ? BetaManagedAgentsSessionUsageSnapshot.fromJson(
-                json['usage'] as Map<String, dynamic>)
-            : null)!,
-        budget: json.containsKey('budget')
-            ? SdkPresent(json['budget'] != null
-                ? BetaManagedAgentsBudget.fromJson(json['budget'])
-                : null)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsSessionUsageEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionUsageEvent(
+    type_: (json['type'] != null ? BetaManagedAgentsSessionUsageEventType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    processedAt: (json['processed_at'] as String?)!,
+    usage: (json['usage'] != null ? BetaManagedAgentsSessionUsageSnapshot.fromJson(json['usage'] as Map<String, dynamic>) : null)!,
+    budget: json.containsKey('budget') ? SdkPresent(json['budget'] != null ? BetaManagedAgentsBudget.fromJson(json['budget']) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'processed_at': processedAt,
-        'usage': usage.toJson(),
-        ...switch (budget) {
-          SdkPresent<BetaManagedAgentsBudget?>(value: final value) => {
-              'budget': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'processed_at': processedAt,
+    'usage': usage.toJson(),
+    ...switch (budget) {
+      SdkPresent<BetaManagedAgentsBudget?>(value: final value) => {'budget': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Point-in-time snapshot of a session's cumulative usage.
 class BetaManagedAgentsSessionUsageSnapshot {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Total input tokens consumed across all turns.
   final SdkOptional<int> inputTokens;
-
   /// Total output tokens generated across all turns.
   final SdkOptional<int> outputTokens;
-
   /// Total tokens read from prompt cache.
   final SdkOptional<int> cacheReadInputTokens;
-
   /// Tokens used to create prompt cache entries, broken down by cache TTL.
   final SdkOptional<BetaManagedAgentsCacheCreationUsage> cacheCreation;
-
   /// Cumulative list cost of the session across all turns, priced at public list rates.
   final SdkOptional<BetaMonetaryAmount> listCost;
-
   /// Cumulative server-executed tool usage across all turns.
   final SdkOptional<BetaManagedAgentsServerToolUsage> serverToolUse;
-
   /// Cumulative time in seconds during which the session had at least one thread in running status. Overlapping activity from concurrent threads is counted once. This is the duration the session's runtime cost is priced on.
   final SdkOptional<double> activeSeconds;
 
-  const BetaManagedAgentsSessionUsageSnapshot(
-      {this.inputTokens = const SdkOmitted(),
-      this.outputTokens = const SdkOmitted(),
-      this.cacheReadInputTokens = const SdkOmitted(),
-      this.cacheCreation = const SdkOmitted(),
-      this.listCost = const SdkOmitted(),
-      this.serverToolUse = const SdkOmitted(),
-      this.activeSeconds = const SdkOmitted()});
+  const BetaManagedAgentsSessionUsageSnapshot({this.inputTokens = const SdkOmitted(), this.outputTokens = const SdkOmitted(), this.cacheReadInputTokens = const SdkOmitted(), this.cacheCreation = const SdkOmitted(), this.listCost = const SdkOmitted(), this.serverToolUse = const SdkOmitted(), this.activeSeconds = const SdkOmitted()});
 
-  BetaManagedAgentsSessionUsageSnapshot Function(
-      {SdkOptional<int> inputTokens,
-      SdkOptional<int> outputTokens,
-      SdkOptional<int> cacheReadInputTokens,
-      SdkOptional<BetaManagedAgentsCacheCreationUsage> cacheCreation,
-      SdkOptional<BetaMonetaryAmount> listCost,
-      SdkOptional<BetaManagedAgentsServerToolUsage> serverToolUse,
-      SdkOptional<double> activeSeconds}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionUsageSnapshot Function({SdkOptional<int> inputTokens, SdkOptional<int> outputTokens, SdkOptional<int> cacheReadInputTokens, SdkOptional<BetaManagedAgentsCacheCreationUsage> cacheCreation, SdkOptional<BetaMonetaryAmount> listCost, SdkOptional<BetaManagedAgentsServerToolUsage> serverToolUse, SdkOptional<double> activeSeconds}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionUsageSnapshot _copyWith(
-          {Object? inputTokens = sdkOmittedValue,
-          Object? outputTokens = sdkOmittedValue,
-          Object? cacheReadInputTokens = sdkOmittedValue,
-          Object? cacheCreation = sdkOmittedValue,
-          Object? listCost = sdkOmittedValue,
-          Object? serverToolUse = sdkOmittedValue,
-          Object? activeSeconds = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionUsageSnapshot(
-        inputTokens: identical(inputTokens, sdkOmittedValue)
-            ? this.inputTokens
-            : inputTokens as SdkOptional<int>,
-        outputTokens: identical(outputTokens, sdkOmittedValue)
-            ? this.outputTokens
-            : outputTokens as SdkOptional<int>,
-        cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue)
-            ? this.cacheReadInputTokens
-            : cacheReadInputTokens as SdkOptional<int>,
-        cacheCreation: identical(cacheCreation, sdkOmittedValue)
-            ? this.cacheCreation
-            : cacheCreation as SdkOptional<BetaManagedAgentsCacheCreationUsage>,
-        listCost: identical(listCost, sdkOmittedValue)
-            ? this.listCost
-            : listCost as SdkOptional<BetaMonetaryAmount>,
-        serverToolUse: identical(serverToolUse, sdkOmittedValue)
-            ? this.serverToolUse
-            : serverToolUse as SdkOptional<BetaManagedAgentsServerToolUsage>,
-        activeSeconds: identical(activeSeconds, sdkOmittedValue)
-            ? this.activeSeconds
-            : activeSeconds as SdkOptional<double>,
-      );
+  BetaManagedAgentsSessionUsageSnapshot _copyWith({Object? inputTokens = sdkOmittedValue, Object? outputTokens = sdkOmittedValue, Object? cacheReadInputTokens = sdkOmittedValue, Object? cacheCreation = sdkOmittedValue, Object? listCost = sdkOmittedValue, Object? serverToolUse = sdkOmittedValue, Object? activeSeconds = sdkOmittedValue}) => BetaManagedAgentsSessionUsageSnapshot(
+    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as SdkOptional<int>,
+    outputTokens: identical(outputTokens, sdkOmittedValue) ? this.outputTokens : outputTokens as SdkOptional<int>,
+    cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue) ? this.cacheReadInputTokens : cacheReadInputTokens as SdkOptional<int>,
+    cacheCreation: identical(cacheCreation, sdkOmittedValue) ? this.cacheCreation : cacheCreation as SdkOptional<BetaManagedAgentsCacheCreationUsage>,
+    listCost: identical(listCost, sdkOmittedValue) ? this.listCost : listCost as SdkOptional<BetaMonetaryAmount>,
+    serverToolUse: identical(serverToolUse, sdkOmittedValue) ? this.serverToolUse : serverToolUse as SdkOptional<BetaManagedAgentsServerToolUsage>,
+    activeSeconds: identical(activeSeconds, sdkOmittedValue) ? this.activeSeconds : activeSeconds as SdkOptional<double>,
+  );
 
-  factory BetaManagedAgentsSessionUsageSnapshot.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionUsageSnapshot(
-        inputTokens: json['input_tokens'] != null
-            ? SdkPresent(((json['input_tokens'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        outputTokens: json['output_tokens'] != null
-            ? SdkPresent(((json['output_tokens'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        cacheReadInputTokens: json['cache_read_input_tokens'] != null
-            ? SdkPresent(((json['cache_read_input_tokens'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        cacheCreation: json['cache_creation'] != null
-            ? SdkPresent((json['cache_creation'] != null
-                ? BetaManagedAgentsCacheCreationUsage.fromJson(
-                    json['cache_creation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        listCost: json['list_cost'] != null
-            ? SdkPresent((json['list_cost'] != null
-                ? BetaMonetaryAmount.fromJson(
-                    json['list_cost'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        serverToolUse: json['server_tool_use'] != null
-            ? SdkPresent((json['server_tool_use'] != null
-                ? BetaManagedAgentsServerToolUsage.fromJson(
-                    json['server_tool_use'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        activeSeconds: json['active_seconds'] != null
-            ? SdkPresent(((json['active_seconds'] as num?)?.toDouble())!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsSessionUsageSnapshot.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionUsageSnapshot(
+    inputTokens: json['input_tokens'] != null ? SdkPresent(((json['input_tokens'] as num?)?.toInt())!) : const SdkOmitted(),
+    outputTokens: json['output_tokens'] != null ? SdkPresent(((json['output_tokens'] as num?)?.toInt())!) : const SdkOmitted(),
+    cacheReadInputTokens: json['cache_read_input_tokens'] != null ? SdkPresent(((json['cache_read_input_tokens'] as num?)?.toInt())!) : const SdkOmitted(),
+    cacheCreation: json['cache_creation'] != null ? SdkPresent((json['cache_creation'] != null ? BetaManagedAgentsCacheCreationUsage.fromJson(json['cache_creation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    listCost: json['list_cost'] != null ? SdkPresent((json['list_cost'] != null ? BetaMonetaryAmount.fromJson(json['list_cost'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    serverToolUse: json['server_tool_use'] != null ? SdkPresent((json['server_tool_use'] != null ? BetaManagedAgentsServerToolUsage.fromJson(json['server_tool_use'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    activeSeconds: json['active_seconds'] != null ? SdkPresent(((json['active_seconds'] as num?)?.toDouble())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (inputTokens) {
-          SdkPresent<int>(value: final value) => {
-              'input_tokens': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (outputTokens) {
-          SdkPresent<int>(value: final value) => {
-              'output_tokens': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cacheReadInputTokens) {
-          SdkPresent<int>(value: final value) => {
-              'cache_read_input_tokens': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cacheCreation) {
-          SdkPresent<BetaManagedAgentsCacheCreationUsage>(value: final value) =>
-            {
-              'cache_creation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (listCost) {
-          SdkPresent<BetaMonetaryAmount>(value: final value) => {
-              'list_cost': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (serverToolUse) {
-          SdkPresent<BetaManagedAgentsServerToolUsage>(value: final value) => {
-              'server_tool_use': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (activeSeconds) {
-          SdkPresent<double>(value: final value) => {
-              'active_seconds': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (inputTokens) {
+      SdkPresent<int>(value: final value) => {'input_tokens': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (outputTokens) {
+      SdkPresent<int>(value: final value) => {'output_tokens': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cacheReadInputTokens) {
+      SdkPresent<int>(value: final value) => {'cache_read_input_tokens': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cacheCreation) {
+      SdkPresent<BetaManagedAgentsCacheCreationUsage>(value: final value) => {'cache_creation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (listCost) {
+      SdkPresent<BetaMonetaryAmount>(value: final value) => {'list_cost': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (serverToolUse) {
+      SdkPresent<BetaManagedAgentsServerToolUsage>(value: final value) => {'server_tool_use': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (activeSeconds) {
+      SdkPresent<double>(value: final value) => {'active_seconds': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class BetaManagedAgentsSkill {
@@ -415,142 +207,85 @@ sealed class BetaManagedAgentsSkill {
   const BetaManagedAgentsSkill();
   factory BetaManagedAgentsSkill.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsAnthropicSkill.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSkillBetaManagedAgentsAnthropicSkill(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsCustomSkill.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSkillBetaManagedAgentsCustomSkill(value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAnthropicSkill.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSkillBetaManagedAgentsAnthropicSkill(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsCustomSkill.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSkillBetaManagedAgentsCustomSkill(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsSkillBetaManagedAgentsAnthropicSkill(
-          BetaManagedAgentsAnthropicSkill.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSkillBetaManagedAgentsCustomSkill(
-          BetaManagedAgentsCustomSkill.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"anthropic", "custom"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsSkill(json);
-    }
+    try { return BetaManagedAgentsSkillBetaManagedAgentsAnthropicSkill(BetaManagedAgentsAnthropicSkill.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSkillBetaManagedAgentsCustomSkill(BetaManagedAgentsCustomSkill.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"anthropic", "custom"}.contains(json["type"])) { return UnknownBetaManagedAgentsSkill(json); }
     throw FormatException("No variant matched for BetaManagedAgentsSkill");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsSkillBetaManagedAgentsAnthropicSkill
-    extends BetaManagedAgentsSkill {
+final class BetaManagedAgentsSkillBetaManagedAgentsAnthropicSkill extends BetaManagedAgentsSkill {
   final BetaManagedAgentsAnthropicSkill value;
   const BetaManagedAgentsSkillBetaManagedAgentsAnthropicSkill(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSkillBetaManagedAgentsCustomSkill
-    extends BetaManagedAgentsSkill {
+final class BetaManagedAgentsSkillBetaManagedAgentsCustomSkill extends BetaManagedAgentsSkill {
   final BetaManagedAgentsCustomSkill value;
   const BetaManagedAgentsSkillBetaManagedAgentsCustomSkill(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSkill] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaManagedAgentsSkill extends BetaManagedAgentsSkill {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSkill(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// A skill referenced by the deployment's agent no longer exists.
 class BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType type_;
 
-  const BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError(
-      {required this.type_});
+  const BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError({required this.type_});
 
-  BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError Function(
-          {BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType type_})
-      get copyWith => _copyWith;
+  BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError Function({BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_
-                as BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType,
-      );
+  BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType,
+  );
 
-  factory BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType
-                .fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError(
+    type_: (json['type'] != null ? BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 /// A skill referenced by the deployment's agent no longer exists.
 class BetaManagedAgentsSkillNotFoundRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSkillNotFoundRunErrorType type_;
-
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsSkillNotFoundRunError(
-      {required this.type_, required this.message});
+  const BetaManagedAgentsSkillNotFoundRunError({required this.type_, required this.message});
 
-  BetaManagedAgentsSkillNotFoundRunError Function(
-      {BetaManagedAgentsSkillNotFoundRunErrorType type_,
-      String message}) get copyWith => _copyWith;
+  BetaManagedAgentsSkillNotFoundRunError Function({BetaManagedAgentsSkillNotFoundRunErrorType type_, String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSkillNotFoundRunError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      BetaManagedAgentsSkillNotFoundRunError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSkillNotFoundRunErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-      );
+  BetaManagedAgentsSkillNotFoundRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsSkillNotFoundRunError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSkillNotFoundRunErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+  );
 
-  factory BetaManagedAgentsSkillNotFoundRunError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSkillNotFoundRunError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSkillNotFoundRunErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-      );
+  factory BetaManagedAgentsSkillNotFoundRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSkillNotFoundRunError(
+    type_: (json['type'] != null ? BetaManagedAgentsSkillNotFoundRunErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-      };
+    'type': type_.toJson(),
+    'message': message,
+  };
 }

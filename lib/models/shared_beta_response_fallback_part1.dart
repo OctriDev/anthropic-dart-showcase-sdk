@@ -8,83 +8,45 @@ part of 'shared_beta_response_fallback.dart';
 class BetaResponseFallbackBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The model whose output ends at this point — the model that declined at this hop. When the declining hop is the requested model, its `model` echoes the top-level `model` string the caller sent (alias or canonical); when the declining hop is a fallback model, its `model` is that model's canonical id.
   final BetaResponseFallbackHopInfo from;
-
   /// The fallback model producing the content that follows this block. Its `model` is always the canonical id.
   final BetaResponseFallbackHopInfo to;
-
   /// What caused the `from` model to hand over at this hop.
   final BetaFallbackRefusalTrigger trigger;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseFallbackBlockType type_;
 
-  const BetaResponseFallbackBlock(
-      {required this.from,
-      required this.to,
-      required this.trigger,
-      required this.type_});
+  const BetaResponseFallbackBlock({required this.from, required this.to, required this.trigger, required this.type_});
 
-  BetaResponseFallbackBlock Function(
-      {BetaResponseFallbackHopInfo from,
-      BetaResponseFallbackHopInfo to,
-      BetaFallbackRefusalTrigger trigger,
-      BetaResponseFallbackBlockType type_}) get copyWith => _copyWith;
+  BetaResponseFallbackBlock Function({BetaResponseFallbackHopInfo from, BetaResponseFallbackHopInfo to, BetaFallbackRefusalTrigger trigger, BetaResponseFallbackBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseFallbackBlock _copyWith(
-          {Object? from = sdkOmittedValue,
-          Object? to = sdkOmittedValue,
-          Object? trigger = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaResponseFallbackBlock(
-        from: identical(from, sdkOmittedValue)
-            ? this.from
-            : from as BetaResponseFallbackHopInfo,
-        to: identical(to, sdkOmittedValue)
-            ? this.to
-            : to as BetaResponseFallbackHopInfo,
-        trigger: identical(trigger, sdkOmittedValue)
-            ? this.trigger
-            : trigger as BetaFallbackRefusalTrigger,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaResponseFallbackBlockType,
-      );
+  BetaResponseFallbackBlock _copyWith({Object? from = sdkOmittedValue, Object? to = sdkOmittedValue, Object? trigger = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseFallbackBlock(
+    from: identical(from, sdkOmittedValue) ? this.from : from as BetaResponseFallbackHopInfo,
+    to: identical(to, sdkOmittedValue) ? this.to : to as BetaResponseFallbackHopInfo,
+    trigger: identical(trigger, sdkOmittedValue) ? this.trigger : trigger as BetaFallbackRefusalTrigger,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseFallbackBlockType,
+  );
 
-  factory BetaResponseFallbackBlock.fromJson(Map<String, dynamic> json) =>
-      BetaResponseFallbackBlock(
-        from: (json['from'] != null
-            ? BetaResponseFallbackHopInfo.fromJson(
-                json['from'] as Map<String, dynamic>)
-            : null)!,
-        to: (json['to'] != null
-            ? BetaResponseFallbackHopInfo.fromJson(
-                json['to'] as Map<String, dynamic>)
-            : null)!,
-        trigger: (json['trigger'] != null
-            ? BetaFallbackRefusalTrigger.fromJson(
-                json['trigger'] as Map<String, dynamic>)
-            : null)!,
-        type_: (json['type'] != null
-            ? BetaResponseFallbackBlockType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaResponseFallbackBlock.fromJson(Map<String, dynamic> json) => BetaResponseFallbackBlock(
+    from: (json['from'] != null ? BetaResponseFallbackHopInfo.fromJson(json['from'] as Map<String, dynamic>) : null)!,
+    to: (json['to'] != null ? BetaResponseFallbackHopInfo.fromJson(json['to'] as Map<String, dynamic>) : null)!,
+    trigger: (json['trigger'] != null ? BetaFallbackRefusalTrigger.fromJson(json['trigger'] as Map<String, dynamic>) : null)!,
+    type_: (json['type'] != null ? BetaResponseFallbackBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from.toJson(),
-        'to': to.toJson(),
-        'trigger': trigger.toJson(),
-        'type': type_.toJson(),
-      };
+    'from': from.toJson(),
+    'to': to.toJson(),
+    'trigger': trigger.toJson(),
+    'type': type_.toJson(),
+  };
 }
 
 /// Identifies one hop of a fallback transition.
 class BetaResponseFallbackHopInfo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The model that will complete your prompt. See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
   final Model model;
 
@@ -92,17 +54,15 @@ class BetaResponseFallbackHopInfo {
 
   BetaResponseFallbackHopInfo Function({Model model}) get copyWith => _copyWith;
 
-  BetaResponseFallbackHopInfo _copyWith({Object? model = sdkOmittedValue}) =>
-      BetaResponseFallbackHopInfo(
-        model: identical(model, sdkOmittedValue) ? this.model : model as Model,
-      );
+  BetaResponseFallbackHopInfo _copyWith({Object? model = sdkOmittedValue}) => BetaResponseFallbackHopInfo(
+    model: identical(model, sdkOmittedValue) ? this.model : model as Model,
+  );
 
-  factory BetaResponseFallbackHopInfo.fromJson(Map<String, dynamic> json) =>
-      BetaResponseFallbackHopInfo(
-        model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
-      );
+  factory BetaResponseFallbackHopInfo.fromJson(Map<String, dynamic> json) => BetaResponseFallbackHopInfo(
+    model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'model': model.toJson(),
-      };
+    'model': model.toJson(),
+  };
 }

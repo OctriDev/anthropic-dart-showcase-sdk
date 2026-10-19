@@ -8,328 +8,160 @@ part of 'users_beta_true.dart';
 class BetaAnalyticsUserActivity {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Claude.ai activity metrics for a single user on a given day.
   final BetaAnalyticsChatMetrics chatMetrics;
-
   /// Claude Code activity metrics for a single user on a given day.
   final BetaAnalyticsClaudeCodeMetrics claudeCodeMetrics;
-
   /// Cowork activity metrics for a single user on a given day.
   final BetaAnalyticsCoworkMetrics coworkMetrics;
-
   /// Claude Design activity metrics for a single user on a given day.
   final BetaAnalyticsDesignMetrics designMetrics;
-
   /// Number of distinct active users represented by this row. Only set for grouped rollups (`group_by[]`); null for per-user rows. In date-range mode, recomputed as an exact distinct count of the group's active members over the requested window, never a sum of per-day values.
   final SdkOptional<int?> distinctUserCount;
-
   /// Most recent UTC day (YYYY-MM-DD) on which the user had any counted activity, within the requested window: equal to the requested `date` in single-day mode, and to the latest active day from `starting_date` (inclusive) to `ending_date` (exclusive) in date-range rollup mode — never a day earlier than the window start. On filtered requests (`filter[]`) only days matching the filter count: with `filter[]=rbac_group_id:{id}` it is the last day the user was active while a member of that group, consistent with the row's other metrics. On grouped (`group_by[]`) rows it is the latest day any member of the group was active (the requested `date` in single-day mode). Omitted from the response while last-activity reporting is not enabled for this organization.
   final SdkOptional<String?> lastActivityDate;
-
   /// Office Agent activity metrics for a single user on a given day, broken out by Office product.
   final BetaAnalyticsOfficeMetrics officeMetrics;
-
   /// Tagged RBAC group identifier (`rbac_group_...`), matching the spend-limits API spelling. Present only when the request grouped by `rbac_group_id`.
   final SdkOptional<String?> rbacGroupId;
-
   /// Resolved RBAC group display name, alongside `rbac_group_id` when name resolution is available. Null if the group has been deleted or its name could not be resolved; `rbac_group_id` remains the stable key.
   final SdkOptional<String?> rbacGroupName;
-
   /// Claude Science activity metrics for a single user on a given day.
   final BetaAnalyticsScienceMetrics scienceMetrics;
-
   /// The user this row describes. Null on rows aggregated across users.
   final SdkOptional<BetaAnalyticsUser?> user;
-
   /// Number of web searches performed
   final int webSearchCount;
 
-  const BetaAnalyticsUserActivity(
-      {required this.chatMetrics,
-      required this.claudeCodeMetrics,
-      required this.coworkMetrics,
-      required this.designMetrics,
-      this.distinctUserCount = const SdkOmitted(),
-      this.lastActivityDate = const SdkOmitted(),
-      required this.officeMetrics,
-      this.rbacGroupId = const SdkOmitted(),
-      this.rbacGroupName = const SdkOmitted(),
-      required this.scienceMetrics,
-      this.user = const SdkOmitted(),
-      required this.webSearchCount});
+  const BetaAnalyticsUserActivity({required this.chatMetrics, required this.claudeCodeMetrics, required this.coworkMetrics, required this.designMetrics, this.distinctUserCount = const SdkOmitted(), this.lastActivityDate = const SdkOmitted(), required this.officeMetrics, this.rbacGroupId = const SdkOmitted(), this.rbacGroupName = const SdkOmitted(), required this.scienceMetrics, this.user = const SdkOmitted(), required this.webSearchCount});
 
-  BetaAnalyticsUserActivity Function(
-      {BetaAnalyticsChatMetrics chatMetrics,
-      BetaAnalyticsClaudeCodeMetrics claudeCodeMetrics,
-      BetaAnalyticsCoworkMetrics coworkMetrics,
-      BetaAnalyticsDesignMetrics designMetrics,
-      SdkOptional<int?> distinctUserCount,
-      SdkOptional<String?> lastActivityDate,
-      BetaAnalyticsOfficeMetrics officeMetrics,
-      SdkOptional<String?> rbacGroupId,
-      SdkOptional<String?> rbacGroupName,
-      BetaAnalyticsScienceMetrics scienceMetrics,
-      SdkOptional<BetaAnalyticsUser?> user,
-      int webSearchCount}) get copyWith => _copyWith;
+  BetaAnalyticsUserActivity Function({BetaAnalyticsChatMetrics chatMetrics, BetaAnalyticsClaudeCodeMetrics claudeCodeMetrics, BetaAnalyticsCoworkMetrics coworkMetrics, BetaAnalyticsDesignMetrics designMetrics, SdkOptional<int?> distinctUserCount, SdkOptional<String?> lastActivityDate, BetaAnalyticsOfficeMetrics officeMetrics, SdkOptional<String?> rbacGroupId, SdkOptional<String?> rbacGroupName, BetaAnalyticsScienceMetrics scienceMetrics, SdkOptional<BetaAnalyticsUser?> user, int webSearchCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsUserActivity _copyWith(
-          {Object? chatMetrics = sdkOmittedValue,
-          Object? claudeCodeMetrics = sdkOmittedValue,
-          Object? coworkMetrics = sdkOmittedValue,
-          Object? designMetrics = sdkOmittedValue,
-          Object? distinctUserCount = sdkOmittedValue,
-          Object? lastActivityDate = sdkOmittedValue,
-          Object? officeMetrics = sdkOmittedValue,
-          Object? rbacGroupId = sdkOmittedValue,
-          Object? rbacGroupName = sdkOmittedValue,
-          Object? scienceMetrics = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? webSearchCount = sdkOmittedValue}) =>
-      BetaAnalyticsUserActivity(
-        chatMetrics: identical(chatMetrics, sdkOmittedValue)
-            ? this.chatMetrics
-            : chatMetrics as BetaAnalyticsChatMetrics,
-        claudeCodeMetrics: identical(claudeCodeMetrics, sdkOmittedValue)
-            ? this.claudeCodeMetrics
-            : claudeCodeMetrics as BetaAnalyticsClaudeCodeMetrics,
-        coworkMetrics: identical(coworkMetrics, sdkOmittedValue)
-            ? this.coworkMetrics
-            : coworkMetrics as BetaAnalyticsCoworkMetrics,
-        designMetrics: identical(designMetrics, sdkOmittedValue)
-            ? this.designMetrics
-            : designMetrics as BetaAnalyticsDesignMetrics,
-        distinctUserCount: identical(distinctUserCount, sdkOmittedValue)
-            ? this.distinctUserCount
-            : distinctUserCount as SdkOptional<int?>,
-        lastActivityDate: identical(lastActivityDate, sdkOmittedValue)
-            ? this.lastActivityDate
-            : lastActivityDate as SdkOptional<String?>,
-        officeMetrics: identical(officeMetrics, sdkOmittedValue)
-            ? this.officeMetrics
-            : officeMetrics as BetaAnalyticsOfficeMetrics,
-        rbacGroupId: identical(rbacGroupId, sdkOmittedValue)
-            ? this.rbacGroupId
-            : rbacGroupId as SdkOptional<String?>,
-        rbacGroupName: identical(rbacGroupName, sdkOmittedValue)
-            ? this.rbacGroupName
-            : rbacGroupName as SdkOptional<String?>,
-        scienceMetrics: identical(scienceMetrics, sdkOmittedValue)
-            ? this.scienceMetrics
-            : scienceMetrics as BetaAnalyticsScienceMetrics,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as SdkOptional<BetaAnalyticsUser?>,
-        webSearchCount: identical(webSearchCount, sdkOmittedValue)
-            ? this.webSearchCount
-            : webSearchCount as int,
-      );
+  BetaAnalyticsUserActivity _copyWith({Object? chatMetrics = sdkOmittedValue, Object? claudeCodeMetrics = sdkOmittedValue, Object? coworkMetrics = sdkOmittedValue, Object? designMetrics = sdkOmittedValue, Object? distinctUserCount = sdkOmittedValue, Object? lastActivityDate = sdkOmittedValue, Object? officeMetrics = sdkOmittedValue, Object? rbacGroupId = sdkOmittedValue, Object? rbacGroupName = sdkOmittedValue, Object? scienceMetrics = sdkOmittedValue, Object? user = sdkOmittedValue, Object? webSearchCount = sdkOmittedValue}) => BetaAnalyticsUserActivity(
+    chatMetrics: identical(chatMetrics, sdkOmittedValue) ? this.chatMetrics : chatMetrics as BetaAnalyticsChatMetrics,
+    claudeCodeMetrics: identical(claudeCodeMetrics, sdkOmittedValue) ? this.claudeCodeMetrics : claudeCodeMetrics as BetaAnalyticsClaudeCodeMetrics,
+    coworkMetrics: identical(coworkMetrics, sdkOmittedValue) ? this.coworkMetrics : coworkMetrics as BetaAnalyticsCoworkMetrics,
+    designMetrics: identical(designMetrics, sdkOmittedValue) ? this.designMetrics : designMetrics as BetaAnalyticsDesignMetrics,
+    distinctUserCount: identical(distinctUserCount, sdkOmittedValue) ? this.distinctUserCount : distinctUserCount as SdkOptional<int?>,
+    lastActivityDate: identical(lastActivityDate, sdkOmittedValue) ? this.lastActivityDate : lastActivityDate as SdkOptional<String?>,
+    officeMetrics: identical(officeMetrics, sdkOmittedValue) ? this.officeMetrics : officeMetrics as BetaAnalyticsOfficeMetrics,
+    rbacGroupId: identical(rbacGroupId, sdkOmittedValue) ? this.rbacGroupId : rbacGroupId as SdkOptional<String?>,
+    rbacGroupName: identical(rbacGroupName, sdkOmittedValue) ? this.rbacGroupName : rbacGroupName as SdkOptional<String?>,
+    scienceMetrics: identical(scienceMetrics, sdkOmittedValue) ? this.scienceMetrics : scienceMetrics as BetaAnalyticsScienceMetrics,
+    user: identical(user, sdkOmittedValue) ? this.user : user as SdkOptional<BetaAnalyticsUser?>,
+    webSearchCount: identical(webSearchCount, sdkOmittedValue) ? this.webSearchCount : webSearchCount as int,
+  );
 
-  factory BetaAnalyticsUserActivity.fromJson(Map<String, dynamic> json) =>
-      BetaAnalyticsUserActivity(
-        chatMetrics: (json['chat_metrics'] != null
-            ? BetaAnalyticsChatMetrics.fromJson(
-                json['chat_metrics'] as Map<String, dynamic>)
-            : null)!,
-        claudeCodeMetrics: (json['claude_code_metrics'] != null
-            ? BetaAnalyticsClaudeCodeMetrics.fromJson(
-                json['claude_code_metrics'] as Map<String, dynamic>)
-            : null)!,
-        coworkMetrics: (json['cowork_metrics'] != null
-            ? BetaAnalyticsCoworkMetrics.fromJson(
-                json['cowork_metrics'] as Map<String, dynamic>)
-            : null)!,
-        designMetrics: (json['design_metrics'] != null
-            ? BetaAnalyticsDesignMetrics.fromJson(
-                json['design_metrics'] as Map<String, dynamic>)
-            : null)!,
-        distinctUserCount: json.containsKey('distinct_user_count')
-            ? SdkPresent((json['distinct_user_count'] as num?)?.toInt())
-            : const SdkOmitted(),
-        lastActivityDate: json.containsKey('last_activity_date')
-            ? SdkPresent(json['last_activity_date'] as String?)
-            : const SdkOmitted(),
-        officeMetrics: (json['office_metrics'] != null
-            ? BetaAnalyticsOfficeMetrics.fromJson(
-                json['office_metrics'] as Map<String, dynamic>)
-            : null)!,
-        rbacGroupId: json.containsKey('rbac_group_id')
-            ? SdkPresent(json['rbac_group_id'] as String?)
-            : const SdkOmitted(),
-        rbacGroupName: json.containsKey('rbac_group_name')
-            ? SdkPresent(json['rbac_group_name'] as String?)
-            : const SdkOmitted(),
-        scienceMetrics: (json['science_metrics'] != null
-            ? BetaAnalyticsScienceMetrics.fromJson(
-                json['science_metrics'] as Map<String, dynamic>)
-            : null)!,
-        user: json.containsKey('user')
-            ? SdkPresent(json['user'] != null
-                ? BetaAnalyticsUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        webSearchCount: ((json['web_search_count'] as num?)?.toInt())!,
-      );
+  factory BetaAnalyticsUserActivity.fromJson(Map<String, dynamic> json) => BetaAnalyticsUserActivity(
+    chatMetrics: (json['chat_metrics'] != null ? BetaAnalyticsChatMetrics.fromJson(json['chat_metrics'] as Map<String, dynamic>) : null)!,
+    claudeCodeMetrics: (json['claude_code_metrics'] != null ? BetaAnalyticsClaudeCodeMetrics.fromJson(json['claude_code_metrics'] as Map<String, dynamic>) : null)!,
+    coworkMetrics: (json['cowork_metrics'] != null ? BetaAnalyticsCoworkMetrics.fromJson(json['cowork_metrics'] as Map<String, dynamic>) : null)!,
+    designMetrics: (json['design_metrics'] != null ? BetaAnalyticsDesignMetrics.fromJson(json['design_metrics'] as Map<String, dynamic>) : null)!,
+    distinctUserCount: json.containsKey('distinct_user_count') ? SdkPresent((json['distinct_user_count'] as num?)?.toInt()) : const SdkOmitted(),
+    lastActivityDate: json.containsKey('last_activity_date') ? SdkPresent(json['last_activity_date'] as String?) : const SdkOmitted(),
+    officeMetrics: (json['office_metrics'] != null ? BetaAnalyticsOfficeMetrics.fromJson(json['office_metrics'] as Map<String, dynamic>) : null)!,
+    rbacGroupId: json.containsKey('rbac_group_id') ? SdkPresent(json['rbac_group_id'] as String?) : const SdkOmitted(),
+    rbacGroupName: json.containsKey('rbac_group_name') ? SdkPresent(json['rbac_group_name'] as String?) : const SdkOmitted(),
+    scienceMetrics: (json['science_metrics'] != null ? BetaAnalyticsScienceMetrics.fromJson(json['science_metrics'] as Map<String, dynamic>) : null)!,
+    user: json.containsKey('user') ? SdkPresent(json['user'] != null ? BetaAnalyticsUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    webSearchCount: ((json['web_search_count'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'chat_metrics': chatMetrics.toJson(),
-        'claude_code_metrics': claudeCodeMetrics.toJson(),
-        'cowork_metrics': coworkMetrics.toJson(),
-        'design_metrics': designMetrics.toJson(),
-        ...switch (distinctUserCount) {
-          SdkPresent<int?>(value: final value) => {
-              'distinct_user_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (lastActivityDate) {
-          SdkPresent<String?>(value: final value) => {
-              'last_activity_date': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'office_metrics': officeMetrics.toJson(),
-        ...switch (rbacGroupId) {
-          SdkPresent<String?>(value: final value) => {
-              'rbac_group_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rbacGroupName) {
-          SdkPresent<String?>(value: final value) => {
-              'rbac_group_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'science_metrics': scienceMetrics.toJson(),
-        ...switch (user) {
-          SdkPresent<BetaAnalyticsUser?>(value: final value) => {
-              'user': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'web_search_count': webSearchCount,
-      };
+    'chat_metrics': chatMetrics.toJson(),
+    'claude_code_metrics': claudeCodeMetrics.toJson(),
+    'cowork_metrics': coworkMetrics.toJson(),
+    'design_metrics': designMetrics.toJson(),
+    ...switch (distinctUserCount) {
+      SdkPresent<int?>(value: final value) => {'distinct_user_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (lastActivityDate) {
+      SdkPresent<String?>(value: final value) => {'last_activity_date': value,},
+      _ => const <String, dynamic>{},
+    },
+    'office_metrics': officeMetrics.toJson(),
+    ...switch (rbacGroupId) {
+      SdkPresent<String?>(value: final value) => {'rbac_group_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rbacGroupName) {
+      SdkPresent<String?>(value: final value) => {'rbac_group_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    'science_metrics': scienceMetrics.toJson(),
+    ...switch (user) {
+      SdkPresent<BetaAnalyticsUser?>(value: final value) => {'user': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'web_search_count': webSearchCount,
+  };
 }
 
 /// Response for GET /v1/organizations/analytics/users.
 class BetaAnalyticsUsersResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `data` wire field.
   final List<BetaAnalyticsUserActivity> data;
-
   /// Opaque cursor for the next page, or null if no more results
   final String? nextPage;
 
-  const BetaAnalyticsUsersResponse(
-      {required this.data, required this.nextPage});
+  const BetaAnalyticsUsersResponse({required this.data, required this.nextPage});
 
-  BetaAnalyticsUsersResponse Function(
-      {List<BetaAnalyticsUserActivity> data,
-      String? nextPage}) get copyWith => _copyWith;
+  BetaAnalyticsUsersResponse Function({List<BetaAnalyticsUserActivity> data, String? nextPage}) get copyWith => _copyWith;
 
-  BetaAnalyticsUsersResponse _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaAnalyticsUsersResponse(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<BetaAnalyticsUserActivity>,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as String?,
-      );
+  BetaAnalyticsUsersResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaAnalyticsUsersResponse(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaAnalyticsUserActivity>,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
+  );
 
-  factory BetaAnalyticsUsersResponse.fromJson(Map<String, dynamic> json) =>
-      BetaAnalyticsUsersResponse(
-        data: ((json['data'] as List?)
-            ?.map((e) =>
-                BetaAnalyticsUserActivity.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        nextPage: json.containsKey('next_page')
-            ? json['next_page'] as String?
-            : throw ArgumentError.value(
-                null, 'next_page', 'Required property is missing'),
-      );
+  factory BetaAnalyticsUsersResponse.fromJson(Map<String, dynamic> json) => BetaAnalyticsUsersResponse(
+    data: ((json['data'] as List?)?.map((e) => BetaAnalyticsUserActivity.fromJson(e as Map<String, dynamic>)).toList())!,
+    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'next_page': nextPage,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'next_page': nextPage,
+  };
 }
 
 /// Typed representation of the `BetaListResponse_User_` API schema.
 class BetaListResponseUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `data` wire field.
   final List<BetaUser> data;
-
   /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
   final String? firstId;
-
   /// Indicates if there are more results in the requested page direction.
   final bool hasMore;
-
   /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
   final String? lastId;
 
-  const BetaListResponseUser(
-      {required this.data,
-      required this.firstId,
-      required this.hasMore,
-      required this.lastId});
+  const BetaListResponseUser({required this.data, required this.firstId, required this.hasMore, required this.lastId});
 
-  BetaListResponseUser Function(
-      {List<BetaUser> data,
-      String? firstId,
-      bool hasMore,
-      String? lastId}) get copyWith => _copyWith;
+  BetaListResponseUser Function({List<BetaUser> data, String? firstId, bool hasMore, String? lastId}) get copyWith => _copyWith;
 
-  BetaListResponseUser _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? firstId = sdkOmittedValue,
-          Object? hasMore = sdkOmittedValue,
-          Object? lastId = sdkOmittedValue}) =>
-      BetaListResponseUser(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<BetaUser>,
-        firstId: identical(firstId, sdkOmittedValue)
-            ? this.firstId
-            : firstId as String?,
-        hasMore: identical(hasMore, sdkOmittedValue)
-            ? this.hasMore
-            : hasMore as bool,
-        lastId: identical(lastId, sdkOmittedValue)
-            ? this.lastId
-            : lastId as String?,
-      );
+  BetaListResponseUser _copyWith({Object? data = sdkOmittedValue, Object? firstId = sdkOmittedValue, Object? hasMore = sdkOmittedValue, Object? lastId = sdkOmittedValue}) => BetaListResponseUser(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaUser>,
+    firstId: identical(firstId, sdkOmittedValue) ? this.firstId : firstId as String?,
+    hasMore: identical(hasMore, sdkOmittedValue) ? this.hasMore : hasMore as bool,
+    lastId: identical(lastId, sdkOmittedValue) ? this.lastId : lastId as String?,
+  );
 
-  factory BetaListResponseUser.fromJson(Map<String, dynamic> json) =>
-      BetaListResponseUser(
-        data: ((json['data'] as List?)
-            ?.map((e) => BetaUser.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        firstId: json.containsKey('first_id')
-            ? json['first_id'] as String?
-            : throw ArgumentError.value(
-                null, 'first_id', 'Required property is missing'),
-        hasMore: (json['has_more'] as bool?)!,
-        lastId: json.containsKey('last_id')
-            ? json['last_id'] as String?
-            : throw ArgumentError.value(
-                null, 'last_id', 'Required property is missing'),
-      );
+  factory BetaListResponseUser.fromJson(Map<String, dynamic> json) => BetaListResponseUser(
+    data: ((json['data'] as List?)?.map((e) => BetaUser.fromJson(e as Map<String, dynamic>)).toList())!,
+    firstId: json.containsKey('first_id') ? json['first_id'] as String? : throw ArgumentError.value(null, 'first_id', 'Required property is missing'),
+    hasMore: (json['has_more'] as bool?)!,
+    lastId: json.containsKey('last_id') ? json['last_id'] as String? : throw ArgumentError.value(null, 'last_id', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'first_id': firstId,
-        'has_more': hasMore,
-        'last_id': lastId,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'first_id': firstId,
+    'has_more': hasMore,
+    'last_id': lastId,
+  };
 }

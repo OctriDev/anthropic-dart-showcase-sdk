@@ -8,277 +8,162 @@ part of 'shared_beta_skill.dart';
 class BetaSkill {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// ISO 8601 timestamp of when the skill was created.
   final String createdAt;
-
   /// Human-readable, single-line label for the Skill. Maximum 255 characters. Always set: derived from the SKILL.md frontmatter `name` when omitted at creation. Not unique.
   final String displayName;
-
   /// Unique identifier for the skill. The format and length of IDs may change over time.
   final String id;
-
   /// ID of the newest Skill Version — what `latest` references resolve to. Always set: a Skill holds at least one version.
   final String latestVersionId;
-
   /// Where the Skill comes from. Possible values: * `"custom"`: authored by the platform user; private to their workspace * `"anthropic"`: published by Anthropic; shared and read-only * `"anthropic_example"`: Anthropic-published sample Skill * `"plugin"`: resolved from an installed plugin
   final BetaSkillSource source;
-
   /// Object type. For Skills, this is always `"skill"`.
   final BetaSkillType type_;
-
   /// ISO 8601 timestamp of when the skill was last updated.
   final String updatedAt;
 
-  const BetaSkill(
-      {required this.createdAt,
-      required this.displayName,
-      required this.id,
-      required this.latestVersionId,
-      required this.source,
-      required this.type_,
-      required this.updatedAt});
+  const BetaSkill({required this.createdAt, required this.displayName, required this.id, required this.latestVersionId, required this.source, required this.type_, required this.updatedAt});
 
-  BetaSkill Function(
-      {String createdAt,
-      String displayName,
-      String id,
-      String latestVersionId,
-      BetaSkillSource source,
-      BetaSkillType type_,
-      String updatedAt}) get copyWith => _copyWith;
+  BetaSkill Function({String createdAt, String displayName, String id, String latestVersionId, BetaSkillSource source, BetaSkillType type_, String updatedAt}) get copyWith => _copyWith;
 
-  BetaSkill _copyWith(
-          {Object? createdAt = sdkOmittedValue,
-          Object? displayName = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? latestVersionId = sdkOmittedValue,
-          Object? source = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      BetaSkill(
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        displayName: identical(displayName, sdkOmittedValue)
-            ? this.displayName
-            : displayName as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        latestVersionId: identical(latestVersionId, sdkOmittedValue)
-            ? this.latestVersionId
-            : latestVersionId as String,
-        source: identical(source, sdkOmittedValue)
-            ? this.source
-            : source as BetaSkillSource,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaSkillType,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-      );
+  BetaSkill _copyWith({Object? createdAt = sdkOmittedValue, Object? displayName = sdkOmittedValue, Object? id = sdkOmittedValue, Object? latestVersionId = sdkOmittedValue, Object? source = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => BetaSkill(
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    latestVersionId: identical(latestVersionId, sdkOmittedValue) ? this.latestVersionId : latestVersionId as String,
+    source: identical(source, sdkOmittedValue) ? this.source : source as BetaSkillSource,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSkillType,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+  );
 
   factory BetaSkill.fromJson(Map<String, dynamic> json) => BetaSkill(
-        createdAt: (json['created_at'] as String?)!,
-        displayName: (json['display_name'] as String?)!,
-        id: (json['id'] as String?)!,
-        latestVersionId: (json['latest_version_id'] as String?)!,
-        source: (json['source'] != null
-            ? BetaSkillSource.fromJson(json['source'] as Map<String, dynamic>)
-            : null)!,
-        type_: (json['type'] != null
-            ? BetaSkillType.fromJson(json['type'] as String)
-            : null)!,
-        updatedAt: (json['updated_at'] as String?)!,
-      );
+    createdAt: (json['created_at'] as String?)!,
+    displayName: (json['display_name'] as String?)!,
+    id: (json['id'] as String?)!,
+    latestVersionId: (json['latest_version_id'] as String?)!,
+    source: (json['source'] != null ? BetaSkillSource.fromJson(json['source'] as Map<String, dynamic>) : null)!,
+    type_: (json['type'] != null ? BetaSkillType.fromJson(json['type'] as String) : null)!,
+    updatedAt: (json['updated_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'created_at': createdAt,
-        'display_name': displayName,
-        'id': id,
-        'latest_version_id': latestVersionId,
-        'source': source.toJson(),
-        'type': type_.toJson(),
-        'updated_at': updatedAt,
-      };
+    'created_at': createdAt,
+    'display_name': displayName,
+    'id': id,
+    'latest_version_id': latestVersionId,
+    'source': source.toJson(),
+    'type': type_.toJson(),
+    'updated_at': updatedAt,
+  };
 }
 
 /// Specification for a skill to be loaded in a container (request model).
 class BetaSkillParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Skill ID
   final String skillId;
-
   /// Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
   final BetaSkillParamsType type_;
-
   /// Skill version or 'latest' for most recent version
   final SdkOptional<String> version;
 
-  const BetaSkillParams(
-      {required this.skillId,
-      required this.type_,
-      this.version = const SdkOmitted()});
+  const BetaSkillParams({required this.skillId, required this.type_, this.version = const SdkOmitted()});
 
-  BetaSkillParams Function(
-      {String skillId,
-      BetaSkillParamsType type_,
-      SdkOptional<String> version}) get copyWith => _copyWith;
+  BetaSkillParams Function({String skillId, BetaSkillParamsType type_, SdkOptional<String> version}) get copyWith => _copyWith;
 
-  BetaSkillParams _copyWith(
-          {Object? skillId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? version = sdkOmittedValue}) =>
-      BetaSkillParams(
-        skillId: identical(skillId, sdkOmittedValue)
-            ? this.skillId
-            : skillId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaSkillParamsType,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as SdkOptional<String>,
-      );
+  BetaSkillParams _copyWith({Object? skillId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? version = sdkOmittedValue}) => BetaSkillParams(
+    skillId: identical(skillId, sdkOmittedValue) ? this.skillId : skillId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSkillParamsType,
+    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String>,
+  );
 
-  factory BetaSkillParams.fromJson(Map<String, dynamic> json) =>
-      BetaSkillParams(
-        skillId: (json['skill_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaSkillParamsType.fromJson(json['type'] as String)
-            : null)!,
-        version: json['version'] != null
-            ? SdkPresent((json['version'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory BetaSkillParams.fromJson(Map<String, dynamic> json) => BetaSkillParams(
+    skillId: (json['skill_id'] as String?)!,
+    type_: (json['type'] != null ? BetaSkillParamsType.fromJson(json['type'] as String) : null)!,
+    version: json['version'] != null ? SdkPresent((json['version'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'skill_id': skillId,
-        'type': type_.toJson(),
-        ...switch (version) {
-          SdkPresent<String>(value: final value) => {
-              'version': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'skill_id': skillId,
+    'type': type_.toJson(),
+    ...switch (version) {
+      SdkPresent<String>(value: final value) => {'version': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `BetaSkillSource` API schema.
 class BetaSkillSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Where the Skill comes from. Possible values: * `"custom"`: authored by the platform user; private to their workspace * `"anthropic"`: published by Anthropic; shared and read-only * `"anthropic_example"`: Anthropic-published sample Skill * `"plugin"`: resolved from an installed plugin
   final BetaSkillSourceType type_;
 
   const BetaSkillSource({required this.type_});
 
-  BetaSkillSource Function({BetaSkillSourceType type_}) get copyWith =>
-      _copyWith;
+  BetaSkillSource Function({BetaSkillSourceType type_}) get copyWith => _copyWith;
 
-  BetaSkillSource _copyWith({Object? type_ = sdkOmittedValue}) =>
-      BetaSkillSource(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaSkillSourceType,
-      );
+  BetaSkillSource _copyWith({Object? type_ = sdkOmittedValue}) => BetaSkillSource(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSkillSourceType,
+  );
 
-  factory BetaSkillSource.fromJson(Map<String, dynamic> json) =>
-      BetaSkillSource(
-        type_: (json['type'] != null
-            ? BetaSkillSourceType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaSkillSource.fromJson(Map<String, dynamic> json) => BetaSkillSource(
+    type_: (json['type'] != null ? BetaSkillSourceType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaSkillVersion` API schema.
 class BetaSkillVersion {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// ISO 8601 timestamp of when the skill was created.
   final String createdAt;
-
   /// Description of the skill version. This is extracted from the SKILL.md file in the skill upload.
   final String description;
-
   /// Unique identifier for this Skill Version. The id addresses the version in paths and pins it in references.
   final String id;
-
   /// The Skill's immutable kebab-case slug, set at creation from the first upload's SKILL.md frontmatter `name` (or its enclosing directory). Every later upload must resolve to the same value. Also the top-level directory of the Skill's mounted files and the base name of a downloaded archive.
   final String name;
-
   /// Unique identifier for the skill. The format and length of IDs may change over time.
   final String skillId;
-
   /// Object type. For Skill Versions, this is always `"skill_version"`.
   final BetaSkillVersionType type_;
 
-  const BetaSkillVersion(
-      {required this.createdAt,
-      required this.description,
-      required this.id,
-      required this.name,
-      required this.skillId,
-      required this.type_});
+  const BetaSkillVersion({required this.createdAt, required this.description, required this.id, required this.name, required this.skillId, required this.type_});
 
-  BetaSkillVersion Function(
-      {String createdAt,
-      String description,
-      String id,
-      String name,
-      String skillId,
-      BetaSkillVersionType type_}) get copyWith => _copyWith;
+  BetaSkillVersion Function({String createdAt, String description, String id, String name, String skillId, BetaSkillVersionType type_}) get copyWith => _copyWith;
 
-  BetaSkillVersion _copyWith(
-          {Object? createdAt = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? skillId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaSkillVersion(
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        skillId: identical(skillId, sdkOmittedValue)
-            ? this.skillId
-            : skillId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaSkillVersionType,
-      );
+  BetaSkillVersion _copyWith({Object? createdAt = sdkOmittedValue, Object? description = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? skillId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaSkillVersion(
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    skillId: identical(skillId, sdkOmittedValue) ? this.skillId : skillId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSkillVersionType,
+  );
 
-  factory BetaSkillVersion.fromJson(Map<String, dynamic> json) =>
-      BetaSkillVersion(
-        createdAt: (json['created_at'] as String?)!,
-        description: (json['description'] as String?)!,
-        id: (json['id'] as String?)!,
-        name: (json['name'] as String?)!,
-        skillId: (json['skill_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaSkillVersionType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaSkillVersion.fromJson(Map<String, dynamic> json) => BetaSkillVersion(
+    createdAt: (json['created_at'] as String?)!,
+    description: (json['description'] as String?)!,
+    id: (json['id'] as String?)!,
+    name: (json['name'] as String?)!,
+    skillId: (json['skill_id'] as String?)!,
+    type_: (json['type'] != null ? BetaSkillVersionType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'created_at': createdAt,
-        'description': description,
-        'id': id,
-        'name': name,
-        'skill_id': skillId,
-        'type': type_.toJson(),
-      };
+    'created_at': createdAt,
+    'description': description,
+    'id': id,
+    'name': name,
+    'skill_id': skillId,
+    'type': type_.toJson(),
+  };
 }

@@ -8,387 +8,187 @@ part of 'shared_request_text.dart';
 class RequestTextEditorCodeExecutionToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
-
   /// Required API value serialized in the `content` wire field.
   final RequestTextEditorCodeExecutionToolResultBlockContent content;
-
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestTextEditorCodeExecutionToolResultBlockType type_;
 
-  const RequestTextEditorCodeExecutionToolResultBlock(
-      {this.cacheControl = const SdkOmitted(),
-      required this.content,
-      required this.toolUseId,
-      required this.type_});
+  const RequestTextEditorCodeExecutionToolResultBlock({this.cacheControl = const SdkOmitted(), required this.content, required this.toolUseId, required this.type_});
 
-  RequestTextEditorCodeExecutionToolResultBlock Function(
-          {SdkOptional<CacheControlEphemeral?> cacheControl,
-          RequestTextEditorCodeExecutionToolResultBlockContent content,
-          String toolUseId,
-          RequestTextEditorCodeExecutionToolResultBlockType type_})
-      get copyWith => _copyWith;
+  RequestTextEditorCodeExecutionToolResultBlock Function({SdkOptional<CacheControlEphemeral?> cacheControl, RequestTextEditorCodeExecutionToolResultBlockContent content, String toolUseId, RequestTextEditorCodeExecutionToolResultBlockType type_}) get copyWith => _copyWith;
 
-  RequestTextEditorCodeExecutionToolResultBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? toolUseId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestTextEditorCodeExecutionToolResultBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<CacheControlEphemeral?>,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as RequestTextEditorCodeExecutionToolResultBlockContent,
-        toolUseId: identical(toolUseId, sdkOmittedValue)
-            ? this.toolUseId
-            : toolUseId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestTextEditorCodeExecutionToolResultBlockType,
-      );
+  RequestTextEditorCodeExecutionToolResultBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestTextEditorCodeExecutionToolResultBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
+    content: identical(content, sdkOmittedValue) ? this.content : content as RequestTextEditorCodeExecutionToolResultBlockContent,
+    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestTextEditorCodeExecutionToolResultBlockType,
+  );
 
-  factory RequestTextEditorCodeExecutionToolResultBlock.fromJson(
-          Map<String, dynamic> json) =>
-      RequestTextEditorCodeExecutionToolResultBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? CacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        content: (json['content'] != null
-            ? RequestTextEditorCodeExecutionToolResultBlockContent.fromJson(
-                json['content'])
-            : null)!,
-        toolUseId: (json['tool_use_id'] as String?)!,
-        type_: (json['type'] != null
-            ? RequestTextEditorCodeExecutionToolResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestTextEditorCodeExecutionToolResultBlock.fromJson(Map<String, dynamic> json) => RequestTextEditorCodeExecutionToolResultBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    content: (json['content'] != null ? RequestTextEditorCodeExecutionToolResultBlockContent.fromJson(json['content']) : null)!,
+    toolUseId: (json['tool_use_id'] as String?)!,
+    type_: (json['type'] != null ? RequestTextEditorCodeExecutionToolResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<CacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content': content.toJson(),
-        'tool_use_id': toolUseId,
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'content': content.toJson(),
+    'tool_use_id': toolUseId,
+    'type': type_.toJson(),
+  };
 }
 
 sealed class RequestTextEditorCodeExecutionToolResultBlockContent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const RequestTextEditorCodeExecutionToolResultBlockContent();
-  factory RequestTextEditorCodeExecutionToolResultBlockContent.fromJson(
-      Object? json) {
+  factory RequestTextEditorCodeExecutionToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value =
-            RequestTextEditorCodeExecutionToolResultError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionToolResultError(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            RequestTextEditorCodeExecutionViewResultBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionViewResultBlock(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            RequestTextEditorCodeExecutionCreateResultBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionCreateResultBlock(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            RequestTextEditorCodeExecutionStrReplaceResultBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionStrReplaceResultBlock(
-              value);
-        }
-      } catch (_) {}
+      try { final value = RequestTextEditorCodeExecutionToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionToolResultError(value); } } catch (_) {}
+      try { final value = RequestTextEditorCodeExecutionViewResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionViewResultBlock(value); } } catch (_) {}
+      try { final value = RequestTextEditorCodeExecutionCreateResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionCreateResultBlock(value); } } catch (_) {}
+      try { final value = RequestTextEditorCodeExecutionStrReplaceResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionStrReplaceResultBlock(value); } } catch (_) {}
     }
-    try {
-      return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionToolResultError(
-          RequestTextEditorCodeExecutionToolResultError.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionViewResultBlock(
-          RequestTextEditorCodeExecutionViewResultBlock.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionCreateResultBlock(
-          RequestTextEditorCodeExecutionCreateResultBlock.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionStrReplaceResultBlock(
-          RequestTextEditorCodeExecutionStrReplaceResultBlock.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "text_editor_code_execution_tool_result_error",
-          "text_editor_code_execution_view_result",
-          "text_editor_code_execution_create_result",
-          "text_editor_code_execution_str_replace_result"
-        }.contains(json["type"])) {
-      return UnknownRequestTextEditorCodeExecutionToolResultBlockContent(json);
-    }
-    throw FormatException(
-        "No variant matched for RequestTextEditorCodeExecutionToolResultBlockContent");
+    try { return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionToolResultError(RequestTextEditorCodeExecutionToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionViewResultBlock(RequestTextEditorCodeExecutionViewResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionCreateResultBlock(RequestTextEditorCodeExecutionCreateResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionStrReplaceResultBlock(RequestTextEditorCodeExecutionStrReplaceResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"text_editor_code_execution_tool_result_error", "text_editor_code_execution_view_result", "text_editor_code_execution_create_result", "text_editor_code_execution_str_replace_result"}.contains(json["type"])) { return UnknownRequestTextEditorCodeExecutionToolResultBlockContent(json); }
+    throw FormatException("No variant matched for RequestTextEditorCodeExecutionToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionToolResultError
-    extends RequestTextEditorCodeExecutionToolResultBlockContent {
+final class RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionToolResultError extends RequestTextEditorCodeExecutionToolResultBlockContent {
   final RequestTextEditorCodeExecutionToolResultError value;
-  const RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionToolResultError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionToolResultError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionViewResultBlock
-    extends RequestTextEditorCodeExecutionToolResultBlockContent {
+final class RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionViewResultBlock extends RequestTextEditorCodeExecutionToolResultBlockContent {
   final RequestTextEditorCodeExecutionViewResultBlock value;
-  const RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionViewResultBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionViewResultBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionCreateResultBlock
-    extends RequestTextEditorCodeExecutionToolResultBlockContent {
+final class RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionCreateResultBlock extends RequestTextEditorCodeExecutionToolResultBlockContent {
   final RequestTextEditorCodeExecutionCreateResultBlock value;
-  const RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionCreateResultBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionCreateResultBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionStrReplaceResultBlock
-    extends RequestTextEditorCodeExecutionToolResultBlockContent {
+final class RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionStrReplaceResultBlock extends RequestTextEditorCodeExecutionToolResultBlockContent {
   final RequestTextEditorCodeExecutionStrReplaceResultBlock value;
-  const RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionStrReplaceResultBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestTextEditorCodeExecutionToolResultBlockContentRequestTextEditorCodeExecutionStrReplaceResultBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [RequestTextEditorCodeExecutionToolResultBlockContent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestTextEditorCodeExecutionToolResultBlockContent
-    extends RequestTextEditorCodeExecutionToolResultBlockContent {
+final class UnknownRequestTextEditorCodeExecutionToolResultBlockContent extends RequestTextEditorCodeExecutionToolResultBlockContent {
   final Map<String, dynamic> raw;
   const UnknownRequestTextEditorCodeExecutionToolResultBlockContent(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `RequestTextEditorCodeExecutionToolResultError` API schema.
 class RequestTextEditorCodeExecutionToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `error_code` wire field.
   final TextEditorCodeExecutionToolResultErrorCode errorCode;
-
   /// Optional `string` value serialized in the `error_message` wire field.
   final SdkOptional<String?> errorMessage;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestTextEditorCodeExecutionToolResultErrorType type_;
 
-  const RequestTextEditorCodeExecutionToolResultError(
-      {required this.errorCode,
-      this.errorMessage = const SdkOmitted(),
-      required this.type_});
+  const RequestTextEditorCodeExecutionToolResultError({required this.errorCode, this.errorMessage = const SdkOmitted(), required this.type_});
 
-  RequestTextEditorCodeExecutionToolResultError Function(
-          {TextEditorCodeExecutionToolResultErrorCode errorCode,
-          SdkOptional<String?> errorMessage,
-          RequestTextEditorCodeExecutionToolResultErrorType type_})
-      get copyWith => _copyWith;
+  RequestTextEditorCodeExecutionToolResultError Function({TextEditorCodeExecutionToolResultErrorCode errorCode, SdkOptional<String?> errorMessage, RequestTextEditorCodeExecutionToolResultErrorType type_}) get copyWith => _copyWith;
 
-  RequestTextEditorCodeExecutionToolResultError _copyWith(
-          {Object? errorCode = sdkOmittedValue,
-          Object? errorMessage = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestTextEditorCodeExecutionToolResultError(
-        errorCode: identical(errorCode, sdkOmittedValue)
-            ? this.errorCode
-            : errorCode as TextEditorCodeExecutionToolResultErrorCode,
-        errorMessage: identical(errorMessage, sdkOmittedValue)
-            ? this.errorMessage
-            : errorMessage as SdkOptional<String?>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestTextEditorCodeExecutionToolResultErrorType,
-      );
+  RequestTextEditorCodeExecutionToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? errorMessage = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestTextEditorCodeExecutionToolResultError(
+    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as TextEditorCodeExecutionToolResultErrorCode,
+    errorMessage: identical(errorMessage, sdkOmittedValue) ? this.errorMessage : errorMessage as SdkOptional<String?>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestTextEditorCodeExecutionToolResultErrorType,
+  );
 
-  factory RequestTextEditorCodeExecutionToolResultError.fromJson(
-          Map<String, dynamic> json) =>
-      RequestTextEditorCodeExecutionToolResultError(
-        errorCode: (json['error_code'] != null
-            ? TextEditorCodeExecutionToolResultErrorCode.fromJson(
-                json['error_code'] as String)
-            : null)!,
-        errorMessage: json.containsKey('error_message')
-            ? SdkPresent(json['error_message'] as String?)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? RequestTextEditorCodeExecutionToolResultErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestTextEditorCodeExecutionToolResultError.fromJson(Map<String, dynamic> json) => RequestTextEditorCodeExecutionToolResultError(
+    errorCode: (json['error_code'] != null ? TextEditorCodeExecutionToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
+    errorMessage: json.containsKey('error_message') ? SdkPresent(json['error_message'] as String?) : const SdkOmitted(),
+    type_: (json['type'] != null ? RequestTextEditorCodeExecutionToolResultErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'error_code': errorCode.toJson(),
-        ...switch (errorMessage) {
-          SdkPresent<String?>(value: final value) => {
-              'error_message': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-      };
+    'error_code': errorCode.toJson(),
+    ...switch (errorMessage) {
+      SdkPresent<String?>(value: final value) => {'error_message': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `RequestTextEditorCodeExecutionViewResultBlock` API schema.
 class RequestTextEditorCodeExecutionViewResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `content` wire field.
   final String content;
-
   /// Required enumerated value serialized in the `file_type` wire field.
   final RequestTextEditorCodeExecutionViewResultBlockFileType fileType;
-
   /// Optional `integer` value serialized in the `num_lines` wire field.
   final SdkOptional<int?> numLines;
-
   /// Optional `integer` value serialized in the `start_line` wire field.
   final SdkOptional<int?> startLine;
-
   /// Optional `integer` value serialized in the `total_lines` wire field.
   final SdkOptional<int?> totalLines;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestTextEditorCodeExecutionViewResultBlockType type_;
 
-  const RequestTextEditorCodeExecutionViewResultBlock(
-      {required this.content,
-      required this.fileType,
-      this.numLines = const SdkOmitted(),
-      this.startLine = const SdkOmitted(),
-      this.totalLines = const SdkOmitted(),
-      required this.type_});
+  const RequestTextEditorCodeExecutionViewResultBlock({required this.content, required this.fileType, this.numLines = const SdkOmitted(), this.startLine = const SdkOmitted(), this.totalLines = const SdkOmitted(), required this.type_});
 
-  RequestTextEditorCodeExecutionViewResultBlock Function(
-          {String content,
-          RequestTextEditorCodeExecutionViewResultBlockFileType fileType,
-          SdkOptional<int?> numLines,
-          SdkOptional<int?> startLine,
-          SdkOptional<int?> totalLines,
-          RequestTextEditorCodeExecutionViewResultBlockType type_})
-      get copyWith => _copyWith;
+  RequestTextEditorCodeExecutionViewResultBlock Function({String content, RequestTextEditorCodeExecutionViewResultBlockFileType fileType, SdkOptional<int?> numLines, SdkOptional<int?> startLine, SdkOptional<int?> totalLines, RequestTextEditorCodeExecutionViewResultBlockType type_}) get copyWith => _copyWith;
 
-  RequestTextEditorCodeExecutionViewResultBlock _copyWith(
-          {Object? content = sdkOmittedValue,
-          Object? fileType = sdkOmittedValue,
-          Object? numLines = sdkOmittedValue,
-          Object? startLine = sdkOmittedValue,
-          Object? totalLines = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestTextEditorCodeExecutionViewResultBlock(
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as String,
-        fileType: identical(fileType, sdkOmittedValue)
-            ? this.fileType
-            : fileType as RequestTextEditorCodeExecutionViewResultBlockFileType,
-        numLines: identical(numLines, sdkOmittedValue)
-            ? this.numLines
-            : numLines as SdkOptional<int?>,
-        startLine: identical(startLine, sdkOmittedValue)
-            ? this.startLine
-            : startLine as SdkOptional<int?>,
-        totalLines: identical(totalLines, sdkOmittedValue)
-            ? this.totalLines
-            : totalLines as SdkOptional<int?>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestTextEditorCodeExecutionViewResultBlockType,
-      );
+  RequestTextEditorCodeExecutionViewResultBlock _copyWith({Object? content = sdkOmittedValue, Object? fileType = sdkOmittedValue, Object? numLines = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? totalLines = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestTextEditorCodeExecutionViewResultBlock(
+    content: identical(content, sdkOmittedValue) ? this.content : content as String,
+    fileType: identical(fileType, sdkOmittedValue) ? this.fileType : fileType as RequestTextEditorCodeExecutionViewResultBlockFileType,
+    numLines: identical(numLines, sdkOmittedValue) ? this.numLines : numLines as SdkOptional<int?>,
+    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as SdkOptional<int?>,
+    totalLines: identical(totalLines, sdkOmittedValue) ? this.totalLines : totalLines as SdkOptional<int?>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestTextEditorCodeExecutionViewResultBlockType,
+  );
 
-  factory RequestTextEditorCodeExecutionViewResultBlock.fromJson(
-          Map<String, dynamic> json) =>
-      RequestTextEditorCodeExecutionViewResultBlock(
-        content: (json['content'] as String?)!,
-        fileType: (json['file_type'] != null
-            ? RequestTextEditorCodeExecutionViewResultBlockFileType.fromJson(
-                json['file_type'] as String)
-            : null)!,
-        numLines: json.containsKey('num_lines')
-            ? SdkPresent((json['num_lines'] as num?)?.toInt())
-            : const SdkOmitted(),
-        startLine: json.containsKey('start_line')
-            ? SdkPresent((json['start_line'] as num?)?.toInt())
-            : const SdkOmitted(),
-        totalLines: json.containsKey('total_lines')
-            ? SdkPresent((json['total_lines'] as num?)?.toInt())
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? RequestTextEditorCodeExecutionViewResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestTextEditorCodeExecutionViewResultBlock.fromJson(Map<String, dynamic> json) => RequestTextEditorCodeExecutionViewResultBlock(
+    content: (json['content'] as String?)!,
+    fileType: (json['file_type'] != null ? RequestTextEditorCodeExecutionViewResultBlockFileType.fromJson(json['file_type'] as String) : null)!,
+    numLines: json.containsKey('num_lines') ? SdkPresent((json['num_lines'] as num?)?.toInt()) : const SdkOmitted(),
+    startLine: json.containsKey('start_line') ? SdkPresent((json['start_line'] as num?)?.toInt()) : const SdkOmitted(),
+    totalLines: json.containsKey('total_lines') ? SdkPresent((json['total_lines'] as num?)?.toInt()) : const SdkOmitted(),
+    type_: (json['type'] != null ? RequestTextEditorCodeExecutionViewResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'content': content,
-        'file_type': fileType.toJson(),
-        ...switch (numLines) {
-          SdkPresent<int?>(value: final value) => {
-              'num_lines': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startLine) {
-          SdkPresent<int?>(value: final value) => {
-              'start_line': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (totalLines) {
-          SdkPresent<int?>(value: final value) => {
-              'total_lines': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-      };
+    'content': content,
+    'file_type': fileType.toJson(),
+    ...switch (numLines) {
+      SdkPresent<int?>(value: final value) => {'num_lines': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startLine) {
+      SdkPresent<int?>(value: final value) => {'start_line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (totalLines) {
+      SdkPresent<int?>(value: final value) => {'total_lines': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+  };
 }

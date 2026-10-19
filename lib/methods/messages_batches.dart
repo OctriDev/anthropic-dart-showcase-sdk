@@ -36,53 +36,14 @@ Future<MessageBatch> createMessagesBatches(ClientConfig config,
           config: config,
           body: {'requests': requests},
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-user-profile-id':
-                SdkUtils.unwrapOptional(anthropicUserProfileId),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-user-profile-id': SdkUtils.unwrapOptional(anthropicUserProfileId), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'createMessagesBatches',
-          fromJsonRaw: (value) =>
-              MessageBatch.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => MessageBatch.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List all Message Batches within a Workspace. Most recently created batches are returned first. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
 ///
@@ -115,59 +76,19 @@ Future<ListResponseMessageBatch> listMessagesBatches(ClientConfig config,
           'GET', '/v1/messages/batches',
           config: config,
           query: {
-            'before_id': SdkQueryValue(SdkUtils.unwrapOptional(beforeId),
-                style: 'form', explode: true),
-            'after_id': SdkQueryValue(SdkUtils.unwrapOptional(afterId),
-                style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true)
+            'before_id': SdkQueryValue(SdkUtils.unwrapOptional(beforeId), style: 'form', explode: true),
+            'after_id': SdkQueryValue(SdkUtils.unwrapOptional(afterId), style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'listMessagesBatches',
-          fromJsonRaw: (value) =>
-              ListResponseMessageBatch.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListResponseMessageBatch.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
 ///
@@ -189,35 +110,14 @@ Future<MessageBatch> retrieveMessagesBatches(ClientConfig config,
           '/v1/messages/batches/${Uri.encodeComponent(messageBatchId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'retrieveMessagesBatches',
-          fromJsonRaw: (value) =>
-              MessageBatch.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => MessageBatch.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Delete a Message Batch. Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
 ///
@@ -239,35 +139,14 @@ Future<DeleteMessageBatchResponse> deleteMessagesBatches(ClientConfig config,
           '/v1/messages/batches/${Uri.encodeComponent(messageBatchId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'deleteMessagesBatches',
-          fromJsonRaw: (value) => DeleteMessageBatchResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DeleteMessageBatchResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation. The number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
 ///
@@ -289,35 +168,14 @@ Future<MessageBatch> cancelMessagesBatches(ClientConfig config,
           '/v1/messages/batches/${Uri.encodeComponent(messageBatchId.toString())}/cancel',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'cancelMessagesBatches',
-          fromJsonRaw: (value) =>
-              MessageBatch.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => MessageBatch.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Streams the results of a Message Batch as a `.jsonl` file. Each line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
 ///
@@ -330,42 +188,20 @@ Future<MessageBatch> cancelMessagesBatches(ClientConfig config,
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<MessageBatchIndividualResponse> resultsMessagesBatches(
-    ClientConfig config,
-    {required String messageBatchId,
-    SdkOptional<String> anthropicVersion = const SdkOmitted(),
-    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<MessageBatchIndividualResponse>
+    resultsMessagesBatches(ClientConfig config,
+        {required String messageBatchId,
+        SdkOptional<String> anthropicVersion = const SdkOmitted(),
+        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<MessageBatchIndividualResponse>('GET',
           '/v1/messages/batches/${Uri.encodeComponent(messageBatchId.toString())}/results',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'resultsMessagesBatches',
-          fromJsonRaw: (value) => MessageBatchIndividualResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => MessageBatchIndividualResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

@@ -33,51 +33,14 @@ Future<SkillVersion> createSkillsVersions(ClientConfig config,
           body: {'files': files},
           contentType: 'multipart/form-data',
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'createSkillsVersions',
-          fromJsonRaw: (value) =>
-              SkillVersion.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SkillVersion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists versions of a specific skill. Use `page` to continue from the previous response's `next_page` token and `limit` to control the number of results per page.
 ///
@@ -105,57 +68,19 @@ Future<ListSkillVersionsResponse> listSkillsVersions(ClientConfig config,
           '/v1/skills/${Uri.encodeComponent(skillId.toString())}/versions',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'listSkillsVersions',
-          fromJsonRaw: (value) =>
-              ListSkillVersionsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListSkillVersionsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                ErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
+
 
 /// Lists versions of a specific skill. Use `page` to continue from the previous response's `next_page` token and `limit` to control the number of results per page.
 ///
@@ -172,64 +97,23 @@ Future<ListSkillVersionsResponse> listSkillsVersions(ClientConfig config,
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Stream<SkillVersion> listSkillsVersionsPaginated(ClientConfig config,
-    {required String skillId,
-    String? page,
-    int? limit,
-    String? anthropicVersion,
-    String? anthropicWorkspaceId,
-    RequestOptions? requestOptions}) async* {
+Stream<SkillVersion> listSkillsVersionsPaginated(ClientConfig config, {required String skillId, String? page, int? limit, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listSkillsVersions(config,
-        skillId: skillId,
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        limit:
-            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        anthropicWorkspaceId: anthropicWorkspaceId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicWorkspaceId),
-        requestOptions: requestOptions);
+    final sdkPage = await listSkillsVersions(config, skillId: skillId, page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) {
-      yield sdkItem;
-    }
+    for (final sdkItem in sdkItems) { yield sdkItem; }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<ListSkillVersionsResponse, SkillVersion>>
-    listSkillsVersionsPages(ClientConfig config,
-        {required String skillId,
-        String? page,
-        int? limit,
-        String? anthropicVersion,
-        String? anthropicWorkspaceId,
-        RequestOptions? requestOptions}) async* {
+Stream<SdkPage<ListSkillVersionsResponse, SkillVersion>> listSkillsVersionsPages(ClientConfig config, {required String skillId, String? page, int? limit, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listSkillsVersions(config,
-        skillId: skillId,
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        limit:
-            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        anthropicWorkspaceId: anthropicWorkspaceId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicWorkspaceId),
-        requestOptions: requestOptions);
+    final sdkPage = await listSkillsVersions(config, skillId: skillId, page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;
@@ -239,6 +123,7 @@ Stream<SdkPage<ListSkillVersionsResponse, SkillVersion>>
     sdkCursor = sdkNext;
   }
 }
+
 
 /// Retrieves a specific version of a skill. Use `version` to identify the version by its ID or request `latest` for the skill's most recent version. With the `skills-2025-10-02` beta header, identify the version by its Unix epoch timestamp instead.
 ///
@@ -266,35 +151,14 @@ Future<SkillVersion> retrieveSkillsVersions(ClientConfig config,
           '/v1/skills/${Uri.encodeComponent(skillId.toString())}/versions/${Uri.encodeComponent(version.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'retrieveSkillsVersions',
-          fromJsonRaw: (value) =>
-              SkillVersion.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SkillVersion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a specific version of a skill. Supply the skill and version identifiers to select the version to remove. The response confirms the deletion with the deleted version's ID.
 ///
@@ -321,32 +185,10 @@ Future<DeletedSkillVersion> deleteSkillsVersions(ClientConfig config,
           '/v1/skills/${Uri.encodeComponent(skillId.toString())}/versions/${Uri.encodeComponent(version.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'deleteSkillsVersions',
-          fromJsonRaw: (value) =>
-              DeletedSkillVersion.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DeletedSkillVersion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>),
-        '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => ErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

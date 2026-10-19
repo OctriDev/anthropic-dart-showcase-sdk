@@ -10,762 +10,265 @@ sealed class BetaManagedAgentsSessionEvent {
   const BetaManagedAgentsSessionEvent();
   factory BetaManagedAgentsSessionEvent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsUserMessageEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsUserMessageEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserInterruptEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsUserInterruptEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserToolConfirmationEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsUserToolConfirmationEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserCustomToolResultEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsUserCustomToolResultEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAgentCustomToolUseEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsAgentCustomToolUseEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAgentMessageEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMessageEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAgentThinkingEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThinkingEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAgentMcpToolUseEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolUseEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAgentMcpToolResultEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolResultEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAgentToolUseEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolUseEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAgentToolResultEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolResultEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsAgentThreadMessageReceivedEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageReceivedEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsAgentThreadMessageSentEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageSentEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsAgentThreadContextCompactedEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadContextCompactedEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsSessionErrorEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionErrorEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsSessionStatusRescheduledEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRescheduledEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsSessionStatusRunningEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRunningEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsSessionStatusIdleEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusIdleEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsSessionStatusTerminatedEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusTerminatedEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsSessionThreadCreatedEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadCreatedEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsSpanOutcomeEvaluationStartEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationStartEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsSpanOutcomeEvaluationEndEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationEndEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsSpanModelRequestStartEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestStartEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsSpanModelRequestEndEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestEndEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationOngoingEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserDefineOutcomeEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsUserDefineOutcomeEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsSessionDeletedEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionDeletedEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsSessionThreadStatusRunningEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRunningEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsSessionThreadStatusIdleEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusIdleEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsSessionThreadStatusTerminatedEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusTerminatedEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserToolResultEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsUserToolResultEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsSessionThreadStatusRescheduledEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsSessionUpdatedEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsSystemMessageEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsSessionUsageEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsUserMessageEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsUserMessageEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserInterruptEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsUserInterruptEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserToolConfirmationEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsUserToolConfirmationEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserCustomToolResultEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsUserCustomToolResultEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentCustomToolUseEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentCustomToolUseEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentMessageEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMessageEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentThinkingEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThinkingEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentMcpToolUseEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolUseEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentMcpToolResultEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolResultEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentToolUseEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolUseEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentToolResultEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolResultEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentThreadMessageReceivedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageReceivedEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentThreadMessageSentEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageSentEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentThreadContextCompactedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadContextCompactedEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionErrorEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionErrorEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionStatusRescheduledEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRescheduledEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionStatusRunningEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRunningEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionStatusIdleEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusIdleEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionStatusTerminatedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusTerminatedEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionThreadCreatedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadCreatedEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSpanOutcomeEvaluationStartEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationStartEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSpanOutcomeEvaluationEndEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationEndEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSpanModelRequestStartEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestStartEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSpanModelRequestEndEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestEndEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationOngoingEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserDefineOutcomeEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsUserDefineOutcomeEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionDeletedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionDeletedEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionThreadStatusRunningEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRunningEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionThreadStatusIdleEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusIdleEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionThreadStatusTerminatedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusTerminatedEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserToolResultEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsUserToolResultEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionThreadStatusRescheduledEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionUpdatedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSystemMessageEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSessionUsageEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsUserMessageEvent(
-          BetaManagedAgentsUserMessageEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsUserInterruptEvent(
-          BetaManagedAgentsUserInterruptEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsUserToolConfirmationEvent(
-          BetaManagedAgentsUserToolConfirmationEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsUserCustomToolResultEvent(
-          BetaManagedAgentsUserCustomToolResultEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsAgentCustomToolUseEvent(
-          BetaManagedAgentsAgentCustomToolUseEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMessageEvent(
-          BetaManagedAgentsAgentMessageEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThinkingEvent(
-          BetaManagedAgentsAgentThinkingEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolUseEvent(
-          BetaManagedAgentsAgentMcpToolUseEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolResultEvent(
-          BetaManagedAgentsAgentMcpToolResultEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolUseEvent(
-          BetaManagedAgentsAgentToolUseEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolResultEvent(
-          BetaManagedAgentsAgentToolResultEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageReceivedEvent(
-          BetaManagedAgentsAgentThreadMessageReceivedEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageSentEvent(
-          BetaManagedAgentsAgentThreadMessageSentEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadContextCompactedEvent(
-          BetaManagedAgentsAgentThreadContextCompactedEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionErrorEvent(
-          BetaManagedAgentsSessionErrorEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRescheduledEvent(
-          BetaManagedAgentsSessionStatusRescheduledEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRunningEvent(
-          BetaManagedAgentsSessionStatusRunningEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusIdleEvent(
-          BetaManagedAgentsSessionStatusIdleEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusTerminatedEvent(
-          BetaManagedAgentsSessionStatusTerminatedEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadCreatedEvent(
-          BetaManagedAgentsSessionThreadCreatedEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationStartEvent(
-          BetaManagedAgentsSpanOutcomeEvaluationStartEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationEndEvent(
-          BetaManagedAgentsSpanOutcomeEvaluationEndEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestStartEvent(
-          BetaManagedAgentsSpanModelRequestStartEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestEndEvent(
-          BetaManagedAgentsSpanModelRequestEndEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationOngoingEvent(
-          BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsUserDefineOutcomeEvent(
-          BetaManagedAgentsUserDefineOutcomeEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionDeletedEvent(
-          BetaManagedAgentsSessionDeletedEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRunningEvent(
-          BetaManagedAgentsSessionThreadStatusRunningEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusIdleEvent(
-          BetaManagedAgentsSessionThreadStatusIdleEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusTerminatedEvent(
-          BetaManagedAgentsSessionThreadStatusTerminatedEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsUserToolResultEvent(
-          BetaManagedAgentsUserToolResultEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent(
-          BetaManagedAgentsSessionThreadStatusRescheduledEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent(
-          BetaManagedAgentsSessionUpdatedEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent(
-          BetaManagedAgentsSystemMessageEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent(
-          BetaManagedAgentsSessionUsageEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "user.message",
-          "user.interrupt",
-          "user.tool_confirmation",
-          "user.custom_tool_result",
-          "agent.custom_tool_use",
-          "agent.message",
-          "agent.thinking",
-          "agent.mcp_tool_use",
-          "agent.mcp_tool_result",
-          "agent.tool_use",
-          "agent.tool_result",
-          "agent.thread_message_received",
-          "agent.thread_message_sent",
-          "agent.thread_context_compacted",
-          "session.error",
-          "session.status_rescheduled",
-          "session.status_running",
-          "session.status_idle",
-          "session.status_terminated",
-          "session.thread_created",
-          "span.outcome_evaluation_start",
-          "span.outcome_evaluation_end",
-          "span.model_request_start",
-          "span.model_request_end",
-          "span.outcome_evaluation_ongoing",
-          "user.define_outcome",
-          "session.deleted",
-          "session.thread_status_running",
-          "session.thread_status_idle",
-          "session.thread_status_terminated",
-          "user.tool_result",
-          "session.thread_status_rescheduled",
-          "session.updated",
-          "system.message",
-          "session.usage"
-        }.contains(json["type"])) {
-      return UnknownBetaManagedAgentsSessionEvent(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsSessionEvent");
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsUserMessageEvent(BetaManagedAgentsUserMessageEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsUserInterruptEvent(BetaManagedAgentsUserInterruptEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsUserToolConfirmationEvent(BetaManagedAgentsUserToolConfirmationEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsUserCustomToolResultEvent(BetaManagedAgentsUserCustomToolResultEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentCustomToolUseEvent(BetaManagedAgentsAgentCustomToolUseEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMessageEvent(BetaManagedAgentsAgentMessageEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThinkingEvent(BetaManagedAgentsAgentThinkingEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolUseEvent(BetaManagedAgentsAgentMcpToolUseEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolResultEvent(BetaManagedAgentsAgentMcpToolResultEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolUseEvent(BetaManagedAgentsAgentToolUseEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolResultEvent(BetaManagedAgentsAgentToolResultEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageReceivedEvent(BetaManagedAgentsAgentThreadMessageReceivedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageSentEvent(BetaManagedAgentsAgentThreadMessageSentEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadContextCompactedEvent(BetaManagedAgentsAgentThreadContextCompactedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionErrorEvent(BetaManagedAgentsSessionErrorEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRescheduledEvent(BetaManagedAgentsSessionStatusRescheduledEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRunningEvent(BetaManagedAgentsSessionStatusRunningEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusIdleEvent(BetaManagedAgentsSessionStatusIdleEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusTerminatedEvent(BetaManagedAgentsSessionStatusTerminatedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadCreatedEvent(BetaManagedAgentsSessionThreadCreatedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationStartEvent(BetaManagedAgentsSpanOutcomeEvaluationStartEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationEndEvent(BetaManagedAgentsSpanOutcomeEvaluationEndEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestStartEvent(BetaManagedAgentsSpanModelRequestStartEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestEndEvent(BetaManagedAgentsSpanModelRequestEndEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationOngoingEvent(BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsUserDefineOutcomeEvent(BetaManagedAgentsUserDefineOutcomeEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionDeletedEvent(BetaManagedAgentsSessionDeletedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRunningEvent(BetaManagedAgentsSessionThreadStatusRunningEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusIdleEvent(BetaManagedAgentsSessionThreadStatusIdleEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusTerminatedEvent(BetaManagedAgentsSessionThreadStatusTerminatedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsUserToolResultEvent(BetaManagedAgentsUserToolResultEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent(BetaManagedAgentsSessionThreadStatusRescheduledEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent(BetaManagedAgentsSessionUpdatedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent(BetaManagedAgentsSystemMessageEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent(BetaManagedAgentsSessionUsageEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"user.message", "user.interrupt", "user.tool_confirmation", "user.custom_tool_result", "agent.custom_tool_use", "agent.message", "agent.thinking", "agent.mcp_tool_use", "agent.mcp_tool_result", "agent.tool_use", "agent.tool_result", "agent.thread_message_received", "agent.thread_message_sent", "agent.thread_context_compacted", "session.error", "session.status_rescheduled", "session.status_running", "session.status_idle", "session.status_terminated", "session.thread_created", "span.outcome_evaluation_start", "span.outcome_evaluation_end", "span.model_request_start", "span.model_request_end", "span.outcome_evaluation_ongoing", "user.define_outcome", "session.deleted", "session.thread_status_running", "session.thread_status_idle", "session.thread_status_terminated", "user.tool_result", "session.thread_status_rescheduled", "session.updated", "system.message", "session.usage"}.contains(json["type"])) { return UnknownBetaManagedAgentsSessionEvent(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsSessionEvent");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsUserMessageEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsUserMessageEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsUserMessageEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsUserMessageEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsUserMessageEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsUserInterruptEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsUserInterruptEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsUserInterruptEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsUserInterruptEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsUserInterruptEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsUserToolConfirmationEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsUserToolConfirmationEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsUserToolConfirmationEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsUserToolConfirmationEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsUserToolConfirmationEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsUserCustomToolResultEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsUserCustomToolResultEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsUserCustomToolResultEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsUserCustomToolResultEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsUserCustomToolResultEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentCustomToolUseEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentCustomToolUseEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsAgentCustomToolUseEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentCustomToolUseEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentCustomToolUseEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentMessageEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentMessageEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsAgentMessageEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentMessageEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentMessageEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentThinkingEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentThinkingEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsAgentThinkingEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentThinkingEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentThinkingEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolUseEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolUseEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsAgentMcpToolUseEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolUseEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolUseEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolResultEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolResultEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsAgentMcpToolResultEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolResultEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentMcpToolResultEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolUseEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolUseEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsAgentToolUseEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolUseEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolUseEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolResultEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolResultEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsAgentToolResultEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolResultEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentToolResultEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageReceivedEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageReceivedEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsAgentThreadMessageReceivedEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageReceivedEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageReceivedEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageSentEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageSentEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsAgentThreadMessageSentEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageSentEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadMessageSentEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadContextCompactedEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadContextCompactedEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsAgentThreadContextCompactedEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadContextCompactedEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsAgentThreadContextCompactedEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionErrorEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionErrorEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionErrorEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionErrorEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionErrorEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRescheduledEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRescheduledEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionStatusRescheduledEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRescheduledEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRescheduledEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRunningEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRunningEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionStatusRunningEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRunningEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusRunningEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusIdleEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusIdleEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionStatusIdleEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusIdleEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusIdleEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusTerminatedEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusTerminatedEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionStatusTerminatedEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusTerminatedEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionStatusTerminatedEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadCreatedEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadCreatedEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionThreadCreatedEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadCreatedEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadCreatedEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationStartEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationStartEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSpanOutcomeEvaluationStartEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationStartEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationStartEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationEndEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationEndEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSpanOutcomeEvaluationEndEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationEndEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationEndEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestStartEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestStartEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSpanModelRequestStartEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestStartEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestStartEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestEndEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestEndEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSpanModelRequestEndEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestEndEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSpanModelRequestEndEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationOngoingEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationOngoingEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationOngoingEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSpanOutcomeEvaluationOngoingEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsUserDefineOutcomeEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsUserDefineOutcomeEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsUserDefineOutcomeEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsUserDefineOutcomeEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsUserDefineOutcomeEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionDeletedEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionDeletedEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionDeletedEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionDeletedEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionDeletedEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRunningEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRunningEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionThreadStatusRunningEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRunningEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRunningEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusIdleEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusIdleEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionThreadStatusIdleEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusIdleEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusIdleEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusTerminatedEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusTerminatedEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionThreadStatusTerminatedEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusTerminatedEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusTerminatedEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsUserToolResultEvent
-    extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsUserToolResultEvent extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsUserToolResultEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsUserToolResultEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsUserToolResultEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }

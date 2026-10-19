@@ -9,20 +9,16 @@ sealed class BetaApiKeyUpdateParamsName {
   static const String constructionSurface = 'named';
   const BetaApiKeyUpdateParamsName();
   factory BetaApiKeyUpdateParamsName.fromJson(Object? json) {
-    if (json is String) {
-      return BetaApiKeyUpdateParamsNameString(json);
-    }
+    if (json is String) { return BetaApiKeyUpdateParamsNameString(json); }
     throw FormatException("No variant matched for BetaApiKeyUpdateParamsName");
   }
   Object? toJson();
 }
 
-final class BetaApiKeyUpdateParamsNameString
-    extends BetaApiKeyUpdateParamsName {
+final class BetaApiKeyUpdateParamsNameString extends BetaApiKeyUpdateParamsName {
   final String value;
   const BetaApiKeyUpdateParamsNameString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 sealed class BetaApiKeyUpdateParamsStatus {
@@ -30,83 +26,49 @@ sealed class BetaApiKeyUpdateParamsStatus {
   static const String constructionSurface = 'named';
   const BetaApiKeyUpdateParamsStatus();
   factory BetaApiKeyUpdateParamsStatus.fromJson(Object? json) {
-    try {
-      return BetaApiKeyUpdateParamsStatusBetaApiKeyUpdateParamsStatusVariant0(
-          BetaApiKeyUpdateParamsStatusVariant0.fromJson(json as String));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for BetaApiKeyUpdateParamsStatus");
+    try { return BetaApiKeyUpdateParamsStatusBetaApiKeyUpdateParamsStatusVariant0(BetaApiKeyUpdateParamsStatusVariant0.fromJson(json as String)); } catch (_) {}
+    throw FormatException("No variant matched for BetaApiKeyUpdateParamsStatus");
   }
   Object? toJson();
 }
 
-final class BetaApiKeyUpdateParamsStatusBetaApiKeyUpdateParamsStatusVariant0
-    extends BetaApiKeyUpdateParamsStatus {
+final class BetaApiKeyUpdateParamsStatusBetaApiKeyUpdateParamsStatusVariant0 extends BetaApiKeyUpdateParamsStatus {
   final BetaApiKeyUpdateParamsStatusVariant0 value;
-  const BetaApiKeyUpdateParamsStatusBetaApiKeyUpdateParamsStatusVariant0(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaApiKeyUpdateParamsStatusBetaApiKeyUpdateParamsStatusVariant0(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `BetaApiKeyUpdateParams` API schema.
 class BetaApiKeyUpdateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Name of the API key.
   final SdkOptional<String?> name;
-
   /// Status of the API key.
   final SdkOptional<BetaApiKeyUpdateParamsStatusVariant0?> status;
 
-  const BetaApiKeyUpdateParams(
-      {this.name = const SdkOmitted(), this.status = const SdkOmitted()});
+  const BetaApiKeyUpdateParams({this.name = const SdkOmitted(), this.status = const SdkOmitted()});
 
-  BetaApiKeyUpdateParams Function(
-          {SdkOptional<String?> name,
-          SdkOptional<BetaApiKeyUpdateParamsStatusVariant0?> status})
-      get copyWith => _copyWith;
+  BetaApiKeyUpdateParams Function({SdkOptional<String?> name, SdkOptional<BetaApiKeyUpdateParamsStatusVariant0?> status}) get copyWith => _copyWith;
 
-  BetaApiKeyUpdateParams _copyWith(
-          {Object? name = sdkOmittedValue, Object? status = sdkOmittedValue}) =>
-      BetaApiKeyUpdateParams(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String?>,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<BetaApiKeyUpdateParamsStatusVariant0?>,
-      );
+  BetaApiKeyUpdateParams _copyWith({Object? name = sdkOmittedValue, Object? status = sdkOmittedValue}) => BetaApiKeyUpdateParams(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<BetaApiKeyUpdateParamsStatusVariant0?>,
+  );
 
-  factory BetaApiKeyUpdateParams.fromJson(Map<String, dynamic> json) =>
-      BetaApiKeyUpdateParams(
-        name: json.containsKey('name')
-            ? SdkPresent(json['name'] as String?)
-            : const SdkOmitted(),
-        status: json.containsKey('status')
-            ? SdkPresent(json['status'] != null
-                ? BetaApiKeyUpdateParamsStatusVariant0.fromJson(
-                    json['status'] as String)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory BetaApiKeyUpdateParams.fromJson(Map<String, dynamic> json) => BetaApiKeyUpdateParams(
+    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
+    status: json.containsKey('status') ? SdkPresent(json['status'] != null ? BetaApiKeyUpdateParamsStatusVariant0.fromJson(json['status'] as String) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String?>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (status) {
-          SdkPresent<BetaApiKeyUpdateParamsStatusVariant0?>(
-            value: final value
-          ) =>
-            {
-              'status': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (name) {
+      SdkPresent<String?>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (status) {
+      SdkPresent<BetaApiKeyUpdateParamsStatusVariant0?>(value: final value) => {'status': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

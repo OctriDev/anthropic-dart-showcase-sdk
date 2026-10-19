@@ -4,189 +4,141 @@
 part of 'beta_webhook_beta_webhook_event.dart';
 
 // beta_webhook_beta_webhook_event domain models (part 2)
-final class BetaWebhookEventDataBetaWebhookSessionUpdatedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionUpdatedEventData extends BetaWebhookEventData {
   final BetaWebhookSessionUpdatedEventData value;
   const BetaWebhookEventDataBetaWebhookSessionUpdatedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookAgentCreatedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookAgentCreatedEventData extends BetaWebhookEventData {
   final BetaWebhookAgentCreatedEventData value;
   const BetaWebhookEventDataBetaWebhookAgentCreatedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookAgentArchivedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookAgentArchivedEventData extends BetaWebhookEventData {
   final BetaWebhookAgentArchivedEventData value;
   const BetaWebhookEventDataBetaWebhookAgentArchivedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookAgentDeletedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookAgentDeletedEventData extends BetaWebhookEventData {
   final BetaWebhookAgentDeletedEventData value;
   const BetaWebhookEventDataBetaWebhookAgentDeletedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookDeploymentPausedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookDeploymentPausedEventData extends BetaWebhookEventData {
   final BetaWebhookDeploymentPausedEventData value;
   const BetaWebhookEventDataBetaWebhookDeploymentPausedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookDeploymentRunFailedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookDeploymentRunFailedEventData extends BetaWebhookEventData {
   final BetaWebhookDeploymentRunFailedEventData value;
   const BetaWebhookEventDataBetaWebhookDeploymentRunFailedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookDeploymentCreatedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookDeploymentCreatedEventData extends BetaWebhookEventData {
   final BetaWebhookDeploymentCreatedEventData value;
   const BetaWebhookEventDataBetaWebhookDeploymentCreatedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookDeploymentUpdatedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookDeploymentUpdatedEventData extends BetaWebhookEventData {
   final BetaWebhookDeploymentUpdatedEventData value;
   const BetaWebhookEventDataBetaWebhookDeploymentUpdatedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookDeploymentUnpausedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookDeploymentUnpausedEventData extends BetaWebhookEventData {
   final BetaWebhookDeploymentUnpausedEventData value;
   const BetaWebhookEventDataBetaWebhookDeploymentUnpausedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookAgentUpdatedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookAgentUpdatedEventData extends BetaWebhookEventData {
   final BetaWebhookAgentUpdatedEventData value;
   const BetaWebhookEventDataBetaWebhookAgentUpdatedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookDeploymentArchivedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookDeploymentArchivedEventData extends BetaWebhookEventData {
   final BetaWebhookDeploymentArchivedEventData value;
   const BetaWebhookEventDataBetaWebhookDeploymentArchivedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookDeploymentRunStartedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookDeploymentRunStartedEventData extends BetaWebhookEventData {
   final BetaWebhookDeploymentRunStartedEventData value;
-  const BetaWebhookEventDataBetaWebhookDeploymentRunStartedEventData(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookDeploymentRunStartedEventData(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookDeploymentDeletedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookDeploymentDeletedEventData extends BetaWebhookEventData {
   final BetaWebhookDeploymentDeletedEventData value;
   const BetaWebhookEventDataBetaWebhookDeploymentDeletedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookDeploymentRunSucceededEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookDeploymentRunSucceededEventData extends BetaWebhookEventData {
   final BetaWebhookDeploymentRunSucceededEventData value;
-  const BetaWebhookEventDataBetaWebhookDeploymentRunSucceededEventData(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookDeploymentRunSucceededEventData(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookEnvironmentCreatedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookEnvironmentCreatedEventData extends BetaWebhookEventData {
   final BetaWebhookEnvironmentCreatedEventData value;
   const BetaWebhookEventDataBetaWebhookEnvironmentCreatedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookEnvironmentUpdatedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookEnvironmentUpdatedEventData extends BetaWebhookEventData {
   final BetaWebhookEnvironmentUpdatedEventData value;
   const BetaWebhookEventDataBetaWebhookEnvironmentUpdatedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookEnvironmentArchivedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookEnvironmentArchivedEventData extends BetaWebhookEventData {
   final BetaWebhookEnvironmentArchivedEventData value;
   const BetaWebhookEventDataBetaWebhookEnvironmentArchivedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookEnvironmentDeletedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookEnvironmentDeletedEventData extends BetaWebhookEventData {
   final BetaWebhookEnvironmentDeletedEventData value;
   const BetaWebhookEventDataBetaWebhookEnvironmentDeletedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookMemoryStoreCreatedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookMemoryStoreCreatedEventData extends BetaWebhookEventData {
   final BetaWebhookMemoryStoreCreatedEventData value;
   const BetaWebhookEventDataBetaWebhookMemoryStoreCreatedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookMemoryStoreArchivedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookMemoryStoreArchivedEventData extends BetaWebhookEventData {
   final BetaWebhookMemoryStoreArchivedEventData value;
   const BetaWebhookEventDataBetaWebhookMemoryStoreArchivedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookMemoryStoreDeletedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookMemoryStoreDeletedEventData extends BetaWebhookEventData {
   final BetaWebhookMemoryStoreDeletedEventData value;
   const BetaWebhookEventDataBetaWebhookMemoryStoreDeletedEventData(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionBudgetReachedEventData
-    extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionBudgetReachedEventData extends BetaWebhookEventData {
   final BetaWebhookSessionBudgetReachedEventData value;
-  const BetaWebhookEventDataBetaWebhookSessionBudgetReachedEventData(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookSessionBudgetReachedEventData(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaWebhookEventData] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaWebhookEventData extends BetaWebhookEventData {
   final Map<String, dynamic> raw;
   const UnknownBetaWebhookEventData(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

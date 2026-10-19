@@ -8,153 +8,106 @@ part of 'results_beta_true.dart';
 class BetaCanceledResult {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaCanceledResultType type_;
 
   const BetaCanceledResult({required this.type_});
 
-  BetaCanceledResult Function({BetaCanceledResultType type_}) get copyWith =>
-      _copyWith;
+  BetaCanceledResult Function({BetaCanceledResultType type_}) get copyWith => _copyWith;
 
-  BetaCanceledResult _copyWith({Object? type_ = sdkOmittedValue}) =>
-      BetaCanceledResult(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaCanceledResultType,
-      );
+  BetaCanceledResult _copyWith({Object? type_ = sdkOmittedValue}) => BetaCanceledResult(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaCanceledResultType,
+  );
 
-  factory BetaCanceledResult.fromJson(Map<String, dynamic> json) =>
-      BetaCanceledResult(
-        type_: (json['type'] != null
-            ? BetaCanceledResultType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaCanceledResult.fromJson(Map<String, dynamic> json) => BetaCanceledResult(
+    type_: (json['type'] != null ? BetaCanceledResultType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaErroredResult` API schema.
 class BetaErroredResult {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `error` wire field.
   final BetaErrorResponse error;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaErroredResultType type_;
 
   const BetaErroredResult({required this.error, required this.type_});
 
-  BetaErroredResult Function(
-      {BetaErrorResponse error,
-      BetaErroredResultType type_}) get copyWith => _copyWith;
+  BetaErroredResult Function({BetaErrorResponse error, BetaErroredResultType type_}) get copyWith => _copyWith;
 
-  BetaErroredResult _copyWith(
-          {Object? error = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
-      BetaErroredResult(
-        error: identical(error, sdkOmittedValue)
-            ? this.error
-            : error as BetaErrorResponse,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaErroredResultType,
-      );
+  BetaErroredResult _copyWith({Object? error = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaErroredResult(
+    error: identical(error, sdkOmittedValue) ? this.error : error as BetaErrorResponse,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaErroredResultType,
+  );
 
-  factory BetaErroredResult.fromJson(Map<String, dynamic> json) =>
-      BetaErroredResult(
-        error: (json['error'] != null
-            ? BetaErrorResponse.fromJson(json['error'] as Map<String, dynamic>)
-            : null)!,
-        type_: (json['type'] != null
-            ? BetaErroredResultType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaErroredResult.fromJson(Map<String, dynamic> json) => BetaErroredResult(
+    error: (json['error'] != null ? BetaErrorResponse.fromJson(json['error'] as Map<String, dynamic>) : null)!,
+    type_: (json['type'] != null ? BetaErroredResultType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'error': error.toJson(),
-        'type': type_.toJson(),
-      };
+    'error': error.toJson(),
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaExpiredResult` API schema.
 class BetaExpiredResult {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaExpiredResultType type_;
 
   const BetaExpiredResult({required this.type_});
 
-  BetaExpiredResult Function({BetaExpiredResultType type_}) get copyWith =>
-      _copyWith;
+  BetaExpiredResult Function({BetaExpiredResultType type_}) get copyWith => _copyWith;
 
-  BetaExpiredResult _copyWith({Object? type_ = sdkOmittedValue}) =>
-      BetaExpiredResult(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaExpiredResultType,
-      );
+  BetaExpiredResult _copyWith({Object? type_ = sdkOmittedValue}) => BetaExpiredResult(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaExpiredResultType,
+  );
 
-  factory BetaExpiredResult.fromJson(Map<String, dynamic> json) =>
-      BetaExpiredResult(
-        type_: (json['type'] != null
-            ? BetaExpiredResultType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaExpiredResult.fromJson(Map<String, dynamic> json) => BetaExpiredResult(
+    type_: (json['type'] != null ? BetaExpiredResultType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 /// This is a single line in the response `.jsonl` file and does not represent the response as a whole.
 class BetaMessageBatchIndividualResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order. Must be unique for each request within the Message Batch.
   final String customId;
-
   /// Processing result for this request. Contains a Message output if processing was successful, an error response if processing failed, or the reason why processing was not attempted, such as cancellation or expiration.
   final BetaMessageBatchIndividualResponseResult result;
 
-  const BetaMessageBatchIndividualResponse(
-      {required this.customId, required this.result});
+  const BetaMessageBatchIndividualResponse({required this.customId, required this.result});
 
-  BetaMessageBatchIndividualResponse Function(
-          {String customId, BetaMessageBatchIndividualResponseResult result})
-      get copyWith => _copyWith;
+  BetaMessageBatchIndividualResponse Function({String customId, BetaMessageBatchIndividualResponseResult result}) get copyWith => _copyWith;
 
-  BetaMessageBatchIndividualResponse _copyWith(
-          {Object? customId = sdkOmittedValue,
-          Object? result = sdkOmittedValue}) =>
-      BetaMessageBatchIndividualResponse(
-        customId: identical(customId, sdkOmittedValue)
-            ? this.customId
-            : customId as String,
-        result: identical(result, sdkOmittedValue)
-            ? this.result
-            : result as BetaMessageBatchIndividualResponseResult,
-      );
+  BetaMessageBatchIndividualResponse _copyWith({Object? customId = sdkOmittedValue, Object? result = sdkOmittedValue}) => BetaMessageBatchIndividualResponse(
+    customId: identical(customId, sdkOmittedValue) ? this.customId : customId as String,
+    result: identical(result, sdkOmittedValue) ? this.result : result as BetaMessageBatchIndividualResponseResult,
+  );
 
-  factory BetaMessageBatchIndividualResponse.fromJson(
-          Map<String, dynamic> json) =>
-      BetaMessageBatchIndividualResponse(
-        customId: (json['custom_id'] as String?)!,
-        result: (json['result'] != null
-            ? BetaMessageBatchIndividualResponseResult.fromJson(json['result'])
-            : null)!,
-      );
+  factory BetaMessageBatchIndividualResponse.fromJson(Map<String, dynamic> json) => BetaMessageBatchIndividualResponse(
+    customId: (json['custom_id'] as String?)!,
+    result: (json['result'] != null ? BetaMessageBatchIndividualResponseResult.fromJson(json['result']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'custom_id': customId,
-        'result': result.toJson(),
-      };
+    'custom_id': customId,
+    'result': result.toJson(),
+  };
 }
 
 sealed class BetaMessageBatchIndividualResponseResult {
@@ -163,145 +116,77 @@ sealed class BetaMessageBatchIndividualResponseResult {
   const BetaMessageBatchIndividualResponseResult();
   factory BetaMessageBatchIndividualResponseResult.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaSucceededResult.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaMessageBatchIndividualResponseResultBetaSucceededResult(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaErroredResult.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaMessageBatchIndividualResponseResultBetaErroredResult(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaCanceledResult.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaMessageBatchIndividualResponseResultBetaCanceledResult(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaExpiredResult.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaMessageBatchIndividualResponseResultBetaExpiredResult(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaSucceededResult.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMessageBatchIndividualResponseResultBetaSucceededResult(value); } } catch (_) {}
+      try { final value = BetaErroredResult.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMessageBatchIndividualResponseResultBetaErroredResult(value); } } catch (_) {}
+      try { final value = BetaCanceledResult.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMessageBatchIndividualResponseResultBetaCanceledResult(value); } } catch (_) {}
+      try { final value = BetaExpiredResult.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMessageBatchIndividualResponseResultBetaExpiredResult(value); } } catch (_) {}
     }
-    try {
-      return BetaMessageBatchIndividualResponseResultBetaSucceededResult(
-          BetaSucceededResult.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaMessageBatchIndividualResponseResultBetaErroredResult(
-          BetaErroredResult.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaMessageBatchIndividualResponseResultBetaCanceledResult(
-          BetaCanceledResult.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaMessageBatchIndividualResponseResultBetaExpiredResult(
-          BetaExpiredResult.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"canceled", "errored", "expired", "succeeded"}
-            .contains(json["type"])) {
-      return UnknownBetaMessageBatchIndividualResponseResult(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaMessageBatchIndividualResponseResult");
+    try { return BetaMessageBatchIndividualResponseResultBetaSucceededResult(BetaSucceededResult.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaMessageBatchIndividualResponseResultBetaErroredResult(BetaErroredResult.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaMessageBatchIndividualResponseResultBetaCanceledResult(BetaCanceledResult.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaMessageBatchIndividualResponseResultBetaExpiredResult(BetaExpiredResult.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"canceled", "errored", "expired", "succeeded"}.contains(json["type"])) { return UnknownBetaMessageBatchIndividualResponseResult(json); }
+    throw FormatException("No variant matched for BetaMessageBatchIndividualResponseResult");
   }
   Object? toJson();
 }
 
-final class BetaMessageBatchIndividualResponseResultBetaSucceededResult
-    extends BetaMessageBatchIndividualResponseResult {
+final class BetaMessageBatchIndividualResponseResultBetaSucceededResult extends BetaMessageBatchIndividualResponseResult {
   final BetaSucceededResult value;
   const BetaMessageBatchIndividualResponseResultBetaSucceededResult(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaMessageBatchIndividualResponseResultBetaErroredResult
-    extends BetaMessageBatchIndividualResponseResult {
+final class BetaMessageBatchIndividualResponseResultBetaErroredResult extends BetaMessageBatchIndividualResponseResult {
   final BetaErroredResult value;
   const BetaMessageBatchIndividualResponseResultBetaErroredResult(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaMessageBatchIndividualResponseResultBetaCanceledResult
-    extends BetaMessageBatchIndividualResponseResult {
+final class BetaMessageBatchIndividualResponseResultBetaCanceledResult extends BetaMessageBatchIndividualResponseResult {
   final BetaCanceledResult value;
   const BetaMessageBatchIndividualResponseResultBetaCanceledResult(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaMessageBatchIndividualResponseResultBetaExpiredResult
-    extends BetaMessageBatchIndividualResponseResult {
+final class BetaMessageBatchIndividualResponseResultBetaExpiredResult extends BetaMessageBatchIndividualResponseResult {
   final BetaExpiredResult value;
   const BetaMessageBatchIndividualResponseResultBetaExpiredResult(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaMessageBatchIndividualResponseResult] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaMessageBatchIndividualResponseResult
-    extends BetaMessageBatchIndividualResponseResult {
+final class UnknownBetaMessageBatchIndividualResponseResult extends BetaMessageBatchIndividualResponseResult {
   final Map<String, dynamic> raw;
   const UnknownBetaMessageBatchIndividualResponseResult(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaSucceededResult` API schema.
 class BetaSucceededResult {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `message` wire field.
   final BetaMessage message;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaSucceededResultType type_;
 
   const BetaSucceededResult({required this.message, required this.type_});
 
-  BetaSucceededResult Function(
-      {BetaMessage message,
-      BetaSucceededResultType type_}) get copyWith => _copyWith;
+  BetaSucceededResult Function({BetaMessage message, BetaSucceededResultType type_}) get copyWith => _copyWith;
 
-  BetaSucceededResult _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaSucceededResult(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as BetaMessage,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaSucceededResultType,
-      );
+  BetaSucceededResult _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaSucceededResult(
+    message: identical(message, sdkOmittedValue) ? this.message : message as BetaMessage,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSucceededResultType,
+  );
 
-  factory BetaSucceededResult.fromJson(Map<String, dynamic> json) =>
-      BetaSucceededResult(
-        message: (json['message'] != null
-            ? BetaMessage.fromJson(json['message'] as Map<String, dynamic>)
-            : null)!,
-        type_: (json['type'] != null
-            ? BetaSucceededResultType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaSucceededResult.fromJson(Map<String, dynamic> json) => BetaSucceededResult(
+    message: (json['message'] != null ? BetaMessage.fromJson(json['message'] as Map<String, dynamic>) : null)!,
+    type_: (json['type'] != null ? BetaSucceededResultType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message.toJson(),
-        'type': type_.toJson(),
-      };
+    'message': message.toJson(),
+    'type': type_.toJson(),
+  };
 }

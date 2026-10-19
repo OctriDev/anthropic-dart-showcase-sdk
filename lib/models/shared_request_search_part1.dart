@@ -9,245 +9,131 @@ sealed class RequestSearchResultBlockCacheControl {
   static const String constructionSurface = 'named';
   const RequestSearchResultBlockCacheControl();
   factory RequestSearchResultBlockCacheControl.fromJson(Object? json) {
-    try {
-      return RequestSearchResultBlockCacheControlCacheControlEphemeral(
-          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownRequestSearchResultBlockCacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for RequestSearchResultBlockCacheControl");
+    try { return RequestSearchResultBlockCacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownRequestSearchResultBlockCacheControl(json); }
+    throw FormatException("No variant matched for RequestSearchResultBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class RequestSearchResultBlockCacheControlCacheControlEphemeral
-    extends RequestSearchResultBlockCacheControl {
+final class RequestSearchResultBlockCacheControlCacheControlEphemeral extends RequestSearchResultBlockCacheControl {
   final CacheControlEphemeral value;
   const RequestSearchResultBlockCacheControlCacheControlEphemeral(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [RequestSearchResultBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestSearchResultBlockCacheControl
-    extends RequestSearchResultBlockCacheControl {
+final class UnknownRequestSearchResultBlockCacheControl extends RequestSearchResultBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownRequestSearchResultBlockCacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `RequestSearchResultBlock` API schema.
 class RequestSearchResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
-
   /// Optional object value serialized in the `citations` wire field.
   final SdkOptional<RequestCitationsConfig> citations;
-
   /// Required array value serialized in the `content` wire field.
   final List<RequestTextBlock> content;
-
   /// Required `string` value serialized in the `source` wire field.
   final String source;
-
   /// Required `string` value serialized in the `title` wire field.
   final String title;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestSearchResultBlockType type_;
 
-  const RequestSearchResultBlock(
-      {this.cacheControl = const SdkOmitted(),
-      this.citations = const SdkOmitted(),
-      required this.content,
-      required this.source,
-      required this.title,
-      required this.type_});
+  const RequestSearchResultBlock({this.cacheControl = const SdkOmitted(), this.citations = const SdkOmitted(), required this.content, required this.source, required this.title, required this.type_});
 
-  RequestSearchResultBlock Function(
-      {SdkOptional<CacheControlEphemeral?> cacheControl,
-      SdkOptional<RequestCitationsConfig> citations,
-      List<RequestTextBlock> content,
-      String source,
-      String title,
-      RequestSearchResultBlockType type_}) get copyWith => _copyWith;
+  RequestSearchResultBlock Function({SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<RequestCitationsConfig> citations, List<RequestTextBlock> content, String source, String title, RequestSearchResultBlockType type_}) get copyWith => _copyWith;
 
-  RequestSearchResultBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? citations = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? source = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestSearchResultBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<CacheControlEphemeral?>,
-        citations: identical(citations, sdkOmittedValue)
-            ? this.citations
-            : citations as SdkOptional<RequestCitationsConfig>,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as List<RequestTextBlock>,
-        source:
-            identical(source, sdkOmittedValue) ? this.source : source as String,
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestSearchResultBlockType,
-      );
+  RequestSearchResultBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? citations = sdkOmittedValue, Object? content = sdkOmittedValue, Object? source = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestSearchResultBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
+    citations: identical(citations, sdkOmittedValue) ? this.citations : citations as SdkOptional<RequestCitationsConfig>,
+    content: identical(content, sdkOmittedValue) ? this.content : content as List<RequestTextBlock>,
+    source: identical(source, sdkOmittedValue) ? this.source : source as String,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestSearchResultBlockType,
+  );
 
-  factory RequestSearchResultBlock.fromJson(Map<String, dynamic> json) =>
-      RequestSearchResultBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? CacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        citations: json['citations'] != null
-            ? SdkPresent((json['citations'] != null
-                ? RequestCitationsConfig.fromJson(
-                    json['citations'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        content: ((json['content'] as List?)
-            ?.map((e) => RequestTextBlock.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        source: (json['source'] as String?)!,
-        title: (json['title'] as String?)!,
-        type_: (json['type'] != null
-            ? RequestSearchResultBlockType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory RequestSearchResultBlock.fromJson(Map<String, dynamic> json) => RequestSearchResultBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    citations: json['citations'] != null ? SdkPresent((json['citations'] != null ? RequestCitationsConfig.fromJson(json['citations'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    content: ((json['content'] as List?)?.map((e) => RequestTextBlock.fromJson(e as Map<String, dynamic>)).toList())!,
+    source: (json['source'] as String?)!,
+    title: (json['title'] as String?)!,
+    type_: (json['type'] != null ? RequestSearchResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<CacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (citations) {
-          SdkPresent<RequestCitationsConfig>(value: final value) => {
-              'citations': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content': content.map((item) => item.toJson()).toList(),
-        'source': source,
-        'title': title,
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (citations) {
+      SdkPresent<RequestCitationsConfig>(value: final value) => {'citations': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'content': content.map((item) => item.toJson()).toList(),
+    'source': source,
+    'title': title,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `RequestSearchResultLocationCitation` API schema.
 class RequestSearchResultLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The full text of the cited block range, concatenated. Always equals the contents of `content[start_block_index:end_block_index]` joined together. The text block is the minimal citable unit; this field is never a substring of a single block. Not counted toward output tokens, and not counted toward input tokens when sent back in subsequent turns.
   final String citedText;
-
   /// Exclusive 0-based end index of the cited block range in the source's `content` array. Always greater than `start_block_index`; a single-block citation has `end_block_index = start_block_index + 1`.
   final int endBlockIndex;
-
   /// 0-based index of the cited search result among all `search_result` content blocks in the request, in the order they appear across messages and tool results. Counted separately from `document_index`; server-side web search results are not included in this count.
   final int searchResultIndex;
-
   /// Required `string` value serialized in the `source` wire field.
   final String source;
-
   /// 0-based index of the first cited block in the source's `content` array.
   final int startBlockIndex;
-
   /// Required `string` value serialized in the `title` wire field.
   final String? title;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestSearchResultLocationCitationType type_;
 
-  const RequestSearchResultLocationCitation(
-      {required this.citedText,
-      required this.endBlockIndex,
-      required this.searchResultIndex,
-      required this.source,
-      required this.startBlockIndex,
-      required this.title,
-      required this.type_});
+  const RequestSearchResultLocationCitation({required this.citedText, required this.endBlockIndex, required this.searchResultIndex, required this.source, required this.startBlockIndex, required this.title, required this.type_});
 
-  RequestSearchResultLocationCitation Function(
-      {String citedText,
-      int endBlockIndex,
-      int searchResultIndex,
-      String source,
-      int startBlockIndex,
-      String? title,
-      RequestSearchResultLocationCitationType type_}) get copyWith => _copyWith;
+  RequestSearchResultLocationCitation Function({String citedText, int endBlockIndex, int searchResultIndex, String source, int startBlockIndex, String? title, RequestSearchResultLocationCitationType type_}) get copyWith => _copyWith;
 
-  RequestSearchResultLocationCitation _copyWith(
-          {Object? citedText = sdkOmittedValue,
-          Object? endBlockIndex = sdkOmittedValue,
-          Object? searchResultIndex = sdkOmittedValue,
-          Object? source = sdkOmittedValue,
-          Object? startBlockIndex = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestSearchResultLocationCitation(
-        citedText: identical(citedText, sdkOmittedValue)
-            ? this.citedText
-            : citedText as String,
-        endBlockIndex: identical(endBlockIndex, sdkOmittedValue)
-            ? this.endBlockIndex
-            : endBlockIndex as int,
-        searchResultIndex: identical(searchResultIndex, sdkOmittedValue)
-            ? this.searchResultIndex
-            : searchResultIndex as int,
-        source:
-            identical(source, sdkOmittedValue) ? this.source : source as String,
-        startBlockIndex: identical(startBlockIndex, sdkOmittedValue)
-            ? this.startBlockIndex
-            : startBlockIndex as int,
-        title:
-            identical(title, sdkOmittedValue) ? this.title : title as String?,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestSearchResultLocationCitationType,
-      );
+  RequestSearchResultLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? endBlockIndex = sdkOmittedValue, Object? searchResultIndex = sdkOmittedValue, Object? source = sdkOmittedValue, Object? startBlockIndex = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestSearchResultLocationCitation(
+    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
+    endBlockIndex: identical(endBlockIndex, sdkOmittedValue) ? this.endBlockIndex : endBlockIndex as int,
+    searchResultIndex: identical(searchResultIndex, sdkOmittedValue) ? this.searchResultIndex : searchResultIndex as int,
+    source: identical(source, sdkOmittedValue) ? this.source : source as String,
+    startBlockIndex: identical(startBlockIndex, sdkOmittedValue) ? this.startBlockIndex : startBlockIndex as int,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestSearchResultLocationCitationType,
+  );
 
-  factory RequestSearchResultLocationCitation.fromJson(
-          Map<String, dynamic> json) =>
-      RequestSearchResultLocationCitation(
-        citedText: (json['cited_text'] as String?)!,
-        endBlockIndex: ((json['end_block_index'] as num?)?.toInt())!,
-        searchResultIndex: ((json['search_result_index'] as num?)?.toInt())!,
-        source: (json['source'] as String?)!,
-        startBlockIndex: ((json['start_block_index'] as num?)?.toInt())!,
-        title: json.containsKey('title')
-            ? json['title'] as String?
-            : throw ArgumentError.value(
-                null, 'title', 'Required property is missing'),
-        type_: (json['type'] != null
-            ? RequestSearchResultLocationCitationType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestSearchResultLocationCitation.fromJson(Map<String, dynamic> json) => RequestSearchResultLocationCitation(
+    citedText: (json['cited_text'] as String?)!,
+    endBlockIndex: ((json['end_block_index'] as num?)?.toInt())!,
+    searchResultIndex: ((json['search_result_index'] as num?)?.toInt())!,
+    source: (json['source'] as String?)!,
+    startBlockIndex: ((json['start_block_index'] as num?)?.toInt())!,
+    title: json.containsKey('title') ? json['title'] as String? : throw ArgumentError.value(null, 'title', 'Required property is missing'),
+    type_: (json['type'] != null ? RequestSearchResultLocationCitationType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'cited_text': citedText,
-        'end_block_index': endBlockIndex,
-        'search_result_index': searchResultIndex,
-        'source': source,
-        'start_block_index': startBlockIndex,
-        'title': title,
-        'type': type_.toJson(),
-      };
+    'cited_text': citedText,
+    'end_block_index': endBlockIndex,
+    'search_result_index': searchResultIndex,
+    'source': source,
+    'start_block_index': startBlockIndex,
+    'title': title,
+    'type': type_.toJson(),
+  };
 }

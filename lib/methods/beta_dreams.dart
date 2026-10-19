@@ -38,50 +38,14 @@ Future<BetaDream> createBetaDreams(ClientConfig config,
             'output_behavior': SdkUtils.unwrapOptional(outputBehavior)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'createBetaDreams',
-          fromJsonRaw: (value) =>
-              BetaDream.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaDream.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '401': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '403': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '404': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '408': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '409': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '412': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '413': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '429': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '431': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '499': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '500': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '501': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '503': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '504': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists Dreams, asynchronous memory-consolidation jobs that read a memory store and session transcripts and write consolidated memories to an output store. Filter by lifecycle status or creation-time bounds, and use `page` with the response's `next_page` cursor to navigate results. Send the required `anthropic-beta` header to use this research-preview API.
 ///
@@ -121,70 +85,23 @@ Future<BetaListDreamsResponse> listBetaDreams(ClientConfig config,
           'GET', '/v1/dreams?beta=true',
           config: config,
           query: {
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'include_archived': SdkQueryValue(
-                SdkUtils.unwrapOptional(includeArchived),
-                style: 'form',
-                explode: true),
-            'statuses[]': SdkQueryValue(SdkUtils.unwrapOptional(statuses),
-                style: 'form', explode: true),
-            'created_at[gt]': SdkQueryValue(
-                SdkUtils.unwrapOptional(createdAtGt),
-                style: 'form',
-                explode: true),
-            'created_at[lt]': SdkQueryValue(
-                SdkUtils.unwrapOptional(createdAtLt),
-                style: 'form',
-                explode: true)
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'include_archived': SdkQueryValue(SdkUtils.unwrapOptional(includeArchived), style: 'form', explode: true),
+            'statuses[]': SdkQueryValue(SdkUtils.unwrapOptional(statuses), style: 'form', explode: true),
+            'created_at[gt]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtGt), style: 'form', explode: true),
+            'created_at[lt]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtLt), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'listBetaDreams',
-          fromJsonRaw: (value) =>
-              BetaListDreamsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaListDreamsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '401': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '403': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '404': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '408': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '409': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '412': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '413': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '429': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '431': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '499': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '500': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '501': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '503': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '504': (value) => BetaDreamingErrorResponse.fromJson(
-                value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
+
 
 /// Lists Dreams, asynchronous memory-consolidation jobs that read a memory store and session transcripts and write consolidated memories to an output store. Filter by lifecycle status or creation-time bounds, and use `page` with the response's `next_page` cursor to navigate results. Send the required `anthropic-beta` header to use this research-preview API.
 ///
@@ -202,98 +119,23 @@ Future<BetaListDreamsResponse> listBetaDreams(ClientConfig config,
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Stream<BetaDream> listBetaDreamsPaginated(ClientConfig config,
-    {int? limit,
-    String? page,
-    bool? includeArchived,
-    List<BetaDreamStatus>? statuses,
-    String? createdAtGt,
-    String? createdAtLt,
-    String? anthropicVersion,
-    List<String>? anthropicBeta,
-    String? anthropicWorkspaceId,
-    RequestOptions? requestOptions}) async* {
+Stream<BetaDream> listBetaDreamsPaginated(ClientConfig config, {int? limit, String? page, bool? includeArchived, List<BetaDreamStatus>? statuses, String? createdAtGt, String? createdAtLt, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaDreams(config,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(sdkCursor),
-        includeArchived: includeArchived == null
-            ? const SdkOmitted<bool>()
-            : SdkPresent<bool>(includeArchived),
-        statuses: statuses == null
-            ? const SdkOmitted<List<BetaDreamStatus>>()
-            : SdkPresent<List<BetaDreamStatus>>(statuses),
-        createdAtGt: createdAtGt == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtGt),
-        createdAtLt: createdAtLt == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtLt),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicWorkspaceId: anthropicWorkspaceId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicWorkspaceId),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaDreams(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), includeArchived: includeArchived == null ? const SdkOmitted<bool>() : SdkPresent<bool>(includeArchived), statuses: statuses == null ? const SdkOmitted<List<BetaDreamStatus>>() : SdkPresent<List<BetaDreamStatus>>(statuses), createdAtGt: createdAtGt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGt), createdAtLt: createdAtLt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLt), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) {
-      yield sdkItem;
-    }
+    for (final sdkItem in sdkItems) { yield sdkItem; }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaListDreamsResponse, BetaDream>> listBetaDreamsPages(
-    ClientConfig config,
-    {int? limit,
-    String? page,
-    bool? includeArchived,
-    List<BetaDreamStatus>? statuses,
-    String? createdAtGt,
-    String? createdAtLt,
-    String? anthropicVersion,
-    List<String>? anthropicBeta,
-    String? anthropicWorkspaceId,
-    RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaListDreamsResponse, BetaDream>> listBetaDreamsPages(ClientConfig config, {int? limit, String? page, bool? includeArchived, List<BetaDreamStatus>? statuses, String? createdAtGt, String? createdAtLt, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaDreams(config,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(sdkCursor),
-        includeArchived: includeArchived == null
-            ? const SdkOmitted<bool>()
-            : SdkPresent<bool>(includeArchived),
-        statuses: statuses == null
-            ? const SdkOmitted<List<BetaDreamStatus>>()
-            : SdkPresent<List<BetaDreamStatus>>(statuses),
-        createdAtGt: createdAtGt == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtGt),
-        createdAtLt: createdAtLt == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtLt),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicWorkspaceId: anthropicWorkspaceId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicWorkspaceId),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaDreams(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), includeArchived: includeArchived == null ? const SdkOmitted<bool>() : SdkPresent<bool>(includeArchived), statuses: statuses == null ? const SdkOmitted<List<BetaDreamStatus>>() : SdkPresent<List<BetaDreamStatus>>(statuses), createdAtGt: createdAtGt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGt), createdAtLt: createdAtLt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLt), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;
@@ -303,6 +145,7 @@ Stream<SdkPage<BetaListDreamsResponse, BetaDream>> listBetaDreamsPages(
     sdkCursor = sdkNext;
   }
 }
+
 
 /// Retrieves a Dream job by its identifier. Use this endpoint to inspect the job's status, inputs, outputs, and cumulative token usage. The returned status indicates whether the job is pending, running, completed, failed, or canceled.
 ///
@@ -322,50 +165,14 @@ Future<BetaDream> retrieveBetaDreams(ClientConfig config,
           '/v1/dreams/${Uri.encodeComponent(dreamId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'retrieveBetaDreams',
-          fromJsonRaw: (value) =>
-              BetaDream.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaDream.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Triggers cancellation of a Dream job. Provide the Dream's identifier to request cancellation of the job. Use GET /v1/dreams/{dream_id}?beta=true to inspect the job's status after the cancellation request.
 ///
@@ -385,50 +192,14 @@ Future<BetaDream> cancelBetaDreams(ClientConfig config,
           '/v1/dreams/${Uri.encodeComponent(dreamId.toString())}/cancel?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'cancelBetaDreams',
-          fromJsonRaw: (value) =>
-              BetaDream.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaDream.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Archives a Dream job. Provide the Dream's identifier to archive that job. Use GET /v1/dreams/{dream_id}?beta=true to retrieve the Dream and inspect its archive timestamp.
 ///
@@ -448,47 +219,10 @@ Future<BetaDream> archiveBetaDreams(ClientConfig config,
           '/v1/dreams/${Uri.encodeComponent(dreamId.toString())}/archive?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'archiveBetaDreams',
-          fromJsonRaw: (value) =>
-              BetaDream.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaDream.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) =>
-            BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaDreamingErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

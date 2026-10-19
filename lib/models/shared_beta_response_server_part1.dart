@@ -8,95 +8,47 @@ part of 'shared_beta_response_server.dart';
 class BetaResponseServerToolUseBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional API value serialized in the `caller` wire field.
   final SdkOptional<BetaResponseServerToolUseBlockCaller> caller;
-
   /// Required `string` value serialized in the `id` wire field.
   final String id;
-
   /// Required object value serialized in the `input` wire field.
   final Map<String, Object?> input;
-
   /// Required enumerated value serialized in the `name` wire field.
   final BetaResponseServerToolUseBlockName name;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseServerToolUseBlockType type_;
 
-  const BetaResponseServerToolUseBlock(
-      {this.caller = const SdkOmitted(),
-      required this.id,
-      required this.input,
-      required this.name,
-      required this.type_});
+  const BetaResponseServerToolUseBlock({this.caller = const SdkOmitted(), required this.id, required this.input, required this.name, required this.type_});
 
-  BetaResponseServerToolUseBlock Function(
-      {SdkOptional<BetaResponseServerToolUseBlockCaller> caller,
-      String id,
-      Map<String, Object?> input,
-      BetaResponseServerToolUseBlockName name,
-      BetaResponseServerToolUseBlockType type_}) get copyWith => _copyWith;
+  BetaResponseServerToolUseBlock Function({SdkOptional<BetaResponseServerToolUseBlockCaller> caller, String id, Map<String, Object?> input, BetaResponseServerToolUseBlockName name, BetaResponseServerToolUseBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseServerToolUseBlock _copyWith(
-          {Object? caller = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? input = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaResponseServerToolUseBlock(
-        caller: identical(caller, sdkOmittedValue)
-            ? this.caller
-            : caller as SdkOptional<BetaResponseServerToolUseBlockCaller>,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        input: identical(input, sdkOmittedValue)
-            ? this.input
-            : input as Map<String, Object?>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as BetaResponseServerToolUseBlockName,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaResponseServerToolUseBlockType,
-      );
+  BetaResponseServerToolUseBlock _copyWith({Object? caller = sdkOmittedValue, Object? id = sdkOmittedValue, Object? input = sdkOmittedValue, Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseServerToolUseBlock(
+    caller: identical(caller, sdkOmittedValue) ? this.caller : caller as SdkOptional<BetaResponseServerToolUseBlockCaller>,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    input: identical(input, sdkOmittedValue) ? this.input : input as Map<String, Object?>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as BetaResponseServerToolUseBlockName,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseServerToolUseBlockType,
+  );
 
-  factory BetaResponseServerToolUseBlock.fromJson(Map<String, dynamic> json) =>
-      BetaResponseServerToolUseBlock(
-        caller: json['caller'] != null
-            ? SdkPresent((json['caller'] != null
-                ? BetaResponseServerToolUseBlockCaller.fromJson(json['caller'])
-                : null)!)
-            : const SdkOmitted(),
-        id: (json['id'] as String?)!,
-        input: (json['input'] == null
-            ? null
-            : Map<String, dynamic>.from(json['input'] as Map)
-                .map((key, value) => MapEntry(key, value)))!,
-        name: (json['name'] != null
-            ? BetaResponseServerToolUseBlockName.fromJson(
-                json['name'] as String)
-            : null)!,
-        type_: (json['type'] != null
-            ? BetaResponseServerToolUseBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaResponseServerToolUseBlock.fromJson(Map<String, dynamic> json) => BetaResponseServerToolUseBlock(
+    caller: json['caller'] != null ? SdkPresent((json['caller'] != null ? BetaResponseServerToolUseBlockCaller.fromJson(json['caller']) : null)!) : const SdkOmitted(),
+    id: (json['id'] as String?)!,
+    input: (json['input'] == null ? null : Map<String, dynamic>.from(json['input'] as Map).map((key, value) => MapEntry(key, value)))!,
+    name: (json['name'] != null ? BetaResponseServerToolUseBlockName.fromJson(json['name'] as String) : null)!,
+    type_: (json['type'] != null ? BetaResponseServerToolUseBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (caller) {
-          SdkPresent<BetaResponseServerToolUseBlockCaller>(
-            value: final value
-          ) =>
-            {
-              'caller': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'id': id,
-        'input': input,
-        'name': name.toJson(),
-        'type': type_.toJson(),
-      };
+    ...switch (caller) {
+      SdkPresent<BetaResponseServerToolUseBlockCaller>(value: final value) => {'caller': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'id': id,
+    'input': input,
+    'name': name.toJson(),
+    'type': type_.toJson(),
+  };
 }
 
 sealed class BetaResponseServerToolUseBlockCaller {
@@ -105,81 +57,40 @@ sealed class BetaResponseServerToolUseBlockCaller {
   const BetaResponseServerToolUseBlockCaller();
   factory BetaResponseServerToolUseBlockCaller.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaDirectCaller.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaResponseServerToolUseBlockCallerBetaDirectCaller(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaServerToolCaller.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaResponseServerToolUseBlockCallerBetaServerToolCaller(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaServerToolCaller20260120.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaResponseServerToolUseBlockCallerBetaServerToolCaller20260120(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaDirectCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseServerToolUseBlockCallerBetaDirectCaller(value); } } catch (_) {}
+      try { final value = BetaServerToolCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseServerToolUseBlockCallerBetaServerToolCaller(value); } } catch (_) {}
+      try { final value = BetaServerToolCaller20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseServerToolUseBlockCallerBetaServerToolCaller20260120(value); } } catch (_) {}
     }
-    try {
-      return BetaResponseServerToolUseBlockCallerBetaDirectCaller(
-          BetaDirectCaller.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaResponseServerToolUseBlockCallerBetaServerToolCaller(
-          BetaServerToolCaller.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaResponseServerToolUseBlockCallerBetaServerToolCaller20260120(
-          BetaServerToolCaller20260120.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"code_execution_20250825", "code_execution_20260120", "direct"}
-            .contains(json["type"])) {
-      return UnknownBetaResponseServerToolUseBlockCaller(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaResponseServerToolUseBlockCaller");
+    try { return BetaResponseServerToolUseBlockCallerBetaDirectCaller(BetaDirectCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaResponseServerToolUseBlockCallerBetaServerToolCaller(BetaServerToolCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaResponseServerToolUseBlockCallerBetaServerToolCaller20260120(BetaServerToolCaller20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"code_execution_20250825", "code_execution_20260120", "direct"}.contains(json["type"])) { return UnknownBetaResponseServerToolUseBlockCaller(json); }
+    throw FormatException("No variant matched for BetaResponseServerToolUseBlockCaller");
   }
   Object? toJson();
 }
 
-final class BetaResponseServerToolUseBlockCallerBetaDirectCaller
-    extends BetaResponseServerToolUseBlockCaller {
+final class BetaResponseServerToolUseBlockCallerBetaDirectCaller extends BetaResponseServerToolUseBlockCaller {
   final BetaDirectCaller value;
   const BetaResponseServerToolUseBlockCallerBetaDirectCaller(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaResponseServerToolUseBlockCallerBetaServerToolCaller
-    extends BetaResponseServerToolUseBlockCaller {
+final class BetaResponseServerToolUseBlockCallerBetaServerToolCaller extends BetaResponseServerToolUseBlockCaller {
   final BetaServerToolCaller value;
   const BetaResponseServerToolUseBlockCallerBetaServerToolCaller(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaResponseServerToolUseBlockCallerBetaServerToolCaller20260120
-    extends BetaResponseServerToolUseBlockCaller {
+final class BetaResponseServerToolUseBlockCallerBetaServerToolCaller20260120 extends BetaResponseServerToolUseBlockCaller {
   final BetaServerToolCaller20260120 value;
-  const BetaResponseServerToolUseBlockCallerBetaServerToolCaller20260120(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaResponseServerToolUseBlockCallerBetaServerToolCaller20260120(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaResponseServerToolUseBlockCaller] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaResponseServerToolUseBlockCaller
-    extends BetaResponseServerToolUseBlockCaller {
+final class UnknownBetaResponseServerToolUseBlockCaller extends BetaResponseServerToolUseBlockCaller {
   final Map<String, dynamic> raw;
   const UnknownBetaResponseServerToolUseBlockCaller(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

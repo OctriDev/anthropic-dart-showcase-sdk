@@ -10,17 +10,14 @@ enum BetaMemoryTool20250818Type {
 
   static BetaMemoryTool20250818Type fromJson(String value) {
     switch (value) {
-      case 'memory_20250818':
-        return BetaMemoryTool20250818Type.memory20250818;
-      default:
-        throw ArgumentError('Unknown BetaMemoryTool20250818Type: $value');
+      case 'memory_20250818': return BetaMemoryTool20250818Type.memory20250818;
+      default: throw ArgumentError('Unknown BetaMemoryTool20250818Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMemoryTool20250818Type.memory20250818:
-        return 'memory_20250818';
+      case BetaMemoryTool20250818Type.memory20250818: return 'memory_20250818';
     }
   }
 
@@ -34,17 +31,14 @@ enum BetaMessageRole {
 
   static BetaMessageRole fromJson(String value) {
     switch (value) {
-      case 'assistant':
-        return BetaMessageRole.assistant;
-      default:
-        throw ArgumentError('Unknown BetaMessageRole: $value');
+      case 'assistant': return BetaMessageRole.assistant;
+      default: throw ArgumentError('Unknown BetaMessageRole: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMessageRole.assistant:
-        return 'assistant';
+      case BetaMessageRole.assistant: return 'assistant';
     }
   }
 
@@ -58,17 +52,14 @@ enum BetaMessageType {
 
   static BetaMessageType fromJson(String value) {
     switch (value) {
-      case 'message':
-        return BetaMessageType.message;
-      default:
-        throw ArgumentError('Unknown BetaMessageType: $value');
+      case 'message': return BetaMessageType.message;
+      default: throw ArgumentError('Unknown BetaMessageType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMessageType.message:
-        return 'message';
+      case BetaMessageType.message: return 'message';
     }
   }
 
@@ -78,12 +69,12 @@ enum BetaMessageType {
 
 /// Processing status of the Message Batch.
 final class BetaMessageBatchProcessingStatus {
+
   final String value;
 
   const BetaMessageBatchProcessingStatus._(this.value);
 
-  factory BetaMessageBatchProcessingStatus.fromJson(String value) =>
-      BetaMessageBatchProcessingStatus._(value);
+  factory BetaMessageBatchProcessingStatus.fromJson(String value) => BetaMessageBatchProcessingStatus._(value);
 
   static const inProgress = BetaMessageBatchProcessingStatus._('in_progress');
   static const canceling = BetaMessageBatchProcessingStatus._('canceling');
@@ -91,15 +82,12 @@ final class BetaMessageBatchProcessingStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaMessageBatchProcessingStatus && other.value == value;
+  @override bool operator ==(Object other) => other is BetaMessageBatchProcessingStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Object type. For Message Batches, this is always `"message_batch"`.
@@ -108,17 +96,14 @@ enum BetaMessageBatchType {
 
   static BetaMessageBatchType fromJson(String value) {
     switch (value) {
-      case 'message_batch':
-        return BetaMessageBatchType.messageBatch;
-      default:
-        throw ArgumentError('Unknown BetaMessageBatchType: $value');
+      case 'message_batch': return BetaMessageBatchType.messageBatch;
+      default: throw ArgumentError('Unknown BetaMessageBatchType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMessageBatchType.messageBatch:
-        return 'message_batch';
+      case BetaMessageBatchType.messageBatch: return 'message_batch';
     }
   }
 
@@ -132,17 +117,14 @@ enum BetaMessageDeltaEventType {
 
   static BetaMessageDeltaEventType fromJson(String value) {
     switch (value) {
-      case 'message_delta':
-        return BetaMessageDeltaEventType.messageDelta;
-      default:
-        throw ArgumentError('Unknown BetaMessageDeltaEventType: $value');
+      case 'message_delta': return BetaMessageDeltaEventType.messageDelta;
+      default: throw ArgumentError('Unknown BetaMessageDeltaEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMessageDeltaEventType.messageDelta:
-        return 'message_delta';
+      case BetaMessageDeltaEventType.messageDelta: return 'message_delta';
     }
   }
 
@@ -156,17 +138,14 @@ enum BetaMessageIterationUsageType {
 
   static BetaMessageIterationUsageType fromJson(String value) {
     switch (value) {
-      case 'message':
-        return BetaMessageIterationUsageType.message;
-      default:
-        throw ArgumentError('Unknown BetaMessageIterationUsageType: $value');
+      case 'message': return BetaMessageIterationUsageType.message;
+      default: throw ArgumentError('Unknown BetaMessageIterationUsageType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMessageIterationUsageType.message:
-        return 'message';
+      case BetaMessageIterationUsageType.message: return 'message';
     }
   }
 
@@ -180,17 +159,14 @@ enum BetaMessageStartEventType {
 
   static BetaMessageStartEventType fromJson(String value) {
     switch (value) {
-      case 'message_start':
-        return BetaMessageStartEventType.messageStart;
-      default:
-        throw ArgumentError('Unknown BetaMessageStartEventType: $value');
+      case 'message_start': return BetaMessageStartEventType.messageStart;
+      default: throw ArgumentError('Unknown BetaMessageStartEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMessageStartEventType.messageStart:
-        return 'message_start';
+      case BetaMessageStartEventType.messageStart: return 'message_start';
     }
   }
 
@@ -204,17 +180,14 @@ enum BetaMessageStopEventType {
 
   static BetaMessageStopEventType fromJson(String value) {
     switch (value) {
-      case 'message_stop':
-        return BetaMessageStopEventType.messageStop;
-      default:
-        throw ArgumentError('Unknown BetaMessageStopEventType: $value');
+      case 'message_stop': return BetaMessageStopEventType.messageStop;
+      default: throw ArgumentError('Unknown BetaMessageStopEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaMessageStopEventType.messageStop:
-        return 'message_stop';
+      case BetaMessageStopEventType.messageStop: return 'message_stop';
     }
   }
 
@@ -228,17 +201,14 @@ enum BetaModelInfoType {
 
   static BetaModelInfoType fromJson(String value) {
     switch (value) {
-      case 'model':
-        return BetaModelInfoType.model;
-      default:
-        throw ArgumentError('Unknown BetaModelInfoType: $value');
+      case 'model': return BetaModelInfoType.model;
+      default: throw ArgumentError('Unknown BetaModelInfoType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaModelInfoType.model:
-        return 'model';
+      case BetaModelInfoType.model: return 'model';
     }
   }
 
@@ -252,17 +222,14 @@ enum BetaNotFoundErrorType {
 
   static BetaNotFoundErrorType fromJson(String value) {
     switch (value) {
-      case 'not_found_error':
-        return BetaNotFoundErrorType.notFoundError;
-      default:
-        throw ArgumentError('Unknown BetaNotFoundErrorType: $value');
+      case 'not_found_error': return BetaNotFoundErrorType.notFoundError;
+      default: throw ArgumentError('Unknown BetaNotFoundErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaNotFoundErrorType.notFoundError:
-        return 'not_found_error';
+      case BetaNotFoundErrorType.notFoundError: return 'not_found_error';
     }
   }
 
@@ -276,18 +243,14 @@ enum BetaOrganizationPermissionResourceType {
 
   static BetaOrganizationPermissionResourceType fromJson(String value) {
     switch (value) {
-      case 'organization':
-        return BetaOrganizationPermissionResourceType.organization;
-      default:
-        throw ArgumentError(
-            'Unknown BetaOrganizationPermissionResourceType: $value');
+      case 'organization': return BetaOrganizationPermissionResourceType.organization;
+      default: throw ArgumentError('Unknown BetaOrganizationPermissionResourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaOrganizationPermissionResourceType.organization:
-        return 'organization';
+      case BetaOrganizationPermissionResourceType.organization: return 'organization';
     }
   }
 
@@ -301,17 +264,14 @@ enum BetaOrganizationSchemaType {
 
   static BetaOrganizationSchemaType fromJson(String value) {
     switch (value) {
-      case 'organization':
-        return BetaOrganizationSchemaType.organization;
-      default:
-        throw ArgumentError('Unknown BetaOrganizationSchemaType: $value');
+      case 'organization': return BetaOrganizationSchemaType.organization;
+      default: throw ArgumentError('Unknown BetaOrganizationSchemaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaOrganizationSchemaType.organization:
-        return 'organization';
+      case BetaOrganizationSchemaType.organization: return 'organization';
     }
   }
 

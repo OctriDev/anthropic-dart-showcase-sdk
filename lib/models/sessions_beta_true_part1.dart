@@ -8,328 +8,165 @@ sealed class BetaManagedAgentsAgentWithOverridesParamsSystem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsAgentWithOverridesParamsSystem();
-  factory BetaManagedAgentsAgentWithOverridesParamsSystem.fromJson(
-      Object? json) {
-    if (json is String) {
-      return BetaManagedAgentsAgentWithOverridesParamsSystemString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsAgentWithOverridesParamsSystem");
+  factory BetaManagedAgentsAgentWithOverridesParamsSystem.fromJson(Object? json) {
+    if (json is String) { return BetaManagedAgentsAgentWithOverridesParamsSystemString(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsAgentWithOverridesParamsSystem");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsAgentWithOverridesParamsSystemString
-    extends BetaManagedAgentsAgentWithOverridesParamsSystem {
+final class BetaManagedAgentsAgentWithOverridesParamsSystemString extends BetaManagedAgentsAgentWithOverridesParamsSystem {
   final String value;
   const BetaManagedAgentsAgentWithOverridesParamsSystemString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Reference to an `agent` plus optional configuration overrides. Each provided field replaces the agent's value for the caller's use; the agent resource is unchanged.
 class BetaManagedAgentsAgentWithOverridesParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAgentWithOverridesParamsType type_;
-
   /// The `agent` ID.
   final String id;
-
   /// The specific `agent` version to use. Omit to use the latest version.
   final SdkOptional<int> version;
-
   /// Replacement model. Accepts the model string, e.g. `claude-opus-5`, or a `model_config` object. Omit to use the agent's model.
   final SdkOptional<BetaManagedAgentsModelParams> model;
-
   /// Replacement system prompt. Up to 100,000 characters. Set to null to clear the agent's system prompt; omit to preserve it.
   final SdkOptional<String?> system;
-
   /// Replacement tool list. Full replacement: the provided array becomes the tool configuration. Send an empty array to clear; omit to preserve the agent's tools.
   final SdkOptional<List<BetaManagedAgentsAgentToolParams>> tools;
-
   /// Replacement MCP server list. Full replacement: the provided array becomes the MCP servers. Send an empty array to clear; omit to preserve the agent's servers.
   final SdkOptional<List<BetaManagedAgentsMCPServerParams>> mcpServers;
-
   /// Replacement skill list. Full replacement: the provided array becomes the skills. Send an empty array to clear; omit to preserve the agent's skills.
   final SdkOptional<List<BetaManagedAgentsSkillParams>> skills;
 
-  const BetaManagedAgentsAgentWithOverridesParams(
-      {required this.type_,
-      required this.id,
-      this.version = const SdkOmitted(),
-      this.model = const SdkOmitted(),
-      this.system = const SdkOmitted(),
-      this.tools = const SdkOmitted(),
-      this.mcpServers = const SdkOmitted(),
-      this.skills = const SdkOmitted()});
+  const BetaManagedAgentsAgentWithOverridesParams({required this.type_, required this.id, this.version = const SdkOmitted(), this.model = const SdkOmitted(), this.system = const SdkOmitted(), this.tools = const SdkOmitted(), this.mcpServers = const SdkOmitted(), this.skills = const SdkOmitted()});
 
-  BetaManagedAgentsAgentWithOverridesParams Function(
-          {BetaManagedAgentsAgentWithOverridesParamsType type_,
-          String id,
-          SdkOptional<int> version,
-          SdkOptional<BetaManagedAgentsModelParams> model,
-          SdkOptional<String?> system,
-          SdkOptional<List<BetaManagedAgentsAgentToolParams>> tools,
-          SdkOptional<List<BetaManagedAgentsMCPServerParams>> mcpServers,
-          SdkOptional<List<BetaManagedAgentsSkillParams>> skills})
-      get copyWith => _copyWith;
+  BetaManagedAgentsAgentWithOverridesParams Function({BetaManagedAgentsAgentWithOverridesParamsType type_, String id, SdkOptional<int> version, SdkOptional<BetaManagedAgentsModelParams> model, SdkOptional<String?> system, SdkOptional<List<BetaManagedAgentsAgentToolParams>> tools, SdkOptional<List<BetaManagedAgentsMCPServerParams>> mcpServers, SdkOptional<List<BetaManagedAgentsSkillParams>> skills}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAgentWithOverridesParams _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? version = sdkOmittedValue,
-          Object? model = sdkOmittedValue,
-          Object? system = sdkOmittedValue,
-          Object? tools = sdkOmittedValue,
-          Object? mcpServers = sdkOmittedValue,
-          Object? skills = sdkOmittedValue}) =>
-      BetaManagedAgentsAgentWithOverridesParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAgentWithOverridesParamsType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as SdkOptional<int>,
-        model: identical(model, sdkOmittedValue)
-            ? this.model
-            : model as SdkOptional<BetaManagedAgentsModelParams>,
-        system: identical(system, sdkOmittedValue)
-            ? this.system
-            : system as SdkOptional<String?>,
-        tools: identical(tools, sdkOmittedValue)
-            ? this.tools
-            : tools as SdkOptional<List<BetaManagedAgentsAgentToolParams>>,
-        mcpServers: identical(mcpServers, sdkOmittedValue)
-            ? this.mcpServers
-            : mcpServers as SdkOptional<List<BetaManagedAgentsMCPServerParams>>,
-        skills: identical(skills, sdkOmittedValue)
-            ? this.skills
-            : skills as SdkOptional<List<BetaManagedAgentsSkillParams>>,
-      );
+  BetaManagedAgentsAgentWithOverridesParams _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? version = sdkOmittedValue, Object? model = sdkOmittedValue, Object? system = sdkOmittedValue, Object? tools = sdkOmittedValue, Object? mcpServers = sdkOmittedValue, Object? skills = sdkOmittedValue}) => BetaManagedAgentsAgentWithOverridesParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAgentWithOverridesParamsType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<int>,
+    model: identical(model, sdkOmittedValue) ? this.model : model as SdkOptional<BetaManagedAgentsModelParams>,
+    system: identical(system, sdkOmittedValue) ? this.system : system as SdkOptional<String?>,
+    tools: identical(tools, sdkOmittedValue) ? this.tools : tools as SdkOptional<List<BetaManagedAgentsAgentToolParams>>,
+    mcpServers: identical(mcpServers, sdkOmittedValue) ? this.mcpServers : mcpServers as SdkOptional<List<BetaManagedAgentsMCPServerParams>>,
+    skills: identical(skills, sdkOmittedValue) ? this.skills : skills as SdkOptional<List<BetaManagedAgentsSkillParams>>,
+  );
 
-  factory BetaManagedAgentsAgentWithOverridesParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsAgentWithOverridesParams(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAgentWithOverridesParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        version: json['version'] != null
-            ? SdkPresent(((json['version'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        model: json['model'] != null
-            ? SdkPresent((json['model'] != null
-                ? BetaManagedAgentsModelParams.fromJson(json['model'])
-                : null)!)
-            : const SdkOmitted(),
-        system: json.containsKey('system')
-            ? SdkPresent(json['system'] as String?)
-            : const SdkOmitted(),
-        tools: json['tools'] != null
-            ? SdkPresent(((json['tools'] as List?)
-                ?.map((e) => BetaManagedAgentsAgentToolParams.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-        mcpServers: json['mcp_servers'] != null
-            ? SdkPresent(((json['mcp_servers'] as List?)
-                ?.map((e) => BetaManagedAgentsMCPServerParams.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-        skills: json['skills'] != null
-            ? SdkPresent(((json['skills'] as List?)
-                ?.map((e) => BetaManagedAgentsSkillParams.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsAgentWithOverridesParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAgentWithOverridesParams(
+    type_: (json['type'] != null ? BetaManagedAgentsAgentWithOverridesParamsType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    version: json['version'] != null ? SdkPresent(((json['version'] as num?)?.toInt())!) : const SdkOmitted(),
+    model: json['model'] != null ? SdkPresent((json['model'] != null ? BetaManagedAgentsModelParams.fromJson(json['model']) : null)!) : const SdkOmitted(),
+    system: json.containsKey('system') ? SdkPresent(json['system'] as String?) : const SdkOmitted(),
+    tools: json['tools'] != null ? SdkPresent(((json['tools'] as List?)?.map((e) => BetaManagedAgentsAgentToolParams.fromJson(e)).toList())!) : const SdkOmitted(),
+    mcpServers: json['mcp_servers'] != null ? SdkPresent(((json['mcp_servers'] as List?)?.map((e) => BetaManagedAgentsMCPServerParams.fromJson(e)).toList())!) : const SdkOmitted(),
+    skills: json['skills'] != null ? SdkPresent(((json['skills'] as List?)?.map((e) => BetaManagedAgentsSkillParams.fromJson(e)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        ...switch (version) {
-          SdkPresent<int>(value: final value) => {
-              'version': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (model) {
-          SdkPresent<BetaManagedAgentsModelParams>(value: final value) => {
-              'model': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (system) {
-          SdkPresent<String?>(value: final value) => {
-              'system': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (tools) {
-          SdkPresent<List<BetaManagedAgentsAgentToolParams>>(
-            value: final value
-          ) =>
-            {
-              'tools': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (mcpServers) {
-          SdkPresent<List<BetaManagedAgentsMCPServerParams>>(
-            value: final value
-          ) =>
-            {
-              'mcp_servers': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (skills) {
-          SdkPresent<List<BetaManagedAgentsSkillParams>>(value: final value) =>
-            {
-              'skills': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    'id': id,
+    ...switch (version) {
+      SdkPresent<int>(value: final value) => {'version': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (model) {
+      SdkPresent<BetaManagedAgentsModelParams>(value: final value) => {'model': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (system) {
+      SdkPresent<String?>(value: final value) => {'system': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (tools) {
+      SdkPresent<List<BetaManagedAgentsAgentToolParams>>(value: final value) => {'tools': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mcpServers) {
+      SdkPresent<List<BetaManagedAgentsMCPServerParams>>(value: final value) => {'mcp_servers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (skills) {
+      SdkPresent<List<BetaManagedAgentsSkillParams>>(value: final value) => {'skills': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsCreateSessionAgentUnionParamsVariant1();
-  factory BetaManagedAgentsCreateSessionAgentUnionParamsVariant1.fromJson(
-      Object? json) {
+  factory BetaManagedAgentsCreateSessionAgentUnionParamsVariant1.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsAgentParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAgentWithOverridesParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAgentParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentWithOverridesParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(
-          BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(
-          BetaManagedAgentsAgentWithOverridesParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"agent", "agent_with_overrides"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsCreateSessionAgentUnionParamsVariant1(
-          json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsCreateSessionAgentUnionParamsVariant1");
+    try { return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(BetaManagedAgentsAgentWithOverridesParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"agent", "agent_with_overrides"}.contains(json["type"])) { return UnknownBetaManagedAgentsCreateSessionAgentUnionParamsVariant1(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsCreateSessionAgentUnionParamsVariant1");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams
-    extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
+final class BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
   final BetaManagedAgentsAgentParams value;
-  const BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams
-    extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
+final class BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
   final BetaManagedAgentsAgentWithOverridesParams value;
-  const BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsCreateSessionAgentUnionParamsVariant1] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsCreateSessionAgentUnionParamsVariant1
-    extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
+final class UnknownBetaManagedAgentsCreateSessionAgentUnionParamsVariant1 extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsCreateSessionAgentUnionParamsVariant1(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsCreateSessionAgentUnionParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsCreateSessionAgentUnionParams();
-  factory BetaManagedAgentsCreateSessionAgentUnionParams.fromJson(
-      Object? json) {
-    if (json is String) {
-      return BetaManagedAgentsCreateSessionAgentUnionParamsString(json);
-    }
+  factory BetaManagedAgentsCreateSessionAgentUnionParams.fromJson(Object? json) {
+    if (json is String) { return BetaManagedAgentsCreateSessionAgentUnionParamsString(json); }
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsAgentParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAgentWithOverridesParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAgentParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentWithOverridesParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(
-          BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(
-          BetaManagedAgentsAgentWithOverridesParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsCreateSessionAgentUnionParams");
+    try { return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(BetaManagedAgentsAgentWithOverridesParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for BetaManagedAgentsCreateSessionAgentUnionParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsCreateSessionAgentUnionParamsString
-    extends BetaManagedAgentsCreateSessionAgentUnionParams {
+final class BetaManagedAgentsCreateSessionAgentUnionParamsString extends BetaManagedAgentsCreateSessionAgentUnionParams {
   final String value;
   const BetaManagedAgentsCreateSessionAgentUnionParamsString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams
-    extends BetaManagedAgentsCreateSessionAgentUnionParams {
+final class BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams extends BetaManagedAgentsCreateSessionAgentUnionParams {
   final BetaManagedAgentsAgentParams value;
-  const BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams
-    extends BetaManagedAgentsCreateSessionAgentUnionParams {
+final class BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams extends BetaManagedAgentsCreateSessionAgentUnionParams {
   final BetaManagedAgentsAgentWithOverridesParams value;
-  const BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 sealed class BetaManagedAgentsCreateSessionParamsTitle {
@@ -337,196 +174,91 @@ sealed class BetaManagedAgentsCreateSessionParamsTitle {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsCreateSessionParamsTitle();
   factory BetaManagedAgentsCreateSessionParamsTitle.fromJson(Object? json) {
-    if (json is String) {
-      return BetaManagedAgentsCreateSessionParamsTitleString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsCreateSessionParamsTitle");
+    if (json is String) { return BetaManagedAgentsCreateSessionParamsTitleString(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsCreateSessionParamsTitle");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsCreateSessionParamsTitleString
-    extends BetaManagedAgentsCreateSessionParamsTitle {
+final class BetaManagedAgentsCreateSessionParamsTitleString extends BetaManagedAgentsCreateSessionParamsTitle {
   final String value;
   const BetaManagedAgentsCreateSessionParamsTitleString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Request parameters for creating a `session`.
 class BetaManagedAgentsCreateSessionParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Agent identifier. Accepts the `agent` ID string, which pins the latest version for the session, or an `agent` object with both id and version specified.
   final BetaManagedAgentsCreateSessionAgentUnionParams agent;
-
   /// ID of the `environment` defining the container configuration for this session.
   final String environmentId;
-
   /// Human-readable session title.
   final SdkOptional<String?> title;
-
   /// Arbitrary key-value metadata attached to the session. Maximum 16 pairs, keys up to 64 chars, values up to 512 chars.
   final SdkOptional<Map<String, String>> metadata;
-
   /// Resources (e.g. repositories, files) to mount into the session's container.
   final SdkOptional<List<BetaManagedAgentsSessionResourceParams>> resources;
-
   /// Vault IDs for stored credentials the agent can use during the session.
   final SdkOptional<List<String>> vaultIds;
-
   /// Initial events to send to the `session` at creation, processed in order. Supports `user.message` and `user.define_outcome` events. Maximum 50 events.
-  final SdkOptional<List<BetaManagedAgentsSessionInitialEventParams>>
-      initialEvents;
-
+  final SdkOptional<List<BetaManagedAgentsSessionInitialEventParams>> initialEvents;
   /// Enforced spend ceiling for the session. Omit to create an uncapped session. Every model the session can run — the agent's model and each callable agent's model — must have a public list price, or the request is rejected with reason `model_not_budgetable`.
   final SdkOptional<BetaManagedAgentsBudget> budget;
 
-  const BetaManagedAgentsCreateSessionParams(
-      {required this.agent,
-      required this.environmentId,
-      this.title = const SdkOmitted(),
-      this.metadata = const SdkOmitted(),
-      this.resources = const SdkOmitted(),
-      this.vaultIds = const SdkOmitted(),
-      this.initialEvents = const SdkOmitted(),
-      this.budget = const SdkOmitted()});
+  const BetaManagedAgentsCreateSessionParams({required this.agent, required this.environmentId, this.title = const SdkOmitted(), this.metadata = const SdkOmitted(), this.resources = const SdkOmitted(), this.vaultIds = const SdkOmitted(), this.initialEvents = const SdkOmitted(), this.budget = const SdkOmitted()});
 
-  BetaManagedAgentsCreateSessionParams Function(
-      {BetaManagedAgentsCreateSessionAgentUnionParams agent,
-      String environmentId,
-      SdkOptional<String?> title,
-      SdkOptional<Map<String, String>> metadata,
-      SdkOptional<List<BetaManagedAgentsSessionResourceParams>> resources,
-      SdkOptional<List<String>> vaultIds,
-      SdkOptional<List<BetaManagedAgentsSessionInitialEventParams>>
-          initialEvents,
-      SdkOptional<BetaManagedAgentsBudget> budget}) get copyWith => _copyWith;
+  BetaManagedAgentsCreateSessionParams Function({BetaManagedAgentsCreateSessionAgentUnionParams agent, String environmentId, SdkOptional<String?> title, SdkOptional<Map<String, String>> metadata, SdkOptional<List<BetaManagedAgentsSessionResourceParams>> resources, SdkOptional<List<String>> vaultIds, SdkOptional<List<BetaManagedAgentsSessionInitialEventParams>> initialEvents, SdkOptional<BetaManagedAgentsBudget> budget}) get copyWith => _copyWith;
 
-  BetaManagedAgentsCreateSessionParams _copyWith(
-          {Object? agent = sdkOmittedValue,
-          Object? environmentId = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue,
-          Object? resources = sdkOmittedValue,
-          Object? vaultIds = sdkOmittedValue,
-          Object? initialEvents = sdkOmittedValue,
-          Object? budget = sdkOmittedValue}) =>
-      BetaManagedAgentsCreateSessionParams(
-        agent: identical(agent, sdkOmittedValue)
-            ? this.agent
-            : agent as BetaManagedAgentsCreateSessionAgentUnionParams,
-        environmentId: identical(environmentId, sdkOmittedValue)
-            ? this.environmentId
-            : environmentId as String,
-        title: identical(title, sdkOmittedValue)
-            ? this.title
-            : title as SdkOptional<String?>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<Map<String, String>>,
-        resources: identical(resources, sdkOmittedValue)
-            ? this.resources
-            : resources
-                as SdkOptional<List<BetaManagedAgentsSessionResourceParams>>,
-        vaultIds: identical(vaultIds, sdkOmittedValue)
-            ? this.vaultIds
-            : vaultIds as SdkOptional<List<String>>,
-        initialEvents: identical(initialEvents, sdkOmittedValue)
-            ? this.initialEvents
-            : initialEvents as SdkOptional<
-                List<BetaManagedAgentsSessionInitialEventParams>>,
-        budget: identical(budget, sdkOmittedValue)
-            ? this.budget
-            : budget as SdkOptional<BetaManagedAgentsBudget>,
-      );
+  BetaManagedAgentsCreateSessionParams _copyWith({Object? agent = sdkOmittedValue, Object? environmentId = sdkOmittedValue, Object? title = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? resources = sdkOmittedValue, Object? vaultIds = sdkOmittedValue, Object? initialEvents = sdkOmittedValue, Object? budget = sdkOmittedValue}) => BetaManagedAgentsCreateSessionParams(
+    agent: identical(agent, sdkOmittedValue) ? this.agent : agent as BetaManagedAgentsCreateSessionAgentUnionParams,
+    environmentId: identical(environmentId, sdkOmittedValue) ? this.environmentId : environmentId as String,
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String?>,
+    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, String>>,
+    resources: identical(resources, sdkOmittedValue) ? this.resources : resources as SdkOptional<List<BetaManagedAgentsSessionResourceParams>>,
+    vaultIds: identical(vaultIds, sdkOmittedValue) ? this.vaultIds : vaultIds as SdkOptional<List<String>>,
+    initialEvents: identical(initialEvents, sdkOmittedValue) ? this.initialEvents : initialEvents as SdkOptional<List<BetaManagedAgentsSessionInitialEventParams>>,
+    budget: identical(budget, sdkOmittedValue) ? this.budget : budget as SdkOptional<BetaManagedAgentsBudget>,
+  );
 
-  factory BetaManagedAgentsCreateSessionParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsCreateSessionParams(
-        agent: (json['agent'] != null
-            ? BetaManagedAgentsCreateSessionAgentUnionParams.fromJson(
-                json['agent'])
-            : null)!,
-        environmentId: (json['environment_id'] as String?)!,
-        title: json.containsKey('title')
-            ? SdkPresent(json['title'] as String?)
-            : const SdkOmitted(),
-        metadata: json['metadata'] != null
-            ? SdkPresent((json['metadata'] == null
-                ? null
-                : Map<String, dynamic>.from(json['metadata'] as Map)
-                    .map((key, value) => MapEntry(key, value as String)))!)
-            : const SdkOmitted(),
-        resources: json['resources'] != null
-            ? SdkPresent(((json['resources'] as List?)
-                ?.map((e) => BetaManagedAgentsSessionResourceParams.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-        vaultIds: json['vault_ids'] != null
-            ? SdkPresent(((json['vault_ids'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        initialEvents: json['initial_events'] != null
-            ? SdkPresent(((json['initial_events'] as List?)
-                ?.map((e) =>
-                    BetaManagedAgentsSessionInitialEventParams.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-        budget: json['budget'] != null
-            ? SdkPresent((json['budget'] != null
-                ? BetaManagedAgentsBudget.fromJson(json['budget'])
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsCreateSessionParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsCreateSessionParams(
+    agent: (json['agent'] != null ? BetaManagedAgentsCreateSessionAgentUnionParams.fromJson(json['agent']) : null)!,
+    environmentId: (json['environment_id'] as String?)!,
+    title: json.containsKey('title') ? SdkPresent(json['title'] as String?) : const SdkOmitted(),
+    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
+    resources: json['resources'] != null ? SdkPresent(((json['resources'] as List?)?.map((e) => BetaManagedAgentsSessionResourceParams.fromJson(e)).toList())!) : const SdkOmitted(),
+    vaultIds: json['vault_ids'] != null ? SdkPresent(((json['vault_ids'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    initialEvents: json['initial_events'] != null ? SdkPresent(((json['initial_events'] as List?)?.map((e) => BetaManagedAgentsSessionInitialEventParams.fromJson(e)).toList())!) : const SdkOmitted(),
+    budget: json['budget'] != null ? SdkPresent((json['budget'] != null ? BetaManagedAgentsBudget.fromJson(json['budget']) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'agent': agent.toJson(),
-        'environment_id': environmentId,
-        ...switch (title) {
-          SdkPresent<String?>(value: final value) => {
-              'title': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (metadata) {
-          SdkPresent<Map<String, String>>(value: final value) => {
-              'metadata': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (resources) {
-          SdkPresent<List<BetaManagedAgentsSessionResourceParams>>(
-            value: final value
-          ) =>
-            {
-              'resources': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (vaultIds) {
-          SdkPresent<List<String>>(value: final value) => {
-              'vault_ids': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (initialEvents) {
-          SdkPresent<List<BetaManagedAgentsSessionInitialEventParams>>(
-            value: final value
-          ) =>
-            {
-              'initial_events': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (budget) {
-          SdkPresent<BetaManagedAgentsBudget>(value: final value) => {
-              'budget': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'agent': agent.toJson(),
+    'environment_id': environmentId,
+    ...switch (title) {
+      SdkPresent<String?>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (metadata) {
+      SdkPresent<Map<String, String>>(value: final value) => {'metadata': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (resources) {
+      SdkPresent<List<BetaManagedAgentsSessionResourceParams>>(value: final value) => {'resources': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (vaultIds) {
+      SdkPresent<List<String>>(value: final value) => {'vault_ids': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (initialEvents) {
+      SdkPresent<List<BetaManagedAgentsSessionInitialEventParams>>(value: final value) => {'initial_events': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (budget) {
+      SdkPresent<BetaManagedAgentsBudget>(value: final value) => {'budget': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

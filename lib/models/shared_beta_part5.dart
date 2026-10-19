@@ -8,42 +8,29 @@ part of 'shared_beta.dart';
 class BetaRateLimitError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaRateLimitErrorType type_;
 
   const BetaRateLimitError({required this.message, required this.type_});
 
-  BetaRateLimitError Function({String message, BetaRateLimitErrorType type_})
-      get copyWith => _copyWith;
+  BetaRateLimitError Function({String message, BetaRateLimitErrorType type_}) get copyWith => _copyWith;
 
-  BetaRateLimitError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaRateLimitError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaRateLimitErrorType,
-      );
+  BetaRateLimitError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRateLimitError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRateLimitErrorType,
+  );
 
-  factory BetaRateLimitError.fromJson(Map<String, dynamic> json) =>
-      BetaRateLimitError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaRateLimitErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaRateLimitError.fromJson(Map<String, dynamic> json) => BetaRateLimitError(
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? BetaRateLimitErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }
 
 sealed class BetaRuleMatchAudience {
@@ -51,9 +38,7 @@ sealed class BetaRuleMatchAudience {
   static const String constructionSurface = 'named';
   const BetaRuleMatchAudience();
   factory BetaRuleMatchAudience.fromJson(Object? json) {
-    if (json is String) {
-      return BetaRuleMatchAudienceString(json);
-    }
+    if (json is String) { return BetaRuleMatchAudienceString(json); }
     throw FormatException("No variant matched for BetaRuleMatchAudience");
   }
   Object? toJson();
@@ -62,8 +47,7 @@ sealed class BetaRuleMatchAudience {
 final class BetaRuleMatchAudienceString extends BetaRuleMatchAudience {
   final String value;
   const BetaRuleMatchAudienceString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 sealed class BetaRuleMatchCondition {
@@ -71,9 +55,7 @@ sealed class BetaRuleMatchCondition {
   static const String constructionSurface = 'named';
   const BetaRuleMatchCondition();
   factory BetaRuleMatchCondition.fromJson(Object? json) {
-    if (json is String) {
-      return BetaRuleMatchConditionString(json);
-    }
+    if (json is String) { return BetaRuleMatchConditionString(json); }
     throw FormatException("No variant matched for BetaRuleMatchCondition");
   }
   Object? toJson();
@@ -82,8 +64,7 @@ sealed class BetaRuleMatchCondition {
 final class BetaRuleMatchConditionString extends BetaRuleMatchCondition {
   final String value;
   const BetaRuleMatchConditionString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 sealed class BetaRuleMatchSubjectPrefix {
@@ -91,244 +72,159 @@ sealed class BetaRuleMatchSubjectPrefix {
   static const String constructionSurface = 'named';
   const BetaRuleMatchSubjectPrefix();
   factory BetaRuleMatchSubjectPrefix.fromJson(Object? json) {
-    if (json is String) {
-      return BetaRuleMatchSubjectPrefixString(json);
-    }
+    if (json is String) { return BetaRuleMatchSubjectPrefixString(json); }
     throw FormatException("No variant matched for BetaRuleMatchSubjectPrefix");
   }
   Object? toJson();
 }
 
-final class BetaRuleMatchSubjectPrefixString
-    extends BetaRuleMatchSubjectPrefix {
+final class BetaRuleMatchSubjectPrefixString extends BetaRuleMatchSubjectPrefix {
   final String value;
   const BetaRuleMatchSubjectPrefixString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Does the incoming JWT qualify? All populated fields must pass; omitted fields are skipped. At least one of `subject_prefix` (other than a wildcard-only value like `*`), `claims`, or `condition` is required; `audience` alone is not sufficient.
 class BetaRuleMatch {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Exact match against the `aud` claim (any element if array). When omitted, the JWT's `aud` must still equal Anthropic's expected audience for the issuer; setting this field overrides that default.
   final SdkOptional<String?> audience;
-
   /// Exact-match `{claim: value}` pairs against top-level claims. Only string-valued claims can be matched; use `condition` for non-string claims.
   final SdkOptional<Map<String, String>?> claims;
-
   /// CEL expression over claims for logic the structural fields can't express. Must evaluate to a boolean and may reference only the `claims` variable; a constant-true expression (such as `true`) is rejected with 400.
   final SdkOptional<String?> condition;
-
   /// Match the verified JWT `sub` claim. Exact match unless the value ends with `*`, in which case it is a prefix match. Example: `repo:my-org/my-repo:ref:refs/heads/main`.
   final SdkOptional<String?> subjectPrefix;
 
-  const BetaRuleMatch(
-      {this.audience = const SdkOmitted(),
-      this.claims = const SdkOmitted(),
-      this.condition = const SdkOmitted(),
-      this.subjectPrefix = const SdkOmitted()});
+  const BetaRuleMatch({this.audience = const SdkOmitted(), this.claims = const SdkOmitted(), this.condition = const SdkOmitted(), this.subjectPrefix = const SdkOmitted()});
 
-  BetaRuleMatch Function(
-      {SdkOptional<String?> audience,
-      SdkOptional<Map<String, String>?> claims,
-      SdkOptional<String?> condition,
-      SdkOptional<String?> subjectPrefix}) get copyWith => _copyWith;
+  BetaRuleMatch Function({SdkOptional<String?> audience, SdkOptional<Map<String, String>?> claims, SdkOptional<String?> condition, SdkOptional<String?> subjectPrefix}) get copyWith => _copyWith;
 
-  BetaRuleMatch _copyWith(
-          {Object? audience = sdkOmittedValue,
-          Object? claims = sdkOmittedValue,
-          Object? condition = sdkOmittedValue,
-          Object? subjectPrefix = sdkOmittedValue}) =>
-      BetaRuleMatch(
-        audience: identical(audience, sdkOmittedValue)
-            ? this.audience
-            : audience as SdkOptional<String?>,
-        claims: identical(claims, sdkOmittedValue)
-            ? this.claims
-            : claims as SdkOptional<Map<String, String>?>,
-        condition: identical(condition, sdkOmittedValue)
-            ? this.condition
-            : condition as SdkOptional<String?>,
-        subjectPrefix: identical(subjectPrefix, sdkOmittedValue)
-            ? this.subjectPrefix
-            : subjectPrefix as SdkOptional<String?>,
-      );
+  BetaRuleMatch _copyWith({Object? audience = sdkOmittedValue, Object? claims = sdkOmittedValue, Object? condition = sdkOmittedValue, Object? subjectPrefix = sdkOmittedValue}) => BetaRuleMatch(
+    audience: identical(audience, sdkOmittedValue) ? this.audience : audience as SdkOptional<String?>,
+    claims: identical(claims, sdkOmittedValue) ? this.claims : claims as SdkOptional<Map<String, String>?>,
+    condition: identical(condition, sdkOmittedValue) ? this.condition : condition as SdkOptional<String?>,
+    subjectPrefix: identical(subjectPrefix, sdkOmittedValue) ? this.subjectPrefix : subjectPrefix as SdkOptional<String?>,
+  );
 
   factory BetaRuleMatch.fromJson(Map<String, dynamic> json) => BetaRuleMatch(
-        audience: json.containsKey('audience')
-            ? SdkPresent(json['audience'] as String?)
-            : const SdkOmitted(),
-        claims: json.containsKey('claims')
-            ? SdkPresent(json['claims'] == null
-                ? null
-                : Map<String, dynamic>.from(json['claims'] as Map)
-                    .map((key, value) => MapEntry(key, value as String)))
-            : const SdkOmitted(),
-        condition: json.containsKey('condition')
-            ? SdkPresent(json['condition'] as String?)
-            : const SdkOmitted(),
-        subjectPrefix: json.containsKey('subject_prefix')
-            ? SdkPresent(json['subject_prefix'] as String?)
-            : const SdkOmitted(),
-      );
+    audience: json.containsKey('audience') ? SdkPresent(json['audience'] as String?) : const SdkOmitted(),
+    claims: json.containsKey('claims') ? SdkPresent(json['claims'] == null ? null : Map<String, dynamic>.from(json['claims'] as Map).map((key, value) => MapEntry(key, value as String))) : const SdkOmitted(),
+    condition: json.containsKey('condition') ? SdkPresent(json['condition'] as String?) : const SdkOmitted(),
+    subjectPrefix: json.containsKey('subject_prefix') ? SdkPresent(json['subject_prefix'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (audience) {
-          SdkPresent<String?>(value: final value) => {
-              'audience': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (claims) {
-          SdkPresent<Map<String, String>?>(value: final value) => {
-              'claims': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (condition) {
-          SdkPresent<String?>(value: final value) => {
-              'condition': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subjectPrefix) {
-          SdkPresent<String?>(value: final value) => {
-              'subject_prefix': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (audience) {
+      SdkPresent<String?>(value: final value) => {'audience': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (claims) {
+      SdkPresent<Map<String, String>?>(value: final value) => {'claims': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (condition) {
+      SdkPresent<String?>(value: final value) => {'condition': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subjectPrefix) {
+      SdkPresent<String?>(value: final value) => {'subject_prefix': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A scoped Admin API key acting on behalf of the organization.
 class BetaScopedApiKeyActorSchema {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `scoped_api_key_id` wire field.
   final String scopedApiKeyId;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaScopedApiKeyActorSchemaType type_;
 
-  const BetaScopedApiKeyActorSchema(
-      {required this.scopedApiKeyId, required this.type_});
+  const BetaScopedApiKeyActorSchema({required this.scopedApiKeyId, required this.type_});
 
-  BetaScopedApiKeyActorSchema Function(
-      {String scopedApiKeyId,
-      BetaScopedApiKeyActorSchemaType type_}) get copyWith => _copyWith;
+  BetaScopedApiKeyActorSchema Function({String scopedApiKeyId, BetaScopedApiKeyActorSchemaType type_}) get copyWith => _copyWith;
 
-  BetaScopedApiKeyActorSchema _copyWith(
-          {Object? scopedApiKeyId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaScopedApiKeyActorSchema(
-        scopedApiKeyId: identical(scopedApiKeyId, sdkOmittedValue)
-            ? this.scopedApiKeyId
-            : scopedApiKeyId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaScopedApiKeyActorSchemaType,
-      );
+  BetaScopedApiKeyActorSchema _copyWith({Object? scopedApiKeyId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaScopedApiKeyActorSchema(
+    scopedApiKeyId: identical(scopedApiKeyId, sdkOmittedValue) ? this.scopedApiKeyId : scopedApiKeyId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaScopedApiKeyActorSchemaType,
+  );
 
-  factory BetaScopedApiKeyActorSchema.fromJson(Map<String, dynamic> json) =>
-      BetaScopedApiKeyActorSchema(
-        scopedApiKeyId: (json['scoped_api_key_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaScopedApiKeyActorSchemaType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaScopedApiKeyActorSchema.fromJson(Map<String, dynamic> json) => BetaScopedApiKeyActorSchema(
+    scopedApiKeyId: (json['scoped_api_key_id'] as String?)!,
+    type_: (json['type'] != null ? BetaScopedApiKeyActorSchemaType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'scoped_api_key_id': scopedApiKeyId,
-        'type': type_.toJson(),
-      };
+    'scoped_api_key_id': scopedApiKeyId,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaSeatTierScope` API schema.
 class BetaSeatTierScope {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `seat_tier` wire field.
   final String seatTier;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaSeatTierScopeType type_;
 
   const BetaSeatTierScope({required this.seatTier, required this.type_});
 
-  BetaSeatTierScope Function({String seatTier, BetaSeatTierScopeType type_})
-      get copyWith => _copyWith;
+  BetaSeatTierScope Function({String seatTier, BetaSeatTierScopeType type_}) get copyWith => _copyWith;
 
-  BetaSeatTierScope _copyWith(
-          {Object? seatTier = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaSeatTierScope(
-        seatTier: identical(seatTier, sdkOmittedValue)
-            ? this.seatTier
-            : seatTier as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaSeatTierScopeType,
-      );
+  BetaSeatTierScope _copyWith({Object? seatTier = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaSeatTierScope(
+    seatTier: identical(seatTier, sdkOmittedValue) ? this.seatTier : seatTier as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSeatTierScopeType,
+  );
 
-  factory BetaSeatTierScope.fromJson(Map<String, dynamic> json) =>
-      BetaSeatTierScope(
-        seatTier: (json['seat_tier'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaSeatTierScopeType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaSeatTierScope.fromJson(Map<String, dynamic> json) => BetaSeatTierScope(
+    seatTier: (json['seat_tier'] as String?)!,
+    type_: (json['type'] != null ? BetaSeatTierScopeType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'seat_tier': seatTier,
-        'type': type_.toJson(),
-      };
+    'seat_tier': seatTier,
+    'type': type_.toJson(),
+  };
 }
 
 /// Work data for session work items. This resource type is used when work represents a session that needs to be executed in a self-hosted environment.
 class BetaSessionWorkData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Session identifier (e.g., 'session_...')
   final String id;
-
   /// Type of work data
   final BetaSessionWorkDataType type_;
 
   const BetaSessionWorkData({required this.id, required this.type_});
 
-  BetaSessionWorkData Function({String id, BetaSessionWorkDataType type_})
-      get copyWith => _copyWith;
+  BetaSessionWorkData Function({String id, BetaSessionWorkDataType type_}) get copyWith => _copyWith;
 
-  BetaSessionWorkData _copyWith(
-          {Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
-      BetaSessionWorkData(
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaSessionWorkDataType,
-      );
+  BetaSessionWorkData _copyWith({Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaSessionWorkData(
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSessionWorkDataType,
+  );
 
-  factory BetaSessionWorkData.fromJson(Map<String, dynamic> json) =>
-      BetaSessionWorkData(
-        id: (json['id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaSessionWorkDataType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaSessionWorkData.fromJson(Map<String, dynamic> json) => BetaSessionWorkData(
+    id: (json['id'] as String?)!,
+    type_: (json['type'] != null ? BetaSessionWorkDataType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'type': type_.toJson(),
-      };
+    'id': id,
+    'type': type_.toJson(),
+  };
 }
 
 /// Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Not all models support `fast`; invalid combinations are rejected at create time.
 final class BetaSpeed {
+
   final String value;
 
   const BetaSpeed._(this.value);
@@ -340,18 +236,17 @@ final class BetaSpeed {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) => other is BetaSpeed && other.value == value;
+  @override bool operator ==(Object other) => other is BetaSpeed && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Typed representation of the `BetaStopReason` API schema.
 final class BetaStopReason {
+
   final String value;
 
   const BetaStopReason._(this.value);
@@ -365,18 +260,14 @@ final class BetaStopReason {
   static const pauseTurn = BetaStopReason._('pause_turn');
   static const compaction = BetaStopReason._('compaction');
   static const refusal = BetaStopReason._('refusal');
-  static const modelContextWindowExceeded =
-      BetaStopReason._('model_context_window_exceeded');
+  static const modelContextWindowExceeded = BetaStopReason._('model_context_window_exceeded');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaStopReason && other.value == value;
+  @override bool operator ==(Object other) => other is BetaStopReason && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

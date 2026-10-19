@@ -4,69 +4,50 @@
 part of 'beta_content_block.dart';
 
 // beta_content_block domain models (part 2)
-final class BetaContentBlockStartEventContentBlockBetaResponseCompactionBlock
-    extends BetaContentBlockStartEventContentBlock {
+final class BetaContentBlockStartEventContentBlockBetaResponseCompactionBlock extends BetaContentBlockStartEventContentBlock {
   final BetaResponseCompactionBlock value;
-  const BetaContentBlockStartEventContentBlockBetaResponseCompactionBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaContentBlockStartEventContentBlockBetaResponseCompactionBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaContentBlockStartEventContentBlockBetaResponseFallbackBlock
-    extends BetaContentBlockStartEventContentBlock {
+final class BetaContentBlockStartEventContentBlockBetaResponseFallbackBlock extends BetaContentBlockStartEventContentBlock {
   final BetaResponseFallbackBlock value;
-  const BetaContentBlockStartEventContentBlockBetaResponseFallbackBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaContentBlockStartEventContentBlockBetaResponseFallbackBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaContentBlockStartEventContentBlock] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaContentBlockStartEventContentBlock
-    extends BetaContentBlockStartEventContentBlock {
+final class UnknownBetaContentBlockStartEventContentBlock extends BetaContentBlockStartEventContentBlock {
   final Map<String, dynamic> raw;
   const UnknownBetaContentBlockStartEventContentBlock(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaContentBlockStopEvent` API schema.
 class BetaContentBlockStopEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `index` wire field.
   final int index;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaContentBlockStopEventType type_;
 
   const BetaContentBlockStopEvent({required this.index, required this.type_});
 
-  BetaContentBlockStopEvent Function(
-      {int index,
-      BetaContentBlockStopEventType type_}) get copyWith => _copyWith;
+  BetaContentBlockStopEvent Function({int index, BetaContentBlockStopEventType type_}) get copyWith => _copyWith;
 
-  BetaContentBlockStopEvent _copyWith(
-          {Object? index = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
-      BetaContentBlockStopEvent(
-        index: identical(index, sdkOmittedValue) ? this.index : index as int,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaContentBlockStopEventType,
-      );
+  BetaContentBlockStopEvent _copyWith({Object? index = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaContentBlockStopEvent(
+    index: identical(index, sdkOmittedValue) ? this.index : index as int,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaContentBlockStopEventType,
+  );
 
-  factory BetaContentBlockStopEvent.fromJson(Map<String, dynamic> json) =>
-      BetaContentBlockStopEvent(
-        index: ((json['index'] as num?)?.toInt())!,
-        type_: (json['type'] != null
-            ? BetaContentBlockStopEventType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaContentBlockStopEvent.fromJson(Map<String, dynamic> json) => BetaContentBlockStopEvent(
+    index: ((json['index'] as num?)?.toInt())!,
+    type_: (json['type'] != null ? BetaContentBlockStopEventType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'index': index,
-        'type': type_.toJson(),
-      };
+    'index': index,
+    'type': type_.toJson(),
+  };
 }

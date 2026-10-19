@@ -6,6 +6,7 @@ part of 'workspaces_beta_true.dart';
 // workspaces_beta_true domain models (part 2)
 /// Typed representation of the `BetaWorkspaceGeo` API schema.
 final class BetaWorkspaceGeo {
+
   final String value;
 
   const BetaWorkspaceGeo._(this.value);
@@ -16,13 +17,10 @@ final class BetaWorkspaceGeo {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaWorkspaceGeo && other.value == value;
+  @override bool operator ==(Object other) => other is BetaWorkspaceGeo && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

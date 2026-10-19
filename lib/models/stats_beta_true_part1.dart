@@ -8,79 +8,42 @@ part of 'stats_beta_true.dart';
 class BetaSelfHostedWorkQueueStats {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Number of work items waiting to be picked up (lag from consumer group)
   final int depth;
-
   /// RFC 3339 timestamp of oldest item in the work stream (includes both queued and pending items), null if stream empty
   final String? oldestQueuedAt;
-
   /// Number of work items being processed (polled but not acknowledged)
   final int pending;
-
   /// The type of object
   final BetaSelfHostedWorkQueueStatsType type_;
-
   /// Number of workers that have polled for work in the last 30 seconds. Requires worker_id to be sent with poll requests.
   final int? workersPolling;
 
-  const BetaSelfHostedWorkQueueStats(
-      {required this.depth,
-      required this.oldestQueuedAt,
-      required this.pending,
-      required this.type_,
-      required this.workersPolling});
+  const BetaSelfHostedWorkQueueStats({required this.depth, required this.oldestQueuedAt, required this.pending, required this.type_, required this.workersPolling});
 
-  BetaSelfHostedWorkQueueStats Function(
-      {int depth,
-      String? oldestQueuedAt,
-      int pending,
-      BetaSelfHostedWorkQueueStatsType type_,
-      int? workersPolling}) get copyWith => _copyWith;
+  BetaSelfHostedWorkQueueStats Function({int depth, String? oldestQueuedAt, int pending, BetaSelfHostedWorkQueueStatsType type_, int? workersPolling}) get copyWith => _copyWith;
 
-  BetaSelfHostedWorkQueueStats _copyWith(
-          {Object? depth = sdkOmittedValue,
-          Object? oldestQueuedAt = sdkOmittedValue,
-          Object? pending = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? workersPolling = sdkOmittedValue}) =>
-      BetaSelfHostedWorkQueueStats(
-        depth: identical(depth, sdkOmittedValue) ? this.depth : depth as int,
-        oldestQueuedAt: identical(oldestQueuedAt, sdkOmittedValue)
-            ? this.oldestQueuedAt
-            : oldestQueuedAt as String?,
-        pending:
-            identical(pending, sdkOmittedValue) ? this.pending : pending as int,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaSelfHostedWorkQueueStatsType,
-        workersPolling: identical(workersPolling, sdkOmittedValue)
-            ? this.workersPolling
-            : workersPolling as int?,
-      );
+  BetaSelfHostedWorkQueueStats _copyWith({Object? depth = sdkOmittedValue, Object? oldestQueuedAt = sdkOmittedValue, Object? pending = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? workersPolling = sdkOmittedValue}) => BetaSelfHostedWorkQueueStats(
+    depth: identical(depth, sdkOmittedValue) ? this.depth : depth as int,
+    oldestQueuedAt: identical(oldestQueuedAt, sdkOmittedValue) ? this.oldestQueuedAt : oldestQueuedAt as String?,
+    pending: identical(pending, sdkOmittedValue) ? this.pending : pending as int,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSelfHostedWorkQueueStatsType,
+    workersPolling: identical(workersPolling, sdkOmittedValue) ? this.workersPolling : workersPolling as int?,
+  );
 
-  factory BetaSelfHostedWorkQueueStats.fromJson(Map<String, dynamic> json) =>
-      BetaSelfHostedWorkQueueStats(
-        depth: ((json['depth'] as num?)?.toInt())!,
-        oldestQueuedAt: json.containsKey('oldest_queued_at')
-            ? json['oldest_queued_at'] as String?
-            : throw ArgumentError.value(
-                null, 'oldest_queued_at', 'Required property is missing'),
-        pending: ((json['pending'] as num?)?.toInt())!,
-        type_: (json['type'] != null
-            ? BetaSelfHostedWorkQueueStatsType.fromJson(json['type'] as String)
-            : null)!,
-        workersPolling: json.containsKey('workers_polling')
-            ? (json['workers_polling'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'workers_polling', 'Required property is missing'),
-      );
+  factory BetaSelfHostedWorkQueueStats.fromJson(Map<String, dynamic> json) => BetaSelfHostedWorkQueueStats(
+    depth: ((json['depth'] as num?)?.toInt())!,
+    oldestQueuedAt: json.containsKey('oldest_queued_at') ? json['oldest_queued_at'] as String? : throw ArgumentError.value(null, 'oldest_queued_at', 'Required property is missing'),
+    pending: ((json['pending'] as num?)?.toInt())!,
+    type_: (json['type'] != null ? BetaSelfHostedWorkQueueStatsType.fromJson(json['type'] as String) : null)!,
+    workersPolling: json.containsKey('workers_polling') ? (json['workers_polling'] as num?)?.toInt() : throw ArgumentError.value(null, 'workers_polling', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'depth': depth,
-        'oldest_queued_at': oldestQueuedAt,
-        'pending': pending,
-        'type': type_.toJson(),
-        'workers_polling': workersPolling,
-      };
+    'depth': depth,
+    'oldest_queued_at': oldestQueuedAt,
+    'pending': pending,
+    'type': type_.toJson(),
+    'workers_polling': workersPolling,
+  };
 }

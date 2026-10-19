@@ -9,151 +9,92 @@ sealed class BetaRequestCharLocationCitationDocumentTitle {
   static const String constructionSurface = 'named';
   const BetaRequestCharLocationCitationDocumentTitle();
   factory BetaRequestCharLocationCitationDocumentTitle.fromJson(Object? json) {
-    if (json is String) {
-      return BetaRequestCharLocationCitationDocumentTitleString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaRequestCharLocationCitationDocumentTitle");
+    if (json is String) { return BetaRequestCharLocationCitationDocumentTitleString(json); }
+    throw FormatException("No variant matched for BetaRequestCharLocationCitationDocumentTitle");
   }
   Object? toJson();
 }
 
-final class BetaRequestCharLocationCitationDocumentTitleString
-    extends BetaRequestCharLocationCitationDocumentTitle {
+final class BetaRequestCharLocationCitationDocumentTitleString extends BetaRequestCharLocationCitationDocumentTitle {
   final String value;
   const BetaRequestCharLocationCitationDocumentTitleString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaRequestCharLocationCitation` API schema.
 class BetaRequestCharLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `cited_text` wire field.
   final String citedText;
-
   /// Required `integer` value serialized in the `document_index` wire field.
   final int documentIndex;
-
   /// Required API value serialized in the `document_title` wire field.
   final String? documentTitle;
-
   /// Required `integer` value serialized in the `end_char_index` wire field.
   final int endCharIndex;
-
   /// Required `integer` value serialized in the `start_char_index` wire field.
   final int startCharIndex;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestCharLocationCitationType type_;
 
-  const BetaRequestCharLocationCitation(
-      {required this.citedText,
-      required this.documentIndex,
-      required this.documentTitle,
-      required this.endCharIndex,
-      required this.startCharIndex,
-      required this.type_});
+  const BetaRequestCharLocationCitation({required this.citedText, required this.documentIndex, required this.documentTitle, required this.endCharIndex, required this.startCharIndex, required this.type_});
 
-  BetaRequestCharLocationCitation Function(
-      {String citedText,
-      int documentIndex,
-      String? documentTitle,
-      int endCharIndex,
-      int startCharIndex,
-      BetaRequestCharLocationCitationType type_}) get copyWith => _copyWith;
+  BetaRequestCharLocationCitation Function({String citedText, int documentIndex, String? documentTitle, int endCharIndex, int startCharIndex, BetaRequestCharLocationCitationType type_}) get copyWith => _copyWith;
 
-  BetaRequestCharLocationCitation _copyWith(
-          {Object? citedText = sdkOmittedValue,
-          Object? documentIndex = sdkOmittedValue,
-          Object? documentTitle = sdkOmittedValue,
-          Object? endCharIndex = sdkOmittedValue,
-          Object? startCharIndex = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaRequestCharLocationCitation(
-        citedText: identical(citedText, sdkOmittedValue)
-            ? this.citedText
-            : citedText as String,
-        documentIndex: identical(documentIndex, sdkOmittedValue)
-            ? this.documentIndex
-            : documentIndex as int,
-        documentTitle: identical(documentTitle, sdkOmittedValue)
-            ? this.documentTitle
-            : documentTitle as String?,
-        endCharIndex: identical(endCharIndex, sdkOmittedValue)
-            ? this.endCharIndex
-            : endCharIndex as int,
-        startCharIndex: identical(startCharIndex, sdkOmittedValue)
-            ? this.startCharIndex
-            : startCharIndex as int,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaRequestCharLocationCitationType,
-      );
+  BetaRequestCharLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? documentIndex = sdkOmittedValue, Object? documentTitle = sdkOmittedValue, Object? endCharIndex = sdkOmittedValue, Object? startCharIndex = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestCharLocationCitation(
+    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
+    documentIndex: identical(documentIndex, sdkOmittedValue) ? this.documentIndex : documentIndex as int,
+    documentTitle: identical(documentTitle, sdkOmittedValue) ? this.documentTitle : documentTitle as String?,
+    endCharIndex: identical(endCharIndex, sdkOmittedValue) ? this.endCharIndex : endCharIndex as int,
+    startCharIndex: identical(startCharIndex, sdkOmittedValue) ? this.startCharIndex : startCharIndex as int,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestCharLocationCitationType,
+  );
 
-  factory BetaRequestCharLocationCitation.fromJson(Map<String, dynamic> json) =>
-      BetaRequestCharLocationCitation(
-        citedText: (json['cited_text'] as String?)!,
-        documentIndex: ((json['document_index'] as num?)?.toInt())!,
-        documentTitle: json.containsKey('document_title')
-            ? json['document_title'] as String?
-            : throw ArgumentError.value(
-                null, 'document_title', 'Required property is missing'),
-        endCharIndex: ((json['end_char_index'] as num?)?.toInt())!,
-        startCharIndex: ((json['start_char_index'] as num?)?.toInt())!,
-        type_: (json['type'] != null
-            ? BetaRequestCharLocationCitationType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaRequestCharLocationCitation.fromJson(Map<String, dynamic> json) => BetaRequestCharLocationCitation(
+    citedText: (json['cited_text'] as String?)!,
+    documentIndex: ((json['document_index'] as num?)?.toInt())!,
+    documentTitle: json.containsKey('document_title') ? json['document_title'] as String? : throw ArgumentError.value(null, 'document_title', 'Required property is missing'),
+    endCharIndex: ((json['end_char_index'] as num?)?.toInt())!,
+    startCharIndex: ((json['start_char_index'] as num?)?.toInt())!,
+    type_: (json['type'] != null ? BetaRequestCharLocationCitationType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'cited_text': citedText,
-        'document_index': documentIndex,
-        'document_title': documentTitle,
-        'end_char_index': endCharIndex,
-        'start_char_index': startCharIndex,
-        'type': type_.toJson(),
-      };
+    'cited_text': citedText,
+    'document_index': documentIndex,
+    'document_title': documentTitle,
+    'end_char_index': endCharIndex,
+    'start_char_index': startCharIndex,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaRequestCitationsConfig` API schema.
 class BetaRequestCitationsConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
 
   const BetaRequestCitationsConfig({this.enabled = const SdkOmitted()});
 
-  BetaRequestCitationsConfig Function({SdkOptional<bool> enabled})
-      get copyWith => _copyWith;
+  BetaRequestCitationsConfig Function({SdkOptional<bool> enabled}) get copyWith => _copyWith;
 
-  BetaRequestCitationsConfig _copyWith({Object? enabled = sdkOmittedValue}) =>
-      BetaRequestCitationsConfig(
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as SdkOptional<bool>,
-      );
+  BetaRequestCitationsConfig _copyWith({Object? enabled = sdkOmittedValue}) => BetaRequestCitationsConfig(
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
+  );
 
-  factory BetaRequestCitationsConfig.fromJson(Map<String, dynamic> json) =>
-      BetaRequestCitationsConfig(
-        enabled: json['enabled'] != null
-            ? SdkPresent((json['enabled'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory BetaRequestCitationsConfig.fromJson(Map<String, dynamic> json) => BetaRequestCitationsConfig(
+    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (enabled) {
-          SdkPresent<bool>(value: final value) => {
-              'enabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (enabled) {
+      SdkPresent<bool>(value: final value) => {'enabled': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class BetaRequestCompactionBlockCacheControl {
@@ -161,128 +102,72 @@ sealed class BetaRequestCompactionBlockCacheControl {
   static const String constructionSurface = 'named';
   const BetaRequestCompactionBlockCacheControl();
   factory BetaRequestCompactionBlockCacheControl.fromJson(Object? json) {
-    try {
-      return BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral(
-          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownBetaRequestCompactionBlockCacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaRequestCompactionBlockCacheControl");
+    try { return BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestCompactionBlockCacheControl(json); }
+    throw FormatException("No variant matched for BetaRequestCompactionBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral
-    extends BetaRequestCompactionBlockCacheControl {
+final class BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral extends BetaRequestCompactionBlockCacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestCompactionBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestCompactionBlockCacheControl
-    extends BetaRequestCompactionBlockCacheControl {
+final class UnknownBetaRequestCompactionBlockCacheControl extends BetaRequestCompactionBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestCompactionBlockCacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// A compaction block containing summary of previous context. Users should round-trip these blocks from responses to subsequent requests to maintain context across compaction boundaries. When content is None, the block represents a failed compaction. The server treats these as no-ops. Empty string content is not allowed.
 class BetaRequestCompactionBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
-
   /// Summary of previously compacted content, or null if compaction failed
   final SdkOptional<String?> content;
-
   /// Opaque metadata from prior compaction, to be round-tripped verbatim
   final SdkOptional<String?> encryptedContent;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestCompactionBlockType type_;
 
-  const BetaRequestCompactionBlock(
-      {this.cacheControl = const SdkOmitted(),
-      this.content = const SdkOmitted(),
-      this.encryptedContent = const SdkOmitted(),
-      required this.type_});
+  const BetaRequestCompactionBlock({this.cacheControl = const SdkOmitted(), this.content = const SdkOmitted(), this.encryptedContent = const SdkOmitted(), required this.type_});
 
-  BetaRequestCompactionBlock Function(
-      {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
-      SdkOptional<String?> content,
-      SdkOptional<String?> encryptedContent,
-      BetaRequestCompactionBlockType type_}) get copyWith => _copyWith;
+  BetaRequestCompactionBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<String?> content, SdkOptional<String?> encryptedContent, BetaRequestCompactionBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestCompactionBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? encryptedContent = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaRequestCompactionBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as SdkOptional<String?>,
-        encryptedContent: identical(encryptedContent, sdkOmittedValue)
-            ? this.encryptedContent
-            : encryptedContent as SdkOptional<String?>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaRequestCompactionBlockType,
-      );
+  BetaRequestCompactionBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? content = sdkOmittedValue, Object? encryptedContent = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestCompactionBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<String?>,
+    encryptedContent: identical(encryptedContent, sdkOmittedValue) ? this.encryptedContent : encryptedContent as SdkOptional<String?>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestCompactionBlockType,
+  );
 
-  factory BetaRequestCompactionBlock.fromJson(Map<String, dynamic> json) =>
-      BetaRequestCompactionBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? BetaCacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        content: json.containsKey('content')
-            ? SdkPresent(json['content'] as String?)
-            : const SdkOmitted(),
-        encryptedContent: json.containsKey('encrypted_content')
-            ? SdkPresent(json['encrypted_content'] as String?)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? BetaRequestCompactionBlockType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaRequestCompactionBlock.fromJson(Map<String, dynamic> json) => BetaRequestCompactionBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    content: json.containsKey('content') ? SdkPresent(json['content'] as String?) : const SdkOmitted(),
+    encryptedContent: json.containsKey('encrypted_content') ? SdkPresent(json['encrypted_content'] as String?) : const SdkOmitted(),
+    type_: (json['type'] != null ? BetaRequestCompactionBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (content) {
-          SdkPresent<String?>(value: final value) => {
-              'content': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (encryptedContent) {
-          SdkPresent<String?>(value: final value) => {
-              'encrypted_content': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (content) {
+      SdkPresent<String?>(value: final value) => {'content': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (encryptedContent) {
+      SdkPresent<String?>(value: final value) => {'encrypted_content': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+  };
 }
 
 sealed class BetaRequestContainerUploadBlockCacheControl {
@@ -290,124 +175,76 @@ sealed class BetaRequestContainerUploadBlockCacheControl {
   static const String constructionSurface = 'named';
   const BetaRequestContainerUploadBlockCacheControl();
   factory BetaRequestContainerUploadBlockCacheControl.fromJson(Object? json) {
-    try {
-      return BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral(
-          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownBetaRequestContainerUploadBlockCacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaRequestContainerUploadBlockCacheControl");
+    try { return BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestContainerUploadBlockCacheControl(json); }
+    throw FormatException("No variant matched for BetaRequestContainerUploadBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral
-    extends BetaRequestContainerUploadBlockCacheControl {
+final class BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral extends BetaRequestContainerUploadBlockCacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestContainerUploadBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestContainerUploadBlockCacheControl
-    extends BetaRequestContainerUploadBlockCacheControl {
+final class UnknownBetaRequestContainerUploadBlockCacheControl extends BetaRequestContainerUploadBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestContainerUploadBlockCacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// A content block that represents a file to be uploaded to the container Files uploaded via this block will be available in the container's input directory.
 class BetaRequestContainerUploadBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
-
   /// Required `string` value serialized in the `file_id` wire field.
   final String fileId;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestContainerUploadBlockType type_;
 
-  const BetaRequestContainerUploadBlock(
-      {this.cacheControl = const SdkOmitted(),
-      required this.fileId,
-      required this.type_});
+  const BetaRequestContainerUploadBlock({this.cacheControl = const SdkOmitted(), required this.fileId, required this.type_});
 
-  BetaRequestContainerUploadBlock Function(
-      {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
-      String fileId,
-      BetaRequestContainerUploadBlockType type_}) get copyWith => _copyWith;
+  BetaRequestContainerUploadBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, String fileId, BetaRequestContainerUploadBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestContainerUploadBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? fileId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaRequestContainerUploadBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-        fileId:
-            identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaRequestContainerUploadBlockType,
-      );
+  BetaRequestContainerUploadBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? fileId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestContainerUploadBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestContainerUploadBlockType,
+  );
 
-  factory BetaRequestContainerUploadBlock.fromJson(Map<String, dynamic> json) =>
-      BetaRequestContainerUploadBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? BetaCacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        fileId: (json['file_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaRequestContainerUploadBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaRequestContainerUploadBlock.fromJson(Map<String, dynamic> json) => BetaRequestContainerUploadBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    fileId: (json['file_id'] as String?)!,
+    type_: (json['type'] != null ? BetaRequestContainerUploadBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'file_id': fileId,
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'file_id': fileId,
+    'type': type_.toJson(),
+  };
 }
 
 sealed class BetaRequestContentBlockLocationCitationDocumentTitle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaRequestContentBlockLocationCitationDocumentTitle();
-  factory BetaRequestContentBlockLocationCitationDocumentTitle.fromJson(
-      Object? json) {
-    if (json is String) {
-      return BetaRequestContentBlockLocationCitationDocumentTitleString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaRequestContentBlockLocationCitationDocumentTitle");
+  factory BetaRequestContentBlockLocationCitationDocumentTitle.fromJson(Object? json) {
+    if (json is String) { return BetaRequestContentBlockLocationCitationDocumentTitleString(json); }
+    throw FormatException("No variant matched for BetaRequestContentBlockLocationCitationDocumentTitle");
   }
   Object? toJson();
 }
 
-final class BetaRequestContentBlockLocationCitationDocumentTitleString
-    extends BetaRequestContentBlockLocationCitationDocumentTitle {
+final class BetaRequestContentBlockLocationCitationDocumentTitleString extends BetaRequestContentBlockLocationCitationDocumentTitle {
   final String value;
   const BetaRequestContentBlockLocationCitationDocumentTitleString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }

@@ -8,547 +8,287 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMCPToolsetParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMCPToolsetParamsType type_;
-
   /// Name of the MCP server. Must match a server name from the mcp_servers array. 1-255 characters.
   final String mcpServerName;
-
   /// Default configuration for all tools from this server.
-  final SdkOptional<BetaManagedAgentsMCPToolsetDefaultConfigParams?>
-      defaultConfig;
-
+  final SdkOptional<BetaManagedAgentsMCPToolsetDefaultConfigParams?> defaultConfig;
   /// Per-tool configuration overrides.
   final SdkOptional<List<BetaManagedAgentsMCPToolConfigParams>> configs;
 
-  const BetaManagedAgentsMCPToolsetParams(
-      {required this.type_,
-      required this.mcpServerName,
-      this.defaultConfig = const SdkOmitted(),
-      this.configs = const SdkOmitted()});
+  const BetaManagedAgentsMCPToolsetParams({required this.type_, required this.mcpServerName, this.defaultConfig = const SdkOmitted(), this.configs = const SdkOmitted()});
 
-  BetaManagedAgentsMCPToolsetParams Function(
-          {BetaManagedAgentsMCPToolsetParamsType type_,
-          String mcpServerName,
-          SdkOptional<BetaManagedAgentsMCPToolsetDefaultConfigParams?>
-              defaultConfig,
-          SdkOptional<List<BetaManagedAgentsMCPToolConfigParams>> configs})
-      get copyWith => _copyWith;
+  BetaManagedAgentsMCPToolsetParams Function({BetaManagedAgentsMCPToolsetParamsType type_, String mcpServerName, SdkOptional<BetaManagedAgentsMCPToolsetDefaultConfigParams?> defaultConfig, SdkOptional<List<BetaManagedAgentsMCPToolConfigParams>> configs}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMCPToolsetParams _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? mcpServerName = sdkOmittedValue,
-          Object? defaultConfig = sdkOmittedValue,
-          Object? configs = sdkOmittedValue}) =>
-      BetaManagedAgentsMCPToolsetParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsMCPToolsetParamsType,
-        mcpServerName: identical(mcpServerName, sdkOmittedValue)
-            ? this.mcpServerName
-            : mcpServerName as String,
-        defaultConfig: identical(defaultConfig, sdkOmittedValue)
-            ? this.defaultConfig
-            : defaultConfig
-                as SdkOptional<BetaManagedAgentsMCPToolsetDefaultConfigParams?>,
-        configs: identical(configs, sdkOmittedValue)
-            ? this.configs
-            : configs
-                as SdkOptional<List<BetaManagedAgentsMCPToolConfigParams>>,
-      );
+  BetaManagedAgentsMCPToolsetParams _copyWith({Object? type_ = sdkOmittedValue, Object? mcpServerName = sdkOmittedValue, Object? defaultConfig = sdkOmittedValue, Object? configs = sdkOmittedValue}) => BetaManagedAgentsMCPToolsetParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMCPToolsetParamsType,
+    mcpServerName: identical(mcpServerName, sdkOmittedValue) ? this.mcpServerName : mcpServerName as String,
+    defaultConfig: identical(defaultConfig, sdkOmittedValue) ? this.defaultConfig : defaultConfig as SdkOptional<BetaManagedAgentsMCPToolsetDefaultConfigParams?>,
+    configs: identical(configs, sdkOmittedValue) ? this.configs : configs as SdkOptional<List<BetaManagedAgentsMCPToolConfigParams>>,
+  );
 
-  factory BetaManagedAgentsMCPToolsetParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMCPToolsetParams(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMCPToolsetParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-        mcpServerName: (json['mcp_server_name'] as String?)!,
-        defaultConfig: json.containsKey('default_config')
-            ? SdkPresent(json['default_config'] != null
-                ? BetaManagedAgentsMCPToolsetDefaultConfigParams.fromJson(
-                    json['default_config'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        configs: json['configs'] != null
-            ? SdkPresent(((json['configs'] as List?)
-                ?.map((e) => BetaManagedAgentsMCPToolConfigParams.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsMCPToolsetParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMCPToolsetParams(
+    type_: (json['type'] != null ? BetaManagedAgentsMCPToolsetParamsType.fromJson(json['type'] as String) : null)!,
+    mcpServerName: (json['mcp_server_name'] as String?)!,
+    defaultConfig: json.containsKey('default_config') ? SdkPresent(json['default_config'] != null ? BetaManagedAgentsMCPToolsetDefaultConfigParams.fromJson(json['default_config'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    configs: json['configs'] != null ? SdkPresent(((json['configs'] as List?)?.map((e) => BetaManagedAgentsMCPToolConfigParams.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'mcp_server_name': mcpServerName,
-        ...switch (defaultConfig) {
-          SdkPresent<BetaManagedAgentsMCPToolsetDefaultConfigParams?>(
-            value: final value
-          ) =>
-            {
-              'default_config': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (configs) {
-          SdkPresent<List<BetaManagedAgentsMCPToolConfigParams>>(
-            value: final value
-          ) =>
-            {
-              'configs': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    'mcp_server_name': mcpServerName,
+    ...switch (defaultConfig) {
+      SdkPresent<BetaManagedAgentsMCPToolsetDefaultConfigParams?>(value: final value) => {'default_config': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (configs) {
+      SdkPresent<List<BetaManagedAgentsMCPToolConfigParams>>(value: final value) => {'configs': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A `memory` object: a single text document at a hierarchical path inside a memory store. The `content` field is populated when `view=full` and `null` when `view=basic`; the `content_size_bytes` and `content_sha256` fields are always populated so sync clients can diff without fetching content. Memories are addressed by their `mem_...` ID; the path is the create key and can be changed via update.
 class BetaManagedAgentsMemory {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMemoryType type_;
-
   /// Unique identifier for this memory (a `mem_...` value). Stable across renames; use this ID, not the path, to read, update, or delete the memory.
   final String id;
-
   /// ID of the memory store this memory belongs to (a `memstore_...` value).
   final String memoryStoreId;
-
   /// Hierarchical path of the memory within the store, e.g. `/projects/foo/notes.md`. Always starts with `/`. Paths are case-sensitive and unique within a store. Maximum 1,024 bytes.
   final String path;
-
   /// The memory's UTF-8 text content. Populated when `view=full`; `null` when `view=basic`. Maximum 100 kB (102,400 bytes).
   final SdkOptional<String?> content;
-
   /// Size of `content` in bytes (the UTF-8 plaintext length). Always populated, regardless of `view`.
   final int contentSizeBytes;
-
   /// Lowercase hex SHA-256 digest of the UTF-8 `content` bytes (64 characters). The server applies no normalization, so clients can compute the same hash locally for staleness checks and as the value for a `content_sha256` precondition on update. Always populated, regardless of `view`.
   final String contentSha256;
-
   /// ID of the `memory_version` representing this memory's current content (a `memver_...` value). This is the authoritative head pointer; `memory_version` objects do not carry an `is_latest` flag, so compare against this field instead. Enumerate the history via List memory versions.
   final String memoryVersionId;
-
   /// When this memory was created, in RFC 3339 format.
   final String createdAt;
-
   /// When this memory was last modified, in RFC 3339 format. Use this as a cheap freshness signal; for who made the change, look up the head version's `created_by` via List memory versions.
   final String updatedAt;
 
-  const BetaManagedAgentsMemory(
-      {required this.type_,
-      required this.id,
-      required this.memoryStoreId,
-      required this.path,
-      this.content = const SdkOmitted(),
-      required this.contentSizeBytes,
-      required this.contentSha256,
-      required this.memoryVersionId,
-      required this.createdAt,
-      required this.updatedAt});
+  const BetaManagedAgentsMemory({required this.type_, required this.id, required this.memoryStoreId, required this.path, this.content = const SdkOmitted(), required this.contentSizeBytes, required this.contentSha256, required this.memoryVersionId, required this.createdAt, required this.updatedAt});
 
-  BetaManagedAgentsMemory Function(
-      {BetaManagedAgentsMemoryType type_,
-      String id,
-      String memoryStoreId,
-      String path,
-      SdkOptional<String?> content,
-      int contentSizeBytes,
-      String contentSha256,
-      String memoryVersionId,
-      String createdAt,
-      String updatedAt}) get copyWith => _copyWith;
+  BetaManagedAgentsMemory Function({BetaManagedAgentsMemoryType type_, String id, String memoryStoreId, String path, SdkOptional<String?> content, int contentSizeBytes, String contentSha256, String memoryVersionId, String createdAt, String updatedAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMemory _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? memoryStoreId = sdkOmittedValue,
-          Object? path = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? contentSizeBytes = sdkOmittedValue,
-          Object? contentSha256 = sdkOmittedValue,
-          Object? memoryVersionId = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      BetaManagedAgentsMemory(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsMemoryType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        memoryStoreId: identical(memoryStoreId, sdkOmittedValue)
-            ? this.memoryStoreId
-            : memoryStoreId as String,
-        path: identical(path, sdkOmittedValue) ? this.path : path as String,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as SdkOptional<String?>,
-        contentSizeBytes: identical(contentSizeBytes, sdkOmittedValue)
-            ? this.contentSizeBytes
-            : contentSizeBytes as int,
-        contentSha256: identical(contentSha256, sdkOmittedValue)
-            ? this.contentSha256
-            : contentSha256 as String,
-        memoryVersionId: identical(memoryVersionId, sdkOmittedValue)
-            ? this.memoryVersionId
-            : memoryVersionId as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-      );
+  BetaManagedAgentsMemory _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? memoryStoreId = sdkOmittedValue, Object? path = sdkOmittedValue, Object? content = sdkOmittedValue, Object? contentSizeBytes = sdkOmittedValue, Object? contentSha256 = sdkOmittedValue, Object? memoryVersionId = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => BetaManagedAgentsMemory(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMemoryType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    memoryStoreId: identical(memoryStoreId, sdkOmittedValue) ? this.memoryStoreId : memoryStoreId as String,
+    path: identical(path, sdkOmittedValue) ? this.path : path as String,
+    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<String?>,
+    contentSizeBytes: identical(contentSizeBytes, sdkOmittedValue) ? this.contentSizeBytes : contentSizeBytes as int,
+    contentSha256: identical(contentSha256, sdkOmittedValue) ? this.contentSha256 : contentSha256 as String,
+    memoryVersionId: identical(memoryVersionId, sdkOmittedValue) ? this.memoryVersionId : memoryVersionId as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+  );
 
-  factory BetaManagedAgentsMemory.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsMemory(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMemoryType.fromJson(json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        memoryStoreId: (json['memory_store_id'] as String?)!,
-        path: (json['path'] as String?)!,
-        content: json.containsKey('content')
-            ? SdkPresent(json['content'] as String?)
-            : const SdkOmitted(),
-        contentSizeBytes: ((json['content_size_bytes'] as num?)?.toInt())!,
-        contentSha256: (json['content_sha256'] as String?)!,
-        memoryVersionId: (json['memory_version_id'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-      );
+  factory BetaManagedAgentsMemory.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMemory(
+    type_: (json['type'] != null ? BetaManagedAgentsMemoryType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    memoryStoreId: (json['memory_store_id'] as String?)!,
+    path: (json['path'] as String?)!,
+    content: json.containsKey('content') ? SdkPresent(json['content'] as String?) : const SdkOmitted(),
+    contentSizeBytes: ((json['content_size_bytes'] as num?)?.toInt())!,
+    contentSha256: (json['content_sha256'] as String?)!,
+    memoryVersionId: (json['memory_version_id'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'memory_store_id': memoryStoreId,
-        'path': path,
-        ...switch (content) {
-          SdkPresent<String?>(value: final value) => {
-              'content': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content_size_bytes': contentSizeBytes,
-        'content_sha256': contentSha256,
-        'memory_version_id': memoryVersionId,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'memory_store_id': memoryStoreId,
+    'path': path,
+    ...switch (content) {
+      SdkPresent<String?>(value: final value) => {'content': value,},
+      _ => const <String, dynamic>{},
+    },
+    'content_size_bytes': contentSizeBytes,
+    'content_sha256': contentSha256,
+    'memory_version_id': memoryVersionId,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+  };
 }
 
 /// Typed representation of the `BetaManagedAgentsMemoryPathConflictError` API schema.
 class BetaManagedAgentsMemoryPathConflictError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMemoryPathConflictErrorType type_;
-
   /// Optional `string` value serialized in the `message` wire field.
   final SdkOptional<String> message;
-
   /// Optional `string` value serialized in the `conflicting_path` wire field.
   final SdkOptional<String> conflictingPath;
-
   /// Optional `string` value serialized in the `conflicting_memory_id` wire field.
   final SdkOptional<String> conflictingMemoryId;
 
-  const BetaManagedAgentsMemoryPathConflictError(
-      {required this.type_,
-      this.message = const SdkOmitted(),
-      this.conflictingPath = const SdkOmitted(),
-      this.conflictingMemoryId = const SdkOmitted()});
+  const BetaManagedAgentsMemoryPathConflictError({required this.type_, this.message = const SdkOmitted(), this.conflictingPath = const SdkOmitted(), this.conflictingMemoryId = const SdkOmitted()});
 
-  BetaManagedAgentsMemoryPathConflictError Function(
-      {BetaManagedAgentsMemoryPathConflictErrorType type_,
-      SdkOptional<String> message,
-      SdkOptional<String> conflictingPath,
-      SdkOptional<String> conflictingMemoryId}) get copyWith => _copyWith;
+  BetaManagedAgentsMemoryPathConflictError Function({BetaManagedAgentsMemoryPathConflictErrorType type_, SdkOptional<String> message, SdkOptional<String> conflictingPath, SdkOptional<String> conflictingMemoryId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMemoryPathConflictError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue,
-          Object? conflictingPath = sdkOmittedValue,
-          Object? conflictingMemoryId = sdkOmittedValue}) =>
-      BetaManagedAgentsMemoryPathConflictError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsMemoryPathConflictErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as SdkOptional<String>,
-        conflictingPath: identical(conflictingPath, sdkOmittedValue)
-            ? this.conflictingPath
-            : conflictingPath as SdkOptional<String>,
-        conflictingMemoryId: identical(conflictingMemoryId, sdkOmittedValue)
-            ? this.conflictingMemoryId
-            : conflictingMemoryId as SdkOptional<String>,
-      );
+  BetaManagedAgentsMemoryPathConflictError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue, Object? conflictingPath = sdkOmittedValue, Object? conflictingMemoryId = sdkOmittedValue}) => BetaManagedAgentsMemoryPathConflictError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMemoryPathConflictErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
+    conflictingPath: identical(conflictingPath, sdkOmittedValue) ? this.conflictingPath : conflictingPath as SdkOptional<String>,
+    conflictingMemoryId: identical(conflictingMemoryId, sdkOmittedValue) ? this.conflictingMemoryId : conflictingMemoryId as SdkOptional<String>,
+  );
 
-  factory BetaManagedAgentsMemoryPathConflictError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMemoryPathConflictError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMemoryPathConflictErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: json['message'] != null
-            ? SdkPresent((json['message'] as String?)!)
-            : const SdkOmitted(),
-        conflictingPath: json['conflicting_path'] != null
-            ? SdkPresent((json['conflicting_path'] as String?)!)
-            : const SdkOmitted(),
-        conflictingMemoryId: json['conflicting_memory_id'] != null
-            ? SdkPresent((json['conflicting_memory_id'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsMemoryPathConflictError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMemoryPathConflictError(
+    type_: (json['type'] != null ? BetaManagedAgentsMemoryPathConflictErrorType.fromJson(json['type'] as String) : null)!,
+    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
+    conflictingPath: json['conflicting_path'] != null ? SdkPresent((json['conflicting_path'] as String?)!) : const SdkOmitted(),
+    conflictingMemoryId: json['conflicting_memory_id'] != null ? SdkPresent((json['conflicting_memory_id'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        ...switch (message) {
-          SdkPresent<String>(value: final value) => {
-              'message': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conflictingPath) {
-          SdkPresent<String>(value: final value) => {
-              'conflicting_path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conflictingMemoryId) {
-          SdkPresent<String>(value: final value) => {
-              'conflicting_memory_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    ...switch (message) {
+      SdkPresent<String>(value: final value) => {'message': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conflictingPath) {
+      SdkPresent<String>(value: final value) => {'conflicting_path': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conflictingMemoryId) {
+      SdkPresent<String>(value: final value) => {'conflicting_memory_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `BetaManagedAgentsMemoryPreconditionFailedError` API schema.
 class BetaManagedAgentsMemoryPreconditionFailedError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMemoryPreconditionFailedErrorType type_;
-
   /// Optional `string` value serialized in the `message` wire field.
   final SdkOptional<String> message;
 
-  const BetaManagedAgentsMemoryPreconditionFailedError(
-      {required this.type_, this.message = const SdkOmitted()});
+  const BetaManagedAgentsMemoryPreconditionFailedError({required this.type_, this.message = const SdkOmitted()});
 
-  BetaManagedAgentsMemoryPreconditionFailedError Function(
-      {BetaManagedAgentsMemoryPreconditionFailedErrorType type_,
-      SdkOptional<String> message}) get copyWith => _copyWith;
+  BetaManagedAgentsMemoryPreconditionFailedError Function({BetaManagedAgentsMemoryPreconditionFailedErrorType type_, SdkOptional<String> message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMemoryPreconditionFailedError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      BetaManagedAgentsMemoryPreconditionFailedError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsMemoryPreconditionFailedErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as SdkOptional<String>,
-      );
+  BetaManagedAgentsMemoryPreconditionFailedError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsMemoryPreconditionFailedError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMemoryPreconditionFailedErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
+  );
 
-  factory BetaManagedAgentsMemoryPreconditionFailedError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMemoryPreconditionFailedError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMemoryPreconditionFailedErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: json['message'] != null
-            ? SdkPresent((json['message'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsMemoryPreconditionFailedError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMemoryPreconditionFailedError(
+    type_: (json['type'] != null ? BetaManagedAgentsMemoryPreconditionFailedErrorType.fromJson(json['type'] as String) : null)!,
+    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        ...switch (message) {
-          SdkPresent<String>(value: final value) => {
-              'message': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    ...switch (message) {
+      SdkPresent<String>(value: final value) => {'message': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A `memory_store`: a named container for agent memories, scoped to a workspace. Attach a store to a session via `resources[]` to mount it as a directory the agent can read and write.
 class BetaManagedAgentsMemoryStore {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMemoryStoreType type_;
-
   /// Unique identifier for the memory store (a `memstore_...` tagged ID). Use this when attaching the store to a session, or in the `{memory_store_id}` path parameter of subsequent calls.
   final String id;
-
   /// Human-readable name for the store. 1–255 characters. The store's mount-path slug under `/mnt/memory/` is derived from this name.
   final String name;
-
   /// Free-text description of what the store contains, up to 1024 characters. Included in the agent's system prompt when the store is attached, so word it to be useful to the agent. Empty string when unset.
   final SdkOptional<String> description;
-
   /// Timestamp when the store was created.
   final String createdAt;
-
   /// Timestamp when the store's `name`, `description`, or `metadata` was last modified. Memory writes inside the store do not advance this.
   final String updatedAt;
-
   /// Arbitrary key-value tags for your own bookkeeping (such as the end user a store belongs to). Up to 16 pairs; keys 1–64 characters; values up to 512 characters. Returned on retrieve/list but not filterable.
   final SdkOptional<Map<String, String>> metadata;
-
   /// Timestamp when the store was archived, or `null` if active. Set once and never cleared; archiving is one-way. Archived stores are read-only and cannot be attached to new sessions.
   final SdkOptional<String?> archivedAt;
 
-  const BetaManagedAgentsMemoryStore(
-      {required this.type_,
-      required this.id,
-      required this.name,
-      this.description = const SdkOmitted(),
-      required this.createdAt,
-      required this.updatedAt,
-      this.metadata = const SdkOmitted(),
-      this.archivedAt = const SdkOmitted()});
+  const BetaManagedAgentsMemoryStore({required this.type_, required this.id, required this.name, this.description = const SdkOmitted(), required this.createdAt, required this.updatedAt, this.metadata = const SdkOmitted(), this.archivedAt = const SdkOmitted()});
 
-  BetaManagedAgentsMemoryStore Function(
-      {BetaManagedAgentsMemoryStoreType type_,
-      String id,
-      String name,
-      SdkOptional<String> description,
-      String createdAt,
-      String updatedAt,
-      SdkOptional<Map<String, String>> metadata,
-      SdkOptional<String?> archivedAt}) get copyWith => _copyWith;
+  BetaManagedAgentsMemoryStore Function({BetaManagedAgentsMemoryStoreType type_, String id, String name, SdkOptional<String> description, String createdAt, String updatedAt, SdkOptional<Map<String, String>> metadata, SdkOptional<String?> archivedAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMemoryStore _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue,
-          Object? archivedAt = sdkOmittedValue}) =>
-      BetaManagedAgentsMemoryStore(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsMemoryStoreType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<Map<String, String>>,
-        archivedAt: identical(archivedAt, sdkOmittedValue)
-            ? this.archivedAt
-            : archivedAt as SdkOptional<String?>,
-      );
+  BetaManagedAgentsMemoryStore _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? archivedAt = sdkOmittedValue}) => BetaManagedAgentsMemoryStore(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMemoryStoreType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, String>>,
+    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as SdkOptional<String?>,
+  );
 
-  factory BetaManagedAgentsMemoryStore.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsMemoryStore(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMemoryStoreType.fromJson(json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        name: (json['name'] as String?)!,
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
-            : const SdkOmitted(),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        metadata: json['metadata'] != null
-            ? SdkPresent((json['metadata'] == null
-                ? null
-                : Map<String, dynamic>.from(json['metadata'] as Map)
-                    .map((key, value) => MapEntry(key, value as String)))!)
-            : const SdkOmitted(),
-        archivedAt: json.containsKey('archived_at')
-            ? SdkPresent(json['archived_at'] as String?)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsMemoryStore.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMemoryStore(
+    type_: (json['type'] != null ? BetaManagedAgentsMemoryStoreType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    name: (json['name'] as String?)!,
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
+    archivedAt: json.containsKey('archived_at') ? SdkPresent(json['archived_at'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'name': name,
-        ...switch (description) {
-          SdkPresent<String>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        ...switch (metadata) {
-          SdkPresent<Map<String, String>>(value: final value) => {
-              'metadata': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (archivedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'archived_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'name': name,
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    ...switch (metadata) {
+      SdkPresent<Map<String, String>>(value: final value) => {'metadata': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (archivedAt) {
+      SdkPresent<String?>(value: final value) => {'archived_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A memory store referenced by the deployment is archived.
 class BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
-  final BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
-      type_;
+  final BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType type_;
 
-  const BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
-      {required this.type_});
+  const BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError({required this.type_});
 
-  BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError Function(
-      {BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
-          type_}) get copyWith => _copyWith;
+  BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError Function({BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_
-                as BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType,
-      );
+  BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType,
+  );
 
-  factory BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
-                .fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
+    type_: (json['type'] != null ? BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

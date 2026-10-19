@@ -10,17 +10,14 @@ enum BetaComputerUseTool20250124Type {
 
   static BetaComputerUseTool20250124Type fromJson(String value) {
     switch (value) {
-      case 'computer_20250124':
-        return BetaComputerUseTool20250124Type.computer20250124;
-      default:
-        throw ArgumentError('Unknown BetaComputerUseTool20250124Type: $value');
+      case 'computer_20250124': return BetaComputerUseTool20250124Type.computer20250124;
+      default: throw ArgumentError('Unknown BetaComputerUseTool20250124Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComputerUseTool20250124Type.computer20250124:
-        return 'computer_20250124';
+      case BetaComputerUseTool20250124Type.computer20250124: return 'computer_20250124';
     }
   }
 
@@ -34,17 +31,14 @@ enum BetaComputerUseTool20251124Name {
 
   static BetaComputerUseTool20251124Name fromJson(String value) {
     switch (value) {
-      case 'computer':
-        return BetaComputerUseTool20251124Name.computer;
-      default:
-        throw ArgumentError('Unknown BetaComputerUseTool20251124Name: $value');
+      case 'computer': return BetaComputerUseTool20251124Name.computer;
+      default: throw ArgumentError('Unknown BetaComputerUseTool20251124Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComputerUseTool20251124Name.computer:
-        return 'computer';
+      case BetaComputerUseTool20251124Name.computer: return 'computer';
     }
   }
 
@@ -58,17 +52,14 @@ enum BetaComputerUseTool20251124Type {
 
   static BetaComputerUseTool20251124Type fromJson(String value) {
     switch (value) {
-      case 'computer_20251124':
-        return BetaComputerUseTool20251124Type.computer20251124;
-      default:
-        throw ArgumentError('Unknown BetaComputerUseTool20251124Type: $value');
+      case 'computer_20251124': return BetaComputerUseTool20251124Type.computer20251124;
+      default: throw ArgumentError('Unknown BetaComputerUseTool20251124Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComputerUseTool20251124Type.computer20251124:
-        return 'computer_20251124';
+      case BetaComputerUseTool20251124Type.computer20251124: return 'computer_20251124';
     }
   }
 
@@ -82,18 +73,14 @@ enum BetaConnectorPermissionResourceType {
 
   static BetaConnectorPermissionResourceType fromJson(String value) {
     switch (value) {
-      case 'connector':
-        return BetaConnectorPermissionResourceType.connector;
-      default:
-        throw ArgumentError(
-            'Unknown BetaConnectorPermissionResourceType: $value');
+      case 'connector': return BetaConnectorPermissionResourceType.connector;
+      default: throw ArgumentError('Unknown BetaConnectorPermissionResourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaConnectorPermissionResourceType.connector:
-        return 'connector';
+      case BetaConnectorPermissionResourceType.connector: return 'connector';
     }
   }
 
@@ -107,18 +94,14 @@ enum BetaConnectorScopePermissionResourceType {
 
   static BetaConnectorScopePermissionResourceType fromJson(String value) {
     switch (value) {
-      case 'connector_scope':
-        return BetaConnectorScopePermissionResourceType.connectorScope;
-      default:
-        throw ArgumentError(
-            'Unknown BetaConnectorScopePermissionResourceType: $value');
+      case 'connector_scope': return BetaConnectorScopePermissionResourceType.connectorScope;
+      default: throw ArgumentError('Unknown BetaConnectorScopePermissionResourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaConnectorScopePermissionResourceType.connectorScope:
-        return 'connector_scope';
+      case BetaConnectorScopePermissionResourceType.connectorScope: return 'connector_scope';
     }
   }
 
@@ -132,18 +115,14 @@ enum BetaConnectorToolPermissionResourceType {
 
   static BetaConnectorToolPermissionResourceType fromJson(String value) {
     switch (value) {
-      case 'connector_tool':
-        return BetaConnectorToolPermissionResourceType.connectorTool;
-      default:
-        throw ArgumentError(
-            'Unknown BetaConnectorToolPermissionResourceType: $value');
+      case 'connector_tool': return BetaConnectorToolPermissionResourceType.connectorTool;
+      default: throw ArgumentError('Unknown BetaConnectorToolPermissionResourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaConnectorToolPermissionResourceType.connectorTool:
-        return 'connector_tool';
+      case BetaConnectorToolPermissionResourceType.connectorTool: return 'connector_tool';
     }
   }
 
@@ -153,27 +132,24 @@ enum BetaConnectorToolPermissionResourceType {
 
 /// Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
 final class BetaContainerSkillType {
+
   final String value;
 
   const BetaContainerSkillType._(this.value);
 
-  factory BetaContainerSkillType.fromJson(String value) =>
-      BetaContainerSkillType._(value);
+  factory BetaContainerSkillType.fromJson(String value) => BetaContainerSkillType._(value);
 
   static const anthropic = BetaContainerSkillType._('anthropic');
   static const custom = BetaContainerSkillType._('custom');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaContainerSkillType && other.value == value;
+  @override bool operator ==(Object other) => other is BetaContainerSkillType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -182,17 +158,14 @@ enum BetaContentBlockDeltaEventType {
 
   static BetaContentBlockDeltaEventType fromJson(String value) {
     switch (value) {
-      case 'content_block_delta':
-        return BetaContentBlockDeltaEventType.contentBlockDelta;
-      default:
-        throw ArgumentError('Unknown BetaContentBlockDeltaEventType: $value');
+      case 'content_block_delta': return BetaContentBlockDeltaEventType.contentBlockDelta;
+      default: throw ArgumentError('Unknown BetaContentBlockDeltaEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaContentBlockDeltaEventType.contentBlockDelta:
-        return 'content_block_delta';
+      case BetaContentBlockDeltaEventType.contentBlockDelta: return 'content_block_delta';
     }
   }
 
@@ -206,17 +179,14 @@ enum BetaContentBlockSourceType {
 
   static BetaContentBlockSourceType fromJson(String value) {
     switch (value) {
-      case 'content':
-        return BetaContentBlockSourceType.content;
-      default:
-        throw ArgumentError('Unknown BetaContentBlockSourceType: $value');
+      case 'content': return BetaContentBlockSourceType.content;
+      default: throw ArgumentError('Unknown BetaContentBlockSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaContentBlockSourceType.content:
-        return 'content';
+      case BetaContentBlockSourceType.content: return 'content';
     }
   }
 
@@ -230,17 +200,14 @@ enum BetaContentBlockStartEventType {
 
   static BetaContentBlockStartEventType fromJson(String value) {
     switch (value) {
-      case 'content_block_start':
-        return BetaContentBlockStartEventType.contentBlockStart;
-      default:
-        throw ArgumentError('Unknown BetaContentBlockStartEventType: $value');
+      case 'content_block_start': return BetaContentBlockStartEventType.contentBlockStart;
+      default: throw ArgumentError('Unknown BetaContentBlockStartEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaContentBlockStartEventType.contentBlockStart:
-        return 'content_block_start';
+      case BetaContentBlockStartEventType.contentBlockStart: return 'content_block_start';
     }
   }
 
@@ -254,17 +221,14 @@ enum BetaContentBlockStopEventType {
 
   static BetaContentBlockStopEventType fromJson(String value) {
     switch (value) {
-      case 'content_block_stop':
-        return BetaContentBlockStopEventType.contentBlockStop;
-      default:
-        throw ArgumentError('Unknown BetaContentBlockStopEventType: $value');
+      case 'content_block_stop': return BetaContentBlockStopEventType.contentBlockStop;
+      default: throw ArgumentError('Unknown BetaContentBlockStopEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaContentBlockStopEventType.contentBlockStop:
-        return 'content_block_stop';
+      case BetaContentBlockStopEventType.contentBlockStop: return 'content_block_stop';
     }
   }
 
@@ -274,54 +238,47 @@ enum BetaContentBlockStopEventType {
 
 /// Type of the actor that created the object.
 final class BetaCreatedByType {
+
   final String value;
 
   const BetaCreatedByType._(this.value);
 
-  factory BetaCreatedByType.fromJson(String value) =>
-      BetaCreatedByType._(value);
+  factory BetaCreatedByType.fromJson(String value) => BetaCreatedByType._(value);
 
   static const serviceAccount = BetaCreatedByType._('service_account');
   static const user = BetaCreatedByType._('user');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaCreatedByType && other.value == value;
+  @override bool operator ==(Object other) => other is BetaCreatedByType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Role for the invited User. The accepted values depend on the organization type. Console and API organizations accept `user`, `developer`, `billing`, and `claude_code_user`; `admin` cannot be assigned through the API. Claude Enterprise organizations accept `user` and `managed`.
 final class BetaCreateInviteParamsRole {
+
   final String value;
 
   const BetaCreateInviteParamsRole._(this.value);
 
-  factory BetaCreateInviteParamsRole.fromJson(String value) =>
-      BetaCreateInviteParamsRole._(value);
+  factory BetaCreateInviteParamsRole.fromJson(String value) => BetaCreateInviteParamsRole._(value);
 
   static const billing = BetaCreateInviteParamsRole._('billing');
-  static const claudeCodeUser =
-      BetaCreateInviteParamsRole._('claude_code_user');
+  static const claudeCodeUser = BetaCreateInviteParamsRole._('claude_code_user');
   static const developer = BetaCreateInviteParamsRole._('developer');
   static const managed = BetaCreateInviteParamsRole._('managed');
   static const user = BetaCreateInviteParamsRole._('user');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaCreateInviteParamsRole && other.value == value;
+  @override bool operator ==(Object other) => other is BetaCreateInviteParamsRole && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

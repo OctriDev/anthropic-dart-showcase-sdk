@@ -10,183 +10,74 @@ sealed class BetaManagedAgentsEventParams {
   const BetaManagedAgentsEventParams();
   factory BetaManagedAgentsEventParams.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsUserMessageEventParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsEventParamsBetaManagedAgentsUserMessageEventParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserInterruptEventParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsEventParamsBetaManagedAgentsUserInterruptEventParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsUserToolConfirmationEventParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsEventParamsBetaManagedAgentsUserToolConfirmationEventParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsUserCustomToolResultEventParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsEventParamsBetaManagedAgentsUserCustomToolResultEventParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserToolResultEventParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsEventParamsBetaManagedAgentsUserToolResultEventParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsSystemMessageEventParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsEventParamsBetaManagedAgentsSystemMessageEventParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsUserMessageEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEventParamsBetaManagedAgentsUserMessageEventParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserInterruptEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEventParamsBetaManagedAgentsUserInterruptEventParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserToolConfirmationEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEventParamsBetaManagedAgentsUserToolConfirmationEventParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserCustomToolResultEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEventParamsBetaManagedAgentsUserCustomToolResultEventParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserToolResultEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEventParamsBetaManagedAgentsUserToolResultEventParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSystemMessageEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEventParamsBetaManagedAgentsSystemMessageEventParams(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsEventParamsBetaManagedAgentsUserMessageEventParams(
-          BetaManagedAgentsUserMessageEventParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsEventParamsBetaManagedAgentsUserInterruptEventParams(
-          BetaManagedAgentsUserInterruptEventParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsEventParamsBetaManagedAgentsUserToolConfirmationEventParams(
-          BetaManagedAgentsUserToolConfirmationEventParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsEventParamsBetaManagedAgentsUserCustomToolResultEventParams(
-          BetaManagedAgentsUserCustomToolResultEventParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(
-          BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsEventParamsBetaManagedAgentsUserToolResultEventParams(
-          BetaManagedAgentsUserToolResultEventParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsEventParamsBetaManagedAgentsSystemMessageEventParams(
-          BetaManagedAgentsSystemMessageEventParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "user.message",
-          "user.interrupt",
-          "user.tool_confirmation",
-          "user.custom_tool_result",
-          "user.define_outcome",
-          "user.tool_result",
-          "system.message"
-        }.contains(json["type"])) {
-      return UnknownBetaManagedAgentsEventParams(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsEventParams");
+    try { return BetaManagedAgentsEventParamsBetaManagedAgentsUserMessageEventParams(BetaManagedAgentsUserMessageEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsEventParamsBetaManagedAgentsUserInterruptEventParams(BetaManagedAgentsUserInterruptEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsEventParamsBetaManagedAgentsUserToolConfirmationEventParams(BetaManagedAgentsUserToolConfirmationEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsEventParamsBetaManagedAgentsUserCustomToolResultEventParams(BetaManagedAgentsUserCustomToolResultEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsEventParamsBetaManagedAgentsUserToolResultEventParams(BetaManagedAgentsUserToolResultEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsEventParamsBetaManagedAgentsSystemMessageEventParams(BetaManagedAgentsSystemMessageEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"user.message", "user.interrupt", "user.tool_confirmation", "user.custom_tool_result", "user.define_outcome", "user.tool_result", "system.message"}.contains(json["type"])) { return UnknownBetaManagedAgentsEventParams(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsEventParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsEventParamsBetaManagedAgentsUserMessageEventParams
-    extends BetaManagedAgentsEventParams {
+final class BetaManagedAgentsEventParamsBetaManagedAgentsUserMessageEventParams extends BetaManagedAgentsEventParams {
   final BetaManagedAgentsUserMessageEventParams value;
-  const BetaManagedAgentsEventParamsBetaManagedAgentsUserMessageEventParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsEventParamsBetaManagedAgentsUserMessageEventParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsEventParamsBetaManagedAgentsUserInterruptEventParams
-    extends BetaManagedAgentsEventParams {
+final class BetaManagedAgentsEventParamsBetaManagedAgentsUserInterruptEventParams extends BetaManagedAgentsEventParams {
   final BetaManagedAgentsUserInterruptEventParams value;
-  const BetaManagedAgentsEventParamsBetaManagedAgentsUserInterruptEventParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsEventParamsBetaManagedAgentsUserInterruptEventParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsEventParamsBetaManagedAgentsUserToolConfirmationEventParams
-    extends BetaManagedAgentsEventParams {
+final class BetaManagedAgentsEventParamsBetaManagedAgentsUserToolConfirmationEventParams extends BetaManagedAgentsEventParams {
   final BetaManagedAgentsUserToolConfirmationEventParams value;
-  const BetaManagedAgentsEventParamsBetaManagedAgentsUserToolConfirmationEventParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsEventParamsBetaManagedAgentsUserToolConfirmationEventParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsEventParamsBetaManagedAgentsUserCustomToolResultEventParams
-    extends BetaManagedAgentsEventParams {
+final class BetaManagedAgentsEventParamsBetaManagedAgentsUserCustomToolResultEventParams extends BetaManagedAgentsEventParams {
   final BetaManagedAgentsUserCustomToolResultEventParams value;
-  const BetaManagedAgentsEventParamsBetaManagedAgentsUserCustomToolResultEventParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsEventParamsBetaManagedAgentsUserCustomToolResultEventParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsEventParamsBetaManagedAgentsUserDefineOutcomeEventParams
-    extends BetaManagedAgentsEventParams {
+final class BetaManagedAgentsEventParamsBetaManagedAgentsUserDefineOutcomeEventParams extends BetaManagedAgentsEventParams {
   final BetaManagedAgentsUserDefineOutcomeEventParams value;
-  const BetaManagedAgentsEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsEventParamsBetaManagedAgentsUserToolResultEventParams
-    extends BetaManagedAgentsEventParams {
+final class BetaManagedAgentsEventParamsBetaManagedAgentsUserToolResultEventParams extends BetaManagedAgentsEventParams {
   final BetaManagedAgentsUserToolResultEventParams value;
-  const BetaManagedAgentsEventParamsBetaManagedAgentsUserToolResultEventParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsEventParamsBetaManagedAgentsUserToolResultEventParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsEventParamsBetaManagedAgentsSystemMessageEventParams
-    extends BetaManagedAgentsEventParams {
+final class BetaManagedAgentsEventParamsBetaManagedAgentsSystemMessageEventParams extends BetaManagedAgentsEventParams {
   final BetaManagedAgentsSystemMessageEventParams value;
-  const BetaManagedAgentsEventParamsBetaManagedAgentsSystemMessageEventParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsEventParamsBetaManagedAgentsSystemMessageEventParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsEventParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsEventParams
-    extends BetaManagedAgentsEventParams {
+final class UnknownBetaManagedAgentsEventParams extends BetaManagedAgentsEventParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsEventParams(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsInputEvent {
@@ -195,373 +86,193 @@ sealed class BetaManagedAgentsInputEvent {
   const BetaManagedAgentsInputEvent();
   factory BetaManagedAgentsInputEvent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsUserMessageEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsInputEventBetaManagedAgentsUserMessageEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserInterruptEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsInputEventBetaManagedAgentsUserInterruptEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserToolConfirmationEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsInputEventBetaManagedAgentsUserToolConfirmationEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserCustomToolResultEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsInputEventBetaManagedAgentsUserCustomToolResultEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserDefineOutcomeEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsInputEventBetaManagedAgentsUserDefineOutcomeEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserToolResultEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsInputEventBetaManagedAgentsUserToolResultEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsSystemMessageEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsInputEventBetaManagedAgentsSystemMessageEvent(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsUserMessageEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsInputEventBetaManagedAgentsUserMessageEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserInterruptEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsInputEventBetaManagedAgentsUserInterruptEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserToolConfirmationEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsInputEventBetaManagedAgentsUserToolConfirmationEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserCustomToolResultEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsInputEventBetaManagedAgentsUserCustomToolResultEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserDefineOutcomeEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsInputEventBetaManagedAgentsUserDefineOutcomeEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserToolResultEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsInputEventBetaManagedAgentsUserToolResultEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsSystemMessageEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsInputEventBetaManagedAgentsSystemMessageEvent(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsInputEventBetaManagedAgentsUserMessageEvent(
-          BetaManagedAgentsUserMessageEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsInputEventBetaManagedAgentsUserInterruptEvent(
-          BetaManagedAgentsUserInterruptEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsInputEventBetaManagedAgentsUserToolConfirmationEvent(
-          BetaManagedAgentsUserToolConfirmationEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsInputEventBetaManagedAgentsUserCustomToolResultEvent(
-          BetaManagedAgentsUserCustomToolResultEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsInputEventBetaManagedAgentsUserDefineOutcomeEvent(
-          BetaManagedAgentsUserDefineOutcomeEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsInputEventBetaManagedAgentsUserToolResultEvent(
-          BetaManagedAgentsUserToolResultEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsInputEventBetaManagedAgentsSystemMessageEvent(
-          BetaManagedAgentsSystemMessageEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "user.message",
-          "user.interrupt",
-          "user.tool_confirmation",
-          "user.custom_tool_result",
-          "user.define_outcome",
-          "user.tool_result",
-          "system.message"
-        }.contains(json["type"])) {
-      return UnknownBetaManagedAgentsInputEvent(json);
-    }
+    try { return BetaManagedAgentsInputEventBetaManagedAgentsUserMessageEvent(BetaManagedAgentsUserMessageEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsInputEventBetaManagedAgentsUserInterruptEvent(BetaManagedAgentsUserInterruptEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsInputEventBetaManagedAgentsUserToolConfirmationEvent(BetaManagedAgentsUserToolConfirmationEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsInputEventBetaManagedAgentsUserCustomToolResultEvent(BetaManagedAgentsUserCustomToolResultEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsInputEventBetaManagedAgentsUserDefineOutcomeEvent(BetaManagedAgentsUserDefineOutcomeEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsInputEventBetaManagedAgentsUserToolResultEvent(BetaManagedAgentsUserToolResultEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsInputEventBetaManagedAgentsSystemMessageEvent(BetaManagedAgentsSystemMessageEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"user.message", "user.interrupt", "user.tool_confirmation", "user.custom_tool_result", "user.define_outcome", "user.tool_result", "system.message"}.contains(json["type"])) { return UnknownBetaManagedAgentsInputEvent(json); }
     throw FormatException("No variant matched for BetaManagedAgentsInputEvent");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsInputEventBetaManagedAgentsUserMessageEvent
-    extends BetaManagedAgentsInputEvent {
+final class BetaManagedAgentsInputEventBetaManagedAgentsUserMessageEvent extends BetaManagedAgentsInputEvent {
   final BetaManagedAgentsUserMessageEvent value;
-  const BetaManagedAgentsInputEventBetaManagedAgentsUserMessageEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsInputEventBetaManagedAgentsUserMessageEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsInputEventBetaManagedAgentsUserInterruptEvent
-    extends BetaManagedAgentsInputEvent {
+final class BetaManagedAgentsInputEventBetaManagedAgentsUserInterruptEvent extends BetaManagedAgentsInputEvent {
   final BetaManagedAgentsUserInterruptEvent value;
-  const BetaManagedAgentsInputEventBetaManagedAgentsUserInterruptEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsInputEventBetaManagedAgentsUserInterruptEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsInputEventBetaManagedAgentsUserToolConfirmationEvent
-    extends BetaManagedAgentsInputEvent {
+final class BetaManagedAgentsInputEventBetaManagedAgentsUserToolConfirmationEvent extends BetaManagedAgentsInputEvent {
   final BetaManagedAgentsUserToolConfirmationEvent value;
-  const BetaManagedAgentsInputEventBetaManagedAgentsUserToolConfirmationEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsInputEventBetaManagedAgentsUserToolConfirmationEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsInputEventBetaManagedAgentsUserCustomToolResultEvent
-    extends BetaManagedAgentsInputEvent {
+final class BetaManagedAgentsInputEventBetaManagedAgentsUserCustomToolResultEvent extends BetaManagedAgentsInputEvent {
   final BetaManagedAgentsUserCustomToolResultEvent value;
-  const BetaManagedAgentsInputEventBetaManagedAgentsUserCustomToolResultEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsInputEventBetaManagedAgentsUserCustomToolResultEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsInputEventBetaManagedAgentsUserDefineOutcomeEvent
-    extends BetaManagedAgentsInputEvent {
+final class BetaManagedAgentsInputEventBetaManagedAgentsUserDefineOutcomeEvent extends BetaManagedAgentsInputEvent {
   final BetaManagedAgentsUserDefineOutcomeEvent value;
-  const BetaManagedAgentsInputEventBetaManagedAgentsUserDefineOutcomeEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsInputEventBetaManagedAgentsUserDefineOutcomeEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsInputEventBetaManagedAgentsUserToolResultEvent
-    extends BetaManagedAgentsInputEvent {
+final class BetaManagedAgentsInputEventBetaManagedAgentsUserToolResultEvent extends BetaManagedAgentsInputEvent {
   final BetaManagedAgentsUserToolResultEvent value;
-  const BetaManagedAgentsInputEventBetaManagedAgentsUserToolResultEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsInputEventBetaManagedAgentsUserToolResultEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsInputEventBetaManagedAgentsSystemMessageEvent
-    extends BetaManagedAgentsInputEvent {
+final class BetaManagedAgentsInputEventBetaManagedAgentsSystemMessageEvent extends BetaManagedAgentsInputEvent {
   final BetaManagedAgentsSystemMessageEvent value;
-  const BetaManagedAgentsInputEventBetaManagedAgentsSystemMessageEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsInputEventBetaManagedAgentsSystemMessageEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsInputEvent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsInputEvent
-    extends BetaManagedAgentsInputEvent {
+final class UnknownBetaManagedAgentsInputEvent extends BetaManagedAgentsInputEvent {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsInputEvent(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Paginated list of events for a `session`.
 class BetaManagedAgentsListSessionEvents {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Events for the session, ordered by `processed_at`.
   final SdkOptional<List<BetaManagedAgentsSessionEvent>> data;
-
   /// Opaque cursor for the next page. Null when no more results.
   final SdkOptional<String?> nextPage;
 
-  const BetaManagedAgentsListSessionEvents(
-      {this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
+  const BetaManagedAgentsListSessionEvents({this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
 
-  BetaManagedAgentsListSessionEvents Function(
-      {SdkOptional<List<BetaManagedAgentsSessionEvent>> data,
-      SdkOptional<String?> nextPage}) get copyWith => _copyWith;
+  BetaManagedAgentsListSessionEvents Function({SdkOptional<List<BetaManagedAgentsSessionEvent>> data, SdkOptional<String?> nextPage}) get copyWith => _copyWith;
 
-  BetaManagedAgentsListSessionEvents _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaManagedAgentsListSessionEvents(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as SdkOptional<List<BetaManagedAgentsSessionEvent>>,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as SdkOptional<String?>,
-      );
+  BetaManagedAgentsListSessionEvents _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaManagedAgentsListSessionEvents(
+    data: identical(data, sdkOmittedValue) ? this.data : data as SdkOptional<List<BetaManagedAgentsSessionEvent>>,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as SdkOptional<String?>,
+  );
 
-  factory BetaManagedAgentsListSessionEvents.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsListSessionEvents(
-        data: json['data'] != null
-            ? SdkPresent(((json['data'] as List?)
-                ?.map((e) => BetaManagedAgentsSessionEvent.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-        nextPage: json.containsKey('next_page')
-            ? SdkPresent(json['next_page'] as String?)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsListSessionEvents.fromJson(Map<String, dynamic> json) => BetaManagedAgentsListSessionEvents(
+    data: json['data'] != null ? SdkPresent(((json['data'] as List?)?.map((e) => BetaManagedAgentsSessionEvent.fromJson(e)).toList())!) : const SdkOmitted(),
+    nextPage: json.containsKey('next_page') ? SdkPresent(json['next_page'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (data) {
-          SdkPresent<List<BetaManagedAgentsSessionEvent>>(value: final value) =>
-            {
-              'data': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPage) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (data) {
+      SdkPresent<List<BetaManagedAgentsSessionEvent>>(value: final value) => {'data': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPage) {
+      SdkPresent<String?>(value: final value) => {'next_page': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Paginated list of events for a single thread within a `session`.
 class BetaManagedAgentsListSessionThreadEvents {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Events for the thread, ordered by `processed_at`.
   final SdkOptional<List<BetaManagedAgentsSessionEvent>> data;
-
   /// Opaque cursor for the next page. Null when no more results.
   final SdkOptional<String?> nextPage;
 
-  const BetaManagedAgentsListSessionThreadEvents(
-      {this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
+  const BetaManagedAgentsListSessionThreadEvents({this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
 
-  BetaManagedAgentsListSessionThreadEvents Function(
-      {SdkOptional<List<BetaManagedAgentsSessionEvent>> data,
-      SdkOptional<String?> nextPage}) get copyWith => _copyWith;
+  BetaManagedAgentsListSessionThreadEvents Function({SdkOptional<List<BetaManagedAgentsSessionEvent>> data, SdkOptional<String?> nextPage}) get copyWith => _copyWith;
 
-  BetaManagedAgentsListSessionThreadEvents _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaManagedAgentsListSessionThreadEvents(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as SdkOptional<List<BetaManagedAgentsSessionEvent>>,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as SdkOptional<String?>,
-      );
+  BetaManagedAgentsListSessionThreadEvents _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaManagedAgentsListSessionThreadEvents(
+    data: identical(data, sdkOmittedValue) ? this.data : data as SdkOptional<List<BetaManagedAgentsSessionEvent>>,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as SdkOptional<String?>,
+  );
 
-  factory BetaManagedAgentsListSessionThreadEvents.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsListSessionThreadEvents(
-        data: json['data'] != null
-            ? SdkPresent(((json['data'] as List?)
-                ?.map((e) => BetaManagedAgentsSessionEvent.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-        nextPage: json.containsKey('next_page')
-            ? SdkPresent(json['next_page'] as String?)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsListSessionThreadEvents.fromJson(Map<String, dynamic> json) => BetaManagedAgentsListSessionThreadEvents(
+    data: json['data'] != null ? SdkPresent(((json['data'] as List?)?.map((e) => BetaManagedAgentsSessionEvent.fromJson(e)).toList())!) : const SdkOmitted(),
+    nextPage: json.containsKey('next_page') ? SdkPresent(json['next_page'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (data) {
-          SdkPresent<List<BetaManagedAgentsSessionEvent>>(value: final value) =>
-            {
-              'data': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPage) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (data) {
+      SdkPresent<List<BetaManagedAgentsSessionEvent>>(value: final value) => {'data': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPage) {
+      SdkPresent<String?>(value: final value) => {'next_page': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Events that were successfully sent to the session.
 class BetaManagedAgentsSendSessionEvents {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Sent events
   final SdkOptional<List<BetaManagedAgentsInputEvent>> data;
 
   const BetaManagedAgentsSendSessionEvents({this.data = const SdkOmitted()});
 
-  BetaManagedAgentsSendSessionEvents Function(
-          {SdkOptional<List<BetaManagedAgentsInputEvent>> data})
-      get copyWith => _copyWith;
+  BetaManagedAgentsSendSessionEvents Function({SdkOptional<List<BetaManagedAgentsInputEvent>> data}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSendSessionEvents _copyWith(
-          {Object? data = sdkOmittedValue}) =>
-      BetaManagedAgentsSendSessionEvents(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as SdkOptional<List<BetaManagedAgentsInputEvent>>,
-      );
+  BetaManagedAgentsSendSessionEvents _copyWith({Object? data = sdkOmittedValue}) => BetaManagedAgentsSendSessionEvents(
+    data: identical(data, sdkOmittedValue) ? this.data : data as SdkOptional<List<BetaManagedAgentsInputEvent>>,
+  );
 
-  factory BetaManagedAgentsSendSessionEvents.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSendSessionEvents(
-        data: json['data'] != null
-            ? SdkPresent(((json['data'] as List?)
-                ?.map((e) => BetaManagedAgentsInputEvent.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsSendSessionEvents.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSendSessionEvents(
+    data: json['data'] != null ? SdkPresent(((json['data'] as List?)?.map((e) => BetaManagedAgentsInputEvent.fromJson(e)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (data) {
-          SdkPresent<List<BetaManagedAgentsInputEvent>>(value: final value) => {
-              'data': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (data) {
+      SdkPresent<List<BetaManagedAgentsInputEvent>>(value: final value) => {'data': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Request parameters for sending events to a `session`.
 class BetaManagedAgentsSendSessionEventsParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Events to send to the `session`.
   final List<BetaManagedAgentsEventParams> events;
 
   const BetaManagedAgentsSendSessionEventsParams({required this.events});
 
-  BetaManagedAgentsSendSessionEventsParams Function(
-      {List<BetaManagedAgentsEventParams> events}) get copyWith => _copyWith;
+  BetaManagedAgentsSendSessionEventsParams Function({List<BetaManagedAgentsEventParams> events}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSendSessionEventsParams _copyWith(
-          {Object? events = sdkOmittedValue}) =>
-      BetaManagedAgentsSendSessionEventsParams(
-        events: identical(events, sdkOmittedValue)
-            ? this.events
-            : events as List<BetaManagedAgentsEventParams>,
-      );
+  BetaManagedAgentsSendSessionEventsParams _copyWith({Object? events = sdkOmittedValue}) => BetaManagedAgentsSendSessionEventsParams(
+    events: identical(events, sdkOmittedValue) ? this.events : events as List<BetaManagedAgentsEventParams>,
+  );
 
-  factory BetaManagedAgentsSendSessionEventsParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSendSessionEventsParams(
-        events: ((json['events'] as List?)
-            ?.map((e) => BetaManagedAgentsEventParams.fromJson(e))
-            .toList())!,
-      );
+  factory BetaManagedAgentsSendSessionEventsParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSendSessionEventsParams(
+    events: ((json['events'] as List?)?.map((e) => BetaManagedAgentsEventParams.fromJson(e)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'events': events.map((item) => item.toJson()).toList(),
-      };
+    'events': events.map((item) => item.toJson()).toList(),
+  };
 }

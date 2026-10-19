@@ -8,238 +8,124 @@ part of 'complete.dart';
 class CompletionRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The model that will complete your prompt. See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
   final Model model;
-
   /// The prompt that you want Claude to complete. For proper response generation you will need to format your prompt using alternating `\n\nHuman:` and `\n\nAssistant:` conversational turns. For example: ``` "\n\nHuman: {userQuestion}\n\nAssistant:" ``` See [prompt validation](https://platform.claude.com/docs/en/build-with-claude/working-with-messages) and our guide to [prompt design](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) for more details.
   final String prompt;
-
   /// The maximum number of tokens to generate before stopping. Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.
   final int maxTokensToSample;
-
   /// Sequences that will cause the model to stop generating. Our models stop on `"\n\nHuman:"`, and may include additional built-in stop sequences in the future. By providing the stop_sequences parameter, you may include additional strings that will cause the model to stop generating.
   final SdkOptional<List<String>> stopSequences;
-
   /// Amount of randomness injected into the response. Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks. Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
   final SdkOptional<double> temperature;
-
   /// Use nucleus sampling. In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`. Recommended for advanced use cases only.
   final SdkOptional<double> topP;
-
   /// Only sample from the top K options for each subsequent token. Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277). Recommended for advanced use cases only.
   final SdkOptional<int> topK;
-
   /// An object describing metadata about the request.
   final SdkOptional<Metadata> metadata;
-
   /// Whether to incrementally stream the response using server-sent events. See [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming) for details.
   final SdkOptional<bool> stream;
 
-  const CompletionRequest(
-      {required this.model,
-      required this.prompt,
-      required this.maxTokensToSample,
-      this.stopSequences = const SdkOmitted(),
-      this.temperature = const SdkOmitted(),
-      this.topP = const SdkOmitted(),
-      this.topK = const SdkOmitted(),
-      this.metadata = const SdkOmitted(),
-      this.stream = const SdkOmitted()});
+  const CompletionRequest({required this.model, required this.prompt, required this.maxTokensToSample, this.stopSequences = const SdkOmitted(), this.temperature = const SdkOmitted(), this.topP = const SdkOmitted(), this.topK = const SdkOmitted(), this.metadata = const SdkOmitted(), this.stream = const SdkOmitted()});
 
-  CompletionRequest Function(
-      {Model model,
-      String prompt,
-      int maxTokensToSample,
-      SdkOptional<List<String>> stopSequences,
-      SdkOptional<double> temperature,
-      SdkOptional<double> topP,
-      SdkOptional<int> topK,
-      SdkOptional<Metadata> metadata,
-      SdkOptional<bool> stream}) get copyWith => _copyWith;
+  CompletionRequest Function({Model model, String prompt, int maxTokensToSample, SdkOptional<List<String>> stopSequences, SdkOptional<double> temperature, SdkOptional<double> topP, SdkOptional<int> topK, SdkOptional<Metadata> metadata, SdkOptional<bool> stream}) get copyWith => _copyWith;
 
-  CompletionRequest _copyWith(
-          {Object? model = sdkOmittedValue,
-          Object? prompt = sdkOmittedValue,
-          Object? maxTokensToSample = sdkOmittedValue,
-          Object? stopSequences = sdkOmittedValue,
-          Object? temperature = sdkOmittedValue,
-          Object? topP = sdkOmittedValue,
-          Object? topK = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue,
-          Object? stream = sdkOmittedValue}) =>
-      CompletionRequest(
-        model: identical(model, sdkOmittedValue) ? this.model : model as Model,
-        prompt:
-            identical(prompt, sdkOmittedValue) ? this.prompt : prompt as String,
-        maxTokensToSample: identical(maxTokensToSample, sdkOmittedValue)
-            ? this.maxTokensToSample
-            : maxTokensToSample as int,
-        stopSequences: identical(stopSequences, sdkOmittedValue)
-            ? this.stopSequences
-            : stopSequences as SdkOptional<List<String>>,
-        temperature: identical(temperature, sdkOmittedValue)
-            ? this.temperature
-            : temperature as SdkOptional<double>,
-        topP: identical(topP, sdkOmittedValue)
-            ? this.topP
-            : topP as SdkOptional<double>,
-        topK: identical(topK, sdkOmittedValue)
-            ? this.topK
-            : topK as SdkOptional<int>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<Metadata>,
-        stream: identical(stream, sdkOmittedValue)
-            ? this.stream
-            : stream as SdkOptional<bool>,
-      );
+  CompletionRequest _copyWith({Object? model = sdkOmittedValue, Object? prompt = sdkOmittedValue, Object? maxTokensToSample = sdkOmittedValue, Object? stopSequences = sdkOmittedValue, Object? temperature = sdkOmittedValue, Object? topP = sdkOmittedValue, Object? topK = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? stream = sdkOmittedValue}) => CompletionRequest(
+    model: identical(model, sdkOmittedValue) ? this.model : model as Model,
+    prompt: identical(prompt, sdkOmittedValue) ? this.prompt : prompt as String,
+    maxTokensToSample: identical(maxTokensToSample, sdkOmittedValue) ? this.maxTokensToSample : maxTokensToSample as int,
+    stopSequences: identical(stopSequences, sdkOmittedValue) ? this.stopSequences : stopSequences as SdkOptional<List<String>>,
+    temperature: identical(temperature, sdkOmittedValue) ? this.temperature : temperature as SdkOptional<double>,
+    topP: identical(topP, sdkOmittedValue) ? this.topP : topP as SdkOptional<double>,
+    topK: identical(topK, sdkOmittedValue) ? this.topK : topK as SdkOptional<int>,
+    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Metadata>,
+    stream: identical(stream, sdkOmittedValue) ? this.stream : stream as SdkOptional<bool>,
+  );
 
-  factory CompletionRequest.fromJson(Map<String, dynamic> json) =>
-      CompletionRequest(
-        model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
-        prompt: (json['prompt'] as String?)!,
-        maxTokensToSample: ((json['max_tokens_to_sample'] as num?)?.toInt())!,
-        stopSequences: json['stop_sequences'] != null
-            ? SdkPresent(((json['stop_sequences'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        temperature: json['temperature'] != null
-            ? SdkPresent(((json['temperature'] as num?)?.toDouble())!)
-            : const SdkOmitted(),
-        topP: json['top_p'] != null
-            ? SdkPresent(((json['top_p'] as num?)?.toDouble())!)
-            : const SdkOmitted(),
-        topK: json['top_k'] != null
-            ? SdkPresent(((json['top_k'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        metadata: json['metadata'] != null
-            ? SdkPresent((json['metadata'] != null
-                ? Metadata.fromJson(json['metadata'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        stream: json['stream'] != null
-            ? SdkPresent((json['stream'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory CompletionRequest.fromJson(Map<String, dynamic> json) => CompletionRequest(
+    model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
+    prompt: (json['prompt'] as String?)!,
+    maxTokensToSample: ((json['max_tokens_to_sample'] as num?)?.toInt())!,
+    stopSequences: json['stop_sequences'] != null ? SdkPresent(((json['stop_sequences'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    temperature: json['temperature'] != null ? SdkPresent(((json['temperature'] as num?)?.toDouble())!) : const SdkOmitted(),
+    topP: json['top_p'] != null ? SdkPresent(((json['top_p'] as num?)?.toDouble())!) : const SdkOmitted(),
+    topK: json['top_k'] != null ? SdkPresent(((json['top_k'] as num?)?.toInt())!) : const SdkOmitted(),
+    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] != null ? Metadata.fromJson(json['metadata'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    stream: json['stream'] != null ? SdkPresent((json['stream'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'model': model.toJson(),
-        'prompt': prompt,
-        'max_tokens_to_sample': maxTokensToSample,
-        ...switch (stopSequences) {
-          SdkPresent<List<String>>(value: final value) => {
-              'stop_sequences': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (temperature) {
-          SdkPresent<double>(value: final value) => {
-              'temperature': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (topP) {
-          SdkPresent<double>(value: final value) => {
-              'top_p': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (topK) {
-          SdkPresent<int>(value: final value) => {
-              'top_k': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (metadata) {
-          SdkPresent<Metadata>(value: final value) => {
-              'metadata': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (stream) {
-          SdkPresent<bool>(value: final value) => {
-              'stream': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'model': model.toJson(),
+    'prompt': prompt,
+    'max_tokens_to_sample': maxTokensToSample,
+    ...switch (stopSequences) {
+      SdkPresent<List<String>>(value: final value) => {'stop_sequences': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (temperature) {
+      SdkPresent<double>(value: final value) => {'temperature': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (topP) {
+      SdkPresent<double>(value: final value) => {'top_p': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (topK) {
+      SdkPresent<int>(value: final value) => {'top_k': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (metadata) {
+      SdkPresent<Metadata>(value: final value) => {'metadata': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (stream) {
+      SdkPresent<bool>(value: final value) => {'stream': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `CompletionResponse` API schema.
 class CompletionResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The resulting completion up to and excluding the stop sequences.
   final String completion;
-
   /// Unique object identifier. The format and length of IDs may change over time.
   final String id;
-
   /// The model that will complete your prompt. See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
   final Model model;
-
   /// The reason that we stopped. This may be one the following values: * `"stop_sequence"`: we reached a stop sequence — either provided by you via the `stop_sequences` parameter, or a stop sequence built into the model * `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum
   final String? stopReason;
-
   /// Object type. For Text Completions, this is always `"completion"`.
   final CompletionResponseType type_;
 
-  const CompletionResponse(
-      {required this.completion,
-      required this.id,
-      required this.model,
-      required this.stopReason,
-      required this.type_});
+  const CompletionResponse({required this.completion, required this.id, required this.model, required this.stopReason, required this.type_});
 
-  CompletionResponse Function(
-      {String completion,
-      String id,
-      Model model,
-      String? stopReason,
-      CompletionResponseType type_}) get copyWith => _copyWith;
+  CompletionResponse Function({String completion, String id, Model model, String? stopReason, CompletionResponseType type_}) get copyWith => _copyWith;
 
-  CompletionResponse _copyWith(
-          {Object? completion = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? model = sdkOmittedValue,
-          Object? stopReason = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      CompletionResponse(
-        completion: identical(completion, sdkOmittedValue)
-            ? this.completion
-            : completion as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        model: identical(model, sdkOmittedValue) ? this.model : model as Model,
-        stopReason: identical(stopReason, sdkOmittedValue)
-            ? this.stopReason
-            : stopReason as String?,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as CompletionResponseType,
-      );
+  CompletionResponse _copyWith({Object? completion = sdkOmittedValue, Object? id = sdkOmittedValue, Object? model = sdkOmittedValue, Object? stopReason = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => CompletionResponse(
+    completion: identical(completion, sdkOmittedValue) ? this.completion : completion as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    model: identical(model, sdkOmittedValue) ? this.model : model as Model,
+    stopReason: identical(stopReason, sdkOmittedValue) ? this.stopReason : stopReason as String?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as CompletionResponseType,
+  );
 
-  factory CompletionResponse.fromJson(Map<String, dynamic> json) =>
-      CompletionResponse(
-        completion: (json['completion'] as String?)!,
-        id: (json['id'] as String?)!,
-        model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
-        stopReason: json.containsKey('stop_reason')
-            ? json['stop_reason'] as String?
-            : throw ArgumentError.value(
-                null, 'stop_reason', 'Required property is missing'),
-        type_: (json['type'] != null
-            ? CompletionResponseType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory CompletionResponse.fromJson(Map<String, dynamic> json) => CompletionResponse(
+    completion: (json['completion'] as String?)!,
+    id: (json['id'] as String?)!,
+    model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
+    stopReason: json.containsKey('stop_reason') ? json['stop_reason'] as String? : throw ArgumentError.value(null, 'stop_reason', 'Required property is missing'),
+    type_: (json['type'] != null ? CompletionResponseType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'completion': completion,
-        'id': id,
-        'model': model.toJson(),
-        'stop_reason': stopReason,
-        'type': type_.toJson(),
-      };
+    'completion': completion,
+    'id': id,
+    'model': model.toJson(),
+    'stop_reason': stopReason,
+    'type': type_.toJson(),
+  };
 }

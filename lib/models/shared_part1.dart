@@ -6,6 +6,7 @@ part of 'shared.dart';
 // shared domain models
 /// Specifies who can invoke a tool. Values: direct: The model can call this tool directly. code_execution_20250825: The tool can be called from the code execution environment (v1). code_execution_20260120: The tool can be called from the code execution environment (v2 with persistence). code_execution_20260521: The tool can be called from the code execution environment (v2 with persistence).
 final class AllowedCaller {
+
   final String value;
 
   const AllowedCaller._(this.value);
@@ -13,24 +14,18 @@ final class AllowedCaller {
   factory AllowedCaller.fromJson(String value) => AllowedCaller._(value);
 
   static const direct = AllowedCaller._('direct');
-  static const codeExecution20250825 =
-      AllowedCaller._('code_execution_20250825');
-  static const codeExecution20260120 =
-      AllowedCaller._('code_execution_20260120');
-  static const codeExecution20260521 =
-      AllowedCaller._('code_execution_20260521');
+  static const codeExecution20250825 = AllowedCaller._('code_execution_20250825');
+  static const codeExecution20260120 = AllowedCaller._('code_execution_20260120');
+  static const codeExecution20260521 = AllowedCaller._('code_execution_20260521');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is AllowedCaller && other.value == value;
+  @override bool operator ==(Object other) => other is AllowedCaller && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 // AnthropicBeta = String
@@ -39,131 +34,93 @@ final class AllowedCaller {
 class APIError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final APIErrorType type_;
 
   const APIError({required this.message, required this.type_});
 
-  APIError Function({String message, APIErrorType type_}) get copyWith =>
-      _copyWith;
+  APIError Function({String message, APIErrorType type_}) get copyWith => _copyWith;
 
-  APIError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      APIError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as APIErrorType,
-      );
+  APIError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => APIError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as APIErrorType,
+  );
 
   factory APIError.fromJson(Map<String, dynamic> json) => APIError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? APIErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? APIErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `AuthenticationError` API schema.
 class AuthenticationError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final AuthenticationErrorType type_;
 
   const AuthenticationError({required this.message, required this.type_});
 
-  AuthenticationError Function({String message, AuthenticationErrorType type_})
-      get copyWith => _copyWith;
+  AuthenticationError Function({String message, AuthenticationErrorType type_}) get copyWith => _copyWith;
 
-  AuthenticationError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      AuthenticationError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as AuthenticationErrorType,
-      );
+  AuthenticationError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => AuthenticationError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as AuthenticationErrorType,
+  );
 
-  factory AuthenticationError.fromJson(Map<String, dynamic> json) =>
-      AuthenticationError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? AuthenticationErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory AuthenticationError.fromJson(Map<String, dynamic> json) => AuthenticationError(
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? AuthenticationErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BillingError` API schema.
 class BillingError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final BillingErrorType type_;
 
   const BillingError({required this.message, required this.type_});
 
-  BillingError Function({String message, BillingErrorType type_})
-      get copyWith => _copyWith;
+  BillingError Function({String message, BillingErrorType type_}) get copyWith => _copyWith;
 
-  BillingError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BillingError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BillingErrorType,
-      );
+  BillingError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BillingError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BillingErrorType,
+  );
 
   factory BillingError.fromJson(Map<String, dynamic> json) => BillingError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? BillingErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? BillingErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }
 
 /// Tool invocation directly from the model.
 class DirectCaller {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final DirectCallerType type_;
 
@@ -172,24 +129,21 @@ class DirectCaller {
   DirectCaller Function({DirectCallerType type_}) get copyWith => _copyWith;
 
   DirectCaller _copyWith({Object? type_ = sdkOmittedValue}) => DirectCaller(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as DirectCallerType,
-      );
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as DirectCallerType,
+  );
 
   factory DirectCaller.fromJson(Map<String, dynamic> json) => DirectCaller(
-        type_: (json['type'] != null
-            ? DirectCallerType.fromJson(json['type'] as String)
-            : null)!,
-      );
+    type_: (json['type'] != null ? DirectCallerType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 /// All possible effort levels.
 final class EffortLevel {
+
   final String value;
 
   const EffortLevel._(this.value);
@@ -204,99 +158,70 @@ final class EffortLevel {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is EffortLevel && other.value == value;
+  @override bool operator ==(Object other) => other is EffortLevel && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Typed representation of the `GatewayTimeoutError` API schema.
 class GatewayTimeoutError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final GatewayTimeoutErrorType type_;
 
   const GatewayTimeoutError({required this.message, required this.type_});
 
-  GatewayTimeoutError Function({String message, GatewayTimeoutErrorType type_})
-      get copyWith => _copyWith;
+  GatewayTimeoutError Function({String message, GatewayTimeoutErrorType type_}) get copyWith => _copyWith;
 
-  GatewayTimeoutError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      GatewayTimeoutError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as GatewayTimeoutErrorType,
-      );
+  GatewayTimeoutError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => GatewayTimeoutError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as GatewayTimeoutErrorType,
+  );
 
-  factory GatewayTimeoutError.fromJson(Map<String, dynamic> json) =>
-      GatewayTimeoutError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? GatewayTimeoutErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory GatewayTimeoutError.fromJson(Map<String, dynamic> json) => GatewayTimeoutError(
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? GatewayTimeoutErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `InvalidRequestError` API schema.
 class InvalidRequestError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final InvalidRequestErrorType type_;
 
   const InvalidRequestError({required this.message, required this.type_});
 
-  InvalidRequestError Function({String message, InvalidRequestErrorType type_})
-      get copyWith => _copyWith;
+  InvalidRequestError Function({String message, InvalidRequestErrorType type_}) get copyWith => _copyWith;
 
-  InvalidRequestError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      InvalidRequestError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as InvalidRequestErrorType,
-      );
+  InvalidRequestError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => InvalidRequestError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as InvalidRequestErrorType,
+  );
 
-  factory InvalidRequestError.fromJson(Map<String, dynamic> json) =>
-      InvalidRequestError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? InvalidRequestErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory InvalidRequestError.fromJson(Map<String, dynamic> json) => InvalidRequestError(
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? InvalidRequestErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }
 
 sealed class MemoryTool20250818CacheControl {
@@ -304,34 +229,22 @@ sealed class MemoryTool20250818CacheControl {
   static const String constructionSurface = 'named';
   const MemoryTool20250818CacheControl();
   factory MemoryTool20250818CacheControl.fromJson(Object? json) {
-    try {
-      return MemoryTool20250818CacheControlCacheControlEphemeral(
-          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownMemoryTool20250818CacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for MemoryTool20250818CacheControl");
+    try { return MemoryTool20250818CacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownMemoryTool20250818CacheControl(json); }
+    throw FormatException("No variant matched for MemoryTool20250818CacheControl");
   }
   Object? toJson();
 }
 
-final class MemoryTool20250818CacheControlCacheControlEphemeral
-    extends MemoryTool20250818CacheControl {
+final class MemoryTool20250818CacheControlCacheControlEphemeral extends MemoryTool20250818CacheControl {
   final CacheControlEphemeral value;
   const MemoryTool20250818CacheControlCacheControlEphemeral(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [MemoryTool20250818CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownMemoryTool20250818CacheControl
-    extends MemoryTool20250818CacheControl {
+final class UnknownMemoryTool20250818CacheControl extends MemoryTool20250818CacheControl {
   final Map<String, dynamic> raw;
   const UnknownMemoryTool20250818CacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

@@ -8,112 +8,68 @@ part of 'shared_beta_mcptool.dart';
 class BetaMCPToolConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `boolean` value serialized in the `defer_loading` wire field.
   final SdkOptional<bool> deferLoading;
-
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
 
-  const BetaMCPToolConfig(
-      {this.deferLoading = const SdkOmitted(),
-      this.enabled = const SdkOmitted()});
+  const BetaMCPToolConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
 
-  BetaMCPToolConfig Function(
-      {SdkOptional<bool> deferLoading,
-      SdkOptional<bool> enabled}) get copyWith => _copyWith;
+  BetaMCPToolConfig Function({SdkOptional<bool> deferLoading, SdkOptional<bool> enabled}) get copyWith => _copyWith;
 
-  BetaMCPToolConfig _copyWith(
-          {Object? deferLoading = sdkOmittedValue,
-          Object? enabled = sdkOmittedValue}) =>
-      BetaMCPToolConfig(
-        deferLoading: identical(deferLoading, sdkOmittedValue)
-            ? this.deferLoading
-            : deferLoading as SdkOptional<bool>,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as SdkOptional<bool>,
-      );
+  BetaMCPToolConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BetaMCPToolConfig(
+    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
+  );
 
-  factory BetaMCPToolConfig.fromJson(Map<String, dynamic> json) =>
-      BetaMCPToolConfig(
-        deferLoading: json['defer_loading'] != null
-            ? SdkPresent((json['defer_loading'] as bool?)!)
-            : const SdkOmitted(),
-        enabled: json['enabled'] != null
-            ? SdkPresent((json['enabled'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory BetaMCPToolConfig.fromJson(Map<String, dynamic> json) => BetaMCPToolConfig(
+    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
+    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (deferLoading) {
-          SdkPresent<bool>(value: final value) => {
-              'defer_loading': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enabled) {
-          SdkPresent<bool>(value: final value) => {
-              'enabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (deferLoading) {
+      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enabled) {
+      SdkPresent<bool>(value: final value) => {'enabled': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Default configuration for tools in an MCP toolset.
 class BetaMCPToolDefaultConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `boolean` value serialized in the `defer_loading` wire field.
   final SdkOptional<bool> deferLoading;
-
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
 
-  const BetaMCPToolDefaultConfig(
-      {this.deferLoading = const SdkOmitted(),
-      this.enabled = const SdkOmitted()});
+  const BetaMCPToolDefaultConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
 
-  BetaMCPToolDefaultConfig Function(
-      {SdkOptional<bool> deferLoading,
-      SdkOptional<bool> enabled}) get copyWith => _copyWith;
+  BetaMCPToolDefaultConfig Function({SdkOptional<bool> deferLoading, SdkOptional<bool> enabled}) get copyWith => _copyWith;
 
-  BetaMCPToolDefaultConfig _copyWith(
-          {Object? deferLoading = sdkOmittedValue,
-          Object? enabled = sdkOmittedValue}) =>
-      BetaMCPToolDefaultConfig(
-        deferLoading: identical(deferLoading, sdkOmittedValue)
-            ? this.deferLoading
-            : deferLoading as SdkOptional<bool>,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as SdkOptional<bool>,
-      );
+  BetaMCPToolDefaultConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BetaMCPToolDefaultConfig(
+    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
+  );
 
-  factory BetaMCPToolDefaultConfig.fromJson(Map<String, dynamic> json) =>
-      BetaMCPToolDefaultConfig(
-        deferLoading: json['defer_loading'] != null
-            ? SdkPresent((json['defer_loading'] as bool?)!)
-            : const SdkOmitted(),
-        enabled: json['enabled'] != null
-            ? SdkPresent((json['enabled'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory BetaMCPToolDefaultConfig.fromJson(Map<String, dynamic> json) => BetaMCPToolDefaultConfig(
+    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
+    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (deferLoading) {
-          SdkPresent<bool>(value: final value) => {
-              'defer_loading': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enabled) {
-          SdkPresent<bool>(value: final value) => {
-              'enabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (deferLoading) {
+      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enabled) {
+      SdkPresent<bool>(value: final value) => {'enabled': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

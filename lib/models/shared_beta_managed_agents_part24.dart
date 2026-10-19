@@ -8,99 +8,58 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMultiagentCoordinator {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMultiagentCoordinatorType type_;
-
   /// Agents the coordinator may spawn as session threads, each resolved to a specific version.
   final List<BetaManagedAgentsMultiagentRosterEntry> agents;
 
-  const BetaManagedAgentsMultiagentCoordinator(
-      {required this.type_, required this.agents});
+  const BetaManagedAgentsMultiagentCoordinator({required this.type_, required this.agents});
 
-  BetaManagedAgentsMultiagentCoordinator Function(
-          {BetaManagedAgentsMultiagentCoordinatorType type_,
-          List<BetaManagedAgentsMultiagentRosterEntry> agents})
-      get copyWith => _copyWith;
+  BetaManagedAgentsMultiagentCoordinator Function({BetaManagedAgentsMultiagentCoordinatorType type_, List<BetaManagedAgentsMultiagentRosterEntry> agents}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMultiagentCoordinator _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? agents = sdkOmittedValue}) =>
-      BetaManagedAgentsMultiagentCoordinator(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsMultiagentCoordinatorType,
-        agents: identical(agents, sdkOmittedValue)
-            ? this.agents
-            : agents as List<BetaManagedAgentsMultiagentRosterEntry>,
-      );
+  BetaManagedAgentsMultiagentCoordinator _copyWith({Object? type_ = sdkOmittedValue, Object? agents = sdkOmittedValue}) => BetaManagedAgentsMultiagentCoordinator(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMultiagentCoordinatorType,
+    agents: identical(agents, sdkOmittedValue) ? this.agents : agents as List<BetaManagedAgentsMultiagentRosterEntry>,
+  );
 
-  factory BetaManagedAgentsMultiagentCoordinator.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMultiagentCoordinator(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMultiagentCoordinatorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        agents: ((json['agents'] as List?)
-            ?.map((e) => BetaManagedAgentsMultiagentRosterEntry.fromJson(e))
-            .toList())!,
-      );
+  factory BetaManagedAgentsMultiagentCoordinator.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMultiagentCoordinator(
+    type_: (json['type'] != null ? BetaManagedAgentsMultiagentCoordinatorType.fromJson(json['type'] as String) : null)!,
+    agents: ((json['agents'] as List?)?.map((e) => BetaManagedAgentsMultiagentRosterEntry.fromJson(e)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'agents': agents.map((item) => item.toJson()).toList(),
-      };
+    'type': type_.toJson(),
+    'agents': agents.map((item) => item.toJson()).toList(),
+  };
 }
 
 /// A coordinator topology: the session's primary thread orchestrates work by spawning session threads, each running an agent drawn from the `agents` roster.
 class BetaManagedAgentsMultiagentCoordinatorParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMultiagentCoordinatorParamsType type_;
-
   /// Agents the coordinator may spawn as session threads. 1–20 entries. Each entry is an agent ID string, a versioned `{"type":"agent","id","version"}` reference, or `{"type":"self"}` to allow recursive self-invocation. Entries must reference distinct agents (after resolving `self` and string forms); at most one `self`. Referenced agents must exist, must not be archived, and must not themselves have `multiagent` set (depth limit 1).
   final List<BetaManagedAgentsMultiagentRosterEntryParams> agents;
 
-  const BetaManagedAgentsMultiagentCoordinatorParams(
-      {required this.type_, required this.agents});
+  const BetaManagedAgentsMultiagentCoordinatorParams({required this.type_, required this.agents});
 
-  BetaManagedAgentsMultiagentCoordinatorParams Function(
-          {BetaManagedAgentsMultiagentCoordinatorParamsType type_,
-          List<BetaManagedAgentsMultiagentRosterEntryParams> agents})
-      get copyWith => _copyWith;
+  BetaManagedAgentsMultiagentCoordinatorParams Function({BetaManagedAgentsMultiagentCoordinatorParamsType type_, List<BetaManagedAgentsMultiagentRosterEntryParams> agents}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMultiagentCoordinatorParams _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? agents = sdkOmittedValue}) =>
-      BetaManagedAgentsMultiagentCoordinatorParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsMultiagentCoordinatorParamsType,
-        agents: identical(agents, sdkOmittedValue)
-            ? this.agents
-            : agents as List<BetaManagedAgentsMultiagentRosterEntryParams>,
-      );
+  BetaManagedAgentsMultiagentCoordinatorParams _copyWith({Object? type_ = sdkOmittedValue, Object? agents = sdkOmittedValue}) => BetaManagedAgentsMultiagentCoordinatorParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMultiagentCoordinatorParamsType,
+    agents: identical(agents, sdkOmittedValue) ? this.agents : agents as List<BetaManagedAgentsMultiagentRosterEntryParams>,
+  );
 
-  factory BetaManagedAgentsMultiagentCoordinatorParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMultiagentCoordinatorParams(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMultiagentCoordinatorParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-        agents: ((json['agents'] as List?)
-            ?.map(
-                (e) => BetaManagedAgentsMultiagentRosterEntryParams.fromJson(e))
-            .toList())!,
-      );
+  factory BetaManagedAgentsMultiagentCoordinatorParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMultiagentCoordinatorParams(
+    type_: (json['type'] != null ? BetaManagedAgentsMultiagentCoordinatorParamsType.fromJson(json['type'] as String) : null)!,
+    agents: ((json['agents'] as List?)?.map((e) => BetaManagedAgentsMultiagentRosterEntryParams.fromJson(e)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'agents': agents.map((item) => item.toJson()).toList(),
-      };
+    'type': type_.toJson(),
+    'agents': agents.map((item) => item.toJson()).toList(),
+  };
 }
 
 sealed class BetaManagedAgentsMultiagentParams {
@@ -108,38 +67,24 @@ sealed class BetaManagedAgentsMultiagentParams {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMultiagentParams();
   factory BetaManagedAgentsMultiagentParams.fromJson(Object? json) {
-    try {
-      return BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams(
-          BetaManagedAgentsMultiagentCoordinatorParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"coordinator"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsMultiagentParams(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsMultiagentParams");
+    try { return BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams(BetaManagedAgentsMultiagentCoordinatorParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"coordinator"}.contains(json["type"])) { return UnknownBetaManagedAgentsMultiagentParams(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsMultiagentParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams
-    extends BetaManagedAgentsMultiagentParams {
+final class BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams extends BetaManagedAgentsMultiagentParams {
   final BetaManagedAgentsMultiagentCoordinatorParams value;
-  const BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMultiagentParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMultiagentParams
-    extends BetaManagedAgentsMultiagentParams {
+final class UnknownBetaManagedAgentsMultiagentParams extends BetaManagedAgentsMultiagentParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsMultiagentParams(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsMultiagentRosterEntry {
@@ -148,156 +93,78 @@ sealed class BetaManagedAgentsMultiagentRosterEntry {
   const BetaManagedAgentsMultiagentRosterEntry();
   factory BetaManagedAgentsMultiagentRosterEntry.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsAgentReference.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAdvisor.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAgentReference.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAdvisor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(
-          BetaManagedAgentsAgentReference.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(
-          BetaManagedAgentsAdvisor.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"agent", "advisor"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsMultiagentRosterEntry(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsMultiagentRosterEntry");
+    try { return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(BetaManagedAgentsAgentReference.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(BetaManagedAgentsAdvisor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"agent", "advisor"}.contains(json["type"])) { return UnknownBetaManagedAgentsMultiagentRosterEntry(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsMultiagentRosterEntry");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference
-    extends BetaManagedAgentsMultiagentRosterEntry {
+final class BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference extends BetaManagedAgentsMultiagentRosterEntry {
   final BetaManagedAgentsAgentReference value;
-  const BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor
-    extends BetaManagedAgentsMultiagentRosterEntry {
+final class BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor extends BetaManagedAgentsMultiagentRosterEntry {
   final BetaManagedAgentsAdvisor value;
-  const BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMultiagentRosterEntry] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMultiagentRosterEntry
-    extends BetaManagedAgentsMultiagentRosterEntry {
+final class UnknownBetaManagedAgentsMultiagentRosterEntry extends BetaManagedAgentsMultiagentRosterEntry {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsMultiagentRosterEntry(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMultiagentRosterEntryParamsVariant1();
-  factory BetaManagedAgentsMultiagentRosterEntryParamsVariant1.fromJson(
-      Object? json) {
+  factory BetaManagedAgentsMultiagentRosterEntryParamsVariant1.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsAgentParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsMultiagentSelfParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAdvisorParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAgentParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsMultiagentSelfParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAdvisorParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(
-          BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(
-          BetaManagedAgentsMultiagentSelfParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(
-          BetaManagedAgentsAdvisorParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"agent", "self", "advisor"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsMultiagentRosterEntryParamsVariant1(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsMultiagentRosterEntryParamsVariant1");
+    try { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(BetaManagedAgentsMultiagentSelfParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(BetaManagedAgentsAdvisorParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"agent", "self", "advisor"}.contains(json["type"])) { return UnknownBetaManagedAgentsMultiagentRosterEntryParamsVariant1(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsMultiagentRosterEntryParamsVariant1");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams
-    extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
+final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
   final BetaManagedAgentsAgentParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams
-    extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
+final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
   final BetaManagedAgentsMultiagentSelfParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams
-    extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
+final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
   final BetaManagedAgentsAdvisorParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMultiagentRosterEntryParamsVariant1] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMultiagentRosterEntryParamsVariant1
-    extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
+final class UnknownBetaManagedAgentsMultiagentRosterEntryParamsVariant1 extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsMultiagentRosterEntryParamsVariant1(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsMultiagentRosterEntryParams {
@@ -305,158 +172,88 @@ sealed class BetaManagedAgentsMultiagentRosterEntryParams {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMultiagentRosterEntryParams();
   factory BetaManagedAgentsMultiagentRosterEntryParams.fromJson(Object? json) {
-    if (json is String) {
-      return BetaManagedAgentsMultiagentRosterEntryParamsString(json);
-    }
+    if (json is String) { return BetaManagedAgentsMultiagentRosterEntryParamsString(json); }
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsAgentParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsMultiagentSelfParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAdvisorParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAgentParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsMultiagentSelfParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAdvisorParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(
-          BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(
-          BetaManagedAgentsMultiagentSelfParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(
-          BetaManagedAgentsAdvisorParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsMultiagentRosterEntryParams");
+    try { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(BetaManagedAgentsMultiagentSelfParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(BetaManagedAgentsAdvisorParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for BetaManagedAgentsMultiagentRosterEntryParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsString
-    extends BetaManagedAgentsMultiagentRosterEntryParams {
+final class BetaManagedAgentsMultiagentRosterEntryParamsString extends BetaManagedAgentsMultiagentRosterEntryParams {
   final String value;
   const BetaManagedAgentsMultiagentRosterEntryParamsString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams
-    extends BetaManagedAgentsMultiagentRosterEntryParams {
+final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams extends BetaManagedAgentsMultiagentRosterEntryParams {
   final BetaManagedAgentsAgentParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams
-    extends BetaManagedAgentsMultiagentRosterEntryParams {
+final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams extends BetaManagedAgentsMultiagentRosterEntryParams {
   final BetaManagedAgentsMultiagentSelfParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams
-    extends BetaManagedAgentsMultiagentRosterEntryParams {
+final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams extends BetaManagedAgentsMultiagentRosterEntryParams {
   final BetaManagedAgentsAdvisorParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// Sentinel roster entry meaning "the agent that owns this configuration". Resolved server-side to a concrete agent reference.
 class BetaManagedAgentsMultiagentSelfParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMultiagentSelfParamsType type_;
 
   const BetaManagedAgentsMultiagentSelfParams({required this.type_});
 
-  BetaManagedAgentsMultiagentSelfParams Function(
-          {BetaManagedAgentsMultiagentSelfParamsType type_})
-      get copyWith => _copyWith;
+  BetaManagedAgentsMultiagentSelfParams Function({BetaManagedAgentsMultiagentSelfParamsType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMultiagentSelfParams _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaManagedAgentsMultiagentSelfParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsMultiagentSelfParamsType,
-      );
+  BetaManagedAgentsMultiagentSelfParams _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsMultiagentSelfParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMultiagentSelfParamsType,
+  );
 
-  factory BetaManagedAgentsMultiagentSelfParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMultiagentSelfParams(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMultiagentSelfParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaManagedAgentsMultiagentSelfParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMultiagentSelfParams(
+    type_: (json['type'] != null ? BetaManagedAgentsMultiagentSelfParamsType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 /// The deployment's organization is disabled.
 class BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
-  final BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
-      type_;
+  final BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType type_;
 
-  const BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
-      {required this.type_});
+  const BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError({required this.type_});
 
-  BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError Function(
-      {BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
-          type_}) get copyWith => _copyWith;
+  BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError Function({BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_
-                as BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType,
-      );
+  BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType,
+  );
 
-  factory BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
-                .fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
+    type_: (json['type'] != null ? BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

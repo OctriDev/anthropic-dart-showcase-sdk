@@ -10,17 +10,14 @@ enum BetaApiKeyOrganizationScopeType {
 
   static BetaApiKeyOrganizationScopeType fromJson(String value) {
     switch (value) {
-      case 'organization':
-        return BetaApiKeyOrganizationScopeType.organization;
-      default:
-        throw ArgumentError('Unknown BetaApiKeyOrganizationScopeType: $value');
+      case 'organization': return BetaApiKeyOrganizationScopeType.organization;
+      default: throw ArgumentError('Unknown BetaApiKeyOrganizationScopeType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaApiKeyOrganizationScopeType.organization:
-        return 'organization';
+      case BetaApiKeyOrganizationScopeType.organization: return 'organization';
     }
   }
 
@@ -34,18 +31,14 @@ enum BetaApiKeyServiceAccountActorType {
 
   static BetaApiKeyServiceAccountActorType fromJson(String value) {
     switch (value) {
-      case 'service_account_actor':
-        return BetaApiKeyServiceAccountActorType.serviceAccountActor;
-      default:
-        throw ArgumentError(
-            'Unknown BetaApiKeyServiceAccountActorType: $value');
+      case 'service_account_actor': return BetaApiKeyServiceAccountActorType.serviceAccountActor;
+      default: throw ArgumentError('Unknown BetaApiKeyServiceAccountActorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaApiKeyServiceAccountActorType.serviceAccountActor:
-        return 'service_account_actor';
+      case BetaApiKeyServiceAccountActorType.serviceAccountActor: return 'service_account_actor';
     }
   }
 
@@ -55,12 +48,12 @@ enum BetaApiKeyServiceAccountActorType {
 
 /// Optional enumerated value serialized in the `status` wire field.
 final class BetaApiKeyUpdateParamsStatusVariant0 {
+
   final String value;
 
   const BetaApiKeyUpdateParamsStatusVariant0._(this.value);
 
-  factory BetaApiKeyUpdateParamsStatusVariant0.fromJson(String value) =>
-      BetaApiKeyUpdateParamsStatusVariant0._(value);
+  factory BetaApiKeyUpdateParamsStatusVariant0.fromJson(String value) => BetaApiKeyUpdateParamsStatusVariant0._(value);
 
   static const active = BetaApiKeyUpdateParamsStatusVariant0._('active');
   static const archived = BetaApiKeyUpdateParamsStatusVariant0._('archived');
@@ -68,15 +61,12 @@ final class BetaApiKeyUpdateParamsStatusVariant0 {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaApiKeyUpdateParamsStatusVariant0 && other.value == value;
+  @override bool operator ==(Object other) => other is BetaApiKeyUpdateParamsStatusVariant0 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Principal type. Always `"user_actor"` for a User.
@@ -85,17 +75,14 @@ enum BetaApiKeyUserActorType {
 
   static BetaApiKeyUserActorType fromJson(String value) {
     switch (value) {
-      case 'user_actor':
-        return BetaApiKeyUserActorType.userActor;
-      default:
-        throw ArgumentError('Unknown BetaApiKeyUserActorType: $value');
+      case 'user_actor': return BetaApiKeyUserActorType.userActor;
+      default: throw ArgumentError('Unknown BetaApiKeyUserActorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaApiKeyUserActorType.userActor:
-        return 'user_actor';
+      case BetaApiKeyUserActorType.userActor: return 'user_actor';
     }
   }
 
@@ -109,17 +96,14 @@ enum BetaApiKeyWorkspaceScopeType {
 
   static BetaApiKeyWorkspaceScopeType fromJson(String value) {
     switch (value) {
-      case 'workspace':
-        return BetaApiKeyWorkspaceScopeType.workspace;
-      default:
-        throw ArgumentError('Unknown BetaApiKeyWorkspaceScopeType: $value');
+      case 'workspace': return BetaApiKeyWorkspaceScopeType.workspace;
+      default: throw ArgumentError('Unknown BetaApiKeyWorkspaceScopeType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaApiKeyWorkspaceScopeType.workspace:
-        return 'workspace';
+      case BetaApiKeyWorkspaceScopeType.workspace: return 'workspace';
     }
   }
 
@@ -129,118 +113,87 @@ enum BetaApiKeyWorkspaceScopeType {
 
 /// Optional enumerated value serialized in the `period` wire field.
 final class BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0 {
+
   final String value;
 
   const BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0._(this.value);
 
-  factory BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0.fromJson(
-          String value) =>
-      BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0._(value);
+  factory BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0.fromJson(String value) => BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0._(value);
 
-  static const daily =
-      BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0._('daily');
-  static const monthly =
-      BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0._('monthly');
-  static const weekly =
-      BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0._('weekly');
+  static const daily = BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0._('daily');
+  static const monthly = BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0._('monthly');
+  static const weekly = BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0._('weekly');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0 &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is BetaApproveSpendLimitIncreaseRequestParamsPeriodVariant0 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `period` wire field.
 final class BetaApproveSpendLimitIncreaseRequestResponsePeriod {
+
   final String value;
 
   const BetaApproveSpendLimitIncreaseRequestResponsePeriod._(this.value);
 
-  factory BetaApproveSpendLimitIncreaseRequestResponsePeriod.fromJson(
-          String value) =>
-      BetaApproveSpendLimitIncreaseRequestResponsePeriod._(value);
+  factory BetaApproveSpendLimitIncreaseRequestResponsePeriod.fromJson(String value) => BetaApproveSpendLimitIncreaseRequestResponsePeriod._(value);
 
-  static const daily =
-      BetaApproveSpendLimitIncreaseRequestResponsePeriod._('daily');
-  static const monthly =
-      BetaApproveSpendLimitIncreaseRequestResponsePeriod._('monthly');
-  static const weekly =
-      BetaApproveSpendLimitIncreaseRequestResponsePeriod._('weekly');
+  static const daily = BetaApproveSpendLimitIncreaseRequestResponsePeriod._('daily');
+  static const monthly = BetaApproveSpendLimitIncreaseRequestResponsePeriod._('monthly');
+  static const weekly = BetaApproveSpendLimitIncreaseRequestResponsePeriod._('weekly');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaApproveSpendLimitIncreaseRequestResponsePeriod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is BetaApproveSpendLimitIncreaseRequestResponsePeriod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `status` wire field.
 final class BetaApproveSpendLimitIncreaseRequestResponseStatus {
+
   final String value;
 
   const BetaApproveSpendLimitIncreaseRequestResponseStatus._(this.value);
 
-  factory BetaApproveSpendLimitIncreaseRequestResponseStatus.fromJson(
-          String value) =>
-      BetaApproveSpendLimitIncreaseRequestResponseStatus._(value);
+  factory BetaApproveSpendLimitIncreaseRequestResponseStatus.fromJson(String value) => BetaApproveSpendLimitIncreaseRequestResponseStatus._(value);
 
-  static const approved =
-      BetaApproveSpendLimitIncreaseRequestResponseStatus._('approved');
-  static const denied =
-      BetaApproveSpendLimitIncreaseRequestResponseStatus._('denied');
-  static const pending =
-      BetaApproveSpendLimitIncreaseRequestResponseStatus._('pending');
+  static const approved = BetaApproveSpendLimitIncreaseRequestResponseStatus._('approved');
+  static const denied = BetaApproveSpendLimitIncreaseRequestResponseStatus._('denied');
+  static const pending = BetaApproveSpendLimitIncreaseRequestResponseStatus._('pending');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaApproveSpendLimitIncreaseRequestResponseStatus &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is BetaApproveSpendLimitIncreaseRequestResponseStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required `string` value serialized in the `type` wire field.
 enum BetaApproveSpendLimitIncreaseRequestResponseType {
   spendLimitIncreaseRequest;
 
-  static BetaApproveSpendLimitIncreaseRequestResponseType fromJson(
-      String value) {
+  static BetaApproveSpendLimitIncreaseRequestResponseType fromJson(String value) {
     switch (value) {
-      case 'spend_limit_increase_request':
-        return BetaApproveSpendLimitIncreaseRequestResponseType
-            .spendLimitIncreaseRequest;
-      default:
-        throw ArgumentError(
-            'Unknown BetaApproveSpendLimitIncreaseRequestResponseType: $value');
+      case 'spend_limit_increase_request': return BetaApproveSpendLimitIncreaseRequestResponseType.spendLimitIncreaseRequest;
+      default: throw ArgumentError('Unknown BetaApproveSpendLimitIncreaseRequestResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaApproveSpendLimitIncreaseRequestResponseType
-            .spendLimitIncreaseRequest:
-        return 'spend_limit_increase_request';
+      case BetaApproveSpendLimitIncreaseRequestResponseType.spendLimitIncreaseRequest: return 'spend_limit_increase_request';
     }
   }
 
@@ -254,17 +207,14 @@ enum BetaAttachedAttachmentType {
 
   static BetaAttachedAttachmentType fromJson(String value) {
     switch (value) {
-      case 'attached':
-        return BetaAttachedAttachmentType.attached;
-      default:
-        throw ArgumentError('Unknown BetaAttachedAttachmentType: $value');
+      case 'attached': return BetaAttachedAttachmentType.attached;
+      default: throw ArgumentError('Unknown BetaAttachedAttachmentType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAttachedAttachmentType.attached:
-        return 'attached';
+      case BetaAttachedAttachmentType.attached: return 'attached';
     }
   }
 
@@ -278,17 +228,14 @@ enum BetaAuthenticationErrorType {
 
   static BetaAuthenticationErrorType fromJson(String value) {
     switch (value) {
-      case 'authentication_error':
-        return BetaAuthenticationErrorType.authenticationError;
-      default:
-        throw ArgumentError('Unknown BetaAuthenticationErrorType: $value');
+      case 'authentication_error': return BetaAuthenticationErrorType.authenticationError;
+      default: throw ArgumentError('Unknown BetaAuthenticationErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAuthenticationErrorType.authenticationError:
-        return 'authentication_error';
+      case BetaAuthenticationErrorType.authenticationError: return 'authentication_error';
     }
   }
 
@@ -302,17 +249,14 @@ enum BetaAwsExternalKeyConfigType {
 
   static BetaAwsExternalKeyConfigType fromJson(String value) {
     switch (value) {
-      case 'aws':
-        return BetaAwsExternalKeyConfigType.aws;
-      default:
-        throw ArgumentError('Unknown BetaAwsExternalKeyConfigType: $value');
+      case 'aws': return BetaAwsExternalKeyConfigType.aws;
+      default: throw ArgumentError('Unknown BetaAwsExternalKeyConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAwsExternalKeyConfigType.aws:
-        return 'aws';
+      case BetaAwsExternalKeyConfigType.aws: return 'aws';
     }
   }
 
@@ -326,17 +270,14 @@ enum BetaAzureExternalKeyConfigType {
 
   static BetaAzureExternalKeyConfigType fromJson(String value) {
     switch (value) {
-      case 'azure':
-        return BetaAzureExternalKeyConfigType.azure;
-      default:
-        throw ArgumentError('Unknown BetaAzureExternalKeyConfigType: $value');
+      case 'azure': return BetaAzureExternalKeyConfigType.azure;
+      default: throw ArgumentError('Unknown BetaAzureExternalKeyConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAzureExternalKeyConfigType.azure:
-        return 'azure';
+      case BetaAzureExternalKeyConfigType.azure: return 'azure';
     }
   }
 

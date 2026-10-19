@@ -10,18 +10,14 @@ enum BetaResponseRedactedThinkingBlockType {
 
   static BetaResponseRedactedThinkingBlockType fromJson(String value) {
     switch (value) {
-      case 'redacted_thinking':
-        return BetaResponseRedactedThinkingBlockType.redactedThinking;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseRedactedThinkingBlockType: $value');
+      case 'redacted_thinking': return BetaResponseRedactedThinkingBlockType.redactedThinking;
+      default: throw ArgumentError('Unknown BetaResponseRedactedThinkingBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseRedactedThinkingBlockType.redactedThinking:
-        return 'redacted_thinking';
+      case BetaResponseRedactedThinkingBlockType.redactedThinking: return 'redacted_thinking';
     }
   }
 
@@ -35,19 +31,14 @@ enum BetaResponseSearchResultLocationCitationType {
 
   static BetaResponseSearchResultLocationCitationType fromJson(String value) {
     switch (value) {
-      case 'search_result_location':
-        return BetaResponseSearchResultLocationCitationType
-            .searchResultLocation;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseSearchResultLocationCitationType: $value');
+      case 'search_result_location': return BetaResponseSearchResultLocationCitationType.searchResultLocation;
+      default: throw ArgumentError('Unknown BetaResponseSearchResultLocationCitationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseSearchResultLocationCitationType.searchResultLocation:
-        return 'search_result_location';
+      case BetaResponseSearchResultLocationCitationType.searchResultLocation: return 'search_result_location';
     }
   }
 
@@ -57,38 +48,30 @@ enum BetaResponseSearchResultLocationCitationType {
 
 /// Required enumerated value serialized in the `name` wire field.
 final class BetaResponseServerToolUseBlockName {
+
   final String value;
 
   const BetaResponseServerToolUseBlockName._(this.value);
 
-  factory BetaResponseServerToolUseBlockName.fromJson(String value) =>
-      BetaResponseServerToolUseBlockName._(value);
+  factory BetaResponseServerToolUseBlockName.fromJson(String value) => BetaResponseServerToolUseBlockName._(value);
 
   static const advisor = BetaResponseServerToolUseBlockName._('advisor');
   static const webSearch = BetaResponseServerToolUseBlockName._('web_search');
   static const webFetch = BetaResponseServerToolUseBlockName._('web_fetch');
-  static const codeExecution =
-      BetaResponseServerToolUseBlockName._('code_execution');
-  static const bashCodeExecution =
-      BetaResponseServerToolUseBlockName._('bash_code_execution');
-  static const textEditorCodeExecution =
-      BetaResponseServerToolUseBlockName._('text_editor_code_execution');
-  static const toolSearchToolRegex =
-      BetaResponseServerToolUseBlockName._('tool_search_tool_regex');
-  static const toolSearchToolBm25 =
-      BetaResponseServerToolUseBlockName._('tool_search_tool_bm25');
+  static const codeExecution = BetaResponseServerToolUseBlockName._('code_execution');
+  static const bashCodeExecution = BetaResponseServerToolUseBlockName._('bash_code_execution');
+  static const textEditorCodeExecution = BetaResponseServerToolUseBlockName._('text_editor_code_execution');
+  static const toolSearchToolRegex = BetaResponseServerToolUseBlockName._('tool_search_tool_regex');
+  static const toolSearchToolBm25 = BetaResponseServerToolUseBlockName._('tool_search_tool_bm25');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaResponseServerToolUseBlockName && other.value == value;
+  @override bool operator ==(Object other) => other is BetaResponseServerToolUseBlockName && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -97,18 +80,14 @@ enum BetaResponseServerToolUseBlockType {
 
   static BetaResponseServerToolUseBlockType fromJson(String value) {
     switch (value) {
-      case 'server_tool_use':
-        return BetaResponseServerToolUseBlockType.serverToolUse;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseServerToolUseBlockType: $value');
+      case 'server_tool_use': return BetaResponseServerToolUseBlockType.serverToolUse;
+      default: throw ArgumentError('Unknown BetaResponseServerToolUseBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseServerToolUseBlockType.serverToolUse:
-        return 'server_tool_use';
+      case BetaResponseServerToolUseBlockType.serverToolUse: return 'server_tool_use';
     }
   }
 
@@ -122,17 +101,14 @@ enum BetaResponseTextBlockType {
 
   static BetaResponseTextBlockType fromJson(String value) {
     switch (value) {
-      case 'text':
-        return BetaResponseTextBlockType.text;
-      default:
-        throw ArgumentError('Unknown BetaResponseTextBlockType: $value');
+      case 'text': return BetaResponseTextBlockType.text;
+      default: throw ArgumentError('Unknown BetaResponseTextBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseTextBlockType.text:
-        return 'text';
+      case BetaResponseTextBlockType.text: return 'text';
     }
   }
 
@@ -144,23 +120,16 @@ enum BetaResponseTextBlockType {
 enum BetaResponseTextEditorCodeExecutionCreateResultBlockType {
   textEditorCodeExecutionCreateResult;
 
-  static BetaResponseTextEditorCodeExecutionCreateResultBlockType fromJson(
-      String value) {
+  static BetaResponseTextEditorCodeExecutionCreateResultBlockType fromJson(String value) {
     switch (value) {
-      case 'text_editor_code_execution_create_result':
-        return BetaResponseTextEditorCodeExecutionCreateResultBlockType
-            .textEditorCodeExecutionCreateResult;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseTextEditorCodeExecutionCreateResultBlockType: $value');
+      case 'text_editor_code_execution_create_result': return BetaResponseTextEditorCodeExecutionCreateResultBlockType.textEditorCodeExecutionCreateResult;
+      default: throw ArgumentError('Unknown BetaResponseTextEditorCodeExecutionCreateResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseTextEditorCodeExecutionCreateResultBlockType
-            .textEditorCodeExecutionCreateResult:
-        return 'text_editor_code_execution_create_result';
+      case BetaResponseTextEditorCodeExecutionCreateResultBlockType.textEditorCodeExecutionCreateResult: return 'text_editor_code_execution_create_result';
     }
   }
 
@@ -172,23 +141,16 @@ enum BetaResponseTextEditorCodeExecutionCreateResultBlockType {
 enum BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType {
   textEditorCodeExecutionStrReplaceResult;
 
-  static BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType fromJson(
-      String value) {
+  static BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType fromJson(String value) {
     switch (value) {
-      case 'text_editor_code_execution_str_replace_result':
-        return BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType
-            .textEditorCodeExecutionStrReplaceResult;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType: $value');
+      case 'text_editor_code_execution_str_replace_result': return BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType.textEditorCodeExecutionStrReplaceResult;
+      default: throw ArgumentError('Unknown BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType
-            .textEditorCodeExecutionStrReplaceResult:
-        return 'text_editor_code_execution_str_replace_result';
+      case BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType.textEditorCodeExecutionStrReplaceResult: return 'text_editor_code_execution_str_replace_result';
     }
   }
 
@@ -200,23 +162,16 @@ enum BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType {
 enum BetaResponseTextEditorCodeExecutionToolResultBlockType {
   textEditorCodeExecutionToolResult;
 
-  static BetaResponseTextEditorCodeExecutionToolResultBlockType fromJson(
-      String value) {
+  static BetaResponseTextEditorCodeExecutionToolResultBlockType fromJson(String value) {
     switch (value) {
-      case 'text_editor_code_execution_tool_result':
-        return BetaResponseTextEditorCodeExecutionToolResultBlockType
-            .textEditorCodeExecutionToolResult;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseTextEditorCodeExecutionToolResultBlockType: $value');
+      case 'text_editor_code_execution_tool_result': return BetaResponseTextEditorCodeExecutionToolResultBlockType.textEditorCodeExecutionToolResult;
+      default: throw ArgumentError('Unknown BetaResponseTextEditorCodeExecutionToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseTextEditorCodeExecutionToolResultBlockType
-            .textEditorCodeExecutionToolResult:
-        return 'text_editor_code_execution_tool_result';
+      case BetaResponseTextEditorCodeExecutionToolResultBlockType.textEditorCodeExecutionToolResult: return 'text_editor_code_execution_tool_result';
     }
   }
 
@@ -228,23 +183,16 @@ enum BetaResponseTextEditorCodeExecutionToolResultBlockType {
 enum BetaResponseTextEditorCodeExecutionToolResultErrorType {
   textEditorCodeExecutionToolResultError;
 
-  static BetaResponseTextEditorCodeExecutionToolResultErrorType fromJson(
-      String value) {
+  static BetaResponseTextEditorCodeExecutionToolResultErrorType fromJson(String value) {
     switch (value) {
-      case 'text_editor_code_execution_tool_result_error':
-        return BetaResponseTextEditorCodeExecutionToolResultErrorType
-            .textEditorCodeExecutionToolResultError;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseTextEditorCodeExecutionToolResultErrorType: $value');
+      case 'text_editor_code_execution_tool_result_error': return BetaResponseTextEditorCodeExecutionToolResultErrorType.textEditorCodeExecutionToolResultError;
+      default: throw ArgumentError('Unknown BetaResponseTextEditorCodeExecutionToolResultErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseTextEditorCodeExecutionToolResultErrorType
-            .textEditorCodeExecutionToolResultError:
-        return 'text_editor_code_execution_tool_result_error';
+      case BetaResponseTextEditorCodeExecutionToolResultErrorType.textEditorCodeExecutionToolResultError: return 'text_editor_code_execution_tool_result_error';
     }
   }
 
@@ -254,57 +202,41 @@ enum BetaResponseTextEditorCodeExecutionToolResultErrorType {
 
 /// Required enumerated value serialized in the `file_type` wire field.
 final class BetaResponseTextEditorCodeExecutionViewResultBlockFileType {
+
   final String value;
 
-  const BetaResponseTextEditorCodeExecutionViewResultBlockFileType._(
-      this.value);
+  const BetaResponseTextEditorCodeExecutionViewResultBlockFileType._(this.value);
 
-  factory BetaResponseTextEditorCodeExecutionViewResultBlockFileType.fromJson(
-          String value) =>
-      BetaResponseTextEditorCodeExecutionViewResultBlockFileType._(value);
+  factory BetaResponseTextEditorCodeExecutionViewResultBlockFileType.fromJson(String value) => BetaResponseTextEditorCodeExecutionViewResultBlockFileType._(value);
 
-  static const text =
-      BetaResponseTextEditorCodeExecutionViewResultBlockFileType._('text');
-  static const image =
-      BetaResponseTextEditorCodeExecutionViewResultBlockFileType._('image');
-  static const pdf =
-      BetaResponseTextEditorCodeExecutionViewResultBlockFileType._('pdf');
+  static const text = BetaResponseTextEditorCodeExecutionViewResultBlockFileType._('text');
+  static const image = BetaResponseTextEditorCodeExecutionViewResultBlockFileType._('image');
+  static const pdf = BetaResponseTextEditorCodeExecutionViewResultBlockFileType._('pdf');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaResponseTextEditorCodeExecutionViewResultBlockFileType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is BetaResponseTextEditorCodeExecutionViewResultBlockFileType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required `string` value serialized in the `type` wire field.
 enum BetaResponseTextEditorCodeExecutionViewResultBlockType {
   textEditorCodeExecutionViewResult;
 
-  static BetaResponseTextEditorCodeExecutionViewResultBlockType fromJson(
-      String value) {
+  static BetaResponseTextEditorCodeExecutionViewResultBlockType fromJson(String value) {
     switch (value) {
-      case 'text_editor_code_execution_view_result':
-        return BetaResponseTextEditorCodeExecutionViewResultBlockType
-            .textEditorCodeExecutionViewResult;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseTextEditorCodeExecutionViewResultBlockType: $value');
+      case 'text_editor_code_execution_view_result': return BetaResponseTextEditorCodeExecutionViewResultBlockType.textEditorCodeExecutionViewResult;
+      default: throw ArgumentError('Unknown BetaResponseTextEditorCodeExecutionViewResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseTextEditorCodeExecutionViewResultBlockType
-            .textEditorCodeExecutionViewResult:
-        return 'text_editor_code_execution_view_result';
+      case BetaResponseTextEditorCodeExecutionViewResultBlockType.textEditorCodeExecutionViewResult: return 'text_editor_code_execution_view_result';
     }
   }
 
@@ -318,17 +250,14 @@ enum BetaResponseThinkingBlockType {
 
   static BetaResponseThinkingBlockType fromJson(String value) {
     switch (value) {
-      case 'thinking':
-        return BetaResponseThinkingBlockType.thinking;
-      default:
-        throw ArgumentError('Unknown BetaResponseThinkingBlockType: $value');
+      case 'thinking': return BetaResponseThinkingBlockType.thinking;
+      default: throw ArgumentError('Unknown BetaResponseThinkingBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseThinkingBlockType.thinking:
-        return 'thinking';
+      case BetaResponseThinkingBlockType.thinking: return 'thinking';
     }
   }
 
@@ -342,18 +271,14 @@ enum BetaResponseToolReferenceBlockType {
 
   static BetaResponseToolReferenceBlockType fromJson(String value) {
     switch (value) {
-      case 'tool_reference':
-        return BetaResponseToolReferenceBlockType.toolReference;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseToolReferenceBlockType: $value');
+      case 'tool_reference': return BetaResponseToolReferenceBlockType.toolReference;
+      default: throw ArgumentError('Unknown BetaResponseToolReferenceBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaResponseToolReferenceBlockType.toolReference:
-        return 'tool_reference';
+      case BetaResponseToolReferenceBlockType.toolReference: return 'tool_reference';
     }
   }
 

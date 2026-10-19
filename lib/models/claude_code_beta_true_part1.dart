@@ -8,238 +8,130 @@ part of 'claude_code_beta_true.dart';
 class BetaApprovalMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Number of tool action proposals that the user accepted.
   final int accepted;
-
   /// Number of tool action proposals that the user rejected.
   final int rejected;
 
   const BetaApprovalMetrics({required this.accepted, required this.rejected});
 
-  BetaApprovalMetrics Function({int accepted, int rejected}) get copyWith =>
-      _copyWith;
+  BetaApprovalMetrics Function({int accepted, int rejected}) get copyWith => _copyWith;
 
-  BetaApprovalMetrics _copyWith(
-          {Object? accepted = sdkOmittedValue,
-          Object? rejected = sdkOmittedValue}) =>
-      BetaApprovalMetrics(
-        accepted: identical(accepted, sdkOmittedValue)
-            ? this.accepted
-            : accepted as int,
-        rejected: identical(rejected, sdkOmittedValue)
-            ? this.rejected
-            : rejected as int,
-      );
+  BetaApprovalMetrics _copyWith({Object? accepted = sdkOmittedValue, Object? rejected = sdkOmittedValue}) => BetaApprovalMetrics(
+    accepted: identical(accepted, sdkOmittedValue) ? this.accepted : accepted as int,
+    rejected: identical(rejected, sdkOmittedValue) ? this.rejected : rejected as int,
+  );
 
-  factory BetaApprovalMetrics.fromJson(Map<String, dynamic> json) =>
-      BetaApprovalMetrics(
-        accepted: ((json['accepted'] as num?)?.toInt())!,
-        rejected: ((json['rejected'] as num?)?.toInt())!,
-      );
+  factory BetaApprovalMetrics.fromJson(Map<String, dynamic> json) => BetaApprovalMetrics(
+    accepted: ((json['accepted'] as num?)?.toInt())!,
+    rejected: ((json['rejected'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'accepted': accepted,
-        'rejected': rejected,
-      };
+    'accepted': accepted,
+    'rejected': rejected,
+  };
 }
 
 /// Typed representation of the `BetaClaudeCodeApiActor` API schema.
 class BetaClaudeCodeApiActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Name of the API key used to perform Claude Code actions.
   final String apiKeyName;
-
   /// Actor type. Always `"api_actor"` for an API key.
   final BetaClaudeCodeApiActorType type_;
 
   const BetaClaudeCodeApiActor({required this.apiKeyName, required this.type_});
 
-  BetaClaudeCodeApiActor Function(
-      {String apiKeyName,
-      BetaClaudeCodeApiActorType type_}) get copyWith => _copyWith;
+  BetaClaudeCodeApiActor Function({String apiKeyName, BetaClaudeCodeApiActorType type_}) get copyWith => _copyWith;
 
-  BetaClaudeCodeApiActor _copyWith(
-          {Object? apiKeyName = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaClaudeCodeApiActor(
-        apiKeyName: identical(apiKeyName, sdkOmittedValue)
-            ? this.apiKeyName
-            : apiKeyName as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaClaudeCodeApiActorType,
-      );
+  BetaClaudeCodeApiActor _copyWith({Object? apiKeyName = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaClaudeCodeApiActor(
+    apiKeyName: identical(apiKeyName, sdkOmittedValue) ? this.apiKeyName : apiKeyName as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaClaudeCodeApiActorType,
+  );
 
-  factory BetaClaudeCodeApiActor.fromJson(Map<String, dynamic> json) =>
-      BetaClaudeCodeApiActor(
-        apiKeyName: (json['api_key_name'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaClaudeCodeApiActorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaClaudeCodeApiActor.fromJson(Map<String, dynamic> json) => BetaClaudeCodeApiActor(
+    apiKeyName: (json['api_key_name'] as String?)!,
+    type_: (json['type'] != null ? BetaClaudeCodeApiActorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'api_key_name': apiKeyName,
-        'type': type_.toJson(),
-      };
+    'api_key_name': apiKeyName,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaClaudeCodeUsageReportItem` API schema.
 class BetaClaudeCodeUsageReportItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The user or API key that performed the Claude Code actions.
   final BetaClaudeCodeUsageReportItemActor actor;
-
   /// Core productivity metrics measuring Claude Code usage and impact.
   final BetaCoreMetrics coreMetrics;
-
   /// Type of customer account (api for API customers, subscription for Pro/Team customers).
   final BetaCustomerType customerType;
-
   /// UTC day the usage metrics cover, as an RFC 3339 timestamp at midnight UTC (for example `2025-08-08T00:00:00Z`).
   final String date;
-
   /// Whether the usage came from remote Claude Code sessions, such as Claude Code on the web. Remote and local usage are reported as separate rows.
   final bool isRemote;
-
   /// Token usage and cost breakdown by AI model used.
   final List<BetaModelBreakdown> modelBreakdown;
-
   /// ID of the organization that owns the Claude Code usage.
   final String organizationId;
-
   /// Subscription tier for subscription customers. `null` for API customers.
   final SdkOptional<BetaSubscriptionType?> subscriptionType;
-
   /// Type of terminal or environment where Claude Code was used.
   final String terminalType;
-
   /// Breakdown of tool action acceptance and rejection rates by tool type.
   final Map<String, BetaApprovalMetrics> toolActions;
 
-  const BetaClaudeCodeUsageReportItem(
-      {required this.actor,
-      required this.coreMetrics,
-      required this.customerType,
-      required this.date,
-      required this.isRemote,
-      required this.modelBreakdown,
-      required this.organizationId,
-      this.subscriptionType = const SdkOmitted(),
-      required this.terminalType,
-      required this.toolActions});
+  const BetaClaudeCodeUsageReportItem({required this.actor, required this.coreMetrics, required this.customerType, required this.date, required this.isRemote, required this.modelBreakdown, required this.organizationId, this.subscriptionType = const SdkOmitted(), required this.terminalType, required this.toolActions});
 
-  BetaClaudeCodeUsageReportItem Function(
-      {BetaClaudeCodeUsageReportItemActor actor,
-      BetaCoreMetrics coreMetrics,
-      BetaCustomerType customerType,
-      String date,
-      bool isRemote,
-      List<BetaModelBreakdown> modelBreakdown,
-      String organizationId,
-      SdkOptional<BetaSubscriptionType?> subscriptionType,
-      String terminalType,
-      Map<String, BetaApprovalMetrics> toolActions}) get copyWith => _copyWith;
+  BetaClaudeCodeUsageReportItem Function({BetaClaudeCodeUsageReportItemActor actor, BetaCoreMetrics coreMetrics, BetaCustomerType customerType, String date, bool isRemote, List<BetaModelBreakdown> modelBreakdown, String organizationId, SdkOptional<BetaSubscriptionType?> subscriptionType, String terminalType, Map<String, BetaApprovalMetrics> toolActions}) get copyWith => _copyWith;
 
-  BetaClaudeCodeUsageReportItem _copyWith(
-          {Object? actor = sdkOmittedValue,
-          Object? coreMetrics = sdkOmittedValue,
-          Object? customerType = sdkOmittedValue,
-          Object? date = sdkOmittedValue,
-          Object? isRemote = sdkOmittedValue,
-          Object? modelBreakdown = sdkOmittedValue,
-          Object? organizationId = sdkOmittedValue,
-          Object? subscriptionType = sdkOmittedValue,
-          Object? terminalType = sdkOmittedValue,
-          Object? toolActions = sdkOmittedValue}) =>
-      BetaClaudeCodeUsageReportItem(
-        actor: identical(actor, sdkOmittedValue)
-            ? this.actor
-            : actor as BetaClaudeCodeUsageReportItemActor,
-        coreMetrics: identical(coreMetrics, sdkOmittedValue)
-            ? this.coreMetrics
-            : coreMetrics as BetaCoreMetrics,
-        customerType: identical(customerType, sdkOmittedValue)
-            ? this.customerType
-            : customerType as BetaCustomerType,
-        date: identical(date, sdkOmittedValue) ? this.date : date as String,
-        isRemote: identical(isRemote, sdkOmittedValue)
-            ? this.isRemote
-            : isRemote as bool,
-        modelBreakdown: identical(modelBreakdown, sdkOmittedValue)
-            ? this.modelBreakdown
-            : modelBreakdown as List<BetaModelBreakdown>,
-        organizationId: identical(organizationId, sdkOmittedValue)
-            ? this.organizationId
-            : organizationId as String,
-        subscriptionType: identical(subscriptionType, sdkOmittedValue)
-            ? this.subscriptionType
-            : subscriptionType as SdkOptional<BetaSubscriptionType?>,
-        terminalType: identical(terminalType, sdkOmittedValue)
-            ? this.terminalType
-            : terminalType as String,
-        toolActions: identical(toolActions, sdkOmittedValue)
-            ? this.toolActions
-            : toolActions as Map<String, BetaApprovalMetrics>,
-      );
+  BetaClaudeCodeUsageReportItem _copyWith({Object? actor = sdkOmittedValue, Object? coreMetrics = sdkOmittedValue, Object? customerType = sdkOmittedValue, Object? date = sdkOmittedValue, Object? isRemote = sdkOmittedValue, Object? modelBreakdown = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? subscriptionType = sdkOmittedValue, Object? terminalType = sdkOmittedValue, Object? toolActions = sdkOmittedValue}) => BetaClaudeCodeUsageReportItem(
+    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as BetaClaudeCodeUsageReportItemActor,
+    coreMetrics: identical(coreMetrics, sdkOmittedValue) ? this.coreMetrics : coreMetrics as BetaCoreMetrics,
+    customerType: identical(customerType, sdkOmittedValue) ? this.customerType : customerType as BetaCustomerType,
+    date: identical(date, sdkOmittedValue) ? this.date : date as String,
+    isRemote: identical(isRemote, sdkOmittedValue) ? this.isRemote : isRemote as bool,
+    modelBreakdown: identical(modelBreakdown, sdkOmittedValue) ? this.modelBreakdown : modelBreakdown as List<BetaModelBreakdown>,
+    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
+    subscriptionType: identical(subscriptionType, sdkOmittedValue) ? this.subscriptionType : subscriptionType as SdkOptional<BetaSubscriptionType?>,
+    terminalType: identical(terminalType, sdkOmittedValue) ? this.terminalType : terminalType as String,
+    toolActions: identical(toolActions, sdkOmittedValue) ? this.toolActions : toolActions as Map<String, BetaApprovalMetrics>,
+  );
 
-  factory BetaClaudeCodeUsageReportItem.fromJson(Map<String, dynamic> json) =>
-      BetaClaudeCodeUsageReportItem(
-        actor: (json['actor'] != null
-            ? BetaClaudeCodeUsageReportItemActor.fromJson(json['actor'])
-            : null)!,
-        coreMetrics: (json['core_metrics'] != null
-            ? BetaCoreMetrics.fromJson(
-                json['core_metrics'] as Map<String, dynamic>)
-            : null)!,
-        customerType: (json['customer_type'] != null
-            ? BetaCustomerType.fromJson(json['customer_type'] as String)
-            : null)!,
-        date: (json['date'] as String?)!,
-        isRemote: (json['is_remote'] as bool?)!,
-        modelBreakdown: ((json['model_breakdown'] as List?)
-            ?.map((e) => BetaModelBreakdown.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        organizationId: (json['organization_id'] as String?)!,
-        subscriptionType: json.containsKey('subscription_type')
-            ? SdkPresent(json['subscription_type'] != null
-                ? BetaSubscriptionType.fromJson(
-                    json['subscription_type'] as String)
-                : null)
-            : const SdkOmitted(),
-        terminalType: (json['terminal_type'] as String?)!,
-        toolActions: (json['tool_actions'] == null
-            ? null
-            : Map<String, dynamic>.from(json['tool_actions'] as Map).map(
-                (key, value) => MapEntry(
-                    key,
-                    BetaApprovalMetrics.fromJson(
-                        value as Map<String, dynamic>))))!,
-      );
+  factory BetaClaudeCodeUsageReportItem.fromJson(Map<String, dynamic> json) => BetaClaudeCodeUsageReportItem(
+    actor: (json['actor'] != null ? BetaClaudeCodeUsageReportItemActor.fromJson(json['actor']) : null)!,
+    coreMetrics: (json['core_metrics'] != null ? BetaCoreMetrics.fromJson(json['core_metrics'] as Map<String, dynamic>) : null)!,
+    customerType: (json['customer_type'] != null ? BetaCustomerType.fromJson(json['customer_type'] as String) : null)!,
+    date: (json['date'] as String?)!,
+    isRemote: (json['is_remote'] as bool?)!,
+    modelBreakdown: ((json['model_breakdown'] as List?)?.map((e) => BetaModelBreakdown.fromJson(e as Map<String, dynamic>)).toList())!,
+    organizationId: (json['organization_id'] as String?)!,
+    subscriptionType: json.containsKey('subscription_type') ? SdkPresent(json['subscription_type'] != null ? BetaSubscriptionType.fromJson(json['subscription_type'] as String) : null) : const SdkOmitted(),
+    terminalType: (json['terminal_type'] as String?)!,
+    toolActions: (json['tool_actions'] == null ? null : Map<String, dynamic>.from(json['tool_actions'] as Map).map((key, value) => MapEntry(key, BetaApprovalMetrics.fromJson(value as Map<String, dynamic>))))!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'actor': actor.toJson(),
-        'core_metrics': coreMetrics.toJson(),
-        'customer_type': customerType.toJson(),
-        'date': date,
-        'is_remote': isRemote,
-        'model_breakdown': modelBreakdown.map((item) => item.toJson()).toList(),
-        'organization_id': organizationId,
-        ...switch (subscriptionType) {
-          SdkPresent<BetaSubscriptionType?>(value: final value) => {
-              'subscription_type': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'terminal_type': terminalType,
-        'tool_actions':
-            toolActions.map((key, value) => MapEntry(key, value.toJson())),
-      };
+    'actor': actor.toJson(),
+    'core_metrics': coreMetrics.toJson(),
+    'customer_type': customerType.toJson(),
+    'date': date,
+    'is_remote': isRemote,
+    'model_breakdown': modelBreakdown.map((item) => item.toJson()).toList(),
+    'organization_id': organizationId,
+    ...switch (subscriptionType) {
+      SdkPresent<BetaSubscriptionType?>(value: final value) => {'subscription_type': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'terminal_type': terminalType,
+    'tool_actions': toolActions.map((key, value) => MapEntry(key, value.toJson())),
+  };
 }
 
 sealed class BetaClaudeCodeUsageReportItemActor {
@@ -248,182 +140,107 @@ sealed class BetaClaudeCodeUsageReportItemActor {
   const BetaClaudeCodeUsageReportItemActor();
   factory BetaClaudeCodeUsageReportItemActor.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaClaudeCodeUserActor.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaClaudeCodeUsageReportItemActorBetaClaudeCodeUserActor(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaClaudeCodeApiActor.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaClaudeCodeUsageReportItemActorBetaClaudeCodeApiActor(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaClaudeCodeUserActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaClaudeCodeUsageReportItemActorBetaClaudeCodeUserActor(value); } } catch (_) {}
+      try { final value = BetaClaudeCodeApiActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaClaudeCodeUsageReportItemActorBetaClaudeCodeApiActor(value); } } catch (_) {}
     }
-    try {
-      return BetaClaudeCodeUsageReportItemActorBetaClaudeCodeUserActor(
-          BetaClaudeCodeUserActor.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaClaudeCodeUsageReportItemActorBetaClaudeCodeApiActor(
-          BetaClaudeCodeApiActor.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"api_actor", "user_actor"}.contains(json["type"])) {
-      return UnknownBetaClaudeCodeUsageReportItemActor(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaClaudeCodeUsageReportItemActor");
+    try { return BetaClaudeCodeUsageReportItemActorBetaClaudeCodeUserActor(BetaClaudeCodeUserActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaClaudeCodeUsageReportItemActorBetaClaudeCodeApiActor(BetaClaudeCodeApiActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"api_actor", "user_actor"}.contains(json["type"])) { return UnknownBetaClaudeCodeUsageReportItemActor(json); }
+    throw FormatException("No variant matched for BetaClaudeCodeUsageReportItemActor");
   }
   Object? toJson();
 }
 
-final class BetaClaudeCodeUsageReportItemActorBetaClaudeCodeUserActor
-    extends BetaClaudeCodeUsageReportItemActor {
+final class BetaClaudeCodeUsageReportItemActorBetaClaudeCodeUserActor extends BetaClaudeCodeUsageReportItemActor {
   final BetaClaudeCodeUserActor value;
   const BetaClaudeCodeUsageReportItemActorBetaClaudeCodeUserActor(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaClaudeCodeUsageReportItemActorBetaClaudeCodeApiActor
-    extends BetaClaudeCodeUsageReportItemActor {
+final class BetaClaudeCodeUsageReportItemActorBetaClaudeCodeApiActor extends BetaClaudeCodeUsageReportItemActor {
   final BetaClaudeCodeApiActor value;
   const BetaClaudeCodeUsageReportItemActorBetaClaudeCodeApiActor(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaClaudeCodeUsageReportItemActor] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaClaudeCodeUsageReportItemActor
-    extends BetaClaudeCodeUsageReportItemActor {
+final class UnknownBetaClaudeCodeUsageReportItemActor extends BetaClaudeCodeUsageReportItemActor {
   final Map<String, dynamic> raw;
   const UnknownBetaClaudeCodeUsageReportItemActor(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaClaudeCodeUserActor` API schema.
 class BetaClaudeCodeUserActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Email address of the user who performed Claude Code actions.
   final String emailAddress;
-
   /// Actor type. Always `"user_actor"` for a user.
   final BetaClaudeCodeUserActorType type_;
 
-  const BetaClaudeCodeUserActor(
-      {required this.emailAddress, required this.type_});
+  const BetaClaudeCodeUserActor({required this.emailAddress, required this.type_});
 
-  BetaClaudeCodeUserActor Function(
-      {String emailAddress,
-      BetaClaudeCodeUserActorType type_}) get copyWith => _copyWith;
+  BetaClaudeCodeUserActor Function({String emailAddress, BetaClaudeCodeUserActorType type_}) get copyWith => _copyWith;
 
-  BetaClaudeCodeUserActor _copyWith(
-          {Object? emailAddress = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaClaudeCodeUserActor(
-        emailAddress: identical(emailAddress, sdkOmittedValue)
-            ? this.emailAddress
-            : emailAddress as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaClaudeCodeUserActorType,
-      );
+  BetaClaudeCodeUserActor _copyWith({Object? emailAddress = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaClaudeCodeUserActor(
+    emailAddress: identical(emailAddress, sdkOmittedValue) ? this.emailAddress : emailAddress as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaClaudeCodeUserActorType,
+  );
 
-  factory BetaClaudeCodeUserActor.fromJson(Map<String, dynamic> json) =>
-      BetaClaudeCodeUserActor(
-        emailAddress: (json['email_address'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaClaudeCodeUserActorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaClaudeCodeUserActor.fromJson(Map<String, dynamic> json) => BetaClaudeCodeUserActor(
+    emailAddress: (json['email_address'] as String?)!,
+    type_: (json['type'] != null ? BetaClaudeCodeUserActorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'email_address': emailAddress,
-        'type': type_.toJson(),
-      };
+    'email_address': emailAddress,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaCoreMetrics` API schema.
 class BetaCoreMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Number of git commits created through Claude Code's commit functionality.
   final int commitsByClaudeCode;
-
   /// Statistics on code changes made through Claude Code.
   final BetaLinesOfCode linesOfCode;
-
   /// Number of distinct Claude Code sessions initiated by this actor.
   final int numSessions;
-
   /// Number of pull requests created through Claude Code's PR functionality.
   final int pullRequestsByClaudeCode;
 
-  const BetaCoreMetrics(
-      {required this.commitsByClaudeCode,
-      required this.linesOfCode,
-      required this.numSessions,
-      required this.pullRequestsByClaudeCode});
+  const BetaCoreMetrics({required this.commitsByClaudeCode, required this.linesOfCode, required this.numSessions, required this.pullRequestsByClaudeCode});
 
-  BetaCoreMetrics Function(
-      {int commitsByClaudeCode,
-      BetaLinesOfCode linesOfCode,
-      int numSessions,
-      int pullRequestsByClaudeCode}) get copyWith => _copyWith;
+  BetaCoreMetrics Function({int commitsByClaudeCode, BetaLinesOfCode linesOfCode, int numSessions, int pullRequestsByClaudeCode}) get copyWith => _copyWith;
 
-  BetaCoreMetrics _copyWith(
-          {Object? commitsByClaudeCode = sdkOmittedValue,
-          Object? linesOfCode = sdkOmittedValue,
-          Object? numSessions = sdkOmittedValue,
-          Object? pullRequestsByClaudeCode = sdkOmittedValue}) =>
-      BetaCoreMetrics(
-        commitsByClaudeCode: identical(commitsByClaudeCode, sdkOmittedValue)
-            ? this.commitsByClaudeCode
-            : commitsByClaudeCode as int,
-        linesOfCode: identical(linesOfCode, sdkOmittedValue)
-            ? this.linesOfCode
-            : linesOfCode as BetaLinesOfCode,
-        numSessions: identical(numSessions, sdkOmittedValue)
-            ? this.numSessions
-            : numSessions as int,
-        pullRequestsByClaudeCode:
-            identical(pullRequestsByClaudeCode, sdkOmittedValue)
-                ? this.pullRequestsByClaudeCode
-                : pullRequestsByClaudeCode as int,
-      );
+  BetaCoreMetrics _copyWith({Object? commitsByClaudeCode = sdkOmittedValue, Object? linesOfCode = sdkOmittedValue, Object? numSessions = sdkOmittedValue, Object? pullRequestsByClaudeCode = sdkOmittedValue}) => BetaCoreMetrics(
+    commitsByClaudeCode: identical(commitsByClaudeCode, sdkOmittedValue) ? this.commitsByClaudeCode : commitsByClaudeCode as int,
+    linesOfCode: identical(linesOfCode, sdkOmittedValue) ? this.linesOfCode : linesOfCode as BetaLinesOfCode,
+    numSessions: identical(numSessions, sdkOmittedValue) ? this.numSessions : numSessions as int,
+    pullRequestsByClaudeCode: identical(pullRequestsByClaudeCode, sdkOmittedValue) ? this.pullRequestsByClaudeCode : pullRequestsByClaudeCode as int,
+  );
 
-  factory BetaCoreMetrics.fromJson(Map<String, dynamic> json) =>
-      BetaCoreMetrics(
-        commitsByClaudeCode:
-            ((json['commits_by_claude_code'] as num?)?.toInt())!,
-        linesOfCode: (json['lines_of_code'] != null
-            ? BetaLinesOfCode.fromJson(
-                json['lines_of_code'] as Map<String, dynamic>)
-            : null)!,
-        numSessions: ((json['num_sessions'] as num?)?.toInt())!,
-        pullRequestsByClaudeCode:
-            ((json['pull_requests_by_claude_code'] as num?)?.toInt())!,
-      );
+  factory BetaCoreMetrics.fromJson(Map<String, dynamic> json) => BetaCoreMetrics(
+    commitsByClaudeCode: ((json['commits_by_claude_code'] as num?)?.toInt())!,
+    linesOfCode: (json['lines_of_code'] != null ? BetaLinesOfCode.fromJson(json['lines_of_code'] as Map<String, dynamic>) : null)!,
+    numSessions: ((json['num_sessions'] as num?)?.toInt())!,
+    pullRequestsByClaudeCode: ((json['pull_requests_by_claude_code'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'commits_by_claude_code': commitsByClaudeCode,
-        'lines_of_code': linesOfCode.toJson(),
-        'num_sessions': numSessions,
-        'pull_requests_by_claude_code': pullRequestsByClaudeCode,
-      };
+    'commits_by_claude_code': commitsByClaudeCode,
+    'lines_of_code': linesOfCode.toJson(),
+    'num_sessions': numSessions,
+    'pull_requests_by_claude_code': pullRequestsByClaudeCode,
+  };
 }
 
 /// Typed representation of the `BetaCustomerType` API schema.
 final class BetaCustomerType {
+
   final String value;
 
   const BetaCustomerType._(this.value);
@@ -435,52 +252,39 @@ final class BetaCustomerType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaCustomerType && other.value == value;
+  @override bool operator ==(Object other) => other is BetaCustomerType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Typed representation of the `BetaEstimatedCost` API schema.
 class BetaEstimatedCost {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Estimated cost amount in minor currency units (e.g., cents for USD).
   final int amount;
-
   /// Currency code for the estimated cost (e.g., 'USD').
   final String currency;
 
   const BetaEstimatedCost({required this.amount, required this.currency});
 
-  BetaEstimatedCost Function({int amount, String currency}) get copyWith =>
-      _copyWith;
+  BetaEstimatedCost Function({int amount, String currency}) get copyWith => _copyWith;
 
-  BetaEstimatedCost _copyWith(
-          {Object? amount = sdkOmittedValue,
-          Object? currency = sdkOmittedValue}) =>
-      BetaEstimatedCost(
-        amount:
-            identical(amount, sdkOmittedValue) ? this.amount : amount as int,
-        currency: identical(currency, sdkOmittedValue)
-            ? this.currency
-            : currency as String,
-      );
+  BetaEstimatedCost _copyWith({Object? amount = sdkOmittedValue, Object? currency = sdkOmittedValue}) => BetaEstimatedCost(
+    amount: identical(amount, sdkOmittedValue) ? this.amount : amount as int,
+    currency: identical(currency, sdkOmittedValue) ? this.currency : currency as String,
+  );
 
-  factory BetaEstimatedCost.fromJson(Map<String, dynamic> json) =>
-      BetaEstimatedCost(
-        amount: ((json['amount'] as num?)?.toInt())!,
-        currency: (json['currency'] as String?)!,
-      );
+  factory BetaEstimatedCost.fromJson(Map<String, dynamic> json) => BetaEstimatedCost(
+    amount: ((json['amount'] as num?)?.toInt())!,
+    currency: (json['currency'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'amount': amount,
-        'currency': currency,
-      };
+    'amount': amount,
+    'currency': currency,
+  };
 }

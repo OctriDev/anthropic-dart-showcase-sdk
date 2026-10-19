@@ -10,475 +10,253 @@ sealed class BetaManagedAgentsActor {
   const BetaManagedAgentsActor();
   factory BetaManagedAgentsActor.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsSessionActor.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsActorBetaManagedAgentsSessionActor(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsApiActor.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsActorBetaManagedAgentsApiActor(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsUserActor.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsActorBetaManagedAgentsUserActor(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsServiceAccountActor.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsSessionActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsActorBetaManagedAgentsSessionActor(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsApiActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsActorBetaManagedAgentsApiActor(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsUserActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsActorBetaManagedAgentsUserActor(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsServiceAccountActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsActorBetaManagedAgentsSessionActor(
-          BetaManagedAgentsSessionActor.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsActorBetaManagedAgentsApiActor(
-          BetaManagedAgentsApiActor.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsActorBetaManagedAgentsUserActor(
-          BetaManagedAgentsUserActor.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor(
-          BetaManagedAgentsServiceAccountActor.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "session_actor",
-          "api_actor",
-          "user_actor",
-          "service_account_actor"
-        }.contains(json["type"])) {
-      return UnknownBetaManagedAgentsActor(json);
-    }
+    try { return BetaManagedAgentsActorBetaManagedAgentsSessionActor(BetaManagedAgentsSessionActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsActorBetaManagedAgentsApiActor(BetaManagedAgentsApiActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsActorBetaManagedAgentsUserActor(BetaManagedAgentsUserActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor(BetaManagedAgentsServiceAccountActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"session_actor", "api_actor", "user_actor", "service_account_actor"}.contains(json["type"])) { return UnknownBetaManagedAgentsActor(json); }
     throw FormatException("No variant matched for BetaManagedAgentsActor");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsActorBetaManagedAgentsSessionActor
-    extends BetaManagedAgentsActor {
+final class BetaManagedAgentsActorBetaManagedAgentsSessionActor extends BetaManagedAgentsActor {
   final BetaManagedAgentsSessionActor value;
   const BetaManagedAgentsActorBetaManagedAgentsSessionActor(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsActorBetaManagedAgentsApiActor
-    extends BetaManagedAgentsActor {
+final class BetaManagedAgentsActorBetaManagedAgentsApiActor extends BetaManagedAgentsActor {
   final BetaManagedAgentsApiActor value;
   const BetaManagedAgentsActorBetaManagedAgentsApiActor(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsActorBetaManagedAgentsUserActor
-    extends BetaManagedAgentsActor {
+final class BetaManagedAgentsActorBetaManagedAgentsUserActor extends BetaManagedAgentsActor {
   final BetaManagedAgentsUserActor value;
   const BetaManagedAgentsActorBetaManagedAgentsUserActor(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor
-    extends BetaManagedAgentsActor {
+final class BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor extends BetaManagedAgentsActor {
   final BetaManagedAgentsServiceAccountActor value;
   const BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsActor] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaManagedAgentsActor extends BetaManagedAgentsActor {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsActor(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Platform advisor roster entry: a model the session's primary thread may consult mid-turn.
 class BetaManagedAgentsAdvisor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAdvisorType type_;
-
   /// The advisor model id.
   final String model;
 
   const BetaManagedAgentsAdvisor({required this.type_, required this.model});
 
-  BetaManagedAgentsAdvisor Function(
-      {BetaManagedAgentsAdvisorType type_,
-      String model}) get copyWith => _copyWith;
+  BetaManagedAgentsAdvisor Function({BetaManagedAgentsAdvisorType type_, String model}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAdvisor _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? model = sdkOmittedValue}) =>
-      BetaManagedAgentsAdvisor(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAdvisorType,
-        model: identical(model, sdkOmittedValue) ? this.model : model as String,
-      );
+  BetaManagedAgentsAdvisor _copyWith({Object? type_ = sdkOmittedValue, Object? model = sdkOmittedValue}) => BetaManagedAgentsAdvisor(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAdvisorType,
+    model: identical(model, sdkOmittedValue) ? this.model : model as String,
+  );
 
-  factory BetaManagedAgentsAdvisor.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsAdvisor(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAdvisorType.fromJson(json['type'] as String)
-            : null)!,
-        model: (json['model'] as String?)!,
-      );
+  factory BetaManagedAgentsAdvisor.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAdvisor(
+    type_: (json['type'] != null ? BetaManagedAgentsAdvisorType.fromJson(json['type'] as String) : null)!,
+    model: (json['model'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'model': model,
-      };
+    'type': type_.toJson(),
+    'model': model,
+  };
 }
 
 /// Platform advisor roster entry: a model the session's primary thread may consult mid-turn. At most one per roster; the entry occupies the roster name `anthropic.advisor`.
 class BetaManagedAgentsAdvisorParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAdvisorParamsType type_;
-
   /// A Claude model id. The model must be permitted as an advisor for this agent's model — see the sessions/threads/advisor spec.
   final String model;
 
-  const BetaManagedAgentsAdvisorParams(
-      {required this.type_, required this.model});
+  const BetaManagedAgentsAdvisorParams({required this.type_, required this.model});
 
-  BetaManagedAgentsAdvisorParams Function(
-      {BetaManagedAgentsAdvisorParamsType type_,
-      String model}) get copyWith => _copyWith;
+  BetaManagedAgentsAdvisorParams Function({BetaManagedAgentsAdvisorParamsType type_, String model}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAdvisorParams _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? model = sdkOmittedValue}) =>
-      BetaManagedAgentsAdvisorParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAdvisorParamsType,
-        model: identical(model, sdkOmittedValue) ? this.model : model as String,
-      );
+  BetaManagedAgentsAdvisorParams _copyWith({Object? type_ = sdkOmittedValue, Object? model = sdkOmittedValue}) => BetaManagedAgentsAdvisorParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAdvisorParamsType,
+    model: identical(model, sdkOmittedValue) ? this.model : model as String,
+  );
 
-  factory BetaManagedAgentsAdvisorParams.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsAdvisorParams(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAdvisorParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-        model: (json['model'] as String?)!,
-      );
+  factory BetaManagedAgentsAdvisorParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAdvisorParams(
+    type_: (json['type'] != null ? BetaManagedAgentsAdvisorParamsType.fromJson(json['type'] as String) : null)!,
+    model: (json['model'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'model': model,
-      };
+    'type': type_.toJson(),
+    'model': model,
+  };
 }
 
 /// A Managed Agents `agent`.
 class BetaManagedAgentsAgent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAgentType type_;
-
   /// Required `string` value serialized in the `id` wire field.
   final String id;
-
   /// The agent's current version. Starts at 1 and increments when the agent is modified.
   final int version;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
-
   /// Model identifier and configuration.
   final BetaManagedAgentsModelConfig model;
-
   /// Required `string` value serialized in the `system` wire field.
   final String? system;
-
   /// Required array value serialized in the `tools` wire field.
   final List<BetaManagedAgentsAgentTool> tools;
-
   /// Required array value serialized in the `mcp_servers` wire field.
   final List<BetaManagedAgentsMCPServer> mcpServers;
-
   /// Required array value serialized in the `skills` wire field.
   final List<BetaManagedAgentsSkill> skills;
-
   /// Required object value serialized in the `metadata` wire field.
   final Map<String, String> metadata;
-
   /// A timestamp in RFC 3339 format
   final String createdAt;
-
   /// A timestamp in RFC 3339 format
   final String updatedAt;
-
   /// When the agent was archived. Null if not archived.
   final String? archivedAt;
-
   /// Multiagent orchestration configuration. Null when the agent is single-threaded.
   final BetaManagedAgentsMultiagent? multiagent;
 
-  const BetaManagedAgentsAgent(
-      {required this.type_,
-      required this.id,
-      required this.version,
-      required this.name,
-      required this.description,
-      required this.model,
-      required this.system,
-      required this.tools,
-      required this.mcpServers,
-      required this.skills,
-      required this.metadata,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.archivedAt,
-      required this.multiagent});
+  const BetaManagedAgentsAgent({required this.type_, required this.id, required this.version, required this.name, required this.description, required this.model, required this.system, required this.tools, required this.mcpServers, required this.skills, required this.metadata, required this.createdAt, required this.updatedAt, required this.archivedAt, required this.multiagent});
 
-  BetaManagedAgentsAgent Function(
-      {BetaManagedAgentsAgentType type_,
-      String id,
-      int version,
-      String name,
-      String? description,
-      BetaManagedAgentsModelConfig model,
-      String? system,
-      List<BetaManagedAgentsAgentTool> tools,
-      List<BetaManagedAgentsMCPServer> mcpServers,
-      List<BetaManagedAgentsSkill> skills,
-      Map<String, String> metadata,
-      String createdAt,
-      String updatedAt,
-      String? archivedAt,
-      BetaManagedAgentsMultiagent? multiagent}) get copyWith => _copyWith;
+  BetaManagedAgentsAgent Function({BetaManagedAgentsAgentType type_, String id, int version, String name, String? description, BetaManagedAgentsModelConfig model, String? system, List<BetaManagedAgentsAgentTool> tools, List<BetaManagedAgentsMCPServer> mcpServers, List<BetaManagedAgentsSkill> skills, Map<String, String> metadata, String createdAt, String updatedAt, String? archivedAt, BetaManagedAgentsMultiagent? multiagent}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAgent _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? version = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? model = sdkOmittedValue,
-          Object? system = sdkOmittedValue,
-          Object? tools = sdkOmittedValue,
-          Object? mcpServers = sdkOmittedValue,
-          Object? skills = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? archivedAt = sdkOmittedValue,
-          Object? multiagent = sdkOmittedValue}) =>
-      BetaManagedAgentsAgent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAgentType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        version:
-            identical(version, sdkOmittedValue) ? this.version : version as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        model: identical(model, sdkOmittedValue)
-            ? this.model
-            : model as BetaManagedAgentsModelConfig,
-        system: identical(system, sdkOmittedValue)
-            ? this.system
-            : system as String?,
-        tools: identical(tools, sdkOmittedValue)
-            ? this.tools
-            : tools as List<BetaManagedAgentsAgentTool>,
-        mcpServers: identical(mcpServers, sdkOmittedValue)
-            ? this.mcpServers
-            : mcpServers as List<BetaManagedAgentsMCPServer>,
-        skills: identical(skills, sdkOmittedValue)
-            ? this.skills
-            : skills as List<BetaManagedAgentsSkill>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as Map<String, String>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        archivedAt: identical(archivedAt, sdkOmittedValue)
-            ? this.archivedAt
-            : archivedAt as String?,
-        multiagent: identical(multiagent, sdkOmittedValue)
-            ? this.multiagent
-            : multiagent as BetaManagedAgentsMultiagent?,
-      );
+  BetaManagedAgentsAgent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? version = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? model = sdkOmittedValue, Object? system = sdkOmittedValue, Object? tools = sdkOmittedValue, Object? mcpServers = sdkOmittedValue, Object? skills = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? multiagent = sdkOmittedValue}) => BetaManagedAgentsAgent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAgentType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    version: identical(version, sdkOmittedValue) ? this.version : version as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
+    model: identical(model, sdkOmittedValue) ? this.model : model as BetaManagedAgentsModelConfig,
+    system: identical(system, sdkOmittedValue) ? this.system : system as String?,
+    tools: identical(tools, sdkOmittedValue) ? this.tools : tools as List<BetaManagedAgentsAgentTool>,
+    mcpServers: identical(mcpServers, sdkOmittedValue) ? this.mcpServers : mcpServers as List<BetaManagedAgentsMCPServer>,
+    skills: identical(skills, sdkOmittedValue) ? this.skills : skills as List<BetaManagedAgentsSkill>,
+    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as Map<String, String>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
+    multiagent: identical(multiagent, sdkOmittedValue) ? this.multiagent : multiagent as BetaManagedAgentsMultiagent?,
+  );
 
-  factory BetaManagedAgentsAgent.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsAgent(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAgentType.fromJson(json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        version: ((json['version'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        model: (json['model'] != null
-            ? BetaManagedAgentsModelConfig.fromJson(
-                json['model'] as Map<String, dynamic>)
-            : null)!,
-        system: json.containsKey('system')
-            ? json['system'] as String?
-            : throw ArgumentError.value(
-                null, 'system', 'Required property is missing'),
-        tools: ((json['tools'] as List?)
-            ?.map((e) => BetaManagedAgentsAgentTool.fromJson(e))
-            .toList())!,
-        mcpServers: ((json['mcp_servers'] as List?)
-            ?.map((e) => BetaManagedAgentsMCPServer.fromJson(e))
-            .toList())!,
-        skills: ((json['skills'] as List?)
-            ?.map((e) => BetaManagedAgentsSkill.fromJson(e))
-            .toList())!,
-        metadata: (json['metadata'] == null
-            ? null
-            : Map<String, dynamic>.from(json['metadata'] as Map)
-                .map((key, value) => MapEntry(key, value as String)))!,
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        archivedAt: json.containsKey('archived_at')
-            ? json['archived_at'] as String?
-            : throw ArgumentError.value(
-                null, 'archived_at', 'Required property is missing'),
-        multiagent: json.containsKey('multiagent')
-            ? json['multiagent'] != null
-                ? BetaManagedAgentsMultiagent.fromJson(json['multiagent'])
-                : null
-            : throw ArgumentError.value(
-                null, 'multiagent', 'Required property is missing'),
-      );
+  factory BetaManagedAgentsAgent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAgent(
+    type_: (json['type'] != null ? BetaManagedAgentsAgentType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    version: ((json['version'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
+    model: (json['model'] != null ? BetaManagedAgentsModelConfig.fromJson(json['model'] as Map<String, dynamic>) : null)!,
+    system: json.containsKey('system') ? json['system'] as String? : throw ArgumentError.value(null, 'system', 'Required property is missing'),
+    tools: ((json['tools'] as List?)?.map((e) => BetaManagedAgentsAgentTool.fromJson(e)).toList())!,
+    mcpServers: ((json['mcp_servers'] as List?)?.map((e) => BetaManagedAgentsMCPServer.fromJson(e)).toList())!,
+    skills: ((json['skills'] as List?)?.map((e) => BetaManagedAgentsSkill.fromJson(e)).toList())!,
+    metadata: (json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String)))!,
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
+    multiagent: json.containsKey('multiagent') ? json['multiagent'] != null ? BetaManagedAgentsMultiagent.fromJson(json['multiagent']) : null : throw ArgumentError.value(null, 'multiagent', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'version': version,
-        'name': name,
-        'description': description,
-        'model': model.toJson(),
-        'system': system,
-        'tools': tools.map((item) => item.toJson()).toList(),
-        'mcp_servers': mcpServers.map((item) => item.toJson()).toList(),
-        'skills': skills.map((item) => item.toJson()).toList(),
-        'metadata': metadata,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'archived_at': archivedAt,
-        'multiagent': multiagent?.toJson(),
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'version': version,
+    'name': name,
+    'description': description,
+    'model': model.toJson(),
+    'system': system,
+    'tools': tools.map((item) => item.toJson()).toList(),
+    'mcp_servers': mcpServers.map((item) => item.toJson()).toList(),
+    'skills': skills.map((item) => item.toJson()).toList(),
+    'metadata': metadata,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'archived_at': archivedAt,
+    'multiagent': multiagent?.toJson(),
+  };
 }
 
 /// The deployment's agent was archived.
 class BetaManagedAgentsAgentArchivedDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType type_;
 
-  const BetaManagedAgentsAgentArchivedDeploymentPausedReasonError(
-      {required this.type_});
+  const BetaManagedAgentsAgentArchivedDeploymentPausedReasonError({required this.type_});
 
-  BetaManagedAgentsAgentArchivedDeploymentPausedReasonError Function(
-          {BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType type_})
-      get copyWith => _copyWith;
+  BetaManagedAgentsAgentArchivedDeploymentPausedReasonError Function({BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAgentArchivedDeploymentPausedReasonError _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaManagedAgentsAgentArchivedDeploymentPausedReasonError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_
-                as BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType,
-      );
+  BetaManagedAgentsAgentArchivedDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsAgentArchivedDeploymentPausedReasonError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType,
+  );
 
-  factory BetaManagedAgentsAgentArchivedDeploymentPausedReasonError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsAgentArchivedDeploymentPausedReasonError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType
-                .fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaManagedAgentsAgentArchivedDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAgentArchivedDeploymentPausedReasonError(
+    type_: (json['type'] != null ? BetaManagedAgentsAgentArchivedDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 /// The deployment's agent was archived.
 class BetaManagedAgentsAgentArchivedRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAgentArchivedRunErrorType type_;
-
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsAgentArchivedRunError(
-      {required this.type_, required this.message});
+  const BetaManagedAgentsAgentArchivedRunError({required this.type_, required this.message});
 
-  BetaManagedAgentsAgentArchivedRunError Function(
-      {BetaManagedAgentsAgentArchivedRunErrorType type_,
-      String message}) get copyWith => _copyWith;
+  BetaManagedAgentsAgentArchivedRunError Function({BetaManagedAgentsAgentArchivedRunErrorType type_, String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAgentArchivedRunError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      BetaManagedAgentsAgentArchivedRunError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAgentArchivedRunErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-      );
+  BetaManagedAgentsAgentArchivedRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsAgentArchivedRunError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAgentArchivedRunErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+  );
 
-  factory BetaManagedAgentsAgentArchivedRunError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsAgentArchivedRunError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAgentArchivedRunErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-      );
+  factory BetaManagedAgentsAgentArchivedRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAgentArchivedRunError(
+    type_: (json['type'] != null ? BetaManagedAgentsAgentArchivedRunErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-      };
+    'type': type_.toJson(),
+    'message': message,
+  };
 }
