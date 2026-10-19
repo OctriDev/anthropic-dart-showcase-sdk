@@ -6,84 +6,111 @@ part of 'cost_report_beta_true.dart';
 // cost_report_beta_true domain models (part 2)
 /// Typed representation of the `BetaCostReportServiceTier` API schema.
 final class BetaCostReportServiceTier {
-
   final String value;
 
   const BetaCostReportServiceTier._(this.value);
 
-  factory BetaCostReportServiceTier.fromJson(String value) => BetaCostReportServiceTier._(value);
+  factory BetaCostReportServiceTier.fromJson(String value) =>
+      BetaCostReportServiceTier._(value);
 
   static const batch = BetaCostReportServiceTier._('batch');
   static const standard = BetaCostReportServiceTier._('standard');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaCostReportServiceTier && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaCostReportServiceTier && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `BetaCostReportTimeBucket` API schema.
 class BetaCostReportTimeBucket {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Start of the time bucket (inclusive) in RFC 3339 format.
   final String startingAt;
+
   /// End of the time bucket (exclusive) in RFC 3339 format.
   final String endingAt;
+
   /// List of cost items for this time bucket. There may be multiple items if one or more `group_by[]` parameters are specified.
   final List<BetaCostReportItem> results;
 
-  const BetaCostReportTimeBucket({required this.startingAt, required this.endingAt, required this.results});
+  const BetaCostReportTimeBucket(
+      {required this.startingAt,
+      required this.endingAt,
+      required this.results});
 
-  BetaCostReportTimeBucket Function({String startingAt, String endingAt, List<BetaCostReportItem> results}) get copyWith => _copyWith;
+  BetaCostReportTimeBucket Function(
+      {String startingAt,
+      String endingAt,
+      List<BetaCostReportItem> results}) get copyWith => _copyWith;
 
-  BetaCostReportTimeBucket _copyWith({Object? startingAt = sdkOmittedValue, Object? endingAt = sdkOmittedValue, Object? results = sdkOmittedValue}) => BetaCostReportTimeBucket(
-    startingAt: identical(startingAt, sdkOmittedValue) ? this.startingAt : startingAt as String,
-    endingAt: identical(endingAt, sdkOmittedValue) ? this.endingAt : endingAt as String,
-    results: identical(results, sdkOmittedValue) ? this.results : results as List<BetaCostReportItem>,
-  );
+  BetaCostReportTimeBucket _copyWith(
+          {Object? startingAt = sdkOmittedValue,
+          Object? endingAt = sdkOmittedValue,
+          Object? results = sdkOmittedValue}) =>
+      BetaCostReportTimeBucket(
+        startingAt: identical(startingAt, sdkOmittedValue)
+            ? this.startingAt
+            : startingAt as String,
+        endingAt: identical(endingAt, sdkOmittedValue)
+            ? this.endingAt
+            : endingAt as String,
+        results: identical(results, sdkOmittedValue)
+            ? this.results
+            : results as List<BetaCostReportItem>,
+      );
 
-  factory BetaCostReportTimeBucket.fromJson(Map<String, dynamic> json) => BetaCostReportTimeBucket(
-    startingAt: (json['starting_at'] as String?)!,
-    endingAt: (json['ending_at'] as String?)!,
-    results: ((json['results'] as List?)?.map((e) => BetaCostReportItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory BetaCostReportTimeBucket.fromJson(Map<String, dynamic> json) =>
+      BetaCostReportTimeBucket(
+        startingAt: (json['starting_at'] as String?)!,
+        endingAt: (json['ending_at'] as String?)!,
+        results: ((json['results'] as List?)
+            ?.map((e) => BetaCostReportItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'starting_at': startingAt,
-    'ending_at': endingAt,
-    'results': results.map((item) => item.toJson()).toList(),
-  };
+        'starting_at': startingAt,
+        'ending_at': endingAt,
+        'results': results.map((item) => item.toJson()).toList(),
+      };
 }
 
 /// Typed representation of the `BetaCostReportTimeBucketWidth` API schema.
 final class BetaCostReportTimeBucketWidth {
-
   final String value;
 
   const BetaCostReportTimeBucketWidth._(this.value);
 
-  factory BetaCostReportTimeBucketWidth.fromJson(String value) => BetaCostReportTimeBucketWidth._(value);
+  factory BetaCostReportTimeBucketWidth.fromJson(String value) =>
+      BetaCostReportTimeBucketWidth._(value);
 
   static const v1d = BetaCostReportTimeBucketWidth._('1d');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaCostReportTimeBucketWidth && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaCostReportTimeBucketWidth && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `BetaCostType` API schema.
 final class BetaCostType {
-
   final String value;
 
   const BetaCostType._(this.value);
@@ -97,44 +124,71 @@ final class BetaCostType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaCostType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaCostType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `BetaGetCostReportResponse` API schema.
 class BetaGetCostReportResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// List of time buckets for this page, oldest first: one per `bucket_width` interval, including intervals with no costs (their `results` list is empty). A page holds at most `limit` buckets.
   final List<BetaCostReportTimeBucket> data;
+
   /// Indicates if there are more results.
   final bool hasMore;
+
   /// Opaque cursor for the next page, or `null` when `has_more` is false. Pass it as the `page` parameter in the next request.
   final String? nextPage;
 
-  const BetaGetCostReportResponse({required this.data, required this.hasMore, required this.nextPage});
+  const BetaGetCostReportResponse(
+      {required this.data, required this.hasMore, required this.nextPage});
 
-  BetaGetCostReportResponse Function({List<BetaCostReportTimeBucket> data, bool hasMore, String? nextPage}) get copyWith => _copyWith;
+  BetaGetCostReportResponse Function(
+      {List<BetaCostReportTimeBucket> data,
+      bool hasMore,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaGetCostReportResponse _copyWith({Object? data = sdkOmittedValue, Object? hasMore = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaGetCostReportResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaCostReportTimeBucket>,
-    hasMore: identical(hasMore, sdkOmittedValue) ? this.hasMore : hasMore as bool,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaGetCostReportResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? hasMore = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaGetCostReportResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaCostReportTimeBucket>,
+        hasMore: identical(hasMore, sdkOmittedValue)
+            ? this.hasMore
+            : hasMore as bool,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaGetCostReportResponse.fromJson(Map<String, dynamic> json) => BetaGetCostReportResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaCostReportTimeBucket.fromJson(e as Map<String, dynamic>)).toList())!,
-    hasMore: (json['has_more'] as bool?)!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  );
+  factory BetaGetCostReportResponse.fromJson(Map<String, dynamic> json) =>
+      BetaGetCostReportResponse(
+        data: ((json['data'] as List?)
+            ?.map((e) =>
+                BetaCostReportTimeBucket.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        hasMore: (json['has_more'] as bool?)!,
+        nextPage: json.containsKey('next_page')
+            ? json['next_page'] as String?
+            : throw ArgumentError.value(
+                null, 'next_page', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'has_more': hasMore,
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'has_more': hasMore,
+        'next_page': nextPage,
+      };
 }

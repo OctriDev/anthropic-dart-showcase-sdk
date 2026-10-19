@@ -8,32 +8,48 @@ part of 'me_beta_true.dart';
 class BetaOrganizationSchema {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// ID of the Organization.
   final String id;
+
   /// Name of the Organization.
   final String name;
+
   /// Object type. For Organizations, this is always `"organization"`.
   final BetaOrganizationSchemaType type_;
 
-  const BetaOrganizationSchema({required this.id, required this.name, required this.type_});
+  const BetaOrganizationSchema(
+      {required this.id, required this.name, required this.type_});
 
-  BetaOrganizationSchema Function({String id, String name, BetaOrganizationSchemaType type_}) get copyWith => _copyWith;
+  BetaOrganizationSchema Function(
+      {String id,
+      String name,
+      BetaOrganizationSchemaType type_}) get copyWith => _copyWith;
 
-  BetaOrganizationSchema _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaOrganizationSchema(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaOrganizationSchemaType,
-  );
+  BetaOrganizationSchema _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaOrganizationSchema(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaOrganizationSchemaType,
+      );
 
-  factory BetaOrganizationSchema.fromJson(Map<String, dynamic> json) => BetaOrganizationSchema(
-    id: (json['id'] as String?)!,
-    name: (json['name'] as String?)!,
-    type_: (json['type'] != null ? BetaOrganizationSchemaType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaOrganizationSchema.fromJson(Map<String, dynamic> json) =>
+      BetaOrganizationSchema(
+        id: (json['id'] as String?)!,
+        name: (json['name'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaOrganizationSchemaType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'type': type_.toJson(),
-  };
+        'id': id,
+        'name': name,
+        'type': type_.toJson(),
+      };
 }

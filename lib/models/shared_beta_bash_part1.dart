@@ -6,27 +6,35 @@ part of 'shared_beta_bash.dart';
 // shared_beta_bash domain models
 /// Typed representation of the `BetaBashCodeExecutionToolResultErrorCode` API schema.
 final class BetaBashCodeExecutionToolResultErrorCode {
-
   final String value;
 
   const BetaBashCodeExecutionToolResultErrorCode._(this.value);
 
-  factory BetaBashCodeExecutionToolResultErrorCode.fromJson(String value) => BetaBashCodeExecutionToolResultErrorCode._(value);
+  factory BetaBashCodeExecutionToolResultErrorCode.fromJson(String value) =>
+      BetaBashCodeExecutionToolResultErrorCode._(value);
 
-  static const invalidToolInput = BetaBashCodeExecutionToolResultErrorCode._('invalid_tool_input');
-  static const unavailable = BetaBashCodeExecutionToolResultErrorCode._('unavailable');
-  static const tooManyRequests = BetaBashCodeExecutionToolResultErrorCode._('too_many_requests');
-  static const executionTimeExceeded = BetaBashCodeExecutionToolResultErrorCode._('execution_time_exceeded');
-  static const outputFileTooLarge = BetaBashCodeExecutionToolResultErrorCode._('output_file_too_large');
+  static const invalidToolInput =
+      BetaBashCodeExecutionToolResultErrorCode._('invalid_tool_input');
+  static const unavailable =
+      BetaBashCodeExecutionToolResultErrorCode._('unavailable');
+  static const tooManyRequests =
+      BetaBashCodeExecutionToolResultErrorCode._('too_many_requests');
+  static const executionTimeExceeded =
+      BetaBashCodeExecutionToolResultErrorCode._('execution_time_exceeded');
+  static const outputFileTooLarge =
+      BetaBashCodeExecutionToolResultErrorCode._('output_file_too_large');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaBashCodeExecutionToolResultErrorCode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaBashCodeExecutionToolResultErrorCode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 sealed class BetaBashTool20241022CacheControl {
@@ -34,93 +42,180 @@ sealed class BetaBashTool20241022CacheControl {
   static const String constructionSurface = 'named';
   const BetaBashTool20241022CacheControl();
   factory BetaBashTool20241022CacheControl.fromJson(Object? json) {
-    try { return BetaBashTool20241022CacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaBashTool20241022CacheControl(json); }
-    throw FormatException("No variant matched for BetaBashTool20241022CacheControl");
+    try {
+      return BetaBashTool20241022CacheControlBetaCacheControlEphemeral(
+          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownBetaBashTool20241022CacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaBashTool20241022CacheControl");
   }
   Object? toJson();
 }
 
-final class BetaBashTool20241022CacheControlBetaCacheControlEphemeral extends BetaBashTool20241022CacheControl {
+final class BetaBashTool20241022CacheControlBetaCacheControlEphemeral
+    extends BetaBashTool20241022CacheControl {
   final BetaCacheControlEphemeral value;
   const BetaBashTool20241022CacheControlBetaCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaBashTool20241022CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaBashTool20241022CacheControl extends BetaBashTool20241022CacheControl {
+final class UnknownBetaBashTool20241022CacheControl
+    extends BetaBashTool20241022CacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaBashTool20241022CacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaBashTool_20241022` API schema.
 class BetaBashTool20241022 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<BetaAllowedCaller>> allowedCallers;
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
+
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
+
   /// Optional array value serialized in the `input_examples` wire field.
   final SdkOptional<List<Map<String, dynamic>>> inputExamples;
+
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final BetaBashTool20241022Name name;
+
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaBashTool20241022Type type_;
 
-  const BetaBashTool20241022({this.allowedCallers = const SdkOmitted(), this.cacheControl = const SdkOmitted(), this.deferLoading = const SdkOmitted(), this.inputExamples = const SdkOmitted(), required this.name, this.strict = const SdkOmitted(), required this.type_});
+  const BetaBashTool20241022(
+      {this.allowedCallers = const SdkOmitted(),
+      this.cacheControl = const SdkOmitted(),
+      this.deferLoading = const SdkOmitted(),
+      this.inputExamples = const SdkOmitted(),
+      required this.name,
+      this.strict = const SdkOmitted(),
+      required this.type_});
 
-  BetaBashTool20241022 Function({SdkOptional<List<BetaAllowedCaller>> allowedCallers, SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<bool> deferLoading, SdkOptional<List<Map<String, dynamic>>> inputExamples, BetaBashTool20241022Name name, SdkOptional<bool> strict, BetaBashTool20241022Type type_}) get copyWith => _copyWith;
+  BetaBashTool20241022 Function(
+      {SdkOptional<List<BetaAllowedCaller>> allowedCallers,
+      SdkOptional<BetaCacheControlEphemeral?> cacheControl,
+      SdkOptional<bool> deferLoading,
+      SdkOptional<List<Map<String, dynamic>>> inputExamples,
+      BetaBashTool20241022Name name,
+      SdkOptional<bool> strict,
+      BetaBashTool20241022Type type_}) get copyWith => _copyWith;
 
-  BetaBashTool20241022 _copyWith({Object? allowedCallers = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? inputExamples = sdkOmittedValue, Object? name = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaBashTool20241022(
-    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<BetaAllowedCaller>>,
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
-    inputExamples: identical(inputExamples, sdkOmittedValue) ? this.inputExamples : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as BetaBashTool20241022Name,
-    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaBashTool20241022Type,
-  );
+  BetaBashTool20241022 _copyWith(
+          {Object? allowedCallers = sdkOmittedValue,
+          Object? cacheControl = sdkOmittedValue,
+          Object? deferLoading = sdkOmittedValue,
+          Object? inputExamples = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? strict = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaBashTool20241022(
+        allowedCallers: identical(allowedCallers, sdkOmittedValue)
+            ? this.allowedCallers
+            : allowedCallers as SdkOptional<List<BetaAllowedCaller>>,
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool>,
+        inputExamples: identical(inputExamples, sdkOmittedValue)
+            ? this.inputExamples
+            : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as BetaBashTool20241022Name,
+        strict: identical(strict, sdkOmittedValue)
+            ? this.strict
+            : strict as SdkOptional<bool>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaBashTool20241022Type,
+      );
 
-  factory BetaBashTool20241022.fromJson(Map<String, dynamic> json) => BetaBashTool20241022(
-    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => BetaAllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
-    inputExamples: json['input_examples'] != null ? SdkPresent(((json['input_examples'] as List?)?.map((e) => e as Map<String, dynamic>).toList())!) : const SdkOmitted(),
-    name: (json['name'] != null ? BetaBashTool20241022Name.fromJson(json['name'] as String) : null)!,
-    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaBashTool20241022Type.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaBashTool20241022.fromJson(Map<String, dynamic> json) =>
+      BetaBashTool20241022(
+        allowedCallers: json['allowed_callers'] != null
+            ? SdkPresent(((json['allowed_callers'] as List?)
+                ?.map((e) => BetaAllowedCaller.fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? BetaCacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        deferLoading: json['defer_loading'] != null
+            ? SdkPresent((json['defer_loading'] as bool?)!)
+            : const SdkOmitted(),
+        inputExamples: json['input_examples'] != null
+            ? SdkPresent(((json['input_examples'] as List?)
+                ?.map((e) => e as Map<String, dynamic>)
+                .toList())!)
+            : const SdkOmitted(),
+        name: (json['name'] != null
+            ? BetaBashTool20241022Name.fromJson(json['name'] as String)
+            : null)!,
+        strict: json['strict'] != null
+            ? SdkPresent((json['strict'] as bool?)!)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaBashTool20241022Type.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (allowedCallers) {
-      SdkPresent<List<BetaAllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (cacheControl) {
-      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deferLoading) {
-      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (inputExamples) {
-      SdkPresent<List<Map<String, dynamic>>>(value: final value) => {'input_examples': value,},
-      _ => const <String, dynamic>{},
-    },
-    'name': name.toJson(),
-    ...switch (strict) {
-      SdkPresent<bool>(value: final value) => {'strict': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (allowedCallers) {
+          SdkPresent<List<BetaAllowedCaller>>(value: final value) => {
+              'allowed_callers': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cacheControl) {
+          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deferLoading) {
+          SdkPresent<bool>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (inputExamples) {
+          SdkPresent<List<Map<String, dynamic>>>(value: final value) => {
+              'input_examples': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name.toJson(),
+        ...switch (strict) {
+          SdkPresent<bool>(value: final value) => {
+              'strict': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaBashTool20250124CacheControl {
@@ -128,91 +223,178 @@ sealed class BetaBashTool20250124CacheControl {
   static const String constructionSurface = 'named';
   const BetaBashTool20250124CacheControl();
   factory BetaBashTool20250124CacheControl.fromJson(Object? json) {
-    try { return BetaBashTool20250124CacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaBashTool20250124CacheControl(json); }
-    throw FormatException("No variant matched for BetaBashTool20250124CacheControl");
+    try {
+      return BetaBashTool20250124CacheControlBetaCacheControlEphemeral(
+          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownBetaBashTool20250124CacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaBashTool20250124CacheControl");
   }
   Object? toJson();
 }
 
-final class BetaBashTool20250124CacheControlBetaCacheControlEphemeral extends BetaBashTool20250124CacheControl {
+final class BetaBashTool20250124CacheControlBetaCacheControlEphemeral
+    extends BetaBashTool20250124CacheControl {
   final BetaCacheControlEphemeral value;
   const BetaBashTool20250124CacheControlBetaCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaBashTool20250124CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaBashTool20250124CacheControl extends BetaBashTool20250124CacheControl {
+final class UnknownBetaBashTool20250124CacheControl
+    extends BetaBashTool20250124CacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaBashTool20250124CacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaBashTool_20250124` API schema.
 class BetaBashTool20250124 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<BetaAllowedCaller>> allowedCallers;
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
+
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
+
   /// Optional array value serialized in the `input_examples` wire field.
   final SdkOptional<List<Map<String, dynamic>>> inputExamples;
+
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final BetaBashTool20250124Name name;
+
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaBashTool20250124Type type_;
 
-  const BetaBashTool20250124({this.allowedCallers = const SdkOmitted(), this.cacheControl = const SdkOmitted(), this.deferLoading = const SdkOmitted(), this.inputExamples = const SdkOmitted(), required this.name, this.strict = const SdkOmitted(), required this.type_});
+  const BetaBashTool20250124(
+      {this.allowedCallers = const SdkOmitted(),
+      this.cacheControl = const SdkOmitted(),
+      this.deferLoading = const SdkOmitted(),
+      this.inputExamples = const SdkOmitted(),
+      required this.name,
+      this.strict = const SdkOmitted(),
+      required this.type_});
 
-  BetaBashTool20250124 Function({SdkOptional<List<BetaAllowedCaller>> allowedCallers, SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<bool> deferLoading, SdkOptional<List<Map<String, dynamic>>> inputExamples, BetaBashTool20250124Name name, SdkOptional<bool> strict, BetaBashTool20250124Type type_}) get copyWith => _copyWith;
+  BetaBashTool20250124 Function(
+      {SdkOptional<List<BetaAllowedCaller>> allowedCallers,
+      SdkOptional<BetaCacheControlEphemeral?> cacheControl,
+      SdkOptional<bool> deferLoading,
+      SdkOptional<List<Map<String, dynamic>>> inputExamples,
+      BetaBashTool20250124Name name,
+      SdkOptional<bool> strict,
+      BetaBashTool20250124Type type_}) get copyWith => _copyWith;
 
-  BetaBashTool20250124 _copyWith({Object? allowedCallers = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? inputExamples = sdkOmittedValue, Object? name = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaBashTool20250124(
-    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<BetaAllowedCaller>>,
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
-    inputExamples: identical(inputExamples, sdkOmittedValue) ? this.inputExamples : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as BetaBashTool20250124Name,
-    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaBashTool20250124Type,
-  );
+  BetaBashTool20250124 _copyWith(
+          {Object? allowedCallers = sdkOmittedValue,
+          Object? cacheControl = sdkOmittedValue,
+          Object? deferLoading = sdkOmittedValue,
+          Object? inputExamples = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? strict = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaBashTool20250124(
+        allowedCallers: identical(allowedCallers, sdkOmittedValue)
+            ? this.allowedCallers
+            : allowedCallers as SdkOptional<List<BetaAllowedCaller>>,
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool>,
+        inputExamples: identical(inputExamples, sdkOmittedValue)
+            ? this.inputExamples
+            : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as BetaBashTool20250124Name,
+        strict: identical(strict, sdkOmittedValue)
+            ? this.strict
+            : strict as SdkOptional<bool>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaBashTool20250124Type,
+      );
 
-  factory BetaBashTool20250124.fromJson(Map<String, dynamic> json) => BetaBashTool20250124(
-    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => BetaAllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
-    inputExamples: json['input_examples'] != null ? SdkPresent(((json['input_examples'] as List?)?.map((e) => e as Map<String, dynamic>).toList())!) : const SdkOmitted(),
-    name: (json['name'] != null ? BetaBashTool20250124Name.fromJson(json['name'] as String) : null)!,
-    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaBashTool20250124Type.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaBashTool20250124.fromJson(Map<String, dynamic> json) =>
+      BetaBashTool20250124(
+        allowedCallers: json['allowed_callers'] != null
+            ? SdkPresent(((json['allowed_callers'] as List?)
+                ?.map((e) => BetaAllowedCaller.fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? BetaCacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        deferLoading: json['defer_loading'] != null
+            ? SdkPresent((json['defer_loading'] as bool?)!)
+            : const SdkOmitted(),
+        inputExamples: json['input_examples'] != null
+            ? SdkPresent(((json['input_examples'] as List?)
+                ?.map((e) => e as Map<String, dynamic>)
+                .toList())!)
+            : const SdkOmitted(),
+        name: (json['name'] != null
+            ? BetaBashTool20250124Name.fromJson(json['name'] as String)
+            : null)!,
+        strict: json['strict'] != null
+            ? SdkPresent((json['strict'] as bool?)!)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaBashTool20250124Type.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (allowedCallers) {
-      SdkPresent<List<BetaAllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (cacheControl) {
-      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deferLoading) {
-      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (inputExamples) {
-      SdkPresent<List<Map<String, dynamic>>>(value: final value) => {'input_examples': value,},
-      _ => const <String, dynamic>{},
-    },
-    'name': name.toJson(),
-    ...switch (strict) {
-      SdkPresent<bool>(value: final value) => {'strict': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (allowedCallers) {
+          SdkPresent<List<BetaAllowedCaller>>(value: final value) => {
+              'allowed_callers': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cacheControl) {
+          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deferLoading) {
+          SdkPresent<bool>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (inputExamples) {
+          SdkPresent<List<Map<String, dynamic>>>(value: final value) => {
+              'input_examples': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name.toJson(),
+        ...switch (strict) {
+          SdkPresent<bool>(value: final value) => {
+              'strict': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

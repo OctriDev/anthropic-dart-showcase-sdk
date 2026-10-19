@@ -8,59 +8,96 @@ part of 'shared_cache.dart';
 class CacheControlEphemeral {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The time-to-live for the cache control breakpoint. This may be one the following values: - `5m`: 5 minutes - `1h`: 1 hour Defaults to `5m`. See [prompt caching pricing](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) for details.
   final SdkOptional<CacheControlEphemeralTtl> ttl;
+
   /// Required `string` value serialized in the `type` wire field.
   final CacheControlEphemeralType type_;
 
-  const CacheControlEphemeral({this.ttl = const SdkOmitted(), required this.type_});
+  const CacheControlEphemeral(
+      {this.ttl = const SdkOmitted(), required this.type_});
 
-  CacheControlEphemeral Function({SdkOptional<CacheControlEphemeralTtl> ttl, CacheControlEphemeralType type_}) get copyWith => _copyWith;
+  CacheControlEphemeral Function(
+      {SdkOptional<CacheControlEphemeralTtl> ttl,
+      CacheControlEphemeralType type_}) get copyWith => _copyWith;
 
-  CacheControlEphemeral _copyWith({Object? ttl = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => CacheControlEphemeral(
-    ttl: identical(ttl, sdkOmittedValue) ? this.ttl : ttl as SdkOptional<CacheControlEphemeralTtl>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as CacheControlEphemeralType,
-  );
+  CacheControlEphemeral _copyWith(
+          {Object? ttl = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      CacheControlEphemeral(
+        ttl: identical(ttl, sdkOmittedValue)
+            ? this.ttl
+            : ttl as SdkOptional<CacheControlEphemeralTtl>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as CacheControlEphemeralType,
+      );
 
-  factory CacheControlEphemeral.fromJson(Map<String, dynamic> json) => CacheControlEphemeral(
-    ttl: json['ttl'] != null ? SdkPresent((json['ttl'] != null ? CacheControlEphemeralTtl.fromJson(json['ttl'] as String) : null)!) : const SdkOmitted(),
-    type_: (json['type'] != null ? CacheControlEphemeralType.fromJson(json['type'] as String) : null)!,
-  );
+  factory CacheControlEphemeral.fromJson(Map<String, dynamic> json) =>
+      CacheControlEphemeral(
+        ttl: json['ttl'] != null
+            ? SdkPresent((json['ttl'] != null
+                ? CacheControlEphemeralTtl.fromJson(json['ttl'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? CacheControlEphemeralType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (ttl) {
-      SdkPresent<CacheControlEphemeralTtl>(value: final value) => {'ttl': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (ttl) {
+          SdkPresent<CacheControlEphemeralTtl>(value: final value) => {
+              'ttl': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `CacheCreation` API schema.
 class CacheCreation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of input tokens used to create the 1 hour cache entry.
   final int ephemeral1hInputTokens;
+
   /// The number of input tokens used to create the 5 minute cache entry.
   final int ephemeral5mInputTokens;
 
-  const CacheCreation({required this.ephemeral1hInputTokens, required this.ephemeral5mInputTokens});
+  const CacheCreation(
+      {required this.ephemeral1hInputTokens,
+      required this.ephemeral5mInputTokens});
 
-  CacheCreation Function({int ephemeral1hInputTokens, int ephemeral5mInputTokens}) get copyWith => _copyWith;
+  CacheCreation Function(
+      {int ephemeral1hInputTokens,
+      int ephemeral5mInputTokens}) get copyWith => _copyWith;
 
-  CacheCreation _copyWith({Object? ephemeral1hInputTokens = sdkOmittedValue, Object? ephemeral5mInputTokens = sdkOmittedValue}) => CacheCreation(
-    ephemeral1hInputTokens: identical(ephemeral1hInputTokens, sdkOmittedValue) ? this.ephemeral1hInputTokens : ephemeral1hInputTokens as int,
-    ephemeral5mInputTokens: identical(ephemeral5mInputTokens, sdkOmittedValue) ? this.ephemeral5mInputTokens : ephemeral5mInputTokens as int,
-  );
+  CacheCreation _copyWith(
+          {Object? ephemeral1hInputTokens = sdkOmittedValue,
+          Object? ephemeral5mInputTokens = sdkOmittedValue}) =>
+      CacheCreation(
+        ephemeral1hInputTokens:
+            identical(ephemeral1hInputTokens, sdkOmittedValue)
+                ? this.ephemeral1hInputTokens
+                : ephemeral1hInputTokens as int,
+        ephemeral5mInputTokens:
+            identical(ephemeral5mInputTokens, sdkOmittedValue)
+                ? this.ephemeral5mInputTokens
+                : ephemeral5mInputTokens as int,
+      );
 
   factory CacheCreation.fromJson(Map<String, dynamic> json) => CacheCreation(
-    ephemeral1hInputTokens: ((json['ephemeral_1h_input_tokens'] as num?)?.toInt())!,
-    ephemeral5mInputTokens: ((json['ephemeral_5m_input_tokens'] as num?)?.toInt())!,
-  );
+        ephemeral1hInputTokens:
+            ((json['ephemeral_1h_input_tokens'] as num?)?.toInt())!,
+        ephemeral5mInputTokens:
+            ((json['ephemeral_5m_input_tokens'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ephemeral_1h_input_tokens': ephemeral1hInputTokens,
-    'ephemeral_5m_input_tokens': ephemeral5mInputTokens,
-  };
+        'ephemeral_1h_input_tokens': ephemeral1hInputTokens,
+        'ephemeral_5m_input_tokens': ephemeral5mInputTokens,
+      };
 }

@@ -8,218 +8,351 @@ part of 'permissions_beta_true.dart';
 class BetaAllConnectorsPermissionResource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Kind of resource the permission applies to.
   final BetaAllConnectorsPermissionResourceType type_;
 
   const BetaAllConnectorsPermissionResource({required this.type_});
 
-  BetaAllConnectorsPermissionResource Function({BetaAllConnectorsPermissionResourceType type_}) get copyWith => _copyWith;
+  BetaAllConnectorsPermissionResource Function(
+          {BetaAllConnectorsPermissionResourceType type_})
+      get copyWith => _copyWith;
 
-  BetaAllConnectorsPermissionResource _copyWith({Object? type_ = sdkOmittedValue}) => BetaAllConnectorsPermissionResource(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaAllConnectorsPermissionResourceType,
-  );
+  BetaAllConnectorsPermissionResource _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaAllConnectorsPermissionResource(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaAllConnectorsPermissionResourceType,
+      );
 
-  factory BetaAllConnectorsPermissionResource.fromJson(Map<String, dynamic> json) => BetaAllConnectorsPermissionResource(
-    type_: (json['type'] != null ? BetaAllConnectorsPermissionResourceType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaAllConnectorsPermissionResource.fromJson(
+          Map<String, dynamic> json) =>
+      BetaAllConnectorsPermissionResource(
+        type_: (json['type'] != null
+            ? BetaAllConnectorsPermissionResourceType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaConnectorPermissionResource` API schema.
 class BetaConnectorPermissionResource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// ID of the connector the permission applies to.
   final String connectorId;
+
   /// Kind of resource the permission applies to.
   final BetaConnectorPermissionResourceType type_;
 
-  const BetaConnectorPermissionResource({required this.connectorId, required this.type_});
+  const BetaConnectorPermissionResource(
+      {required this.connectorId, required this.type_});
 
-  BetaConnectorPermissionResource Function({String connectorId, BetaConnectorPermissionResourceType type_}) get copyWith => _copyWith;
+  BetaConnectorPermissionResource Function(
+      {String connectorId,
+      BetaConnectorPermissionResourceType type_}) get copyWith => _copyWith;
 
-  BetaConnectorPermissionResource _copyWith({Object? connectorId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaConnectorPermissionResource(
-    connectorId: identical(connectorId, sdkOmittedValue) ? this.connectorId : connectorId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaConnectorPermissionResourceType,
-  );
+  BetaConnectorPermissionResource _copyWith(
+          {Object? connectorId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaConnectorPermissionResource(
+        connectorId: identical(connectorId, sdkOmittedValue)
+            ? this.connectorId
+            : connectorId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaConnectorPermissionResourceType,
+      );
 
-  factory BetaConnectorPermissionResource.fromJson(Map<String, dynamic> json) => BetaConnectorPermissionResource(
-    connectorId: (json['connector_id'] as String?)!,
-    type_: (json['type'] != null ? BetaConnectorPermissionResourceType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaConnectorPermissionResource.fromJson(Map<String, dynamic> json) =>
+      BetaConnectorPermissionResource(
+        connectorId: (json['connector_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaConnectorPermissionResourceType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'connector_id': connectorId,
-    'type': type_.toJson(),
-  };
+        'connector_id': connectorId,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaConnectorScopePermissionResource` API schema.
 class BetaConnectorScopePermissionResource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// ID of the connector the permission applies to.
   final String connectorId;
+
   /// OAuth scope the permission names — the role may receive this scope when tokens are minted for the connector. Subject to the same encoding rule as `tool_name`: a scope containing characters outside `[a-zA-Z0-9_-]` (or colliding with a reserved form) appears server-encoded in a stable `{prefix}_{32-hex}` form. OAuth scopes routinely contain `:` and `/`, so most appear encoded.
   final String scope;
+
   /// Kind of resource the permission applies to.
   final BetaConnectorScopePermissionResourceType type_;
 
-  const BetaConnectorScopePermissionResource({required this.connectorId, required this.scope, required this.type_});
+  const BetaConnectorScopePermissionResource(
+      {required this.connectorId, required this.scope, required this.type_});
 
-  BetaConnectorScopePermissionResource Function({String connectorId, String scope, BetaConnectorScopePermissionResourceType type_}) get copyWith => _copyWith;
+  BetaConnectorScopePermissionResource Function(
+          {String connectorId,
+          String scope,
+          BetaConnectorScopePermissionResourceType type_})
+      get copyWith => _copyWith;
 
-  BetaConnectorScopePermissionResource _copyWith({Object? connectorId = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaConnectorScopePermissionResource(
-    connectorId: identical(connectorId, sdkOmittedValue) ? this.connectorId : connectorId as String,
-    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaConnectorScopePermissionResourceType,
-  );
+  BetaConnectorScopePermissionResource _copyWith(
+          {Object? connectorId = sdkOmittedValue,
+          Object? scope = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaConnectorScopePermissionResource(
+        connectorId: identical(connectorId, sdkOmittedValue)
+            ? this.connectorId
+            : connectorId as String,
+        scope: identical(scope, sdkOmittedValue) ? this.scope : scope as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaConnectorScopePermissionResourceType,
+      );
 
-  factory BetaConnectorScopePermissionResource.fromJson(Map<String, dynamic> json) => BetaConnectorScopePermissionResource(
-    connectorId: (json['connector_id'] as String?)!,
-    scope: (json['scope'] as String?)!,
-    type_: (json['type'] != null ? BetaConnectorScopePermissionResourceType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaConnectorScopePermissionResource.fromJson(
+          Map<String, dynamic> json) =>
+      BetaConnectorScopePermissionResource(
+        connectorId: (json['connector_id'] as String?)!,
+        scope: (json['scope'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaConnectorScopePermissionResourceType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'connector_id': connectorId,
-    'scope': scope,
-    'type': type_.toJson(),
-  };
+        'connector_id': connectorId,
+        'scope': scope,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaConnectorToolPermissionResource` API schema.
 class BetaConnectorToolPermissionResource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// ID of the connector the permission applies to.
   final String connectorId;
+
   /// Published name of the connector tool the permission applies to. When the published name contains characters outside `[a-zA-Z0-9_-]` (or collides with a reserved form), it is server-encoded into a stable `{prefix}_{32-hex}` form — a shortened readable prefix of the name plus a hash — from which the published name is not recoverable.
   final String toolName;
+
   /// Kind of resource the permission applies to.
   final BetaConnectorToolPermissionResourceType type_;
 
-  const BetaConnectorToolPermissionResource({required this.connectorId, required this.toolName, required this.type_});
+  const BetaConnectorToolPermissionResource(
+      {required this.connectorId, required this.toolName, required this.type_});
 
-  BetaConnectorToolPermissionResource Function({String connectorId, String toolName, BetaConnectorToolPermissionResourceType type_}) get copyWith => _copyWith;
+  BetaConnectorToolPermissionResource Function(
+      {String connectorId,
+      String toolName,
+      BetaConnectorToolPermissionResourceType type_}) get copyWith => _copyWith;
 
-  BetaConnectorToolPermissionResource _copyWith({Object? connectorId = sdkOmittedValue, Object? toolName = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaConnectorToolPermissionResource(
-    connectorId: identical(connectorId, sdkOmittedValue) ? this.connectorId : connectorId as String,
-    toolName: identical(toolName, sdkOmittedValue) ? this.toolName : toolName as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaConnectorToolPermissionResourceType,
-  );
+  BetaConnectorToolPermissionResource _copyWith(
+          {Object? connectorId = sdkOmittedValue,
+          Object? toolName = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaConnectorToolPermissionResource(
+        connectorId: identical(connectorId, sdkOmittedValue)
+            ? this.connectorId
+            : connectorId as String,
+        toolName: identical(toolName, sdkOmittedValue)
+            ? this.toolName
+            : toolName as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaConnectorToolPermissionResourceType,
+      );
 
-  factory BetaConnectorToolPermissionResource.fromJson(Map<String, dynamic> json) => BetaConnectorToolPermissionResource(
-    connectorId: (json['connector_id'] as String?)!,
-    toolName: (json['tool_name'] as String?)!,
-    type_: (json['type'] != null ? BetaConnectorToolPermissionResourceType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaConnectorToolPermissionResource.fromJson(
+          Map<String, dynamic> json) =>
+      BetaConnectorToolPermissionResource(
+        connectorId: (json['connector_id'] as String?)!,
+        toolName: (json['tool_name'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaConnectorToolPermissionResourceType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'connector_id': connectorId,
-    'tool_name': toolName,
-    'type': type_.toJson(),
-  };
+        'connector_id': connectorId,
+        'tool_name': toolName,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaOrganizationPermissionResource` API schema.
 class BetaOrganizationPermissionResource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// UUID of the organization the permission applies to.
   final String organizationId;
+
   /// Kind of resource the permission applies to.
   final BetaOrganizationPermissionResourceType type_;
 
-  const BetaOrganizationPermissionResource({required this.organizationId, required this.type_});
+  const BetaOrganizationPermissionResource(
+      {required this.organizationId, required this.type_});
 
-  BetaOrganizationPermissionResource Function({String organizationId, BetaOrganizationPermissionResourceType type_}) get copyWith => _copyWith;
+  BetaOrganizationPermissionResource Function(
+      {String organizationId,
+      BetaOrganizationPermissionResourceType type_}) get copyWith => _copyWith;
 
-  BetaOrganizationPermissionResource _copyWith({Object? organizationId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaOrganizationPermissionResource(
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaOrganizationPermissionResourceType,
-  );
+  BetaOrganizationPermissionResource _copyWith(
+          {Object? organizationId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaOrganizationPermissionResource(
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaOrganizationPermissionResourceType,
+      );
 
-  factory BetaOrganizationPermissionResource.fromJson(Map<String, dynamic> json) => BetaOrganizationPermissionResource(
-    organizationId: (json['organization_id'] as String?)!,
-    type_: (json['type'] != null ? BetaOrganizationPermissionResourceType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaOrganizationPermissionResource.fromJson(
+          Map<String, dynamic> json) =>
+      BetaOrganizationPermissionResource(
+        organizationId: (json['organization_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaOrganizationPermissionResourceType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'organization_id': organizationId,
-    'type': type_.toJson(),
-  };
+        'organization_id': organizationId,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaRbacRolePermission` API schema.
 class BetaRbacRolePermission {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Action the permission grants on the resource. The vocabulary follows the resource: an `organization` grant carries a product-feature entitlement (for example `chat`), an admin-panel permission entitlement (`permission_*`), or a blanket capability-access mode — `capability_access_all` grants every product-feature entitlement, and `capability_access_all_ga` grants the generally-available subset as it stands at permission-check time; neither mode grants model-access entitlements. A consumer enumerating a role's per-feature grants should treat a blanket row as granting every product-feature entitlement it covers, or it will under-report the role's effective access. A `connector_tool` grant carries a tool-access action (`use` or `always_allow`); a `connector_scope` grant carries the scope action `grant` (the role may receive the named OAuth scope when tokens are minted for the connector); `connector` and `all_connectors` grants carry a tool-access action, the scope action, or an authentication-method action (`interactive` or `managed`).
   final String action;
+
   /// What the permission applies to. A tagged union: `type` names the kind of resource and determines which identifier fields are present.
   final BetaRbacRolePermissionResource resource;
+
   /// Object type. For RBAC Role Permissions, this is always `"rbac_role_permission"`.
   final BetaRbacRolePermissionType type_;
 
-  const BetaRbacRolePermission({required this.action, required this.resource, required this.type_});
+  const BetaRbacRolePermission(
+      {required this.action, required this.resource, required this.type_});
 
-  BetaRbacRolePermission Function({String action, BetaRbacRolePermissionResource resource, BetaRbacRolePermissionType type_}) get copyWith => _copyWith;
+  BetaRbacRolePermission Function(
+      {String action,
+      BetaRbacRolePermissionResource resource,
+      BetaRbacRolePermissionType type_}) get copyWith => _copyWith;
 
-  BetaRbacRolePermission _copyWith({Object? action = sdkOmittedValue, Object? resource = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRbacRolePermission(
-    action: identical(action, sdkOmittedValue) ? this.action : action as String,
-    resource: identical(resource, sdkOmittedValue) ? this.resource : resource as BetaRbacRolePermissionResource,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRbacRolePermissionType,
-  );
+  BetaRbacRolePermission _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? resource = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRbacRolePermission(
+        action:
+            identical(action, sdkOmittedValue) ? this.action : action as String,
+        resource: identical(resource, sdkOmittedValue)
+            ? this.resource
+            : resource as BetaRbacRolePermissionResource,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRbacRolePermissionType,
+      );
 
-  factory BetaRbacRolePermission.fromJson(Map<String, dynamic> json) => BetaRbacRolePermission(
-    action: (json['action'] as String?)!,
-    resource: (json['resource'] != null ? BetaRbacRolePermissionResource.fromJson(json['resource']) : null)!,
-    type_: (json['type'] != null ? BetaRbacRolePermissionType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRbacRolePermission.fromJson(Map<String, dynamic> json) =>
+      BetaRbacRolePermission(
+        action: (json['action'] as String?)!,
+        resource: (json['resource'] != null
+            ? BetaRbacRolePermissionResource.fromJson(json['resource'])
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaRbacRolePermissionType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action,
-    'resource': resource.toJson(),
-    'type': type_.toJson(),
-  };
+        'action': action,
+        'resource': resource.toJson(),
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaRbacRolePermissionList` API schema.
 class BetaRbacRolePermissionList {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `data` wire field.
   final List<BetaRbacRolePermission> data;
+
   /// Indicates whether there are more results beyond this page.
   final bool hasMore;
+
   /// Opaque cursor for the next page. Pass as the `page` parameter on the next request.
   final String? nextPage;
 
-  const BetaRbacRolePermissionList({required this.data, required this.hasMore, required this.nextPage});
+  const BetaRbacRolePermissionList(
+      {required this.data, required this.hasMore, required this.nextPage});
 
-  BetaRbacRolePermissionList Function({List<BetaRbacRolePermission> data, bool hasMore, String? nextPage}) get copyWith => _copyWith;
+  BetaRbacRolePermissionList Function(
+      {List<BetaRbacRolePermission> data,
+      bool hasMore,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaRbacRolePermissionList _copyWith({Object? data = sdkOmittedValue, Object? hasMore = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaRbacRolePermissionList(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaRbacRolePermission>,
-    hasMore: identical(hasMore, sdkOmittedValue) ? this.hasMore : hasMore as bool,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaRbacRolePermissionList _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? hasMore = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaRbacRolePermissionList(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaRbacRolePermission>,
+        hasMore: identical(hasMore, sdkOmittedValue)
+            ? this.hasMore
+            : hasMore as bool,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaRbacRolePermissionList.fromJson(Map<String, dynamic> json) => BetaRbacRolePermissionList(
-    data: ((json['data'] as List?)?.map((e) => BetaRbacRolePermission.fromJson(e as Map<String, dynamic>)).toList())!,
-    hasMore: (json['has_more'] as bool?)!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  );
+  factory BetaRbacRolePermissionList.fromJson(Map<String, dynamic> json) =>
+      BetaRbacRolePermissionList(
+        data: ((json['data'] as List?)
+            ?.map((e) =>
+                BetaRbacRolePermission.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        hasMore: (json['has_more'] as bool?)!,
+        nextPage: json.containsKey('next_page')
+            ? json['next_page'] as String?
+            : throw ArgumentError.value(
+                null, 'next_page', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'has_more': hasMore,
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'has_more': hasMore,
+        'next_page': nextPage,
+      };
 }
 
 sealed class BetaRbacRolePermissionResource {
@@ -228,56 +361,134 @@ sealed class BetaRbacRolePermissionResource {
   const BetaRbacRolePermissionResource();
   factory BetaRbacRolePermissionResource.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaOrganizationPermissionResource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRbacRolePermissionResourceBetaOrganizationPermissionResource(value); } } catch (_) {}
-      try { final value = BetaConnectorToolPermissionResource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRbacRolePermissionResourceBetaConnectorToolPermissionResource(value); } } catch (_) {}
-      try { final value = BetaConnectorScopePermissionResource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRbacRolePermissionResourceBetaConnectorScopePermissionResource(value); } } catch (_) {}
-      try { final value = BetaConnectorPermissionResource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRbacRolePermissionResourceBetaConnectorPermissionResource(value); } } catch (_) {}
-      try { final value = BetaAllConnectorsPermissionResource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRbacRolePermissionResourceBetaAllConnectorsPermissionResource(value); } } catch (_) {}
+      try {
+        final value = BetaOrganizationPermissionResource.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRbacRolePermissionResourceBetaOrganizationPermissionResource(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaConnectorToolPermissionResource.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRbacRolePermissionResourceBetaConnectorToolPermissionResource(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaConnectorScopePermissionResource.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRbacRolePermissionResourceBetaConnectorScopePermissionResource(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaConnectorPermissionResource.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRbacRolePermissionResourceBetaConnectorPermissionResource(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaAllConnectorsPermissionResource.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRbacRolePermissionResourceBetaAllConnectorsPermissionResource(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaRbacRolePermissionResourceBetaOrganizationPermissionResource(BetaOrganizationPermissionResource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRbacRolePermissionResourceBetaConnectorToolPermissionResource(BetaConnectorToolPermissionResource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRbacRolePermissionResourceBetaConnectorScopePermissionResource(BetaConnectorScopePermissionResource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRbacRolePermissionResourceBetaConnectorPermissionResource(BetaConnectorPermissionResource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRbacRolePermissionResourceBetaAllConnectorsPermissionResource(BetaAllConnectorsPermissionResource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"all_connectors", "connector", "connector_scope", "connector_tool", "organization"}.contains(json["type"])) { return UnknownBetaRbacRolePermissionResource(json); }
-    throw FormatException("No variant matched for BetaRbacRolePermissionResource");
+    try {
+      return BetaRbacRolePermissionResourceBetaOrganizationPermissionResource(
+          BetaOrganizationPermissionResource.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRbacRolePermissionResourceBetaConnectorToolPermissionResource(
+          BetaConnectorToolPermissionResource.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRbacRolePermissionResourceBetaConnectorScopePermissionResource(
+          BetaConnectorScopePermissionResource.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRbacRolePermissionResourceBetaConnectorPermissionResource(
+          BetaConnectorPermissionResource.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRbacRolePermissionResourceBetaAllConnectorsPermissionResource(
+          BetaAllConnectorsPermissionResource.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "all_connectors",
+          "connector",
+          "connector_scope",
+          "connector_tool",
+          "organization"
+        }.contains(json["type"])) {
+      return UnknownBetaRbacRolePermissionResource(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRbacRolePermissionResource");
   }
   Object? toJson();
 }
 
-final class BetaRbacRolePermissionResourceBetaOrganizationPermissionResource extends BetaRbacRolePermissionResource {
+final class BetaRbacRolePermissionResourceBetaOrganizationPermissionResource
+    extends BetaRbacRolePermissionResource {
   final BetaOrganizationPermissionResource value;
-  const BetaRbacRolePermissionResourceBetaOrganizationPermissionResource(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRbacRolePermissionResourceBetaOrganizationPermissionResource(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRbacRolePermissionResourceBetaConnectorToolPermissionResource extends BetaRbacRolePermissionResource {
+final class BetaRbacRolePermissionResourceBetaConnectorToolPermissionResource
+    extends BetaRbacRolePermissionResource {
   final BetaConnectorToolPermissionResource value;
-  const BetaRbacRolePermissionResourceBetaConnectorToolPermissionResource(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRbacRolePermissionResourceBetaConnectorToolPermissionResource(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRbacRolePermissionResourceBetaConnectorScopePermissionResource extends BetaRbacRolePermissionResource {
+final class BetaRbacRolePermissionResourceBetaConnectorScopePermissionResource
+    extends BetaRbacRolePermissionResource {
   final BetaConnectorScopePermissionResource value;
-  const BetaRbacRolePermissionResourceBetaConnectorScopePermissionResource(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRbacRolePermissionResourceBetaConnectorScopePermissionResource(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRbacRolePermissionResourceBetaConnectorPermissionResource extends BetaRbacRolePermissionResource {
+final class BetaRbacRolePermissionResourceBetaConnectorPermissionResource
+    extends BetaRbacRolePermissionResource {
   final BetaConnectorPermissionResource value;
-  const BetaRbacRolePermissionResourceBetaConnectorPermissionResource(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRbacRolePermissionResourceBetaConnectorPermissionResource(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRbacRolePermissionResourceBetaAllConnectorsPermissionResource extends BetaRbacRolePermissionResource {
+final class BetaRbacRolePermissionResourceBetaAllConnectorsPermissionResource
+    extends BetaRbacRolePermissionResource {
   final BetaAllConnectorsPermissionResource value;
-  const BetaRbacRolePermissionResourceBetaAllConnectorsPermissionResource(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRbacRolePermissionResourceBetaAllConnectorsPermissionResource(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRbacRolePermissionResource] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRbacRolePermissionResource extends BetaRbacRolePermissionResource {
+final class UnknownBetaRbacRolePermissionResource
+    extends BetaRbacRolePermissionResource {
   final Map<String, dynamic> raw;
   const UnknownBetaRbacRolePermissionResource(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

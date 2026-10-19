@@ -9,90 +9,148 @@ sealed class BetaServiceAccountUpdateParamsDescription {
   static const String constructionSurface = 'named';
   const BetaServiceAccountUpdateParamsDescription();
   factory BetaServiceAccountUpdateParamsDescription.fromJson(Object? json) {
-    if (json is String) { return BetaServiceAccountUpdateParamsDescriptionString(json); }
-    throw FormatException("No variant matched for BetaServiceAccountUpdateParamsDescription");
+    if (json is String) {
+      return BetaServiceAccountUpdateParamsDescriptionString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaServiceAccountUpdateParamsDescription");
   }
   Object? toJson();
 }
 
-final class BetaServiceAccountUpdateParamsDescriptionString extends BetaServiceAccountUpdateParamsDescription {
+final class BetaServiceAccountUpdateParamsDescriptionString
+    extends BetaServiceAccountUpdateParamsDescription {
   final String value;
   const BetaServiceAccountUpdateParamsDescriptionString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BetaServiceAccountUpdateParamsOrganizationRole {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaServiceAccountUpdateParamsOrganizationRole();
-  factory BetaServiceAccountUpdateParamsOrganizationRole.fromJson(Object? json) {
-    try { return BetaServiceAccountUpdateParamsOrganizationRoleBetaServiceAccountUpdateParamsOrganizationRoleVariant0(BetaServiceAccountUpdateParamsOrganizationRoleVariant0.fromJson(json as String)); } catch (_) {}
-    throw FormatException("No variant matched for BetaServiceAccountUpdateParamsOrganizationRole");
+  factory BetaServiceAccountUpdateParamsOrganizationRole.fromJson(
+      Object? json) {
+    try {
+      return BetaServiceAccountUpdateParamsOrganizationRoleBetaServiceAccountUpdateParamsOrganizationRoleVariant0(
+          BetaServiceAccountUpdateParamsOrganizationRoleVariant0.fromJson(
+              json as String));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for BetaServiceAccountUpdateParamsOrganizationRole");
   }
   Object? toJson();
 }
 
-final class BetaServiceAccountUpdateParamsOrganizationRoleBetaServiceAccountUpdateParamsOrganizationRoleVariant0 extends BetaServiceAccountUpdateParamsOrganizationRole {
+final class BetaServiceAccountUpdateParamsOrganizationRoleBetaServiceAccountUpdateParamsOrganizationRoleVariant0
+    extends BetaServiceAccountUpdateParamsOrganizationRole {
   final BetaServiceAccountUpdateParamsOrganizationRoleVariant0 value;
-  const BetaServiceAccountUpdateParamsOrganizationRoleBetaServiceAccountUpdateParamsOrganizationRoleVariant0(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaServiceAccountUpdateParamsOrganizationRoleBetaServiceAccountUpdateParamsOrganizationRoleVariant0(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Partial update. `name` is immutable.
 class BetaServiceAccountUpdateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Replaces the description. Omit to leave unchanged; send `null` to clear (the field is stored as an empty string).
   final SdkOptional<String?> description;
+
   /// Replaces the org-level role. Omit or send `null` to leave unchanged.
-  final SdkOptional<BetaServiceAccountUpdateParamsOrganizationRoleVariant0?> organizationRole;
+  final SdkOptional<BetaServiceAccountUpdateParamsOrganizationRoleVariant0?>
+      organizationRole;
 
-  const BetaServiceAccountUpdateParams({this.description = const SdkOmitted(), this.organizationRole = const SdkOmitted()});
+  const BetaServiceAccountUpdateParams(
+      {this.description = const SdkOmitted(),
+      this.organizationRole = const SdkOmitted()});
 
-  BetaServiceAccountUpdateParams Function({SdkOptional<String?> description, SdkOptional<BetaServiceAccountUpdateParamsOrganizationRoleVariant0?> organizationRole}) get copyWith => _copyWith;
+  BetaServiceAccountUpdateParams Function(
+      {SdkOptional<String?> description,
+      SdkOptional<BetaServiceAccountUpdateParamsOrganizationRoleVariant0?>
+          organizationRole}) get copyWith => _copyWith;
 
-  BetaServiceAccountUpdateParams _copyWith({Object? description = sdkOmittedValue, Object? organizationRole = sdkOmittedValue}) => BetaServiceAccountUpdateParams(
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    organizationRole: identical(organizationRole, sdkOmittedValue) ? this.organizationRole : organizationRole as SdkOptional<BetaServiceAccountUpdateParamsOrganizationRoleVariant0?>,
-  );
+  BetaServiceAccountUpdateParams _copyWith(
+          {Object? description = sdkOmittedValue,
+          Object? organizationRole = sdkOmittedValue}) =>
+      BetaServiceAccountUpdateParams(
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        organizationRole: identical(organizationRole, sdkOmittedValue)
+            ? this.organizationRole
+            : organizationRole as SdkOptional<
+                BetaServiceAccountUpdateParamsOrganizationRoleVariant0?>,
+      );
 
-  factory BetaServiceAccountUpdateParams.fromJson(Map<String, dynamic> json) => BetaServiceAccountUpdateParams(
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    organizationRole: json.containsKey('organization_role') ? SdkPresent(json['organization_role'] != null ? BetaServiceAccountUpdateParamsOrganizationRoleVariant0.fromJson(json['organization_role'] as String) : null) : const SdkOmitted(),
-  );
+  factory BetaServiceAccountUpdateParams.fromJson(Map<String, dynamic> json) =>
+      BetaServiceAccountUpdateParams(
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        organizationRole: json.containsKey('organization_role')
+            ? SdkPresent(json['organization_role'] != null
+                ? BetaServiceAccountUpdateParamsOrganizationRoleVariant0
+                    .fromJson(json['organization_role'] as String)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationRole) {
-      SdkPresent<BetaServiceAccountUpdateParamsOrganizationRoleVariant0?>(value: final value) => {'organization_role': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationRole) {
+          SdkPresent<BetaServiceAccountUpdateParamsOrganizationRoleVariant0?>(
+            value: final value
+          ) =>
+            {
+              'organization_role': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `BetaServiceAccountWorkspaceMemberUpdateParams` API schema.
 class BetaServiceAccountWorkspaceMemberUpdateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// New role for the service account in this workspace.
   final BetaNoBillingWorkspaceRoleSchema workspaceRole;
 
-  const BetaServiceAccountWorkspaceMemberUpdateParams({required this.workspaceRole});
+  const BetaServiceAccountWorkspaceMemberUpdateParams(
+      {required this.workspaceRole});
 
-  BetaServiceAccountWorkspaceMemberUpdateParams Function({BetaNoBillingWorkspaceRoleSchema workspaceRole}) get copyWith => _copyWith;
+  BetaServiceAccountWorkspaceMemberUpdateParams Function(
+          {BetaNoBillingWorkspaceRoleSchema workspaceRole})
+      get copyWith => _copyWith;
 
-  BetaServiceAccountWorkspaceMemberUpdateParams _copyWith({Object? workspaceRole = sdkOmittedValue}) => BetaServiceAccountWorkspaceMemberUpdateParams(
-    workspaceRole: identical(workspaceRole, sdkOmittedValue) ? this.workspaceRole : workspaceRole as BetaNoBillingWorkspaceRoleSchema,
-  );
+  BetaServiceAccountWorkspaceMemberUpdateParams _copyWith(
+          {Object? workspaceRole = sdkOmittedValue}) =>
+      BetaServiceAccountWorkspaceMemberUpdateParams(
+        workspaceRole: identical(workspaceRole, sdkOmittedValue)
+            ? this.workspaceRole
+            : workspaceRole as BetaNoBillingWorkspaceRoleSchema,
+      );
 
-  factory BetaServiceAccountWorkspaceMemberUpdateParams.fromJson(Map<String, dynamic> json) => BetaServiceAccountWorkspaceMemberUpdateParams(
-    workspaceRole: (json['workspace_role'] != null ? BetaNoBillingWorkspaceRoleSchema.fromJson(json['workspace_role'] as String) : null)!,
-  );
+  factory BetaServiceAccountWorkspaceMemberUpdateParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaServiceAccountWorkspaceMemberUpdateParams(
+        workspaceRole: (json['workspace_role'] != null
+            ? BetaNoBillingWorkspaceRoleSchema.fromJson(
+                json['workspace_role'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'workspace_role': workspaceRole.toJson(),
-  };
+        'workspace_role': workspaceRole.toJson(),
+      };
 }

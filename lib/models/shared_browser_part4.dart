@@ -8,70 +8,114 @@ part of 'shared_browser.dart';
 class BrowserScrollConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Defer loading for this member. Must resolve to the same value on every enabled member of the toolset.
   final SdkOptional<bool?> deferLoading;
+
   /// Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
   final SdkOptional<bool?> enabled;
 
-  const BrowserScrollConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
+  const BrowserScrollConfig(
+      {this.deferLoading = const SdkOmitted(),
+      this.enabled = const SdkOmitted()});
 
-  BrowserScrollConfig Function({SdkOptional<bool?> deferLoading, SdkOptional<bool?> enabled}) get copyWith => _copyWith;
+  BrowserScrollConfig Function(
+      {SdkOptional<bool?> deferLoading,
+      SdkOptional<bool?> enabled}) get copyWith => _copyWith;
 
-  BrowserScrollConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BrowserScrollConfig(
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool?>,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-  );
+  BrowserScrollConfig _copyWith(
+          {Object? deferLoading = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue}) =>
+      BrowserScrollConfig(
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool?>,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+      );
 
-  factory BrowserScrollConfig.fromJson(Map<String, dynamic> json) => BrowserScrollConfig(
-    deferLoading: json.containsKey('defer_loading') ? SdkPresent(json['defer_loading'] as bool?) : const SdkOmitted(),
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-  );
+  factory BrowserScrollConfig.fromJson(Map<String, dynamic> json) =>
+      BrowserScrollConfig(
+        deferLoading: json.containsKey('defer_loading')
+            ? SdkPresent(json['defer_loading'] as bool?)
+            : const SdkOmitted(),
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deferLoading) {
-      SdkPresent<bool?>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (deferLoading) {
+          SdkPresent<bool?>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// ``scroll_to``'s config overrides.
 class BrowserScrollToConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Defer loading for this member. Must resolve to the same value on every enabled member of the toolset.
   final SdkOptional<bool?> deferLoading;
+
   /// Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
   final SdkOptional<bool?> enabled;
 
-  const BrowserScrollToConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
+  const BrowserScrollToConfig(
+      {this.deferLoading = const SdkOmitted(),
+      this.enabled = const SdkOmitted()});
 
-  BrowserScrollToConfig Function({SdkOptional<bool?> deferLoading, SdkOptional<bool?> enabled}) get copyWith => _copyWith;
+  BrowserScrollToConfig Function(
+      {SdkOptional<bool?> deferLoading,
+      SdkOptional<bool?> enabled}) get copyWith => _copyWith;
 
-  BrowserScrollToConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BrowserScrollToConfig(
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool?>,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-  );
+  BrowserScrollToConfig _copyWith(
+          {Object? deferLoading = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue}) =>
+      BrowserScrollToConfig(
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool?>,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+      );
 
-  factory BrowserScrollToConfig.fromJson(Map<String, dynamic> json) => BrowserScrollToConfig(
-    deferLoading: json.containsKey('defer_loading') ? SdkPresent(json['defer_loading'] as bool?) : const SdkOmitted(),
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-  );
+  factory BrowserScrollToConfig.fromJson(Map<String, dynamic> json) =>
+      BrowserScrollToConfig(
+        deferLoading: json.containsKey('defer_loading')
+            ? SdkPresent(json['defer_loading'] as bool?)
+            : const SdkOmitted(),
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deferLoading) {
-      SdkPresent<bool?>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (deferLoading) {
+          SdkPresent<bool?>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class BrowserStateChangeDownloadCompletedPath {
@@ -79,16 +123,21 @@ sealed class BrowserStateChangeDownloadCompletedPath {
   static const String constructionSurface = 'named';
   const BrowserStateChangeDownloadCompletedPath();
   factory BrowserStateChangeDownloadCompletedPath.fromJson(Object? json) {
-    if (json is String) { return BrowserStateChangeDownloadCompletedPathString(json); }
-    throw FormatException("No variant matched for BrowserStateChangeDownloadCompletedPath");
+    if (json is String) {
+      return BrowserStateChangeDownloadCompletedPathString(json);
+    }
+    throw FormatException(
+        "No variant matched for BrowserStateChangeDownloadCompletedPath");
   }
   Object? toJson();
 }
 
-final class BrowserStateChangeDownloadCompletedPathString extends BrowserStateChangeDownloadCompletedPath {
+final class BrowserStateChangeDownloadCompletedPathString
+    extends BrowserStateChangeDownloadCompletedPath {
   final String value;
   const BrowserStateChangeDownloadCompletedPathString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BrowserStateChangeDownloadCompletedSizeBytes {
@@ -96,66 +145,113 @@ sealed class BrowserStateChangeDownloadCompletedSizeBytes {
   static const String constructionSurface = 'named';
   const BrowserStateChangeDownloadCompletedSizeBytes();
   factory BrowserStateChangeDownloadCompletedSizeBytes.fromJson(Object? json) {
-    if (json is num) { return BrowserStateChangeDownloadCompletedSizeBytesInt(json.toInt()); }
-    throw FormatException("No variant matched for BrowserStateChangeDownloadCompletedSizeBytes");
+    if (json is num) {
+      return BrowserStateChangeDownloadCompletedSizeBytesInt(json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for BrowserStateChangeDownloadCompletedSizeBytes");
   }
   Object? toJson();
 }
 
-final class BrowserStateChangeDownloadCompletedSizeBytesInt extends BrowserStateChangeDownloadCompletedSizeBytes {
+final class BrowserStateChangeDownloadCompletedSizeBytesInt
+    extends BrowserStateChangeDownloadCompletedSizeBytes {
   final int value;
   const BrowserStateChangeDownloadCompletedSizeBytesInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// A file download that finished during this call, reported with the same `download_id` as its `download_started` — or without a prior `download_started`, when the download finished during the call that started it (at most one state change per `download_id` per result).
 class BrowserStateChangeDownloadCompleted {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The caller-assigned identifier for this download, stable across the state changes reporting it.
   final String downloadId;
+
   /// Where the executor saved the file, on the executor's filesystem. Only included when another tool in the same environment can read the file at that path.
   final SdkOptional<String?> path;
+
   /// The completed download's size.
   final SdkOptional<int?> sizeBytes;
+
   /// Required `string` value serialized in the `type` wire field.
   final BrowserStateChangeDownloadCompletedType type_;
+
   /// The final post-redirect URL the download was served from.
   final String url;
 
-  const BrowserStateChangeDownloadCompleted({required this.downloadId, this.path = const SdkOmitted(), this.sizeBytes = const SdkOmitted(), required this.type_, required this.url});
+  const BrowserStateChangeDownloadCompleted(
+      {required this.downloadId,
+      this.path = const SdkOmitted(),
+      this.sizeBytes = const SdkOmitted(),
+      required this.type_,
+      required this.url});
 
-  BrowserStateChangeDownloadCompleted Function({String downloadId, SdkOptional<String?> path, SdkOptional<int?> sizeBytes, BrowserStateChangeDownloadCompletedType type_, String url}) get copyWith => _copyWith;
+  BrowserStateChangeDownloadCompleted Function(
+      {String downloadId,
+      SdkOptional<String?> path,
+      SdkOptional<int?> sizeBytes,
+      BrowserStateChangeDownloadCompletedType type_,
+      String url}) get copyWith => _copyWith;
 
-  BrowserStateChangeDownloadCompleted _copyWith({Object? downloadId = sdkOmittedValue, Object? path = sdkOmittedValue, Object? sizeBytes = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BrowserStateChangeDownloadCompleted(
-    downloadId: identical(downloadId, sdkOmittedValue) ? this.downloadId : downloadId as String,
-    path: identical(path, sdkOmittedValue) ? this.path : path as SdkOptional<String?>,
-    sizeBytes: identical(sizeBytes, sdkOmittedValue) ? this.sizeBytes : sizeBytes as SdkOptional<int?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BrowserStateChangeDownloadCompletedType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BrowserStateChangeDownloadCompleted _copyWith(
+          {Object? downloadId = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? sizeBytes = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      BrowserStateChangeDownloadCompleted(
+        downloadId: identical(downloadId, sdkOmittedValue)
+            ? this.downloadId
+            : downloadId as String,
+        path: identical(path, sdkOmittedValue)
+            ? this.path
+            : path as SdkOptional<String?>,
+        sizeBytes: identical(sizeBytes, sdkOmittedValue)
+            ? this.sizeBytes
+            : sizeBytes as SdkOptional<int?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BrowserStateChangeDownloadCompletedType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BrowserStateChangeDownloadCompleted.fromJson(Map<String, dynamic> json) => BrowserStateChangeDownloadCompleted(
-    downloadId: (json['download_id'] as String?)!,
-    path: json.containsKey('path') ? SdkPresent(json['path'] as String?) : const SdkOmitted(),
-    sizeBytes: json.containsKey('size_bytes') ? SdkPresent((json['size_bytes'] as num?)?.toInt()) : const SdkOmitted(),
-    type_: (json['type'] != null ? BrowserStateChangeDownloadCompletedType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BrowserStateChangeDownloadCompleted.fromJson(
+          Map<String, dynamic> json) =>
+      BrowserStateChangeDownloadCompleted(
+        downloadId: (json['download_id'] as String?)!,
+        path: json.containsKey('path')
+            ? SdkPresent(json['path'] as String?)
+            : const SdkOmitted(),
+        sizeBytes: json.containsKey('size_bytes')
+            ? SdkPresent((json['size_bytes'] as num?)?.toInt())
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BrowserStateChangeDownloadCompletedType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'download_id': downloadId,
-    ...switch (path) {
-      SdkPresent<String?>(value: final value) => {'path': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sizeBytes) {
-      SdkPresent<int?>(value: final value) => {'size_bytes': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'download_id': downloadId,
+        ...switch (path) {
+          SdkPresent<String?>(value: final value) => {
+              'path': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sizeBytes) {
+          SdkPresent<int?>(value: final value) => {
+              'size_bytes': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+        'url': url,
+      };
 }
 
 sealed class BrowserStateChangeDownloadFailedError {
@@ -163,119 +259,187 @@ sealed class BrowserStateChangeDownloadFailedError {
   static const String constructionSurface = 'named';
   const BrowserStateChangeDownloadFailedError();
   factory BrowserStateChangeDownloadFailedError.fromJson(Object? json) {
-    if (json is String) { return BrowserStateChangeDownloadFailedErrorString(json); }
-    throw FormatException("No variant matched for BrowserStateChangeDownloadFailedError");
+    if (json is String) {
+      return BrowserStateChangeDownloadFailedErrorString(json);
+    }
+    throw FormatException(
+        "No variant matched for BrowserStateChangeDownloadFailedError");
   }
   Object? toJson();
 }
 
-final class BrowserStateChangeDownloadFailedErrorString extends BrowserStateChangeDownloadFailedError {
+final class BrowserStateChangeDownloadFailedErrorString
+    extends BrowserStateChangeDownloadFailedError {
   final String value;
   const BrowserStateChangeDownloadFailedErrorString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// A file download that failed — or was cancelled — during this call.
 class BrowserStateChangeDownloadFailed {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The caller-assigned identifier for this download, stable across the state changes reporting it.
   final String downloadId;
+
   /// The failure or cancellation detail, when known.
   final SdkOptional<String?> error;
+
   /// Required `string` value serialized in the `type` wire field.
   final BrowserStateChangeDownloadFailedType type_;
+
   /// The final post-redirect URL the download was served from.
   final String url;
 
-  const BrowserStateChangeDownloadFailed({required this.downloadId, this.error = const SdkOmitted(), required this.type_, required this.url});
+  const BrowserStateChangeDownloadFailed(
+      {required this.downloadId,
+      this.error = const SdkOmitted(),
+      required this.type_,
+      required this.url});
 
-  BrowserStateChangeDownloadFailed Function({String downloadId, SdkOptional<String?> error, BrowserStateChangeDownloadFailedType type_, String url}) get copyWith => _copyWith;
+  BrowserStateChangeDownloadFailed Function(
+      {String downloadId,
+      SdkOptional<String?> error,
+      BrowserStateChangeDownloadFailedType type_,
+      String url}) get copyWith => _copyWith;
 
-  BrowserStateChangeDownloadFailed _copyWith({Object? downloadId = sdkOmittedValue, Object? error = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BrowserStateChangeDownloadFailed(
-    downloadId: identical(downloadId, sdkOmittedValue) ? this.downloadId : downloadId as String,
-    error: identical(error, sdkOmittedValue) ? this.error : error as SdkOptional<String?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BrowserStateChangeDownloadFailedType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BrowserStateChangeDownloadFailed _copyWith(
+          {Object? downloadId = sdkOmittedValue,
+          Object? error = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      BrowserStateChangeDownloadFailed(
+        downloadId: identical(downloadId, sdkOmittedValue)
+            ? this.downloadId
+            : downloadId as String,
+        error: identical(error, sdkOmittedValue)
+            ? this.error
+            : error as SdkOptional<String?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BrowserStateChangeDownloadFailedType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BrowserStateChangeDownloadFailed.fromJson(Map<String, dynamic> json) => BrowserStateChangeDownloadFailed(
-    downloadId: (json['download_id'] as String?)!,
-    error: json.containsKey('error') ? SdkPresent(json['error'] as String?) : const SdkOmitted(),
-    type_: (json['type'] != null ? BrowserStateChangeDownloadFailedType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BrowserStateChangeDownloadFailed.fromJson(
+          Map<String, dynamic> json) =>
+      BrowserStateChangeDownloadFailed(
+        downloadId: (json['download_id'] as String?)!,
+        error: json.containsKey('error')
+            ? SdkPresent(json['error'] as String?)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BrowserStateChangeDownloadFailedType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'download_id': downloadId,
-    ...switch (error) {
-      SdkPresent<String?>(value: final value) => {'error': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'download_id': downloadId,
+        ...switch (error) {
+          SdkPresent<String?>(value: final value) => {
+              'error': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+        'url': url,
+      };
 }
 
 /// A file download that started during this call.
 class BrowserStateChangeDownloadStarted {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The caller-assigned identifier for this download, stable across the state changes reporting it.
   final String downloadId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BrowserStateChangeDownloadStartedType type_;
+
   /// The final post-redirect URL the download was served from.
   final String url;
 
-  const BrowserStateChangeDownloadStarted({required this.downloadId, required this.type_, required this.url});
+  const BrowserStateChangeDownloadStarted(
+      {required this.downloadId, required this.type_, required this.url});
 
-  BrowserStateChangeDownloadStarted Function({String downloadId, BrowserStateChangeDownloadStartedType type_, String url}) get copyWith => _copyWith;
+  BrowserStateChangeDownloadStarted Function(
+      {String downloadId,
+      BrowserStateChangeDownloadStartedType type_,
+      String url}) get copyWith => _copyWith;
 
-  BrowserStateChangeDownloadStarted _copyWith({Object? downloadId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BrowserStateChangeDownloadStarted(
-    downloadId: identical(downloadId, sdkOmittedValue) ? this.downloadId : downloadId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BrowserStateChangeDownloadStartedType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BrowserStateChangeDownloadStarted _copyWith(
+          {Object? downloadId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      BrowserStateChangeDownloadStarted(
+        downloadId: identical(downloadId, sdkOmittedValue)
+            ? this.downloadId
+            : downloadId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BrowserStateChangeDownloadStartedType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BrowserStateChangeDownloadStarted.fromJson(Map<String, dynamic> json) => BrowserStateChangeDownloadStarted(
-    downloadId: (json['download_id'] as String?)!,
-    type_: (json['type'] != null ? BrowserStateChangeDownloadStartedType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BrowserStateChangeDownloadStarted.fromJson(
+          Map<String, dynamic> json) =>
+      BrowserStateChangeDownloadStarted(
+        downloadId: (json['download_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BrowserStateChangeDownloadStartedType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'download_id': downloadId,
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'download_id': downloadId,
+        'type': type_.toJson(),
+        'url': url,
+      };
 }
 
 /// A tab this call's execution opened that remains open at its end — the creation delta of the `tabs` inventory, not an event log. Carries only the `tab_id`; the tab's `title` and `url` live on its `tabs` entry, which must include the same `tab_id`. A tab opened during a failed call gets no deferred `tab_opened`; it simply appears in the next result's `tabs` inventory.
 class BrowserStateChangeTabOpened {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The `tab_id` of the opened tab, present in `tabs`.
   final String tabId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BrowserStateChangeTabOpenedType type_;
 
   const BrowserStateChangeTabOpened({required this.tabId, required this.type_});
 
-  BrowserStateChangeTabOpened Function({String tabId, BrowserStateChangeTabOpenedType type_}) get copyWith => _copyWith;
+  BrowserStateChangeTabOpened Function(
+      {String tabId,
+      BrowserStateChangeTabOpenedType type_}) get copyWith => _copyWith;
 
-  BrowserStateChangeTabOpened _copyWith({Object? tabId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BrowserStateChangeTabOpened(
-    tabId: identical(tabId, sdkOmittedValue) ? this.tabId : tabId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BrowserStateChangeTabOpenedType,
-  );
+  BrowserStateChangeTabOpened _copyWith(
+          {Object? tabId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      BrowserStateChangeTabOpened(
+        tabId: identical(tabId, sdkOmittedValue) ? this.tabId : tabId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BrowserStateChangeTabOpenedType,
+      );
 
-  factory BrowserStateChangeTabOpened.fromJson(Map<String, dynamic> json) => BrowserStateChangeTabOpened(
-    tabId: (json['tab_id'] as String?)!,
-    type_: (json['type'] != null ? BrowserStateChangeTabOpenedType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BrowserStateChangeTabOpened.fromJson(Map<String, dynamic> json) =>
+      BrowserStateChangeTabOpened(
+        tabId: (json['tab_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BrowserStateChangeTabOpenedType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'tab_id': tabId,
-    'type': type_.toJson(),
-  };
+        'tab_id': tabId,
+        'type': type_.toJson(),
+      };
 }

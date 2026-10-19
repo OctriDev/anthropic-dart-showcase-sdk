@@ -8,116 +8,223 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsGrepToolConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaManagedAgentsGrepToolConfigType type_;
+
   /// Required `string` value serialized in the `name` wire field.
   final BetaManagedAgentsGrepToolConfigName name;
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
+
   /// Permission policy for tool execution.
   final BetaManagedAgentsPermissionPolicy permissionPolicy;
 
-  const BetaManagedAgentsGrepToolConfig({required this.type_, required this.name, required this.enabled, required this.permissionPolicy});
+  const BetaManagedAgentsGrepToolConfig(
+      {required this.type_,
+      required this.name,
+      required this.enabled,
+      required this.permissionPolicy});
 
-  BetaManagedAgentsGrepToolConfig Function({BetaManagedAgentsGrepToolConfigType type_, BetaManagedAgentsGrepToolConfigName name, bool enabled, BetaManagedAgentsPermissionPolicy permissionPolicy}) get copyWith => _copyWith;
+  BetaManagedAgentsGrepToolConfig Function(
+          {BetaManagedAgentsGrepToolConfigType type_,
+          BetaManagedAgentsGrepToolConfigName name,
+          bool enabled,
+          BetaManagedAgentsPermissionPolicy permissionPolicy})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsGrepToolConfig _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue}) => BetaManagedAgentsGrepToolConfig(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsGrepToolConfigType,
-    name: identical(name, sdkOmittedValue) ? this.name : name as BetaManagedAgentsGrepToolConfigName,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as BetaManagedAgentsPermissionPolicy,
-  );
+  BetaManagedAgentsGrepToolConfig _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue,
+          Object? permissionPolicy = sdkOmittedValue}) =>
+      BetaManagedAgentsGrepToolConfig(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsGrepToolConfigType,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as BetaManagedAgentsGrepToolConfigName,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
+            ? this.permissionPolicy
+            : permissionPolicy as BetaManagedAgentsPermissionPolicy,
+      );
 
-  factory BetaManagedAgentsGrepToolConfig.fromJson(Map<String, dynamic> json) => BetaManagedAgentsGrepToolConfig(
-    type_: (json['type'] != null ? BetaManagedAgentsGrepToolConfigType.fromJson(json['type'] as String) : null)!,
-    name: (json['name'] != null ? BetaManagedAgentsGrepToolConfigName.fromJson(json['name'] as String) : null)!,
-    enabled: (json['enabled'] as bool?)!,
-    permissionPolicy: (json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null)!,
-  );
+  factory BetaManagedAgentsGrepToolConfig.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsGrepToolConfig(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsGrepToolConfigType.fromJson(
+                json['type'] as String)
+            : null)!,
+        name: (json['name'] != null
+            ? BetaManagedAgentsGrepToolConfigName.fromJson(
+                json['name'] as String)
+            : null)!,
+        enabled: (json['enabled'] as bool?)!,
+        permissionPolicy: (json['permission_policy'] != null
+            ? BetaManagedAgentsPermissionPolicy.fromJson(
+                json['permission_policy'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'name': name.toJson(),
-    'enabled': enabled,
-    'permission_policy': permissionPolicy.toJson(),
-  };
+        'type': type_.toJson(),
+        'name': name.toJson(),
+        'enabled': enabled,
+        'permission_policy': permissionPolicy.toJson(),
+      };
 }
 
 /// Configuration override for the grep tool.
 class BetaManagedAgentsGrepToolConfigParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `type` wire field.
   final SdkOptional<BetaManagedAgentsGrepToolConfigParamsType> type_;
+
   /// Must be "grep".
   final BetaManagedAgentsGrepToolConfigParamsName name;
+
   /// Whether this tool is enabled and available to Claude. Overrides the default_config setting.
   final SdkOptional<bool?> enabled;
+
   /// Permission policy for this tool. Controls whether tool calls are auto-approved or require confirmation.
   final SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy;
 
-  const BetaManagedAgentsGrepToolConfigParams({this.type_ = const SdkOmitted(), required this.name, this.enabled = const SdkOmitted(), this.permissionPolicy = const SdkOmitted()});
+  const BetaManagedAgentsGrepToolConfigParams(
+      {this.type_ = const SdkOmitted(),
+      required this.name,
+      this.enabled = const SdkOmitted(),
+      this.permissionPolicy = const SdkOmitted()});
 
-  BetaManagedAgentsGrepToolConfigParams Function({SdkOptional<BetaManagedAgentsGrepToolConfigParamsType> type_, BetaManagedAgentsGrepToolConfigParamsName name, SdkOptional<bool?> enabled, SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy}) get copyWith => _copyWith;
+  BetaManagedAgentsGrepToolConfigParams Function(
+          {SdkOptional<BetaManagedAgentsGrepToolConfigParamsType> type_,
+          BetaManagedAgentsGrepToolConfigParamsName name,
+          SdkOptional<bool?> enabled,
+          SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsGrepToolConfigParams _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue}) => BetaManagedAgentsGrepToolConfigParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<BetaManagedAgentsGrepToolConfigParamsType>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as BetaManagedAgentsGrepToolConfigParamsName,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
-  );
+  BetaManagedAgentsGrepToolConfigParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue,
+          Object? permissionPolicy = sdkOmittedValue}) =>
+      BetaManagedAgentsGrepToolConfigParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<BetaManagedAgentsGrepToolConfigParamsType>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as BetaManagedAgentsGrepToolConfigParamsName,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
+            ? this.permissionPolicy
+            : permissionPolicy
+                as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
+      );
 
-  factory BetaManagedAgentsGrepToolConfigParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsGrepToolConfigParams(
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? BetaManagedAgentsGrepToolConfigParamsType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    name: (json['name'] != null ? BetaManagedAgentsGrepToolConfigParamsName.fromJson(json['name'] as String) : null)!,
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-    permissionPolicy: json.containsKey('permission_policy') ? SdkPresent(json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsGrepToolConfigParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsGrepToolConfigParams(
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? BetaManagedAgentsGrepToolConfigParamsType.fromJson(
+                    json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        name: (json['name'] != null
+            ? BetaManagedAgentsGrepToolConfigParamsName.fromJson(
+                json['name'] as String)
+            : null)!,
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+        permissionPolicy: json.containsKey('permission_policy')
+            ? SdkPresent(json['permission_policy'] != null
+                ? BetaManagedAgentsPermissionPolicy.fromJson(
+                    json['permission_policy'])
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (type_) {
-      SdkPresent<BetaManagedAgentsGrepToolConfigParamsType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'name': name.toJson(),
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (permissionPolicy) {
-      SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) => {'permission_policy': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (type_) {
+          SdkPresent<BetaManagedAgentsGrepToolConfigParamsType>(
+            value: final value
+          ) =>
+            {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name.toJson(),
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (permissionPolicy) {
+          SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) =>
+            {
+              'permission_policy': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Image content specified directly as base64 data or as a reference via a URL.
 class BetaManagedAgentsImageBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsImageBlockType type_;
+
   /// The source of the image data.
   final BetaManagedAgentsImageSource source;
 
-  const BetaManagedAgentsImageBlock({required this.type_, required this.source});
+  const BetaManagedAgentsImageBlock(
+      {required this.type_, required this.source});
 
-  BetaManagedAgentsImageBlock Function({BetaManagedAgentsImageBlockType type_, BetaManagedAgentsImageSource source}) get copyWith => _copyWith;
+  BetaManagedAgentsImageBlock Function(
+      {BetaManagedAgentsImageBlockType type_,
+      BetaManagedAgentsImageSource source}) get copyWith => _copyWith;
 
-  BetaManagedAgentsImageBlock _copyWith({Object? type_ = sdkOmittedValue, Object? source = sdkOmittedValue}) => BetaManagedAgentsImageBlock(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsImageBlockType,
-    source: identical(source, sdkOmittedValue) ? this.source : source as BetaManagedAgentsImageSource,
-  );
+  BetaManagedAgentsImageBlock _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? source = sdkOmittedValue}) =>
+      BetaManagedAgentsImageBlock(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsImageBlockType,
+        source: identical(source, sdkOmittedValue)
+            ? this.source
+            : source as BetaManagedAgentsImageSource,
+      );
 
-  factory BetaManagedAgentsImageBlock.fromJson(Map<String, dynamic> json) => BetaManagedAgentsImageBlock(
-    type_: (json['type'] != null ? BetaManagedAgentsImageBlockType.fromJson(json['type'] as String) : null)!,
-    source: (json['source'] != null ? BetaManagedAgentsImageSource.fromJson(json['source']) : null)!,
-  );
+  factory BetaManagedAgentsImageBlock.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsImageBlock(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsImageBlockType.fromJson(json['type'] as String)
+            : null)!,
+        source: (json['source'] != null
+            ? BetaManagedAgentsImageSource.fromJson(json['source'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'source': source.toJson(),
-  };
+        'type': type_.toJson(),
+        'source': source.toJson(),
+      };
 }
 
 sealed class BetaManagedAgentsImageSource {
@@ -126,149 +233,244 @@ sealed class BetaManagedAgentsImageSource {
   const BetaManagedAgentsImageSource();
   factory BetaManagedAgentsImageSource.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsBase64ImageSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsURLImageSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsFileImageSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsBase64ImageSource.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsURLImageSource.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsFileImageSource.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(BetaManagedAgentsBase64ImageSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource(BetaManagedAgentsURLImageSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(BetaManagedAgentsFileImageSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"base64", "url", "file"}.contains(json["type"])) { return UnknownBetaManagedAgentsImageSource(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsImageSource");
+    try {
+      return BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(
+          BetaManagedAgentsBase64ImageSource.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource(
+          BetaManagedAgentsURLImageSource.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(
+          BetaManagedAgentsFileImageSource.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"base64", "url", "file"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsImageSource(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsImageSource");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource extends BetaManagedAgentsImageSource {
+final class BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource
+    extends BetaManagedAgentsImageSource {
   final BetaManagedAgentsBase64ImageSource value;
-  const BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource extends BetaManagedAgentsImageSource {
+final class BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource
+    extends BetaManagedAgentsImageSource {
   final BetaManagedAgentsURLImageSource value;
   const BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource extends BetaManagedAgentsImageSource {
+final class BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource
+    extends BetaManagedAgentsImageSource {
   final BetaManagedAgentsFileImageSource value;
-  const BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsImageSource] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsImageSource extends BetaManagedAgentsImageSource {
+final class UnknownBetaManagedAgentsImageSource
+    extends BetaManagedAgentsImageSource {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsImageSource(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Where in the outbound request the secret value is substituted.
 class BetaManagedAgentsInjectionLocationResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether the placeholder is substituted in request header values.
   final bool header;
+
   /// Whether the placeholder is substituted in the request body.
   final bool body;
 
-  const BetaManagedAgentsInjectionLocationResponse({required this.header, required this.body});
+  const BetaManagedAgentsInjectionLocationResponse(
+      {required this.header, required this.body});
 
-  BetaManagedAgentsInjectionLocationResponse Function({bool header, bool body}) get copyWith => _copyWith;
+  BetaManagedAgentsInjectionLocationResponse Function({bool header, bool body})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsInjectionLocationResponse _copyWith({Object? header = sdkOmittedValue, Object? body = sdkOmittedValue}) => BetaManagedAgentsInjectionLocationResponse(
-    header: identical(header, sdkOmittedValue) ? this.header : header as bool,
-    body: identical(body, sdkOmittedValue) ? this.body : body as bool,
-  );
+  BetaManagedAgentsInjectionLocationResponse _copyWith(
+          {Object? header = sdkOmittedValue, Object? body = sdkOmittedValue}) =>
+      BetaManagedAgentsInjectionLocationResponse(
+        header:
+            identical(header, sdkOmittedValue) ? this.header : header as bool,
+        body: identical(body, sdkOmittedValue) ? this.body : body as bool,
+      );
 
-  factory BetaManagedAgentsInjectionLocationResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsInjectionLocationResponse(
-    header: (json['header'] as bool?)!,
-    body: (json['body'] as bool?)!,
-  );
+  factory BetaManagedAgentsInjectionLocationResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsInjectionLocationResponse(
+        header: (json['header'] as bool?)!,
+        body: (json['body'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'header': header,
-    'body': body,
-  };
+        'header': header,
+        'body': body,
+      };
 }
 
 /// Substitute the secret only on requests to the listed hosts.
 class BetaManagedAgentsLimitedCredentialNetworkingParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsLimitedCredentialNetworkingParamsType type_;
+
   /// Hostnames on which the secret will be substituted. Each entry is a bare hostname (`api.example.com`), an IPv4 address (`192.0.2.1`), or a `*.`-prefixed wildcard (`*.example.com`). URLs, ports, paths, and IPv6 addresses are not accepted. At most 16 entries.
   final List<String> allowedHosts;
 
-  const BetaManagedAgentsLimitedCredentialNetworkingParams({required this.type_, required this.allowedHosts});
+  const BetaManagedAgentsLimitedCredentialNetworkingParams(
+      {required this.type_, required this.allowedHosts});
 
-  BetaManagedAgentsLimitedCredentialNetworkingParams Function({BetaManagedAgentsLimitedCredentialNetworkingParamsType type_, List<String> allowedHosts}) get copyWith => _copyWith;
+  BetaManagedAgentsLimitedCredentialNetworkingParams Function(
+      {BetaManagedAgentsLimitedCredentialNetworkingParamsType type_,
+      List<String> allowedHosts}) get copyWith => _copyWith;
 
-  BetaManagedAgentsLimitedCredentialNetworkingParams _copyWith({Object? type_ = sdkOmittedValue, Object? allowedHosts = sdkOmittedValue}) => BetaManagedAgentsLimitedCredentialNetworkingParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsLimitedCredentialNetworkingParamsType,
-    allowedHosts: identical(allowedHosts, sdkOmittedValue) ? this.allowedHosts : allowedHosts as List<String>,
-  );
+  BetaManagedAgentsLimitedCredentialNetworkingParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? allowedHosts = sdkOmittedValue}) =>
+      BetaManagedAgentsLimitedCredentialNetworkingParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsLimitedCredentialNetworkingParamsType,
+        allowedHosts: identical(allowedHosts, sdkOmittedValue)
+            ? this.allowedHosts
+            : allowedHosts as List<String>,
+      );
 
-  factory BetaManagedAgentsLimitedCredentialNetworkingParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsLimitedCredentialNetworkingParams(
-    type_: (json['type'] != null ? BetaManagedAgentsLimitedCredentialNetworkingParamsType.fromJson(json['type'] as String) : null)!,
-    allowedHosts: ((json['allowed_hosts'] as List?)?.map((e) => e as String).toList())!,
-  );
+  factory BetaManagedAgentsLimitedCredentialNetworkingParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsLimitedCredentialNetworkingParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsLimitedCredentialNetworkingParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        allowedHosts: ((json['allowed_hosts'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'allowed_hosts': allowedHosts,
-  };
+        'type': type_.toJson(),
+        'allowed_hosts': allowedHosts,
+      };
 }
 
 /// The secret is substituted only on requests to the listed hosts.
 class BetaManagedAgentsLimitedCredentialNetworkingResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsLimitedCredentialNetworkingResponseType type_;
+
   /// Hostnames on which the secret will be substituted. An entry matches the request host exactly; a `*.`-prefixed entry matches any subdomain of the named domain but not the domain itself.
   final List<String> allowedHosts;
 
-  const BetaManagedAgentsLimitedCredentialNetworkingResponse({required this.type_, required this.allowedHosts});
+  const BetaManagedAgentsLimitedCredentialNetworkingResponse(
+      {required this.type_, required this.allowedHosts});
 
-  BetaManagedAgentsLimitedCredentialNetworkingResponse Function({BetaManagedAgentsLimitedCredentialNetworkingResponseType type_, List<String> allowedHosts}) get copyWith => _copyWith;
+  BetaManagedAgentsLimitedCredentialNetworkingResponse Function(
+      {BetaManagedAgentsLimitedCredentialNetworkingResponseType type_,
+      List<String> allowedHosts}) get copyWith => _copyWith;
 
-  BetaManagedAgentsLimitedCredentialNetworkingResponse _copyWith({Object? type_ = sdkOmittedValue, Object? allowedHosts = sdkOmittedValue}) => BetaManagedAgentsLimitedCredentialNetworkingResponse(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsLimitedCredentialNetworkingResponseType,
-    allowedHosts: identical(allowedHosts, sdkOmittedValue) ? this.allowedHosts : allowedHosts as List<String>,
-  );
+  BetaManagedAgentsLimitedCredentialNetworkingResponse _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? allowedHosts = sdkOmittedValue}) =>
+      BetaManagedAgentsLimitedCredentialNetworkingResponse(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsLimitedCredentialNetworkingResponseType,
+        allowedHosts: identical(allowedHosts, sdkOmittedValue)
+            ? this.allowedHosts
+            : allowedHosts as List<String>,
+      );
 
-  factory BetaManagedAgentsLimitedCredentialNetworkingResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsLimitedCredentialNetworkingResponse(
-    type_: (json['type'] != null ? BetaManagedAgentsLimitedCredentialNetworkingResponseType.fromJson(json['type'] as String) : null)!,
-    allowedHosts: ((json['allowed_hosts'] as List?)?.map((e) => e as String).toList())!,
-  );
+  factory BetaManagedAgentsLimitedCredentialNetworkingResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsLimitedCredentialNetworkingResponse(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsLimitedCredentialNetworkingResponseType.fromJson(
+                json['type'] as String)
+            : null)!,
+        allowedHosts: ((json['allowed_hosts'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'allowed_hosts': allowedHosts,
-  };
+        'type': type_.toJson(),
+        'allowed_hosts': allowedHosts,
+      };
 }
 
 /// ListOrder enum
 final class BetaManagedAgentsListOrder {
-
   final String value;
 
   const BetaManagedAgentsListOrder._(this.value);
 
-  factory BetaManagedAgentsListOrder.fromJson(String value) => BetaManagedAgentsListOrder._(value);
+  factory BetaManagedAgentsListOrder.fromJson(String value) =>
+      BetaManagedAgentsListOrder._(value);
 
   static const asc = BetaManagedAgentsListOrder._('asc');
   static const desc = BetaManagedAgentsListOrder._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsListOrder && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsListOrder && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

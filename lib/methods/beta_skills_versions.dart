@@ -37,14 +37,52 @@ Future<BetaSkillVersion> createBetaSkillsVersions(ClientConfig config,
           body: {'files': files},
           contentType: 'multipart/form-data',
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'createBetaSkillsVersions',
-          fromJsonRaw: (value) => BetaSkillVersion.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaSkillVersion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists the versions associated with a Skill. Use `page` to continue from the previous response's `next_page` token and `limit` to control the number of results per page. Results include version metadata and a token for retrieving the next page when more versions are available.
 ///
@@ -64,32 +102,71 @@ Future<BetaSkillVersion> createBetaSkillsVersions(ClientConfig config,
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaListSkillVersionsResponse>
-    listBetaSkillsVersions(ClientConfig config,
-        {required String skillId,
-        SdkOptional<String?> page = const SdkOmitted(),
-        SdkOptional<int?> limit = const SdkOmitted(),
-        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-        SdkOptional<String> anthropicVersion = const SdkOmitted(),
-        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaListSkillVersionsResponse> listBetaSkillsVersions(
+    ClientConfig config,
+    {required String skillId,
+    SdkOptional<String?> page = const SdkOmitted(),
+    SdkOptional<int?> limit = const SdkOmitted(),
+    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+    SdkOptional<String> anthropicVersion = const SdkOmitted(),
+    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaListSkillVersionsResponse>('GET',
           '/v1/skills/${Uri.encodeComponent(skillId.toString())}/versions?beta=true',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'listBetaSkillsVersions',
-          fromJsonRaw: (value) => BetaListSkillVersionsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaListSkillVersionsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// Lists the versions associated with a Skill. Use `page` to continue from the previous response's `next_page` token and `limit` to control the number of results per page. Results include version metadata and a token for retrieving the next page when more versions are available.
 ///
@@ -109,23 +186,72 @@ Future<BetaListSkillVersionsResponse>
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Stream<BetaSkillVersion> listBetaSkillsVersionsPaginated(ClientConfig config, {required String skillId, String? page, int? limit, List<String>? anthropicBeta, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<BetaSkillVersion> listBetaSkillsVersionsPaginated(ClientConfig config,
+    {required String skillId,
+    String? page,
+    int? limit,
+    List<String>? anthropicBeta,
+    String? anthropicVersion,
+    String? anthropicWorkspaceId,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaSkillsVersions(config, skillId: skillId, page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listBetaSkillsVersions(config,
+        skillId: skillId,
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        limit:
+            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaListSkillVersionsResponse, BetaSkillVersion>> listBetaSkillsVersionsPages(ClientConfig config, {required String skillId, String? page, int? limit, List<String>? anthropicBeta, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaListSkillVersionsResponse, BetaSkillVersion>>
+    listBetaSkillsVersionsPages(ClientConfig config,
+        {required String skillId,
+        String? page,
+        int? limit,
+        List<String>? anthropicBeta,
+        String? anthropicVersion,
+        String? anthropicWorkspaceId,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaSkillsVersions(config, skillId: skillId, page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listBetaSkillsVersions(config,
+        skillId: skillId,
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        limit:
+            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;
@@ -135,7 +261,6 @@ Stream<SdkPage<BetaListSkillVersionsResponse, BetaSkillVersion>> listBetaSkillsV
     sdkCursor = sdkNext;
   }
 }
-
 
 /// Retrieves a specific version of a Skill. Use `skill_id` to select the Skill and `version` to identify the version by its ID or the literal `latest`; with the `skills-2025-10-02` beta, use its Unix epoch timestamp instead. The response contains the version's metadata, including its name and description.
 ///
@@ -167,14 +292,52 @@ Future<BetaSkillVersion> retrieveBetaSkillsVersions(ClientConfig config,
           '/v1/skills/${Uri.encodeComponent(skillId.toString())}/versions/${Uri.encodeComponent(version.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'retrieveBetaSkillsVersions',
-          fromJsonRaw: (value) => BetaSkillVersion.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaSkillVersion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Deletes a specific version of a Skill using its Skill identifier and version identifier. Use this operation to remove a version when it is no longer needed; the version is identified by its ID, or by its Unix epoch timestamp when using the `skills-2025-10-02` beta. The response confirms deletion with the version identifier.
 ///
@@ -205,14 +368,52 @@ Future<BetaDeletedSkillVersion> deleteBetaSkillsVersions(ClientConfig config,
           '/v1/skills/${Uri.encodeComponent(skillId.toString())}/versions/${Uri.encodeComponent(version.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'deleteBetaSkillsVersions',
-          fromJsonRaw: (value) => BetaDeletedSkillVersion.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaDeletedSkillVersion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Download a skill version's content as a zip archive.
 ///
@@ -243,7 +444,12 @@ Future<List<int>> downloadBetaSkillsVersions(ClientConfig config,
           '/v1/skills/${Uri.encodeComponent(skillId.toString())}/versions/${Uri.encodeComponent(version.toString())}/content?beta=true',
           config: config,
           decoder: SdkResponseDecoder.bytes,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'downloadBetaSkillsVersions',
           options: requestOptions))
       .data;

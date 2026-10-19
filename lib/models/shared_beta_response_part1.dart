@@ -8,291 +8,543 @@ part of 'shared_beta_response.dart';
 class BetaResponseCharLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `cited_text` wire field.
   final String citedText;
+
   /// Required `integer` value serialized in the `document_index` wire field.
   final int documentIndex;
+
   /// Required `string` value serialized in the `document_title` wire field.
   final String? documentTitle;
+
   /// Required `integer` value serialized in the `end_char_index` wire field.
   final int endCharIndex;
+
   /// Required `string` value serialized in the `file_id` wire field.
   final String? fileId;
+
   /// Required `integer` value serialized in the `start_char_index` wire field.
   final int startCharIndex;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseCharLocationCitationType type_;
 
-  const BetaResponseCharLocationCitation({required this.citedText, required this.documentIndex, required this.documentTitle, required this.endCharIndex, required this.fileId, required this.startCharIndex, required this.type_});
+  const BetaResponseCharLocationCitation(
+      {required this.citedText,
+      required this.documentIndex,
+      required this.documentTitle,
+      required this.endCharIndex,
+      required this.fileId,
+      required this.startCharIndex,
+      required this.type_});
 
-  BetaResponseCharLocationCitation Function({String citedText, int documentIndex, String? documentTitle, int endCharIndex, String? fileId, int startCharIndex, BetaResponseCharLocationCitationType type_}) get copyWith => _copyWith;
+  BetaResponseCharLocationCitation Function(
+      {String citedText,
+      int documentIndex,
+      String? documentTitle,
+      int endCharIndex,
+      String? fileId,
+      int startCharIndex,
+      BetaResponseCharLocationCitationType type_}) get copyWith => _copyWith;
 
-  BetaResponseCharLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? documentIndex = sdkOmittedValue, Object? documentTitle = sdkOmittedValue, Object? endCharIndex = sdkOmittedValue, Object? fileId = sdkOmittedValue, Object? startCharIndex = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseCharLocationCitation(
-    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
-    documentIndex: identical(documentIndex, sdkOmittedValue) ? this.documentIndex : documentIndex as int,
-    documentTitle: identical(documentTitle, sdkOmittedValue) ? this.documentTitle : documentTitle as String?,
-    endCharIndex: identical(endCharIndex, sdkOmittedValue) ? this.endCharIndex : endCharIndex as int,
-    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String?,
-    startCharIndex: identical(startCharIndex, sdkOmittedValue) ? this.startCharIndex : startCharIndex as int,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseCharLocationCitationType,
-  );
+  BetaResponseCharLocationCitation _copyWith(
+          {Object? citedText = sdkOmittedValue,
+          Object? documentIndex = sdkOmittedValue,
+          Object? documentTitle = sdkOmittedValue,
+          Object? endCharIndex = sdkOmittedValue,
+          Object? fileId = sdkOmittedValue,
+          Object? startCharIndex = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseCharLocationCitation(
+        citedText: identical(citedText, sdkOmittedValue)
+            ? this.citedText
+            : citedText as String,
+        documentIndex: identical(documentIndex, sdkOmittedValue)
+            ? this.documentIndex
+            : documentIndex as int,
+        documentTitle: identical(documentTitle, sdkOmittedValue)
+            ? this.documentTitle
+            : documentTitle as String?,
+        endCharIndex: identical(endCharIndex, sdkOmittedValue)
+            ? this.endCharIndex
+            : endCharIndex as int,
+        fileId: identical(fileId, sdkOmittedValue)
+            ? this.fileId
+            : fileId as String?,
+        startCharIndex: identical(startCharIndex, sdkOmittedValue)
+            ? this.startCharIndex
+            : startCharIndex as int,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseCharLocationCitationType,
+      );
 
-  factory BetaResponseCharLocationCitation.fromJson(Map<String, dynamic> json) => BetaResponseCharLocationCitation(
-    citedText: (json['cited_text'] as String?)!,
-    documentIndex: ((json['document_index'] as num?)?.toInt())!,
-    documentTitle: json.containsKey('document_title') ? json['document_title'] as String? : throw ArgumentError.value(null, 'document_title', 'Required property is missing'),
-    endCharIndex: ((json['end_char_index'] as num?)?.toInt())!,
-    fileId: json.containsKey('file_id') ? json['file_id'] as String? : throw ArgumentError.value(null, 'file_id', 'Required property is missing'),
-    startCharIndex: ((json['start_char_index'] as num?)?.toInt())!,
-    type_: (json['type'] != null ? BetaResponseCharLocationCitationType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseCharLocationCitation.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseCharLocationCitation(
+        citedText: (json['cited_text'] as String?)!,
+        documentIndex: ((json['document_index'] as num?)?.toInt())!,
+        documentTitle: json.containsKey('document_title')
+            ? json['document_title'] as String?
+            : throw ArgumentError.value(
+                null, 'document_title', 'Required property is missing'),
+        endCharIndex: ((json['end_char_index'] as num?)?.toInt())!,
+        fileId: json.containsKey('file_id')
+            ? json['file_id'] as String?
+            : throw ArgumentError.value(
+                null, 'file_id', 'Required property is missing'),
+        startCharIndex: ((json['start_char_index'] as num?)?.toInt())!,
+        type_: (json['type'] != null
+            ? BetaResponseCharLocationCitationType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'cited_text': citedText,
-    'document_index': documentIndex,
-    'document_title': documentTitle,
-    'end_char_index': endCharIndex,
-    'file_id': fileId,
-    'start_char_index': startCharIndex,
-    'type': type_.toJson(),
-  };
+        'cited_text': citedText,
+        'document_index': documentIndex,
+        'document_title': documentTitle,
+        'end_char_index': endCharIndex,
+        'file_id': fileId,
+        'start_char_index': startCharIndex,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaResponseCitationsConfig` API schema.
 class BetaResponseCitationsConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
 
   const BetaResponseCitationsConfig({required this.enabled});
 
-  BetaResponseCitationsConfig Function({bool enabled}) get copyWith => _copyWith;
+  BetaResponseCitationsConfig Function({bool enabled}) get copyWith =>
+      _copyWith;
 
-  BetaResponseCitationsConfig _copyWith({Object? enabled = sdkOmittedValue}) => BetaResponseCitationsConfig(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-  );
+  BetaResponseCitationsConfig _copyWith({Object? enabled = sdkOmittedValue}) =>
+      BetaResponseCitationsConfig(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+      );
 
-  factory BetaResponseCitationsConfig.fromJson(Map<String, dynamic> json) => BetaResponseCitationsConfig(
-    enabled: (json['enabled'] as bool?)!,
-  );
+  factory BetaResponseCitationsConfig.fromJson(Map<String, dynamic> json) =>
+      BetaResponseCitationsConfig(
+        enabled: (json['enabled'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-  };
+        'enabled': enabled,
+      };
 }
 
 /// A compaction block returned when autocompact is triggered. When content is None, it indicates the compaction failed to produce a valid summary (e.g., malformed output from the model). Clients may round-trip compaction blocks with null content; the server treats them as no-ops.
 class BetaResponseCompactionBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Summary of compacted content, or null if compaction failed
   final String? content;
+
   /// Opaque metadata from prior compaction, to be round-tripped verbatim
   final String? encryptedContent;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseCompactionBlockType type_;
 
-  const BetaResponseCompactionBlock({required this.content, required this.encryptedContent, required this.type_});
+  const BetaResponseCompactionBlock(
+      {required this.content,
+      required this.encryptedContent,
+      required this.type_});
 
-  BetaResponseCompactionBlock Function({String? content, String? encryptedContent, BetaResponseCompactionBlockType type_}) get copyWith => _copyWith;
+  BetaResponseCompactionBlock Function(
+      {String? content,
+      String? encryptedContent,
+      BetaResponseCompactionBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseCompactionBlock _copyWith({Object? content = sdkOmittedValue, Object? encryptedContent = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseCompactionBlock(
-    content: identical(content, sdkOmittedValue) ? this.content : content as String?,
-    encryptedContent: identical(encryptedContent, sdkOmittedValue) ? this.encryptedContent : encryptedContent as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseCompactionBlockType,
-  );
+  BetaResponseCompactionBlock _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? encryptedContent = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseCompactionBlock(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as String?,
+        encryptedContent: identical(encryptedContent, sdkOmittedValue)
+            ? this.encryptedContent
+            : encryptedContent as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseCompactionBlockType,
+      );
 
-  factory BetaResponseCompactionBlock.fromJson(Map<String, dynamic> json) => BetaResponseCompactionBlock(
-    content: json.containsKey('content') ? json['content'] as String? : throw ArgumentError.value(null, 'content', 'Required property is missing'),
-    encryptedContent: json.containsKey('encrypted_content') ? json['encrypted_content'] as String? : throw ArgumentError.value(null, 'encrypted_content', 'Required property is missing'),
-    type_: (json['type'] != null ? BetaResponseCompactionBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseCompactionBlock.fromJson(Map<String, dynamic> json) =>
+      BetaResponseCompactionBlock(
+        content: json.containsKey('content')
+            ? json['content'] as String?
+            : throw ArgumentError.value(
+                null, 'content', 'Required property is missing'),
+        encryptedContent: json.containsKey('encrypted_content')
+            ? json['encrypted_content'] as String?
+            : throw ArgumentError.value(
+                null, 'encrypted_content', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? BetaResponseCompactionBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content,
-    'encrypted_content': encryptedContent,
-    'type': type_.toJson(),
-  };
+        'content': content,
+        'encrypted_content': encryptedContent,
+        'type': type_.toJson(),
+      };
 }
 
 /// Response model for a file uploaded to the container.
 class BetaResponseContainerUploadBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `file_id` wire field.
   final String fileId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseContainerUploadBlockType type_;
 
-  const BetaResponseContainerUploadBlock({required this.fileId, required this.type_});
+  const BetaResponseContainerUploadBlock(
+      {required this.fileId, required this.type_});
 
-  BetaResponseContainerUploadBlock Function({String fileId, BetaResponseContainerUploadBlockType type_}) get copyWith => _copyWith;
+  BetaResponseContainerUploadBlock Function(
+      {String fileId,
+      BetaResponseContainerUploadBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseContainerUploadBlock _copyWith({Object? fileId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseContainerUploadBlock(
-    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseContainerUploadBlockType,
-  );
+  BetaResponseContainerUploadBlock _copyWith(
+          {Object? fileId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseContainerUploadBlock(
+        fileId:
+            identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseContainerUploadBlockType,
+      );
 
-  factory BetaResponseContainerUploadBlock.fromJson(Map<String, dynamic> json) => BetaResponseContainerUploadBlock(
-    fileId: (json['file_id'] as String?)!,
-    type_: (json['type'] != null ? BetaResponseContainerUploadBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseContainerUploadBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseContainerUploadBlock(
+        fileId: (json['file_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaResponseContainerUploadBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'file_id': fileId,
-    'type': type_.toJson(),
-  };
+        'file_id': fileId,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaResponseContentBlockLocationCitation` API schema.
 class BetaResponseContentBlockLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The full text of the cited block range, concatenated. Always equals the contents of `content[start_block_index:end_block_index]` joined together. The text block is the minimal citable unit; this field is never a substring of a single block. Not counted toward output tokens, and not counted toward input tokens when sent back in subsequent turns.
   final String citedText;
+
   /// Required `integer` value serialized in the `document_index` wire field.
   final int documentIndex;
+
   /// Required `string` value serialized in the `document_title` wire field.
   final String? documentTitle;
+
   /// Exclusive 0-based end index of the cited block range in the source's `content` array. Always greater than `start_block_index`; a single-block citation has `end_block_index = start_block_index + 1`.
   final int endBlockIndex;
+
   /// Required `string` value serialized in the `file_id` wire field.
   final String? fileId;
+
   /// 0-based index of the first cited block in the source's `content` array.
   final int startBlockIndex;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseContentBlockLocationCitationType type_;
 
-  const BetaResponseContentBlockLocationCitation({required this.citedText, required this.documentIndex, required this.documentTitle, required this.endBlockIndex, required this.fileId, required this.startBlockIndex, required this.type_});
+  const BetaResponseContentBlockLocationCitation(
+      {required this.citedText,
+      required this.documentIndex,
+      required this.documentTitle,
+      required this.endBlockIndex,
+      required this.fileId,
+      required this.startBlockIndex,
+      required this.type_});
 
-  BetaResponseContentBlockLocationCitation Function({String citedText, int documentIndex, String? documentTitle, int endBlockIndex, String? fileId, int startBlockIndex, BetaResponseContentBlockLocationCitationType type_}) get copyWith => _copyWith;
+  BetaResponseContentBlockLocationCitation Function(
+          {String citedText,
+          int documentIndex,
+          String? documentTitle,
+          int endBlockIndex,
+          String? fileId,
+          int startBlockIndex,
+          BetaResponseContentBlockLocationCitationType type_})
+      get copyWith => _copyWith;
 
-  BetaResponseContentBlockLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? documentIndex = sdkOmittedValue, Object? documentTitle = sdkOmittedValue, Object? endBlockIndex = sdkOmittedValue, Object? fileId = sdkOmittedValue, Object? startBlockIndex = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseContentBlockLocationCitation(
-    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
-    documentIndex: identical(documentIndex, sdkOmittedValue) ? this.documentIndex : documentIndex as int,
-    documentTitle: identical(documentTitle, sdkOmittedValue) ? this.documentTitle : documentTitle as String?,
-    endBlockIndex: identical(endBlockIndex, sdkOmittedValue) ? this.endBlockIndex : endBlockIndex as int,
-    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String?,
-    startBlockIndex: identical(startBlockIndex, sdkOmittedValue) ? this.startBlockIndex : startBlockIndex as int,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseContentBlockLocationCitationType,
-  );
+  BetaResponseContentBlockLocationCitation _copyWith(
+          {Object? citedText = sdkOmittedValue,
+          Object? documentIndex = sdkOmittedValue,
+          Object? documentTitle = sdkOmittedValue,
+          Object? endBlockIndex = sdkOmittedValue,
+          Object? fileId = sdkOmittedValue,
+          Object? startBlockIndex = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseContentBlockLocationCitation(
+        citedText: identical(citedText, sdkOmittedValue)
+            ? this.citedText
+            : citedText as String,
+        documentIndex: identical(documentIndex, sdkOmittedValue)
+            ? this.documentIndex
+            : documentIndex as int,
+        documentTitle: identical(documentTitle, sdkOmittedValue)
+            ? this.documentTitle
+            : documentTitle as String?,
+        endBlockIndex: identical(endBlockIndex, sdkOmittedValue)
+            ? this.endBlockIndex
+            : endBlockIndex as int,
+        fileId: identical(fileId, sdkOmittedValue)
+            ? this.fileId
+            : fileId as String?,
+        startBlockIndex: identical(startBlockIndex, sdkOmittedValue)
+            ? this.startBlockIndex
+            : startBlockIndex as int,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseContentBlockLocationCitationType,
+      );
 
-  factory BetaResponseContentBlockLocationCitation.fromJson(Map<String, dynamic> json) => BetaResponseContentBlockLocationCitation(
-    citedText: (json['cited_text'] as String?)!,
-    documentIndex: ((json['document_index'] as num?)?.toInt())!,
-    documentTitle: json.containsKey('document_title') ? json['document_title'] as String? : throw ArgumentError.value(null, 'document_title', 'Required property is missing'),
-    endBlockIndex: ((json['end_block_index'] as num?)?.toInt())!,
-    fileId: json.containsKey('file_id') ? json['file_id'] as String? : throw ArgumentError.value(null, 'file_id', 'Required property is missing'),
-    startBlockIndex: ((json['start_block_index'] as num?)?.toInt())!,
-    type_: (json['type'] != null ? BetaResponseContentBlockLocationCitationType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseContentBlockLocationCitation.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseContentBlockLocationCitation(
+        citedText: (json['cited_text'] as String?)!,
+        documentIndex: ((json['document_index'] as num?)?.toInt())!,
+        documentTitle: json.containsKey('document_title')
+            ? json['document_title'] as String?
+            : throw ArgumentError.value(
+                null, 'document_title', 'Required property is missing'),
+        endBlockIndex: ((json['end_block_index'] as num?)?.toInt())!,
+        fileId: json.containsKey('file_id')
+            ? json['file_id'] as String?
+            : throw ArgumentError.value(
+                null, 'file_id', 'Required property is missing'),
+        startBlockIndex: ((json['start_block_index'] as num?)?.toInt())!,
+        type_: (json['type'] != null
+            ? BetaResponseContentBlockLocationCitationType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'cited_text': citedText,
-    'document_index': documentIndex,
-    'document_title': documentTitle,
-    'end_block_index': endBlockIndex,
-    'file_id': fileId,
-    'start_block_index': startBlockIndex,
-    'type': type_.toJson(),
-  };
+        'cited_text': citedText,
+        'document_index': documentIndex,
+        'document_title': documentTitle,
+        'end_block_index': endBlockIndex,
+        'file_id': fileId,
+        'start_block_index': startBlockIndex,
+        'type': type_.toJson(),
+      };
 }
 
 /// Code execution result with encrypted stdout for PFC + web_search results.
 class BetaResponseEncryptedCodeExecutionResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `content` wire field.
   final List<BetaResponseCodeExecutionOutputBlock> content;
+
   /// Required `string` value serialized in the `encrypted_stdout` wire field.
   final String encryptedStdout;
+
   /// Required `integer` value serialized in the `return_code` wire field.
   final int returnCode;
+
   /// Required `string` value serialized in the `stderr` wire field.
   final String stderr;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseEncryptedCodeExecutionResultBlockType type_;
 
-  const BetaResponseEncryptedCodeExecutionResultBlock({required this.content, required this.encryptedStdout, required this.returnCode, required this.stderr, required this.type_});
+  const BetaResponseEncryptedCodeExecutionResultBlock(
+      {required this.content,
+      required this.encryptedStdout,
+      required this.returnCode,
+      required this.stderr,
+      required this.type_});
 
-  BetaResponseEncryptedCodeExecutionResultBlock Function({List<BetaResponseCodeExecutionOutputBlock> content, String encryptedStdout, int returnCode, String stderr, BetaResponseEncryptedCodeExecutionResultBlockType type_}) get copyWith => _copyWith;
+  BetaResponseEncryptedCodeExecutionResultBlock Function(
+          {List<BetaResponseCodeExecutionOutputBlock> content,
+          String encryptedStdout,
+          int returnCode,
+          String stderr,
+          BetaResponseEncryptedCodeExecutionResultBlockType type_})
+      get copyWith => _copyWith;
 
-  BetaResponseEncryptedCodeExecutionResultBlock _copyWith({Object? content = sdkOmittedValue, Object? encryptedStdout = sdkOmittedValue, Object? returnCode = sdkOmittedValue, Object? stderr = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseEncryptedCodeExecutionResultBlock(
-    content: identical(content, sdkOmittedValue) ? this.content : content as List<BetaResponseCodeExecutionOutputBlock>,
-    encryptedStdout: identical(encryptedStdout, sdkOmittedValue) ? this.encryptedStdout : encryptedStdout as String,
-    returnCode: identical(returnCode, sdkOmittedValue) ? this.returnCode : returnCode as int,
-    stderr: identical(stderr, sdkOmittedValue) ? this.stderr : stderr as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseEncryptedCodeExecutionResultBlockType,
-  );
+  BetaResponseEncryptedCodeExecutionResultBlock _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? encryptedStdout = sdkOmittedValue,
+          Object? returnCode = sdkOmittedValue,
+          Object? stderr = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseEncryptedCodeExecutionResultBlock(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as List<BetaResponseCodeExecutionOutputBlock>,
+        encryptedStdout: identical(encryptedStdout, sdkOmittedValue)
+            ? this.encryptedStdout
+            : encryptedStdout as String,
+        returnCode: identical(returnCode, sdkOmittedValue)
+            ? this.returnCode
+            : returnCode as int,
+        stderr:
+            identical(stderr, sdkOmittedValue) ? this.stderr : stderr as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseEncryptedCodeExecutionResultBlockType,
+      );
 
-  factory BetaResponseEncryptedCodeExecutionResultBlock.fromJson(Map<String, dynamic> json) => BetaResponseEncryptedCodeExecutionResultBlock(
-    content: ((json['content'] as List?)?.map((e) => BetaResponseCodeExecutionOutputBlock.fromJson(e as Map<String, dynamic>)).toList())!,
-    encryptedStdout: (json['encrypted_stdout'] as String?)!,
-    returnCode: ((json['return_code'] as num?)?.toInt())!,
-    stderr: (json['stderr'] as String?)!,
-    type_: (json['type'] != null ? BetaResponseEncryptedCodeExecutionResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseEncryptedCodeExecutionResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseEncryptedCodeExecutionResultBlock(
+        content: ((json['content'] as List?)
+            ?.map((e) => BetaResponseCodeExecutionOutputBlock.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        encryptedStdout: (json['encrypted_stdout'] as String?)!,
+        returnCode: ((json['return_code'] as num?)?.toInt())!,
+        stderr: (json['stderr'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaResponseEncryptedCodeExecutionResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content.map((item) => item.toJson()).toList(),
-    'encrypted_stdout': encryptedStdout,
-    'return_code': returnCode,
-    'stderr': stderr,
-    'type': type_.toJson(),
-  };
+        'content': content.map((item) => item.toJson()).toList(),
+        'encrypted_stdout': encryptedStdout,
+        'return_code': returnCode,
+        'stderr': stderr,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaResponsePageLocationCitation` API schema.
 class BetaResponsePageLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `cited_text` wire field.
   final String citedText;
+
   /// Required `integer` value serialized in the `document_index` wire field.
   final int documentIndex;
+
   /// Required `string` value serialized in the `document_title` wire field.
   final String? documentTitle;
+
   /// Required `integer` value serialized in the `end_page_number` wire field.
   final int endPageNumber;
+
   /// Required `string` value serialized in the `file_id` wire field.
   final String? fileId;
+
   /// Required `integer` value serialized in the `start_page_number` wire field.
   final int startPageNumber;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponsePageLocationCitationType type_;
 
-  const BetaResponsePageLocationCitation({required this.citedText, required this.documentIndex, required this.documentTitle, required this.endPageNumber, required this.fileId, required this.startPageNumber, required this.type_});
+  const BetaResponsePageLocationCitation(
+      {required this.citedText,
+      required this.documentIndex,
+      required this.documentTitle,
+      required this.endPageNumber,
+      required this.fileId,
+      required this.startPageNumber,
+      required this.type_});
 
-  BetaResponsePageLocationCitation Function({String citedText, int documentIndex, String? documentTitle, int endPageNumber, String? fileId, int startPageNumber, BetaResponsePageLocationCitationType type_}) get copyWith => _copyWith;
+  BetaResponsePageLocationCitation Function(
+      {String citedText,
+      int documentIndex,
+      String? documentTitle,
+      int endPageNumber,
+      String? fileId,
+      int startPageNumber,
+      BetaResponsePageLocationCitationType type_}) get copyWith => _copyWith;
 
-  BetaResponsePageLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? documentIndex = sdkOmittedValue, Object? documentTitle = sdkOmittedValue, Object? endPageNumber = sdkOmittedValue, Object? fileId = sdkOmittedValue, Object? startPageNumber = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponsePageLocationCitation(
-    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
-    documentIndex: identical(documentIndex, sdkOmittedValue) ? this.documentIndex : documentIndex as int,
-    documentTitle: identical(documentTitle, sdkOmittedValue) ? this.documentTitle : documentTitle as String?,
-    endPageNumber: identical(endPageNumber, sdkOmittedValue) ? this.endPageNumber : endPageNumber as int,
-    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String?,
-    startPageNumber: identical(startPageNumber, sdkOmittedValue) ? this.startPageNumber : startPageNumber as int,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponsePageLocationCitationType,
-  );
+  BetaResponsePageLocationCitation _copyWith(
+          {Object? citedText = sdkOmittedValue,
+          Object? documentIndex = sdkOmittedValue,
+          Object? documentTitle = sdkOmittedValue,
+          Object? endPageNumber = sdkOmittedValue,
+          Object? fileId = sdkOmittedValue,
+          Object? startPageNumber = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponsePageLocationCitation(
+        citedText: identical(citedText, sdkOmittedValue)
+            ? this.citedText
+            : citedText as String,
+        documentIndex: identical(documentIndex, sdkOmittedValue)
+            ? this.documentIndex
+            : documentIndex as int,
+        documentTitle: identical(documentTitle, sdkOmittedValue)
+            ? this.documentTitle
+            : documentTitle as String?,
+        endPageNumber: identical(endPageNumber, sdkOmittedValue)
+            ? this.endPageNumber
+            : endPageNumber as int,
+        fileId: identical(fileId, sdkOmittedValue)
+            ? this.fileId
+            : fileId as String?,
+        startPageNumber: identical(startPageNumber, sdkOmittedValue)
+            ? this.startPageNumber
+            : startPageNumber as int,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponsePageLocationCitationType,
+      );
 
-  factory BetaResponsePageLocationCitation.fromJson(Map<String, dynamic> json) => BetaResponsePageLocationCitation(
-    citedText: (json['cited_text'] as String?)!,
-    documentIndex: ((json['document_index'] as num?)?.toInt())!,
-    documentTitle: json.containsKey('document_title') ? json['document_title'] as String? : throw ArgumentError.value(null, 'document_title', 'Required property is missing'),
-    endPageNumber: ((json['end_page_number'] as num?)?.toInt())!,
-    fileId: json.containsKey('file_id') ? json['file_id'] as String? : throw ArgumentError.value(null, 'file_id', 'Required property is missing'),
-    startPageNumber: ((json['start_page_number'] as num?)?.toInt())!,
-    type_: (json['type'] != null ? BetaResponsePageLocationCitationType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponsePageLocationCitation.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponsePageLocationCitation(
+        citedText: (json['cited_text'] as String?)!,
+        documentIndex: ((json['document_index'] as num?)?.toInt())!,
+        documentTitle: json.containsKey('document_title')
+            ? json['document_title'] as String?
+            : throw ArgumentError.value(
+                null, 'document_title', 'Required property is missing'),
+        endPageNumber: ((json['end_page_number'] as num?)?.toInt())!,
+        fileId: json.containsKey('file_id')
+            ? json['file_id'] as String?
+            : throw ArgumentError.value(
+                null, 'file_id', 'Required property is missing'),
+        startPageNumber: ((json['start_page_number'] as num?)?.toInt())!,
+        type_: (json['type'] != null
+            ? BetaResponsePageLocationCitationType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'cited_text': citedText,
-    'document_index': documentIndex,
-    'document_title': documentTitle,
-    'end_page_number': endPageNumber,
-    'file_id': fileId,
-    'start_page_number': startPageNumber,
-    'type': type_.toJson(),
-  };
+        'cited_text': citedText,
+        'document_index': documentIndex,
+        'document_title': documentTitle,
+        'end_page_number': endPageNumber,
+        'file_id': fileId,
+        'start_page_number': startPageNumber,
+        'type': type_.toJson(),
+      };
 }

@@ -9,131 +9,248 @@ sealed class BetaRequestSearchResultBlockCacheControl {
   static const String constructionSurface = 'named';
   const BetaRequestSearchResultBlockCacheControl();
   factory BetaRequestSearchResultBlockCacheControl.fromJson(Object? json) {
-    try { return BetaRequestSearchResultBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestSearchResultBlockCacheControl(json); }
-    throw FormatException("No variant matched for BetaRequestSearchResultBlockCacheControl");
+    try {
+      return BetaRequestSearchResultBlockCacheControlBetaCacheControlEphemeral(
+          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownBetaRequestSearchResultBlockCacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRequestSearchResultBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestSearchResultBlockCacheControlBetaCacheControlEphemeral extends BetaRequestSearchResultBlockCacheControl {
+final class BetaRequestSearchResultBlockCacheControlBetaCacheControlEphemeral
+    extends BetaRequestSearchResultBlockCacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaRequestSearchResultBlockCacheControlBetaCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestSearchResultBlockCacheControlBetaCacheControlEphemeral(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestSearchResultBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestSearchResultBlockCacheControl extends BetaRequestSearchResultBlockCacheControl {
+final class UnknownBetaRequestSearchResultBlockCacheControl
+    extends BetaRequestSearchResultBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestSearchResultBlockCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaRequestSearchResultBlock` API schema.
 class BetaRequestSearchResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
+
   /// Optional object value serialized in the `citations` wire field.
   final SdkOptional<BetaRequestCitationsConfig> citations;
+
   /// Required array value serialized in the `content` wire field.
   final List<BetaRequestTextBlock> content;
+
   /// Required `string` value serialized in the `source` wire field.
   final String source;
+
   /// Required `string` value serialized in the `title` wire field.
   final String title;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestSearchResultBlockType type_;
 
-  const BetaRequestSearchResultBlock({this.cacheControl = const SdkOmitted(), this.citations = const SdkOmitted(), required this.content, required this.source, required this.title, required this.type_});
+  const BetaRequestSearchResultBlock(
+      {this.cacheControl = const SdkOmitted(),
+      this.citations = const SdkOmitted(),
+      required this.content,
+      required this.source,
+      required this.title,
+      required this.type_});
 
-  BetaRequestSearchResultBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<BetaRequestCitationsConfig> citations, List<BetaRequestTextBlock> content, String source, String title, BetaRequestSearchResultBlockType type_}) get copyWith => _copyWith;
+  BetaRequestSearchResultBlock Function(
+      {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
+      SdkOptional<BetaRequestCitationsConfig> citations,
+      List<BetaRequestTextBlock> content,
+      String source,
+      String title,
+      BetaRequestSearchResultBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestSearchResultBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? citations = sdkOmittedValue, Object? content = sdkOmittedValue, Object? source = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestSearchResultBlock(
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-    citations: identical(citations, sdkOmittedValue) ? this.citations : citations as SdkOptional<BetaRequestCitationsConfig>,
-    content: identical(content, sdkOmittedValue) ? this.content : content as List<BetaRequestTextBlock>,
-    source: identical(source, sdkOmittedValue) ? this.source : source as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestSearchResultBlockType,
-  );
+  BetaRequestSearchResultBlock _copyWith(
+          {Object? cacheControl = sdkOmittedValue,
+          Object? citations = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? source = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestSearchResultBlock(
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+        citations: identical(citations, sdkOmittedValue)
+            ? this.citations
+            : citations as SdkOptional<BetaRequestCitationsConfig>,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as List<BetaRequestTextBlock>,
+        source:
+            identical(source, sdkOmittedValue) ? this.source : source as String,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestSearchResultBlockType,
+      );
 
-  factory BetaRequestSearchResultBlock.fromJson(Map<String, dynamic> json) => BetaRequestSearchResultBlock(
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    citations: json['citations'] != null ? SdkPresent((json['citations'] != null ? BetaRequestCitationsConfig.fromJson(json['citations'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    content: ((json['content'] as List?)?.map((e) => BetaRequestTextBlock.fromJson(e as Map<String, dynamic>)).toList())!,
-    source: (json['source'] as String?)!,
-    title: (json['title'] as String?)!,
-    type_: (json['type'] != null ? BetaRequestSearchResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestSearchResultBlock.fromJson(Map<String, dynamic> json) =>
+      BetaRequestSearchResultBlock(
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? BetaCacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        citations: json['citations'] != null
+            ? SdkPresent((json['citations'] != null
+                ? BetaRequestCitationsConfig.fromJson(
+                    json['citations'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        content: ((json['content'] as List?)
+            ?.map(
+                (e) => BetaRequestTextBlock.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        source: (json['source'] as String?)!,
+        title: (json['title'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaRequestSearchResultBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (cacheControl) {
-      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (citations) {
-      SdkPresent<BetaRequestCitationsConfig>(value: final value) => {'citations': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'content': content.map((item) => item.toJson()).toList(),
-    'source': source,
-    'title': title,
-    'type': type_.toJson(),
-  };
+        ...switch (cacheControl) {
+          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (citations) {
+          SdkPresent<BetaRequestCitationsConfig>(value: final value) => {
+              'citations': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'content': content.map((item) => item.toJson()).toList(),
+        'source': source,
+        'title': title,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaRequestSearchResultLocationCitation` API schema.
 class BetaRequestSearchResultLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The full text of the cited block range, concatenated. Always equals the contents of `content[start_block_index:end_block_index]` joined together. The text block is the minimal citable unit; this field is never a substring of a single block. Not counted toward output tokens, and not counted toward input tokens when sent back in subsequent turns.
   final String citedText;
+
   /// Exclusive 0-based end index of the cited block range in the source's `content` array. Always greater than `start_block_index`; a single-block citation has `end_block_index = start_block_index + 1`.
   final int endBlockIndex;
+
   /// 0-based index of the cited search result among all `search_result` content blocks in the request, in the order they appear across messages and tool results. Counted separately from `document_index`; server-side web search results are not included in this count.
   final int searchResultIndex;
+
   /// Required `string` value serialized in the `source` wire field.
   final String source;
+
   /// 0-based index of the first cited block in the source's `content` array.
   final int startBlockIndex;
+
   /// Required `string` value serialized in the `title` wire field.
   final String? title;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestSearchResultLocationCitationType type_;
 
-  const BetaRequestSearchResultLocationCitation({required this.citedText, required this.endBlockIndex, required this.searchResultIndex, required this.source, required this.startBlockIndex, required this.title, required this.type_});
+  const BetaRequestSearchResultLocationCitation(
+      {required this.citedText,
+      required this.endBlockIndex,
+      required this.searchResultIndex,
+      required this.source,
+      required this.startBlockIndex,
+      required this.title,
+      required this.type_});
 
-  BetaRequestSearchResultLocationCitation Function({String citedText, int endBlockIndex, int searchResultIndex, String source, int startBlockIndex, String? title, BetaRequestSearchResultLocationCitationType type_}) get copyWith => _copyWith;
+  BetaRequestSearchResultLocationCitation Function(
+          {String citedText,
+          int endBlockIndex,
+          int searchResultIndex,
+          String source,
+          int startBlockIndex,
+          String? title,
+          BetaRequestSearchResultLocationCitationType type_})
+      get copyWith => _copyWith;
 
-  BetaRequestSearchResultLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? endBlockIndex = sdkOmittedValue, Object? searchResultIndex = sdkOmittedValue, Object? source = sdkOmittedValue, Object? startBlockIndex = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestSearchResultLocationCitation(
-    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
-    endBlockIndex: identical(endBlockIndex, sdkOmittedValue) ? this.endBlockIndex : endBlockIndex as int,
-    searchResultIndex: identical(searchResultIndex, sdkOmittedValue) ? this.searchResultIndex : searchResultIndex as int,
-    source: identical(source, sdkOmittedValue) ? this.source : source as String,
-    startBlockIndex: identical(startBlockIndex, sdkOmittedValue) ? this.startBlockIndex : startBlockIndex as int,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestSearchResultLocationCitationType,
-  );
+  BetaRequestSearchResultLocationCitation _copyWith(
+          {Object? citedText = sdkOmittedValue,
+          Object? endBlockIndex = sdkOmittedValue,
+          Object? searchResultIndex = sdkOmittedValue,
+          Object? source = sdkOmittedValue,
+          Object? startBlockIndex = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestSearchResultLocationCitation(
+        citedText: identical(citedText, sdkOmittedValue)
+            ? this.citedText
+            : citedText as String,
+        endBlockIndex: identical(endBlockIndex, sdkOmittedValue)
+            ? this.endBlockIndex
+            : endBlockIndex as int,
+        searchResultIndex: identical(searchResultIndex, sdkOmittedValue)
+            ? this.searchResultIndex
+            : searchResultIndex as int,
+        source:
+            identical(source, sdkOmittedValue) ? this.source : source as String,
+        startBlockIndex: identical(startBlockIndex, sdkOmittedValue)
+            ? this.startBlockIndex
+            : startBlockIndex as int,
+        title:
+            identical(title, sdkOmittedValue) ? this.title : title as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestSearchResultLocationCitationType,
+      );
 
-  factory BetaRequestSearchResultLocationCitation.fromJson(Map<String, dynamic> json) => BetaRequestSearchResultLocationCitation(
-    citedText: (json['cited_text'] as String?)!,
-    endBlockIndex: ((json['end_block_index'] as num?)?.toInt())!,
-    searchResultIndex: ((json['search_result_index'] as num?)?.toInt())!,
-    source: (json['source'] as String?)!,
-    startBlockIndex: ((json['start_block_index'] as num?)?.toInt())!,
-    title: json.containsKey('title') ? json['title'] as String? : throw ArgumentError.value(null, 'title', 'Required property is missing'),
-    type_: (json['type'] != null ? BetaRequestSearchResultLocationCitationType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestSearchResultLocationCitation.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestSearchResultLocationCitation(
+        citedText: (json['cited_text'] as String?)!,
+        endBlockIndex: ((json['end_block_index'] as num?)?.toInt())!,
+        searchResultIndex: ((json['search_result_index'] as num?)?.toInt())!,
+        source: (json['source'] as String?)!,
+        startBlockIndex: ((json['start_block_index'] as num?)?.toInt())!,
+        title: json.containsKey('title')
+            ? json['title'] as String?
+            : throw ArgumentError.value(
+                null, 'title', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? BetaRequestSearchResultLocationCitationType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'cited_text': citedText,
-    'end_block_index': endBlockIndex,
-    'search_result_index': searchResultIndex,
-    'source': source,
-    'start_block_index': startBlockIndex,
-    'title': title,
-    'type': type_.toJson(),
-  };
+        'cited_text': citedText,
+        'end_block_index': endBlockIndex,
+        'search_result_index': searchResultIndex,
+        'source': source,
+        'start_block_index': startBlockIndex,
+        'title': title,
+        'type': type_.toJson(),
+      };
 }

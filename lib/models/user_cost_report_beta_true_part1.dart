@@ -9,16 +9,21 @@ sealed class BetaAnalyticsCostUsersItemEndingAt {
   static const String constructionSurface = 'named';
   const BetaAnalyticsCostUsersItemEndingAt();
   factory BetaAnalyticsCostUsersItemEndingAt.fromJson(Object? json) {
-    if (json is String) { return BetaAnalyticsCostUsersItemEndingAtString(json); }
-    throw FormatException("No variant matched for BetaAnalyticsCostUsersItemEndingAt");
+    if (json is String) {
+      return BetaAnalyticsCostUsersItemEndingAtString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaAnalyticsCostUsersItemEndingAt");
   }
   Object? toJson();
 }
 
-final class BetaAnalyticsCostUsersItemEndingAtString extends BetaAnalyticsCostUsersItemEndingAt {
+final class BetaAnalyticsCostUsersItemEndingAtString
+    extends BetaAnalyticsCostUsersItemEndingAt {
   final String value;
   const BetaAnalyticsCostUsersItemEndingAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BetaAnalyticsCostUsersItemSpeed {
@@ -26,16 +31,23 @@ sealed class BetaAnalyticsCostUsersItemSpeed {
   static const String constructionSurface = 'named';
   const BetaAnalyticsCostUsersItemSpeed();
   factory BetaAnalyticsCostUsersItemSpeed.fromJson(Object? json) {
-    try { return BetaAnalyticsCostUsersItemSpeedBetaAnalyticsCostUsersItemSpeedVariant0(BetaAnalyticsCostUsersItemSpeedVariant0.fromJson(json as String)); } catch (_) {}
-    throw FormatException("No variant matched for BetaAnalyticsCostUsersItemSpeed");
+    try {
+      return BetaAnalyticsCostUsersItemSpeedBetaAnalyticsCostUsersItemSpeedVariant0(
+          BetaAnalyticsCostUsersItemSpeedVariant0.fromJson(json as String));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for BetaAnalyticsCostUsersItemSpeed");
   }
   Object? toJson();
 }
 
-final class BetaAnalyticsCostUsersItemSpeedBetaAnalyticsCostUsersItemSpeedVariant0 extends BetaAnalyticsCostUsersItemSpeed {
+final class BetaAnalyticsCostUsersItemSpeedBetaAnalyticsCostUsersItemSpeedVariant0
+    extends BetaAnalyticsCostUsersItemSpeed {
   final BetaAnalyticsCostUsersItemSpeedVariant0 value;
-  const BetaAnalyticsCostUsersItemSpeedBetaAnalyticsCostUsersItemSpeedVariant0(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaAnalyticsCostUsersItemSpeedBetaAnalyticsCostUsersItemSpeedVariant0(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 sealed class BetaAnalyticsCostUsersItemStartingAt {
@@ -43,137 +55,295 @@ sealed class BetaAnalyticsCostUsersItemStartingAt {
   static const String constructionSurface = 'named';
   const BetaAnalyticsCostUsersItemStartingAt();
   factory BetaAnalyticsCostUsersItemStartingAt.fromJson(Object? json) {
-    if (json is String) { return BetaAnalyticsCostUsersItemStartingAtString(json); }
-    throw FormatException("No variant matched for BetaAnalyticsCostUsersItemStartingAt");
+    if (json is String) {
+      return BetaAnalyticsCostUsersItemStartingAtString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaAnalyticsCostUsersItemStartingAt");
   }
   Object? toJson();
 }
 
-final class BetaAnalyticsCostUsersItemStartingAtString extends BetaAnalyticsCostUsersItemStartingAt {
+final class BetaAnalyticsCostUsersItemStartingAtString
+    extends BetaAnalyticsCostUsersItemStartingAt {
   final String value;
   const BetaAnalyticsCostUsersItemStartingAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaAnalyticsCostUsersItem` API schema.
 class BetaAnalyticsCostUsersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The user this row's usage or cost is attributed to. Always a `user_actor`.
   final BetaAnalyticsUserActor actor;
+
   /// Amount (post-discount, pre-credit) in fractional cents (minor units).
   final String amount;
+
   /// Context-window pricing tier of the usage or cost. Null unless `context_window` is in `group_by[]`; it can also be null on grouped rows with no context-window tier, such as code execution.
   final BetaMessagesUsageReportContextWindow? contextWindow;
+
   /// Cost component breakdown; null when returning the combined total.
   final BetaAnalyticsCostType? costType;
+
   /// Currency code for the cost amount. Currently always `"USD"`.
   final BetaAnalyticsCostUsersItemCurrency currency;
+
   /// End of the row's UTC time bucket (exclusive), as an RFC 3339 timestamp; equal to `starting_at` plus one `bucket_width`. Null unless `bucket_width` is set.
   final String? endingAt;
+
   /// Inference region of the usage or cost. Null unless `inference_geo` is in `group_by[]`; it can also be null on grouped rows where the region is not set (the rows that `inference_geos[]=not_available` matches).
   final BetaInferenceGeo? inferenceGeo;
+
   /// List-price amount (pre-discount) in fractional cents.
   final String listAmount;
+
   /// Model that produced the usage or cost, as a model name in the form the `models[]` filter accepts (for example, `claude-opus-5`). Null unless `model` is in `group_by[]`; it can also be null on grouped rows whose usage or cost is not attributed to a specific model, such as code execution.
   final String? model;
+
   /// Product surface that produced the usage or cost. Null unless product is in `group_by[]`; it can also be null on grouped rows whose usage cannot be attributed to a known surface. Values include `chat`, `claude_code`, `cowork`, `office_agent`, `claude_in_chrome`, `claude_design`, and `claude-tag`. `claude-tag` is Claude Tag, the Claude product in Slack. Some unattributed usage is reported as "other".
   final String? product;
+
   /// RBAC group (team) the usage is attributed to, in the public tagged `rbac_group_...` spelling — the same spelling the activity resources use for this key, so the same team has one id across resources and it round-trips as an `rbac_group_ids[]` filter value. Populated only when `rbac_group_id` is in `group_by[]`. Any-membership semantics: a user in several groups contributes their full usage to each of those groups' rows, so the named-group rows overlap and their sum can exceed the org total. A null value is the single unassigned row: users in no group on that (UTC) day. For the true org total, run the same query without `group_by[]`.
   final String? rbacGroupId;
+
   /// Number of API requests in this row's scope. Null when `group_by` includes `cost_type` or `token_type` (the count has no per-component attribution; read it from the ungrouped response). For sandbox / code-execution events, this counts execution spans rather than HTTP requests (these rows surface with `product: null`).
   final int? requests;
+
   /// Slack channel the usage originated from. Populated only when `slack_channel_id` is in `group_by[]`; null for usage outside Slack (and for rows recorded before channel attribution was enabled).
   final String? slackChannelId;
+
   /// Inference speed mode of the usage or cost: `fast` or `standard`. Null unless `speed` is in `group_by[]`.
   final BetaAnalyticsCostUsersItemSpeedVariant0? speed;
+
   /// Start of the row's UTC time bucket (inclusive), as an RFC 3339 timestamp. Null unless `bucket_width` is set; without `bucket_width`, each row aggregates the full requested range.
   final String? startingAt;
+
   /// Token type when `cost_type` is `tokens`; null otherwise.
   final BetaCostReportTokenType? tokenType;
 
-  const BetaAnalyticsCostUsersItem({required this.actor, required this.amount, required this.contextWindow, required this.costType, required this.currency, required this.endingAt, required this.inferenceGeo, required this.listAmount, required this.model, required this.product, required this.rbacGroupId, required this.requests, required this.slackChannelId, required this.speed, required this.startingAt, required this.tokenType});
+  const BetaAnalyticsCostUsersItem(
+      {required this.actor,
+      required this.amount,
+      required this.contextWindow,
+      required this.costType,
+      required this.currency,
+      required this.endingAt,
+      required this.inferenceGeo,
+      required this.listAmount,
+      required this.model,
+      required this.product,
+      required this.rbacGroupId,
+      required this.requests,
+      required this.slackChannelId,
+      required this.speed,
+      required this.startingAt,
+      required this.tokenType});
 
-  BetaAnalyticsCostUsersItem Function({BetaAnalyticsUserActor actor, String amount, BetaMessagesUsageReportContextWindow? contextWindow, BetaAnalyticsCostType? costType, BetaAnalyticsCostUsersItemCurrency currency, String? endingAt, BetaInferenceGeo? inferenceGeo, String listAmount, String? model, String? product, String? rbacGroupId, int? requests, String? slackChannelId, BetaAnalyticsCostUsersItemSpeedVariant0? speed, String? startingAt, BetaCostReportTokenType? tokenType}) get copyWith => _copyWith;
+  BetaAnalyticsCostUsersItem Function(
+      {BetaAnalyticsUserActor actor,
+      String amount,
+      BetaMessagesUsageReportContextWindow? contextWindow,
+      BetaAnalyticsCostType? costType,
+      BetaAnalyticsCostUsersItemCurrency currency,
+      String? endingAt,
+      BetaInferenceGeo? inferenceGeo,
+      String listAmount,
+      String? model,
+      String? product,
+      String? rbacGroupId,
+      int? requests,
+      String? slackChannelId,
+      BetaAnalyticsCostUsersItemSpeedVariant0? speed,
+      String? startingAt,
+      BetaCostReportTokenType? tokenType}) get copyWith => _copyWith;
 
-  BetaAnalyticsCostUsersItem _copyWith({Object? actor = sdkOmittedValue, Object? amount = sdkOmittedValue, Object? contextWindow = sdkOmittedValue, Object? costType = sdkOmittedValue, Object? currency = sdkOmittedValue, Object? endingAt = sdkOmittedValue, Object? inferenceGeo = sdkOmittedValue, Object? listAmount = sdkOmittedValue, Object? model = sdkOmittedValue, Object? product = sdkOmittedValue, Object? rbacGroupId = sdkOmittedValue, Object? requests = sdkOmittedValue, Object? slackChannelId = sdkOmittedValue, Object? speed = sdkOmittedValue, Object? startingAt = sdkOmittedValue, Object? tokenType = sdkOmittedValue}) => BetaAnalyticsCostUsersItem(
-    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as BetaAnalyticsUserActor,
-    amount: identical(amount, sdkOmittedValue) ? this.amount : amount as String,
-    contextWindow: identical(contextWindow, sdkOmittedValue) ? this.contextWindow : contextWindow as BetaMessagesUsageReportContextWindow?,
-    costType: identical(costType, sdkOmittedValue) ? this.costType : costType as BetaAnalyticsCostType?,
-    currency: identical(currency, sdkOmittedValue) ? this.currency : currency as BetaAnalyticsCostUsersItemCurrency,
-    endingAt: identical(endingAt, sdkOmittedValue) ? this.endingAt : endingAt as String?,
-    inferenceGeo: identical(inferenceGeo, sdkOmittedValue) ? this.inferenceGeo : inferenceGeo as BetaInferenceGeo?,
-    listAmount: identical(listAmount, sdkOmittedValue) ? this.listAmount : listAmount as String,
-    model: identical(model, sdkOmittedValue) ? this.model : model as String?,
-    product: identical(product, sdkOmittedValue) ? this.product : product as String?,
-    rbacGroupId: identical(rbacGroupId, sdkOmittedValue) ? this.rbacGroupId : rbacGroupId as String?,
-    requests: identical(requests, sdkOmittedValue) ? this.requests : requests as int?,
-    slackChannelId: identical(slackChannelId, sdkOmittedValue) ? this.slackChannelId : slackChannelId as String?,
-    speed: identical(speed, sdkOmittedValue) ? this.speed : speed as BetaAnalyticsCostUsersItemSpeedVariant0?,
-    startingAt: identical(startingAt, sdkOmittedValue) ? this.startingAt : startingAt as String?,
-    tokenType: identical(tokenType, sdkOmittedValue) ? this.tokenType : tokenType as BetaCostReportTokenType?,
-  );
+  BetaAnalyticsCostUsersItem _copyWith(
+          {Object? actor = sdkOmittedValue,
+          Object? amount = sdkOmittedValue,
+          Object? contextWindow = sdkOmittedValue,
+          Object? costType = sdkOmittedValue,
+          Object? currency = sdkOmittedValue,
+          Object? endingAt = sdkOmittedValue,
+          Object? inferenceGeo = sdkOmittedValue,
+          Object? listAmount = sdkOmittedValue,
+          Object? model = sdkOmittedValue,
+          Object? product = sdkOmittedValue,
+          Object? rbacGroupId = sdkOmittedValue,
+          Object? requests = sdkOmittedValue,
+          Object? slackChannelId = sdkOmittedValue,
+          Object? speed = sdkOmittedValue,
+          Object? startingAt = sdkOmittedValue,
+          Object? tokenType = sdkOmittedValue}) =>
+      BetaAnalyticsCostUsersItem(
+        actor: identical(actor, sdkOmittedValue)
+            ? this.actor
+            : actor as BetaAnalyticsUserActor,
+        amount:
+            identical(amount, sdkOmittedValue) ? this.amount : amount as String,
+        contextWindow: identical(contextWindow, sdkOmittedValue)
+            ? this.contextWindow
+            : contextWindow as BetaMessagesUsageReportContextWindow?,
+        costType: identical(costType, sdkOmittedValue)
+            ? this.costType
+            : costType as BetaAnalyticsCostType?,
+        currency: identical(currency, sdkOmittedValue)
+            ? this.currency
+            : currency as BetaAnalyticsCostUsersItemCurrency,
+        endingAt: identical(endingAt, sdkOmittedValue)
+            ? this.endingAt
+            : endingAt as String?,
+        inferenceGeo: identical(inferenceGeo, sdkOmittedValue)
+            ? this.inferenceGeo
+            : inferenceGeo as BetaInferenceGeo?,
+        listAmount: identical(listAmount, sdkOmittedValue)
+            ? this.listAmount
+            : listAmount as String,
+        model:
+            identical(model, sdkOmittedValue) ? this.model : model as String?,
+        product: identical(product, sdkOmittedValue)
+            ? this.product
+            : product as String?,
+        rbacGroupId: identical(rbacGroupId, sdkOmittedValue)
+            ? this.rbacGroupId
+            : rbacGroupId as String?,
+        requests: identical(requests, sdkOmittedValue)
+            ? this.requests
+            : requests as int?,
+        slackChannelId: identical(slackChannelId, sdkOmittedValue)
+            ? this.slackChannelId
+            : slackChannelId as String?,
+        speed: identical(speed, sdkOmittedValue)
+            ? this.speed
+            : speed as BetaAnalyticsCostUsersItemSpeedVariant0?,
+        startingAt: identical(startingAt, sdkOmittedValue)
+            ? this.startingAt
+            : startingAt as String?,
+        tokenType: identical(tokenType, sdkOmittedValue)
+            ? this.tokenType
+            : tokenType as BetaCostReportTokenType?,
+      );
 
-  factory BetaAnalyticsCostUsersItem.fromJson(Map<String, dynamic> json) => BetaAnalyticsCostUsersItem(
-    actor: (json['actor'] != null ? BetaAnalyticsUserActor.fromJson(json['actor'] as Map<String, dynamic>) : null)!,
-    amount: (json['amount'] as String?)!,
-    contextWindow: json.containsKey('context_window') ? json['context_window'] != null ? BetaMessagesUsageReportContextWindow.fromJson(json['context_window'] as String) : null : throw ArgumentError.value(null, 'context_window', 'Required property is missing'),
-    costType: json.containsKey('cost_type') ? json['cost_type'] != null ? BetaAnalyticsCostType.fromJson(json['cost_type'] as String) : null : throw ArgumentError.value(null, 'cost_type', 'Required property is missing'),
-    currency: (json['currency'] != null ? BetaAnalyticsCostUsersItemCurrency.fromJson(json['currency'] as String) : null)!,
-    endingAt: json.containsKey('ending_at') ? json['ending_at'] as String? : throw ArgumentError.value(null, 'ending_at', 'Required property is missing'),
-    inferenceGeo: json.containsKey('inference_geo') ? json['inference_geo'] != null ? BetaInferenceGeo.fromJson(json['inference_geo'] as String) : null : throw ArgumentError.value(null, 'inference_geo', 'Required property is missing'),
-    listAmount: (json['list_amount'] as String?)!,
-    model: json.containsKey('model') ? json['model'] as String? : throw ArgumentError.value(null, 'model', 'Required property is missing'),
-    product: json.containsKey('product') ? json['product'] as String? : throw ArgumentError.value(null, 'product', 'Required property is missing'),
-    rbacGroupId: json.containsKey('rbac_group_id') ? json['rbac_group_id'] as String? : throw ArgumentError.value(null, 'rbac_group_id', 'Required property is missing'),
-    requests: json.containsKey('requests') ? (json['requests'] as num?)?.toInt() : throw ArgumentError.value(null, 'requests', 'Required property is missing'),
-    slackChannelId: json.containsKey('slack_channel_id') ? json['slack_channel_id'] as String? : throw ArgumentError.value(null, 'slack_channel_id', 'Required property is missing'),
-    speed: json.containsKey('speed') ? json['speed'] != null ? BetaAnalyticsCostUsersItemSpeedVariant0.fromJson(json['speed'] as String) : null : throw ArgumentError.value(null, 'speed', 'Required property is missing'),
-    startingAt: json.containsKey('starting_at') ? json['starting_at'] as String? : throw ArgumentError.value(null, 'starting_at', 'Required property is missing'),
-    tokenType: json.containsKey('token_type') ? json['token_type'] != null ? BetaCostReportTokenType.fromJson(json['token_type'] as String) : null : throw ArgumentError.value(null, 'token_type', 'Required property is missing'),
-  );
+  factory BetaAnalyticsCostUsersItem.fromJson(Map<String, dynamic> json) =>
+      BetaAnalyticsCostUsersItem(
+        actor: (json['actor'] != null
+            ? BetaAnalyticsUserActor.fromJson(
+                json['actor'] as Map<String, dynamic>)
+            : null)!,
+        amount: (json['amount'] as String?)!,
+        contextWindow: json.containsKey('context_window')
+            ? json['context_window'] != null
+                ? BetaMessagesUsageReportContextWindow.fromJson(
+                    json['context_window'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'context_window', 'Required property is missing'),
+        costType: json.containsKey('cost_type')
+            ? json['cost_type'] != null
+                ? BetaAnalyticsCostType.fromJson(json['cost_type'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'cost_type', 'Required property is missing'),
+        currency: (json['currency'] != null
+            ? BetaAnalyticsCostUsersItemCurrency.fromJson(
+                json['currency'] as String)
+            : null)!,
+        endingAt: json.containsKey('ending_at')
+            ? json['ending_at'] as String?
+            : throw ArgumentError.value(
+                null, 'ending_at', 'Required property is missing'),
+        inferenceGeo: json.containsKey('inference_geo')
+            ? json['inference_geo'] != null
+                ? BetaInferenceGeo.fromJson(json['inference_geo'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'inference_geo', 'Required property is missing'),
+        listAmount: (json['list_amount'] as String?)!,
+        model: json.containsKey('model')
+            ? json['model'] as String?
+            : throw ArgumentError.value(
+                null, 'model', 'Required property is missing'),
+        product: json.containsKey('product')
+            ? json['product'] as String?
+            : throw ArgumentError.value(
+                null, 'product', 'Required property is missing'),
+        rbacGroupId: json.containsKey('rbac_group_id')
+            ? json['rbac_group_id'] as String?
+            : throw ArgumentError.value(
+                null, 'rbac_group_id', 'Required property is missing'),
+        requests: json.containsKey('requests')
+            ? (json['requests'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'requests', 'Required property is missing'),
+        slackChannelId: json.containsKey('slack_channel_id')
+            ? json['slack_channel_id'] as String?
+            : throw ArgumentError.value(
+                null, 'slack_channel_id', 'Required property is missing'),
+        speed: json.containsKey('speed')
+            ? json['speed'] != null
+                ? BetaAnalyticsCostUsersItemSpeedVariant0.fromJson(
+                    json['speed'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'speed', 'Required property is missing'),
+        startingAt: json.containsKey('starting_at')
+            ? json['starting_at'] as String?
+            : throw ArgumentError.value(
+                null, 'starting_at', 'Required property is missing'),
+        tokenType: json.containsKey('token_type')
+            ? json['token_type'] != null
+                ? BetaCostReportTokenType.fromJson(json['token_type'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'token_type', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'actor': actor.toJson(),
-    'amount': amount,
-    'context_window': contextWindow?.toJson(),
-    'cost_type': costType?.toJson(),
-    'currency': currency.toJson(),
-    'ending_at': endingAt,
-    'inference_geo': inferenceGeo?.toJson(),
-    'list_amount': listAmount,
-    'model': model,
-    'product': product,
-    'rbac_group_id': rbacGroupId,
-    'requests': requests,
-    'slack_channel_id': slackChannelId,
-    'speed': speed?.toJson(),
-    'starting_at': startingAt,
-    'token_type': tokenType?.toJson(),
-  };
+        'actor': actor.toJson(),
+        'amount': amount,
+        'context_window': contextWindow?.toJson(),
+        'cost_type': costType?.toJson(),
+        'currency': currency.toJson(),
+        'ending_at': endingAt,
+        'inference_geo': inferenceGeo?.toJson(),
+        'list_amount': listAmount,
+        'model': model,
+        'product': product,
+        'rbac_group_id': rbacGroupId,
+        'requests': requests,
+        'slack_channel_id': slackChannelId,
+        'speed': speed?.toJson(),
+        'starting_at': startingAt,
+        'token_type': tokenType?.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaAnalyticsCostUsersOrderBy` API schema.
 final class BetaAnalyticsCostUsersOrderBy {
-
   final String value;
 
   const BetaAnalyticsCostUsersOrderBy._(this.value);
 
-  factory BetaAnalyticsCostUsersOrderBy.fromJson(String value) => BetaAnalyticsCostUsersOrderBy._(value);
+  factory BetaAnalyticsCostUsersOrderBy.fromJson(String value) =>
+      BetaAnalyticsCostUsersOrderBy._(value);
 
   static const amount = BetaAnalyticsCostUsersOrderBy._('amount');
   static const listAmount = BetaAnalyticsCostUsersOrderBy._('list_amount');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaAnalyticsCostUsersOrderBy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaAnalyticsCostUsersOrderBy && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 sealed class BetaAnalyticsCostUsersResponseDataRefreshedAt {
@@ -181,58 +351,104 @@ sealed class BetaAnalyticsCostUsersResponseDataRefreshedAt {
   static const String constructionSurface = 'named';
   const BetaAnalyticsCostUsersResponseDataRefreshedAt();
   factory BetaAnalyticsCostUsersResponseDataRefreshedAt.fromJson(Object? json) {
-    if (json is String) { return BetaAnalyticsCostUsersResponseDataRefreshedAtString(json); }
-    throw FormatException("No variant matched for BetaAnalyticsCostUsersResponseDataRefreshedAt");
+    if (json is String) {
+      return BetaAnalyticsCostUsersResponseDataRefreshedAtString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaAnalyticsCostUsersResponseDataRefreshedAt");
   }
   Object? toJson();
 }
 
-final class BetaAnalyticsCostUsersResponseDataRefreshedAtString extends BetaAnalyticsCostUsersResponseDataRefreshedAt {
+final class BetaAnalyticsCostUsersResponseDataRefreshedAtString
+    extends BetaAnalyticsCostUsersResponseDataRefreshedAt {
   final String value;
   const BetaAnalyticsCostUsersResponseDataRefreshedAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaAnalyticsCostUsersResponse` API schema.
 class BetaAnalyticsCostUsersResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Rows for this page, ranked by `order_by` in the `order` direction. One row per user, or several per user when `group_by[]` or `bucket_width` breaks that user's usage or cost out across rows. Rows split out by `cost_type` or `token_type` (cost endpoint only) stay adjacent and are ranked as one unit.
   final List<BetaAnalyticsCostUsersItem> data;
+
   /// RFC 3339 timestamp of the export this response was served from. Null when no export yet covers any part of the requested range, in which case `data` is empty. Data beyond this watermark is incomplete; for stable results, set `ending_at` to this value or earlier. Data is typically refreshed every 4 hours but not final until about 30 days after the usage date (late-arriving events, reconciliation adjustments).
   final String? dataRefreshedAt;
+
   /// Whether another page is available. When true, pass `next_page` as the `page` parameter to fetch it.
   final bool hasMore;
+
   /// Opaque cursor for the next page, or null when `has_more` is false. Pass it as the `page` parameter, keeping the other parameters unchanged. A cursor can expire after the underlying data refreshes; the request then returns HTTP 410 and pagination must restart from the first page.
   final String? nextPage;
+
   /// ID of the Organization.
   final String organizationId;
 
-  const BetaAnalyticsCostUsersResponse({required this.data, required this.dataRefreshedAt, required this.hasMore, required this.nextPage, required this.organizationId});
+  const BetaAnalyticsCostUsersResponse(
+      {required this.data,
+      required this.dataRefreshedAt,
+      required this.hasMore,
+      required this.nextPage,
+      required this.organizationId});
 
-  BetaAnalyticsCostUsersResponse Function({List<BetaAnalyticsCostUsersItem> data, String? dataRefreshedAt, bool hasMore, String? nextPage, String organizationId}) get copyWith => _copyWith;
+  BetaAnalyticsCostUsersResponse Function(
+      {List<BetaAnalyticsCostUsersItem> data,
+      String? dataRefreshedAt,
+      bool hasMore,
+      String? nextPage,
+      String organizationId}) get copyWith => _copyWith;
 
-  BetaAnalyticsCostUsersResponse _copyWith({Object? data = sdkOmittedValue, Object? dataRefreshedAt = sdkOmittedValue, Object? hasMore = sdkOmittedValue, Object? nextPage = sdkOmittedValue, Object? organizationId = sdkOmittedValue}) => BetaAnalyticsCostUsersResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaAnalyticsCostUsersItem>,
-    dataRefreshedAt: identical(dataRefreshedAt, sdkOmittedValue) ? this.dataRefreshedAt : dataRefreshedAt as String?,
-    hasMore: identical(hasMore, sdkOmittedValue) ? this.hasMore : hasMore as bool,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-  );
+  BetaAnalyticsCostUsersResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? dataRefreshedAt = sdkOmittedValue,
+          Object? hasMore = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue,
+          Object? organizationId = sdkOmittedValue}) =>
+      BetaAnalyticsCostUsersResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaAnalyticsCostUsersItem>,
+        dataRefreshedAt: identical(dataRefreshedAt, sdkOmittedValue)
+            ? this.dataRefreshedAt
+            : dataRefreshedAt as String?,
+        hasMore: identical(hasMore, sdkOmittedValue)
+            ? this.hasMore
+            : hasMore as bool,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+      );
 
-  factory BetaAnalyticsCostUsersResponse.fromJson(Map<String, dynamic> json) => BetaAnalyticsCostUsersResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaAnalyticsCostUsersItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    dataRefreshedAt: json.containsKey('data_refreshed_at') ? json['data_refreshed_at'] as String? : throw ArgumentError.value(null, 'data_refreshed_at', 'Required property is missing'),
-    hasMore: (json['has_more'] as bool?)!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-    organizationId: (json['organization_id'] as String?)!,
-  );
+  factory BetaAnalyticsCostUsersResponse.fromJson(Map<String, dynamic> json) =>
+      BetaAnalyticsCostUsersResponse(
+        data: ((json['data'] as List?)
+            ?.map((e) =>
+                BetaAnalyticsCostUsersItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        dataRefreshedAt: json.containsKey('data_refreshed_at')
+            ? json['data_refreshed_at'] as String?
+            : throw ArgumentError.value(
+                null, 'data_refreshed_at', 'Required property is missing'),
+        hasMore: (json['has_more'] as bool?)!,
+        nextPage: json.containsKey('next_page')
+            ? json['next_page'] as String?
+            : throw ArgumentError.value(
+                null, 'next_page', 'Required property is missing'),
+        organizationId: (json['organization_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'data_refreshed_at': dataRefreshedAt,
-    'has_more': hasMore,
-    'next_page': nextPage,
-    'organization_id': organizationId,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'data_refreshed_at': dataRefreshedAt,
+        'has_more': hasMore,
+        'next_page': nextPage,
+        'organization_id': organizationId,
+      };
 }

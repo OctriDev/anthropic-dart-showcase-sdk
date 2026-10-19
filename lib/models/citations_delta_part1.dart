@@ -8,29 +8,44 @@ part of 'citations_delta.dart';
 class CitationsDelta {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required API value serialized in the `citation` wire field.
   final CitationsDeltaCitation citation;
+
   /// Required `string` value serialized in the `type` wire field.
   final CitationsDeltaType type_;
 
   const CitationsDelta({required this.citation, required this.type_});
 
-  CitationsDelta Function({CitationsDeltaCitation citation, CitationsDeltaType type_}) get copyWith => _copyWith;
+  CitationsDelta Function(
+      {CitationsDeltaCitation citation,
+      CitationsDeltaType type_}) get copyWith => _copyWith;
 
-  CitationsDelta _copyWith({Object? citation = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => CitationsDelta(
-    citation: identical(citation, sdkOmittedValue) ? this.citation : citation as CitationsDeltaCitation,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as CitationsDeltaType,
-  );
+  CitationsDelta _copyWith(
+          {Object? citation = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      CitationsDelta(
+        citation: identical(citation, sdkOmittedValue)
+            ? this.citation
+            : citation as CitationsDeltaCitation,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as CitationsDeltaType,
+      );
 
   factory CitationsDelta.fromJson(Map<String, dynamic> json) => CitationsDelta(
-    citation: (json['citation'] != null ? CitationsDeltaCitation.fromJson(json['citation']) : null)!,
-    type_: (json['type'] != null ? CitationsDeltaType.fromJson(json['type'] as String) : null)!,
-  );
+        citation: (json['citation'] != null
+            ? CitationsDeltaCitation.fromJson(json['citation'])
+            : null)!,
+        type_: (json['type'] != null
+            ? CitationsDeltaType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'citation': citation.toJson(),
-    'type': type_.toJson(),
-  };
+        'citation': citation.toJson(),
+        'type': type_.toJson(),
+      };
 }
 
 sealed class CitationsDeltaCitation {
@@ -39,56 +54,124 @@ sealed class CitationsDeltaCitation {
   const CitationsDeltaCitation();
   factory CitationsDeltaCitation.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = ResponseCharLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CitationsDeltaCitationResponseCharLocationCitation(value); } } catch (_) {}
-      try { final value = ResponsePageLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CitationsDeltaCitationResponsePageLocationCitation(value); } } catch (_) {}
-      try { final value = ResponseContentBlockLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CitationsDeltaCitationResponseContentBlockLocationCitation(value); } } catch (_) {}
-      try { final value = ResponseWebSearchResultLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CitationsDeltaCitationResponseWebSearchResultLocationCitation(value); } } catch (_) {}
-      try { final value = ResponseSearchResultLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CitationsDeltaCitationResponseSearchResultLocationCitation(value); } } catch (_) {}
+      try {
+        final value = ResponseCharLocationCitation.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CitationsDeltaCitationResponseCharLocationCitation(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ResponsePageLocationCitation.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CitationsDeltaCitationResponsePageLocationCitation(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ResponseContentBlockLocationCitation.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CitationsDeltaCitationResponseContentBlockLocationCitation(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = ResponseWebSearchResultLocationCitation.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CitationsDeltaCitationResponseWebSearchResultLocationCitation(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = ResponseSearchResultLocationCitation.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CitationsDeltaCitationResponseSearchResultLocationCitation(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return CitationsDeltaCitationResponseCharLocationCitation(ResponseCharLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CitationsDeltaCitationResponsePageLocationCitation(ResponsePageLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CitationsDeltaCitationResponseContentBlockLocationCitation(ResponseContentBlockLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CitationsDeltaCitationResponseWebSearchResultLocationCitation(ResponseWebSearchResultLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CitationsDeltaCitationResponseSearchResultLocationCitation(ResponseSearchResultLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"char_location", "content_block_location", "page_location", "search_result_location", "web_search_result_location"}.contains(json["type"])) { return UnknownCitationsDeltaCitation(json); }
+    try {
+      return CitationsDeltaCitationResponseCharLocationCitation(
+          ResponseCharLocationCitation.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CitationsDeltaCitationResponsePageLocationCitation(
+          ResponsePageLocationCitation.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CitationsDeltaCitationResponseContentBlockLocationCitation(
+          ResponseContentBlockLocationCitation.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CitationsDeltaCitationResponseWebSearchResultLocationCitation(
+          ResponseWebSearchResultLocationCitation.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CitationsDeltaCitationResponseSearchResultLocationCitation(
+          ResponseSearchResultLocationCitation.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "char_location",
+          "content_block_location",
+          "page_location",
+          "search_result_location",
+          "web_search_result_location"
+        }.contains(json["type"])) {
+      return UnknownCitationsDeltaCitation(json);
+    }
     throw FormatException("No variant matched for CitationsDeltaCitation");
   }
   Object? toJson();
 }
 
-final class CitationsDeltaCitationResponseCharLocationCitation extends CitationsDeltaCitation {
+final class CitationsDeltaCitationResponseCharLocationCitation
+    extends CitationsDeltaCitation {
   final ResponseCharLocationCitation value;
   const CitationsDeltaCitationResponseCharLocationCitation(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CitationsDeltaCitationResponsePageLocationCitation extends CitationsDeltaCitation {
+final class CitationsDeltaCitationResponsePageLocationCitation
+    extends CitationsDeltaCitation {
   final ResponsePageLocationCitation value;
   const CitationsDeltaCitationResponsePageLocationCitation(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CitationsDeltaCitationResponseContentBlockLocationCitation extends CitationsDeltaCitation {
+final class CitationsDeltaCitationResponseContentBlockLocationCitation
+    extends CitationsDeltaCitation {
   final ResponseContentBlockLocationCitation value;
   const CitationsDeltaCitationResponseContentBlockLocationCitation(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CitationsDeltaCitationResponseWebSearchResultLocationCitation extends CitationsDeltaCitation {
+final class CitationsDeltaCitationResponseWebSearchResultLocationCitation
+    extends CitationsDeltaCitation {
   final ResponseWebSearchResultLocationCitation value;
-  const CitationsDeltaCitationResponseWebSearchResultLocationCitation(this.value);
-  @override Object? toJson() => value.toJson();
+  const CitationsDeltaCitationResponseWebSearchResultLocationCitation(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CitationsDeltaCitationResponseSearchResultLocationCitation extends CitationsDeltaCitation {
+final class CitationsDeltaCitationResponseSearchResultLocationCitation
+    extends CitationsDeltaCitation {
   final ResponseSearchResultLocationCitation value;
   const CitationsDeltaCitationResponseSearchResultLocationCitation(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [CitationsDeltaCitation] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownCitationsDeltaCitation extends CitationsDeltaCitation {
   final Map<String, dynamic> raw;
   const UnknownCitationsDeltaCitation(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
