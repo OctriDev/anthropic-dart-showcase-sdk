@@ -9,24 +9,36 @@ sealed class CreateMessageParamsCacheControl {
   static const String constructionSurface = 'named';
   const CreateMessageParamsCacheControl();
   factory CreateMessageParamsCacheControl.fromJson(Object? json) {
-    try { return CreateMessageParamsCacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownCreateMessageParamsCacheControl(json); }
-    throw FormatException("No variant matched for CreateMessageParamsCacheControl");
+    try {
+      return CreateMessageParamsCacheControlCacheControlEphemeral(
+          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownCreateMessageParamsCacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for CreateMessageParamsCacheControl");
   }
   Object? toJson();
 }
 
-final class CreateMessageParamsCacheControlCacheControlEphemeral extends CreateMessageParamsCacheControl {
+final class CreateMessageParamsCacheControlCacheControlEphemeral
+    extends CreateMessageParamsCacheControl {
   final CacheControlEphemeral value;
   const CreateMessageParamsCacheControlCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [CreateMessageParamsCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownCreateMessageParamsCacheControl extends CreateMessageParamsCacheControl {
+final class UnknownCreateMessageParamsCacheControl
+    extends CreateMessageParamsCacheControl {
   final Map<String, dynamic> raw;
   const UnknownCreateMessageParamsCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 sealed class CreateMessageParamsContainer {
@@ -34,23 +46,33 @@ sealed class CreateMessageParamsContainer {
   static const String constructionSurface = 'named';
   const CreateMessageParamsContainer();
   factory CreateMessageParamsContainer.fromJson(Object? json) {
-    if (json is String) { return CreateMessageParamsContainerString(json); }
-    try { return CreateMessageParamsContainerContainerParams(ContainerParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for CreateMessageParamsContainer");
+    if (json is String) {
+      return CreateMessageParamsContainerString(json);
+    }
+    try {
+      return CreateMessageParamsContainerContainerParams(
+          ContainerParams.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for CreateMessageParamsContainer");
   }
   Object? toJson();
 }
 
-final class CreateMessageParamsContainerContainerParams extends CreateMessageParamsContainer {
+final class CreateMessageParamsContainerContainerParams
+    extends CreateMessageParamsContainer {
   final ContainerParams value;
   const CreateMessageParamsContainerContainerParams(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsContainerString extends CreateMessageParamsContainer {
+final class CreateMessageParamsContainerString
+    extends CreateMessageParamsContainer {
   final String value;
   const CreateMessageParamsContainerString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class CreateMessageParamsSystem {
@@ -58,8 +80,13 @@ sealed class CreateMessageParamsSystem {
   static const String constructionSurface = 'named';
   const CreateMessageParamsSystem();
   factory CreateMessageParamsSystem.fromJson(Object? json) {
-    if (json is String) { return CreateMessageParamsSystemString(json); }
-    try { return CreateMessageParamsSystemRequestTextBlock(RequestTextBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is String) {
+      return CreateMessageParamsSystemString(json);
+    }
+    try {
+      return CreateMessageParamsSystemRequestTextBlock(
+          RequestTextBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for CreateMessageParamsSystem");
   }
   Object? toJson();
@@ -68,11 +95,14 @@ sealed class CreateMessageParamsSystem {
 final class CreateMessageParamsSystemString extends CreateMessageParamsSystem {
   final String value;
   const CreateMessageParamsSystemString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class CreateMessageParamsSystemRequestTextBlock extends CreateMessageParamsSystem {
+final class CreateMessageParamsSystemRequestTextBlock
+    extends CreateMessageParamsSystem {
   final RequestTextBlock value;
   const CreateMessageParamsSystemRequestTextBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

@@ -19,12 +19,45 @@ Future<BetaSpendLimitIncreaseRequestSchema>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'retrieveBetaOrganizationsSpendLimitIncreaseRequests',
-          fromJsonRaw: (value) => BetaSpendLimitIncreaseRequestSchema.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaSpendLimitIncreaseRequestSchema.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Denies a pending spend limit increase request and records the request as denied. Denying an already-denied request is idempotent, while denying an approved request is rejected; the requester is emailed unless `suppress_notification` is set.
 ///
@@ -42,16 +75,50 @@ Future<BetaSpendLimitIncreaseRequestSchema>
           '/v1/organizations/spend_limit_increase_requests/${Uri.encodeComponent(spendLimitIncreaseRequestId.toString())}/deny?beta=true',
           config: config,
           body: {
-            'suppress_notification': SdkUtils.unwrapOptional(suppressNotification)
+            'suppress_notification':
+                SdkUtils.unwrapOptional(suppressNotification)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'denyBetaOrganizationsSpendLimitIncreaseRequests',
-          fromJsonRaw: (value) => BetaSpendLimitIncreaseRequestSchema.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaSpendLimitIncreaseRequestSchema.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Approves a pending spend limit increase request and creates a per-user spend limit for the requester. Supply `amount` as a non-negative integer decimal string in minor units; `period` defaults to the period the member was blocked on, and the requester is emailed unless `suppress_notification` is set.
 ///
@@ -76,16 +143,51 @@ Future<BetaApproveSpendLimitIncreaseRequestResponse>
           body: {
             'amount': amount,
             'period': SdkUtils.unwrapOptional(period),
-            'suppress_notification': SdkUtils.unwrapOptional(suppressNotification)
+            'suppress_notification':
+                SdkUtils.unwrapOptional(suppressNotification)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'approveBetaOrganizationsSpendLimitIncreaseRequests',
-          fromJsonRaw: (value) => BetaApproveSpendLimitIncreaseRequestResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaApproveSpendLimitIncreaseRequestResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists spend limit increase requests, ordered from most recent to oldest. Filter by request status or requester, and use the `page` cursor from a previous response to continue through the results; pending requests include a live `spend_summary`, while requests from former members are excluded.
 ///
@@ -96,7 +198,10 @@ Future<BetaApproveSpendLimitIncreaseRequestResponse>
 /// [page] Opaque cursor from a previous response's `next_page`.
 Future<BetaSpendLimitIncreaseRequestListResponse>
     listBetaOrganizationsSpendLimitIncreaseRequests(ClientConfig config,
-        {SdkOptional<List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?> status = const SdkOmitted(),
+        {SdkOptional<
+                List<
+                    ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?>
+            status = const SdkOmitted(),
         SdkOptional<List<String>?> actorIds = const SdkOmitted(),
         SdkOptional<String?> page = const SdkOmitted(),
         SdkOptional<int> limit = const SdkOmitted(),
@@ -109,20 +214,57 @@ Future<BetaSpendLimitIncreaseRequestListResponse>
           'GET', '/v1/organizations/spend_limit_increase_requests?beta=true',
           config: config,
           query: {
-            'status[]': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true),
-            'actor_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(actorIds), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true)
+            'status[]': SdkQueryValue(SdkUtils.unwrapOptional(status),
+                style: 'form', explode: true),
+            'actor_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(actorIds),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listBetaOrganizationsSpendLimitIncreaseRequests',
-          fromJsonRaw: (value) => BetaSpendLimitIncreaseRequestListResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaSpendLimitIncreaseRequestListResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// Lists spend limit increase requests, ordered from most recent to oldest. Filter by request status or requester, and use the `page` cursor from a previous response to continue through the results; pending requests include a live `spend_summary`, while requests from former members are excluded.
 ///
@@ -131,23 +273,76 @@ Future<BetaSpendLimitIncreaseRequestListResponse>
 /// [status] Filter by status. Omit to return all.
 /// [actorIds] Filter by requester, as `user_...` tagged IDs.
 /// [page] Opaque cursor from a previous response's `next_page`.
-Stream<BetaSpendLimitIncreaseRequestSchema> listBetaOrganizationsSpendLimitIncreaseRequestsPaginated(ClientConfig config, {List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>? status, List<String>? actorIds, String? page, int? limit, RequestOptions? requestOptions}) async* {
+Stream<BetaSpendLimitIncreaseRequestSchema>
+    listBetaOrganizationsSpendLimitIncreaseRequestsPaginated(
+        ClientConfig config,
+        {List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?
+            status,
+        List<String>? actorIds,
+        String? page,
+        int? limit,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsSpendLimitIncreaseRequests(config, status: status == null ? const SdkOmitted<List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?>() : SdkPresent<List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?>(status), actorIds: actorIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(actorIds), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsSpendLimitIncreaseRequests(
+        config,
+        status: status == null
+            ? const SdkOmitted<
+                List<
+                    ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?>()
+            : SdkPresent<
+                    List<
+                        ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?>(
+                status),
+        actorIds: actorIds == null
+            ? const SdkOmitted<List<String>?>()
+            : SdkPresent<List<String>?>(actorIds),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaSpendLimitIncreaseRequestListResponse, BetaSpendLimitIncreaseRequestSchema>> listBetaOrganizationsSpendLimitIncreaseRequestsPages(ClientConfig config, {List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>? status, List<String>? actorIds, String? page, int? limit, RequestOptions? requestOptions}) async* {
+Stream<
+        SdkPage<BetaSpendLimitIncreaseRequestListResponse,
+            BetaSpendLimitIncreaseRequestSchema>>
+    listBetaOrganizationsSpendLimitIncreaseRequestsPages(ClientConfig config,
+        {List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?
+            status,
+        List<String>? actorIds,
+        String? page,
+        int? limit,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsSpendLimitIncreaseRequests(config, status: status == null ? const SdkOmitted<List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?>() : SdkPresent<List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?>(status), actorIds: actorIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(actorIds), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsSpendLimitIncreaseRequests(
+        config,
+        status: status == null
+            ? const SdkOmitted<
+                List<
+                    ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?>()
+            : SdkPresent<
+                    List<
+                        ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?>(
+                status),
+        actorIds: actorIds == null
+            ? const SdkOmitted<List<String>?>()
+            : SdkPresent<List<String>?>(actorIds),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;

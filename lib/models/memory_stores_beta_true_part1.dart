@@ -8,40 +8,70 @@ part of 'memory_stores_beta_true.dart';
 class BetaManagedAgentsCreateMemoryStoreRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Human-readable name for the store. Required; 1–255 characters; no control characters. The mount-path slug under `/mnt/memory/` is derived from this name (lowercased, non-alphanumeric runs collapsed to a hyphen). Names need not be unique within a workspace.
   final String name;
+
   /// Free-text description of what the store contains, up to 1024 characters. Included in the agent's system prompt when the store is attached, so word it to be useful to the agent.
   final SdkOptional<String> description;
+
   /// Arbitrary key-value tags for your own bookkeeping (such as the end user a store belongs to). Up to 16 pairs; keys 1–64 characters; values up to 512 characters. Not visible to the agent.
   final SdkOptional<Map<String, String>> metadata;
 
-  const BetaManagedAgentsCreateMemoryStoreRequest({required this.name, this.description = const SdkOmitted(), this.metadata = const SdkOmitted()});
+  const BetaManagedAgentsCreateMemoryStoreRequest(
+      {required this.name,
+      this.description = const SdkOmitted(),
+      this.metadata = const SdkOmitted()});
 
-  BetaManagedAgentsCreateMemoryStoreRequest Function({String name, SdkOptional<String> description, SdkOptional<Map<String, String>> metadata}) get copyWith => _copyWith;
+  BetaManagedAgentsCreateMemoryStoreRequest Function(
+      {String name,
+      SdkOptional<String> description,
+      SdkOptional<Map<String, String>> metadata}) get copyWith => _copyWith;
 
-  BetaManagedAgentsCreateMemoryStoreRequest _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? metadata = sdkOmittedValue}) => BetaManagedAgentsCreateMemoryStoreRequest(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, String>>,
-  );
+  BetaManagedAgentsCreateMemoryStoreRequest _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue}) =>
+      BetaManagedAgentsCreateMemoryStoreRequest(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as SdkOptional<Map<String, String>>,
+      );
 
-  factory BetaManagedAgentsCreateMemoryStoreRequest.fromJson(Map<String, dynamic> json) => BetaManagedAgentsCreateMemoryStoreRequest(
-    name: (json['name'] as String?)!,
-    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
-    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsCreateMemoryStoreRequest.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsCreateMemoryStoreRequest(
+        name: (json['name'] as String?)!,
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
+            : const SdkOmitted(),
+        metadata: json['metadata'] != null
+            ? SdkPresent((json['metadata'] == null
+                ? null
+                : Map<String, dynamic>.from(json['metadata'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (description) {
-      SdkPresent<String>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (metadata) {
-      SdkPresent<Map<String, String>>(value: final value) => {'metadata': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        ...switch (description) {
+          SdkPresent<String>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (metadata) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'metadata': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class BetaManagedAgentsCreateMemoryStoreResponse {
@@ -49,57 +79,96 @@ sealed class BetaManagedAgentsCreateMemoryStoreResponse {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsCreateMemoryStoreResponse();
   factory BetaManagedAgentsCreateMemoryStoreResponse.fromJson(Object? json) {
-    try { return BetaManagedAgentsCreateMemoryStoreResponseBetaManagedAgentsMemoryStore(BetaManagedAgentsMemoryStore.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"memory_store"}.contains(json["type"])) { return UnknownBetaManagedAgentsCreateMemoryStoreResponse(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsCreateMemoryStoreResponse");
+    try {
+      return BetaManagedAgentsCreateMemoryStoreResponseBetaManagedAgentsMemoryStore(
+          BetaManagedAgentsMemoryStore.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"memory_store"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsCreateMemoryStoreResponse(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsCreateMemoryStoreResponse");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsCreateMemoryStoreResponseBetaManagedAgentsMemoryStore extends BetaManagedAgentsCreateMemoryStoreResponse {
+final class BetaManagedAgentsCreateMemoryStoreResponseBetaManagedAgentsMemoryStore
+    extends BetaManagedAgentsCreateMemoryStoreResponse {
   final BetaManagedAgentsMemoryStore value;
-  const BetaManagedAgentsCreateMemoryStoreResponseBetaManagedAgentsMemoryStore(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsCreateMemoryStoreResponseBetaManagedAgentsMemoryStore(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsCreateMemoryStoreResponse] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsCreateMemoryStoreResponse extends BetaManagedAgentsCreateMemoryStoreResponse {
+final class UnknownBetaManagedAgentsCreateMemoryStoreResponse
+    extends BetaManagedAgentsCreateMemoryStoreResponse {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsCreateMemoryStoreResponse(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// A page of `memory_store` results, ordered by `created_at` descending (newest first).
 class BetaManagedAgentsListMemoryStoresResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Memory stores on this page, newest first. Empty when there are no stores matching the filters.
   final SdkOptional<List<BetaManagedAgentsMemoryStore>> data;
+
   /// Opaque cursor for the next page (a `page_...` value). Pass as `page` on the next request. `null` when there are no more results.
   final SdkOptional<String?> nextPage;
 
-  const BetaManagedAgentsListMemoryStoresResponse({this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
+  const BetaManagedAgentsListMemoryStoresResponse(
+      {this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
 
-  BetaManagedAgentsListMemoryStoresResponse Function({SdkOptional<List<BetaManagedAgentsMemoryStore>> data, SdkOptional<String?> nextPage}) get copyWith => _copyWith;
+  BetaManagedAgentsListMemoryStoresResponse Function(
+      {SdkOptional<List<BetaManagedAgentsMemoryStore>> data,
+      SdkOptional<String?> nextPage}) get copyWith => _copyWith;
 
-  BetaManagedAgentsListMemoryStoresResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaManagedAgentsListMemoryStoresResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as SdkOptional<List<BetaManagedAgentsMemoryStore>>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as SdkOptional<String?>,
-  );
+  BetaManagedAgentsListMemoryStoresResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaManagedAgentsListMemoryStoresResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as SdkOptional<List<BetaManagedAgentsMemoryStore>>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as SdkOptional<String?>,
+      );
 
-  factory BetaManagedAgentsListMemoryStoresResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsListMemoryStoresResponse(
-    data: json['data'] != null ? SdkPresent(((json['data'] as List?)?.map((e) => BetaManagedAgentsMemoryStore.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    nextPage: json.containsKey('next_page') ? SdkPresent(json['next_page'] as String?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsListMemoryStoresResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsListMemoryStoresResponse(
+        data: json['data'] != null
+            ? SdkPresent(((json['data'] as List?)
+                ?.map((e) => BetaManagedAgentsMemoryStore.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        nextPage: json.containsKey('next_page')
+            ? SdkPresent(json['next_page'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (data) {
-      SdkPresent<List<BetaManagedAgentsMemoryStore>>(value: final value) => {'data': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPage) {
-      SdkPresent<String?>(value: final value) => {'next_page': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (data) {
+          SdkPresent<List<BetaManagedAgentsMemoryStore>>(value: final value) =>
+            {
+              'data': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPage) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

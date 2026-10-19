@@ -4,79 +4,131 @@
 part of 'shared_beta_request_web.dart';
 
 // shared_beta_request_web domain models (part 2)
-final class BetaRequestWebSearchResultLocationCitationTitleString extends BetaRequestWebSearchResultLocationCitationTitle {
+final class BetaRequestWebSearchResultLocationCitationTitleString
+    extends BetaRequestWebSearchResultLocationCitationTitle {
   final String value;
   const BetaRequestWebSearchResultLocationCitationTitleString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaRequestWebSearchResultLocationCitation` API schema.
 class BetaRequestWebSearchResultLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `cited_text` wire field.
   final String citedText;
+
   /// Required `string` value serialized in the `encrypted_index` wire field.
   final String encryptedIndex;
+
   /// Required API value serialized in the `title` wire field.
   final String? title;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestWebSearchResultLocationCitationType type_;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
-  const BetaRequestWebSearchResultLocationCitation({required this.citedText, required this.encryptedIndex, required this.title, required this.type_, required this.url});
+  const BetaRequestWebSearchResultLocationCitation(
+      {required this.citedText,
+      required this.encryptedIndex,
+      required this.title,
+      required this.type_,
+      required this.url});
 
-  BetaRequestWebSearchResultLocationCitation Function({String citedText, String encryptedIndex, String? title, BetaRequestWebSearchResultLocationCitationType type_, String url}) get copyWith => _copyWith;
+  BetaRequestWebSearchResultLocationCitation Function(
+      {String citedText,
+      String encryptedIndex,
+      String? title,
+      BetaRequestWebSearchResultLocationCitationType type_,
+      String url}) get copyWith => _copyWith;
 
-  BetaRequestWebSearchResultLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? encryptedIndex = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaRequestWebSearchResultLocationCitation(
-    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
-    encryptedIndex: identical(encryptedIndex, sdkOmittedValue) ? this.encryptedIndex : encryptedIndex as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestWebSearchResultLocationCitationType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BetaRequestWebSearchResultLocationCitation _copyWith(
+          {Object? citedText = sdkOmittedValue,
+          Object? encryptedIndex = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      BetaRequestWebSearchResultLocationCitation(
+        citedText: identical(citedText, sdkOmittedValue)
+            ? this.citedText
+            : citedText as String,
+        encryptedIndex: identical(encryptedIndex, sdkOmittedValue)
+            ? this.encryptedIndex
+            : encryptedIndex as String,
+        title:
+            identical(title, sdkOmittedValue) ? this.title : title as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestWebSearchResultLocationCitationType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BetaRequestWebSearchResultLocationCitation.fromJson(Map<String, dynamic> json) => BetaRequestWebSearchResultLocationCitation(
-    citedText: (json['cited_text'] as String?)!,
-    encryptedIndex: (json['encrypted_index'] as String?)!,
-    title: json.containsKey('title') ? json['title'] as String? : throw ArgumentError.value(null, 'title', 'Required property is missing'),
-    type_: (json['type'] != null ? BetaRequestWebSearchResultLocationCitationType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BetaRequestWebSearchResultLocationCitation.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestWebSearchResultLocationCitation(
+        citedText: (json['cited_text'] as String?)!,
+        encryptedIndex: (json['encrypted_index'] as String?)!,
+        title: json.containsKey('title')
+            ? json['title'] as String?
+            : throw ArgumentError.value(
+                null, 'title', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? BetaRequestWebSearchResultLocationCitationType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'cited_text': citedText,
-    'encrypted_index': encryptedIndex,
-    'title': title,
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'cited_text': citedText,
+        'encrypted_index': encryptedIndex,
+        'title': title,
+        'type': type_.toJson(),
+        'url': url,
+      };
 }
 
 sealed class BetaRequestWebSearchToolResultBlockCacheControl {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaRequestWebSearchToolResultBlockCacheControl();
-  factory BetaRequestWebSearchToolResultBlockCacheControl.fromJson(Object? json) {
-    try { return BetaRequestWebSearchToolResultBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestWebSearchToolResultBlockCacheControl(json); }
-    throw FormatException("No variant matched for BetaRequestWebSearchToolResultBlockCacheControl");
+  factory BetaRequestWebSearchToolResultBlockCacheControl.fromJson(
+      Object? json) {
+    try {
+      return BetaRequestWebSearchToolResultBlockCacheControlBetaCacheControlEphemeral(
+          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownBetaRequestWebSearchToolResultBlockCacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRequestWebSearchToolResultBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestWebSearchToolResultBlockCacheControlBetaCacheControlEphemeral extends BetaRequestWebSearchToolResultBlockCacheControl {
+final class BetaRequestWebSearchToolResultBlockCacheControlBetaCacheControlEphemeral
+    extends BetaRequestWebSearchToolResultBlockCacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaRequestWebSearchToolResultBlockCacheControlBetaCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestWebSearchToolResultBlockCacheControlBetaCacheControlEphemeral(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestWebSearchToolResultBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestWebSearchToolResultBlockCacheControl extends BetaRequestWebSearchToolResultBlockCacheControl {
+final class UnknownBetaRequestWebSearchToolResultBlockCacheControl
+    extends BetaRequestWebSearchToolResultBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestWebSearchToolResultBlockCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 sealed class BetaRequestWebSearchToolResultBlockContent {
@@ -85,76 +137,157 @@ sealed class BetaRequestWebSearchToolResultBlockContent {
   const BetaRequestWebSearchToolResultBlockContent();
   factory BetaRequestWebSearchToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaRequestWebSearchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchResultBlock(value); } } catch (_) {}
-      try { final value = BetaRequestWebSearchToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchToolResultError(value); } } catch (_) {}
+      try {
+        final value = BetaRequestWebSearchResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchResultBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestWebSearchToolResultError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchToolResultError(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchResultBlock(BetaRequestWebSearchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchToolResultError(BetaRequestWebSearchToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for BetaRequestWebSearchToolResultBlockContent");
+    try {
+      return BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchResultBlock(
+          BetaRequestWebSearchResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchToolResultError(
+          BetaRequestWebSearchToolResultError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for BetaRequestWebSearchToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchResultBlock extends BetaRequestWebSearchToolResultBlockContent {
+final class BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchResultBlock
+    extends BetaRequestWebSearchToolResultBlockContent {
   final BetaRequestWebSearchResultBlock value;
-  const BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchToolResultError extends BetaRequestWebSearchToolResultBlockContent {
+final class BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchToolResultError
+    extends BetaRequestWebSearchToolResultBlockContent {
   final BetaRequestWebSearchToolResultError value;
-  const BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchToolResultError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestWebSearchToolResultBlockContentBetaRequestWebSearchToolResultError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `BetaRequestWebSearchToolResultBlock` API schema.
 class BetaRequestWebSearchToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
+
   /// Optional API value serialized in the `caller` wire field.
   final SdkOptional<BetaRequestWebSearchToolResultBlockCaller> caller;
+
   /// Required API value serialized in the `content` wire field.
   final dynamic content;
+
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestWebSearchToolResultBlockType type_;
 
-  const BetaRequestWebSearchToolResultBlock({this.cacheControl = const SdkOmitted(), this.caller = const SdkOmitted(), required this.content, required this.toolUseId, required this.type_});
+  const BetaRequestWebSearchToolResultBlock(
+      {this.cacheControl = const SdkOmitted(),
+      this.caller = const SdkOmitted(),
+      required this.content,
+      required this.toolUseId,
+      required this.type_});
 
-  BetaRequestWebSearchToolResultBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<BetaRequestWebSearchToolResultBlockCaller> caller, dynamic content, String toolUseId, BetaRequestWebSearchToolResultBlockType type_}) get copyWith => _copyWith;
+  BetaRequestWebSearchToolResultBlock Function(
+      {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
+      SdkOptional<BetaRequestWebSearchToolResultBlockCaller> caller,
+      dynamic content,
+      String toolUseId,
+      BetaRequestWebSearchToolResultBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestWebSearchToolResultBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? caller = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestWebSearchToolResultBlock(
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-    caller: identical(caller, sdkOmittedValue) ? this.caller : caller as SdkOptional<BetaRequestWebSearchToolResultBlockCaller>,
-    content: identical(content, sdkOmittedValue) ? this.content : content as dynamic,
-    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestWebSearchToolResultBlockType,
-  );
+  BetaRequestWebSearchToolResultBlock _copyWith(
+          {Object? cacheControl = sdkOmittedValue,
+          Object? caller = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? toolUseId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestWebSearchToolResultBlock(
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+        caller: identical(caller, sdkOmittedValue)
+            ? this.caller
+            : caller as SdkOptional<BetaRequestWebSearchToolResultBlockCaller>,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as dynamic,
+        toolUseId: identical(toolUseId, sdkOmittedValue)
+            ? this.toolUseId
+            : toolUseId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestWebSearchToolResultBlockType,
+      );
 
-  factory BetaRequestWebSearchToolResultBlock.fromJson(Map<String, dynamic> json) => BetaRequestWebSearchToolResultBlock(
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    caller: json['caller'] != null ? SdkPresent((json['caller'] != null ? BetaRequestWebSearchToolResultBlockCaller.fromJson(json['caller']) : null)!) : const SdkOmitted(),
-    content: (SdkUtils.unionBranch(json['content'], [BetaRequestWebSearchToolResultError.fromJson]))!,
-    toolUseId: (json['tool_use_id'] as String?)!,
-    type_: (json['type'] != null ? BetaRequestWebSearchToolResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestWebSearchToolResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestWebSearchToolResultBlock(
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? BetaCacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        caller: json['caller'] != null
+            ? SdkPresent((json['caller'] != null
+                ? BetaRequestWebSearchToolResultBlockCaller.fromJson(
+                    json['caller'])
+                : null)!)
+            : const SdkOmitted(),
+        content: (SdkUtils.unionBranch(
+            json['content'], [BetaRequestWebSearchToolResultError.fromJson]))!,
+        toolUseId: (json['tool_use_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaRequestWebSearchToolResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (cacheControl) {
-      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (caller) {
-      SdkPresent<BetaRequestWebSearchToolResultBlockCaller>(value: final value) => {'caller': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'content': content,
-    'tool_use_id': toolUseId,
-    'type': type_.toJson(),
-  };
+        ...switch (cacheControl) {
+          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (caller) {
+          SdkPresent<BetaRequestWebSearchToolResultBlockCaller>(
+            value: final value
+          ) =>
+            {
+              'caller': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'content': content,
+        'tool_use_id': toolUseId,
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaRequestWebSearchToolResultBlockCaller {
@@ -163,69 +296,132 @@ sealed class BetaRequestWebSearchToolResultBlockCaller {
   const BetaRequestWebSearchToolResultBlockCaller();
   factory BetaRequestWebSearchToolResultBlockCaller.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaDirectCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestWebSearchToolResultBlockCallerBetaDirectCaller(value); } } catch (_) {}
-      try { final value = BetaServerToolCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller(value); } } catch (_) {}
-      try { final value = BetaServerToolCaller20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller20260120(value); } } catch (_) {}
+      try {
+        final value = BetaDirectCaller.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestWebSearchToolResultBlockCallerBetaDirectCaller(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaServerToolCaller.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaServerToolCaller20260120.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller20260120(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaRequestWebSearchToolResultBlockCallerBetaDirectCaller(BetaDirectCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller(BetaServerToolCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller20260120(BetaServerToolCaller20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"code_execution_20250825", "code_execution_20260120", "direct"}.contains(json["type"])) { return UnknownBetaRequestWebSearchToolResultBlockCaller(json); }
-    throw FormatException("No variant matched for BetaRequestWebSearchToolResultBlockCaller");
+    try {
+      return BetaRequestWebSearchToolResultBlockCallerBetaDirectCaller(
+          BetaDirectCaller.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller(
+          BetaServerToolCaller.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller20260120(
+          BetaServerToolCaller20260120.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"code_execution_20250825", "code_execution_20260120", "direct"}
+            .contains(json["type"])) {
+      return UnknownBetaRequestWebSearchToolResultBlockCaller(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRequestWebSearchToolResultBlockCaller");
   }
   Object? toJson();
 }
 
-final class BetaRequestWebSearchToolResultBlockCallerBetaDirectCaller extends BetaRequestWebSearchToolResultBlockCaller {
+final class BetaRequestWebSearchToolResultBlockCallerBetaDirectCaller
+    extends BetaRequestWebSearchToolResultBlockCaller {
   final BetaDirectCaller value;
   const BetaRequestWebSearchToolResultBlockCallerBetaDirectCaller(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller extends BetaRequestWebSearchToolResultBlockCaller {
+final class BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller
+    extends BetaRequestWebSearchToolResultBlockCaller {
   final BetaServerToolCaller value;
-  const BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller20260120 extends BetaRequestWebSearchToolResultBlockCaller {
+final class BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller20260120
+    extends BetaRequestWebSearchToolResultBlockCaller {
   final BetaServerToolCaller20260120 value;
-  const BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller20260120(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestWebSearchToolResultBlockCallerBetaServerToolCaller20260120(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestWebSearchToolResultBlockCaller] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestWebSearchToolResultBlockCaller extends BetaRequestWebSearchToolResultBlockCaller {
+final class UnknownBetaRequestWebSearchToolResultBlockCaller
+    extends BetaRequestWebSearchToolResultBlockCaller {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestWebSearchToolResultBlockCaller(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaRequestWebSearchToolResultError` API schema.
 class BetaRequestWebSearchToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `error_code` wire field.
   final BetaWebSearchToolResultErrorCode errorCode;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestWebSearchToolResultErrorType type_;
 
-  const BetaRequestWebSearchToolResultError({required this.errorCode, required this.type_});
+  const BetaRequestWebSearchToolResultError(
+      {required this.errorCode, required this.type_});
 
-  BetaRequestWebSearchToolResultError Function({BetaWebSearchToolResultErrorCode errorCode, BetaRequestWebSearchToolResultErrorType type_}) get copyWith => _copyWith;
+  BetaRequestWebSearchToolResultError Function(
+      {BetaWebSearchToolResultErrorCode errorCode,
+      BetaRequestWebSearchToolResultErrorType type_}) get copyWith => _copyWith;
 
-  BetaRequestWebSearchToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestWebSearchToolResultError(
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as BetaWebSearchToolResultErrorCode,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestWebSearchToolResultErrorType,
-  );
+  BetaRequestWebSearchToolResultError _copyWith(
+          {Object? errorCode = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestWebSearchToolResultError(
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as BetaWebSearchToolResultErrorCode,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestWebSearchToolResultErrorType,
+      );
 
-  factory BetaRequestWebSearchToolResultError.fromJson(Map<String, dynamic> json) => BetaRequestWebSearchToolResultError(
-    errorCode: (json['error_code'] != null ? BetaWebSearchToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
-    type_: (json['type'] != null ? BetaRequestWebSearchToolResultErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestWebSearchToolResultError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestWebSearchToolResultError(
+        errorCode: (json['error_code'] != null
+            ? BetaWebSearchToolResultErrorCode.fromJson(
+                json['error_code'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaRequestWebSearchToolResultErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'error_code': errorCode.toJson(),
-    'type': type_.toJson(),
-  };
+        'error_code': errorCode.toJson(),
+        'type': type_.toJson(),
+      };
 }

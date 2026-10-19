@@ -7,71 +7,162 @@ part of 'shared.dart';
 final class UsageServiceTierUsageServiceTierVariant0 extends UsageServiceTier {
   final UsageServiceTierVariant0 value;
   const UsageServiceTierUsageServiceTierVariant0(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `Usage` API schema.
 class Usage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Breakdown of cached tokens by TTL
   final CacheCreation? cacheCreation;
+
   /// The number of input tokens used to create the cache entry.
   final int? cacheCreationInputTokens;
+
   /// The number of input tokens read from the cache.
   final int? cacheReadInputTokens;
+
   /// The geographic region where inference was performed for this request.
   final String? inferenceGeo;
+
   /// The number of input tokens which were used.
   final int inputTokens;
+
   /// The number of output tokens which were used.
   final int outputTokens;
+
   /// Breakdown of output tokens by category. `output_tokens` remains the inclusive, authoritative total used for billing. This object provides a read-only decomposition for observability — for example, how many of the billed output tokens were spent on internal reasoning that may have been summarized before being returned to you.
   final OutputTokensDetails? outputTokensDetails;
+
   /// The number of server tool requests.
   final ServerToolUsage? serverToolUse;
+
   /// If the request used the priority, standard, or batch tier.
   final UsageServiceTierVariant0? serviceTier;
 
-  const Usage({required this.cacheCreation, required this.cacheCreationInputTokens, required this.cacheReadInputTokens, required this.inferenceGeo, required this.inputTokens, required this.outputTokens, required this.outputTokensDetails, required this.serverToolUse, required this.serviceTier});
+  const Usage(
+      {required this.cacheCreation,
+      required this.cacheCreationInputTokens,
+      required this.cacheReadInputTokens,
+      required this.inferenceGeo,
+      required this.inputTokens,
+      required this.outputTokens,
+      required this.outputTokensDetails,
+      required this.serverToolUse,
+      required this.serviceTier});
 
-  Usage Function({CacheCreation? cacheCreation, int? cacheCreationInputTokens, int? cacheReadInputTokens, String? inferenceGeo, int inputTokens, int outputTokens, OutputTokensDetails? outputTokensDetails, ServerToolUsage? serverToolUse, UsageServiceTierVariant0? serviceTier}) get copyWith => _copyWith;
+  Usage Function(
+      {CacheCreation? cacheCreation,
+      int? cacheCreationInputTokens,
+      int? cacheReadInputTokens,
+      String? inferenceGeo,
+      int inputTokens,
+      int outputTokens,
+      OutputTokensDetails? outputTokensDetails,
+      ServerToolUsage? serverToolUse,
+      UsageServiceTierVariant0? serviceTier}) get copyWith => _copyWith;
 
-  Usage _copyWith({Object? cacheCreation = sdkOmittedValue, Object? cacheCreationInputTokens = sdkOmittedValue, Object? cacheReadInputTokens = sdkOmittedValue, Object? inferenceGeo = sdkOmittedValue, Object? inputTokens = sdkOmittedValue, Object? outputTokens = sdkOmittedValue, Object? outputTokensDetails = sdkOmittedValue, Object? serverToolUse = sdkOmittedValue, Object? serviceTier = sdkOmittedValue}) => Usage(
-    cacheCreation: identical(cacheCreation, sdkOmittedValue) ? this.cacheCreation : cacheCreation as CacheCreation?,
-    cacheCreationInputTokens: identical(cacheCreationInputTokens, sdkOmittedValue) ? this.cacheCreationInputTokens : cacheCreationInputTokens as int?,
-    cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue) ? this.cacheReadInputTokens : cacheReadInputTokens as int?,
-    inferenceGeo: identical(inferenceGeo, sdkOmittedValue) ? this.inferenceGeo : inferenceGeo as String?,
-    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as int,
-    outputTokens: identical(outputTokens, sdkOmittedValue) ? this.outputTokens : outputTokens as int,
-    outputTokensDetails: identical(outputTokensDetails, sdkOmittedValue) ? this.outputTokensDetails : outputTokensDetails as OutputTokensDetails?,
-    serverToolUse: identical(serverToolUse, sdkOmittedValue) ? this.serverToolUse : serverToolUse as ServerToolUsage?,
-    serviceTier: identical(serviceTier, sdkOmittedValue) ? this.serviceTier : serviceTier as UsageServiceTierVariant0?,
-  );
+  Usage _copyWith(
+          {Object? cacheCreation = sdkOmittedValue,
+          Object? cacheCreationInputTokens = sdkOmittedValue,
+          Object? cacheReadInputTokens = sdkOmittedValue,
+          Object? inferenceGeo = sdkOmittedValue,
+          Object? inputTokens = sdkOmittedValue,
+          Object? outputTokens = sdkOmittedValue,
+          Object? outputTokensDetails = sdkOmittedValue,
+          Object? serverToolUse = sdkOmittedValue,
+          Object? serviceTier = sdkOmittedValue}) =>
+      Usage(
+        cacheCreation: identical(cacheCreation, sdkOmittedValue)
+            ? this.cacheCreation
+            : cacheCreation as CacheCreation?,
+        cacheCreationInputTokens:
+            identical(cacheCreationInputTokens, sdkOmittedValue)
+                ? this.cacheCreationInputTokens
+                : cacheCreationInputTokens as int?,
+        cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue)
+            ? this.cacheReadInputTokens
+            : cacheReadInputTokens as int?,
+        inferenceGeo: identical(inferenceGeo, sdkOmittedValue)
+            ? this.inferenceGeo
+            : inferenceGeo as String?,
+        inputTokens: identical(inputTokens, sdkOmittedValue)
+            ? this.inputTokens
+            : inputTokens as int,
+        outputTokens: identical(outputTokens, sdkOmittedValue)
+            ? this.outputTokens
+            : outputTokens as int,
+        outputTokensDetails: identical(outputTokensDetails, sdkOmittedValue)
+            ? this.outputTokensDetails
+            : outputTokensDetails as OutputTokensDetails?,
+        serverToolUse: identical(serverToolUse, sdkOmittedValue)
+            ? this.serverToolUse
+            : serverToolUse as ServerToolUsage?,
+        serviceTier: identical(serviceTier, sdkOmittedValue)
+            ? this.serviceTier
+            : serviceTier as UsageServiceTierVariant0?,
+      );
 
   factory Usage.fromJson(Map<String, dynamic> json) => Usage(
-    cacheCreation: json.containsKey('cache_creation') ? json['cache_creation'] != null ? CacheCreation.fromJson(json['cache_creation'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'cache_creation', 'Required property is missing'),
-    cacheCreationInputTokens: json.containsKey('cache_creation_input_tokens') ? (json['cache_creation_input_tokens'] as num?)?.toInt() : throw ArgumentError.value(null, 'cache_creation_input_tokens', 'Required property is missing'),
-    cacheReadInputTokens: json.containsKey('cache_read_input_tokens') ? (json['cache_read_input_tokens'] as num?)?.toInt() : throw ArgumentError.value(null, 'cache_read_input_tokens', 'Required property is missing'),
-    inferenceGeo: json.containsKey('inference_geo') ? json['inference_geo'] as String? : throw ArgumentError.value(null, 'inference_geo', 'Required property is missing'),
-    inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
-    outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
-    outputTokensDetails: json.containsKey('output_tokens_details') ? json['output_tokens_details'] != null ? OutputTokensDetails.fromJson(json['output_tokens_details'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'output_tokens_details', 'Required property is missing'),
-    serverToolUse: json.containsKey('server_tool_use') ? json['server_tool_use'] != null ? ServerToolUsage.fromJson(json['server_tool_use'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'server_tool_use', 'Required property is missing'),
-    serviceTier: json.containsKey('service_tier') ? json['service_tier'] != null ? UsageServiceTierVariant0.fromJson(json['service_tier'] as String) : null : throw ArgumentError.value(null, 'service_tier', 'Required property is missing'),
-  );
+        cacheCreation: json.containsKey('cache_creation')
+            ? json['cache_creation'] != null
+                ? CacheCreation.fromJson(
+                    json['cache_creation'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'cache_creation', 'Required property is missing'),
+        cacheCreationInputTokens:
+            json.containsKey('cache_creation_input_tokens')
+                ? (json['cache_creation_input_tokens'] as num?)?.toInt()
+                : throw ArgumentError.value(null, 'cache_creation_input_tokens',
+                    'Required property is missing'),
+        cacheReadInputTokens: json.containsKey('cache_read_input_tokens')
+            ? (json['cache_read_input_tokens'] as num?)?.toInt()
+            : throw ArgumentError.value(null, 'cache_read_input_tokens',
+                'Required property is missing'),
+        inferenceGeo: json.containsKey('inference_geo')
+            ? json['inference_geo'] as String?
+            : throw ArgumentError.value(
+                null, 'inference_geo', 'Required property is missing'),
+        inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
+        outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
+        outputTokensDetails: json.containsKey('output_tokens_details')
+            ? json['output_tokens_details'] != null
+                ? OutputTokensDetails.fromJson(
+                    json['output_tokens_details'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'output_tokens_details', 'Required property is missing'),
+        serverToolUse: json.containsKey('server_tool_use')
+            ? json['server_tool_use'] != null
+                ? ServerToolUsage.fromJson(
+                    json['server_tool_use'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'server_tool_use', 'Required property is missing'),
+        serviceTier: json.containsKey('service_tier')
+            ? json['service_tier'] != null
+                ? UsageServiceTierVariant0.fromJson(
+                    json['service_tier'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'service_tier', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'cache_creation': cacheCreation?.toJson(),
-    'cache_creation_input_tokens': cacheCreationInputTokens,
-    'cache_read_input_tokens': cacheReadInputTokens,
-    'inference_geo': inferenceGeo,
-    'input_tokens': inputTokens,
-    'output_tokens': outputTokens,
-    'output_tokens_details': outputTokensDetails?.toJson(),
-    'server_tool_use': serverToolUse?.toJson(),
-    'service_tier': serviceTier?.toJson(),
-  };
+        'cache_creation': cacheCreation?.toJson(),
+        'cache_creation_input_tokens': cacheCreationInputTokens,
+        'cache_read_input_tokens': cacheReadInputTokens,
+        'inference_geo': inferenceGeo,
+        'input_tokens': inputTokens,
+        'output_tokens': outputTokens,
+        'output_tokens_details': outputTokensDetails?.toJson(),
+        'server_tool_use': serverToolUse?.toJson(),
+        'service_tier': serviceTier?.toJson(),
+      };
 }
 
 sealed class UserLocationCity {
@@ -79,7 +170,9 @@ sealed class UserLocationCity {
   static const String constructionSurface = 'named';
   const UserLocationCity();
   factory UserLocationCity.fromJson(Object? json) {
-    if (json is String) { return UserLocationCityString(json); }
+    if (json is String) {
+      return UserLocationCityString(json);
+    }
     throw FormatException("No variant matched for UserLocationCity");
   }
   Object? toJson();
@@ -88,7 +181,8 @@ sealed class UserLocationCity {
 final class UserLocationCityString extends UserLocationCity {
   final String value;
   const UserLocationCityString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class UserLocationCountry {
@@ -96,7 +190,9 @@ sealed class UserLocationCountry {
   static const String constructionSurface = 'named';
   const UserLocationCountry();
   factory UserLocationCountry.fromJson(Object? json) {
-    if (json is String) { return UserLocationCountryString(json); }
+    if (json is String) {
+      return UserLocationCountryString(json);
+    }
     throw FormatException("No variant matched for UserLocationCountry");
   }
   Object? toJson();
@@ -105,7 +201,8 @@ sealed class UserLocationCountry {
 final class UserLocationCountryString extends UserLocationCountry {
   final String value;
   const UserLocationCountryString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class UserLocationRegion {
@@ -113,7 +210,9 @@ sealed class UserLocationRegion {
   static const String constructionSurface = 'named';
   const UserLocationRegion();
   factory UserLocationRegion.fromJson(Object? json) {
-    if (json is String) { return UserLocationRegionString(json); }
+    if (json is String) {
+      return UserLocationRegionString(json);
+    }
     throw FormatException("No variant matched for UserLocationRegion");
   }
   Object? toJson();
@@ -122,7 +221,8 @@ sealed class UserLocationRegion {
 final class UserLocationRegionString extends UserLocationRegion {
   final String value;
   const UserLocationRegionString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class UserLocationTimezone {
@@ -130,7 +230,9 @@ sealed class UserLocationTimezone {
   static const String constructionSurface = 'named';
   const UserLocationTimezone();
   factory UserLocationTimezone.fromJson(Object? json) {
-    if (json is String) { return UserLocationTimezoneString(json); }
+    if (json is String) {
+      return UserLocationTimezoneString(json);
+    }
     throw FormatException("No variant matched for UserLocationTimezone");
   }
   Object? toJson();
@@ -139,61 +241,111 @@ sealed class UserLocationTimezone {
 final class UserLocationTimezoneString extends UserLocationTimezone {
   final String value;
   const UserLocationTimezoneString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `UserLocation` API schema.
 class UserLocation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The city of the user.
   final SdkOptional<String?> city;
+
   /// The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
   final SdkOptional<String?> country;
+
   /// The region of the user.
   final SdkOptional<String?> region;
+
   /// The [IANA timezone](https://nodatime.org/TimeZones) of the user.
   final SdkOptional<String?> timezone;
+
   /// Required `string` value serialized in the `type` wire field.
   final UserLocationType type_;
 
-  const UserLocation({this.city = const SdkOmitted(), this.country = const SdkOmitted(), this.region = const SdkOmitted(), this.timezone = const SdkOmitted(), required this.type_});
+  const UserLocation(
+      {this.city = const SdkOmitted(),
+      this.country = const SdkOmitted(),
+      this.region = const SdkOmitted(),
+      this.timezone = const SdkOmitted(),
+      required this.type_});
 
-  UserLocation Function({SdkOptional<String?> city, SdkOptional<String?> country, SdkOptional<String?> region, SdkOptional<String?> timezone, UserLocationType type_}) get copyWith => _copyWith;
+  UserLocation Function(
+      {SdkOptional<String?> city,
+      SdkOptional<String?> country,
+      SdkOptional<String?> region,
+      SdkOptional<String?> timezone,
+      UserLocationType type_}) get copyWith => _copyWith;
 
-  UserLocation _copyWith({Object? city = sdkOmittedValue, Object? country = sdkOmittedValue, Object? region = sdkOmittedValue, Object? timezone = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => UserLocation(
-    city: identical(city, sdkOmittedValue) ? this.city : city as SdkOptional<String?>,
-    country: identical(country, sdkOmittedValue) ? this.country : country as SdkOptional<String?>,
-    region: identical(region, sdkOmittedValue) ? this.region : region as SdkOptional<String?>,
-    timezone: identical(timezone, sdkOmittedValue) ? this.timezone : timezone as SdkOptional<String?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as UserLocationType,
-  );
+  UserLocation _copyWith(
+          {Object? city = sdkOmittedValue,
+          Object? country = sdkOmittedValue,
+          Object? region = sdkOmittedValue,
+          Object? timezone = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      UserLocation(
+        city: identical(city, sdkOmittedValue)
+            ? this.city
+            : city as SdkOptional<String?>,
+        country: identical(country, sdkOmittedValue)
+            ? this.country
+            : country as SdkOptional<String?>,
+        region: identical(region, sdkOmittedValue)
+            ? this.region
+            : region as SdkOptional<String?>,
+        timezone: identical(timezone, sdkOmittedValue)
+            ? this.timezone
+            : timezone as SdkOptional<String?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as UserLocationType,
+      );
 
   factory UserLocation.fromJson(Map<String, dynamic> json) => UserLocation(
-    city: json.containsKey('city') ? SdkPresent(json['city'] as String?) : const SdkOmitted(),
-    country: json.containsKey('country') ? SdkPresent(json['country'] as String?) : const SdkOmitted(),
-    region: json.containsKey('region') ? SdkPresent(json['region'] as String?) : const SdkOmitted(),
-    timezone: json.containsKey('timezone') ? SdkPresent(json['timezone'] as String?) : const SdkOmitted(),
-    type_: (json['type'] != null ? UserLocationType.fromJson(json['type'] as String) : null)!,
-  );
+        city: json.containsKey('city')
+            ? SdkPresent(json['city'] as String?)
+            : const SdkOmitted(),
+        country: json.containsKey('country')
+            ? SdkPresent(json['country'] as String?)
+            : const SdkOmitted(),
+        region: json.containsKey('region')
+            ? SdkPresent(json['region'] as String?)
+            : const SdkOmitted(),
+        timezone: json.containsKey('timezone')
+            ? SdkPresent(json['timezone'] as String?)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? UserLocationType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (city) {
-      SdkPresent<String?>(value: final value) => {'city': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (country) {
-      SdkPresent<String?>(value: final value) => {'country': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (region) {
-      SdkPresent<String?>(value: final value) => {'region': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (timezone) {
-      SdkPresent<String?>(value: final value) => {'timezone': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (city) {
+          SdkPresent<String?>(value: final value) => {
+              'city': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (country) {
+          SdkPresent<String?>(value: final value) => {
+              'country': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (region) {
+          SdkPresent<String?>(value: final value) => {
+              'region': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (timezone) {
+          SdkPresent<String?>(value: final value) => {
+              'timezone': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

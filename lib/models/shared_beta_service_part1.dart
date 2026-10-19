@@ -9,237 +9,446 @@ sealed class BetaServiceAccountArchivedAt {
   static const String constructionSurface = 'named';
   const BetaServiceAccountArchivedAt();
   factory BetaServiceAccountArchivedAt.fromJson(Object? json) {
-    if (json is String) { return BetaServiceAccountArchivedAtString(json); }
-    throw FormatException("No variant matched for BetaServiceAccountArchivedAt");
+    if (json is String) {
+      return BetaServiceAccountArchivedAtString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaServiceAccountArchivedAt");
   }
   Object? toJson();
 }
 
-final class BetaServiceAccountArchivedAtString extends BetaServiceAccountArchivedAt {
+final class BetaServiceAccountArchivedAtString
+    extends BetaServiceAccountArchivedAt {
   final String value;
   const BetaServiceAccountArchivedAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Named non-human identity within the caller's organization. A service account is a pure identity: name + org. Authorization lives on whatever references it (federation rules).
 class BetaServiceAccount {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// If set, this service account is archived.
   final String? archivedAt;
+
   /// Tagged ID (`user_`/`svac_`) of the actor that archived this service account.
   final String? archivedByActorId;
+
   /// When this service account was created.
   final String createdAt;
+
   /// Tagged ID (`user_`/`svac_`) of the actor that created this service account.
   final String? createdByActorId;
+
   /// Optional free-text description.
   final String? description;
+
   /// Tagged ID of the service account.
   final String id;
+
   /// Admin-chosen slug identifier.
   final String name;
+
   /// Org-level role. A federation rule may only be created or retargeted to grant `org:admin` scope when this is `admin`. A rule granting `org:admin` whose target is later demoted to `developer` is rejected at token exchange. Rules granting `org:admin` are managed in the Console.
   final BetaServiceAccountOrganizationRole organizationRole;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaServiceAccountType type_;
+
   /// When this service account was last updated.
   final String updatedAt;
+
   /// Tagged ID (`user_`/`svac_`) of the actor that last updated this service account.
   final String? updatedByActorId;
 
-  const BetaServiceAccount({required this.archivedAt, required this.archivedByActorId, required this.createdAt, required this.createdByActorId, required this.description, required this.id, required this.name, required this.organizationRole, required this.type_, required this.updatedAt, required this.updatedByActorId});
+  const BetaServiceAccount(
+      {required this.archivedAt,
+      required this.archivedByActorId,
+      required this.createdAt,
+      required this.createdByActorId,
+      required this.description,
+      required this.id,
+      required this.name,
+      required this.organizationRole,
+      required this.type_,
+      required this.updatedAt,
+      required this.updatedByActorId});
 
-  BetaServiceAccount Function({String? archivedAt, String? archivedByActorId, String createdAt, String? createdByActorId, String? description, String id, String name, BetaServiceAccountOrganizationRole organizationRole, BetaServiceAccountType type_, String updatedAt, String? updatedByActorId}) get copyWith => _copyWith;
+  BetaServiceAccount Function(
+      {String? archivedAt,
+      String? archivedByActorId,
+      String createdAt,
+      String? createdByActorId,
+      String? description,
+      String id,
+      String name,
+      BetaServiceAccountOrganizationRole organizationRole,
+      BetaServiceAccountType type_,
+      String updatedAt,
+      String? updatedByActorId}) get copyWith => _copyWith;
 
-  BetaServiceAccount _copyWith({Object? archivedAt = sdkOmittedValue, Object? archivedByActorId = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? createdByActorId = sdkOmittedValue, Object? description = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? organizationRole = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? updatedByActorId = sdkOmittedValue}) => BetaServiceAccount(
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
-    archivedByActorId: identical(archivedByActorId, sdkOmittedValue) ? this.archivedByActorId : archivedByActorId as String?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    createdByActorId: identical(createdByActorId, sdkOmittedValue) ? this.createdByActorId : createdByActorId as String?,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    organizationRole: identical(organizationRole, sdkOmittedValue) ? this.organizationRole : organizationRole as BetaServiceAccountOrganizationRole,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaServiceAccountType,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    updatedByActorId: identical(updatedByActorId, sdkOmittedValue) ? this.updatedByActorId : updatedByActorId as String?,
-  );
+  BetaServiceAccount _copyWith(
+          {Object? archivedAt = sdkOmittedValue,
+          Object? archivedByActorId = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? createdByActorId = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? organizationRole = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? updatedByActorId = sdkOmittedValue}) =>
+      BetaServiceAccount(
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as String?,
+        archivedByActorId: identical(archivedByActorId, sdkOmittedValue)
+            ? this.archivedByActorId
+            : archivedByActorId as String?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        createdByActorId: identical(createdByActorId, sdkOmittedValue)
+            ? this.createdByActorId
+            : createdByActorId as String?,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        organizationRole: identical(organizationRole, sdkOmittedValue)
+            ? this.organizationRole
+            : organizationRole as BetaServiceAccountOrganizationRole,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaServiceAccountType,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        updatedByActorId: identical(updatedByActorId, sdkOmittedValue)
+            ? this.updatedByActorId
+            : updatedByActorId as String?,
+      );
 
-  factory BetaServiceAccount.fromJson(Map<String, dynamic> json) => BetaServiceAccount(
-    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
-    archivedByActorId: json.containsKey('archived_by_actor_id') ? json['archived_by_actor_id'] as String? : throw ArgumentError.value(null, 'archived_by_actor_id', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    createdByActorId: json.containsKey('created_by_actor_id') ? json['created_by_actor_id'] as String? : throw ArgumentError.value(null, 'created_by_actor_id', 'Required property is missing'),
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    id: (json['id'] as String?)!,
-    name: (json['name'] as String?)!,
-    organizationRole: (json['organization_role'] != null ? BetaServiceAccountOrganizationRole.fromJson(json['organization_role'] as String) : null)!,
-    type_: (json['type'] != null ? BetaServiceAccountType.fromJson(json['type'] as String) : null)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    updatedByActorId: json.containsKey('updated_by_actor_id') ? json['updated_by_actor_id'] as String? : throw ArgumentError.value(null, 'updated_by_actor_id', 'Required property is missing'),
-  );
+  factory BetaServiceAccount.fromJson(Map<String, dynamic> json) =>
+      BetaServiceAccount(
+        archivedAt: json.containsKey('archived_at')
+            ? json['archived_at'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_at', 'Required property is missing'),
+        archivedByActorId: json.containsKey('archived_by_actor_id')
+            ? json['archived_by_actor_id'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_by_actor_id', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        createdByActorId: json.containsKey('created_by_actor_id')
+            ? json['created_by_actor_id'] as String?
+            : throw ArgumentError.value(
+                null, 'created_by_actor_id', 'Required property is missing'),
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        id: (json['id'] as String?)!,
+        name: (json['name'] as String?)!,
+        organizationRole: (json['organization_role'] != null
+            ? BetaServiceAccountOrganizationRole.fromJson(
+                json['organization_role'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaServiceAccountType.fromJson(json['type'] as String)
+            : null)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        updatedByActorId: json.containsKey('updated_by_actor_id')
+            ? json['updated_by_actor_id'] as String?
+            : throw ArgumentError.value(
+                null, 'updated_by_actor_id', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'archived_at': archivedAt,
-    'archived_by_actor_id': archivedByActorId,
-    'created_at': createdAt,
-    'created_by_actor_id': createdByActorId,
-    'description': description,
-    'id': id,
-    'name': name,
-    'organization_role': organizationRole.toJson(),
-    'type': type_.toJson(),
-    'updated_at': updatedAt,
-    'updated_by_actor_id': updatedByActorId,
-  };
+        'archived_at': archivedAt,
+        'archived_by_actor_id': archivedByActorId,
+        'created_at': createdAt,
+        'created_by_actor_id': createdByActorId,
+        'description': description,
+        'id': id,
+        'name': name,
+        'organization_role': organizationRole.toJson(),
+        'type': type_.toJson(),
+        'updated_at': updatedAt,
+        'updated_by_actor_id': updatedByActorId,
+      };
 }
 
 /// Bind to a fixed service account by ID.
 class BetaServiceAccountTarget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Tagged ID of the service account to mint tokens for.
   final String serviceAccountId;
+
   /// Service account's display name at read time. Ignored on writes.
   final SdkOptional<String?> serviceAccountName;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaServiceAccountTargetType type_;
 
-  const BetaServiceAccountTarget({required this.serviceAccountId, this.serviceAccountName = const SdkOmitted(), required this.type_});
+  const BetaServiceAccountTarget(
+      {required this.serviceAccountId,
+      this.serviceAccountName = const SdkOmitted(),
+      required this.type_});
 
-  BetaServiceAccountTarget Function({String serviceAccountId, SdkOptional<String?> serviceAccountName, BetaServiceAccountTargetType type_}) get copyWith => _copyWith;
+  BetaServiceAccountTarget Function(
+      {String serviceAccountId,
+      SdkOptional<String?> serviceAccountName,
+      BetaServiceAccountTargetType type_}) get copyWith => _copyWith;
 
-  BetaServiceAccountTarget _copyWith({Object? serviceAccountId = sdkOmittedValue, Object? serviceAccountName = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaServiceAccountTarget(
-    serviceAccountId: identical(serviceAccountId, sdkOmittedValue) ? this.serviceAccountId : serviceAccountId as String,
-    serviceAccountName: identical(serviceAccountName, sdkOmittedValue) ? this.serviceAccountName : serviceAccountName as SdkOptional<String?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaServiceAccountTargetType,
-  );
+  BetaServiceAccountTarget _copyWith(
+          {Object? serviceAccountId = sdkOmittedValue,
+          Object? serviceAccountName = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaServiceAccountTarget(
+        serviceAccountId: identical(serviceAccountId, sdkOmittedValue)
+            ? this.serviceAccountId
+            : serviceAccountId as String,
+        serviceAccountName: identical(serviceAccountName, sdkOmittedValue)
+            ? this.serviceAccountName
+            : serviceAccountName as SdkOptional<String?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaServiceAccountTargetType,
+      );
 
-  factory BetaServiceAccountTarget.fromJson(Map<String, dynamic> json) => BetaServiceAccountTarget(
-    serviceAccountId: (json['service_account_id'] as String?)!,
-    serviceAccountName: json.containsKey('service_account_name') ? SdkPresent(json['service_account_name'] as String?) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaServiceAccountTargetType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaServiceAccountTarget.fromJson(Map<String, dynamic> json) =>
+      BetaServiceAccountTarget(
+        serviceAccountId: (json['service_account_id'] as String?)!,
+        serviceAccountName: json.containsKey('service_account_name')
+            ? SdkPresent(json['service_account_name'] as String?)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaServiceAccountTargetType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'service_account_id': serviceAccountId,
-    ...switch (serviceAccountName) {
-      SdkPresent<String?>(value: final value) => {'service_account_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        'service_account_id': serviceAccountId,
+        ...switch (serviceAccountName) {
+          SdkPresent<String?>(value: final value) => {
+              'service_account_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaServiceAccountWorkspaceMember` API schema.
 class BetaServiceAccountWorkspaceMember {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Tagged ID (`user_...`/`svac_...`) of the actor who created this membership.
   final String? createdByActorId;
+
   /// True when this is the implicit default-workspace membership every service account has when no explicit membership exists. Implicit memberships have role `workspace_user` and cannot be removed.
   final bool? implicit;
+
   /// Tagged service account ID (`svac_...`).
   final String serviceAccountId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaServiceAccountWorkspaceMemberType type_;
+
   /// Tagged workspace ID (`wrkspc_...`).
   final String workspaceId;
+
   /// Role of the service account in this workspace. Service accounts cannot hold the `workspace_billing` role.
   final BetaWorkspaceRoleSchema workspaceRole;
 
-  const BetaServiceAccountWorkspaceMember({required this.createdByActorId, required this.implicit, required this.serviceAccountId, required this.type_, required this.workspaceId, required this.workspaceRole});
+  const BetaServiceAccountWorkspaceMember(
+      {required this.createdByActorId,
+      required this.implicit,
+      required this.serviceAccountId,
+      required this.type_,
+      required this.workspaceId,
+      required this.workspaceRole});
 
-  BetaServiceAccountWorkspaceMember Function({String? createdByActorId, bool? implicit, String serviceAccountId, BetaServiceAccountWorkspaceMemberType type_, String workspaceId, BetaWorkspaceRoleSchema workspaceRole}) get copyWith => _copyWith;
+  BetaServiceAccountWorkspaceMember Function(
+      {String? createdByActorId,
+      bool? implicit,
+      String serviceAccountId,
+      BetaServiceAccountWorkspaceMemberType type_,
+      String workspaceId,
+      BetaWorkspaceRoleSchema workspaceRole}) get copyWith => _copyWith;
 
-  BetaServiceAccountWorkspaceMember _copyWith({Object? createdByActorId = sdkOmittedValue, Object? implicit = sdkOmittedValue, Object? serviceAccountId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? workspaceId = sdkOmittedValue, Object? workspaceRole = sdkOmittedValue}) => BetaServiceAccountWorkspaceMember(
-    createdByActorId: identical(createdByActorId, sdkOmittedValue) ? this.createdByActorId : createdByActorId as String?,
-    implicit: identical(implicit, sdkOmittedValue) ? this.implicit : implicit as bool?,
-    serviceAccountId: identical(serviceAccountId, sdkOmittedValue) ? this.serviceAccountId : serviceAccountId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaServiceAccountWorkspaceMemberType,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-    workspaceRole: identical(workspaceRole, sdkOmittedValue) ? this.workspaceRole : workspaceRole as BetaWorkspaceRoleSchema,
-  );
+  BetaServiceAccountWorkspaceMember _copyWith(
+          {Object? createdByActorId = sdkOmittedValue,
+          Object? implicit = sdkOmittedValue,
+          Object? serviceAccountId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue,
+          Object? workspaceRole = sdkOmittedValue}) =>
+      BetaServiceAccountWorkspaceMember(
+        createdByActorId: identical(createdByActorId, sdkOmittedValue)
+            ? this.createdByActorId
+            : createdByActorId as String?,
+        implicit: identical(implicit, sdkOmittedValue)
+            ? this.implicit
+            : implicit as bool?,
+        serviceAccountId: identical(serviceAccountId, sdkOmittedValue)
+            ? this.serviceAccountId
+            : serviceAccountId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaServiceAccountWorkspaceMemberType,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+        workspaceRole: identical(workspaceRole, sdkOmittedValue)
+            ? this.workspaceRole
+            : workspaceRole as BetaWorkspaceRoleSchema,
+      );
 
-  factory BetaServiceAccountWorkspaceMember.fromJson(Map<String, dynamic> json) => BetaServiceAccountWorkspaceMember(
-    createdByActorId: json.containsKey('created_by_actor_id') ? json['created_by_actor_id'] as String? : throw ArgumentError.value(null, 'created_by_actor_id', 'Required property is missing'),
-    implicit: json.containsKey('implicit') ? json['implicit'] as bool? : throw ArgumentError.value(null, 'implicit', 'Required property is missing'),
-    serviceAccountId: (json['service_account_id'] as String?)!,
-    type_: (json['type'] != null ? BetaServiceAccountWorkspaceMemberType.fromJson(json['type'] as String) : null)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-    workspaceRole: (json['workspace_role'] != null ? BetaWorkspaceRoleSchema.fromJson(json['workspace_role'] as String) : null)!,
-  );
+  factory BetaServiceAccountWorkspaceMember.fromJson(
+          Map<String, dynamic> json) =>
+      BetaServiceAccountWorkspaceMember(
+        createdByActorId: json.containsKey('created_by_actor_id')
+            ? json['created_by_actor_id'] as String?
+            : throw ArgumentError.value(
+                null, 'created_by_actor_id', 'Required property is missing'),
+        implicit: json.containsKey('implicit')
+            ? json['implicit'] as bool?
+            : throw ArgumentError.value(
+                null, 'implicit', 'Required property is missing'),
+        serviceAccountId: (json['service_account_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaServiceAccountWorkspaceMemberType.fromJson(
+                json['type'] as String)
+            : null)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+        workspaceRole: (json['workspace_role'] != null
+            ? BetaWorkspaceRoleSchema.fromJson(json['workspace_role'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'created_by_actor_id': createdByActorId,
-    'implicit': implicit,
-    'service_account_id': serviceAccountId,
-    'type': type_.toJson(),
-    'workspace_id': workspaceId,
-    'workspace_role': workspaceRole.toJson(),
-  };
+        'created_by_actor_id': createdByActorId,
+        'implicit': implicit,
+        'service_account_id': serviceAccountId,
+        'type': type_.toJson(),
+        'workspace_id': workspaceId,
+        'workspace_role': workspaceRole.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaServiceAccountWorkspaceMemberDeleteResponse` API schema.
 class BetaServiceAccountWorkspaceMemberDeleteResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Tagged service account ID (`svac_...`) named in the delete request. Removal is idempotent; see the endpoint description for the implicit-membership no-op.
   final String serviceAccountId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaServiceAccountWorkspaceMemberDeleteResponseType type_;
+
   /// Tagged workspace ID (`wrkspc_...`) named in the delete request.
   final String workspaceId;
 
-  const BetaServiceAccountWorkspaceMemberDeleteResponse({required this.serviceAccountId, required this.type_, required this.workspaceId});
+  const BetaServiceAccountWorkspaceMemberDeleteResponse(
+      {required this.serviceAccountId,
+      required this.type_,
+      required this.workspaceId});
 
-  BetaServiceAccountWorkspaceMemberDeleteResponse Function({String serviceAccountId, BetaServiceAccountWorkspaceMemberDeleteResponseType type_, String workspaceId}) get copyWith => _copyWith;
+  BetaServiceAccountWorkspaceMemberDeleteResponse Function(
+      {String serviceAccountId,
+      BetaServiceAccountWorkspaceMemberDeleteResponseType type_,
+      String workspaceId}) get copyWith => _copyWith;
 
-  BetaServiceAccountWorkspaceMemberDeleteResponse _copyWith({Object? serviceAccountId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaServiceAccountWorkspaceMemberDeleteResponse(
-    serviceAccountId: identical(serviceAccountId, sdkOmittedValue) ? this.serviceAccountId : serviceAccountId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaServiceAccountWorkspaceMemberDeleteResponseType,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaServiceAccountWorkspaceMemberDeleteResponse _copyWith(
+          {Object? serviceAccountId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaServiceAccountWorkspaceMemberDeleteResponse(
+        serviceAccountId: identical(serviceAccountId, sdkOmittedValue)
+            ? this.serviceAccountId
+            : serviceAccountId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaServiceAccountWorkspaceMemberDeleteResponseType,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaServiceAccountWorkspaceMemberDeleteResponse.fromJson(Map<String, dynamic> json) => BetaServiceAccountWorkspaceMemberDeleteResponse(
-    serviceAccountId: (json['service_account_id'] as String?)!,
-    type_: (json['type'] != null ? BetaServiceAccountWorkspaceMemberDeleteResponseType.fromJson(json['type'] as String) : null)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaServiceAccountWorkspaceMemberDeleteResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaServiceAccountWorkspaceMemberDeleteResponse(
+        serviceAccountId: (json['service_account_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaServiceAccountWorkspaceMemberDeleteResponseType.fromJson(
+                json['type'] as String)
+            : null)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'service_account_id': serviceAccountId,
-    'type': type_.toJson(),
-    'workspace_id': workspaceId,
-  };
+        'service_account_id': serviceAccountId,
+        'type': type_.toJson(),
+        'workspace_id': workspaceId,
+      };
 }
 
 /// Typed representation of the `BetaServiceAccountWorkspaceMemberListResponse` API schema.
 class BetaServiceAccountWorkspaceMemberListResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `data` wire field.
   final List<BetaServiceAccountWorkspaceMember> data;
+
   /// Opaque cursor for the next page, or null if no more results.
   final String? nextPage;
 
-  const BetaServiceAccountWorkspaceMemberListResponse({required this.data, required this.nextPage});
+  const BetaServiceAccountWorkspaceMemberListResponse(
+      {required this.data, required this.nextPage});
 
-  BetaServiceAccountWorkspaceMemberListResponse Function({List<BetaServiceAccountWorkspaceMember> data, String? nextPage}) get copyWith => _copyWith;
+  BetaServiceAccountWorkspaceMemberListResponse Function(
+      {List<BetaServiceAccountWorkspaceMember> data,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaServiceAccountWorkspaceMemberListResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaServiceAccountWorkspaceMemberListResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaServiceAccountWorkspaceMember>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaServiceAccountWorkspaceMemberListResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaServiceAccountWorkspaceMemberListResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaServiceAccountWorkspaceMember>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaServiceAccountWorkspaceMemberListResponse.fromJson(Map<String, dynamic> json) => BetaServiceAccountWorkspaceMemberListResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaServiceAccountWorkspaceMember.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  );
+  factory BetaServiceAccountWorkspaceMemberListResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaServiceAccountWorkspaceMemberListResponse(
+        data: ((json['data'] as List?)
+            ?.map((e) => BetaServiceAccountWorkspaceMember.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        nextPage: json.containsKey('next_page')
+            ? json['next_page'] as String?
+            : throw ArgumentError.value(
+                null, 'next_page', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'next_page': nextPage,
+      };
 }

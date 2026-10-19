@@ -9,16 +9,21 @@ sealed class BetaManagedAgentsUpdateAgentParamsDescription {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsUpdateAgentParamsDescription();
   factory BetaManagedAgentsUpdateAgentParamsDescription.fromJson(Object? json) {
-    if (json is String) { return BetaManagedAgentsUpdateAgentParamsDescriptionString(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsUpdateAgentParamsDescription");
+    if (json is String) {
+      return BetaManagedAgentsUpdateAgentParamsDescriptionString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsUpdateAgentParamsDescription");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsUpdateAgentParamsDescriptionString extends BetaManagedAgentsUpdateAgentParamsDescription {
+final class BetaManagedAgentsUpdateAgentParamsDescriptionString
+    extends BetaManagedAgentsUpdateAgentParamsDescription {
   final String value;
   const BetaManagedAgentsUpdateAgentParamsDescriptionString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BetaManagedAgentsUpdateAgentParamsSystem {
@@ -26,113 +31,244 @@ sealed class BetaManagedAgentsUpdateAgentParamsSystem {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsUpdateAgentParamsSystem();
   factory BetaManagedAgentsUpdateAgentParamsSystem.fromJson(Object? json) {
-    if (json is String) { return BetaManagedAgentsUpdateAgentParamsSystemString(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsUpdateAgentParamsSystem");
+    if (json is String) {
+      return BetaManagedAgentsUpdateAgentParamsSystemString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsUpdateAgentParamsSystem");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsUpdateAgentParamsSystemString extends BetaManagedAgentsUpdateAgentParamsSystem {
+final class BetaManagedAgentsUpdateAgentParamsSystemString
+    extends BetaManagedAgentsUpdateAgentParamsSystem {
   final String value;
   const BetaManagedAgentsUpdateAgentParamsSystemString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Request parameters for updating an `agent`. Omit a field to preserve its current value.
 class BetaManagedAgentsUpdateAgentParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The agent's current version, used to prevent concurrent overwrites. Obtain this value from a create or retrieve response. Must be at least 1 if specified. When supplied, the request fails if it does not match the server's current version; omit to apply the update unconditionally.
   final SdkOptional<int> version;
+
   /// Human-readable name. Must be non-empty. Omit to preserve. Cannot be cleared.
   final SdkOptional<String> name;
+
   /// Description. Omit to preserve; send empty string or null to clear.
   final SdkOptional<String?> description;
+
   /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
   final SdkOptional<BetaManagedAgentsModelParams> model;
+
   /// System prompt. Omit to preserve; send empty string or null to clear.
   final SdkOptional<String?> system;
+
   /// Tool configurations available to the agent. Full replacement. Omit to preserve; send empty array or null to clear. Maximum of 128 tools across all toolsets allowed.
   final SdkOptional<List<BetaManagedAgentsAgentToolParams>?> tools;
+
   /// MCP servers. Full replacement. Omit to preserve; send empty array or `null` to clear. Names must be unique. Maximum 20. Every server must be referenced by an `mcp_toolset` in the agent's resulting `tools`; unreferenced servers are rejected. See the [MCP connector guide](https://platform.claude.com/docs/en/managed-agents/mcp-connector).
   final SdkOptional<List<BetaManagedAgentsMCPServerParams>?> mcpServers;
+
   /// Skills. Full replacement. Omit to preserve; send empty array or null to clear.
   final SdkOptional<List<BetaManagedAgentsSkillParams>?> skills;
+
   /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
   final SdkOptional<Map<String, String>?> metadata;
+
   /// Multiagent orchestration configuration. Full replacement. Omit to preserve; send null to clear.
   final SdkOptional<BetaManagedAgentsMultiagentParams?> multiagent;
 
-  const BetaManagedAgentsUpdateAgentParams({this.version = const SdkOmitted(), this.name = const SdkOmitted(), this.description = const SdkOmitted(), this.model = const SdkOmitted(), this.system = const SdkOmitted(), this.tools = const SdkOmitted(), this.mcpServers = const SdkOmitted(), this.skills = const SdkOmitted(), this.metadata = const SdkOmitted(), this.multiagent = const SdkOmitted()});
+  const BetaManagedAgentsUpdateAgentParams(
+      {this.version = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.model = const SdkOmitted(),
+      this.system = const SdkOmitted(),
+      this.tools = const SdkOmitted(),
+      this.mcpServers = const SdkOmitted(),
+      this.skills = const SdkOmitted(),
+      this.metadata = const SdkOmitted(),
+      this.multiagent = const SdkOmitted()});
 
-  BetaManagedAgentsUpdateAgentParams Function({SdkOptional<int> version, SdkOptional<String> name, SdkOptional<String?> description, SdkOptional<BetaManagedAgentsModelParams> model, SdkOptional<String?> system, SdkOptional<List<BetaManagedAgentsAgentToolParams>?> tools, SdkOptional<List<BetaManagedAgentsMCPServerParams>?> mcpServers, SdkOptional<List<BetaManagedAgentsSkillParams>?> skills, SdkOptional<Map<String, String>?> metadata, SdkOptional<BetaManagedAgentsMultiagentParams?> multiagent}) get copyWith => _copyWith;
+  BetaManagedAgentsUpdateAgentParams Function(
+          {SdkOptional<int> version,
+          SdkOptional<String> name,
+          SdkOptional<String?> description,
+          SdkOptional<BetaManagedAgentsModelParams> model,
+          SdkOptional<String?> system,
+          SdkOptional<List<BetaManagedAgentsAgentToolParams>?> tools,
+          SdkOptional<List<BetaManagedAgentsMCPServerParams>?> mcpServers,
+          SdkOptional<List<BetaManagedAgentsSkillParams>?> skills,
+          SdkOptional<Map<String, String>?> metadata,
+          SdkOptional<BetaManagedAgentsMultiagentParams?> multiagent})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsUpdateAgentParams _copyWith({Object? version = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? model = sdkOmittedValue, Object? system = sdkOmittedValue, Object? tools = sdkOmittedValue, Object? mcpServers = sdkOmittedValue, Object? skills = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? multiagent = sdkOmittedValue}) => BetaManagedAgentsUpdateAgentParams(
-    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<int>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    model: identical(model, sdkOmittedValue) ? this.model : model as SdkOptional<BetaManagedAgentsModelParams>,
-    system: identical(system, sdkOmittedValue) ? this.system : system as SdkOptional<String?>,
-    tools: identical(tools, sdkOmittedValue) ? this.tools : tools as SdkOptional<List<BetaManagedAgentsAgentToolParams>?>,
-    mcpServers: identical(mcpServers, sdkOmittedValue) ? this.mcpServers : mcpServers as SdkOptional<List<BetaManagedAgentsMCPServerParams>?>,
-    skills: identical(skills, sdkOmittedValue) ? this.skills : skills as SdkOptional<List<BetaManagedAgentsSkillParams>?>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, String>?>,
-    multiagent: identical(multiagent, sdkOmittedValue) ? this.multiagent : multiagent as SdkOptional<BetaManagedAgentsMultiagentParams?>,
-  );
+  BetaManagedAgentsUpdateAgentParams _copyWith(
+          {Object? version = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? model = sdkOmittedValue,
+          Object? system = sdkOmittedValue,
+          Object? tools = sdkOmittedValue,
+          Object? mcpServers = sdkOmittedValue,
+          Object? skills = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue,
+          Object? multiagent = sdkOmittedValue}) =>
+      BetaManagedAgentsUpdateAgentParams(
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as SdkOptional<int>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        model: identical(model, sdkOmittedValue)
+            ? this.model
+            : model as SdkOptional<BetaManagedAgentsModelParams>,
+        system: identical(system, sdkOmittedValue)
+            ? this.system
+            : system as SdkOptional<String?>,
+        tools: identical(tools, sdkOmittedValue)
+            ? this.tools
+            : tools as SdkOptional<List<BetaManagedAgentsAgentToolParams>?>,
+        mcpServers: identical(mcpServers, sdkOmittedValue)
+            ? this.mcpServers
+            : mcpServers
+                as SdkOptional<List<BetaManagedAgentsMCPServerParams>?>,
+        skills: identical(skills, sdkOmittedValue)
+            ? this.skills
+            : skills as SdkOptional<List<BetaManagedAgentsSkillParams>?>,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as SdkOptional<Map<String, String>?>,
+        multiagent: identical(multiagent, sdkOmittedValue)
+            ? this.multiagent
+            : multiagent as SdkOptional<BetaManagedAgentsMultiagentParams?>,
+      );
 
-  factory BetaManagedAgentsUpdateAgentParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUpdateAgentParams(
-    version: json['version'] != null ? SdkPresent(((json['version'] as num?)?.toInt())!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    model: json['model'] != null ? SdkPresent((json['model'] != null ? BetaManagedAgentsModelParams.fromJson(json['model']) : null)!) : const SdkOmitted(),
-    system: json.containsKey('system') ? SdkPresent(json['system'] as String?) : const SdkOmitted(),
-    tools: json.containsKey('tools') ? SdkPresent((json['tools'] as List?)?.map((e) => BetaManagedAgentsAgentToolParams.fromJson(e)).toList()) : const SdkOmitted(),
-    mcpServers: json.containsKey('mcp_servers') ? SdkPresent((json['mcp_servers'] as List?)?.map((e) => BetaManagedAgentsMCPServerParams.fromJson(e)).toList()) : const SdkOmitted(),
-    skills: json.containsKey('skills') ? SdkPresent((json['skills'] as List?)?.map((e) => BetaManagedAgentsSkillParams.fromJson(e)).toList()) : const SdkOmitted(),
-    metadata: json.containsKey('metadata') ? SdkPresent(json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String))) : const SdkOmitted(),
-    multiagent: json.containsKey('multiagent') ? SdkPresent(json['multiagent'] != null ? BetaManagedAgentsMultiagentParams.fromJson(json['multiagent']) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsUpdateAgentParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUpdateAgentParams(
+        version: json['version'] != null
+            ? SdkPresent(((json['version'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        model: json['model'] != null
+            ? SdkPresent((json['model'] != null
+                ? BetaManagedAgentsModelParams.fromJson(json['model'])
+                : null)!)
+            : const SdkOmitted(),
+        system: json.containsKey('system')
+            ? SdkPresent(json['system'] as String?)
+            : const SdkOmitted(),
+        tools: json.containsKey('tools')
+            ? SdkPresent((json['tools'] as List?)
+                ?.map((e) => BetaManagedAgentsAgentToolParams.fromJson(e))
+                .toList())
+            : const SdkOmitted(),
+        mcpServers: json.containsKey('mcp_servers')
+            ? SdkPresent((json['mcp_servers'] as List?)
+                ?.map((e) => BetaManagedAgentsMCPServerParams.fromJson(e))
+                .toList())
+            : const SdkOmitted(),
+        skills: json.containsKey('skills')
+            ? SdkPresent((json['skills'] as List?)
+                ?.map((e) => BetaManagedAgentsSkillParams.fromJson(e))
+                .toList())
+            : const SdkOmitted(),
+        metadata: json.containsKey('metadata')
+            ? SdkPresent(json['metadata'] == null
+                ? null
+                : Map<String, dynamic>.from(json['metadata'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))
+            : const SdkOmitted(),
+        multiagent: json.containsKey('multiagent')
+            ? SdkPresent(json['multiagent'] != null
+                ? BetaManagedAgentsMultiagentParams.fromJson(json['multiagent'])
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (version) {
-      SdkPresent<int>(value: final value) => {'version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (model) {
-      SdkPresent<BetaManagedAgentsModelParams>(value: final value) => {'model': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (system) {
-      SdkPresent<String?>(value: final value) => {'system': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (tools) {
-      SdkPresent<List<BetaManagedAgentsAgentToolParams>?>(value: final value) => {'tools': value?.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (mcpServers) {
-      SdkPresent<List<BetaManagedAgentsMCPServerParams>?>(value: final value) => {'mcp_servers': value?.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (skills) {
-      SdkPresent<List<BetaManagedAgentsSkillParams>?>(value: final value) => {'skills': value?.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (metadata) {
-      SdkPresent<Map<String, String>?>(value: final value) => {'metadata': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (multiagent) {
-      SdkPresent<BetaManagedAgentsMultiagentParams?>(value: final value) => {'multiagent': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (version) {
+          SdkPresent<int>(value: final value) => {
+              'version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (model) {
+          SdkPresent<BetaManagedAgentsModelParams>(value: final value) => {
+              'model': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (system) {
+          SdkPresent<String?>(value: final value) => {
+              'system': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (tools) {
+          SdkPresent<List<BetaManagedAgentsAgentToolParams>?>(
+            value: final value
+          ) =>
+            {
+              'tools': value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (mcpServers) {
+          SdkPresent<List<BetaManagedAgentsMCPServerParams>?>(
+            value: final value
+          ) =>
+            {
+              'mcp_servers': value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (skills) {
+          SdkPresent<List<BetaManagedAgentsSkillParams>?>(value: final value) =>
+            {
+              'skills': value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (metadata) {
+          SdkPresent<Map<String, String>?>(value: final value) => {
+              'metadata': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (multiagent) {
+          SdkPresent<BetaManagedAgentsMultiagentParams?>(value: final value) =>
+            {
+              'multiagent': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -8,101 +8,162 @@ part of 'shared_container.dart';
 class Container {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The time at which the container will expire.
   final String expiresAt;
+
   /// Identifier for the container used in this request
   final String id;
+
   /// Skills loaded in the container
   final List<ContainerSkill>? skills;
 
-  const Container({required this.expiresAt, required this.id, required this.skills});
+  const Container(
+      {required this.expiresAt, required this.id, required this.skills});
 
-  Container Function({String expiresAt, String id, List<ContainerSkill>? skills}) get copyWith => _copyWith;
+  Container Function(
+      {String expiresAt,
+      String id,
+      List<ContainerSkill>? skills}) get copyWith => _copyWith;
 
-  Container _copyWith({Object? expiresAt = sdkOmittedValue, Object? id = sdkOmittedValue, Object? skills = sdkOmittedValue}) => Container(
-    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    skills: identical(skills, sdkOmittedValue) ? this.skills : skills as List<ContainerSkill>?,
-  );
+  Container _copyWith(
+          {Object? expiresAt = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? skills = sdkOmittedValue}) =>
+      Container(
+        expiresAt: identical(expiresAt, sdkOmittedValue)
+            ? this.expiresAt
+            : expiresAt as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        skills: identical(skills, sdkOmittedValue)
+            ? this.skills
+            : skills as List<ContainerSkill>?,
+      );
 
   factory Container.fromJson(Map<String, dynamic> json) => Container(
-    expiresAt: (json['expires_at'] as String?)!,
-    id: (json['id'] as String?)!,
-    skills: json.containsKey('skills') ? (json['skills'] as List?)?.map((e) => ContainerSkill.fromJson(e as Map<String, dynamic>)).toList() : throw ArgumentError.value(null, 'skills', 'Required property is missing'),
-  );
+        expiresAt: (json['expires_at'] as String?)!,
+        id: (json['id'] as String?)!,
+        skills: json.containsKey('skills')
+            ? (json['skills'] as List?)
+                ?.map((e) => ContainerSkill.fromJson(e as Map<String, dynamic>))
+                .toList()
+            : throw ArgumentError.value(
+                null, 'skills', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'expires_at': expiresAt,
-    'id': id,
-    'skills': skills?.map((item) => item.toJson()).toList(),
-  };
+        'expires_at': expiresAt,
+        'id': id,
+        'skills': skills?.map((item) => item.toJson()).toList(),
+      };
 }
 
 /// Container parameters with skills to be loaded.
 class ContainerParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Container id
   final SdkOptional<String?> id;
+
   /// List of skills to load in the container
   final SdkOptional<List<SkillParams>?> skills;
 
-  const ContainerParams({this.id = const SdkOmitted(), this.skills = const SdkOmitted()});
+  const ContainerParams(
+      {this.id = const SdkOmitted(), this.skills = const SdkOmitted()});
 
-  ContainerParams Function({SdkOptional<String?> id, SdkOptional<List<SkillParams>?> skills}) get copyWith => _copyWith;
+  ContainerParams Function(
+      {SdkOptional<String?> id,
+      SdkOptional<List<SkillParams>?> skills}) get copyWith => _copyWith;
 
-  ContainerParams _copyWith({Object? id = sdkOmittedValue, Object? skills = sdkOmittedValue}) => ContainerParams(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<String?>,
-    skills: identical(skills, sdkOmittedValue) ? this.skills : skills as SdkOptional<List<SkillParams>?>,
-  );
+  ContainerParams _copyWith(
+          {Object? id = sdkOmittedValue, Object? skills = sdkOmittedValue}) =>
+      ContainerParams(
+        id: identical(id, sdkOmittedValue)
+            ? this.id
+            : id as SdkOptional<String?>,
+        skills: identical(skills, sdkOmittedValue)
+            ? this.skills
+            : skills as SdkOptional<List<SkillParams>?>,
+      );
 
-  factory ContainerParams.fromJson(Map<String, dynamic> json) => ContainerParams(
-    id: json.containsKey('id') ? SdkPresent(json['id'] as String?) : const SdkOmitted(),
-    skills: json.containsKey('skills') ? SdkPresent((json['skills'] as List?)?.map((e) => SkillParams.fromJson(e as Map<String, dynamic>)).toList()) : const SdkOmitted(),
-  );
+  factory ContainerParams.fromJson(Map<String, dynamic> json) =>
+      ContainerParams(
+        id: json.containsKey('id')
+            ? SdkPresent(json['id'] as String?)
+            : const SdkOmitted(),
+        skills: json.containsKey('skills')
+            ? SdkPresent((json['skills'] as List?)
+                ?.map((e) => SkillParams.fromJson(e as Map<String, dynamic>))
+                .toList())
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<String?>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (skills) {
-      SdkPresent<List<SkillParams>?>(value: final value) => {'skills': value?.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<String?>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (skills) {
+          SdkPresent<List<SkillParams>?>(value: final value) => {
+              'skills': value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A skill that was loaded in a container (response model).
 class ContainerSkill {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Skill ID
   final String skillId;
+
   /// Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
   final ContainerSkillType type_;
+
   /// The resolved version: a skill version ID for custom skills.
   final String version;
 
-  const ContainerSkill({required this.skillId, required this.type_, required this.version});
+  const ContainerSkill(
+      {required this.skillId, required this.type_, required this.version});
 
-  ContainerSkill Function({String skillId, ContainerSkillType type_, String version}) get copyWith => _copyWith;
+  ContainerSkill Function(
+      {String skillId,
+      ContainerSkillType type_,
+      String version}) get copyWith => _copyWith;
 
-  ContainerSkill _copyWith({Object? skillId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? version = sdkOmittedValue}) => ContainerSkill(
-    skillId: identical(skillId, sdkOmittedValue) ? this.skillId : skillId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ContainerSkillType,
-    version: identical(version, sdkOmittedValue) ? this.version : version as String,
-  );
+  ContainerSkill _copyWith(
+          {Object? skillId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? version = sdkOmittedValue}) =>
+      ContainerSkill(
+        skillId: identical(skillId, sdkOmittedValue)
+            ? this.skillId
+            : skillId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ContainerSkillType,
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as String,
+      );
 
   factory ContainerSkill.fromJson(Map<String, dynamic> json) => ContainerSkill(
-    skillId: (json['skill_id'] as String?)!,
-    type_: (json['type'] != null ? ContainerSkillType.fromJson(json['type'] as String) : null)!,
-    version: (json['version'] as String?)!,
-  );
+        skillId: (json['skill_id'] as String?)!,
+        type_: (json['type'] != null
+            ? ContainerSkillType.fromJson(json['type'] as String)
+            : null)!,
+        version: (json['version'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'skill_id': skillId,
-    'type': type_.toJson(),
-    'version': version,
-  };
+        'skill_id': skillId,
+        'type': type_.toJson(),
+        'version': version,
+      };
 }

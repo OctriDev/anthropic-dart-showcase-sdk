@@ -30,21 +30,21 @@ import '../types.dart';
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaManagedAgentsListSessionEvents>
-    listBetaSessionsEvents(ClientConfig config,
-        {required String sessionId,
-        SdkOptional<int> limit = const SdkOmitted(),
-        SdkOptional<String> page = const SdkOmitted(),
-        SdkOptional<BetaManagedAgentsListOrder> order = const SdkOmitted(),
-        SdkOptional<List<String>> types = const SdkOmitted(),
-        SdkOptional<String> createdAtGte = const SdkOmitted(),
-        SdkOptional<String> createdAtGt = const SdkOmitted(),
-        SdkOptional<String> createdAtLte = const SdkOmitted(),
-        SdkOptional<String> createdAtLt = const SdkOmitted(),
-        SdkOptional<String> anthropicVersion = const SdkOmitted(),
-        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsListSessionEvents> listBetaSessionsEvents(
+    ClientConfig config,
+    {required String sessionId,
+    SdkOptional<int> limit = const SdkOmitted(),
+    SdkOptional<String> page = const SdkOmitted(),
+    SdkOptional<BetaManagedAgentsListOrder> order = const SdkOmitted(),
+    SdkOptional<List<String>> types = const SdkOmitted(),
+    SdkOptional<String> createdAtGte = const SdkOmitted(),
+    SdkOptional<String> createdAtGt = const SdkOmitted(),
+    SdkOptional<String> createdAtLte = const SdkOmitted(),
+    SdkOptional<String> createdAtLt = const SdkOmitted(),
+    SdkOptional<String> anthropicVersion = const SdkOmitted(),
+    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (createdAtGte is SdkPresent<String>) {
     sdkValidateDateTime('created_at[gte]', createdAtGte.value);
   }
@@ -62,25 +62,76 @@ Future<BetaManagedAgentsListSessionEvents>
           '/v1/sessions/${Uri.encodeComponent(sessionId.toString())}/events?beta=true',
           config: config,
           query: {
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'order': SdkQueryValue(SdkUtils.unwrapOptional(order), style: 'form', explode: true),
-            'types[]': SdkQueryValue(SdkUtils.unwrapOptional(types), style: 'form', explode: true),
-            'created_at[gte]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtGte), style: 'form', explode: true),
-            'created_at[gt]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtGt), style: 'form', explode: true),
-            'created_at[lte]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtLte), style: 'form', explode: true),
-            'created_at[lt]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtLt), style: 'form', explode: true)
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'order': SdkQueryValue(SdkUtils.unwrapOptional(order),
+                style: 'form', explode: true),
+            'types[]': SdkQueryValue(SdkUtils.unwrapOptional(types),
+                style: 'form', explode: true),
+            'created_at[gte]': SdkQueryValue(
+                SdkUtils.unwrapOptional(createdAtGte),
+                style: 'form',
+                explode: true),
+            'created_at[gt]': SdkQueryValue(
+                SdkUtils.unwrapOptional(createdAtGt),
+                style: 'form',
+                explode: true),
+            'created_at[lte]': SdkQueryValue(
+                SdkUtils.unwrapOptional(createdAtLte),
+                style: 'form',
+                explode: true),
+            'created_at[lt]': SdkQueryValue(
+                SdkUtils.unwrapOptional(createdAtLt),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'listBetaSessionsEvents',
-          fromJsonRaw: (value) => BetaManagedAgentsListSessionEvents.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsListSessionEvents.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// Lists events for a session in pages, ordered by the event processing time. Use `types[]` and the `created_at` filters to narrow the events, and use `page` to continue from a previous response's cursor. Set `order` to choose chronological or reverse-chronological order.
 ///
@@ -105,23 +156,121 @@ Future<BetaManagedAgentsListSessionEvents>
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Stream<BetaManagedAgentsSessionEvent> listBetaSessionsEventsPaginated(ClientConfig config, {required String sessionId, int? limit, String? page, BetaManagedAgentsListOrder? order, List<String>? types, String? createdAtGte, String? createdAtGt, String? createdAtLte, String? createdAtLt, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<BetaManagedAgentsSessionEvent> listBetaSessionsEventsPaginated(
+    ClientConfig config,
+    {required String sessionId,
+    int? limit,
+    String? page,
+    BetaManagedAgentsListOrder? order,
+    List<String>? types,
+    String? createdAtGte,
+    String? createdAtGt,
+    String? createdAtLte,
+    String? createdAtLt,
+    String? anthropicVersion,
+    List<String>? anthropicBeta,
+    String? anthropicWorkspaceId,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaSessionsEvents(config, sessionId: sessionId, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), order: order == null ? const SdkOmitted<BetaManagedAgentsListOrder>() : SdkPresent<BetaManagedAgentsListOrder>(order), types: types == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(types), createdAtGte: createdAtGte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGte), createdAtGt: createdAtGt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGt), createdAtLte: createdAtLte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLte), createdAtLt: createdAtLt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLt), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listBetaSessionsEvents(config,
+        sessionId: sessionId,
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(sdkCursor),
+        order: order == null
+            ? const SdkOmitted<BetaManagedAgentsListOrder>()
+            : SdkPresent<BetaManagedAgentsListOrder>(order),
+        types: types == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(types),
+        createdAtGte: createdAtGte == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtGte),
+        createdAtGt: createdAtGt == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtGt),
+        createdAtLte: createdAtLte == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtLte),
+        createdAtLt: createdAtLt == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtLt),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data.valueOrNull ?? [];
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage.valueOrNull;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaManagedAgentsListSessionEvents, BetaManagedAgentsSessionEvent>> listBetaSessionsEventsPages(ClientConfig config, {required String sessionId, int? limit, String? page, BetaManagedAgentsListOrder? order, List<String>? types, String? createdAtGte, String? createdAtGt, String? createdAtLte, String? createdAtLt, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<
+    SdkPage<BetaManagedAgentsListSessionEvents,
+        BetaManagedAgentsSessionEvent>> listBetaSessionsEventsPages(
+    ClientConfig config,
+    {required String sessionId,
+    int? limit,
+    String? page,
+    BetaManagedAgentsListOrder? order,
+    List<String>? types,
+    String? createdAtGte,
+    String? createdAtGt,
+    String? createdAtLte,
+    String? createdAtLt,
+    String? anthropicVersion,
+    List<String>? anthropicBeta,
+    String? anthropicWorkspaceId,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaSessionsEvents(config, sessionId: sessionId, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), order: order == null ? const SdkOmitted<BetaManagedAgentsListOrder>() : SdkPresent<BetaManagedAgentsListOrder>(order), types: types == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(types), createdAtGte: createdAtGte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGte), createdAtGt: createdAtGt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGt), createdAtLte: createdAtLte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLte), createdAtLt: createdAtLt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLt), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listBetaSessionsEvents(config,
+        sessionId: sessionId,
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(sdkCursor),
+        order: order == null
+            ? const SdkOmitted<BetaManagedAgentsListOrder>()
+            : SdkPresent<BetaManagedAgentsListOrder>(order),
+        types: types == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(types),
+        createdAtGte: createdAtGte == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtGte),
+        createdAtGt: createdAtGt == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtGt),
+        createdAtLte: createdAtLte == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtLte),
+        createdAtLt: createdAtLt == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtLt),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data.valueOrNull ?? [];
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage.valueOrNull;
@@ -132,7 +281,6 @@ Stream<SdkPage<BetaManagedAgentsListSessionEvents, BetaManagedAgentsSessionEvent
   }
 }
 
-
 /// Submits events to a session, including user messages, interrupts, and tool execution confirmations. Provide the events as an array in `events`; each event must match one of the supported event types and include that type's required fields. The response contains the events that were successfully sent to the session.
 ///
 /// [sessionId] Path parameter session_id
@@ -142,27 +290,63 @@ Stream<SdkPage<BetaManagedAgentsListSessionEvents, BetaManagedAgentsSessionEvent
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaManagedAgentsSendSessionEvents>
-    createBetaSessionsEvents(ClientConfig config,
-        {required String sessionId,
-        required List<BetaManagedAgentsEventParams> events,
-        SdkOptional<String> anthropicVersion = const SdkOmitted(),
-        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsSendSessionEvents> createBetaSessionsEvents(
+    ClientConfig config,
+    {required String sessionId,
+    required List<BetaManagedAgentsEventParams> events,
+    SdkOptional<String> anthropicVersion = const SdkOmitted(),
+    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaManagedAgentsSendSessionEvents>('POST',
           '/v1/sessions/${Uri.encodeComponent(sessionId.toString())}/events?beta=true',
           config: config,
           body: {'events': events},
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'createBetaSessionsEvents',
-          fromJsonRaw: (value) => BetaManagedAgentsSendSessionEvents.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsSendSessionEvents.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Streams events from a session as server-sent events. Set `event_deltas[]` to receive best-effort previews for `agent.message` or `agent.thinking` events before the complete event arrives; the final event contains the complete content when produced. If a model request ends early with an error or interrupt, its terminal `span.model_request_end` closes the preview without a final event.
 ///
@@ -182,25 +366,66 @@ Future<BetaManagedAgentsSendSessionEvents>
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaManagedAgentsStreamSessionEvents>
-    streamBetaSessionsEvents(ClientConfig config,
-        {required String sessionId,
-        SdkOptional<List<BetaManagedAgentsEventDeltaType>> eventDeltas = const SdkOmitted(),
-        SdkOptional<String> anthropicVersion = const SdkOmitted(),
-        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsStreamSessionEvents> streamBetaSessionsEvents(
+    ClientConfig config,
+    {required String sessionId,
+    SdkOptional<List<BetaManagedAgentsEventDeltaType>> eventDeltas =
+        const SdkOmitted(),
+    SdkOptional<String> anthropicVersion = const SdkOmitted(),
+    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaManagedAgentsStreamSessionEvents>('GET',
           '/v1/sessions/${Uri.encodeComponent(sessionId.toString())}/events/stream?beta=true',
           config: config,
           query: {
-            'event_deltas[]': SdkQueryValue(SdkUtils.unwrapOptional(eventDeltas), style: 'form', explode: true)
+            'event_deltas[]': SdkQueryValue(
+                SdkUtils.unwrapOptional(eventDeltas),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'streamBetaSessionsEvents',
-          fromJsonRaw: (value) => BetaManagedAgentsStreamSessionEvents.fromJson(value),
+          fromJsonRaw: (value) =>
+              BetaManagedAgentsStreamSessionEvents.fromJson(value),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }

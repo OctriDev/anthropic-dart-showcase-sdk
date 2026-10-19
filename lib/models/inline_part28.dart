@@ -8,16 +8,23 @@ part of 'inline.dart';
 enum BetaManagedAgentsSessionThreadStatusIdleEventType {
   sessionThreadStatusIdle;
 
-  static BetaManagedAgentsSessionThreadStatusIdleEventType fromJson(String value) {
+  static BetaManagedAgentsSessionThreadStatusIdleEventType fromJson(
+      String value) {
     switch (value) {
-      case 'session.thread_status_idle': return BetaManagedAgentsSessionThreadStatusIdleEventType.sessionThreadStatusIdle;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionThreadStatusIdleEventType: $value');
+      case 'session.thread_status_idle':
+        return BetaManagedAgentsSessionThreadStatusIdleEventType
+            .sessionThreadStatusIdle;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSessionThreadStatusIdleEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSessionThreadStatusIdleEventType.sessionThreadStatusIdle: return 'session.thread_status_idle';
+      case BetaManagedAgentsSessionThreadStatusIdleEventType
+            .sessionThreadStatusIdle:
+        return 'session.thread_status_idle';
     }
   }
 
@@ -29,16 +36,23 @@ enum BetaManagedAgentsSessionThreadStatusIdleEventType {
 enum BetaManagedAgentsSessionThreadStatusRescheduledEventType {
   sessionThreadStatusRescheduled;
 
-  static BetaManagedAgentsSessionThreadStatusRescheduledEventType fromJson(String value) {
+  static BetaManagedAgentsSessionThreadStatusRescheduledEventType fromJson(
+      String value) {
     switch (value) {
-      case 'session.thread_status_rescheduled': return BetaManagedAgentsSessionThreadStatusRescheduledEventType.sessionThreadStatusRescheduled;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionThreadStatusRescheduledEventType: $value');
+      case 'session.thread_status_rescheduled':
+        return BetaManagedAgentsSessionThreadStatusRescheduledEventType
+            .sessionThreadStatusRescheduled;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSessionThreadStatusRescheduledEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSessionThreadStatusRescheduledEventType.sessionThreadStatusRescheduled: return 'session.thread_status_rescheduled';
+      case BetaManagedAgentsSessionThreadStatusRescheduledEventType
+            .sessionThreadStatusRescheduled:
+        return 'session.thread_status_rescheduled';
     }
   }
 
@@ -50,16 +64,23 @@ enum BetaManagedAgentsSessionThreadStatusRescheduledEventType {
 enum BetaManagedAgentsSessionThreadStatusRunningEventType {
   sessionThreadStatusRunning;
 
-  static BetaManagedAgentsSessionThreadStatusRunningEventType fromJson(String value) {
+  static BetaManagedAgentsSessionThreadStatusRunningEventType fromJson(
+      String value) {
     switch (value) {
-      case 'session.thread_status_running': return BetaManagedAgentsSessionThreadStatusRunningEventType.sessionThreadStatusRunning;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionThreadStatusRunningEventType: $value');
+      case 'session.thread_status_running':
+        return BetaManagedAgentsSessionThreadStatusRunningEventType
+            .sessionThreadStatusRunning;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSessionThreadStatusRunningEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSessionThreadStatusRunningEventType.sessionThreadStatusRunning: return 'session.thread_status_running';
+      case BetaManagedAgentsSessionThreadStatusRunningEventType
+            .sessionThreadStatusRunning:
+        return 'session.thread_status_running';
     }
   }
 
@@ -71,16 +92,23 @@ enum BetaManagedAgentsSessionThreadStatusRunningEventType {
 enum BetaManagedAgentsSessionThreadStatusTerminatedEventType {
   sessionThreadStatusTerminated;
 
-  static BetaManagedAgentsSessionThreadStatusTerminatedEventType fromJson(String value) {
+  static BetaManagedAgentsSessionThreadStatusTerminatedEventType fromJson(
+      String value) {
     switch (value) {
-      case 'session.thread_status_terminated': return BetaManagedAgentsSessionThreadStatusTerminatedEventType.sessionThreadStatusTerminated;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionThreadStatusTerminatedEventType: $value');
+      case 'session.thread_status_terminated':
+        return BetaManagedAgentsSessionThreadStatusTerminatedEventType
+            .sessionThreadStatusTerminated;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSessionThreadStatusTerminatedEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSessionThreadStatusTerminatedEventType.sessionThreadStatusTerminated: return 'session.thread_status_terminated';
+      case BetaManagedAgentsSessionThreadStatusTerminatedEventType
+            .sessionThreadStatusTerminated:
+        return 'session.thread_status_terminated';
     }
   }
 
@@ -94,14 +122,18 @@ enum BetaManagedAgentsSessionUpdatedEventType {
 
   static BetaManagedAgentsSessionUpdatedEventType fromJson(String value) {
     switch (value) {
-      case 'session.updated': return BetaManagedAgentsSessionUpdatedEventType.sessionUpdated;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionUpdatedEventType: $value');
+      case 'session.updated':
+        return BetaManagedAgentsSessionUpdatedEventType.sessionUpdated;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSessionUpdatedEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSessionUpdatedEventType.sessionUpdated: return 'session.updated';
+      case BetaManagedAgentsSessionUpdatedEventType.sessionUpdated:
+        return 'session.updated';
     }
   }
 
@@ -115,14 +147,18 @@ enum BetaManagedAgentsSessionUsageEventType {
 
   static BetaManagedAgentsSessionUsageEventType fromJson(String value) {
     switch (value) {
-      case 'session.usage': return BetaManagedAgentsSessionUsageEventType.sessionUsage;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionUsageEventType: $value');
+      case 'session.usage':
+        return BetaManagedAgentsSessionUsageEventType.sessionUsage;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSessionUsageEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSessionUsageEventType.sessionUsage: return 'session.usage';
+      case BetaManagedAgentsSessionUsageEventType.sessionUsage:
+        return 'session.usage';
     }
   }
 
@@ -134,16 +170,23 @@ enum BetaManagedAgentsSessionUsageEventType {
 enum BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType {
   skillNotFoundError;
 
-  static BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType fromJson(String value) {
+  static BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType fromJson(
+      String value) {
     switch (value) {
-      case 'skill_not_found_error': return BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType.skillNotFoundError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType: $value');
+      case 'skill_not_found_error':
+        return BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType
+            .skillNotFoundError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType.skillNotFoundError: return 'skill_not_found_error';
+      case BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType
+            .skillNotFoundError:
+        return 'skill_not_found_error';
     }
   }
 
@@ -157,14 +200,18 @@ enum BetaManagedAgentsSkillNotFoundRunErrorType {
 
   static BetaManagedAgentsSkillNotFoundRunErrorType fromJson(String value) {
     switch (value) {
-      case 'skill_not_found_error': return BetaManagedAgentsSkillNotFoundRunErrorType.skillNotFoundError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSkillNotFoundRunErrorType: $value');
+      case 'skill_not_found_error':
+        return BetaManagedAgentsSkillNotFoundRunErrorType.skillNotFoundError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSkillNotFoundRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSkillNotFoundRunErrorType.skillNotFoundError: return 'skill_not_found_error';
+      case BetaManagedAgentsSkillNotFoundRunErrorType.skillNotFoundError:
+        return 'skill_not_found_error';
     }
   }
 
@@ -178,14 +225,19 @@ enum BetaManagedAgentsSpanModelRequestEndEventType {
 
   static BetaManagedAgentsSpanModelRequestEndEventType fromJson(String value) {
     switch (value) {
-      case 'span.model_request_end': return BetaManagedAgentsSpanModelRequestEndEventType.spanModelRequestEnd;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSpanModelRequestEndEventType: $value');
+      case 'span.model_request_end':
+        return BetaManagedAgentsSpanModelRequestEndEventType
+            .spanModelRequestEnd;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSpanModelRequestEndEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSpanModelRequestEndEventType.spanModelRequestEnd: return 'span.model_request_end';
+      case BetaManagedAgentsSpanModelRequestEndEventType.spanModelRequestEnd:
+        return 'span.model_request_end';
     }
   }
 
@@ -197,16 +249,23 @@ enum BetaManagedAgentsSpanModelRequestEndEventType {
 enum BetaManagedAgentsSpanModelRequestStartEventType {
   spanModelRequestStart;
 
-  static BetaManagedAgentsSpanModelRequestStartEventType fromJson(String value) {
+  static BetaManagedAgentsSpanModelRequestStartEventType fromJson(
+      String value) {
     switch (value) {
-      case 'span.model_request_start': return BetaManagedAgentsSpanModelRequestStartEventType.spanModelRequestStart;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSpanModelRequestStartEventType: $value');
+      case 'span.model_request_start':
+        return BetaManagedAgentsSpanModelRequestStartEventType
+            .spanModelRequestStart;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSpanModelRequestStartEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSpanModelRequestStartEventType.spanModelRequestStart: return 'span.model_request_start';
+      case BetaManagedAgentsSpanModelRequestStartEventType
+            .spanModelRequestStart:
+        return 'span.model_request_start';
     }
   }
 
@@ -218,16 +277,23 @@ enum BetaManagedAgentsSpanModelRequestStartEventType {
 enum BetaManagedAgentsSpanOutcomeEvaluationEndEventType {
   spanOutcomeEvaluationEnd;
 
-  static BetaManagedAgentsSpanOutcomeEvaluationEndEventType fromJson(String value) {
+  static BetaManagedAgentsSpanOutcomeEvaluationEndEventType fromJson(
+      String value) {
     switch (value) {
-      case 'span.outcome_evaluation_end': return BetaManagedAgentsSpanOutcomeEvaluationEndEventType.spanOutcomeEvaluationEnd;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSpanOutcomeEvaluationEndEventType: $value');
+      case 'span.outcome_evaluation_end':
+        return BetaManagedAgentsSpanOutcomeEvaluationEndEventType
+            .spanOutcomeEvaluationEnd;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSpanOutcomeEvaluationEndEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSpanOutcomeEvaluationEndEventType.spanOutcomeEvaluationEnd: return 'span.outcome_evaluation_end';
+      case BetaManagedAgentsSpanOutcomeEvaluationEndEventType
+            .spanOutcomeEvaluationEnd:
+        return 'span.outcome_evaluation_end';
     }
   }
 
@@ -239,16 +305,23 @@ enum BetaManagedAgentsSpanOutcomeEvaluationEndEventType {
 enum BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType {
   spanOutcomeEvaluationOngoing;
 
-  static BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType fromJson(String value) {
+  static BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType fromJson(
+      String value) {
     switch (value) {
-      case 'span.outcome_evaluation_ongoing': return BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType.spanOutcomeEvaluationOngoing;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType: $value');
+      case 'span.outcome_evaluation_ongoing':
+        return BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType
+            .spanOutcomeEvaluationOngoing;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType.spanOutcomeEvaluationOngoing: return 'span.outcome_evaluation_ongoing';
+      case BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType
+            .spanOutcomeEvaluationOngoing:
+        return 'span.outcome_evaluation_ongoing';
     }
   }
 
@@ -260,16 +333,23 @@ enum BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType {
 enum BetaManagedAgentsSpanOutcomeEvaluationStartEventType {
   spanOutcomeEvaluationStart;
 
-  static BetaManagedAgentsSpanOutcomeEvaluationStartEventType fromJson(String value) {
+  static BetaManagedAgentsSpanOutcomeEvaluationStartEventType fromJson(
+      String value) {
     switch (value) {
-      case 'span.outcome_evaluation_start': return BetaManagedAgentsSpanOutcomeEvaluationStartEventType.spanOutcomeEvaluationStart;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSpanOutcomeEvaluationStartEventType: $value');
+      case 'span.outcome_evaluation_start':
+        return BetaManagedAgentsSpanOutcomeEvaluationStartEventType
+            .spanOutcomeEvaluationStart;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsSpanOutcomeEvaluationStartEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsSpanOutcomeEvaluationStartEventType.spanOutcomeEvaluationStart: return 'span.outcome_evaluation_start';
+      case BetaManagedAgentsSpanOutcomeEvaluationStartEventType
+            .spanOutcomeEvaluationStart:
+        return 'span.outcome_evaluation_start';
     }
   }
 

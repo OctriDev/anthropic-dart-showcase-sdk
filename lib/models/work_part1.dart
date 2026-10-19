@@ -8,22 +8,32 @@ part of 'work.dart';
 class BetaSelfHostedWorkUpdateRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve existing metadata.
   final Map<String, String> metadata;
 
   const BetaSelfHostedWorkUpdateRequest({required this.metadata});
 
-  BetaSelfHostedWorkUpdateRequest Function({Map<String, String> metadata}) get copyWith => _copyWith;
+  BetaSelfHostedWorkUpdateRequest Function({Map<String, String> metadata})
+      get copyWith => _copyWith;
 
-  BetaSelfHostedWorkUpdateRequest _copyWith({Object? metadata = sdkOmittedValue}) => BetaSelfHostedWorkUpdateRequest(
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as Map<String, String>,
-  );
+  BetaSelfHostedWorkUpdateRequest _copyWith(
+          {Object? metadata = sdkOmittedValue}) =>
+      BetaSelfHostedWorkUpdateRequest(
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as Map<String, String>,
+      );
 
-  factory BetaSelfHostedWorkUpdateRequest.fromJson(Map<String, dynamic> json) => BetaSelfHostedWorkUpdateRequest(
-    metadata: (json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String)))!,
-  );
+  factory BetaSelfHostedWorkUpdateRequest.fromJson(Map<String, dynamic> json) =>
+      BetaSelfHostedWorkUpdateRequest(
+        metadata: (json['metadata'] == null
+            ? null
+            : Map<String, dynamic>.from(json['metadata'] as Map)
+                .map((key, value) => MapEntry(key, value as String)))!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'metadata': metadata,
-  };
+        'metadata': metadata,
+      };
 }

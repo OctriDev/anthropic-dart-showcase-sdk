@@ -19,33 +19,70 @@ import '../types.dart';
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Future<BetaRateLimitListResponse>
-    listBetaOrganizationsRateLimits(ClientConfig config,
-        {SdkOptional<String?> model = const SdkOmitted(),
-        SdkOptional<String?> groupType = const SdkOmitted(),
-        SdkOptional<int?> limit = const SdkOmitted(),
-        SdkOptional<String?> page = const SdkOmitted(),
-        SdkOptional<String> anthropicVersion = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaRateLimitListResponse> listBetaOrganizationsRateLimits(
+    ClientConfig config,
+    {SdkOptional<String?> model = const SdkOmitted(),
+    SdkOptional<String?> groupType = const SdkOmitted(),
+    SdkOptional<int?> limit = const SdkOmitted(),
+    SdkOptional<String?> page = const SdkOmitted(),
+    SdkOptional<String> anthropicVersion = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaRateLimitListResponse>(
           'GET', '/v1/organizations/rate_limits?beta=true',
           config: config,
           query: {
-            'model': SdkQueryValue(SdkUtils.unwrapOptional(model), style: 'form', explode: true),
-            'group_type': SdkQueryValue(SdkUtils.unwrapOptional(groupType), style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'model': SdkQueryValue(SdkUtils.unwrapOptional(model),
+                style: 'form', explode: true),
+            'group_type': SdkQueryValue(SdkUtils.unwrapOptional(groupType),
+                style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders(
+              {'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
           operationId: 'listBetaOrganizationsRateLimits',
-          fromJsonRaw: (value) => BetaRateLimitListResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaRateLimitListResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// List Messages API rate limits for your organization. Each entry corresponds to one rate-limit group (either a model family or an API-surface category such as the Files API or Message Batches) and contains the set of limiter values that apply to it. When `limit` is omitted, every matching entry is returned in a single page; when `limit` truncates the result, follow `next_page` to fetch the remaining entries.
 ///
@@ -60,23 +97,69 @@ Future<BetaRateLimitListResponse>
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Stream<BetaRateLimit> listBetaOrganizationsRateLimitsPaginated(ClientConfig config, {String? model, String? groupType, int? limit, String? page, String? anthropicVersion, RequestOptions? requestOptions}) async* {
+Stream<BetaRateLimit> listBetaOrganizationsRateLimitsPaginated(
+    ClientConfig config,
+    {String? model,
+    String? groupType,
+    int? limit,
+    String? page,
+    String? anthropicVersion,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsRateLimits(config, model: model == null ? const SdkOmitted<String?>() : SdkPresent<String?>(model), groupType: groupType == null ? const SdkOmitted<String?>() : SdkPresent<String?>(groupType), limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsRateLimits(config,
+        model: model == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(model),
+        groupType: groupType == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(groupType),
+        limit:
+            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaRateLimitListResponse, BetaRateLimit>> listBetaOrganizationsRateLimitsPages(ClientConfig config, {String? model, String? groupType, int? limit, String? page, String? anthropicVersion, RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaRateLimitListResponse, BetaRateLimit>>
+    listBetaOrganizationsRateLimitsPages(ClientConfig config,
+        {String? model,
+        String? groupType,
+        int? limit,
+        String? page,
+        String? anthropicVersion,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsRateLimits(config, model: model == null ? const SdkOmitted<String?>() : SdkPresent<String?>(model), groupType: groupType == null ? const SdkOmitted<String?>() : SdkPresent<String?>(groupType), limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsRateLimits(config,
+        model: model == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(model),
+        groupType: groupType == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(groupType),
+        limit:
+            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;

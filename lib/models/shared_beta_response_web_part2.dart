@@ -8,44 +8,80 @@ part of 'shared_beta_response_web.dart';
 class BetaResponseWebSearchResultLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `cited_text` wire field.
   final String citedText;
+
   /// Required `string` value serialized in the `encrypted_index` wire field.
   final String encryptedIndex;
+
   /// Required API value serialized in the `title` wire field.
   final String? title;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseWebSearchResultLocationCitationType type_;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
-  const BetaResponseWebSearchResultLocationCitation({required this.citedText, required this.encryptedIndex, required this.title, required this.type_, required this.url});
+  const BetaResponseWebSearchResultLocationCitation(
+      {required this.citedText,
+      required this.encryptedIndex,
+      required this.title,
+      required this.type_,
+      required this.url});
 
-  BetaResponseWebSearchResultLocationCitation Function({String citedText, String encryptedIndex, String? title, BetaResponseWebSearchResultLocationCitationType type_, String url}) get copyWith => _copyWith;
+  BetaResponseWebSearchResultLocationCitation Function(
+      {String citedText,
+      String encryptedIndex,
+      String? title,
+      BetaResponseWebSearchResultLocationCitationType type_,
+      String url}) get copyWith => _copyWith;
 
-  BetaResponseWebSearchResultLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? encryptedIndex = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaResponseWebSearchResultLocationCitation(
-    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
-    encryptedIndex: identical(encryptedIndex, sdkOmittedValue) ? this.encryptedIndex : encryptedIndex as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseWebSearchResultLocationCitationType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BetaResponseWebSearchResultLocationCitation _copyWith(
+          {Object? citedText = sdkOmittedValue,
+          Object? encryptedIndex = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      BetaResponseWebSearchResultLocationCitation(
+        citedText: identical(citedText, sdkOmittedValue)
+            ? this.citedText
+            : citedText as String,
+        encryptedIndex: identical(encryptedIndex, sdkOmittedValue)
+            ? this.encryptedIndex
+            : encryptedIndex as String,
+        title:
+            identical(title, sdkOmittedValue) ? this.title : title as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseWebSearchResultLocationCitationType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BetaResponseWebSearchResultLocationCitation.fromJson(Map<String, dynamic> json) => BetaResponseWebSearchResultLocationCitation(
-    citedText: (json['cited_text'] as String?)!,
-    encryptedIndex: (json['encrypted_index'] as String?)!,
-    title: json.containsKey('title') ? json['title'] as String? : throw ArgumentError.value(null, 'title', 'Required property is missing'),
-    type_: (json['type'] != null ? BetaResponseWebSearchResultLocationCitationType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BetaResponseWebSearchResultLocationCitation.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseWebSearchResultLocationCitation(
+        citedText: (json['cited_text'] as String?)!,
+        encryptedIndex: (json['encrypted_index'] as String?)!,
+        title: json.containsKey('title')
+            ? json['title'] as String?
+            : throw ArgumentError.value(
+                null, 'title', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? BetaResponseWebSearchResultLocationCitationType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'cited_text': citedText,
-    'encrypted_index': encryptedIndex,
-    'title': title,
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'cited_text': citedText,
+        'encrypted_index': encryptedIndex,
+        'title': title,
+        'type': type_.toJson(),
+        'url': url,
+      };
 }
 
 sealed class BetaResponseWebSearchToolResultBlockContent {
@@ -54,68 +90,137 @@ sealed class BetaResponseWebSearchToolResultBlockContent {
   const BetaResponseWebSearchToolResultBlockContent();
   factory BetaResponseWebSearchToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaResponseWebSearchToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(value); } } catch (_) {}
-      try { final value = BetaResponseWebSearchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(value); } } catch (_) {}
+      try {
+        final value = BetaResponseWebSearchToolResultError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaResponseWebSearchResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(BetaResponseWebSearchToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(BetaResponseWebSearchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for BetaResponseWebSearchToolResultBlockContent");
+    try {
+      return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(
+          BetaResponseWebSearchToolResultError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(
+          BetaResponseWebSearchResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for BetaResponseWebSearchToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError extends BetaResponseWebSearchToolResultBlockContent {
+final class BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError
+    extends BetaResponseWebSearchToolResultBlockContent {
   final BetaResponseWebSearchToolResultError value;
-  const BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock extends BetaResponseWebSearchToolResultBlockContent {
+final class BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock
+    extends BetaResponseWebSearchToolResultBlockContent {
   final BetaResponseWebSearchResultBlock value;
-  const BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `BetaResponseWebSearchToolResultBlock` API schema.
 class BetaResponseWebSearchToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional API value serialized in the `caller` wire field.
   final SdkOptional<BetaResponseWebSearchToolResultBlockCaller> caller;
+
   /// Required API value serialized in the `content` wire field.
   final dynamic content;
+
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseWebSearchToolResultBlockType type_;
 
-  const BetaResponseWebSearchToolResultBlock({this.caller = const SdkOmitted(), required this.content, required this.toolUseId, required this.type_});
+  const BetaResponseWebSearchToolResultBlock(
+      {this.caller = const SdkOmitted(),
+      required this.content,
+      required this.toolUseId,
+      required this.type_});
 
-  BetaResponseWebSearchToolResultBlock Function({SdkOptional<BetaResponseWebSearchToolResultBlockCaller> caller, dynamic content, String toolUseId, BetaResponseWebSearchToolResultBlockType type_}) get copyWith => _copyWith;
+  BetaResponseWebSearchToolResultBlock Function(
+          {SdkOptional<BetaResponseWebSearchToolResultBlockCaller> caller,
+          dynamic content,
+          String toolUseId,
+          BetaResponseWebSearchToolResultBlockType type_})
+      get copyWith => _copyWith;
 
-  BetaResponseWebSearchToolResultBlock _copyWith({Object? caller = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseWebSearchToolResultBlock(
-    caller: identical(caller, sdkOmittedValue) ? this.caller : caller as SdkOptional<BetaResponseWebSearchToolResultBlockCaller>,
-    content: identical(content, sdkOmittedValue) ? this.content : content as dynamic,
-    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseWebSearchToolResultBlockType,
-  );
+  BetaResponseWebSearchToolResultBlock _copyWith(
+          {Object? caller = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? toolUseId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseWebSearchToolResultBlock(
+        caller: identical(caller, sdkOmittedValue)
+            ? this.caller
+            : caller as SdkOptional<BetaResponseWebSearchToolResultBlockCaller>,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as dynamic,
+        toolUseId: identical(toolUseId, sdkOmittedValue)
+            ? this.toolUseId
+            : toolUseId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseWebSearchToolResultBlockType,
+      );
 
-  factory BetaResponseWebSearchToolResultBlock.fromJson(Map<String, dynamic> json) => BetaResponseWebSearchToolResultBlock(
-    caller: json['caller'] != null ? SdkPresent((json['caller'] != null ? BetaResponseWebSearchToolResultBlockCaller.fromJson(json['caller']) : null)!) : const SdkOmitted(),
-    content: (SdkUtils.unionBranch(json['content'], [BetaResponseWebSearchToolResultError.fromJson]))!,
-    toolUseId: (json['tool_use_id'] as String?)!,
-    type_: (json['type'] != null ? BetaResponseWebSearchToolResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseWebSearchToolResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseWebSearchToolResultBlock(
+        caller: json['caller'] != null
+            ? SdkPresent((json['caller'] != null
+                ? BetaResponseWebSearchToolResultBlockCaller.fromJson(
+                    json['caller'])
+                : null)!)
+            : const SdkOmitted(),
+        content: (SdkUtils.unionBranch(
+            json['content'], [BetaResponseWebSearchToolResultError.fromJson]))!,
+        toolUseId: (json['tool_use_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaResponseWebSearchToolResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (caller) {
-      SdkPresent<BetaResponseWebSearchToolResultBlockCaller>(value: final value) => {'caller': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'content': content,
-    'tool_use_id': toolUseId,
-    'type': type_.toJson(),
-  };
+        ...switch (caller) {
+          SdkPresent<BetaResponseWebSearchToolResultBlockCaller>(
+            value: final value
+          ) =>
+            {
+              'caller': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'content': content,
+        'tool_use_id': toolUseId,
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaResponseWebSearchToolResultBlockCaller {
@@ -124,69 +229,133 @@ sealed class BetaResponseWebSearchToolResultBlockCaller {
   const BetaResponseWebSearchToolResultBlockCaller();
   factory BetaResponseWebSearchToolResultBlockCaller.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaDirectCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseWebSearchToolResultBlockCallerBetaDirectCaller(value); } } catch (_) {}
-      try { final value = BetaServerToolCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller(value); } } catch (_) {}
-      try { final value = BetaServerToolCaller20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller20260120(value); } } catch (_) {}
+      try {
+        final value = BetaDirectCaller.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseWebSearchToolResultBlockCallerBetaDirectCaller(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaServerToolCaller.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaServerToolCaller20260120.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller20260120(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaResponseWebSearchToolResultBlockCallerBetaDirectCaller(BetaDirectCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller(BetaServerToolCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller20260120(BetaServerToolCaller20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"code_execution_20250825", "code_execution_20260120", "direct"}.contains(json["type"])) { return UnknownBetaResponseWebSearchToolResultBlockCaller(json); }
-    throw FormatException("No variant matched for BetaResponseWebSearchToolResultBlockCaller");
+    try {
+      return BetaResponseWebSearchToolResultBlockCallerBetaDirectCaller(
+          BetaDirectCaller.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller(
+          BetaServerToolCaller.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller20260120(
+          BetaServerToolCaller20260120.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"code_execution_20250825", "code_execution_20260120", "direct"}
+            .contains(json["type"])) {
+      return UnknownBetaResponseWebSearchToolResultBlockCaller(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaResponseWebSearchToolResultBlockCaller");
   }
   Object? toJson();
 }
 
-final class BetaResponseWebSearchToolResultBlockCallerBetaDirectCaller extends BetaResponseWebSearchToolResultBlockCaller {
+final class BetaResponseWebSearchToolResultBlockCallerBetaDirectCaller
+    extends BetaResponseWebSearchToolResultBlockCaller {
   final BetaDirectCaller value;
   const BetaResponseWebSearchToolResultBlockCallerBetaDirectCaller(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller extends BetaResponseWebSearchToolResultBlockCaller {
+final class BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller
+    extends BetaResponseWebSearchToolResultBlockCaller {
   final BetaServerToolCaller value;
-  const BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller20260120 extends BetaResponseWebSearchToolResultBlockCaller {
+final class BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller20260120
+    extends BetaResponseWebSearchToolResultBlockCaller {
   final BetaServerToolCaller20260120 value;
-  const BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller20260120(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaResponseWebSearchToolResultBlockCallerBetaServerToolCaller20260120(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaResponseWebSearchToolResultBlockCaller] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaResponseWebSearchToolResultBlockCaller extends BetaResponseWebSearchToolResultBlockCaller {
+final class UnknownBetaResponseWebSearchToolResultBlockCaller
+    extends BetaResponseWebSearchToolResultBlockCaller {
   final Map<String, dynamic> raw;
   const UnknownBetaResponseWebSearchToolResultBlockCaller(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaResponseWebSearchToolResultError` API schema.
 class BetaResponseWebSearchToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `error_code` wire field.
   final BetaWebSearchToolResultErrorCode errorCode;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseWebSearchToolResultErrorType type_;
 
-  const BetaResponseWebSearchToolResultError({required this.errorCode, required this.type_});
+  const BetaResponseWebSearchToolResultError(
+      {required this.errorCode, required this.type_});
 
-  BetaResponseWebSearchToolResultError Function({BetaWebSearchToolResultErrorCode errorCode, BetaResponseWebSearchToolResultErrorType type_}) get copyWith => _copyWith;
+  BetaResponseWebSearchToolResultError Function(
+          {BetaWebSearchToolResultErrorCode errorCode,
+          BetaResponseWebSearchToolResultErrorType type_})
+      get copyWith => _copyWith;
 
-  BetaResponseWebSearchToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseWebSearchToolResultError(
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as BetaWebSearchToolResultErrorCode,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseWebSearchToolResultErrorType,
-  );
+  BetaResponseWebSearchToolResultError _copyWith(
+          {Object? errorCode = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseWebSearchToolResultError(
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as BetaWebSearchToolResultErrorCode,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseWebSearchToolResultErrorType,
+      );
 
-  factory BetaResponseWebSearchToolResultError.fromJson(Map<String, dynamic> json) => BetaResponseWebSearchToolResultError(
-    errorCode: (json['error_code'] != null ? BetaWebSearchToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
-    type_: (json['type'] != null ? BetaResponseWebSearchToolResultErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseWebSearchToolResultError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseWebSearchToolResultError(
+        errorCode: (json['error_code'] != null
+            ? BetaWebSearchToolResultErrorCode.fromJson(
+                json['error_code'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaResponseWebSearchToolResultErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'error_code': errorCode.toJson(),
-    'type': type_.toJson(),
-  };
+        'error_code': errorCode.toJson(),
+        'type': type_.toJson(),
+      };
 }

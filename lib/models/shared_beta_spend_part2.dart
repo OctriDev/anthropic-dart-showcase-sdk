@@ -8,59 +8,121 @@ part of 'shared_beta_spend.dart';
 class BetaSpendSummary {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A user within the organization. `name` and `email_address` are null when the underlying account is unavailable or has been deleted; `deleted` is true only for deleted accounts.
   final BetaUserActorSchema actor;
+
   /// Effective limit amount as a non-negative integer decimal string in the minor unit of `currency` (cents for USD). `null` means no limit applies for this row's `period` — each period resolves independently, so another period may still cap this member.
   final String? amount;
+
   /// ISO 4217 code of the organization's billing currency; the unit for `amount` and `period_to_date_spend`.
   final String currency;
+
   /// Period this row's effective limit and spend are reported for.
   final BetaSpendSummaryPeriod period;
+
   /// The member's spend so far in the current period, as a non-negative decimal string in the minor unit of `currency` (cents for USD). May carry fractional minor units up to three decimal places (e.g. `"12050.5"`) — metered usage is not rounded to whole cents. Reads as `"0"` when the spend reading is temporarily unavailable.
   final String periodToDateSpend;
+
   /// Scope selecting a single member of the organization.
   final BetaUserScope scope;
+
   /// Required API value serialized in the `source` wire field.
   final BetaSpendSummarySource source;
+
   /// Required `string` value serialized in the `spend_limit_id` wire field.
   final String spendLimitId;
 
-  const BetaSpendSummary({required this.actor, required this.amount, required this.currency, required this.period, required this.periodToDateSpend, required this.scope, required this.source, required this.spendLimitId});
+  const BetaSpendSummary(
+      {required this.actor,
+      required this.amount,
+      required this.currency,
+      required this.period,
+      required this.periodToDateSpend,
+      required this.scope,
+      required this.source,
+      required this.spendLimitId});
 
-  BetaSpendSummary Function({BetaUserActorSchema actor, String? amount, String currency, BetaSpendSummaryPeriod period, String periodToDateSpend, BetaUserScope scope, BetaSpendSummarySource source, String spendLimitId}) get copyWith => _copyWith;
+  BetaSpendSummary Function(
+      {BetaUserActorSchema actor,
+      String? amount,
+      String currency,
+      BetaSpendSummaryPeriod period,
+      String periodToDateSpend,
+      BetaUserScope scope,
+      BetaSpendSummarySource source,
+      String spendLimitId}) get copyWith => _copyWith;
 
-  BetaSpendSummary _copyWith({Object? actor = sdkOmittedValue, Object? amount = sdkOmittedValue, Object? currency = sdkOmittedValue, Object? period = sdkOmittedValue, Object? periodToDateSpend = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? source = sdkOmittedValue, Object? spendLimitId = sdkOmittedValue}) => BetaSpendSummary(
-    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as BetaUserActorSchema,
-    amount: identical(amount, sdkOmittedValue) ? this.amount : amount as String?,
-    currency: identical(currency, sdkOmittedValue) ? this.currency : currency as String,
-    period: identical(period, sdkOmittedValue) ? this.period : period as BetaSpendSummaryPeriod,
-    periodToDateSpend: identical(periodToDateSpend, sdkOmittedValue) ? this.periodToDateSpend : periodToDateSpend as String,
-    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as BetaUserScope,
-    source: identical(source, sdkOmittedValue) ? this.source : source as BetaSpendSummarySource,
-    spendLimitId: identical(spendLimitId, sdkOmittedValue) ? this.spendLimitId : spendLimitId as String,
-  );
+  BetaSpendSummary _copyWith(
+          {Object? actor = sdkOmittedValue,
+          Object? amount = sdkOmittedValue,
+          Object? currency = sdkOmittedValue,
+          Object? period = sdkOmittedValue,
+          Object? periodToDateSpend = sdkOmittedValue,
+          Object? scope = sdkOmittedValue,
+          Object? source = sdkOmittedValue,
+          Object? spendLimitId = sdkOmittedValue}) =>
+      BetaSpendSummary(
+        actor: identical(actor, sdkOmittedValue)
+            ? this.actor
+            : actor as BetaUserActorSchema,
+        amount: identical(amount, sdkOmittedValue)
+            ? this.amount
+            : amount as String?,
+        currency: identical(currency, sdkOmittedValue)
+            ? this.currency
+            : currency as String,
+        period: identical(period, sdkOmittedValue)
+            ? this.period
+            : period as BetaSpendSummaryPeriod,
+        periodToDateSpend: identical(periodToDateSpend, sdkOmittedValue)
+            ? this.periodToDateSpend
+            : periodToDateSpend as String,
+        scope: identical(scope, sdkOmittedValue)
+            ? this.scope
+            : scope as BetaUserScope,
+        source: identical(source, sdkOmittedValue)
+            ? this.source
+            : source as BetaSpendSummarySource,
+        spendLimitId: identical(spendLimitId, sdkOmittedValue)
+            ? this.spendLimitId
+            : spendLimitId as String,
+      );
 
-  factory BetaSpendSummary.fromJson(Map<String, dynamic> json) => BetaSpendSummary(
-    actor: (json['actor'] != null ? BetaUserActorSchema.fromJson(json['actor'] as Map<String, dynamic>) : null)!,
-    amount: json.containsKey('amount') ? json['amount'] as String? : throw ArgumentError.value(null, 'amount', 'Required property is missing'),
-    currency: (json['currency'] as String?)!,
-    period: (json['period'] != null ? BetaSpendSummaryPeriod.fromJson(json['period'] as String) : null)!,
-    periodToDateSpend: (json['period_to_date_spend'] as String?)!,
-    scope: (json['scope'] != null ? BetaUserScope.fromJson(json['scope'] as Map<String, dynamic>) : null)!,
-    source: (json['source'] != null ? BetaSpendSummarySource.fromJson(json['source']) : null)!,
-    spendLimitId: (json['spend_limit_id'] as String?)!,
-  );
+  factory BetaSpendSummary.fromJson(Map<String, dynamic> json) =>
+      BetaSpendSummary(
+        actor: (json['actor'] != null
+            ? BetaUserActorSchema.fromJson(
+                json['actor'] as Map<String, dynamic>)
+            : null)!,
+        amount: json.containsKey('amount')
+            ? json['amount'] as String?
+            : throw ArgumentError.value(
+                null, 'amount', 'Required property is missing'),
+        currency: (json['currency'] as String?)!,
+        period: (json['period'] != null
+            ? BetaSpendSummaryPeriod.fromJson(json['period'] as String)
+            : null)!,
+        periodToDateSpend: (json['period_to_date_spend'] as String?)!,
+        scope: (json['scope'] != null
+            ? BetaUserScope.fromJson(json['scope'] as Map<String, dynamic>)
+            : null)!,
+        source: (json['source'] != null
+            ? BetaSpendSummarySource.fromJson(json['source'])
+            : null)!,
+        spendLimitId: (json['spend_limit_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'actor': actor.toJson(),
-    'amount': amount,
-    'currency': currency,
-    'period': period.toJson(),
-    'period_to_date_spend': periodToDateSpend,
-    'scope': scope.toJson(),
-    'source': source.toJson(),
-    'spend_limit_id': spendLimitId,
-  };
+        'actor': actor.toJson(),
+        'amount': amount,
+        'currency': currency,
+        'period': period.toJson(),
+        'period_to_date_spend': periodToDateSpend,
+        'scope': scope.toJson(),
+        'source': source.toJson(),
+        'spend_limit_id': spendLimitId,
+      };
 }
 
 sealed class BetaSpendSummarySource {
@@ -69,18 +131,68 @@ sealed class BetaSpendSummarySource {
   const BetaSpendSummarySource();
   factory BetaSpendSummarySource.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaUserScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendSummarySourceBetaUserScope(value); } } catch (_) {}
-      try { final value = BetaSeatTierScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendSummarySourceBetaSeatTierScope(value); } } catch (_) {}
-      try { final value = BetaRbacGroupScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendSummarySourceBetaRbacGroupScope(value); } } catch (_) {}
-      try { final value = BetaOrgServiceScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendSummarySourceBetaOrgServiceScope(value); } } catch (_) {}
-      try { final value = BetaOrganizationScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendSummarySourceBetaOrganizationScope(value); } } catch (_) {}
+      try {
+        final value = BetaUserScope.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaSpendSummarySourceBetaUserScope(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaSeatTierScope.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaSpendSummarySourceBetaSeatTierScope(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRbacGroupScope.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaSpendSummarySourceBetaRbacGroupScope(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaOrgServiceScope.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaSpendSummarySourceBetaOrgServiceScope(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaOrganizationScope.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaSpendSummarySourceBetaOrganizationScope(value);
+        }
+      } catch (_) {}
     }
-    try { return BetaSpendSummarySourceBetaUserScope(BetaUserScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaSpendSummarySourceBetaSeatTierScope(BetaSeatTierScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaSpendSummarySourceBetaRbacGroupScope(BetaRbacGroupScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaSpendSummarySourceBetaOrgServiceScope(BetaOrgServiceScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaSpendSummarySourceBetaOrganizationScope(BetaOrganizationScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"organization", "organization_service", "rbac_group", "seat_tier", "user"}.contains(json["type"])) { return UnknownBetaSpendSummarySource(json); }
+    try {
+      return BetaSpendSummarySourceBetaUserScope(
+          BetaUserScope.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaSpendSummarySourceBetaSeatTierScope(
+          BetaSeatTierScope.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaSpendSummarySourceBetaRbacGroupScope(
+          BetaRbacGroupScope.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaSpendSummarySourceBetaOrgServiceScope(
+          BetaOrgServiceScope.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaSpendSummarySourceBetaOrganizationScope(
+          BetaOrganizationScope.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "organization",
+          "organization_service",
+          "rbac_group",
+          "seat_tier",
+          "user"
+        }.contains(json["type"])) {
+      return UnknownBetaSpendSummarySource(json);
+    }
     throw FormatException("No variant matched for BetaSpendSummarySource");
   }
   Object? toJson();
@@ -89,36 +201,46 @@ sealed class BetaSpendSummarySource {
 final class BetaSpendSummarySourceBetaUserScope extends BetaSpendSummarySource {
   final BetaUserScope value;
   const BetaSpendSummarySourceBetaUserScope(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaSpendSummarySourceBetaSeatTierScope extends BetaSpendSummarySource {
+final class BetaSpendSummarySourceBetaSeatTierScope
+    extends BetaSpendSummarySource {
   final BetaSeatTierScope value;
   const BetaSpendSummarySourceBetaSeatTierScope(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaSpendSummarySourceBetaRbacGroupScope extends BetaSpendSummarySource {
+final class BetaSpendSummarySourceBetaRbacGroupScope
+    extends BetaSpendSummarySource {
   final BetaRbacGroupScope value;
   const BetaSpendSummarySourceBetaRbacGroupScope(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaSpendSummarySourceBetaOrgServiceScope extends BetaSpendSummarySource {
+final class BetaSpendSummarySourceBetaOrgServiceScope
+    extends BetaSpendSummarySource {
   final BetaOrgServiceScope value;
   const BetaSpendSummarySourceBetaOrgServiceScope(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaSpendSummarySourceBetaOrganizationScope extends BetaSpendSummarySource {
+final class BetaSpendSummarySourceBetaOrganizationScope
+    extends BetaSpendSummarySource {
   final BetaOrganizationScope value;
   const BetaSpendSummarySourceBetaOrganizationScope(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaSpendSummarySource] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaSpendSummarySource extends BetaSpendSummarySource {
   final Map<String, dynamic> raw;
   const UnknownBetaSpendSummarySource(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

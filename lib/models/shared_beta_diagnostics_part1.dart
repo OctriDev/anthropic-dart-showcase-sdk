@@ -8,24 +8,36 @@ part of 'shared_beta_diagnostics.dart';
 class BetaDiagnostics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Explains why the prompt cache could not fully reuse the prefix from the request identified by `diagnostics.previous_message_id`. `null` means diagnosis is still pending — the response was serialized before the background comparison completed.
   final BetaDiagnosticsCacheMissReason? cacheMissReason;
 
   const BetaDiagnostics({required this.cacheMissReason});
 
-  BetaDiagnostics Function({BetaDiagnosticsCacheMissReason? cacheMissReason}) get copyWith => _copyWith;
+  BetaDiagnostics Function({BetaDiagnosticsCacheMissReason? cacheMissReason})
+      get copyWith => _copyWith;
 
-  BetaDiagnostics _copyWith({Object? cacheMissReason = sdkOmittedValue}) => BetaDiagnostics(
-    cacheMissReason: identical(cacheMissReason, sdkOmittedValue) ? this.cacheMissReason : cacheMissReason as BetaDiagnosticsCacheMissReason?,
-  );
+  BetaDiagnostics _copyWith({Object? cacheMissReason = sdkOmittedValue}) =>
+      BetaDiagnostics(
+        cacheMissReason: identical(cacheMissReason, sdkOmittedValue)
+            ? this.cacheMissReason
+            : cacheMissReason as BetaDiagnosticsCacheMissReason?,
+      );
 
-  factory BetaDiagnostics.fromJson(Map<String, dynamic> json) => BetaDiagnostics(
-    cacheMissReason: json.containsKey('cache_miss_reason') ? json['cache_miss_reason'] != null ? BetaDiagnosticsCacheMissReason.fromJson(json['cache_miss_reason']) : null : throw ArgumentError.value(null, 'cache_miss_reason', 'Required property is missing'),
-  );
+  factory BetaDiagnostics.fromJson(Map<String, dynamic> json) =>
+      BetaDiagnostics(
+        cacheMissReason: json.containsKey('cache_miss_reason')
+            ? json['cache_miss_reason'] != null
+                ? BetaDiagnosticsCacheMissReason.fromJson(
+                    json['cache_miss_reason'])
+                : null
+            : throw ArgumentError.value(
+                null, 'cache_miss_reason', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'cache_miss_reason': cacheMissReason?.toJson(),
-  };
+        'cache_miss_reason': cacheMissReason?.toJson(),
+      };
 }
 
 sealed class BetaDiagnosticsCacheMissReason {
@@ -34,66 +46,145 @@ sealed class BetaDiagnosticsCacheMissReason {
   const BetaDiagnosticsCacheMissReason();
   factory BetaDiagnosticsCacheMissReason.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaCacheMissModelChanged.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaDiagnosticsCacheMissReasonBetaCacheMissModelChanged(value); } } catch (_) {}
-      try { final value = BetaCacheMissSystemChanged.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaDiagnosticsCacheMissReasonBetaCacheMissSystemChanged(value); } } catch (_) {}
-      try { final value = BetaCacheMissToolsChanged.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaDiagnosticsCacheMissReasonBetaCacheMissToolsChanged(value); } } catch (_) {}
-      try { final value = BetaCacheMissMessagesChanged.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaDiagnosticsCacheMissReasonBetaCacheMissMessagesChanged(value); } } catch (_) {}
-      try { final value = BetaCacheMissPreviousMessageNotFound.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaDiagnosticsCacheMissReasonBetaCacheMissPreviousMessageNotFound(value); } } catch (_) {}
-      try { final value = BetaCacheMissUnavailable.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaDiagnosticsCacheMissReasonBetaCacheMissUnavailable(value); } } catch (_) {}
+      try {
+        final value = BetaCacheMissModelChanged.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaDiagnosticsCacheMissReasonBetaCacheMissModelChanged(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaCacheMissSystemChanged.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaDiagnosticsCacheMissReasonBetaCacheMissSystemChanged(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaCacheMissToolsChanged.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaDiagnosticsCacheMissReasonBetaCacheMissToolsChanged(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaCacheMissMessagesChanged.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaDiagnosticsCacheMissReasonBetaCacheMissMessagesChanged(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaCacheMissPreviousMessageNotFound.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaDiagnosticsCacheMissReasonBetaCacheMissPreviousMessageNotFound(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaCacheMissUnavailable.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaDiagnosticsCacheMissReasonBetaCacheMissUnavailable(value);
+        }
+      } catch (_) {}
     }
-    try { return BetaDiagnosticsCacheMissReasonBetaCacheMissModelChanged(BetaCacheMissModelChanged.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaDiagnosticsCacheMissReasonBetaCacheMissSystemChanged(BetaCacheMissSystemChanged.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaDiagnosticsCacheMissReasonBetaCacheMissToolsChanged(BetaCacheMissToolsChanged.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaDiagnosticsCacheMissReasonBetaCacheMissMessagesChanged(BetaCacheMissMessagesChanged.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaDiagnosticsCacheMissReasonBetaCacheMissPreviousMessageNotFound(BetaCacheMissPreviousMessageNotFound.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaDiagnosticsCacheMissReasonBetaCacheMissUnavailable(BetaCacheMissUnavailable.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"messages_changed", "model_changed", "previous_message_not_found", "system_changed", "tools_changed", "unavailable"}.contains(json["type"])) { return UnknownBetaDiagnosticsCacheMissReason(json); }
-    throw FormatException("No variant matched for BetaDiagnosticsCacheMissReason");
+    try {
+      return BetaDiagnosticsCacheMissReasonBetaCacheMissModelChanged(
+          BetaCacheMissModelChanged.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaDiagnosticsCacheMissReasonBetaCacheMissSystemChanged(
+          BetaCacheMissSystemChanged.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaDiagnosticsCacheMissReasonBetaCacheMissToolsChanged(
+          BetaCacheMissToolsChanged.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaDiagnosticsCacheMissReasonBetaCacheMissMessagesChanged(
+          BetaCacheMissMessagesChanged.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaDiagnosticsCacheMissReasonBetaCacheMissPreviousMessageNotFound(
+          BetaCacheMissPreviousMessageNotFound.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaDiagnosticsCacheMissReasonBetaCacheMissUnavailable(
+          BetaCacheMissUnavailable.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "messages_changed",
+          "model_changed",
+          "previous_message_not_found",
+          "system_changed",
+          "tools_changed",
+          "unavailable"
+        }.contains(json["type"])) {
+      return UnknownBetaDiagnosticsCacheMissReason(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaDiagnosticsCacheMissReason");
   }
   Object? toJson();
 }
 
-final class BetaDiagnosticsCacheMissReasonBetaCacheMissModelChanged extends BetaDiagnosticsCacheMissReason {
+final class BetaDiagnosticsCacheMissReasonBetaCacheMissModelChanged
+    extends BetaDiagnosticsCacheMissReason {
   final BetaCacheMissModelChanged value;
   const BetaDiagnosticsCacheMissReasonBetaCacheMissModelChanged(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaDiagnosticsCacheMissReasonBetaCacheMissSystemChanged extends BetaDiagnosticsCacheMissReason {
+final class BetaDiagnosticsCacheMissReasonBetaCacheMissSystemChanged
+    extends BetaDiagnosticsCacheMissReason {
   final BetaCacheMissSystemChanged value;
   const BetaDiagnosticsCacheMissReasonBetaCacheMissSystemChanged(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaDiagnosticsCacheMissReasonBetaCacheMissToolsChanged extends BetaDiagnosticsCacheMissReason {
+final class BetaDiagnosticsCacheMissReasonBetaCacheMissToolsChanged
+    extends BetaDiagnosticsCacheMissReason {
   final BetaCacheMissToolsChanged value;
   const BetaDiagnosticsCacheMissReasonBetaCacheMissToolsChanged(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaDiagnosticsCacheMissReasonBetaCacheMissMessagesChanged extends BetaDiagnosticsCacheMissReason {
+final class BetaDiagnosticsCacheMissReasonBetaCacheMissMessagesChanged
+    extends BetaDiagnosticsCacheMissReason {
   final BetaCacheMissMessagesChanged value;
   const BetaDiagnosticsCacheMissReasonBetaCacheMissMessagesChanged(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaDiagnosticsCacheMissReasonBetaCacheMissPreviousMessageNotFound extends BetaDiagnosticsCacheMissReason {
+final class BetaDiagnosticsCacheMissReasonBetaCacheMissPreviousMessageNotFound
+    extends BetaDiagnosticsCacheMissReason {
   final BetaCacheMissPreviousMessageNotFound value;
-  const BetaDiagnosticsCacheMissReasonBetaCacheMissPreviousMessageNotFound(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaDiagnosticsCacheMissReasonBetaCacheMissPreviousMessageNotFound(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaDiagnosticsCacheMissReasonBetaCacheMissUnavailable extends BetaDiagnosticsCacheMissReason {
+final class BetaDiagnosticsCacheMissReasonBetaCacheMissUnavailable
+    extends BetaDiagnosticsCacheMissReason {
   final BetaCacheMissUnavailable value;
   const BetaDiagnosticsCacheMissReasonBetaCacheMissUnavailable(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaDiagnosticsCacheMissReason] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaDiagnosticsCacheMissReason extends BetaDiagnosticsCacheMissReason {
+final class UnknownBetaDiagnosticsCacheMissReason
+    extends BetaDiagnosticsCacheMissReason {
   final Map<String, dynamic> raw;
   const UnknownBetaDiagnosticsCacheMissReason(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 sealed class BetaDiagnosticsParamPreviousMessageId {
@@ -101,41 +192,57 @@ sealed class BetaDiagnosticsParamPreviousMessageId {
   static const String constructionSurface = 'named';
   const BetaDiagnosticsParamPreviousMessageId();
   factory BetaDiagnosticsParamPreviousMessageId.fromJson(Object? json) {
-    if (json is String) { return BetaDiagnosticsParamPreviousMessageIdString(json); }
-    throw FormatException("No variant matched for BetaDiagnosticsParamPreviousMessageId");
+    if (json is String) {
+      return BetaDiagnosticsParamPreviousMessageIdString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaDiagnosticsParamPreviousMessageId");
   }
   Object? toJson();
 }
 
-final class BetaDiagnosticsParamPreviousMessageIdString extends BetaDiagnosticsParamPreviousMessageId {
+final class BetaDiagnosticsParamPreviousMessageIdString
+    extends BetaDiagnosticsParamPreviousMessageId {
   final String value;
   const BetaDiagnosticsParamPreviousMessageIdString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Request-level diagnostics. Currently carries the previous response id for prompt-cache divergence reporting.
 class BetaDiagnosticsParam {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The `id` (`msg_...`) from this client's previous /v1/messages response. The server compares that request's prompt fingerprint against this one and returns `diagnostics.cache_miss_reason` when the prompt-cache prefix could not be reused. Pass `null` on the first turn to opt in without a prior message to compare.
   final SdkOptional<String?> previousMessageId;
 
   const BetaDiagnosticsParam({this.previousMessageId = const SdkOmitted()});
 
-  BetaDiagnosticsParam Function({SdkOptional<String?> previousMessageId}) get copyWith => _copyWith;
+  BetaDiagnosticsParam Function({SdkOptional<String?> previousMessageId})
+      get copyWith => _copyWith;
 
-  BetaDiagnosticsParam _copyWith({Object? previousMessageId = sdkOmittedValue}) => BetaDiagnosticsParam(
-    previousMessageId: identical(previousMessageId, sdkOmittedValue) ? this.previousMessageId : previousMessageId as SdkOptional<String?>,
-  );
+  BetaDiagnosticsParam _copyWith(
+          {Object? previousMessageId = sdkOmittedValue}) =>
+      BetaDiagnosticsParam(
+        previousMessageId: identical(previousMessageId, sdkOmittedValue)
+            ? this.previousMessageId
+            : previousMessageId as SdkOptional<String?>,
+      );
 
-  factory BetaDiagnosticsParam.fromJson(Map<String, dynamic> json) => BetaDiagnosticsParam(
-    previousMessageId: json.containsKey('previous_message_id') ? SdkPresent(json['previous_message_id'] as String?) : const SdkOmitted(),
-  );
+  factory BetaDiagnosticsParam.fromJson(Map<String, dynamic> json) =>
+      BetaDiagnosticsParam(
+        previousMessageId: json.containsKey('previous_message_id')
+            ? SdkPresent(json['previous_message_id'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (previousMessageId) {
-      SdkPresent<String?>(value: final value) => {'previous_message_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (previousMessageId) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_message_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -31,7 +31,8 @@ import 'methods/beta_deployment_runs.dart' as deployment_runs_methods;
 import 'methods/beta_vaults.dart' as vaults_methods;
 import 'methods/beta_vaults_credentials.dart' as credentials_methods;
 import 'methods/beta_memory_stores_memories.dart' as memories_methods;
-import 'methods/beta_memory_stores_memory_versions.dart' as memory_versions_methods;
+import 'methods/beta_memory_stores_memory_versions.dart'
+    as memory_versions_methods;
 import 'methods/beta_memory_stores.dart' as memory_stores_methods;
 import 'methods/beta_user_profiles.dart' as user_profiles_methods;
 import 'methods/beta_tunnels.dart' as tunnels_methods_import;
@@ -40,45 +41,69 @@ import 'methods/beta_dreams.dart' as dreams_methods;
 import 'methods/beta_organizations_invites.dart' as invites_methods;
 import 'methods/beta_organizations_users.dart' as users_methods_import;
 import 'methods/beta_organizations_workspaces.dart' as workspaces_methods_2;
-import 'methods/beta_organizations_workspaces_members.dart' as members_methods_import;
+import 'methods/beta_organizations_workspaces_members.dart'
+    as members_methods_import;
 import 'methods/beta_organizations_api_keys.dart' as api_keys_methods;
-import 'methods/beta_organizations_usage_report_messages.dart' as messages_methods_import;
-import 'methods/beta_organizations_usage_report_claude_code.dart' as claude_code_methods;
-import 'methods/beta_organizations_cost_report.dart' as cost_report_methods_import;
+import 'methods/beta_organizations_usage_report_messages.dart'
+    as messages_methods_import;
+import 'methods/beta_organizations_usage_report_claude_code.dart'
+    as claude_code_methods;
+import 'methods/beta_organizations_cost_report.dart'
+    as cost_report_methods_import;
 import 'methods/beta_organizations_me.dart' as me_methods;
 import 'methods/beta_organizations_external_keys.dart' as external_keys_methods;
-import 'methods/beta_organizations_compliance_settings.dart' as compliance_settings_methods;
+import 'methods/beta_organizations_compliance_settings.dart'
+    as compliance_settings_methods;
 import 'methods/beta_organizations_rate_limits.dart' as rate_limits_methods;
-import 'methods/beta_organizations_workspaces_rate_limits.dart' as rate_limits_methods_import;
-import 'methods/beta_organizations_spend_limits_effective.dart' as effective_methods;
+import 'methods/beta_organizations_workspaces_rate_limits.dart'
+    as rate_limits_methods_import;
+import 'methods/beta_organizations_spend_limits_effective.dart'
+    as effective_methods;
 import 'methods/beta_organizations_spend_limits.dart' as spend_limits_methods;
-import 'methods/beta_organizations_service_accounts.dart' as service_accounts_methods;
-import 'methods/beta_organizations_workspaces_service_accounts.dart' as service_accounts_methods_import;
-import 'methods/beta_organizations_service_accounts_workspaces.dart' as workspaces_methods_import;
-import 'methods/beta_organizations_federation_issuers.dart' as federation_issuers_methods;
-import 'methods/beta_organizations_federation_rules.dart' as federation_rules_methods;
-import 'methods/beta_organizations_federation_rules_workspaces.dart' as workspaces_methods;
-import 'methods/beta_organizations_spend_limit_increase_requests.dart' as spend_limit_increase_requests_methods;
+import 'methods/beta_organizations_service_accounts.dart'
+    as service_accounts_methods;
+import 'methods/beta_organizations_workspaces_service_accounts.dart'
+    as service_accounts_methods_import;
+import 'methods/beta_organizations_service_accounts_workspaces.dart'
+    as workspaces_methods_import;
+import 'methods/beta_organizations_federation_issuers.dart'
+    as federation_issuers_methods;
+import 'methods/beta_organizations_federation_rules.dart'
+    as federation_rules_methods;
+import 'methods/beta_organizations_federation_rules_workspaces.dart'
+    as workspaces_methods;
+import 'methods/beta_organizations_spend_limit_increase_requests.dart'
+    as spend_limit_increase_requests_methods;
 import 'methods/beta_organizations_tunnels.dart' as tunnels_methods;
-import 'methods/beta_organizations_tunnels_certificates.dart' as certificates_methods;
+import 'methods/beta_organizations_tunnels_certificates.dart'
+    as certificates_methods;
 import 'methods/beta_organizations_rbac_groups.dart' as rbac_groups_methods;
 import 'methods/beta_organizations_rbac_groups_members.dart' as members_methods;
 import 'methods/beta_organizations_rbac_roles.dart' as rbac_roles_methods;
-import 'methods/beta_organizations_analytics_user_usage_report.dart' as user_usage_report_methods;
-import 'methods/beta_organizations_analytics_user_cost_report.dart' as user_cost_report_methods;
-import 'methods/beta_organizations_analytics_usage_report.dart' as usage_report_methods;
-import 'methods/beta_organizations_analytics_cost_report.dart' as cost_report_methods;
-import 'methods/beta_organizations_analytics_summaries.dart' as summaries_methods;
+import 'methods/beta_organizations_analytics_user_usage_report.dart'
+    as user_usage_report_methods;
+import 'methods/beta_organizations_analytics_user_cost_report.dart'
+    as user_cost_report_methods;
+import 'methods/beta_organizations_analytics_usage_report.dart'
+    as usage_report_methods;
+import 'methods/beta_organizations_analytics_cost_report.dart'
+    as cost_report_methods;
+import 'methods/beta_organizations_analytics_summaries.dart'
+    as summaries_methods;
 import 'methods/beta_organizations_analytics_users.dart' as users_methods;
-import 'methods/beta_organizations_analytics_apps_chat_projects.dart' as projects_methods;
+import 'methods/beta_organizations_analytics_apps_chat_projects.dart'
+    as projects_methods;
 import 'methods/beta_organizations_analytics_skills.dart' as skills_methods;
-import 'methods/beta_organizations_analytics_connectors.dart' as connectors_methods;
+import 'methods/beta_organizations_analytics_connectors.dart'
+    as connectors_methods;
 import 'methods/beta_organizations_analytics_plugins.dart' as plugins_methods;
-import 'methods/beta_organizations_analytics_artifacts.dart' as artifacts_methods;
+import 'methods/beta_organizations_analytics_artifacts.dart'
+    as artifacts_methods;
 
 class MessagesBatchesNamespace {
   final ClientConfig _config;
   MessagesBatchesNamespace(ClientConfig config) : _config = config;
+
   /// Send a batch of Message creation requests. The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
   Future<MessageBatch> create(
       {required List<MessageBatchIndividualRequestParams> requests,
@@ -86,7 +111,12 @@ class MessagesBatchesNamespace {
       SdkOptional<String> anthropicUserProfileId = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods_import.createMessagesBatches(_config, requests: requests, anthropicVersion: anthropicVersion, anthropicUserProfileId: anthropicUserProfileId, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods_import.createMessagesBatches(_config,
+        requests: requests,
+        anthropicVersion: anthropicVersion,
+        anthropicUserProfileId: anthropicUserProfileId,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// List all Message Batches within a Workspace. Most recently created batches are returned first. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
@@ -97,7 +127,13 @@ class MessagesBatchesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods_import.listMessagesBatches(_config, beforeId: beforeId, afterId: afterId, limit: limit, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods_import.listMessagesBatches(_config,
+        beforeId: beforeId,
+        afterId: afterId,
+        limit: limit,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
@@ -106,7 +142,11 @@ class MessagesBatchesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods_import.retrieveMessagesBatches(_config, messageBatchId: messageBatchId, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods_import.retrieveMessagesBatches(_config,
+        messageBatchId: messageBatchId,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Delete a Message Batch. Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
@@ -115,7 +155,11 @@ class MessagesBatchesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods_import.deleteMessagesBatches(_config, messageBatchId: messageBatchId, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods_import.deleteMessagesBatches(_config,
+        messageBatchId: messageBatchId,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation. The number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
@@ -124,7 +168,11 @@ class MessagesBatchesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods_import.cancelMessagesBatches(_config, messageBatchId: messageBatchId, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods_import.cancelMessagesBatches(_config,
+        messageBatchId: messageBatchId,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Streams the results of a Message Batch as a `.jsonl` file. Each line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
@@ -133,9 +181,12 @@ class MessagesBatchesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods_import.resultsMessagesBatches(_config, messageBatchId: messageBatchId, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods_import.resultsMessagesBatches(_config,
+        messageBatchId: messageBatchId,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class MessagesNamespace {
@@ -144,6 +195,7 @@ class MessagesNamespace {
   MessagesNamespace(ClientConfig config) : _config = config {
     batches = MessagesBatchesNamespace(config);
   }
+
   /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation. The Messages API can be used for either single queries or stateless multi-turn conversations. Learn more about the Messages API in our [user guide](https://platform.claude.com/docs/en/get-started)
   Future<Message> create(
       {required Model model,
@@ -157,18 +209,42 @@ class MessagesNamespace {
       SdkOptional<String?> inferenceGeo = const SdkOmitted(),
       SdkOptional<Metadata> metadata = const SdkOmitted(),
       SdkOptional<OutputConfig> outputConfig = const SdkOmitted(),
-      SdkOptional<CreateMessageParamsServiceTier> serviceTier = const SdkOmitted(),
+      SdkOptional<CreateMessageParamsServiceTier> serviceTier =
+          const SdkOmitted(),
       SdkOptional<List<String>> stopSequences = const SdkOmitted(),
       SdkOptional<bool> stream = const SdkOmitted(),
       SdkOptional<dynamic> system = const SdkOmitted(),
       SdkOptional<double> temperature = const SdkOmitted(),
       SdkOptional<ThinkingConfigParam> thinking = const SdkOmitted(),
       SdkOptional<ToolChoice> toolChoice = const SdkOmitted(),
-      SdkOptional<List<CreateMessageParamsToolsItem>> tools = const SdkOmitted(),
+      SdkOptional<List<CreateMessageParamsToolsItem>> tools =
+          const SdkOmitted(),
       SdkOptional<int> topK = const SdkOmitted(),
       SdkOptional<double> topP = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return messages_methods_2.createMessages(_config, model: model, messages: messages, maxTokens: maxTokens, anthropicVersion: anthropicVersion, anthropicUserProfileId: anthropicUserProfileId, anthropicWorkspaceId: anthropicWorkspaceId, cacheControl: cacheControl, container: container, inferenceGeo: inferenceGeo, metadata: metadata, outputConfig: outputConfig, serviceTier: serviceTier, stopSequences: stopSequences, stream: stream, system: system, temperature: temperature, thinking: thinking, toolChoice: toolChoice, tools: tools, topK: topK, topP: topP, requestOptions: requestOptions);
+    return messages_methods_2.createMessages(_config,
+        model: model,
+        messages: messages,
+        maxTokens: maxTokens,
+        anthropicVersion: anthropicVersion,
+        anthropicUserProfileId: anthropicUserProfileId,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        cacheControl: cacheControl,
+        container: container,
+        inferenceGeo: inferenceGeo,
+        metadata: metadata,
+        outputConfig: outputConfig,
+        serviceTier: serviceTier,
+        stopSequences: stopSequences,
+        stream: stream,
+        system: system,
+        temperature: temperature,
+        thinking: thinking,
+        toolChoice: toolChoice,
+        tools: tools,
+        topK: topK,
+        topP: topP,
+        requestOptions: requestOptions);
   }
 
   /// Count the number of tokens in a Message. The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it. Learn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)
@@ -183,16 +259,29 @@ class MessagesNamespace {
       SdkOptional<dynamic> system = const SdkOmitted(),
       SdkOptional<ThinkingConfigParam> thinking = const SdkOmitted(),
       SdkOptional<ToolChoice> toolChoice = const SdkOmitted(),
-      SdkOptional<List<CountMessageTokensParamsToolsItem>> tools = const SdkOmitted(),
+      SdkOptional<List<CountMessageTokensParamsToolsItem>> tools =
+          const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return messages_methods_2.countMessagesTokens(_config, messages: messages, model: model, anthropicVersion: anthropicVersion, anthropicUserProfileId: anthropicUserProfileId, anthropicWorkspaceId: anthropicWorkspaceId, cacheControl: cacheControl, outputConfig: outputConfig, system: system, thinking: thinking, toolChoice: toolChoice, tools: tools, requestOptions: requestOptions);
+    return messages_methods_2.countMessagesTokens(_config,
+        messages: messages,
+        model: model,
+        anthropicVersion: anthropicVersion,
+        anthropicUserProfileId: anthropicUserProfileId,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        cacheControl: cacheControl,
+        outputConfig: outputConfig,
+        system: system,
+        thinking: thinking,
+        toolChoice: toolChoice,
+        tools: tools,
+        requestOptions: requestOptions);
   }
-
 }
 
 class CompletionsNamespace {
   final ClientConfig _config;
   CompletionsNamespace(ClientConfig config) : _config = config;
+
   /// [Legacy] Create a Text Completion. The Text Completions API is a legacy API. We recommend using the [Messages API](https://platform.claude.com/docs/en/api/messages) going forward. Future models and features will not be compatible with Text Completions. See our [migration guide](https://platform.claude.com/docs/en/build-with-claude/working-with-messages) for guidance in migrating from Text Completions to Messages.
   Future<CompletionResponse> create(
       {required Model model,
@@ -208,14 +297,27 @@ class CompletionsNamespace {
       SdkOptional<Metadata> metadata = const SdkOmitted(),
       SdkOptional<bool> stream = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return completions_methods.createCompletions(_config, model: model, prompt: prompt, maxTokensToSample: maxTokensToSample, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, stopSequences: stopSequences, temperature: temperature, topP: topP, topK: topK, metadata: metadata, stream: stream, requestOptions: requestOptions);
+    return completions_methods.createCompletions(_config,
+        model: model,
+        prompt: prompt,
+        maxTokensToSample: maxTokensToSample,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        stopSequences: stopSequences,
+        temperature: temperature,
+        topP: topP,
+        topK: topK,
+        metadata: metadata,
+        stream: stream,
+        requestOptions: requestOptions);
   }
-
 }
 
 class ModelsNamespace {
   final ClientConfig _config;
   ModelsNamespace(ClientConfig config) : _config = config;
+
   /// List available models. The Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.
   Future<ListResponseModelInfo> list(
       {SdkOptional<String> beforeId = const SdkOmitted(),
@@ -225,7 +327,14 @@ class ModelsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return models_methods_import.listModels(_config, beforeId: beforeId, afterId: afterId, limit: limit, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return models_methods_import.listModels(_config,
+        beforeId: beforeId,
+        afterId: afterId,
+        limit: limit,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Get a specific model. The Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.
@@ -235,14 +344,19 @@ class ModelsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return models_methods_import.retrieveModels(_config, modelId: modelId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return models_methods_import.retrieveModels(_config,
+        modelId: modelId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class FilesNamespace {
   final ClientConfig _config;
   FilesNamespace(ClientConfig config) : _config = config;
+
   /// Uploads a file for use through the Files API. Send the file as multipart form data and optionally set `expires_in_seconds` to control how long its bytes remain available. The response includes file metadata and the expiration time when one is set.
   Future<FileMetadataSchema> upload(
       {required SdkUploadFile file,
@@ -250,7 +364,12 @@ class FilesNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<int> expiresInSeconds = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return files_methods_import.uploadFiles(_config, file: file, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, expiresInSeconds: expiresInSeconds, requestOptions: requestOptions);
+    return files_methods_import.uploadFiles(_config,
+        file: file,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        expiresInSeconds: expiresInSeconds,
+        requestOptions: requestOptions);
   }
 
   /// Lists file metadata for the authenticated user in the selected Workspace. Use `page` and `limit` to paginate the results, or use `ids[]` to request specific files; `ids[]` cannot be combined with either parameter and returns a single page. IDs that do not resolve to visible files are omitted.
@@ -261,12 +380,30 @@ class FilesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return files_methods_import.listFiles(_config, page: page, ids: ids, limit: limit, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return files_methods_import.listFiles(_config,
+        page: page,
+        ids: ids,
+        limit: limit,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists file metadata for the authenticated user in the selected Workspace. Use `page` and `limit` to paginate the results, or use `ids[]` to request specific files; `ids[]` cannot be combined with either parameter and returns a single page. IDs that do not resolve to visible files are omitted.
-  Stream<FileMetadataSchema> listPaginated({String? page, List<String>? ids, int? limit, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* files_methods_import.listFilesPaginated(_config, page: page, ids: ids, limit: limit, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<FileMetadataSchema> listPaginated(
+      {String? page,
+      List<String>? ids,
+      int? limit,
+      String? anthropicVersion,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* files_methods_import.listFilesPaginated(_config,
+        page: page,
+        ids: ids,
+        limit: limit,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves metadata for a specific file. Use `file_id` to identify the file whose metadata you need, including its filename, MIME type, size, and availability. The response also includes the file's expiration time when applicable.
@@ -275,7 +412,11 @@ class FilesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return files_methods_import.retrieveFiles(_config, fileId: fileId, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return files_methods_import.retrieveFiles(_config,
+        fileId: fileId,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a specific file. Supply the file's `file_id` to remove it from the Files API. A successful response identifies the deleted file.
@@ -284,7 +425,11 @@ class FilesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return files_methods_import.deleteFiles(_config, fileId: fileId, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return files_methods_import.deleteFiles(_config,
+        fileId: fileId,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves the file bytes for a specific file. Supply `file_id` for the file whose content you want to download. The response contains the file content as an octet stream.
@@ -293,14 +438,18 @@ class FilesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return files_methods_import.downloadFiles(_config, fileId: fileId, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return files_methods_import.downloadFiles(_config,
+        fileId: fileId,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class SkillsVersionsNamespace {
   final ClientConfig _config;
   SkillsVersionsNamespace(ClientConfig config) : _config = config;
+
   /// Creates a new version of a skill by uploading its files. Put all files in the same top-level directory and include `SKILL.md` at that directory's root. The response contains the created skill version and its generated identifier.
   Future<SkillVersion> create(
       {required String skillId,
@@ -308,7 +457,12 @@ class SkillsVersionsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return versions_methods_2.createSkillsVersions(_config, skillId: skillId, files: files, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return versions_methods_2.createSkillsVersions(_config,
+        skillId: skillId,
+        files: files,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists versions of a specific skill. Use `page` to continue from the previous response's `next_page` token and `limit` to control the number of results per page.
@@ -319,12 +473,30 @@ class SkillsVersionsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return versions_methods_2.listSkillsVersions(_config, skillId: skillId, page: page, limit: limit, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return versions_methods_2.listSkillsVersions(_config,
+        skillId: skillId,
+        page: page,
+        limit: limit,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists versions of a specific skill. Use `page` to continue from the previous response's `next_page` token and `limit` to control the number of results per page.
-  Stream<SkillVersion> listPaginated({required String skillId, String? page, int? limit, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* versions_methods_2.listSkillsVersionsPaginated(_config, skillId: skillId, page: page, limit: limit, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<SkillVersion> listPaginated(
+      {required String skillId,
+      String? page,
+      int? limit,
+      String? anthropicVersion,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* versions_methods_2.listSkillsVersionsPaginated(_config,
+        skillId: skillId,
+        page: page,
+        limit: limit,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a specific version of a skill. Use `version` to identify the version by its ID or request `latest` for the skill's most recent version. With the `skills-2025-10-02` beta header, identify the version by its Unix epoch timestamp instead.
@@ -334,7 +506,12 @@ class SkillsVersionsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return versions_methods_2.retrieveSkillsVersions(_config, skillId: skillId, version: version, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return versions_methods_2.retrieveSkillsVersions(_config,
+        skillId: skillId,
+        version: version,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a specific version of a skill. Supply the skill and version identifiers to select the version to remove. The response confirms the deletion with the deleted version's ID.
@@ -344,9 +521,13 @@ class SkillsVersionsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return versions_methods_2.deleteSkillsVersions(_config, skillId: skillId, version: version, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return versions_methods_2.deleteSkillsVersions(_config,
+        skillId: skillId,
+        version: version,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class SkillsNamespace {
@@ -355,6 +536,7 @@ class SkillsNamespace {
   SkillsNamespace(ClientConfig config) : _config = config {
     versions = SkillsVersionsNamespace(config);
   }
+
   /// Creates a skill from uploaded files and creates its initial version. Provide the files in a single top-level directory with `SKILL.md` at that directory's root; optionally set `display_name` to a human-readable label. If omitted, the label is derived from the `SKILL.md` frontmatter name.
   Future<Skill> create(
       {required List<SdkUploadFile> files,
@@ -362,7 +544,12 @@ class SkillsNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<String?> displayName = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return skills_methods_2.createSkills(_config, files: files, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, displayName: displayName, requestOptions: requestOptions);
+    return skills_methods_2.createSkills(_config,
+        files: files,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        displayName: displayName,
+        requestOptions: requestOptions);
   }
 
   /// Lists skills available to the authenticated user, with optional pagination and filtering by source. Use `source` to limit results to custom or Anthropic-created skills, and use `page` and `limit` to paginate the results. The response includes a `next_page` cursor when more results are available.
@@ -373,12 +560,30 @@ class SkillsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return skills_methods_2.listSkills(_config, page: page, limit: limit, source: source, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return skills_methods_2.listSkills(_config,
+        page: page,
+        limit: limit,
+        source: source,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists skills available to the authenticated user, with optional pagination and filtering by source. Use `source` to limit results to custom or Anthropic-created skills, and use `page` and `limit` to paginate the results. The response includes a `next_page` cursor when more results are available.
-  Stream<Skill> listPaginated({String? page, int? limit, String? source, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* skills_methods_2.listSkillsPaginated(_config, page: page, limit: limit, source: source, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<Skill> listPaginated(
+      {String? page,
+      int? limit,
+      String? source,
+      String? anthropicVersion,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* skills_methods_2.listSkillsPaginated(_config,
+        page: page,
+        limit: limit,
+        source: source,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a skill by its unique identifier. Use `skill_id` to identify the skill and inspect its display name, source, timestamps, and latest version identifier. The identifier's format and length may change over time.
@@ -387,7 +592,11 @@ class SkillsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return skills_methods_2.retrieveSkills(_config, skillId: skillId, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return skills_methods_2.retrieveSkills(_config,
+        skillId: skillId,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a skill identified by its unique identifier. Use `skill_id` to select the skill to remove. A successful response confirms the deletion and includes the skill's ID.
@@ -396,14 +605,18 @@ class SkillsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return skills_methods_2.deleteSkills(_config, skillId: skillId, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return skills_methods_2.deleteSkills(_config,
+        skillId: skillId,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaMessagesBatchesNamespace {
   final ClientConfig _config;
   BetaMessagesBatchesNamespace(ClientConfig config) : _config = config;
+
   /// Send a batch of Message creation requests. The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
   Future<BetaMessageBatch> create(
       {required List<BetaMessageBatchIndividualRequestParams> requests,
@@ -412,7 +625,13 @@ class BetaMessagesBatchesNamespace {
       SdkOptional<String> anthropicUserProfileId = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods.createBetaMessagesBatches(_config, requests: requests, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicUserProfileId: anthropicUserProfileId, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods.createBetaMessagesBatches(_config,
+        requests: requests,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicUserProfileId: anthropicUserProfileId,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// List all Message Batches within a Workspace. Most recently created batches are returned first. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
@@ -424,7 +643,14 @@ class BetaMessagesBatchesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods.listBetaMessagesBatches(_config, beforeId: beforeId, afterId: afterId, limit: limit, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods.listBetaMessagesBatches(_config,
+        beforeId: beforeId,
+        afterId: afterId,
+        limit: limit,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
@@ -434,7 +660,12 @@ class BetaMessagesBatchesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods.retrieveBetaMessagesBatches(_config, messageBatchId: messageBatchId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods.retrieveBetaMessagesBatches(_config,
+        messageBatchId: messageBatchId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Delete a Message Batch. Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
@@ -444,7 +675,12 @@ class BetaMessagesBatchesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods.deleteBetaMessagesBatches(_config, messageBatchId: messageBatchId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods.deleteBetaMessagesBatches(_config,
+        messageBatchId: messageBatchId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation. The number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
@@ -454,7 +690,12 @@ class BetaMessagesBatchesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods.cancelBetaMessagesBatches(_config, messageBatchId: messageBatchId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods.cancelBetaMessagesBatches(_config,
+        messageBatchId: messageBatchId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Streams the results of a Message Batch as a `.jsonl` file. Each line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests. Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
@@ -464,9 +705,13 @@ class BetaMessagesBatchesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return batches_methods.resultsBetaMessagesBatches(_config, messageBatchId: messageBatchId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return batches_methods.resultsBetaMessagesBatches(_config,
+        messageBatchId: messageBatchId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaMessagesNamespace {
@@ -475,6 +720,7 @@ class BetaMessagesNamespace {
   BetaMessagesNamespace(ClientConfig config) : _config = config {
     batches = BetaMessagesBatchesNamespace(config);
   }
+
   /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation. The Messages API can be used for either single queries or stateless multi-turn conversations. Learn more about the Messages API in our [user guide](https://platform.claude.com/docs/en/get-started)
   Future<BetaMessage> create(
       {required Model model,
@@ -486,16 +732,19 @@ class BetaMessagesNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<BetaCacheControlEphemeral?> cacheControl = const SdkOmitted(),
       SdkOptional<dynamic> container = const SdkOmitted(),
-      SdkOptional<BetaContextManagementConfig?> contextManagement = const SdkOmitted(),
+      SdkOptional<BetaContextManagementConfig?> contextManagement =
+          const SdkOmitted(),
       SdkOptional<BetaDiagnosticsParam?> diagnostics = const SdkOmitted(),
       SdkOptional<dynamic> fallbackCreditToken = const SdkOmitted(),
       SdkOptional<dynamic> fallbacks = const SdkOmitted(),
       SdkOptional<String?> inferenceGeo = const SdkOmitted(),
-      SdkOptional<List<BetaRequestMCPServerURLDefinition>> mcpServers = const SdkOmitted(),
+      SdkOptional<List<BetaRequestMCPServerURLDefinition>> mcpServers =
+          const SdkOmitted(),
       SdkOptional<BetaMetadata> metadata = const SdkOmitted(),
       SdkOptional<BetaOutputConfig> outputConfig = const SdkOmitted(),
       SdkOptional<BetaJsonOutputFormat?> outputFormat = const SdkOmitted(),
-      SdkOptional<BetaCreateMessageParamsServiceTier> serviceTier = const SdkOmitted(),
+      SdkOptional<BetaCreateMessageParamsServiceTier> serviceTier =
+          const SdkOmitted(),
       SdkOptional<BetaSpeed?> speed = const SdkOmitted(),
       SdkOptional<List<String>> stopSequences = const SdkOmitted(),
       SdkOptional<bool> stream = const SdkOmitted(),
@@ -503,11 +752,42 @@ class BetaMessagesNamespace {
       SdkOptional<double> temperature = const SdkOmitted(),
       SdkOptional<BetaThinkingConfigParam> thinking = const SdkOmitted(),
       SdkOptional<BetaToolChoice> toolChoice = const SdkOmitted(),
-      SdkOptional<List<BetaCreateMessageParamsToolsItem>> tools = const SdkOmitted(),
+      SdkOptional<List<BetaCreateMessageParamsToolsItem>> tools =
+          const SdkOmitted(),
       SdkOptional<int> topK = const SdkOmitted(),
       SdkOptional<double> topP = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return messages_methods.createBetaMessages(_config, model: model, messages: messages, maxTokens: maxTokens, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicUserProfileId: anthropicUserProfileId, anthropicWorkspaceId: anthropicWorkspaceId, cacheControl: cacheControl, container: container, contextManagement: contextManagement, diagnostics: diagnostics, fallbackCreditToken: fallbackCreditToken, fallbacks: fallbacks, inferenceGeo: inferenceGeo, mcpServers: mcpServers, metadata: metadata, outputConfig: outputConfig, outputFormat: outputFormat, serviceTier: serviceTier, speed: speed, stopSequences: stopSequences, stream: stream, system: system, temperature: temperature, thinking: thinking, toolChoice: toolChoice, tools: tools, topK: topK, topP: topP, requestOptions: requestOptions);
+    return messages_methods.createBetaMessages(_config,
+        model: model,
+        messages: messages,
+        maxTokens: maxTokens,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicUserProfileId: anthropicUserProfileId,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        cacheControl: cacheControl,
+        container: container,
+        contextManagement: contextManagement,
+        diagnostics: diagnostics,
+        fallbackCreditToken: fallbackCreditToken,
+        fallbacks: fallbacks,
+        inferenceGeo: inferenceGeo,
+        mcpServers: mcpServers,
+        metadata: metadata,
+        outputConfig: outputConfig,
+        outputFormat: outputFormat,
+        serviceTier: serviceTier,
+        speed: speed,
+        stopSequences: stopSequences,
+        stream: stream,
+        system: system,
+        temperature: temperature,
+        thinking: thinking,
+        toolChoice: toolChoice,
+        tools: tools,
+        topK: topK,
+        topP: topP,
+        requestOptions: requestOptions);
   }
 
   /// Count the number of tokens in a Message. The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it. Learn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)
@@ -519,24 +799,44 @@ class BetaMessagesNamespace {
       SdkOptional<String> anthropicUserProfileId = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<BetaCacheControlEphemeral?> cacheControl = const SdkOmitted(),
-      SdkOptional<BetaContextManagementConfig?> contextManagement = const SdkOmitted(),
-      SdkOptional<List<BetaRequestMCPServerURLDefinition>> mcpServers = const SdkOmitted(),
+      SdkOptional<BetaContextManagementConfig?> contextManagement =
+          const SdkOmitted(),
+      SdkOptional<List<BetaRequestMCPServerURLDefinition>> mcpServers =
+          const SdkOmitted(),
       SdkOptional<BetaOutputConfig> outputConfig = const SdkOmitted(),
       SdkOptional<BetaJsonOutputFormat?> outputFormat = const SdkOmitted(),
       SdkOptional<BetaSpeed?> speed = const SdkOmitted(),
       SdkOptional<dynamic> system = const SdkOmitted(),
       SdkOptional<BetaThinkingConfigParam> thinking = const SdkOmitted(),
       SdkOptional<BetaToolChoice> toolChoice = const SdkOmitted(),
-      SdkOptional<List<BetaCountMessageTokensParamsToolsItem>> tools = const SdkOmitted(),
+      SdkOptional<List<BetaCountMessageTokensParamsToolsItem>> tools =
+          const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return messages_methods.countBetaMessagesTokens(_config, messages: messages, model: model, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicUserProfileId: anthropicUserProfileId, anthropicWorkspaceId: anthropicWorkspaceId, cacheControl: cacheControl, contextManagement: contextManagement, mcpServers: mcpServers, outputConfig: outputConfig, outputFormat: outputFormat, speed: speed, system: system, thinking: thinking, toolChoice: toolChoice, tools: tools, requestOptions: requestOptions);
+    return messages_methods.countBetaMessagesTokens(_config,
+        messages: messages,
+        model: model,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicUserProfileId: anthropicUserProfileId,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        cacheControl: cacheControl,
+        contextManagement: contextManagement,
+        mcpServers: mcpServers,
+        outputConfig: outputConfig,
+        outputFormat: outputFormat,
+        speed: speed,
+        system: system,
+        thinking: thinking,
+        toolChoice: toolChoice,
+        tools: tools,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaModelsNamespace {
   final ClientConfig _config;
   BetaModelsNamespace(ClientConfig config) : _config = config;
+
   /// List available models. The Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.
   Future<BetaListResponseModelInfo> list(
       {SdkOptional<String> beforeId = const SdkOmitted(),
@@ -546,7 +846,14 @@ class BetaModelsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return models_methods.listBetaModels(_config, beforeId: beforeId, afterId: afterId, limit: limit, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return models_methods.listBetaModels(_config,
+        beforeId: beforeId,
+        afterId: afterId,
+        limit: limit,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Get a specific model. The Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.
@@ -556,14 +863,19 @@ class BetaModelsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return models_methods.retrieveBetaModels(_config, modelId: modelId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return models_methods.retrieveBetaModels(_config,
+        modelId: modelId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaFilesNamespace {
   final ClientConfig _config;
   BetaFilesNamespace(ClientConfig config) : _config = config;
+
   /// Uploads a file and returns its metadata. Send the file as multipart form data in the `file` field; optionally set `expires_in_seconds` to control when the file bytes become unavailable. The uploaded filename uses only the final path component, and a missing or empty filename is replaced with `unnamed` plus the known file extension.
   Future<BetaFileMetadataSchema> upload(
       {required SdkUploadFile file,
@@ -572,7 +884,13 @@ class BetaFilesNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<int> expiresInSeconds = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return files_methods.uploadBetaFiles(_config, file: file, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, expiresInSeconds: expiresInSeconds, requestOptions: requestOptions);
+    return files_methods.uploadBetaFiles(_config,
+        file: file,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        expiresInSeconds: expiresInSeconds,
+        requestOptions: requestOptions);
   }
 
   /// Lists file metadata available to the authenticated user. Use `scope_id` to filter by scope, or `ids[]` to retrieve specific files; `ids[]` cannot be combined with `page` or `limit`, and returns a single page. Use `page` and `limit` to paginate the results.
@@ -585,12 +903,36 @@ class BetaFilesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return files_methods.listBetaFiles(_config, page: page, ids: ids, limit: limit, scopeId: scopeId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return files_methods.listBetaFiles(_config,
+        page: page,
+        ids: ids,
+        limit: limit,
+        scopeId: scopeId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists file metadata available to the authenticated user. Use `scope_id` to filter by scope, or `ids[]` to retrieve specific files; `ids[]` cannot be combined with `page` or `limit`, and returns a single page. Use `page` and `limit` to paginate the results.
-  Stream<BetaFileMetadataSchema> listPaginated({String? page, List<String>? ids, int? limit, String? scopeId, List<String>? anthropicBeta, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* files_methods.listBetaFilesPaginated(_config, page: page, ids: ids, limit: limit, scopeId: scopeId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaFileMetadataSchema> listPaginated(
+      {String? page,
+      List<String>? ids,
+      int? limit,
+      String? scopeId,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* files_methods.listBetaFilesPaginated(_config,
+        page: page,
+        ids: ids,
+        limit: limit,
+        scopeId: scopeId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves metadata for a file by its ID. Use this operation to inspect details such as the file's name, MIME type, size, scope, and expiration time. Provide an API key and, when needed, a Workspace ID that matches the credential's Workspace.
@@ -600,7 +942,12 @@ class BetaFilesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return files_methods.retrieveBetaFiles(_config, fileId: fileId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return files_methods.retrieveBetaFiles(_config,
+        fileId: fileId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a file by its ID. Use this operation when you no longer need the file; deletion removes it from the files available to you. Provide an API key and, when needed, a Workspace ID that matches the credential's Workspace.
@@ -610,7 +957,12 @@ class BetaFilesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return files_methods.deleteBetaFiles(_config, fileId: fileId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return files_methods.deleteBetaFiles(_config,
+        fileId: fileId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves the contents of a file by its ID. Use this operation when you need the file bytes rather than its metadata. Provide an API key and, when needed, a Workspace ID that matches the credential's Workspace.
@@ -620,14 +972,19 @@ class BetaFilesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return files_methods.downloadBetaFiles(_config, fileId: fileId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return files_methods.downloadBetaFiles(_config,
+        fileId: fileId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaSkillsVersionsNamespace {
   final ClientConfig _config;
   BetaSkillsVersionsNamespace(ClientConfig config) : _config = config;
+
   /// Creates a new version for the Skill identified by `skill_id`, using the uploaded files as its contents. Include a `SKILL.md` file at the root of a single top-level directory in the multipart upload. The response includes the created version's identifier, name, description, and creation timestamp.
   Future<BetaSkillVersion> create(
       {required String skillId,
@@ -636,7 +993,13 @@ class BetaSkillsVersionsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return versions_methods_import.createBetaSkillsVersions(_config, skillId: skillId, files: files, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return versions_methods_import.createBetaSkillsVersions(_config,
+        skillId: skillId,
+        files: files,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists the versions associated with a Skill. Use `page` to continue from the previous response's `next_page` token and `limit` to control the number of results per page. Results include version metadata and a token for retrieving the next page when more versions are available.
@@ -648,12 +1011,33 @@ class BetaSkillsVersionsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return versions_methods_import.listBetaSkillsVersions(_config, skillId: skillId, page: page, limit: limit, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return versions_methods_import.listBetaSkillsVersions(_config,
+        skillId: skillId,
+        page: page,
+        limit: limit,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists the versions associated with a Skill. Use `page` to continue from the previous response's `next_page` token and `limit` to control the number of results per page. Results include version metadata and a token for retrieving the next page when more versions are available.
-  Stream<BetaSkillVersion> listPaginated({required String skillId, String? page, int? limit, List<String>? anthropicBeta, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* versions_methods_import.listBetaSkillsVersionsPaginated(_config, skillId: skillId, page: page, limit: limit, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaSkillVersion> listPaginated(
+      {required String skillId,
+      String? page,
+      int? limit,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* versions_methods_import.listBetaSkillsVersionsPaginated(_config,
+        skillId: skillId,
+        page: page,
+        limit: limit,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a specific version of a Skill. Use `skill_id` to select the Skill and `version` to identify the version by its ID or the literal `latest`; with the `skills-2025-10-02` beta, use its Unix epoch timestamp instead. The response contains the version's metadata, including its name and description.
@@ -664,7 +1048,13 @@ class BetaSkillsVersionsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return versions_methods_import.retrieveBetaSkillsVersions(_config, skillId: skillId, version: version, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return versions_methods_import.retrieveBetaSkillsVersions(_config,
+        skillId: skillId,
+        version: version,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a specific version of a Skill using its Skill identifier and version identifier. Use this operation to remove a version when it is no longer needed; the version is identified by its ID, or by its Unix epoch timestamp when using the `skills-2025-10-02` beta. The response confirms deletion with the version identifier.
@@ -675,7 +1065,13 @@ class BetaSkillsVersionsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return versions_methods_import.deleteBetaSkillsVersions(_config, skillId: skillId, version: version, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return versions_methods_import.deleteBetaSkillsVersions(_config,
+        skillId: skillId,
+        version: version,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Download a skill version's content as a zip archive.
@@ -686,9 +1082,14 @@ class BetaSkillsVersionsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return versions_methods_import.downloadBetaSkillsVersions(_config, skillId: skillId, version: version, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return versions_methods_import.downloadBetaSkillsVersions(_config,
+        skillId: skillId,
+        version: version,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaSkillsNamespace {
@@ -697,6 +1098,7 @@ class BetaSkillsNamespace {
   BetaSkillsNamespace(ClientConfig config) : _config = config {
     versions = BetaSkillsVersionsNamespace(config);
   }
+
   /// Creates a new Skill and its initial version from uploaded files. Include a `SKILL.md` file at the root of a single top-level directory; `display_name` can be omitted to derive it from the file's frontmatter. The response includes the created Skill and its latest version identifier.
   Future<BetaSkill> create(
       {required List<SdkUploadFile> files,
@@ -705,7 +1107,13 @@ class BetaSkillsNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<String?> displayName = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return skills_methods_import.createBetaSkills(_config, files: files, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, displayName: displayName, requestOptions: requestOptions);
+    return skills_methods_import.createBetaSkills(_config,
+        files: files,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        displayName: displayName,
+        requestOptions: requestOptions);
   }
 
   /// Lists skills available to the authenticated user. Use `source` to filter the results to custom or Anthropic-created skills, and use the pagination token to retrieve additional pages. Use `page` and `limit` to paginate the results.
@@ -717,12 +1125,33 @@ class BetaSkillsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return skills_methods_import.listBetaSkills(_config, page: page, limit: limit, source: source, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return skills_methods_import.listBetaSkills(_config,
+        page: page,
+        limit: limit,
+        source: source,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists skills available to the authenticated user. Use `source` to filter the results to custom or Anthropic-created skills, and use the pagination token to retrieve additional pages. Use `page` and `limit` to paginate the results.
-  Stream<BetaSkill> listPaginated({String? page, int? limit, String? source, List<String>? anthropicBeta, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* skills_methods_import.listBetaSkillsPaginated(_config, page: page, limit: limit, source: source, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaSkill> listPaginated(
+      {String? page,
+      int? limit,
+      String? source,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* skills_methods_import.listBetaSkillsPaginated(_config,
+        page: page,
+        limit: limit,
+        source: source,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a Skill by its identifier. Use `skill_id` to select the Skill and, when applicable, `anthropic-workspace-id` to choose the workspace to access. The response includes the Skill's metadata and latest version identifier.
@@ -732,7 +1161,12 @@ class BetaSkillsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return skills_methods_import.retrieveBetaSkills(_config, skillId: skillId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return skills_methods_import.retrieveBetaSkills(_config,
+        skillId: skillId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a Skill identified by its `skill_id` path parameter. Use this operation when you want to remove a Skill from the selected workspace. The response confirms deletion with the Skill identifier and a deletion type.
@@ -742,14 +1176,19 @@ class BetaSkillsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return skills_methods_import.deleteBetaSkills(_config, skillId: skillId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return skills_methods_import.deleteBetaSkills(_config,
+        skillId: skillId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaEnvironmentsWorkNamespace {
   final ClientConfig _config;
   BetaEnvironmentsWorkNamespace(ClientConfig config) : _config = config;
+
   /// Retrieves queue statistics for an environment, including queued work depth, pending work, and the oldest queued timestamp. Use `environment_id` to select the environment; `workers_polling` reports workers that polled in the last 30 seconds when poll requests include a worker identifier.
   ///
   /// Get statistics about the work queue for an environment.
@@ -760,7 +1199,13 @@ class BetaEnvironmentsWorkNamespace {
       SdkOptional<String?> authorization = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return work_methods.retrieveBetaEnvironmentsWorkStats(_config, environmentId: environmentId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, authorization: authorization, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return work_methods.retrieveBetaEnvironmentsWorkStats(_config,
+        environmentId: environmentId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        authorization: authorization,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Polls an environment work queue for an available work item, optionally waiting for work or reclaiming older unacknowledged items. The pre-built environment worker in the SDKs and CLI calls this operation automatically, so you do not need to invoke it directly. Set `block_ms` to wait up to 999 milliseconds; omit it for a non-blocking poll.
@@ -775,7 +1220,15 @@ class BetaEnvironmentsWorkNamespace {
       SdkOptional<String?> anthropicWorkerId = const SdkOmitted(),
       SdkOptional<String?> authorization = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return work_methods.pollBetaEnvironmentsWork(_config, environmentId: environmentId, blockMs: blockMs, reclaimOlderThanMs: reclaimOlderThanMs, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkerId: anthropicWorkerId, authorization: authorization, requestOptions: requestOptions);
+    return work_methods.pollBetaEnvironmentsWork(_config,
+        environmentId: environmentId,
+        blockMs: blockMs,
+        reclaimOlderThanMs: reclaimOlderThanMs,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkerId: anthropicWorkerId,
+        authorization: authorization,
+        requestOptions: requestOptions);
   }
 
   /// Acknowledges receipt of a work item, moving it from the queued state to starting and removing it from the queue. The pre-built environment worker in the SDKs and CLI calls this operation automatically, so you do not need to invoke it directly. Use the environment and work identifiers corresponding to the item being processed.
@@ -788,7 +1241,13 @@ class BetaEnvironmentsWorkNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String?> authorization = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return work_methods.ackBetaEnvironmentsWork(_config, environmentId: environmentId, workId: workId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, authorization: authorization, requestOptions: requestOptions);
+    return work_methods.ackBetaEnvironmentsWork(_config,
+        environmentId: environmentId,
+        workId: workId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        authorization: authorization,
+        requestOptions: requestOptions);
   }
 
   /// Records a heartbeat for a work item to maintain its lease. The pre-built environment worker in the SDKs and CLI calls this operation automatically, so you do not need to invoke it directly. For conditional updates, send `NO_HEARTBEAT` for the first heartbeat or echo the previous heartbeat value exactly.
@@ -803,7 +1262,15 @@ class BetaEnvironmentsWorkNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String?> authorization = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return work_methods.heartbeatBetaEnvironmentsWork(_config, environmentId: environmentId, workId: workId, desiredTtlSeconds: desiredTtlSeconds, expectedLastHeartbeat: expectedLastHeartbeat, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, authorization: authorization, requestOptions: requestOptions);
+    return work_methods.heartbeatBetaEnvironmentsWork(_config,
+        environmentId: environmentId,
+        workId: workId,
+        desiredTtlSeconds: desiredTtlSeconds,
+        expectedLastHeartbeat: expectedLastHeartbeat,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        authorization: authorization,
+        requestOptions: requestOptions);
   }
 
   /// Stops a work item by initiating a graceful or forced shutdown. The pre-built environment worker in the SDKs and CLI calls this operation automatically, so you do not need to invoke it directly. Set `force` to true to stop the work immediately rather than allowing graceful shutdown.
@@ -818,7 +1285,15 @@ class BetaEnvironmentsWorkNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<bool> force = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return work_methods.stopBetaEnvironmentsWork(_config, environmentId: environmentId, workId: workId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, authorization: authorization, anthropicWorkspaceId: anthropicWorkspaceId, force: force, requestOptions: requestOptions);
+    return work_methods.stopBetaEnvironmentsWork(_config,
+        environmentId: environmentId,
+        workId: workId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        authorization: authorization,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        force: force,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves detailed information about a specific work item in an environment. The pre-built environment worker in the SDKs and CLI calls this operation automatically, so you do not need to invoke it directly. Use both `environment_id` and `work_id` to identify the item.
@@ -831,7 +1306,13 @@ class BetaEnvironmentsWorkNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return work_methods.retrieveBetaEnvironmentsWork(_config, environmentId: environmentId, workId: workId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return work_methods.retrieveBetaEnvironmentsWork(_config,
+        environmentId: environmentId,
+        workId: workId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Updates metadata on a work item in a self-hosted environment using merge semantics. Set metadata keys to strings to add or replace them, or to null to delete them; omit `metadata` keys you want to preserve. The SDK and CLI environment workers call this operation automatically, so you do not need to invoke it directly.
@@ -845,7 +1326,14 @@ class BetaEnvironmentsWorkNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return work_methods.updateBetaEnvironmentsWork(_config, environmentId: environmentId, workId: workId, metadata: metadata, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return work_methods.updateBetaEnvironmentsWork(_config,
+        environmentId: environmentId,
+        workId: workId,
+        metadata: metadata,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists work items in a self-hosted environment. Use the cursor in `page` to continue through the results, and use `limit` to control the maximum number of items in each response. The SDK and CLI environment workers call this operation automatically, so you do not need to invoke it directly.
@@ -859,16 +1347,36 @@ class BetaEnvironmentsWorkNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String?> authorization = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return work_methods.listBetaEnvironmentsWork(_config, environmentId: environmentId, limit: limit, page: page, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, authorization: authorization, requestOptions: requestOptions);
+    return work_methods.listBetaEnvironmentsWork(_config,
+        environmentId: environmentId,
+        limit: limit,
+        page: page,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        authorization: authorization,
+        requestOptions: requestOptions);
   }
 
   /// Lists work items in a self-hosted environment. Use the cursor in `page` to continue through the results, and use `limit` to control the maximum number of items in each response. The SDK and CLI environment workers call this operation automatically, so you do not need to invoke it directly.
   ///
   /// Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly. List work items in an environment.
-  Stream<BetaSelfHostedWork> listPaginated({required String environmentId, int? limit, String? page, List<String>? anthropicBeta, String? anthropicVersion, String? authorization, RequestOptions? requestOptions}) async* {
-    yield* work_methods.listBetaEnvironmentsWorkPaginated(_config, environmentId: environmentId, limit: limit, page: page, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, authorization: authorization, requestOptions: requestOptions);
+  Stream<BetaSelfHostedWork> listPaginated(
+      {required String environmentId,
+      int? limit,
+      String? page,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      String? authorization,
+      RequestOptions? requestOptions}) async* {
+    yield* work_methods.listBetaEnvironmentsWorkPaginated(_config,
+        environmentId: environmentId,
+        limit: limit,
+        page: page,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        authorization: authorization,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaEnvironmentsNamespace {
@@ -877,18 +1385,29 @@ class BetaEnvironmentsNamespace {
   BetaEnvironmentsNamespace(ClientConfig config) : _config = config {
     work = BetaEnvironmentsWorkNamespace(config);
   }
+
   /// Create a new environment with the specified configuration.
   Future<BetaEnvironment> create(
       {required String name,
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-      SdkOptional<BetaPublicEnvironmentCreateRequestConfig?> config_ = const SdkOmitted(),
+      SdkOptional<BetaPublicEnvironmentCreateRequestConfig?> config_ =
+          const SdkOmitted(),
       SdkOptional<String?> description = const SdkOmitted(),
       SdkOptional<Map<String, String>> metadata = const SdkOmitted(),
       SdkOptional<String?> scope = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return environments_methods.createBetaEnvironments(_config, name: name, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, config_: config_, description: description, metadata: metadata, scope: scope, requestOptions: requestOptions);
+    return environments_methods.createBetaEnvironments(_config,
+        name: name,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        config_: config_,
+        description: description,
+        metadata: metadata,
+        scope: scope,
+        requestOptions: requestOptions);
   }
 
   /// Lists environments with cursor-based pagination. Set `include_archived` to include archived environments and use `page` with the previous response's `next_page` token to fetch another page. The response includes environment objects and a token indicating whether another page is available.
@@ -902,14 +1421,35 @@ class BetaEnvironmentsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return environments_methods.listBetaEnvironments(_config, limit: limit, page: page, includeArchived: includeArchived, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return environments_methods.listBetaEnvironments(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists environments with cursor-based pagination. Set `include_archived` to include archived environments and use `page` with the previous response's `next_page` token to fetch another page. The response includes environment objects and a token indicating whether another page is available.
   ///
   /// List environments with pagination support.
-  Stream<BetaEnvironment> listPaginated({int? limit, String? page, bool? includeArchived, List<String>? anthropicBeta, String? anthropicVersion, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* environments_methods.listBetaEnvironmentsPaginated(_config, limit: limit, page: page, includeArchived: includeArchived, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaEnvironment> listPaginated(
+      {int? limit,
+      String? page,
+      bool? includeArchived,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* environments_methods.listBetaEnvironmentsPaginated(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a specific environment by its identifier. Use `environment_id` to select the environment, and include `anthropic-workspace-id` when your credentials can act on multiple workspaces. The response includes its configuration, visibility scope, metadata, and lifecycle timestamps.
@@ -921,7 +1461,12 @@ class BetaEnvironmentsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return environments_methods.retrieveBetaEnvironments(_config, environmentId: environmentId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return environments_methods.retrieveBetaEnvironments(_config,
+        environmentId: environmentId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Updates the configuration and settings of an existing environment. Supply only the fields you want to change: omitted fields remain unchanged, while `description: null` clears the description. Use `scope` to choose whether the environment is visible across the organization or only to its owning account.
@@ -932,13 +1477,24 @@ class BetaEnvironmentsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-      SdkOptional<BetaPublicEnvironmentUpdateRequestConfig?> config_ = const SdkOmitted(),
+      SdkOptional<BetaPublicEnvironmentUpdateRequestConfig?> config_ =
+          const SdkOmitted(),
       SdkOptional<String?> description = const SdkOmitted(),
       SdkOptional<Map<String, String>> metadata = const SdkOmitted(),
       SdkOptional<String?> name = const SdkOmitted(),
       SdkOptional<String?> scope = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return environments_methods.updateBetaEnvironments(_config, environmentId: environmentId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, config_: config_, description: description, metadata: metadata, name: name, scope: scope, requestOptions: requestOptions);
+    return environments_methods.updateBetaEnvironments(_config,
+        environmentId: environmentId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        config_: config_,
+        description: description,
+        metadata: metadata,
+        name: name,
+        scope: scope,
+        requestOptions: requestOptions);
   }
 
   /// Deletes an environment identified by `environment_id`. Use this operation when you want to remove an environment rather than archive it. A successful response confirms deletion with the environment identifier.
@@ -950,7 +1506,12 @@ class BetaEnvironmentsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return environments_methods.deleteBetaEnvironments(_config, environmentId: environmentId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return environments_methods.deleteBetaEnvironments(_config,
+        environmentId: environmentId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Archives an environment identified by `environment_id`. Use this operation to prevent the environment from being used to create new sessions without deleting the environment record. The response includes the environment with its updated archive timestamp.
@@ -962,14 +1523,19 @@ class BetaEnvironmentsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return environments_methods.archiveBetaEnvironments(_config, environmentId: environmentId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return environments_methods.archiveBetaEnvironments(_config,
+        environmentId: environmentId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaSessionsEventsNamespace {
   final ClientConfig _config;
   BetaSessionsEventsNamespace(ClientConfig config) : _config = config;
+
   /// Lists events for a session in pages, ordered by the event processing time. Use `types[]` and the `created_at` filters to narrow the events, and use `page` to continue from a previous response's cursor. Set `order` to choose chronological or reverse-chronological order.
   Future<BetaManagedAgentsListSessionEvents> list(
       {required String sessionId,
@@ -985,12 +1551,51 @@ class BetaSessionsEventsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return events_methods.listBetaSessionsEvents(_config, sessionId: sessionId, limit: limit, page: page, order: order, types: types, createdAtGte: createdAtGte, createdAtGt: createdAtGt, createdAtLte: createdAtLte, createdAtLt: createdAtLt, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return events_methods.listBetaSessionsEvents(_config,
+        sessionId: sessionId,
+        limit: limit,
+        page: page,
+        order: order,
+        types: types,
+        createdAtGte: createdAtGte,
+        createdAtGt: createdAtGt,
+        createdAtLte: createdAtLte,
+        createdAtLt: createdAtLt,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists events for a session in pages, ordered by the event processing time. Use `types[]` and the `created_at` filters to narrow the events, and use `page` to continue from a previous response's cursor. Set `order` to choose chronological or reverse-chronological order.
-  Stream<BetaManagedAgentsSessionEvent> listPaginated({required String sessionId, int? limit, String? page, BetaManagedAgentsListOrder? order, List<String>? types, String? createdAtGte, String? createdAtGt, String? createdAtLte, String? createdAtLt, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* events_methods.listBetaSessionsEventsPaginated(_config, sessionId: sessionId, limit: limit, page: page, order: order, types: types, createdAtGte: createdAtGte, createdAtGt: createdAtGt, createdAtLte: createdAtLte, createdAtLt: createdAtLt, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsSessionEvent> listPaginated(
+      {required String sessionId,
+      int? limit,
+      String? page,
+      BetaManagedAgentsListOrder? order,
+      List<String>? types,
+      String? createdAtGte,
+      String? createdAtGt,
+      String? createdAtLte,
+      String? createdAtLt,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* events_methods.listBetaSessionsEventsPaginated(_config,
+        sessionId: sessionId,
+        limit: limit,
+        page: page,
+        order: order,
+        types: types,
+        createdAtGte: createdAtGte,
+        createdAtGt: createdAtGt,
+        createdAtLte: createdAtLte,
+        createdAtLt: createdAtLt,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Submits events to a session, including user messages, interrupts, and tool execution confirmations. Provide the events as an array in `events`; each event must match one of the supported event types and include that type's required fields. The response contains the events that were successfully sent to the session.
@@ -1001,44 +1606,79 @@ class BetaSessionsEventsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return events_methods.createBetaSessionsEvents(_config, sessionId: sessionId, events: events, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return events_methods.createBetaSessionsEvents(_config,
+        sessionId: sessionId,
+        events: events,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Streams events from a session as server-sent events. Set `event_deltas[]` to receive best-effort previews for `agent.message` or `agent.thinking` events before the complete event arrives; the final event contains the complete content when produced. If a model request ends early with an error or interrupt, its terminal `span.model_request_end` closes the preview without a final event.
   Future<BetaManagedAgentsStreamSessionEvents> stream(
       {required String sessionId,
-      SdkOptional<List<BetaManagedAgentsEventDeltaType>> eventDeltas = const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsEventDeltaType>> eventDeltas =
+          const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return events_methods.streamBetaSessionsEvents(_config, sessionId: sessionId, eventDeltas: eventDeltas, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return events_methods.streamBetaSessionsEvents(_config,
+        sessionId: sessionId,
+        eventDeltas: eventDeltas,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaSessionsThreadsEventsNamespace {
   final ClientConfig _config;
   BetaSessionsThreadsEventsNamespace(ClientConfig config) : _config = config;
+
   /// Lists events for a specific execution thread, ordered by processing time. Use `page` as the cursor for subsequent results and `limit` to control the requested page size.
-  Future<BetaManagedAgentsListSessionThreadEvents>
-      list(
-          {required String sessionId,
-          required String threadId,
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String> page = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return events_methods_import.listBetaSessionsThreadsEvents(_config, sessionId: sessionId, threadId: threadId, limit: limit, page: page, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Future<BetaManagedAgentsListSessionThreadEvents> list(
+      {required String sessionId,
+      required String threadId,
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String> page = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return events_methods_import.listBetaSessionsThreadsEvents(_config,
+        sessionId: sessionId,
+        threadId: threadId,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists events for a specific execution thread, ordered by processing time. Use `page` as the cursor for subsequent results and `limit` to control the requested page size.
-  Stream<BetaManagedAgentsSessionEvent> listPaginated({required String sessionId, required String threadId, int? limit, String? page, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* events_methods_import.listBetaSessionsThreadsEventsPaginated(_config, sessionId: sessionId, threadId: threadId, limit: limit, page: page, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsSessionEvent> listPaginated(
+      {required String sessionId,
+      required String threadId,
+      int? limit,
+      String? page,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* events_methods_import.listBetaSessionsThreadsEventsPaginated(_config,
+        sessionId: sessionId,
+        threadId: threadId,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaSessionsThreadsNamespace {
@@ -1047,6 +1687,7 @@ class BetaSessionsThreadsNamespace {
   BetaSessionsThreadsNamespace(ClientConfig config) : _config = config {
     events = BetaSessionsThreadsEventsNamespace(config);
   }
+
   /// Lists the execution threads belonging to a session, with the primary thread followed by child threads in spawn order. Use `page` to continue from the previous response's `next_page` cursor; `limit` controls page size and defaults to 1000.
   Future<BetaManagedAgentsListSessionThreads> list(
       {required String sessionId,
@@ -1056,12 +1697,33 @@ class BetaSessionsThreadsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return threads_methods.listBetaSessionsThreads(_config, sessionId: sessionId, limit: limit, page: page, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return threads_methods.listBetaSessionsThreads(_config,
+        sessionId: sessionId,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists the execution threads belonging to a session, with the primary thread followed by child threads in spawn order. Use `page` to continue from the previous response's `next_page` cursor; `limit` controls page size and defaults to 1000.
-  Stream<BetaManagedAgentsSessionThread> listPaginated({required String sessionId, int? limit, String? page, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* threads_methods.listBetaSessionsThreadsPaginated(_config, sessionId: sessionId, limit: limit, page: page, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsSessionThread> listPaginated(
+      {required String sessionId,
+      int? limit,
+      String? page,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* threads_methods.listBetaSessionsThreadsPaginated(_config,
+        sessionId: sessionId,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves an execution thread from a session, including its status, agent snapshot, usage, and timing statistics. Supply both `session_id` and `thread_id` to identify the thread and its parent session.
@@ -1072,19 +1734,33 @@ class BetaSessionsThreadsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return threads_methods.retrieveBetaSessionsThreads(_config, sessionId: sessionId, threadId: threadId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return threads_methods.retrieveBetaSessionsThreads(_config,
+        sessionId: sessionId,
+        threadId: threadId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Streams server-sent events from an execution thread, delivering events as they are produced. Use `event_deltas[]` to request best-effort previews for `agent.message` or `agent.thinking`; the final event carries complete content, while a model request that ends early may have no final event.
   Future<BetaManagedAgentsStreamSessionThreadEvents> stream(
       {required String sessionId,
       required String threadId,
-      SdkOptional<List<BetaManagedAgentsEventDeltaType>> eventDeltas = const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsEventDeltaType>> eventDeltas =
+          const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return threads_methods.streamBetaSessionsThreads(_config, sessionId: sessionId, threadId: threadId, eventDeltas: eventDeltas, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return threads_methods.streamBetaSessionsThreads(_config,
+        sessionId: sessionId,
+        threadId: threadId,
+        eventDeltas: eventDeltas,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Archives an execution thread within a session and returns the updated thread record. Supply `session_id` and `thread_id` to identify the thread; if you select a Workspace with `anthropic-workspace-id`, it must match the credential's Workspace.
@@ -1095,14 +1771,20 @@ class BetaSessionsThreadsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return threads_methods.archiveBetaSessionsThreads(_config, sessionId: sessionId, threadId: threadId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return threads_methods.archiveBetaSessionsThreads(_config,
+        sessionId: sessionId,
+        threadId: threadId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaSessionsResourcesNamespace {
   final ClientConfig _config;
   BetaSessionsResourcesNamespace(ClientConfig config) : _config = config;
+
   /// Lists resources attached to a session, ordered by creation time. Use `page` to continue from a previous `next_page` cursor; `limit` can cap the number returned at 1000, and omitting it returns all resources.
   Future<BetaManagedAgentsListSessionResources> list(
       {required String sessionId,
@@ -1112,12 +1794,33 @@ class BetaSessionsResourcesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return resources_methods.listBetaSessionsResources(_config, sessionId: sessionId, limit: limit, page: page, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return resources_methods.listBetaSessionsResources(_config,
+        sessionId: sessionId,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists resources attached to a session, ordered by creation time. Use `page` to continue from a previous `next_page` cursor; `limit` can cap the number returned at 1000, and omitting it returns all resources.
-  Stream<BetaManagedAgentsSessionResource> listPaginated({required String sessionId, int? limit, String? page, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* resources_methods.listBetaSessionsResourcesPaginated(_config, sessionId: sessionId, limit: limit, page: page, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsSessionResource> listPaginated(
+      {required String sessionId,
+      int? limit,
+      String? page,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* resources_methods.listBetaSessionsResourcesPaginated(_config,
+        sessionId: sessionId,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Attaches a previously uploaded file to a session as a mounted resource. Supply the required `file_id`; optionally set `mount_path`, which defaults to `/mnt/session/uploads/&lt;file_id&gt;` when omitted.
@@ -1128,7 +1831,13 @@ class BetaSessionsResourcesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return resources_methods.createBetaSessionsResources(_config, sessionId: sessionId, body: body, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return resources_methods.createBetaSessionsResources(_config,
+        sessionId: sessionId,
+        body: body,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a resource attached to a session, such as a mounted file, repository, or memory store. Use `session_id` and `resource_id` to identify the session and the specific resource.
@@ -1139,7 +1848,13 @@ class BetaSessionsResourcesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return resources_methods.retrieveBetaSessionsResources(_config, sessionId: sessionId, resourceId: resourceId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return resources_methods.retrieveBetaSessionsResources(_config,
+        sessionId: sessionId,
+        resourceId: resourceId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a resource from a session. Use `session_id` and `resource_id` to identify the session and resource to remove. A successful response confirms deletion with the resource ID.
@@ -1150,7 +1865,13 @@ class BetaSessionsResourcesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return resources_methods.deleteBetaSessionsResources(_config, sessionId: sessionId, resourceId: resourceId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return resources_methods.deleteBetaSessionsResources(_config,
+        sessionId: sessionId,
+        resourceId: resourceId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Updates the authorization token for a resource attached to a session. Supply `authorization_token` between 1 and 4096 characters; token rotation is currently supported only for `github_repository` resources.
@@ -1162,9 +1883,15 @@ class BetaSessionsResourcesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return resources_methods.updateBetaSessionsResources(_config, sessionId: sessionId, resourceId: resourceId, authorizationToken: authorizationToken, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return resources_methods.updateBetaSessionsResources(_config,
+        sessionId: sessionId,
+        resourceId: resourceId,
+        authorizationToken: authorizationToken,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaSessionsNamespace {
@@ -1177,6 +1904,7 @@ class BetaSessionsNamespace {
     threads = BetaSessionsThreadsNamespace(config);
     resources = BetaSessionsResourcesNamespace(config);
   }
+
   /// Creates a session using an agent and an environment configuration. Supply `agent` and `environment_id` at minimum; you can also set session metadata, attach resources or vaults, and provide initial events. Initial events are processed in order, and the session response includes its status, resolved agent configuration, resources, usage, and timing statistics.
   Future<BetaManagedAgentsSession> create(
       {required BetaManagedAgentsCreateSessionAgentUnionParams agent,
@@ -1186,12 +1914,26 @@ class BetaSessionsNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<String?> title = const SdkOmitted(),
       SdkOptional<Map<String, String>> metadata = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsSessionResourceParams>> resources = const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsSessionResourceParams>> resources =
+          const SdkOmitted(),
       SdkOptional<List<String>> vaultIds = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsSessionInitialEventParams>> initialEvents = const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsSessionInitialEventParams>>
+          initialEvents = const SdkOmitted(),
       SdkOptional<BetaManagedAgentsBudget> budget = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return sessions_methods.createBetaSessions(_config, agent: agent, environmentId: environmentId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, title: title, metadata: metadata, resources: resources, vaultIds: vaultIds, initialEvents: initialEvents, budget: budget, requestOptions: requestOptions);
+    return sessions_methods.createBetaSessions(_config,
+        agent: agent,
+        environmentId: environmentId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        title: title,
+        metadata: metadata,
+        resources: resources,
+        vaultIds: vaultIds,
+        initialEvents: initialEvents,
+        budget: budget,
+        requestOptions: requestOptions);
   }
 
   /// Lists sessions with cursor-based pagination and optional filters for creation time, agent, memory store, deployment, and status. Use `page` to navigate with the response cursors, and use `order` to sort by creation time; `agent_version` only filters results when `agent_id` is also set. The authenticated user must have valid credentials and permission to access the requested sessions.
@@ -1208,17 +1950,69 @@ class BetaSessionsNamespace {
       SdkOptional<BetaManagedAgentsListOrder> order = const SdkOmitted(),
       SdkOptional<String> memoryStoreId = const SdkOmitted(),
       SdkOptional<String> deploymentId = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsSessionStatus>> statuses = const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsSessionStatus>> statuses =
+          const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return sessions_methods.listBetaSessions(_config, limit: limit, page: page, includeArchived: includeArchived, createdAtGte: createdAtGte, createdAtGt: createdAtGt, createdAtLte: createdAtLte, createdAtLt: createdAtLt, agentId: agentId, agentVersion: agentVersion, order: order, memoryStoreId: memoryStoreId, deploymentId: deploymentId, statuses: statuses, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return sessions_methods.listBetaSessions(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        createdAtGte: createdAtGte,
+        createdAtGt: createdAtGt,
+        createdAtLte: createdAtLte,
+        createdAtLt: createdAtLt,
+        agentId: agentId,
+        agentVersion: agentVersion,
+        order: order,
+        memoryStoreId: memoryStoreId,
+        deploymentId: deploymentId,
+        statuses: statuses,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists sessions with cursor-based pagination and optional filters for creation time, agent, memory store, deployment, and status. Use `page` to navigate with the response cursors, and use `order` to sort by creation time; `agent_version` only filters results when `agent_id` is also set. The authenticated user must have valid credentials and permission to access the requested sessions.
-  Stream<BetaManagedAgentsSession> listPaginated({int? limit, String? page, bool? includeArchived, String? createdAtGte, String? createdAtGt, String? createdAtLte, String? createdAtLt, String? agentId, int? agentVersion, BetaManagedAgentsListOrder? order, String? memoryStoreId, String? deploymentId, List<BetaManagedAgentsSessionStatus>? statuses, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* sessions_methods.listBetaSessionsPaginated(_config, limit: limit, page: page, includeArchived: includeArchived, createdAtGte: createdAtGte, createdAtGt: createdAtGt, createdAtLte: createdAtLte, createdAtLt: createdAtLt, agentId: agentId, agentVersion: agentVersion, order: order, memoryStoreId: memoryStoreId, deploymentId: deploymentId, statuses: statuses, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsSession> listPaginated(
+      {int? limit,
+      String? page,
+      bool? includeArchived,
+      String? createdAtGte,
+      String? createdAtGt,
+      String? createdAtLte,
+      String? createdAtLt,
+      String? agentId,
+      int? agentVersion,
+      BetaManagedAgentsListOrder? order,
+      String? memoryStoreId,
+      String? deploymentId,
+      List<BetaManagedAgentsSessionStatus>? statuses,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* sessions_methods.listBetaSessionsPaginated(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        createdAtGte: createdAtGte,
+        createdAtGt: createdAtGt,
+        createdAtLte: createdAtLte,
+        createdAtLt: createdAtLt,
+        agentId: agentId,
+        agentVersion: agentVersion,
+        order: order,
+        memoryStoreId: memoryStoreId,
+        deploymentId: deploymentId,
+        statuses: statuses,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a session by its identifier. Use this operation to inspect the session's current status, configuration, resources, cumulative usage, and timing statistics. The returned agent definition is a snapshot of the agent configuration from when the session was created.
@@ -1228,7 +2022,12 @@ class BetaSessionsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return sessions_methods.retrieveBetaSessions(_config, sessionId: sessionId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return sessions_methods.retrieveBetaSessions(_config,
+        sessionId: sessionId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Updates configurable fields on a session while preserving fields you omit. Use `title`, `metadata`, `agent`, or `budget` to change the corresponding session settings; only `tools` and `mcp_servers` can be updated in the agent configuration. `vault_ids` is reserved for future use and requests that set it are rejected.
@@ -1240,10 +2039,21 @@ class BetaSessionsNamespace {
       SdkOptional<String?> title = const SdkOmitted(),
       SdkOptional<Map<String, String>?> metadata = const SdkOmitted(),
       SdkOptional<List<String>> vaultIds = const SdkOmitted(),
-      SdkOptional<BetaManagedAgentsSessionAgentUpdate> agent = const SdkOmitted(),
+      SdkOptional<BetaManagedAgentsSessionAgentUpdate> agent =
+          const SdkOmitted(),
       SdkOptional<BetaManagedAgentsBudget?> budget = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return sessions_methods.updateBetaSessions(_config, sessionId: sessionId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, title: title, metadata: metadata, vaultIds: vaultIds, agent: agent, budget: budget, requestOptions: requestOptions);
+    return sessions_methods.updateBetaSessions(_config,
+        sessionId: sessionId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        title: title,
+        metadata: metadata,
+        vaultIds: vaultIds,
+        agent: agent,
+        budget: budget,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a session permanently. Use this operation when you need to remove a session rather than archive it. A successful response confirms deletion with the session identifier.
@@ -1253,7 +2063,12 @@ class BetaSessionsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return sessions_methods.deleteBetaSessions(_config, sessionId: sessionId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return sessions_methods.deleteBetaSessions(_config,
+        sessionId: sessionId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Archives a session, marking it as archived while retaining its session record. Use `session_id` to identify the session; if you select a Workspace with `anthropic-workspace-id`, it must match the Workspace associated with the credential.
@@ -1263,14 +2078,19 @@ class BetaSessionsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return sessions_methods.archiveBetaSessions(_config, sessionId: sessionId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return sessions_methods.archiveBetaSessions(_config,
+        sessionId: sessionId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaAgentsVersionsNamespace {
   final ClientConfig _config;
   BetaAgentsVersionsNamespace(ClientConfig config) : _config = config;
+
   /// Lists versions of a specified agent. Use `agent_id` to select the agent and `page` to continue through the cursor-based results. Each response includes a `next_page` cursor when another page is available.
   Future<BetaManagedAgentsListAgentVersions> list(
       {required String agentId,
@@ -1280,14 +2100,34 @@ class BetaAgentsVersionsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return versions_methods.listBetaAgentsVersions(_config, agentId: agentId, limit: limit, page: page, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return versions_methods.listBetaAgentsVersions(_config,
+        agentId: agentId,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists versions of a specified agent. Use `agent_id` to select the agent and `page` to continue through the cursor-based results. Each response includes a `next_page` cursor when another page is available.
-  Stream<BetaManagedAgentsAgent> listPaginated({required String agentId, int? limit, String? page, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* versions_methods.listBetaAgentsVersionsPaginated(_config, agentId: agentId, limit: limit, page: page, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsAgent> listPaginated(
+      {required String agentId,
+      int? limit,
+      String? page,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* versions_methods.listBetaAgentsVersionsPaginated(_config,
+        agentId: agentId,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaAgentsNamespace {
@@ -1296,6 +2136,7 @@ class BetaAgentsNamespace {
   BetaAgentsNamespace(ClientConfig config) : _config = config {
     versions = BetaAgentsVersionsNamespace(config);
   }
+
   /// Creates an agent with a name and model configuration. Provide `name` and `model`, then optionally configure its instructions, tools, connected MCP servers, skills, metadata, and multiagent behavior. A successful response returns the created agent at version 1.
   Future<BetaManagedAgentsAgent> create(
       {required String name,
@@ -1305,13 +2146,30 @@ class BetaAgentsNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<String?> description = const SdkOmitted(),
       SdkOptional<String?> system = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsAgentToolParams>> tools = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsMCPServerParams>> mcpServers = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsSkillParams>> skills = const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsAgentToolParams>> tools =
+          const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsMCPServerParams>> mcpServers =
+          const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsSkillParams>> skills =
+          const SdkOmitted(),
       SdkOptional<Map<String, String>> metadata = const SdkOmitted(),
-      SdkOptional<BetaManagedAgentsMultiagentParams?> multiagent = const SdkOmitted(),
+      SdkOptional<BetaManagedAgentsMultiagentParams?> multiagent =
+          const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return agents_methods.createBetaAgents(_config, name: name, model: model, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, description: description, system: system, tools: tools, mcpServers: mcpServers, skills: skills, metadata: metadata, multiagent: multiagent, requestOptions: requestOptions);
+    return agents_methods.createBetaAgents(_config,
+        name: name,
+        model: model,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        description: description,
+        system: system,
+        tools: tools,
+        mcpServers: mcpServers,
+        skills: skills,
+        metadata: metadata,
+        multiagent: multiagent,
+        requestOptions: requestOptions);
   }
 
   /// Lists agents available in the selected workspace. Use the creation-time filters and `include_archived` to narrow the results, and use `page` to continue through the cursor-based results. Each response includes a `next_page` cursor when another page is available.
@@ -1325,12 +2183,39 @@ class BetaAgentsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return agents_methods.listBetaAgents(_config, limit: limit, page: page, createdAtGte: createdAtGte, createdAtLte: createdAtLte, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return agents_methods.listBetaAgents(_config,
+        limit: limit,
+        page: page,
+        createdAtGte: createdAtGte,
+        createdAtLte: createdAtLte,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists agents available in the selected workspace. Use the creation-time filters and `include_archived` to narrow the results, and use `page` to continue through the cursor-based results. Each response includes a `next_page` cursor when another page is available.
-  Stream<BetaManagedAgentsAgent> listPaginated({int? limit, String? page, String? createdAtGte, String? createdAtLte, bool? includeArchived, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* agents_methods.listBetaAgentsPaginated(_config, limit: limit, page: page, createdAtGte: createdAtGte, createdAtLte: createdAtLte, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsAgent> listPaginated(
+      {int? limit,
+      String? page,
+      String? createdAtGte,
+      String? createdAtLte,
+      bool? includeArchived,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* agents_methods.listBetaAgentsPaginated(_config,
+        limit: limit,
+        page: page,
+        createdAtGte: createdAtGte,
+        createdAtLte: createdAtLte,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves an agent by its identifier. Supply `agent_id` to select the agent and optionally `version` to retrieve a particular version. Omit `version` to retrieve the most recent version.
@@ -1341,7 +2226,13 @@ class BetaAgentsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return agents_methods.retrieveBetaAgents(_config, agentId: agentId, version: version, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return agents_methods.retrieveBetaAgents(_config,
+        agentId: agentId,
+        version: version,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Updates the configuration of an existing agent. Send only the fields to change; omitted fields retain their current values, while fields such as `tools`, `mcp_servers`, and `skills` replace their complete existing collections when supplied. Use `version` to guard against concurrent updates, or omit it to apply the update unconditionally.
@@ -1355,13 +2246,32 @@ class BetaAgentsNamespace {
       SdkOptional<String?> description = const SdkOmitted(),
       SdkOptional<BetaManagedAgentsModelParams> model = const SdkOmitted(),
       SdkOptional<String?> system = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsAgentToolParams>?> tools = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsMCPServerParams>?> mcpServers = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsSkillParams>?> skills = const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsAgentToolParams>?> tools =
+          const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsMCPServerParams>?> mcpServers =
+          const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsSkillParams>?> skills =
+          const SdkOmitted(),
       SdkOptional<Map<String, String>?> metadata = const SdkOmitted(),
-      SdkOptional<BetaManagedAgentsMultiagentParams?> multiagent = const SdkOmitted(),
+      SdkOptional<BetaManagedAgentsMultiagentParams?> multiagent =
+          const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return agents_methods.updateBetaAgents(_config, agentId: agentId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, version: version, name: name, description: description, model: model, system: system, tools: tools, mcpServers: mcpServers, skills: skills, metadata: metadata, multiagent: multiagent, requestOptions: requestOptions);
+    return agents_methods.updateBetaAgents(_config,
+        agentId: agentId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        version: version,
+        name: name,
+        description: description,
+        model: model,
+        system: system,
+        tools: tools,
+        mcpServers: mcpServers,
+        skills: skills,
+        metadata: metadata,
+        multiagent: multiagent,
+        requestOptions: requestOptions);
   }
 
   /// Archives an agent so it is marked as archived. Use `agent_id` to select the agent to archive. A successful response returns the agent object, including its archive timestamp.
@@ -1371,31 +2281,53 @@ class BetaAgentsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return agents_methods.archiveBetaAgents(_config, agentId: agentId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return agents_methods.archiveBetaAgents(_config,
+        agentId: agentId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaDeploymentsNamespace {
   final ClientConfig _config;
   BetaDeploymentsNamespace(ClientConfig config) : _config = config;
+
   /// Creates a deployment that binds an agent to an environment, credentials, initial events, and optional resources or schedule. Provide `name`, `agent`, `environment_id`, and `initial_events` to configure the deployment. A successful response returns the created deployment and its current status.
   Future<BetaManagedAgentsDeployment> create(
       {required String name,
       required BetaManagedAgentsAgentUnionParams agent,
       required String environmentId,
-      required List<BetaManagedAgentsDeploymentInitialEventParams> initialEvents,
+      required List<BetaManagedAgentsDeploymentInitialEventParams>
+          initialEvents,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<String?> description = const SdkOmitted(),
       SdkOptional<List<String>> vaultIds = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsSessionResourceParams>> resources = const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsSessionResourceParams>> resources =
+          const SdkOmitted(),
       SdkOptional<Map<String, String>> metadata = const SdkOmitted(),
-      SdkOptional<BetaManagedAgentsScheduleParams?> schedule = const SdkOmitted(),
+      SdkOptional<BetaManagedAgentsScheduleParams?> schedule =
+          const SdkOmitted(),
       SdkOptional<BetaManagedAgentsBudget?> budget = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return deployments_methods.createBetaDeployments(_config, name: name, agent: agent, environmentId: environmentId, initialEvents: initialEvents, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, description: description, vaultIds: vaultIds, resources: resources, metadata: metadata, schedule: schedule, budget: budget, requestOptions: requestOptions);
+    return deployments_methods.createBetaDeployments(_config,
+        name: name,
+        agent: agent,
+        environmentId: environmentId,
+        initialEvents: initialEvents,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        description: description,
+        vaultIds: vaultIds,
+        resources: resources,
+        metadata: metadata,
+        schedule: schedule,
+        budget: budget,
+        requestOptions: requestOptions);
   }
 
   /// Lists deployments configured to run agents. Filter results by agent, lifecycle status, creation time, or archive state, and use `page` to continue through cursor-based results. The `status` filter cannot be combined with `include_archived`.
@@ -1403,7 +2335,8 @@ class BetaDeploymentsNamespace {
       {SdkOptional<int> limit = const SdkOmitted(),
       SdkOptional<String> page = const SdkOmitted(),
       SdkOptional<String> agentId = const SdkOmitted(),
-      SdkOptional<BetaManagedAgentsDeploymentStatus> status = const SdkOmitted(),
+      SdkOptional<BetaManagedAgentsDeploymentStatus> status =
+          const SdkOmitted(),
       SdkOptional<String> createdAtGte = const SdkOmitted(),
       SdkOptional<String> createdAtLte = const SdkOmitted(),
       SdkOptional<bool> includeArchived = const SdkOmitted(),
@@ -1411,12 +2344,45 @@ class BetaDeploymentsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return deployments_methods.listBetaDeployments(_config, limit: limit, page: page, agentId: agentId, status: status, createdAtGte: createdAtGte, createdAtLte: createdAtLte, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return deployments_methods.listBetaDeployments(_config,
+        limit: limit,
+        page: page,
+        agentId: agentId,
+        status: status,
+        createdAtGte: createdAtGte,
+        createdAtLte: createdAtLte,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists deployments configured to run agents. Filter results by agent, lifecycle status, creation time, or archive state, and use `page` to continue through cursor-based results. The `status` filter cannot be combined with `include_archived`.
-  Stream<BetaManagedAgentsDeployment> listPaginated({int? limit, String? page, String? agentId, BetaManagedAgentsDeploymentStatus? status, String? createdAtGte, String? createdAtLte, bool? includeArchived, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* deployments_methods.listBetaDeploymentsPaginated(_config, limit: limit, page: page, agentId: agentId, status: status, createdAtGte: createdAtGte, createdAtLte: createdAtLte, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsDeployment> listPaginated(
+      {int? limit,
+      String? page,
+      String? agentId,
+      BetaManagedAgentsDeploymentStatus? status,
+      String? createdAtGte,
+      String? createdAtLte,
+      bool? includeArchived,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* deployments_methods.listBetaDeploymentsPaginated(_config,
+        limit: limit,
+        page: page,
+        agentId: agentId,
+        status: status,
+        createdAtGte: createdAtGte,
+        createdAtLte: createdAtLte,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a deployment by its identifier. Use `deployment_id` to select the deployment and inspect its agent, environment, schedule, resources, and lifecycle status. The response includes the deployment's current configuration and status details.
@@ -1426,7 +2392,12 @@ class BetaDeploymentsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return deployments_methods.retrieveBetaDeployments(_config, deploymentId: deploymentId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return deployments_methods.retrieveBetaDeployments(_config,
+        deploymentId: deploymentId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Updates a deployment's configuration while preserving any fields you omit. Use the request body to replace or clear supported values, including `description`, `vault_ids`, `resources`, `metadata`, `schedule`, and `budget`; `name` must be non-empty when supplied. The response includes the updated deployment and its current status.
@@ -1440,13 +2411,31 @@ class BetaDeploymentsNamespace {
       SdkOptional<BetaManagedAgentsAgentUnionParams> agent = const SdkOmitted(),
       SdkOptional<String> environmentId = const SdkOmitted(),
       SdkOptional<List<String>?> vaultIds = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsDeploymentInitialEventParams>> initialEvents = const SdkOmitted(),
-      SdkOptional<List<BetaManagedAgentsSessionResourceParams>?> resources = const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsDeploymentInitialEventParams>>
+          initialEvents = const SdkOmitted(),
+      SdkOptional<List<BetaManagedAgentsSessionResourceParams>?> resources =
+          const SdkOmitted(),
       SdkOptional<Map<String, String>?> metadata = const SdkOmitted(),
-      SdkOptional<BetaManagedAgentsScheduleParams?> schedule = const SdkOmitted(),
+      SdkOptional<BetaManagedAgentsScheduleParams?> schedule =
+          const SdkOmitted(),
       SdkOptional<BetaManagedAgentsBudget?> budget = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return deployments_methods.updateBetaDeployments(_config, deploymentId: deploymentId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, name: name, description: description, agent: agent, environmentId: environmentId, vaultIds: vaultIds, initialEvents: initialEvents, resources: resources, metadata: metadata, schedule: schedule, budget: budget, requestOptions: requestOptions);
+    return deployments_methods.updateBetaDeployments(_config,
+        deploymentId: deploymentId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        name: name,
+        description: description,
+        agent: agent,
+        environmentId: environmentId,
+        vaultIds: vaultIds,
+        initialEvents: initialEvents,
+        resources: resources,
+        metadata: metadata,
+        schedule: schedule,
+        budget: budget,
+        requestOptions: requestOptions);
   }
 
   /// Archives a deployment so it is no longer treated as an active deployment for management purposes. Use `deployment_id` to identify the deployment to archive; the response returns the deployment record, including its status and timestamps.
@@ -1456,7 +2445,12 @@ class BetaDeploymentsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return deployments_methods.archiveBetaDeployments(_config, deploymentId: deploymentId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return deployments_methods.archiveBetaDeployments(_config,
+        deploymentId: deploymentId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Pauses a deployment to stop it from running until it is unpaused. Use `deployment_id` to select the deployment; the response returns the deployment record with its computed status and pause information.
@@ -1466,7 +2460,12 @@ class BetaDeploymentsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return deployments_methods.pauseBetaDeployments(_config, deploymentId: deploymentId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return deployments_methods.pauseBetaDeployments(_config,
+        deploymentId: deploymentId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Unpauses a deployment so it can run again. Use `deployment_id` to select the deployment; the response returns the deployment record with its computed status and pause information.
@@ -1476,7 +2475,12 @@ class BetaDeploymentsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return deployments_methods.unpauseBetaDeployments(_config, deploymentId: deploymentId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return deployments_methods.unpauseBetaDeployments(_config,
+        deploymentId: deploymentId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Triggers an immediate run of a deployment and records the result of session creation. Use `deployment_id` to select the deployment; inspect the returned run record's `session_id` or `error` to determine whether session creation succeeded.
@@ -1486,20 +2490,26 @@ class BetaDeploymentsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return deployments_methods.runBetaDeployments(_config, deploymentId: deploymentId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return deployments_methods.runBetaDeployments(_config,
+        deploymentId: deploymentId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaDeploymentRunsNamespace {
   final ClientConfig _config;
   BetaDeploymentRunsNamespace(ClientConfig config) : _config = config;
+
   /// Lists deployment runs, sorted from newest to oldest, with optional filters for deployment, trigger type, outcome, and creation time. Use `page` as the opaque cursor from the previous response's `next_page` field, and set `limit` to control the page size.
   Future<BetaManagedAgentsListDeploymentRunsData> list(
       {SdkOptional<int> limit = const SdkOmitted(),
       SdkOptional<String> page = const SdkOmitted(),
       SdkOptional<String> deploymentId = const SdkOmitted(),
-      SdkOptional<BetaManagedAgentsTriggerType> triggerType = const SdkOmitted(),
+      SdkOptional<BetaManagedAgentsTriggerType> triggerType =
+          const SdkOmitted(),
       SdkOptional<bool> hasError = const SdkOmitted(),
       SdkOptional<String> createdAtGte = const SdkOmitted(),
       SdkOptional<String> createdAtLte = const SdkOmitted(),
@@ -1509,12 +2519,51 @@ class BetaDeploymentRunsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return deployment_runs_methods.listBetaDeploymentRuns(_config, limit: limit, page: page, deploymentId: deploymentId, triggerType: triggerType, hasError: hasError, createdAtGte: createdAtGte, createdAtLte: createdAtLte, createdAtGt: createdAtGt, createdAtLt: createdAtLt, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return deployment_runs_methods.listBetaDeploymentRuns(_config,
+        limit: limit,
+        page: page,
+        deploymentId: deploymentId,
+        triggerType: triggerType,
+        hasError: hasError,
+        createdAtGte: createdAtGte,
+        createdAtLte: createdAtLte,
+        createdAtGt: createdAtGt,
+        createdAtLt: createdAtLt,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists deployment runs, sorted from newest to oldest, with optional filters for deployment, trigger type, outcome, and creation time. Use `page` as the opaque cursor from the previous response's `next_page` field, and set `limit` to control the page size.
-  Stream<BetaManagedAgentsDeploymentRun> listPaginated({int? limit, String? page, String? deploymentId, BetaManagedAgentsTriggerType? triggerType, bool? hasError, String? createdAtGte, String? createdAtLte, String? createdAtGt, String? createdAtLt, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* deployment_runs_methods.listBetaDeploymentRunsPaginated(_config, limit: limit, page: page, deploymentId: deploymentId, triggerType: triggerType, hasError: hasError, createdAtGte: createdAtGte, createdAtLte: createdAtLte, createdAtGt: createdAtGt, createdAtLt: createdAtLt, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsDeploymentRun> listPaginated(
+      {int? limit,
+      String? page,
+      String? deploymentId,
+      BetaManagedAgentsTriggerType? triggerType,
+      bool? hasError,
+      String? createdAtGte,
+      String? createdAtLte,
+      String? createdAtGt,
+      String? createdAtLt,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* deployment_runs_methods.listBetaDeploymentRunsPaginated(_config,
+        limit: limit,
+        page: page,
+        deploymentId: deploymentId,
+        triggerType: triggerType,
+        hasError: hasError,
+        createdAtGte: createdAtGte,
+        createdAtLte: createdAtLte,
+        createdAtGt: createdAtGt,
+        createdAtLt: createdAtLt,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves the record for a single deployment run, including whether session creation succeeded or failed. Use `deployment_run_id` to select the run and inspect `session_id` or `error` for its creation outcome.
@@ -1524,14 +2573,19 @@ class BetaDeploymentRunsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return deployment_runs_methods.retrieveBetaDeploymentRuns(_config, deploymentRunId: deploymentRunId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return deployment_runs_methods.retrieveBetaDeploymentRuns(_config,
+        deploymentRunId: deploymentRunId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaVaultsCredentialsNamespace {
   final ClientConfig _config;
   BetaVaultsCredentialsNamespace(ClientConfig config) : _config = config;
+
   /// Creates a credential in a vault using the supplied authentication configuration. Include `auth` to define how the credential authenticates, and optionally provide `display_name` and `metadata` to label and annotate it. The response returns the created credential without exposing sensitive credential fields.
   Future<BetaManagedAgentsCredential> create(
       {required String vaultId,
@@ -1542,7 +2596,15 @@ class BetaVaultsCredentialsNamespace {
       SdkOptional<String?> displayName = const SdkOmitted(),
       SdkOptional<Map<String, String>> metadata = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return credentials_methods.createBetaVaultsCredentials(_config, vaultId: vaultId, auth: auth, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, displayName: displayName, metadata: metadata, requestOptions: requestOptions);
+    return credentials_methods.createBetaVaultsCredentials(_config,
+        vaultId: vaultId,
+        auth: auth,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        displayName: displayName,
+        metadata: metadata,
+        requestOptions: requestOptions);
   }
 
   /// Lists credentials stored in a vault, with pagination and an option to include archived credentials. Use `limit` to set the page size and `page` to continue from a previous response; `include_archived` controls whether archived credentials appear. The response provides a `next_page` token when more results are available.
@@ -1555,12 +2617,36 @@ class BetaVaultsCredentialsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return credentials_methods.listBetaVaultsCredentials(_config, vaultId: vaultId, limit: limit, page: page, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return credentials_methods.listBetaVaultsCredentials(_config,
+        vaultId: vaultId,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists credentials stored in a vault, with pagination and an option to include archived credentials. Use `limit` to set the page size and `page` to continue from a previous response; `include_archived` controls whether archived credentials appear. The response provides a `next_page` token when more results are available.
-  Stream<BetaManagedAgentsCredential> listPaginated({required String vaultId, int? limit, String? page, bool? includeArchived, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* credentials_methods.listBetaVaultsCredentialsPaginated(_config, vaultId: vaultId, limit: limit, page: page, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsCredential> listPaginated(
+      {required String vaultId,
+      int? limit,
+      String? page,
+      bool? includeArchived,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* credentials_methods.listBetaVaultsCredentialsPaginated(_config,
+        vaultId: vaultId,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a credential stored in a vault. Use `vault_id` and `credential_id` to identify the credential; sensitive fields are not included in the response. Include `anthropic-workspace-id` only when a multi-Workspace credential needs to select a Workspace.
@@ -1571,7 +2657,13 @@ class BetaVaultsCredentialsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return credentials_methods.retrieveBetaVaultsCredentials(_config, vaultId: vaultId, credentialId: credentialId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return credentials_methods.retrieveBetaVaultsCredentials(_config,
+        vaultId: vaultId,
+        credentialId: credentialId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Updates a credential's display name, metadata, or authentication configuration. Send only the fields you want to change; metadata keys you omit are preserved. If you update `auth`, its variant must match the stored credential's immutable type.
@@ -1583,9 +2675,19 @@ class BetaVaultsCredentialsNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<String?> displayName = const SdkOmitted(),
       SdkOptional<Map<String, String>?> metadata = const SdkOmitted(),
-      SdkOptional<BetaManagedAgentsCredentialUpdateAuth> auth = const SdkOmitted(),
+      SdkOptional<BetaManagedAgentsCredentialUpdateAuth> auth =
+          const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return credentials_methods.updateBetaVaultsCredentials(_config, vaultId: vaultId, credentialId: credentialId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, displayName: displayName, metadata: metadata, auth: auth, requestOptions: requestOptions);
+    return credentials_methods.updateBetaVaultsCredentials(_config,
+        vaultId: vaultId,
+        credentialId: credentialId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        displayName: displayName,
+        metadata: metadata,
+        auth: auth,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a credential from a vault. Use `vault_id` and `credential_id` to select the credential to remove, and provide `anthropic-workspace-id` when a multi-Workspace credential needs to target a specific Workspace. The response confirms deletion and identifies the deleted credential.
@@ -1596,7 +2698,13 @@ class BetaVaultsCredentialsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return credentials_methods.deleteBetaVaultsCredentials(_config, vaultId: vaultId, credentialId: credentialId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return credentials_methods.deleteBetaVaultsCredentials(_config,
+        vaultId: vaultId,
+        credentialId: credentialId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Archives a credential in a vault while retaining its record and configuration. Use `vault_id` and `credential_id` to identify the credential to archive, and include `anthropic-workspace-id` when a multi-Workspace credential needs to select a Workspace. The response returns the credential with its updated archive timestamp.
@@ -1607,21 +2715,31 @@ class BetaVaultsCredentialsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return credentials_methods.archiveBetaVaultsCredentials(_config, vaultId: vaultId, credentialId: credentialId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return credentials_methods.archiveBetaVaultsCredentials(_config,
+        vaultId: vaultId,
+        credentialId: credentialId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Validates a credential by probing its configured MCP server and, when applicable, attempting a refresh-token exchange. Use `vault_id` and `credential_id` to select the credential; inspect `status`, `mcp_probe`, and `refresh` in the response to understand the validation result. A successful response reports the probe outcome and validation time.
-  Future<BetaManagedAgentsCredentialValidation>
-      validateMcpOauth(
-          {required String vaultId,
-          required String credentialId,
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return credentials_methods.validateBetaVaultsCredentialsMcpOauth(_config, vaultId: vaultId, credentialId: credentialId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Future<BetaManagedAgentsCredentialValidation> validateMcpOauth(
+      {required String vaultId,
+      required String credentialId,
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return credentials_methods.validateBetaVaultsCredentialsMcpOauth(_config,
+        vaultId: vaultId,
+        credentialId: credentialId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaVaultsNamespace {
@@ -1630,6 +2748,7 @@ class BetaVaultsNamespace {
   BetaVaultsNamespace(ClientConfig config) : _config = config {
     credentials = BetaVaultsCredentialsNamespace(config);
   }
+
   /// Creates a vault for storing credentials that agents can use during sessions. Supply a `display_name` between 1 and 255 characters, and optionally attach metadata; the response includes the new vault's identifier and timestamps.
   Future<BetaManagedAgentsVault> create(
       {required String displayName,
@@ -1638,7 +2757,13 @@ class BetaVaultsNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<Map<String, String>> metadata = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return vaults_methods.createBetaVaults(_config, displayName: displayName, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, metadata: metadata, requestOptions: requestOptions);
+    return vaults_methods.createBetaVaults(_config,
+        displayName: displayName,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        metadata: metadata,
+        requestOptions: requestOptions);
   }
 
   /// Lists vaults available in the selected workspace, with optional pagination and archived-vault inclusion. Use `include_archived` to include archived vaults and pass `page` from a previous response to continue through the results.
@@ -1650,12 +2775,33 @@ class BetaVaultsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return vaults_methods.listBetaVaults(_config, limit: limit, page: page, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return vaults_methods.listBetaVaults(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists vaults available in the selected workspace, with optional pagination and archived-vault inclusion. Use `include_archived` to include archived vaults and pass `page` from a previous response to continue through the results.
-  Stream<BetaManagedAgentsVault> listPaginated({int? limit, String? page, bool? includeArchived, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* vaults_methods.listBetaVaultsPaginated(_config, limit: limit, page: page, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsVault> listPaginated(
+      {int? limit,
+      String? page,
+      bool? includeArchived,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* vaults_methods.listBetaVaultsPaginated(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a vault that stores credentials for use by agents during sessions. Use `vault_id` to identify the vault; the response includes its display name, metadata, timestamps, and archive state.
@@ -1665,7 +2811,12 @@ class BetaVaultsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return vaults_methods.retrieveBetaVaults(_config, vaultId: vaultId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return vaults_methods.retrieveBetaVaults(_config,
+        vaultId: vaultId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Updates a vault's human-readable name or metadata. Send `display_name` to change the name, or use `metadata` to add, replace, or delete individual keys; omitted metadata keys are preserved. The `anthropic-workspace-id` header must match the credential's Workspace when you use it.
@@ -1677,7 +2828,14 @@ class BetaVaultsNamespace {
       SdkOptional<String?> displayName = const SdkOmitted(),
       SdkOptional<Map<String, String>?> metadata = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return vaults_methods.updateBetaVaults(_config, vaultId: vaultId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, displayName: displayName, metadata: metadata, requestOptions: requestOptions);
+    return vaults_methods.updateBetaVaults(_config,
+        vaultId: vaultId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        displayName: displayName,
+        metadata: metadata,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a vault. Use `vault_id` to identify the vault to remove, and send `anthropic-workspace-id` only when your credential can act on more than one Workspace. The response confirms deletion and includes the deleted vault's identifier.
@@ -1687,7 +2845,12 @@ class BetaVaultsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return vaults_methods.deleteBetaVaults(_config, vaultId: vaultId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return vaults_methods.deleteBetaVaults(_config,
+        vaultId: vaultId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Archives a vault so it is no longer active for use by agents during sessions. Use `vault_id` to select the vault, and provide `anthropic-workspace-id` when a multi-Workspace credential needs to target a specific Workspace. The response includes the vault's updated archive timestamp.
@@ -1697,14 +2860,19 @@ class BetaVaultsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return vaults_methods.archiveBetaVaults(_config, vaultId: vaultId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return vaults_methods.archiveBetaVaults(_config,
+        vaultId: vaultId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaMemoryStoresMemoriesNamespace {
   final ClientConfig _config;
   BetaMemoryStoresMemoriesNamespace(ClientConfig config) : _config = config;
+
   /// Creates a memory document at a hierarchical path in a memory store. Provide `path` and `content`; the path must be unoccupied and the content can be an empty string when creating an empty memory. Choose `view` to control whether the returned memory includes its content.
   Future<BetaManagedAgentsMemory> create(
       {required String memoryStoreId,
@@ -1715,7 +2883,15 @@ class BetaMemoryStoresMemoriesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memories_methods.createBetaMemoryStoresMemories(_config, memoryStoreId: memoryStoreId, path: path, content: content, view: view, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return memories_methods.createBetaMemoryStoresMemories(_config,
+        memoryStoreId: memoryStoreId,
+        path: path,
+        content: content,
+        view: view,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists memories and memory-prefix rollup items from a memory store. Use `path_prefix` to scope results and `depth` to choose recursive results or immediate children; `view=full` includes content and caps the page size at 20. Pass the returned `next_page` value as `page` to retrieve another page.
@@ -1730,12 +2906,42 @@ class BetaMemoryStoresMemoriesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memories_methods.listBetaMemoryStoresMemories(_config, memoryStoreId: memoryStoreId, pathPrefix: pathPrefix, depth: depth, limit: limit, page: page, view: view, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return memories_methods.listBetaMemoryStoresMemories(_config,
+        memoryStoreId: memoryStoreId,
+        pathPrefix: pathPrefix,
+        depth: depth,
+        limit: limit,
+        page: page,
+        view: view,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists memories and memory-prefix rollup items from a memory store. Use `path_prefix` to scope results and `depth` to choose recursive results or immediate children; `view=full` includes content and caps the page size at 20. Pass the returned `next_page` value as `page` to retrieve another page.
-  Stream<BetaManagedAgentsMemoryListItem> listPaginated({required String memoryStoreId, String? pathPrefix, int? depth, int? limit, String? page, BetaManagedAgentsMemoryView? view, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* memories_methods.listBetaMemoryStoresMemoriesPaginated(_config, memoryStoreId: memoryStoreId, pathPrefix: pathPrefix, depth: depth, limit: limit, page: page, view: view, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsMemoryListItem> listPaginated(
+      {required String memoryStoreId,
+      String? pathPrefix,
+      int? depth,
+      int? limit,
+      String? page,
+      BetaManagedAgentsMemoryView? view,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* memories_methods.listBetaMemoryStoresMemoriesPaginated(_config,
+        memoryStoreId: memoryStoreId,
+        pathPrefix: pathPrefix,
+        depth: depth,
+        limit: limit,
+        page: page,
+        view: view,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a memory document from a memory store by its identifier. Use `view` to choose whether the response includes the memory's content or only its basic projection. The response includes the memory's current version identifier and content hash for tracking changes.
@@ -1747,7 +2953,14 @@ class BetaMemoryStoresMemoriesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memories_methods.retrieveBetaMemoryStoresMemories(_config, memoryStoreId: memoryStoreId, memoryId: memoryId, view: view, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return memories_methods.retrieveBetaMemoryStoresMemories(_config,
+        memoryStoreId: memoryStoreId,
+        memoryId: memoryId,
+        view: view,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Updates a memory's content, path, or both in a memory store. Include at least one of `content` or `path`; omit `content` for a rename-only update and omit `path` to keep the existing path. Use `precondition` to make the update conditional on the memory's current state.
@@ -1760,9 +2973,20 @@ class BetaMemoryStoresMemoriesNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<String?> content = const SdkOmitted(),
       SdkOptional<String?> path = const SdkOmitted(),
-      SdkOptional<BetaManagedAgentsPrecondition> precondition = const SdkOmitted(),
+      SdkOptional<BetaManagedAgentsPrecondition> precondition =
+          const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memories_methods.updateBetaMemoryStoresMemories(_config, memoryStoreId: memoryStoreId, memoryId: memoryId, view: view, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, content: content, path: path, precondition: precondition, requestOptions: requestOptions);
+    return memories_methods.updateBetaMemoryStoresMemories(_config,
+        memoryStoreId: memoryStoreId,
+        memoryId: memoryId,
+        view: view,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        content: content,
+        path: path,
+        precondition: precondition,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a memory from a memory store while retaining its version history for as long as the versions are retained. Supply `expected_content_sha256` when you want the deletion to proceed only if the memory's current content hash matches the expected value. The response is a tombstone identifying the deleted memory.
@@ -1774,38 +2998,92 @@ class BetaMemoryStoresMemoriesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memories_methods.deleteBetaMemoryStoresMemories(_config, memoryStoreId: memoryStoreId, memoryId: memoryId, expectedContentSha256: expectedContentSha256, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return memories_methods.deleteBetaMemoryStoresMemories(_config,
+        memoryStoreId: memoryStoreId,
+        memoryId: memoryId,
+        expectedContentSha256: expectedContentSha256,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaMemoryStoresMemoryVersionsNamespace {
   final ClientConfig _config;
-  BetaMemoryStoresMemoryVersionsNamespace(ClientConfig config) : _config = config;
+  BetaMemoryStoresMemoryVersionsNamespace(ClientConfig config)
+      : _config = config;
+
   /// Lists a memory store's version history, with the newest versions first. Use the available filters to narrow results by memory, actor, operation, or creation time, and use `page` to continue through the results. Choose `view` to control whether version content is included.
-  Future<BetaManagedAgentsListMemoryVersionsResult>
-      list(
-          {required String memoryStoreId,
-          SdkOptional<String> memoryId = const SdkOmitted(),
-          SdkOptional<String> sessionId = const SdkOmitted(),
-          SdkOptional<String> apiKeyId = const SdkOmitted(),
-          SdkOptional<String> serviceAccountId = const SdkOmitted(),
-          SdkOptional<BetaManagedAgentsMemoryVersionOperation> operation = const SdkOmitted(),
-          SdkOptional<String> createdAtGte = const SdkOmitted(),
-          SdkOptional<String> createdAtLte = const SdkOmitted(),
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String> page = const SdkOmitted(),
-          SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return memory_versions_methods.listBetaMemoryStoresMemoryVersions(_config, memoryStoreId: memoryStoreId, memoryId: memoryId, sessionId: sessionId, apiKeyId: apiKeyId, serviceAccountId: serviceAccountId, operation: operation, createdAtGte: createdAtGte, createdAtLte: createdAtLte, limit: limit, page: page, view: view, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Future<BetaManagedAgentsListMemoryVersionsResult> list(
+      {required String memoryStoreId,
+      SdkOptional<String> memoryId = const SdkOmitted(),
+      SdkOptional<String> sessionId = const SdkOmitted(),
+      SdkOptional<String> apiKeyId = const SdkOmitted(),
+      SdkOptional<String> serviceAccountId = const SdkOmitted(),
+      SdkOptional<BetaManagedAgentsMemoryVersionOperation> operation =
+          const SdkOmitted(),
+      SdkOptional<String> createdAtGte = const SdkOmitted(),
+      SdkOptional<String> createdAtLte = const SdkOmitted(),
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String> page = const SdkOmitted(),
+      SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return memory_versions_methods.listBetaMemoryStoresMemoryVersions(_config,
+        memoryStoreId: memoryStoreId,
+        memoryId: memoryId,
+        sessionId: sessionId,
+        apiKeyId: apiKeyId,
+        serviceAccountId: serviceAccountId,
+        operation: operation,
+        createdAtGte: createdAtGte,
+        createdAtLte: createdAtLte,
+        limit: limit,
+        page: page,
+        view: view,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists a memory store's version history, with the newest versions first. Use the available filters to narrow results by memory, actor, operation, or creation time, and use `page` to continue through the results. Choose `view` to control whether version content is included.
-  Stream<BetaManagedAgentsMemoryVersion> listPaginated({required String memoryStoreId, String? memoryId, String? sessionId, String? apiKeyId, String? serviceAccountId, BetaManagedAgentsMemoryVersionOperation? operation, String? createdAtGte, String? createdAtLte, int? limit, String? page, BetaManagedAgentsMemoryView? view, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* memory_versions_methods.listBetaMemoryStoresMemoryVersionsPaginated(_config, memoryStoreId: memoryStoreId, memoryId: memoryId, sessionId: sessionId, apiKeyId: apiKeyId, serviceAccountId: serviceAccountId, operation: operation, createdAtGte: createdAtGte, createdAtLte: createdAtLte, limit: limit, page: page, view: view, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsMemoryVersion> listPaginated(
+      {required String memoryStoreId,
+      String? memoryId,
+      String? sessionId,
+      String? apiKeyId,
+      String? serviceAccountId,
+      BetaManagedAgentsMemoryVersionOperation? operation,
+      String? createdAtGte,
+      String? createdAtLte,
+      int? limit,
+      String? page,
+      BetaManagedAgentsMemoryView? view,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* memory_versions_methods.listBetaMemoryStoresMemoryVersionsPaginated(
+        _config,
+        memoryStoreId: memoryStoreId,
+        memoryId: memoryId,
+        sessionId: sessionId,
+        apiKeyId: apiKeyId,
+        serviceAccountId: serviceAccountId,
+        operation: operation,
+        createdAtGte: createdAtGte,
+        createdAtLte: createdAtLte,
+        limit: limit,
+        page: page,
+        view: view,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a specific immutable version from a memory store's version history. Use `view` to choose whether the response includes the version's content. Redacted versions and deleted-version records may have content and related path or hash values set to `null`.
@@ -1817,7 +3095,15 @@ class BetaMemoryStoresMemoryVersionsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memory_versions_methods.retrieveBetaMemoryStoresMemoryVersions(_config, memoryStoreId: memoryStoreId, memoryVersionId: memoryVersionId, view: view, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return memory_versions_methods.retrieveBetaMemoryStoresMemoryVersions(
+        _config,
+        memoryStoreId: memoryStoreId,
+        memoryVersionId: memoryVersionId,
+        view: view,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Redacts a specific version in a memory store's immutable history. Use this operation when the version's stored content and path must no longer be available; the version record remains, with its redaction details retained. The response returns the redacted version.
@@ -1828,9 +3114,14 @@ class BetaMemoryStoresMemoryVersionsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memory_versions_methods.redactBetaMemoryStoresMemoryVersions(_config, memoryStoreId: memoryStoreId, memoryVersionId: memoryVersionId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return memory_versions_methods.redactBetaMemoryStoresMemoryVersions(_config,
+        memoryStoreId: memoryStoreId,
+        memoryVersionId: memoryVersionId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaMemoryStoresNamespace {
@@ -1841,6 +3132,7 @@ class BetaMemoryStoresNamespace {
     memories = BetaMemoryStoresMemoriesNamespace(config);
     memoryVersions = BetaMemoryStoresMemoryVersionsNamespace(config);
   }
+
   /// Creates a named memory store in the selected Workspace for organizing agent memories. Provide a `name` and optionally include a `description` or bookkeeping `metadata`; the description is included in the agent's system prompt when the store is attached. The response contains the created store and its generated identifier.
   Future<BetaManagedAgentsCreateMemoryStoreResponse> create(
       {required String name,
@@ -1850,7 +3142,14 @@ class BetaMemoryStoresNamespace {
       SdkOptional<String> description = const SdkOmitted(),
       SdkOptional<Map<String, String>> metadata = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memory_stores_methods.createBetaMemoryStores(_config, name: name, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, description: description, metadata: metadata, requestOptions: requestOptions);
+    return memory_stores_methods.createBetaMemoryStores(_config,
+        name: name,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        description: description,
+        metadata: metadata,
+        requestOptions: requestOptions);
   }
 
   /// Lists memory stores available in the selected Workspace, ordered from newest to oldest. Use `include_archived` and the creation-time filters to refine the results, and pass `next_page` as `page` to continue through the list. Archived stores are excluded unless you request them.
@@ -1864,12 +3163,39 @@ class BetaMemoryStoresNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memory_stores_methods.listBetaMemoryStores(_config, limit: limit, page: page, includeArchived: includeArchived, createdAtGte: createdAtGte, createdAtLte: createdAtLte, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return memory_stores_methods.listBetaMemoryStores(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        createdAtGte: createdAtGte,
+        createdAtLte: createdAtLte,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists memory stores available in the selected Workspace, ordered from newest to oldest. Use `include_archived` and the creation-time filters to refine the results, and pass `next_page` as `page` to continue through the list. Archived stores are excluded unless you request them.
-  Stream<BetaManagedAgentsMemoryStore> listPaginated({int? limit, String? page, bool? includeArchived, String? createdAtGte, String? createdAtLte, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* memory_stores_methods.listBetaMemoryStoresPaginated(_config, limit: limit, page: page, includeArchived: includeArchived, createdAtGte: createdAtGte, createdAtLte: createdAtLte, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaManagedAgentsMemoryStore> listPaginated(
+      {int? limit,
+      String? page,
+      bool? includeArchived,
+      String? createdAtGte,
+      String? createdAtLte,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* memory_stores_methods.listBetaMemoryStoresPaginated(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        createdAtGte: createdAtGte,
+        createdAtLte: createdAtLte,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a memory store, including stores that have been archived. Use `memory_store_id` to identify the store; include `anthropic-workspace-id` only when your credentials can access multiple workspaces.
@@ -1879,7 +3205,12 @@ class BetaMemoryStoresNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memory_stores_methods.retrieveBetaMemoryStores(_config, memoryStoreId: memoryStoreId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return memory_stores_methods.retrieveBetaMemoryStores(_config,
+        memoryStoreId: memoryStoreId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Updates a memory store's name, description, or metadata. Supply only the fields you want to change; set a metadata key to `null` to delete it, and use an empty `description` to clear the description.
@@ -1892,7 +3223,15 @@ class BetaMemoryStoresNamespace {
       SdkOptional<String?> description = const SdkOmitted(),
       SdkOptional<Map<String, String>?> metadata = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memory_stores_methods.updateBetaMemoryStores(_config, memoryStoreId: memoryStoreId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, name: name, description: description, metadata: metadata, requestOptions: requestOptions);
+    return memory_stores_methods.updateBetaMemoryStores(_config,
+        memoryStoreId: memoryStoreId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        name: name,
+        description: description,
+        metadata: metadata,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a memory store. Use `memory_store_id` to identify the store; deletion removes the store rather than archiving it. A successful response confirms the deleted store's identifier.
@@ -1902,7 +3241,12 @@ class BetaMemoryStoresNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memory_stores_methods.deleteBetaMemoryStores(_config, memoryStoreId: memoryStoreId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return memory_stores_methods.deleteBetaMemoryStores(_config,
+        memoryStoreId: memoryStoreId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Archives a memory store by setting its `archived_at` timestamp. Use this operation when you want to retain the store while marking it as archived; the response includes the updated store.
@@ -1912,14 +3256,19 @@ class BetaMemoryStoresNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return memory_stores_methods.archiveBetaMemoryStores(_config, memoryStoreId: memoryStoreId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return memory_stores_methods.archiveBetaMemoryStores(_config,
+        memoryStoreId: memoryStoreId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaUserProfilesNamespace {
   final ClientConfig _config;
   BetaUserProfilesNamespace(ClientConfig config) : _config = config;
+
   /// Creates a user profile for an individual or company represented by your platform. Set `access_type` to `application` or `passthrough` to describe how your platform uses the API for that entity; all request fields are optional.
   Future<BetaUserProfile> create(
       {SdkOptional<String> anthropicVersion = const SdkOmitted(),
@@ -1930,7 +3279,15 @@ class BetaUserProfilesNamespace {
       SdkOptional<String> externalUserOnboardedAt = const SdkOmitted(),
       SdkOptional<Map<String, String>> metadata = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return user_profiles_methods.createBetaUserProfiles(_config, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, externalId: externalId, name: name, accessType: accessType, externalUserOnboardedAt: externalUserOnboardedAt, metadata: metadata, requestOptions: requestOptions);
+    return user_profiles_methods.createBetaUserProfiles(_config,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        externalId: externalId,
+        name: name,
+        accessType: accessType,
+        externalUserOnboardedAt: externalUserOnboardedAt,
+        metadata: metadata,
+        requestOptions: requestOptions);
   }
 
   /// Lists user profiles in a paginated response. Use `order` and `order_by` to control sorting, and pass the returned `next_page` cursor as `page` to retrieve subsequent results.
@@ -1942,12 +3299,33 @@ class BetaUserProfilesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return user_profiles_methods.listBetaUserProfiles(_config, limit: limit, page: page, order: order, orderBy: orderBy, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, requestOptions: requestOptions);
+    return user_profiles_methods.listBetaUserProfiles(_config,
+        limit: limit,
+        page: page,
+        order: order,
+        orderBy: orderBy,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        requestOptions: requestOptions);
   }
 
   /// Lists user profiles in a paginated response. Use `order` and `order_by` to control sorting, and pass the returned `next_page` cursor as `page` to retrieve subsequent results.
-  Stream<BetaUserProfile> listPaginated({int? limit, String? page, BetaUserProfileListOrder? order, BetaUserProfileListOrderBy? orderBy, String? anthropicVersion, List<String>? anthropicBeta, RequestOptions? requestOptions}) async* {
-    yield* user_profiles_methods.listBetaUserProfilesPaginated(_config, limit: limit, page: page, order: order, orderBy: orderBy, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, requestOptions: requestOptions);
+  Stream<BetaUserProfile> listPaginated(
+      {int? limit,
+      String? page,
+      BetaUserProfileListOrder? order,
+      BetaUserProfileListOrderBy? orderBy,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      RequestOptions? requestOptions}) async* {
+    yield* user_profiles_methods.listBetaUserProfilesPaginated(_config,
+        limit: limit,
+        page: page,
+        order: order,
+        orderBy: orderBy,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a user profile by its identifier. Use `user_profile_id` to select the profile; the response includes its profile details, trust grants, metadata, and timestamps.
@@ -1956,7 +3334,11 @@ class BetaUserProfilesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return user_profiles_methods.retrieveBetaUserProfiles(_config, userProfileId: userProfileId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, requestOptions: requestOptions);
+    return user_profiles_methods.retrieveBetaUserProfiles(_config,
+        userProfileId: userProfileId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        requestOptions: requestOptions);
   }
 
   /// Updates the supplied fields on a user profile while leaving omitted fields unchanged. Use `metadata` to merge key-value pairs, and provide a complete RFC 3339 timestamp for `external_user_onboarded_at` if setting it.
@@ -1970,7 +3352,16 @@ class BetaUserProfilesNamespace {
       SdkOptional<BetaUserProfileAccessType?> accessType = const SdkOmitted(),
       SdkOptional<String> externalUserOnboardedAt = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return user_profiles_methods.updateBetaUserProfiles(_config, userProfileId: userProfileId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, externalId: externalId, metadata: metadata, name: name, accessType: accessType, externalUserOnboardedAt: externalUserOnboardedAt, requestOptions: requestOptions);
+    return user_profiles_methods.updateBetaUserProfiles(_config,
+        userProfileId: userProfileId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        externalId: externalId,
+        metadata: metadata,
+        name: name,
+        accessType: accessType,
+        externalUserOnboardedAt: externalUserOnboardedAt,
+        requestOptions: requestOptions);
   }
 
   /// Creates an enrollment URL for a user profile to send to the represented end user. Use `user_profile_id` to select the profile, then send the returned URL before its `expires_at` time.
@@ -1979,14 +3370,18 @@ class BetaUserProfilesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return user_profiles_methods.createBetaUserProfilesEnrollmentUrl(_config, userProfileId: userProfileId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, requestOptions: requestOptions);
+    return user_profiles_methods.createBetaUserProfilesEnrollmentUrl(_config,
+        userProfileId: userProfileId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaTunnelsCertificatesNamespace {
   final ClientConfig _config;
   BetaTunnelsCertificatesNamespace(ClientConfig config) : _config = config;
+
   /// Registers a public CA certificate on a tunnel so Anthropic can verify the gateway's server certificate when terminating the inner TLS session. Each tunnel can have at most two non-archived certificates. Send a valid CA certificate in `ca_certificate_pem` and the required `anthropic-beta` header.
   ///
   /// The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window. Registers a public CA certificate on a tunnel. Anthropic verifies the gateway's server certificate against this CA when it terminates the inner TLS session. A tunnel holds at most two non-archived certificates.
@@ -1997,7 +3392,13 @@ class BetaTunnelsCertificatesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return certificates_methods_import.createBetaTunnelsCertificates(_config, tunnelId: tunnelId, caCertificatePem: caCertificatePem, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return certificates_methods_import.createBetaTunnelsCertificates(_config,
+        tunnelId: tunnelId,
+        caCertificatePem: caCertificatePem,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists certificates registered on a tunnel, ordered by creation time from newest to oldest. Archived certificates are excluded by default; use `include_archived` to include them and `page` to continue through the results. Send the required `anthropic-beta` header to use this research-preview API.
@@ -2012,14 +3413,39 @@ class BetaTunnelsCertificatesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return certificates_methods_import.listBetaTunnelsCertificates(_config, tunnelId: tunnelId, limit: limit, page: page, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return certificates_methods_import.listBetaTunnelsCertificates(_config,
+        tunnelId: tunnelId,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists certificates registered on a tunnel, ordered by creation time from newest to oldest. Archived certificates are excluded by default; use `include_archived` to include them and `page` to continue through the results. Send the required `anthropic-beta` header to use this research-preview API.
   ///
   /// The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window. Lists the certificates registered on a tunnel. Archived certificates are excluded unless include_archived is set.
-  Stream<BetaTunnelCertificate> listPaginated({required String tunnelId, int? limit, String? page, bool? includeArchived, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* certificates_methods_import.listBetaTunnelsCertificatesPaginated(_config, tunnelId: tunnelId, limit: limit, page: page, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaTunnelCertificate> listPaginated(
+      {required String tunnelId,
+      int? limit,
+      String? page,
+      bool? includeArchived,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* certificates_methods_import.listBetaTunnelsCertificatesPaginated(
+        _config,
+        tunnelId: tunnelId,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a certificate registered on a tunnel by its identifier. Use `tunnel_id` and `certificate_id` to identify the certificate record, including its fingerprint and archive state. Send the required `anthropic-beta` header to use this research-preview API.
@@ -2032,7 +3458,13 @@ class BetaTunnelsCertificatesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return certificates_methods_import.retrieveBetaTunnelsCertificates(_config, tunnelId: tunnelId, certificateId: certificateId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return certificates_methods_import.retrieveBetaTunnelsCertificates(_config,
+        tunnelId: tunnelId,
+        certificateId: certificateId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Archives a tunnel certificate, removing it from the certificates Anthropic trusts for the tunnel while retaining the certificate record. You can archive the last active certificate, but the tunnel will reject MCP traffic until you add another certificate. Send the required `anthropic-beta` header to use this research-preview API.
@@ -2045,9 +3477,14 @@ class BetaTunnelsCertificatesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return certificates_methods_import.archiveBetaTunnelsCertificates(_config, tunnelId: tunnelId, certificateId: certificateId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return certificates_methods_import.archiveBetaTunnelsCertificates(_config,
+        tunnelId: tunnelId,
+        certificateId: certificateId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaTunnelsNamespace {
@@ -2056,6 +3493,7 @@ class BetaTunnelsNamespace {
   BetaTunnelsNamespace(ClientConfig config) : _config = config {
     certificates = BetaTunnelsCertificatesNamespace(config);
   }
+
   /// Creates a tunnel and provisions a fresh hostname for routing MCP traffic. Send the required `anthropic-beta` header; the tunnel rejects MCP traffic until you add at least one CA certificate. Creation is not idempotent, and this research-preview API may change without a deprecation period.
   ///
   /// The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window. Creates a tunnel. Creation allocates a fresh hostname and provisions the tunnel; it is not idempotent. The new tunnel rejects MCP traffic until at least one CA certificate is added.
@@ -2065,7 +3503,12 @@ class BetaTunnelsNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<String?> displayName = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tunnels_methods_import.createBetaTunnels(_config, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, displayName: displayName, requestOptions: requestOptions);
+    return tunnels_methods_import.createBetaTunnels(_config,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        displayName: displayName,
+        requestOptions: requestOptions);
   }
 
   /// Lists tunnels in creation-time order, newest first, excluding archived tunnels by default. Use `page` to continue through results and `include_archived` to include archived tunnels; this research-preview API requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period.
@@ -2079,14 +3522,35 @@ class BetaTunnelsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tunnels_methods_import.listBetaTunnels(_config, limit: limit, page: page, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return tunnels_methods_import.listBetaTunnels(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists tunnels in creation-time order, newest first, excluding archived tunnels by default. Use `page` to continue through results and `include_archived` to include archived tunnels; this research-preview API requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period.
   ///
   /// The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window. Lists tunnels. Results are ordered by creation time, newest first; archived tunnels are excluded unless include_archived is set.
-  Stream<BetaTunnel> listPaginated({int? limit, String? page, bool? includeArchived, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* tunnels_methods_import.listBetaTunnelsPaginated(_config, limit: limit, page: page, includeArchived: includeArchived, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaTunnel> listPaginated(
+      {int? limit,
+      String? page,
+      bool? includeArchived,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* tunnels_methods_import.listBetaTunnelsPaginated(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a tunnel by its identifier, including its assigned hostname and archive state. Send the required `anthropic-beta` header to use this research-preview API, which may change without a deprecation period.
@@ -2098,7 +3562,12 @@ class BetaTunnelsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tunnels_methods_import.retrieveBetaTunnels(_config, tunnelId: tunnelId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return tunnels_methods_import.retrieveBetaTunnels(_config,
+        tunnelId: tunnelId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Archives a tunnel, invalidating its token and retiring its hostname. Archiving also archives every non-archived certificate on the tunnel, and repeating the request for an already archived tunnel returns its record unchanged. This action is irreversible; send the required `anthropic-beta` header to use the research-preview API.
@@ -2110,7 +3579,12 @@ class BetaTunnelsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tunnels_methods_import.archiveBetaTunnels(_config, tunnelId: tunnelId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return tunnels_methods_import.archiveBetaTunnels(_config,
+        tunnelId: tunnelId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Reveals the connector token for a tunnel; repeated calls return the same token until it is rotated. Treat the returned token as a credential, and use this POST operation so the value does not appear in intermediary access logs. Send the required `anthropic-beta` header to use the research-preview API.
@@ -2122,7 +3596,12 @@ class BetaTunnelsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tunnels_methods_import.revealBetaTunnelsToken(_config, tunnelId: tunnelId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return tunnels_methods_import.revealBetaTunnelsToken(_config,
+        tunnelId: tunnelId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Rotates a tunnel's connector token and returns a fresh value, invalidating the current token for new connections. Established connections are not severed, but restart the connector with the new token. Send the required `anthropic-beta` header to use this research-preview API.
@@ -2135,14 +3614,20 @@ class BetaTunnelsNamespace {
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       SdkOptional<String?> reason = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tunnels_methods_import.rotateBetaTunnelsToken(_config, tunnelId: tunnelId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, reason: reason, requestOptions: requestOptions);
+    return tunnels_methods_import.rotateBetaTunnelsToken(_config,
+        tunnelId: tunnelId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        reason: reason,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaDreamsNamespace {
   final ClientConfig _config;
   BetaDreamsNamespace(ClientConfig config) : _config = config;
+
   /// Creates an asynchronous memory-consolidation job that reads memory stores or session transcripts and writes consolidated memories to an output memory store. Provide `inputs` and `model`; `output_behavior` controls whether the job creates a new destination store or writes to an existing one. Poll GET /v1/dreams/{dream_id}?beta=true to check the job status and outputs.
   Future<BetaDream> create(
       {required List<BetaDreamInput> inputs,
@@ -2153,7 +3638,15 @@ class BetaDreamsNamespace {
       SdkOptional<String?> instructions = const SdkOmitted(),
       SdkOptional<BetaOutputBehavior> outputBehavior = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return dreams_methods.createBetaDreams(_config, inputs: inputs, model: model, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, instructions: instructions, outputBehavior: outputBehavior, requestOptions: requestOptions);
+    return dreams_methods.createBetaDreams(_config,
+        inputs: inputs,
+        model: model,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        instructions: instructions,
+        outputBehavior: outputBehavior,
+        requestOptions: requestOptions);
   }
 
   /// Lists Dreams, asynchronous memory-consolidation jobs that read a memory store and session transcripts and write consolidated memories to an output store. Filter by lifecycle status or creation-time bounds, and use `page` with the response's `next_page` cursor to navigate results. Send the required `anthropic-beta` header to use this research-preview API.
@@ -2168,12 +3661,42 @@ class BetaDreamsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return dreams_methods.listBetaDreams(_config, limit: limit, page: page, includeArchived: includeArchived, statuses: statuses, createdAtGt: createdAtGt, createdAtLt: createdAtLt, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return dreams_methods.listBetaDreams(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        statuses: statuses,
+        createdAtGt: createdAtGt,
+        createdAtLt: createdAtLt,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Lists Dreams, asynchronous memory-consolidation jobs that read a memory store and session transcripts and write consolidated memories to an output store. Filter by lifecycle status or creation-time bounds, and use `page` with the response's `next_page` cursor to navigate results. Send the required `anthropic-beta` header to use this research-preview API.
-  Stream<BetaDream> listPaginated({int? limit, String? page, bool? includeArchived, List<BetaDreamStatus>? statuses, String? createdAtGt, String? createdAtLt, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
-    yield* dreams_methods.listBetaDreamsPaginated(_config, limit: limit, page: page, includeArchived: includeArchived, statuses: statuses, createdAtGt: createdAtGt, createdAtLt: createdAtLt, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+  Stream<BetaDream> listPaginated(
+      {int? limit,
+      String? page,
+      bool? includeArchived,
+      List<BetaDreamStatus>? statuses,
+      String? createdAtGt,
+      String? createdAtLt,
+      String? anthropicVersion,
+      List<String>? anthropicBeta,
+      String? anthropicWorkspaceId,
+      RequestOptions? requestOptions}) async* {
+    yield* dreams_methods.listBetaDreamsPaginated(_config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        statuses: statuses,
+        createdAtGt: createdAtGt,
+        createdAtLt: createdAtLt,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves a Dream job by its identifier. Use this endpoint to inspect the job's status, inputs, outputs, and cumulative token usage. The returned status indicates whether the job is pending, running, completed, failed, or canceled.
@@ -2183,7 +3706,12 @@ class BetaDreamsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return dreams_methods.retrieveBetaDreams(_config, dreamId: dreamId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return dreams_methods.retrieveBetaDreams(_config,
+        dreamId: dreamId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Triggers cancellation of a Dream job. Provide the Dream's identifier to request cancellation of the job. Use GET /v1/dreams/{dream_id}?beta=true to inspect the job's status after the cancellation request.
@@ -2193,7 +3721,12 @@ class BetaDreamsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return dreams_methods.cancelBetaDreams(_config, dreamId: dreamId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return dreams_methods.cancelBetaDreams(_config,
+        dreamId: dreamId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
 
   /// Archives a Dream job. Provide the Dream's identifier to archive that job. Use GET /v1/dreams/{dream_id}?beta=true to retrieve the Dream and inspect its archive timestamp.
@@ -2203,14 +3736,19 @@ class BetaDreamsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return dreams_methods.archiveBetaDreams(_config, dreamId: dreamId, anthropicVersion: anthropicVersion, anthropicBeta: anthropicBeta, anthropicWorkspaceId: anthropicWorkspaceId, requestOptions: requestOptions);
+    return dreams_methods.archiveBetaDreams(_config,
+        dreamId: dreamId,
+        anthropicVersion: anthropicVersion,
+        anthropicBeta: anthropicBeta,
+        anthropicWorkspaceId: anthropicWorkspaceId,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsInvitesNamespace {
   final ClientConfig _config;
   BetaOrganizationsInvitesNamespace(ClientConfig config) : _config = config;
+
   /// Invite a user to join the organization by email. On plans that draw members from a finite pool of purchased seats, the invite automatically consumes a seat from the lowest tier with availability; there is no seat-tier parameter. When no seat is free the request fails with a 400 error rather than purchasing a seat.
   Future<BetaInviteSchema> create(
       {required String email,
@@ -2218,7 +3756,12 @@ class BetaOrganizationsInvitesNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<List<String>> rbacGroupIds = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return invites_methods.createBetaOrganizationsInvites(_config, email: email, role: role, anthropicVersion: anthropicVersion, rbacGroupIds: rbacGroupIds, requestOptions: requestOptions);
+    return invites_methods.createBetaOrganizationsInvites(_config,
+        email: email,
+        role: role,
+        anthropicVersion: anthropicVersion,
+        rbacGroupIds: rbacGroupIds,
+        requestOptions: requestOptions);
   }
 
   /// Lists organization invites with optional cursor pagination and filters. Use `before_id` or `after_id` to navigate pages, and filter by invite status, email address, or role as needed. Results include pagination cursors and a `has_more` indicator.
@@ -2228,12 +3771,21 @@ class BetaOrganizationsInvitesNamespace {
       {SdkOptional<String> beforeId = const SdkOmitted(),
       SdkOptional<String> afterId = const SdkOmitted(),
       SdkOptional<int> limit = const SdkOmitted(),
-      SdkOptional<List<ListBetaOrganizationsInvitesStatusesItem>> statuses = const SdkOmitted(),
+      SdkOptional<List<ListBetaOrganizationsInvitesStatusesItem>> statuses =
+          const SdkOmitted(),
       SdkOptional<String> email = const SdkOmitted(),
       SdkOptional<List<String>> roles = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return invites_methods.listBetaOrganizationsInvites(_config, beforeId: beforeId, afterId: afterId, limit: limit, statuses: statuses, email: email, roles: roles, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return invites_methods.listBetaOrganizationsInvites(_config,
+        beforeId: beforeId,
+        afterId: afterId,
+        limit: limit,
+        statuses: statuses,
+        email: email,
+        roles: roles,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves an organization invite by its identifier. Use this endpoint to inspect the recipient, assigned role, status, and expiration details for a specific invite. The invite status indicates whether it is accepted, deleted, expired, or pending.
@@ -2243,7 +3795,10 @@ class BetaOrganizationsInvitesNamespace {
       {required String inviteId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return invites_methods.retrieveBetaOrganizationsInvites(_config, inviteId: inviteId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return invites_methods.retrieveBetaOrganizationsInvites(_config,
+        inviteId: inviteId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Deletes a pending organization invite. Provide the invite's identifier to remove it. The response confirms deletion with the invite ID and a deleted-object type.
@@ -2253,14 +3808,17 @@ class BetaOrganizationsInvitesNamespace {
       {required String inviteId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return invites_methods.deleteBetaOrganizationsInvites(_config, inviteId: inviteId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return invites_methods.deleteBetaOrganizationsInvites(_config,
+        inviteId: inviteId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsUsersNamespace {
   final ClientConfig _config;
   BetaOrganizationsUsersNamespace(ClientConfig config) : _config = config;
+
   /// Retrieves an organization member by user ID. Use this endpoint to inspect the member's email address, name, organization role, and join timestamp. The returned role identifies the member's permissions within the organization.
   ///
   /// Retrieve a member of the organization by user ID.
@@ -2268,7 +3826,10 @@ class BetaOrganizationsUsersNamespace {
       {required String userId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return users_methods_import.retrieveBetaOrganizationsUsers(_config, userId: userId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return users_methods_import.retrieveBetaOrganizationsUsers(_config,
+        userId: userId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Updates an organization member's role. Provide the new `role` in the request body; accepted values depend on the organization type, and the API does not allow assigning the admin role. The response returns the updated organization user object.
@@ -2279,7 +3840,11 @@ class BetaOrganizationsUsersNamespace {
       required BetaUpdateUserParamsRole role,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return users_methods_import.updateBetaOrganizationsUsers(_config, userId: userId, role: role, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return users_methods_import.updateBetaOrganizationsUsers(_config,
+        userId: userId,
+        role: role,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Removes a user from the organization. Supply the user's `user_id` and authenticate with an Admin API key in the `x-api-key` header. The response identifies the deleted user.
@@ -2289,7 +3854,10 @@ class BetaOrganizationsUsersNamespace {
       {required String userId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return users_methods_import.deleteBetaOrganizationsUsers(_config, userId: userId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return users_methods_import.deleteBetaOrganizationsUsers(_config,
+        userId: userId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Lists members of the organization, with cursor-based pagination and optional filters. Use `before_id` or `after_id` to navigate pages, and filter by `email` or one or more `roles[]` values. The response includes pagination cursors and a `has_more` flag.
@@ -2303,21 +3871,34 @@ class BetaOrganizationsUsersNamespace {
       SdkOptional<List<String>> roles = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return users_methods_import.listBetaOrganizationsUsers(_config, beforeId: beforeId, afterId: afterId, limit: limit, email: email, roles: roles, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return users_methods_import.listBetaOrganizationsUsers(_config,
+        beforeId: beforeId,
+        afterId: afterId,
+        limit: limit,
+        email: email,
+        roles: roles,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsWorkspacesMembersNamespace {
   final ClientConfig _config;
-  BetaOrganizationsWorkspacesMembersNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsWorkspacesMembersNamespace(ClientConfig config)
+      : _config = config;
+
   /// Retrieves a user's membership in a workspace. Supply both `workspace_id` and `user_id` to identify the membership. The response includes the user's workspace role.
   Future<BetaWorkspaceMemberSchema> retrieve(
       {required String workspaceId,
       required String userId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return members_methods_import.retrieveBetaOrganizationsWorkspacesMembers(_config, workspaceId: workspaceId, userId: userId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return members_methods_import.retrieveBetaOrganizationsWorkspacesMembers(
+        _config,
+        workspaceId: workspaceId,
+        userId: userId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Updates a user's role in a workspace. Supply `workspace_role` with the new role and use the path parameters to identify the workspace membership. The role must be one of the defined workspace roles.
@@ -2327,29 +3908,45 @@ class BetaOrganizationsWorkspacesMembersNamespace {
       required BetaWorkspaceRoleSchema workspaceRole,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return members_methods_import.updateBetaOrganizationsWorkspacesMembers(_config, userId: userId, workspaceId: workspaceId, workspaceRole: workspaceRole, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return members_methods_import.updateBetaOrganizationsWorkspacesMembers(
+        _config,
+        userId: userId,
+        workspaceId: workspaceId,
+        workspaceRole: workspaceRole,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Removes a user's membership from a workspace. Identify the membership with `workspace_id` and `user_id`, and authenticate with an Admin API key in the `x-api-key` header. The response identifies the deleted workspace membership.
-  Future<BetaDeleteWorkspaceMemberResponse>
-      delete(
-          {required String userId,
-          required String workspaceId,
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return members_methods_import.deleteBetaOrganizationsWorkspacesMembers(_config, userId: userId, workspaceId: workspaceId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaDeleteWorkspaceMemberResponse> delete(
+      {required String userId,
+      required String workspaceId,
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return members_methods_import.deleteBetaOrganizationsWorkspacesMembers(
+        _config,
+        userId: userId,
+        workspaceId: workspaceId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Lists members of a specified workspace. Use `before_id` or `after_id` to navigate the results, and `limit` to control the page size. The response includes cursor IDs and a `has_more` flag.
-  Future<BetaListResponseWorkspaceMemberSchema>
-      list(
-          {required String workspaceId,
-          SdkOptional<String> beforeId = const SdkOmitted(),
-          SdkOptional<String> afterId = const SdkOmitted(),
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return members_methods_import.listBetaOrganizationsWorkspacesMembers(_config, workspaceId: workspaceId, beforeId: beforeId, afterId: afterId, limit: limit, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaListResponseWorkspaceMemberSchema> list(
+      {required String workspaceId,
+      SdkOptional<String> beforeId = const SdkOmitted(),
+      SdkOptional<String> afterId = const SdkOmitted(),
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return members_methods_import.listBetaOrganizationsWorkspacesMembers(
+        _config,
+        workspaceId: workspaceId,
+        beforeId: beforeId,
+        afterId: afterId,
+        limit: limit,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Creates a membership for a user in a specified workspace. Supply `user_id` and `workspace_role`; the role must be one of the supported non-billing workspace roles. The response contains the new workspace member and its assigned role.
@@ -2359,130 +3956,212 @@ class BetaOrganizationsWorkspacesMembersNamespace {
       required BetaNoBillingWorkspaceRoleSchema workspaceRole,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return members_methods_import.createBetaOrganizationsWorkspacesMembers(_config, workspaceId: workspaceId, userId: userId, workspaceRole: workspaceRole, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return members_methods_import.createBetaOrganizationsWorkspacesMembers(
+        _config,
+        workspaceId: workspaceId,
+        userId: userId,
+        workspaceRole: workspaceRole,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsWorkspacesRateLimitsNamespace {
   final ClientConfig _config;
-  BetaOrganizationsWorkspacesRateLimitsNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsWorkspacesRateLimitsNamespace(ClientConfig config)
+      : _config = config;
+
   /// List rate-limit overrides configured for a workspace. Returns only the groups and limiter types that have a workspace-level override. Groups without overrides inherit the organization limits and are not listed; use `GET /v1/organizations/rate_limits` to see those. When `limit` is omitted, every matching entry is returned in a single page; when `limit` truncates the result, follow `next_page` to fetch the remaining entries.
-  Future<BetaWorkspaceRateLimitListResponse>
-      list(
-          {required String workspaceId,
-          SdkOptional<String?> groupType = const SdkOmitted(),
-          SdkOptional<int?> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return rate_limits_methods_import.listBetaOrganizationsWorkspacesRateLimits(_config, workspaceId: workspaceId, groupType: groupType, limit: limit, page: page, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaWorkspaceRateLimitListResponse> list(
+      {required String workspaceId,
+      SdkOptional<String?> groupType = const SdkOmitted(),
+      SdkOptional<int?> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return rate_limits_methods_import.listBetaOrganizationsWorkspacesRateLimits(
+        _config,
+        workspaceId: workspaceId,
+        groupType: groupType,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// List rate-limit overrides configured for a workspace. Returns only the groups and limiter types that have a workspace-level override. Groups without overrides inherit the organization limits and are not listed; use `GET /v1/organizations/rate_limits` to see those. When `limit` is omitted, every matching entry is returned in a single page; when `limit` truncates the result, follow `next_page` to fetch the remaining entries.
-  Stream<BetaWorkspaceRateLimit> listPaginated({required String workspaceId, String? groupType, int? limit, String? page, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* rate_limits_methods_import.listBetaOrganizationsWorkspacesRateLimitsPaginated(_config, workspaceId: workspaceId, groupType: groupType, limit: limit, page: page, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaWorkspaceRateLimit> listPaginated(
+      {required String workspaceId,
+      String? groupType,
+      int? limit,
+      String? page,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* rate_limits_methods_import
+        .listBetaOrganizationsWorkspacesRateLimitsPaginated(_config,
+            workspaceId: workspaceId,
+            groupType: groupType,
+            limit: limit,
+            page: page,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsWorkspacesServiceAccountsNamespace {
   final ClientConfig _config;
-  BetaOrganizationsWorkspacesServiceAccountsNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsWorkspacesServiceAccountsNamespace(ClientConfig config)
+      : _config = config;
+
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List the service accounts that are members of a workspace. Each entry includes the service account's `workspace_role`. Use `limit` and the `next_page` cursor to paginate. Archived workspaces return 400; use `GET /service_accounts/{id}/workspaces` to audit memberships of an archived workspace. The implicit default-workspace membership is not included in this list. Memberships of archived service accounts are omitted from the results.
-  Future<BetaServiceAccountWorkspaceMemberListResponse>
-      list(
-          {required String workspaceId,
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return service_accounts_methods_import.listBetaOrganizationsWorkspacesServiceAccounts(_config, workspaceId: workspaceId, limit: limit, page: page, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaServiceAccountWorkspaceMemberListResponse> list(
+      {required String workspaceId,
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return service_accounts_methods_import
+        .listBetaOrganizationsWorkspacesServiceAccounts(_config,
+            workspaceId: workspaceId,
+            limit: limit,
+            page: page,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List the service accounts that are members of a workspace. Each entry includes the service account's `workspace_role`. Use `limit` and the `next_page` cursor to paginate. Archived workspaces return 400; use `GET /service_accounts/{id}/workspaces` to audit memberships of an archived workspace. The implicit default-workspace membership is not included in this list. Memberships of archived service accounts are omitted from the results.
-  Stream<BetaServiceAccountWorkspaceMember> listPaginated({required String workspaceId, int? limit, String? page, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* service_accounts_methods_import.listBetaOrganizationsWorkspacesServiceAccountsPaginated(_config, workspaceId: workspaceId, limit: limit, page: page, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaServiceAccountWorkspaceMember> listPaginated(
+      {required String workspaceId,
+      int? limit,
+      String? page,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* service_accounts_methods_import
+        .listBetaOrganizationsWorkspacesServiceAccountsPaginated(_config,
+            workspaceId: workspaceId,
+            limit: limit,
+            page: page,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Add a service account to a workspace with the given `workspace_role`. The role determines what the service account can do in the workspace and which workspace-scoped permissions it can be granted when authenticating through federation. Every service account is already an implicit `workspace_user` member of the default workspace; adding it explicitly assigns a chosen role. If the service account is already an explicit member of the workspace, its `workspace_role` is replaced with the value supplied here. Archived workspaces return 400. Archived service accounts cannot be added and are rejected.
-  Future<BetaServiceAccountWorkspaceMember>
-      create(
-          {required String workspaceId,
-          required String serviceAccountId,
-          required BetaNoBillingWorkspaceRoleSchema workspaceRole,
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return service_accounts_methods_import.createBetaOrganizationsWorkspacesServiceAccounts(_config, workspaceId: workspaceId, serviceAccountId: serviceAccountId, workspaceRole: workspaceRole, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaServiceAccountWorkspaceMember> create(
+      {required String workspaceId,
+      required String serviceAccountId,
+      required BetaNoBillingWorkspaceRoleSchema workspaceRole,
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return service_accounts_methods_import
+        .createBetaOrganizationsWorkspacesServiceAccounts(_config,
+            workspaceId: workspaceId,
+            serviceAccountId: serviceAccountId,
+            workspaceRole: workspaceRole,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Retrieve a service account's membership in a workspace. Returns the membership record, including the service account's `workspace_role` in this workspace. Archived workspaces return 400. For the default workspace, returns the implicit (`implicit: true`) membership when no explicit membership exists; an explicitly added membership is returned with its assigned role. An archived service account returns 404.
-  Future<BetaServiceAccountWorkspaceMember>
-      retrieve(
-          {required String workspaceId,
-          required String serviceAccountId,
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return service_accounts_methods_import.retrieveBetaOrganizationsWorkspacesServiceAccounts(_config, workspaceId: workspaceId, serviceAccountId: serviceAccountId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaServiceAccountWorkspaceMember> retrieve(
+      {required String workspaceId,
+      required String serviceAccountId,
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return service_accounts_methods_import
+        .retrieveBetaOrganizationsWorkspacesServiceAccounts(_config,
+            workspaceId: workspaceId,
+            serviceAccountId: serviceAccountId,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Change a service account's role in a workspace. The new `workspace_role` replaces the current one. Only explicit memberships can be updated; to set a role on the implicit default-workspace membership, add the service account explicitly with `POST /workspaces/{workspace_id}/service_accounts`. Archived workspaces return 400. Archived service accounts cannot be updated and are rejected.
-  Future<BetaServiceAccountWorkspaceMember>
-      update(
-          {required String workspaceId,
-          required String serviceAccountId,
-          required BetaNoBillingWorkspaceRoleSchema workspaceRole,
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return service_accounts_methods_import.updateBetaOrganizationsWorkspacesServiceAccounts(_config, workspaceId: workspaceId, serviceAccountId: serviceAccountId, workspaceRole: workspaceRole, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaServiceAccountWorkspaceMember> update(
+      {required String workspaceId,
+      required String serviceAccountId,
+      required BetaNoBillingWorkspaceRoleSchema workspaceRole,
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return service_accounts_methods_import
+        .updateBetaOrganizationsWorkspacesServiceAccounts(_config,
+            workspaceId: workspaceId,
+            serviceAccountId: serviceAccountId,
+            workspaceRole: workspaceRole,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Remove a service account from a workspace. Removal is idempotent (returns 200 even if the membership was already removed). A DELETE against the implicit default-workspace membership returns 200 but is a no-op and the membership persists; deleting an explicit default-workspace row reverts to the implicit `workspace_user` membership. Archived workspaces return 400.
-  Future<BetaServiceAccountWorkspaceMemberDeleteResponse>
-      delete(
-          {required String workspaceId,
-          required String serviceAccountId,
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return service_accounts_methods_import.deleteBetaOrganizationsWorkspacesServiceAccounts(_config, workspaceId: workspaceId, serviceAccountId: serviceAccountId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaServiceAccountWorkspaceMemberDeleteResponse> delete(
+      {required String workspaceId,
+      required String serviceAccountId,
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return service_accounts_methods_import
+        .deleteBetaOrganizationsWorkspacesServiceAccounts(_config,
+            workspaceId: workspaceId,
+            serviceAccountId: serviceAccountId,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsWorkspacesNamespace {
   final ClientConfig _config;
   late final BetaOrganizationsWorkspacesMembersNamespace members;
   late final BetaOrganizationsWorkspacesRateLimitsNamespace rateLimits;
-  late final BetaOrganizationsWorkspacesServiceAccountsNamespace serviceAccounts;
+  late final BetaOrganizationsWorkspacesServiceAccountsNamespace
+      serviceAccounts;
   BetaOrganizationsWorkspacesNamespace(ClientConfig config) : _config = config {
     members = BetaOrganizationsWorkspacesMembersNamespace(config);
     rateLimits = BetaOrganizationsWorkspacesRateLimitsNamespace(config);
-    serviceAccounts = BetaOrganizationsWorkspacesServiceAccountsNamespace(config);
+    serviceAccounts =
+        BetaOrganizationsWorkspacesServiceAccountsNamespace(config);
   }
+
   /// Retrieves a workspace by its identifier. Use `workspace_id` to select the workspace whose configuration and metadata you need. The response includes the workspace's data residency settings, tags, and archive state.
   Future<BetaWorkspace> retrieve(
       {required String workspaceId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return workspaces_methods_2.retrieveBetaOrganizationsWorkspaces(_config, workspaceId: workspaceId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return workspaces_methods_2.retrieveBetaOrganizationsWorkspaces(_config,
+        workspaceId: workspaceId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Updates selected configuration fields for a workspace. Include only the fields you want to change; omitted fields remain unchanged. Use `name`, `display_color`, `tags`, `data_residency`, or `external_key_id` as needed.
   Future<BetaWorkspace> update(
       {required String workspaceId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
-      SdkOptional<BetaDataResidencyUpdateParams?> dataResidency = const SdkOmitted(),
+      SdkOptional<BetaDataResidencyUpdateParams?> dataResidency =
+          const SdkOmitted(),
       SdkOptional<String> displayColor = const SdkOmitted(),
       SdkOptional<String> externalKeyId = const SdkOmitted(),
       SdkOptional<String> name = const SdkOmitted(),
       SdkOptional<Map<String, String>?> tags = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return workspaces_methods_2.updateBetaOrganizationsWorkspaces(_config, workspaceId: workspaceId, anthropicVersion: anthropicVersion, dataResidency: dataResidency, displayColor: displayColor, externalKeyId: externalKeyId, name: name, tags: tags, requestOptions: requestOptions);
+    return workspaces_methods_2.updateBetaOrganizationsWorkspaces(_config,
+        workspaceId: workspaceId,
+        anthropicVersion: anthropicVersion,
+        dataResidency: dataResidency,
+        displayColor: displayColor,
+        externalKeyId: externalKeyId,
+        name: name,
+        tags: tags,
+        requestOptions: requestOptions);
   }
 
   /// Lists workspaces in the organization, with cursor-based pagination. Set `include_archived` to include archived workspaces, and use `before_id` or `after_id` to navigate pages. The response includes cursors and a `has_more` flag.
@@ -2493,7 +4172,13 @@ class BetaOrganizationsWorkspacesNamespace {
       SdkOptional<int> limit = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return workspaces_methods_2.listBetaOrganizationsWorkspaces(_config, includeArchived: includeArchived, beforeId: beforeId, afterId: afterId, limit: limit, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return workspaces_methods_2.listBetaOrganizationsWorkspaces(_config,
+        includeArchived: includeArchived,
+        beforeId: beforeId,
+        afterId: afterId,
+        limit: limit,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Creates a workspace in the organization. Supply a `name` and optionally configure its data residency, display color, encryption key, and tags. The response contains the created workspace and its generated identifier.
@@ -2501,12 +4186,21 @@ class BetaOrganizationsWorkspacesNamespace {
       {required String name,
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
-      SdkOptional<BetaDataResidencyCreateParams?> dataResidency = const SdkOmitted(),
+      SdkOptional<BetaDataResidencyCreateParams?> dataResidency =
+          const SdkOmitted(),
       SdkOptional<String?> displayColor = const SdkOmitted(),
       SdkOptional<String?> externalKeyId = const SdkOmitted(),
       SdkOptional<Map<String, String>?> tags = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return workspaces_methods_2.createBetaOrganizationsWorkspaces(_config, name: name, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, dataResidency: dataResidency, displayColor: displayColor, externalKeyId: externalKeyId, tags: tags, requestOptions: requestOptions);
+    return workspaces_methods_2.createBetaOrganizationsWorkspaces(_config,
+        name: name,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        dataResidency: dataResidency,
+        displayColor: displayColor,
+        externalKeyId: externalKeyId,
+        tags: tags,
+        requestOptions: requestOptions);
   }
 
   /// Archives a workspace in the organization. Use `workspace_id` to identify the workspace to archive. The response returns the workspace object with its archive state.
@@ -2514,20 +4208,26 @@ class BetaOrganizationsWorkspacesNamespace {
       {required String workspaceId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return workspaces_methods_2.archiveBetaOrganizationsWorkspaces(_config, workspaceId: workspaceId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return workspaces_methods_2.archiveBetaOrganizationsWorkspaces(_config,
+        workspaceId: workspaceId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsApiKeysNamespace {
   final ClientConfig _config;
   BetaOrganizationsApiKeysNamespace(ClientConfig config) : _config = config;
+
   /// Retrieves a specific API key by its ID. Use `api_key_id` to identify the key whose metadata you need. The response includes its status, scope, creation and expiration details, and a partially redacted key hint.
   Future<BetaApiKey> retrieve(
       {required String apiKeyId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return api_keys_methods.retrieveBetaOrganizationsApiKeys(_config, apiKeyId: apiKeyId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return api_keys_methods.retrieveBetaOrganizationsApiKeys(_config,
+        apiKeyId: apiKeyId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Updates an API key's name, status, or both. Include the fields you want to change; `name` can be a string or `null`, and `status` can be active, archived, inactive, or `null`. The response returns the API key object with its current metadata.
@@ -2537,7 +4237,12 @@ class BetaOrganizationsApiKeysNamespace {
       SdkOptional<String?> name = const SdkOmitted(),
       SdkOptional<String?> status = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return api_keys_methods.updateBetaOrganizationsApiKeys(_config, apiKeyId: apiKeyId, anthropicVersion: anthropicVersion, name: name, status: status, requestOptions: requestOptions);
+    return api_keys_methods.updateBetaOrganizationsApiKeys(_config,
+        apiKeyId: apiKeyId,
+        anthropicVersion: anthropicVersion,
+        name: name,
+        status: status,
+        requestOptions: requestOptions);
   }
 
   /// Lists API keys in the organization, with optional filters for status, workspace, and creator. Use `before_id` or `after_id` to navigate pages and `limit` to set the page size. The response includes cursor IDs and a `has_more` flag.
@@ -2550,64 +4255,149 @@ class BetaOrganizationsApiKeysNamespace {
       SdkOptional<String?> createdByUserId = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return api_keys_methods.listBetaOrganizationsApiKeys(_config, beforeId: beforeId, afterId: afterId, limit: limit, status: status, workspaceId: workspaceId, createdByUserId: createdByUserId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return api_keys_methods.listBetaOrganizationsApiKeys(_config,
+        beforeId: beforeId,
+        afterId: afterId,
+        limit: limit,
+        status: status,
+        workspaceId: workspaceId,
+        createdByUserId: createdByUserId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsUsageReportMessagesNamespace {
   final ClientConfig _config;
-  BetaOrganizationsUsageReportMessagesNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsUsageReportMessagesNamespace(ClientConfig config)
+      : _config = config;
+
   /// Retrieves organization message usage over time, grouped into time buckets. Set `starting_at` to the RFC 3339 timestamp that begins the reporting range, and use the filters and grouping options to narrow or organize the results. Use the response's `next_page` token as `page` to continue through results.
-  Future<BetaGetMessagesUsageReportResponse>
-      list(
-          {required String startingAt,
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<String?> endingAt = const SdkOmitted(),
-          SdkOptional<List<String>?> apiKeyIds = const SdkOmitted(),
-          SdkOptional<List<String>?> workspaceIds = const SdkOmitted(),
-          SdkOptional<List<String>?> accountIds = const SdkOmitted(),
-          SdkOptional<List<String>?> serviceAccountIds = const SdkOmitted(),
-          SdkOptional<List<String>?> models = const SdkOmitted(),
-          SdkOptional<List<BetaUsageReportServiceTier>?> serviceTiers = const SdkOmitted(),
-          SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindow = const SdkOmitted(),
-          SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos = const SdkOmitted(),
-          SdkOptional<List<BetaSpeed>?> speeds = const SdkOmitted(),
-          SdkOptional<List<BetaMessagesUsageReportGroupBy>?> groupBy = const SdkOmitted(),
-          SdkOptional<BetaMessagesUsageReportTimeBucketWidth> bucketWidth = const SdkOmitted(),
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return messages_methods_import.listBetaOrganizationsUsageReportMessages(_config, startingAt: startingAt, limit: limit, page: page, endingAt: endingAt, apiKeyIds: apiKeyIds, workspaceIds: workspaceIds, accountIds: accountIds, serviceAccountIds: serviceAccountIds, models: models, serviceTiers: serviceTiers, contextWindow: contextWindow, inferenceGeos: inferenceGeos, speeds: speeds, groupBy: groupBy, bucketWidth: bucketWidth, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaGetMessagesUsageReportResponse> list(
+      {required String startingAt,
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<String?> endingAt = const SdkOmitted(),
+      SdkOptional<List<String>?> apiKeyIds = const SdkOmitted(),
+      SdkOptional<List<String>?> workspaceIds = const SdkOmitted(),
+      SdkOptional<List<String>?> accountIds = const SdkOmitted(),
+      SdkOptional<List<String>?> serviceAccountIds = const SdkOmitted(),
+      SdkOptional<List<String>?> models = const SdkOmitted(),
+      SdkOptional<List<BetaUsageReportServiceTier>?> serviceTiers =
+          const SdkOmitted(),
+      SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindow =
+          const SdkOmitted(),
+      SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos =
+          const SdkOmitted(),
+      SdkOptional<List<BetaSpeed>?> speeds = const SdkOmitted(),
+      SdkOptional<List<BetaMessagesUsageReportGroupBy>?> groupBy =
+          const SdkOmitted(),
+      SdkOptional<BetaMessagesUsageReportTimeBucketWidth> bucketWidth =
+          const SdkOmitted(),
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return messages_methods_import.listBetaOrganizationsUsageReportMessages(
+        _config,
+        startingAt: startingAt,
+        limit: limit,
+        page: page,
+        endingAt: endingAt,
+        apiKeyIds: apiKeyIds,
+        workspaceIds: workspaceIds,
+        accountIds: accountIds,
+        serviceAccountIds: serviceAccountIds,
+        models: models,
+        serviceTiers: serviceTiers,
+        contextWindow: contextWindow,
+        inferenceGeos: inferenceGeos,
+        speeds: speeds,
+        groupBy: groupBy,
+        bucketWidth: bucketWidth,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves organization message usage over time, grouped into time buckets. Set `starting_at` to the RFC 3339 timestamp that begins the reporting range, and use the filters and grouping options to narrow or organize the results. Use the response's `next_page` token as `page` to continue through results.
-  Stream<BetaMessagesUsageReportTimeBucket> listPaginated({required String startingAt, int? limit, String? page, String? endingAt, List<String>? apiKeyIds, List<String>? workspaceIds, List<String>? accountIds, List<String>? serviceAccountIds, List<String>? models, List<BetaUsageReportServiceTier>? serviceTiers, List<BetaMessagesUsageReportContextWindow>? contextWindow, List<BetaInferenceGeoFilter>? inferenceGeos, List<BetaSpeed>? speeds, List<BetaMessagesUsageReportGroupBy>? groupBy, BetaMessagesUsageReportTimeBucketWidth? bucketWidth, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* messages_methods_import.listBetaOrganizationsUsageReportMessagesPaginated(_config, startingAt: startingAt, limit: limit, page: page, endingAt: endingAt, apiKeyIds: apiKeyIds, workspaceIds: workspaceIds, accountIds: accountIds, serviceAccountIds: serviceAccountIds, models: models, serviceTiers: serviceTiers, contextWindow: contextWindow, inferenceGeos: inferenceGeos, speeds: speeds, groupBy: groupBy, bucketWidth: bucketWidth, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaMessagesUsageReportTimeBucket> listPaginated(
+      {required String startingAt,
+      int? limit,
+      String? page,
+      String? endingAt,
+      List<String>? apiKeyIds,
+      List<String>? workspaceIds,
+      List<String>? accountIds,
+      List<String>? serviceAccountIds,
+      List<String>? models,
+      List<BetaUsageReportServiceTier>? serviceTiers,
+      List<BetaMessagesUsageReportContextWindow>? contextWindow,
+      List<BetaInferenceGeoFilter>? inferenceGeos,
+      List<BetaSpeed>? speeds,
+      List<BetaMessagesUsageReportGroupBy>? groupBy,
+      BetaMessagesUsageReportTimeBucketWidth? bucketWidth,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* messages_methods_import
+        .listBetaOrganizationsUsageReportMessagesPaginated(_config,
+            startingAt: startingAt,
+            limit: limit,
+            page: page,
+            endingAt: endingAt,
+            apiKeyIds: apiKeyIds,
+            workspaceIds: workspaceIds,
+            accountIds: accountIds,
+            serviceAccountIds: serviceAccountIds,
+            models: models,
+            serviceTiers: serviceTiers,
+            contextWindow: contextWindow,
+            inferenceGeos: inferenceGeos,
+            speeds: speeds,
+            groupBy: groupBy,
+            bucketWidth: bucketWidth,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsUsageReportClaudeCodeNamespace {
   final ClientConfig _config;
-  BetaOrganizationsUsageReportClaudeCodeNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsUsageReportClaudeCodeNamespace(ClientConfig config)
+      : _config = config;
+
   /// Retrieve daily aggregated usage metrics for Claude Code users. Enables organizations to analyze developer productivity and build custom dashboards.
-  Future<BetaGetClaudeCodeUsageReportResponse>
-      retrieve(
-          {required String startingAt,
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return claude_code_methods.retrieveBetaOrganizationsUsageReportClaudeCode(_config, startingAt: startingAt, limit: limit, page: page, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaGetClaudeCodeUsageReportResponse> retrieve(
+      {required String startingAt,
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return claude_code_methods.retrieveBetaOrganizationsUsageReportClaudeCode(
+        _config,
+        startingAt: startingAt,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Retrieve daily aggregated usage metrics for Claude Code users. Enables organizations to analyze developer productivity and build custom dashboards.
-  Stream<BetaClaudeCodeUsageReportItem> retrievePaginated({required String startingAt, int? limit, String? page, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* claude_code_methods.retrieveBetaOrganizationsUsageReportClaudeCodePaginated(_config, startingAt: startingAt, limit: limit, page: page, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaClaudeCodeUsageReportItem> retrievePaginated(
+      {required String startingAt,
+      int? limit,
+      String? page,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* claude_code_methods
+        .retrieveBetaOrganizationsUsageReportClaudeCodePaginated(_config,
+            startingAt: startingAt,
+            limit: limit,
+            page: page,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsUsageReportNamespace {
@@ -2622,6 +4412,7 @@ class BetaOrganizationsUsageReportNamespace {
 class BetaOrganizationsCostReportNamespace {
   final ClientConfig _config;
   BetaOrganizationsCostReportNamespace(ClientConfig config) : _config = config;
+
   /// Retrieves organization costs over time in daily buckets. Set `starting_at` to the RFC 3339 timestamp that begins the reporting range, and use `group_by[]` to organize results by description or workspace. Use the response's `next_page` token as `page` to continue through results.
   Future<BetaGetCostReportResponse> retrieve(
       {required String startingAt,
@@ -2629,35 +4420,67 @@ class BetaOrganizationsCostReportNamespace {
       SdkOptional<String?> page = const SdkOmitted(),
       SdkOptional<String?> endingAt = const SdkOmitted(),
       SdkOptional<List<BetaCostReportGroupBy>?> groupBy = const SdkOmitted(),
-      SdkOptional<BetaCostReportTimeBucketWidth> bucketWidth = const SdkOmitted(),
+      SdkOptional<BetaCostReportTimeBucketWidth> bucketWidth =
+          const SdkOmitted(),
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return cost_report_methods_import.retrieveBetaOrganizationsCostReport(_config, startingAt: startingAt, limit: limit, page: page, endingAt: endingAt, groupBy: groupBy, bucketWidth: bucketWidth, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return cost_report_methods_import.retrieveBetaOrganizationsCostReport(
+        _config,
+        startingAt: startingAt,
+        limit: limit,
+        page: page,
+        endingAt: endingAt,
+        groupBy: groupBy,
+        bucketWidth: bucketWidth,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Retrieves organization costs over time in daily buckets. Set `starting_at` to the RFC 3339 timestamp that begins the reporting range, and use `group_by[]` to organize results by description or workspace. Use the response's `next_page` token as `page` to continue through results.
-  Stream<BetaCostReportTimeBucket> retrievePaginated({required String startingAt, int? limit, String? page, String? endingAt, List<BetaCostReportGroupBy>? groupBy, BetaCostReportTimeBucketWidth? bucketWidth, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* cost_report_methods_import.retrieveBetaOrganizationsCostReportPaginated(_config, startingAt: startingAt, limit: limit, page: page, endingAt: endingAt, groupBy: groupBy, bucketWidth: bucketWidth, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaCostReportTimeBucket> retrievePaginated(
+      {required String startingAt,
+      int? limit,
+      String? page,
+      String? endingAt,
+      List<BetaCostReportGroupBy>? groupBy,
+      BetaCostReportTimeBucketWidth? bucketWidth,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* cost_report_methods_import
+        .retrieveBetaOrganizationsCostReportPaginated(_config,
+            startingAt: startingAt,
+            limit: limit,
+            page: page,
+            endingAt: endingAt,
+            groupBy: groupBy,
+            bucketWidth: bucketWidth,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsMeNamespace {
   final ClientConfig _config;
   BetaOrganizationsMeNamespace(ClientConfig config) : _config = config;
+
   /// Retrieve information about the organization associated with the authenticated API key.
   Future<BetaOrganizationSchema> retrieve(
       {SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return me_methods.retrieveBetaOrganizationsMe(_config, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return me_methods.retrieveBetaOrganizationsMe(_config,
+        anthropicVersion: anthropicVersion, requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsExternalKeysNamespace {
   final ClientConfig _config;
-  BetaOrganizationsExternalKeysNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsExternalKeysNamespace(ClientConfig config)
+      : _config = config;
+
   /// Create an external key config owned by the caller's organization.
   Future<BetaExternalKey> create(
       {required BetaExternalKeyCreateParamsProviderConfig providerConfig,
@@ -2665,7 +4488,12 @@ class BetaOrganizationsExternalKeysNamespace {
       SdkOptional<String?> displayName = const SdkOmitted(),
       SdkOptional<BetaExternalKeyCreateParamsGeo> geo = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return external_keys_methods.createBetaOrganizationsExternalKeys(_config, providerConfig: providerConfig, anthropicVersion: anthropicVersion, displayName: displayName, geo: geo, requestOptions: requestOptions);
+    return external_keys_methods.createBetaOrganizationsExternalKeys(_config,
+        providerConfig: providerConfig,
+        anthropicVersion: anthropicVersion,
+        displayName: displayName,
+        geo: geo,
+        requestOptions: requestOptions);
   }
 
   /// List external key configs in the caller's organization. Results are ordered by creation time (newest first). Use the `next_page` cursor from the response to fetch subsequent pages.
@@ -2674,12 +4502,25 @@ class BetaOrganizationsExternalKeysNamespace {
       SdkOptional<String?> page = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return external_keys_methods.listBetaOrganizationsExternalKeys(_config, limit: limit, page: page, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return external_keys_methods.listBetaOrganizationsExternalKeys(_config,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// List external key configs in the caller's organization. Results are ordered by creation time (newest first). Use the `next_page` cursor from the response to fetch subsequent pages.
-  Stream<BetaExternalKey> listPaginated({int? limit, String? page, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* external_keys_methods.listBetaOrganizationsExternalKeysPaginated(_config, limit: limit, page: page, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaExternalKey> listPaginated(
+      {int? limit,
+      String? page,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* external_keys_methods.listBetaOrganizationsExternalKeysPaginated(
+        _config,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Retrieve a single external key config in the caller's organization by ID.
@@ -2687,7 +4528,10 @@ class BetaOrganizationsExternalKeysNamespace {
       {required String externalKeyId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return external_keys_methods.retrieveBetaOrganizationsExternalKeys(_config, externalKeyId: externalKeyId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return external_keys_methods.retrieveBetaOrganizationsExternalKeys(_config,
+        externalKeyId: externalKeyId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Partially update an external key config. Omitted fields are left unchanged. `display_name` is always editable. `geo` and `provider_config` cannot be changed once any workspace references this config, because previously encrypted data requires the original key identity to decrypt.
@@ -2695,10 +4539,18 @@ class BetaOrganizationsExternalKeysNamespace {
       {required String externalKeyId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String?> displayName = const SdkOmitted(),
-      SdkOptional<BetaExternalKeyUpdateParamsGeoVariant0?> geo = const SdkOmitted(),
-      SdkOptional<BetaExternalKeyUpdateParamsProviderConfig?> providerConfig = const SdkOmitted(),
+      SdkOptional<BetaExternalKeyUpdateParamsGeoVariant0?> geo =
+          const SdkOmitted(),
+      SdkOptional<BetaExternalKeyUpdateParamsProviderConfig?> providerConfig =
+          const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return external_keys_methods.updateBetaOrganizationsExternalKeys(_config, externalKeyId: externalKeyId, anthropicVersion: anthropicVersion, displayName: displayName, geo: geo, providerConfig: providerConfig, requestOptions: requestOptions);
+    return external_keys_methods.updateBetaOrganizationsExternalKeys(_config,
+        externalKeyId: externalKeyId,
+        anthropicVersion: anthropicVersion,
+        displayName: displayName,
+        geo: geo,
+        providerConfig: providerConfig,
+        requestOptions: requestOptions);
   }
 
   /// Delete an external key config. The request is rejected if any workspace still references this config.
@@ -2706,7 +4558,10 @@ class BetaOrganizationsExternalKeysNamespace {
       {required String externalKeyId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return external_keys_methods.deleteBetaOrganizationsExternalKeys(_config, externalKeyId: externalKeyId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return external_keys_methods.deleteBetaOrganizationsExternalKeys(_config,
+        externalKeyId: externalKeyId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Validate an external key config against the customer's KMS. Anthropic performs an encrypt/decrypt roundtrip against the configured KMS key and waits up to 30 seconds for the result. The response status is `success` if the roundtrip succeeded, or `failure` with an error message if it failed or timed out.
@@ -2714,19 +4569,26 @@ class BetaOrganizationsExternalKeysNamespace {
       {required String externalKeyId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return external_keys_methods.validateBetaOrganizationsExternalKeys(_config, externalKeyId: externalKeyId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return external_keys_methods.validateBetaOrganizationsExternalKeys(_config,
+        externalKeyId: externalKeyId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsComplianceSettingsNamespace {
   final ClientConfig _config;
-  BetaOrganizationsComplianceSettingsNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsComplianceSettingsNamespace(ClientConfig config)
+      : _config = config;
+
   /// Retrieve your organization's Compliance Settings. Compliance Settings is a singleton resource: there is exactly one per organization, addressed without an identifier. The `state` field reflects whether the Compliance API is enabled. An organization with a parent organization reads the state inherited from the parent's configuration.
   Future<BetaComplianceSettings> list(
       {SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return compliance_settings_methods.listBetaOrganizationsComplianceSettings(_config, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return compliance_settings_methods.listBetaOrganizationsComplianceSettings(
+        _config,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Update your organization's Compliance Settings. Setting `state` to `enabled` turns on the Compliance API and begins capturing organization activity events. Setting it to `disabled` turns both off. `state` reflects whether the Compliance API is enabled. A request that sets `state` to its current value succeeds and leaves the resource unchanged. A `disabled` request stays in effect until a later `enabled` request or the organization's next provisioning action that enables Access Transparency: enabling Access Transparency also enables the Compliance API, which serves its activity events, so such provisioning (including re-runs) re-enables the Compliance API even after a `disabled` request. Automated provisioning never disables compliance settings.
@@ -2734,14 +4596,18 @@ class BetaOrganizationsComplianceSettingsNamespace {
       {required BetaComplianceSettingsUpdateParamsState state,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return compliance_settings_methods.createBetaOrganizationsComplianceSettings(_config, state: state, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return compliance_settings_methods
+        .createBetaOrganizationsComplianceSettings(_config,
+            state: state,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsRateLimitsNamespace {
   final ClientConfig _config;
   BetaOrganizationsRateLimitsNamespace(ClientConfig config) : _config = config;
+
   /// List Messages API rate limits for your organization. Each entry corresponds to one rate-limit group (either a model family or an API-surface category such as the Files API or Message Batches) and contains the set of limiter values that apply to it. When `limit` is omitted, every matching entry is returned in a single page; when `limit` truncates the result, follow `next_page` to fetch the remaining entries.
   Future<BetaRateLimitListResponse> list(
       {SdkOptional<String?> model = const SdkOmitted(),
@@ -2750,44 +4616,85 @@ class BetaOrganizationsRateLimitsNamespace {
       SdkOptional<String?> page = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return rate_limits_methods.listBetaOrganizationsRateLimits(_config, model: model, groupType: groupType, limit: limit, page: page, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return rate_limits_methods.listBetaOrganizationsRateLimits(_config,
+        model: model,
+        groupType: groupType,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// List Messages API rate limits for your organization. Each entry corresponds to one rate-limit group (either a model family or an API-surface category such as the Files API or Message Batches) and contains the set of limiter values that apply to it. When `limit` is omitted, every matching entry is returned in a single page; when `limit` truncates the result, follow `next_page` to fetch the remaining entries.
-  Stream<BetaRateLimit> listPaginated({String? model, String? groupType, int? limit, String? page, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* rate_limits_methods.listBetaOrganizationsRateLimitsPaginated(_config, model: model, groupType: groupType, limit: limit, page: page, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaRateLimit> listPaginated(
+      {String? model,
+      String? groupType,
+      int? limit,
+      String? page,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* rate_limits_methods.listBetaOrganizationsRateLimitsPaginated(_config,
+        model: model,
+        groupType: groupType,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsSpendLimitsEffectiveNamespace {
   final ClientConfig _config;
-  BetaOrganizationsSpendLimitsEffectiveNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsSpendLimitsEffectiveNamespace(ClientConfig config)
+      : _config = config;
+
   /// List each member's effective spend limit and period-to-date spend. Returns one row per (member, period) the member resolves a spend limit for, with the `source` scope the spend limit was inherited from. Paginates by member, so a member's periods never split across pages.
-  Future<BetaListEffectiveSpendLimitsResponse>
-      retrieve(
-          {SdkOptional<List<String>?> userIds = const SdkOmitted(),
-          SdkOptional<List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?> period = const SdkOmitted(),
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return effective_methods.retrieveBetaOrganizationsSpendLimitsEffective(_config, userIds: userIds, period: period, limit: limit, page: page, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaListEffectiveSpendLimitsResponse> retrieve(
+      {SdkOptional<List<String>?> userIds = const SdkOmitted(),
+      SdkOptional<
+              List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>
+          period = const SdkOmitted(),
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return effective_methods.retrieveBetaOrganizationsSpendLimitsEffective(
+        _config,
+        userIds: userIds,
+        period: period,
+        limit: limit,
+        page: page,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// List each member's effective spend limit and period-to-date spend. Returns one row per (member, period) the member resolves a spend limit for, with the `source` scope the spend limit was inherited from. Paginates by member, so a member's periods never split across pages.
-  Stream<BetaSpendSummary> retrievePaginated({List<String>? userIds, List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>? period, int? limit, String? page, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* effective_methods.retrieveBetaOrganizationsSpendLimitsEffectivePaginated(_config, userIds: userIds, period: period, limit: limit, page: page, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaSpendSummary> retrievePaginated(
+      {List<String>? userIds,
+      List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>? period,
+      int? limit,
+      String? page,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* effective_methods
+        .retrieveBetaOrganizationsSpendLimitsEffectivePaginated(_config,
+            userIds: userIds,
+            period: period,
+            limit: limit,
+            page: page,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsSpendLimitsNamespace {
   final ClientConfig _config;
   late final BetaOrganizationsSpendLimitsEffectiveNamespace effective;
-  BetaOrganizationsSpendLimitsNamespace(ClientConfig config) : _config = config {
+  BetaOrganizationsSpendLimitsNamespace(ClientConfig config)
+      : _config = config {
     effective = BetaOrganizationsSpendLimitsEffectiveNamespace(config);
   }
+
   /// Retrieves a configured spend limit by its unique identifier, including its amount, currency, scope, and reset period. Use `spend_limit_id` to look up a specific limit and inspect its current configuration and timestamps.
   ///
   /// Retrieve a spend limit by ID.
@@ -2795,13 +4702,17 @@ class BetaOrganizationsSpendLimitsNamespace {
       {required String spendLimitId,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return spend_limits_methods.retrieveBetaOrganizationsSpendLimits(_config, spendLimitId: spendLimitId, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return spend_limits_methods.retrieveBetaOrganizationsSpendLimits(_config,
+        spendLimitId: spendLimitId,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Delete a per-user spend limit override. The member falls back to any inherited spend limit at that period. Seat-tier, group, and organization-level rows cannot be deleted via this endpoint.
   Future<BetaDeleteSpendLimitResponse> delete(
       {required String spendLimitId, RequestOptions? requestOptions}) async {
-    return spend_limits_methods.deleteBetaOrganizationsSpendLimits(_config, spendLimitId: spendLimitId, requestOptions: requestOptions);
+    return spend_limits_methods.deleteBetaOrganizationsSpendLimits(_config,
+        spendLimitId: spendLimitId, requestOptions: requestOptions);
   }
 
   /// Creates or replaces a per-user spend limit override keyed by `scope` and `period`. Supply `amount` and a user scope; `period` can be daily, monthly, or weekly, and setting an existing scope-period pair overwrites its limit. A `null` amount sets an explicit no-limit override for that scope and period only.
@@ -2812,71 +4723,115 @@ class BetaOrganizationsSpendLimitsNamespace {
       required BetaUserScope scope,
       SdkOptional<BetaSetSpendLimitParamsPeriod> period = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return spend_limits_methods.createBetaOrganizationsSpendLimits(_config, amount: amount, scope: scope, period: period, requestOptions: requestOptions);
+    return spend_limits_methods.createBetaOrganizationsSpendLimits(_config,
+        amount: amount,
+        scope: scope,
+        period: period,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsServiceAccountsWorkspacesNamespace {
   final ClientConfig _config;
-  BetaOrganizationsServiceAccountsWorkspacesNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsServiceAccountsWorkspacesNamespace(ClientConfig config)
+      : _config = config;
+
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List the workspaces a service account is a member of. Each entry includes the service account's `workspace_role` in that workspace. Use `limit` and the `next_page` cursor to paginate. When the service account has no explicit default-workspace membership, the implicit (`implicit: true`) membership is returned as the first entry on the first page; with `limit=1` the first page may return up to 2 entries (the implicit entry plus one explicit membership) so a pagination cursor can be derived. Memberships are returned only while the service account is active. Without a `page` cursor, an archived service account returns an empty list. A `page` cursor that does not match an active membership returns a 400 invalid-request error. A cursor stops matching when the membership is removed, the workspace is deleted, or the service account is archived. Restart pagination from the first page to recover.
-  Future<BetaServiceAccountWorkspaceMemberListResponse>
-      list(
-          {required String serviceAccountId,
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return workspaces_methods_import.listBetaOrganizationsServiceAccountsWorkspaces(_config, serviceAccountId: serviceAccountId, limit: limit, page: page, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaServiceAccountWorkspaceMemberListResponse> list(
+      {required String serviceAccountId,
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return workspaces_methods_import
+        .listBetaOrganizationsServiceAccountsWorkspaces(_config,
+            serviceAccountId: serviceAccountId,
+            limit: limit,
+            page: page,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List the workspaces a service account is a member of. Each entry includes the service account's `workspace_role` in that workspace. Use `limit` and the `next_page` cursor to paginate. When the service account has no explicit default-workspace membership, the implicit (`implicit: true`) membership is returned as the first entry on the first page; with `limit=1` the first page may return up to 2 entries (the implicit entry plus one explicit membership) so a pagination cursor can be derived. Memberships are returned only while the service account is active. Without a `page` cursor, an archived service account returns an empty list. A `page` cursor that does not match an active membership returns a 400 invalid-request error. A cursor stops matching when the membership is removed, the workspace is deleted, or the service account is archived. Restart pagination from the first page to recover.
-  Stream<BetaServiceAccountWorkspaceMember> listPaginated({required String serviceAccountId, int? limit, String? page, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* workspaces_methods_import.listBetaOrganizationsServiceAccountsWorkspacesPaginated(_config, serviceAccountId: serviceAccountId, limit: limit, page: page, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaServiceAccountWorkspaceMember> listPaginated(
+      {required String serviceAccountId,
+      int? limit,
+      String? page,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* workspaces_methods_import
+        .listBetaOrganizationsServiceAccountsWorkspacesPaginated(_config,
+            serviceAccountId: serviceAccountId,
+            limit: limit,
+            page: page,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Add a service account to a workspace with the given `workspace_role`. Mirror of `POST /workspaces/{workspace_id}/service_accounts`, addressed from the service-account side; both create the same membership. If the service account is already an explicit member of the workspace, its `workspace_role` is replaced with the value supplied here. Archived workspaces return 400. Archived service accounts cannot be added and are rejected.
-  Future<BetaServiceAccountWorkspaceMember>
-      create(
-          {required String serviceAccountId,
-          required String workspaceId,
-          required BetaNoBillingWorkspaceRoleSchema workspaceRole,
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return workspaces_methods_import.createBetaOrganizationsServiceAccountsWorkspaces(_config, serviceAccountId: serviceAccountId, workspaceId: workspaceId, workspaceRole: workspaceRole, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaServiceAccountWorkspaceMember> create(
+      {required String serviceAccountId,
+      required String workspaceId,
+      required BetaNoBillingWorkspaceRoleSchema workspaceRole,
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return workspaces_methods_import
+        .createBetaOrganizationsServiceAccountsWorkspaces(_config,
+            serviceAccountId: serviceAccountId,
+            workspaceId: workspaceId,
+            workspaceRole: workspaceRole,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Remove a service account from a workspace. Mirror of `DELETE /workspaces/{workspace_id}/service_accounts/{service_account_id}`, addressed from the service-account side. Removal is idempotent (returns 200 even if the membership was already removed). A DELETE against the implicit default-workspace membership returns 200 but is a no-op and the membership persists; deleting an explicit default-workspace row reverts to the implicit `workspace_user` membership. Archived workspaces return 400.
-  Future<BetaServiceAccountWorkspaceMemberDeleteResponse>
-      delete(
-          {required String workspaceId,
-          required String serviceAccountId,
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return workspaces_methods_import.deleteBetaOrganizationsServiceAccountsWorkspaces(_config, workspaceId: workspaceId, serviceAccountId: serviceAccountId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaServiceAccountWorkspaceMemberDeleteResponse> delete(
+      {required String workspaceId,
+      required String serviceAccountId,
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return workspaces_methods_import
+        .deleteBetaOrganizationsServiceAccountsWorkspaces(_config,
+            workspaceId: workspaceId,
+            serviceAccountId: serviceAccountId,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsServiceAccountsNamespace {
   final ClientConfig _config;
   late final BetaOrganizationsServiceAccountsWorkspacesNamespace workspaces;
-  BetaOrganizationsServiceAccountsNamespace(ClientConfig config) : _config = config {
+  BetaOrganizationsServiceAccountsNamespace(ClientConfig config)
+      : _config = config {
     workspaces = BetaOrganizationsServiceAccountsWorkspacesNamespace(config);
   }
+
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Create a service account. A service account is a named workload identity that federation rules target. `organization_role` is `developer` (default) or `admin`; a rule may only be created or retargeted to grant `org:admin` scope when the target's `organization_role` is `admin`. Creating an `admin`-role service account requires an interactive credential (a user OAuth token or a Console session) — a workload may only create `developer`-role service accounts.
   Future<BetaServiceAccount> create(
       {required String name,
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<String?> description = const SdkOmitted(),
-      SdkOptional<BetaServiceAccountCreateParamsOrganizationRole> organizationRole = const SdkOmitted(),
+      SdkOptional<BetaServiceAccountCreateParamsOrganizationRole>
+          organizationRole = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return service_accounts_methods.createBetaOrganizationsServiceAccounts(_config, name: name, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, description: description, organizationRole: organizationRole, requestOptions: requestOptions);
+    return service_accounts_methods.createBetaOrganizationsServiceAccounts(
+        _config,
+        name: name,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        description: description,
+        organizationRole: organizationRole,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List service accounts in the caller's organization. Results are ordered by creation time, newest first. Use `limit` and the `next_page` cursor to paginate; set `include_archived=true` to include archived service accounts.
@@ -2887,12 +4842,32 @@ class BetaOrganizationsServiceAccountsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return service_accounts_methods.listBetaOrganizationsServiceAccounts(_config, limit: limit, page: page, includeArchived: includeArchived, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return service_accounts_methods.listBetaOrganizationsServiceAccounts(
+        _config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List service accounts in the caller's organization. Results are ordered by creation time, newest first. Use `limit` and the `next_page` cursor to paginate; set `include_archived=true` to include archived service accounts.
-  Stream<BetaServiceAccount> listPaginated({int? limit, String? page, bool? includeArchived, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* service_accounts_methods.listBetaOrganizationsServiceAccountsPaginated(_config, limit: limit, page: page, includeArchived: includeArchived, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaServiceAccount> listPaginated(
+      {int? limit,
+      String? page,
+      bool? includeArchived,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* service_accounts_methods
+        .listBetaOrganizationsServiceAccountsPaginated(_config,
+            limit: limit,
+            page: page,
+            includeArchived: includeArchived,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Retrieve a service account by its ID (`svac_...`).
@@ -2901,7 +4876,12 @@ class BetaOrganizationsServiceAccountsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return service_accounts_methods.retrieveBetaOrganizationsServiceAccounts(_config, serviceAccountId: serviceAccountId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return service_accounts_methods.retrieveBetaOrganizationsServiceAccounts(
+        _config,
+        serviceAccountId: serviceAccountId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Update a service account. Only `description` and `organization_role` are mutable; `name` cannot be changed. Archived service accounts cannot be updated; this returns 400. Setting `organization_role` to `admin` (even when unchanged) requires an interactive credential (a user OAuth token or a Console session).
@@ -2912,7 +4892,14 @@ class BetaOrganizationsServiceAccountsNamespace {
       SdkOptional<String?> description = const SdkOmitted(),
       SdkOptional<String?> organizationRole = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return service_accounts_methods.updateBetaOrganizationsServiceAccounts(_config, serviceAccountId: serviceAccountId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, description: description, organizationRole: organizationRole, requestOptions: requestOptions);
+    return service_accounts_methods.updateBetaOrganizationsServiceAccounts(
+        _config,
+        serviceAccountId: serviceAccountId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        description: description,
+        organizationRole: organizationRole,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Archive a service account. Idempotent; re-archiving returns the service account with its original `archived_at`. Rejected with 400 if any live (non-archived) federation rule still targets this service account, same as issuer archival; archive those rules first or change their target to another service account.
@@ -2921,14 +4908,20 @@ class BetaOrganizationsServiceAccountsNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return service_accounts_methods.archiveBetaOrganizationsServiceAccounts(_config, serviceAccountId: serviceAccountId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return service_accounts_methods.archiveBetaOrganizationsServiceAccounts(
+        _config,
+        serviceAccountId: serviceAccountId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsFederationIssuersNamespace {
   final ClientConfig _config;
-  BetaOrganizationsFederationIssuersNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsFederationIssuersNamespace(ClientConfig config)
+      : _config = config;
+
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Register an OIDC issuer that Anthropic will trust for workload identity federation in your organization. The `jwks` field controls how the issuer's signing keys are obtained and takes one of three shapes selected by `type`: `discovery` (resolve keys through OIDC discovery), `explicit_url` (fetch keys from a fixed JWKS URL), or `inline` (provide a static key set). When `jwks.type` is `discovery` and no `discovery_base` is set, the issuer URL must be publicly reachable over HTTPS so Anthropic can fetch the discovery document; for `explicit_url` and `inline` modes the issuer URL is only matched as the JWT's `iss` claim and is not fetched.
   Future<BetaFederationIssuer> create(
       {required String issuerUrl,
@@ -2936,27 +4929,56 @@ class BetaOrganizationsFederationIssuersNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<bool?> checkJti = const SdkOmitted(),
-      SdkOptional<BetaFederationIssuerCreateParamsJwks> jwks = const SdkOmitted(),
+      SdkOptional<BetaFederationIssuerCreateParamsJwks> jwks =
+          const SdkOmitted(),
       SdkOptional<int?> maxJwtLifetimeSeconds = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return federation_issuers_methods.createBetaOrganizationsFederationIssuers(_config, issuerUrl: issuerUrl, name: name, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, checkJti: checkJti, jwks: jwks, maxJwtLifetimeSeconds: maxJwtLifetimeSeconds, requestOptions: requestOptions);
+    return federation_issuers_methods.createBetaOrganizationsFederationIssuers(
+        _config,
+        issuerUrl: issuerUrl,
+        name: name,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        checkJti: checkJti,
+        jwks: jwks,
+        maxJwtLifetimeSeconds: maxJwtLifetimeSeconds,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List federation issuers in your organization. Archived issuers are excluded unless `include_archived=true`.
-  Future<BetaFederationIssuerListResponse>
-      list(
-          {SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<bool> includeArchived = const SdkOmitted(),
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return federation_issuers_methods.listBetaOrganizationsFederationIssuers(_config, limit: limit, page: page, includeArchived: includeArchived, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaFederationIssuerListResponse> list(
+      {SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<bool> includeArchived = const SdkOmitted(),
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return federation_issuers_methods.listBetaOrganizationsFederationIssuers(
+        _config,
+        limit: limit,
+        page: page,
+        includeArchived: includeArchived,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List federation issuers in your organization. Archived issuers are excluded unless `include_archived=true`.
-  Stream<BetaFederationIssuer> listPaginated({int? limit, String? page, bool? includeArchived, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* federation_issuers_methods.listBetaOrganizationsFederationIssuersPaginated(_config, limit: limit, page: page, includeArchived: includeArchived, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaFederationIssuer> listPaginated(
+      {int? limit,
+      String? page,
+      bool? includeArchived,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* federation_issuers_methods
+        .listBetaOrganizationsFederationIssuersPaginated(_config,
+            limit: limit,
+            page: page,
+            includeArchived: includeArchived,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Retrieve a federation issuer by its ID (`fdis_...`).
@@ -2965,7 +4987,12 @@ class BetaOrganizationsFederationIssuersNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return federation_issuers_methods.retrieveBetaOrganizationsFederationIssuers(_config, federationIssuerId: federationIssuerId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return federation_issuers_methods
+        .retrieveBetaOrganizationsFederationIssuers(_config,
+            federationIssuerId: federationIssuerId,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Partially update a federation issuer. Setting `jwks` replaces the full JWKS shape at once. Archived issuers cannot be updated; this returns 400. Create a new issuer instead. Updating an issuer that backs a rule with a scope outside `workspace:developer` or `workspace:inference` requires a Console session.
@@ -2975,12 +5002,24 @@ class BetaOrganizationsFederationIssuersNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<bool?> checkJti = const SdkOmitted(),
       SdkOptional<String?> issuerUrl = const SdkOmitted(),
-      SdkOptional<BetaFederationIssuerUpdateParamsJwks?> jwks = const SdkOmitted(),
+      SdkOptional<BetaFederationIssuerUpdateParamsJwks?> jwks =
+          const SdkOmitted(),
       SdkOptional<bool?> jwksPollingDisabled = const SdkOmitted(),
       SdkOptional<int?> maxJwtLifetimeSeconds = const SdkOmitted(),
       SdkOptional<String?> name = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return federation_issuers_methods.updateBetaOrganizationsFederationIssuers(_config, federationIssuerId: federationIssuerId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, checkJti: checkJti, issuerUrl: issuerUrl, jwks: jwks, jwksPollingDisabled: jwksPollingDisabled, maxJwtLifetimeSeconds: maxJwtLifetimeSeconds, name: name, requestOptions: requestOptions);
+    return federation_issuers_methods.updateBetaOrganizationsFederationIssuers(
+        _config,
+        federationIssuerId: federationIssuerId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        checkJti: checkJti,
+        issuerUrl: issuerUrl,
+        jwks: jwks,
+        jwksPollingDisabled: jwksPollingDisabled,
+        maxJwtLifetimeSeconds: maxJwtLifetimeSeconds,
+        name: name,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Archive a federation issuer. Idempotent; re-archiving returns the issuer with its original `archived_at`. Rejected with 400 if any live (non-archived) federation rule still references the issuer; archive those rules first (a rule's issuer cannot be changed), or recreate them against another issuer.
@@ -2989,61 +5028,97 @@ class BetaOrganizationsFederationIssuersNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return federation_issuers_methods.archiveBetaOrganizationsFederationIssuers(_config, federationIssuerId: federationIssuerId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return federation_issuers_methods.archiveBetaOrganizationsFederationIssuers(
+        _config,
+        federationIssuerId: federationIssuerId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsFederationRulesWorkspacesNamespace {
   final ClientConfig _config;
-  BetaOrganizationsFederationRulesWorkspacesNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsFederationRulesWorkspacesNamespace(ClientConfig config)
+      : _config = config;
+
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Enable a federation rule for a workspace. Idempotent; re-enabling returns the existing enablement. The rule and workspace must both belong to your organization. Membership of the rule's target service account in this workspace is not checked at enablement: token exchange into this workspace is rejected unless the target is a member (it is implicitly a member of the default workspace). Archived rules are rejected with 400. OAuth callers may only manage rules whose `oauth_scope` is `workspace:developer` or `workspace:inference`; other scopes require a Console session.
-  Future<BetaFederationRuleWorkspace>
-      create(
-          {required String federationRuleId,
-          required String workspaceId,
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return workspaces_methods.createBetaOrganizationsFederationRulesWorkspaces(_config, federationRuleId: federationRuleId, workspaceId: workspaceId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaFederationRuleWorkspace> create(
+      {required String federationRuleId,
+      required String workspaceId,
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return workspaces_methods.createBetaOrganizationsFederationRulesWorkspaces(
+        _config,
+        federationRuleId: federationRuleId,
+        workspaceId: workspaceId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List workspaces where this federation rule is enabled. Returns all workspace enablements in a single response; the `limit` and `page` parameters are accepted but have no effect, and `next_page` is always `null`. Returns explicit per-workspace enablements only; for rules with `applies_to_all_workspaces` or a legacy single `workspace_id`, check those fields on the rule itself.
-  Future<BetaFederationRuleWorkspaceListResponse>
-      list(
-          {required String federationRuleId,
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return workspaces_methods.listBetaOrganizationsFederationRulesWorkspaces(_config, federationRuleId: federationRuleId, limit: limit, page: page, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaFederationRuleWorkspaceListResponse> list(
+      {required String federationRuleId,
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return workspaces_methods.listBetaOrganizationsFederationRulesWorkspaces(
+        _config,
+        federationRuleId: federationRuleId,
+        limit: limit,
+        page: page,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List workspaces where this federation rule is enabled. Returns all workspace enablements in a single response; the `limit` and `page` parameters are accepted but have no effect, and `next_page` is always `null`. Returns explicit per-workspace enablements only; for rules with `applies_to_all_workspaces` or a legacy single `workspace_id`, check those fields on the rule itself.
-  Stream<BetaFederationRuleWorkspace> listPaginated({required String federationRuleId, int? limit, String? page, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* workspaces_methods.listBetaOrganizationsFederationRulesWorkspacesPaginated(_config, federationRuleId: federationRuleId, limit: limit, page: page, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaFederationRuleWorkspace> listPaginated(
+      {required String federationRuleId,
+      int? limit,
+      String? page,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* workspaces_methods
+        .listBetaOrganizationsFederationRulesWorkspacesPaginated(_config,
+            federationRuleId: federationRuleId,
+            limit: limit,
+            page: page,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Disable a federation rule for a workspace. Idempotent; succeeds even if the enablement was already removed. OAuth callers may only manage rules whose `oauth_scope` is `workspace:developer` or `workspace:inference`; other scopes require a Console session.
-  Future<BetaRemoveFederationRuleWorkspaceResponse>
-      delete(
-          {required String federationRuleId,
-          required String workspaceId,
-          SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return workspaces_methods.deleteBetaOrganizationsFederationRulesWorkspaces(_config, federationRuleId: federationRuleId, workspaceId: workspaceId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaRemoveFederationRuleWorkspaceResponse> delete(
+      {required String federationRuleId,
+      required String workspaceId,
+      SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return workspaces_methods.deleteBetaOrganizationsFederationRulesWorkspaces(
+        _config,
+        federationRuleId: federationRuleId,
+        workspaceId: workspaceId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsFederationRulesNamespace {
   final ClientConfig _config;
   late final BetaOrganizationsFederationRulesWorkspacesNamespace workspaces;
-  BetaOrganizationsFederationRulesNamespace(ClientConfig config) : _config = config {
+  BetaOrganizationsFederationRulesNamespace(ClientConfig config)
+      : _config = config {
     workspaces = BetaOrganizationsFederationRulesWorkspacesNamespace(config);
   }
+
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Create a federation rule owned by your organization. The referenced issuer and the target service account must already exist in the same organization; invalid references are rejected with a 400 error. The workspace reference is validated. Membership is not checked at rule creation: token exchange resolves a single enabled workspace per call and is rejected unless the target service account is a member of that workspace (it is implicitly a member of the default workspace). Rules on well-known shared issuers (GitHub Actions, GitLab, Buildkite, Terraform Cloud, Google) must constrain tenant identity via an identity-bearing claim, a tenant-pinning subject prefix (such as `repo:YOUR_ORG/...`), or a CEL condition referencing one of those identity claims (e.g. `claims.repository_owner`). OAuth callers may only manage rules whose `oauth_scope` is `workspace:developer` or `workspace:inference`; other scopes require a Console session.
   Future<BetaFederationRule> create(
       {required String issuerId,
@@ -3059,7 +5134,21 @@ class BetaOrganizationsFederationRulesNamespace {
       SdkOptional<int> tokenLifetimeSeconds = const SdkOmitted(),
       SdkOptional<String?> workspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return federation_rules_methods.createBetaOrganizationsFederationRules(_config, issuerId: issuerId, match: match, name: name, oauthScope: oauthScope, target: target, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, appliesToAllWorkspaces: appliesToAllWorkspaces, attributes: attributes, description: description, tokenLifetimeSeconds: tokenLifetimeSeconds, workspaceId: workspaceId, requestOptions: requestOptions);
+    return federation_rules_methods.createBetaOrganizationsFederationRules(
+        _config,
+        issuerId: issuerId,
+        match: match,
+        name: name,
+        oauthScope: oauthScope,
+        target: target,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        appliesToAllWorkspaces: appliesToAllWorkspaces,
+        attributes: attributes,
+        description: description,
+        tokenLifetimeSeconds: tokenLifetimeSeconds,
+        workspaceId: workspaceId,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List federation rules in your organization. Optionally filter by issuer with `issuer_id`. Archived rules are excluded unless `include_archived=true`.
@@ -3071,12 +5160,35 @@ class BetaOrganizationsFederationRulesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return federation_rules_methods.listBetaOrganizationsFederationRules(_config, limit: limit, page: page, issuerId: issuerId, includeArchived: includeArchived, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return federation_rules_methods.listBetaOrganizationsFederationRules(
+        _config,
+        limit: limit,
+        page: page,
+        issuerId: issuerId,
+        includeArchived: includeArchived,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List federation rules in your organization. Optionally filter by issuer with `issuer_id`. Archived rules are excluded unless `include_archived=true`.
-  Stream<BetaFederationRule> listPaginated({int? limit, String? page, String? issuerId, bool? includeArchived, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* federation_rules_methods.listBetaOrganizationsFederationRulesPaginated(_config, limit: limit, page: page, issuerId: issuerId, includeArchived: includeArchived, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaFederationRule> listPaginated(
+      {int? limit,
+      String? page,
+      String? issuerId,
+      bool? includeArchived,
+      List<String>? anthropicBeta,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* federation_rules_methods
+        .listBetaOrganizationsFederationRulesPaginated(_config,
+            limit: limit,
+            page: page,
+            issuerId: issuerId,
+            includeArchived: includeArchived,
+            anthropicBeta: anthropicBeta,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Retrieve a federation rule by its ID (`fdrl_...`).
@@ -3085,7 +5197,12 @@ class BetaOrganizationsFederationRulesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return federation_rules_methods.retrieveBetaOrganizationsFederationRules(_config, federationRuleId: federationRuleId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return federation_rules_methods.retrieveBetaOrganizationsFederationRules(
+        _config,
+        federationRuleId: federationRuleId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Partially update a federation rule. `issuer_id` is immutable. `match` and `target` are replaced as whole objects when set. Referenced service accounts and workspaces must exist in your organization; invalid references are rejected with a 400 error. Archived rules cannot be updated; this returns 400. Create a new rule instead. Rules on well-known shared issuers (GitHub Actions, GitLab, Buildkite, Terraform Cloud, Google) must constrain tenant identity via an identity-bearing claim, a tenant-pinning subject prefix (such as `repo:YOUR_ORG/...`), or a CEL condition referencing one of those identity claims (e.g. `claims.repository_owner`). On these issuers the requirement is re-checked on every update; if an existing rule's stored match does not yet constrain tenant identity, any update (even a rename or description change) must also supply a conforming `match` in the same request. OAuth callers may only manage rules whose `oauth_scope` is `workspace:developer` or `workspace:inference`; other scopes require a Console session.
@@ -3103,7 +5220,21 @@ class BetaOrganizationsFederationRulesNamespace {
       SdkOptional<int?> tokenLifetimeSeconds = const SdkOmitted(),
       SdkOptional<String?> workspaceId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return federation_rules_methods.updateBetaOrganizationsFederationRules(_config, federationRuleId: federationRuleId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, appliesToAllWorkspaces: appliesToAllWorkspaces, attributes: attributes, description: description, match: match, name: name, oauthScope: oauthScope, target: target, tokenLifetimeSeconds: tokenLifetimeSeconds, workspaceId: workspaceId, requestOptions: requestOptions);
+    return federation_rules_methods.updateBetaOrganizationsFederationRules(
+        _config,
+        federationRuleId: federationRuleId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        appliesToAllWorkspaces: appliesToAllWorkspaces,
+        attributes: attributes,
+        description: description,
+        match: match,
+        name: name,
+        oauthScope: oauthScope,
+        target: target,
+        tokenLifetimeSeconds: tokenLifetimeSeconds,
+        workspaceId: workspaceId,
+        requestOptions: requestOptions);
   }
 
   /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Archive a federation rule. Token exchange through this rule stops immediately. Idempotent; re-archiving returns the rule with its original `archived_at`. Archiving clears the rule's workspace targeting (`workspace_id` and `workspace_ids` are emptied). Tokens already minted before archive remain valid until they expire. OAuth callers may only manage rules whose `oauth_scope` is `workspace:developer` or `workspace:inference`; other scopes require a Console session.
@@ -3112,132 +5243,203 @@ class BetaOrganizationsFederationRulesNamespace {
       SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return federation_rules_methods.archiveBetaOrganizationsFederationRules(_config, federationRuleId: federationRuleId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return federation_rules_methods.archiveBetaOrganizationsFederationRules(
+        _config,
+        federationRuleId: federationRuleId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsSpendLimitIncreaseRequestsNamespace {
   final ClientConfig _config;
-  BetaOrganizationsSpendLimitIncreaseRequestsNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsSpendLimitIncreaseRequestsNamespace(ClientConfig config)
+      : _config = config;
+
   /// Retrieve a spend limit increase request. While `pending`, the response includes a live `spend_summary` for the requester at the request's period.
-  Future<BetaSpendLimitIncreaseRequestSchema>
-      retrieve(
-          {required String spendLimitIncreaseRequestId,
-          RequestOptions? requestOptions}) async {
-    return spend_limit_increase_requests_methods.retrieveBetaOrganizationsSpendLimitIncreaseRequests(_config, spendLimitIncreaseRequestId: spendLimitIncreaseRequestId, requestOptions: requestOptions);
+  Future<BetaSpendLimitIncreaseRequestSchema> retrieve(
+      {required String spendLimitIncreaseRequestId,
+      RequestOptions? requestOptions}) async {
+    return spend_limit_increase_requests_methods
+        .retrieveBetaOrganizationsSpendLimitIncreaseRequests(_config,
+            spendLimitIncreaseRequestId: spendLimitIncreaseRequestId,
+            requestOptions: requestOptions);
   }
 
   /// Denies a pending spend limit increase request and records the request as denied. Denying an already-denied request is idempotent, while denying an approved request is rejected; the requester is emailed unless `suppress_notification` is set.
   ///
   /// Deny a pending spend limit increase request. Idempotent on `denied`; denying an already-`approved` request returns 400. Anthropic emails the requester unless `suppress_notification` is set.
-  Future<BetaSpendLimitIncreaseRequestSchema>
-      deny(
-          {required String spendLimitIncreaseRequestId,
-          SdkOptional<bool> suppressNotification = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return spend_limit_increase_requests_methods.denyBetaOrganizationsSpendLimitIncreaseRequests(_config, spendLimitIncreaseRequestId: spendLimitIncreaseRequestId, suppressNotification: suppressNotification, requestOptions: requestOptions);
+  Future<BetaSpendLimitIncreaseRequestSchema> deny(
+      {required String spendLimitIncreaseRequestId,
+      SdkOptional<bool> suppressNotification = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return spend_limit_increase_requests_methods
+        .denyBetaOrganizationsSpendLimitIncreaseRequests(_config,
+            spendLimitIncreaseRequestId: spendLimitIncreaseRequestId,
+            suppressNotification: suppressNotification,
+            requestOptions: requestOptions);
   }
 
   /// Approves a pending spend limit increase request and creates a per-user spend limit for the requester. Supply `amount` as a non-negative integer decimal string in minor units; `period` defaults to the period the member was blocked on, and the requester is emailed unless `suppress_notification` is set.
   ///
   /// Approve a pending spend limit increase request. Writes a per-user spend limit at `amount` for the requester and transitions the request to `approved`. `period` defaults to the period the member was blocked on. Anthropic emails the requester unless `suppress_notification` is set.
-  Future<BetaApproveSpendLimitIncreaseRequestResponse>
-      approve(
-          {required String spendLimitIncreaseRequestId,
-          required String amount,
-          SdkOptional<String?> period = const SdkOmitted(),
-          SdkOptional<bool> suppressNotification = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return spend_limit_increase_requests_methods.approveBetaOrganizationsSpendLimitIncreaseRequests(_config, spendLimitIncreaseRequestId: spendLimitIncreaseRequestId, amount: amount, period: period, suppressNotification: suppressNotification, requestOptions: requestOptions);
+  Future<BetaApproveSpendLimitIncreaseRequestResponse> approve(
+      {required String spendLimitIncreaseRequestId,
+      required String amount,
+      SdkOptional<String?> period = const SdkOmitted(),
+      SdkOptional<bool> suppressNotification = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return spend_limit_increase_requests_methods
+        .approveBetaOrganizationsSpendLimitIncreaseRequests(_config,
+            spendLimitIncreaseRequestId: spendLimitIncreaseRequestId,
+            amount: amount,
+            period: period,
+            suppressNotification: suppressNotification,
+            requestOptions: requestOptions);
   }
 
   /// Lists spend limit increase requests, ordered from most recent to oldest. Filter by request status or requester, and use the `page` cursor from a previous response to continue through the results; pending requests include a live `spend_summary`, while requests from former members are excluded.
   ///
   /// List spend limit increase requests, most recent first. Pending requests include a live `spend_summary` for the requester. Requests whose requester is no longer a member are excluded.
-  Future<BetaSpendLimitIncreaseRequestListResponse>
-      list(
-          {SdkOptional<List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?> status = const SdkOmitted(),
-          SdkOptional<List<String>?> actorIds = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<int> limit = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return spend_limit_increase_requests_methods.listBetaOrganizationsSpendLimitIncreaseRequests(_config, status: status, actorIds: actorIds, page: page, limit: limit, requestOptions: requestOptions);
+  Future<BetaSpendLimitIncreaseRequestListResponse> list(
+      {SdkOptional<
+              List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>?>
+          status = const SdkOmitted(),
+      SdkOptional<List<String>?> actorIds = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<int> limit = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return spend_limit_increase_requests_methods
+        .listBetaOrganizationsSpendLimitIncreaseRequests(_config,
+            status: status,
+            actorIds: actorIds,
+            page: page,
+            limit: limit,
+            requestOptions: requestOptions);
   }
 
   /// Lists spend limit increase requests, ordered from most recent to oldest. Filter by request status or requester, and use the `page` cursor from a previous response to continue through the results; pending requests include a live `spend_summary`, while requests from former members are excluded.
   ///
   /// List spend limit increase requests, most recent first. Pending requests include a live `spend_summary` for the requester. Requests whose requester is no longer a member are excluded.
-  Stream<BetaSpendLimitIncreaseRequestSchema> listPaginated({List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>? status, List<String>? actorIds, String? page, int? limit, RequestOptions? requestOptions}) async* {
-    yield* spend_limit_increase_requests_methods.listBetaOrganizationsSpendLimitIncreaseRequestsPaginated(_config, status: status, actorIds: actorIds, page: page, limit: limit, requestOptions: requestOptions);
+  Stream<BetaSpendLimitIncreaseRequestSchema> listPaginated(
+      {List<ListBetaOrganizationsSpendLimitIncreaseRequestsStatusItem>? status,
+      List<String>? actorIds,
+      String? page,
+      int? limit,
+      RequestOptions? requestOptions}) async* {
+    yield* spend_limit_increase_requests_methods
+        .listBetaOrganizationsSpendLimitIncreaseRequestsPaginated(_config,
+            status: status,
+            actorIds: actorIds,
+            page: page,
+            limit: limit,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsTunnelsCertificatesNamespace {
   final ClientConfig _config;
-  BetaOrganizationsTunnelsCertificatesNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsTunnelsCertificatesNamespace(ClientConfig config)
+      : _config = config;
+
   /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. Register a public CA certificate for the tunnel. Anthropic verifies the gateway's server certificate against this CA when it terminates the inner TLS session. The PEM body must contain exactly one X.509 certificate and no private-key material. A tunnel holds at most two non-archived certificates.
   ///
   /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-  Future<BetaOrganizationTunnelCertificate>
-      create(
-          {required String tunnelId,
-          required List<String> anthropicBeta,
-          required String caCertificatePem,
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return certificates_methods.createBetaOrganizationsTunnelsCertificates(_config, tunnelId: tunnelId, anthropicBeta: anthropicBeta, caCertificatePem: caCertificatePem, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaOrganizationTunnelCertificate> create(
+      {required String tunnelId,
+      required List<String> anthropicBeta,
+      required String caCertificatePem,
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return certificates_methods.createBetaOrganizationsTunnelsCertificates(
+        _config,
+        tunnelId: tunnelId,
+        anthropicBeta: anthropicBeta,
+        caCertificatePem: caCertificatePem,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. List the certificates registered on a tunnel. Archived certificates are excluded unless `include_archived` is set.
   ///
   /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-  Future<BetaTunnelCertificateListResponse>
-      list(
-          {required String tunnelId,
-          required List<String> anthropicBeta,
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<bool> includeArchived = const SdkOmitted(),
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return certificates_methods.listBetaOrganizationsTunnelsCertificates(_config, tunnelId: tunnelId, anthropicBeta: anthropicBeta, page: page, limit: limit, includeArchived: includeArchived, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaTunnelCertificateListResponse> list(
+      {required String tunnelId,
+      required List<String> anthropicBeta,
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<bool> includeArchived = const SdkOmitted(),
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return certificates_methods.listBetaOrganizationsTunnelsCertificates(
+        _config,
+        tunnelId: tunnelId,
+        anthropicBeta: anthropicBeta,
+        page: page,
+        limit: limit,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. List the certificates registered on a tunnel. Archived certificates are excluded unless `include_archived` is set.
   ///
   /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-  Stream<BetaOrganizationTunnelCertificate> listPaginated({required String tunnelId, required List<String> anthropicBeta, String? page, int? limit, bool? includeArchived, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* certificates_methods.listBetaOrganizationsTunnelsCertificatesPaginated(_config, tunnelId: tunnelId, anthropicBeta: anthropicBeta, page: page, limit: limit, includeArchived: includeArchived, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaOrganizationTunnelCertificate> listPaginated(
+      {required String tunnelId,
+      required List<String> anthropicBeta,
+      String? page,
+      int? limit,
+      bool? includeArchived,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* certificates_methods
+        .listBetaOrganizationsTunnelsCertificatesPaginated(_config,
+            tunnelId: tunnelId,
+            anthropicBeta: anthropicBeta,
+            page: page,
+            limit: limit,
+            includeArchived: includeArchived,
+            anthropicVersion: anthropicVersion,
+            requestOptions: requestOptions);
   }
 
   /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. Retrieve a single certificate registered on a tunnel by ID.
   ///
   /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-  Future<BetaOrganizationTunnelCertificate>
-      retrieve(
-          {required String tunnelId,
-          required String certificateId,
-          required List<String> anthropicBeta,
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return certificates_methods.retrieveBetaOrganizationsTunnelsCertificates(_config, tunnelId: tunnelId, certificateId: certificateId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaOrganizationTunnelCertificate> retrieve(
+      {required String tunnelId,
+      required String certificateId,
+      required List<String> anthropicBeta,
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return certificates_methods.retrieveBetaOrganizationsTunnelsCertificates(
+        _config,
+        tunnelId: tunnelId,
+        certificateId: certificateId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. Archive a certificate, removing it from the set Anthropic trusts for this tunnel. The certificate record is retained. Archiving the last non-archived certificate is permitted; the tunnel rejects MCP traffic until a new certificate is added.
   ///
   /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-  Future<BetaOrganizationTunnelCertificate>
-      archive(
-          {required String tunnelId,
-          required String certificateId,
-          required List<String> anthropicBeta,
-          SdkOptional<String> anthropicVersion = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return certificates_methods.archiveBetaOrganizationsTunnelsCertificates(_config, tunnelId: tunnelId, certificateId: certificateId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Future<BetaOrganizationTunnelCertificate> archive(
+      {required String tunnelId,
+      required String certificateId,
+      required List<String> anthropicBeta,
+      SdkOptional<String> anthropicVersion = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return certificates_methods.archiveBetaOrganizationsTunnelsCertificates(
+        _config,
+        tunnelId: tunnelId,
+        certificateId: certificateId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsTunnelsNamespace {
@@ -3246,6 +5448,7 @@ class BetaOrganizationsTunnelsNamespace {
   BetaOrganizationsTunnelsNamespace(ClientConfig config) : _config = config {
     certificates = BetaOrganizationsTunnelsCertificatesNamespace(config);
   }
+
   /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. List the organization's tunnels. Results span the caller's organization, ordered by creation time (newest first). Use `workspace_id` to filter to a single workspace; archived tunnels are excluded unless `include_archived` is set.
   ///
   /// **Deprecated:** this operation is deprecated and may be removed in a future release.
@@ -3257,14 +5460,35 @@ class BetaOrganizationsTunnelsNamespace {
       SdkOptional<bool> includeArchived = const SdkOmitted(),
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tunnels_methods.listBetaOrganizationsTunnels(_config, anthropicBeta: anthropicBeta, page: page, limit: limit, workspaceId: workspaceId, includeArchived: includeArchived, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return tunnels_methods.listBetaOrganizationsTunnels(_config,
+        anthropicBeta: anthropicBeta,
+        page: page,
+        limit: limit,
+        workspaceId: workspaceId,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. List the organization's tunnels. Results span the caller's organization, ordered by creation time (newest first). Use `workspace_id` to filter to a single workspace; archived tunnels are excluded unless `include_archived` is set.
   ///
   /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-  Stream<BetaOrganizationTunnel> listPaginated({required List<String> anthropicBeta, String? page, int? limit, String? workspaceId, bool? includeArchived, String? anthropicVersion, RequestOptions? requestOptions}) async* {
-    yield* tunnels_methods.listBetaOrganizationsTunnelsPaginated(_config, anthropicBeta: anthropicBeta, page: page, limit: limit, workspaceId: workspaceId, includeArchived: includeArchived, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+  Stream<BetaOrganizationTunnel> listPaginated(
+      {required List<String> anthropicBeta,
+      String? page,
+      int? limit,
+      String? workspaceId,
+      bool? includeArchived,
+      String? anthropicVersion,
+      RequestOptions? requestOptions}) async* {
+    yield* tunnels_methods.listBetaOrganizationsTunnelsPaginated(_config,
+        anthropicBeta: anthropicBeta,
+        page: page,
+        limit: limit,
+        workspaceId: workspaceId,
+        includeArchived: includeArchived,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. Retrieve a single tunnel in the caller's organization by ID.
@@ -3275,7 +5499,11 @@ class BetaOrganizationsTunnelsNamespace {
       required List<String> anthropicBeta,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tunnels_methods.retrieveBetaOrganizationsTunnels(_config, tunnelId: tunnelId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return tunnels_methods.retrieveBetaOrganizationsTunnels(_config,
+        tunnelId: tunnelId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. Archive a tunnel. Archival is irreversible. Every non-archived certificate on the tunnel is archived in the same operation, the hostname is retired and never re-allocated, and the tunnel token is invalidated. Retrying against an already-archived tunnel returns the existing record unchanged.
@@ -3286,7 +5514,11 @@ class BetaOrganizationsTunnelsNamespace {
       required List<String> anthropicBeta,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tunnels_methods.archiveBetaOrganizationsTunnels(_config, tunnelId: tunnelId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return tunnels_methods.archiveBetaOrganizationsTunnels(_config,
+        tunnelId: tunnelId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. Return the tunnel's current connection token. The value is fetched live on each call; Anthropic does not store it. Repeated calls return the same value until the token is rotated. Exposed as `POST` so the token does not appear in intermediary access logs.
@@ -3297,7 +5529,11 @@ class BetaOrganizationsTunnelsNamespace {
       required List<String> anthropicBeta,
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tunnels_methods.revealBetaOrganizationsTunnelsToken(_config, tunnelId: tunnelId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, requestOptions: requestOptions);
+    return tunnels_methods.revealBetaOrganizationsTunnelsToken(_config,
+        tunnelId: tunnelId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        requestOptions: requestOptions);
   }
 
   /// Rotates a tunnel's token, invalidating the previous token for new connections and returning a fresh value. Established connections remain active, but connectors restarted after rotation must use the new token; provide `reason` to record operational context. This operation is closing down and will be removed after the migration window; use the replacement tunnel endpoint for new integrations.
@@ -3311,21 +5547,27 @@ class BetaOrganizationsTunnelsNamespace {
       SdkOptional<String> anthropicVersion = const SdkOmitted(),
       SdkOptional<BetaRotateTunnelTokenParams> body = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tunnels_methods.rotateBetaOrganizationsTunnelsToken(_config, tunnelId: tunnelId, anthropicBeta: anthropicBeta, anthropicVersion: anthropicVersion, body: body, requestOptions: requestOptions);
+    return tunnels_methods.rotateBetaOrganizationsTunnelsToken(_config,
+        tunnelId: tunnelId,
+        anthropicBeta: anthropicBeta,
+        anthropicVersion: anthropicVersion,
+        body: body,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsRbacGroupsMembersNamespace {
   final ClientConfig _config;
-  BetaOrganizationsRbacGroupsMembersNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsRbacGroupsMembersNamespace(ClientConfig config)
+      : _config = config;
+
   /// Remove a User from an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning. The RBAC Groups API is available to Claude Enterprise organizations only.
-  Future<BetaDeleteRbacGroupMemberResponse>
-      delete(
-          {required String groupId,
-          required String userId,
-          RequestOptions? requestOptions}) async {
-    return members_methods.deleteBetaOrganizationsRbacGroupsMembers(_config, groupId: groupId, userId: userId, requestOptions: requestOptions);
+  Future<BetaDeleteRbacGroupMemberResponse> delete(
+      {required String groupId,
+      required String userId,
+      RequestOptions? requestOptions}) async {
+    return members_methods.deleteBetaOrganizationsRbacGroupsMembers(_config,
+        groupId: groupId, userId: userId, requestOptions: requestOptions);
   }
 
   /// List members of an RBAC Group. The RBAC Groups API is available to Claude Enterprise organizations only.
@@ -3334,12 +5576,25 @@ class BetaOrganizationsRbacGroupsMembersNamespace {
       SdkOptional<int> limit = const SdkOmitted(),
       SdkOptional<String?> page = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return members_methods.listBetaOrganizationsRbacGroupsMembers(_config, groupId: groupId, limit: limit, page: page, requestOptions: requestOptions);
+    return members_methods.listBetaOrganizationsRbacGroupsMembers(_config,
+        groupId: groupId,
+        limit: limit,
+        page: page,
+        requestOptions: requestOptions);
   }
 
   /// List members of an RBAC Group. The RBAC Groups API is available to Claude Enterprise organizations only.
-  Stream<BetaRbacGroupMember> listPaginated({required String groupId, int? limit, String? page, RequestOptions? requestOptions}) async* {
-    yield* members_methods.listBetaOrganizationsRbacGroupsMembersPaginated(_config, groupId: groupId, limit: limit, page: page, requestOptions: requestOptions);
+  Stream<BetaRbacGroupMember> listPaginated(
+      {required String groupId,
+      int? limit,
+      String? page,
+      RequestOptions? requestOptions}) async* {
+    yield* members_methods.listBetaOrganizationsRbacGroupsMembersPaginated(
+        _config,
+        groupId: groupId,
+        limit: limit,
+        page: page,
+        requestOptions: requestOptions);
   }
 
   /// Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning. The RBAC Groups API is available to Claude Enterprise organizations only.
@@ -3347,9 +5602,9 @@ class BetaOrganizationsRbacGroupsMembersNamespace {
       {required String groupId,
       required String userId,
       RequestOptions? requestOptions}) async {
-    return members_methods.createBetaOrganizationsRbacGroupsMembers(_config, groupId: groupId, userId: userId, requestOptions: requestOptions);
+    return members_methods.createBetaOrganizationsRbacGroupsMembers(_config,
+        groupId: groupId, userId: userId, requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsRbacGroupsNamespace {
@@ -3358,10 +5613,12 @@ class BetaOrganizationsRbacGroupsNamespace {
   BetaOrganizationsRbacGroupsNamespace(ClientConfig config) : _config = config {
     members = BetaOrganizationsRbacGroupsMembersNamespace(config);
   }
+
   /// Create an RBAC Group in the Claude Enterprise tenant. Groups created via the API have source type `"direct"`. The RBAC Groups API is available to Claude Enterprise organizations only.
   Future<BetaRbacGroup> create(
       {required String name, RequestOptions? requestOptions}) async {
-    return rbac_groups_methods.createBetaOrganizationsRbacGroups(_config, name: name, requestOptions: requestOptions);
+    return rbac_groups_methods.createBetaOrganizationsRbacGroups(_config,
+        name: name, requestOptions: requestOptions);
   }
 
   /// List RBAC Groups in the Claude Enterprise tenant. The RBAC Groups API is available to Claude Enterprise organizations only.
@@ -3369,12 +5626,15 @@ class BetaOrganizationsRbacGroupsNamespace {
       {SdkOptional<int> limit = const SdkOmitted(),
       SdkOptional<String?> page = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return rbac_groups_methods.listBetaOrganizationsRbacGroups(_config, limit: limit, page: page, requestOptions: requestOptions);
+    return rbac_groups_methods.listBetaOrganizationsRbacGroups(_config,
+        limit: limit, page: page, requestOptions: requestOptions);
   }
 
   /// List RBAC Groups in the Claude Enterprise tenant. The RBAC Groups API is available to Claude Enterprise organizations only.
-  Stream<BetaRbacGroup> listPaginated({int? limit, String? page, RequestOptions? requestOptions}) async* {
-    yield* rbac_groups_methods.listBetaOrganizationsRbacGroupsPaginated(_config, limit: limit, page: page, requestOptions: requestOptions);
+  Stream<BetaRbacGroup> listPaginated(
+      {int? limit, String? page, RequestOptions? requestOptions}) async* {
+    yield* rbac_groups_methods.listBetaOrganizationsRbacGroupsPaginated(_config,
+        limit: limit, page: page, requestOptions: requestOptions);
   }
 
   /// Update an RBAC Group's name. Groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning. The RBAC Groups API is available to Claude Enterprise organizations only.
@@ -3382,43 +5642,50 @@ class BetaOrganizationsRbacGroupsNamespace {
       {required String groupId,
       SdkOptional<String?> name = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return rbac_groups_methods.updateBetaOrganizationsRbacGroups(_config, groupId: groupId, name: name, requestOptions: requestOptions);
+    return rbac_groups_methods.updateBetaOrganizationsRbacGroups(_config,
+        groupId: groupId, name: name, requestOptions: requestOptions);
   }
 
   /// Delete an RBAC Group. Groups provisioned by an identity provider (source type `"scim"`) cannot be deleted via the API while an organization in the tenant uses SCIM provisioning. The RBAC Groups API is available to Claude Enterprise organizations only.
   Future<BetaDeleteRbacGroupResponse> delete(
       {required String groupId, RequestOptions? requestOptions}) async {
-    return rbac_groups_methods.deleteBetaOrganizationsRbacGroups(_config, groupId: groupId, requestOptions: requestOptions);
+    return rbac_groups_methods.deleteBetaOrganizationsRbacGroups(_config,
+        groupId: groupId, requestOptions: requestOptions);
   }
 
   /// Retrieve an RBAC Group by ID. The RBAC Groups API is available to Claude Enterprise organizations only.
   Future<BetaRbacGroup> retrieve(
       {required String groupId, RequestOptions? requestOptions}) async {
-    return rbac_groups_methods.retrieveBetaOrganizationsRbacGroups(_config, groupId: groupId, requestOptions: requestOptions);
+    return rbac_groups_methods.retrieveBetaOrganizationsRbacGroups(_config,
+        groupId: groupId, requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsRbacRolesNamespace {
   final ClientConfig _config;
   BetaOrganizationsRbacRolesNamespace(ClientConfig config) : _config = config;
+
   /// List RBAC Roles in the organization. The RBAC Roles API is available to Claude Enterprise organizations only.
   Future<BetaRbacRoleList> list(
       {SdkOptional<int> limit = const SdkOmitted(),
       SdkOptional<String?> page = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return rbac_roles_methods.listBetaOrganizationsRbacRoles(_config, limit: limit, page: page, requestOptions: requestOptions);
+    return rbac_roles_methods.listBetaOrganizationsRbacRoles(_config,
+        limit: limit, page: page, requestOptions: requestOptions);
   }
 
   /// List RBAC Roles in the organization. The RBAC Roles API is available to Claude Enterprise organizations only.
-  Stream<BetaRbacRole> listPaginated({int? limit, String? page, RequestOptions? requestOptions}) async* {
-    yield* rbac_roles_methods.listBetaOrganizationsRbacRolesPaginated(_config, limit: limit, page: page, requestOptions: requestOptions);
+  Stream<BetaRbacRole> listPaginated(
+      {int? limit, String? page, RequestOptions? requestOptions}) async* {
+    yield* rbac_roles_methods.listBetaOrganizationsRbacRolesPaginated(_config,
+        limit: limit, page: page, requestOptions: requestOptions);
   }
 
   /// Retrieve an RBAC Role by ID. The RBAC Roles API is available to Claude Enterprise organizations only.
   Future<BetaRbacRole> retrieve(
       {required String roleId, RequestOptions? requestOptions}) async {
-    return rbac_roles_methods.retrieveBetaOrganizationsRbacRoles(_config, roleId: roleId, requestOptions: requestOptions);
+    return rbac_roles_methods.retrieveBetaOrganizationsRbacRoles(_config,
+        roleId: roleId, requestOptions: requestOptions);
   }
 
   /// List the permissions an RBAC Role grants. The RBAC Roles API is available to Claude Enterprise organizations only.
@@ -3427,164 +5694,422 @@ class BetaOrganizationsRbacRolesNamespace {
       SdkOptional<int> limit = const SdkOmitted(),
       SdkOptional<String?> page = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return rbac_roles_methods.permissionsBetaOrganizationsRbacRoles(_config, roleId: roleId, limit: limit, page: page, requestOptions: requestOptions);
+    return rbac_roles_methods.permissionsBetaOrganizationsRbacRoles(_config,
+        roleId: roleId,
+        limit: limit,
+        page: page,
+        requestOptions: requestOptions);
   }
 
   /// List the permissions an RBAC Role grants. The RBAC Roles API is available to Claude Enterprise organizations only.
-  Stream<BetaRbacRolePermission> permissionsPaginated({required String roleId, int? limit, String? page, RequestOptions? requestOptions}) async* {
-    yield* rbac_roles_methods.permissionsBetaOrganizationsRbacRolesPaginated(_config, roleId: roleId, limit: limit, page: page, requestOptions: requestOptions);
+  Stream<BetaRbacRolePermission> permissionsPaginated(
+      {required String roleId,
+      int? limit,
+      String? page,
+      RequestOptions? requestOptions}) async* {
+    yield* rbac_roles_methods.permissionsBetaOrganizationsRbacRolesPaginated(
+        _config,
+        roleId: roleId,
+        limit: limit,
+        page: page,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsAnalyticsUserUsageReportNamespace {
   final ClientConfig _config;
-  BetaOrganizationsAnalyticsUserUsageReportNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsAnalyticsUserUsageReportNamespace(ClientConfig config)
+      : _config = config;
+
   /// Get per-user token usage across a date range. Returns one row per user, ranked by the chosen token metric. Use this to see which users consume the most tokens. Only usage attributable to a seat user is included; for organization-wide totals including direct API-key and automation traffic, use the bucketed `/v1/organizations/analytics/usage_report` endpoint. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Future<BetaAnalyticsUsageUsersResponse>
-      retrieve(
-          {required String startingAt,
-          SdkOptional<String?> endingAt = const SdkOmitted(),
-          SdkOptional<List<BetaAnalyticsProductFilter>?> products = const SdkOmitted(),
-          SdkOptional<List<String>?> models = const SdkOmitted(),
-          SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindows = const SdkOmitted(),
-          SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos = const SdkOmitted(),
-          SdkOptional<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?> speeds = const SdkOmitted(),
-          SdkOptional<List<String>?> slackChannelIds = const SdkOmitted(),
-          SdkOptional<List<String>?> rbacGroupIds = const SdkOmitted(),
-          SdkOptional<List<String>?> userIds = const SdkOmitted(),
-          SdkOptional<String?> bucketWidth = const SdkOmitted(),
-          SdkOptional<BetaAnalyticsSortOrder> order = const SdkOmitted(),
-          SdkOptional<bool> excludeDeletedUsers = const SdkOmitted(),
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<BetaAnalyticsUsageUsersOrderBy> orderBy = const SdkOmitted(),
-          SdkOptional<List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?> groupBy = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return user_usage_report_methods.retrieveBetaOrganizationsAnalyticsUserUsageReport(_config, startingAt: startingAt, endingAt: endingAt, products: products, models: models, contextWindows: contextWindows, inferenceGeos: inferenceGeos, speeds: speeds, slackChannelIds: slackChannelIds, rbacGroupIds: rbacGroupIds, userIds: userIds, bucketWidth: bucketWidth, order: order, excludeDeletedUsers: excludeDeletedUsers, limit: limit, page: page, orderBy: orderBy, groupBy: groupBy, requestOptions: requestOptions);
+  Future<BetaAnalyticsUsageUsersResponse> retrieve(
+      {required String startingAt,
+      SdkOptional<String?> endingAt = const SdkOmitted(),
+      SdkOptional<List<BetaAnalyticsProductFilter>?> products =
+          const SdkOmitted(),
+      SdkOptional<List<String>?> models = const SdkOmitted(),
+      SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindows =
+          const SdkOmitted(),
+      SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos =
+          const SdkOmitted(),
+      SdkOptional<
+              List<
+                  RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>?>
+          speeds = const SdkOmitted(),
+      SdkOptional<List<String>?> slackChannelIds = const SdkOmitted(),
+      SdkOptional<List<String>?> rbacGroupIds = const SdkOmitted(),
+      SdkOptional<List<String>?> userIds = const SdkOmitted(),
+      SdkOptional<String?> bucketWidth = const SdkOmitted(),
+      SdkOptional<BetaAnalyticsSortOrder> order = const SdkOmitted(),
+      SdkOptional<bool> excludeDeletedUsers = const SdkOmitted(),
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<BetaAnalyticsUsageUsersOrderBy> orderBy = const SdkOmitted(),
+      SdkOptional<
+              List<
+                  RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?>
+          groupBy = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return user_usage_report_methods
+        .retrieveBetaOrganizationsAnalyticsUserUsageReport(_config,
+            startingAt: startingAt,
+            endingAt: endingAt,
+            products: products,
+            models: models,
+            contextWindows: contextWindows,
+            inferenceGeos: inferenceGeos,
+            speeds: speeds,
+            slackChannelIds: slackChannelIds,
+            rbacGroupIds: rbacGroupIds,
+            userIds: userIds,
+            bucketWidth: bucketWidth,
+            order: order,
+            excludeDeletedUsers: excludeDeletedUsers,
+            limit: limit,
+            page: page,
+            orderBy: orderBy,
+            groupBy: groupBy,
+            requestOptions: requestOptions);
   }
 
   /// Get per-user token usage across a date range. Returns one row per user, ranked by the chosen token metric. Use this to see which users consume the most tokens. Only usage attributable to a seat user is included; for organization-wide totals including direct API-key and automation traffic, use the bucketed `/v1/organizations/analytics/usage_report` endpoint. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Stream<BetaAnalyticsUsageUsersItem> retrievePaginated({required String startingAt, String? endingAt, List<BetaAnalyticsProductFilter>? products, List<String>? models, List<BetaMessagesUsageReportContextWindow>? contextWindows, List<BetaInferenceGeoFilter>? inferenceGeos, List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>? speeds, List<String>? slackChannelIds, List<String>? rbacGroupIds, List<String>? userIds, String? bucketWidth, BetaAnalyticsSortOrder? order, bool? excludeDeletedUsers, int? limit, String? page, BetaAnalyticsUsageUsersOrderBy? orderBy, List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>? groupBy, RequestOptions? requestOptions}) async* {
-    yield* user_usage_report_methods.retrieveBetaOrganizationsAnalyticsUserUsageReportPaginated(_config, startingAt: startingAt, endingAt: endingAt, products: products, models: models, contextWindows: contextWindows, inferenceGeos: inferenceGeos, speeds: speeds, slackChannelIds: slackChannelIds, rbacGroupIds: rbacGroupIds, userIds: userIds, bucketWidth: bucketWidth, order: order, excludeDeletedUsers: excludeDeletedUsers, limit: limit, page: page, orderBy: orderBy, groupBy: groupBy, requestOptions: requestOptions);
+  Stream<BetaAnalyticsUsageUsersItem> retrievePaginated(
+      {required String startingAt,
+      String? endingAt,
+      List<BetaAnalyticsProductFilter>? products,
+      List<String>? models,
+      List<BetaMessagesUsageReportContextWindow>? contextWindows,
+      List<BetaInferenceGeoFilter>? inferenceGeos,
+      List<RetrieveBetaOrganizationsAnalyticsUserUsageReportSpeedsItem>? speeds,
+      List<String>? slackChannelIds,
+      List<String>? rbacGroupIds,
+      List<String>? userIds,
+      String? bucketWidth,
+      BetaAnalyticsSortOrder? order,
+      bool? excludeDeletedUsers,
+      int? limit,
+      String? page,
+      BetaAnalyticsUsageUsersOrderBy? orderBy,
+      List<RetrieveBetaOrganizationsAnalyticsUserUsageReportGroupByItem>?
+          groupBy,
+      RequestOptions? requestOptions}) async* {
+    yield* user_usage_report_methods
+        .retrieveBetaOrganizationsAnalyticsUserUsageReportPaginated(_config,
+            startingAt: startingAt,
+            endingAt: endingAt,
+            products: products,
+            models: models,
+            contextWindows: contextWindows,
+            inferenceGeos: inferenceGeos,
+            speeds: speeds,
+            slackChannelIds: slackChannelIds,
+            rbacGroupIds: rbacGroupIds,
+            userIds: userIds,
+            bucketWidth: bucketWidth,
+            order: order,
+            excludeDeletedUsers: excludeDeletedUsers,
+            limit: limit,
+            page: page,
+            orderBy: orderBy,
+            groupBy: groupBy,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsAnalyticsUserCostReportNamespace {
   final ClientConfig _config;
-  BetaOrganizationsAnalyticsUserCostReportNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsAnalyticsUserCostReportNamespace(ClientConfig config)
+      : _config = config;
+
   /// Get per-user cost in USD across a date range. Returns one row per user, ranked by spend. Use this to see which users account for the most cost. Only cost attributable to a seat user is included; for organization-wide totals including direct API-key and automation traffic, use the bucketed `/v1/organizations/analytics/cost_report` endpoint. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Future<BetaAnalyticsCostUsersResponse>
-      retrieve(
-          {required String startingAt,
-          SdkOptional<String?> endingAt = const SdkOmitted(),
-          SdkOptional<List<BetaAnalyticsProductFilter>?> products = const SdkOmitted(),
-          SdkOptional<List<String>?> models = const SdkOmitted(),
-          SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindows = const SdkOmitted(),
-          SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos = const SdkOmitted(),
-          SdkOptional<List<RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem>?> speeds = const SdkOmitted(),
-          SdkOptional<List<String>?> slackChannelIds = const SdkOmitted(),
-          SdkOptional<List<String>?> rbacGroupIds = const SdkOmitted(),
-          SdkOptional<List<String>?> userIds = const SdkOmitted(),
-          SdkOptional<String?> bucketWidth = const SdkOmitted(),
-          SdkOptional<BetaAnalyticsSortOrder> order = const SdkOmitted(),
-          SdkOptional<bool> excludeDeletedUsers = const SdkOmitted(),
-          SdkOptional<int> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<BetaAnalyticsCostUsersOrderBy> orderBy = const SdkOmitted(),
-          SdkOptional<List<RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem>?> groupBy = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return user_cost_report_methods.retrieveBetaOrganizationsAnalyticsUserCostReport(_config, startingAt: startingAt, endingAt: endingAt, products: products, models: models, contextWindows: contextWindows, inferenceGeos: inferenceGeos, speeds: speeds, slackChannelIds: slackChannelIds, rbacGroupIds: rbacGroupIds, userIds: userIds, bucketWidth: bucketWidth, order: order, excludeDeletedUsers: excludeDeletedUsers, limit: limit, page: page, orderBy: orderBy, groupBy: groupBy, requestOptions: requestOptions);
+  Future<BetaAnalyticsCostUsersResponse> retrieve(
+      {required String startingAt,
+      SdkOptional<String?> endingAt = const SdkOmitted(),
+      SdkOptional<List<BetaAnalyticsProductFilter>?> products =
+          const SdkOmitted(),
+      SdkOptional<List<String>?> models = const SdkOmitted(),
+      SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindows =
+          const SdkOmitted(),
+      SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos =
+          const SdkOmitted(),
+      SdkOptional<
+              List<RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem>?>
+          speeds = const SdkOmitted(),
+      SdkOptional<List<String>?> slackChannelIds = const SdkOmitted(),
+      SdkOptional<List<String>?> rbacGroupIds = const SdkOmitted(),
+      SdkOptional<List<String>?> userIds = const SdkOmitted(),
+      SdkOptional<String?> bucketWidth = const SdkOmitted(),
+      SdkOptional<BetaAnalyticsSortOrder> order = const SdkOmitted(),
+      SdkOptional<bool> excludeDeletedUsers = const SdkOmitted(),
+      SdkOptional<int> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<BetaAnalyticsCostUsersOrderBy> orderBy = const SdkOmitted(),
+      SdkOptional<
+              List<
+                  RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem>?>
+          groupBy = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return user_cost_report_methods
+        .retrieveBetaOrganizationsAnalyticsUserCostReport(_config,
+            startingAt: startingAt,
+            endingAt: endingAt,
+            products: products,
+            models: models,
+            contextWindows: contextWindows,
+            inferenceGeos: inferenceGeos,
+            speeds: speeds,
+            slackChannelIds: slackChannelIds,
+            rbacGroupIds: rbacGroupIds,
+            userIds: userIds,
+            bucketWidth: bucketWidth,
+            order: order,
+            excludeDeletedUsers: excludeDeletedUsers,
+            limit: limit,
+            page: page,
+            orderBy: orderBy,
+            groupBy: groupBy,
+            requestOptions: requestOptions);
   }
 
   /// Get per-user cost in USD across a date range. Returns one row per user, ranked by spend. Use this to see which users account for the most cost. Only cost attributable to a seat user is included; for organization-wide totals including direct API-key and automation traffic, use the bucketed `/v1/organizations/analytics/cost_report` endpoint. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Stream<BetaAnalyticsCostUsersItem> retrievePaginated({required String startingAt, String? endingAt, List<BetaAnalyticsProductFilter>? products, List<String>? models, List<BetaMessagesUsageReportContextWindow>? contextWindows, List<BetaInferenceGeoFilter>? inferenceGeos, List<RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem>? speeds, List<String>? slackChannelIds, List<String>? rbacGroupIds, List<String>? userIds, String? bucketWidth, BetaAnalyticsSortOrder? order, bool? excludeDeletedUsers, int? limit, String? page, BetaAnalyticsCostUsersOrderBy? orderBy, List<RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem>? groupBy, RequestOptions? requestOptions}) async* {
-    yield* user_cost_report_methods.retrieveBetaOrganizationsAnalyticsUserCostReportPaginated(_config, startingAt: startingAt, endingAt: endingAt, products: products, models: models, contextWindows: contextWindows, inferenceGeos: inferenceGeos, speeds: speeds, slackChannelIds: slackChannelIds, rbacGroupIds: rbacGroupIds, userIds: userIds, bucketWidth: bucketWidth, order: order, excludeDeletedUsers: excludeDeletedUsers, limit: limit, page: page, orderBy: orderBy, groupBy: groupBy, requestOptions: requestOptions);
+  Stream<BetaAnalyticsCostUsersItem> retrievePaginated(
+      {required String startingAt,
+      String? endingAt,
+      List<BetaAnalyticsProductFilter>? products,
+      List<String>? models,
+      List<BetaMessagesUsageReportContextWindow>? contextWindows,
+      List<BetaInferenceGeoFilter>? inferenceGeos,
+      List<RetrieveBetaOrganizationsAnalyticsUserCostReportSpeedsItem>? speeds,
+      List<String>? slackChannelIds,
+      List<String>? rbacGroupIds,
+      List<String>? userIds,
+      String? bucketWidth,
+      BetaAnalyticsSortOrder? order,
+      bool? excludeDeletedUsers,
+      int? limit,
+      String? page,
+      BetaAnalyticsCostUsersOrderBy? orderBy,
+      List<RetrieveBetaOrganizationsAnalyticsUserCostReportGroupByItem>?
+          groupBy,
+      RequestOptions? requestOptions}) async* {
+    yield* user_cost_report_methods
+        .retrieveBetaOrganizationsAnalyticsUserCostReportPaginated(_config,
+            startingAt: startingAt,
+            endingAt: endingAt,
+            products: products,
+            models: models,
+            contextWindows: contextWindows,
+            inferenceGeos: inferenceGeos,
+            speeds: speeds,
+            slackChannelIds: slackChannelIds,
+            rbacGroupIds: rbacGroupIds,
+            userIds: userIds,
+            bucketWidth: bucketWidth,
+            order: order,
+            excludeDeletedUsers: excludeDeletedUsers,
+            limit: limit,
+            page: page,
+            orderBy: orderBy,
+            groupBy: groupBy,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsAnalyticsUsageReportNamespace {
   final ClientConfig _config;
-  BetaOrganizationsAnalyticsUsageReportNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsAnalyticsUsageReportNamespace(ClientConfig config)
+      : _config = config;
+
   /// Get token usage over time across a date range. Returns token usage bucketed by minute, hour, or day, optionally broken down by product, model, context window, inference region, or speed. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Future<BetaAnalyticsUsageBucketedResponse>
-      retrieve(
-          {required String startingAt,
-          SdkOptional<String?> endingAt = const SdkOmitted(),
-          SdkOptional<RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth> bucketWidth = const SdkOmitted(),
-          SdkOptional<List<BetaAnalyticsProductFilter>?> products = const SdkOmitted(),
-          SdkOptional<List<String>?> models = const SdkOmitted(),
-          SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindows = const SdkOmitted(),
-          SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos = const SdkOmitted(),
-          SdkOptional<List<RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem>?> speeds = const SdkOmitted(),
-          SdkOptional<List<String>?> slackChannelIds = const SdkOmitted(),
-          SdkOptional<List<String>?> rbacGroupIds = const SdkOmitted(),
-          SdkOptional<List<String>?> userIds = const SdkOmitted(),
-          SdkOptional<int?> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<List<RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem>?> groupBy = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return usage_report_methods.retrieveBetaOrganizationsAnalyticsUsageReport(_config, startingAt: startingAt, endingAt: endingAt, bucketWidth: bucketWidth, products: products, models: models, contextWindows: contextWindows, inferenceGeos: inferenceGeos, speeds: speeds, slackChannelIds: slackChannelIds, rbacGroupIds: rbacGroupIds, userIds: userIds, limit: limit, page: page, groupBy: groupBy, requestOptions: requestOptions);
+  Future<BetaAnalyticsUsageBucketedResponse> retrieve(
+      {required String startingAt,
+      SdkOptional<String?> endingAt = const SdkOmitted(),
+      SdkOptional<RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth>
+          bucketWidth = const SdkOmitted(),
+      SdkOptional<List<BetaAnalyticsProductFilter>?> products =
+          const SdkOmitted(),
+      SdkOptional<List<String>?> models = const SdkOmitted(),
+      SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindows =
+          const SdkOmitted(),
+      SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos =
+          const SdkOmitted(),
+      SdkOptional<
+              List<RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem>?>
+          speeds = const SdkOmitted(),
+      SdkOptional<List<String>?> slackChannelIds = const SdkOmitted(),
+      SdkOptional<List<String>?> rbacGroupIds = const SdkOmitted(),
+      SdkOptional<List<String>?> userIds = const SdkOmitted(),
+      SdkOptional<int?> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<
+              List<RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem>?>
+          groupBy = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return usage_report_methods.retrieveBetaOrganizationsAnalyticsUsageReport(
+        _config,
+        startingAt: startingAt,
+        endingAt: endingAt,
+        bucketWidth: bucketWidth,
+        products: products,
+        models: models,
+        contextWindows: contextWindows,
+        inferenceGeos: inferenceGeos,
+        speeds: speeds,
+        slackChannelIds: slackChannelIds,
+        rbacGroupIds: rbacGroupIds,
+        userIds: userIds,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        requestOptions: requestOptions);
   }
 
   /// Get token usage over time across a date range. Returns token usage bucketed by minute, hour, or day, optionally broken down by product, model, context window, inference region, or speed. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Stream<BetaAnalyticsUsageReportTimeBucket> retrievePaginated({required String startingAt, String? endingAt, RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth? bucketWidth, List<BetaAnalyticsProductFilter>? products, List<String>? models, List<BetaMessagesUsageReportContextWindow>? contextWindows, List<BetaInferenceGeoFilter>? inferenceGeos, List<RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem>? speeds, List<String>? slackChannelIds, List<String>? rbacGroupIds, List<String>? userIds, int? limit, String? page, List<RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem>? groupBy, RequestOptions? requestOptions}) async* {
-    yield* usage_report_methods.retrieveBetaOrganizationsAnalyticsUsageReportPaginated(_config, startingAt: startingAt, endingAt: endingAt, bucketWidth: bucketWidth, products: products, models: models, contextWindows: contextWindows, inferenceGeos: inferenceGeos, speeds: speeds, slackChannelIds: slackChannelIds, rbacGroupIds: rbacGroupIds, userIds: userIds, limit: limit, page: page, groupBy: groupBy, requestOptions: requestOptions);
+  Stream<BetaAnalyticsUsageReportTimeBucket> retrievePaginated(
+      {required String startingAt,
+      String? endingAt,
+      RetrieveBetaOrganizationsAnalyticsUsageReportBucketWidth? bucketWidth,
+      List<BetaAnalyticsProductFilter>? products,
+      List<String>? models,
+      List<BetaMessagesUsageReportContextWindow>? contextWindows,
+      List<BetaInferenceGeoFilter>? inferenceGeos,
+      List<RetrieveBetaOrganizationsAnalyticsUsageReportSpeedsItem>? speeds,
+      List<String>? slackChannelIds,
+      List<String>? rbacGroupIds,
+      List<String>? userIds,
+      int? limit,
+      String? page,
+      List<RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem>? groupBy,
+      RequestOptions? requestOptions}) async* {
+    yield* usage_report_methods
+        .retrieveBetaOrganizationsAnalyticsUsageReportPaginated(_config,
+            startingAt: startingAt,
+            endingAt: endingAt,
+            bucketWidth: bucketWidth,
+            products: products,
+            models: models,
+            contextWindows: contextWindows,
+            inferenceGeos: inferenceGeos,
+            speeds: speeds,
+            slackChannelIds: slackChannelIds,
+            rbacGroupIds: rbacGroupIds,
+            userIds: userIds,
+            limit: limit,
+            page: page,
+            groupBy: groupBy,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsAnalyticsCostReportNamespace {
   final ClientConfig _config;
-  BetaOrganizationsAnalyticsCostReportNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsAnalyticsCostReportNamespace(ClientConfig config)
+      : _config = config;
+
   /// Get cost in USD over time across a date range. Returns cost bucketed by minute, hour, or day, optionally broken down by product, model, context window, inference region, speed, cost type, or token type. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Future<BetaAnalyticsCostBucketedResponse>
-      retrieve(
-          {required String startingAt,
-          SdkOptional<String?> endingAt = const SdkOmitted(),
-          SdkOptional<RetrieveBetaOrganizationsAnalyticsCostReportBucketWidth> bucketWidth = const SdkOmitted(),
-          SdkOptional<List<BetaAnalyticsProductFilter>?> products = const SdkOmitted(),
-          SdkOptional<List<String>?> models = const SdkOmitted(),
-          SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindows = const SdkOmitted(),
-          SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos = const SdkOmitted(),
-          SdkOptional<List<RetrieveBetaOrganizationsAnalyticsCostReportSpeedsItem>?> speeds = const SdkOmitted(),
-          SdkOptional<List<String>?> slackChannelIds = const SdkOmitted(),
-          SdkOptional<List<String>?> rbacGroupIds = const SdkOmitted(),
-          SdkOptional<List<String>?> userIds = const SdkOmitted(),
-          SdkOptional<int?> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<List<RetrieveBetaOrganizationsAnalyticsCostReportGroupByItem>?> groupBy = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return cost_report_methods.retrieveBetaOrganizationsAnalyticsCostReport(_config, startingAt: startingAt, endingAt: endingAt, bucketWidth: bucketWidth, products: products, models: models, contextWindows: contextWindows, inferenceGeos: inferenceGeos, speeds: speeds, slackChannelIds: slackChannelIds, rbacGroupIds: rbacGroupIds, userIds: userIds, limit: limit, page: page, groupBy: groupBy, requestOptions: requestOptions);
+  Future<BetaAnalyticsCostBucketedResponse> retrieve(
+      {required String startingAt,
+      SdkOptional<String?> endingAt = const SdkOmitted(),
+      SdkOptional<RetrieveBetaOrganizationsAnalyticsCostReportBucketWidth>
+          bucketWidth = const SdkOmitted(),
+      SdkOptional<List<BetaAnalyticsProductFilter>?> products =
+          const SdkOmitted(),
+      SdkOptional<List<String>?> models = const SdkOmitted(),
+      SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindows =
+          const SdkOmitted(),
+      SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos =
+          const SdkOmitted(),
+      SdkOptional<List<RetrieveBetaOrganizationsAnalyticsCostReportSpeedsItem>?>
+          speeds = const SdkOmitted(),
+      SdkOptional<List<String>?> slackChannelIds = const SdkOmitted(),
+      SdkOptional<List<String>?> rbacGroupIds = const SdkOmitted(),
+      SdkOptional<List<String>?> userIds = const SdkOmitted(),
+      SdkOptional<int?> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<
+              List<RetrieveBetaOrganizationsAnalyticsCostReportGroupByItem>?>
+          groupBy = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return cost_report_methods.retrieveBetaOrganizationsAnalyticsCostReport(
+        _config,
+        startingAt: startingAt,
+        endingAt: endingAt,
+        bucketWidth: bucketWidth,
+        products: products,
+        models: models,
+        contextWindows: contextWindows,
+        inferenceGeos: inferenceGeos,
+        speeds: speeds,
+        slackChannelIds: slackChannelIds,
+        rbacGroupIds: rbacGroupIds,
+        userIds: userIds,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        requestOptions: requestOptions);
   }
 
   /// Get cost in USD over time across a date range. Returns cost bucketed by minute, hour, or day, optionally broken down by product, model, context window, inference region, speed, cost type, or token type. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Stream<BetaAnalyticsCostReportTimeBucket> retrievePaginated({required String startingAt, String? endingAt, RetrieveBetaOrganizationsAnalyticsCostReportBucketWidth? bucketWidth, List<BetaAnalyticsProductFilter>? products, List<String>? models, List<BetaMessagesUsageReportContextWindow>? contextWindows, List<BetaInferenceGeoFilter>? inferenceGeos, List<RetrieveBetaOrganizationsAnalyticsCostReportSpeedsItem>? speeds, List<String>? slackChannelIds, List<String>? rbacGroupIds, List<String>? userIds, int? limit, String? page, List<RetrieveBetaOrganizationsAnalyticsCostReportGroupByItem>? groupBy, RequestOptions? requestOptions}) async* {
-    yield* cost_report_methods.retrieveBetaOrganizationsAnalyticsCostReportPaginated(_config, startingAt: startingAt, endingAt: endingAt, bucketWidth: bucketWidth, products: products, models: models, contextWindows: contextWindows, inferenceGeos: inferenceGeos, speeds: speeds, slackChannelIds: slackChannelIds, rbacGroupIds: rbacGroupIds, userIds: userIds, limit: limit, page: page, groupBy: groupBy, requestOptions: requestOptions);
+  Stream<BetaAnalyticsCostReportTimeBucket> retrievePaginated(
+      {required String startingAt,
+      String? endingAt,
+      RetrieveBetaOrganizationsAnalyticsCostReportBucketWidth? bucketWidth,
+      List<BetaAnalyticsProductFilter>? products,
+      List<String>? models,
+      List<BetaMessagesUsageReportContextWindow>? contextWindows,
+      List<BetaInferenceGeoFilter>? inferenceGeos,
+      List<RetrieveBetaOrganizationsAnalyticsCostReportSpeedsItem>? speeds,
+      List<String>? slackChannelIds,
+      List<String>? rbacGroupIds,
+      List<String>? userIds,
+      int? limit,
+      String? page,
+      List<RetrieveBetaOrganizationsAnalyticsCostReportGroupByItem>? groupBy,
+      RequestOptions? requestOptions}) async* {
+    yield* cost_report_methods
+        .retrieveBetaOrganizationsAnalyticsCostReportPaginated(_config,
+            startingAt: startingAt,
+            endingAt: endingAt,
+            bucketWidth: bucketWidth,
+            products: products,
+            models: models,
+            contextWindows: contextWindows,
+            inferenceGeos: inferenceGeos,
+            speeds: speeds,
+            slackChannelIds: slackChannelIds,
+            rbacGroupIds: rbacGroupIds,
+            userIds: userIds,
+            limit: limit,
+            page: page,
+            groupBy: groupBy,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsAnalyticsSummariesNamespace {
   final ClientConfig _config;
-  BetaOrganizationsAnalyticsSummariesNamespace(ClientConfig config) : _config = config;
-  /// Get organization-wide activity summaries for a date range. Returns one entry per day from `starting_date` (inclusive) to `ending_date` (exclusive). Data is typically available with a 1-day lag and may be revised by a few percent over the following days: when `ending_date` is omitted it defaults to the most recent available day + 1, so the last entry covers the most recent available day. The series can be scoped to an RBAC group via `filter[]=rbac_group_id:{id}`. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Future<BetaAnalyticsActivitySummaryResponse>
-      list(
-          {required String startingDate,
-          SdkOptional<String?> endingDate = const SdkOmitted(),
-          SdkOptional<List<String>?> filter = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return summaries_methods.listBetaOrganizationsAnalyticsSummaries(_config, startingDate: startingDate, endingDate: endingDate, filter: filter, requestOptions: requestOptions);
-  }
+  BetaOrganizationsAnalyticsSummariesNamespace(ClientConfig config)
+      : _config = config;
 
+  /// Get organization-wide activity summaries for a date range. Returns one entry per day from `starting_date` (inclusive) to `ending_date` (exclusive). Data is typically available with a 1-day lag and may be revised by a few percent over the following days: when `ending_date` is omitted it defaults to the most recent available day + 1, so the last entry covers the most recent available day. The series can be scoped to an RBAC group via `filter[]=rbac_group_id:{id}`. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
+  Future<BetaAnalyticsActivitySummaryResponse> list(
+      {required String startingDate,
+      SdkOptional<String?> endingDate = const SdkOmitted(),
+      SdkOptional<List<String>?> filter = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return summaries_methods.listBetaOrganizationsAnalyticsSummaries(_config,
+        startingDate: startingDate,
+        endingDate: endingDate,
+        filter: filter,
+        requestOptions: requestOptions);
+  }
 }
 
 class BetaOrganizationsAnalyticsUsersNamespace {
   final ClientConfig _config;
-  BetaOrganizationsAnalyticsUsersNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsAnalyticsUsersNamespace(ClientConfig config)
+      : _config = config;
+
   /// Get per-user activity for a given day, with cursor-based pagination. Returns activity metrics for each user in the organization, sorted by email address. Use `group_by[]` for per-RBAC-group aggregates, or `filter[]` to scope results to specific members, groups, or a chat project. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
   Future<BetaAnalyticsUsersResponse> list(
       {SdkOptional<String?> date = const SdkOmitted(),
@@ -3592,45 +6117,109 @@ class BetaOrganizationsAnalyticsUsersNamespace {
       SdkOptional<String?> endingDate = const SdkOmitted(),
       SdkOptional<int?> limit = const SdkOmitted(),
       SdkOptional<String?> page = const SdkOmitted(),
-      SdkOptional<List<ListBetaOrganizationsAnalyticsUsersGroupByItem>?> groupBy = const SdkOmitted(),
+      SdkOptional<List<ListBetaOrganizationsAnalyticsUsersGroupByItem>?>
+          groupBy = const SdkOmitted(),
       SdkOptional<List<String>?> filter = const SdkOmitted(),
       SdkOptional<String?> orderBy = const SdkOmitted(),
       SdkOptional<String?> order = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return users_methods.listBetaOrganizationsAnalyticsUsers(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+    return users_methods.listBetaOrganizationsAnalyticsUsers(_config,
+        date: date,
+        startingDate: startingDate,
+        endingDate: endingDate,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        filter: filter,
+        orderBy: orderBy,
+        order: order,
+        requestOptions: requestOptions);
   }
 
   /// Get per-user activity for a given day, with cursor-based pagination. Returns activity metrics for each user in the organization, sorted by email address. Use `group_by[]` for per-RBAC-group aggregates, or `filter[]` to scope results to specific members, groups, or a chat project. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Stream<BetaAnalyticsUserActivity> listPaginated({String? date, String? startingDate, String? endingDate, int? limit, String? page, List<ListBetaOrganizationsAnalyticsUsersGroupByItem>? groupBy, List<String>? filter, String? orderBy, String? order, RequestOptions? requestOptions}) async* {
-    yield* users_methods.listBetaOrganizationsAnalyticsUsersPaginated(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+  Stream<BetaAnalyticsUserActivity> listPaginated(
+      {String? date,
+      String? startingDate,
+      String? endingDate,
+      int? limit,
+      String? page,
+      List<ListBetaOrganizationsAnalyticsUsersGroupByItem>? groupBy,
+      List<String>? filter,
+      String? orderBy,
+      String? order,
+      RequestOptions? requestOptions}) async* {
+    yield* users_methods.listBetaOrganizationsAnalyticsUsersPaginated(_config,
+        date: date,
+        startingDate: startingDate,
+        endingDate: endingDate,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        filter: filter,
+        orderBy: orderBy,
+        order: order,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsAnalyticsAppsChatProjectsNamespace {
   final ClientConfig _config;
-  BetaOrganizationsAnalyticsAppsChatProjectsNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsAnalyticsAppsChatProjectsNamespace(ClientConfig config)
+      : _config = config;
+
   /// Get per-project activity for a given day, with cursor-based pagination. Returns activity metrics for each project in the organization, sorted by project ID. Use `group_by[]` to break projects out per member or per RBAC group, and `filter[]` to scope results; the parameter descriptions list the supported dimensions. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Future<BetaAnalyticsProjectsResponse>
-      list(
-          {SdkOptional<String?> date = const SdkOmitted(),
-          SdkOptional<String?> startingDate = const SdkOmitted(),
-          SdkOptional<String?> endingDate = const SdkOmitted(),
-          SdkOptional<int?> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<List<ListBetaOrganizationsAnalyticsAppsChatProjectsGroupByItem>?> groupBy = const SdkOmitted(),
-          SdkOptional<List<String>?> filter = const SdkOmitted(),
-          SdkOptional<String?> orderBy = const SdkOmitted(),
-          SdkOptional<String?> order = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return projects_methods.listBetaOrganizationsAnalyticsAppsChatProjects(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+  Future<BetaAnalyticsProjectsResponse> list(
+      {SdkOptional<String?> date = const SdkOmitted(),
+      SdkOptional<String?> startingDate = const SdkOmitted(),
+      SdkOptional<String?> endingDate = const SdkOmitted(),
+      SdkOptional<int?> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<
+              List<ListBetaOrganizationsAnalyticsAppsChatProjectsGroupByItem>?>
+          groupBy = const SdkOmitted(),
+      SdkOptional<List<String>?> filter = const SdkOmitted(),
+      SdkOptional<String?> orderBy = const SdkOmitted(),
+      SdkOptional<String?> order = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return projects_methods.listBetaOrganizationsAnalyticsAppsChatProjects(
+        _config,
+        date: date,
+        startingDate: startingDate,
+        endingDate: endingDate,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        filter: filter,
+        orderBy: orderBy,
+        order: order,
+        requestOptions: requestOptions);
   }
 
   /// Get per-project activity for a given day, with cursor-based pagination. Returns activity metrics for each project in the organization, sorted by project ID. Use `group_by[]` to break projects out per member or per RBAC group, and `filter[]` to scope results; the parameter descriptions list the supported dimensions. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Stream<BetaAnalyticsProjectActivity> listPaginated({String? date, String? startingDate, String? endingDate, int? limit, String? page, List<ListBetaOrganizationsAnalyticsAppsChatProjectsGroupByItem>? groupBy, List<String>? filter, String? orderBy, String? order, RequestOptions? requestOptions}) async* {
-    yield* projects_methods.listBetaOrganizationsAnalyticsAppsChatProjectsPaginated(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+  Stream<BetaAnalyticsProjectActivity> listPaginated(
+      {String? date,
+      String? startingDate,
+      String? endingDate,
+      int? limit,
+      String? page,
+      List<ListBetaOrganizationsAnalyticsAppsChatProjectsGroupByItem>? groupBy,
+      List<String>? filter,
+      String? orderBy,
+      String? order,
+      RequestOptions? requestOptions}) async* {
+    yield* projects_methods
+        .listBetaOrganizationsAnalyticsAppsChatProjectsPaginated(_config,
+            date: date,
+            startingDate: startingDate,
+            endingDate: endingDate,
+            limit: limit,
+            page: page,
+            groupBy: groupBy,
+            filter: filter,
+            orderBy: orderBy,
+            order: order,
+            requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsAnalyticsAppsChatNamespace {
@@ -3649,7 +6238,9 @@ class BetaOrganizationsAnalyticsAppsNamespace {
 
 class BetaOrganizationsAnalyticsSkillsNamespace {
   final ClientConfig _config;
-  BetaOrganizationsAnalyticsSkillsNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsAnalyticsSkillsNamespace(ClientConfig config)
+      : _config = config;
+
   /// Get per-skill usage for a given day, with cursor-based pagination. Returns skill usage metrics for the organization, sorted by skill name. Use `group_by[]` to break usage out per member, per RBAC group, or per product surface, and `filter[]` to scope results; the parameter descriptions list the supported dimensions. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
   Future<BetaAnalyticsSkillsResponse> list(
       {SdkOptional<String?> date = const SdkOmitted(),
@@ -3657,50 +6248,114 @@ class BetaOrganizationsAnalyticsSkillsNamespace {
       SdkOptional<String?> endingDate = const SdkOmitted(),
       SdkOptional<int?> limit = const SdkOmitted(),
       SdkOptional<String?> page = const SdkOmitted(),
-      SdkOptional<List<ListBetaOrganizationsAnalyticsSkillsGroupByItem>?> groupBy = const SdkOmitted(),
+      SdkOptional<List<ListBetaOrganizationsAnalyticsSkillsGroupByItem>?>
+          groupBy = const SdkOmitted(),
       SdkOptional<List<String>?> filter = const SdkOmitted(),
       SdkOptional<String?> orderBy = const SdkOmitted(),
       SdkOptional<String?> order = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return skills_methods.listBetaOrganizationsAnalyticsSkills(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+    return skills_methods.listBetaOrganizationsAnalyticsSkills(_config,
+        date: date,
+        startingDate: startingDate,
+        endingDate: endingDate,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        filter: filter,
+        orderBy: orderBy,
+        order: order,
+        requestOptions: requestOptions);
   }
 
   /// Get per-skill usage for a given day, with cursor-based pagination. Returns skill usage metrics for the organization, sorted by skill name. Use `group_by[]` to break usage out per member, per RBAC group, or per product surface, and `filter[]` to scope results; the parameter descriptions list the supported dimensions. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Stream<BetaAnalyticsSkillActivity> listPaginated({String? date, String? startingDate, String? endingDate, int? limit, String? page, List<ListBetaOrganizationsAnalyticsSkillsGroupByItem>? groupBy, List<String>? filter, String? orderBy, String? order, RequestOptions? requestOptions}) async* {
-    yield* skills_methods.listBetaOrganizationsAnalyticsSkillsPaginated(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+  Stream<BetaAnalyticsSkillActivity> listPaginated(
+      {String? date,
+      String? startingDate,
+      String? endingDate,
+      int? limit,
+      String? page,
+      List<ListBetaOrganizationsAnalyticsSkillsGroupByItem>? groupBy,
+      List<String>? filter,
+      String? orderBy,
+      String? order,
+      RequestOptions? requestOptions}) async* {
+    yield* skills_methods.listBetaOrganizationsAnalyticsSkillsPaginated(_config,
+        date: date,
+        startingDate: startingDate,
+        endingDate: endingDate,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        filter: filter,
+        orderBy: orderBy,
+        order: order,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsAnalyticsConnectorsNamespace {
   final ClientConfig _config;
-  BetaOrganizationsAnalyticsConnectorsNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsAnalyticsConnectorsNamespace(ClientConfig config)
+      : _config = config;
+
   /// Get per-connector usage for a given day, with cursor-based pagination. Returns connector usage metrics for the organization, sorted by connector name. Connector names are normalized from their various sources — for example, "Atlassian MCP server" and "mcp-atlassian" both appear as "atlassian". Use `group_by[]` to break usage out per member, per RBAC group, or per product surface, and `filter[]` to scope results; the parameter descriptions list the supported dimensions. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Future<BetaAnalyticsConnectorsResponse>
-      list(
-          {SdkOptional<String?> date = const SdkOmitted(),
-          SdkOptional<String?> startingDate = const SdkOmitted(),
-          SdkOptional<String?> endingDate = const SdkOmitted(),
-          SdkOptional<int?> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?> groupBy = const SdkOmitted(),
-          SdkOptional<List<String>?> filter = const SdkOmitted(),
-          SdkOptional<String?> orderBy = const SdkOmitted(),
-          SdkOptional<String?> order = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return connectors_methods.listBetaOrganizationsAnalyticsConnectors(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+  Future<BetaAnalyticsConnectorsResponse> list(
+      {SdkOptional<String?> date = const SdkOmitted(),
+      SdkOptional<String?> startingDate = const SdkOmitted(),
+      SdkOptional<String?> endingDate = const SdkOmitted(),
+      SdkOptional<int?> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>
+          groupBy = const SdkOmitted(),
+      SdkOptional<List<String>?> filter = const SdkOmitted(),
+      SdkOptional<String?> orderBy = const SdkOmitted(),
+      SdkOptional<String?> order = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return connectors_methods.listBetaOrganizationsAnalyticsConnectors(_config,
+        date: date,
+        startingDate: startingDate,
+        endingDate: endingDate,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        filter: filter,
+        orderBy: orderBy,
+        order: order,
+        requestOptions: requestOptions);
   }
 
   /// Get per-connector usage for a given day, with cursor-based pagination. Returns connector usage metrics for the organization, sorted by connector name. Connector names are normalized from their various sources — for example, "Atlassian MCP server" and "mcp-atlassian" both appear as "atlassian". Use `group_by[]` to break usage out per member, per RBAC group, or per product surface, and `filter[]` to scope results; the parameter descriptions list the supported dimensions. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
-  Stream<BetaAnalyticsConnectorActivity> listPaginated({String? date, String? startingDate, String? endingDate, int? limit, String? page, List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>? groupBy, List<String>? filter, String? orderBy, String? order, RequestOptions? requestOptions}) async* {
-    yield* connectors_methods.listBetaOrganizationsAnalyticsConnectorsPaginated(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+  Stream<BetaAnalyticsConnectorActivity> listPaginated(
+      {String? date,
+      String? startingDate,
+      String? endingDate,
+      int? limit,
+      String? page,
+      List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>? groupBy,
+      List<String>? filter,
+      String? orderBy,
+      String? order,
+      RequestOptions? requestOptions}) async* {
+    yield* connectors_methods.listBetaOrganizationsAnalyticsConnectorsPaginated(
+        _config,
+        date: date,
+        startingDate: startingDate,
+        endingDate: endingDate,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        filter: filter,
+        orderBy: orderBy,
+        order: order,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsAnalyticsPluginsNamespace {
   final ClientConfig _config;
-  BetaOrganizationsAnalyticsPluginsNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsAnalyticsPluginsNamespace(ClientConfig config)
+      : _config = config;
+
   /// Get per-plugin install + invocation usage for a given day, with pagination. Returns plugin usage metrics for the organization across Cowork and Claude Code, sorted by plugin name. The `plugin_name` value `third-party` is an aggregate bucket, not a plugin: it collects plugin activity, from either surface, for which the reporting client did not provide a plugin name — so an organization's own plugins can contribute both to their own named rows and to this bucket. Use `group_by[]` to break usage out per member, per RBAC group, or per product surface (Cowork / Claude Code), and `filter[]` to scope results; the parameter descriptions list the supported dimensions. Requires an API key with the `read:analytics` scope. `starting_date` / `ending_date` select range-rollup mode like `/skills`.
   Future<BetaAnalyticsPluginsResponse> list(
       {SdkOptional<String?> date = const SdkOmitted(),
@@ -3708,41 +6363,92 @@ class BetaOrganizationsAnalyticsPluginsNamespace {
       SdkOptional<String?> endingDate = const SdkOmitted(),
       SdkOptional<int?> limit = const SdkOmitted(),
       SdkOptional<String?> page = const SdkOmitted(),
-      SdkOptional<List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?> groupBy = const SdkOmitted(),
+      SdkOptional<List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?>
+          groupBy = const SdkOmitted(),
       SdkOptional<List<String>?> filter = const SdkOmitted(),
       SdkOptional<String?> orderBy = const SdkOmitted(),
       SdkOptional<String?> order = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return plugins_methods.listBetaOrganizationsAnalyticsPlugins(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+    return plugins_methods.listBetaOrganizationsAnalyticsPlugins(_config,
+        date: date,
+        startingDate: startingDate,
+        endingDate: endingDate,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        filter: filter,
+        orderBy: orderBy,
+        order: order,
+        requestOptions: requestOptions);
   }
 
   /// Get per-plugin install + invocation usage for a given day, with pagination. Returns plugin usage metrics for the organization across Cowork and Claude Code, sorted by plugin name. The `plugin_name` value `third-party` is an aggregate bucket, not a plugin: it collects plugin activity, from either surface, for which the reporting client did not provide a plugin name — so an organization's own plugins can contribute both to their own named rows and to this bucket. Use `group_by[]` to break usage out per member, per RBAC group, or per product surface (Cowork / Claude Code), and `filter[]` to scope results; the parameter descriptions list the supported dimensions. Requires an API key with the `read:analytics` scope. `starting_date` / `ending_date` select range-rollup mode like `/skills`.
-  Stream<BetaAnalyticsPluginActivity> listPaginated({String? date, String? startingDate, String? endingDate, int? limit, String? page, List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>? groupBy, List<String>? filter, String? orderBy, String? order, RequestOptions? requestOptions}) async* {
-    yield* plugins_methods.listBetaOrganizationsAnalyticsPluginsPaginated(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+  Stream<BetaAnalyticsPluginActivity> listPaginated(
+      {String? date,
+      String? startingDate,
+      String? endingDate,
+      int? limit,
+      String? page,
+      List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>? groupBy,
+      List<String>? filter,
+      String? orderBy,
+      String? order,
+      RequestOptions? requestOptions}) async* {
+    yield* plugins_methods.listBetaOrganizationsAnalyticsPluginsPaginated(
+        _config,
+        date: date,
+        startingDate: startingDate,
+        endingDate: endingDate,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        filter: filter,
+        orderBy: orderBy,
+        order: order,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsAnalyticsArtifactsNamespace {
   final ClientConfig _config;
-  BetaOrganizationsAnalyticsArtifactsNamespace(ClientConfig config) : _config = config;
+  BetaOrganizationsAnalyticsArtifactsNamespace(ClientConfig config)
+      : _config = config;
+
   /// Get artifact-creation activity for a given day, broken out by MIME type. Returns the full (`artifact_type`, `is_shared`) cube for the organization; `next_page` is null except for grouped queries, which paginate. The cube can be broken out per product, per member, or per RBAC group via `group_by[]`, and scoped via `filter[]`. Requires an API key with the `read:analytics` scope.
-  Future<BetaAnalyticsArtifactsResponse>
-      list(
-          {required String date,
-          SdkOptional<int?> limit = const SdkOmitted(),
-          SdkOptional<String?> page = const SdkOmitted(),
-          SdkOptional<List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?> groupBy = const SdkOmitted(),
-          SdkOptional<List<String>?> filter = const SdkOmitted(),
-          RequestOptions? requestOptions}) async {
-    return artifacts_methods.listBetaOrganizationsAnalyticsArtifacts(_config, date: date, limit: limit, page: page, groupBy: groupBy, filter: filter, requestOptions: requestOptions);
+  Future<BetaAnalyticsArtifactsResponse> list(
+      {required String date,
+      SdkOptional<int?> limit = const SdkOmitted(),
+      SdkOptional<String?> page = const SdkOmitted(),
+      SdkOptional<List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>
+          groupBy = const SdkOmitted(),
+      SdkOptional<List<String>?> filter = const SdkOmitted(),
+      RequestOptions? requestOptions}) async {
+    return artifacts_methods.listBetaOrganizationsAnalyticsArtifacts(_config,
+        date: date,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        filter: filter,
+        requestOptions: requestOptions);
   }
 
   /// Get artifact-creation activity for a given day, broken out by MIME type. Returns the full (`artifact_type`, `is_shared`) cube for the organization; `next_page` is null except for grouped queries, which paginate. The cube can be broken out per product, per member, or per RBAC group via `group_by[]`, and scoped via `filter[]`. Requires an API key with the `read:analytics` scope.
-  Stream<BetaAnalyticsArtifactActivity> listPaginated({required String date, int? limit, String? page, List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>? groupBy, List<String>? filter, RequestOptions? requestOptions}) async* {
-    yield* artifacts_methods.listBetaOrganizationsAnalyticsArtifactsPaginated(_config, date: date, limit: limit, page: page, groupBy: groupBy, filter: filter, requestOptions: requestOptions);
+  Stream<BetaAnalyticsArtifactActivity> listPaginated(
+      {required String date,
+      int? limit,
+      String? page,
+      List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>? groupBy,
+      List<String>? filter,
+      RequestOptions? requestOptions}) async* {
+    yield* artifacts_methods.listBetaOrganizationsAnalyticsArtifactsPaginated(
+        _config,
+        date: date,
+        limit: limit,
+        page: page,
+        groupBy: groupBy,
+        filter: filter,
+        requestOptions: requestOptions);
   }
-
 }
 
 class BetaOrganizationsAnalyticsNamespace {
@@ -3758,7 +6464,8 @@ class BetaOrganizationsAnalyticsNamespace {
   late final BetaOrganizationsAnalyticsPluginsNamespace plugins;
   late final BetaOrganizationsAnalyticsArtifactsNamespace artifacts;
   BetaOrganizationsAnalyticsNamespace(ClientConfig config) {
-    userUsageReport = BetaOrganizationsAnalyticsUserUsageReportNamespace(config);
+    userUsageReport =
+        BetaOrganizationsAnalyticsUserUsageReportNamespace(config);
     userCostReport = BetaOrganizationsAnalyticsUserCostReportNamespace(config);
     usageReport = BetaOrganizationsAnalyticsUsageReportNamespace(config);
     costReport = BetaOrganizationsAnalyticsCostReportNamespace(config);
@@ -3787,7 +6494,8 @@ class BetaOrganizationsNamespace {
   late final BetaOrganizationsServiceAccountsNamespace serviceAccounts;
   late final BetaOrganizationsFederationIssuersNamespace federationIssuers;
   late final BetaOrganizationsFederationRulesNamespace federationRules;
-  late final BetaOrganizationsSpendLimitIncreaseRequestsNamespace spendLimitIncreaseRequests;
+  late final BetaOrganizationsSpendLimitIncreaseRequestsNamespace
+      spendLimitIncreaseRequests;
   late final BetaOrganizationsTunnelsNamespace tunnels;
   late final BetaOrganizationsRbacGroupsNamespace rbacGroups;
   late final BetaOrganizationsRbacRolesNamespace rbacRoles;
@@ -3807,7 +6515,8 @@ class BetaOrganizationsNamespace {
     serviceAccounts = BetaOrganizationsServiceAccountsNamespace(config);
     federationIssuers = BetaOrganizationsFederationIssuersNamespace(config);
     federationRules = BetaOrganizationsFederationRulesNamespace(config);
-    spendLimitIncreaseRequests = BetaOrganizationsSpendLimitIncreaseRequestsNamespace(config);
+    spendLimitIncreaseRequests =
+        BetaOrganizationsSpendLimitIncreaseRequestsNamespace(config);
     tunnels = BetaOrganizationsTunnelsNamespace(config);
     rbacGroups = BetaOrganizationsRbacGroupsNamespace(config);
     rbacRoles = BetaOrganizationsRbacRolesNamespace(config);
@@ -3893,5 +6602,4 @@ class Anthropic {
     logging.enabled = enabled ?? true;
     return logging;
   }
-
 }

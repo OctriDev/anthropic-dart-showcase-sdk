@@ -10,14 +10,17 @@ enum CodeExecutionTool20250825Name {
 
   static CodeExecutionTool20250825Name fromJson(String value) {
     switch (value) {
-      case 'code_execution': return CodeExecutionTool20250825Name.codeExecution;
-      default: throw ArgumentError('Unknown CodeExecutionTool20250825Name: $value');
+      case 'code_execution':
+        return CodeExecutionTool20250825Name.codeExecution;
+      default:
+        throw ArgumentError('Unknown CodeExecutionTool20250825Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CodeExecutionTool20250825Name.codeExecution: return 'code_execution';
+      case CodeExecutionTool20250825Name.codeExecution:
+        return 'code_execution';
     }
   }
 
@@ -31,14 +34,17 @@ enum CodeExecutionTool20250825Type {
 
   static CodeExecutionTool20250825Type fromJson(String value) {
     switch (value) {
-      case 'code_execution_20250825': return CodeExecutionTool20250825Type.codeExecution20250825;
-      default: throw ArgumentError('Unknown CodeExecutionTool20250825Type: $value');
+      case 'code_execution_20250825':
+        return CodeExecutionTool20250825Type.codeExecution20250825;
+      default:
+        throw ArgumentError('Unknown CodeExecutionTool20250825Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CodeExecutionTool20250825Type.codeExecution20250825: return 'code_execution_20250825';
+      case CodeExecutionTool20250825Type.codeExecution20250825:
+        return 'code_execution_20250825';
     }
   }
 
@@ -52,14 +58,17 @@ enum CodeExecutionTool20260120Name {
 
   static CodeExecutionTool20260120Name fromJson(String value) {
     switch (value) {
-      case 'code_execution': return CodeExecutionTool20260120Name.codeExecution;
-      default: throw ArgumentError('Unknown CodeExecutionTool20260120Name: $value');
+      case 'code_execution':
+        return CodeExecutionTool20260120Name.codeExecution;
+      default:
+        throw ArgumentError('Unknown CodeExecutionTool20260120Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CodeExecutionTool20260120Name.codeExecution: return 'code_execution';
+      case CodeExecutionTool20260120Name.codeExecution:
+        return 'code_execution';
     }
   }
 
@@ -73,14 +82,17 @@ enum CodeExecutionTool20260120Type {
 
   static CodeExecutionTool20260120Type fromJson(String value) {
     switch (value) {
-      case 'code_execution_20260120': return CodeExecutionTool20260120Type.codeExecution20260120;
-      default: throw ArgumentError('Unknown CodeExecutionTool20260120Type: $value');
+      case 'code_execution_20260120':
+        return CodeExecutionTool20260120Type.codeExecution20260120;
+      default:
+        throw ArgumentError('Unknown CodeExecutionTool20260120Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CodeExecutionTool20260120Type.codeExecution20260120: return 'code_execution_20260120';
+      case CodeExecutionTool20260120Type.codeExecution20260120:
+        return 'code_execution_20260120';
     }
   }
 
@@ -94,14 +106,17 @@ enum CodeExecutionTool20260521Name {
 
   static CodeExecutionTool20260521Name fromJson(String value) {
     switch (value) {
-      case 'code_execution': return CodeExecutionTool20260521Name.codeExecution;
-      default: throw ArgumentError('Unknown CodeExecutionTool20260521Name: $value');
+      case 'code_execution':
+        return CodeExecutionTool20260521Name.codeExecution;
+      default:
+        throw ArgumentError('Unknown CodeExecutionTool20260521Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CodeExecutionTool20260521Name.codeExecution: return 'code_execution';
+      case CodeExecutionTool20260521Name.codeExecution:
+        return 'code_execution';
     }
   }
 
@@ -115,14 +130,17 @@ enum CodeExecutionTool20260521Type {
 
   static CodeExecutionTool20260521Type fromJson(String value) {
     switch (value) {
-      case 'code_execution_20260521': return CodeExecutionTool20260521Type.codeExecution20260521;
-      default: throw ArgumentError('Unknown CodeExecutionTool20260521Type: $value');
+      case 'code_execution_20260521':
+        return CodeExecutionTool20260521Type.codeExecution20260521;
+      default:
+        throw ArgumentError('Unknown CodeExecutionTool20260521Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CodeExecutionTool20260521Type.codeExecution20260521: return 'code_execution_20260521';
+      case CodeExecutionTool20260521Type.codeExecution20260521:
+        return 'code_execution_20260521';
     }
   }
 
@@ -136,14 +154,17 @@ enum CompletionResponseType {
 
   static CompletionResponseType fromJson(String value) {
     switch (value) {
-      case 'completion': return CompletionResponseType.completion;
-      default: throw ArgumentError('Unknown CompletionResponseType: $value');
+      case 'completion':
+        return CompletionResponseType.completion;
+      default:
+        throw ArgumentError('Unknown CompletionResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CompletionResponseType.completion: return 'completion';
+      case CompletionResponseType.completion:
+        return 'completion';
     }
   }
 
@@ -157,14 +178,17 @@ enum ComputerToolset20260801Type {
 
   static ComputerToolset20260801Type fromJson(String value) {
     switch (value) {
-      case 'computer_toolset_20260801': return ComputerToolset20260801Type.computerToolset20260801;
-      default: throw ArgumentError('Unknown ComputerToolset20260801Type: $value');
+      case 'computer_toolset_20260801':
+        return ComputerToolset20260801Type.computerToolset20260801;
+      default:
+        throw ArgumentError('Unknown ComputerToolset20260801Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ComputerToolset20260801Type.computerToolset20260801: return 'computer_toolset_20260801';
+      case ComputerToolset20260801Type.computerToolset20260801:
+        return 'computer_toolset_20260801';
     }
   }
 
@@ -174,24 +198,27 @@ enum ComputerToolset20260801Type {
 
 /// Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
 final class ContainerSkillType {
-
   final String value;
 
   const ContainerSkillType._(this.value);
 
-  factory ContainerSkillType.fromJson(String value) => ContainerSkillType._(value);
+  factory ContainerSkillType.fromJson(String value) =>
+      ContainerSkillType._(value);
 
   static const anthropic = ContainerSkillType._('anthropic');
   static const custom = ContainerSkillType._('custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ContainerSkillType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ContainerSkillType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -200,14 +227,17 @@ enum ContentBlockDeltaEventType {
 
   static ContentBlockDeltaEventType fromJson(String value) {
     switch (value) {
-      case 'content_block_delta': return ContentBlockDeltaEventType.contentBlockDelta;
-      default: throw ArgumentError('Unknown ContentBlockDeltaEventType: $value');
+      case 'content_block_delta':
+        return ContentBlockDeltaEventType.contentBlockDelta;
+      default:
+        throw ArgumentError('Unknown ContentBlockDeltaEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ContentBlockDeltaEventType.contentBlockDelta: return 'content_block_delta';
+      case ContentBlockDeltaEventType.contentBlockDelta:
+        return 'content_block_delta';
     }
   }
 
@@ -221,14 +251,17 @@ enum ContentBlockSourceType {
 
   static ContentBlockSourceType fromJson(String value) {
     switch (value) {
-      case 'content': return ContentBlockSourceType.content;
-      default: throw ArgumentError('Unknown ContentBlockSourceType: $value');
+      case 'content':
+        return ContentBlockSourceType.content;
+      default:
+        throw ArgumentError('Unknown ContentBlockSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ContentBlockSourceType.content: return 'content';
+      case ContentBlockSourceType.content:
+        return 'content';
     }
   }
 
@@ -242,14 +275,17 @@ enum ContentBlockStartEventType {
 
   static ContentBlockStartEventType fromJson(String value) {
     switch (value) {
-      case 'content_block_start': return ContentBlockStartEventType.contentBlockStart;
-      default: throw ArgumentError('Unknown ContentBlockStartEventType: $value');
+      case 'content_block_start':
+        return ContentBlockStartEventType.contentBlockStart;
+      default:
+        throw ArgumentError('Unknown ContentBlockStartEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ContentBlockStartEventType.contentBlockStart: return 'content_block_start';
+      case ContentBlockStartEventType.contentBlockStart:
+        return 'content_block_start';
     }
   }
 
@@ -263,14 +299,17 @@ enum ContentBlockStopEventType {
 
   static ContentBlockStopEventType fromJson(String value) {
     switch (value) {
-      case 'content_block_stop': return ContentBlockStopEventType.contentBlockStop;
-      default: throw ArgumentError('Unknown ContentBlockStopEventType: $value');
+      case 'content_block_stop':
+        return ContentBlockStopEventType.contentBlockStop;
+      default:
+        throw ArgumentError('Unknown ContentBlockStopEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ContentBlockStopEventType.contentBlockStop: return 'content_block_stop';
+      case ContentBlockStopEventType.contentBlockStop:
+        return 'content_block_stop';
     }
   }
 

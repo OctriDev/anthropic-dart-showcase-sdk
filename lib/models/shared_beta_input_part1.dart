@@ -10,202 +10,480 @@ sealed class BetaInputContentBlock {
   const BetaInputContentBlock();
   factory BetaInputContentBlock.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaRequestTextBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestTextBlock(value); } } catch (_) {}
-      try { final value = BetaRequestImageBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestImageBlock(value); } } catch (_) {}
-      try { final value = BetaRequestDocumentBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestDocumentBlock(value); } } catch (_) {}
-      try { final value = BetaRequestSearchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestSearchResultBlock(value); } } catch (_) {}
-      try { final value = BetaRequestThinkingBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestThinkingBlock(value); } } catch (_) {}
-      try { final value = BetaRequestRedactedThinkingBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestRedactedThinkingBlock(value); } } catch (_) {}
-      try { final value = BetaRequestToolUseBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestToolUseBlock(value); } } catch (_) {}
-      try { final value = BetaRequestToolResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestToolResultBlock(value); } } catch (_) {}
-      try { final value = BetaRequestServerToolUseBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestServerToolUseBlock(value); } } catch (_) {}
-      try { final value = BetaRequestWebSearchToolResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestWebSearchToolResultBlock(value); } } catch (_) {}
-      try { final value = BetaRequestWebFetchToolResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestWebFetchToolResultBlock(value); } } catch (_) {}
-      try { final value = BetaRequestAdvisorToolResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestAdvisorToolResultBlock(value); } } catch (_) {}
-      try { final value = BetaRequestCodeExecutionToolResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestCodeExecutionToolResultBlock(value); } } catch (_) {}
-      try { final value = BetaRequestBashCodeExecutionToolResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestBashCodeExecutionToolResultBlock(value); } } catch (_) {}
-      try { final value = BetaRequestTextEditorCodeExecutionToolResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestTextEditorCodeExecutionToolResultBlock(value); } } catch (_) {}
-      try { final value = BetaRequestToolSearchToolResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestToolSearchToolResultBlock(value); } } catch (_) {}
-      try { final value = BetaRequestMCPToolUseBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestMCPToolUseBlock(value); } } catch (_) {}
-      try { final value = BetaRequestMCPToolResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestMCPToolResultBlock(value); } } catch (_) {}
-      try { final value = BetaRequestContainerUploadBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestContainerUploadBlock(value); } } catch (_) {}
-      try { final value = BetaRequestCompactionBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestCompactionBlock(value); } } catch (_) {}
-      try { final value = BetaRequestToolAdditionBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestToolAdditionBlock(value); } } catch (_) {}
-      try { final value = BetaRequestToolRemovalBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestToolRemovalBlock(value); } } catch (_) {}
-      try { final value = BetaRequestFallbackBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaInputContentBlockBetaRequestFallbackBlock(value); } } catch (_) {}
+      try {
+        final value = BetaRequestTextBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestTextBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestImageBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestImageBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestDocumentBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestDocumentBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestSearchResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestSearchResultBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestThinkingBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestThinkingBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestRedactedThinkingBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestRedactedThinkingBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestToolUseBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestToolUseBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestToolResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestToolResultBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestServerToolUseBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestServerToolUseBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestWebSearchToolResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestWebSearchToolResultBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestWebFetchToolResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestWebFetchToolResultBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestAdvisorToolResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestAdvisorToolResultBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestCodeExecutionToolResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestCodeExecutionToolResultBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaRequestBashCodeExecutionToolResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestBashCodeExecutionToolResultBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaRequestTextEditorCodeExecutionToolResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestTextEditorCodeExecutionToolResultBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestToolSearchToolResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestToolSearchToolResultBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestMCPToolUseBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestMCPToolUseBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestMCPToolResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestMCPToolResultBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestContainerUploadBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestContainerUploadBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestCompactionBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestCompactionBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestToolAdditionBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestToolAdditionBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestToolRemovalBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestToolRemovalBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestFallbackBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaInputContentBlockBetaRequestFallbackBlock(value);
+        }
+      } catch (_) {}
     }
-    try { return BetaInputContentBlockBetaRequestTextBlock(BetaRequestTextBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestImageBlock(BetaRequestImageBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestDocumentBlock(BetaRequestDocumentBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestSearchResultBlock(BetaRequestSearchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestThinkingBlock(BetaRequestThinkingBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestRedactedThinkingBlock(BetaRequestRedactedThinkingBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestToolUseBlock(BetaRequestToolUseBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestToolResultBlock(BetaRequestToolResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestServerToolUseBlock(BetaRequestServerToolUseBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestWebSearchToolResultBlock(BetaRequestWebSearchToolResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestWebFetchToolResultBlock(BetaRequestWebFetchToolResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestAdvisorToolResultBlock(BetaRequestAdvisorToolResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestCodeExecutionToolResultBlock(BetaRequestCodeExecutionToolResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestBashCodeExecutionToolResultBlock(BetaRequestBashCodeExecutionToolResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestTextEditorCodeExecutionToolResultBlock(BetaRequestTextEditorCodeExecutionToolResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestToolSearchToolResultBlock(BetaRequestToolSearchToolResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestMCPToolUseBlock(BetaRequestMCPToolUseBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestMCPToolResultBlock(BetaRequestMCPToolResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestContainerUploadBlock(BetaRequestContainerUploadBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestCompactionBlock(BetaRequestCompactionBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestToolAdditionBlock(BetaRequestToolAdditionBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestToolRemovalBlock(BetaRequestToolRemovalBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaInputContentBlockBetaRequestFallbackBlock(BetaRequestFallbackBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"advisor_tool_result", "bash_code_execution_tool_result", "code_execution_tool_result", "compaction", "container_upload", "document", "fallback", "image", "mcp_tool_result", "mcp_tool_use", "redacted_thinking", "search_result", "server_tool_use", "text", "text_editor_code_execution_tool_result", "thinking", "tool_addition", "tool_removal", "tool_result", "tool_search_tool_result", "tool_use", "web_fetch_tool_result", "web_search_tool_result"}.contains(json["type"])) { return UnknownBetaInputContentBlock(json); }
+    try {
+      return BetaInputContentBlockBetaRequestTextBlock(
+          BetaRequestTextBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestImageBlock(
+          BetaRequestImageBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestDocumentBlock(
+          BetaRequestDocumentBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestSearchResultBlock(
+          BetaRequestSearchResultBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestThinkingBlock(
+          BetaRequestThinkingBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestRedactedThinkingBlock(
+          BetaRequestRedactedThinkingBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestToolUseBlock(
+          BetaRequestToolUseBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestToolResultBlock(
+          BetaRequestToolResultBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestServerToolUseBlock(
+          BetaRequestServerToolUseBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestWebSearchToolResultBlock(
+          BetaRequestWebSearchToolResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestWebFetchToolResultBlock(
+          BetaRequestWebFetchToolResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestAdvisorToolResultBlock(
+          BetaRequestAdvisorToolResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestCodeExecutionToolResultBlock(
+          BetaRequestCodeExecutionToolResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestBashCodeExecutionToolResultBlock(
+          BetaRequestBashCodeExecutionToolResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestTextEditorCodeExecutionToolResultBlock(
+          BetaRequestTextEditorCodeExecutionToolResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestToolSearchToolResultBlock(
+          BetaRequestToolSearchToolResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestMCPToolUseBlock(
+          BetaRequestMCPToolUseBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestMCPToolResultBlock(
+          BetaRequestMCPToolResultBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestContainerUploadBlock(
+          BetaRequestContainerUploadBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestCompactionBlock(
+          BetaRequestCompactionBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestToolAdditionBlock(
+          BetaRequestToolAdditionBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestToolRemovalBlock(
+          BetaRequestToolRemovalBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaInputContentBlockBetaRequestFallbackBlock(
+          BetaRequestFallbackBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "advisor_tool_result",
+          "bash_code_execution_tool_result",
+          "code_execution_tool_result",
+          "compaction",
+          "container_upload",
+          "document",
+          "fallback",
+          "image",
+          "mcp_tool_result",
+          "mcp_tool_use",
+          "redacted_thinking",
+          "search_result",
+          "server_tool_use",
+          "text",
+          "text_editor_code_execution_tool_result",
+          "thinking",
+          "tool_addition",
+          "tool_removal",
+          "tool_result",
+          "tool_search_tool_result",
+          "tool_use",
+          "web_fetch_tool_result",
+          "web_search_tool_result"
+        }.contains(json["type"])) {
+      return UnknownBetaInputContentBlock(json);
+    }
     throw FormatException("No variant matched for BetaInputContentBlock");
   }
   Object? toJson();
 }
 
-final class BetaInputContentBlockBetaRequestTextBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestTextBlock
+    extends BetaInputContentBlock {
   final BetaRequestTextBlock value;
   const BetaInputContentBlockBetaRequestTextBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestImageBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestImageBlock
+    extends BetaInputContentBlock {
   final BetaRequestImageBlock value;
   const BetaInputContentBlockBetaRequestImageBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestDocumentBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestDocumentBlock
+    extends BetaInputContentBlock {
   final BetaRequestDocumentBlock value;
   const BetaInputContentBlockBetaRequestDocumentBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestSearchResultBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestSearchResultBlock
+    extends BetaInputContentBlock {
   final BetaRequestSearchResultBlock value;
   const BetaInputContentBlockBetaRequestSearchResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestThinkingBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestThinkingBlock
+    extends BetaInputContentBlock {
   final BetaRequestThinkingBlock value;
   const BetaInputContentBlockBetaRequestThinkingBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestRedactedThinkingBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestRedactedThinkingBlock
+    extends BetaInputContentBlock {
   final BetaRequestRedactedThinkingBlock value;
   const BetaInputContentBlockBetaRequestRedactedThinkingBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestToolUseBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestToolUseBlock
+    extends BetaInputContentBlock {
   final BetaRequestToolUseBlock value;
   const BetaInputContentBlockBetaRequestToolUseBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestToolResultBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestToolResultBlock
+    extends BetaInputContentBlock {
   final BetaRequestToolResultBlock value;
   const BetaInputContentBlockBetaRequestToolResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestServerToolUseBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestServerToolUseBlock
+    extends BetaInputContentBlock {
   final BetaRequestServerToolUseBlock value;
   const BetaInputContentBlockBetaRequestServerToolUseBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestWebSearchToolResultBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestWebSearchToolResultBlock
+    extends BetaInputContentBlock {
   final BetaRequestWebSearchToolResultBlock value;
   const BetaInputContentBlockBetaRequestWebSearchToolResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestWebFetchToolResultBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestWebFetchToolResultBlock
+    extends BetaInputContentBlock {
   final BetaRequestWebFetchToolResultBlock value;
   const BetaInputContentBlockBetaRequestWebFetchToolResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestAdvisorToolResultBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestAdvisorToolResultBlock
+    extends BetaInputContentBlock {
   final BetaRequestAdvisorToolResultBlock value;
   const BetaInputContentBlockBetaRequestAdvisorToolResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestCodeExecutionToolResultBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestCodeExecutionToolResultBlock
+    extends BetaInputContentBlock {
   final BetaRequestCodeExecutionToolResultBlock value;
-  const BetaInputContentBlockBetaRequestCodeExecutionToolResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaInputContentBlockBetaRequestCodeExecutionToolResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestBashCodeExecutionToolResultBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestBashCodeExecutionToolResultBlock
+    extends BetaInputContentBlock {
   final BetaRequestBashCodeExecutionToolResultBlock value;
-  const BetaInputContentBlockBetaRequestBashCodeExecutionToolResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaInputContentBlockBetaRequestBashCodeExecutionToolResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestTextEditorCodeExecutionToolResultBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestTextEditorCodeExecutionToolResultBlock
+    extends BetaInputContentBlock {
   final BetaRequestTextEditorCodeExecutionToolResultBlock value;
-  const BetaInputContentBlockBetaRequestTextEditorCodeExecutionToolResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaInputContentBlockBetaRequestTextEditorCodeExecutionToolResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestToolSearchToolResultBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestToolSearchToolResultBlock
+    extends BetaInputContentBlock {
   final BetaRequestToolSearchToolResultBlock value;
   const BetaInputContentBlockBetaRequestToolSearchToolResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestMCPToolUseBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestMCPToolUseBlock
+    extends BetaInputContentBlock {
   final BetaRequestMCPToolUseBlock value;
   const BetaInputContentBlockBetaRequestMCPToolUseBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestMCPToolResultBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestMCPToolResultBlock
+    extends BetaInputContentBlock {
   final BetaRequestMCPToolResultBlock value;
   const BetaInputContentBlockBetaRequestMCPToolResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestContainerUploadBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestContainerUploadBlock
+    extends BetaInputContentBlock {
   final BetaRequestContainerUploadBlock value;
   const BetaInputContentBlockBetaRequestContainerUploadBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestCompactionBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestCompactionBlock
+    extends BetaInputContentBlock {
   final BetaRequestCompactionBlock value;
   const BetaInputContentBlockBetaRequestCompactionBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestToolAdditionBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestToolAdditionBlock
+    extends BetaInputContentBlock {
   final BetaRequestToolAdditionBlock value;
   const BetaInputContentBlockBetaRequestToolAdditionBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestToolRemovalBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestToolRemovalBlock
+    extends BetaInputContentBlock {
   final BetaRequestToolRemovalBlock value;
   const BetaInputContentBlockBetaRequestToolRemovalBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaInputContentBlockBetaRequestFallbackBlock extends BetaInputContentBlock {
+final class BetaInputContentBlockBetaRequestFallbackBlock
+    extends BetaInputContentBlock {
   final BetaRequestFallbackBlock value;
   const BetaInputContentBlockBetaRequestFallbackBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaInputContentBlock] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaInputContentBlock extends BetaInputContentBlock {
   final Map<String, dynamic> raw;
   const UnknownBetaInputContentBlock(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 sealed class BetaInputMessageClearAt {
@@ -213,16 +491,21 @@ sealed class BetaInputMessageClearAt {
   static const String constructionSurface = 'named';
   const BetaInputMessageClearAt();
   factory BetaInputMessageClearAt.fromJson(Object? json) {
-    try { return BetaInputMessageClearAtBetaInputMessageClearAtVariant0(BetaInputMessageClearAtVariant0.fromJson(json as String)); } catch (_) {}
+    try {
+      return BetaInputMessageClearAtBetaInputMessageClearAtVariant0(
+          BetaInputMessageClearAtVariant0.fromJson(json as String));
+    } catch (_) {}
     throw FormatException("No variant matched for BetaInputMessageClearAt");
   }
   Object? toJson();
 }
 
-final class BetaInputMessageClearAtBetaInputMessageClearAtVariant0 extends BetaInputMessageClearAt {
+final class BetaInputMessageClearAtBetaInputMessageClearAtVariant0
+    extends BetaInputMessageClearAt {
   final BetaInputMessageClearAtVariant0 value;
   const BetaInputMessageClearAtBetaInputMessageClearAtVariant0(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 sealed class BetaInputMessageContent {
@@ -230,8 +513,13 @@ sealed class BetaInputMessageContent {
   static const String constructionSurface = 'named';
   const BetaInputMessageContent();
   factory BetaInputMessageContent.fromJson(Object? json) {
-    if (json is String) { return BetaInputMessageContentString(json); }
-    try { return BetaInputMessageContentBetaInputContentBlock(BetaInputContentBlock.fromJson(json)); } catch (_) {}
+    if (json is String) {
+      return BetaInputMessageContentString(json);
+    }
+    try {
+      return BetaInputMessageContentBetaInputContentBlock(
+          BetaInputContentBlock.fromJson(json));
+    } catch (_) {}
     throw FormatException("No variant matched for BetaInputMessageContent");
   }
   Object? toJson();
@@ -240,11 +528,14 @@ sealed class BetaInputMessageContent {
 final class BetaInputMessageContentString extends BetaInputMessageContent {
   final String value;
   const BetaInputMessageContentString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class BetaInputMessageContentBetaInputContentBlock extends BetaInputMessageContent {
+final class BetaInputMessageContentBetaInputContentBlock
+    extends BetaInputMessageContent {
   final BetaInputContentBlock value;
   const BetaInputMessageContentBetaInputContentBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

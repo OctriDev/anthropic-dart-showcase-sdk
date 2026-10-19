@@ -8,163 +8,245 @@ part of 'shared.dart';
 class OverloadedError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final OverloadedErrorType type_;
 
   const OverloadedError({required this.message, required this.type_});
 
-  OverloadedError Function({String message, OverloadedErrorType type_}) get copyWith => _copyWith;
+  OverloadedError Function({String message, OverloadedErrorType type_})
+      get copyWith => _copyWith;
 
-  OverloadedError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => OverloadedError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as OverloadedErrorType,
-  );
+  OverloadedError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      OverloadedError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as OverloadedErrorType,
+      );
 
-  factory OverloadedError.fromJson(Map<String, dynamic> json) => OverloadedError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? OverloadedErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory OverloadedError.fromJson(Map<String, dynamic> json) =>
+      OverloadedError(
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? OverloadedErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `PermissionError` API schema.
 class PermissionError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final PermissionErrorType type_;
 
   const PermissionError({required this.message, required this.type_});
 
-  PermissionError Function({String message, PermissionErrorType type_}) get copyWith => _copyWith;
+  PermissionError Function({String message, PermissionErrorType type_})
+      get copyWith => _copyWith;
 
-  PermissionError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => PermissionError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as PermissionErrorType,
-  );
+  PermissionError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      PermissionError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as PermissionErrorType,
+      );
 
-  factory PermissionError.fromJson(Map<String, dynamic> json) => PermissionError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? PermissionErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory PermissionError.fromJson(Map<String, dynamic> json) =>
+      PermissionError(
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? PermissionErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `PlainTextSource` API schema.
 class PlainTextSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `data` wire field.
   final String data;
+
   /// Required `string` value serialized in the `media_type` wire field.
   final PlainTextSourceMediaType mediaType;
+
   /// Required `string` value serialized in the `type` wire field.
   final PlainTextSourceType type_;
 
-  const PlainTextSource({required this.data, required this.mediaType, required this.type_});
+  const PlainTextSource(
+      {required this.data, required this.mediaType, required this.type_});
 
-  PlainTextSource Function({String data, PlainTextSourceMediaType mediaType, PlainTextSourceType type_}) get copyWith => _copyWith;
+  PlainTextSource Function(
+      {String data,
+      PlainTextSourceMediaType mediaType,
+      PlainTextSourceType type_}) get copyWith => _copyWith;
 
-  PlainTextSource _copyWith({Object? data = sdkOmittedValue, Object? mediaType = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => PlainTextSource(
-    data: identical(data, sdkOmittedValue) ? this.data : data as String,
-    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as PlainTextSourceMediaType,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as PlainTextSourceType,
-  );
+  PlainTextSource _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? mediaType = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      PlainTextSource(
+        data: identical(data, sdkOmittedValue) ? this.data : data as String,
+        mediaType: identical(mediaType, sdkOmittedValue)
+            ? this.mediaType
+            : mediaType as PlainTextSourceMediaType,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as PlainTextSourceType,
+      );
 
-  factory PlainTextSource.fromJson(Map<String, dynamic> json) => PlainTextSource(
-    data: (json['data'] as String?)!,
-    mediaType: (json['media_type'] != null ? PlainTextSourceMediaType.fromJson(json['media_type'] as String) : null)!,
-    type_: (json['type'] != null ? PlainTextSourceType.fromJson(json['type'] as String) : null)!,
-  );
+  factory PlainTextSource.fromJson(Map<String, dynamic> json) =>
+      PlainTextSource(
+        data: (json['data'] as String?)!,
+        mediaType: (json['media_type'] != null
+            ? PlainTextSourceMediaType.fromJson(json['media_type'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? PlainTextSourceType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data,
-    'media_type': mediaType.toJson(),
-    'type': type_.toJson(),
-  };
+        'data': data,
+        'media_type': mediaType.toJson(),
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `RateLimitError` API schema.
 class RateLimitError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final RateLimitErrorType type_;
 
   const RateLimitError({required this.message, required this.type_});
 
-  RateLimitError Function({String message, RateLimitErrorType type_}) get copyWith => _copyWith;
+  RateLimitError Function({String message, RateLimitErrorType type_})
+      get copyWith => _copyWith;
 
-  RateLimitError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RateLimitError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RateLimitErrorType,
-  );
+  RateLimitError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RateLimitError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RateLimitErrorType,
+      );
 
   factory RateLimitError.fromJson(Map<String, dynamic> json) => RateLimitError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? RateLimitErrorType.fromJson(json['type'] as String) : null)!,
-  );
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? RateLimitErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }
 
 /// Specification for a skill to be loaded in a container (request model).
 class SkillParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Skill ID
   final String skillId;
+
   /// Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
   final SkillParamsType type_;
+
   /// Skill version or 'latest' for most recent version
   final SdkOptional<String> version;
 
-  const SkillParams({required this.skillId, required this.type_, this.version = const SdkOmitted()});
+  const SkillParams(
+      {required this.skillId,
+      required this.type_,
+      this.version = const SdkOmitted()});
 
-  SkillParams Function({String skillId, SkillParamsType type_, SdkOptional<String> version}) get copyWith => _copyWith;
+  SkillParams Function(
+      {String skillId,
+      SkillParamsType type_,
+      SdkOptional<String> version}) get copyWith => _copyWith;
 
-  SkillParams _copyWith({Object? skillId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? version = sdkOmittedValue}) => SkillParams(
-    skillId: identical(skillId, sdkOmittedValue) ? this.skillId : skillId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SkillParamsType,
-    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String>,
-  );
+  SkillParams _copyWith(
+          {Object? skillId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? version = sdkOmittedValue}) =>
+      SkillParams(
+        skillId: identical(skillId, sdkOmittedValue)
+            ? this.skillId
+            : skillId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SkillParamsType,
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as SdkOptional<String>,
+      );
 
   factory SkillParams.fromJson(Map<String, dynamic> json) => SkillParams(
-    skillId: (json['skill_id'] as String?)!,
-    type_: (json['type'] != null ? SkillParamsType.fromJson(json['type'] as String) : null)!,
-    version: json['version'] != null ? SdkPresent((json['version'] as String?)!) : const SdkOmitted(),
-  );
+        skillId: (json['skill_id'] as String?)!,
+        type_: (json['type'] != null
+            ? SkillParamsType.fromJson(json['type'] as String)
+            : null)!,
+        version: json['version'] != null
+            ? SdkPresent((json['version'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'skill_id': skillId,
-    'type': type_.toJson(),
-    ...switch (version) {
-      SdkPresent<String>(value: final value) => {'version': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'skill_id': skillId,
+        'type': type_.toJson(),
+        ...switch (version) {
+          SdkPresent<String>(value: final value) => {
+              'version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `StopReason` API schema.
 final class StopReason {
-
   final String value;
 
   const StopReason._(this.value);
@@ -177,74 +259,95 @@ final class StopReason {
   static const toolUse = StopReason._('tool_use');
   static const pauseTurn = StopReason._('pause_turn');
   static const refusal = StopReason._('refusal');
-  static const modelContextWindowExceeded = StopReason._('model_context_window_exceeded');
+  static const modelContextWindowExceeded =
+      StopReason._('model_context_window_exceeded');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is StopReason && other.value == value;
+  @override
+  bool operator ==(Object other) => other is StopReason && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `URLImageSource` API schema.
 class URLImageSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final URLImageSourceType type_;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
   const URLImageSource({required this.type_, required this.url});
 
-  URLImageSource Function({URLImageSourceType type_, String url}) get copyWith => _copyWith;
+  URLImageSource Function({URLImageSourceType type_, String url})
+      get copyWith => _copyWith;
 
-  URLImageSource _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => URLImageSource(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as URLImageSourceType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  URLImageSource _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      URLImageSource(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as URLImageSourceType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
   factory URLImageSource.fromJson(Map<String, dynamic> json) => URLImageSource(
-    type_: (json['type'] != null ? URLImageSourceType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+        type_: (json['type'] != null
+            ? URLImageSourceType.fromJson(json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'type': type_.toJson(),
+        'url': url,
+      };
 }
 
 /// Typed representation of the `URLPDFSource` API schema.
 class URLPDFSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final URLPDFSourceType type_;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
   const URLPDFSource({required this.type_, required this.url});
 
-  URLPDFSource Function({URLPDFSourceType type_, String url}) get copyWith => _copyWith;
+  URLPDFSource Function({URLPDFSourceType type_, String url}) get copyWith =>
+      _copyWith;
 
-  URLPDFSource _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => URLPDFSource(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as URLPDFSourceType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  URLPDFSource _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      URLPDFSource(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as URLPDFSourceType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
   factory URLPDFSource.fromJson(Map<String, dynamic> json) => URLPDFSource(
-    type_: (json['type'] != null ? URLPDFSourceType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+        type_: (json['type'] != null
+            ? URLPDFSourceType.fromJson(json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'type': type_.toJson(),
+        'url': url,
+      };
 }
 
 sealed class UsageCacheCreationInputTokens {
@@ -252,16 +355,21 @@ sealed class UsageCacheCreationInputTokens {
   static const String constructionSurface = 'named';
   const UsageCacheCreationInputTokens();
   factory UsageCacheCreationInputTokens.fromJson(Object? json) {
-    if (json is num) { return UsageCacheCreationInputTokensInt(json.toInt()); }
-    throw FormatException("No variant matched for UsageCacheCreationInputTokens");
+    if (json is num) {
+      return UsageCacheCreationInputTokensInt(json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for UsageCacheCreationInputTokens");
   }
   Object? toJson();
 }
 
-final class UsageCacheCreationInputTokensInt extends UsageCacheCreationInputTokens {
+final class UsageCacheCreationInputTokensInt
+    extends UsageCacheCreationInputTokens {
   final int value;
   const UsageCacheCreationInputTokensInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class UsageCacheReadInputTokens {
@@ -269,7 +377,9 @@ sealed class UsageCacheReadInputTokens {
   static const String constructionSurface = 'named';
   const UsageCacheReadInputTokens();
   factory UsageCacheReadInputTokens.fromJson(Object? json) {
-    if (json is num) { return UsageCacheReadInputTokensInt(json.toInt()); }
+    if (json is num) {
+      return UsageCacheReadInputTokensInt(json.toInt());
+    }
     throw FormatException("No variant matched for UsageCacheReadInputTokens");
   }
   Object? toJson();
@@ -278,7 +388,8 @@ sealed class UsageCacheReadInputTokens {
 final class UsageCacheReadInputTokensInt extends UsageCacheReadInputTokens {
   final int value;
   const UsageCacheReadInputTokensInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class UsageServiceTier {
@@ -286,7 +397,10 @@ sealed class UsageServiceTier {
   static const String constructionSurface = 'named';
   const UsageServiceTier();
   factory UsageServiceTier.fromJson(Object? json) {
-    try { return UsageServiceTierUsageServiceTierVariant0(UsageServiceTierVariant0.fromJson(json as String)); } catch (_) {}
+    try {
+      return UsageServiceTierUsageServiceTierVariant0(
+          UsageServiceTierVariant0.fromJson(json as String));
+    } catch (_) {}
     throw FormatException("No variant matched for UsageServiceTier");
   }
   Object? toJson();

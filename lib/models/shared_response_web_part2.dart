@@ -8,44 +8,80 @@ part of 'shared_response_web.dart';
 class ResponseWebSearchResultLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `cited_text` wire field.
   final String citedText;
+
   /// Required `string` value serialized in the `encrypted_index` wire field.
   final String encryptedIndex;
+
   /// Required API value serialized in the `title` wire field.
   final String? title;
+
   /// Required `string` value serialized in the `type` wire field.
   final ResponseWebSearchResultLocationCitationType type_;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
-  const ResponseWebSearchResultLocationCitation({required this.citedText, required this.encryptedIndex, required this.title, required this.type_, required this.url});
+  const ResponseWebSearchResultLocationCitation(
+      {required this.citedText,
+      required this.encryptedIndex,
+      required this.title,
+      required this.type_,
+      required this.url});
 
-  ResponseWebSearchResultLocationCitation Function({String citedText, String encryptedIndex, String? title, ResponseWebSearchResultLocationCitationType type_, String url}) get copyWith => _copyWith;
+  ResponseWebSearchResultLocationCitation Function(
+      {String citedText,
+      String encryptedIndex,
+      String? title,
+      ResponseWebSearchResultLocationCitationType type_,
+      String url}) get copyWith => _copyWith;
 
-  ResponseWebSearchResultLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? encryptedIndex = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => ResponseWebSearchResultLocationCitation(
-    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
-    encryptedIndex: identical(encryptedIndex, sdkOmittedValue) ? this.encryptedIndex : encryptedIndex as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ResponseWebSearchResultLocationCitationType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  ResponseWebSearchResultLocationCitation _copyWith(
+          {Object? citedText = sdkOmittedValue,
+          Object? encryptedIndex = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      ResponseWebSearchResultLocationCitation(
+        citedText: identical(citedText, sdkOmittedValue)
+            ? this.citedText
+            : citedText as String,
+        encryptedIndex: identical(encryptedIndex, sdkOmittedValue)
+            ? this.encryptedIndex
+            : encryptedIndex as String,
+        title:
+            identical(title, sdkOmittedValue) ? this.title : title as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ResponseWebSearchResultLocationCitationType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory ResponseWebSearchResultLocationCitation.fromJson(Map<String, dynamic> json) => ResponseWebSearchResultLocationCitation(
-    citedText: (json['cited_text'] as String?)!,
-    encryptedIndex: (json['encrypted_index'] as String?)!,
-    title: json.containsKey('title') ? json['title'] as String? : throw ArgumentError.value(null, 'title', 'Required property is missing'),
-    type_: (json['type'] != null ? ResponseWebSearchResultLocationCitationType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory ResponseWebSearchResultLocationCitation.fromJson(
+          Map<String, dynamic> json) =>
+      ResponseWebSearchResultLocationCitation(
+        citedText: (json['cited_text'] as String?)!,
+        encryptedIndex: (json['encrypted_index'] as String?)!,
+        title: json.containsKey('title')
+            ? json['title'] as String?
+            : throw ArgumentError.value(
+                null, 'title', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? ResponseWebSearchResultLocationCitationType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'cited_text': citedText,
-    'encrypted_index': encryptedIndex,
-    'title': title,
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'cited_text': citedText,
+        'encrypted_index': encryptedIndex,
+        'title': title,
+        'type': type_.toJson(),
+        'url': url,
+      };
 }
 
 sealed class ResponseWebSearchToolResultBlockContent {
@@ -54,65 +90,124 @@ sealed class ResponseWebSearchToolResultBlockContent {
   const ResponseWebSearchToolResultBlockContent();
   factory ResponseWebSearchToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = ResponseWebSearchToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseWebSearchToolResultBlockContentResponseWebSearchToolResultError(value); } } catch (_) {}
-      try { final value = ResponseWebSearchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseWebSearchToolResultBlockContentResponseWebSearchResultBlock(value); } } catch (_) {}
+      try {
+        final value = ResponseWebSearchToolResultError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ResponseWebSearchToolResultBlockContentResponseWebSearchToolResultError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = ResponseWebSearchResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ResponseWebSearchToolResultBlockContentResponseWebSearchResultBlock(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return ResponseWebSearchToolResultBlockContentResponseWebSearchToolResultError(ResponseWebSearchToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ResponseWebSearchToolResultBlockContentResponseWebSearchResultBlock(ResponseWebSearchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for ResponseWebSearchToolResultBlockContent");
+    try {
+      return ResponseWebSearchToolResultBlockContentResponseWebSearchToolResultError(
+          ResponseWebSearchToolResultError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ResponseWebSearchToolResultBlockContentResponseWebSearchResultBlock(
+          ResponseWebSearchResultBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for ResponseWebSearchToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class ResponseWebSearchToolResultBlockContentResponseWebSearchToolResultError extends ResponseWebSearchToolResultBlockContent {
+final class ResponseWebSearchToolResultBlockContentResponseWebSearchToolResultError
+    extends ResponseWebSearchToolResultBlockContent {
   final ResponseWebSearchToolResultError value;
-  const ResponseWebSearchToolResultBlockContentResponseWebSearchToolResultError(this.value);
-  @override Object? toJson() => value.toJson();
+  const ResponseWebSearchToolResultBlockContentResponseWebSearchToolResultError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class ResponseWebSearchToolResultBlockContentResponseWebSearchResultBlock extends ResponseWebSearchToolResultBlockContent {
+final class ResponseWebSearchToolResultBlockContentResponseWebSearchResultBlock
+    extends ResponseWebSearchToolResultBlockContent {
   final ResponseWebSearchResultBlock value;
-  const ResponseWebSearchToolResultBlockContentResponseWebSearchResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const ResponseWebSearchToolResultBlockContentResponseWebSearchResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `ResponseWebSearchToolResultBlock` API schema.
 class ResponseWebSearchToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required API value serialized in the `caller` wire field.
   final ResponseWebSearchToolResultBlockCaller caller;
+
   /// Required API value serialized in the `content` wire field.
   final dynamic content;
+
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
+
   /// Required `string` value serialized in the `type` wire field.
   final ResponseWebSearchToolResultBlockType type_;
 
-  const ResponseWebSearchToolResultBlock({required this.caller, required this.content, required this.toolUseId, required this.type_});
+  const ResponseWebSearchToolResultBlock(
+      {required this.caller,
+      required this.content,
+      required this.toolUseId,
+      required this.type_});
 
-  ResponseWebSearchToolResultBlock Function({ResponseWebSearchToolResultBlockCaller caller, dynamic content, String toolUseId, ResponseWebSearchToolResultBlockType type_}) get copyWith => _copyWith;
+  ResponseWebSearchToolResultBlock Function(
+      {ResponseWebSearchToolResultBlockCaller caller,
+      dynamic content,
+      String toolUseId,
+      ResponseWebSearchToolResultBlockType type_}) get copyWith => _copyWith;
 
-  ResponseWebSearchToolResultBlock _copyWith({Object? caller = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ResponseWebSearchToolResultBlock(
-    caller: identical(caller, sdkOmittedValue) ? this.caller : caller as ResponseWebSearchToolResultBlockCaller,
-    content: identical(content, sdkOmittedValue) ? this.content : content as dynamic,
-    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ResponseWebSearchToolResultBlockType,
-  );
+  ResponseWebSearchToolResultBlock _copyWith(
+          {Object? caller = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? toolUseId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      ResponseWebSearchToolResultBlock(
+        caller: identical(caller, sdkOmittedValue)
+            ? this.caller
+            : caller as ResponseWebSearchToolResultBlockCaller,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as dynamic,
+        toolUseId: identical(toolUseId, sdkOmittedValue)
+            ? this.toolUseId
+            : toolUseId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ResponseWebSearchToolResultBlockType,
+      );
 
-  factory ResponseWebSearchToolResultBlock.fromJson(Map<String, dynamic> json) => ResponseWebSearchToolResultBlock(
-    caller: (json['caller'] != null ? ResponseWebSearchToolResultBlockCaller.fromJson(json['caller']) : null)!,
-    content: (SdkUtils.unionBranch(json['content'], [ResponseWebSearchToolResultError.fromJson]))!,
-    toolUseId: (json['tool_use_id'] as String?)!,
-    type_: (json['type'] != null ? ResponseWebSearchToolResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory ResponseWebSearchToolResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      ResponseWebSearchToolResultBlock(
+        caller: (json['caller'] != null
+            ? ResponseWebSearchToolResultBlockCaller.fromJson(json['caller'])
+            : null)!,
+        content: (SdkUtils.unionBranch(
+            json['content'], [ResponseWebSearchToolResultError.fromJson]))!,
+        toolUseId: (json['tool_use_id'] as String?)!,
+        type_: (json['type'] != null
+            ? ResponseWebSearchToolResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'caller': caller.toJson(),
-    'content': content,
-    'tool_use_id': toolUseId,
-    'type': type_.toJson(),
-  };
+        'caller': caller.toJson(),
+        'content': content,
+        'tool_use_id': toolUseId,
+        'type': type_.toJson(),
+      };
 }
 
 sealed class ResponseWebSearchToolResultBlockCaller {
@@ -121,69 +216,129 @@ sealed class ResponseWebSearchToolResultBlockCaller {
   const ResponseWebSearchToolResultBlockCaller();
   factory ResponseWebSearchToolResultBlockCaller.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = DirectCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseWebSearchToolResultBlockCallerDirectCaller(value); } } catch (_) {}
-      try { final value = ServerToolCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseWebSearchToolResultBlockCallerServerToolCaller(value); } } catch (_) {}
-      try { final value = ServerToolCaller20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseWebSearchToolResultBlockCallerServerToolCaller20260120(value); } } catch (_) {}
+      try {
+        final value = DirectCaller.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ResponseWebSearchToolResultBlockCallerDirectCaller(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ServerToolCaller.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ResponseWebSearchToolResultBlockCallerServerToolCaller(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ServerToolCaller20260120.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ResponseWebSearchToolResultBlockCallerServerToolCaller20260120(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return ResponseWebSearchToolResultBlockCallerDirectCaller(DirectCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ResponseWebSearchToolResultBlockCallerServerToolCaller(ServerToolCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ResponseWebSearchToolResultBlockCallerServerToolCaller20260120(ServerToolCaller20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"code_execution_20250825", "code_execution_20260120", "direct"}.contains(json["type"])) { return UnknownResponseWebSearchToolResultBlockCaller(json); }
-    throw FormatException("No variant matched for ResponseWebSearchToolResultBlockCaller");
+    try {
+      return ResponseWebSearchToolResultBlockCallerDirectCaller(
+          DirectCaller.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ResponseWebSearchToolResultBlockCallerServerToolCaller(
+          ServerToolCaller.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ResponseWebSearchToolResultBlockCallerServerToolCaller20260120(
+          ServerToolCaller20260120.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"code_execution_20250825", "code_execution_20260120", "direct"}
+            .contains(json["type"])) {
+      return UnknownResponseWebSearchToolResultBlockCaller(json);
+    }
+    throw FormatException(
+        "No variant matched for ResponseWebSearchToolResultBlockCaller");
   }
   Object? toJson();
 }
 
-final class ResponseWebSearchToolResultBlockCallerDirectCaller extends ResponseWebSearchToolResultBlockCaller {
+final class ResponseWebSearchToolResultBlockCallerDirectCaller
+    extends ResponseWebSearchToolResultBlockCaller {
   final DirectCaller value;
   const ResponseWebSearchToolResultBlockCallerDirectCaller(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class ResponseWebSearchToolResultBlockCallerServerToolCaller extends ResponseWebSearchToolResultBlockCaller {
+final class ResponseWebSearchToolResultBlockCallerServerToolCaller
+    extends ResponseWebSearchToolResultBlockCaller {
   final ServerToolCaller value;
   const ResponseWebSearchToolResultBlockCallerServerToolCaller(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class ResponseWebSearchToolResultBlockCallerServerToolCaller20260120 extends ResponseWebSearchToolResultBlockCaller {
+final class ResponseWebSearchToolResultBlockCallerServerToolCaller20260120
+    extends ResponseWebSearchToolResultBlockCaller {
   final ServerToolCaller20260120 value;
-  const ResponseWebSearchToolResultBlockCallerServerToolCaller20260120(this.value);
-  @override Object? toJson() => value.toJson();
+  const ResponseWebSearchToolResultBlockCallerServerToolCaller20260120(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [ResponseWebSearchToolResultBlockCaller] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownResponseWebSearchToolResultBlockCaller extends ResponseWebSearchToolResultBlockCaller {
+final class UnknownResponseWebSearchToolResultBlockCaller
+    extends ResponseWebSearchToolResultBlockCaller {
   final Map<String, dynamic> raw;
   const UnknownResponseWebSearchToolResultBlockCaller(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `ResponseWebSearchToolResultError` API schema.
 class ResponseWebSearchToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `error_code` wire field.
   final WebSearchToolResultErrorCode errorCode;
+
   /// Required `string` value serialized in the `type` wire field.
   final ResponseWebSearchToolResultErrorType type_;
 
-  const ResponseWebSearchToolResultError({required this.errorCode, required this.type_});
+  const ResponseWebSearchToolResultError(
+      {required this.errorCode, required this.type_});
 
-  ResponseWebSearchToolResultError Function({WebSearchToolResultErrorCode errorCode, ResponseWebSearchToolResultErrorType type_}) get copyWith => _copyWith;
+  ResponseWebSearchToolResultError Function(
+      {WebSearchToolResultErrorCode errorCode,
+      ResponseWebSearchToolResultErrorType type_}) get copyWith => _copyWith;
 
-  ResponseWebSearchToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ResponseWebSearchToolResultError(
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as WebSearchToolResultErrorCode,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ResponseWebSearchToolResultErrorType,
-  );
+  ResponseWebSearchToolResultError _copyWith(
+          {Object? errorCode = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      ResponseWebSearchToolResultError(
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as WebSearchToolResultErrorCode,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ResponseWebSearchToolResultErrorType,
+      );
 
-  factory ResponseWebSearchToolResultError.fromJson(Map<String, dynamic> json) => ResponseWebSearchToolResultError(
-    errorCode: (json['error_code'] != null ? WebSearchToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
-    type_: (json['type'] != null ? ResponseWebSearchToolResultErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory ResponseWebSearchToolResultError.fromJson(
+          Map<String, dynamic> json) =>
+      ResponseWebSearchToolResultError(
+        errorCode: (json['error_code'] != null
+            ? WebSearchToolResultErrorCode.fromJson(
+                json['error_code'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? ResponseWebSearchToolResultErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'error_code': errorCode.toJson(),
-    'type': type_.toJson(),
-  };
+        'error_code': errorCode.toJson(),
+        'type': type_.toJson(),
+      };
 }

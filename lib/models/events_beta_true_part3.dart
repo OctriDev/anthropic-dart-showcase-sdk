@@ -4,214 +4,384 @@
 part of 'events_beta_true.dart';
 
 // events_beta_true domain models (part 3)
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent
+    extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionThreadStatusRescheduledEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent
+    extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionUpdatedEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent
+    extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSystemMessageEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent
+    extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionUsageEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSessionEvent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsSessionEvent extends BetaManagedAgentsSessionEvent {
+final class UnknownBetaManagedAgentsSessionEvent
+    extends BetaManagedAgentsSessionEvent {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSessionEvent(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Parameters for providing the result of a custom tool execution.
 class BetaManagedAgentsUserCustomToolResultEventParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUserCustomToolResultEventParamsType type_;
+
   /// The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
   final String customToolUseId;
+
   /// The result content returned by the tool.
   final SdkOptional<List<BetaManagedAgentsToolResultContentBlock>> content;
+
   /// Whether the tool execution resulted in an error.
   final SdkOptional<bool?> isError;
 
-  const BetaManagedAgentsUserCustomToolResultEventParams({required this.type_, required this.customToolUseId, this.content = const SdkOmitted(), this.isError = const SdkOmitted()});
+  const BetaManagedAgentsUserCustomToolResultEventParams(
+      {required this.type_,
+      required this.customToolUseId,
+      this.content = const SdkOmitted(),
+      this.isError = const SdkOmitted()});
 
-  BetaManagedAgentsUserCustomToolResultEventParams Function({BetaManagedAgentsUserCustomToolResultEventParamsType type_, String customToolUseId, SdkOptional<List<BetaManagedAgentsToolResultContentBlock>> content, SdkOptional<bool?> isError}) get copyWith => _copyWith;
+  BetaManagedAgentsUserCustomToolResultEventParams Function(
+      {BetaManagedAgentsUserCustomToolResultEventParamsType type_,
+      String customToolUseId,
+      SdkOptional<List<BetaManagedAgentsToolResultContentBlock>> content,
+      SdkOptional<bool?> isError}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUserCustomToolResultEventParams _copyWith({Object? type_ = sdkOmittedValue, Object? customToolUseId = sdkOmittedValue, Object? content = sdkOmittedValue, Object? isError = sdkOmittedValue}) => BetaManagedAgentsUserCustomToolResultEventParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUserCustomToolResultEventParamsType,
-    customToolUseId: identical(customToolUseId, sdkOmittedValue) ? this.customToolUseId : customToolUseId as String,
-    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<List<BetaManagedAgentsToolResultContentBlock>>,
-    isError: identical(isError, sdkOmittedValue) ? this.isError : isError as SdkOptional<bool?>,
-  );
+  BetaManagedAgentsUserCustomToolResultEventParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? customToolUseId = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? isError = sdkOmittedValue}) =>
+      BetaManagedAgentsUserCustomToolResultEventParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsUserCustomToolResultEventParamsType,
+        customToolUseId: identical(customToolUseId, sdkOmittedValue)
+            ? this.customToolUseId
+            : customToolUseId as String,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content
+                as SdkOptional<List<BetaManagedAgentsToolResultContentBlock>>,
+        isError: identical(isError, sdkOmittedValue)
+            ? this.isError
+            : isError as SdkOptional<bool?>,
+      );
 
-  factory BetaManagedAgentsUserCustomToolResultEventParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUserCustomToolResultEventParams(
-    type_: (json['type'] != null ? BetaManagedAgentsUserCustomToolResultEventParamsType.fromJson(json['type'] as String) : null)!,
-    customToolUseId: (json['custom_tool_use_id'] as String?)!,
-    content: json['content'] != null ? SdkPresent(((json['content'] as List?)?.map((e) => BetaManagedAgentsToolResultContentBlock.fromJson(e)).toList())!) : const SdkOmitted(),
-    isError: json.containsKey('is_error') ? SdkPresent(json['is_error'] as bool?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsUserCustomToolResultEventParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUserCustomToolResultEventParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUserCustomToolResultEventParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        customToolUseId: (json['custom_tool_use_id'] as String?)!,
+        content: json['content'] != null
+            ? SdkPresent(((json['content'] as List?)
+                ?.map(
+                    (e) => BetaManagedAgentsToolResultContentBlock.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+        isError: json.containsKey('is_error')
+            ? SdkPresent(json['is_error'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'custom_tool_use_id': customToolUseId,
-    ...switch (content) {
-      SdkPresent<List<BetaManagedAgentsToolResultContentBlock>>(value: final value) => {'content': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (isError) {
-      SdkPresent<bool?>(value: final value) => {'is_error': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        'custom_tool_use_id': customToolUseId,
+        ...switch (content) {
+          SdkPresent<List<BetaManagedAgentsToolResultContentBlock>>(
+            value: final value
+          ) =>
+            {
+              'content': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (isError) {
+          SdkPresent<bool?>(value: final value) => {
+              'is_error': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Parameters for sending an interrupt to pause the agent.
 class BetaManagedAgentsUserInterruptEventParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUserInterruptEventParamsType type_;
+
   /// If absent, interrupts every non-archived thread in a multiagent session (or the primary alone in a single-agent session). If present, interrupts only the named thread.
   final SdkOptional<String?> sessionThreadId;
 
-  const BetaManagedAgentsUserInterruptEventParams({required this.type_, this.sessionThreadId = const SdkOmitted()});
+  const BetaManagedAgentsUserInterruptEventParams(
+      {required this.type_, this.sessionThreadId = const SdkOmitted()});
 
-  BetaManagedAgentsUserInterruptEventParams Function({BetaManagedAgentsUserInterruptEventParamsType type_, SdkOptional<String?> sessionThreadId}) get copyWith => _copyWith;
+  BetaManagedAgentsUserInterruptEventParams Function(
+      {BetaManagedAgentsUserInterruptEventParamsType type_,
+      SdkOptional<String?> sessionThreadId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUserInterruptEventParams _copyWith({Object? type_ = sdkOmittedValue, Object? sessionThreadId = sdkOmittedValue}) => BetaManagedAgentsUserInterruptEventParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUserInterruptEventParamsType,
-    sessionThreadId: identical(sessionThreadId, sdkOmittedValue) ? this.sessionThreadId : sessionThreadId as SdkOptional<String?>,
-  );
+  BetaManagedAgentsUserInterruptEventParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? sessionThreadId = sdkOmittedValue}) =>
+      BetaManagedAgentsUserInterruptEventParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsUserInterruptEventParamsType,
+        sessionThreadId: identical(sessionThreadId, sdkOmittedValue)
+            ? this.sessionThreadId
+            : sessionThreadId as SdkOptional<String?>,
+      );
 
-  factory BetaManagedAgentsUserInterruptEventParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUserInterruptEventParams(
-    type_: (json['type'] != null ? BetaManagedAgentsUserInterruptEventParamsType.fromJson(json['type'] as String) : null)!,
-    sessionThreadId: json.containsKey('session_thread_id') ? SdkPresent(json['session_thread_id'] as String?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsUserInterruptEventParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUserInterruptEventParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUserInterruptEventParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        sessionThreadId: json.containsKey('session_thread_id')
+            ? SdkPresent(json['session_thread_id'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (sessionThreadId) {
-      SdkPresent<String?>(value: final value) => {'session_thread_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (sessionThreadId) {
+          SdkPresent<String?>(value: final value) => {
+              'session_thread_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class BetaManagedAgentsUserToolConfirmationEventParamsDenyMessage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsUserToolConfirmationEventParamsDenyMessage();
-  factory BetaManagedAgentsUserToolConfirmationEventParamsDenyMessage.fromJson(Object? json) {
-    if (json is String) { return BetaManagedAgentsUserToolConfirmationEventParamsDenyMessageString(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsUserToolConfirmationEventParamsDenyMessage");
+  factory BetaManagedAgentsUserToolConfirmationEventParamsDenyMessage.fromJson(
+      Object? json) {
+    if (json is String) {
+      return BetaManagedAgentsUserToolConfirmationEventParamsDenyMessageString(
+          json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsUserToolConfirmationEventParamsDenyMessage");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsUserToolConfirmationEventParamsDenyMessageString extends BetaManagedAgentsUserToolConfirmationEventParamsDenyMessage {
+final class BetaManagedAgentsUserToolConfirmationEventParamsDenyMessageString
+    extends BetaManagedAgentsUserToolConfirmationEventParamsDenyMessage {
   final String value;
-  const BetaManagedAgentsUserToolConfirmationEventParamsDenyMessageString(this.value);
-  @override Object? toJson() => value;
+  const BetaManagedAgentsUserToolConfirmationEventParamsDenyMessageString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
 /// Parameters for confirming or denying a tool execution request.
 class BetaManagedAgentsUserToolConfirmationEventParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUserToolConfirmationEventParamsType type_;
+
   /// The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
   final String toolUseId;
+
   /// The confirmation result: 'allow' or 'deny'.
   final BetaManagedAgentsUserToolConfirmationResult result;
+
   /// Optional message providing context for a 'deny' decision. Only allowed when result is 'deny'.
   final SdkOptional<String?> denyMessage;
 
-  const BetaManagedAgentsUserToolConfirmationEventParams({required this.type_, required this.toolUseId, required this.result, this.denyMessage = const SdkOmitted()});
+  const BetaManagedAgentsUserToolConfirmationEventParams(
+      {required this.type_,
+      required this.toolUseId,
+      required this.result,
+      this.denyMessage = const SdkOmitted()});
 
-  BetaManagedAgentsUserToolConfirmationEventParams Function({BetaManagedAgentsUserToolConfirmationEventParamsType type_, String toolUseId, BetaManagedAgentsUserToolConfirmationResult result, SdkOptional<String?> denyMessage}) get copyWith => _copyWith;
+  BetaManagedAgentsUserToolConfirmationEventParams Function(
+      {BetaManagedAgentsUserToolConfirmationEventParamsType type_,
+      String toolUseId,
+      BetaManagedAgentsUserToolConfirmationResult result,
+      SdkOptional<String?> denyMessage}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUserToolConfirmationEventParams _copyWith({Object? type_ = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? result = sdkOmittedValue, Object? denyMessage = sdkOmittedValue}) => BetaManagedAgentsUserToolConfirmationEventParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUserToolConfirmationEventParamsType,
-    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
-    result: identical(result, sdkOmittedValue) ? this.result : result as BetaManagedAgentsUserToolConfirmationResult,
-    denyMessage: identical(denyMessage, sdkOmittedValue) ? this.denyMessage : denyMessage as SdkOptional<String?>,
-  );
+  BetaManagedAgentsUserToolConfirmationEventParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? toolUseId = sdkOmittedValue,
+          Object? result = sdkOmittedValue,
+          Object? denyMessage = sdkOmittedValue}) =>
+      BetaManagedAgentsUserToolConfirmationEventParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsUserToolConfirmationEventParamsType,
+        toolUseId: identical(toolUseId, sdkOmittedValue)
+            ? this.toolUseId
+            : toolUseId as String,
+        result: identical(result, sdkOmittedValue)
+            ? this.result
+            : result as BetaManagedAgentsUserToolConfirmationResult,
+        denyMessage: identical(denyMessage, sdkOmittedValue)
+            ? this.denyMessage
+            : denyMessage as SdkOptional<String?>,
+      );
 
-  factory BetaManagedAgentsUserToolConfirmationEventParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUserToolConfirmationEventParams(
-    type_: (json['type'] != null ? BetaManagedAgentsUserToolConfirmationEventParamsType.fromJson(json['type'] as String) : null)!,
-    toolUseId: (json['tool_use_id'] as String?)!,
-    result: (json['result'] != null ? BetaManagedAgentsUserToolConfirmationResult.fromJson(json['result'] as String) : null)!,
-    denyMessage: json.containsKey('deny_message') ? SdkPresent(json['deny_message'] as String?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsUserToolConfirmationEventParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUserToolConfirmationEventParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUserToolConfirmationEventParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        toolUseId: (json['tool_use_id'] as String?)!,
+        result: (json['result'] != null
+            ? BetaManagedAgentsUserToolConfirmationResult.fromJson(
+                json['result'] as String)
+            : null)!,
+        denyMessage: json.containsKey('deny_message')
+            ? SdkPresent(json['deny_message'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'tool_use_id': toolUseId,
-    'result': result.toJson(),
-    ...switch (denyMessage) {
-      SdkPresent<String?>(value: final value) => {'deny_message': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        'tool_use_id': toolUseId,
+        'result': result.toJson(),
+        ...switch (denyMessage) {
+          SdkPresent<String?>(value: final value) => {
+              'deny_message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Parameters for providing the result of an agent-toolset tool execution. Only valid on `self_hosted` environments, where sandbox-routed tools are executed by the client rather than the server.
 class BetaManagedAgentsUserToolResultEventParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUserToolResultEventParamsType type_;
+
   /// The id of the `agent.tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
   final String toolUseId;
+
   /// The result content returned by the tool.
   final SdkOptional<List<BetaManagedAgentsToolResultContentBlock>> content;
+
   /// Whether the tool execution resulted in an error.
   final SdkOptional<bool?> isError;
 
-  const BetaManagedAgentsUserToolResultEventParams({required this.type_, required this.toolUseId, this.content = const SdkOmitted(), this.isError = const SdkOmitted()});
+  const BetaManagedAgentsUserToolResultEventParams(
+      {required this.type_,
+      required this.toolUseId,
+      this.content = const SdkOmitted(),
+      this.isError = const SdkOmitted()});
 
-  BetaManagedAgentsUserToolResultEventParams Function({BetaManagedAgentsUserToolResultEventParamsType type_, String toolUseId, SdkOptional<List<BetaManagedAgentsToolResultContentBlock>> content, SdkOptional<bool?> isError}) get copyWith => _copyWith;
+  BetaManagedAgentsUserToolResultEventParams Function(
+      {BetaManagedAgentsUserToolResultEventParamsType type_,
+      String toolUseId,
+      SdkOptional<List<BetaManagedAgentsToolResultContentBlock>> content,
+      SdkOptional<bool?> isError}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUserToolResultEventParams _copyWith({Object? type_ = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? content = sdkOmittedValue, Object? isError = sdkOmittedValue}) => BetaManagedAgentsUserToolResultEventParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUserToolResultEventParamsType,
-    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
-    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<List<BetaManagedAgentsToolResultContentBlock>>,
-    isError: identical(isError, sdkOmittedValue) ? this.isError : isError as SdkOptional<bool?>,
-  );
+  BetaManagedAgentsUserToolResultEventParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? toolUseId = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? isError = sdkOmittedValue}) =>
+      BetaManagedAgentsUserToolResultEventParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsUserToolResultEventParamsType,
+        toolUseId: identical(toolUseId, sdkOmittedValue)
+            ? this.toolUseId
+            : toolUseId as String,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content
+                as SdkOptional<List<BetaManagedAgentsToolResultContentBlock>>,
+        isError: identical(isError, sdkOmittedValue)
+            ? this.isError
+            : isError as SdkOptional<bool?>,
+      );
 
-  factory BetaManagedAgentsUserToolResultEventParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUserToolResultEventParams(
-    type_: (json['type'] != null ? BetaManagedAgentsUserToolResultEventParamsType.fromJson(json['type'] as String) : null)!,
-    toolUseId: (json['tool_use_id'] as String?)!,
-    content: json['content'] != null ? SdkPresent(((json['content'] as List?)?.map((e) => BetaManagedAgentsToolResultContentBlock.fromJson(e)).toList())!) : const SdkOmitted(),
-    isError: json.containsKey('is_error') ? SdkPresent(json['is_error'] as bool?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsUserToolResultEventParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUserToolResultEventParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUserToolResultEventParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        toolUseId: (json['tool_use_id'] as String?)!,
+        content: json['content'] != null
+            ? SdkPresent(((json['content'] as List?)
+                ?.map(
+                    (e) => BetaManagedAgentsToolResultContentBlock.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+        isError: json.containsKey('is_error')
+            ? SdkPresent(json['is_error'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'tool_use_id': toolUseId,
-    ...switch (content) {
-      SdkPresent<List<BetaManagedAgentsToolResultContentBlock>>(value: final value) => {'content': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (isError) {
-      SdkPresent<bool?>(value: final value) => {'is_error': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        'tool_use_id': toolUseId,
+        ...switch (content) {
+          SdkPresent<List<BetaManagedAgentsToolResultContentBlock>>(
+            value: final value
+          ) =>
+            {
+              'content': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (isError) {
+          SdkPresent<bool?>(value: final value) => {
+              'is_error': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

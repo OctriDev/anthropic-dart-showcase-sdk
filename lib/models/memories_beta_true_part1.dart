@@ -8,64 +8,105 @@ part of 'memories_beta_true.dart';
 class BetaManagedAgentsCreateMemoryParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Hierarchical path for the new memory, e.g. `/projects/foo/notes.md`. Must start with `/`, contain at least one non-empty segment, and be at most 1,024 bytes. Must not contain empty segments, `.` or `..` segments, control or format characters, or the Unicode line and paragraph separators (U+2028, U+2029), and must be NFC-normalized. Paths are case-sensitive.
   final String path;
+
   /// UTF-8 text content for the new memory. Maximum 100 kB (102,400 bytes). Required; pass `""` explicitly to create an empty memory.
   final String? content;
 
-  const BetaManagedAgentsCreateMemoryParams({required this.path, required this.content});
+  const BetaManagedAgentsCreateMemoryParams(
+      {required this.path, required this.content});
 
-  BetaManagedAgentsCreateMemoryParams Function({String path, String? content}) get copyWith => _copyWith;
+  BetaManagedAgentsCreateMemoryParams Function({String path, String? content})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsCreateMemoryParams _copyWith({Object? path = sdkOmittedValue, Object? content = sdkOmittedValue}) => BetaManagedAgentsCreateMemoryParams(
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    content: identical(content, sdkOmittedValue) ? this.content : content as String?,
-  );
+  BetaManagedAgentsCreateMemoryParams _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? content = sdkOmittedValue}) =>
+      BetaManagedAgentsCreateMemoryParams(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as String?,
+      );
 
-  factory BetaManagedAgentsCreateMemoryParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsCreateMemoryParams(
-    path: (json['path'] as String?)!,
-    content: json.containsKey('content') ? json['content'] as String? : throw ArgumentError.value(null, 'content', 'Required property is missing'),
-  );
+  factory BetaManagedAgentsCreateMemoryParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsCreateMemoryParams(
+        path: (json['path'] as String?)!,
+        content: json.containsKey('content')
+            ? json['content'] as String?
+            : throw ArgumentError.value(
+                null, 'content', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'path': path,
-    'content': content,
-  };
+        'path': path,
+        'content': content,
+      };
 }
 
 /// Response payload for List memories.
 class BetaManagedAgentsListMemoriesResult {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// One page of results. Each item is either a `memory` object or, when `depth` was set, a `memory_prefix` rollup marker. Items are returned in a stable, server-defined order.
   final SdkOptional<List<BetaManagedAgentsMemoryListItem>> data;
+
   /// Opaque cursor for the next page (a `page_...` value), or `null` if there are no more results. Pass as `page` on the next request.
   final SdkOptional<String?> nextPage;
 
-  const BetaManagedAgentsListMemoriesResult({this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
+  const BetaManagedAgentsListMemoriesResult(
+      {this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
 
-  BetaManagedAgentsListMemoriesResult Function({SdkOptional<List<BetaManagedAgentsMemoryListItem>> data, SdkOptional<String?> nextPage}) get copyWith => _copyWith;
+  BetaManagedAgentsListMemoriesResult Function(
+      {SdkOptional<List<BetaManagedAgentsMemoryListItem>> data,
+      SdkOptional<String?> nextPage}) get copyWith => _copyWith;
 
-  BetaManagedAgentsListMemoriesResult _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaManagedAgentsListMemoriesResult(
-    data: identical(data, sdkOmittedValue) ? this.data : data as SdkOptional<List<BetaManagedAgentsMemoryListItem>>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as SdkOptional<String?>,
-  );
+  BetaManagedAgentsListMemoriesResult _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaManagedAgentsListMemoriesResult(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as SdkOptional<List<BetaManagedAgentsMemoryListItem>>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as SdkOptional<String?>,
+      );
 
-  factory BetaManagedAgentsListMemoriesResult.fromJson(Map<String, dynamic> json) => BetaManagedAgentsListMemoriesResult(
-    data: json['data'] != null ? SdkPresent(((json['data'] as List?)?.map((e) => BetaManagedAgentsMemoryListItem.fromJson(e)).toList())!) : const SdkOmitted(),
-    nextPage: json.containsKey('next_page') ? SdkPresent(json['next_page'] as String?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsListMemoriesResult.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsListMemoriesResult(
+        data: json['data'] != null
+            ? SdkPresent(((json['data'] as List?)
+                ?.map((e) => BetaManagedAgentsMemoryListItem.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+        nextPage: json.containsKey('next_page')
+            ? SdkPresent(json['next_page'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (data) {
-      SdkPresent<List<BetaManagedAgentsMemoryListItem>>(value: final value) => {'data': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPage) {
-      SdkPresent<String?>(value: final value) => {'next_page': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (data) {
+          SdkPresent<List<BetaManagedAgentsMemoryListItem>>(
+            value: final value
+          ) =>
+            {
+              'data': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPage) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class BetaManagedAgentsMemoryListItem {
@@ -74,61 +115,102 @@ sealed class BetaManagedAgentsMemoryListItem {
   const BetaManagedAgentsMemoryListItem();
   factory BetaManagedAgentsMemoryListItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsMemory.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMemoryListItemBetaManagedAgentsMemory(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsMemoryPrefix.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMemoryListItemBetaManagedAgentsMemoryPrefix(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsMemory.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMemoryListItemBetaManagedAgentsMemory(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsMemoryPrefix.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMemoryListItemBetaManagedAgentsMemoryPrefix(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsMemoryListItemBetaManagedAgentsMemory(BetaManagedAgentsMemory.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsMemoryListItemBetaManagedAgentsMemoryPrefix(BetaManagedAgentsMemoryPrefix.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"memory", "memory_prefix"}.contains(json["type"])) { return UnknownBetaManagedAgentsMemoryListItem(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsMemoryListItem");
+    try {
+      return BetaManagedAgentsMemoryListItemBetaManagedAgentsMemory(
+          BetaManagedAgentsMemory.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsMemoryListItemBetaManagedAgentsMemoryPrefix(
+          BetaManagedAgentsMemoryPrefix.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"memory", "memory_prefix"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsMemoryListItem(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsMemoryListItem");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMemoryListItemBetaManagedAgentsMemory extends BetaManagedAgentsMemoryListItem {
+final class BetaManagedAgentsMemoryListItemBetaManagedAgentsMemory
+    extends BetaManagedAgentsMemoryListItem {
   final BetaManagedAgentsMemory value;
   const BetaManagedAgentsMemoryListItemBetaManagedAgentsMemory(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMemoryListItemBetaManagedAgentsMemoryPrefix extends BetaManagedAgentsMemoryListItem {
+final class BetaManagedAgentsMemoryListItemBetaManagedAgentsMemoryPrefix
+    extends BetaManagedAgentsMemoryListItem {
   final BetaManagedAgentsMemoryPrefix value;
-  const BetaManagedAgentsMemoryListItemBetaManagedAgentsMemoryPrefix(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMemoryListItemBetaManagedAgentsMemoryPrefix(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMemoryListItem] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMemoryListItem extends BetaManagedAgentsMemoryListItem {
+final class UnknownBetaManagedAgentsMemoryListItem
+    extends BetaManagedAgentsMemoryListItem {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsMemoryListItem(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// A rolled-up directory marker returned by List memories when `depth` is set. Indicates that one or more memories exist deeper than the requested depth under this prefix. This is a list-time rollup, not a stored resource; it has no ID and no lifecycle. Each prefix counts toward the page `limit` and interleaves with `memory` items in path order.
 class BetaManagedAgentsMemoryPrefix {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMemoryPrefixType type_;
+
   /// The rolled-up path prefix, including a trailing `/` (e.g. `/projects/foo/`). Pass this value as `path_prefix` on a subsequent list call to drill into the directory.
   final String path;
 
-  const BetaManagedAgentsMemoryPrefix({required this.type_, required this.path});
+  const BetaManagedAgentsMemoryPrefix(
+      {required this.type_, required this.path});
 
-  BetaManagedAgentsMemoryPrefix Function({BetaManagedAgentsMemoryPrefixType type_, String path}) get copyWith => _copyWith;
+  BetaManagedAgentsMemoryPrefix Function(
+      {BetaManagedAgentsMemoryPrefixType type_,
+      String path}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMemoryPrefix _copyWith({Object? type_ = sdkOmittedValue, Object? path = sdkOmittedValue}) => BetaManagedAgentsMemoryPrefix(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMemoryPrefixType,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-  );
+  BetaManagedAgentsMemoryPrefix _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? path = sdkOmittedValue}) =>
+      BetaManagedAgentsMemoryPrefix(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsMemoryPrefixType,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+      );
 
-  factory BetaManagedAgentsMemoryPrefix.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMemoryPrefix(
-    type_: (json['type'] != null ? BetaManagedAgentsMemoryPrefixType.fromJson(json['type'] as String) : null)!,
-    path: (json['path'] as String?)!,
-  );
+  factory BetaManagedAgentsMemoryPrefix.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsMemoryPrefix(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsMemoryPrefixType.fromJson(json['type'] as String)
+            : null)!,
+        path: (json['path'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'path': path,
-  };
+        'type': type_.toJson(),
+        'path': path,
+      };
 }
