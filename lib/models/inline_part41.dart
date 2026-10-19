@@ -5,58 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 41)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaRequestWebSearchResultBlockType {
-  webSearchResult;
-
-  static BetaRequestWebSearchResultBlockType fromJson(String value) {
-    switch (value) {
-      case 'web_search_result':
-        return BetaRequestWebSearchResultBlockType.webSearchResult;
-      default:
-        throw ArgumentError(
-            'Unknown BetaRequestWebSearchResultBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaRequestWebSearchResultBlockType.webSearchResult:
-        return 'web_search_result';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaRequestWebSearchResultLocationCitationType {
-  webSearchResultLocation;
-
-  static BetaRequestWebSearchResultLocationCitationType fromJson(String value) {
-    switch (value) {
-      case 'web_search_result_location':
-        return BetaRequestWebSearchResultLocationCitationType
-            .webSearchResultLocation;
-      default:
-        throw ArgumentError(
-            'Unknown BetaRequestWebSearchResultLocationCitationType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaRequestWebSearchResultLocationCitationType
-            .webSearchResultLocation:
-        return 'web_search_result_location';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaRequestWebSearchToolResultBlockType {
   webSearchToolResult;
 
@@ -332,6 +280,56 @@ enum BetaResponseCharLocationCitationType {
     switch (this) {
       case BetaResponseCharLocationCitationType.charLocation:
         return 'char_location';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// The type of context management edit applied.
+enum BetaResponseClearThinking20251015EditType {
+  clearThinking20251015;
+
+  static BetaResponseClearThinking20251015EditType fromJson(String value) {
+    switch (value) {
+      case 'clear_thinking_20251015':
+        return BetaResponseClearThinking20251015EditType.clearThinking20251015;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseClearThinking20251015EditType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaResponseClearThinking20251015EditType.clearThinking20251015:
+        return 'clear_thinking_20251015';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// The type of context management edit applied.
+enum BetaResponseClearToolUses20250919EditType {
+  clearToolUses20250919;
+
+  static BetaResponseClearToolUses20250919EditType fromJson(String value) {
+    switch (value) {
+      case 'clear_tool_uses_20250919':
+        return BetaResponseClearToolUses20250919EditType.clearToolUses20250919;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponseClearToolUses20250919EditType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaResponseClearToolUses20250919EditType.clearToolUses20250919:
+        return 'clear_tool_uses_20250919';
     }
   }
 

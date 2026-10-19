@@ -4,56 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 42)
-/// The type of context management edit applied.
-enum BetaResponseClearThinking20251015EditType {
-  clearThinking20251015;
-
-  static BetaResponseClearThinking20251015EditType fromJson(String value) {
-    switch (value) {
-      case 'clear_thinking_20251015':
-        return BetaResponseClearThinking20251015EditType.clearThinking20251015;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseClearThinking20251015EditType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaResponseClearThinking20251015EditType.clearThinking20251015:
-        return 'clear_thinking_20251015';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// The type of context management edit applied.
-enum BetaResponseClearToolUses20250919EditType {
-  clearToolUses20250919;
-
-  static BetaResponseClearToolUses20250919EditType fromJson(String value) {
-    switch (value) {
-      case 'clear_tool_uses_20250919':
-        return BetaResponseClearToolUses20250919EditType.clearToolUses20250919;
-      default:
-        throw ArgumentError(
-            'Unknown BetaResponseClearToolUses20250919EditType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaResponseClearToolUses20250919EditType.clearToolUses20250919:
-        return 'clear_tool_uses_20250919';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Required `string` value serialized in the `type` wire field.
 enum BetaResponseCodeExecutionOutputBlockType {
   codeExecutionOutput;
@@ -326,6 +276,55 @@ enum BetaResponseMCPToolResultBlockType {
     switch (this) {
       case BetaResponseMCPToolResultBlockType.mcpToolResult:
         return 'mcp_tool_result';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaResponseMCPToolUseBlockType {
+  mcpToolUse;
+
+  static BetaResponseMCPToolUseBlockType fromJson(String value) {
+    switch (value) {
+      case 'mcp_tool_use':
+        return BetaResponseMCPToolUseBlockType.mcpToolUse;
+      default:
+        throw ArgumentError('Unknown BetaResponseMCPToolUseBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaResponseMCPToolUseBlockType.mcpToolUse:
+        return 'mcp_tool_use';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaResponsePageLocationCitationType {
+  pageLocation;
+
+  static BetaResponsePageLocationCitationType fromJson(String value) {
+    switch (value) {
+      case 'page_location':
+        return BetaResponsePageLocationCitationType.pageLocation;
+      default:
+        throw ArgumentError(
+            'Unknown BetaResponsePageLocationCitationType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaResponsePageLocationCitationType.pageLocation:
+        return 'page_location';
     }
   }
 

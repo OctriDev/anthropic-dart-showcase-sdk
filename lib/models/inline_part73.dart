@@ -4,33 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 73)
-final class ListBetaOrganizationsAnalyticsSkillsOrderVariant0 {
-  final String value;
-
-  const ListBetaOrganizationsAnalyticsSkillsOrderVariant0._(this.value);
-
-  factory ListBetaOrganizationsAnalyticsSkillsOrderVariant0.fromJson(
-          String value) =>
-      ListBetaOrganizationsAnalyticsSkillsOrderVariant0._(value);
-
-  static const asc = ListBetaOrganizationsAnalyticsSkillsOrderVariant0._('asc');
-  static const desc =
-      ListBetaOrganizationsAnalyticsSkillsOrderVariant0._('desc');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is ListBetaOrganizationsAnalyticsSkillsOrderVariant0 &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
 final class RetrieveBetaOrganizationsAnalyticsUsageReportGroupByItem {
   final String value;
 
@@ -401,6 +374,36 @@ final class ListBetaOrganizationsAnalyticsUsersOrderVariant0 {
   @override
   bool operator ==(Object other) =>
       other is ListBetaOrganizationsAnalyticsUsersOrderVariant0 &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class ListBetaOrganizationsApiKeysStatusVariant0 {
+  final String value;
+
+  const ListBetaOrganizationsApiKeysStatusVariant0._(this.value);
+
+  factory ListBetaOrganizationsApiKeysStatusVariant0.fromJson(String value) =>
+      ListBetaOrganizationsApiKeysStatusVariant0._(value);
+
+  static const active = ListBetaOrganizationsApiKeysStatusVariant0._('active');
+  static const archived =
+      ListBetaOrganizationsApiKeysStatusVariant0._('archived');
+  static const expired =
+      ListBetaOrganizationsApiKeysStatusVariant0._('expired');
+  static const inactive =
+      ListBetaOrganizationsApiKeysStatusVariant0._('inactive');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ListBetaOrganizationsApiKeysStatusVariant0 &&
       other.value == value;
 
   @override

@@ -5,62 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 67)
 /// Required `string` value serialized in the `type` wire field.
-enum ResponseTextEditorCodeExecutionCreateResultBlockType {
-  textEditorCodeExecutionCreateResult;
-
-  static ResponseTextEditorCodeExecutionCreateResultBlockType fromJson(
-      String value) {
-    switch (value) {
-      case 'text_editor_code_execution_create_result':
-        return ResponseTextEditorCodeExecutionCreateResultBlockType
-            .textEditorCodeExecutionCreateResult;
-      default:
-        throw ArgumentError(
-            'Unknown ResponseTextEditorCodeExecutionCreateResultBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case ResponseTextEditorCodeExecutionCreateResultBlockType
-            .textEditorCodeExecutionCreateResult:
-        return 'text_editor_code_execution_create_result';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum ResponseTextEditorCodeExecutionStrReplaceResultBlockType {
-  textEditorCodeExecutionStrReplaceResult;
-
-  static ResponseTextEditorCodeExecutionStrReplaceResultBlockType fromJson(
-      String value) {
-    switch (value) {
-      case 'text_editor_code_execution_str_replace_result':
-        return ResponseTextEditorCodeExecutionStrReplaceResultBlockType
-            .textEditorCodeExecutionStrReplaceResult;
-      default:
-        throw ArgumentError(
-            'Unknown ResponseTextEditorCodeExecutionStrReplaceResultBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case ResponseTextEditorCodeExecutionStrReplaceResultBlockType
-            .textEditorCodeExecutionStrReplaceResult:
-        return 'text_editor_code_execution_str_replace_result';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum ResponseTextEditorCodeExecutionToolResultBlockType {
   textEditorCodeExecutionToolResult;
 
@@ -341,6 +285,56 @@ enum ResponseWebFetchResultBlockType {
     switch (this) {
       case ResponseWebFetchResultBlockType.webFetchResult:
         return 'web_fetch_result';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum ResponseWebFetchToolResultBlockType {
+  webFetchToolResult;
+
+  static ResponseWebFetchToolResultBlockType fromJson(String value) {
+    switch (value) {
+      case 'web_fetch_tool_result':
+        return ResponseWebFetchToolResultBlockType.webFetchToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown ResponseWebFetchToolResultBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ResponseWebFetchToolResultBlockType.webFetchToolResult:
+        return 'web_fetch_tool_result';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum ResponseWebFetchToolResultErrorType {
+  webFetchToolResultError;
+
+  static ResponseWebFetchToolResultErrorType fromJson(String value) {
+    switch (value) {
+      case 'web_fetch_tool_result_error':
+        return ResponseWebFetchToolResultErrorType.webFetchToolResultError;
+      default:
+        throw ArgumentError(
+            'Unknown ResponseWebFetchToolResultErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ResponseWebFetchToolResultErrorType.webFetchToolResultError:
+        return 'web_fetch_tool_result_error';
     }
   }
 

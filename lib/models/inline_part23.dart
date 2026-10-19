@@ -5,58 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 23)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsMemoryStoreType {
-  memoryStore;
-
-  static BetaManagedAgentsMemoryStoreType fromJson(String value) {
-    switch (value) {
-      case 'memory_store':
-        return BetaManagedAgentsMemoryStoreType.memoryStore;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsMemoryStoreType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsMemoryStoreType.memoryStore:
-        return 'memory_store';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType {
-  memoryStoreArchivedError;
-
-  static BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
-      fromJson(String value) {
-    switch (value) {
-      case 'memory_store_archived_error':
-        return BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
-            .memoryStoreArchivedError;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
-            .memoryStoreArchivedError:
-        return 'memory_store_archived_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsMemoryStoreArchivedRunErrorType {
   memoryStoreArchivedError;
 
@@ -321,6 +269,54 @@ enum BetaManagedAgentsModelVariant14 {
     switch (this) {
       case BetaManagedAgentsModelVariant14.claudeSonnet4520250929:
         return 'claude-sonnet-4-5-20250929';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// High-performance model for coding and agents
+enum BetaManagedAgentsModelVariant2 {
+  claudeSonnet5;
+
+  static BetaManagedAgentsModelVariant2 fromJson(String value) {
+    switch (value) {
+      case 'claude-sonnet-5':
+        return BetaManagedAgentsModelVariant2.claudeSonnet5;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant2: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsModelVariant2.claudeSonnet5:
+        return 'claude-sonnet-5';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Next generation of intelligence for the hardest knowledge work and coding problems
+enum BetaManagedAgentsModelVariant3 {
+  claudeFable5;
+
+  static BetaManagedAgentsModelVariant3 fromJson(String value) {
+    switch (value) {
+      case 'claude-fable-5':
+        return BetaManagedAgentsModelVariant3.claudeFable5;
+      default:
+        throw ArgumentError('Unknown BetaManagedAgentsModelVariant3: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsModelVariant3.claudeFable5:
+        return 'claude-fable-5';
     }
   }
 

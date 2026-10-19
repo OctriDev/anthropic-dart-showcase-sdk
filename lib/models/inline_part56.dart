@@ -4,59 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 56)
-/// Object type. For Workspace Members, this is always `"workspace_member"`.
-enum BetaWorkspaceMemberSchemaType {
-  workspaceMember;
-
-  static BetaWorkspaceMemberSchemaType fromJson(String value) {
-    switch (value) {
-      case 'workspace_member':
-        return BetaWorkspaceMemberSchemaType.workspaceMember;
-      default:
-        throw ArgumentError('Unknown BetaWorkspaceMemberSchemaType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaWorkspaceMemberSchemaType.workspaceMember:
-        return 'workspace_member';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`.
-final class BetaWorkspaceRateLimitGroupType {
-  final String value;
-
-  const BetaWorkspaceRateLimitGroupType._(this.value);
-
-  factory BetaWorkspaceRateLimitGroupType.fromJson(String value) =>
-      BetaWorkspaceRateLimitGroupType._(value);
-
-  static const batch = BetaWorkspaceRateLimitGroupType._('batch');
-  static const files = BetaWorkspaceRateLimitGroupType._('files');
-  static const modelGroup = BetaWorkspaceRateLimitGroupType._('model_group');
-  static const skills = BetaWorkspaceRateLimitGroupType._('skills');
-  static const tokenCount = BetaWorkspaceRateLimitGroupType._('token_count');
-  static const webSearch = BetaWorkspaceRateLimitGroupType._('web_search');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is BetaWorkspaceRateLimitGroupType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
 /// Object type. Always `workspace_rate_limit` for workspace rate-limit entries.
 enum BetaWorkspaceRateLimitType {
   workspaceRateLimit;
@@ -318,6 +265,54 @@ enum CitationsDeltaType {
     switch (this) {
       case CitationsDeltaType.citationsDelta:
         return 'citations_delta';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
+enum CodeExecutionTool20250522Name {
+  codeExecution;
+
+  static CodeExecutionTool20250522Name fromJson(String value) {
+    switch (value) {
+      case 'code_execution':
+        return CodeExecutionTool20250522Name.codeExecution;
+      default:
+        throw ArgumentError('Unknown CodeExecutionTool20250522Name: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case CodeExecutionTool20250522Name.codeExecution:
+        return 'code_execution';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum CodeExecutionTool20250522Type {
+  codeExecution20250522;
+
+  static CodeExecutionTool20250522Type fromJson(String value) {
+    switch (value) {
+      case 'code_execution_20250522':
+        return CodeExecutionTool20250522Type.codeExecution20250522;
+      default:
+        throw ArgumentError('Unknown CodeExecutionTool20250522Type: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case CodeExecutionTool20250522Type.codeExecution20250522:
+        return 'code_execution_20250522';
     }
   }
 

@@ -5,61 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 55)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaWebhookVaultCredentialArchivedEventDataType {
-  vaultCredentialArchived;
-
-  static BetaWebhookVaultCredentialArchivedEventDataType fromJson(
-      String value) {
-    switch (value) {
-      case 'vault_credential.archived':
-        return BetaWebhookVaultCredentialArchivedEventDataType
-            .vaultCredentialArchived;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookVaultCredentialArchivedEventDataType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaWebhookVaultCredentialArchivedEventDataType
-            .vaultCredentialArchived:
-        return 'vault_credential.archived';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaWebhookVaultCredentialCreatedEventDataType {
-  vaultCredentialCreated;
-
-  static BetaWebhookVaultCredentialCreatedEventDataType fromJson(String value) {
-    switch (value) {
-      case 'vault_credential.created':
-        return BetaWebhookVaultCredentialCreatedEventDataType
-            .vaultCredentialCreated;
-      default:
-        throw ArgumentError(
-            'Unknown BetaWebhookVaultCredentialCreatedEventDataType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaWebhookVaultCredentialCreatedEventDataType
-            .vaultCredentialCreated:
-        return 'vault_credential.created';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaWebhookVaultCredentialDeletedEventDataType {
   vaultCredentialDeleted;
 
@@ -332,4 +277,57 @@ enum BetaWorkspaceType {
 
   @override
   String toString() => toJson();
+}
+
+/// Object type. For Workspace Members, this is always `"workspace_member"`.
+enum BetaWorkspaceMemberSchemaType {
+  workspaceMember;
+
+  static BetaWorkspaceMemberSchemaType fromJson(String value) {
+    switch (value) {
+      case 'workspace_member':
+        return BetaWorkspaceMemberSchemaType.workspaceMember;
+      default:
+        throw ArgumentError('Unknown BetaWorkspaceMemberSchemaType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaWorkspaceMemberSchemaType.workspaceMember:
+        return 'workspace_member';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`.
+final class BetaWorkspaceRateLimitGroupType {
+  final String value;
+
+  const BetaWorkspaceRateLimitGroupType._(this.value);
+
+  factory BetaWorkspaceRateLimitGroupType.fromJson(String value) =>
+      BetaWorkspaceRateLimitGroupType._(value);
+
+  static const batch = BetaWorkspaceRateLimitGroupType._('batch');
+  static const files = BetaWorkspaceRateLimitGroupType._('files');
+  static const modelGroup = BetaWorkspaceRateLimitGroupType._('model_group');
+  static const skills = BetaWorkspaceRateLimitGroupType._('skills');
+  static const tokenCount = BetaWorkspaceRateLimitGroupType._('token_count');
+  static const webSearch = BetaWorkspaceRateLimitGroupType._('web_search');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is BetaWorkspaceRateLimitGroupType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
 }

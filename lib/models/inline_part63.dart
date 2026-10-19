@@ -5,55 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 63)
 /// Required `string` value serialized in the `type` wire field.
-enum RequestContainerUploadBlockType {
-  containerUpload;
-
-  static RequestContainerUploadBlockType fromJson(String value) {
-    switch (value) {
-      case 'container_upload':
-        return RequestContainerUploadBlockType.containerUpload;
-      default:
-        throw ArgumentError('Unknown RequestContainerUploadBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RequestContainerUploadBlockType.containerUpload:
-        return 'container_upload';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum RequestContentBlockLocationCitationType {
-  contentBlockLocation;
-
-  static RequestContentBlockLocationCitationType fromJson(String value) {
-    switch (value) {
-      case 'content_block_location':
-        return RequestContentBlockLocationCitationType.contentBlockLocation;
-      default:
-        throw ArgumentError(
-            'Unknown RequestContentBlockLocationCitationType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RequestContentBlockLocationCitationType.contentBlockLocation:
-        return 'content_block_location';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum RequestDocumentBlockType {
   document;
 
@@ -328,6 +279,62 @@ enum RequestTextBlockType {
     switch (this) {
       case RequestTextBlockType.text:
         return 'text';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum RequestTextEditorCodeExecutionCreateResultBlockType {
+  textEditorCodeExecutionCreateResult;
+
+  static RequestTextEditorCodeExecutionCreateResultBlockType fromJson(
+      String value) {
+    switch (value) {
+      case 'text_editor_code_execution_create_result':
+        return RequestTextEditorCodeExecutionCreateResultBlockType
+            .textEditorCodeExecutionCreateResult;
+      default:
+        throw ArgumentError(
+            'Unknown RequestTextEditorCodeExecutionCreateResultBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RequestTextEditorCodeExecutionCreateResultBlockType
+            .textEditorCodeExecutionCreateResult:
+        return 'text_editor_code_execution_create_result';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum RequestTextEditorCodeExecutionStrReplaceResultBlockType {
+  textEditorCodeExecutionStrReplaceResult;
+
+  static RequestTextEditorCodeExecutionStrReplaceResultBlockType fromJson(
+      String value) {
+    switch (value) {
+      case 'text_editor_code_execution_str_replace_result':
+        return RequestTextEditorCodeExecutionStrReplaceResultBlockType
+            .textEditorCodeExecutionStrReplaceResult;
+      default:
+        throw ArgumentError(
+            'Unknown RequestTextEditorCodeExecutionStrReplaceResultBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RequestTextEditorCodeExecutionStrReplaceResultBlockType
+            .textEditorCodeExecutionStrReplaceResult:
+        return 'text_editor_code_execution_str_replace_result';
     }
   }
 

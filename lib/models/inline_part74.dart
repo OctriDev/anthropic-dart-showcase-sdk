@@ -4,36 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 74)
-final class ListBetaOrganizationsApiKeysStatusVariant0 {
-  final String value;
-
-  const ListBetaOrganizationsApiKeysStatusVariant0._(this.value);
-
-  factory ListBetaOrganizationsApiKeysStatusVariant0.fromJson(String value) =>
-      ListBetaOrganizationsApiKeysStatusVariant0._(value);
-
-  static const active = ListBetaOrganizationsApiKeysStatusVariant0._('active');
-  static const archived =
-      ListBetaOrganizationsApiKeysStatusVariant0._('archived');
-  static const expired =
-      ListBetaOrganizationsApiKeysStatusVariant0._('expired');
-  static const inactive =
-      ListBetaOrganizationsApiKeysStatusVariant0._('inactive');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is ListBetaOrganizationsApiKeysStatusVariant0 &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
 final class ListBetaOrganizationsInvitesStatusesItem {
   final String value;
 

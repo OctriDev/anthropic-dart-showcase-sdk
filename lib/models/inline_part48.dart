@@ -5,54 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 48)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaTextEditor20250429Type {
-  textEditor20250429;
-
-  static BetaTextEditor20250429Type fromJson(String value) {
-    switch (value) {
-      case 'text_editor_20250429':
-        return BetaTextEditor20250429Type.textEditor20250429;
-      default:
-        throw ArgumentError('Unknown BetaTextEditor20250429Type: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaTextEditor20250429Type.textEditor20250429:
-        return 'text_editor_20250429';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
-enum BetaTextEditor20250728Name {
-  strReplaceBasedEditTool;
-
-  static BetaTextEditor20250728Name fromJson(String value) {
-    switch (value) {
-      case 'str_replace_based_edit_tool':
-        return BetaTextEditor20250728Name.strReplaceBasedEditTool;
-      default:
-        throw ArgumentError('Unknown BetaTextEditor20250728Name: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaTextEditor20250728Name.strReplaceBasedEditTool:
-        return 'str_replace_based_edit_tool';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaTextEditor20250728Type {
   textEditor20250728;
 
@@ -322,6 +274,55 @@ enum BetaToolChangeMCPToolReferenceType {
     switch (this) {
       case BetaToolChangeMCPToolReferenceType.mcpToolReference:
         return 'mcp_tool_reference';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaToolChangeMCPToolsetReferenceType {
+  mcpToolsetReference;
+
+  static BetaToolChangeMCPToolsetReferenceType fromJson(String value) {
+    switch (value) {
+      case 'mcp_toolset_reference':
+        return BetaToolChangeMCPToolsetReferenceType.mcpToolsetReference;
+      default:
+        throw ArgumentError(
+            'Unknown BetaToolChangeMCPToolsetReferenceType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaToolChangeMCPToolsetReferenceType.mcpToolsetReference:
+        return 'mcp_toolset_reference';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaToolChangeToolReferenceType {
+  toolReference;
+
+  static BetaToolChangeToolReferenceType fromJson(String value) {
+    switch (value) {
+      case 'tool_reference':
+        return BetaToolChangeToolReferenceType.toolReference;
+      default:
+        throw ArgumentError('Unknown BetaToolChangeToolReferenceType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaToolChangeToolReferenceType.toolReference:
+        return 'tool_reference';
     }
   }
 

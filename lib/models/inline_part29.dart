@@ -5,62 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 29)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType {
-  spanOutcomeEvaluationOngoing;
-
-  static BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType fromJson(
-      String value) {
-    switch (value) {
-      case 'span.outcome_evaluation_ongoing':
-        return BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType
-            .spanOutcomeEvaluationOngoing;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType
-            .spanOutcomeEvaluationOngoing:
-        return 'span.outcome_evaluation_ongoing';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsSpanOutcomeEvaluationStartEventType {
-  spanOutcomeEvaluationStart;
-
-  static BetaManagedAgentsSpanOutcomeEvaluationStartEventType fromJson(
-      String value) {
-    switch (value) {
-      case 'span.outcome_evaluation_start':
-        return BetaManagedAgentsSpanOutcomeEvaluationStartEventType
-            .spanOutcomeEvaluationStart;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsSpanOutcomeEvaluationStartEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsSpanOutcomeEvaluationStartEventType
-            .spanOutcomeEvaluationStart:
-        return 'span.outcome_evaluation_start';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsStaticBearerAuthResponseType {
   staticBearer;
 
@@ -334,6 +278,58 @@ enum BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType {
       case BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType
             .clientSecretBasic:
         return 'client_secret_basic';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsTokenEndpointAuthNoneParamType {
+  none;
+
+  static BetaManagedAgentsTokenEndpointAuthNoneParamType fromJson(
+      String value) {
+    switch (value) {
+      case 'none':
+        return BetaManagedAgentsTokenEndpointAuthNoneParamType.none;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsTokenEndpointAuthNoneParamType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsTokenEndpointAuthNoneParamType.none:
+        return 'none';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsTokenEndpointAuthNoneResponseType {
+  none;
+
+  static BetaManagedAgentsTokenEndpointAuthNoneResponseType fromJson(
+      String value) {
+    switch (value) {
+      case 'none':
+        return BetaManagedAgentsTokenEndpointAuthNoneResponseType.none;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsTokenEndpointAuthNoneResponseType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsTokenEndpointAuthNoneResponseType.none:
+        return 'none';
     }
   }
 

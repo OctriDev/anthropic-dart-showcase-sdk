@@ -5,56 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 20)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsFileDocumentSourceType {
-  file;
-
-  static BetaManagedAgentsFileDocumentSourceType fromJson(String value) {
-    switch (value) {
-      case 'file':
-        return BetaManagedAgentsFileDocumentSourceType.file;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsFileDocumentSourceType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsFileDocumentSourceType.file:
-        return 'file';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsFileImageSourceType {
-  file;
-
-  static BetaManagedAgentsFileImageSourceType fromJson(String value) {
-    switch (value) {
-      case 'file':
-        return BetaManagedAgentsFileImageSourceType.file;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsFileImageSourceType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsFileImageSourceType.file:
-        return 'file';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType {
   fileNotFoundError;
 
@@ -327,6 +277,56 @@ enum BetaManagedAgentsGlobToolConfigName {
   String toJson() {
     switch (this) {
       case BetaManagedAgentsGlobToolConfigName.glob:
+        return 'glob';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaManagedAgentsGlobToolConfigType {
+  glob;
+
+  static BetaManagedAgentsGlobToolConfigType fromJson(String value) {
+    switch (value) {
+      case 'glob':
+        return BetaManagedAgentsGlobToolConfigType.glob;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsGlobToolConfigType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsGlobToolConfigType.glob:
+        return 'glob';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Must be "glob".
+enum BetaManagedAgentsGlobToolConfigParamsName {
+  glob;
+
+  static BetaManagedAgentsGlobToolConfigParamsName fromJson(String value) {
+    switch (value) {
+      case 'glob':
+        return BetaManagedAgentsGlobToolConfigParamsName.glob;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsGlobToolConfigParamsName: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsGlobToolConfigParamsName.glob:
         return 'glob';
     }
   }

@@ -4,51 +4,13 @@
 part of 'workspaces.dart';
 
 // workspaces domain models
-sealed class BetaDataResidencyUpdateParamsAllowedInferenceGeos {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  const BetaDataResidencyUpdateParamsAllowedInferenceGeos();
-  factory BetaDataResidencyUpdateParamsAllowedInferenceGeos.fromJson(
-      Object? json) {
-    try {
-      return BetaDataResidencyUpdateParamsAllowedInferenceGeosBetaAllowedInferenceGeo(
-          BetaAllowedInferenceGeo.fromJson(json as String));
-    } catch (_) {}
-    try {
-      return BetaDataResidencyUpdateParamsAllowedInferenceGeosUnrestricted678896b2(
-          Unrestricted678896b2.fromJson(json as String));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for BetaDataResidencyUpdateParamsAllowedInferenceGeos");
-  }
-  Object? toJson();
-}
-
-final class BetaDataResidencyUpdateParamsAllowedInferenceGeosBetaAllowedInferenceGeo
-    extends BetaDataResidencyUpdateParamsAllowedInferenceGeos {
-  final BetaAllowedInferenceGeo value;
-  const BetaDataResidencyUpdateParamsAllowedInferenceGeosBetaAllowedInferenceGeo(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
-}
-
-final class BetaDataResidencyUpdateParamsAllowedInferenceGeosUnrestricted678896b2
-    extends BetaDataResidencyUpdateParamsAllowedInferenceGeos {
-  final Unrestricted678896b2 value;
-  const BetaDataResidencyUpdateParamsAllowedInferenceGeosUnrestricted678896b2(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
-}
-
 /// Typed representation of the `BetaDataResidencyUpdateParams` API schema.
 class BetaDataResidencyUpdateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
   /// Permitted inference geo values. Use 'unrestricted' to allow all geos, or a list of specific geos.
-  final SdkOptional<dynamic> allowedInferenceGeos;
+  final SdkOptional<List<BetaAllowedInferenceGeo>?> allowedInferenceGeos;
 
   /// Default inference geo applied when requests omit the parameter. Must be a member of `allowed_inference_geos` unless `allowed_inference_geos` is `"unrestricted"`.
   final SdkOptional<BetaInferenceGeo?> defaultInferenceGeo;
@@ -58,7 +20,7 @@ class BetaDataResidencyUpdateParams {
       this.defaultInferenceGeo = const SdkOmitted()});
 
   BetaDataResidencyUpdateParams Function(
-          {SdkOptional<dynamic> allowedInferenceGeos,
+          {SdkOptional<List<BetaAllowedInferenceGeo>?> allowedInferenceGeos,
           SdkOptional<BetaInferenceGeo?> defaultInferenceGeo})
       get copyWith => _copyWith;
 
@@ -68,7 +30,8 @@ class BetaDataResidencyUpdateParams {
       BetaDataResidencyUpdateParams(
         allowedInferenceGeos: identical(allowedInferenceGeos, sdkOmittedValue)
             ? this.allowedInferenceGeos
-            : allowedInferenceGeos as SdkOptional<dynamic>,
+            : allowedInferenceGeos
+                as SdkOptional<List<BetaAllowedInferenceGeo>?>,
         defaultInferenceGeo: identical(defaultInferenceGeo, sdkOmittedValue)
             ? this.defaultInferenceGeo
             : defaultInferenceGeo as SdkOptional<BetaInferenceGeo?>,
@@ -77,7 +40,9 @@ class BetaDataResidencyUpdateParams {
   factory BetaDataResidencyUpdateParams.fromJson(Map<String, dynamic> json) =>
       BetaDataResidencyUpdateParams(
         allowedInferenceGeos: json.containsKey('allowed_inference_geos')
-            ? SdkPresent(json['allowed_inference_geos'])
+            ? SdkPresent((json['allowed_inference_geos'] as List?)
+                ?.map((e) => BetaAllowedInferenceGeo.fromJson(e as String))
+                .toList())
             : const SdkOmitted(),
         defaultInferenceGeo: json.containsKey('default_inference_geo')
             ? SdkPresent(json['default_inference_geo'] != null
@@ -89,8 +54,9 @@ class BetaDataResidencyUpdateParams {
 
   Map<String, dynamic> toJson() => {
         ...switch (allowedInferenceGeos) {
-          SdkPresent<dynamic>(value: final value) => {
-              'allowed_inference_geos': value,
+          SdkPresent<List<BetaAllowedInferenceGeo>?>(value: final value) => {
+              'allowed_inference_geos':
+                  value?.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },

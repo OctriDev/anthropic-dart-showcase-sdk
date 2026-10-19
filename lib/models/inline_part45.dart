@@ -4,54 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 45)
-/// Required `string` value serialized in the `type` wire field.
-enum BetaScopedApiKeyActorSchemaType {
-  scopedApiKeyActor;
-
-  static BetaScopedApiKeyActorSchemaType fromJson(String value) {
-    switch (value) {
-      case 'scoped_api_key_actor':
-        return BetaScopedApiKeyActorSchemaType.scopedApiKeyActor;
-      default:
-        throw ArgumentError('Unknown BetaScopedApiKeyActorSchemaType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaScopedApiKeyActorSchemaType.scopedApiKeyActor:
-        return 'scoped_api_key_actor';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaSeatTierScopeType {
-  seatTier;
-
-  static BetaSeatTierScopeType fromJson(String value) {
-    switch (value) {
-      case 'seat_tier':
-        return BetaSeatTierScopeType.seatTier;
-      default:
-        throw ArgumentError('Unknown BetaSeatTierScopeType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaSeatTierScopeType.seatTier:
-        return 'seat_tier';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Environment type
 enum BetaSelfHostedConfigType {
   selfHosted;
@@ -320,6 +272,59 @@ enum BetaServiceAccountType {
   String toJson() {
     switch (this) {
       case BetaServiceAccountType.serviceAccount:
+        return 'service_account';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Org-level role. Defaults to `developer`.
+final class BetaServiceAccountCreateParamsOrganizationRole {
+  final String value;
+
+  const BetaServiceAccountCreateParamsOrganizationRole._(this.value);
+
+  factory BetaServiceAccountCreateParamsOrganizationRole.fromJson(
+          String value) =>
+      BetaServiceAccountCreateParamsOrganizationRole._(value);
+
+  static const admin =
+      BetaServiceAccountCreateParamsOrganizationRole._('admin');
+  static const developer =
+      BetaServiceAccountCreateParamsOrganizationRole._('developer');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is BetaServiceAccountCreateParamsOrganizationRole &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaServiceAccountTargetType {
+  serviceAccount;
+
+  static BetaServiceAccountTargetType fromJson(String value) {
+    switch (value) {
+      case 'service_account':
+        return BetaServiceAccountTargetType.serviceAccount;
+      default:
+        throw ArgumentError('Unknown BetaServiceAccountTargetType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaServiceAccountTargetType.serviceAccount:
         return 'service_account';
     }
   }
