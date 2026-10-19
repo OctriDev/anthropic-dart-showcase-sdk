@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 37)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaRefusalStopDetailsType {
-  refusal;
-
-  static BetaRefusalStopDetailsType fromJson(String value) {
-    switch (value) {
-      case 'refusal': return BetaRefusalStopDetailsType.refusal;
-      default: throw ArgumentError('Unknown BetaRefusalStopDetailsType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaRefusalStopDetailsType.refusal: return 'refusal';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaRemoveFederationRuleWorkspaceResponseType {
-  federationRuleWorkspaceDeleted;
-
-  static BetaRemoveFederationRuleWorkspaceResponseType fromJson(String value) {
-    switch (value) {
-      case 'federation_rule_workspace_deleted': return BetaRemoveFederationRuleWorkspaceResponseType.federationRuleWorkspaceDeleted;
-      default: throw ArgumentError('Unknown BetaRemoveFederationRuleWorkspaceResponseType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaRemoveFederationRuleWorkspaceResponseType.federationRuleWorkspaceDeleted: return 'federation_rule_workspace_deleted';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaRequestAdvisorRedactedResultBlockType {
   advisorRedactedResult;
 
@@ -270,6 +228,48 @@ enum BetaRequestCodeExecutionOutputBlockType {
   String toJson() {
     switch (this) {
       case BetaRequestCodeExecutionOutputBlockType.codeExecutionOutput: return 'code_execution_output';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaRequestCodeExecutionResultBlockType {
+  codeExecutionResult;
+
+  static BetaRequestCodeExecutionResultBlockType fromJson(String value) {
+    switch (value) {
+      case 'code_execution_result': return BetaRequestCodeExecutionResultBlockType.codeExecutionResult;
+      default: throw ArgumentError('Unknown BetaRequestCodeExecutionResultBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaRequestCodeExecutionResultBlockType.codeExecutionResult: return 'code_execution_result';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaRequestCodeExecutionToolResultBlockType {
+  codeExecutionToolResult;
+
+  static BetaRequestCodeExecutionToolResultBlockType fromJson(String value) {
+    switch (value) {
+      case 'code_execution_tool_result': return BetaRequestCodeExecutionToolResultBlockType.codeExecutionToolResult;
+      default: throw ArgumentError('Unknown BetaRequestCodeExecutionToolResultBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaRequestCodeExecutionToolResultBlockType.codeExecutionToolResult: return 'code_execution_tool_result';
     }
   }
 

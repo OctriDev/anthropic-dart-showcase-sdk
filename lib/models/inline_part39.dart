@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 39)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaRequestMCPToolUseBlockType {
-  mcpToolUse;
-
-  static BetaRequestMCPToolUseBlockType fromJson(String value) {
-    switch (value) {
-      case 'mcp_tool_use': return BetaRequestMCPToolUseBlockType.mcpToolUse;
-      default: throw ArgumentError('Unknown BetaRequestMCPToolUseBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaRequestMCPToolUseBlockType.mcpToolUse: return 'mcp_tool_use';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaRequestPageLocationCitationType {
-  pageLocation;
-
-  static BetaRequestPageLocationCitationType fromJson(String value) {
-    switch (value) {
-      case 'page_location': return BetaRequestPageLocationCitationType.pageLocation;
-      default: throw ArgumentError('Unknown BetaRequestPageLocationCitationType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaRequestPageLocationCitationType.pageLocation: return 'page_location';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaRequestRedactedThinkingBlockType {
   redactedThinking;
 
@@ -284,4 +242,46 @@ final class BetaRequestTextEditorCodeExecutionViewResultBlockFileType {
 
   @override int get hashCode => value.hashCode;
 
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaRequestTextEditorCodeExecutionViewResultBlockType {
+  textEditorCodeExecutionViewResult;
+
+  static BetaRequestTextEditorCodeExecutionViewResultBlockType fromJson(String value) {
+    switch (value) {
+      case 'text_editor_code_execution_view_result': return BetaRequestTextEditorCodeExecutionViewResultBlockType.textEditorCodeExecutionViewResult;
+      default: throw ArgumentError('Unknown BetaRequestTextEditorCodeExecutionViewResultBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaRequestTextEditorCodeExecutionViewResultBlockType.textEditorCodeExecutionViewResult: return 'text_editor_code_execution_view_result';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaRequestThinkingBlockType {
+  thinking;
+
+  static BetaRequestThinkingBlockType fromJson(String value) {
+    switch (value) {
+      case 'thinking': return BetaRequestThinkingBlockType.thinking;
+      default: throw ArgumentError('Unknown BetaRequestThinkingBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaRequestThinkingBlockType.thinking: return 'thinking';
+    }
+  }
+
+  @override
+  String toString() => toJson();
 }

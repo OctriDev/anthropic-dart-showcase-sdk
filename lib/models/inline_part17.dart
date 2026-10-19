@@ -4,48 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 17)
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsCustomSkillParamsType {
-  custom;
-
-  static BetaManagedAgentsCustomSkillParamsType fromJson(String value) {
-    switch (value) {
-      case 'custom': return BetaManagedAgentsCustomSkillParamsType.custom;
-      default: throw ArgumentError('Unknown BetaManagedAgentsCustomSkillParamsType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsCustomSkillParamsType.custom: return 'custom';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsCustomToolType {
-  custom;
-
-  static BetaManagedAgentsCustomToolType fromJson(String value) {
-    switch (value) {
-      case 'custom': return BetaManagedAgentsCustomToolType.custom;
-      default: throw ArgumentError('Unknown BetaManagedAgentsCustomToolType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsCustomToolType.custom: return 'custom';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Required `string` value serialized in the `type` wire field.
 enum BetaManagedAgentsCustomToolInputSchemaType {
   object;
@@ -270,6 +228,48 @@ enum BetaManagedAgentsDeploymentSystemMessageEventType {
   String toJson() {
     switch (this) {
       case BetaManagedAgentsDeploymentSystemMessageEventType.systemMessage: return 'system.message';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsDeploymentUserDefineOutcomeEventType {
+  userDefineOutcome;
+
+  static BetaManagedAgentsDeploymentUserDefineOutcomeEventType fromJson(String value) {
+    switch (value) {
+      case 'user.define_outcome': return BetaManagedAgentsDeploymentUserDefineOutcomeEventType.userDefineOutcome;
+      default: throw ArgumentError('Unknown BetaManagedAgentsDeploymentUserDefineOutcomeEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsDeploymentUserDefineOutcomeEventType.userDefineOutcome: return 'user.define_outcome';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsDeploymentUserMessageEventType {
+  userMessage;
+
+  static BetaManagedAgentsDeploymentUserMessageEventType fromJson(String value) {
+    switch (value) {
+      case 'user.message': return BetaManagedAgentsDeploymentUserMessageEventType.userMessage;
+      default: throw ArgumentError('Unknown BetaManagedAgentsDeploymentUserMessageEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsDeploymentUserMessageEventType.userMessage: return 'user.message';
     }
   }
 

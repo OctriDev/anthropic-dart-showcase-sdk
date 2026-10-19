@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 12)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaFederationRuleWorkspaceType {
-  federationRuleWorkspace;
-
-  static BetaFederationRuleWorkspaceType fromJson(String value) {
-    switch (value) {
-      case 'federation_rule_workspace': return BetaFederationRuleWorkspaceType.federationRuleWorkspace;
-      default: throw ArgumentError('Unknown BetaFederationRuleWorkspaceType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaFederationRuleWorkspaceType.federationRuleWorkspace: return 'federation_rule_workspace';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Deleted object type. For file deletion, this is always `"file_deleted"`.
-enum BetaFileDeleteResponseType {
-  fileDeleted;
-
-  static BetaFileDeleteResponseType fromJson(String value) {
-    switch (value) {
-      case 'file_deleted': return BetaFileDeleteResponseType.fileDeleted;
-      default: throw ArgumentError('Unknown BetaFileDeleteResponseType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaFileDeleteResponseType.fileDeleted: return 'file_deleted';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaFileDocumentSourceType {
   file;
 
@@ -273,6 +231,48 @@ enum BetaInputTokensClearAtLeastType {
   String toJson() {
     switch (this) {
       case BetaInputTokensClearAtLeastType.inputTokens: return 'input_tokens';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaInputTokensTriggerType {
+  inputTokens;
+
+  static BetaInputTokensTriggerType fromJson(String value) {
+    switch (value) {
+      case 'input_tokens': return BetaInputTokensTriggerType.inputTokens;
+      default: throw ArgumentError('Unknown BetaInputTokensTriggerType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaInputTokensTriggerType.inputTokens: return 'input_tokens';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaInvalidRequestErrorType {
+  invalidRequestError;
+
+  static BetaInvalidRequestErrorType fromJson(String value) {
+    switch (value) {
+      case 'invalid_request_error': return BetaInvalidRequestErrorType.invalidRequestError;
+      default: throw ArgumentError('Unknown BetaInvalidRequestErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaInvalidRequestErrorType.invalidRequestError: return 'invalid_request_error';
     }
   }
 

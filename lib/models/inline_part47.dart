@@ -4,50 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 47)
-/// Object type. Always `spend_limit`.
-enum BetaSpendLimitType {
-  spendLimit;
-
-  static BetaSpendLimitType fromJson(String value) {
-    switch (value) {
-      case 'spend_limit': return BetaSpendLimitType.spendLimit;
-      default: throw ArgumentError('Unknown BetaSpendLimitType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaSpendLimitType.spendLimit: return 'spend_limit';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `period` wire field.
-final class BetaSpendLimitIncreaseRequestSchemaPeriod {
-
-  final String value;
-
-  const BetaSpendLimitIncreaseRequestSchemaPeriod._(this.value);
-
-  factory BetaSpendLimitIncreaseRequestSchemaPeriod.fromJson(String value) => BetaSpendLimitIncreaseRequestSchemaPeriod._(value);
-
-  static const daily = BetaSpendLimitIncreaseRequestSchemaPeriod._('daily');
-  static const monthly = BetaSpendLimitIncreaseRequestSchemaPeriod._('monthly');
-  static const weekly = BetaSpendLimitIncreaseRequestSchemaPeriod._('weekly');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is BetaSpendLimitIncreaseRequestSchemaPeriod && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
 /// Required enumerated value serialized in the `status` wire field.
 final class BetaSpendLimitIncreaseRequestSchemaStatus {
 
@@ -276,6 +232,48 @@ enum BetaTextEditor20250429Name {
   String toJson() {
     switch (this) {
       case BetaTextEditor20250429Name.strReplaceBasedEditTool: return 'str_replace_based_edit_tool';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaTextEditor20250429Type {
+  textEditor20250429;
+
+  static BetaTextEditor20250429Type fromJson(String value) {
+    switch (value) {
+      case 'text_editor_20250429': return BetaTextEditor20250429Type.textEditor20250429;
+      default: throw ArgumentError('Unknown BetaTextEditor20250429Type: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaTextEditor20250429Type.textEditor20250429: return 'text_editor_20250429';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
+enum BetaTextEditor20250728Name {
+  strReplaceBasedEditTool;
+
+  static BetaTextEditor20250728Name fromJson(String value) {
+    switch (value) {
+      case 'str_replace_based_edit_tool': return BetaTextEditor20250728Name.strReplaceBasedEditTool;
+      default: throw ArgumentError('Unknown BetaTextEditor20250728Name: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaTextEditor20250728Name.strReplaceBasedEditTool: return 'str_replace_based_edit_tool';
     }
   }
 

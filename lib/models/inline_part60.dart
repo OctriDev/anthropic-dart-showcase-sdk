@@ -4,48 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 60)
-/// Object type. For Message Batches, this is always `"message_batch"`.
-enum MessageBatchType {
-  messageBatch;
-
-  static MessageBatchType fromJson(String value) {
-    switch (value) {
-      case 'message_batch': return MessageBatchType.messageBatch;
-      default: throw ArgumentError('Unknown MessageBatchType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case MessageBatchType.messageBatch: return 'message_batch';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum MessageDeltaEventType {
-  messageDelta;
-
-  static MessageDeltaEventType fromJson(String value) {
-    switch (value) {
-      case 'message_delta': return MessageDeltaEventType.messageDelta;
-      default: throw ArgumentError('Unknown MessageDeltaEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case MessageDeltaEventType.messageDelta: return 'message_delta';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Required `string` value serialized in the `type` wire field.
 enum MessageStartEventType {
   messageStart;
@@ -270,6 +228,48 @@ enum ModelVariant17 {
   String toJson() {
     switch (this) {
       case ModelVariant17.claudeSonnet4520250929: return 'claude-sonnet-4-5-20250929';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Our most capable model for cybersecurity and biology research, available through trusted access programs
+enum ModelVariant2 {
+  claudeMythos51;
+
+  static ModelVariant2 fromJson(String value) {
+    switch (value) {
+      case 'claude-mythos-5-1': return ModelVariant2.claudeMythos51;
+      default: throw ArgumentError('Unknown ModelVariant2: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ModelVariant2.claudeMythos51: return 'claude-mythos-5-1';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// High-performance model for coding and agents
+enum ModelVariant3 {
+  claudeSonnet5;
+
+  static ModelVariant3 fromJson(String value) {
+    switch (value) {
+      case 'claude-sonnet-5': return ModelVariant3.claudeSonnet5;
+      default: throw ArgumentError('Unknown ModelVariant3: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ModelVariant3.claudeSonnet5: return 'claude-sonnet-5';
     }
   }
 

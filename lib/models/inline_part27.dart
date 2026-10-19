@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 27)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsSessionEndTurnType {
-  endTurn;
-
-  static BetaManagedAgentsSessionEndTurnType fromJson(String value) {
-    switch (value) {
-      case 'end_turn': return BetaManagedAgentsSessionEndTurnType.endTurn;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionEndTurnType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsSessionEndTurnType.endTurn: return 'end_turn';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsSessionErrorEventType {
-  sessionError;
-
-  static BetaManagedAgentsSessionErrorEventType fromJson(String value) {
-    switch (value) {
-      case 'session.error': return BetaManagedAgentsSessionErrorEventType.sessionError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsSessionErrorEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsSessionErrorEventType.sessionError: return 'session.error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsSessionMultiagentCoordinatorType {
   coordinator;
 
@@ -275,4 +233,46 @@ final class BetaManagedAgentsSessionThreadType {
 
   @override int get hashCode => value.hashCode;
 
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsSessionThreadAgentType {
+  agent;
+
+  static BetaManagedAgentsSessionThreadAgentType fromJson(String value) {
+    switch (value) {
+      case 'agent': return BetaManagedAgentsSessionThreadAgentType.agent;
+      default: throw ArgumentError('Unknown BetaManagedAgentsSessionThreadAgentType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsSessionThreadAgentType.agent: return 'agent';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsSessionThreadCreatedEventType {
+  sessionThreadCreated;
+
+  static BetaManagedAgentsSessionThreadCreatedEventType fromJson(String value) {
+    switch (value) {
+      case 'session.thread_created': return BetaManagedAgentsSessionThreadCreatedEventType.sessionThreadCreated;
+      default: throw ArgumentError('Unknown BetaManagedAgentsSessionThreadCreatedEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsSessionThreadCreatedEventType.sessionThreadCreated: return 'session.thread_created';
+    }
+  }
+
+  @override
+  String toString() => toJson();
 }

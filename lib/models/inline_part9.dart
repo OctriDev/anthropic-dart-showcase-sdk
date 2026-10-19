@@ -68,48 +68,6 @@ enum Unrestricted {
   String toString() => toJson();
 }
 
-/// Optional `string` value serialized in the `allowed_inference_geos` wire field.
-enum Unrestricted918b8666 {
-  unrestricted;
-
-  static Unrestricted918b8666 fromJson(String value) {
-    switch (value) {
-      case 'unrestricted': return Unrestricted918b8666.unrestricted;
-      default: throw ArgumentError('Unknown Unrestricted918b8666: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case Unrestricted918b8666.unrestricted: return 'unrestricted';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Optional `string` value serialized in the `allowed_inference_geos` wire field.
-enum Unrestricted678896b2 {
-  unrestricted;
-
-  static Unrestricted678896b2 fromJson(String value) {
-    switch (value) {
-      case 'unrestricted': return Unrestricted678896b2.unrestricted;
-      default: throw ArgumentError('Unknown Unrestricted678896b2: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case Unrestricted678896b2.unrestricted: return 'unrestricted';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Deleted object type. For Skills, this is always `"skill_deleted"`.
 enum BetaDeletedSkillType {
   skillDeleted;
@@ -271,6 +229,48 @@ enum BetaDeleteSpendLimitResponseType {
   String toJson() {
     switch (this) {
       case BetaDeleteSpendLimitResponseType.spendLimitDeleted: return 'spend_limit_deleted';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Deleted object type. For Users, this is always `"user_deleted"`.
+enum BetaDeleteUserResponseType {
+  userDeleted;
+
+  static BetaDeleteUserResponseType fromJson(String value) {
+    switch (value) {
+      case 'user_deleted': return BetaDeleteUserResponseType.userDeleted;
+      default: throw ArgumentError('Unknown BetaDeleteUserResponseType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaDeleteUserResponseType.userDeleted: return 'user_deleted';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Deleted object type. For Workspace Members, this is always `"workspace_member_deleted"`.
+enum BetaDeleteWorkspaceMemberResponseType {
+  workspaceMemberDeleted;
+
+  static BetaDeleteWorkspaceMemberResponseType fromJson(String value) {
+    switch (value) {
+      case 'workspace_member_deleted': return BetaDeleteWorkspaceMemberResponseType.workspaceMemberDeleted;
+      default: throw ArgumentError('Unknown BetaDeleteWorkspaceMemberResponseType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaDeleteWorkspaceMemberResponseType.workspaceMemberDeleted: return 'workspace_member_deleted';
     }
   }
 

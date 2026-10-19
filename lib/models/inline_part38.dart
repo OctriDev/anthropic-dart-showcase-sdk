@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 38)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaRequestCodeExecutionResultBlockType {
-  codeExecutionResult;
-
-  static BetaRequestCodeExecutionResultBlockType fromJson(String value) {
-    switch (value) {
-      case 'code_execution_result': return BetaRequestCodeExecutionResultBlockType.codeExecutionResult;
-      default: throw ArgumentError('Unknown BetaRequestCodeExecutionResultBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaRequestCodeExecutionResultBlockType.codeExecutionResult: return 'code_execution_result';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaRequestCodeExecutionToolResultBlockType {
-  codeExecutionToolResult;
-
-  static BetaRequestCodeExecutionToolResultBlockType fromJson(String value) {
-    switch (value) {
-      case 'code_execution_tool_result': return BetaRequestCodeExecutionToolResultBlockType.codeExecutionToolResult;
-      default: throw ArgumentError('Unknown BetaRequestCodeExecutionToolResultBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaRequestCodeExecutionToolResultBlockType.codeExecutionToolResult: return 'code_execution_tool_result';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaRequestCodeExecutionToolResultErrorType {
   codeExecutionToolResultError;
 
@@ -271,6 +229,48 @@ enum BetaRequestMCPToolResultBlockType {
   String toJson() {
     switch (this) {
       case BetaRequestMCPToolResultBlockType.mcpToolResult: return 'mcp_tool_result';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaRequestMCPToolUseBlockType {
+  mcpToolUse;
+
+  static BetaRequestMCPToolUseBlockType fromJson(String value) {
+    switch (value) {
+      case 'mcp_tool_use': return BetaRequestMCPToolUseBlockType.mcpToolUse;
+      default: throw ArgumentError('Unknown BetaRequestMCPToolUseBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaRequestMCPToolUseBlockType.mcpToolUse: return 'mcp_tool_use';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaRequestPageLocationCitationType {
+  pageLocation;
+
+  static BetaRequestPageLocationCitationType fromJson(String value) {
+    switch (value) {
+      case 'page_location': return BetaRequestPageLocationCitationType.pageLocation;
+      default: throw ArgumentError('Unknown BetaRequestPageLocationCitationType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaRequestPageLocationCitationType.pageLocation: return 'page_location';
     }
   }
 

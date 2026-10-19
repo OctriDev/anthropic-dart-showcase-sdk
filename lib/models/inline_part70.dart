@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 70)
 /// Required `string` value serialized in the `type` wire field.
-enum ToolChoiceAnyType {
-  any;
-
-  static ToolChoiceAnyType fromJson(String value) {
-    switch (value) {
-      case 'any': return ToolChoiceAnyType.any;
-      default: throw ArgumentError('Unknown ToolChoiceAnyType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case ToolChoiceAnyType.any: return 'any';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum ToolChoiceAutoType {
-  auto;
-
-  static ToolChoiceAutoType fromJson(String value) {
-    switch (value) {
-      case 'auto': return ToolChoiceAutoType.auto;
-      default: throw ArgumentError('Unknown ToolChoiceAutoType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case ToolChoiceAutoType.auto: return 'auto';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum ToolChoiceNoneType {
   none;
 
@@ -274,6 +232,48 @@ enum WebFetchTool20250910Name {
   String toJson() {
     switch (this) {
       case WebFetchTool20250910Name.webFetch: return 'web_fetch';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum WebFetchTool20250910Type {
+  webFetch20250910;
+
+  static WebFetchTool20250910Type fromJson(String value) {
+    switch (value) {
+      case 'web_fetch_20250910': return WebFetchTool20250910Type.webFetch20250910;
+      default: throw ArgumentError('Unknown WebFetchTool20250910Type: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case WebFetchTool20250910Type.webFetch20250910: return 'web_fetch_20250910';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
+enum WebFetchTool20260209Name {
+  webFetch;
+
+  static WebFetchTool20260209Name fromJson(String value) {
+    switch (value) {
+      case 'web_fetch': return WebFetchTool20260209Name.webFetch;
+      default: throw ArgumentError('Unknown WebFetchTool20260209Name: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case WebFetchTool20260209Name.webFetch: return 'web_fetch';
     }
   }
 

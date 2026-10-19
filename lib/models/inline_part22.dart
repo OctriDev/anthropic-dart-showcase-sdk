@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 22)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsMcpConnectionFailedErrorType {
-  mcpConnectionFailedError;
-
-  static BetaManagedAgentsMcpConnectionFailedErrorType fromJson(String value) {
-    switch (value) {
-      case 'mcp_connection_failed_error': return BetaManagedAgentsMcpConnectionFailedErrorType.mcpConnectionFailedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMcpConnectionFailedErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsMcpConnectionFailedErrorType.mcpConnectionFailedError: return 'mcp_connection_failed_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType {
-  mcpEgressBlockedError;
-
-  static BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType fromJson(String value) {
-    switch (value) {
-      case 'mcp_egress_blocked_error': return BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType.mcpEgressBlockedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType.mcpEgressBlockedError: return 'mcp_egress_blocked_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsMcpEgressBlockedRunErrorType {
   mcpEgressBlockedError;
 
@@ -270,6 +228,48 @@ enum BetaManagedAgentsMemoryPrefixType {
   String toJson() {
     switch (this) {
       case BetaManagedAgentsMemoryPrefixType.memoryPrefix: return 'memory_prefix';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsMemoryStoreType {
+  memoryStore;
+
+  static BetaManagedAgentsMemoryStoreType fromJson(String value) {
+    switch (value) {
+      case 'memory_store': return BetaManagedAgentsMemoryStoreType.memoryStore;
+      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryStoreType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsMemoryStoreType.memoryStore: return 'memory_store';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType {
+  memoryStoreArchivedError;
+
+  static BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType fromJson(String value) {
+    switch (value) {
+      case 'memory_store_archived_error': return BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType.memoryStoreArchivedError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType.memoryStoreArchivedError: return 'memory_store_archived_error';
     }
   }
 

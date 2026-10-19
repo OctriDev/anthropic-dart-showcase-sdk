@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 15)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsAgentToolset20260401ParamsType {
-  agentToolset20260401;
-
-  static BetaManagedAgentsAgentToolset20260401ParamsType fromJson(String value) {
-    switch (value) {
-      case 'agent_toolset_20260401': return BetaManagedAgentsAgentToolset20260401ParamsType.agentToolset20260401;
-      default: throw ArgumentError('Unknown BetaManagedAgentsAgentToolset20260401ParamsType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsAgentToolset20260401ParamsType.agentToolset20260401: return 'agent_toolset_20260401';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsAgentToolUseEventType {
-  agentToolUse;
-
-  static BetaManagedAgentsAgentToolUseEventType fromJson(String value) {
-    switch (value) {
-      case 'agent.tool_use': return BetaManagedAgentsAgentToolUseEventType.agentToolUse;
-      default: throw ArgumentError('Unknown BetaManagedAgentsAgentToolUseEventType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsAgentToolUseEventType.agentToolUse: return 'agent.tool_use';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsAgentWithOverridesParamsType {
   agentWithOverrides;
 
@@ -270,6 +228,48 @@ enum BetaManagedAgentsBashToolConfigParamsName {
   String toJson() {
     switch (this) {
       case BetaManagedAgentsBashToolConfigParamsName.bash: return 'bash';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Optional `string` value serialized in the `type` wire field.
+enum BetaManagedAgentsBashToolConfigParamsType {
+  bash;
+
+  static BetaManagedAgentsBashToolConfigParamsType fromJson(String value) {
+    switch (value) {
+      case 'bash': return BetaManagedAgentsBashToolConfigParamsType.bash;
+      default: throw ArgumentError('Unknown BetaManagedAgentsBashToolConfigParamsType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsBashToolConfigParamsType.bash: return 'bash';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsBillingErrorType {
+  billingError;
+
+  static BetaManagedAgentsBillingErrorType fromJson(String value) {
+    switch (value) {
+      case 'billing_error': return BetaManagedAgentsBillingErrorType.billingError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsBillingErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsBillingErrorType.billingError: return 'billing_error';
     }
   }
 

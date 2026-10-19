@@ -4,48 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 36)
-/// Required `string` value serialized in the `media_type` wire field.
-enum BetaPlainTextSourceMediaType {
-  textPlain;
-
-  static BetaPlainTextSourceMediaType fromJson(String value) {
-    switch (value) {
-      case 'text/plain': return BetaPlainTextSourceMediaType.textPlain;
-      default: throw ArgumentError('Unknown BetaPlainTextSourceMediaType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaPlainTextSourceMediaType.textPlain: return 'text/plain';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaPlainTextSourceType {
-  text;
-
-  static BetaPlainTextSourceType fromJson(String value) {
-    switch (value) {
-      case 'text': return BetaPlainTextSourceType.text;
-      default: throw ArgumentError('Unknown BetaPlainTextSourceType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaPlainTextSourceType.text: return 'text';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Optional enumerated value serialized in the `scope` wire field.
 final class BetaPublicEnvironmentCreateRequestScopeVariant0 {
 
@@ -278,6 +236,48 @@ enum BetaRbacRolePermissionType {
   String toJson() {
     switch (this) {
       case BetaRbacRolePermissionType.rbacRolePermission: return 'rbac_role_permission';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaRefusalStopDetailsType {
+  refusal;
+
+  static BetaRefusalStopDetailsType fromJson(String value) {
+    switch (value) {
+      case 'refusal': return BetaRefusalStopDetailsType.refusal;
+      default: throw ArgumentError('Unknown BetaRefusalStopDetailsType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaRefusalStopDetailsType.refusal: return 'refusal';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaRemoveFederationRuleWorkspaceResponseType {
+  federationRuleWorkspaceDeleted;
+
+  static BetaRemoveFederationRuleWorkspaceResponseType fromJson(String value) {
+    switch (value) {
+      case 'federation_rule_workspace_deleted': return BetaRemoveFederationRuleWorkspaceResponseType.federationRuleWorkspaceDeleted;
+      default: throw ArgumentError('Unknown BetaRemoveFederationRuleWorkspaceResponseType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaRemoveFederationRuleWorkspaceResponseType.federationRuleWorkspaceDeleted: return 'federation_rule_workspace_deleted';
     }
   }
 

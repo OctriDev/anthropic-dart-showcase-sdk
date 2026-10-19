@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 32)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsUserToolResultEventParamsType {
-  userToolResult;
-
-  static BetaManagedAgentsUserToolResultEventParamsType fromJson(String value) {
-    switch (value) {
-      case 'user.tool_result': return BetaManagedAgentsUserToolResultEventParamsType.userToolResult;
-      default: throw ArgumentError('Unknown BetaManagedAgentsUserToolResultEventParamsType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsUserToolResultEventParamsType.userToolResult: return 'user.tool_result';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-final class BetaManagedAgentsVaultType {
-
-  final String value;
-
-  const BetaManagedAgentsVaultType._(this.value);
-
-  factory BetaManagedAgentsVaultType.fromJson(String value) => BetaManagedAgentsVaultType._(value);
-
-  static const vault = BetaManagedAgentsVaultType._('vault');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is BetaManagedAgentsVaultType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsVaultArchivedDeploymentPausedReasonErrorType {
   vaultArchivedError;
 
@@ -270,6 +228,48 @@ enum BetaManagedAgentsWebSearchToolConfigParamsName {
   String toJson() {
     switch (this) {
       case BetaManagedAgentsWebSearchToolConfigParamsName.webSearch: return 'web_search';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Optional `string` value serialized in the `type` wire field.
+enum BetaManagedAgentsWebSearchToolConfigParamsType {
+  webSearch;
+
+  static BetaManagedAgentsWebSearchToolConfigParamsType fromJson(String value) {
+    switch (value) {
+      case 'web_search': return BetaManagedAgentsWebSearchToolConfigParamsType.webSearch;
+      default: throw ArgumentError('Unknown BetaManagedAgentsWebSearchToolConfigParamsType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsWebSearchToolConfigParamsType.webSearch: return 'web_search';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType {
+  workspaceArchivedError;
+
+  static BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType fromJson(String value) {
+    switch (value) {
+      case 'workspace_archived_error': return BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType.workspaceArchivedError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType.workspaceArchivedError: return 'workspace_archived_error';
     }
   }
 

@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 53)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaWebhookEnvironmentCreatedEventDataType {
-  environmentCreated;
-
-  static BetaWebhookEnvironmentCreatedEventDataType fromJson(String value) {
-    switch (value) {
-      case 'environment.created': return BetaWebhookEnvironmentCreatedEventDataType.environmentCreated;
-      default: throw ArgumentError('Unknown BetaWebhookEnvironmentCreatedEventDataType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaWebhookEnvironmentCreatedEventDataType.environmentCreated: return 'environment.created';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaWebhookEnvironmentDeletedEventDataType {
-  environmentDeleted;
-
-  static BetaWebhookEnvironmentDeletedEventDataType fromJson(String value) {
-    switch (value) {
-      case 'environment.deleted': return BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted;
-      default: throw ArgumentError('Unknown BetaWebhookEnvironmentDeletedEventDataType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted: return 'environment.deleted';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaWebhookEnvironmentUpdatedEventDataType {
   environmentUpdated;
 
@@ -270,6 +228,48 @@ enum BetaWebhookSessionOutcomeEvaluationEndedEventDataType {
   String toJson() {
     switch (this) {
       case BetaWebhookSessionOutcomeEvaluationEndedEventDataType.sessionOutcomeEvaluationEnded: return 'session.outcome_evaluation_ended';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaWebhookSessionPendingEventDataType {
+  sessionPending;
+
+  static BetaWebhookSessionPendingEventDataType fromJson(String value) {
+    switch (value) {
+      case 'session.pending': return BetaWebhookSessionPendingEventDataType.sessionPending;
+      default: throw ArgumentError('Unknown BetaWebhookSessionPendingEventDataType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaWebhookSessionPendingEventDataType.sessionPending: return 'session.pending';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaWebhookSessionRequiresActionEventDataType {
+  sessionRequiresAction;
+
+  static BetaWebhookSessionRequiresActionEventDataType fromJson(String value) {
+    switch (value) {
+      case 'session.requires_action': return BetaWebhookSessionRequiresActionEventDataType.sessionRequiresAction;
+      default: throw ArgumentError('Unknown BetaWebhookSessionRequiresActionEventDataType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaWebhookSessionRequiresActionEventDataType.sessionRequiresAction: return 'session.requires_action';
     }
   }
 

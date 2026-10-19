@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 59)
 /// Required `string` value serialized in the `type` wire field.
-enum FileImageSourceType {
-  file;
-
-  static FileImageSourceType fromJson(String value) {
-    switch (value) {
-      case 'file': return FileImageSourceType.file;
-      default: throw ArgumentError('Unknown FileImageSourceType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case FileImageSourceType.file: return 'file';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Object type. For files, this is always `"file"`.
-enum FileMetadataSchemaType {
-  file;
-
-  static FileMetadataSchemaType fromJson(String value) {
-    switch (value) {
-      case 'file': return FileMetadataSchemaType.file;
-      default: throw ArgumentError('Unknown FileMetadataSchemaType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case FileMetadataSchemaType.file: return 'file';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum GatewayTimeoutErrorType {
   timeoutError;
 
@@ -279,4 +237,46 @@ final class MessageBatchProcessingStatus {
 
   @override int get hashCode => value.hashCode;
 
+}
+
+/// Object type. For Message Batches, this is always `"message_batch"`.
+enum MessageBatchType {
+  messageBatch;
+
+  static MessageBatchType fromJson(String value) {
+    switch (value) {
+      case 'message_batch': return MessageBatchType.messageBatch;
+      default: throw ArgumentError('Unknown MessageBatchType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case MessageBatchType.messageBatch: return 'message_batch';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum MessageDeltaEventType {
+  messageDelta;
+
+  static MessageDeltaEventType fromJson(String value) {
+    switch (value) {
+      case 'message_delta': return MessageDeltaEventType.messageDelta;
+      default: throw ArgumentError('Unknown MessageDeltaEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case MessageDeltaEventType.messageDelta: return 'message_delta';
+    }
+  }
+
+  @override
+  String toString() => toJson();
 }

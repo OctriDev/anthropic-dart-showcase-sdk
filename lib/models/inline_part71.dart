@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 71)
 /// Required `string` value serialized in the `type` wire field.
-enum WebFetchTool20250910Type {
-  webFetch20250910;
-
-  static WebFetchTool20250910Type fromJson(String value) {
-    switch (value) {
-      case 'web_fetch_20250910': return WebFetchTool20250910Type.webFetch20250910;
-      default: throw ArgumentError('Unknown WebFetchTool20250910Type: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case WebFetchTool20250910Type.webFetch20250910: return 'web_fetch_20250910';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
-enum WebFetchTool20260209Name {
-  webFetch;
-
-  static WebFetchTool20260209Name fromJson(String value) {
-    switch (value) {
-      case 'web_fetch': return WebFetchTool20260209Name.webFetch;
-      default: throw ArgumentError('Unknown WebFetchTool20260209Name: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case WebFetchTool20260209Name.webFetch: return 'web_fetch';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum WebFetchTool20260209Type {
   webFetch20260209;
 
@@ -271,6 +229,49 @@ enum WebSearchTool20260318Name {
   String toJson() {
     switch (this) {
       case WebSearchTool20260318Name.webSearch: return 'web_search';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// How this tool's result blocks appear in the API response when the result was consumed by a completed code_execution call in the same turn. 'full' returns the complete content (default). 'excluded' drops the nested server_tool_use and result block pair entirely. Results from direct calls, or from code_execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
+final class WebSearchTool20260318ResponseInclusion {
+
+  final String value;
+
+  const WebSearchTool20260318ResponseInclusion._(this.value);
+
+  factory WebSearchTool20260318ResponseInclusion.fromJson(String value) => WebSearchTool20260318ResponseInclusion._(value);
+
+  static const full = WebSearchTool20260318ResponseInclusion._('full');
+  static const excluded = WebSearchTool20260318ResponseInclusion._('excluded');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebSearchTool20260318ResponseInclusion && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum WebSearchTool20260318Type {
+  webSearch20260318;
+
+  static WebSearchTool20260318Type fromJson(String value) {
+    switch (value) {
+      case 'web_search_20260318': return WebSearchTool20260318Type.webSearch20260318;
+      default: throw ArgumentError('Unknown WebSearchTool20260318Type: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case WebSearchTool20260318Type.webSearch20260318: return 'web_search_20260318';
     }
   }
 

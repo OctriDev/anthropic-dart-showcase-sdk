@@ -4,49 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 51)
-/// Scope type. Always `user` for this scope.
-enum BetaUserScopeType {
-  user;
-
-  static BetaUserScopeType fromJson(String value) {
-    switch (value) {
-      case 'user': return BetaUserScopeType.user;
-      default: throw ArgumentError('Unknown BetaUserScopeType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaUserScopeType.user: return 'user';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// `success` — encrypt/decrypt roundtrip succeeded. `failure` — the roundtrip failed or timed out; see `error`.
-final class BetaValidateExternalKeyResponseStatus {
-
-  final String value;
-
-  const BetaValidateExternalKeyResponseStatus._(this.value);
-
-  factory BetaValidateExternalKeyResponseStatus.fromJson(String value) => BetaValidateExternalKeyResponseStatus._(value);
-
-  static const failure = BetaValidateExternalKeyResponseStatus._('failure');
-  static const success = BetaValidateExternalKeyResponseStatus._('success');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is BetaValidateExternalKeyResponseStatus && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
 /// Required `string` value serialized in the `type` wire field.
 enum BetaValidateExternalKeyResponseType {
   externalKeyValidation;
@@ -272,6 +229,48 @@ enum BetaWebhookAgentArchivedEventDataType {
   String toJson() {
     switch (this) {
       case BetaWebhookAgentArchivedEventDataType.agentArchived: return 'agent.archived';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaWebhookAgentCreatedEventDataType {
+  agentCreated;
+
+  static BetaWebhookAgentCreatedEventDataType fromJson(String value) {
+    switch (value) {
+      case 'agent.created': return BetaWebhookAgentCreatedEventDataType.agentCreated;
+      default: throw ArgumentError('Unknown BetaWebhookAgentCreatedEventDataType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaWebhookAgentCreatedEventDataType.agentCreated: return 'agent.created';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaWebhookAgentDeletedEventDataType {
+  agentDeleted;
+
+  static BetaWebhookAgentDeletedEventDataType fromJson(String value) {
+    switch (value) {
+      case 'agent.deleted': return BetaWebhookAgentDeletedEventDataType.agentDeleted;
+      default: throw ArgumentError('Unknown BetaWebhookAgentDeletedEventDataType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaWebhookAgentDeletedEventDataType.agentDeleted: return 'agent.deleted';
     }
   }
 

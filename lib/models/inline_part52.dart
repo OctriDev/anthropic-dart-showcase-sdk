@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 52)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaWebhookAgentCreatedEventDataType {
-  agentCreated;
-
-  static BetaWebhookAgentCreatedEventDataType fromJson(String value) {
-    switch (value) {
-      case 'agent.created': return BetaWebhookAgentCreatedEventDataType.agentCreated;
-      default: throw ArgumentError('Unknown BetaWebhookAgentCreatedEventDataType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaWebhookAgentCreatedEventDataType.agentCreated: return 'agent.created';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaWebhookAgentDeletedEventDataType {
-  agentDeleted;
-
-  static BetaWebhookAgentDeletedEventDataType fromJson(String value) {
-    switch (value) {
-      case 'agent.deleted': return BetaWebhookAgentDeletedEventDataType.agentDeleted;
-      default: throw ArgumentError('Unknown BetaWebhookAgentDeletedEventDataType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaWebhookAgentDeletedEventDataType.agentDeleted: return 'agent.deleted';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaWebhookAgentUpdatedEventDataType {
   agentUpdated;
 
@@ -270,6 +228,48 @@ enum BetaWebhookEnvironmentArchivedEventDataType {
   String toJson() {
     switch (this) {
       case BetaWebhookEnvironmentArchivedEventDataType.environmentArchived: return 'environment.archived';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaWebhookEnvironmentCreatedEventDataType {
+  environmentCreated;
+
+  static BetaWebhookEnvironmentCreatedEventDataType fromJson(String value) {
+    switch (value) {
+      case 'environment.created': return BetaWebhookEnvironmentCreatedEventDataType.environmentCreated;
+      default: throw ArgumentError('Unknown BetaWebhookEnvironmentCreatedEventDataType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaWebhookEnvironmentCreatedEventDataType.environmentCreated: return 'environment.created';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaWebhookEnvironmentDeletedEventDataType {
+  environmentDeleted;
+
+  static BetaWebhookEnvironmentDeletedEventDataType fromJson(String value) {
+    switch (value) {
+      case 'environment.deleted': return BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted;
+      default: throw ArgumentError('Unknown BetaWebhookEnvironmentDeletedEventDataType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaWebhookEnvironmentDeletedEventDataType.environmentDeleted: return 'environment.deleted';
     }
   }
 

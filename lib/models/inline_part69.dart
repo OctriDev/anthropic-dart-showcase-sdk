@@ -4,48 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 69)
-/// Required `string` value serialized in the `type` wire field.
-enum SucceededResultType {
-  succeeded;
-
-  static SucceededResultType fromJson(String value) {
-    switch (value) {
-      case 'succeeded': return SucceededResultType.succeeded;
-      default: throw ArgumentError('Unknown SucceededResultType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case SucceededResultType.succeeded: return 'succeeded';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum TextContentBlockDeltaType {
-  textDelta;
-
-  static TextContentBlockDeltaType fromJson(String value) {
-    switch (value) {
-      case 'text_delta': return TextContentBlockDeltaType.textDelta;
-      default: throw ArgumentError('Unknown TextContentBlockDeltaType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case TextContentBlockDeltaType.textDelta: return 'text_delta';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
 enum TextEditor20250124Name {
   strReplaceEditor;
@@ -270,6 +228,48 @@ enum ToolTypeVariant1 {
   String toJson() {
     switch (this) {
       case ToolTypeVariant1.custom: return 'custom';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum ToolChoiceAnyType {
+  any;
+
+  static ToolChoiceAnyType fromJson(String value) {
+    switch (value) {
+      case 'any': return ToolChoiceAnyType.any;
+      default: throw ArgumentError('Unknown ToolChoiceAnyType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ToolChoiceAnyType.any: return 'any';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum ToolChoiceAutoType {
+  auto;
+
+  static ToolChoiceAutoType fromJson(String value) {
+    switch (value) {
+      case 'auto': return ToolChoiceAutoType.auto;
+      default: throw ArgumentError('Unknown ToolChoiceAutoType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ToolChoiceAutoType.auto: return 'auto';
     }
   }
 

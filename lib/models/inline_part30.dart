@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 30)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsTokenEndpointAuthNoneParamType {
-  none;
-
-  static BetaManagedAgentsTokenEndpointAuthNoneParamType fromJson(String value) {
-    switch (value) {
-      case 'none': return BetaManagedAgentsTokenEndpointAuthNoneParamType.none;
-      default: throw ArgumentError('Unknown BetaManagedAgentsTokenEndpointAuthNoneParamType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsTokenEndpointAuthNoneParamType.none: return 'none';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsTokenEndpointAuthNoneResponseType {
-  none;
-
-  static BetaManagedAgentsTokenEndpointAuthNoneResponseType fromJson(String value) {
-    switch (value) {
-      case 'none': return BetaManagedAgentsTokenEndpointAuthNoneResponseType.none;
-      default: throw ArgumentError('Unknown BetaManagedAgentsTokenEndpointAuthNoneResponseType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsTokenEndpointAuthNoneResponseType.none: return 'none';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsTokenEndpointAuthPostParamType {
   clientSecretPost;
 
@@ -270,6 +228,48 @@ enum BetaManagedAgentsURLMCPServerParamsType {
   String toJson() {
     switch (this) {
       case BetaManagedAgentsURLMCPServerParamsType.url: return 'url';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsUserActorType {
+  userActor;
+
+  static BetaManagedAgentsUserActorType fromJson(String value) {
+    switch (value) {
+      case 'user_actor': return BetaManagedAgentsUserActorType.userActor;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserActorType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsUserActorType.userActor: return 'user_actor';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsUserCustomToolResultEventType {
+  userCustomToolResult;
+
+  static BetaManagedAgentsUserCustomToolResultEventType fromJson(String value) {
+    switch (value) {
+      case 'user.custom_tool_result': return BetaManagedAgentsUserCustomToolResultEventType.userCustomToolResult;
+      default: throw ArgumentError('Unknown BetaManagedAgentsUserCustomToolResultEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsUserCustomToolResultEventType.userCustomToolResult: return 'user.custom_tool_result';
     }
   }
 

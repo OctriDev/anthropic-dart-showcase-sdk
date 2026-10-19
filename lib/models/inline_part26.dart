@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 26)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsRetryStatusTerminalType {
-  terminal;
-
-  static BetaManagedAgentsRetryStatusTerminalType fromJson(String value) {
-    switch (value) {
-      case 'terminal': return BetaManagedAgentsRetryStatusTerminalType.terminal;
-      default: throw ArgumentError('Unknown BetaManagedAgentsRetryStatusTerminalType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsRetryStatusTerminalType.terminal: return 'terminal';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsScheduleTriggerContextType {
-  schedule;
-
-  static BetaManagedAgentsScheduleTriggerContextType fromJson(String value) {
-    switch (value) {
-      case 'schedule': return BetaManagedAgentsScheduleTriggerContextType.schedule;
-      default: throw ArgumentError('Unknown BetaManagedAgentsScheduleTriggerContextType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsScheduleTriggerContextType.schedule: return 'schedule';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsSearchResultBlockType {
   searchResult;
 
@@ -270,6 +228,48 @@ enum BetaManagedAgentsSessionDeletedEventType {
   String toJson() {
     switch (this) {
       case BetaManagedAgentsSessionDeletedEventType.sessionDeleted: return 'session.deleted';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsSessionEndTurnType {
+  endTurn;
+
+  static BetaManagedAgentsSessionEndTurnType fromJson(String value) {
+    switch (value) {
+      case 'end_turn': return BetaManagedAgentsSessionEndTurnType.endTurn;
+      default: throw ArgumentError('Unknown BetaManagedAgentsSessionEndTurnType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsSessionEndTurnType.endTurn: return 'end_turn';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsSessionErrorEventType {
+  sessionError;
+
+  static BetaManagedAgentsSessionErrorEventType fromJson(String value) {
+    switch (value) {
+      case 'session.error': return BetaManagedAgentsSessionErrorEventType.sessionError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsSessionErrorEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsSessionErrorEventType.sessionError: return 'session.error';
     }
   }
 

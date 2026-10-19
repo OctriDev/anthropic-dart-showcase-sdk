@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 62)
 /// Required `string` value serialized in the `type` wire field.
-enum PlainTextSourceType {
-  text;
-
-  static PlainTextSourceType fromJson(String value) {
-    switch (value) {
-      case 'text': return PlainTextSourceType.text;
-      default: throw ArgumentError('Unknown PlainTextSourceType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case PlainTextSourceType.text: return 'text';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum RateLimitErrorType {
-  rateLimitError;
-
-  static RateLimitErrorType fromJson(String value) {
-    switch (value) {
-      case 'rate_limit_error': return RateLimitErrorType.rateLimitError;
-      default: throw ArgumentError('Unknown RateLimitErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RateLimitErrorType.rateLimitError: return 'rate_limit_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum RefusalStopDetailsType {
   refusal;
 
@@ -270,6 +228,48 @@ enum RequestCodeExecutionToolResultErrorType {
   String toJson() {
     switch (this) {
       case RequestCodeExecutionToolResultErrorType.codeExecutionToolResultError: return 'code_execution_tool_result_error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum RequestContainerUploadBlockType {
+  containerUpload;
+
+  static RequestContainerUploadBlockType fromJson(String value) {
+    switch (value) {
+      case 'container_upload': return RequestContainerUploadBlockType.containerUpload;
+      default: throw ArgumentError('Unknown RequestContainerUploadBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RequestContainerUploadBlockType.containerUpload: return 'container_upload';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum RequestContentBlockLocationCitationType {
+  contentBlockLocation;
+
+  static RequestContentBlockLocationCitationType fromJson(String value) {
+    switch (value) {
+      case 'content_block_location': return RequestContentBlockLocationCitationType.contentBlockLocation;
+      default: throw ArgumentError('Unknown RequestContentBlockLocationCitationType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RequestContentBlockLocationCitationType.contentBlockLocation: return 'content_block_location';
     }
   }
 

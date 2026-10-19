@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 50)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaTunnelCertificateType {
-  tunnelCertificate;
-
-  static BetaTunnelCertificateType fromJson(String value) {
-    switch (value) {
-      case 'tunnel_certificate': return BetaTunnelCertificateType.tunnelCertificate;
-      default: throw ArgumentError('Unknown BetaTunnelCertificateType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaTunnelCertificateType.tunnelCertificate: return 'tunnel_certificate';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaTunnelTokenType {
-  tunnelToken;
-
-  static BetaTunnelTokenType fromJson(String value) {
-    switch (value) {
-      case 'tunnel_token': return BetaTunnelTokenType.tunnelToken;
-      default: throw ArgumentError('Unknown BetaTunnelTokenType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaTunnelTokenType.tunnelToken: return 'tunnel_token';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaUnattachedAttachmentType {
   unattached;
 
@@ -280,6 +238,49 @@ final class BetaUserProfileTrustGrantStatus {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is BetaUserProfileTrustGrantStatus && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Scope type. Always `user` for this scope.
+enum BetaUserScopeType {
+  user;
+
+  static BetaUserScopeType fromJson(String value) {
+    switch (value) {
+      case 'user': return BetaUserScopeType.user;
+      default: throw ArgumentError('Unknown BetaUserScopeType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaUserScopeType.user: return 'user';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// `success` — encrypt/decrypt roundtrip succeeded. `failure` — the roundtrip failed or timed out; see `error`.
+final class BetaValidateExternalKeyResponseStatus {
+
+  final String value;
+
+  const BetaValidateExternalKeyResponseStatus._(this.value);
+
+  factory BetaValidateExternalKeyResponseStatus.fromJson(String value) => BetaValidateExternalKeyResponseStatus._(value);
+
+  static const failure = BetaValidateExternalKeyResponseStatus._('failure');
+  static const success = BetaValidateExternalKeyResponseStatus._('success');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is BetaValidateExternalKeyResponseStatus && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

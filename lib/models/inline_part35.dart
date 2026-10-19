@@ -4,48 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 35)
-/// Kind of resource the permission applies to.
-enum BetaOrganizationPermissionResourceType {
-  organization;
-
-  static BetaOrganizationPermissionResourceType fromJson(String value) {
-    switch (value) {
-      case 'organization': return BetaOrganizationPermissionResourceType.organization;
-      default: throw ArgumentError('Unknown BetaOrganizationPermissionResourceType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaOrganizationPermissionResourceType.organization: return 'organization';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Object type. For Organizations, this is always `"organization"`.
-enum BetaOrganizationSchemaType {
-  organization;
-
-  static BetaOrganizationSchemaType fromJson(String value) {
-    switch (value) {
-      case 'organization': return BetaOrganizationSchemaType.organization;
-      default: throw ArgumentError('Unknown BetaOrganizationSchemaType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaOrganizationSchemaType.organization: return 'organization';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Required `string` value serialized in the `type` wire field.
 enum BetaOrganizationScopeType {
   organization;
@@ -270,6 +228,48 @@ enum BetaPermissionErrorType {
   String toJson() {
     switch (this) {
       case BetaPermissionErrorType.permissionError: return 'permission_error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `media_type` wire field.
+enum BetaPlainTextSourceMediaType {
+  textPlain;
+
+  static BetaPlainTextSourceMediaType fromJson(String value) {
+    switch (value) {
+      case 'text/plain': return BetaPlainTextSourceMediaType.textPlain;
+      default: throw ArgumentError('Unknown BetaPlainTextSourceMediaType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaPlainTextSourceMediaType.textPlain: return 'text/plain';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaPlainTextSourceType {
+  text;
+
+  static BetaPlainTextSourceType fromJson(String value) {
+    switch (value) {
+      case 'text': return BetaPlainTextSourceType.text;
+      default: throw ArgumentError('Unknown BetaPlainTextSourceType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaPlainTextSourceType.text: return 'text';
     }
   }
 

@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 57)
 /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
-enum CodeExecutionTool20250522Name {
-  codeExecution;
-
-  static CodeExecutionTool20250522Name fromJson(String value) {
-    switch (value) {
-      case 'code_execution': return CodeExecutionTool20250522Name.codeExecution;
-      default: throw ArgumentError('Unknown CodeExecutionTool20250522Name: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case CodeExecutionTool20250522Name.codeExecution: return 'code_execution';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum CodeExecutionTool20250522Type {
-  codeExecution20250522;
-
-  static CodeExecutionTool20250522Type fromJson(String value) {
-    switch (value) {
-      case 'code_execution_20250522': return CodeExecutionTool20250522Type.codeExecution20250522;
-      default: throw ArgumentError('Unknown CodeExecutionTool20250522Type: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case CodeExecutionTool20250522Type.codeExecution20250522: return 'code_execution_20250522';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
 enum CodeExecutionTool20250825Name {
   codeExecution;
 
@@ -271,6 +229,48 @@ enum ContentBlockSourceType {
   String toJson() {
     switch (this) {
       case ContentBlockSourceType.content: return 'content';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum ContentBlockStartEventType {
+  contentBlockStart;
+
+  static ContentBlockStartEventType fromJson(String value) {
+    switch (value) {
+      case 'content_block_start': return ContentBlockStartEventType.contentBlockStart;
+      default: throw ArgumentError('Unknown ContentBlockStartEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ContentBlockStartEventType.contentBlockStart: return 'content_block_start';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum ContentBlockStopEventType {
+  contentBlockStop;
+
+  static ContentBlockStopEventType fromJson(String value) {
+    switch (value) {
+      case 'content_block_stop': return ContentBlockStopEventType.contentBlockStop;
+      default: throw ArgumentError('Unknown ContentBlockStopEventType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ContentBlockStopEventType.contentBlockStop: return 'content_block_stop';
     }
   }
 

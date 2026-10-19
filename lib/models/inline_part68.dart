@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 68)
 /// Required `string` value serialized in the `type` wire field.
-enum ResponseWebFetchToolResultBlockType {
-  webFetchToolResult;
-
-  static ResponseWebFetchToolResultBlockType fromJson(String value) {
-    switch (value) {
-      case 'web_fetch_tool_result': return ResponseWebFetchToolResultBlockType.webFetchToolResult;
-      default: throw ArgumentError('Unknown ResponseWebFetchToolResultBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case ResponseWebFetchToolResultBlockType.webFetchToolResult: return 'web_fetch_tool_result';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum ResponseWebFetchToolResultErrorType {
-  webFetchToolResultError;
-
-  static ResponseWebFetchToolResultErrorType fromJson(String value) {
-    switch (value) {
-      case 'web_fetch_tool_result_error': return ResponseWebFetchToolResultErrorType.webFetchToolResultError;
-      default: throw ArgumentError('Unknown ResponseWebFetchToolResultErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case ResponseWebFetchToolResultErrorType.webFetchToolResultError: return 'web_fetch_tool_result_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum ResponseWebSearchResultBlockType {
   webSearchResult;
 
@@ -274,6 +232,48 @@ enum SkillVersionType {
   String toJson() {
     switch (this) {
       case SkillVersionType.skillVersion: return 'skill_version';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum SucceededResultType {
+  succeeded;
+
+  static SucceededResultType fromJson(String value) {
+    switch (value) {
+      case 'succeeded': return SucceededResultType.succeeded;
+      default: throw ArgumentError('Unknown SucceededResultType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case SucceededResultType.succeeded: return 'succeeded';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum TextContentBlockDeltaType {
+  textDelta;
+
+  static TextContentBlockDeltaType fromJson(String value) {
+    switch (value) {
+      case 'text_delta': return TextContentBlockDeltaType.textDelta;
+      default: throw ArgumentError('Unknown TextContentBlockDeltaType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case TextContentBlockDeltaType.textDelta: return 'text_delta';
     }
   }
 

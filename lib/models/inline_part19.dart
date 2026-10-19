@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 19)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsEnvironmentArchivedRunErrorType {
-  environmentArchivedError;
-
-  static BetaManagedAgentsEnvironmentArchivedRunErrorType fromJson(String value) {
-    switch (value) {
-      case 'environment_archived_error': return BetaManagedAgentsEnvironmentArchivedRunErrorType.environmentArchivedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsEnvironmentArchivedRunErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsEnvironmentArchivedRunErrorType.environmentArchivedError: return 'environment_archived_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType {
-  environmentNotFoundError;
-
-  static BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType fromJson(String value) {
-    switch (value) {
-      case 'environment_not_found_error': return BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType.environmentNotFoundError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType.environmentNotFoundError: return 'environment_not_found_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsEnvironmentNotFoundRunErrorType {
   environmentNotFoundError;
 
@@ -270,6 +228,48 @@ enum BetaManagedAgentsEventStartEventType {
   String toJson() {
     switch (this) {
       case BetaManagedAgentsEventStartEventType.eventStart: return 'event_start';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsFileDocumentSourceType {
+  file;
+
+  static BetaManagedAgentsFileDocumentSourceType fromJson(String value) {
+    switch (value) {
+      case 'file': return BetaManagedAgentsFileDocumentSourceType.file;
+      default: throw ArgumentError('Unknown BetaManagedAgentsFileDocumentSourceType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsFileDocumentSourceType.file: return 'file';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsFileImageSourceType {
+  file;
+
+  static BetaManagedAgentsFileImageSourceType fromJson(String value) {
+    switch (value) {
+      case 'file': return BetaManagedAgentsFileImageSourceType.file;
+      default: throw ArgumentError('Unknown BetaManagedAgentsFileImageSourceType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsFileImageSourceType.file: return 'file';
     }
   }
 

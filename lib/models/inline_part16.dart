@@ -4,48 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 16)
-/// Optional `string` value serialized in the `type` wire field.
-enum BetaManagedAgentsBashToolConfigParamsType {
-  bash;
-
-  static BetaManagedAgentsBashToolConfigParamsType fromJson(String value) {
-    switch (value) {
-      case 'bash': return BetaManagedAgentsBashToolConfigParamsType.bash;
-      default: throw ArgumentError('Unknown BetaManagedAgentsBashToolConfigParamsType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsBashToolConfigParamsType.bash: return 'bash';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsBillingErrorType {
-  billingError;
-
-  static BetaManagedAgentsBillingErrorType fromJson(String value) {
-    switch (value) {
-      case 'billing_error': return BetaManagedAgentsBillingErrorType.billingError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsBillingErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsBillingErrorType.billingError: return 'billing_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsBranchCheckoutType {
   branch;
@@ -270,6 +228,48 @@ enum BetaManagedAgentsCustomSkillType {
   String toJson() {
     switch (this) {
       case BetaManagedAgentsCustomSkillType.custom: return 'custom';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsCustomSkillParamsType {
+  custom;
+
+  static BetaManagedAgentsCustomSkillParamsType fromJson(String value) {
+    switch (value) {
+      case 'custom': return BetaManagedAgentsCustomSkillParamsType.custom;
+      default: throw ArgumentError('Unknown BetaManagedAgentsCustomSkillParamsType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsCustomSkillParamsType.custom: return 'custom';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsCustomToolType {
+  custom;
+
+  static BetaManagedAgentsCustomToolType fromJson(String value) {
+    switch (value) {
+      case 'custom': return BetaManagedAgentsCustomToolType.custom;
+      default: throw ArgumentError('Unknown BetaManagedAgentsCustomToolType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsCustomToolType.custom: return 'custom';
     }
   }
 

@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 11)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaErrorResponseType {
-  error;
-
-  static BetaErrorResponseType fromJson(String value) {
-    switch (value) {
-      case 'error': return BetaErrorResponseType.error;
-      default: throw ArgumentError('Unknown BetaErrorResponseType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaErrorResponseType.error: return 'error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaExpiredResultType {
-  expired;
-
-  static BetaExpiredResultType fromJson(String value) {
-    switch (value) {
-      case 'expired': return BetaExpiredResultType.expired;
-      default: throw ArgumentError('Unknown BetaExpiredResultType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaExpiredResultType.expired: return 'expired';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaExternalKeyType {
   externalKey;
 
@@ -282,6 +240,48 @@ enum BetaFederationRuleType {
   String toJson() {
     switch (this) {
       case BetaFederationRuleType.federationRule: return 'federation_rule';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaFederationRuleWorkspaceType {
+  federationRuleWorkspace;
+
+  static BetaFederationRuleWorkspaceType fromJson(String value) {
+    switch (value) {
+      case 'federation_rule_workspace': return BetaFederationRuleWorkspaceType.federationRuleWorkspace;
+      default: throw ArgumentError('Unknown BetaFederationRuleWorkspaceType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaFederationRuleWorkspaceType.federationRuleWorkspace: return 'federation_rule_workspace';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Deleted object type. For file deletion, this is always `"file_deleted"`.
+enum BetaFileDeleteResponseType {
+  fileDeleted;
+
+  static BetaFileDeleteResponseType fromJson(String value) {
+    switch (value) {
+      case 'file_deleted': return BetaFileDeleteResponseType.fileDeleted;
+      default: throw ArgumentError('Unknown BetaFileDeleteResponseType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaFileDeleteResponseType.fileDeleted: return 'file_deleted';
     }
   }
 

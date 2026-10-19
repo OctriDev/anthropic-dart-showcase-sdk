@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 40)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaRequestTextEditorCodeExecutionViewResultBlockType {
-  textEditorCodeExecutionViewResult;
-
-  static BetaRequestTextEditorCodeExecutionViewResultBlockType fromJson(String value) {
-    switch (value) {
-      case 'text_editor_code_execution_view_result': return BetaRequestTextEditorCodeExecutionViewResultBlockType.textEditorCodeExecutionViewResult;
-      default: throw ArgumentError('Unknown BetaRequestTextEditorCodeExecutionViewResultBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaRequestTextEditorCodeExecutionViewResultBlockType.textEditorCodeExecutionViewResult: return 'text_editor_code_execution_view_result';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaRequestThinkingBlockType {
-  thinking;
-
-  static BetaRequestThinkingBlockType fromJson(String value) {
-    switch (value) {
-      case 'thinking': return BetaRequestThinkingBlockType.thinking;
-      default: throw ArgumentError('Unknown BetaRequestThinkingBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaRequestThinkingBlockType.thinking: return 'thinking';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaRequestToolAdditionBlockType {
   toolAddition;
 
@@ -270,6 +228,48 @@ enum BetaRequestWebFetchToolResultErrorType {
   String toJson() {
     switch (this) {
       case BetaRequestWebFetchToolResultErrorType.webFetchToolResultError: return 'web_fetch_tool_result_error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaRequestWebSearchResultBlockType {
+  webSearchResult;
+
+  static BetaRequestWebSearchResultBlockType fromJson(String value) {
+    switch (value) {
+      case 'web_search_result': return BetaRequestWebSearchResultBlockType.webSearchResult;
+      default: throw ArgumentError('Unknown BetaRequestWebSearchResultBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaRequestWebSearchResultBlockType.webSearchResult: return 'web_search_result';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaRequestWebSearchResultLocationCitationType {
+  webSearchResultLocation;
+
+  static BetaRequestWebSearchResultLocationCitationType fromJson(String value) {
+    switch (value) {
+      case 'web_search_result_location': return BetaRequestWebSearchResultLocationCitationType.webSearchResultLocation;
+      default: throw ArgumentError('Unknown BetaRequestWebSearchResultLocationCitationType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaRequestWebSearchResultLocationCitationType.webSearchResultLocation: return 'web_search_result_location';
     }
   }
 

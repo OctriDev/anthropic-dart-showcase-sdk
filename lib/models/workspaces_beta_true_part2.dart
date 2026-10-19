@@ -4,62 +4,6 @@
 part of 'workspaces_beta_true.dart';
 
 // workspaces_beta_true domain models (part 2)
-/// Typed representation of the `BetaWorkspaceCreateParams` API schema.
-class BetaWorkspaceCreateParams {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Data residency configuration for the workspace. If omitted, defaults to `workspace_geo: "us"`, `allowed_inference_geos: "unrestricted"`, and `default_inference_geo: "global"`.
-  final SdkOptional<BetaDataResidencyCreateParams?> dataResidency;
-  /// Hex color code representing the Workspace in the Anthropic Console.
-  final SdkOptional<String?> displayColor;
-  /// ID of the customer-managed encryption key (CMEK) configuration to use for this Workspace. Setting this field requires CMEK to be enabled for your organization. When set, data stored for this Workspace is encrypted with the referenced key. Create key configurations with the External Keys API. On Claude Platform on AWS the value is the AWS KMS key ARN, and the key must be a single-Region key in the same AWS account and Region as the Workspace. On that platform the key is validated against this Workspace when it is attached, so a key-policy problem is reported as an error on this request. This field is write-once: once a key is attached to a Workspace it cannot be detached or replaced. To rotate key material, rotate the underlying key on your cloud KMS; the `external_key_id` stays the same.
-  final SdkOptional<String?> externalKeyId;
-  /// Name of the Workspace.
-  final String name;
-  /// User-defined tags as string key-value pairs. Keys may not begin with `anthropic`.
-  final SdkOptional<Map<String, String>?> tags;
-
-  const BetaWorkspaceCreateParams({this.dataResidency = const SdkOmitted(), this.displayColor = const SdkOmitted(), this.externalKeyId = const SdkOmitted(), required this.name, this.tags = const SdkOmitted()});
-
-  BetaWorkspaceCreateParams Function({SdkOptional<BetaDataResidencyCreateParams?> dataResidency, SdkOptional<String?> displayColor, SdkOptional<String?> externalKeyId, String name, SdkOptional<Map<String, String>?> tags}) get copyWith => _copyWith;
-
-  BetaWorkspaceCreateParams _copyWith({Object? dataResidency = sdkOmittedValue, Object? displayColor = sdkOmittedValue, Object? externalKeyId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? tags = sdkOmittedValue}) => BetaWorkspaceCreateParams(
-    dataResidency: identical(dataResidency, sdkOmittedValue) ? this.dataResidency : dataResidency as SdkOptional<BetaDataResidencyCreateParams?>,
-    displayColor: identical(displayColor, sdkOmittedValue) ? this.displayColor : displayColor as SdkOptional<String?>,
-    externalKeyId: identical(externalKeyId, sdkOmittedValue) ? this.externalKeyId : externalKeyId as SdkOptional<String?>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    tags: identical(tags, sdkOmittedValue) ? this.tags : tags as SdkOptional<Map<String, String>?>,
-  );
-
-  factory BetaWorkspaceCreateParams.fromJson(Map<String, dynamic> json) => BetaWorkspaceCreateParams(
-    dataResidency: json.containsKey('data_residency') ? SdkPresent(json['data_residency'] != null ? BetaDataResidencyCreateParams.fromJson(json['data_residency'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    displayColor: json.containsKey('display_color') ? SdkPresent(json['display_color'] as String?) : const SdkOmitted(),
-    externalKeyId: json.containsKey('external_key_id') ? SdkPresent(json['external_key_id'] as String?) : const SdkOmitted(),
-    name: (json['name'] as String?)!,
-    tags: json.containsKey('tags') ? SdkPresent(json['tags'] == null ? null : Map<String, dynamic>.from(json['tags'] as Map).map((key, value) => MapEntry(key, value as String))) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (dataResidency) {
-      SdkPresent<BetaDataResidencyCreateParams?>(value: final value) => {'data_residency': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (displayColor) {
-      SdkPresent<String?>(value: final value) => {'display_color': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (externalKeyId) {
-      SdkPresent<String?>(value: final value) => {'external_key_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'name': name,
-    ...switch (tags) {
-      SdkPresent<Map<String, String>?>(value: final value) => {'tags': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
 /// Typed representation of the `BetaWorkspaceGeo` API schema.
 final class BetaWorkspaceGeo {
 

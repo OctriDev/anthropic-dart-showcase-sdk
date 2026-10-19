@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 25)
 /// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsMultiagentSelfParamsType {
-  self;
-
-  static BetaManagedAgentsMultiagentSelfParamsType fromJson(String value) {
-    switch (value) {
-      case 'self': return BetaManagedAgentsMultiagentSelfParamsType.self;
-      default: throw ArgumentError('Unknown BetaManagedAgentsMultiagentSelfParamsType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsMultiagentSelfParamsType.self: return 'self';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType {
-  organizationDisabledError;
-
-  static BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType fromJson(String value) {
-    switch (value) {
-      case 'organization_disabled_error': return BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType.organizationDisabledError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType.organizationDisabledError: return 'organization_disabled_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsOrganizationDisabledRunErrorType {
   organizationDisabledError;
 
@@ -270,6 +228,48 @@ enum BetaManagedAgentsRetryStatusRetryingType {
   String toJson() {
     switch (this) {
       case BetaManagedAgentsRetryStatusRetryingType.retrying: return 'retrying';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsRetryStatusTerminalType {
+  terminal;
+
+  static BetaManagedAgentsRetryStatusTerminalType fromJson(String value) {
+    switch (value) {
+      case 'terminal': return BetaManagedAgentsRetryStatusTerminalType.terminal;
+      default: throw ArgumentError('Unknown BetaManagedAgentsRetryStatusTerminalType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsRetryStatusTerminalType.terminal: return 'terminal';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum BetaManagedAgentsScheduleTriggerContextType {
+  schedule;
+
+  static BetaManagedAgentsScheduleTriggerContextType fromJson(String value) {
+    switch (value) {
+      case 'schedule': return BetaManagedAgentsScheduleTriggerContextType.schedule;
+      default: throw ArgumentError('Unknown BetaManagedAgentsScheduleTriggerContextType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaManagedAgentsScheduleTriggerContextType.schedule: return 'schedule';
     }
   }
 

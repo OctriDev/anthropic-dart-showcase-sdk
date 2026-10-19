@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 54)
 /// Required `string` value serialized in the `type` wire field.
-enum BetaWebhookSessionPendingEventDataType {
-  sessionPending;
-
-  static BetaWebhookSessionPendingEventDataType fromJson(String value) {
-    switch (value) {
-      case 'session.pending': return BetaWebhookSessionPendingEventDataType.sessionPending;
-      default: throw ArgumentError('Unknown BetaWebhookSessionPendingEventDataType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaWebhookSessionPendingEventDataType.sessionPending: return 'session.pending';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaWebhookSessionRequiresActionEventDataType {
-  sessionRequiresAction;
-
-  static BetaWebhookSessionRequiresActionEventDataType fromJson(String value) {
-    switch (value) {
-      case 'session.requires_action': return BetaWebhookSessionRequiresActionEventDataType.sessionRequiresAction;
-      default: throw ArgumentError('Unknown BetaWebhookSessionRequiresActionEventDataType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaWebhookSessionRequiresActionEventDataType.sessionRequiresAction: return 'session.requires_action';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum BetaWebhookSessionRunningEventDataType {
   sessionRunning;
 
@@ -270,6 +228,48 @@ enum BetaWebhookVaultCreatedEventDataType {
   String toJson() {
     switch (this) {
       case BetaWebhookVaultCreatedEventDataType.vaultCreated: return 'vault.created';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaWebhookVaultCredentialArchivedEventDataType {
+  vaultCredentialArchived;
+
+  static BetaWebhookVaultCredentialArchivedEventDataType fromJson(String value) {
+    switch (value) {
+      case 'vault_credential.archived': return BetaWebhookVaultCredentialArchivedEventDataType.vaultCredentialArchived;
+      default: throw ArgumentError('Unknown BetaWebhookVaultCredentialArchivedEventDataType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaWebhookVaultCredentialArchivedEventDataType.vaultCredentialArchived: return 'vault_credential.archived';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum BetaWebhookVaultCredentialCreatedEventDataType {
+  vaultCredentialCreated;
+
+  static BetaWebhookVaultCredentialCreatedEventDataType fromJson(String value) {
+    switch (value) {
+      case 'vault_credential.created': return BetaWebhookVaultCredentialCreatedEventDataType.vaultCredentialCreated;
+      default: throw ArgumentError('Unknown BetaWebhookVaultCredentialCreatedEventDataType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaWebhookVaultCredentialCreatedEventDataType.vaultCredentialCreated: return 'vault_credential.created';
     }
   }
 

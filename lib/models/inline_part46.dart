@@ -4,49 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 46)
-/// Org-level role. Defaults to `developer`.
-final class BetaServiceAccountCreateParamsOrganizationRole {
-
-  final String value;
-
-  const BetaServiceAccountCreateParamsOrganizationRole._(this.value);
-
-  factory BetaServiceAccountCreateParamsOrganizationRole.fromJson(String value) => BetaServiceAccountCreateParamsOrganizationRole._(value);
-
-  static const admin = BetaServiceAccountCreateParamsOrganizationRole._('admin');
-  static const developer = BetaServiceAccountCreateParamsOrganizationRole._('developer');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is BetaServiceAccountCreateParamsOrganizationRole && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum BetaServiceAccountTargetType {
-  serviceAccount;
-
-  static BetaServiceAccountTargetType fromJson(String value) {
-    switch (value) {
-      case 'service_account': return BetaServiceAccountTargetType.serviceAccount;
-      default: throw ArgumentError('Unknown BetaServiceAccountTargetType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaServiceAccountTargetType.serviceAccount: return 'service_account';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Optional enumerated value serialized in the `organization_role` wire field.
 final class BetaServiceAccountUpdateParamsOrganizationRoleVariant0 {
 
@@ -282,6 +239,50 @@ final class BetaSpendLimitPeriod {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is BetaSpendLimitPeriod && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Object type. Always `spend_limit`.
+enum BetaSpendLimitType {
+  spendLimit;
+
+  static BetaSpendLimitType fromJson(String value) {
+    switch (value) {
+      case 'spend_limit': return BetaSpendLimitType.spendLimit;
+      default: throw ArgumentError('Unknown BetaSpendLimitType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaSpendLimitType.spendLimit: return 'spend_limit';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `period` wire field.
+final class BetaSpendLimitIncreaseRequestSchemaPeriod {
+
+  final String value;
+
+  const BetaSpendLimitIncreaseRequestSchemaPeriod._(this.value);
+
+  factory BetaSpendLimitIncreaseRequestSchemaPeriod.fromJson(String value) => BetaSpendLimitIncreaseRequestSchemaPeriod._(value);
+
+  static const daily = BetaSpendLimitIncreaseRequestSchemaPeriod._('daily');
+  static const monthly = BetaSpendLimitIncreaseRequestSchemaPeriod._('monthly');
+  static const weekly = BetaSpendLimitIncreaseRequestSchemaPeriod._('weekly');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is BetaSpendLimitIncreaseRequestSchemaPeriod && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

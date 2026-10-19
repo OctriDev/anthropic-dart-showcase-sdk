@@ -4,49 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 72)
-/// How this tool's result blocks appear in the API response when the result was consumed by a completed code_execution call in the same turn. 'full' returns the complete content (default). 'excluded' drops the nested server_tool_use and result block pair entirely. Results from direct calls, or from code_execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
-final class WebSearchTool20260318ResponseInclusion {
-
-  final String value;
-
-  const WebSearchTool20260318ResponseInclusion._(this.value);
-
-  factory WebSearchTool20260318ResponseInclusion.fromJson(String value) => WebSearchTool20260318ResponseInclusion._(value);
-
-  static const full = WebSearchTool20260318ResponseInclusion._('full');
-  static const excluded = WebSearchTool20260318ResponseInclusion._('excluded');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebSearchTool20260318ResponseInclusion && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum WebSearchTool20260318Type {
-  webSearch20260318;
-
-  static WebSearchTool20260318Type fromJson(String value) {
-    switch (value) {
-      case 'web_search_20260318': return WebSearchTool20260318Type.webSearch20260318;
-      default: throw ArgumentError('Unknown WebSearchTool20260318Type: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case WebSearchTool20260318Type.webSearch20260318: return 'web_search_20260318';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 final class ListBetaOrganizationsAnalyticsAppsChatProjectsGroupByItem {
 
   final String value;
@@ -286,6 +243,27 @@ final class ListBetaOrganizationsAnalyticsSkillsGroupByItem {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is ListBetaOrganizationsAnalyticsSkillsGroupByItem && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+final class ListBetaOrganizationsAnalyticsSkillsOrderVariant0 {
+
+  final String value;
+
+  const ListBetaOrganizationsAnalyticsSkillsOrderVariant0._(this.value);
+
+  factory ListBetaOrganizationsAnalyticsSkillsOrderVariant0.fromJson(String value) => ListBetaOrganizationsAnalyticsSkillsOrderVariant0._(value);
+
+  static const asc = ListBetaOrganizationsAnalyticsSkillsOrderVariant0._('asc');
+  static const desc = ListBetaOrganizationsAnalyticsSkillsOrderVariant0._('desc');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is ListBetaOrganizationsAnalyticsSkillsOrderVariant0 && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

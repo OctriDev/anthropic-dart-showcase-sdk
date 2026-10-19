@@ -4,48 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 33)
-/// Optional `string` value serialized in the `type` wire field.
-enum BetaManagedAgentsWebSearchToolConfigParamsType {
-  webSearch;
-
-  static BetaManagedAgentsWebSearchToolConfigParamsType fromJson(String value) {
-    switch (value) {
-      case 'web_search': return BetaManagedAgentsWebSearchToolConfigParamsType.webSearch;
-      default: throw ArgumentError('Unknown BetaManagedAgentsWebSearchToolConfigParamsType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsWebSearchToolConfigParamsType.webSearch: return 'web_search';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType {
-  workspaceArchivedError;
-
-  static BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType fromJson(String value) {
-    switch (value) {
-      case 'workspace_archived_error': return BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType.workspaceArchivedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType.workspaceArchivedError: return 'workspace_archived_error';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Required enumerated value serialized in the `type` wire field.
 enum BetaManagedAgentsWorkspaceArchivedRunErrorType {
   workspaceArchivedError;
@@ -270,6 +228,48 @@ enum BetaMemoryTool20250818StrReplaceCommandCommand {
   String toJson() {
     switch (this) {
       case BetaMemoryTool20250818StrReplaceCommandCommand.strReplace: return 'str_replace';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Command type identifier
+enum BetaMemoryTool20250818ViewCommandCommand {
+  view;
+
+  static BetaMemoryTool20250818ViewCommandCommand fromJson(String value) {
+    switch (value) {
+      case 'view': return BetaMemoryTool20250818ViewCommandCommand.view;
+      default: throw ArgumentError('Unknown BetaMemoryTool20250818ViewCommandCommand: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaMemoryTool20250818ViewCommandCommand.view: return 'view';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
+enum BetaMemoryTool20250818Name {
+  memory;
+
+  static BetaMemoryTool20250818Name fromJson(String value) {
+    switch (value) {
+      case 'memory': return BetaMemoryTool20250818Name.memory;
+      default: throw ArgumentError('Unknown BetaMemoryTool20250818Name: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaMemoryTool20250818Name.memory: return 'memory';
     }
   }
 

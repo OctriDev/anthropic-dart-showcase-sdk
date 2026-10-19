@@ -5,48 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 65)
 /// Required `string` value serialized in the `type` wire field.
-enum RequestWebFetchResultBlockType {
-  webFetchResult;
-
-  static RequestWebFetchResultBlockType fromJson(String value) {
-    switch (value) {
-      case 'web_fetch_result': return RequestWebFetchResultBlockType.webFetchResult;
-      default: throw ArgumentError('Unknown RequestWebFetchResultBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RequestWebFetchResultBlockType.webFetchResult: return 'web_fetch_result';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
-enum RequestWebFetchToolResultBlockType {
-  webFetchToolResult;
-
-  static RequestWebFetchToolResultBlockType fromJson(String value) {
-    switch (value) {
-      case 'web_fetch_tool_result': return RequestWebFetchToolResultBlockType.webFetchToolResult;
-      default: throw ArgumentError('Unknown RequestWebFetchToolResultBlockType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RequestWebFetchToolResultBlockType.webFetchToolResult: return 'web_fetch_tool_result';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required `string` value serialized in the `type` wire field.
 enum RequestWebFetchToolResultErrorType {
   webFetchToolResultError;
 
@@ -270,6 +228,48 @@ enum ResponseCodeExecutionOutputBlockType {
   String toJson() {
     switch (this) {
       case ResponseCodeExecutionOutputBlockType.codeExecutionOutput: return 'code_execution_output';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum ResponseCodeExecutionResultBlockType {
+  codeExecutionResult;
+
+  static ResponseCodeExecutionResultBlockType fromJson(String value) {
+    switch (value) {
+      case 'code_execution_result': return ResponseCodeExecutionResultBlockType.codeExecutionResult;
+      default: throw ArgumentError('Unknown ResponseCodeExecutionResultBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ResponseCodeExecutionResultBlockType.codeExecutionResult: return 'code_execution_result';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required `string` value serialized in the `type` wire field.
+enum ResponseCodeExecutionToolResultBlockType {
+  codeExecutionToolResult;
+
+  static ResponseCodeExecutionToolResultBlockType fromJson(String value) {
+    switch (value) {
+      case 'code_execution_tool_result': return ResponseCodeExecutionToolResultBlockType.codeExecutionToolResult;
+      default: throw ArgumentError('Unknown ResponseCodeExecutionToolResultBlockType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ResponseCodeExecutionToolResultBlockType.codeExecutionToolResult: return 'code_execution_tool_result';
     }
   }
 

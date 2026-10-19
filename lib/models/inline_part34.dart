@@ -4,48 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 34)
-/// Command type identifier
-enum BetaMemoryTool20250818ViewCommandCommand {
-  view;
-
-  static BetaMemoryTool20250818ViewCommandCommand fromJson(String value) {
-    switch (value) {
-      case 'view': return BetaMemoryTool20250818ViewCommandCommand.view;
-      default: throw ArgumentError('Unknown BetaMemoryTool20250818ViewCommandCommand: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaMemoryTool20250818ViewCommandCommand.view: return 'view';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
-enum BetaMemoryTool20250818Name {
-  memory;
-
-  static BetaMemoryTool20250818Name fromJson(String value) {
-    switch (value) {
-      case 'memory': return BetaMemoryTool20250818Name.memory;
-      default: throw ArgumentError('Unknown BetaMemoryTool20250818Name: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case BetaMemoryTool20250818Name.memory: return 'memory';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Required `string` value serialized in the `type` wire field.
 enum BetaMemoryTool20250818Type {
   memory20250818;
@@ -272,6 +230,48 @@ enum BetaNotFoundErrorType {
   String toJson() {
     switch (this) {
       case BetaNotFoundErrorType.notFoundError: return 'not_found_error';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Kind of resource the permission applies to.
+enum BetaOrganizationPermissionResourceType {
+  organization;
+
+  static BetaOrganizationPermissionResourceType fromJson(String value) {
+    switch (value) {
+      case 'organization': return BetaOrganizationPermissionResourceType.organization;
+      default: throw ArgumentError('Unknown BetaOrganizationPermissionResourceType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaOrganizationPermissionResourceType.organization: return 'organization';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Object type. For Organizations, this is always `"organization"`.
+enum BetaOrganizationSchemaType {
+  organization;
+
+  static BetaOrganizationSchemaType fromJson(String value) {
+    switch (value) {
+      case 'organization': return BetaOrganizationSchemaType.organization;
+      default: throw ArgumentError('Unknown BetaOrganizationSchemaType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case BetaOrganizationSchemaType.organization: return 'organization';
     }
   }
 
