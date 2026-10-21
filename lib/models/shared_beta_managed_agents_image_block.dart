@@ -8,44 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsImageBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsImageBlockType type_;
-
   /// The source of the image data.
   final BetaManagedAgentsImageSource source;
 
-  const BetaManagedAgentsImageBlock(
-      {required this.type_, required this.source});
+  const BetaManagedAgentsImageBlock({required this.type_, required this.source});
 
-  BetaManagedAgentsImageBlock Function(
-      {BetaManagedAgentsImageBlockType type_,
-      BetaManagedAgentsImageSource source}) get copyWith => _copyWith;
+  BetaManagedAgentsImageBlock Function({BetaManagedAgentsImageBlockType type_, BetaManagedAgentsImageSource source}) get copyWith => _copyWith;
 
-  BetaManagedAgentsImageBlock _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? source = sdkOmittedValue}) =>
-      BetaManagedAgentsImageBlock(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsImageBlockType,
-        source: identical(source, sdkOmittedValue)
-            ? this.source
-            : source as BetaManagedAgentsImageSource,
-      );
+  BetaManagedAgentsImageBlock _copyWith({Object? type_ = sdkOmittedValue, Object? source = sdkOmittedValue}) => BetaManagedAgentsImageBlock(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsImageBlockType,
+    source: identical(source, sdkOmittedValue) ? this.source : source as BetaManagedAgentsImageSource,
+  );
 
-  factory BetaManagedAgentsImageBlock.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsImageBlock(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsImageBlockType.fromJson(json['type'] as String)
-            : null)!,
-        source: (json['source'] != null
-            ? BetaManagedAgentsImageSource.fromJson(json['source'])
-            : null)!,
-      );
+  factory BetaManagedAgentsImageBlock.fromJson(Map<String, dynamic> json) => BetaManagedAgentsImageBlock(
+    type_: (json['type'] != null ? BetaManagedAgentsImageBlockType.fromJson(json['type'] as String) : null)!,
+    source: (json['source'] != null ? BetaManagedAgentsImageSource.fromJson(json['source']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'source': source.toJson(),
-      };
+    'type': type_.toJson(),
+    'source': source.toJson(),
+  };
 }

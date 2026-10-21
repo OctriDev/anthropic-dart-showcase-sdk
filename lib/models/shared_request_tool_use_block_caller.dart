@@ -10,76 +10,40 @@ sealed class RequestToolUseBlockCaller {
   const RequestToolUseBlockCaller();
   factory RequestToolUseBlockCaller.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = DirectCaller.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestToolUseBlockCallerDirectCaller(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ServerToolCaller.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestToolUseBlockCallerServerToolCaller(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ServerToolCaller20260120.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestToolUseBlockCallerServerToolCaller20260120(value);
-        }
-      } catch (_) {}
+      try { final value = DirectCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolUseBlockCallerDirectCaller(value); } } catch (_) {}
+      try { final value = ServerToolCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolUseBlockCallerServerToolCaller(value); } } catch (_) {}
+      try { final value = ServerToolCaller20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolUseBlockCallerServerToolCaller20260120(value); } } catch (_) {}
     }
-    try {
-      return RequestToolUseBlockCallerDirectCaller(
-          DirectCaller.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestToolUseBlockCallerServerToolCaller(
-          ServerToolCaller.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestToolUseBlockCallerServerToolCaller20260120(
-          ServerToolCaller20260120.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"code_execution_20250825", "code_execution_20260120", "direct"}
-            .contains(json["type"])) {
-      return UnknownRequestToolUseBlockCaller(json);
-    }
+    try { return RequestToolUseBlockCallerDirectCaller(DirectCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestToolUseBlockCallerServerToolCaller(ServerToolCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestToolUseBlockCallerServerToolCaller20260120(ServerToolCaller20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"code_execution_20250825", "code_execution_20260120", "direct"}.contains(json["type"])) { return UnknownRequestToolUseBlockCaller(json); }
     throw FormatException("No variant matched for RequestToolUseBlockCaller");
   }
   Object? toJson();
 }
 
-final class RequestToolUseBlockCallerDirectCaller
-    extends RequestToolUseBlockCaller {
+final class RequestToolUseBlockCallerDirectCaller extends RequestToolUseBlockCaller {
   final DirectCaller value;
   const RequestToolUseBlockCallerDirectCaller(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestToolUseBlockCallerServerToolCaller
-    extends RequestToolUseBlockCaller {
+final class RequestToolUseBlockCallerServerToolCaller extends RequestToolUseBlockCaller {
   final ServerToolCaller value;
   const RequestToolUseBlockCallerServerToolCaller(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestToolUseBlockCallerServerToolCaller20260120
-    extends RequestToolUseBlockCaller {
+final class RequestToolUseBlockCallerServerToolCaller20260120 extends RequestToolUseBlockCaller {
   final ServerToolCaller20260120 value;
   const RequestToolUseBlockCallerServerToolCaller20260120(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [RequestToolUseBlockCaller] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownRequestToolUseBlockCaller extends RequestToolUseBlockCaller {
   final Map<String, dynamic> raw;
   const UnknownRequestToolUseBlockCaller(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

@@ -10,68 +10,32 @@ sealed class RequestToolSearchToolResultBlockContent {
   const RequestToolSearchToolResultBlockContent();
   factory RequestToolSearchToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = RequestToolSearchToolResultError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = RequestToolSearchToolSearchResultBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(
-              value);
-        }
-      } catch (_) {}
+      try { final value = RequestToolSearchToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(value); } } catch (_) {}
+      try { final value = RequestToolSearchToolSearchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(value); } } catch (_) {}
     }
-    try {
-      return RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(
-          RequestToolSearchToolResultError.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(
-          RequestToolSearchToolSearchResultBlock.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "tool_search_tool_result_error",
-          "tool_search_tool_search_result"
-        }.contains(json["type"])) {
-      return UnknownRequestToolSearchToolResultBlockContent(json);
-    }
-    throw FormatException(
-        "No variant matched for RequestToolSearchToolResultBlockContent");
+    try { return RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(RequestToolSearchToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(RequestToolSearchToolSearchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"tool_search_tool_result_error", "tool_search_tool_search_result"}.contains(json["type"])) { return UnknownRequestToolSearchToolResultBlockContent(json); }
+    throw FormatException("No variant matched for RequestToolSearchToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError
-    extends RequestToolSearchToolResultBlockContent {
+final class RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError extends RequestToolSearchToolResultBlockContent {
   final RequestToolSearchToolResultError value;
-  const RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock
-    extends RequestToolSearchToolResultBlockContent {
+final class RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock extends RequestToolSearchToolResultBlockContent {
   final RequestToolSearchToolSearchResultBlock value;
-  const RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [RequestToolSearchToolResultBlockContent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestToolSearchToolResultBlockContent
-    extends RequestToolSearchToolResultBlockContent {
+final class UnknownRequestToolSearchToolResultBlockContent extends RequestToolSearchToolResultBlockContent {
   final Map<String, dynamic> raw;
   const UnknownRequestToolSearchToolResultBlockContent(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

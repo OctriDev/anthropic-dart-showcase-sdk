@@ -6,6 +6,7 @@ part of 'shared.dart';
 // shared domain models
 /// Typed representation of the `StopReason` API schema.
 final class StopReason {
+
   final String value;
 
   const StopReason._(this.value);
@@ -18,17 +19,14 @@ final class StopReason {
   static const toolUse = StopReason._('tool_use');
   static const pauseTurn = StopReason._('pause_turn');
   static const refusal = StopReason._('refusal');
-  static const modelContextWindowExceeded =
-      StopReason._('model_context_window_exceeded');
+  static const modelContextWindowExceeded = StopReason._('model_context_window_exceeded');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) => other is StopReason && other.value == value;
+  @override bool operator ==(Object other) => other is StopReason && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

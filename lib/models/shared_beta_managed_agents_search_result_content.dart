@@ -8,41 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSearchResultContent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSearchResultContentType type_;
-
   /// The text content.
   final String text;
 
-  const BetaManagedAgentsSearchResultContent(
-      {required this.type_, required this.text});
+  const BetaManagedAgentsSearchResultContent({required this.type_, required this.text});
 
-  BetaManagedAgentsSearchResultContent Function(
-      {BetaManagedAgentsSearchResultContentType type_,
-      String text}) get copyWith => _copyWith;
+  BetaManagedAgentsSearchResultContent Function({BetaManagedAgentsSearchResultContentType type_, String text}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSearchResultContent _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? text = sdkOmittedValue}) =>
-      BetaManagedAgentsSearchResultContent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSearchResultContentType,
-        text: identical(text, sdkOmittedValue) ? this.text : text as String,
-      );
+  BetaManagedAgentsSearchResultContent _copyWith({Object? type_ = sdkOmittedValue, Object? text = sdkOmittedValue}) => BetaManagedAgentsSearchResultContent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSearchResultContentType,
+    text: identical(text, sdkOmittedValue) ? this.text : text as String,
+  );
 
-  factory BetaManagedAgentsSearchResultContent.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSearchResultContent(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSearchResultContentType.fromJson(
-                json['type'] as String)
-            : null)!,
-        text: (json['text'] as String?)!,
-      );
+  factory BetaManagedAgentsSearchResultContent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSearchResultContent(
+    type_: (json['type'] != null ? BetaManagedAgentsSearchResultContentType.fromJson(json['type'] as String) : null)!,
+    text: (json['text'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'text': text,
-      };
+    'type': type_.toJson(),
+    'text': text,
+  };
 }

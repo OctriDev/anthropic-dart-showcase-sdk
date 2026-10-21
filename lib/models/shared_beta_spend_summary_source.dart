@@ -10,68 +10,18 @@ sealed class BetaSpendSummarySource {
   const BetaSpendSummarySource();
   factory BetaSpendSummarySource.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaUserScope.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaSpendSummarySourceBetaUserScope(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaSeatTierScope.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaSpendSummarySourceBetaSeatTierScope(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaRbacGroupScope.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaSpendSummarySourceBetaRbacGroupScope(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaOrgServiceScope.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaSpendSummarySourceBetaOrgServiceScope(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaOrganizationScope.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaSpendSummarySourceBetaOrganizationScope(value);
-        }
-      } catch (_) {}
+      try { final value = BetaUserScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendSummarySourceBetaUserScope(value); } } catch (_) {}
+      try { final value = BetaSeatTierScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendSummarySourceBetaSeatTierScope(value); } } catch (_) {}
+      try { final value = BetaRbacGroupScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendSummarySourceBetaRbacGroupScope(value); } } catch (_) {}
+      try { final value = BetaOrgServiceScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendSummarySourceBetaOrgServiceScope(value); } } catch (_) {}
+      try { final value = BetaOrganizationScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendSummarySourceBetaOrganizationScope(value); } } catch (_) {}
     }
-    try {
-      return BetaSpendSummarySourceBetaUserScope(
-          BetaUserScope.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaSpendSummarySourceBetaSeatTierScope(
-          BetaSeatTierScope.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaSpendSummarySourceBetaRbacGroupScope(
-          BetaRbacGroupScope.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaSpendSummarySourceBetaOrgServiceScope(
-          BetaOrgServiceScope.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaSpendSummarySourceBetaOrganizationScope(
-          BetaOrganizationScope.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "organization",
-          "organization_service",
-          "rbac_group",
-          "seat_tier",
-          "user"
-        }.contains(json["type"])) {
-      return UnknownBetaSpendSummarySource(json);
-    }
+    try { return BetaSpendSummarySourceBetaUserScope(BetaUserScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaSpendSummarySourceBetaSeatTierScope(BetaSeatTierScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaSpendSummarySourceBetaRbacGroupScope(BetaRbacGroupScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaSpendSummarySourceBetaOrgServiceScope(BetaOrgServiceScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaSpendSummarySourceBetaOrganizationScope(BetaOrganizationScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"organization", "organization_service", "rbac_group", "seat_tier", "user"}.contains(json["type"])) { return UnknownBetaSpendSummarySource(json); }
     throw FormatException("No variant matched for BetaSpendSummarySource");
   }
   Object? toJson();
@@ -80,46 +30,36 @@ sealed class BetaSpendSummarySource {
 final class BetaSpendSummarySourceBetaUserScope extends BetaSpendSummarySource {
   final BetaUserScope value;
   const BetaSpendSummarySourceBetaUserScope(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaSpendSummarySourceBetaSeatTierScope
-    extends BetaSpendSummarySource {
+final class BetaSpendSummarySourceBetaSeatTierScope extends BetaSpendSummarySource {
   final BetaSeatTierScope value;
   const BetaSpendSummarySourceBetaSeatTierScope(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaSpendSummarySourceBetaRbacGroupScope
-    extends BetaSpendSummarySource {
+final class BetaSpendSummarySourceBetaRbacGroupScope extends BetaSpendSummarySource {
   final BetaRbacGroupScope value;
   const BetaSpendSummarySourceBetaRbacGroupScope(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaSpendSummarySourceBetaOrgServiceScope
-    extends BetaSpendSummarySource {
+final class BetaSpendSummarySourceBetaOrgServiceScope extends BetaSpendSummarySource {
   final BetaOrgServiceScope value;
   const BetaSpendSummarySourceBetaOrgServiceScope(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaSpendSummarySourceBetaOrganizationScope
-    extends BetaSpendSummarySource {
+final class BetaSpendSummarySourceBetaOrganizationScope extends BetaSpendSummarySource {
   final BetaOrganizationScope value;
   const BetaSpendSummarySourceBetaOrganizationScope(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaSpendSummarySource] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaSpendSummarySource extends BetaSpendSummarySource {
   final Map<String, dynamic> raw;
   const UnknownBetaSpendSummarySource(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

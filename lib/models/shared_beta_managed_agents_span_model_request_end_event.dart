@@ -8,93 +8,47 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSpanModelRequestEndEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSpanModelRequestEndEventType type_;
-
   /// Unique identifier for this event.
   final String id;
-
   /// Timestamp when the model request completed.
   final String processedAt;
-
   /// Whether the model request resulted in an error.
   final bool? isError;
-
   /// Token usage for this model request.
   final BetaManagedAgentsSpanModelUsage modelUsage;
-
   /// The id of the corresponding `span.model_request_start` event.
   final String modelRequestStartId;
 
-  const BetaManagedAgentsSpanModelRequestEndEvent(
-      {required this.type_,
-      required this.id,
-      required this.processedAt,
-      required this.isError,
-      required this.modelUsage,
-      required this.modelRequestStartId});
+  const BetaManagedAgentsSpanModelRequestEndEvent({required this.type_, required this.id, required this.processedAt, required this.isError, required this.modelUsage, required this.modelRequestStartId});
 
-  BetaManagedAgentsSpanModelRequestEndEvent Function(
-      {BetaManagedAgentsSpanModelRequestEndEventType type_,
-      String id,
-      String processedAt,
-      bool? isError,
-      BetaManagedAgentsSpanModelUsage modelUsage,
-      String modelRequestStartId}) get copyWith => _copyWith;
+  BetaManagedAgentsSpanModelRequestEndEvent Function({BetaManagedAgentsSpanModelRequestEndEventType type_, String id, String processedAt, bool? isError, BetaManagedAgentsSpanModelUsage modelUsage, String modelRequestStartId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSpanModelRequestEndEvent _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? processedAt = sdkOmittedValue,
-          Object? isError = sdkOmittedValue,
-          Object? modelUsage = sdkOmittedValue,
-          Object? modelRequestStartId = sdkOmittedValue}) =>
-      BetaManagedAgentsSpanModelRequestEndEvent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSpanModelRequestEndEventType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        processedAt: identical(processedAt, sdkOmittedValue)
-            ? this.processedAt
-            : processedAt as String,
-        isError: identical(isError, sdkOmittedValue)
-            ? this.isError
-            : isError as bool?,
-        modelUsage: identical(modelUsage, sdkOmittedValue)
-            ? this.modelUsage
-            : modelUsage as BetaManagedAgentsSpanModelUsage,
-        modelRequestStartId: identical(modelRequestStartId, sdkOmittedValue)
-            ? this.modelRequestStartId
-            : modelRequestStartId as String,
-      );
+  BetaManagedAgentsSpanModelRequestEndEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? isError = sdkOmittedValue, Object? modelUsage = sdkOmittedValue, Object? modelRequestStartId = sdkOmittedValue}) => BetaManagedAgentsSpanModelRequestEndEvent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSpanModelRequestEndEventType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
+    isError: identical(isError, sdkOmittedValue) ? this.isError : isError as bool?,
+    modelUsage: identical(modelUsage, sdkOmittedValue) ? this.modelUsage : modelUsage as BetaManagedAgentsSpanModelUsage,
+    modelRequestStartId: identical(modelRequestStartId, sdkOmittedValue) ? this.modelRequestStartId : modelRequestStartId as String,
+  );
 
-  factory BetaManagedAgentsSpanModelRequestEndEvent.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSpanModelRequestEndEvent(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSpanModelRequestEndEventType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        processedAt: (json['processed_at'] as String?)!,
-        isError: json.containsKey('is_error')
-            ? json['is_error'] as bool?
-            : throw ArgumentError.value(
-                null, 'is_error', 'Required property is missing'),
-        modelUsage: (json['model_usage'] != null
-            ? BetaManagedAgentsSpanModelUsage.fromJson(
-                json['model_usage'] as Map<String, dynamic>)
-            : null)!,
-        modelRequestStartId: (json['model_request_start_id'] as String?)!,
-      );
+  factory BetaManagedAgentsSpanModelRequestEndEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSpanModelRequestEndEvent(
+    type_: (json['type'] != null ? BetaManagedAgentsSpanModelRequestEndEventType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    processedAt: (json['processed_at'] as String?)!,
+    isError: json.containsKey('is_error') ? json['is_error'] as bool? : throw ArgumentError.value(null, 'is_error', 'Required property is missing'),
+    modelUsage: (json['model_usage'] != null ? BetaManagedAgentsSpanModelUsage.fromJson(json['model_usage'] as Map<String, dynamic>) : null)!,
+    modelRequestStartId: (json['model_request_start_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'processed_at': processedAt,
-        'is_error': isError,
-        'model_usage': modelUsage.toJson(),
-        'model_request_start_id': modelRequestStartId,
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'processed_at': processedAt,
+    'is_error': isError,
+    'model_usage': modelUsage.toJson(),
+    'model_request_start_id': modelRequestStartId,
+  };
 }

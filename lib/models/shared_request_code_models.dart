@@ -8,245 +8,140 @@ part of 'shared_request_code.dart';
 class RequestCodeExecutionOutputBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `file_id` wire field.
   final String fileId;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestCodeExecutionOutputBlockType type_;
 
-  const RequestCodeExecutionOutputBlock(
-      {required this.fileId, required this.type_});
+  const RequestCodeExecutionOutputBlock({required this.fileId, required this.type_});
 
-  RequestCodeExecutionOutputBlock Function(
-      {String fileId,
-      RequestCodeExecutionOutputBlockType type_}) get copyWith => _copyWith;
+  RequestCodeExecutionOutputBlock Function({String fileId, RequestCodeExecutionOutputBlockType type_}) get copyWith => _copyWith;
 
-  RequestCodeExecutionOutputBlock _copyWith(
-          {Object? fileId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestCodeExecutionOutputBlock(
-        fileId:
-            identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestCodeExecutionOutputBlockType,
-      );
+  RequestCodeExecutionOutputBlock _copyWith({Object? fileId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestCodeExecutionOutputBlock(
+    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestCodeExecutionOutputBlockType,
+  );
 
-  factory RequestCodeExecutionOutputBlock.fromJson(Map<String, dynamic> json) =>
-      RequestCodeExecutionOutputBlock(
-        fileId: (json['file_id'] as String?)!,
-        type_: (json['type'] != null
-            ? RequestCodeExecutionOutputBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestCodeExecutionOutputBlock.fromJson(Map<String, dynamic> json) => RequestCodeExecutionOutputBlock(
+    fileId: (json['file_id'] as String?)!,
+    type_: (json['type'] != null ? RequestCodeExecutionOutputBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'file_id': fileId,
-        'type': type_.toJson(),
-      };
+    'file_id': fileId,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `RequestCodeExecutionResultBlock` API schema.
 class RequestCodeExecutionResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `content` wire field.
   final List<RequestCodeExecutionOutputBlock> content;
-
   /// Required `integer` value serialized in the `return_code` wire field.
   final int returnCode;
-
   /// Required `string` value serialized in the `stderr` wire field.
   final String stderr;
-
   /// Required `string` value serialized in the `stdout` wire field.
   final String stdout;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestCodeExecutionResultBlockType type_;
 
-  const RequestCodeExecutionResultBlock(
-      {required this.content,
-      required this.returnCode,
-      required this.stderr,
-      required this.stdout,
-      required this.type_});
+  const RequestCodeExecutionResultBlock({required this.content, required this.returnCode, required this.stderr, required this.stdout, required this.type_});
 
-  RequestCodeExecutionResultBlock Function(
-      {List<RequestCodeExecutionOutputBlock> content,
-      int returnCode,
-      String stderr,
-      String stdout,
-      RequestCodeExecutionResultBlockType type_}) get copyWith => _copyWith;
+  RequestCodeExecutionResultBlock Function({List<RequestCodeExecutionOutputBlock> content, int returnCode, String stderr, String stdout, RequestCodeExecutionResultBlockType type_}) get copyWith => _copyWith;
 
-  RequestCodeExecutionResultBlock _copyWith(
-          {Object? content = sdkOmittedValue,
-          Object? returnCode = sdkOmittedValue,
-          Object? stderr = sdkOmittedValue,
-          Object? stdout = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestCodeExecutionResultBlock(
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as List<RequestCodeExecutionOutputBlock>,
-        returnCode: identical(returnCode, sdkOmittedValue)
-            ? this.returnCode
-            : returnCode as int,
-        stderr:
-            identical(stderr, sdkOmittedValue) ? this.stderr : stderr as String,
-        stdout:
-            identical(stdout, sdkOmittedValue) ? this.stdout : stdout as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestCodeExecutionResultBlockType,
-      );
+  RequestCodeExecutionResultBlock _copyWith({Object? content = sdkOmittedValue, Object? returnCode = sdkOmittedValue, Object? stderr = sdkOmittedValue, Object? stdout = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestCodeExecutionResultBlock(
+    content: identical(content, sdkOmittedValue) ? this.content : content as List<RequestCodeExecutionOutputBlock>,
+    returnCode: identical(returnCode, sdkOmittedValue) ? this.returnCode : returnCode as int,
+    stderr: identical(stderr, sdkOmittedValue) ? this.stderr : stderr as String,
+    stdout: identical(stdout, sdkOmittedValue) ? this.stdout : stdout as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestCodeExecutionResultBlockType,
+  );
 
-  factory RequestCodeExecutionResultBlock.fromJson(Map<String, dynamic> json) =>
-      RequestCodeExecutionResultBlock(
-        content: ((json['content'] as List?)
-            ?.map((e) => RequestCodeExecutionOutputBlock.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        returnCode: ((json['return_code'] as num?)?.toInt())!,
-        stderr: (json['stderr'] as String?)!,
-        stdout: (json['stdout'] as String?)!,
-        type_: (json['type'] != null
-            ? RequestCodeExecutionResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestCodeExecutionResultBlock.fromJson(Map<String, dynamic> json) => RequestCodeExecutionResultBlock(
+    content: ((json['content'] as List?)?.map((e) => RequestCodeExecutionOutputBlock.fromJson(e as Map<String, dynamic>)).toList())!,
+    returnCode: ((json['return_code'] as num?)?.toInt())!,
+    stderr: (json['stderr'] as String?)!,
+    stdout: (json['stdout'] as String?)!,
+    type_: (json['type'] != null ? RequestCodeExecutionResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'content': content.map((item) => item.toJson()).toList(),
-        'return_code': returnCode,
-        'stderr': stderr,
-        'stdout': stdout,
-        'type': type_.toJson(),
-      };
+    'content': content.map((item) => item.toJson()).toList(),
+    'return_code': returnCode,
+    'stderr': stderr,
+    'stdout': stdout,
+    'type': type_.toJson(),
+  };
 }
 
 sealed class RequestCodeExecutionToolResultBlockCacheControl {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const RequestCodeExecutionToolResultBlockCacheControl();
-  factory RequestCodeExecutionToolResultBlockCacheControl.fromJson(
-      Object? json) {
-    try {
-      return RequestCodeExecutionToolResultBlockCacheControlCacheControlEphemeral(
-          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownRequestCodeExecutionToolResultBlockCacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for RequestCodeExecutionToolResultBlockCacheControl");
+  factory RequestCodeExecutionToolResultBlockCacheControl.fromJson(Object? json) {
+    try { return RequestCodeExecutionToolResultBlockCacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownRequestCodeExecutionToolResultBlockCacheControl(json); }
+    throw FormatException("No variant matched for RequestCodeExecutionToolResultBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class RequestCodeExecutionToolResultBlockCacheControlCacheControlEphemeral
-    extends RequestCodeExecutionToolResultBlockCacheControl {
+final class RequestCodeExecutionToolResultBlockCacheControlCacheControlEphemeral extends RequestCodeExecutionToolResultBlockCacheControl {
   final CacheControlEphemeral value;
-  const RequestCodeExecutionToolResultBlockCacheControlCacheControlEphemeral(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestCodeExecutionToolResultBlockCacheControlCacheControlEphemeral(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [RequestCodeExecutionToolResultBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestCodeExecutionToolResultBlockCacheControl
-    extends RequestCodeExecutionToolResultBlockCacheControl {
+final class UnknownRequestCodeExecutionToolResultBlockCacheControl extends RequestCodeExecutionToolResultBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownRequestCodeExecutionToolResultBlockCacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `RequestCodeExecutionToolResultBlock` API schema.
 class RequestCodeExecutionToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
-
   /// Required API value serialized in the `content` wire field.
   final RequestCodeExecutionToolResultBlockContent content;
-
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestCodeExecutionToolResultBlockType type_;
 
-  const RequestCodeExecutionToolResultBlock(
-      {this.cacheControl = const SdkOmitted(),
-      required this.content,
-      required this.toolUseId,
-      required this.type_});
+  const RequestCodeExecutionToolResultBlock({this.cacheControl = const SdkOmitted(), required this.content, required this.toolUseId, required this.type_});
 
-  RequestCodeExecutionToolResultBlock Function(
-      {SdkOptional<CacheControlEphemeral?> cacheControl,
-      RequestCodeExecutionToolResultBlockContent content,
-      String toolUseId,
-      RequestCodeExecutionToolResultBlockType type_}) get copyWith => _copyWith;
+  RequestCodeExecutionToolResultBlock Function({SdkOptional<CacheControlEphemeral?> cacheControl, RequestCodeExecutionToolResultBlockContent content, String toolUseId, RequestCodeExecutionToolResultBlockType type_}) get copyWith => _copyWith;
 
-  RequestCodeExecutionToolResultBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? toolUseId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestCodeExecutionToolResultBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<CacheControlEphemeral?>,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as RequestCodeExecutionToolResultBlockContent,
-        toolUseId: identical(toolUseId, sdkOmittedValue)
-            ? this.toolUseId
-            : toolUseId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestCodeExecutionToolResultBlockType,
-      );
+  RequestCodeExecutionToolResultBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestCodeExecutionToolResultBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
+    content: identical(content, sdkOmittedValue) ? this.content : content as RequestCodeExecutionToolResultBlockContent,
+    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestCodeExecutionToolResultBlockType,
+  );
 
-  factory RequestCodeExecutionToolResultBlock.fromJson(
-          Map<String, dynamic> json) =>
-      RequestCodeExecutionToolResultBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? CacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        content: (json['content'] != null
-            ? RequestCodeExecutionToolResultBlockContent.fromJson(
-                json['content'])
-            : null)!,
-        toolUseId: (json['tool_use_id'] as String?)!,
-        type_: (json['type'] != null
-            ? RequestCodeExecutionToolResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestCodeExecutionToolResultBlock.fromJson(Map<String, dynamic> json) => RequestCodeExecutionToolResultBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    content: (json['content'] != null ? RequestCodeExecutionToolResultBlockContent.fromJson(json['content']) : null)!,
+    toolUseId: (json['tool_use_id'] as String?)!,
+    type_: (json['type'] != null ? RequestCodeExecutionToolResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<CacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content': content.toJson(),
-        'tool_use_id': toolUseId,
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'content': content.toJson(),
+    'tool_use_id': toolUseId,
+    'type': type_.toJson(),
+  };
 }
 
 sealed class RequestCodeExecutionToolResultBlockContent {
@@ -255,139 +150,69 @@ sealed class RequestCodeExecutionToolResultBlockContent {
   const RequestCodeExecutionToolResultBlockContent();
   factory RequestCodeExecutionToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = RequestCodeExecutionToolResultError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestCodeExecutionToolResultBlockContentRequestCodeExecutionToolResultError(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = RequestCodeExecutionResultBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestCodeExecutionToolResultBlockContentRequestCodeExecutionResultBlock(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = RequestEncryptedCodeExecutionResultBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestCodeExecutionToolResultBlockContentRequestEncryptedCodeExecutionResultBlock(
-              value);
-        }
-      } catch (_) {}
+      try { final value = RequestCodeExecutionToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestCodeExecutionToolResultBlockContentRequestCodeExecutionToolResultError(value); } } catch (_) {}
+      try { final value = RequestCodeExecutionResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestCodeExecutionToolResultBlockContentRequestCodeExecutionResultBlock(value); } } catch (_) {}
+      try { final value = RequestEncryptedCodeExecutionResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestCodeExecutionToolResultBlockContentRequestEncryptedCodeExecutionResultBlock(value); } } catch (_) {}
     }
-    try {
-      return RequestCodeExecutionToolResultBlockContentRequestCodeExecutionToolResultError(
-          RequestCodeExecutionToolResultError.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestCodeExecutionToolResultBlockContentRequestCodeExecutionResultBlock(
-          RequestCodeExecutionResultBlock.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestCodeExecutionToolResultBlockContentRequestEncryptedCodeExecutionResultBlock(
-          RequestEncryptedCodeExecutionResultBlock.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "code_execution_tool_result_error",
-          "code_execution_result",
-          "encrypted_code_execution_result"
-        }.contains(json["type"])) {
-      return UnknownRequestCodeExecutionToolResultBlockContent(json);
-    }
-    throw FormatException(
-        "No variant matched for RequestCodeExecutionToolResultBlockContent");
+    try { return RequestCodeExecutionToolResultBlockContentRequestCodeExecutionToolResultError(RequestCodeExecutionToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestCodeExecutionToolResultBlockContentRequestCodeExecutionResultBlock(RequestCodeExecutionResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestCodeExecutionToolResultBlockContentRequestEncryptedCodeExecutionResultBlock(RequestEncryptedCodeExecutionResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"code_execution_tool_result_error", "code_execution_result", "encrypted_code_execution_result"}.contains(json["type"])) { return UnknownRequestCodeExecutionToolResultBlockContent(json); }
+    throw FormatException("No variant matched for RequestCodeExecutionToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class RequestCodeExecutionToolResultBlockContentRequestCodeExecutionToolResultError
-    extends RequestCodeExecutionToolResultBlockContent {
+final class RequestCodeExecutionToolResultBlockContentRequestCodeExecutionToolResultError extends RequestCodeExecutionToolResultBlockContent {
   final RequestCodeExecutionToolResultError value;
-  const RequestCodeExecutionToolResultBlockContentRequestCodeExecutionToolResultError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestCodeExecutionToolResultBlockContentRequestCodeExecutionToolResultError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestCodeExecutionToolResultBlockContentRequestCodeExecutionResultBlock
-    extends RequestCodeExecutionToolResultBlockContent {
+final class RequestCodeExecutionToolResultBlockContentRequestCodeExecutionResultBlock extends RequestCodeExecutionToolResultBlockContent {
   final RequestCodeExecutionResultBlock value;
-  const RequestCodeExecutionToolResultBlockContentRequestCodeExecutionResultBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestCodeExecutionToolResultBlockContentRequestCodeExecutionResultBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestCodeExecutionToolResultBlockContentRequestEncryptedCodeExecutionResultBlock
-    extends RequestCodeExecutionToolResultBlockContent {
+final class RequestCodeExecutionToolResultBlockContentRequestEncryptedCodeExecutionResultBlock extends RequestCodeExecutionToolResultBlockContent {
   final RequestEncryptedCodeExecutionResultBlock value;
-  const RequestCodeExecutionToolResultBlockContentRequestEncryptedCodeExecutionResultBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestCodeExecutionToolResultBlockContentRequestEncryptedCodeExecutionResultBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [RequestCodeExecutionToolResultBlockContent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestCodeExecutionToolResultBlockContent
-    extends RequestCodeExecutionToolResultBlockContent {
+final class UnknownRequestCodeExecutionToolResultBlockContent extends RequestCodeExecutionToolResultBlockContent {
   final Map<String, dynamic> raw;
   const UnknownRequestCodeExecutionToolResultBlockContent(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `RequestCodeExecutionToolResultError` API schema.
 class RequestCodeExecutionToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `error_code` wire field.
   final CodeExecutionToolResultErrorCode errorCode;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestCodeExecutionToolResultErrorType type_;
 
-  const RequestCodeExecutionToolResultError(
-      {required this.errorCode, required this.type_});
+  const RequestCodeExecutionToolResultError({required this.errorCode, required this.type_});
 
-  RequestCodeExecutionToolResultError Function(
-      {CodeExecutionToolResultErrorCode errorCode,
-      RequestCodeExecutionToolResultErrorType type_}) get copyWith => _copyWith;
+  RequestCodeExecutionToolResultError Function({CodeExecutionToolResultErrorCode errorCode, RequestCodeExecutionToolResultErrorType type_}) get copyWith => _copyWith;
 
-  RequestCodeExecutionToolResultError _copyWith(
-          {Object? errorCode = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestCodeExecutionToolResultError(
-        errorCode: identical(errorCode, sdkOmittedValue)
-            ? this.errorCode
-            : errorCode as CodeExecutionToolResultErrorCode,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestCodeExecutionToolResultErrorType,
-      );
+  RequestCodeExecutionToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestCodeExecutionToolResultError(
+    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as CodeExecutionToolResultErrorCode,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestCodeExecutionToolResultErrorType,
+  );
 
-  factory RequestCodeExecutionToolResultError.fromJson(
-          Map<String, dynamic> json) =>
-      RequestCodeExecutionToolResultError(
-        errorCode: (json['error_code'] != null
-            ? CodeExecutionToolResultErrorCode.fromJson(
-                json['error_code'] as String)
-            : null)!,
-        type_: (json['type'] != null
-            ? RequestCodeExecutionToolResultErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestCodeExecutionToolResultError.fromJson(Map<String, dynamic> json) => RequestCodeExecutionToolResultError(
+    errorCode: (json['error_code'] != null ? CodeExecutionToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
+    type_: (json['type'] != null ? RequestCodeExecutionToolResultErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'error_code': errorCode.toJson(),
-        'type': type_.toJson(),
-      };
+    'error_code': errorCode.toJson(),
+    'type': type_.toJson(),
+  };
 }

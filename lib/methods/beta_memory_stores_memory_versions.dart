@@ -32,8 +32,7 @@ Future<BetaManagedAgentsListMemoryVersionsResult>
         SdkOptional<String> sessionId = const SdkOmitted(),
         SdkOptional<String> apiKeyId = const SdkOmitted(),
         SdkOptional<String> serviceAccountId = const SdkOmitted(),
-        SdkOptional<BetaManagedAgentsMemoryVersionOperation> operation =
-            const SdkOmitted(),
+        SdkOptional<BetaManagedAgentsMemoryVersionOperation> operation = const SdkOmitted(),
         SdkOptional<String> createdAtGte = const SdkOmitted(),
         SdkOptional<String> createdAtLte = const SdkOmitted(),
         SdkOptional<int> limit = const SdkOmitted(),
@@ -54,79 +53,27 @@ Future<BetaManagedAgentsListMemoryVersionsResult>
           '/v1/memory_stores/${Uri.encodeComponent(memoryStoreId.toString())}/memory_versions?beta=true',
           config: config,
           query: {
-            'memory_id': SdkQueryValue(SdkUtils.unwrapOptional(memoryId),
-                style: 'form', explode: true),
-            'session_id': SdkQueryValue(SdkUtils.unwrapOptional(sessionId),
-                style: 'form', explode: true),
-            'api_key_id': SdkQueryValue(SdkUtils.unwrapOptional(apiKeyId),
-                style: 'form', explode: true),
-            'service_account_id': SdkQueryValue(
-                SdkUtils.unwrapOptional(serviceAccountId),
-                style: 'form',
-                explode: true),
-            'operation': SdkQueryValue(SdkUtils.unwrapOptional(operation),
-                style: 'form', explode: true),
-            'created_at[gte]': SdkQueryValue(
-                SdkUtils.unwrapOptional(createdAtGte),
-                style: 'form',
-                explode: true),
-            'created_at[lte]': SdkQueryValue(
-                SdkUtils.unwrapOptional(createdAtLte),
-                style: 'form',
-                explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'view': SdkQueryValue(SdkUtils.unwrapOptional(view),
-                style: 'form', explode: true)
+            'memory_id': SdkQueryValue(SdkUtils.unwrapOptional(memoryId), style: 'form', explode: true),
+            'session_id': SdkQueryValue(SdkUtils.unwrapOptional(sessionId), style: 'form', explode: true),
+            'api_key_id': SdkQueryValue(SdkUtils.unwrapOptional(apiKeyId), style: 'form', explode: true),
+            'service_account_id': SdkQueryValue(SdkUtils.unwrapOptional(serviceAccountId), style: 'form', explode: true),
+            'operation': SdkQueryValue(SdkUtils.unwrapOptional(operation), style: 'form', explode: true),
+            'created_at[gte]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtGte), style: 'form', explode: true),
+            'created_at[lte]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtLte), style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'view': SdkQueryValue(SdkUtils.unwrapOptional(view), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'listBetaMemoryStoresMemoryVersions',
-          fromJsonRaw: (value) =>
-              BetaManagedAgentsListMemoryVersionsResult.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsListMemoryVersionsResult.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '401': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '403': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '404': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '408': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '409': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '412': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '413': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '429': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '431': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '499': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '500': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '501': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '503': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '504': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
+
 
 /// Lists a memory store's version history, with the newest versions first. Use the available filters to narrow results by memory, actor, operation, or creation time, and use `page` to continue through the results. Choose `view` to control whether version content is included.
 ///
@@ -146,137 +93,23 @@ Future<BetaManagedAgentsListMemoryVersionsResult>
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Stream<BetaManagedAgentsMemoryVersion>
-    listBetaMemoryStoresMemoryVersionsPaginated(ClientConfig config,
-        {required String memoryStoreId,
-        String? memoryId,
-        String? sessionId,
-        String? apiKeyId,
-        String? serviceAccountId,
-        BetaManagedAgentsMemoryVersionOperation? operation,
-        String? createdAtGte,
-        String? createdAtLte,
-        int? limit,
-        String? page,
-        BetaManagedAgentsMemoryView? view,
-        String? anthropicVersion,
-        List<String>? anthropicBeta,
-        String? anthropicWorkspaceId,
-        RequestOptions? requestOptions}) async* {
+Stream<BetaManagedAgentsMemoryVersion> listBetaMemoryStoresMemoryVersionsPaginated(ClientConfig config, {required String memoryStoreId, String? memoryId, String? sessionId, String? apiKeyId, String? serviceAccountId, BetaManagedAgentsMemoryVersionOperation? operation, String? createdAtGte, String? createdAtLte, int? limit, String? page, BetaManagedAgentsMemoryView? view, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaMemoryStoresMemoryVersions(config,
-        memoryStoreId: memoryStoreId,
-        memoryId: memoryId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(memoryId),
-        sessionId: sessionId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(sessionId),
-        apiKeyId: apiKeyId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(apiKeyId),
-        serviceAccountId: serviceAccountId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(serviceAccountId),
-        operation: operation == null
-            ? const SdkOmitted<BetaManagedAgentsMemoryVersionOperation>()
-            : SdkPresent<BetaManagedAgentsMemoryVersionOperation>(operation),
-        createdAtGte: createdAtGte == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtGte),
-        createdAtLte: createdAtLte == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtLte),
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(sdkCursor),
-        view: view == null
-            ? const SdkOmitted<BetaManagedAgentsMemoryView>()
-            : SdkPresent<BetaManagedAgentsMemoryView>(view),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicWorkspaceId: anthropicWorkspaceId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicWorkspaceId),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaMemoryStoresMemoryVersions(config, memoryStoreId: memoryStoreId, memoryId: memoryId == null ? const SdkOmitted<String>() : SdkPresent<String>(memoryId), sessionId: sessionId == null ? const SdkOmitted<String>() : SdkPresent<String>(sessionId), apiKeyId: apiKeyId == null ? const SdkOmitted<String>() : SdkPresent<String>(apiKeyId), serviceAccountId: serviceAccountId == null ? const SdkOmitted<String>() : SdkPresent<String>(serviceAccountId), operation: operation == null ? const SdkOmitted<BetaManagedAgentsMemoryVersionOperation>() : SdkPresent<BetaManagedAgentsMemoryVersionOperation>(operation), createdAtGte: createdAtGte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGte), createdAtLte: createdAtLte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLte), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), view: view == null ? const SdkOmitted<BetaManagedAgentsMemoryView>() : SdkPresent<BetaManagedAgentsMemoryView>(view), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
     final sdkItems = sdkPage.data.valueOrNull ?? [];
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) {
-      yield sdkItem;
-    }
+    for (final sdkItem in sdkItems) { yield sdkItem; }
     final sdkNext = sdkPage.nextPage.valueOrNull;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<
-        SdkPage<BetaManagedAgentsListMemoryVersionsResult,
-            BetaManagedAgentsMemoryVersion>>
-    listBetaMemoryStoresMemoryVersionsPages(ClientConfig config,
-        {required String memoryStoreId,
-        String? memoryId,
-        String? sessionId,
-        String? apiKeyId,
-        String? serviceAccountId,
-        BetaManagedAgentsMemoryVersionOperation? operation,
-        String? createdAtGte,
-        String? createdAtLte,
-        int? limit,
-        String? page,
-        BetaManagedAgentsMemoryView? view,
-        String? anthropicVersion,
-        List<String>? anthropicBeta,
-        String? anthropicWorkspaceId,
-        RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaManagedAgentsListMemoryVersionsResult, BetaManagedAgentsMemoryVersion>> listBetaMemoryStoresMemoryVersionsPages(ClientConfig config, {required String memoryStoreId, String? memoryId, String? sessionId, String? apiKeyId, String? serviceAccountId, BetaManagedAgentsMemoryVersionOperation? operation, String? createdAtGte, String? createdAtLte, int? limit, String? page, BetaManagedAgentsMemoryView? view, String? anthropicVersion, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaMemoryStoresMemoryVersions(config,
-        memoryStoreId: memoryStoreId,
-        memoryId: memoryId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(memoryId),
-        sessionId: sessionId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(sessionId),
-        apiKeyId: apiKeyId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(apiKeyId),
-        serviceAccountId: serviceAccountId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(serviceAccountId),
-        operation: operation == null
-            ? const SdkOmitted<BetaManagedAgentsMemoryVersionOperation>()
-            : SdkPresent<BetaManagedAgentsMemoryVersionOperation>(operation),
-        createdAtGte: createdAtGte == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtGte),
-        createdAtLte: createdAtLte == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(createdAtLte),
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(sdkCursor),
-        view: view == null
-            ? const SdkOmitted<BetaManagedAgentsMemoryView>()
-            : SdkPresent<BetaManagedAgentsMemoryView>(view),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicWorkspaceId: anthropicWorkspaceId == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicWorkspaceId),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaMemoryStoresMemoryVersions(config, memoryStoreId: memoryStoreId, memoryId: memoryId == null ? const SdkOmitted<String>() : SdkPresent<String>(memoryId), sessionId: sessionId == null ? const SdkOmitted<String>() : SdkPresent<String>(sessionId), apiKeyId: apiKeyId == null ? const SdkOmitted<String>() : SdkPresent<String>(apiKeyId), serviceAccountId: serviceAccountId == null ? const SdkOmitted<String>() : SdkPresent<String>(serviceAccountId), operation: operation == null ? const SdkOmitted<BetaManagedAgentsMemoryVersionOperation>() : SdkPresent<BetaManagedAgentsMemoryVersionOperation>(operation), createdAtGte: createdAtGte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGte), createdAtLte: createdAtLte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLte), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), view: view == null ? const SdkOmitted<BetaManagedAgentsMemoryView>() : SdkPresent<BetaManagedAgentsMemoryView>(view), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
     final sdkItems = sdkPage.data.valueOrNull ?? [];
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage.valueOrNull;
@@ -286,6 +119,7 @@ Stream<
     sdkCursor = sdkNext;
   }
 }
+
 
 /// Retrieves a specific immutable version from a memory store's version history. Use `view` to choose whether the response includes the version's content. Redacted versions and deleted-version records may have content and related path or hash values set to `null`.
 ///
@@ -297,67 +131,30 @@ Stream<
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaManagedAgentsMemoryVersion> retrieveBetaMemoryStoresMemoryVersions(
-    ClientConfig config,
-    {required String memoryStoreId,
-    required String memoryVersionId,
-    SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
-    SdkOptional<String> anthropicVersion = const SdkOmitted(),
-    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsMemoryVersion>
+    retrieveBetaMemoryStoresMemoryVersions(ClientConfig config,
+        {required String memoryStoreId,
+        required String memoryVersionId,
+        SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
+        SdkOptional<String> anthropicVersion = const SdkOmitted(),
+        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaManagedAgentsMemoryVersion>('GET',
           '/v1/memory_stores/${Uri.encodeComponent(memoryStoreId.toString())}/memory_versions/${Uri.encodeComponent(memoryVersionId.toString())}?beta=true',
           config: config,
           query: {
-            'view': SdkQueryValue(SdkUtils.unwrapOptional(view),
-                style: 'form', explode: true)
+            'view': SdkQueryValue(SdkUtils.unwrapOptional(view), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'retrieveBetaMemoryStoresMemoryVersions',
-          fromJsonRaw: (value) => BetaManagedAgentsMemoryVersion.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsMemoryVersion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '401': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '403': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '404': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '408': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '409': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '412': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '413': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '429': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '431': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '499': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '500': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '501': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '503': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>),
-            '504': (value) => BetaManagedAgentsErrorResponse.fromJson(
-                value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Redacts a specific version in a memory store's immutable history. Use this operation when the version's stored content and path must no longer be available; the version record remains, with its redaction details retained. The response returns the redacted version.
 ///
@@ -368,59 +165,22 @@ Future<BetaManagedAgentsMemoryVersion> retrieveBetaMemoryStoresMemoryVersions(
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaManagedAgentsMemoryVersion> redactBetaMemoryStoresMemoryVersions(
-    ClientConfig config,
-    {required String memoryStoreId,
-    required String memoryVersionId,
-    SdkOptional<String> anthropicVersion = const SdkOmitted(),
-    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsMemoryVersion>
+    redactBetaMemoryStoresMemoryVersions(ClientConfig config,
+        {required String memoryStoreId,
+        required String memoryVersionId,
+        SdkOptional<String> anthropicVersion = const SdkOmitted(),
+        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaManagedAgentsMemoryVersion>('POST',
           '/v1/memory_stores/${Uri.encodeComponent(memoryStoreId.toString())}/memory_versions/${Uri.encodeComponent(memoryVersionId.toString())}/redact?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'redactBetaMemoryStoresMemoryVersions',
-          fromJsonRaw: (value) => BetaManagedAgentsMemoryVersion.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsMemoryVersion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '401': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '403': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '404': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '408': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '409': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '412': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '413': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '429': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '431': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '499': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '500': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '501': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '503': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>),
-        '504': (value) => BetaManagedAgentsErrorResponse.fromJson(
-            value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

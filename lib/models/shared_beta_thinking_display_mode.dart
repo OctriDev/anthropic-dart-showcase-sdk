@@ -6,12 +6,12 @@ part of 'shared_beta_thinking.dart';
 // shared_beta_thinking domain models
 /// Typed representation of the `BetaThinkingDisplayMode` API schema.
 final class BetaThinkingDisplayMode {
+
   final String value;
 
   const BetaThinkingDisplayMode._(this.value);
 
-  factory BetaThinkingDisplayMode.fromJson(String value) =>
-      BetaThinkingDisplayMode._(value);
+  factory BetaThinkingDisplayMode.fromJson(String value) => BetaThinkingDisplayMode._(value);
 
   static const summarized = BetaThinkingDisplayMode._('summarized');
   static const omitted = BetaThinkingDisplayMode._('omitted');
@@ -19,13 +19,10 @@ final class BetaThinkingDisplayMode {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaThinkingDisplayMode && other.value == value;
+  @override bool operator ==(Object other) => other is BetaThinkingDisplayMode && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

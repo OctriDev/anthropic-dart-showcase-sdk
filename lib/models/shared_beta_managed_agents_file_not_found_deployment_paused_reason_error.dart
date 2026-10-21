@@ -8,36 +8,22 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsFileNotFoundDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType type_;
 
-  const BetaManagedAgentsFileNotFoundDeploymentPausedReasonError(
-      {required this.type_});
+  const BetaManagedAgentsFileNotFoundDeploymentPausedReasonError({required this.type_});
 
-  BetaManagedAgentsFileNotFoundDeploymentPausedReasonError Function(
-          {BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType type_})
-      get copyWith => _copyWith;
+  BetaManagedAgentsFileNotFoundDeploymentPausedReasonError Function({BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsFileNotFoundDeploymentPausedReasonError _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaManagedAgentsFileNotFoundDeploymentPausedReasonError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_
-                as BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType,
-      );
+  BetaManagedAgentsFileNotFoundDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsFileNotFoundDeploymentPausedReasonError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType,
+  );
 
-  factory BetaManagedAgentsFileNotFoundDeploymentPausedReasonError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsFileNotFoundDeploymentPausedReasonError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType
-                .fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaManagedAgentsFileNotFoundDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsFileNotFoundDeploymentPausedReasonError(
+    type_: (json['type'] != null ? BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

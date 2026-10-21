@@ -8,43 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsFileImageSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsFileImageSourceType type_;
-
   /// ID of a previously uploaded file.
   final String fileId;
 
-  const BetaManagedAgentsFileImageSource(
-      {required this.type_, required this.fileId});
+  const BetaManagedAgentsFileImageSource({required this.type_, required this.fileId});
 
-  BetaManagedAgentsFileImageSource Function(
-      {BetaManagedAgentsFileImageSourceType type_,
-      String fileId}) get copyWith => _copyWith;
+  BetaManagedAgentsFileImageSource Function({BetaManagedAgentsFileImageSourceType type_, String fileId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsFileImageSource _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? fileId = sdkOmittedValue}) =>
-      BetaManagedAgentsFileImageSource(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsFileImageSourceType,
-        fileId:
-            identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
-      );
+  BetaManagedAgentsFileImageSource _copyWith({Object? type_ = sdkOmittedValue, Object? fileId = sdkOmittedValue}) => BetaManagedAgentsFileImageSource(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsFileImageSourceType,
+    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
+  );
 
-  factory BetaManagedAgentsFileImageSource.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsFileImageSource(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsFileImageSourceType.fromJson(
-                json['type'] as String)
-            : null)!,
-        fileId: (json['file_id'] as String?)!,
-      );
+  factory BetaManagedAgentsFileImageSource.fromJson(Map<String, dynamic> json) => BetaManagedAgentsFileImageSource(
+    type_: (json['type'] != null ? BetaManagedAgentsFileImageSourceType.fromJson(json['type'] as String) : null)!,
+    fileId: (json['file_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'file_id': fileId,
-      };
+    'type': type_.toJson(),
+    'file_id': fileId,
+  };
 }

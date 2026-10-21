@@ -8,100 +8,46 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsGrepToolConfigParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `type` wire field.
   final SdkOptional<BetaManagedAgentsGrepToolConfigParamsType> type_;
-
   /// Must be "grep".
   final BetaManagedAgentsGrepToolConfigParamsName name;
-
   /// Whether this tool is enabled and available to Claude. Overrides the default_config setting.
   final SdkOptional<bool?> enabled;
-
   /// Permission policy for this tool. Controls whether tool calls are auto-approved or require confirmation.
   final SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy;
 
-  const BetaManagedAgentsGrepToolConfigParams(
-      {this.type_ = const SdkOmitted(),
-      required this.name,
-      this.enabled = const SdkOmitted(),
-      this.permissionPolicy = const SdkOmitted()});
+  const BetaManagedAgentsGrepToolConfigParams({this.type_ = const SdkOmitted(), required this.name, this.enabled = const SdkOmitted(), this.permissionPolicy = const SdkOmitted()});
 
-  BetaManagedAgentsGrepToolConfigParams Function(
-          {SdkOptional<BetaManagedAgentsGrepToolConfigParamsType> type_,
-          BetaManagedAgentsGrepToolConfigParamsName name,
-          SdkOptional<bool?> enabled,
-          SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy})
-      get copyWith => _copyWith;
+  BetaManagedAgentsGrepToolConfigParams Function({SdkOptional<BetaManagedAgentsGrepToolConfigParamsType> type_, BetaManagedAgentsGrepToolConfigParamsName name, SdkOptional<bool?> enabled, SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy}) get copyWith => _copyWith;
 
-  BetaManagedAgentsGrepToolConfigParams _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? enabled = sdkOmittedValue,
-          Object? permissionPolicy = sdkOmittedValue}) =>
-      BetaManagedAgentsGrepToolConfigParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<BetaManagedAgentsGrepToolConfigParamsType>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as BetaManagedAgentsGrepToolConfigParamsName,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as SdkOptional<bool?>,
-        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
-            ? this.permissionPolicy
-            : permissionPolicy
-                as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
-      );
+  BetaManagedAgentsGrepToolConfigParams _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue}) => BetaManagedAgentsGrepToolConfigParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<BetaManagedAgentsGrepToolConfigParamsType>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as BetaManagedAgentsGrepToolConfigParamsName,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
+    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
+  );
 
-  factory BetaManagedAgentsGrepToolConfigParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsGrepToolConfigParams(
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] != null
-                ? BetaManagedAgentsGrepToolConfigParamsType.fromJson(
-                    json['type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        name: (json['name'] != null
-            ? BetaManagedAgentsGrepToolConfigParamsName.fromJson(
-                json['name'] as String)
-            : null)!,
-        enabled: json.containsKey('enabled')
-            ? SdkPresent(json['enabled'] as bool?)
-            : const SdkOmitted(),
-        permissionPolicy: json.containsKey('permission_policy')
-            ? SdkPresent(json['permission_policy'] != null
-                ? BetaManagedAgentsPermissionPolicy.fromJson(
-                    json['permission_policy'])
-                : null)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsGrepToolConfigParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsGrepToolConfigParams(
+    type_: json['type'] != null ? SdkPresent((json['type'] != null ? BetaManagedAgentsGrepToolConfigParamsType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
+    name: (json['name'] != null ? BetaManagedAgentsGrepToolConfigParamsName.fromJson(json['name'] as String) : null)!,
+    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
+    permissionPolicy: json.containsKey('permission_policy') ? SdkPresent(json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (type_) {
-          SdkPresent<BetaManagedAgentsGrepToolConfigParamsType>(
-            value: final value
-          ) =>
-            {
-              'type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name.toJson(),
-        ...switch (enabled) {
-          SdkPresent<bool?>(value: final value) => {
-              'enabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (permissionPolicy) {
-          SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) =>
-            {
-              'permission_policy': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (type_) {
+      SdkPresent<BetaManagedAgentsGrepToolConfigParamsType>(value: final value) => {'type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'name': name.toJson(),
+    ...switch (enabled) {
+      SdkPresent<bool?>(value: final value) => {'enabled': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (permissionPolicy) {
+      SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) => {'permission_policy': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

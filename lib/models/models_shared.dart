@@ -8,7 +8,6 @@ part of 'models.dart';
 class CapabilitySupport {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether this capability is supported by the model.
   final bool supported;
 
@@ -16,545 +15,279 @@ class CapabilitySupport {
 
   CapabilitySupport Function({bool supported}) get copyWith => _copyWith;
 
-  CapabilitySupport _copyWith({Object? supported = sdkOmittedValue}) =>
-      CapabilitySupport(
-        supported: identical(supported, sdkOmittedValue)
-            ? this.supported
-            : supported as bool,
-      );
+  CapabilitySupport _copyWith({Object? supported = sdkOmittedValue}) => CapabilitySupport(
+    supported: identical(supported, sdkOmittedValue) ? this.supported : supported as bool,
+  );
 
-  factory CapabilitySupport.fromJson(Map<String, dynamic> json) =>
-      CapabilitySupport(
-        supported: (json['supported'] as bool?)!,
-      );
+  factory CapabilitySupport.fromJson(Map<String, dynamic> json) => CapabilitySupport(
+    supported: (json['supported'] as bool?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'supported': supported,
-      };
+    'supported': supported,
+  };
 }
 
 /// Context management capability details.
 class ContextManagementCapability {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether the clear_thinking_20251015 strategy is supported.
   final CapabilitySupport? clearThinking20251015;
-
   /// Whether the clear_tool_uses_20250919 strategy is supported.
   final CapabilitySupport? clearToolUses20250919;
-
   /// Whether the compact_20260112 strategy is supported.
   final CapabilitySupport? compact20260112;
-
   /// Whether this capability is supported by the model.
   final bool supported;
 
-  const ContextManagementCapability(
-      {required this.clearThinking20251015,
-      required this.clearToolUses20250919,
-      required this.compact20260112,
-      required this.supported});
+  const ContextManagementCapability({required this.clearThinking20251015, required this.clearToolUses20250919, required this.compact20260112, required this.supported});
 
-  ContextManagementCapability Function(
-      {CapabilitySupport? clearThinking20251015,
-      CapabilitySupport? clearToolUses20250919,
-      CapabilitySupport? compact20260112,
-      bool supported}) get copyWith => _copyWith;
+  ContextManagementCapability Function({CapabilitySupport? clearThinking20251015, CapabilitySupport? clearToolUses20250919, CapabilitySupport? compact20260112, bool supported}) get copyWith => _copyWith;
 
-  ContextManagementCapability _copyWith(
-          {Object? clearThinking20251015 = sdkOmittedValue,
-          Object? clearToolUses20250919 = sdkOmittedValue,
-          Object? compact20260112 = sdkOmittedValue,
-          Object? supported = sdkOmittedValue}) =>
-      ContextManagementCapability(
-        clearThinking20251015: identical(clearThinking20251015, sdkOmittedValue)
-            ? this.clearThinking20251015
-            : clearThinking20251015 as CapabilitySupport?,
-        clearToolUses20250919: identical(clearToolUses20250919, sdkOmittedValue)
-            ? this.clearToolUses20250919
-            : clearToolUses20250919 as CapabilitySupport?,
-        compact20260112: identical(compact20260112, sdkOmittedValue)
-            ? this.compact20260112
-            : compact20260112 as CapabilitySupport?,
-        supported: identical(supported, sdkOmittedValue)
-            ? this.supported
-            : supported as bool,
-      );
+  ContextManagementCapability _copyWith({Object? clearThinking20251015 = sdkOmittedValue, Object? clearToolUses20250919 = sdkOmittedValue, Object? compact20260112 = sdkOmittedValue, Object? supported = sdkOmittedValue}) => ContextManagementCapability(
+    clearThinking20251015: identical(clearThinking20251015, sdkOmittedValue) ? this.clearThinking20251015 : clearThinking20251015 as CapabilitySupport?,
+    clearToolUses20250919: identical(clearToolUses20250919, sdkOmittedValue) ? this.clearToolUses20250919 : clearToolUses20250919 as CapabilitySupport?,
+    compact20260112: identical(compact20260112, sdkOmittedValue) ? this.compact20260112 : compact20260112 as CapabilitySupport?,
+    supported: identical(supported, sdkOmittedValue) ? this.supported : supported as bool,
+  );
 
-  factory ContextManagementCapability.fromJson(Map<String, dynamic> json) =>
-      ContextManagementCapability(
-        clearThinking20251015: json.containsKey('clear_thinking_20251015')
-            ? json['clear_thinking_20251015'] != null
-                ? CapabilitySupport.fromJson(
-                    json['clear_thinking_20251015'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(null, 'clear_thinking_20251015',
-                'Required property is missing'),
-        clearToolUses20250919: json.containsKey('clear_tool_uses_20250919')
-            ? json['clear_tool_uses_20250919'] != null
-                ? CapabilitySupport.fromJson(
-                    json['clear_tool_uses_20250919'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(null, 'clear_tool_uses_20250919',
-                'Required property is missing'),
-        compact20260112: json.containsKey('compact_20260112')
-            ? json['compact_20260112'] != null
-                ? CapabilitySupport.fromJson(
-                    json['compact_20260112'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'compact_20260112', 'Required property is missing'),
-        supported: (json['supported'] as bool?)!,
-      );
+  factory ContextManagementCapability.fromJson(Map<String, dynamic> json) => ContextManagementCapability(
+    clearThinking20251015: json.containsKey('clear_thinking_20251015') ? json['clear_thinking_20251015'] != null ? CapabilitySupport.fromJson(json['clear_thinking_20251015'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'clear_thinking_20251015', 'Required property is missing'),
+    clearToolUses20250919: json.containsKey('clear_tool_uses_20250919') ? json['clear_tool_uses_20250919'] != null ? CapabilitySupport.fromJson(json['clear_tool_uses_20250919'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'clear_tool_uses_20250919', 'Required property is missing'),
+    compact20260112: json.containsKey('compact_20260112') ? json['compact_20260112'] != null ? CapabilitySupport.fromJson(json['compact_20260112'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'compact_20260112', 'Required property is missing'),
+    supported: (json['supported'] as bool?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'clear_thinking_20251015': clearThinking20251015?.toJson(),
-        'clear_tool_uses_20250919': clearToolUses20250919?.toJson(),
-        'compact_20260112': compact20260112?.toJson(),
-        'supported': supported,
-      };
+    'clear_thinking_20251015': clearThinking20251015?.toJson(),
+    'clear_tool_uses_20250919': clearToolUses20250919?.toJson(),
+    'compact_20260112': compact20260112?.toJson(),
+    'supported': supported,
+  };
 }
 
 /// Effort (reasoning_effort) capability details.
 class EffortCapability {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether the model supports high effort level.
   final CapabilitySupport high;
-
   /// Whether the model supports low effort level.
   final CapabilitySupport low;
-
   /// Whether the model supports max effort level.
   final CapabilitySupport max;
-
   /// Whether the model supports medium effort level.
   final CapabilitySupport medium;
-
   /// Whether this capability is supported by the model.
   final bool supported;
-
   /// Whether the model supports xhigh effort level.
   final CapabilitySupport? xhigh;
 
-  const EffortCapability(
-      {required this.high,
-      required this.low,
-      required this.max,
-      required this.medium,
-      required this.supported,
-      required this.xhigh});
+  const EffortCapability({required this.high, required this.low, required this.max, required this.medium, required this.supported, required this.xhigh});
 
-  EffortCapability Function(
-      {CapabilitySupport high,
-      CapabilitySupport low,
-      CapabilitySupport max,
-      CapabilitySupport medium,
-      bool supported,
-      CapabilitySupport? xhigh}) get copyWith => _copyWith;
+  EffortCapability Function({CapabilitySupport high, CapabilitySupport low, CapabilitySupport max, CapabilitySupport medium, bool supported, CapabilitySupport? xhigh}) get copyWith => _copyWith;
 
-  EffortCapability _copyWith(
-          {Object? high = sdkOmittedValue,
-          Object? low = sdkOmittedValue,
-          Object? max = sdkOmittedValue,
-          Object? medium = sdkOmittedValue,
-          Object? supported = sdkOmittedValue,
-          Object? xhigh = sdkOmittedValue}) =>
-      EffortCapability(
-        high: identical(high, sdkOmittedValue)
-            ? this.high
-            : high as CapabilitySupport,
-        low: identical(low, sdkOmittedValue)
-            ? this.low
-            : low as CapabilitySupport,
-        max: identical(max, sdkOmittedValue)
-            ? this.max
-            : max as CapabilitySupport,
-        medium: identical(medium, sdkOmittedValue)
-            ? this.medium
-            : medium as CapabilitySupport,
-        supported: identical(supported, sdkOmittedValue)
-            ? this.supported
-            : supported as bool,
-        xhigh: identical(xhigh, sdkOmittedValue)
-            ? this.xhigh
-            : xhigh as CapabilitySupport?,
-      );
+  EffortCapability _copyWith({Object? high = sdkOmittedValue, Object? low = sdkOmittedValue, Object? max = sdkOmittedValue, Object? medium = sdkOmittedValue, Object? supported = sdkOmittedValue, Object? xhigh = sdkOmittedValue}) => EffortCapability(
+    high: identical(high, sdkOmittedValue) ? this.high : high as CapabilitySupport,
+    low: identical(low, sdkOmittedValue) ? this.low : low as CapabilitySupport,
+    max: identical(max, sdkOmittedValue) ? this.max : max as CapabilitySupport,
+    medium: identical(medium, sdkOmittedValue) ? this.medium : medium as CapabilitySupport,
+    supported: identical(supported, sdkOmittedValue) ? this.supported : supported as bool,
+    xhigh: identical(xhigh, sdkOmittedValue) ? this.xhigh : xhigh as CapabilitySupport?,
+  );
 
-  factory EffortCapability.fromJson(Map<String, dynamic> json) =>
-      EffortCapability(
-        high: (json['high'] != null
-            ? CapabilitySupport.fromJson(json['high'] as Map<String, dynamic>)
-            : null)!,
-        low: (json['low'] != null
-            ? CapabilitySupport.fromJson(json['low'] as Map<String, dynamic>)
-            : null)!,
-        max: (json['max'] != null
-            ? CapabilitySupport.fromJson(json['max'] as Map<String, dynamic>)
-            : null)!,
-        medium: (json['medium'] != null
-            ? CapabilitySupport.fromJson(json['medium'] as Map<String, dynamic>)
-            : null)!,
-        supported: (json['supported'] as bool?)!,
-        xhigh: json.containsKey('xhigh')
-            ? json['xhigh'] != null
-                ? CapabilitySupport.fromJson(
-                    json['xhigh'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'xhigh', 'Required property is missing'),
-      );
+  factory EffortCapability.fromJson(Map<String, dynamic> json) => EffortCapability(
+    high: (json['high'] != null ? CapabilitySupport.fromJson(json['high'] as Map<String, dynamic>) : null)!,
+    low: (json['low'] != null ? CapabilitySupport.fromJson(json['low'] as Map<String, dynamic>) : null)!,
+    max: (json['max'] != null ? CapabilitySupport.fromJson(json['max'] as Map<String, dynamic>) : null)!,
+    medium: (json['medium'] != null ? CapabilitySupport.fromJson(json['medium'] as Map<String, dynamic>) : null)!,
+    supported: (json['supported'] as bool?)!,
+    xhigh: json.containsKey('xhigh') ? json['xhigh'] != null ? CapabilitySupport.fromJson(json['xhigh'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'xhigh', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'high': high.toJson(),
-        'low': low.toJson(),
-        'max': max.toJson(),
-        'medium': medium.toJson(),
-        'supported': supported,
-        'xhigh': xhigh?.toJson(),
-      };
+    'high': high.toJson(),
+    'low': low.toJson(),
+    'max': max.toJson(),
+    'medium': medium.toJson(),
+    'supported': supported,
+    'xhigh': xhigh?.toJson(),
+  };
 }
 
 /// Model capability information.
 class ModelCapabilities {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether the model supports the Batch API.
   final CapabilitySupport batch;
-
   /// Whether the model supports citation generation.
   final CapabilitySupport citations;
-
   /// Whether the model supports code execution tools.
   final CapabilitySupport codeExecution;
-
   /// Context management support and available strategies.
   final ContextManagementCapability contextManagement;
-
   /// Effort (reasoning_effort) support and available levels.
   final EffortCapability effort;
-
   /// Whether the model accepts image content blocks.
   final CapabilitySupport imageInput;
-
   /// Whether the model accepts PDF content blocks.
   final CapabilitySupport pdfInput;
-
   /// Whether the model supports structured output / JSON mode / strict tool schemas.
   final CapabilitySupport structuredOutputs;
-
   /// Thinking capability and supported type configurations.
   final ThinkingCapability thinking;
 
-  const ModelCapabilities(
-      {required this.batch,
-      required this.citations,
-      required this.codeExecution,
-      required this.contextManagement,
-      required this.effort,
-      required this.imageInput,
-      required this.pdfInput,
-      required this.structuredOutputs,
-      required this.thinking});
+  const ModelCapabilities({required this.batch, required this.citations, required this.codeExecution, required this.contextManagement, required this.effort, required this.imageInput, required this.pdfInput, required this.structuredOutputs, required this.thinking});
 
-  ModelCapabilities Function(
-      {CapabilitySupport batch,
-      CapabilitySupport citations,
-      CapabilitySupport codeExecution,
-      ContextManagementCapability contextManagement,
-      EffortCapability effort,
-      CapabilitySupport imageInput,
-      CapabilitySupport pdfInput,
-      CapabilitySupport structuredOutputs,
-      ThinkingCapability thinking}) get copyWith => _copyWith;
+  ModelCapabilities Function({CapabilitySupport batch, CapabilitySupport citations, CapabilitySupport codeExecution, ContextManagementCapability contextManagement, EffortCapability effort, CapabilitySupport imageInput, CapabilitySupport pdfInput, CapabilitySupport structuredOutputs, ThinkingCapability thinking}) get copyWith => _copyWith;
 
-  ModelCapabilities _copyWith(
-          {Object? batch = sdkOmittedValue,
-          Object? citations = sdkOmittedValue,
-          Object? codeExecution = sdkOmittedValue,
-          Object? contextManagement = sdkOmittedValue,
-          Object? effort = sdkOmittedValue,
-          Object? imageInput = sdkOmittedValue,
-          Object? pdfInput = sdkOmittedValue,
-          Object? structuredOutputs = sdkOmittedValue,
-          Object? thinking = sdkOmittedValue}) =>
-      ModelCapabilities(
-        batch: identical(batch, sdkOmittedValue)
-            ? this.batch
-            : batch as CapabilitySupport,
-        citations: identical(citations, sdkOmittedValue)
-            ? this.citations
-            : citations as CapabilitySupport,
-        codeExecution: identical(codeExecution, sdkOmittedValue)
-            ? this.codeExecution
-            : codeExecution as CapabilitySupport,
-        contextManagement: identical(contextManagement, sdkOmittedValue)
-            ? this.contextManagement
-            : contextManagement as ContextManagementCapability,
-        effort: identical(effort, sdkOmittedValue)
-            ? this.effort
-            : effort as EffortCapability,
-        imageInput: identical(imageInput, sdkOmittedValue)
-            ? this.imageInput
-            : imageInput as CapabilitySupport,
-        pdfInput: identical(pdfInput, sdkOmittedValue)
-            ? this.pdfInput
-            : pdfInput as CapabilitySupport,
-        structuredOutputs: identical(structuredOutputs, sdkOmittedValue)
-            ? this.structuredOutputs
-            : structuredOutputs as CapabilitySupport,
-        thinking: identical(thinking, sdkOmittedValue)
-            ? this.thinking
-            : thinking as ThinkingCapability,
-      );
+  ModelCapabilities _copyWith({Object? batch = sdkOmittedValue, Object? citations = sdkOmittedValue, Object? codeExecution = sdkOmittedValue, Object? contextManagement = sdkOmittedValue, Object? effort = sdkOmittedValue, Object? imageInput = sdkOmittedValue, Object? pdfInput = sdkOmittedValue, Object? structuredOutputs = sdkOmittedValue, Object? thinking = sdkOmittedValue}) => ModelCapabilities(
+    batch: identical(batch, sdkOmittedValue) ? this.batch : batch as CapabilitySupport,
+    citations: identical(citations, sdkOmittedValue) ? this.citations : citations as CapabilitySupport,
+    codeExecution: identical(codeExecution, sdkOmittedValue) ? this.codeExecution : codeExecution as CapabilitySupport,
+    contextManagement: identical(contextManagement, sdkOmittedValue) ? this.contextManagement : contextManagement as ContextManagementCapability,
+    effort: identical(effort, sdkOmittedValue) ? this.effort : effort as EffortCapability,
+    imageInput: identical(imageInput, sdkOmittedValue) ? this.imageInput : imageInput as CapabilitySupport,
+    pdfInput: identical(pdfInput, sdkOmittedValue) ? this.pdfInput : pdfInput as CapabilitySupport,
+    structuredOutputs: identical(structuredOutputs, sdkOmittedValue) ? this.structuredOutputs : structuredOutputs as CapabilitySupport,
+    thinking: identical(thinking, sdkOmittedValue) ? this.thinking : thinking as ThinkingCapability,
+  );
 
-  factory ModelCapabilities.fromJson(Map<String, dynamic> json) =>
-      ModelCapabilities(
-        batch: (json['batch'] != null
-            ? CapabilitySupport.fromJson(json['batch'] as Map<String, dynamic>)
-            : null)!,
-        citations: (json['citations'] != null
-            ? CapabilitySupport.fromJson(
-                json['citations'] as Map<String, dynamic>)
-            : null)!,
-        codeExecution: (json['code_execution'] != null
-            ? CapabilitySupport.fromJson(
-                json['code_execution'] as Map<String, dynamic>)
-            : null)!,
-        contextManagement: (json['context_management'] != null
-            ? ContextManagementCapability.fromJson(
-                json['context_management'] as Map<String, dynamic>)
-            : null)!,
-        effort: (json['effort'] != null
-            ? EffortCapability.fromJson(json['effort'] as Map<String, dynamic>)
-            : null)!,
-        imageInput: (json['image_input'] != null
-            ? CapabilitySupport.fromJson(
-                json['image_input'] as Map<String, dynamic>)
-            : null)!,
-        pdfInput: (json['pdf_input'] != null
-            ? CapabilitySupport.fromJson(
-                json['pdf_input'] as Map<String, dynamic>)
-            : null)!,
-        structuredOutputs: (json['structured_outputs'] != null
-            ? CapabilitySupport.fromJson(
-                json['structured_outputs'] as Map<String, dynamic>)
-            : null)!,
-        thinking: (json['thinking'] != null
-            ? ThinkingCapability.fromJson(
-                json['thinking'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory ModelCapabilities.fromJson(Map<String, dynamic> json) => ModelCapabilities(
+    batch: (json['batch'] != null ? CapabilitySupport.fromJson(json['batch'] as Map<String, dynamic>) : null)!,
+    citations: (json['citations'] != null ? CapabilitySupport.fromJson(json['citations'] as Map<String, dynamic>) : null)!,
+    codeExecution: (json['code_execution'] != null ? CapabilitySupport.fromJson(json['code_execution'] as Map<String, dynamic>) : null)!,
+    contextManagement: (json['context_management'] != null ? ContextManagementCapability.fromJson(json['context_management'] as Map<String, dynamic>) : null)!,
+    effort: (json['effort'] != null ? EffortCapability.fromJson(json['effort'] as Map<String, dynamic>) : null)!,
+    imageInput: (json['image_input'] != null ? CapabilitySupport.fromJson(json['image_input'] as Map<String, dynamic>) : null)!,
+    pdfInput: (json['pdf_input'] != null ? CapabilitySupport.fromJson(json['pdf_input'] as Map<String, dynamic>) : null)!,
+    structuredOutputs: (json['structured_outputs'] != null ? CapabilitySupport.fromJson(json['structured_outputs'] as Map<String, dynamic>) : null)!,
+    thinking: (json['thinking'] != null ? ThinkingCapability.fromJson(json['thinking'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'batch': batch.toJson(),
-        'citations': citations.toJson(),
-        'code_execution': codeExecution.toJson(),
-        'context_management': contextManagement.toJson(),
-        'effort': effort.toJson(),
-        'image_input': imageInput.toJson(),
-        'pdf_input': pdfInput.toJson(),
-        'structured_outputs': structuredOutputs.toJson(),
-        'thinking': thinking.toJson(),
-      };
+    'batch': batch.toJson(),
+    'citations': citations.toJson(),
+    'code_execution': codeExecution.toJson(),
+    'context_management': contextManagement.toJson(),
+    'effort': effort.toJson(),
+    'image_input': imageInput.toJson(),
+    'pdf_input': pdfInput.toJson(),
+    'structured_outputs': structuredOutputs.toJson(),
+    'thinking': thinking.toJson(),
+  };
 }
 
 /// Typed representation of the `ModelInfo` API schema.
 class ModelInfo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Object mapping capability names to their support details. Keys are always present for all known capabilities.
   final ModelCapabilities? capabilities;
-
   /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
   final String createdAt;
-
   /// A human-readable name for the model.
   final String displayName;
-
   /// Unique model identifier.
   final String id;
-
   /// Maximum input context window size in tokens for this model.
   final int? maxInputTokens;
-
   /// Maximum value for the `max_tokens` parameter when using this model.
   final int? maxTokens;
-
   /// Object type. For Models, this is always `"model"`.
   final ModelInfoType type_;
 
-  const ModelInfo(
-      {required this.capabilities,
-      required this.createdAt,
-      required this.displayName,
-      required this.id,
-      required this.maxInputTokens,
-      required this.maxTokens,
-      required this.type_});
+  const ModelInfo({required this.capabilities, required this.createdAt, required this.displayName, required this.id, required this.maxInputTokens, required this.maxTokens, required this.type_});
 
-  ModelInfo Function(
-      {ModelCapabilities? capabilities,
-      String createdAt,
-      String displayName,
-      String id,
-      int? maxInputTokens,
-      int? maxTokens,
-      ModelInfoType type_}) get copyWith => _copyWith;
+  ModelInfo Function({ModelCapabilities? capabilities, String createdAt, String displayName, String id, int? maxInputTokens, int? maxTokens, ModelInfoType type_}) get copyWith => _copyWith;
 
-  ModelInfo _copyWith(
-          {Object? capabilities = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? displayName = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? maxInputTokens = sdkOmittedValue,
-          Object? maxTokens = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      ModelInfo(
-        capabilities: identical(capabilities, sdkOmittedValue)
-            ? this.capabilities
-            : capabilities as ModelCapabilities?,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        displayName: identical(displayName, sdkOmittedValue)
-            ? this.displayName
-            : displayName as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        maxInputTokens: identical(maxInputTokens, sdkOmittedValue)
-            ? this.maxInputTokens
-            : maxInputTokens as int?,
-        maxTokens: identical(maxTokens, sdkOmittedValue)
-            ? this.maxTokens
-            : maxTokens as int?,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as ModelInfoType,
-      );
+  ModelInfo _copyWith({Object? capabilities = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? displayName = sdkOmittedValue, Object? id = sdkOmittedValue, Object? maxInputTokens = sdkOmittedValue, Object? maxTokens = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ModelInfo(
+    capabilities: identical(capabilities, sdkOmittedValue) ? this.capabilities : capabilities as ModelCapabilities?,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    maxInputTokens: identical(maxInputTokens, sdkOmittedValue) ? this.maxInputTokens : maxInputTokens as int?,
+    maxTokens: identical(maxTokens, sdkOmittedValue) ? this.maxTokens : maxTokens as int?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ModelInfoType,
+  );
 
   factory ModelInfo.fromJson(Map<String, dynamic> json) => ModelInfo(
-        capabilities: json.containsKey('capabilities')
-            ? json['capabilities'] != null
-                ? ModelCapabilities.fromJson(
-                    json['capabilities'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'capabilities', 'Required property is missing'),
-        createdAt: (json['created_at'] as String?)!,
-        displayName: (json['display_name'] as String?)!,
-        id: (json['id'] as String?)!,
-        maxInputTokens: json.containsKey('max_input_tokens')
-            ? (json['max_input_tokens'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'max_input_tokens', 'Required property is missing'),
-        maxTokens: json.containsKey('max_tokens')
-            ? (json['max_tokens'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'max_tokens', 'Required property is missing'),
-        type_: (json['type'] != null
-            ? ModelInfoType.fromJson(json['type'] as String)
-            : null)!,
-      );
+    capabilities: json.containsKey('capabilities') ? json['capabilities'] != null ? ModelCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'capabilities', 'Required property is missing'),
+    createdAt: (json['created_at'] as String?)!,
+    displayName: (json['display_name'] as String?)!,
+    id: (json['id'] as String?)!,
+    maxInputTokens: json.containsKey('max_input_tokens') ? (json['max_input_tokens'] as num?)?.toInt() : throw ArgumentError.value(null, 'max_input_tokens', 'Required property is missing'),
+    maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num?)?.toInt() : throw ArgumentError.value(null, 'max_tokens', 'Required property is missing'),
+    type_: (json['type'] != null ? ModelInfoType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'capabilities': capabilities?.toJson(),
-        'created_at': createdAt,
-        'display_name': displayName,
-        'id': id,
-        'max_input_tokens': maxInputTokens,
-        'max_tokens': maxTokens,
-        'type': type_.toJson(),
-      };
+    'capabilities': capabilities?.toJson(),
+    'created_at': createdAt,
+    'display_name': displayName,
+    'id': id,
+    'max_input_tokens': maxInputTokens,
+    'max_tokens': maxTokens,
+    'type': type_.toJson(),
+  };
 }
 
 /// Thinking capability details.
 class ThinkingCapability {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether this capability is supported by the model.
   final bool supported;
-
   /// Supported thinking type configurations.
   final ThinkingTypes types;
 
   const ThinkingCapability({required this.supported, required this.types});
 
-  ThinkingCapability Function({bool supported, ThinkingTypes types})
-      get copyWith => _copyWith;
+  ThinkingCapability Function({bool supported, ThinkingTypes types}) get copyWith => _copyWith;
 
-  ThinkingCapability _copyWith(
-          {Object? supported = sdkOmittedValue,
-          Object? types = sdkOmittedValue}) =>
-      ThinkingCapability(
-        supported: identical(supported, sdkOmittedValue)
-            ? this.supported
-            : supported as bool,
-        types: identical(types, sdkOmittedValue)
-            ? this.types
-            : types as ThinkingTypes,
-      );
+  ThinkingCapability _copyWith({Object? supported = sdkOmittedValue, Object? types = sdkOmittedValue}) => ThinkingCapability(
+    supported: identical(supported, sdkOmittedValue) ? this.supported : supported as bool,
+    types: identical(types, sdkOmittedValue) ? this.types : types as ThinkingTypes,
+  );
 
-  factory ThinkingCapability.fromJson(Map<String, dynamic> json) =>
-      ThinkingCapability(
-        supported: (json['supported'] as bool?)!,
-        types: (json['types'] != null
-            ? ThinkingTypes.fromJson(json['types'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory ThinkingCapability.fromJson(Map<String, dynamic> json) => ThinkingCapability(
+    supported: (json['supported'] as bool?)!,
+    types: (json['types'] != null ? ThinkingTypes.fromJson(json['types'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'supported': supported,
-        'types': types.toJson(),
-      };
+    'supported': supported,
+    'types': types.toJson(),
+  };
 }
 
 /// Supported thinking type configurations.
 class ThinkingTypes {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether the model supports thinking with type 'adaptive' (auto).
   final CapabilitySupport adaptive;
-
   /// Whether the model supports thinking with type 'enabled'.
   final CapabilitySupport enabled;
 
   const ThinkingTypes({required this.adaptive, required this.enabled});
 
-  ThinkingTypes Function(
-      {CapabilitySupport adaptive,
-      CapabilitySupport enabled}) get copyWith => _copyWith;
+  ThinkingTypes Function({CapabilitySupport adaptive, CapabilitySupport enabled}) get copyWith => _copyWith;
 
-  ThinkingTypes _copyWith(
-          {Object? adaptive = sdkOmittedValue,
-          Object? enabled = sdkOmittedValue}) =>
-      ThinkingTypes(
-        adaptive: identical(adaptive, sdkOmittedValue)
-            ? this.adaptive
-            : adaptive as CapabilitySupport,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as CapabilitySupport,
-      );
+  ThinkingTypes _copyWith({Object? adaptive = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => ThinkingTypes(
+    adaptive: identical(adaptive, sdkOmittedValue) ? this.adaptive : adaptive as CapabilitySupport,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as CapabilitySupport,
+  );
 
   factory ThinkingTypes.fromJson(Map<String, dynamic> json) => ThinkingTypes(
-        adaptive: (json['adaptive'] != null
-            ? CapabilitySupport.fromJson(
-                json['adaptive'] as Map<String, dynamic>)
-            : null)!,
-        enabled: (json['enabled'] != null
-            ? CapabilitySupport.fromJson(
-                json['enabled'] as Map<String, dynamic>)
-            : null)!,
-      );
+    adaptive: (json['adaptive'] != null ? CapabilitySupport.fromJson(json['adaptive'] as Map<String, dynamic>) : null)!,
+    enabled: (json['enabled'] != null ? CapabilitySupport.fromJson(json['enabled'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'adaptive': adaptive.toJson(),
-        'enabled': enabled.toJson(),
-      };
+    'adaptive': adaptive.toJson(),
+    'enabled': enabled.toJson(),
+  };
 }

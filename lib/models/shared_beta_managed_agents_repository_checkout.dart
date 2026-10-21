@@ -10,65 +10,32 @@ sealed class BetaManagedAgentsRepositoryCheckout {
   const BetaManagedAgentsRepositoryCheckout();
   factory BetaManagedAgentsRepositoryCheckout.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsBranchCheckout.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsBranchCheckout(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsCommitCheckout.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsCommitCheckout(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsBranchCheckout.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsBranchCheckout(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsCommitCheckout.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsCommitCheckout(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsBranchCheckout(
-          BetaManagedAgentsBranchCheckout.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsCommitCheckout(
-          BetaManagedAgentsCommitCheckout.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"branch", "commit"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsRepositoryCheckout(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsRepositoryCheckout");
+    try { return BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsBranchCheckout(BetaManagedAgentsBranchCheckout.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsCommitCheckout(BetaManagedAgentsCommitCheckout.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"branch", "commit"}.contains(json["type"])) { return UnknownBetaManagedAgentsRepositoryCheckout(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsRepositoryCheckout");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsBranchCheckout
-    extends BetaManagedAgentsRepositoryCheckout {
+final class BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsBranchCheckout extends BetaManagedAgentsRepositoryCheckout {
   final BetaManagedAgentsBranchCheckout value;
-  const BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsBranchCheckout(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsBranchCheckout(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsCommitCheckout
-    extends BetaManagedAgentsRepositoryCheckout {
+final class BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsCommitCheckout extends BetaManagedAgentsRepositoryCheckout {
   final BetaManagedAgentsCommitCheckout value;
-  const BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsCommitCheckout(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsRepositoryCheckoutBetaManagedAgentsCommitCheckout(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsRepositoryCheckout] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsRepositoryCheckout
-    extends BetaManagedAgentsRepositoryCheckout {
+final class UnknownBetaManagedAgentsRepositoryCheckout extends BetaManagedAgentsRepositoryCheckout {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsRepositoryCheckout(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

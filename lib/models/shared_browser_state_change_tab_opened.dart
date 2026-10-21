@@ -8,38 +8,27 @@ part of 'shared_browser.dart';
 class BrowserStateChangeTabOpened {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The `tab_id` of the opened tab, present in `tabs`.
   final String tabId;
-
   /// Required `string` value serialized in the `type` wire field.
   final BrowserStateChangeTabOpenedType type_;
 
   const BrowserStateChangeTabOpened({required this.tabId, required this.type_});
 
-  BrowserStateChangeTabOpened Function(
-      {String tabId,
-      BrowserStateChangeTabOpenedType type_}) get copyWith => _copyWith;
+  BrowserStateChangeTabOpened Function({String tabId, BrowserStateChangeTabOpenedType type_}) get copyWith => _copyWith;
 
-  BrowserStateChangeTabOpened _copyWith(
-          {Object? tabId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
-      BrowserStateChangeTabOpened(
-        tabId: identical(tabId, sdkOmittedValue) ? this.tabId : tabId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BrowserStateChangeTabOpenedType,
-      );
+  BrowserStateChangeTabOpened _copyWith({Object? tabId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BrowserStateChangeTabOpened(
+    tabId: identical(tabId, sdkOmittedValue) ? this.tabId : tabId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BrowserStateChangeTabOpenedType,
+  );
 
-  factory BrowserStateChangeTabOpened.fromJson(Map<String, dynamic> json) =>
-      BrowserStateChangeTabOpened(
-        tabId: (json['tab_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BrowserStateChangeTabOpenedType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BrowserStateChangeTabOpened.fromJson(Map<String, dynamic> json) => BrowserStateChangeTabOpened(
+    tabId: (json['tab_id'] as String?)!,
+    type_: (json['type'] != null ? BrowserStateChangeTabOpenedType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'tab_id': tabId,
-        'type': type_.toJson(),
-      };
+    'tab_id': tabId,
+    'type': type_.toJson(),
+  };
 }

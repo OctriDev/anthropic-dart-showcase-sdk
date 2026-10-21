@@ -24,76 +24,31 @@ Future<BetaRbacRoleList> listBetaOrganizationsRbacRoles(ClientConfig config,
           'GET', '/v1/organizations/rbac_roles?beta=true',
           config: config,
           query: {
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listBetaOrganizationsRbacRoles',
-          fromJsonRaw: (value) =>
-              BetaRbacRoleList.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaRbacRoleList.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
+
 
 /// List RBAC Roles in the organization. The RBAC Roles API is available to Claude Enterprise organizations only.
 ///
 /// [limit] Number of items to return per page. Defaults to `20`. Ranges from
 ///   `1` to `1000`.
 /// [page] Optionally set to the `next_page` token from the previous response.
-Stream<BetaRbacRole> listBetaOrganizationsRbacRolesPaginated(
-    ClientConfig config,
-    {int? limit,
-    String? page,
-    RequestOptions? requestOptions}) async* {
+Stream<BetaRbacRole> listBetaOrganizationsRbacRolesPaginated(ClientConfig config, {int? limit, String? page, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsRbacRoles(config,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsRbacRoles(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) {
-      yield sdkItem;
-    }
+    for (final sdkItem in sdkItems) { yield sdkItem; }
     if (sdkPage.hasMore != true) return;
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
@@ -101,17 +56,10 @@ Stream<BetaRbacRole> listBetaOrganizationsRbacRolesPaginated(
   }
 }
 
-Stream<SdkPage<BetaRbacRoleList, BetaRbacRole>>
-    listBetaOrganizationsRbacRolesPages(ClientConfig config,
-        {int? limit, String? page, RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaRbacRoleList, BetaRbacRole>> listBetaOrganizationsRbacRolesPages(ClientConfig config, {int? limit, String? page, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsRbacRoles(config,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsRbacRoles(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;
@@ -121,6 +69,7 @@ Stream<SdkPage<BetaRbacRoleList, BetaRbacRole>>
     sdkCursor = sdkNext;
   }
 }
+
 
 /// Retrieve an RBAC Role by ID. The RBAC Roles API is available to Claude Enterprise organizations only.
 ///
@@ -132,45 +81,12 @@ Future<BetaRbacRole> retrieveBetaOrganizationsRbacRoles(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'retrieveBetaOrganizationsRbacRoles',
-          fromJsonRaw: (value) =>
-              BetaRbacRole.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaRbacRole.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '401': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '403': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '404': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '408': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '409': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '412': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '413': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '429': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '431': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '499': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '500': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '501': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '504': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-        '529': (value) =>
-            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List the permissions an RBAC Role grants. The RBAC Roles API is available to Claude Enterprise organizations only.
 ///
@@ -178,12 +94,12 @@ Future<BetaRbacRole> retrieveBetaOrganizationsRbacRoles(ClientConfig config,
 /// [limit] Number of items to return per page. Defaults to `20`. Ranges from
 ///   `1` to `1000`.
 /// [page] Optionally set to the `next_page` token from the previous response.
-Future<BetaRbacRolePermissionList> permissionsBetaOrganizationsRbacRoles(
-    ClientConfig config,
-    {required String roleId,
-    SdkOptional<int> limit = const SdkOmitted(),
-    SdkOptional<String?> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BetaRbacRolePermissionList>
+    permissionsBetaOrganizationsRbacRoles(ClientConfig config,
+        {required String roleId,
+        SdkOptional<int> limit = const SdkOmitted(),
+        SdkOptional<String?> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (limit is SdkPresent<int>) {
     validateRange('limit', limit.value, min: 1, max: 1000);
   }
@@ -192,52 +108,18 @@ Future<BetaRbacRolePermissionList> permissionsBetaOrganizationsRbacRoles(
           '/v1/organizations/rbac_roles/${Uri.encodeComponent(roleId.toString())}/permissions?beta=true',
           config: config,
           query: {
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'permissionsBetaOrganizationsRbacRoles',
-          fromJsonRaw: (value) => BetaRbacRolePermissionList.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaRbacRolePermissionList.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
+
 
 /// List the permissions an RBAC Role grants. The RBAC Roles API is available to Claude Enterprise organizations only.
 ///
@@ -245,26 +127,13 @@ Future<BetaRbacRolePermissionList> permissionsBetaOrganizationsRbacRoles(
 /// [limit] Number of items to return per page. Defaults to `20`. Ranges from
 ///   `1` to `1000`.
 /// [page] Optionally set to the `next_page` token from the previous response.
-Stream<BetaRbacRolePermission> permissionsBetaOrganizationsRbacRolesPaginated(
-    ClientConfig config,
-    {required String roleId,
-    int? limit,
-    String? page,
-    RequestOptions? requestOptions}) async* {
+Stream<BetaRbacRolePermission> permissionsBetaOrganizationsRbacRolesPaginated(ClientConfig config, {required String roleId, int? limit, String? page, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await permissionsBetaOrganizationsRbacRoles(config,
-        roleId: roleId,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        requestOptions: requestOptions);
+    final sdkPage = await permissionsBetaOrganizationsRbacRoles(config, roleId: roleId, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) {
-      yield sdkItem;
-    }
+    for (final sdkItem in sdkItems) { yield sdkItem; }
     if (sdkPage.hasMore != true) return;
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
@@ -272,21 +141,10 @@ Stream<BetaRbacRolePermission> permissionsBetaOrganizationsRbacRolesPaginated(
   }
 }
 
-Stream<SdkPage<BetaRbacRolePermissionList, BetaRbacRolePermission>>
-    permissionsBetaOrganizationsRbacRolesPages(ClientConfig config,
-        {required String roleId,
-        int? limit,
-        String? page,
-        RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaRbacRolePermissionList, BetaRbacRolePermission>> permissionsBetaOrganizationsRbacRolesPages(ClientConfig config, {required String roleId, int? limit, String? page, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await permissionsBetaOrganizationsRbacRoles(config,
-        roleId: roleId,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        requestOptions: requestOptions);
+    final sdkPage = await permissionsBetaOrganizationsRbacRoles(config, roleId: roleId, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;

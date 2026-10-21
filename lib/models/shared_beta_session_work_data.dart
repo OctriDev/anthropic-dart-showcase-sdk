@@ -8,37 +8,27 @@ part of 'shared_beta.dart';
 class BetaSessionWorkData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Session identifier (e.g., 'session_...')
   final String id;
-
   /// Type of work data
   final BetaSessionWorkDataType type_;
 
   const BetaSessionWorkData({required this.id, required this.type_});
 
-  BetaSessionWorkData Function({String id, BetaSessionWorkDataType type_})
-      get copyWith => _copyWith;
+  BetaSessionWorkData Function({String id, BetaSessionWorkDataType type_}) get copyWith => _copyWith;
 
-  BetaSessionWorkData _copyWith(
-          {Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
-      BetaSessionWorkData(
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaSessionWorkDataType,
-      );
+  BetaSessionWorkData _copyWith({Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaSessionWorkData(
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSessionWorkDataType,
+  );
 
-  factory BetaSessionWorkData.fromJson(Map<String, dynamic> json) =>
-      BetaSessionWorkData(
-        id: (json['id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaSessionWorkDataType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaSessionWorkData.fromJson(Map<String, dynamic> json) => BetaSessionWorkData(
+    id: (json['id'] as String?)!,
+    type_: (json['type'] != null ? BetaSessionWorkDataType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'type': type_.toJson(),
-      };
+    'id': id,
+    'type': type_.toJson(),
+  };
 }

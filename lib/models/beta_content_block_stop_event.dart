@@ -8,38 +8,27 @@ part of 'beta_content_block.dart';
 class BetaContentBlockStopEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `index` wire field.
   final int index;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaContentBlockStopEventType type_;
 
   const BetaContentBlockStopEvent({required this.index, required this.type_});
 
-  BetaContentBlockStopEvent Function(
-      {int index,
-      BetaContentBlockStopEventType type_}) get copyWith => _copyWith;
+  BetaContentBlockStopEvent Function({int index, BetaContentBlockStopEventType type_}) get copyWith => _copyWith;
 
-  BetaContentBlockStopEvent _copyWith(
-          {Object? index = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
-      BetaContentBlockStopEvent(
-        index: identical(index, sdkOmittedValue) ? this.index : index as int,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaContentBlockStopEventType,
-      );
+  BetaContentBlockStopEvent _copyWith({Object? index = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaContentBlockStopEvent(
+    index: identical(index, sdkOmittedValue) ? this.index : index as int,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaContentBlockStopEventType,
+  );
 
-  factory BetaContentBlockStopEvent.fromJson(Map<String, dynamic> json) =>
-      BetaContentBlockStopEvent(
-        index: ((json['index'] as num?)?.toInt())!,
-        type_: (json['type'] != null
-            ? BetaContentBlockStopEventType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaContentBlockStopEvent.fromJson(Map<String, dynamic> json) => BetaContentBlockStopEvent(
+    index: ((json['index'] as num?)?.toInt())!,
+    type_: (json['type'] != null ? BetaContentBlockStopEventType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'index': index,
-        'type': type_.toJson(),
-      };
+    'index': index,
+    'type': type_.toJson(),
+  };
 }

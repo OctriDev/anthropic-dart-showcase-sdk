@@ -8,45 +8,27 @@ part of 'shared_beta_thinking.dart';
 class BetaThinkingTypes {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether the model supports thinking with type 'adaptive' (auto).
   final BetaCapabilitySupport adaptive;
-
   /// Whether the model supports thinking with type 'enabled'.
   final BetaCapabilitySupport enabled;
 
   const BetaThinkingTypes({required this.adaptive, required this.enabled});
 
-  BetaThinkingTypes Function(
-      {BetaCapabilitySupport adaptive,
-      BetaCapabilitySupport enabled}) get copyWith => _copyWith;
+  BetaThinkingTypes Function({BetaCapabilitySupport adaptive, BetaCapabilitySupport enabled}) get copyWith => _copyWith;
 
-  BetaThinkingTypes _copyWith(
-          {Object? adaptive = sdkOmittedValue,
-          Object? enabled = sdkOmittedValue}) =>
-      BetaThinkingTypes(
-        adaptive: identical(adaptive, sdkOmittedValue)
-            ? this.adaptive
-            : adaptive as BetaCapabilitySupport,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as BetaCapabilitySupport,
-      );
+  BetaThinkingTypes _copyWith({Object? adaptive = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BetaThinkingTypes(
+    adaptive: identical(adaptive, sdkOmittedValue) ? this.adaptive : adaptive as BetaCapabilitySupport,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as BetaCapabilitySupport,
+  );
 
-  factory BetaThinkingTypes.fromJson(Map<String, dynamic> json) =>
-      BetaThinkingTypes(
-        adaptive: (json['adaptive'] != null
-            ? BetaCapabilitySupport.fromJson(
-                json['adaptive'] as Map<String, dynamic>)
-            : null)!,
-        enabled: (json['enabled'] != null
-            ? BetaCapabilitySupport.fromJson(
-                json['enabled'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory BetaThinkingTypes.fromJson(Map<String, dynamic> json) => BetaThinkingTypes(
+    adaptive: (json['adaptive'] != null ? BetaCapabilitySupport.fromJson(json['adaptive'] as Map<String, dynamic>) : null)!,
+    enabled: (json['enabled'] != null ? BetaCapabilitySupport.fromJson(json['enabled'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'adaptive': adaptive.toJson(),
-        'enabled': enabled.toJson(),
-      };
+    'adaptive': adaptive.toJson(),
+    'enabled': enabled.toJson(),
+  };
 }

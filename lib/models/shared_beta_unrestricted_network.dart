@@ -8,30 +8,22 @@ part of 'shared_beta.dart';
 class BetaUnrestrictedNetwork {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Network policy type
   final BetaUnrestrictedNetworkType type_;
 
   const BetaUnrestrictedNetwork({required this.type_});
 
-  BetaUnrestrictedNetwork Function({BetaUnrestrictedNetworkType type_})
-      get copyWith => _copyWith;
+  BetaUnrestrictedNetwork Function({BetaUnrestrictedNetworkType type_}) get copyWith => _copyWith;
 
-  BetaUnrestrictedNetwork _copyWith({Object? type_ = sdkOmittedValue}) =>
-      BetaUnrestrictedNetwork(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaUnrestrictedNetworkType,
-      );
+  BetaUnrestrictedNetwork _copyWith({Object? type_ = sdkOmittedValue}) => BetaUnrestrictedNetwork(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaUnrestrictedNetworkType,
+  );
 
-  factory BetaUnrestrictedNetwork.fromJson(Map<String, dynamic> json) =>
-      BetaUnrestrictedNetwork(
-        type_: (json['type'] != null
-            ? BetaUnrestrictedNetworkType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaUnrestrictedNetwork.fromJson(Map<String, dynamic> json) => BetaUnrestrictedNetwork(
+    type_: (json['type'] != null ? BetaUnrestrictedNetworkType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

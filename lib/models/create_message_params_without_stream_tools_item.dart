@@ -10,422 +10,176 @@ sealed class CreateMessageParamsWithoutStreamToolsItem {
   const CreateMessageParamsWithoutStreamToolsItem();
   factory CreateMessageParamsWithoutStreamToolsItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = Tool.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemTool(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BashTool20250124.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemBashTool20250124(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = CodeExecutionTool20250522.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250522(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = CodeExecutionTool20250825.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250825(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = CodeExecutionTool20260120.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260120(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = CodeExecutionTool20260521.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260521(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BrowserToolset20260801.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemBrowserToolset20260801(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = MemoryTool20250818.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemMemoryTool20250818(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ComputerToolset20260801.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemComputerToolset20260801(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = TextEditor20250124.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemTextEditor20250124(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = TextEditor20250429.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemTextEditor20250429(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = TextEditor20250728.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemTextEditor20250728(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebSearchTool20250305.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20250305(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebFetchTool20250910.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20250910(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebSearchTool20260209.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260209(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebFetchTool20260209.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260209(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebFetchTool20260309.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260309(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebSearchTool20260318.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260318(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebFetchTool20260318.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260318(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ToolSearchToolBM2520251119.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemToolSearchToolBM2520251119(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ToolSearchToolRegex20251119.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CreateMessageParamsWithoutStreamToolsItemToolSearchToolRegex20251119(
-              value);
-        }
-      } catch (_) {}
+      try { final value = Tool.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemTool(value); } } catch (_) {}
+      try { final value = BashTool20250124.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemBashTool20250124(value); } } catch (_) {}
+      try { final value = CodeExecutionTool20250522.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250522(value); } } catch (_) {}
+      try { final value = CodeExecutionTool20250825.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250825(value); } } catch (_) {}
+      try { final value = CodeExecutionTool20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260120(value); } } catch (_) {}
+      try { final value = CodeExecutionTool20260521.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260521(value); } } catch (_) {}
+      try { final value = BrowserToolset20260801.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemBrowserToolset20260801(value); } } catch (_) {}
+      try { final value = MemoryTool20250818.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemMemoryTool20250818(value); } } catch (_) {}
+      try { final value = ComputerToolset20260801.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemComputerToolset20260801(value); } } catch (_) {}
+      try { final value = TextEditor20250124.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemTextEditor20250124(value); } } catch (_) {}
+      try { final value = TextEditor20250429.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemTextEditor20250429(value); } } catch (_) {}
+      try { final value = TextEditor20250728.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemTextEditor20250728(value); } } catch (_) {}
+      try { final value = WebSearchTool20250305.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20250305(value); } } catch (_) {}
+      try { final value = WebFetchTool20250910.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20250910(value); } } catch (_) {}
+      try { final value = WebSearchTool20260209.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260209(value); } } catch (_) {}
+      try { final value = WebFetchTool20260209.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260209(value); } } catch (_) {}
+      try { final value = WebFetchTool20260309.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260309(value); } } catch (_) {}
+      try { final value = WebSearchTool20260318.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260318(value); } } catch (_) {}
+      try { final value = WebFetchTool20260318.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260318(value); } } catch (_) {}
+      try { final value = ToolSearchToolBM2520251119.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemToolSearchToolBM2520251119(value); } } catch (_) {}
+      try { final value = ToolSearchToolRegex20251119.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CreateMessageParamsWithoutStreamToolsItemToolSearchToolRegex20251119(value); } } catch (_) {}
     }
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemTool(
-          Tool.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemBashTool20250124(
-          BashTool20250124.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250522(
-          CodeExecutionTool20250522.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250825(
-          CodeExecutionTool20250825.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260120(
-          CodeExecutionTool20260120.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260521(
-          CodeExecutionTool20260521.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemBrowserToolset20260801(
-          BrowserToolset20260801.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemMemoryTool20250818(
-          MemoryTool20250818.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemComputerToolset20260801(
-          ComputerToolset20260801.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemTextEditor20250124(
-          TextEditor20250124.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemTextEditor20250429(
-          TextEditor20250429.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemTextEditor20250728(
-          TextEditor20250728.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20250305(
-          WebSearchTool20250305.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20250910(
-          WebFetchTool20250910.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260209(
-          WebSearchTool20260209.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260209(
-          WebFetchTool20260209.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260309(
-          WebFetchTool20260309.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260318(
-          WebSearchTool20260318.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260318(
-          WebFetchTool20260318.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemToolSearchToolBM2520251119(
-          ToolSearchToolBM2520251119.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CreateMessageParamsWithoutStreamToolsItemToolSearchToolRegex20251119(
-          ToolSearchToolRegex20251119.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for CreateMessageParamsWithoutStreamToolsItem");
+    try { return CreateMessageParamsWithoutStreamToolsItemTool(Tool.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemBashTool20250124(BashTool20250124.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250522(CodeExecutionTool20250522.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250825(CodeExecutionTool20250825.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260120(CodeExecutionTool20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260521(CodeExecutionTool20260521.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemBrowserToolset20260801(BrowserToolset20260801.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemMemoryTool20250818(MemoryTool20250818.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemComputerToolset20260801(ComputerToolset20260801.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemTextEditor20250124(TextEditor20250124.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemTextEditor20250429(TextEditor20250429.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemTextEditor20250728(TextEditor20250728.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20250305(WebSearchTool20250305.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20250910(WebFetchTool20250910.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260209(WebSearchTool20260209.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260209(WebFetchTool20260209.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260309(WebFetchTool20260309.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260318(WebSearchTool20260318.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260318(WebFetchTool20260318.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemToolSearchToolBM2520251119(ToolSearchToolBM2520251119.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CreateMessageParamsWithoutStreamToolsItemToolSearchToolRegex20251119(ToolSearchToolRegex20251119.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for CreateMessageParamsWithoutStreamToolsItem");
   }
   Object? toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemTool
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemTool extends CreateMessageParamsWithoutStreamToolsItem {
   final Tool value;
   const CreateMessageParamsWithoutStreamToolsItemTool(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemBashTool20250124
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemBashTool20250124 extends CreateMessageParamsWithoutStreamToolsItem {
   final BashTool20250124 value;
   const CreateMessageParamsWithoutStreamToolsItemBashTool20250124(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250522
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250522 extends CreateMessageParamsWithoutStreamToolsItem {
   final CodeExecutionTool20250522 value;
-  const CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250522(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250522(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250825
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250825 extends CreateMessageParamsWithoutStreamToolsItem {
   final CodeExecutionTool20250825 value;
-  const CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250825(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20250825(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260120
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260120 extends CreateMessageParamsWithoutStreamToolsItem {
   final CodeExecutionTool20260120 value;
-  const CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260120(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260120(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260521
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260521 extends CreateMessageParamsWithoutStreamToolsItem {
   final CodeExecutionTool20260521 value;
-  const CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260521(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemCodeExecutionTool20260521(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemBrowserToolset20260801
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemBrowserToolset20260801 extends CreateMessageParamsWithoutStreamToolsItem {
   final BrowserToolset20260801 value;
-  const CreateMessageParamsWithoutStreamToolsItemBrowserToolset20260801(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemBrowserToolset20260801(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemMemoryTool20250818
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemMemoryTool20250818 extends CreateMessageParamsWithoutStreamToolsItem {
   final MemoryTool20250818 value;
   const CreateMessageParamsWithoutStreamToolsItemMemoryTool20250818(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemComputerToolset20260801
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemComputerToolset20260801 extends CreateMessageParamsWithoutStreamToolsItem {
   final ComputerToolset20260801 value;
-  const CreateMessageParamsWithoutStreamToolsItemComputerToolset20260801(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemComputerToolset20260801(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemTextEditor20250124
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemTextEditor20250124 extends CreateMessageParamsWithoutStreamToolsItem {
   final TextEditor20250124 value;
   const CreateMessageParamsWithoutStreamToolsItemTextEditor20250124(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemTextEditor20250429
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemTextEditor20250429 extends CreateMessageParamsWithoutStreamToolsItem {
   final TextEditor20250429 value;
   const CreateMessageParamsWithoutStreamToolsItemTextEditor20250429(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemTextEditor20250728
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemTextEditor20250728 extends CreateMessageParamsWithoutStreamToolsItem {
   final TextEditor20250728 value;
   const CreateMessageParamsWithoutStreamToolsItemTextEditor20250728(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemWebSearchTool20250305
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemWebSearchTool20250305 extends CreateMessageParamsWithoutStreamToolsItem {
   final WebSearchTool20250305 value;
-  const CreateMessageParamsWithoutStreamToolsItemWebSearchTool20250305(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemWebSearchTool20250305(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemWebFetchTool20250910
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemWebFetchTool20250910 extends CreateMessageParamsWithoutStreamToolsItem {
   final WebFetchTool20250910 value;
-  const CreateMessageParamsWithoutStreamToolsItemWebFetchTool20250910(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemWebFetchTool20250910(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260209
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260209 extends CreateMessageParamsWithoutStreamToolsItem {
   final WebSearchTool20260209 value;
-  const CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260209(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260209(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260209
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260209 extends CreateMessageParamsWithoutStreamToolsItem {
   final WebFetchTool20260209 value;
-  const CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260209(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260209(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260309
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260309 extends CreateMessageParamsWithoutStreamToolsItem {
   final WebFetchTool20260309 value;
-  const CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260309(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260309(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260318
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260318 extends CreateMessageParamsWithoutStreamToolsItem {
   final WebSearchTool20260318 value;
-  const CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260318(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemWebSearchTool20260318(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260318
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260318 extends CreateMessageParamsWithoutStreamToolsItem {
   final WebFetchTool20260318 value;
-  const CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260318(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemWebFetchTool20260318(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemToolSearchToolBM2520251119
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemToolSearchToolBM2520251119 extends CreateMessageParamsWithoutStreamToolsItem {
   final ToolSearchToolBM2520251119 value;
-  const CreateMessageParamsWithoutStreamToolsItemToolSearchToolBM2520251119(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemToolSearchToolBM2520251119(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateMessageParamsWithoutStreamToolsItemToolSearchToolRegex20251119
-    extends CreateMessageParamsWithoutStreamToolsItem {
+final class CreateMessageParamsWithoutStreamToolsItemToolSearchToolRegex20251119 extends CreateMessageParamsWithoutStreamToolsItem {
   final ToolSearchToolRegex20251119 value;
-  const CreateMessageParamsWithoutStreamToolsItemToolSearchToolRegex20251119(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateMessageParamsWithoutStreamToolsItemToolSearchToolRegex20251119(this.value);
+  @override Object? toJson() => value.toJson();
 }

@@ -8,57 +8,32 @@ part of 'claude_code_beta_true.dart';
 class BetaGetClaudeCodeUsageReportResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// List of Claude Code usage records for the requested date.
   final List<BetaClaudeCodeUsageReportItem> data;
-
   /// True if there are more records available beyond the current page.
   final bool hasMore;
-
   /// Opaque cursor token for fetching the next page of results, or null if no more pages are available.
   final String? nextPage;
 
-  const BetaGetClaudeCodeUsageReportResponse(
-      {required this.data, required this.hasMore, required this.nextPage});
+  const BetaGetClaudeCodeUsageReportResponse({required this.data, required this.hasMore, required this.nextPage});
 
-  BetaGetClaudeCodeUsageReportResponse Function(
-      {List<BetaClaudeCodeUsageReportItem> data,
-      bool hasMore,
-      String? nextPage}) get copyWith => _copyWith;
+  BetaGetClaudeCodeUsageReportResponse Function({List<BetaClaudeCodeUsageReportItem> data, bool hasMore, String? nextPage}) get copyWith => _copyWith;
 
-  BetaGetClaudeCodeUsageReportResponse _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? hasMore = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaGetClaudeCodeUsageReportResponse(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<BetaClaudeCodeUsageReportItem>,
-        hasMore: identical(hasMore, sdkOmittedValue)
-            ? this.hasMore
-            : hasMore as bool,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as String?,
-      );
+  BetaGetClaudeCodeUsageReportResponse _copyWith({Object? data = sdkOmittedValue, Object? hasMore = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaGetClaudeCodeUsageReportResponse(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaClaudeCodeUsageReportItem>,
+    hasMore: identical(hasMore, sdkOmittedValue) ? this.hasMore : hasMore as bool,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
+  );
 
-  factory BetaGetClaudeCodeUsageReportResponse.fromJson(
-          Map<String, dynamic> json) =>
-      BetaGetClaudeCodeUsageReportResponse(
-        data: ((json['data'] as List?)
-            ?.map((e) => BetaClaudeCodeUsageReportItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        hasMore: (json['has_more'] as bool?)!,
-        nextPage: json.containsKey('next_page')
-            ? json['next_page'] as String?
-            : throw ArgumentError.value(
-                null, 'next_page', 'Required property is missing'),
-      );
+  factory BetaGetClaudeCodeUsageReportResponse.fromJson(Map<String, dynamic> json) => BetaGetClaudeCodeUsageReportResponse(
+    data: ((json['data'] as List?)?.map((e) => BetaClaudeCodeUsageReportItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    hasMore: (json['has_more'] as bool?)!,
+    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'has_more': hasMore,
-        'next_page': nextPage,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'has_more': hasMore,
+    'next_page': nextPage,
+  };
 }

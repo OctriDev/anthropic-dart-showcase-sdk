@@ -8,40 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsURLImageSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsURLImageSourceType type_;
-
   /// URL of the image to fetch.
   final String url;
 
-  const BetaManagedAgentsURLImageSource(
-      {required this.type_, required this.url});
+  const BetaManagedAgentsURLImageSource({required this.type_, required this.url});
 
-  BetaManagedAgentsURLImageSource Function(
-      {BetaManagedAgentsURLImageSourceType type_,
-      String url}) get copyWith => _copyWith;
+  BetaManagedAgentsURLImageSource Function({BetaManagedAgentsURLImageSourceType type_, String url}) get copyWith => _copyWith;
 
-  BetaManagedAgentsURLImageSource _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
-      BetaManagedAgentsURLImageSource(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsURLImageSourceType,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  BetaManagedAgentsURLImageSource _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaManagedAgentsURLImageSource(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsURLImageSourceType,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory BetaManagedAgentsURLImageSource.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsURLImageSource(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsURLImageSourceType.fromJson(
-                json['type'] as String)
-            : null)!,
-        url: (json['url'] as String?)!,
-      );
+  factory BetaManagedAgentsURLImageSource.fromJson(Map<String, dynamic> json) => BetaManagedAgentsURLImageSource(
+    type_: (json['type'] != null ? BetaManagedAgentsURLImageSourceType.fromJson(json['type'] as String) : null)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'url': url,
-      };
+    'type': type_.toJson(),
+    'url': url,
+  };
 }

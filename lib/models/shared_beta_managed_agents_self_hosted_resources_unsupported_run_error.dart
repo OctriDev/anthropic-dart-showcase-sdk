@@ -8,45 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSelfHostedResourcesUnsupportedRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType type_;
-
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsSelfHostedResourcesUnsupportedRunError(
-      {required this.type_, required this.message});
+  const BetaManagedAgentsSelfHostedResourcesUnsupportedRunError({required this.type_, required this.message});
 
-  BetaManagedAgentsSelfHostedResourcesUnsupportedRunError Function(
-      {BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType type_,
-      String message}) get copyWith => _copyWith;
+  BetaManagedAgentsSelfHostedResourcesUnsupportedRunError Function({BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType type_, String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSelfHostedResourcesUnsupportedRunError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      BetaManagedAgentsSelfHostedResourcesUnsupportedRunError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_
-                as BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-      );
+  BetaManagedAgentsSelfHostedResourcesUnsupportedRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsSelfHostedResourcesUnsupportedRunError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+  );
 
-  factory BetaManagedAgentsSelfHostedResourcesUnsupportedRunError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSelfHostedResourcesUnsupportedRunError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType
-                .fromJson(json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-      );
+  factory BetaManagedAgentsSelfHostedResourcesUnsupportedRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSelfHostedResourcesUnsupportedRunError(
+    type_: (json['type'] != null ? BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-      };
+    'type': type_.toJson(),
+    'message': message,
+  };
 }

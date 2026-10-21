@@ -9,35 +9,22 @@ sealed class BetaManagedAgentsSystemContentBlock {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsSystemContentBlock();
   factory BetaManagedAgentsSystemContentBlock.fromJson(Object? json) {
-    try {
-      return BetaManagedAgentsSystemContentBlockBetaManagedAgentsTextBlock(
-          BetaManagedAgentsTextBlock.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"text"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsSystemContentBlock(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsSystemContentBlock");
+    try { return BetaManagedAgentsSystemContentBlockBetaManagedAgentsTextBlock(BetaManagedAgentsTextBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"text"}.contains(json["type"])) { return UnknownBetaManagedAgentsSystemContentBlock(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsSystemContentBlock");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsSystemContentBlockBetaManagedAgentsTextBlock
-    extends BetaManagedAgentsSystemContentBlock {
+final class BetaManagedAgentsSystemContentBlockBetaManagedAgentsTextBlock extends BetaManagedAgentsSystemContentBlock {
   final BetaManagedAgentsTextBlock value;
-  const BetaManagedAgentsSystemContentBlockBetaManagedAgentsTextBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSystemContentBlockBetaManagedAgentsTextBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSystemContentBlock] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsSystemContentBlock
-    extends BetaManagedAgentsSystemContentBlock {
+final class UnknownBetaManagedAgentsSystemContentBlock extends BetaManagedAgentsSystemContentBlock {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSystemContentBlock(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

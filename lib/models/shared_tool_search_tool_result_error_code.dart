@@ -6,30 +6,24 @@ part of 'shared_tool.dart';
 // shared_tool domain models
 /// Typed representation of the `ToolSearchToolResultErrorCode` API schema.
 final class ToolSearchToolResultErrorCode {
+
   final String value;
 
   const ToolSearchToolResultErrorCode._(this.value);
 
-  factory ToolSearchToolResultErrorCode.fromJson(String value) =>
-      ToolSearchToolResultErrorCode._(value);
+  factory ToolSearchToolResultErrorCode.fromJson(String value) => ToolSearchToolResultErrorCode._(value);
 
-  static const invalidToolInput =
-      ToolSearchToolResultErrorCode._('invalid_tool_input');
+  static const invalidToolInput = ToolSearchToolResultErrorCode._('invalid_tool_input');
   static const unavailable = ToolSearchToolResultErrorCode._('unavailable');
-  static const tooManyRequests =
-      ToolSearchToolResultErrorCode._('too_many_requests');
-  static const executionTimeExceeded =
-      ToolSearchToolResultErrorCode._('execution_time_exceeded');
+  static const tooManyRequests = ToolSearchToolResultErrorCode._('too_many_requests');
+  static const executionTimeExceeded = ToolSearchToolResultErrorCode._('execution_time_exceeded');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ToolSearchToolResultErrorCode && other.value == value;
+  @override bool operator ==(Object other) => other is ToolSearchToolResultErrorCode && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

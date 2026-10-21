@@ -8,96 +8,50 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsAgentThreadMessageSentEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAgentThreadMessageSentEventType type_;
-
   /// Unique identifier for this event.
   final String id;
-
   /// Timestamp when the message was sent.
   final String processedAt;
-
   /// Name of the callable agent this message was sent to. Absent when sent to the primary agent.
   final SdkOptional<String?> toAgentName;
-
   /// Message content blocks.
   final List<BetaManagedAgentsUserContentBlock> content;
-
   /// Public `sthr_` ID of the thread the message was sent to.
   final String toSessionThreadId;
 
-  const BetaManagedAgentsAgentThreadMessageSentEvent(
-      {required this.type_,
-      required this.id,
-      required this.processedAt,
-      this.toAgentName = const SdkOmitted(),
-      required this.content,
-      required this.toSessionThreadId});
+  const BetaManagedAgentsAgentThreadMessageSentEvent({required this.type_, required this.id, required this.processedAt, this.toAgentName = const SdkOmitted(), required this.content, required this.toSessionThreadId});
 
-  BetaManagedAgentsAgentThreadMessageSentEvent Function(
-      {BetaManagedAgentsAgentThreadMessageSentEventType type_,
-      String id,
-      String processedAt,
-      SdkOptional<String?> toAgentName,
-      List<BetaManagedAgentsUserContentBlock> content,
-      String toSessionThreadId}) get copyWith => _copyWith;
+  BetaManagedAgentsAgentThreadMessageSentEvent Function({BetaManagedAgentsAgentThreadMessageSentEventType type_, String id, String processedAt, SdkOptional<String?> toAgentName, List<BetaManagedAgentsUserContentBlock> content, String toSessionThreadId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAgentThreadMessageSentEvent _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? processedAt = sdkOmittedValue,
-          Object? toAgentName = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? toSessionThreadId = sdkOmittedValue}) =>
-      BetaManagedAgentsAgentThreadMessageSentEvent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAgentThreadMessageSentEventType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        processedAt: identical(processedAt, sdkOmittedValue)
-            ? this.processedAt
-            : processedAt as String,
-        toAgentName: identical(toAgentName, sdkOmittedValue)
-            ? this.toAgentName
-            : toAgentName as SdkOptional<String?>,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as List<BetaManagedAgentsUserContentBlock>,
-        toSessionThreadId: identical(toSessionThreadId, sdkOmittedValue)
-            ? this.toSessionThreadId
-            : toSessionThreadId as String,
-      );
+  BetaManagedAgentsAgentThreadMessageSentEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? toAgentName = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toSessionThreadId = sdkOmittedValue}) => BetaManagedAgentsAgentThreadMessageSentEvent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAgentThreadMessageSentEventType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
+    toAgentName: identical(toAgentName, sdkOmittedValue) ? this.toAgentName : toAgentName as SdkOptional<String?>,
+    content: identical(content, sdkOmittedValue) ? this.content : content as List<BetaManagedAgentsUserContentBlock>,
+    toSessionThreadId: identical(toSessionThreadId, sdkOmittedValue) ? this.toSessionThreadId : toSessionThreadId as String,
+  );
 
-  factory BetaManagedAgentsAgentThreadMessageSentEvent.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsAgentThreadMessageSentEvent(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAgentThreadMessageSentEventType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        processedAt: (json['processed_at'] as String?)!,
-        toAgentName: json.containsKey('to_agent_name')
-            ? SdkPresent(json['to_agent_name'] as String?)
-            : const SdkOmitted(),
-        content: ((json['content'] as List?)
-            ?.map((e) => BetaManagedAgentsUserContentBlock.fromJson(e))
-            .toList())!,
-        toSessionThreadId: (json['to_session_thread_id'] as String?)!,
-      );
+  factory BetaManagedAgentsAgentThreadMessageSentEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAgentThreadMessageSentEvent(
+    type_: (json['type'] != null ? BetaManagedAgentsAgentThreadMessageSentEventType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    processedAt: (json['processed_at'] as String?)!,
+    toAgentName: json.containsKey('to_agent_name') ? SdkPresent(json['to_agent_name'] as String?) : const SdkOmitted(),
+    content: ((json['content'] as List?)?.map((e) => BetaManagedAgentsUserContentBlock.fromJson(e)).toList())!,
+    toSessionThreadId: (json['to_session_thread_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'processed_at': processedAt,
-        ...switch (toAgentName) {
-          SdkPresent<String?>(value: final value) => {
-              'to_agent_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content': content.map((item) => item.toJson()).toList(),
-        'to_session_thread_id': toSessionThreadId,
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'processed_at': processedAt,
+    ...switch (toAgentName) {
+      SdkPresent<String?>(value: final value) => {'to_agent_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    'content': content.map((item) => item.toJson()).toList(),
+    'to_session_thread_id': toSessionThreadId,
+  };
 }

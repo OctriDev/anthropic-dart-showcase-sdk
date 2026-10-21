@@ -8,38 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsAdvisor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAdvisorType type_;
-
   /// The advisor model id.
   final String model;
 
   const BetaManagedAgentsAdvisor({required this.type_, required this.model});
 
-  BetaManagedAgentsAdvisor Function(
-      {BetaManagedAgentsAdvisorType type_,
-      String model}) get copyWith => _copyWith;
+  BetaManagedAgentsAdvisor Function({BetaManagedAgentsAdvisorType type_, String model}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAdvisor _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? model = sdkOmittedValue}) =>
-      BetaManagedAgentsAdvisor(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAdvisorType,
-        model: identical(model, sdkOmittedValue) ? this.model : model as String,
-      );
+  BetaManagedAgentsAdvisor _copyWith({Object? type_ = sdkOmittedValue, Object? model = sdkOmittedValue}) => BetaManagedAgentsAdvisor(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAdvisorType,
+    model: identical(model, sdkOmittedValue) ? this.model : model as String,
+  );
 
-  factory BetaManagedAgentsAdvisor.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsAdvisor(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAdvisorType.fromJson(json['type'] as String)
-            : null)!,
-        model: (json['model'] as String?)!,
-      );
+  factory BetaManagedAgentsAdvisor.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAdvisor(
+    type_: (json['type'] != null ? BetaManagedAgentsAdvisorType.fromJson(json['type'] as String) : null)!,
+    model: (json['model'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'model': model,
-      };
+    'type': type_.toJson(),
+    'model': model,
+  };
 }

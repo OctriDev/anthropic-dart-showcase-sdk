@@ -8,45 +8,27 @@ part of 'shared_request_text.dart';
 class RequestTextEditorCodeExecutionCreateResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `boolean` value serialized in the `is_file_update` wire field.
   final bool isFileUpdate;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestTextEditorCodeExecutionCreateResultBlockType type_;
 
-  const RequestTextEditorCodeExecutionCreateResultBlock(
-      {required this.isFileUpdate, required this.type_});
+  const RequestTextEditorCodeExecutionCreateResultBlock({required this.isFileUpdate, required this.type_});
 
-  RequestTextEditorCodeExecutionCreateResultBlock Function(
-          {bool isFileUpdate,
-          RequestTextEditorCodeExecutionCreateResultBlockType type_})
-      get copyWith => _copyWith;
+  RequestTextEditorCodeExecutionCreateResultBlock Function({bool isFileUpdate, RequestTextEditorCodeExecutionCreateResultBlockType type_}) get copyWith => _copyWith;
 
-  RequestTextEditorCodeExecutionCreateResultBlock _copyWith(
-          {Object? isFileUpdate = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestTextEditorCodeExecutionCreateResultBlock(
-        isFileUpdate: identical(isFileUpdate, sdkOmittedValue)
-            ? this.isFileUpdate
-            : isFileUpdate as bool,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestTextEditorCodeExecutionCreateResultBlockType,
-      );
+  RequestTextEditorCodeExecutionCreateResultBlock _copyWith({Object? isFileUpdate = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestTextEditorCodeExecutionCreateResultBlock(
+    isFileUpdate: identical(isFileUpdate, sdkOmittedValue) ? this.isFileUpdate : isFileUpdate as bool,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestTextEditorCodeExecutionCreateResultBlockType,
+  );
 
-  factory RequestTextEditorCodeExecutionCreateResultBlock.fromJson(
-          Map<String, dynamic> json) =>
-      RequestTextEditorCodeExecutionCreateResultBlock(
-        isFileUpdate: (json['is_file_update'] as bool?)!,
-        type_: (json['type'] != null
-            ? RequestTextEditorCodeExecutionCreateResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestTextEditorCodeExecutionCreateResultBlock.fromJson(Map<String, dynamic> json) => RequestTextEditorCodeExecutionCreateResultBlock(
+    isFileUpdate: (json['is_file_update'] as bool?)!,
+    type_: (json['type'] != null ? RequestTextEditorCodeExecutionCreateResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'is_file_update': isFileUpdate,
-        'type': type_.toJson(),
-      };
+    'is_file_update': isFileUpdate,
+    'type': type_.toJson(),
+  };
 }

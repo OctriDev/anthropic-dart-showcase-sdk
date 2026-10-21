@@ -8,33 +8,22 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsAlwaysAllowPolicy {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAlwaysAllowPolicyType type_;
 
   const BetaManagedAgentsAlwaysAllowPolicy({required this.type_});
 
-  BetaManagedAgentsAlwaysAllowPolicy Function(
-      {BetaManagedAgentsAlwaysAllowPolicyType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsAlwaysAllowPolicy Function({BetaManagedAgentsAlwaysAllowPolicyType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAlwaysAllowPolicy _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaManagedAgentsAlwaysAllowPolicy(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAlwaysAllowPolicyType,
-      );
+  BetaManagedAgentsAlwaysAllowPolicy _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsAlwaysAllowPolicy(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAlwaysAllowPolicyType,
+  );
 
-  factory BetaManagedAgentsAlwaysAllowPolicy.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsAlwaysAllowPolicy(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAlwaysAllowPolicyType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaManagedAgentsAlwaysAllowPolicy.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAlwaysAllowPolicy(
+    type_: (json['type'] != null ? BetaManagedAgentsAlwaysAllowPolicyType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

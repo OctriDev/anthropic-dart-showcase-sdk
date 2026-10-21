@@ -8,47 +8,30 @@ part of 'shared_beta_fallback.dart';
 class BetaFallbackCreditTokenParam {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// How a failing token affects the retry. `strict` (the default, and the bare-string behavior): a failing redemption is a 400 and the retry is not served. `best_effort`: the retry is served either way — a token-layer failure no longer rejects the request; the retry proceeds at normal price and the outcome is reported on the response's `usage.fallback_credit`. Two failures stay hard in both modes: a malformed token, and combining `fallback_credit_token` with `fallbacks`.
   final SdkOptional<BetaFallbackCreditTokenParamMode> mode;
-
   /// The opaque `fallback_credit_token` from a prior refusal's `stop_details` — the same string the bare-string form carries.
   final String token;
 
-  const BetaFallbackCreditTokenParam(
-      {this.mode = const SdkOmitted(), required this.token});
+  const BetaFallbackCreditTokenParam({this.mode = const SdkOmitted(), required this.token});
 
-  BetaFallbackCreditTokenParam Function(
-      {SdkOptional<BetaFallbackCreditTokenParamMode> mode,
-      String token}) get copyWith => _copyWith;
+  BetaFallbackCreditTokenParam Function({SdkOptional<BetaFallbackCreditTokenParamMode> mode, String token}) get copyWith => _copyWith;
 
-  BetaFallbackCreditTokenParam _copyWith(
-          {Object? mode = sdkOmittedValue, Object? token = sdkOmittedValue}) =>
-      BetaFallbackCreditTokenParam(
-        mode: identical(mode, sdkOmittedValue)
-            ? this.mode
-            : mode as SdkOptional<BetaFallbackCreditTokenParamMode>,
-        token: identical(token, sdkOmittedValue) ? this.token : token as String,
-      );
+  BetaFallbackCreditTokenParam _copyWith({Object? mode = sdkOmittedValue, Object? token = sdkOmittedValue}) => BetaFallbackCreditTokenParam(
+    mode: identical(mode, sdkOmittedValue) ? this.mode : mode as SdkOptional<BetaFallbackCreditTokenParamMode>,
+    token: identical(token, sdkOmittedValue) ? this.token : token as String,
+  );
 
-  factory BetaFallbackCreditTokenParam.fromJson(Map<String, dynamic> json) =>
-      BetaFallbackCreditTokenParam(
-        mode: json['mode'] != null
-            ? SdkPresent((json['mode'] != null
-                ? BetaFallbackCreditTokenParamMode.fromJson(
-                    json['mode'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        token: (json['token'] as String?)!,
-      );
+  factory BetaFallbackCreditTokenParam.fromJson(Map<String, dynamic> json) => BetaFallbackCreditTokenParam(
+    mode: json['mode'] != null ? SdkPresent((json['mode'] != null ? BetaFallbackCreditTokenParamMode.fromJson(json['mode'] as String) : null)!) : const SdkOmitted(),
+    token: (json['token'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (mode) {
-          SdkPresent<BetaFallbackCreditTokenParamMode>(value: final value) => {
-              'mode': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'token': token,
-      };
+    ...switch (mode) {
+      SdkPresent<BetaFallbackCreditTokenParamMode>(value: final value) => {'mode': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'token': token,
+  };
 }

@@ -8,93 +8,47 @@ part of 'workspaces_beta_true.dart';
 class BetaFederationRuleWorkspace {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// When this workspace was enabled for the rule.
   final String createdAt;
-
   /// Tagged ID (`user_...` or `svac_...`) of the actor that enabled this workspace for the rule, if known.
   final String? createdByActorId;
-
   /// Tagged ID of the federation rule.
   final String federationRuleId;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaFederationRuleWorkspaceType type_;
-
   /// Tagged ID of the workspace this rule is enabled for.
   final String workspaceId;
-
   /// Workspace display name. Populated when listing; null in the enable response.
   final String? workspaceName;
 
-  const BetaFederationRuleWorkspace(
-      {required this.createdAt,
-      required this.createdByActorId,
-      required this.federationRuleId,
-      required this.type_,
-      required this.workspaceId,
-      required this.workspaceName});
+  const BetaFederationRuleWorkspace({required this.createdAt, required this.createdByActorId, required this.federationRuleId, required this.type_, required this.workspaceId, required this.workspaceName});
 
-  BetaFederationRuleWorkspace Function(
-      {String createdAt,
-      String? createdByActorId,
-      String federationRuleId,
-      BetaFederationRuleWorkspaceType type_,
-      String workspaceId,
-      String? workspaceName}) get copyWith => _copyWith;
+  BetaFederationRuleWorkspace Function({String createdAt, String? createdByActorId, String federationRuleId, BetaFederationRuleWorkspaceType type_, String workspaceId, String? workspaceName}) get copyWith => _copyWith;
 
-  BetaFederationRuleWorkspace _copyWith(
-          {Object? createdAt = sdkOmittedValue,
-          Object? createdByActorId = sdkOmittedValue,
-          Object? federationRuleId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? workspaceId = sdkOmittedValue,
-          Object? workspaceName = sdkOmittedValue}) =>
-      BetaFederationRuleWorkspace(
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        createdByActorId: identical(createdByActorId, sdkOmittedValue)
-            ? this.createdByActorId
-            : createdByActorId as String?,
-        federationRuleId: identical(federationRuleId, sdkOmittedValue)
-            ? this.federationRuleId
-            : federationRuleId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaFederationRuleWorkspaceType,
-        workspaceId: identical(workspaceId, sdkOmittedValue)
-            ? this.workspaceId
-            : workspaceId as String,
-        workspaceName: identical(workspaceName, sdkOmittedValue)
-            ? this.workspaceName
-            : workspaceName as String?,
-      );
+  BetaFederationRuleWorkspace _copyWith({Object? createdAt = sdkOmittedValue, Object? createdByActorId = sdkOmittedValue, Object? federationRuleId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? workspaceId = sdkOmittedValue, Object? workspaceName = sdkOmittedValue}) => BetaFederationRuleWorkspace(
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    createdByActorId: identical(createdByActorId, sdkOmittedValue) ? this.createdByActorId : createdByActorId as String?,
+    federationRuleId: identical(federationRuleId, sdkOmittedValue) ? this.federationRuleId : federationRuleId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaFederationRuleWorkspaceType,
+    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
+    workspaceName: identical(workspaceName, sdkOmittedValue) ? this.workspaceName : workspaceName as String?,
+  );
 
-  factory BetaFederationRuleWorkspace.fromJson(Map<String, dynamic> json) =>
-      BetaFederationRuleWorkspace(
-        createdAt: (json['created_at'] as String?)!,
-        createdByActorId: json.containsKey('created_by_actor_id')
-            ? json['created_by_actor_id'] as String?
-            : throw ArgumentError.value(
-                null, 'created_by_actor_id', 'Required property is missing'),
-        federationRuleId: (json['federation_rule_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaFederationRuleWorkspaceType.fromJson(json['type'] as String)
-            : null)!,
-        workspaceId: (json['workspace_id'] as String?)!,
-        workspaceName: json.containsKey('workspace_name')
-            ? json['workspace_name'] as String?
-            : throw ArgumentError.value(
-                null, 'workspace_name', 'Required property is missing'),
-      );
+  factory BetaFederationRuleWorkspace.fromJson(Map<String, dynamic> json) => BetaFederationRuleWorkspace(
+    createdAt: (json['created_at'] as String?)!,
+    createdByActorId: json.containsKey('created_by_actor_id') ? json['created_by_actor_id'] as String? : throw ArgumentError.value(null, 'created_by_actor_id', 'Required property is missing'),
+    federationRuleId: (json['federation_rule_id'] as String?)!,
+    type_: (json['type'] != null ? BetaFederationRuleWorkspaceType.fromJson(json['type'] as String) : null)!,
+    workspaceId: (json['workspace_id'] as String?)!,
+    workspaceName: json.containsKey('workspace_name') ? json['workspace_name'] as String? : throw ArgumentError.value(null, 'workspace_name', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'created_at': createdAt,
-        'created_by_actor_id': createdByActorId,
-        'federation_rule_id': federationRuleId,
-        'type': type_.toJson(),
-        'workspace_id': workspaceId,
-        'workspace_name': workspaceName,
-      };
+    'created_at': createdAt,
+    'created_by_actor_id': createdByActorId,
+    'federation_rule_id': federationRuleId,
+    'type': type_.toJson(),
+    'workspace_id': workspaceId,
+    'workspace_name': workspaceName,
+  };
 }

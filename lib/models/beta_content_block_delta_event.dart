@@ -8,52 +8,32 @@ part of 'beta_content_block.dart';
 class BetaContentBlockDeltaEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required API value serialized in the `delta` wire field.
   final BetaContentBlockDeltaEventDelta delta;
-
   /// Required `integer` value serialized in the `index` wire field.
   final int index;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaContentBlockDeltaEventType type_;
 
-  const BetaContentBlockDeltaEvent(
-      {required this.delta, required this.index, required this.type_});
+  const BetaContentBlockDeltaEvent({required this.delta, required this.index, required this.type_});
 
-  BetaContentBlockDeltaEvent Function(
-      {BetaContentBlockDeltaEventDelta delta,
-      int index,
-      BetaContentBlockDeltaEventType type_}) get copyWith => _copyWith;
+  BetaContentBlockDeltaEvent Function({BetaContentBlockDeltaEventDelta delta, int index, BetaContentBlockDeltaEventType type_}) get copyWith => _copyWith;
 
-  BetaContentBlockDeltaEvent _copyWith(
-          {Object? delta = sdkOmittedValue,
-          Object? index = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaContentBlockDeltaEvent(
-        delta: identical(delta, sdkOmittedValue)
-            ? this.delta
-            : delta as BetaContentBlockDeltaEventDelta,
-        index: identical(index, sdkOmittedValue) ? this.index : index as int,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaContentBlockDeltaEventType,
-      );
+  BetaContentBlockDeltaEvent _copyWith({Object? delta = sdkOmittedValue, Object? index = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaContentBlockDeltaEvent(
+    delta: identical(delta, sdkOmittedValue) ? this.delta : delta as BetaContentBlockDeltaEventDelta,
+    index: identical(index, sdkOmittedValue) ? this.index : index as int,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaContentBlockDeltaEventType,
+  );
 
-  factory BetaContentBlockDeltaEvent.fromJson(Map<String, dynamic> json) =>
-      BetaContentBlockDeltaEvent(
-        delta: (json['delta'] != null
-            ? BetaContentBlockDeltaEventDelta.fromJson(json['delta'])
-            : null)!,
-        index: ((json['index'] as num?)?.toInt())!,
-        type_: (json['type'] != null
-            ? BetaContentBlockDeltaEventType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaContentBlockDeltaEvent.fromJson(Map<String, dynamic> json) => BetaContentBlockDeltaEvent(
+    delta: (json['delta'] != null ? BetaContentBlockDeltaEventDelta.fromJson(json['delta']) : null)!,
+    index: ((json['index'] as num?)?.toInt())!,
+    type_: (json['type'] != null ? BetaContentBlockDeltaEventType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'delta': delta.toJson(),
-        'index': index,
-        'type': type_.toJson(),
-      };
+    'delta': delta.toJson(),
+    'index': index,
+    'type': type_.toJson(),
+  };
 }

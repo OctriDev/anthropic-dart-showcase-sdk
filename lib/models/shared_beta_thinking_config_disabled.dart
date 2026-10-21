@@ -8,30 +8,22 @@ part of 'shared_beta_thinking.dart';
 class BetaThinkingConfigDisabled {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaThinkingConfigDisabledType type_;
 
   const BetaThinkingConfigDisabled({required this.type_});
 
-  BetaThinkingConfigDisabled Function({BetaThinkingConfigDisabledType type_})
-      get copyWith => _copyWith;
+  BetaThinkingConfigDisabled Function({BetaThinkingConfigDisabledType type_}) get copyWith => _copyWith;
 
-  BetaThinkingConfigDisabled _copyWith({Object? type_ = sdkOmittedValue}) =>
-      BetaThinkingConfigDisabled(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaThinkingConfigDisabledType,
-      );
+  BetaThinkingConfigDisabled _copyWith({Object? type_ = sdkOmittedValue}) => BetaThinkingConfigDisabled(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaThinkingConfigDisabledType,
+  );
 
-  factory BetaThinkingConfigDisabled.fromJson(Map<String, dynamic> json) =>
-      BetaThinkingConfigDisabled(
-        type_: (json['type'] != null
-            ? BetaThinkingConfigDisabledType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaThinkingConfigDisabled.fromJson(Map<String, dynamic> json) => BetaThinkingConfigDisabled(
+    type_: (json['type'] != null ? BetaThinkingConfigDisabledType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

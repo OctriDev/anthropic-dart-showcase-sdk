@@ -8,42 +8,27 @@ part of 'shared_beta_dream.dart';
 class BetaDreamMemoryStoreInput {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaDreamMemoryStoreInputType type_;
-
   /// Required `string` value serialized in the `memory_store_id` wire field.
   final String memoryStoreId;
 
-  const BetaDreamMemoryStoreInput(
-      {required this.type_, required this.memoryStoreId});
+  const BetaDreamMemoryStoreInput({required this.type_, required this.memoryStoreId});
 
-  BetaDreamMemoryStoreInput Function(
-      {BetaDreamMemoryStoreInputType type_,
-      String memoryStoreId}) get copyWith => _copyWith;
+  BetaDreamMemoryStoreInput Function({BetaDreamMemoryStoreInputType type_, String memoryStoreId}) get copyWith => _copyWith;
 
-  BetaDreamMemoryStoreInput _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? memoryStoreId = sdkOmittedValue}) =>
-      BetaDreamMemoryStoreInput(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaDreamMemoryStoreInputType,
-        memoryStoreId: identical(memoryStoreId, sdkOmittedValue)
-            ? this.memoryStoreId
-            : memoryStoreId as String,
-      );
+  BetaDreamMemoryStoreInput _copyWith({Object? type_ = sdkOmittedValue, Object? memoryStoreId = sdkOmittedValue}) => BetaDreamMemoryStoreInput(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaDreamMemoryStoreInputType,
+    memoryStoreId: identical(memoryStoreId, sdkOmittedValue) ? this.memoryStoreId : memoryStoreId as String,
+  );
 
-  factory BetaDreamMemoryStoreInput.fromJson(Map<String, dynamic> json) =>
-      BetaDreamMemoryStoreInput(
-        type_: (json['type'] != null
-            ? BetaDreamMemoryStoreInputType.fromJson(json['type'] as String)
-            : null)!,
-        memoryStoreId: (json['memory_store_id'] as String?)!,
-      );
+  factory BetaDreamMemoryStoreInput.fromJson(Map<String, dynamic> json) => BetaDreamMemoryStoreInput(
+    type_: (json['type'] != null ? BetaDreamMemoryStoreInputType.fromJson(json['type'] as String) : null)!,
+    memoryStoreId: (json['memory_store_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'memory_store_id': memoryStoreId,
-      };
+    'type': type_.toJson(),
+    'memory_store_id': memoryStoreId,
+  };
 }

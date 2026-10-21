@@ -10,105 +10,48 @@ sealed class BetaManagedAgentsUserContentBlock {
   const BetaManagedAgentsUserContentBlock();
   factory BetaManagedAgentsUserContentBlock.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsTextBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsImageBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsDocumentBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsRedactedBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsTextBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsImageBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsDocumentBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsRedactedBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock(
-          BetaManagedAgentsTextBlock.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(
-          BetaManagedAgentsImageBlock.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(
-          BetaManagedAgentsDocumentBlock.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(
-          BetaManagedAgentsRedactedBlock.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"text", "image", "document", "redacted"}
-            .contains(json["type"])) {
-      return UnknownBetaManagedAgentsUserContentBlock(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsUserContentBlock");
+    try { return BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock(BetaManagedAgentsTextBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(BetaManagedAgentsImageBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(BetaManagedAgentsDocumentBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(BetaManagedAgentsRedactedBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"text", "image", "document", "redacted"}.contains(json["type"])) { return UnknownBetaManagedAgentsUserContentBlock(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsUserContentBlock");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock
-    extends BetaManagedAgentsUserContentBlock {
+final class BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock extends BetaManagedAgentsUserContentBlock {
   final BetaManagedAgentsTextBlock value;
   const BetaManagedAgentsUserContentBlockBetaManagedAgentsTextBlock(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock
-    extends BetaManagedAgentsUserContentBlock {
+final class BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock extends BetaManagedAgentsUserContentBlock {
   final BetaManagedAgentsImageBlock value;
-  const BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsUserContentBlockBetaManagedAgentsImageBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock
-    extends BetaManagedAgentsUserContentBlock {
+final class BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock extends BetaManagedAgentsUserContentBlock {
   final BetaManagedAgentsDocumentBlock value;
-  const BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsUserContentBlockBetaManagedAgentsDocumentBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock
-    extends BetaManagedAgentsUserContentBlock {
+final class BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock extends BetaManagedAgentsUserContentBlock {
   final BetaManagedAgentsRedactedBlock value;
-  const BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsUserContentBlockBetaManagedAgentsRedactedBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsUserContentBlock] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsUserContentBlock
-    extends BetaManagedAgentsUserContentBlock {
+final class UnknownBetaManagedAgentsUserContentBlock extends BetaManagedAgentsUserContentBlock {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsUserContentBlock(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

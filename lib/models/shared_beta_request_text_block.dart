@@ -9,122 +9,67 @@ sealed class BetaRequestTextBlockCacheControl {
   static const String constructionSurface = 'named';
   const BetaRequestTextBlockCacheControl();
   factory BetaRequestTextBlockCacheControl.fromJson(Object? json) {
-    try {
-      return BetaRequestTextBlockCacheControlBetaCacheControlEphemeral(
-          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownBetaRequestTextBlockCacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaRequestTextBlockCacheControl");
+    try { return BetaRequestTextBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestTextBlockCacheControl(json); }
+    throw FormatException("No variant matched for BetaRequestTextBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestTextBlockCacheControlBetaCacheControlEphemeral
-    extends BetaRequestTextBlockCacheControl {
+final class BetaRequestTextBlockCacheControlBetaCacheControlEphemeral extends BetaRequestTextBlockCacheControl {
   final BetaCacheControlEphemeral value;
   const BetaRequestTextBlockCacheControlBetaCacheControlEphemeral(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestTextBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestTextBlockCacheControl
-    extends BetaRequestTextBlockCacheControl {
+final class UnknownBetaRequestTextBlockCacheControl extends BetaRequestTextBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestTextBlockCacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaRequestTextBlock` API schema.
 class BetaRequestTextBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
-
   /// Optional array value serialized in the `citations` wire field.
   final SdkOptional<List<BetaRequestTextBlockCitationsItem>?> citations;
-
   /// Required `string` value serialized in the `text` wire field.
   final String text;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestTextBlockType type_;
 
-  const BetaRequestTextBlock(
-      {this.cacheControl = const SdkOmitted(),
-      this.citations = const SdkOmitted(),
-      required this.text,
-      required this.type_});
+  const BetaRequestTextBlock({this.cacheControl = const SdkOmitted(), this.citations = const SdkOmitted(), required this.text, required this.type_});
 
-  BetaRequestTextBlock Function(
-      {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
-      SdkOptional<List<BetaRequestTextBlockCitationsItem>?> citations,
-      String text,
-      BetaRequestTextBlockType type_}) get copyWith => _copyWith;
+  BetaRequestTextBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<List<BetaRequestTextBlockCitationsItem>?> citations, String text, BetaRequestTextBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestTextBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? citations = sdkOmittedValue,
-          Object? text = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaRequestTextBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-        citations: identical(citations, sdkOmittedValue)
-            ? this.citations
-            : citations
-                as SdkOptional<List<BetaRequestTextBlockCitationsItem>?>,
-        text: identical(text, sdkOmittedValue) ? this.text : text as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaRequestTextBlockType,
-      );
+  BetaRequestTextBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? citations = sdkOmittedValue, Object? text = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestTextBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+    citations: identical(citations, sdkOmittedValue) ? this.citations : citations as SdkOptional<List<BetaRequestTextBlockCitationsItem>?>,
+    text: identical(text, sdkOmittedValue) ? this.text : text as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestTextBlockType,
+  );
 
-  factory BetaRequestTextBlock.fromJson(Map<String, dynamic> json) =>
-      BetaRequestTextBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? BetaCacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        citations: json.containsKey('citations')
-            ? SdkPresent((json['citations'] as List?)
-                ?.map((e) => BetaRequestTextBlockCitationsItem.fromJson(e))
-                .toList())
-            : const SdkOmitted(),
-        text: (json['text'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaRequestTextBlockType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaRequestTextBlock.fromJson(Map<String, dynamic> json) => BetaRequestTextBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    citations: json.containsKey('citations') ? SdkPresent((json['citations'] as List?)?.map((e) => BetaRequestTextBlockCitationsItem.fromJson(e)).toList()) : const SdkOmitted(),
+    text: (json['text'] as String?)!,
+    type_: (json['type'] != null ? BetaRequestTextBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (citations) {
-          SdkPresent<List<BetaRequestTextBlockCitationsItem>?>(
-            value: final value
-          ) =>
-            {
-              'citations': value?.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'text': text,
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (citations) {
+      SdkPresent<List<BetaRequestTextBlockCitationsItem>?>(value: final value) => {'citations': value?.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    'text': text,
+    'type': type_.toJson(),
+  };
 }

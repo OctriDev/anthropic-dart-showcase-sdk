@@ -8,39 +8,27 @@ part of 'shared.dart';
 class NotFoundError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final NotFoundErrorType type_;
 
   const NotFoundError({required this.message, required this.type_});
 
-  NotFoundError Function({String message, NotFoundErrorType type_})
-      get copyWith => _copyWith;
+  NotFoundError Function({String message, NotFoundErrorType type_}) get copyWith => _copyWith;
 
-  NotFoundError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      NotFoundError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as NotFoundErrorType,
-      );
+  NotFoundError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => NotFoundError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as NotFoundErrorType,
+  );
 
   factory NotFoundError.fromJson(Map<String, dynamic> json) => NotFoundError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? NotFoundErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? NotFoundErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }

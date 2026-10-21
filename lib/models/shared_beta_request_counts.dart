@@ -8,72 +8,42 @@ part of 'shared_beta_request.dart';
 class BetaRequestCounts {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Number of requests in the Message Batch that have been canceled. This is zero until processing of the entire Message Batch has ended.
   final int canceled;
-
   /// Number of requests in the Message Batch that encountered an error. This is zero until processing of the entire Message Batch has ended.
   final int errored;
-
   /// Number of requests in the Message Batch that have expired. This is zero until processing of the entire Message Batch has ended.
   final int expired;
-
   /// Number of requests in the Message Batch that are processing.
   final int processing;
-
   /// Number of requests in the Message Batch that have completed successfully. This is zero until processing of the entire Message Batch has ended.
   final int succeeded;
 
-  const BetaRequestCounts(
-      {required this.canceled,
-      required this.errored,
-      required this.expired,
-      required this.processing,
-      required this.succeeded});
+  const BetaRequestCounts({required this.canceled, required this.errored, required this.expired, required this.processing, required this.succeeded});
 
-  BetaRequestCounts Function(
-      {int canceled,
-      int errored,
-      int expired,
-      int processing,
-      int succeeded}) get copyWith => _copyWith;
+  BetaRequestCounts Function({int canceled, int errored, int expired, int processing, int succeeded}) get copyWith => _copyWith;
 
-  BetaRequestCounts _copyWith(
-          {Object? canceled = sdkOmittedValue,
-          Object? errored = sdkOmittedValue,
-          Object? expired = sdkOmittedValue,
-          Object? processing = sdkOmittedValue,
-          Object? succeeded = sdkOmittedValue}) =>
-      BetaRequestCounts(
-        canceled: identical(canceled, sdkOmittedValue)
-            ? this.canceled
-            : canceled as int,
-        errored:
-            identical(errored, sdkOmittedValue) ? this.errored : errored as int,
-        expired:
-            identical(expired, sdkOmittedValue) ? this.expired : expired as int,
-        processing: identical(processing, sdkOmittedValue)
-            ? this.processing
-            : processing as int,
-        succeeded: identical(succeeded, sdkOmittedValue)
-            ? this.succeeded
-            : succeeded as int,
-      );
+  BetaRequestCounts _copyWith({Object? canceled = sdkOmittedValue, Object? errored = sdkOmittedValue, Object? expired = sdkOmittedValue, Object? processing = sdkOmittedValue, Object? succeeded = sdkOmittedValue}) => BetaRequestCounts(
+    canceled: identical(canceled, sdkOmittedValue) ? this.canceled : canceled as int,
+    errored: identical(errored, sdkOmittedValue) ? this.errored : errored as int,
+    expired: identical(expired, sdkOmittedValue) ? this.expired : expired as int,
+    processing: identical(processing, sdkOmittedValue) ? this.processing : processing as int,
+    succeeded: identical(succeeded, sdkOmittedValue) ? this.succeeded : succeeded as int,
+  );
 
-  factory BetaRequestCounts.fromJson(Map<String, dynamic> json) =>
-      BetaRequestCounts(
-        canceled: ((json['canceled'] as num?)?.toInt())!,
-        errored: ((json['errored'] as num?)?.toInt())!,
-        expired: ((json['expired'] as num?)?.toInt())!,
-        processing: ((json['processing'] as num?)?.toInt())!,
-        succeeded: ((json['succeeded'] as num?)?.toInt())!,
-      );
+  factory BetaRequestCounts.fromJson(Map<String, dynamic> json) => BetaRequestCounts(
+    canceled: ((json['canceled'] as num?)?.toInt())!,
+    errored: ((json['errored'] as num?)?.toInt())!,
+    expired: ((json['expired'] as num?)?.toInt())!,
+    processing: ((json['processing'] as num?)?.toInt())!,
+    succeeded: ((json['succeeded'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'canceled': canceled,
-        'errored': errored,
-        'expired': expired,
-        'processing': processing,
-        'succeeded': succeeded,
-      };
+    'canceled': canceled,
+    'errored': errored,
+    'expired': expired,
+    'processing': processing,
+    'succeeded': succeeded,
+  };
 }

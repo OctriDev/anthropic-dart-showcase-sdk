@@ -9,37 +9,24 @@ sealed class RequestWebSearchToolResultBlockCacheControl {
   static const String constructionSurface = 'named';
   const RequestWebSearchToolResultBlockCacheControl();
   factory RequestWebSearchToolResultBlockCacheControl.fromJson(Object? json) {
-    try {
-      return RequestWebSearchToolResultBlockCacheControlCacheControlEphemeral(
-          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownRequestWebSearchToolResultBlockCacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for RequestWebSearchToolResultBlockCacheControl");
+    try { return RequestWebSearchToolResultBlockCacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownRequestWebSearchToolResultBlockCacheControl(json); }
+    throw FormatException("No variant matched for RequestWebSearchToolResultBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class RequestWebSearchToolResultBlockCacheControlCacheControlEphemeral
-    extends RequestWebSearchToolResultBlockCacheControl {
+final class RequestWebSearchToolResultBlockCacheControlCacheControlEphemeral extends RequestWebSearchToolResultBlockCacheControl {
   final CacheControlEphemeral value;
-  const RequestWebSearchToolResultBlockCacheControlCacheControlEphemeral(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestWebSearchToolResultBlockCacheControlCacheControlEphemeral(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [RequestWebSearchToolResultBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestWebSearchToolResultBlockCacheControl
-    extends RequestWebSearchToolResultBlockCacheControl {
+final class UnknownRequestWebSearchToolResultBlockCacheControl extends RequestWebSearchToolResultBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownRequestWebSearchToolResultBlockCacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class RequestWebSearchToolResultBlockContent {
@@ -48,152 +35,74 @@ sealed class RequestWebSearchToolResultBlockContent {
   const RequestWebSearchToolResultBlockContent();
   factory RequestWebSearchToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = RequestWebSearchResultBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestWebSearchToolResultBlockContentRequestWebSearchResultBlock(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = RequestWebSearchToolResultError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestWebSearchToolResultBlockContentRequestWebSearchToolResultError(
-              value);
-        }
-      } catch (_) {}
+      try { final value = RequestWebSearchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestWebSearchToolResultBlockContentRequestWebSearchResultBlock(value); } } catch (_) {}
+      try { final value = RequestWebSearchToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestWebSearchToolResultBlockContentRequestWebSearchToolResultError(value); } } catch (_) {}
     }
-    try {
-      return RequestWebSearchToolResultBlockContentRequestWebSearchResultBlock(
-          RequestWebSearchResultBlock.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestWebSearchToolResultBlockContentRequestWebSearchToolResultError(
-          RequestWebSearchToolResultError.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for RequestWebSearchToolResultBlockContent");
+    try { return RequestWebSearchToolResultBlockContentRequestWebSearchResultBlock(RequestWebSearchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestWebSearchToolResultBlockContentRequestWebSearchToolResultError(RequestWebSearchToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for RequestWebSearchToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class RequestWebSearchToolResultBlockContentRequestWebSearchResultBlock
-    extends RequestWebSearchToolResultBlockContent {
+final class RequestWebSearchToolResultBlockContentRequestWebSearchResultBlock extends RequestWebSearchToolResultBlockContent {
   final RequestWebSearchResultBlock value;
-  const RequestWebSearchToolResultBlockContentRequestWebSearchResultBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestWebSearchToolResultBlockContentRequestWebSearchResultBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestWebSearchToolResultBlockContentRequestWebSearchToolResultError
-    extends RequestWebSearchToolResultBlockContent {
+final class RequestWebSearchToolResultBlockContentRequestWebSearchToolResultError extends RequestWebSearchToolResultBlockContent {
   final RequestWebSearchToolResultError value;
-  const RequestWebSearchToolResultBlockContentRequestWebSearchToolResultError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestWebSearchToolResultBlockContentRequestWebSearchToolResultError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `RequestWebSearchToolResultBlock` API schema.
 class RequestWebSearchToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
-
   /// Optional API value serialized in the `caller` wire field.
   final SdkOptional<RequestWebSearchToolResultBlockCaller> caller;
-
   /// Required API value serialized in the `content` wire field.
   final dynamic content;
-
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestWebSearchToolResultBlockType type_;
 
-  const RequestWebSearchToolResultBlock(
-      {this.cacheControl = const SdkOmitted(),
-      this.caller = const SdkOmitted(),
-      required this.content,
-      required this.toolUseId,
-      required this.type_});
+  const RequestWebSearchToolResultBlock({this.cacheControl = const SdkOmitted(), this.caller = const SdkOmitted(), required this.content, required this.toolUseId, required this.type_});
 
-  RequestWebSearchToolResultBlock Function(
-      {SdkOptional<CacheControlEphemeral?> cacheControl,
-      SdkOptional<RequestWebSearchToolResultBlockCaller> caller,
-      dynamic content,
-      String toolUseId,
-      RequestWebSearchToolResultBlockType type_}) get copyWith => _copyWith;
+  RequestWebSearchToolResultBlock Function({SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<RequestWebSearchToolResultBlockCaller> caller, dynamic content, String toolUseId, RequestWebSearchToolResultBlockType type_}) get copyWith => _copyWith;
 
-  RequestWebSearchToolResultBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? caller = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? toolUseId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestWebSearchToolResultBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<CacheControlEphemeral?>,
-        caller: identical(caller, sdkOmittedValue)
-            ? this.caller
-            : caller as SdkOptional<RequestWebSearchToolResultBlockCaller>,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as dynamic,
-        toolUseId: identical(toolUseId, sdkOmittedValue)
-            ? this.toolUseId
-            : toolUseId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestWebSearchToolResultBlockType,
-      );
+  RequestWebSearchToolResultBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? caller = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestWebSearchToolResultBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
+    caller: identical(caller, sdkOmittedValue) ? this.caller : caller as SdkOptional<RequestWebSearchToolResultBlockCaller>,
+    content: identical(content, sdkOmittedValue) ? this.content : content as dynamic,
+    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestWebSearchToolResultBlockType,
+  );
 
-  factory RequestWebSearchToolResultBlock.fromJson(Map<String, dynamic> json) =>
-      RequestWebSearchToolResultBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? CacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        caller: json['caller'] != null
-            ? SdkPresent((json['caller'] != null
-                ? RequestWebSearchToolResultBlockCaller.fromJson(json['caller'])
-                : null)!)
-            : const SdkOmitted(),
-        content: (SdkUtils.unionBranch(
-            json['content'], [RequestWebSearchToolResultError.fromJson]))!,
-        toolUseId: (json['tool_use_id'] as String?)!,
-        type_: (json['type'] != null
-            ? RequestWebSearchToolResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestWebSearchToolResultBlock.fromJson(Map<String, dynamic> json) => RequestWebSearchToolResultBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    caller: json['caller'] != null ? SdkPresent((json['caller'] != null ? RequestWebSearchToolResultBlockCaller.fromJson(json['caller']) : null)!) : const SdkOmitted(),
+    content: (SdkUtils.unionBranch(json['content'], [RequestWebSearchToolResultError.fromJson]))!,
+    toolUseId: (json['tool_use_id'] as String?)!,
+    type_: (json['type'] != null ? RequestWebSearchToolResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<CacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (caller) {
-          SdkPresent<RequestWebSearchToolResultBlockCaller>(
-            value: final value
-          ) =>
-            {
-              'caller': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content': content,
-        'tool_use_id': toolUseId,
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (caller) {
+      SdkPresent<RequestWebSearchToolResultBlockCaller>(value: final value) => {'caller': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'content': content,
+    'tool_use_id': toolUseId,
+    'type': type_.toJson(),
+  };
 }

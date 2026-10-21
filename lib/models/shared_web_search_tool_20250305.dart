@@ -9,36 +9,24 @@ sealed class WebSearchTool20250305CacheControl {
   static const String constructionSurface = 'named';
   const WebSearchTool20250305CacheControl();
   factory WebSearchTool20250305CacheControl.fromJson(Object? json) {
-    try {
-      return WebSearchTool20250305CacheControlCacheControlEphemeral(
-          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownWebSearchTool20250305CacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for WebSearchTool20250305CacheControl");
+    try { return WebSearchTool20250305CacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownWebSearchTool20250305CacheControl(json); }
+    throw FormatException("No variant matched for WebSearchTool20250305CacheControl");
   }
   Object? toJson();
 }
 
-final class WebSearchTool20250305CacheControlCacheControlEphemeral
-    extends WebSearchTool20250305CacheControl {
+final class WebSearchTool20250305CacheControlCacheControlEphemeral extends WebSearchTool20250305CacheControl {
   final CacheControlEphemeral value;
   const WebSearchTool20250305CacheControlCacheControlEphemeral(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [WebSearchTool20250305CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownWebSearchTool20250305CacheControl
-    extends WebSearchTool20250305CacheControl {
+final class UnknownWebSearchTool20250305CacheControl extends WebSearchTool20250305CacheControl {
   final Map<String, dynamic> raw;
   const UnknownWebSearchTool20250305CacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class WebSearchTool20250305MaxUses {
@@ -46,222 +34,107 @@ sealed class WebSearchTool20250305MaxUses {
   static const String constructionSurface = 'named';
   const WebSearchTool20250305MaxUses();
   factory WebSearchTool20250305MaxUses.fromJson(Object? json) {
-    if (json is num) {
-      return WebSearchTool20250305MaxUsesInt(json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for WebSearchTool20250305MaxUses");
+    if (json is num) { return WebSearchTool20250305MaxUsesInt(json.toInt()); }
+    throw FormatException("No variant matched for WebSearchTool20250305MaxUses");
   }
   Object? toJson();
 }
 
-final class WebSearchTool20250305MaxUsesInt
-    extends WebSearchTool20250305MaxUses {
+final class WebSearchTool20250305MaxUsesInt extends WebSearchTool20250305MaxUses {
   final int value;
   const WebSearchTool20250305MaxUsesInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `WebSearchTool_20250305` API schema.
 class WebSearchTool20250305 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<AllowedCaller>> allowedCallers;
-
   /// If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
   final SdkOptional<List<String>?> allowedDomains;
-
   /// If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
   final SdkOptional<List<String>?> blockedDomains;
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
-
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
-
   /// Maximum number of times the tool can be used in the API request.
   final SdkOptional<int?> maxUses;
-
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final WebSearchTool20250305Name name;
-
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
-
   /// Required `string` value serialized in the `type` wire field.
   final WebSearchTool20250305Type type_;
-
   /// Parameters for the user's location. Used to provide more relevant search results.
   final SdkOptional<UserLocation?> userLocation;
 
-  const WebSearchTool20250305(
-      {this.allowedCallers = const SdkOmitted(),
-      this.allowedDomains = const SdkOmitted(),
-      this.blockedDomains = const SdkOmitted(),
-      this.cacheControl = const SdkOmitted(),
-      this.deferLoading = const SdkOmitted(),
-      this.maxUses = const SdkOmitted(),
-      required this.name,
-      this.strict = const SdkOmitted(),
-      required this.type_,
-      this.userLocation = const SdkOmitted()});
+  const WebSearchTool20250305({this.allowedCallers = const SdkOmitted(), this.allowedDomains = const SdkOmitted(), this.blockedDomains = const SdkOmitted(), this.cacheControl = const SdkOmitted(), this.deferLoading = const SdkOmitted(), this.maxUses = const SdkOmitted(), required this.name, this.strict = const SdkOmitted(), required this.type_, this.userLocation = const SdkOmitted()});
 
-  WebSearchTool20250305 Function(
-      {SdkOptional<List<AllowedCaller>> allowedCallers,
-      SdkOptional<List<String>?> allowedDomains,
-      SdkOptional<List<String>?> blockedDomains,
-      SdkOptional<CacheControlEphemeral?> cacheControl,
-      SdkOptional<bool> deferLoading,
-      SdkOptional<int?> maxUses,
-      WebSearchTool20250305Name name,
-      SdkOptional<bool> strict,
-      WebSearchTool20250305Type type_,
-      SdkOptional<UserLocation?> userLocation}) get copyWith => _copyWith;
+  WebSearchTool20250305 Function({SdkOptional<List<AllowedCaller>> allowedCallers, SdkOptional<List<String>?> allowedDomains, SdkOptional<List<String>?> blockedDomains, SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<bool> deferLoading, SdkOptional<int?> maxUses, WebSearchTool20250305Name name, SdkOptional<bool> strict, WebSearchTool20250305Type type_, SdkOptional<UserLocation?> userLocation}) get copyWith => _copyWith;
 
-  WebSearchTool20250305 _copyWith(
-          {Object? allowedCallers = sdkOmittedValue,
-          Object? allowedDomains = sdkOmittedValue,
-          Object? blockedDomains = sdkOmittedValue,
-          Object? cacheControl = sdkOmittedValue,
-          Object? deferLoading = sdkOmittedValue,
-          Object? maxUses = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? strict = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? userLocation = sdkOmittedValue}) =>
-      WebSearchTool20250305(
-        allowedCallers: identical(allowedCallers, sdkOmittedValue)
-            ? this.allowedCallers
-            : allowedCallers as SdkOptional<List<AllowedCaller>>,
-        allowedDomains: identical(allowedDomains, sdkOmittedValue)
-            ? this.allowedDomains
-            : allowedDomains as SdkOptional<List<String>?>,
-        blockedDomains: identical(blockedDomains, sdkOmittedValue)
-            ? this.blockedDomains
-            : blockedDomains as SdkOptional<List<String>?>,
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<CacheControlEphemeral?>,
-        deferLoading: identical(deferLoading, sdkOmittedValue)
-            ? this.deferLoading
-            : deferLoading as SdkOptional<bool>,
-        maxUses: identical(maxUses, sdkOmittedValue)
-            ? this.maxUses
-            : maxUses as SdkOptional<int?>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as WebSearchTool20250305Name,
-        strict: identical(strict, sdkOmittedValue)
-            ? this.strict
-            : strict as SdkOptional<bool>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as WebSearchTool20250305Type,
-        userLocation: identical(userLocation, sdkOmittedValue)
-            ? this.userLocation
-            : userLocation as SdkOptional<UserLocation?>,
-      );
+  WebSearchTool20250305 _copyWith({Object? allowedCallers = sdkOmittedValue, Object? allowedDomains = sdkOmittedValue, Object? blockedDomains = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? maxUses = sdkOmittedValue, Object? name = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? userLocation = sdkOmittedValue}) => WebSearchTool20250305(
+    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<AllowedCaller>>,
+    allowedDomains: identical(allowedDomains, sdkOmittedValue) ? this.allowedDomains : allowedDomains as SdkOptional<List<String>?>,
+    blockedDomains: identical(blockedDomains, sdkOmittedValue) ? this.blockedDomains : blockedDomains as SdkOptional<List<String>?>,
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
+    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
+    maxUses: identical(maxUses, sdkOmittedValue) ? this.maxUses : maxUses as SdkOptional<int?>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as WebSearchTool20250305Name,
+    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as WebSearchTool20250305Type,
+    userLocation: identical(userLocation, sdkOmittedValue) ? this.userLocation : userLocation as SdkOptional<UserLocation?>,
+  );
 
-  factory WebSearchTool20250305.fromJson(Map<String, dynamic> json) =>
-      WebSearchTool20250305(
-        allowedCallers: json['allowed_callers'] != null
-            ? SdkPresent(((json['allowed_callers'] as List?)
-                ?.map((e) => AllowedCaller.fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        allowedDomains: json.containsKey('allowed_domains')
-            ? SdkPresent((json['allowed_domains'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-        blockedDomains: json.containsKey('blocked_domains')
-            ? SdkPresent((json['blocked_domains'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? CacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        deferLoading: json['defer_loading'] != null
-            ? SdkPresent((json['defer_loading'] as bool?)!)
-            : const SdkOmitted(),
-        maxUses: json.containsKey('max_uses')
-            ? SdkPresent((json['max_uses'] as num?)?.toInt())
-            : const SdkOmitted(),
-        name: (json['name'] != null
-            ? WebSearchTool20250305Name.fromJson(json['name'] as String)
-            : null)!,
-        strict: json['strict'] != null
-            ? SdkPresent((json['strict'] as bool?)!)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? WebSearchTool20250305Type.fromJson(json['type'] as String)
-            : null)!,
-        userLocation: json.containsKey('user_location')
-            ? SdkPresent(json['user_location'] != null
-                ? UserLocation.fromJson(
-                    json['user_location'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory WebSearchTool20250305.fromJson(Map<String, dynamic> json) => WebSearchTool20250305(
+    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => AllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
+    allowedDomains: json.containsKey('allowed_domains') ? SdkPresent((json['allowed_domains'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    blockedDomains: json.containsKey('blocked_domains') ? SdkPresent((json['blocked_domains'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
+    maxUses: json.containsKey('max_uses') ? SdkPresent((json['max_uses'] as num?)?.toInt()) : const SdkOmitted(),
+    name: (json['name'] != null ? WebSearchTool20250305Name.fromJson(json['name'] as String) : null)!,
+    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
+    type_: (json['type'] != null ? WebSearchTool20250305Type.fromJson(json['type'] as String) : null)!,
+    userLocation: json.containsKey('user_location') ? SdkPresent(json['user_location'] != null ? UserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (allowedCallers) {
-          SdkPresent<List<AllowedCaller>>(value: final value) => {
-              'allowed_callers': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowedDomains) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'allowed_domains': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (blockedDomains) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'blocked_domains': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cacheControl) {
-          SdkPresent<CacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deferLoading) {
-          SdkPresent<bool>(value: final value) => {
-              'defer_loading': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maxUses) {
-          SdkPresent<int?>(value: final value) => {
-              'max_uses': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name.toJson(),
-        ...switch (strict) {
-          SdkPresent<bool>(value: final value) => {
-              'strict': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-        ...switch (userLocation) {
-          SdkPresent<UserLocation?>(value: final value) => {
-              'user_location': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (allowedCallers) {
+      SdkPresent<List<AllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowedDomains) {
+      SdkPresent<List<String>?>(value: final value) => {'allowed_domains': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (blockedDomains) {
+      SdkPresent<List<String>?>(value: final value) => {'blocked_domains': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cacheControl) {
+      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deferLoading) {
+      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (maxUses) {
+      SdkPresent<int?>(value: final value) => {'max_uses': value,},
+      _ => const <String, dynamic>{},
+    },
+    'name': name.toJson(),
+    ...switch (strict) {
+      SdkPresent<bool>(value: final value) => {'strict': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+    ...switch (userLocation) {
+      SdkPresent<UserLocation?>(value: final value) => {'user_location': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

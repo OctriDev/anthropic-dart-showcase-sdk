@@ -8,45 +8,27 @@ part of 'shared_request_web.dart';
 class RequestWebFetchToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `error_code` wire field.
   final WebFetchToolResultErrorCode errorCode;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestWebFetchToolResultErrorType type_;
 
-  const RequestWebFetchToolResultError(
-      {required this.errorCode, required this.type_});
+  const RequestWebFetchToolResultError({required this.errorCode, required this.type_});
 
-  RequestWebFetchToolResultError Function(
-      {WebFetchToolResultErrorCode errorCode,
-      RequestWebFetchToolResultErrorType type_}) get copyWith => _copyWith;
+  RequestWebFetchToolResultError Function({WebFetchToolResultErrorCode errorCode, RequestWebFetchToolResultErrorType type_}) get copyWith => _copyWith;
 
-  RequestWebFetchToolResultError _copyWith(
-          {Object? errorCode = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestWebFetchToolResultError(
-        errorCode: identical(errorCode, sdkOmittedValue)
-            ? this.errorCode
-            : errorCode as WebFetchToolResultErrorCode,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestWebFetchToolResultErrorType,
-      );
+  RequestWebFetchToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestWebFetchToolResultError(
+    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as WebFetchToolResultErrorCode,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestWebFetchToolResultErrorType,
+  );
 
-  factory RequestWebFetchToolResultError.fromJson(Map<String, dynamic> json) =>
-      RequestWebFetchToolResultError(
-        errorCode: (json['error_code'] != null
-            ? WebFetchToolResultErrorCode.fromJson(json['error_code'] as String)
-            : null)!,
-        type_: (json['type'] != null
-            ? RequestWebFetchToolResultErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestWebFetchToolResultError.fromJson(Map<String, dynamic> json) => RequestWebFetchToolResultError(
+    errorCode: (json['error_code'] != null ? WebFetchToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
+    type_: (json['type'] != null ? RequestWebFetchToolResultErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'error_code': errorCode.toJson(),
-        'type': type_.toJson(),
-      };
+    'error_code': errorCode.toJson(),
+    'type': type_.toJson(),
+  };
 }

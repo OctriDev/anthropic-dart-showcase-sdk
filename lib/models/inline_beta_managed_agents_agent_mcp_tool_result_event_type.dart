@@ -10,18 +10,14 @@ enum BetaManagedAgentsAgentMcpToolResultEventType {
 
   static BetaManagedAgentsAgentMcpToolResultEventType fromJson(String value) {
     switch (value) {
-      case 'agent.mcp_tool_result':
-        return BetaManagedAgentsAgentMcpToolResultEventType.agentMcpToolResult;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentMcpToolResultEventType: $value');
+      case 'agent.mcp_tool_result': return BetaManagedAgentsAgentMcpToolResultEventType.agentMcpToolResult;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentMcpToolResultEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentMcpToolResultEventType.agentMcpToolResult:
-        return 'agent.mcp_tool_result';
+      case BetaManagedAgentsAgentMcpToolResultEventType.agentMcpToolResult: return 'agent.mcp_tool_result';
     }
   }
 
@@ -35,18 +31,14 @@ enum BetaManagedAgentsAgentMcpToolUseEventType {
 
   static BetaManagedAgentsAgentMcpToolUseEventType fromJson(String value) {
     switch (value) {
-      case 'agent.mcp_tool_use':
-        return BetaManagedAgentsAgentMcpToolUseEventType.agentMcpToolUse;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentMcpToolUseEventType: $value');
+      case 'agent.mcp_tool_use': return BetaManagedAgentsAgentMcpToolUseEventType.agentMcpToolUse;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentMcpToolUseEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentMcpToolUseEventType.agentMcpToolUse:
-        return 'agent.mcp_tool_use';
+      case BetaManagedAgentsAgentMcpToolUseEventType.agentMcpToolUse: return 'agent.mcp_tool_use';
     }
   }
 
@@ -60,18 +52,14 @@ enum BetaManagedAgentsAgentMessageEventType {
 
   static BetaManagedAgentsAgentMessageEventType fromJson(String value) {
     switch (value) {
-      case 'agent.message':
-        return BetaManagedAgentsAgentMessageEventType.agentMessage;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentMessageEventType: $value');
+      case 'agent.message': return BetaManagedAgentsAgentMessageEventType.agentMessage;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentMessageEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentMessageEventType.agentMessage:
-        return 'agent.message';
+      case BetaManagedAgentsAgentMessageEventType.agentMessage: return 'agent.message';
     }
   }
 
@@ -85,17 +73,14 @@ enum BetaManagedAgentsAgentParamsType {
 
   static BetaManagedAgentsAgentParamsType fromJson(String value) {
     switch (value) {
-      case 'agent':
-        return BetaManagedAgentsAgentParamsType.agent;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsAgentParamsType: $value');
+      case 'agent': return BetaManagedAgentsAgentParamsType.agent;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentParamsType.agent:
-        return 'agent';
+      case BetaManagedAgentsAgentParamsType.agent: return 'agent';
     }
   }
 
@@ -109,18 +94,14 @@ enum BetaManagedAgentsAgentReferenceType {
 
   static BetaManagedAgentsAgentReferenceType fromJson(String value) {
     switch (value) {
-      case 'agent':
-        return BetaManagedAgentsAgentReferenceType.agent;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentReferenceType: $value');
+      case 'agent': return BetaManagedAgentsAgentReferenceType.agent;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentReferenceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentReferenceType.agent:
-        return 'agent';
+      case BetaManagedAgentsAgentReferenceType.agent: return 'agent';
     }
   }
 
@@ -134,18 +115,14 @@ enum BetaManagedAgentsAgentThinkingEventType {
 
   static BetaManagedAgentsAgentThinkingEventType fromJson(String value) {
     switch (value) {
-      case 'agent.thinking':
-        return BetaManagedAgentsAgentThinkingEventType.agentThinking;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentThinkingEventType: $value');
+      case 'agent.thinking': return BetaManagedAgentsAgentThinkingEventType.agentThinking;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentThinkingEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentThinkingEventType.agentThinking:
-        return 'agent.thinking';
+      case BetaManagedAgentsAgentThinkingEventType.agentThinking: return 'agent.thinking';
     }
   }
 
@@ -157,23 +134,16 @@ enum BetaManagedAgentsAgentThinkingEventType {
 enum BetaManagedAgentsAgentThreadContextCompactedEventType {
   agentThreadContextCompacted;
 
-  static BetaManagedAgentsAgentThreadContextCompactedEventType fromJson(
-      String value) {
+  static BetaManagedAgentsAgentThreadContextCompactedEventType fromJson(String value) {
     switch (value) {
-      case 'agent.thread_context_compacted':
-        return BetaManagedAgentsAgentThreadContextCompactedEventType
-            .agentThreadContextCompacted;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentThreadContextCompactedEventType: $value');
+      case 'agent.thread_context_compacted': return BetaManagedAgentsAgentThreadContextCompactedEventType.agentThreadContextCompacted;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentThreadContextCompactedEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentThreadContextCompactedEventType
-            .agentThreadContextCompacted:
-        return 'agent.thread_context_compacted';
+      case BetaManagedAgentsAgentThreadContextCompactedEventType.agentThreadContextCompacted: return 'agent.thread_context_compacted';
     }
   }
 
@@ -185,23 +155,16 @@ enum BetaManagedAgentsAgentThreadContextCompactedEventType {
 enum BetaManagedAgentsAgentThreadMessageReceivedEventType {
   agentThreadMessageReceived;
 
-  static BetaManagedAgentsAgentThreadMessageReceivedEventType fromJson(
-      String value) {
+  static BetaManagedAgentsAgentThreadMessageReceivedEventType fromJson(String value) {
     switch (value) {
-      case 'agent.thread_message_received':
-        return BetaManagedAgentsAgentThreadMessageReceivedEventType
-            .agentThreadMessageReceived;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentThreadMessageReceivedEventType: $value');
+      case 'agent.thread_message_received': return BetaManagedAgentsAgentThreadMessageReceivedEventType.agentThreadMessageReceived;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentThreadMessageReceivedEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentThreadMessageReceivedEventType
-            .agentThreadMessageReceived:
-        return 'agent.thread_message_received';
+      case BetaManagedAgentsAgentThreadMessageReceivedEventType.agentThreadMessageReceived: return 'agent.thread_message_received';
     }
   }
 
@@ -213,23 +176,16 @@ enum BetaManagedAgentsAgentThreadMessageReceivedEventType {
 enum BetaManagedAgentsAgentThreadMessageSentEventType {
   agentThreadMessageSent;
 
-  static BetaManagedAgentsAgentThreadMessageSentEventType fromJson(
-      String value) {
+  static BetaManagedAgentsAgentThreadMessageSentEventType fromJson(String value) {
     switch (value) {
-      case 'agent.thread_message_sent':
-        return BetaManagedAgentsAgentThreadMessageSentEventType
-            .agentThreadMessageSent;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentThreadMessageSentEventType: $value');
+      case 'agent.thread_message_sent': return BetaManagedAgentsAgentThreadMessageSentEventType.agentThreadMessageSent;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentThreadMessageSentEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentThreadMessageSentEventType
-            .agentThreadMessageSent:
-        return 'agent.thread_message_sent';
+      case BetaManagedAgentsAgentThreadMessageSentEventType.agentThreadMessageSent: return 'agent.thread_message_sent';
     }
   }
 
@@ -243,18 +199,14 @@ enum BetaManagedAgentsAgentToolResultEventType {
 
   static BetaManagedAgentsAgentToolResultEventType fromJson(String value) {
     switch (value) {
-      case 'agent.tool_result':
-        return BetaManagedAgentsAgentToolResultEventType.agentToolResult;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentToolResultEventType: $value');
+      case 'agent.tool_result': return BetaManagedAgentsAgentToolResultEventType.agentToolResult;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentToolResultEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentToolResultEventType.agentToolResult:
-        return 'agent.tool_result';
+      case BetaManagedAgentsAgentToolResultEventType.agentToolResult: return 'agent.tool_result';
     }
   }
 
@@ -268,18 +220,14 @@ enum BetaManagedAgentsAgentToolset20260401Type {
 
   static BetaManagedAgentsAgentToolset20260401Type fromJson(String value) {
     switch (value) {
-      case 'agent_toolset_20260401':
-        return BetaManagedAgentsAgentToolset20260401Type.agentToolset20260401;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentToolset20260401Type: $value');
+      case 'agent_toolset_20260401': return BetaManagedAgentsAgentToolset20260401Type.agentToolset20260401;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentToolset20260401Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentToolset20260401Type.agentToolset20260401:
-        return 'agent_toolset_20260401';
+      case BetaManagedAgentsAgentToolset20260401Type.agentToolset20260401: return 'agent_toolset_20260401';
     }
   }
 
@@ -291,22 +239,16 @@ enum BetaManagedAgentsAgentToolset20260401Type {
 enum BetaManagedAgentsAgentToolset20260401ParamsType {
   agentToolset20260401;
 
-  static BetaManagedAgentsAgentToolset20260401ParamsType fromJson(
-      String value) {
+  static BetaManagedAgentsAgentToolset20260401ParamsType fromJson(String value) {
     switch (value) {
-      case 'agent_toolset_20260401':
-        return BetaManagedAgentsAgentToolset20260401ParamsType
-            .agentToolset20260401;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentToolset20260401ParamsType: $value');
+      case 'agent_toolset_20260401': return BetaManagedAgentsAgentToolset20260401ParamsType.agentToolset20260401;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentToolset20260401ParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentToolset20260401ParamsType.agentToolset20260401:
-        return 'agent_toolset_20260401';
+      case BetaManagedAgentsAgentToolset20260401ParamsType.agentToolset20260401: return 'agent_toolset_20260401';
     }
   }
 
@@ -320,18 +262,14 @@ enum BetaManagedAgentsAgentToolUseEventType {
 
   static BetaManagedAgentsAgentToolUseEventType fromJson(String value) {
     switch (value) {
-      case 'agent.tool_use':
-        return BetaManagedAgentsAgentToolUseEventType.agentToolUse;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsAgentToolUseEventType: $value');
+      case 'agent.tool_use': return BetaManagedAgentsAgentToolUseEventType.agentToolUse;
+      default: throw ArgumentError('Unknown BetaManagedAgentsAgentToolUseEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsAgentToolUseEventType.agentToolUse:
-        return 'agent.tool_use';
+      case BetaManagedAgentsAgentToolUseEventType.agentToolUse: return 'agent.tool_use';
     }
   }
 

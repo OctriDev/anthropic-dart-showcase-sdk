@@ -8,73 +8,37 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsReadToolConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaManagedAgentsReadToolConfigType type_;
-
   /// Required `string` value serialized in the `name` wire field.
   final BetaManagedAgentsReadToolConfigName name;
-
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
-
   /// Permission policy for tool execution.
   final BetaManagedAgentsPermissionPolicy permissionPolicy;
 
-  const BetaManagedAgentsReadToolConfig(
-      {required this.type_,
-      required this.name,
-      required this.enabled,
-      required this.permissionPolicy});
+  const BetaManagedAgentsReadToolConfig({required this.type_, required this.name, required this.enabled, required this.permissionPolicy});
 
-  BetaManagedAgentsReadToolConfig Function(
-          {BetaManagedAgentsReadToolConfigType type_,
-          BetaManagedAgentsReadToolConfigName name,
-          bool enabled,
-          BetaManagedAgentsPermissionPolicy permissionPolicy})
-      get copyWith => _copyWith;
+  BetaManagedAgentsReadToolConfig Function({BetaManagedAgentsReadToolConfigType type_, BetaManagedAgentsReadToolConfigName name, bool enabled, BetaManagedAgentsPermissionPolicy permissionPolicy}) get copyWith => _copyWith;
 
-  BetaManagedAgentsReadToolConfig _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? enabled = sdkOmittedValue,
-          Object? permissionPolicy = sdkOmittedValue}) =>
-      BetaManagedAgentsReadToolConfig(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsReadToolConfigType,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as BetaManagedAgentsReadToolConfigName,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as bool,
-        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
-            ? this.permissionPolicy
-            : permissionPolicy as BetaManagedAgentsPermissionPolicy,
-      );
+  BetaManagedAgentsReadToolConfig _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue}) => BetaManagedAgentsReadToolConfig(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsReadToolConfigType,
+    name: identical(name, sdkOmittedValue) ? this.name : name as BetaManagedAgentsReadToolConfigName,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
+    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as BetaManagedAgentsPermissionPolicy,
+  );
 
-  factory BetaManagedAgentsReadToolConfig.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsReadToolConfig(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsReadToolConfigType.fromJson(
-                json['type'] as String)
-            : null)!,
-        name: (json['name'] != null
-            ? BetaManagedAgentsReadToolConfigName.fromJson(
-                json['name'] as String)
-            : null)!,
-        enabled: (json['enabled'] as bool?)!,
-        permissionPolicy: (json['permission_policy'] != null
-            ? BetaManagedAgentsPermissionPolicy.fromJson(
-                json['permission_policy'])
-            : null)!,
-      );
+  factory BetaManagedAgentsReadToolConfig.fromJson(Map<String, dynamic> json) => BetaManagedAgentsReadToolConfig(
+    type_: (json['type'] != null ? BetaManagedAgentsReadToolConfigType.fromJson(json['type'] as String) : null)!,
+    name: (json['name'] != null ? BetaManagedAgentsReadToolConfigName.fromJson(json['name'] as String) : null)!,
+    enabled: (json['enabled'] as bool?)!,
+    permissionPolicy: (json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'name': name.toJson(),
-        'enabled': enabled,
-        'permission_policy': permissionPolicy.toJson(),
-      };
+    'type': type_.toJson(),
+    'name': name.toJson(),
+    'enabled': enabled,
+    'permission_policy': permissionPolicy.toJson(),
+  };
 }

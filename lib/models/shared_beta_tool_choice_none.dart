@@ -8,30 +8,22 @@ part of 'shared_beta_tool.dart';
 class BetaToolChoiceNone {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaToolChoiceNoneType type_;
 
   const BetaToolChoiceNone({required this.type_});
 
-  BetaToolChoiceNone Function({BetaToolChoiceNoneType type_}) get copyWith =>
-      _copyWith;
+  BetaToolChoiceNone Function({BetaToolChoiceNoneType type_}) get copyWith => _copyWith;
 
-  BetaToolChoiceNone _copyWith({Object? type_ = sdkOmittedValue}) =>
-      BetaToolChoiceNone(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaToolChoiceNoneType,
-      );
+  BetaToolChoiceNone _copyWith({Object? type_ = sdkOmittedValue}) => BetaToolChoiceNone(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaToolChoiceNoneType,
+  );
 
-  factory BetaToolChoiceNone.fromJson(Map<String, dynamic> json) =>
-      BetaToolChoiceNone(
-        type_: (json['type'] != null
-            ? BetaToolChoiceNoneType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaToolChoiceNone.fromJson(Map<String, dynamic> json) => BetaToolChoiceNone(
+    type_: (json['type'] != null ? BetaToolChoiceNoneType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

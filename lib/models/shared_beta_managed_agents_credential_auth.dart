@@ -10,88 +10,40 @@ sealed class BetaManagedAgentsCredentialAuth {
   const BetaManagedAgentsCredentialAuth();
   factory BetaManagedAgentsCredentialAuth.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsMcpOauthAuthResponse.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCredentialAuthBetaManagedAgentsMcpOauthAuthResponse(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsStaticBearerAuthResponse.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCredentialAuthBetaManagedAgentsStaticBearerAuthResponse(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsEnvironmentVariableAuthResponse.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCredentialAuthBetaManagedAgentsEnvironmentVariableAuthResponse(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsMcpOauthAuthResponse.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCredentialAuthBetaManagedAgentsMcpOauthAuthResponse(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsStaticBearerAuthResponse.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCredentialAuthBetaManagedAgentsStaticBearerAuthResponse(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsEnvironmentVariableAuthResponse.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCredentialAuthBetaManagedAgentsEnvironmentVariableAuthResponse(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsCredentialAuthBetaManagedAgentsMcpOauthAuthResponse(
-          BetaManagedAgentsMcpOauthAuthResponse.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsCredentialAuthBetaManagedAgentsStaticBearerAuthResponse(
-          BetaManagedAgentsStaticBearerAuthResponse.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsCredentialAuthBetaManagedAgentsEnvironmentVariableAuthResponse(
-          BetaManagedAgentsEnvironmentVariableAuthResponse.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"mcp_oauth", "static_bearer", "environment_variable"}
-            .contains(json["type"])) {
-      return UnknownBetaManagedAgentsCredentialAuth(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsCredentialAuth");
+    try { return BetaManagedAgentsCredentialAuthBetaManagedAgentsMcpOauthAuthResponse(BetaManagedAgentsMcpOauthAuthResponse.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsCredentialAuthBetaManagedAgentsStaticBearerAuthResponse(BetaManagedAgentsStaticBearerAuthResponse.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsCredentialAuthBetaManagedAgentsEnvironmentVariableAuthResponse(BetaManagedAgentsEnvironmentVariableAuthResponse.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"mcp_oauth", "static_bearer", "environment_variable"}.contains(json["type"])) { return UnknownBetaManagedAgentsCredentialAuth(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsCredentialAuth");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsCredentialAuthBetaManagedAgentsMcpOauthAuthResponse
-    extends BetaManagedAgentsCredentialAuth {
+final class BetaManagedAgentsCredentialAuthBetaManagedAgentsMcpOauthAuthResponse extends BetaManagedAgentsCredentialAuth {
   final BetaManagedAgentsMcpOauthAuthResponse value;
-  const BetaManagedAgentsCredentialAuthBetaManagedAgentsMcpOauthAuthResponse(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCredentialAuthBetaManagedAgentsMcpOauthAuthResponse(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsCredentialAuthBetaManagedAgentsStaticBearerAuthResponse
-    extends BetaManagedAgentsCredentialAuth {
+final class BetaManagedAgentsCredentialAuthBetaManagedAgentsStaticBearerAuthResponse extends BetaManagedAgentsCredentialAuth {
   final BetaManagedAgentsStaticBearerAuthResponse value;
-  const BetaManagedAgentsCredentialAuthBetaManagedAgentsStaticBearerAuthResponse(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCredentialAuthBetaManagedAgentsStaticBearerAuthResponse(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsCredentialAuthBetaManagedAgentsEnvironmentVariableAuthResponse
-    extends BetaManagedAgentsCredentialAuth {
+final class BetaManagedAgentsCredentialAuthBetaManagedAgentsEnvironmentVariableAuthResponse extends BetaManagedAgentsCredentialAuth {
   final BetaManagedAgentsEnvironmentVariableAuthResponse value;
-  const BetaManagedAgentsCredentialAuthBetaManagedAgentsEnvironmentVariableAuthResponse(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCredentialAuthBetaManagedAgentsEnvironmentVariableAuthResponse(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsCredentialAuth] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsCredentialAuth
-    extends BetaManagedAgentsCredentialAuth {
+final class UnknownBetaManagedAgentsCredentialAuth extends BetaManagedAgentsCredentialAuth {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsCredentialAuth(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

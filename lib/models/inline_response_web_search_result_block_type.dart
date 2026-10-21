@@ -10,17 +10,14 @@ enum ResponseWebSearchResultBlockType {
 
   static ResponseWebSearchResultBlockType fromJson(String value) {
     switch (value) {
-      case 'web_search_result':
-        return ResponseWebSearchResultBlockType.webSearchResult;
-      default:
-        throw ArgumentError('Unknown ResponseWebSearchResultBlockType: $value');
+      case 'web_search_result': return ResponseWebSearchResultBlockType.webSearchResult;
+      default: throw ArgumentError('Unknown ResponseWebSearchResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseWebSearchResultBlockType.webSearchResult:
-        return 'web_search_result';
+      case ResponseWebSearchResultBlockType.webSearchResult: return 'web_search_result';
     }
   }
 
@@ -34,19 +31,14 @@ enum ResponseWebSearchResultLocationCitationType {
 
   static ResponseWebSearchResultLocationCitationType fromJson(String value) {
     switch (value) {
-      case 'web_search_result_location':
-        return ResponseWebSearchResultLocationCitationType
-            .webSearchResultLocation;
-      default:
-        throw ArgumentError(
-            'Unknown ResponseWebSearchResultLocationCitationType: $value');
+      case 'web_search_result_location': return ResponseWebSearchResultLocationCitationType.webSearchResultLocation;
+      default: throw ArgumentError('Unknown ResponseWebSearchResultLocationCitationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseWebSearchResultLocationCitationType.webSearchResultLocation:
-        return 'web_search_result_location';
+      case ResponseWebSearchResultLocationCitationType.webSearchResultLocation: return 'web_search_result_location';
     }
   }
 
@@ -60,18 +52,14 @@ enum ResponseWebSearchToolResultBlockType {
 
   static ResponseWebSearchToolResultBlockType fromJson(String value) {
     switch (value) {
-      case 'web_search_tool_result':
-        return ResponseWebSearchToolResultBlockType.webSearchToolResult;
-      default:
-        throw ArgumentError(
-            'Unknown ResponseWebSearchToolResultBlockType: $value');
+      case 'web_search_tool_result': return ResponseWebSearchToolResultBlockType.webSearchToolResult;
+      default: throw ArgumentError('Unknown ResponseWebSearchToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseWebSearchToolResultBlockType.webSearchToolResult:
-        return 'web_search_tool_result';
+      case ResponseWebSearchToolResultBlockType.webSearchToolResult: return 'web_search_tool_result';
     }
   }
 
@@ -85,18 +73,14 @@ enum ResponseWebSearchToolResultErrorType {
 
   static ResponseWebSearchToolResultErrorType fromJson(String value) {
     switch (value) {
-      case 'web_search_tool_result_error':
-        return ResponseWebSearchToolResultErrorType.webSearchToolResultError;
-      default:
-        throw ArgumentError(
-            'Unknown ResponseWebSearchToolResultErrorType: $value');
+      case 'web_search_tool_result_error': return ResponseWebSearchToolResultErrorType.webSearchToolResultError;
+      default: throw ArgumentError('Unknown ResponseWebSearchToolResultErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseWebSearchToolResultErrorType.webSearchToolResultError:
-        return 'web_search_tool_result_error';
+      case ResponseWebSearchToolResultErrorType.webSearchToolResultError: return 'web_search_tool_result_error';
     }
   }
 
@@ -110,17 +94,14 @@ enum ServerToolCaller20260120Type {
 
   static ServerToolCaller20260120Type fromJson(String value) {
     switch (value) {
-      case 'code_execution_20260120':
-        return ServerToolCaller20260120Type.codeExecution20260120;
-      default:
-        throw ArgumentError('Unknown ServerToolCaller20260120Type: $value');
+      case 'code_execution_20260120': return ServerToolCaller20260120Type.codeExecution20260120;
+      default: throw ArgumentError('Unknown ServerToolCaller20260120Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ServerToolCaller20260120Type.codeExecution20260120:
-        return 'code_execution_20260120';
+      case ServerToolCaller20260120Type.codeExecution20260120: return 'code_execution_20260120';
     }
   }
 
@@ -134,17 +115,14 @@ enum ServerToolCallerType {
 
   static ServerToolCallerType fromJson(String value) {
     switch (value) {
-      case 'code_execution_20250825':
-        return ServerToolCallerType.codeExecution20250825;
-      default:
-        throw ArgumentError('Unknown ServerToolCallerType: $value');
+      case 'code_execution_20250825': return ServerToolCallerType.codeExecution20250825;
+      default: throw ArgumentError('Unknown ServerToolCallerType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ServerToolCallerType.codeExecution20250825:
-        return 'code_execution_20250825';
+      case ServerToolCallerType.codeExecution20250825: return 'code_execution_20250825';
     }
   }
 
@@ -158,17 +136,14 @@ enum SignatureContentBlockDeltaType {
 
   static SignatureContentBlockDeltaType fromJson(String value) {
     switch (value) {
-      case 'signature_delta':
-        return SignatureContentBlockDeltaType.signatureDelta;
-      default:
-        throw ArgumentError('Unknown SignatureContentBlockDeltaType: $value');
+      case 'signature_delta': return SignatureContentBlockDeltaType.signatureDelta;
+      default: throw ArgumentError('Unknown SignatureContentBlockDeltaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case SignatureContentBlockDeltaType.signatureDelta:
-        return 'signature_delta';
+      case SignatureContentBlockDeltaType.signatureDelta: return 'signature_delta';
     }
   }
 
@@ -182,17 +157,14 @@ enum SkillType {
 
   static SkillType fromJson(String value) {
     switch (value) {
-      case 'skill':
-        return SkillType.skill;
-      default:
-        throw ArgumentError('Unknown SkillType: $value');
+      case 'skill': return SkillType.skill;
+      default: throw ArgumentError('Unknown SkillType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case SkillType.skill:
-        return 'skill';
+      case SkillType.skill: return 'skill';
     }
   }
 
@@ -202,6 +174,7 @@ enum SkillType {
 
 /// Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
 final class SkillParamsType {
+
   final String value;
 
   const SkillParamsType._(this.value);
@@ -213,19 +186,17 @@ final class SkillParamsType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SkillParamsType && other.value == value;
+  @override bool operator ==(Object other) => other is SkillParamsType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Where the Skill comes from. Possible values: * `"custom"`: authored by the platform user; private to their workspace * `"anthropic"`: published by Anthropic; shared and read-only * `"anthropic_example"`: Anthropic-published sample Skill * `"plugin"`: resolved from an installed plugin
 final class SkillSourceType {
+
   final String value;
 
   const SkillSourceType._(this.value);
@@ -239,15 +210,12 @@ final class SkillSourceType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SkillSourceType && other.value == value;
+  @override bool operator ==(Object other) => other is SkillSourceType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Object type. For Skill Versions, this is always `"skill_version"`.
@@ -256,17 +224,14 @@ enum SkillVersionType {
 
   static SkillVersionType fromJson(String value) {
     switch (value) {
-      case 'skill_version':
-        return SkillVersionType.skillVersion;
-      default:
-        throw ArgumentError('Unknown SkillVersionType: $value');
+      case 'skill_version': return SkillVersionType.skillVersion;
+      default: throw ArgumentError('Unknown SkillVersionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case SkillVersionType.skillVersion:
-        return 'skill_version';
+      case SkillVersionType.skillVersion: return 'skill_version';
     }
   }
 
@@ -280,17 +245,14 @@ enum SucceededResultType {
 
   static SucceededResultType fromJson(String value) {
     switch (value) {
-      case 'succeeded':
-        return SucceededResultType.succeeded;
-      default:
-        throw ArgumentError('Unknown SucceededResultType: $value');
+      case 'succeeded': return SucceededResultType.succeeded;
+      default: throw ArgumentError('Unknown SucceededResultType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case SucceededResultType.succeeded:
-        return 'succeeded';
+      case SucceededResultType.succeeded: return 'succeeded';
     }
   }
 
@@ -304,17 +266,14 @@ enum TextContentBlockDeltaType {
 
   static TextContentBlockDeltaType fromJson(String value) {
     switch (value) {
-      case 'text_delta':
-        return TextContentBlockDeltaType.textDelta;
-      default:
-        throw ArgumentError('Unknown TextContentBlockDeltaType: $value');
+      case 'text_delta': return TextContentBlockDeltaType.textDelta;
+      default: throw ArgumentError('Unknown TextContentBlockDeltaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case TextContentBlockDeltaType.textDelta:
-        return 'text_delta';
+      case TextContentBlockDeltaType.textDelta: return 'text_delta';
     }
   }
 

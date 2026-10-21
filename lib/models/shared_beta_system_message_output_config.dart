@@ -8,37 +8,25 @@ part of 'shared_beta.dart';
 class BetaSystemMessageOutputConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
   final SdkOptional<BetaEffortLevel?> effort;
 
   const BetaSystemMessageOutputConfig({this.effort = const SdkOmitted()});
 
-  BetaSystemMessageOutputConfig Function({SdkOptional<BetaEffortLevel?> effort})
-      get copyWith => _copyWith;
+  BetaSystemMessageOutputConfig Function({SdkOptional<BetaEffortLevel?> effort}) get copyWith => _copyWith;
 
-  BetaSystemMessageOutputConfig _copyWith({Object? effort = sdkOmittedValue}) =>
-      BetaSystemMessageOutputConfig(
-        effort: identical(effort, sdkOmittedValue)
-            ? this.effort
-            : effort as SdkOptional<BetaEffortLevel?>,
-      );
+  BetaSystemMessageOutputConfig _copyWith({Object? effort = sdkOmittedValue}) => BetaSystemMessageOutputConfig(
+    effort: identical(effort, sdkOmittedValue) ? this.effort : effort as SdkOptional<BetaEffortLevel?>,
+  );
 
-  factory BetaSystemMessageOutputConfig.fromJson(Map<String, dynamic> json) =>
-      BetaSystemMessageOutputConfig(
-        effort: json.containsKey('effort')
-            ? SdkPresent(json['effort'] != null
-                ? BetaEffortLevel.fromJson(json['effort'] as String)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory BetaSystemMessageOutputConfig.fromJson(Map<String, dynamic> json) => BetaSystemMessageOutputConfig(
+    effort: json.containsKey('effort') ? SdkPresent(json['effort'] != null ? BetaEffortLevel.fromJson(json['effort'] as String) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (effort) {
-          SdkPresent<BetaEffortLevel?>(value: final value) => {
-              'effort': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (effort) {
+      SdkPresent<BetaEffortLevel?>(value: final value) => {'effort': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

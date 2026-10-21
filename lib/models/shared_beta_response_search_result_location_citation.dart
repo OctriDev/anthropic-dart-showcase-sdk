@@ -8,102 +8,52 @@ part of 'shared_beta_response.dart';
 class BetaResponseSearchResultLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The full text of the cited block range, concatenated. Always equals the contents of `content[start_block_index:end_block_index]` joined together. The text block is the minimal citable unit; this field is never a substring of a single block. Not counted toward output tokens, and not counted toward input tokens when sent back in subsequent turns.
   final String citedText;
-
   /// Exclusive 0-based end index of the cited block range in the source's `content` array. Always greater than `start_block_index`; a single-block citation has `end_block_index = start_block_index + 1`.
   final int endBlockIndex;
-
   /// 0-based index of the cited search result among all `search_result` content blocks in the request, in the order they appear across messages and tool results. Counted separately from `document_index`; server-side web search results are not included in this count.
   final int searchResultIndex;
-
   /// Required `string` value serialized in the `source` wire field.
   final String source;
-
   /// 0-based index of the first cited block in the source's `content` array.
   final int startBlockIndex;
-
   /// Required `string` value serialized in the `title` wire field.
   final String? title;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseSearchResultLocationCitationType type_;
 
-  const BetaResponseSearchResultLocationCitation(
-      {required this.citedText,
-      required this.endBlockIndex,
-      required this.searchResultIndex,
-      required this.source,
-      required this.startBlockIndex,
-      required this.title,
-      required this.type_});
+  const BetaResponseSearchResultLocationCitation({required this.citedText, required this.endBlockIndex, required this.searchResultIndex, required this.source, required this.startBlockIndex, required this.title, required this.type_});
 
-  BetaResponseSearchResultLocationCitation Function(
-          {String citedText,
-          int endBlockIndex,
-          int searchResultIndex,
-          String source,
-          int startBlockIndex,
-          String? title,
-          BetaResponseSearchResultLocationCitationType type_})
-      get copyWith => _copyWith;
+  BetaResponseSearchResultLocationCitation Function({String citedText, int endBlockIndex, int searchResultIndex, String source, int startBlockIndex, String? title, BetaResponseSearchResultLocationCitationType type_}) get copyWith => _copyWith;
 
-  BetaResponseSearchResultLocationCitation _copyWith(
-          {Object? citedText = sdkOmittedValue,
-          Object? endBlockIndex = sdkOmittedValue,
-          Object? searchResultIndex = sdkOmittedValue,
-          Object? source = sdkOmittedValue,
-          Object? startBlockIndex = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaResponseSearchResultLocationCitation(
-        citedText: identical(citedText, sdkOmittedValue)
-            ? this.citedText
-            : citedText as String,
-        endBlockIndex: identical(endBlockIndex, sdkOmittedValue)
-            ? this.endBlockIndex
-            : endBlockIndex as int,
-        searchResultIndex: identical(searchResultIndex, sdkOmittedValue)
-            ? this.searchResultIndex
-            : searchResultIndex as int,
-        source:
-            identical(source, sdkOmittedValue) ? this.source : source as String,
-        startBlockIndex: identical(startBlockIndex, sdkOmittedValue)
-            ? this.startBlockIndex
-            : startBlockIndex as int,
-        title:
-            identical(title, sdkOmittedValue) ? this.title : title as String?,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaResponseSearchResultLocationCitationType,
-      );
+  BetaResponseSearchResultLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? endBlockIndex = sdkOmittedValue, Object? searchResultIndex = sdkOmittedValue, Object? source = sdkOmittedValue, Object? startBlockIndex = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseSearchResultLocationCitation(
+    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
+    endBlockIndex: identical(endBlockIndex, sdkOmittedValue) ? this.endBlockIndex : endBlockIndex as int,
+    searchResultIndex: identical(searchResultIndex, sdkOmittedValue) ? this.searchResultIndex : searchResultIndex as int,
+    source: identical(source, sdkOmittedValue) ? this.source : source as String,
+    startBlockIndex: identical(startBlockIndex, sdkOmittedValue) ? this.startBlockIndex : startBlockIndex as int,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseSearchResultLocationCitationType,
+  );
 
-  factory BetaResponseSearchResultLocationCitation.fromJson(
-          Map<String, dynamic> json) =>
-      BetaResponseSearchResultLocationCitation(
-        citedText: (json['cited_text'] as String?)!,
-        endBlockIndex: ((json['end_block_index'] as num?)?.toInt())!,
-        searchResultIndex: ((json['search_result_index'] as num?)?.toInt())!,
-        source: (json['source'] as String?)!,
-        startBlockIndex: ((json['start_block_index'] as num?)?.toInt())!,
-        title: json.containsKey('title')
-            ? json['title'] as String?
-            : throw ArgumentError.value(
-                null, 'title', 'Required property is missing'),
-        type_: (json['type'] != null
-            ? BetaResponseSearchResultLocationCitationType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaResponseSearchResultLocationCitation.fromJson(Map<String, dynamic> json) => BetaResponseSearchResultLocationCitation(
+    citedText: (json['cited_text'] as String?)!,
+    endBlockIndex: ((json['end_block_index'] as num?)?.toInt())!,
+    searchResultIndex: ((json['search_result_index'] as num?)?.toInt())!,
+    source: (json['source'] as String?)!,
+    startBlockIndex: ((json['start_block_index'] as num?)?.toInt())!,
+    title: json.containsKey('title') ? json['title'] as String? : throw ArgumentError.value(null, 'title', 'Required property is missing'),
+    type_: (json['type'] != null ? BetaResponseSearchResultLocationCitationType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'cited_text': citedText,
-        'end_block_index': endBlockIndex,
-        'search_result_index': searchResultIndex,
-        'source': source,
-        'start_block_index': startBlockIndex,
-        'title': title,
-        'type': type_.toJson(),
-      };
+    'cited_text': citedText,
+    'end_block_index': endBlockIndex,
+    'search_result_index': searchResultIndex,
+    'source': source,
+    'start_block_index': startBlockIndex,
+    'title': title,
+    'type': type_.toJson(),
+  };
 }

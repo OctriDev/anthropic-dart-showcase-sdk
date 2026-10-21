@@ -10,90 +10,40 @@ sealed class BetaManagedAgentsDeploymentInitialEvent {
   const BetaManagedAgentsDeploymentInitialEvent();
   factory BetaManagedAgentsDeploymentInitialEvent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value =
-            BetaManagedAgentsDeploymentUserMessageEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsDeploymentUserDefineOutcomeEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsDeploymentSystemMessageEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsDeploymentUserMessageEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsDeploymentUserDefineOutcomeEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsDeploymentSystemMessageEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(
-          BetaManagedAgentsDeploymentUserMessageEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(
-          BetaManagedAgentsDeploymentUserDefineOutcomeEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(
-          BetaManagedAgentsDeploymentSystemMessageEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"user.message", "user.define_outcome", "system.message"}
-            .contains(json["type"])) {
-      return UnknownBetaManagedAgentsDeploymentInitialEvent(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsDeploymentInitialEvent");
+    try { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(BetaManagedAgentsDeploymentUserMessageEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(BetaManagedAgentsDeploymentUserDefineOutcomeEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(BetaManagedAgentsDeploymentSystemMessageEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"user.message", "user.define_outcome", "system.message"}.contains(json["type"])) { return UnknownBetaManagedAgentsDeploymentInitialEvent(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsDeploymentInitialEvent");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent
-    extends BetaManagedAgentsDeploymentInitialEvent {
+final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent extends BetaManagedAgentsDeploymentInitialEvent {
   final BetaManagedAgentsDeploymentUserMessageEvent value;
-  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserMessageEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent
-    extends BetaManagedAgentsDeploymentInitialEvent {
+final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent extends BetaManagedAgentsDeploymentInitialEvent {
   final BetaManagedAgentsDeploymentUserDefineOutcomeEvent value;
-  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentUserDefineOutcomeEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent
-    extends BetaManagedAgentsDeploymentInitialEvent {
+final class BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent extends BetaManagedAgentsDeploymentInitialEvent {
   final BetaManagedAgentsDeploymentSystemMessageEvent value;
-  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentInitialEventBetaManagedAgentsDeploymentSystemMessageEvent(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsDeploymentInitialEvent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsDeploymentInitialEvent
-    extends BetaManagedAgentsDeploymentInitialEvent {
+final class UnknownBetaManagedAgentsDeploymentInitialEvent extends BetaManagedAgentsDeploymentInitialEvent {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsDeploymentInitialEvent(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

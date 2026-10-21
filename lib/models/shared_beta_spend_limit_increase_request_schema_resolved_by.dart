@@ -10,63 +10,32 @@ sealed class BetaSpendLimitIncreaseRequestSchemaResolvedBy {
   const BetaSpendLimitIncreaseRequestSchemaResolvedBy();
   factory BetaSpendLimitIncreaseRequestSchemaResolvedBy.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaUserActorSchema.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaSpendLimitIncreaseRequestSchemaResolvedByBetaUserActorSchema(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaScopedApiKeyActorSchema.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaSpendLimitIncreaseRequestSchemaResolvedByBetaScopedApiKeyActorSchema(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaUserActorSchema.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendLimitIncreaseRequestSchemaResolvedByBetaUserActorSchema(value); } } catch (_) {}
+      try { final value = BetaScopedApiKeyActorSchema.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendLimitIncreaseRequestSchemaResolvedByBetaScopedApiKeyActorSchema(value); } } catch (_) {}
     }
-    try {
-      return BetaSpendLimitIncreaseRequestSchemaResolvedByBetaUserActorSchema(
-          BetaUserActorSchema.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaSpendLimitIncreaseRequestSchemaResolvedByBetaScopedApiKeyActorSchema(
-          BetaScopedApiKeyActorSchema.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"scoped_api_key_actor", "user_actor"}.contains(json["type"])) {
-      return UnknownBetaSpendLimitIncreaseRequestSchemaResolvedBy(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaSpendLimitIncreaseRequestSchemaResolvedBy");
+    try { return BetaSpendLimitIncreaseRequestSchemaResolvedByBetaUserActorSchema(BetaUserActorSchema.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaSpendLimitIncreaseRequestSchemaResolvedByBetaScopedApiKeyActorSchema(BetaScopedApiKeyActorSchema.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"scoped_api_key_actor", "user_actor"}.contains(json["type"])) { return UnknownBetaSpendLimitIncreaseRequestSchemaResolvedBy(json); }
+    throw FormatException("No variant matched for BetaSpendLimitIncreaseRequestSchemaResolvedBy");
   }
   Object? toJson();
 }
 
-final class BetaSpendLimitIncreaseRequestSchemaResolvedByBetaUserActorSchema
-    extends BetaSpendLimitIncreaseRequestSchemaResolvedBy {
+final class BetaSpendLimitIncreaseRequestSchemaResolvedByBetaUserActorSchema extends BetaSpendLimitIncreaseRequestSchemaResolvedBy {
   final BetaUserActorSchema value;
-  const BetaSpendLimitIncreaseRequestSchemaResolvedByBetaUserActorSchema(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaSpendLimitIncreaseRequestSchemaResolvedByBetaUserActorSchema(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaSpendLimitIncreaseRequestSchemaResolvedByBetaScopedApiKeyActorSchema
-    extends BetaSpendLimitIncreaseRequestSchemaResolvedBy {
+final class BetaSpendLimitIncreaseRequestSchemaResolvedByBetaScopedApiKeyActorSchema extends BetaSpendLimitIncreaseRequestSchemaResolvedBy {
   final BetaScopedApiKeyActorSchema value;
-  const BetaSpendLimitIncreaseRequestSchemaResolvedByBetaScopedApiKeyActorSchema(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaSpendLimitIncreaseRequestSchemaResolvedByBetaScopedApiKeyActorSchema(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaSpendLimitIncreaseRequestSchemaResolvedBy] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaSpendLimitIncreaseRequestSchemaResolvedBy
-    extends BetaSpendLimitIncreaseRequestSchemaResolvedBy {
+final class UnknownBetaSpendLimitIncreaseRequestSchemaResolvedBy extends BetaSpendLimitIncreaseRequestSchemaResolvedBy {
   final Map<String, dynamic> raw;
   const UnknownBetaSpendLimitIncreaseRequestSchemaResolvedBy(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

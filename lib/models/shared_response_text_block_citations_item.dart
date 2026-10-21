@@ -10,130 +10,56 @@ sealed class ResponseTextBlockCitationsItem {
   const ResponseTextBlockCitationsItem();
   factory ResponseTextBlockCitationsItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = ResponseCharLocationCitation.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ResponseTextBlockCitationsItemResponseCharLocationCitation(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ResponsePageLocationCitation.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ResponseTextBlockCitationsItemResponsePageLocationCitation(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ResponseContentBlockLocationCitation.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ResponseTextBlockCitationsItemResponseContentBlockLocationCitation(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ResponseWebSearchResultLocationCitation.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ResponseTextBlockCitationsItemResponseWebSearchResultLocationCitation(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ResponseSearchResultLocationCitation.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ResponseTextBlockCitationsItemResponseSearchResultLocationCitation(
-              value);
-        }
-      } catch (_) {}
+      try { final value = ResponseCharLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseTextBlockCitationsItemResponseCharLocationCitation(value); } } catch (_) {}
+      try { final value = ResponsePageLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseTextBlockCitationsItemResponsePageLocationCitation(value); } } catch (_) {}
+      try { final value = ResponseContentBlockLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseTextBlockCitationsItemResponseContentBlockLocationCitation(value); } } catch (_) {}
+      try { final value = ResponseWebSearchResultLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseTextBlockCitationsItemResponseWebSearchResultLocationCitation(value); } } catch (_) {}
+      try { final value = ResponseSearchResultLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseTextBlockCitationsItemResponseSearchResultLocationCitation(value); } } catch (_) {}
     }
-    try {
-      return ResponseTextBlockCitationsItemResponseCharLocationCitation(
-          ResponseCharLocationCitation.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ResponseTextBlockCitationsItemResponsePageLocationCitation(
-          ResponsePageLocationCitation.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ResponseTextBlockCitationsItemResponseContentBlockLocationCitation(
-          ResponseContentBlockLocationCitation.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ResponseTextBlockCitationsItemResponseWebSearchResultLocationCitation(
-          ResponseWebSearchResultLocationCitation.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ResponseTextBlockCitationsItemResponseSearchResultLocationCitation(
-          ResponseSearchResultLocationCitation.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "char_location",
-          "content_block_location",
-          "page_location",
-          "search_result_location",
-          "web_search_result_location"
-        }.contains(json["type"])) {
-      return UnknownResponseTextBlockCitationsItem(json);
-    }
-    throw FormatException(
-        "No variant matched for ResponseTextBlockCitationsItem");
+    try { return ResponseTextBlockCitationsItemResponseCharLocationCitation(ResponseCharLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ResponseTextBlockCitationsItemResponsePageLocationCitation(ResponsePageLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ResponseTextBlockCitationsItemResponseContentBlockLocationCitation(ResponseContentBlockLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ResponseTextBlockCitationsItemResponseWebSearchResultLocationCitation(ResponseWebSearchResultLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ResponseTextBlockCitationsItemResponseSearchResultLocationCitation(ResponseSearchResultLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"char_location", "content_block_location", "page_location", "search_result_location", "web_search_result_location"}.contains(json["type"])) { return UnknownResponseTextBlockCitationsItem(json); }
+    throw FormatException("No variant matched for ResponseTextBlockCitationsItem");
   }
   Object? toJson();
 }
 
-final class ResponseTextBlockCitationsItemResponseCharLocationCitation
-    extends ResponseTextBlockCitationsItem {
+final class ResponseTextBlockCitationsItemResponseCharLocationCitation extends ResponseTextBlockCitationsItem {
   final ResponseCharLocationCitation value;
   const ResponseTextBlockCitationsItemResponseCharLocationCitation(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class ResponseTextBlockCitationsItemResponsePageLocationCitation
-    extends ResponseTextBlockCitationsItem {
+final class ResponseTextBlockCitationsItemResponsePageLocationCitation extends ResponseTextBlockCitationsItem {
   final ResponsePageLocationCitation value;
   const ResponseTextBlockCitationsItemResponsePageLocationCitation(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class ResponseTextBlockCitationsItemResponseContentBlockLocationCitation
-    extends ResponseTextBlockCitationsItem {
+final class ResponseTextBlockCitationsItemResponseContentBlockLocationCitation extends ResponseTextBlockCitationsItem {
   final ResponseContentBlockLocationCitation value;
-  const ResponseTextBlockCitationsItemResponseContentBlockLocationCitation(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const ResponseTextBlockCitationsItemResponseContentBlockLocationCitation(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class ResponseTextBlockCitationsItemResponseWebSearchResultLocationCitation
-    extends ResponseTextBlockCitationsItem {
+final class ResponseTextBlockCitationsItemResponseWebSearchResultLocationCitation extends ResponseTextBlockCitationsItem {
   final ResponseWebSearchResultLocationCitation value;
-  const ResponseTextBlockCitationsItemResponseWebSearchResultLocationCitation(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const ResponseTextBlockCitationsItemResponseWebSearchResultLocationCitation(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class ResponseTextBlockCitationsItemResponseSearchResultLocationCitation
-    extends ResponseTextBlockCitationsItem {
+final class ResponseTextBlockCitationsItemResponseSearchResultLocationCitation extends ResponseTextBlockCitationsItem {
   final ResponseSearchResultLocationCitation value;
-  const ResponseTextBlockCitationsItemResponseSearchResultLocationCitation(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const ResponseTextBlockCitationsItemResponseSearchResultLocationCitation(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [ResponseTextBlockCitationsItem] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownResponseTextBlockCitationsItem
-    extends ResponseTextBlockCitationsItem {
+final class UnknownResponseTextBlockCitationsItem extends ResponseTextBlockCitationsItem {
   final Map<String, dynamic> raw;
   const UnknownResponseTextBlockCitationsItem(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

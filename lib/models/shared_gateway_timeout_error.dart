@@ -8,40 +8,27 @@ part of 'shared.dart';
 class GatewayTimeoutError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final GatewayTimeoutErrorType type_;
 
   const GatewayTimeoutError({required this.message, required this.type_});
 
-  GatewayTimeoutError Function({String message, GatewayTimeoutErrorType type_})
-      get copyWith => _copyWith;
+  GatewayTimeoutError Function({String message, GatewayTimeoutErrorType type_}) get copyWith => _copyWith;
 
-  GatewayTimeoutError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      GatewayTimeoutError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as GatewayTimeoutErrorType,
-      );
+  GatewayTimeoutError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => GatewayTimeoutError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as GatewayTimeoutErrorType,
+  );
 
-  factory GatewayTimeoutError.fromJson(Map<String, dynamic> json) =>
-      GatewayTimeoutError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? GatewayTimeoutErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory GatewayTimeoutError.fromJson(Map<String, dynamic> json) => GatewayTimeoutError(
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? GatewayTimeoutErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }

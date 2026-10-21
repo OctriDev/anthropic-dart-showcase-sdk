@@ -9,9 +9,7 @@ sealed class UserLocationCity {
   static const String constructionSurface = 'named';
   const UserLocationCity();
   factory UserLocationCity.fromJson(Object? json) {
-    if (json is String) {
-      return UserLocationCityString(json);
-    }
+    if (json is String) { return UserLocationCityString(json); }
     throw FormatException("No variant matched for UserLocationCity");
   }
   Object? toJson();
@@ -20,8 +18,7 @@ sealed class UserLocationCity {
 final class UserLocationCityString extends UserLocationCity {
   final String value;
   const UserLocationCityString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 sealed class UserLocationCountry {
@@ -29,9 +26,7 @@ sealed class UserLocationCountry {
   static const String constructionSurface = 'named';
   const UserLocationCountry();
   factory UserLocationCountry.fromJson(Object? json) {
-    if (json is String) {
-      return UserLocationCountryString(json);
-    }
+    if (json is String) { return UserLocationCountryString(json); }
     throw FormatException("No variant matched for UserLocationCountry");
   }
   Object? toJson();
@@ -40,8 +35,7 @@ sealed class UserLocationCountry {
 final class UserLocationCountryString extends UserLocationCountry {
   final String value;
   const UserLocationCountryString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 sealed class UserLocationRegion {
@@ -49,9 +43,7 @@ sealed class UserLocationRegion {
   static const String constructionSurface = 'named';
   const UserLocationRegion();
   factory UserLocationRegion.fromJson(Object? json) {
-    if (json is String) {
-      return UserLocationRegionString(json);
-    }
+    if (json is String) { return UserLocationRegionString(json); }
     throw FormatException("No variant matched for UserLocationRegion");
   }
   Object? toJson();
@@ -60,8 +52,7 @@ sealed class UserLocationRegion {
 final class UserLocationRegionString extends UserLocationRegion {
   final String value;
   const UserLocationRegionString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 sealed class UserLocationTimezone {
@@ -69,9 +60,7 @@ sealed class UserLocationTimezone {
   static const String constructionSurface = 'named';
   const UserLocationTimezone();
   factory UserLocationTimezone.fromJson(Object? json) {
-    if (json is String) {
-      return UserLocationTimezoneString(json);
-    }
+    if (json is String) { return UserLocationTimezoneString(json); }
     throw FormatException("No variant matched for UserLocationTimezone");
   }
   Object? toJson();
@@ -80,111 +69,61 @@ sealed class UserLocationTimezone {
 final class UserLocationTimezoneString extends UserLocationTimezone {
   final String value;
   const UserLocationTimezoneString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `UserLocation` API schema.
 class UserLocation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The city of the user.
   final SdkOptional<String?> city;
-
   /// The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
   final SdkOptional<String?> country;
-
   /// The region of the user.
   final SdkOptional<String?> region;
-
   /// The [IANA timezone](https://nodatime.org/TimeZones) of the user.
   final SdkOptional<String?> timezone;
-
   /// Required `string` value serialized in the `type` wire field.
   final UserLocationType type_;
 
-  const UserLocation(
-      {this.city = const SdkOmitted(),
-      this.country = const SdkOmitted(),
-      this.region = const SdkOmitted(),
-      this.timezone = const SdkOmitted(),
-      required this.type_});
+  const UserLocation({this.city = const SdkOmitted(), this.country = const SdkOmitted(), this.region = const SdkOmitted(), this.timezone = const SdkOmitted(), required this.type_});
 
-  UserLocation Function(
-      {SdkOptional<String?> city,
-      SdkOptional<String?> country,
-      SdkOptional<String?> region,
-      SdkOptional<String?> timezone,
-      UserLocationType type_}) get copyWith => _copyWith;
+  UserLocation Function({SdkOptional<String?> city, SdkOptional<String?> country, SdkOptional<String?> region, SdkOptional<String?> timezone, UserLocationType type_}) get copyWith => _copyWith;
 
-  UserLocation _copyWith(
-          {Object? city = sdkOmittedValue,
-          Object? country = sdkOmittedValue,
-          Object? region = sdkOmittedValue,
-          Object? timezone = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      UserLocation(
-        city: identical(city, sdkOmittedValue)
-            ? this.city
-            : city as SdkOptional<String?>,
-        country: identical(country, sdkOmittedValue)
-            ? this.country
-            : country as SdkOptional<String?>,
-        region: identical(region, sdkOmittedValue)
-            ? this.region
-            : region as SdkOptional<String?>,
-        timezone: identical(timezone, sdkOmittedValue)
-            ? this.timezone
-            : timezone as SdkOptional<String?>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as UserLocationType,
-      );
+  UserLocation _copyWith({Object? city = sdkOmittedValue, Object? country = sdkOmittedValue, Object? region = sdkOmittedValue, Object? timezone = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => UserLocation(
+    city: identical(city, sdkOmittedValue) ? this.city : city as SdkOptional<String?>,
+    country: identical(country, sdkOmittedValue) ? this.country : country as SdkOptional<String?>,
+    region: identical(region, sdkOmittedValue) ? this.region : region as SdkOptional<String?>,
+    timezone: identical(timezone, sdkOmittedValue) ? this.timezone : timezone as SdkOptional<String?>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as UserLocationType,
+  );
 
   factory UserLocation.fromJson(Map<String, dynamic> json) => UserLocation(
-        city: json.containsKey('city')
-            ? SdkPresent(json['city'] as String?)
-            : const SdkOmitted(),
-        country: json.containsKey('country')
-            ? SdkPresent(json['country'] as String?)
-            : const SdkOmitted(),
-        region: json.containsKey('region')
-            ? SdkPresent(json['region'] as String?)
-            : const SdkOmitted(),
-        timezone: json.containsKey('timezone')
-            ? SdkPresent(json['timezone'] as String?)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? UserLocationType.fromJson(json['type'] as String)
-            : null)!,
-      );
+    city: json.containsKey('city') ? SdkPresent(json['city'] as String?) : const SdkOmitted(),
+    country: json.containsKey('country') ? SdkPresent(json['country'] as String?) : const SdkOmitted(),
+    region: json.containsKey('region') ? SdkPresent(json['region'] as String?) : const SdkOmitted(),
+    timezone: json.containsKey('timezone') ? SdkPresent(json['timezone'] as String?) : const SdkOmitted(),
+    type_: (json['type'] != null ? UserLocationType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (city) {
-          SdkPresent<String?>(value: final value) => {
-              'city': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (country) {
-          SdkPresent<String?>(value: final value) => {
-              'country': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (region) {
-          SdkPresent<String?>(value: final value) => {
-              'region': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (timezone) {
-          SdkPresent<String?>(value: final value) => {
-              'timezone': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-      };
+    ...switch (city) {
+      SdkPresent<String?>(value: final value) => {'city': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (country) {
+      SdkPresent<String?>(value: final value) => {'country': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (region) {
+      SdkPresent<String?>(value: final value) => {'region': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (timezone) {
+      SdkPresent<String?>(value: final value) => {'timezone': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+  };
 }

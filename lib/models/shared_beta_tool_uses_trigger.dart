@@ -8,37 +8,27 @@ part of 'shared_beta_tool.dart';
 class BetaToolUsesTrigger {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaToolUsesTriggerType type_;
-
   /// Required `integer` value serialized in the `value` wire field.
   final int value;
 
   const BetaToolUsesTrigger({required this.type_, required this.value});
 
-  BetaToolUsesTrigger Function({BetaToolUsesTriggerType type_, int value})
-      get copyWith => _copyWith;
+  BetaToolUsesTrigger Function({BetaToolUsesTriggerType type_, int value}) get copyWith => _copyWith;
 
-  BetaToolUsesTrigger _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
-      BetaToolUsesTrigger(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaToolUsesTriggerType,
-        value: identical(value, sdkOmittedValue) ? this.value : value as int,
-      );
+  BetaToolUsesTrigger _copyWith({Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) => BetaToolUsesTrigger(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaToolUsesTriggerType,
+    value: identical(value, sdkOmittedValue) ? this.value : value as int,
+  );
 
-  factory BetaToolUsesTrigger.fromJson(Map<String, dynamic> json) =>
-      BetaToolUsesTrigger(
-        type_: (json['type'] != null
-            ? BetaToolUsesTriggerType.fromJson(json['type'] as String)
-            : null)!,
-        value: ((json['value'] as num?)?.toInt())!,
-      );
+  factory BetaToolUsesTrigger.fromJson(Map<String, dynamic> json) => BetaToolUsesTrigger(
+    type_: (json['type'] != null ? BetaToolUsesTriggerType.fromJson(json['type'] as String) : null)!,
+    value: ((json['value'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'value': value,
-      };
+    'type': type_.toJson(),
+    'value': value,
+  };
 }

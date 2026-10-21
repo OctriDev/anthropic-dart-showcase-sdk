@@ -8,40 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsUserActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUserActorType type_;
-
   /// ID of the user who performed the write (a `user_...` value).
   final String userId;
 
   const BetaManagedAgentsUserActor({required this.type_, required this.userId});
 
-  BetaManagedAgentsUserActor Function(
-      {BetaManagedAgentsUserActorType type_,
-      String userId}) get copyWith => _copyWith;
+  BetaManagedAgentsUserActor Function({BetaManagedAgentsUserActorType type_, String userId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUserActor _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? userId = sdkOmittedValue}) =>
-      BetaManagedAgentsUserActor(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsUserActorType,
-        userId:
-            identical(userId, sdkOmittedValue) ? this.userId : userId as String,
-      );
+  BetaManagedAgentsUserActor _copyWith({Object? type_ = sdkOmittedValue, Object? userId = sdkOmittedValue}) => BetaManagedAgentsUserActor(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUserActorType,
+    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as String,
+  );
 
-  factory BetaManagedAgentsUserActor.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsUserActor(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsUserActorType.fromJson(json['type'] as String)
-            : null)!,
-        userId: (json['user_id'] as String?)!,
-      );
+  factory BetaManagedAgentsUserActor.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUserActor(
+    type_: (json['type'] != null ? BetaManagedAgentsUserActorType.fromJson(json['type'] as String) : null)!,
+    userId: (json['user_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'user_id': userId,
-      };
+    'type': type_.toJson(),
+    'user_id': userId,
+  };
 }

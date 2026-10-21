@@ -8,76 +8,42 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionThreadStatusRescheduledEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionThreadStatusRescheduledEventType type_;
-
   /// Unique identifier for this event.
   final String id;
-
   /// Public sthr_ ID of the thread that is retrying.
   final String sessionThreadId;
-
   /// Timestamp of the status transition.
   final String processedAt;
-
   /// Name of the agent the thread runs.
   final String agentName;
 
-  const BetaManagedAgentsSessionThreadStatusRescheduledEvent(
-      {required this.type_,
-      required this.id,
-      required this.sessionThreadId,
-      required this.processedAt,
-      required this.agentName});
+  const BetaManagedAgentsSessionThreadStatusRescheduledEvent({required this.type_, required this.id, required this.sessionThreadId, required this.processedAt, required this.agentName});
 
-  BetaManagedAgentsSessionThreadStatusRescheduledEvent Function(
-      {BetaManagedAgentsSessionThreadStatusRescheduledEventType type_,
-      String id,
-      String sessionThreadId,
-      String processedAt,
-      String agentName}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionThreadStatusRescheduledEvent Function({BetaManagedAgentsSessionThreadStatusRescheduledEventType type_, String id, String sessionThreadId, String processedAt, String agentName}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionThreadStatusRescheduledEvent _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? sessionThreadId = sdkOmittedValue,
-          Object? processedAt = sdkOmittedValue,
-          Object? agentName = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionThreadStatusRescheduledEvent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSessionThreadStatusRescheduledEventType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        sessionThreadId: identical(sessionThreadId, sdkOmittedValue)
-            ? this.sessionThreadId
-            : sessionThreadId as String,
-        processedAt: identical(processedAt, sdkOmittedValue)
-            ? this.processedAt
-            : processedAt as String,
-        agentName: identical(agentName, sdkOmittedValue)
-            ? this.agentName
-            : agentName as String,
-      );
+  BetaManagedAgentsSessionThreadStatusRescheduledEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? sessionThreadId = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? agentName = sdkOmittedValue}) => BetaManagedAgentsSessionThreadStatusRescheduledEvent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionThreadStatusRescheduledEventType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    sessionThreadId: identical(sessionThreadId, sdkOmittedValue) ? this.sessionThreadId : sessionThreadId as String,
+    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
+    agentName: identical(agentName, sdkOmittedValue) ? this.agentName : agentName as String,
+  );
 
-  factory BetaManagedAgentsSessionThreadStatusRescheduledEvent.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionThreadStatusRescheduledEvent(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSessionThreadStatusRescheduledEventType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        sessionThreadId: (json['session_thread_id'] as String?)!,
-        processedAt: (json['processed_at'] as String?)!,
-        agentName: (json['agent_name'] as String?)!,
-      );
+  factory BetaManagedAgentsSessionThreadStatusRescheduledEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionThreadStatusRescheduledEvent(
+    type_: (json['type'] != null ? BetaManagedAgentsSessionThreadStatusRescheduledEventType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    sessionThreadId: (json['session_thread_id'] as String?)!,
+    processedAt: (json['processed_at'] as String?)!,
+    agentName: (json['agent_name'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'session_thread_id': sessionThreadId,
-        'processed_at': processedAt,
-        'agent_name': agentName,
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'session_thread_id': sessionThreadId,
+    'processed_at': processedAt,
+    'agent_name': agentName,
+  };
 }

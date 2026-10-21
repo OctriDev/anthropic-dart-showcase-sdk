@@ -8,37 +8,27 @@ part of 'shared_beta_tool.dart';
 class BetaToolUsesKeep {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaToolUsesKeepType type_;
-
   /// Required `integer` value serialized in the `value` wire field.
   final int value;
 
   const BetaToolUsesKeep({required this.type_, required this.value});
 
-  BetaToolUsesKeep Function({BetaToolUsesKeepType type_, int value})
-      get copyWith => _copyWith;
+  BetaToolUsesKeep Function({BetaToolUsesKeepType type_, int value}) get copyWith => _copyWith;
 
-  BetaToolUsesKeep _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
-      BetaToolUsesKeep(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaToolUsesKeepType,
-        value: identical(value, sdkOmittedValue) ? this.value : value as int,
-      );
+  BetaToolUsesKeep _copyWith({Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) => BetaToolUsesKeep(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaToolUsesKeepType,
+    value: identical(value, sdkOmittedValue) ? this.value : value as int,
+  );
 
-  factory BetaToolUsesKeep.fromJson(Map<String, dynamic> json) =>
-      BetaToolUsesKeep(
-        type_: (json['type'] != null
-            ? BetaToolUsesKeepType.fromJson(json['type'] as String)
-            : null)!,
-        value: ((json['value'] as num?)?.toInt())!,
-      );
+  factory BetaToolUsesKeep.fromJson(Map<String, dynamic> json) => BetaToolUsesKeep(
+    type_: (json['type'] != null ? BetaToolUsesKeepType.fromJson(json['type'] as String) : null)!,
+    value: ((json['value'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'value': value,
-      };
+    'type': type_.toJson(),
+    'value': value,
+  };
 }

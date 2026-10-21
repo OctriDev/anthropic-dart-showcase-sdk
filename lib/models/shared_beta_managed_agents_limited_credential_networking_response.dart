@@ -8,46 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsLimitedCredentialNetworkingResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsLimitedCredentialNetworkingResponseType type_;
-
   /// Hostnames on which the secret will be substituted. An entry matches the request host exactly; a `*.`-prefixed entry matches any subdomain of the named domain but not the domain itself.
   final List<String> allowedHosts;
 
-  const BetaManagedAgentsLimitedCredentialNetworkingResponse(
-      {required this.type_, required this.allowedHosts});
+  const BetaManagedAgentsLimitedCredentialNetworkingResponse({required this.type_, required this.allowedHosts});
 
-  BetaManagedAgentsLimitedCredentialNetworkingResponse Function(
-      {BetaManagedAgentsLimitedCredentialNetworkingResponseType type_,
-      List<String> allowedHosts}) get copyWith => _copyWith;
+  BetaManagedAgentsLimitedCredentialNetworkingResponse Function({BetaManagedAgentsLimitedCredentialNetworkingResponseType type_, List<String> allowedHosts}) get copyWith => _copyWith;
 
-  BetaManagedAgentsLimitedCredentialNetworkingResponse _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? allowedHosts = sdkOmittedValue}) =>
-      BetaManagedAgentsLimitedCredentialNetworkingResponse(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsLimitedCredentialNetworkingResponseType,
-        allowedHosts: identical(allowedHosts, sdkOmittedValue)
-            ? this.allowedHosts
-            : allowedHosts as List<String>,
-      );
+  BetaManagedAgentsLimitedCredentialNetworkingResponse _copyWith({Object? type_ = sdkOmittedValue, Object? allowedHosts = sdkOmittedValue}) => BetaManagedAgentsLimitedCredentialNetworkingResponse(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsLimitedCredentialNetworkingResponseType,
+    allowedHosts: identical(allowedHosts, sdkOmittedValue) ? this.allowedHosts : allowedHosts as List<String>,
+  );
 
-  factory BetaManagedAgentsLimitedCredentialNetworkingResponse.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsLimitedCredentialNetworkingResponse(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsLimitedCredentialNetworkingResponseType.fromJson(
-                json['type'] as String)
-            : null)!,
-        allowedHosts: ((json['allowed_hosts'] as List?)
-            ?.map((e) => e as String)
-            .toList())!,
-      );
+  factory BetaManagedAgentsLimitedCredentialNetworkingResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsLimitedCredentialNetworkingResponse(
+    type_: (json['type'] != null ? BetaManagedAgentsLimitedCredentialNetworkingResponseType.fromJson(json['type'] as String) : null)!,
+    allowedHosts: ((json['allowed_hosts'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'allowed_hosts': allowedHosts,
-      };
+    'type': type_.toJson(),
+    'allowed_hosts': allowedHosts,
+  };
 }

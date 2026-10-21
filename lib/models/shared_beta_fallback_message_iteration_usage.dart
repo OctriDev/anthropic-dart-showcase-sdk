@@ -8,107 +8,52 @@ part of 'shared_beta_fallback.dart';
 class BetaFallbackMessageIterationUsage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Breakdown of cached tokens by TTL
   final BetaCacheCreation? cacheCreation;
-
   /// The number of input tokens used to create the cache entry.
   final int cacheCreationInputTokens;
-
   /// The number of input tokens read from the cache.
   final int cacheReadInputTokens;
-
   /// The number of input tokens which were used.
   final int inputTokens;
-
   /// The model that will complete your prompt. See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
   final Model model;
-
   /// The number of output tokens which were used.
   final int outputTokens;
-
   /// Usage for the fallback-model attempt that served the response
   final BetaFallbackMessageIterationUsageType type_;
 
-  const BetaFallbackMessageIterationUsage(
-      {required this.cacheCreation,
-      required this.cacheCreationInputTokens,
-      required this.cacheReadInputTokens,
-      required this.inputTokens,
-      required this.model,
-      required this.outputTokens,
-      required this.type_});
+  const BetaFallbackMessageIterationUsage({required this.cacheCreation, required this.cacheCreationInputTokens, required this.cacheReadInputTokens, required this.inputTokens, required this.model, required this.outputTokens, required this.type_});
 
-  BetaFallbackMessageIterationUsage Function(
-      {BetaCacheCreation? cacheCreation,
-      int cacheCreationInputTokens,
-      int cacheReadInputTokens,
-      int inputTokens,
-      Model model,
-      int outputTokens,
-      BetaFallbackMessageIterationUsageType type_}) get copyWith => _copyWith;
+  BetaFallbackMessageIterationUsage Function({BetaCacheCreation? cacheCreation, int cacheCreationInputTokens, int cacheReadInputTokens, int inputTokens, Model model, int outputTokens, BetaFallbackMessageIterationUsageType type_}) get copyWith => _copyWith;
 
-  BetaFallbackMessageIterationUsage _copyWith(
-          {Object? cacheCreation = sdkOmittedValue,
-          Object? cacheCreationInputTokens = sdkOmittedValue,
-          Object? cacheReadInputTokens = sdkOmittedValue,
-          Object? inputTokens = sdkOmittedValue,
-          Object? model = sdkOmittedValue,
-          Object? outputTokens = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaFallbackMessageIterationUsage(
-        cacheCreation: identical(cacheCreation, sdkOmittedValue)
-            ? this.cacheCreation
-            : cacheCreation as BetaCacheCreation?,
-        cacheCreationInputTokens:
-            identical(cacheCreationInputTokens, sdkOmittedValue)
-                ? this.cacheCreationInputTokens
-                : cacheCreationInputTokens as int,
-        cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue)
-            ? this.cacheReadInputTokens
-            : cacheReadInputTokens as int,
-        inputTokens: identical(inputTokens, sdkOmittedValue)
-            ? this.inputTokens
-            : inputTokens as int,
-        model: identical(model, sdkOmittedValue) ? this.model : model as Model,
-        outputTokens: identical(outputTokens, sdkOmittedValue)
-            ? this.outputTokens
-            : outputTokens as int,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaFallbackMessageIterationUsageType,
-      );
+  BetaFallbackMessageIterationUsage _copyWith({Object? cacheCreation = sdkOmittedValue, Object? cacheCreationInputTokens = sdkOmittedValue, Object? cacheReadInputTokens = sdkOmittedValue, Object? inputTokens = sdkOmittedValue, Object? model = sdkOmittedValue, Object? outputTokens = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaFallbackMessageIterationUsage(
+    cacheCreation: identical(cacheCreation, sdkOmittedValue) ? this.cacheCreation : cacheCreation as BetaCacheCreation?,
+    cacheCreationInputTokens: identical(cacheCreationInputTokens, sdkOmittedValue) ? this.cacheCreationInputTokens : cacheCreationInputTokens as int,
+    cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue) ? this.cacheReadInputTokens : cacheReadInputTokens as int,
+    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as int,
+    model: identical(model, sdkOmittedValue) ? this.model : model as Model,
+    outputTokens: identical(outputTokens, sdkOmittedValue) ? this.outputTokens : outputTokens as int,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaFallbackMessageIterationUsageType,
+  );
 
-  factory BetaFallbackMessageIterationUsage.fromJson(
-          Map<String, dynamic> json) =>
-      BetaFallbackMessageIterationUsage(
-        cacheCreation: json.containsKey('cache_creation')
-            ? json['cache_creation'] != null
-                ? BetaCacheCreation.fromJson(
-                    json['cache_creation'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'cache_creation', 'Required property is missing'),
-        cacheCreationInputTokens:
-            ((json['cache_creation_input_tokens'] as num?)?.toInt())!,
-        cacheReadInputTokens:
-            ((json['cache_read_input_tokens'] as num?)?.toInt())!,
-        inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
-        model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
-        outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
-        type_: (json['type'] != null
-            ? BetaFallbackMessageIterationUsageType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaFallbackMessageIterationUsage.fromJson(Map<String, dynamic> json) => BetaFallbackMessageIterationUsage(
+    cacheCreation: json.containsKey('cache_creation') ? json['cache_creation'] != null ? BetaCacheCreation.fromJson(json['cache_creation'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'cache_creation', 'Required property is missing'),
+    cacheCreationInputTokens: ((json['cache_creation_input_tokens'] as num?)?.toInt())!,
+    cacheReadInputTokens: ((json['cache_read_input_tokens'] as num?)?.toInt())!,
+    inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
+    model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
+    outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
+    type_: (json['type'] != null ? BetaFallbackMessageIterationUsageType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'cache_creation': cacheCreation?.toJson(),
-        'cache_creation_input_tokens': cacheCreationInputTokens,
-        'cache_read_input_tokens': cacheReadInputTokens,
-        'input_tokens': inputTokens,
-        'model': model.toJson(),
-        'output_tokens': outputTokens,
-        'type': type_.toJson(),
-      };
+    'cache_creation': cacheCreation?.toJson(),
+    'cache_creation_input_tokens': cacheCreationInputTokens,
+    'cache_read_input_tokens': cacheReadInputTokens,
+    'input_tokens': inputTokens,
+    'model': model.toJson(),
+    'output_tokens': outputTokens,
+    'type': type_.toJson(),
+  };
 }

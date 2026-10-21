@@ -6,54 +6,46 @@ part of 'inline.dart';
 // Inline operation models
 /// Determines whether to use priority capacity (if available) or standard capacity for this request. Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/service-tiers) for details.
 final class CreateMessageParamsServiceTier {
+
   final String value;
 
   const CreateMessageParamsServiceTier._(this.value);
 
-  factory CreateMessageParamsServiceTier.fromJson(String value) =>
-      CreateMessageParamsServiceTier._(value);
+  factory CreateMessageParamsServiceTier.fromJson(String value) => CreateMessageParamsServiceTier._(value);
 
   static const auto = CreateMessageParamsServiceTier._('auto');
   static const standardOnly = CreateMessageParamsServiceTier._('standard_only');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CreateMessageParamsServiceTier && other.value == value;
+  @override bool operator ==(Object other) => other is CreateMessageParamsServiceTier && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Determines whether to use priority capacity (if available) or standard capacity for this request. Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/service-tiers) for details.
 final class CreateMessageParamsWithoutStreamServiceTier {
+
   final String value;
 
   const CreateMessageParamsWithoutStreamServiceTier._(this.value);
 
-  factory CreateMessageParamsWithoutStreamServiceTier.fromJson(String value) =>
-      CreateMessageParamsWithoutStreamServiceTier._(value);
+  factory CreateMessageParamsWithoutStreamServiceTier.fromJson(String value) => CreateMessageParamsWithoutStreamServiceTier._(value);
 
   static const auto = CreateMessageParamsWithoutStreamServiceTier._('auto');
-  static const standardOnly =
-      CreateMessageParamsWithoutStreamServiceTier._('standard_only');
+  static const standardOnly = CreateMessageParamsWithoutStreamServiceTier._('standard_only');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CreateMessageParamsWithoutStreamServiceTier &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is CreateMessageParamsWithoutStreamServiceTier && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Deleted object type. For Skills, this is always `"skill_deleted"`.
@@ -62,17 +54,14 @@ enum DeletedSkillType {
 
   static DeletedSkillType fromJson(String value) {
     switch (value) {
-      case 'skill_deleted':
-        return DeletedSkillType.skillDeleted;
-      default:
-        throw ArgumentError('Unknown DeletedSkillType: $value');
+      case 'skill_deleted': return DeletedSkillType.skillDeleted;
+      default: throw ArgumentError('Unknown DeletedSkillType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case DeletedSkillType.skillDeleted:
-        return 'skill_deleted';
+      case DeletedSkillType.skillDeleted: return 'skill_deleted';
     }
   }
 
@@ -86,17 +75,14 @@ enum DeletedSkillVersionType {
 
   static DeletedSkillVersionType fromJson(String value) {
     switch (value) {
-      case 'skill_version_deleted':
-        return DeletedSkillVersionType.skillVersionDeleted;
-      default:
-        throw ArgumentError('Unknown DeletedSkillVersionType: $value');
+      case 'skill_version_deleted': return DeletedSkillVersionType.skillVersionDeleted;
+      default: throw ArgumentError('Unknown DeletedSkillVersionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case DeletedSkillVersionType.skillVersionDeleted:
-        return 'skill_version_deleted';
+      case DeletedSkillVersionType.skillVersionDeleted: return 'skill_version_deleted';
     }
   }
 
@@ -110,17 +96,14 @@ enum DeleteMessageBatchResponseType {
 
   static DeleteMessageBatchResponseType fromJson(String value) {
     switch (value) {
-      case 'message_batch_deleted':
-        return DeleteMessageBatchResponseType.messageBatchDeleted;
-      default:
-        throw ArgumentError('Unknown DeleteMessageBatchResponseType: $value');
+      case 'message_batch_deleted': return DeleteMessageBatchResponseType.messageBatchDeleted;
+      default: throw ArgumentError('Unknown DeleteMessageBatchResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case DeleteMessageBatchResponseType.messageBatchDeleted:
-        return 'message_batch_deleted';
+      case DeleteMessageBatchResponseType.messageBatchDeleted: return 'message_batch_deleted';
     }
   }
 
@@ -134,17 +117,14 @@ enum DirectCallerType {
 
   static DirectCallerType fromJson(String value) {
     switch (value) {
-      case 'direct':
-        return DirectCallerType.direct;
-      default:
-        throw ArgumentError('Unknown DirectCallerType: $value');
+      case 'direct': return DirectCallerType.direct;
+      default: throw ArgumentError('Unknown DirectCallerType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case DirectCallerType.direct:
-        return 'direct';
+      case DirectCallerType.direct: return 'direct';
     }
   }
 
@@ -158,17 +138,14 @@ enum ErroredResultType {
 
   static ErroredResultType fromJson(String value) {
     switch (value) {
-      case 'errored':
-        return ErroredResultType.errored;
-      default:
-        throw ArgumentError('Unknown ErroredResultType: $value');
+      case 'errored': return ErroredResultType.errored;
+      default: throw ArgumentError('Unknown ErroredResultType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ErroredResultType.errored:
-        return 'errored';
+      case ErroredResultType.errored: return 'errored';
     }
   }
 
@@ -182,17 +159,14 @@ enum ErrorResponseType {
 
   static ErrorResponseType fromJson(String value) {
     switch (value) {
-      case 'error':
-        return ErrorResponseType.error;
-      default:
-        throw ArgumentError('Unknown ErrorResponseType: $value');
+      case 'error': return ErrorResponseType.error;
+      default: throw ArgumentError('Unknown ErrorResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ErrorResponseType.error:
-        return 'error';
+      case ErrorResponseType.error: return 'error';
     }
   }
 
@@ -206,17 +180,14 @@ enum ExpiredResultType {
 
   static ExpiredResultType fromJson(String value) {
     switch (value) {
-      case 'expired':
-        return ExpiredResultType.expired;
-      default:
-        throw ArgumentError('Unknown ExpiredResultType: $value');
+      case 'expired': return ExpiredResultType.expired;
+      default: throw ArgumentError('Unknown ExpiredResultType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ExpiredResultType.expired:
-        return 'expired';
+      case ExpiredResultType.expired: return 'expired';
     }
   }
 
@@ -230,17 +201,14 @@ enum FileDeleteResponseType {
 
   static FileDeleteResponseType fromJson(String value) {
     switch (value) {
-      case 'file_deleted':
-        return FileDeleteResponseType.fileDeleted;
-      default:
-        throw ArgumentError('Unknown FileDeleteResponseType: $value');
+      case 'file_deleted': return FileDeleteResponseType.fileDeleted;
+      default: throw ArgumentError('Unknown FileDeleteResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case FileDeleteResponseType.fileDeleted:
-        return 'file_deleted';
+      case FileDeleteResponseType.fileDeleted: return 'file_deleted';
     }
   }
 
@@ -254,17 +222,14 @@ enum FileDocumentSourceType {
 
   static FileDocumentSourceType fromJson(String value) {
     switch (value) {
-      case 'file':
-        return FileDocumentSourceType.file;
-      default:
-        throw ArgumentError('Unknown FileDocumentSourceType: $value');
+      case 'file': return FileDocumentSourceType.file;
+      default: throw ArgumentError('Unknown FileDocumentSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case FileDocumentSourceType.file:
-        return 'file';
+      case FileDocumentSourceType.file: return 'file';
     }
   }
 
@@ -278,17 +243,14 @@ enum FileImageSourceType {
 
   static FileImageSourceType fromJson(String value) {
     switch (value) {
-      case 'file':
-        return FileImageSourceType.file;
-      default:
-        throw ArgumentError('Unknown FileImageSourceType: $value');
+      case 'file': return FileImageSourceType.file;
+      default: throw ArgumentError('Unknown FileImageSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case FileImageSourceType.file:
-        return 'file';
+      case FileImageSourceType.file: return 'file';
     }
   }
 
@@ -302,17 +264,14 @@ enum FileMetadataSchemaType {
 
   static FileMetadataSchemaType fromJson(String value) {
     switch (value) {
-      case 'file':
-        return FileMetadataSchemaType.file;
-      default:
-        throw ArgumentError('Unknown FileMetadataSchemaType: $value');
+      case 'file': return FileMetadataSchemaType.file;
+      default: throw ArgumentError('Unknown FileMetadataSchemaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case FileMetadataSchemaType.file:
-        return 'file';
+      case FileMetadataSchemaType.file: return 'file';
     }
   }
 

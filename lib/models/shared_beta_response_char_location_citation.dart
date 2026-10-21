@@ -8,106 +8,52 @@ part of 'shared_beta_response.dart';
 class BetaResponseCharLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `cited_text` wire field.
   final String citedText;
-
   /// Required `integer` value serialized in the `document_index` wire field.
   final int documentIndex;
-
   /// Required `string` value serialized in the `document_title` wire field.
   final String? documentTitle;
-
   /// Required `integer` value serialized in the `end_char_index` wire field.
   final int endCharIndex;
-
   /// Required `string` value serialized in the `file_id` wire field.
   final String? fileId;
-
   /// Required `integer` value serialized in the `start_char_index` wire field.
   final int startCharIndex;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseCharLocationCitationType type_;
 
-  const BetaResponseCharLocationCitation(
-      {required this.citedText,
-      required this.documentIndex,
-      required this.documentTitle,
-      required this.endCharIndex,
-      required this.fileId,
-      required this.startCharIndex,
-      required this.type_});
+  const BetaResponseCharLocationCitation({required this.citedText, required this.documentIndex, required this.documentTitle, required this.endCharIndex, required this.fileId, required this.startCharIndex, required this.type_});
 
-  BetaResponseCharLocationCitation Function(
-      {String citedText,
-      int documentIndex,
-      String? documentTitle,
-      int endCharIndex,
-      String? fileId,
-      int startCharIndex,
-      BetaResponseCharLocationCitationType type_}) get copyWith => _copyWith;
+  BetaResponseCharLocationCitation Function({String citedText, int documentIndex, String? documentTitle, int endCharIndex, String? fileId, int startCharIndex, BetaResponseCharLocationCitationType type_}) get copyWith => _copyWith;
 
-  BetaResponseCharLocationCitation _copyWith(
-          {Object? citedText = sdkOmittedValue,
-          Object? documentIndex = sdkOmittedValue,
-          Object? documentTitle = sdkOmittedValue,
-          Object? endCharIndex = sdkOmittedValue,
-          Object? fileId = sdkOmittedValue,
-          Object? startCharIndex = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaResponseCharLocationCitation(
-        citedText: identical(citedText, sdkOmittedValue)
-            ? this.citedText
-            : citedText as String,
-        documentIndex: identical(documentIndex, sdkOmittedValue)
-            ? this.documentIndex
-            : documentIndex as int,
-        documentTitle: identical(documentTitle, sdkOmittedValue)
-            ? this.documentTitle
-            : documentTitle as String?,
-        endCharIndex: identical(endCharIndex, sdkOmittedValue)
-            ? this.endCharIndex
-            : endCharIndex as int,
-        fileId: identical(fileId, sdkOmittedValue)
-            ? this.fileId
-            : fileId as String?,
-        startCharIndex: identical(startCharIndex, sdkOmittedValue)
-            ? this.startCharIndex
-            : startCharIndex as int,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaResponseCharLocationCitationType,
-      );
+  BetaResponseCharLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? documentIndex = sdkOmittedValue, Object? documentTitle = sdkOmittedValue, Object? endCharIndex = sdkOmittedValue, Object? fileId = sdkOmittedValue, Object? startCharIndex = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseCharLocationCitation(
+    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
+    documentIndex: identical(documentIndex, sdkOmittedValue) ? this.documentIndex : documentIndex as int,
+    documentTitle: identical(documentTitle, sdkOmittedValue) ? this.documentTitle : documentTitle as String?,
+    endCharIndex: identical(endCharIndex, sdkOmittedValue) ? this.endCharIndex : endCharIndex as int,
+    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String?,
+    startCharIndex: identical(startCharIndex, sdkOmittedValue) ? this.startCharIndex : startCharIndex as int,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseCharLocationCitationType,
+  );
 
-  factory BetaResponseCharLocationCitation.fromJson(
-          Map<String, dynamic> json) =>
-      BetaResponseCharLocationCitation(
-        citedText: (json['cited_text'] as String?)!,
-        documentIndex: ((json['document_index'] as num?)?.toInt())!,
-        documentTitle: json.containsKey('document_title')
-            ? json['document_title'] as String?
-            : throw ArgumentError.value(
-                null, 'document_title', 'Required property is missing'),
-        endCharIndex: ((json['end_char_index'] as num?)?.toInt())!,
-        fileId: json.containsKey('file_id')
-            ? json['file_id'] as String?
-            : throw ArgumentError.value(
-                null, 'file_id', 'Required property is missing'),
-        startCharIndex: ((json['start_char_index'] as num?)?.toInt())!,
-        type_: (json['type'] != null
-            ? BetaResponseCharLocationCitationType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaResponseCharLocationCitation.fromJson(Map<String, dynamic> json) => BetaResponseCharLocationCitation(
+    citedText: (json['cited_text'] as String?)!,
+    documentIndex: ((json['document_index'] as num?)?.toInt())!,
+    documentTitle: json.containsKey('document_title') ? json['document_title'] as String? : throw ArgumentError.value(null, 'document_title', 'Required property is missing'),
+    endCharIndex: ((json['end_char_index'] as num?)?.toInt())!,
+    fileId: json.containsKey('file_id') ? json['file_id'] as String? : throw ArgumentError.value(null, 'file_id', 'Required property is missing'),
+    startCharIndex: ((json['start_char_index'] as num?)?.toInt())!,
+    type_: (json['type'] != null ? BetaResponseCharLocationCitationType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'cited_text': citedText,
-        'document_index': documentIndex,
-        'document_title': documentTitle,
-        'end_char_index': endCharIndex,
-        'file_id': fileId,
-        'start_char_index': startCharIndex,
-        'type': type_.toJson(),
-      };
+    'cited_text': citedText,
+    'document_index': documentIndex,
+    'document_title': documentTitle,
+    'end_char_index': endCharIndex,
+    'file_id': fileId,
+    'start_char_index': startCharIndex,
+    'type': type_.toJson(),
+  };
 }

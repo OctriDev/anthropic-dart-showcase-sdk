@@ -6,6 +6,7 @@ part of 'claude_code_beta_true.dart';
 // claude_code_beta_true domain models
 /// Typed representation of the `BetaCustomerType` API schema.
 final class BetaCustomerType {
+
   final String value;
 
   const BetaCustomerType._(this.value);
@@ -17,13 +18,10 @@ final class BetaCustomerType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaCustomerType && other.value == value;
+  @override bool operator ==(Object other) => other is BetaCustomerType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

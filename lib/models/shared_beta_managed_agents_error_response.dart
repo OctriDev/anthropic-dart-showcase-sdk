@@ -8,44 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsErrorResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Always "error" for error responses
   final BetaManagedAgentsErrorResponseType type_;
-
   /// Required API value serialized in the `error` wire field.
   final BetaManagedAgentsError error;
 
-  const BetaManagedAgentsErrorResponse(
-      {required this.type_, required this.error});
+  const BetaManagedAgentsErrorResponse({required this.type_, required this.error});
 
-  BetaManagedAgentsErrorResponse Function(
-      {BetaManagedAgentsErrorResponseType type_,
-      BetaManagedAgentsError error}) get copyWith => _copyWith;
+  BetaManagedAgentsErrorResponse Function({BetaManagedAgentsErrorResponseType type_, BetaManagedAgentsError error}) get copyWith => _copyWith;
 
-  BetaManagedAgentsErrorResponse _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? error = sdkOmittedValue}) =>
-      BetaManagedAgentsErrorResponse(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsErrorResponseType,
-        error: identical(error, sdkOmittedValue)
-            ? this.error
-            : error as BetaManagedAgentsError,
-      );
+  BetaManagedAgentsErrorResponse _copyWith({Object? type_ = sdkOmittedValue, Object? error = sdkOmittedValue}) => BetaManagedAgentsErrorResponse(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsErrorResponseType,
+    error: identical(error, sdkOmittedValue) ? this.error : error as BetaManagedAgentsError,
+  );
 
-  factory BetaManagedAgentsErrorResponse.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsErrorResponse(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsErrorResponseType.fromJson(
-                json['type'] as String)
-            : null)!,
-        error: (json['error'] != null
-            ? BetaManagedAgentsError.fromJson(json['error'])
-            : null)!,
-      );
+  factory BetaManagedAgentsErrorResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsErrorResponse(
+    type_: (json['type'] != null ? BetaManagedAgentsErrorResponseType.fromJson(json['type'] as String) : null)!,
+    error: (json['error'] != null ? BetaManagedAgentsError.fromJson(json['error']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'error': error.toJson(),
-      };
+    'type': type_.toJson(),
+    'error': error.toJson(),
+  };
 }

@@ -8,54 +8,33 @@ part of 'credentials.dart';
 class BetaManagedAgentsInjectionLocationUpdateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Substitute when the placeholder appears in a request header value.
   final SdkOptional<bool> header;
-
   /// Substitute when the placeholder appears in the request body.
   final SdkOptional<bool> body;
 
-  const BetaManagedAgentsInjectionLocationUpdateParams(
-      {this.header = const SdkOmitted(), this.body = const SdkOmitted()});
+  const BetaManagedAgentsInjectionLocationUpdateParams({this.header = const SdkOmitted(), this.body = const SdkOmitted()});
 
-  BetaManagedAgentsInjectionLocationUpdateParams Function(
-      {SdkOptional<bool> header,
-      SdkOptional<bool> body}) get copyWith => _copyWith;
+  BetaManagedAgentsInjectionLocationUpdateParams Function({SdkOptional<bool> header, SdkOptional<bool> body}) get copyWith => _copyWith;
 
-  BetaManagedAgentsInjectionLocationUpdateParams _copyWith(
-          {Object? header = sdkOmittedValue, Object? body = sdkOmittedValue}) =>
-      BetaManagedAgentsInjectionLocationUpdateParams(
-        header: identical(header, sdkOmittedValue)
-            ? this.header
-            : header as SdkOptional<bool>,
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body as SdkOptional<bool>,
-      );
+  BetaManagedAgentsInjectionLocationUpdateParams _copyWith({Object? header = sdkOmittedValue, Object? body = sdkOmittedValue}) => BetaManagedAgentsInjectionLocationUpdateParams(
+    header: identical(header, sdkOmittedValue) ? this.header : header as SdkOptional<bool>,
+    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<bool>,
+  );
 
-  factory BetaManagedAgentsInjectionLocationUpdateParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsInjectionLocationUpdateParams(
-        header: json['header'] != null
-            ? SdkPresent((json['header'] as bool?)!)
-            : const SdkOmitted(),
-        body: json['body'] != null
-            ? SdkPresent((json['body'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsInjectionLocationUpdateParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsInjectionLocationUpdateParams(
+    header: json['header'] != null ? SdkPresent((json['header'] as bool?)!) : const SdkOmitted(),
+    body: json['body'] != null ? SdkPresent((json['body'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (header) {
-          SdkPresent<bool>(value: final value) => {
-              'header': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (body) {
-          SdkPresent<bool>(value: final value) => {
-              'body': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (header) {
+      SdkPresent<bool>(value: final value) => {'header': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (body) {
+      SdkPresent<bool>(value: final value) => {'body': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

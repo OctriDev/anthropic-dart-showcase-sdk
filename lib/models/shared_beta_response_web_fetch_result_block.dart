@@ -8,70 +8,37 @@ part of 'shared_beta_response_web.dart';
 class BetaResponseWebFetchResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `content` wire field.
   final BetaResponseDocumentBlock content;
-
   /// ISO 8601 timestamp when the content was retrieved
   final String? retrievedAt;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseWebFetchResultBlockType type_;
-
   /// Fetched content URL
   final String url;
 
-  const BetaResponseWebFetchResultBlock(
-      {required this.content,
-      required this.retrievedAt,
-      required this.type_,
-      required this.url});
+  const BetaResponseWebFetchResultBlock({required this.content, required this.retrievedAt, required this.type_, required this.url});
 
-  BetaResponseWebFetchResultBlock Function(
-      {BetaResponseDocumentBlock content,
-      String? retrievedAt,
-      BetaResponseWebFetchResultBlockType type_,
-      String url}) get copyWith => _copyWith;
+  BetaResponseWebFetchResultBlock Function({BetaResponseDocumentBlock content, String? retrievedAt, BetaResponseWebFetchResultBlockType type_, String url}) get copyWith => _copyWith;
 
-  BetaResponseWebFetchResultBlock _copyWith(
-          {Object? content = sdkOmittedValue,
-          Object? retrievedAt = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      BetaResponseWebFetchResultBlock(
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as BetaResponseDocumentBlock,
-        retrievedAt: identical(retrievedAt, sdkOmittedValue)
-            ? this.retrievedAt
-            : retrievedAt as String?,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaResponseWebFetchResultBlockType,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  BetaResponseWebFetchResultBlock _copyWith({Object? content = sdkOmittedValue, Object? retrievedAt = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaResponseWebFetchResultBlock(
+    content: identical(content, sdkOmittedValue) ? this.content : content as BetaResponseDocumentBlock,
+    retrievedAt: identical(retrievedAt, sdkOmittedValue) ? this.retrievedAt : retrievedAt as String?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseWebFetchResultBlockType,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory BetaResponseWebFetchResultBlock.fromJson(Map<String, dynamic> json) =>
-      BetaResponseWebFetchResultBlock(
-        content: (json['content'] != null
-            ? BetaResponseDocumentBlock.fromJson(
-                json['content'] as Map<String, dynamic>)
-            : null)!,
-        retrievedAt: json.containsKey('retrieved_at')
-            ? json['retrieved_at'] as String?
-            : throw ArgumentError.value(
-                null, 'retrieved_at', 'Required property is missing'),
-        type_: (json['type'] != null
-            ? BetaResponseWebFetchResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-        url: (json['url'] as String?)!,
-      );
+  factory BetaResponseWebFetchResultBlock.fromJson(Map<String, dynamic> json) => BetaResponseWebFetchResultBlock(
+    content: (json['content'] != null ? BetaResponseDocumentBlock.fromJson(json['content'] as Map<String, dynamic>) : null)!,
+    retrievedAt: json.containsKey('retrieved_at') ? json['retrieved_at'] as String? : throw ArgumentError.value(null, 'retrieved_at', 'Required property is missing'),
+    type_: (json['type'] != null ? BetaResponseWebFetchResultBlockType.fromJson(json['type'] as String) : null)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'content': content.toJson(),
-        'retrieved_at': retrievedAt,
-        'type': type_.toJson(),
-        'url': url,
-      };
+    'content': content.toJson(),
+    'retrieved_at': retrievedAt,
+    'type': type_.toJson(),
+    'url': url,
+  };
 }

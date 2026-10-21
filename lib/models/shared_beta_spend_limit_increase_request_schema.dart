@@ -9,165 +9,78 @@ sealed class BetaSpendLimitIncreaseRequestSchemaResolvedAt {
   static const String constructionSurface = 'named';
   const BetaSpendLimitIncreaseRequestSchemaResolvedAt();
   factory BetaSpendLimitIncreaseRequestSchemaResolvedAt.fromJson(Object? json) {
-    if (json is String) {
-      return BetaSpendLimitIncreaseRequestSchemaResolvedAtString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaSpendLimitIncreaseRequestSchemaResolvedAt");
+    if (json is String) { return BetaSpendLimitIncreaseRequestSchemaResolvedAtString(json); }
+    throw FormatException("No variant matched for BetaSpendLimitIncreaseRequestSchemaResolvedAt");
   }
   Object? toJson();
 }
 
-final class BetaSpendLimitIncreaseRequestSchemaResolvedAtString
-    extends BetaSpendLimitIncreaseRequestSchemaResolvedAt {
+final class BetaSpendLimitIncreaseRequestSchemaResolvedAtString extends BetaSpendLimitIncreaseRequestSchemaResolvedAt {
   final String value;
   const BetaSpendLimitIncreaseRequestSchemaResolvedAtString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaSpendLimitIncreaseRequestSchema` API schema.
 class BetaSpendLimitIncreaseRequestSchema {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A user within the organization. `name` and `email_address` are null when the underlying account is unavailable or has been deleted; `deleted` is true only for deleted accounts.
   final BetaUserActorSchema actor;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `string` value serialized in the `id` wire field.
   final String id;
-
   /// Required enumerated value serialized in the `period` wire field.
   final BetaSpendLimitIncreaseRequestSchemaPeriod period;
-
   /// Required API value serialized in the `resolved_at` wire field.
   final String? resolvedAt;
-
   /// Required API value serialized in the `resolved_by` wire field.
   final BetaSpendLimitIncreaseRequestSchemaResolvedBy? resolvedBy;
-
   /// Required API value serialized in the `spend_summary` wire field.
   final BetaSpendSummary? spendSummary;
-
   /// Required enumerated value serialized in the `status` wire field.
   final BetaSpendLimitIncreaseRequestSchemaStatus status;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaSpendLimitIncreaseRequestSchemaType type_;
 
-  const BetaSpendLimitIncreaseRequestSchema(
-      {required this.actor,
-      required this.createdAt,
-      required this.id,
-      required this.period,
-      required this.resolvedAt,
-      required this.resolvedBy,
-      required this.spendSummary,
-      required this.status,
-      required this.type_});
+  const BetaSpendLimitIncreaseRequestSchema({required this.actor, required this.createdAt, required this.id, required this.period, required this.resolvedAt, required this.resolvedBy, required this.spendSummary, required this.status, required this.type_});
 
-  BetaSpendLimitIncreaseRequestSchema Function(
-      {BetaUserActorSchema actor,
-      String createdAt,
-      String id,
-      BetaSpendLimitIncreaseRequestSchemaPeriod period,
-      String? resolvedAt,
-      BetaSpendLimitIncreaseRequestSchemaResolvedBy? resolvedBy,
-      BetaSpendSummary? spendSummary,
-      BetaSpendLimitIncreaseRequestSchemaStatus status,
-      BetaSpendLimitIncreaseRequestSchemaType type_}) get copyWith => _copyWith;
+  BetaSpendLimitIncreaseRequestSchema Function({BetaUserActorSchema actor, String createdAt, String id, BetaSpendLimitIncreaseRequestSchemaPeriod period, String? resolvedAt, BetaSpendLimitIncreaseRequestSchemaResolvedBy? resolvedBy, BetaSpendSummary? spendSummary, BetaSpendLimitIncreaseRequestSchemaStatus status, BetaSpendLimitIncreaseRequestSchemaType type_}) get copyWith => _copyWith;
 
-  BetaSpendLimitIncreaseRequestSchema _copyWith(
-          {Object? actor = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? period = sdkOmittedValue,
-          Object? resolvedAt = sdkOmittedValue,
-          Object? resolvedBy = sdkOmittedValue,
-          Object? spendSummary = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaSpendLimitIncreaseRequestSchema(
-        actor: identical(actor, sdkOmittedValue)
-            ? this.actor
-            : actor as BetaUserActorSchema,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        period: identical(period, sdkOmittedValue)
-            ? this.period
-            : period as BetaSpendLimitIncreaseRequestSchemaPeriod,
-        resolvedAt: identical(resolvedAt, sdkOmittedValue)
-            ? this.resolvedAt
-            : resolvedAt as String?,
-        resolvedBy: identical(resolvedBy, sdkOmittedValue)
-            ? this.resolvedBy
-            : resolvedBy as BetaSpendLimitIncreaseRequestSchemaResolvedBy?,
-        spendSummary: identical(spendSummary, sdkOmittedValue)
-            ? this.spendSummary
-            : spendSummary as BetaSpendSummary?,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as BetaSpendLimitIncreaseRequestSchemaStatus,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaSpendLimitIncreaseRequestSchemaType,
-      );
+  BetaSpendLimitIncreaseRequestSchema _copyWith({Object? actor = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? id = sdkOmittedValue, Object? period = sdkOmittedValue, Object? resolvedAt = sdkOmittedValue, Object? resolvedBy = sdkOmittedValue, Object? spendSummary = sdkOmittedValue, Object? status = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaSpendLimitIncreaseRequestSchema(
+    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as BetaUserActorSchema,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    period: identical(period, sdkOmittedValue) ? this.period : period as BetaSpendLimitIncreaseRequestSchemaPeriod,
+    resolvedAt: identical(resolvedAt, sdkOmittedValue) ? this.resolvedAt : resolvedAt as String?,
+    resolvedBy: identical(resolvedBy, sdkOmittedValue) ? this.resolvedBy : resolvedBy as BetaSpendLimitIncreaseRequestSchemaResolvedBy?,
+    spendSummary: identical(spendSummary, sdkOmittedValue) ? this.spendSummary : spendSummary as BetaSpendSummary?,
+    status: identical(status, sdkOmittedValue) ? this.status : status as BetaSpendLimitIncreaseRequestSchemaStatus,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSpendLimitIncreaseRequestSchemaType,
+  );
 
-  factory BetaSpendLimitIncreaseRequestSchema.fromJson(
-          Map<String, dynamic> json) =>
-      BetaSpendLimitIncreaseRequestSchema(
-        actor: (json['actor'] != null
-            ? BetaUserActorSchema.fromJson(
-                json['actor'] as Map<String, dynamic>)
-            : null)!,
-        createdAt: (json['created_at'] as String?)!,
-        id: (json['id'] as String?)!,
-        period: (json['period'] != null
-            ? BetaSpendLimitIncreaseRequestSchemaPeriod.fromJson(
-                json['period'] as String)
-            : null)!,
-        resolvedAt: json.containsKey('resolved_at')
-            ? json['resolved_at'] as String?
-            : throw ArgumentError.value(
-                null, 'resolved_at', 'Required property is missing'),
-        resolvedBy: json.containsKey('resolved_by')
-            ? json['resolved_by'] != null
-                ? BetaSpendLimitIncreaseRequestSchemaResolvedBy.fromJson(
-                    json['resolved_by'])
-                : null
-            : throw ArgumentError.value(
-                null, 'resolved_by', 'Required property is missing'),
-        spendSummary: json.containsKey('spend_summary')
-            ? json['spend_summary'] != null
-                ? BetaSpendSummary.fromJson(
-                    json['spend_summary'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'spend_summary', 'Required property is missing'),
-        status: (json['status'] != null
-            ? BetaSpendLimitIncreaseRequestSchemaStatus.fromJson(
-                json['status'] as String)
-            : null)!,
-        type_: (json['type'] != null
-            ? BetaSpendLimitIncreaseRequestSchemaType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaSpendLimitIncreaseRequestSchema.fromJson(Map<String, dynamic> json) => BetaSpendLimitIncreaseRequestSchema(
+    actor: (json['actor'] != null ? BetaUserActorSchema.fromJson(json['actor'] as Map<String, dynamic>) : null)!,
+    createdAt: (json['created_at'] as String?)!,
+    id: (json['id'] as String?)!,
+    period: (json['period'] != null ? BetaSpendLimitIncreaseRequestSchemaPeriod.fromJson(json['period'] as String) : null)!,
+    resolvedAt: json.containsKey('resolved_at') ? json['resolved_at'] as String? : throw ArgumentError.value(null, 'resolved_at', 'Required property is missing'),
+    resolvedBy: json.containsKey('resolved_by') ? json['resolved_by'] != null ? BetaSpendLimitIncreaseRequestSchemaResolvedBy.fromJson(json['resolved_by']) : null : throw ArgumentError.value(null, 'resolved_by', 'Required property is missing'),
+    spendSummary: json.containsKey('spend_summary') ? json['spend_summary'] != null ? BetaSpendSummary.fromJson(json['spend_summary'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'spend_summary', 'Required property is missing'),
+    status: (json['status'] != null ? BetaSpendLimitIncreaseRequestSchemaStatus.fromJson(json['status'] as String) : null)!,
+    type_: (json['type'] != null ? BetaSpendLimitIncreaseRequestSchemaType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'actor': actor.toJson(),
-        'created_at': createdAt,
-        'id': id,
-        'period': period.toJson(),
-        'resolved_at': resolvedAt,
-        'resolved_by': resolvedBy?.toJson(),
-        'spend_summary': spendSummary?.toJson(),
-        'status': status.toJson(),
-        'type': type_.toJson(),
-      };
+    'actor': actor.toJson(),
+    'created_at': createdAt,
+    'id': id,
+    'period': period.toJson(),
+    'resolved_at': resolvedAt,
+    'resolved_by': resolvedBy?.toJson(),
+    'spend_summary': spendSummary?.toJson(),
+    'status': status.toJson(),
+    'type': type_.toJson(),
+  };
 }

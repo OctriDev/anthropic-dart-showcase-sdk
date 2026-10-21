@@ -10,135 +10,66 @@ sealed class BetaResponseWebSearchToolResultBlockContent {
   const BetaResponseWebSearchToolResultBlockContent();
   factory BetaResponseWebSearchToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaResponseWebSearchToolResultError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaResponseWebSearchResultBlock.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaResponseWebSearchToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(value); } } catch (_) {}
+      try { final value = BetaResponseWebSearchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(value); } } catch (_) {}
     }
-    try {
-      return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(
-          BetaResponseWebSearchToolResultError.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(
-          BetaResponseWebSearchResultBlock.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for BetaResponseWebSearchToolResultBlockContent");
+    try { return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(BetaResponseWebSearchToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(BetaResponseWebSearchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for BetaResponseWebSearchToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError
-    extends BetaResponseWebSearchToolResultBlockContent {
+final class BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError extends BetaResponseWebSearchToolResultBlockContent {
   final BetaResponseWebSearchToolResultError value;
-  const BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchToolResultError(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock
-    extends BetaResponseWebSearchToolResultBlockContent {
+final class BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock extends BetaResponseWebSearchToolResultBlockContent {
   final BetaResponseWebSearchResultBlock value;
-  const BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaResponseWebSearchToolResultBlockContentBetaResponseWebSearchResultBlock(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// Typed representation of the `BetaResponseWebSearchToolResultBlock` API schema.
 class BetaResponseWebSearchToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional API value serialized in the `caller` wire field.
   final SdkOptional<BetaResponseWebSearchToolResultBlockCaller> caller;
-
   /// Required API value serialized in the `content` wire field.
   final dynamic content;
-
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseWebSearchToolResultBlockType type_;
 
-  const BetaResponseWebSearchToolResultBlock(
-      {this.caller = const SdkOmitted(),
-      required this.content,
-      required this.toolUseId,
-      required this.type_});
+  const BetaResponseWebSearchToolResultBlock({this.caller = const SdkOmitted(), required this.content, required this.toolUseId, required this.type_});
 
-  BetaResponseWebSearchToolResultBlock Function(
-          {SdkOptional<BetaResponseWebSearchToolResultBlockCaller> caller,
-          dynamic content,
-          String toolUseId,
-          BetaResponseWebSearchToolResultBlockType type_})
-      get copyWith => _copyWith;
+  BetaResponseWebSearchToolResultBlock Function({SdkOptional<BetaResponseWebSearchToolResultBlockCaller> caller, dynamic content, String toolUseId, BetaResponseWebSearchToolResultBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseWebSearchToolResultBlock _copyWith(
-          {Object? caller = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? toolUseId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaResponseWebSearchToolResultBlock(
-        caller: identical(caller, sdkOmittedValue)
-            ? this.caller
-            : caller as SdkOptional<BetaResponseWebSearchToolResultBlockCaller>,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as dynamic,
-        toolUseId: identical(toolUseId, sdkOmittedValue)
-            ? this.toolUseId
-            : toolUseId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaResponseWebSearchToolResultBlockType,
-      );
+  BetaResponseWebSearchToolResultBlock _copyWith({Object? caller = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseWebSearchToolResultBlock(
+    caller: identical(caller, sdkOmittedValue) ? this.caller : caller as SdkOptional<BetaResponseWebSearchToolResultBlockCaller>,
+    content: identical(content, sdkOmittedValue) ? this.content : content as dynamic,
+    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseWebSearchToolResultBlockType,
+  );
 
-  factory BetaResponseWebSearchToolResultBlock.fromJson(
-          Map<String, dynamic> json) =>
-      BetaResponseWebSearchToolResultBlock(
-        caller: json['caller'] != null
-            ? SdkPresent((json['caller'] != null
-                ? BetaResponseWebSearchToolResultBlockCaller.fromJson(
-                    json['caller'])
-                : null)!)
-            : const SdkOmitted(),
-        content: (SdkUtils.unionBranch(
-            json['content'], [BetaResponseWebSearchToolResultError.fromJson]))!,
-        toolUseId: (json['tool_use_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaResponseWebSearchToolResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaResponseWebSearchToolResultBlock.fromJson(Map<String, dynamic> json) => BetaResponseWebSearchToolResultBlock(
+    caller: json['caller'] != null ? SdkPresent((json['caller'] != null ? BetaResponseWebSearchToolResultBlockCaller.fromJson(json['caller']) : null)!) : const SdkOmitted(),
+    content: (SdkUtils.unionBranch(json['content'], [BetaResponseWebSearchToolResultError.fromJson]))!,
+    toolUseId: (json['tool_use_id'] as String?)!,
+    type_: (json['type'] != null ? BetaResponseWebSearchToolResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (caller) {
-          SdkPresent<BetaResponseWebSearchToolResultBlockCaller>(
-            value: final value
-          ) =>
-            {
-              'caller': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content': content,
-        'tool_use_id': toolUseId,
-        'type': type_.toJson(),
-      };
+    ...switch (caller) {
+      SdkPresent<BetaResponseWebSearchToolResultBlockCaller>(value: final value) => {'caller': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'content': content,
+    'tool_use_id': toolUseId,
+    'type': type_.toJson(),
+  };
 }

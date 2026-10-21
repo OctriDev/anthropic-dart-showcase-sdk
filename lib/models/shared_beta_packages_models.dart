@@ -8,249 +8,130 @@ part of 'shared_beta_packages.dart';
 class BetaPackages {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Ubuntu/Debian packages to install
   final List<String> apt;
-
   /// Rust packages to install
   final List<String> cargo;
-
   /// Ruby packages to install
   final List<String> gem;
-
   /// Go packages to install
   final List<String> go;
-
   /// Node.js packages to install
   final List<String> npm;
-
   /// Python packages to install
   final List<String> pip;
-
   /// Package configuration type
   final SdkOptional<BetaPackagesType> type_;
 
-  const BetaPackages(
-      {required this.apt,
-      required this.cargo,
-      required this.gem,
-      required this.go,
-      required this.npm,
-      required this.pip,
-      this.type_ = const SdkOmitted()});
+  const BetaPackages({required this.apt, required this.cargo, required this.gem, required this.go, required this.npm, required this.pip, this.type_ = const SdkOmitted()});
 
-  BetaPackages Function(
-      {List<String> apt,
-      List<String> cargo,
-      List<String> gem,
-      List<String> go,
-      List<String> npm,
-      List<String> pip,
-      SdkOptional<BetaPackagesType> type_}) get copyWith => _copyWith;
+  BetaPackages Function({List<String> apt, List<String> cargo, List<String> gem, List<String> go, List<String> npm, List<String> pip, SdkOptional<BetaPackagesType> type_}) get copyWith => _copyWith;
 
-  BetaPackages _copyWith(
-          {Object? apt = sdkOmittedValue,
-          Object? cargo = sdkOmittedValue,
-          Object? gem = sdkOmittedValue,
-          Object? go = sdkOmittedValue,
-          Object? npm = sdkOmittedValue,
-          Object? pip = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaPackages(
-        apt: identical(apt, sdkOmittedValue) ? this.apt : apt as List<String>,
-        cargo: identical(cargo, sdkOmittedValue)
-            ? this.cargo
-            : cargo as List<String>,
-        gem: identical(gem, sdkOmittedValue) ? this.gem : gem as List<String>,
-        go: identical(go, sdkOmittedValue) ? this.go : go as List<String>,
-        npm: identical(npm, sdkOmittedValue) ? this.npm : npm as List<String>,
-        pip: identical(pip, sdkOmittedValue) ? this.pip : pip as List<String>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<BetaPackagesType>,
-      );
+  BetaPackages _copyWith({Object? apt = sdkOmittedValue, Object? cargo = sdkOmittedValue, Object? gem = sdkOmittedValue, Object? go = sdkOmittedValue, Object? npm = sdkOmittedValue, Object? pip = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaPackages(
+    apt: identical(apt, sdkOmittedValue) ? this.apt : apt as List<String>,
+    cargo: identical(cargo, sdkOmittedValue) ? this.cargo : cargo as List<String>,
+    gem: identical(gem, sdkOmittedValue) ? this.gem : gem as List<String>,
+    go: identical(go, sdkOmittedValue) ? this.go : go as List<String>,
+    npm: identical(npm, sdkOmittedValue) ? this.npm : npm as List<String>,
+    pip: identical(pip, sdkOmittedValue) ? this.pip : pip as List<String>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<BetaPackagesType>,
+  );
 
   factory BetaPackages.fromJson(Map<String, dynamic> json) => BetaPackages(
-        apt: ((json['apt'] as List?)?.map((e) => e as String).toList())!,
-        cargo: ((json['cargo'] as List?)?.map((e) => e as String).toList())!,
-        gem: ((json['gem'] as List?)?.map((e) => e as String).toList())!,
-        go: ((json['go'] as List?)?.map((e) => e as String).toList())!,
-        npm: ((json['npm'] as List?)?.map((e) => e as String).toList())!,
-        pip: ((json['pip'] as List?)?.map((e) => e as String).toList())!,
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] != null
-                ? BetaPackagesType.fromJson(json['type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+    apt: ((json['apt'] as List?)?.map((e) => e as String).toList())!,
+    cargo: ((json['cargo'] as List?)?.map((e) => e as String).toList())!,
+    gem: ((json['gem'] as List?)?.map((e) => e as String).toList())!,
+    go: ((json['go'] as List?)?.map((e) => e as String).toList())!,
+    npm: ((json['npm'] as List?)?.map((e) => e as String).toList())!,
+    pip: ((json['pip'] as List?)?.map((e) => e as String).toList())!,
+    type_: json['type'] != null ? SdkPresent((json['type'] != null ? BetaPackagesType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'apt': apt,
-        'cargo': cargo,
-        'gem': gem,
-        'go': go,
-        'npm': npm,
-        'pip': pip,
-        ...switch (type_) {
-          SdkPresent<BetaPackagesType>(value: final value) => {
-              'type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'apt': apt,
+    'cargo': cargo,
+    'gem': gem,
+    'go': go,
+    'npm': npm,
+    'pip': pip,
+    ...switch (type_) {
+      SdkPresent<BetaPackagesType>(value: final value) => {'type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Specify packages (and optionally their versions) available in this environment. When versioning, use the version semantics relevant for the package manager, e.g. for `pip` use `package==1.0.0`. You are responsible for validating the package and version exist. Unversioned installs the latest. Under `limited` networking, requires `networking.allow_package_managers` to be `true`.
 class BetaPackagesParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Ubuntu/Debian packages to install
   final SdkOptional<List<String>?> apt;
-
   /// Rust packages to install
   final SdkOptional<List<String>?> cargo;
-
   /// Ruby packages to install
   final SdkOptional<List<String>?> gem;
-
   /// Go packages to install
   final SdkOptional<List<String>?> go;
-
   /// Node.js packages to install
   final SdkOptional<List<String>?> npm;
-
   /// Python packages to install
   final SdkOptional<List<String>?> pip;
-
   /// Package configuration type
   final SdkOptional<BetaPackagesParamsType> type_;
 
-  const BetaPackagesParams(
-      {this.apt = const SdkOmitted(),
-      this.cargo = const SdkOmitted(),
-      this.gem = const SdkOmitted(),
-      this.go = const SdkOmitted(),
-      this.npm = const SdkOmitted(),
-      this.pip = const SdkOmitted(),
-      this.type_ = const SdkOmitted()});
+  const BetaPackagesParams({this.apt = const SdkOmitted(), this.cargo = const SdkOmitted(), this.gem = const SdkOmitted(), this.go = const SdkOmitted(), this.npm = const SdkOmitted(), this.pip = const SdkOmitted(), this.type_ = const SdkOmitted()});
 
-  BetaPackagesParams Function(
-      {SdkOptional<List<String>?> apt,
-      SdkOptional<List<String>?> cargo,
-      SdkOptional<List<String>?> gem,
-      SdkOptional<List<String>?> go,
-      SdkOptional<List<String>?> npm,
-      SdkOptional<List<String>?> pip,
-      SdkOptional<BetaPackagesParamsType> type_}) get copyWith => _copyWith;
+  BetaPackagesParams Function({SdkOptional<List<String>?> apt, SdkOptional<List<String>?> cargo, SdkOptional<List<String>?> gem, SdkOptional<List<String>?> go, SdkOptional<List<String>?> npm, SdkOptional<List<String>?> pip, SdkOptional<BetaPackagesParamsType> type_}) get copyWith => _copyWith;
 
-  BetaPackagesParams _copyWith(
-          {Object? apt = sdkOmittedValue,
-          Object? cargo = sdkOmittedValue,
-          Object? gem = sdkOmittedValue,
-          Object? go = sdkOmittedValue,
-          Object? npm = sdkOmittedValue,
-          Object? pip = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaPackagesParams(
-        apt: identical(apt, sdkOmittedValue)
-            ? this.apt
-            : apt as SdkOptional<List<String>?>,
-        cargo: identical(cargo, sdkOmittedValue)
-            ? this.cargo
-            : cargo as SdkOptional<List<String>?>,
-        gem: identical(gem, sdkOmittedValue)
-            ? this.gem
-            : gem as SdkOptional<List<String>?>,
-        go: identical(go, sdkOmittedValue)
-            ? this.go
-            : go as SdkOptional<List<String>?>,
-        npm: identical(npm, sdkOmittedValue)
-            ? this.npm
-            : npm as SdkOptional<List<String>?>,
-        pip: identical(pip, sdkOmittedValue)
-            ? this.pip
-            : pip as SdkOptional<List<String>?>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<BetaPackagesParamsType>,
-      );
+  BetaPackagesParams _copyWith({Object? apt = sdkOmittedValue, Object? cargo = sdkOmittedValue, Object? gem = sdkOmittedValue, Object? go = sdkOmittedValue, Object? npm = sdkOmittedValue, Object? pip = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaPackagesParams(
+    apt: identical(apt, sdkOmittedValue) ? this.apt : apt as SdkOptional<List<String>?>,
+    cargo: identical(cargo, sdkOmittedValue) ? this.cargo : cargo as SdkOptional<List<String>?>,
+    gem: identical(gem, sdkOmittedValue) ? this.gem : gem as SdkOptional<List<String>?>,
+    go: identical(go, sdkOmittedValue) ? this.go : go as SdkOptional<List<String>?>,
+    npm: identical(npm, sdkOmittedValue) ? this.npm : npm as SdkOptional<List<String>?>,
+    pip: identical(pip, sdkOmittedValue) ? this.pip : pip as SdkOptional<List<String>?>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<BetaPackagesParamsType>,
+  );
 
-  factory BetaPackagesParams.fromJson(Map<String, dynamic> json) =>
-      BetaPackagesParams(
-        apt: json.containsKey('apt')
-            ? SdkPresent(
-                (json['apt'] as List?)?.map((e) => e as String).toList())
-            : const SdkOmitted(),
-        cargo: json.containsKey('cargo')
-            ? SdkPresent(
-                (json['cargo'] as List?)?.map((e) => e as String).toList())
-            : const SdkOmitted(),
-        gem: json.containsKey('gem')
-            ? SdkPresent(
-                (json['gem'] as List?)?.map((e) => e as String).toList())
-            : const SdkOmitted(),
-        go: json.containsKey('go')
-            ? SdkPresent(
-                (json['go'] as List?)?.map((e) => e as String).toList())
-            : const SdkOmitted(),
-        npm: json.containsKey('npm')
-            ? SdkPresent(
-                (json['npm'] as List?)?.map((e) => e as String).toList())
-            : const SdkOmitted(),
-        pip: json.containsKey('pip')
-            ? SdkPresent(
-                (json['pip'] as List?)?.map((e) => e as String).toList())
-            : const SdkOmitted(),
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] != null
-                ? BetaPackagesParamsType.fromJson(json['type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory BetaPackagesParams.fromJson(Map<String, dynamic> json) => BetaPackagesParams(
+    apt: json.containsKey('apt') ? SdkPresent((json['apt'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    cargo: json.containsKey('cargo') ? SdkPresent((json['cargo'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    gem: json.containsKey('gem') ? SdkPresent((json['gem'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    go: json.containsKey('go') ? SdkPresent((json['go'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    npm: json.containsKey('npm') ? SdkPresent((json['npm'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    pip: json.containsKey('pip') ? SdkPresent((json['pip'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    type_: json['type'] != null ? SdkPresent((json['type'] != null ? BetaPackagesParamsType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (apt) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'apt': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cargo) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'cargo': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (gem) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'gem': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (go) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'go': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (npm) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'npm': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pip) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'pip': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (type_) {
-          SdkPresent<BetaPackagesParamsType>(value: final value) => {
-              'type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (apt) {
+      SdkPresent<List<String>?>(value: final value) => {'apt': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cargo) {
+      SdkPresent<List<String>?>(value: final value) => {'cargo': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (gem) {
+      SdkPresent<List<String>?>(value: final value) => {'gem': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (go) {
+      SdkPresent<List<String>?>(value: final value) => {'go': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (npm) {
+      SdkPresent<List<String>?>(value: final value) => {'npm': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pip) {
+      SdkPresent<List<String>?>(value: final value) => {'pip': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (type_) {
+      SdkPresent<BetaPackagesParamsType>(value: final value) => {'type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

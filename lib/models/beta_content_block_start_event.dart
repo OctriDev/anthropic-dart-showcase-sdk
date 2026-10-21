@@ -8,53 +8,32 @@ part of 'beta_content_block.dart';
 class BetaContentBlockStartEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required API value serialized in the `content_block` wire field.
   final BetaContentBlockStartEventContentBlock contentBlock;
-
   /// Required `integer` value serialized in the `index` wire field.
   final int index;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaContentBlockStartEventType type_;
 
-  const BetaContentBlockStartEvent(
-      {required this.contentBlock, required this.index, required this.type_});
+  const BetaContentBlockStartEvent({required this.contentBlock, required this.index, required this.type_});
 
-  BetaContentBlockStartEvent Function(
-      {BetaContentBlockStartEventContentBlock contentBlock,
-      int index,
-      BetaContentBlockStartEventType type_}) get copyWith => _copyWith;
+  BetaContentBlockStartEvent Function({BetaContentBlockStartEventContentBlock contentBlock, int index, BetaContentBlockStartEventType type_}) get copyWith => _copyWith;
 
-  BetaContentBlockStartEvent _copyWith(
-          {Object? contentBlock = sdkOmittedValue,
-          Object? index = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaContentBlockStartEvent(
-        contentBlock: identical(contentBlock, sdkOmittedValue)
-            ? this.contentBlock
-            : contentBlock as BetaContentBlockStartEventContentBlock,
-        index: identical(index, sdkOmittedValue) ? this.index : index as int,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaContentBlockStartEventType,
-      );
+  BetaContentBlockStartEvent _copyWith({Object? contentBlock = sdkOmittedValue, Object? index = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaContentBlockStartEvent(
+    contentBlock: identical(contentBlock, sdkOmittedValue) ? this.contentBlock : contentBlock as BetaContentBlockStartEventContentBlock,
+    index: identical(index, sdkOmittedValue) ? this.index : index as int,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaContentBlockStartEventType,
+  );
 
-  factory BetaContentBlockStartEvent.fromJson(Map<String, dynamic> json) =>
-      BetaContentBlockStartEvent(
-        contentBlock: (json['content_block'] != null
-            ? BetaContentBlockStartEventContentBlock.fromJson(
-                json['content_block'])
-            : null)!,
-        index: ((json['index'] as num?)?.toInt())!,
-        type_: (json['type'] != null
-            ? BetaContentBlockStartEventType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaContentBlockStartEvent.fromJson(Map<String, dynamic> json) => BetaContentBlockStartEvent(
+    contentBlock: (json['content_block'] != null ? BetaContentBlockStartEventContentBlock.fromJson(json['content_block']) : null)!,
+    index: ((json['index'] as num?)?.toInt())!,
+    type_: (json['type'] != null ? BetaContentBlockStartEventType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'content_block': contentBlock.toJson(),
-        'index': index,
-        'type': type_.toJson(),
-      };
+    'content_block': contentBlock.toJson(),
+    'index': index,
+    'type': type_.toJson(),
+  };
 }

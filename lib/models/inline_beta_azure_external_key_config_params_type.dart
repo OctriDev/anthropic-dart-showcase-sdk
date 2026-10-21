@@ -10,18 +10,14 @@ enum BetaAzureExternalKeyConfigParamsType {
 
   static BetaAzureExternalKeyConfigParamsType fromJson(String value) {
     switch (value) {
-      case 'azure':
-        return BetaAzureExternalKeyConfigParamsType.azure;
-      default:
-        throw ArgumentError(
-            'Unknown BetaAzureExternalKeyConfigParamsType: $value');
+      case 'azure': return BetaAzureExternalKeyConfigParamsType.azure;
+      default: throw ArgumentError('Unknown BetaAzureExternalKeyConfigParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaAzureExternalKeyConfigParamsType.azure:
-        return 'azure';
+      case BetaAzureExternalKeyConfigParamsType.azure: return 'azure';
     }
   }
 
@@ -31,12 +27,12 @@ enum BetaAzureExternalKeyConfigParamsType {
 
 /// Required enumerated value serialized in the `media_type` wire field.
 final class BetaBase64ImageSourceMediaType {
+
   final String value;
 
   const BetaBase64ImageSourceMediaType._(this.value);
 
-  factory BetaBase64ImageSourceMediaType.fromJson(String value) =>
-      BetaBase64ImageSourceMediaType._(value);
+  factory BetaBase64ImageSourceMediaType.fromJson(String value) => BetaBase64ImageSourceMediaType._(value);
 
   static const imageJpeg = BetaBase64ImageSourceMediaType._('image/jpeg');
   static const imagePng = BetaBase64ImageSourceMediaType._('image/png');
@@ -45,15 +41,12 @@ final class BetaBase64ImageSourceMediaType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaBase64ImageSourceMediaType && other.value == value;
+  @override bool operator ==(Object other) => other is BetaBase64ImageSourceMediaType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -62,17 +55,14 @@ enum BetaBase64ImageSourceType {
 
   static BetaBase64ImageSourceType fromJson(String value) {
     switch (value) {
-      case 'base64':
-        return BetaBase64ImageSourceType.base64;
-      default:
-        throw ArgumentError('Unknown BetaBase64ImageSourceType: $value');
+      case 'base64': return BetaBase64ImageSourceType.base64;
+      default: throw ArgumentError('Unknown BetaBase64ImageSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBase64ImageSourceType.base64:
-        return 'base64';
+      case BetaBase64ImageSourceType.base64: return 'base64';
     }
   }
 
@@ -86,17 +76,14 @@ enum BetaBase64PDFSourceMediaType {
 
   static BetaBase64PDFSourceMediaType fromJson(String value) {
     switch (value) {
-      case 'application/pdf':
-        return BetaBase64PDFSourceMediaType.applicationPdf;
-      default:
-        throw ArgumentError('Unknown BetaBase64PDFSourceMediaType: $value');
+      case 'application/pdf': return BetaBase64PDFSourceMediaType.applicationPdf;
+      default: throw ArgumentError('Unknown BetaBase64PDFSourceMediaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBase64PDFSourceMediaType.applicationPdf:
-        return 'application/pdf';
+      case BetaBase64PDFSourceMediaType.applicationPdf: return 'application/pdf';
     }
   }
 
@@ -110,17 +97,14 @@ enum BetaBase64PDFSourceType {
 
   static BetaBase64PDFSourceType fromJson(String value) {
     switch (value) {
-      case 'base64':
-        return BetaBase64PDFSourceType.base64;
-      default:
-        throw ArgumentError('Unknown BetaBase64PDFSourceType: $value');
+      case 'base64': return BetaBase64PDFSourceType.base64;
+      default: throw ArgumentError('Unknown BetaBase64PDFSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBase64PDFSourceType.base64:
-        return 'base64';
+      case BetaBase64PDFSourceType.base64: return 'base64';
     }
   }
 
@@ -134,17 +118,14 @@ enum BetaBashTool20241022Name {
 
   static BetaBashTool20241022Name fromJson(String value) {
     switch (value) {
-      case 'bash':
-        return BetaBashTool20241022Name.bash;
-      default:
-        throw ArgumentError('Unknown BetaBashTool20241022Name: $value');
+      case 'bash': return BetaBashTool20241022Name.bash;
+      default: throw ArgumentError('Unknown BetaBashTool20241022Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBashTool20241022Name.bash:
-        return 'bash';
+      case BetaBashTool20241022Name.bash: return 'bash';
     }
   }
 
@@ -158,17 +139,14 @@ enum BetaBashTool20241022Type {
 
   static BetaBashTool20241022Type fromJson(String value) {
     switch (value) {
-      case 'bash_20241022':
-        return BetaBashTool20241022Type.bash20241022;
-      default:
-        throw ArgumentError('Unknown BetaBashTool20241022Type: $value');
+      case 'bash_20241022': return BetaBashTool20241022Type.bash20241022;
+      default: throw ArgumentError('Unknown BetaBashTool20241022Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBashTool20241022Type.bash20241022:
-        return 'bash_20241022';
+      case BetaBashTool20241022Type.bash20241022: return 'bash_20241022';
     }
   }
 
@@ -182,17 +160,14 @@ enum BetaBashTool20250124Name {
 
   static BetaBashTool20250124Name fromJson(String value) {
     switch (value) {
-      case 'bash':
-        return BetaBashTool20250124Name.bash;
-      default:
-        throw ArgumentError('Unknown BetaBashTool20250124Name: $value');
+      case 'bash': return BetaBashTool20250124Name.bash;
+      default: throw ArgumentError('Unknown BetaBashTool20250124Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBashTool20250124Name.bash:
-        return 'bash';
+      case BetaBashTool20250124Name.bash: return 'bash';
     }
   }
 
@@ -206,17 +181,14 @@ enum BetaBashTool20250124Type {
 
   static BetaBashTool20250124Type fromJson(String value) {
     switch (value) {
-      case 'bash_20250124':
-        return BetaBashTool20250124Type.bash20250124;
-      default:
-        throw ArgumentError('Unknown BetaBashTool20250124Type: $value');
+      case 'bash_20250124': return BetaBashTool20250124Type.bash20250124;
+      default: throw ArgumentError('Unknown BetaBashTool20250124Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBashTool20250124Type.bash20250124:
-        return 'bash_20250124';
+      case BetaBashTool20250124Type.bash20250124: return 'bash_20250124';
     }
   }
 
@@ -230,17 +202,14 @@ enum BetaBillingErrorType {
 
   static BetaBillingErrorType fromJson(String value) {
     switch (value) {
-      case 'billing_error':
-        return BetaBillingErrorType.billingError;
-      default:
-        throw ArgumentError('Unknown BetaBillingErrorType: $value');
+      case 'billing_error': return BetaBillingErrorType.billingError;
+      default: throw ArgumentError('Unknown BetaBillingErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBillingErrorType.billingError:
-        return 'billing_error';
+      case BetaBillingErrorType.billingError: return 'billing_error';
     }
   }
 
@@ -254,18 +223,14 @@ enum BetaBrowserStateChangeDownloadCompletedType {
 
   static BetaBrowserStateChangeDownloadCompletedType fromJson(String value) {
     switch (value) {
-      case 'download_completed':
-        return BetaBrowserStateChangeDownloadCompletedType.downloadCompleted;
-      default:
-        throw ArgumentError(
-            'Unknown BetaBrowserStateChangeDownloadCompletedType: $value');
+      case 'download_completed': return BetaBrowserStateChangeDownloadCompletedType.downloadCompleted;
+      default: throw ArgumentError('Unknown BetaBrowserStateChangeDownloadCompletedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBrowserStateChangeDownloadCompletedType.downloadCompleted:
-        return 'download_completed';
+      case BetaBrowserStateChangeDownloadCompletedType.downloadCompleted: return 'download_completed';
     }
   }
 
@@ -279,18 +244,14 @@ enum BetaBrowserStateChangeDownloadFailedType {
 
   static BetaBrowserStateChangeDownloadFailedType fromJson(String value) {
     switch (value) {
-      case 'download_failed':
-        return BetaBrowserStateChangeDownloadFailedType.downloadFailed;
-      default:
-        throw ArgumentError(
-            'Unknown BetaBrowserStateChangeDownloadFailedType: $value');
+      case 'download_failed': return BetaBrowserStateChangeDownloadFailedType.downloadFailed;
+      default: throw ArgumentError('Unknown BetaBrowserStateChangeDownloadFailedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBrowserStateChangeDownloadFailedType.downloadFailed:
-        return 'download_failed';
+      case BetaBrowserStateChangeDownloadFailedType.downloadFailed: return 'download_failed';
     }
   }
 
@@ -304,18 +265,14 @@ enum BetaBrowserStateChangeDownloadStartedType {
 
   static BetaBrowserStateChangeDownloadStartedType fromJson(String value) {
     switch (value) {
-      case 'download_started':
-        return BetaBrowserStateChangeDownloadStartedType.downloadStarted;
-      default:
-        throw ArgumentError(
-            'Unknown BetaBrowserStateChangeDownloadStartedType: $value');
+      case 'download_started': return BetaBrowserStateChangeDownloadStartedType.downloadStarted;
+      default: throw ArgumentError('Unknown BetaBrowserStateChangeDownloadStartedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBrowserStateChangeDownloadStartedType.downloadStarted:
-        return 'download_started';
+      case BetaBrowserStateChangeDownloadStartedType.downloadStarted: return 'download_started';
     }
   }
 

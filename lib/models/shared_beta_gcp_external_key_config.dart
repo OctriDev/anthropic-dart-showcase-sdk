@@ -8,41 +8,27 @@ part of 'shared_beta.dart';
 class BetaGcpExternalKeyConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Full resource name of the Cloud KMS key.
   final String keyName;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaGcpExternalKeyConfigType type_;
 
   const BetaGcpExternalKeyConfig({required this.keyName, required this.type_});
 
-  BetaGcpExternalKeyConfig Function(
-      {String keyName,
-      BetaGcpExternalKeyConfigType type_}) get copyWith => _copyWith;
+  BetaGcpExternalKeyConfig Function({String keyName, BetaGcpExternalKeyConfigType type_}) get copyWith => _copyWith;
 
-  BetaGcpExternalKeyConfig _copyWith(
-          {Object? keyName = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaGcpExternalKeyConfig(
-        keyName: identical(keyName, sdkOmittedValue)
-            ? this.keyName
-            : keyName as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaGcpExternalKeyConfigType,
-      );
+  BetaGcpExternalKeyConfig _copyWith({Object? keyName = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaGcpExternalKeyConfig(
+    keyName: identical(keyName, sdkOmittedValue) ? this.keyName : keyName as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaGcpExternalKeyConfigType,
+  );
 
-  factory BetaGcpExternalKeyConfig.fromJson(Map<String, dynamic> json) =>
-      BetaGcpExternalKeyConfig(
-        keyName: (json['key_name'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaGcpExternalKeyConfigType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaGcpExternalKeyConfig.fromJson(Map<String, dynamic> json) => BetaGcpExternalKeyConfig(
+    keyName: (json['key_name'] as String?)!,
+    type_: (json['type'] != null ? BetaGcpExternalKeyConfigType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'key_name': keyName,
-        'type': type_.toJson(),
-      };
+    'key_name': keyName,
+    'type': type_.toJson(),
+  };
 }

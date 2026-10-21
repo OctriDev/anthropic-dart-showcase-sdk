@@ -8,40 +8,27 @@ part of 'shared_beta.dart';
 class BetaSeatTierScope {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `seat_tier` wire field.
   final String seatTier;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaSeatTierScopeType type_;
 
   const BetaSeatTierScope({required this.seatTier, required this.type_});
 
-  BetaSeatTierScope Function({String seatTier, BetaSeatTierScopeType type_})
-      get copyWith => _copyWith;
+  BetaSeatTierScope Function({String seatTier, BetaSeatTierScopeType type_}) get copyWith => _copyWith;
 
-  BetaSeatTierScope _copyWith(
-          {Object? seatTier = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaSeatTierScope(
-        seatTier: identical(seatTier, sdkOmittedValue)
-            ? this.seatTier
-            : seatTier as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaSeatTierScopeType,
-      );
+  BetaSeatTierScope _copyWith({Object? seatTier = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaSeatTierScope(
+    seatTier: identical(seatTier, sdkOmittedValue) ? this.seatTier : seatTier as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSeatTierScopeType,
+  );
 
-  factory BetaSeatTierScope.fromJson(Map<String, dynamic> json) =>
-      BetaSeatTierScope(
-        seatTier: (json['seat_tier'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaSeatTierScopeType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaSeatTierScope.fromJson(Map<String, dynamic> json) => BetaSeatTierScope(
+    seatTier: (json['seat_tier'] as String?)!,
+    type_: (json['type'] != null ? BetaSeatTierScopeType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'seat_tier': seatTier,
-        'type': type_.toJson(),
-      };
+    'seat_tier': seatTier,
+    'type': type_.toJson(),
+  };
 }

@@ -10,88 +10,40 @@ sealed class BetaManagedAgentsAgentToolParams {
   const BetaManagedAgentsAgentToolParams();
   factory BetaManagedAgentsAgentToolParams.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value =
-            BetaManagedAgentsAgentToolset20260401Params.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsAgentToolParamsBetaManagedAgentsAgentToolset20260401Params(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsMCPToolsetParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsAgentToolParamsBetaManagedAgentsMCPToolsetParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsCustomToolParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsAgentToolParamsBetaManagedAgentsCustomToolParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAgentToolset20260401Params.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsAgentToolParamsBetaManagedAgentsAgentToolset20260401Params(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsMCPToolsetParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsAgentToolParamsBetaManagedAgentsMCPToolsetParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsCustomToolParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsAgentToolParamsBetaManagedAgentsCustomToolParams(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsAgentToolParamsBetaManagedAgentsAgentToolset20260401Params(
-          BetaManagedAgentsAgentToolset20260401Params.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsAgentToolParamsBetaManagedAgentsMCPToolsetParams(
-          BetaManagedAgentsMCPToolsetParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsAgentToolParamsBetaManagedAgentsCustomToolParams(
-          BetaManagedAgentsCustomToolParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"agent_toolset_20260401", "mcp_toolset", "custom"}
-            .contains(json["type"])) {
-      return UnknownBetaManagedAgentsAgentToolParams(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsAgentToolParams");
+    try { return BetaManagedAgentsAgentToolParamsBetaManagedAgentsAgentToolset20260401Params(BetaManagedAgentsAgentToolset20260401Params.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsAgentToolParamsBetaManagedAgentsMCPToolsetParams(BetaManagedAgentsMCPToolsetParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsAgentToolParamsBetaManagedAgentsCustomToolParams(BetaManagedAgentsCustomToolParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"agent_toolset_20260401", "mcp_toolset", "custom"}.contains(json["type"])) { return UnknownBetaManagedAgentsAgentToolParams(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsAgentToolParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsAgentToolParamsBetaManagedAgentsAgentToolset20260401Params
-    extends BetaManagedAgentsAgentToolParams {
+final class BetaManagedAgentsAgentToolParamsBetaManagedAgentsAgentToolset20260401Params extends BetaManagedAgentsAgentToolParams {
   final BetaManagedAgentsAgentToolset20260401Params value;
-  const BetaManagedAgentsAgentToolParamsBetaManagedAgentsAgentToolset20260401Params(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentToolParamsBetaManagedAgentsAgentToolset20260401Params(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsAgentToolParamsBetaManagedAgentsMCPToolsetParams
-    extends BetaManagedAgentsAgentToolParams {
+final class BetaManagedAgentsAgentToolParamsBetaManagedAgentsMCPToolsetParams extends BetaManagedAgentsAgentToolParams {
   final BetaManagedAgentsMCPToolsetParams value;
-  const BetaManagedAgentsAgentToolParamsBetaManagedAgentsMCPToolsetParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentToolParamsBetaManagedAgentsMCPToolsetParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsAgentToolParamsBetaManagedAgentsCustomToolParams
-    extends BetaManagedAgentsAgentToolParams {
+final class BetaManagedAgentsAgentToolParamsBetaManagedAgentsCustomToolParams extends BetaManagedAgentsAgentToolParams {
   final BetaManagedAgentsCustomToolParams value;
-  const BetaManagedAgentsAgentToolParamsBetaManagedAgentsCustomToolParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentToolParamsBetaManagedAgentsCustomToolParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsAgentToolParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsAgentToolParams
-    extends BetaManagedAgentsAgentToolParams {
+final class UnknownBetaManagedAgentsAgentToolParams extends BetaManagedAgentsAgentToolParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsAgentToolParams(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

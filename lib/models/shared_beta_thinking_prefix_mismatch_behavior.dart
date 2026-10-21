@@ -6,25 +6,22 @@ part of 'shared_beta_thinking.dart';
 // shared_beta_thinking domain models
 /// What happens when a thinking block in `messages` fails the conversation check: it was created in a different conversation, or the messages before it have changed since. `"error"` (the default) fails the request with a 400 error. `"drop_block"` removes the failing blocks and the request proceeds; the model no longer sees the dropped reasoning.
 final class BetaThinkingPrefixMismatchBehavior {
+
   final String value;
 
   const BetaThinkingPrefixMismatchBehavior._(this.value);
 
-  factory BetaThinkingPrefixMismatchBehavior.fromJson(String value) =>
-      BetaThinkingPrefixMismatchBehavior._(value);
+  factory BetaThinkingPrefixMismatchBehavior.fromJson(String value) => BetaThinkingPrefixMismatchBehavior._(value);
 
   static const error = BetaThinkingPrefixMismatchBehavior._('error');
   static const dropBlock = BetaThinkingPrefixMismatchBehavior._('drop_block');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaThinkingPrefixMismatchBehavior && other.value == value;
+  @override bool operator ==(Object other) => other is BetaThinkingPrefixMismatchBehavior && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

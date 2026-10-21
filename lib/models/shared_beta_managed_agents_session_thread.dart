@@ -8,164 +8,72 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionThread {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionThreadType type_;
-
   /// Unique identifier for this thread.
   final String id;
-
   /// The session this thread belongs to.
   final String sessionId;
-
   /// Current execution status of the thread.
   final BetaManagedAgentsSessionThreadStatus status;
-
   /// Resolved agent definition for this thread. Snapshot of the agent at thread creation time.
   final BetaManagedAgentsSessionThreadAgentEntry agent;
-
   /// Parent thread that spawned this thread. Null for the primary thread.
   final String? parentThreadId;
-
   /// When the thread was created.
   final String createdAt;
-
   /// When the thread was last updated.
   final String updatedAt;
-
   /// When the thread was archived. Null if not archived.
   final String? archivedAt;
-
   /// Cumulative token usage for this thread. Null until the thread's first idle transition.
   final BetaManagedAgentsSessionThreadUsage? usage;
-
   /// Timing statistics for this thread. Null until the thread's first status transition.
   final BetaManagedAgentsSessionThreadStats? stats;
 
-  const BetaManagedAgentsSessionThread(
-      {required this.type_,
-      required this.id,
-      required this.sessionId,
-      required this.status,
-      required this.agent,
-      required this.parentThreadId,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.archivedAt,
-      required this.usage,
-      required this.stats});
+  const BetaManagedAgentsSessionThread({required this.type_, required this.id, required this.sessionId, required this.status, required this.agent, required this.parentThreadId, required this.createdAt, required this.updatedAt, required this.archivedAt, required this.usage, required this.stats});
 
-  BetaManagedAgentsSessionThread Function(
-      {BetaManagedAgentsSessionThreadType type_,
-      String id,
-      String sessionId,
-      BetaManagedAgentsSessionThreadStatus status,
-      BetaManagedAgentsSessionThreadAgentEntry agent,
-      String? parentThreadId,
-      String createdAt,
-      String updatedAt,
-      String? archivedAt,
-      BetaManagedAgentsSessionThreadUsage? usage,
-      BetaManagedAgentsSessionThreadStats? stats}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionThread Function({BetaManagedAgentsSessionThreadType type_, String id, String sessionId, BetaManagedAgentsSessionThreadStatus status, BetaManagedAgentsSessionThreadAgentEntry agent, String? parentThreadId, String createdAt, String updatedAt, String? archivedAt, BetaManagedAgentsSessionThreadUsage? usage, BetaManagedAgentsSessionThreadStats? stats}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionThread _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? sessionId = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? agent = sdkOmittedValue,
-          Object? parentThreadId = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? archivedAt = sdkOmittedValue,
-          Object? usage = sdkOmittedValue,
-          Object? stats = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionThread(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSessionThreadType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        sessionId: identical(sessionId, sdkOmittedValue)
-            ? this.sessionId
-            : sessionId as String,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as BetaManagedAgentsSessionThreadStatus,
-        agent: identical(agent, sdkOmittedValue)
-            ? this.agent
-            : agent as BetaManagedAgentsSessionThreadAgentEntry,
-        parentThreadId: identical(parentThreadId, sdkOmittedValue)
-            ? this.parentThreadId
-            : parentThreadId as String?,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        archivedAt: identical(archivedAt, sdkOmittedValue)
-            ? this.archivedAt
-            : archivedAt as String?,
-        usage: identical(usage, sdkOmittedValue)
-            ? this.usage
-            : usage as BetaManagedAgentsSessionThreadUsage?,
-        stats: identical(stats, sdkOmittedValue)
-            ? this.stats
-            : stats as BetaManagedAgentsSessionThreadStats?,
-      );
+  BetaManagedAgentsSessionThread _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? sessionId = sdkOmittedValue, Object? status = sdkOmittedValue, Object? agent = sdkOmittedValue, Object? parentThreadId = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? usage = sdkOmittedValue, Object? stats = sdkOmittedValue}) => BetaManagedAgentsSessionThread(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionThreadType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    sessionId: identical(sessionId, sdkOmittedValue) ? this.sessionId : sessionId as String,
+    status: identical(status, sdkOmittedValue) ? this.status : status as BetaManagedAgentsSessionThreadStatus,
+    agent: identical(agent, sdkOmittedValue) ? this.agent : agent as BetaManagedAgentsSessionThreadAgentEntry,
+    parentThreadId: identical(parentThreadId, sdkOmittedValue) ? this.parentThreadId : parentThreadId as String?,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
+    usage: identical(usage, sdkOmittedValue) ? this.usage : usage as BetaManagedAgentsSessionThreadUsage?,
+    stats: identical(stats, sdkOmittedValue) ? this.stats : stats as BetaManagedAgentsSessionThreadStats?,
+  );
 
-  factory BetaManagedAgentsSessionThread.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionThread(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSessionThreadType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        sessionId: (json['session_id'] as String?)!,
-        status: (json['status'] != null
-            ? BetaManagedAgentsSessionThreadStatus.fromJson(
-                json['status'] as String)
-            : null)!,
-        agent: (json['agent'] != null
-            ? BetaManagedAgentsSessionThreadAgentEntry.fromJson(json['agent'])
-            : null)!,
-        parentThreadId: json.containsKey('parent_thread_id')
-            ? json['parent_thread_id'] as String?
-            : throw ArgumentError.value(
-                null, 'parent_thread_id', 'Required property is missing'),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        archivedAt: json.containsKey('archived_at')
-            ? json['archived_at'] as String?
-            : throw ArgumentError.value(
-                null, 'archived_at', 'Required property is missing'),
-        usage: json.containsKey('usage')
-            ? json['usage'] != null
-                ? BetaManagedAgentsSessionThreadUsage.fromJson(
-                    json['usage'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'usage', 'Required property is missing'),
-        stats: json.containsKey('stats')
-            ? json['stats'] != null
-                ? BetaManagedAgentsSessionThreadStats.fromJson(
-                    json['stats'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'stats', 'Required property is missing'),
-      );
+  factory BetaManagedAgentsSessionThread.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionThread(
+    type_: (json['type'] != null ? BetaManagedAgentsSessionThreadType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    sessionId: (json['session_id'] as String?)!,
+    status: (json['status'] != null ? BetaManagedAgentsSessionThreadStatus.fromJson(json['status'] as String) : null)!,
+    agent: (json['agent'] != null ? BetaManagedAgentsSessionThreadAgentEntry.fromJson(json['agent']) : null)!,
+    parentThreadId: json.containsKey('parent_thread_id') ? json['parent_thread_id'] as String? : throw ArgumentError.value(null, 'parent_thread_id', 'Required property is missing'),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
+    usage: json.containsKey('usage') ? json['usage'] != null ? BetaManagedAgentsSessionThreadUsage.fromJson(json['usage'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'usage', 'Required property is missing'),
+    stats: json.containsKey('stats') ? json['stats'] != null ? BetaManagedAgentsSessionThreadStats.fromJson(json['stats'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'stats', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'session_id': sessionId,
-        'status': status.toJson(),
-        'agent': agent.toJson(),
-        'parent_thread_id': parentThreadId,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'archived_at': archivedAt,
-        'usage': usage?.toJson(),
-        'stats': stats?.toJson(),
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'session_id': sessionId,
+    'status': status.toJson(),
+    'agent': agent.toJson(),
+    'parent_thread_id': parentThreadId,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'archived_at': archivedAt,
+    'usage': usage?.toJson(),
+    'stats': stats?.toJson(),
+  };
 }

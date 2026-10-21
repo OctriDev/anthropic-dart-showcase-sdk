@@ -8,71 +8,37 @@ part of 'models.dart';
 class ListResponseModelInfo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `data` wire field.
   final List<ModelInfo> data;
-
   /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
   final String? firstId;
-
   /// Indicates if there are more results in the requested page direction.
   final bool hasMore;
-
   /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
   final String? lastId;
 
-  const ListResponseModelInfo(
-      {required this.data,
-      required this.firstId,
-      required this.hasMore,
-      required this.lastId});
+  const ListResponseModelInfo({required this.data, required this.firstId, required this.hasMore, required this.lastId});
 
-  ListResponseModelInfo Function(
-      {List<ModelInfo> data,
-      String? firstId,
-      bool hasMore,
-      String? lastId}) get copyWith => _copyWith;
+  ListResponseModelInfo Function({List<ModelInfo> data, String? firstId, bool hasMore, String? lastId}) get copyWith => _copyWith;
 
-  ListResponseModelInfo _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? firstId = sdkOmittedValue,
-          Object? hasMore = sdkOmittedValue,
-          Object? lastId = sdkOmittedValue}) =>
-      ListResponseModelInfo(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<ModelInfo>,
-        firstId: identical(firstId, sdkOmittedValue)
-            ? this.firstId
-            : firstId as String?,
-        hasMore: identical(hasMore, sdkOmittedValue)
-            ? this.hasMore
-            : hasMore as bool,
-        lastId: identical(lastId, sdkOmittedValue)
-            ? this.lastId
-            : lastId as String?,
-      );
+  ListResponseModelInfo _copyWith({Object? data = sdkOmittedValue, Object? firstId = sdkOmittedValue, Object? hasMore = sdkOmittedValue, Object? lastId = sdkOmittedValue}) => ListResponseModelInfo(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<ModelInfo>,
+    firstId: identical(firstId, sdkOmittedValue) ? this.firstId : firstId as String?,
+    hasMore: identical(hasMore, sdkOmittedValue) ? this.hasMore : hasMore as bool,
+    lastId: identical(lastId, sdkOmittedValue) ? this.lastId : lastId as String?,
+  );
 
-  factory ListResponseModelInfo.fromJson(Map<String, dynamic> json) =>
-      ListResponseModelInfo(
-        data: ((json['data'] as List?)
-            ?.map((e) => ModelInfo.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        firstId: json.containsKey('first_id')
-            ? json['first_id'] as String?
-            : throw ArgumentError.value(
-                null, 'first_id', 'Required property is missing'),
-        hasMore: (json['has_more'] as bool?)!,
-        lastId: json.containsKey('last_id')
-            ? json['last_id'] as String?
-            : throw ArgumentError.value(
-                null, 'last_id', 'Required property is missing'),
-      );
+  factory ListResponseModelInfo.fromJson(Map<String, dynamic> json) => ListResponseModelInfo(
+    data: ((json['data'] as List?)?.map((e) => ModelInfo.fromJson(e as Map<String, dynamic>)).toList())!,
+    firstId: json.containsKey('first_id') ? json['first_id'] as String? : throw ArgumentError.value(null, 'first_id', 'Required property is missing'),
+    hasMore: (json['has_more'] as bool?)!,
+    lastId: json.containsKey('last_id') ? json['last_id'] as String? : throw ArgumentError.value(null, 'last_id', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'first_id': firstId,
-        'has_more': hasMore,
-        'last_id': lastId,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'first_id': firstId,
+    'has_more': hasMore,
+    'last_id': lastId,
+  };
 }

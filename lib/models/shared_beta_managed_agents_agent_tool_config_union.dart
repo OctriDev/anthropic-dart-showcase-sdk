@@ -10,200 +10,80 @@ sealed class BetaManagedAgentsAgentToolConfigUnion {
   const BetaManagedAgentsAgentToolConfigUnion();
   factory BetaManagedAgentsAgentToolConfigUnion.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsBashToolConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsBashToolConfig(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsEditToolConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsEditToolConfig(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsReadToolConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsReadToolConfig(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsWriteToolConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWriteToolConfig(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsGlobToolConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGlobToolConfig(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsGrepToolConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGrepToolConfig(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsWebFetchToolConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebFetchToolConfig(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsWebSearchToolConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebSearchToolConfig(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsBashToolConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsBashToolConfig(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsEditToolConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsEditToolConfig(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsReadToolConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsReadToolConfig(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsWriteToolConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWriteToolConfig(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsGlobToolConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGlobToolConfig(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsGrepToolConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGrepToolConfig(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsWebFetchToolConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebFetchToolConfig(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsWebSearchToolConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebSearchToolConfig(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsBashToolConfig(
-          BetaManagedAgentsBashToolConfig.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsEditToolConfig(
-          BetaManagedAgentsEditToolConfig.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsReadToolConfig(
-          BetaManagedAgentsReadToolConfig.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWriteToolConfig(
-          BetaManagedAgentsWriteToolConfig.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGlobToolConfig(
-          BetaManagedAgentsGlobToolConfig.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGrepToolConfig(
-          BetaManagedAgentsGrepToolConfig.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebFetchToolConfig(
-          BetaManagedAgentsWebFetchToolConfig.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebSearchToolConfig(
-          BetaManagedAgentsWebSearchToolConfig.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "bash",
-          "edit",
-          "read",
-          "write",
-          "glob",
-          "grep",
-          "web_fetch",
-          "web_search"
-        }.contains(json["type"])) {
-      return UnknownBetaManagedAgentsAgentToolConfigUnion(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsAgentToolConfigUnion");
+    try { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsBashToolConfig(BetaManagedAgentsBashToolConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsEditToolConfig(BetaManagedAgentsEditToolConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsReadToolConfig(BetaManagedAgentsReadToolConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWriteToolConfig(BetaManagedAgentsWriteToolConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGlobToolConfig(BetaManagedAgentsGlobToolConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGrepToolConfig(BetaManagedAgentsGrepToolConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebFetchToolConfig(BetaManagedAgentsWebFetchToolConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebSearchToolConfig(BetaManagedAgentsWebSearchToolConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"bash", "edit", "read", "write", "glob", "grep", "web_fetch", "web_search"}.contains(json["type"])) { return UnknownBetaManagedAgentsAgentToolConfigUnion(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsAgentToolConfigUnion");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsBashToolConfig
-    extends BetaManagedAgentsAgentToolConfigUnion {
+final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsBashToolConfig extends BetaManagedAgentsAgentToolConfigUnion {
   final BetaManagedAgentsBashToolConfig value;
-  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsBashToolConfig(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsBashToolConfig(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsEditToolConfig
-    extends BetaManagedAgentsAgentToolConfigUnion {
+final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsEditToolConfig extends BetaManagedAgentsAgentToolConfigUnion {
   final BetaManagedAgentsEditToolConfig value;
-  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsEditToolConfig(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsEditToolConfig(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsReadToolConfig
-    extends BetaManagedAgentsAgentToolConfigUnion {
+final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsReadToolConfig extends BetaManagedAgentsAgentToolConfigUnion {
   final BetaManagedAgentsReadToolConfig value;
-  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsReadToolConfig(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsReadToolConfig(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWriteToolConfig
-    extends BetaManagedAgentsAgentToolConfigUnion {
+final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWriteToolConfig extends BetaManagedAgentsAgentToolConfigUnion {
   final BetaManagedAgentsWriteToolConfig value;
-  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWriteToolConfig(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWriteToolConfig(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGlobToolConfig
-    extends BetaManagedAgentsAgentToolConfigUnion {
+final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGlobToolConfig extends BetaManagedAgentsAgentToolConfigUnion {
   final BetaManagedAgentsGlobToolConfig value;
-  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGlobToolConfig(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGlobToolConfig(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGrepToolConfig
-    extends BetaManagedAgentsAgentToolConfigUnion {
+final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGrepToolConfig extends BetaManagedAgentsAgentToolConfigUnion {
   final BetaManagedAgentsGrepToolConfig value;
-  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGrepToolConfig(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsGrepToolConfig(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebFetchToolConfig
-    extends BetaManagedAgentsAgentToolConfigUnion {
+final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebFetchToolConfig extends BetaManagedAgentsAgentToolConfigUnion {
   final BetaManagedAgentsWebFetchToolConfig value;
-  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebFetchToolConfig(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebFetchToolConfig(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebSearchToolConfig
-    extends BetaManagedAgentsAgentToolConfigUnion {
+final class BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebSearchToolConfig extends BetaManagedAgentsAgentToolConfigUnion {
   final BetaManagedAgentsWebSearchToolConfig value;
-  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebSearchToolConfig(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentToolConfigUnionBetaManagedAgentsWebSearchToolConfig(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsAgentToolConfigUnion] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsAgentToolConfigUnion
-    extends BetaManagedAgentsAgentToolConfigUnion {
+final class UnknownBetaManagedAgentsAgentToolConfigUnion extends BetaManagedAgentsAgentToolConfigUnion {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsAgentToolConfigUnion(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

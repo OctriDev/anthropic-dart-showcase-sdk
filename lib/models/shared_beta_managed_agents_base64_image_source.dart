@@ -8,52 +8,32 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsBase64ImageSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsBase64ImageSourceType type_;
-
   /// MIME type of the image (e.g., "image/png", "image/jpeg", "image/gif", "image/webp").
   final String mediaType;
-
   /// Base64-encoded image data.
   final String data;
 
-  const BetaManagedAgentsBase64ImageSource(
-      {required this.type_, required this.mediaType, required this.data});
+  const BetaManagedAgentsBase64ImageSource({required this.type_, required this.mediaType, required this.data});
 
-  BetaManagedAgentsBase64ImageSource Function(
-      {BetaManagedAgentsBase64ImageSourceType type_,
-      String mediaType,
-      String data}) get copyWith => _copyWith;
+  BetaManagedAgentsBase64ImageSource Function({BetaManagedAgentsBase64ImageSourceType type_, String mediaType, String data}) get copyWith => _copyWith;
 
-  BetaManagedAgentsBase64ImageSource _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? mediaType = sdkOmittedValue,
-          Object? data = sdkOmittedValue}) =>
-      BetaManagedAgentsBase64ImageSource(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsBase64ImageSourceType,
-        mediaType: identical(mediaType, sdkOmittedValue)
-            ? this.mediaType
-            : mediaType as String,
-        data: identical(data, sdkOmittedValue) ? this.data : data as String,
-      );
+  BetaManagedAgentsBase64ImageSource _copyWith({Object? type_ = sdkOmittedValue, Object? mediaType = sdkOmittedValue, Object? data = sdkOmittedValue}) => BetaManagedAgentsBase64ImageSource(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsBase64ImageSourceType,
+    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as String,
+    data: identical(data, sdkOmittedValue) ? this.data : data as String,
+  );
 
-  factory BetaManagedAgentsBase64ImageSource.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsBase64ImageSource(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsBase64ImageSourceType.fromJson(
-                json['type'] as String)
-            : null)!,
-        mediaType: (json['media_type'] as String?)!,
-        data: (json['data'] as String?)!,
-      );
+  factory BetaManagedAgentsBase64ImageSource.fromJson(Map<String, dynamic> json) => BetaManagedAgentsBase64ImageSource(
+    type_: (json['type'] != null ? BetaManagedAgentsBase64ImageSourceType.fromJson(json['type'] as String) : null)!,
+    mediaType: (json['media_type'] as String?)!,
+    data: (json['data'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'media_type': mediaType,
-        'data': data,
-      };
+    'type': type_.toJson(),
+    'media_type': mediaType,
+    'data': data,
+  };
 }

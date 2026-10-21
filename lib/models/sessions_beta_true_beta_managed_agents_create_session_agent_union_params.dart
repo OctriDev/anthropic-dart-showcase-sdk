@@ -8,134 +8,69 @@ sealed class BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsCreateSessionAgentUnionParamsVariant1();
-  factory BetaManagedAgentsCreateSessionAgentUnionParamsVariant1.fromJson(
-      Object? json) {
+  factory BetaManagedAgentsCreateSessionAgentUnionParamsVariant1.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsAgentParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAgentWithOverridesParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAgentParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentWithOverridesParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(
-          BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(
-          BetaManagedAgentsAgentWithOverridesParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"agent", "agent_with_overrides"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsCreateSessionAgentUnionParamsVariant1(
-          json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsCreateSessionAgentUnionParamsVariant1");
+    try { return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(BetaManagedAgentsAgentWithOverridesParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"agent", "agent_with_overrides"}.contains(json["type"])) { return UnknownBetaManagedAgentsCreateSessionAgentUnionParamsVariant1(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsCreateSessionAgentUnionParamsVariant1");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams
-    extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
+final class BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
   final BetaManagedAgentsAgentParams value;
-  const BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams
-    extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
+final class BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
   final BetaManagedAgentsAgentWithOverridesParams value;
-  const BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCreateSessionAgentUnionParamsVariant1BetaManagedAgentsAgentWithOverridesParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsCreateSessionAgentUnionParamsVariant1] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsCreateSessionAgentUnionParamsVariant1
-    extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
+final class UnknownBetaManagedAgentsCreateSessionAgentUnionParamsVariant1 extends BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsCreateSessionAgentUnionParamsVariant1(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsCreateSessionAgentUnionParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsCreateSessionAgentUnionParams();
-  factory BetaManagedAgentsCreateSessionAgentUnionParams.fromJson(
-      Object? json) {
-    if (json is String) {
-      return BetaManagedAgentsCreateSessionAgentUnionParamsString(json);
-    }
+  factory BetaManagedAgentsCreateSessionAgentUnionParams.fromJson(Object? json) {
+    if (json is String) { return BetaManagedAgentsCreateSessionAgentUnionParamsString(json); }
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsAgentParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAgentWithOverridesParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAgentParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAgentWithOverridesParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(
-          BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(
-          BetaManagedAgentsAgentWithOverridesParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsCreateSessionAgentUnionParams");
+    try { return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(BetaManagedAgentsAgentWithOverridesParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for BetaManagedAgentsCreateSessionAgentUnionParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsCreateSessionAgentUnionParamsString
-    extends BetaManagedAgentsCreateSessionAgentUnionParams {
+final class BetaManagedAgentsCreateSessionAgentUnionParamsString extends BetaManagedAgentsCreateSessionAgentUnionParams {
   final String value;
   const BetaManagedAgentsCreateSessionAgentUnionParamsString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams
-    extends BetaManagedAgentsCreateSessionAgentUnionParams {
+final class BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams extends BetaManagedAgentsCreateSessionAgentUnionParams {
   final BetaManagedAgentsAgentParams value;
-  const BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams
-    extends BetaManagedAgentsCreateSessionAgentUnionParams {
+final class BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams extends BetaManagedAgentsCreateSessionAgentUnionParams {
   final BetaManagedAgentsAgentWithOverridesParams value;
-  const BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCreateSessionAgentUnionParamsBetaManagedAgentsAgentWithOverridesParams(this.value);
+  @override Object? toJson() => value.toJson();
 }

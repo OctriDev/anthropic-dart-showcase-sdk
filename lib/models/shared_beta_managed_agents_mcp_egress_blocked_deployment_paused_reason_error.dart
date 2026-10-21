@@ -8,36 +8,22 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType type_;
 
-  const BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
-      {required this.type_});
+  const BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError({required this.type_});
 
-  BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError Function(
-      {BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType
-          type_}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError Function({BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_
-                as BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType,
-      );
+  BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType,
+  );
 
-  factory BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType
-                .fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
+    type_: (json['type'] != null ? BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

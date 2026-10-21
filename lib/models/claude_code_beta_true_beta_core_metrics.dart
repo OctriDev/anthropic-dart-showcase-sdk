@@ -8,69 +8,37 @@ part of 'claude_code_beta_true.dart';
 class BetaCoreMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Number of git commits created through Claude Code's commit functionality.
   final int commitsByClaudeCode;
-
   /// Statistics on code changes made through Claude Code.
   final BetaLinesOfCode linesOfCode;
-
   /// Number of distinct Claude Code sessions initiated by this actor.
   final int numSessions;
-
   /// Number of pull requests created through Claude Code's PR functionality.
   final int pullRequestsByClaudeCode;
 
-  const BetaCoreMetrics(
-      {required this.commitsByClaudeCode,
-      required this.linesOfCode,
-      required this.numSessions,
-      required this.pullRequestsByClaudeCode});
+  const BetaCoreMetrics({required this.commitsByClaudeCode, required this.linesOfCode, required this.numSessions, required this.pullRequestsByClaudeCode});
 
-  BetaCoreMetrics Function(
-      {int commitsByClaudeCode,
-      BetaLinesOfCode linesOfCode,
-      int numSessions,
-      int pullRequestsByClaudeCode}) get copyWith => _copyWith;
+  BetaCoreMetrics Function({int commitsByClaudeCode, BetaLinesOfCode linesOfCode, int numSessions, int pullRequestsByClaudeCode}) get copyWith => _copyWith;
 
-  BetaCoreMetrics _copyWith(
-          {Object? commitsByClaudeCode = sdkOmittedValue,
-          Object? linesOfCode = sdkOmittedValue,
-          Object? numSessions = sdkOmittedValue,
-          Object? pullRequestsByClaudeCode = sdkOmittedValue}) =>
-      BetaCoreMetrics(
-        commitsByClaudeCode: identical(commitsByClaudeCode, sdkOmittedValue)
-            ? this.commitsByClaudeCode
-            : commitsByClaudeCode as int,
-        linesOfCode: identical(linesOfCode, sdkOmittedValue)
-            ? this.linesOfCode
-            : linesOfCode as BetaLinesOfCode,
-        numSessions: identical(numSessions, sdkOmittedValue)
-            ? this.numSessions
-            : numSessions as int,
-        pullRequestsByClaudeCode:
-            identical(pullRequestsByClaudeCode, sdkOmittedValue)
-                ? this.pullRequestsByClaudeCode
-                : pullRequestsByClaudeCode as int,
-      );
+  BetaCoreMetrics _copyWith({Object? commitsByClaudeCode = sdkOmittedValue, Object? linesOfCode = sdkOmittedValue, Object? numSessions = sdkOmittedValue, Object? pullRequestsByClaudeCode = sdkOmittedValue}) => BetaCoreMetrics(
+    commitsByClaudeCode: identical(commitsByClaudeCode, sdkOmittedValue) ? this.commitsByClaudeCode : commitsByClaudeCode as int,
+    linesOfCode: identical(linesOfCode, sdkOmittedValue) ? this.linesOfCode : linesOfCode as BetaLinesOfCode,
+    numSessions: identical(numSessions, sdkOmittedValue) ? this.numSessions : numSessions as int,
+    pullRequestsByClaudeCode: identical(pullRequestsByClaudeCode, sdkOmittedValue) ? this.pullRequestsByClaudeCode : pullRequestsByClaudeCode as int,
+  );
 
-  factory BetaCoreMetrics.fromJson(Map<String, dynamic> json) =>
-      BetaCoreMetrics(
-        commitsByClaudeCode:
-            ((json['commits_by_claude_code'] as num?)?.toInt())!,
-        linesOfCode: (json['lines_of_code'] != null
-            ? BetaLinesOfCode.fromJson(
-                json['lines_of_code'] as Map<String, dynamic>)
-            : null)!,
-        numSessions: ((json['num_sessions'] as num?)?.toInt())!,
-        pullRequestsByClaudeCode:
-            ((json['pull_requests_by_claude_code'] as num?)?.toInt())!,
-      );
+  factory BetaCoreMetrics.fromJson(Map<String, dynamic> json) => BetaCoreMetrics(
+    commitsByClaudeCode: ((json['commits_by_claude_code'] as num?)?.toInt())!,
+    linesOfCode: (json['lines_of_code'] != null ? BetaLinesOfCode.fromJson(json['lines_of_code'] as Map<String, dynamic>) : null)!,
+    numSessions: ((json['num_sessions'] as num?)?.toInt())!,
+    pullRequestsByClaudeCode: ((json['pull_requests_by_claude_code'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'commits_by_claude_code': commitsByClaudeCode,
-        'lines_of_code': linesOfCode.toJson(),
-        'num_sessions': numSessions,
-        'pull_requests_by_claude_code': pullRequestsByClaudeCode,
-      };
+    'commits_by_claude_code': commitsByClaudeCode,
+    'lines_of_code': linesOfCode.toJson(),
+    'num_sessions': numSessions,
+    'pull_requests_by_claude_code': pullRequestsByClaudeCode,
+  };
 }

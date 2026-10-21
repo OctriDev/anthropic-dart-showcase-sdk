@@ -9,84 +9,51 @@ sealed class BetaManagedAgentsAnthropicSkillParamsVersion {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsAnthropicSkillParamsVersion();
   factory BetaManagedAgentsAnthropicSkillParamsVersion.fromJson(Object? json) {
-    if (json is String) {
-      return BetaManagedAgentsAnthropicSkillParamsVersionString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsAnthropicSkillParamsVersion");
+    if (json is String) { return BetaManagedAgentsAnthropicSkillParamsVersionString(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsAnthropicSkillParamsVersion");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsAnthropicSkillParamsVersionString
-    extends BetaManagedAgentsAnthropicSkillParamsVersion {
+final class BetaManagedAgentsAnthropicSkillParamsVersionString extends BetaManagedAgentsAnthropicSkillParamsVersion {
   final String value;
   const BetaManagedAgentsAnthropicSkillParamsVersionString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// An Anthropic-managed skill.
 class BetaManagedAgentsAnthropicSkillParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAnthropicSkillParamsType type_;
-
   /// Identifier of the Anthropic skill (e.g., "xlsx").
   final String skillId;
-
   /// Version to pin. Defaults to latest if omitted.
   final SdkOptional<String?> version;
 
-  const BetaManagedAgentsAnthropicSkillParams(
-      {required this.type_,
-      required this.skillId,
-      this.version = const SdkOmitted()});
+  const BetaManagedAgentsAnthropicSkillParams({required this.type_, required this.skillId, this.version = const SdkOmitted()});
 
-  BetaManagedAgentsAnthropicSkillParams Function(
-      {BetaManagedAgentsAnthropicSkillParamsType type_,
-      String skillId,
-      SdkOptional<String?> version}) get copyWith => _copyWith;
+  BetaManagedAgentsAnthropicSkillParams Function({BetaManagedAgentsAnthropicSkillParamsType type_, String skillId, SdkOptional<String?> version}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAnthropicSkillParams _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? skillId = sdkOmittedValue,
-          Object? version = sdkOmittedValue}) =>
-      BetaManagedAgentsAnthropicSkillParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAnthropicSkillParamsType,
-        skillId: identical(skillId, sdkOmittedValue)
-            ? this.skillId
-            : skillId as String,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as SdkOptional<String?>,
-      );
+  BetaManagedAgentsAnthropicSkillParams _copyWith({Object? type_ = sdkOmittedValue, Object? skillId = sdkOmittedValue, Object? version = sdkOmittedValue}) => BetaManagedAgentsAnthropicSkillParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAnthropicSkillParamsType,
+    skillId: identical(skillId, sdkOmittedValue) ? this.skillId : skillId as String,
+    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String?>,
+  );
 
-  factory BetaManagedAgentsAnthropicSkillParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsAnthropicSkillParams(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAnthropicSkillParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-        skillId: (json['skill_id'] as String?)!,
-        version: json.containsKey('version')
-            ? SdkPresent(json['version'] as String?)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsAnthropicSkillParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAnthropicSkillParams(
+    type_: (json['type'] != null ? BetaManagedAgentsAnthropicSkillParamsType.fromJson(json['type'] as String) : null)!,
+    skillId: (json['skill_id'] as String?)!,
+    version: json.containsKey('version') ? SdkPresent(json['version'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'skill_id': skillId,
-        ...switch (version) {
-          SdkPresent<String?>(value: final value) => {
-              'version': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    'skill_id': skillId,
+    ...switch (version) {
+      SdkPresent<String?>(value: final value) => {'version': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

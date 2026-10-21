@@ -8,50 +8,32 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsAgentReference {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAgentReferenceType type_;
-
   /// Required `string` value serialized in the `id` wire field.
   final String id;
-
   /// Required `int32`-formatted value serialized in the `version` wire field.
   final int version;
 
-  const BetaManagedAgentsAgentReference(
-      {required this.type_, required this.id, required this.version});
+  const BetaManagedAgentsAgentReference({required this.type_, required this.id, required this.version});
 
-  BetaManagedAgentsAgentReference Function(
-      {BetaManagedAgentsAgentReferenceType type_,
-      String id,
-      int version}) get copyWith => _copyWith;
+  BetaManagedAgentsAgentReference Function({BetaManagedAgentsAgentReferenceType type_, String id, int version}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAgentReference _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? version = sdkOmittedValue}) =>
-      BetaManagedAgentsAgentReference(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAgentReferenceType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        version:
-            identical(version, sdkOmittedValue) ? this.version : version as int,
-      );
+  BetaManagedAgentsAgentReference _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? version = sdkOmittedValue}) => BetaManagedAgentsAgentReference(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAgentReferenceType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    version: identical(version, sdkOmittedValue) ? this.version : version as int,
+  );
 
-  factory BetaManagedAgentsAgentReference.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsAgentReference(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAgentReferenceType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        version: ((json['version'] as num?)?.toInt())!,
-      );
+  factory BetaManagedAgentsAgentReference.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAgentReference(
+    type_: (json['type'] != null ? BetaManagedAgentsAgentReferenceType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    version: ((json['version'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'version': version,
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'version': version,
+  };
 }

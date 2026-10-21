@@ -8,43 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsFileRubricParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsFileRubricParamsType type_;
-
   /// ID of the rubric file.
   final String fileId;
 
-  const BetaManagedAgentsFileRubricParams(
-      {required this.type_, required this.fileId});
+  const BetaManagedAgentsFileRubricParams({required this.type_, required this.fileId});
 
-  BetaManagedAgentsFileRubricParams Function(
-      {BetaManagedAgentsFileRubricParamsType type_,
-      String fileId}) get copyWith => _copyWith;
+  BetaManagedAgentsFileRubricParams Function({BetaManagedAgentsFileRubricParamsType type_, String fileId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsFileRubricParams _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? fileId = sdkOmittedValue}) =>
-      BetaManagedAgentsFileRubricParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsFileRubricParamsType,
-        fileId:
-            identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
-      );
+  BetaManagedAgentsFileRubricParams _copyWith({Object? type_ = sdkOmittedValue, Object? fileId = sdkOmittedValue}) => BetaManagedAgentsFileRubricParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsFileRubricParamsType,
+    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
+  );
 
-  factory BetaManagedAgentsFileRubricParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsFileRubricParams(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsFileRubricParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-        fileId: (json['file_id'] as String?)!,
-      );
+  factory BetaManagedAgentsFileRubricParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsFileRubricParams(
+    type_: (json['type'] != null ? BetaManagedAgentsFileRubricParamsType.fromJson(json['type'] as String) : null)!,
+    fileId: (json['file_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'file_id': fileId,
-      };
+    'type': type_.toJson(),
+    'file_id': fileId,
+  };
 }

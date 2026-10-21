@@ -10,134 +10,56 @@ sealed class BetaRequestTextBlockCitationsItem {
   const BetaRequestTextBlockCitationsItem();
   factory BetaRequestTextBlockCitationsItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaRequestCharLocationCitation.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaRequestTextBlockCitationsItemBetaRequestCharLocationCitation(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaRequestPageLocationCitation.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaRequestTextBlockCitationsItemBetaRequestPageLocationCitation(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaRequestContentBlockLocationCitation.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaRequestTextBlockCitationsItemBetaRequestContentBlockLocationCitation(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaRequestWebSearchResultLocationCitation.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaRequestTextBlockCitationsItemBetaRequestWebSearchResultLocationCitation(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaRequestSearchResultLocationCitation.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaRequestTextBlockCitationsItemBetaRequestSearchResultLocationCitation(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaRequestCharLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestTextBlockCitationsItemBetaRequestCharLocationCitation(value); } } catch (_) {}
+      try { final value = BetaRequestPageLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestTextBlockCitationsItemBetaRequestPageLocationCitation(value); } } catch (_) {}
+      try { final value = BetaRequestContentBlockLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestTextBlockCitationsItemBetaRequestContentBlockLocationCitation(value); } } catch (_) {}
+      try { final value = BetaRequestWebSearchResultLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestTextBlockCitationsItemBetaRequestWebSearchResultLocationCitation(value); } } catch (_) {}
+      try { final value = BetaRequestSearchResultLocationCitation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestTextBlockCitationsItemBetaRequestSearchResultLocationCitation(value); } } catch (_) {}
     }
-    try {
-      return BetaRequestTextBlockCitationsItemBetaRequestCharLocationCitation(
-          BetaRequestCharLocationCitation.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaRequestTextBlockCitationsItemBetaRequestPageLocationCitation(
-          BetaRequestPageLocationCitation.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaRequestTextBlockCitationsItemBetaRequestContentBlockLocationCitation(
-          BetaRequestContentBlockLocationCitation.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaRequestTextBlockCitationsItemBetaRequestWebSearchResultLocationCitation(
-          BetaRequestWebSearchResultLocationCitation.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaRequestTextBlockCitationsItemBetaRequestSearchResultLocationCitation(
-          BetaRequestSearchResultLocationCitation.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "char_location",
-          "content_block_location",
-          "page_location",
-          "search_result_location",
-          "web_search_result_location"
-        }.contains(json["type"])) {
-      return UnknownBetaRequestTextBlockCitationsItem(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaRequestTextBlockCitationsItem");
+    try { return BetaRequestTextBlockCitationsItemBetaRequestCharLocationCitation(BetaRequestCharLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaRequestTextBlockCitationsItemBetaRequestPageLocationCitation(BetaRequestPageLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaRequestTextBlockCitationsItemBetaRequestContentBlockLocationCitation(BetaRequestContentBlockLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaRequestTextBlockCitationsItemBetaRequestWebSearchResultLocationCitation(BetaRequestWebSearchResultLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaRequestTextBlockCitationsItemBetaRequestSearchResultLocationCitation(BetaRequestSearchResultLocationCitation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"char_location", "content_block_location", "page_location", "search_result_location", "web_search_result_location"}.contains(json["type"])) { return UnknownBetaRequestTextBlockCitationsItem(json); }
+    throw FormatException("No variant matched for BetaRequestTextBlockCitationsItem");
   }
   Object? toJson();
 }
 
-final class BetaRequestTextBlockCitationsItemBetaRequestCharLocationCitation
-    extends BetaRequestTextBlockCitationsItem {
+final class BetaRequestTextBlockCitationsItemBetaRequestCharLocationCitation extends BetaRequestTextBlockCitationsItem {
   final BetaRequestCharLocationCitation value;
-  const BetaRequestTextBlockCitationsItemBetaRequestCharLocationCitation(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestTextBlockCitationsItemBetaRequestCharLocationCitation(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaRequestTextBlockCitationsItemBetaRequestPageLocationCitation
-    extends BetaRequestTextBlockCitationsItem {
+final class BetaRequestTextBlockCitationsItemBetaRequestPageLocationCitation extends BetaRequestTextBlockCitationsItem {
   final BetaRequestPageLocationCitation value;
-  const BetaRequestTextBlockCitationsItemBetaRequestPageLocationCitation(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestTextBlockCitationsItemBetaRequestPageLocationCitation(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaRequestTextBlockCitationsItemBetaRequestContentBlockLocationCitation
-    extends BetaRequestTextBlockCitationsItem {
+final class BetaRequestTextBlockCitationsItemBetaRequestContentBlockLocationCitation extends BetaRequestTextBlockCitationsItem {
   final BetaRequestContentBlockLocationCitation value;
-  const BetaRequestTextBlockCitationsItemBetaRequestContentBlockLocationCitation(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestTextBlockCitationsItemBetaRequestContentBlockLocationCitation(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaRequestTextBlockCitationsItemBetaRequestWebSearchResultLocationCitation
-    extends BetaRequestTextBlockCitationsItem {
+final class BetaRequestTextBlockCitationsItemBetaRequestWebSearchResultLocationCitation extends BetaRequestTextBlockCitationsItem {
   final BetaRequestWebSearchResultLocationCitation value;
-  const BetaRequestTextBlockCitationsItemBetaRequestWebSearchResultLocationCitation(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestTextBlockCitationsItemBetaRequestWebSearchResultLocationCitation(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaRequestTextBlockCitationsItemBetaRequestSearchResultLocationCitation
-    extends BetaRequestTextBlockCitationsItem {
+final class BetaRequestTextBlockCitationsItemBetaRequestSearchResultLocationCitation extends BetaRequestTextBlockCitationsItem {
   final BetaRequestSearchResultLocationCitation value;
-  const BetaRequestTextBlockCitationsItemBetaRequestSearchResultLocationCitation(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestTextBlockCitationsItemBetaRequestSearchResultLocationCitation(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestTextBlockCitationsItem] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestTextBlockCitationsItem
-    extends BetaRequestTextBlockCitationsItem {
+final class UnknownBetaRequestTextBlockCitationsItem extends BetaRequestTextBlockCitationsItem {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestTextBlockCitationsItem(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

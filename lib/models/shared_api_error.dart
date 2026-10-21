@@ -8,39 +8,27 @@ part of 'shared.dart';
 class APIError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final APIErrorType type_;
 
   const APIError({required this.message, required this.type_});
 
-  APIError Function({String message, APIErrorType type_}) get copyWith =>
-      _copyWith;
+  APIError Function({String message, APIErrorType type_}) get copyWith => _copyWith;
 
-  APIError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      APIError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as APIErrorType,
-      );
+  APIError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => APIError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as APIErrorType,
+  );
 
   factory APIError.fromJson(Map<String, dynamic> json) => APIError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? APIErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? APIErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }

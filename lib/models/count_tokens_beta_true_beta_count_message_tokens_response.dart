@@ -8,46 +8,27 @@ part of 'count_tokens_beta_true.dart';
 class BetaCountMessageTokensResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Information about context management applied to the message.
   final BetaContextManagementResponse? contextManagement;
-
   /// The total number of tokens across the provided list of messages, system prompt, and tools.
   final int inputTokens;
 
-  const BetaCountMessageTokensResponse(
-      {required this.contextManagement, required this.inputTokens});
+  const BetaCountMessageTokensResponse({required this.contextManagement, required this.inputTokens});
 
-  BetaCountMessageTokensResponse Function(
-      {BetaContextManagementResponse? contextManagement,
-      int inputTokens}) get copyWith => _copyWith;
+  BetaCountMessageTokensResponse Function({BetaContextManagementResponse? contextManagement, int inputTokens}) get copyWith => _copyWith;
 
-  BetaCountMessageTokensResponse _copyWith(
-          {Object? contextManagement = sdkOmittedValue,
-          Object? inputTokens = sdkOmittedValue}) =>
-      BetaCountMessageTokensResponse(
-        contextManagement: identical(contextManagement, sdkOmittedValue)
-            ? this.contextManagement
-            : contextManagement as BetaContextManagementResponse?,
-        inputTokens: identical(inputTokens, sdkOmittedValue)
-            ? this.inputTokens
-            : inputTokens as int,
-      );
+  BetaCountMessageTokensResponse _copyWith({Object? contextManagement = sdkOmittedValue, Object? inputTokens = sdkOmittedValue}) => BetaCountMessageTokensResponse(
+    contextManagement: identical(contextManagement, sdkOmittedValue) ? this.contextManagement : contextManagement as BetaContextManagementResponse?,
+    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as int,
+  );
 
-  factory BetaCountMessageTokensResponse.fromJson(Map<String, dynamic> json) =>
-      BetaCountMessageTokensResponse(
-        contextManagement: json.containsKey('context_management')
-            ? json['context_management'] != null
-                ? BetaContextManagementResponse.fromJson(
-                    json['context_management'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'context_management', 'Required property is missing'),
-        inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
-      );
+  factory BetaCountMessageTokensResponse.fromJson(Map<String, dynamic> json) => BetaCountMessageTokensResponse(
+    contextManagement: json.containsKey('context_management') ? json['context_management'] != null ? BetaContextManagementResponse.fromJson(json['context_management'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'context_management', 'Required property is missing'),
+    inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'context_management': contextManagement?.toJson(),
-        'input_tokens': inputTokens,
-      };
+    'context_management': contextManagement?.toJson(),
+    'input_tokens': inputTokens,
+  };
 }

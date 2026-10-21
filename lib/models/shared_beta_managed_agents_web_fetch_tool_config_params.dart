@@ -8,183 +8,87 @@ sealed class BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokens {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokens();
-  factory BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokens.fromJson(
-      Object? json) {
-    if (json is num) {
-      return BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokensInt(
-          json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokens");
+  factory BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokens.fromJson(Object? json) {
+    if (json is num) { return BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokensInt(json.toInt()); }
+    throw FormatException("No variant matched for BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokens");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokensInt
-    extends BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokens {
+final class BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokensInt extends BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokens {
   final int value;
-  const BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokensInt(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const BetaManagedAgentsWebFetchToolConfigParamsMaxContentTokensInt(this.value);
+  @override Object? toJson() => value;
 }
 
 /// Configuration override for the web_fetch tool.
 class BetaManagedAgentsWebFetchToolConfigParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `type` wire field.
   final SdkOptional<BetaManagedAgentsWebFetchToolConfigParamsType> type_;
-
   /// Must be "web_fetch".
   final BetaManagedAgentsWebFetchToolConfigParamsName name;
-
   /// Whether this tool is enabled and available to Claude. Overrides the default_config setting.
   final SdkOptional<bool?> enabled;
-
   /// Permission policy for this tool. Controls whether tool calls are auto-approved or require confirmation.
   final SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy;
-
   /// Only fetch URLs whose host is one of these domains or a subdomain of one. Each entry is a plain hostname like "docs.example.com" (no scheme, port, or path). At most 64 entries; an empty list is rejected (omit the field instead). Cannot be combined with blocked_domains.
   final SdkOptional<List<String>> allowedDomains;
-
   /// Never fetch URLs whose host is one of these domains or a subdomain of one. Each entry is a plain hostname like "ads.example.com" (no scheme, port, or path). At most 64 entries; an empty list is rejected (omit the field instead). Cannot be combined with allowed_domains.
   final SdkOptional<List<String>> blockedDomains;
-
   /// Maximum number of tokens of fetched text content to include in context per call. Does not apply to binary content such as PDFs.
   final SdkOptional<int?> maxContentTokens;
 
-  const BetaManagedAgentsWebFetchToolConfigParams(
-      {this.type_ = const SdkOmitted(),
-      required this.name,
-      this.enabled = const SdkOmitted(),
-      this.permissionPolicy = const SdkOmitted(),
-      this.allowedDomains = const SdkOmitted(),
-      this.blockedDomains = const SdkOmitted(),
-      this.maxContentTokens = const SdkOmitted()});
+  const BetaManagedAgentsWebFetchToolConfigParams({this.type_ = const SdkOmitted(), required this.name, this.enabled = const SdkOmitted(), this.permissionPolicy = const SdkOmitted(), this.allowedDomains = const SdkOmitted(), this.blockedDomains = const SdkOmitted(), this.maxContentTokens = const SdkOmitted()});
 
-  BetaManagedAgentsWebFetchToolConfigParams Function(
-      {SdkOptional<BetaManagedAgentsWebFetchToolConfigParamsType> type_,
-      BetaManagedAgentsWebFetchToolConfigParamsName name,
-      SdkOptional<bool?> enabled,
-      SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy,
-      SdkOptional<List<String>> allowedDomains,
-      SdkOptional<List<String>> blockedDomains,
-      SdkOptional<int?> maxContentTokens}) get copyWith => _copyWith;
+  BetaManagedAgentsWebFetchToolConfigParams Function({SdkOptional<BetaManagedAgentsWebFetchToolConfigParamsType> type_, BetaManagedAgentsWebFetchToolConfigParamsName name, SdkOptional<bool?> enabled, SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy, SdkOptional<List<String>> allowedDomains, SdkOptional<List<String>> blockedDomains, SdkOptional<int?> maxContentTokens}) get copyWith => _copyWith;
 
-  BetaManagedAgentsWebFetchToolConfigParams _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? enabled = sdkOmittedValue,
-          Object? permissionPolicy = sdkOmittedValue,
-          Object? allowedDomains = sdkOmittedValue,
-          Object? blockedDomains = sdkOmittedValue,
-          Object? maxContentTokens = sdkOmittedValue}) =>
-      BetaManagedAgentsWebFetchToolConfigParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_
-                as SdkOptional<BetaManagedAgentsWebFetchToolConfigParamsType>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as BetaManagedAgentsWebFetchToolConfigParamsName,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as SdkOptional<bool?>,
-        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
-            ? this.permissionPolicy
-            : permissionPolicy
-                as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
-        allowedDomains: identical(allowedDomains, sdkOmittedValue)
-            ? this.allowedDomains
-            : allowedDomains as SdkOptional<List<String>>,
-        blockedDomains: identical(blockedDomains, sdkOmittedValue)
-            ? this.blockedDomains
-            : blockedDomains as SdkOptional<List<String>>,
-        maxContentTokens: identical(maxContentTokens, sdkOmittedValue)
-            ? this.maxContentTokens
-            : maxContentTokens as SdkOptional<int?>,
-      );
+  BetaManagedAgentsWebFetchToolConfigParams _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue, Object? allowedDomains = sdkOmittedValue, Object? blockedDomains = sdkOmittedValue, Object? maxContentTokens = sdkOmittedValue}) => BetaManagedAgentsWebFetchToolConfigParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<BetaManagedAgentsWebFetchToolConfigParamsType>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as BetaManagedAgentsWebFetchToolConfigParamsName,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
+    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
+    allowedDomains: identical(allowedDomains, sdkOmittedValue) ? this.allowedDomains : allowedDomains as SdkOptional<List<String>>,
+    blockedDomains: identical(blockedDomains, sdkOmittedValue) ? this.blockedDomains : blockedDomains as SdkOptional<List<String>>,
+    maxContentTokens: identical(maxContentTokens, sdkOmittedValue) ? this.maxContentTokens : maxContentTokens as SdkOptional<int?>,
+  );
 
-  factory BetaManagedAgentsWebFetchToolConfigParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsWebFetchToolConfigParams(
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] != null
-                ? BetaManagedAgentsWebFetchToolConfigParamsType.fromJson(
-                    json['type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        name: (json['name'] != null
-            ? BetaManagedAgentsWebFetchToolConfigParamsName.fromJson(
-                json['name'] as String)
-            : null)!,
-        enabled: json.containsKey('enabled')
-            ? SdkPresent(json['enabled'] as bool?)
-            : const SdkOmitted(),
-        permissionPolicy: json.containsKey('permission_policy')
-            ? SdkPresent(json['permission_policy'] != null
-                ? BetaManagedAgentsPermissionPolicy.fromJson(
-                    json['permission_policy'])
-                : null)
-            : const SdkOmitted(),
-        allowedDomains: json['allowed_domains'] != null
-            ? SdkPresent(((json['allowed_domains'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        blockedDomains: json['blocked_domains'] != null
-            ? SdkPresent(((json['blocked_domains'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        maxContentTokens: json.containsKey('max_content_tokens')
-            ? SdkPresent((json['max_content_tokens'] as num?)?.toInt())
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsWebFetchToolConfigParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsWebFetchToolConfigParams(
+    type_: json['type'] != null ? SdkPresent((json['type'] != null ? BetaManagedAgentsWebFetchToolConfigParamsType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
+    name: (json['name'] != null ? BetaManagedAgentsWebFetchToolConfigParamsName.fromJson(json['name'] as String) : null)!,
+    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
+    permissionPolicy: json.containsKey('permission_policy') ? SdkPresent(json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null) : const SdkOmitted(),
+    allowedDomains: json['allowed_domains'] != null ? SdkPresent(((json['allowed_domains'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    blockedDomains: json['blocked_domains'] != null ? SdkPresent(((json['blocked_domains'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    maxContentTokens: json.containsKey('max_content_tokens') ? SdkPresent((json['max_content_tokens'] as num?)?.toInt()) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (type_) {
-          SdkPresent<BetaManagedAgentsWebFetchToolConfigParamsType>(
-            value: final value
-          ) =>
-            {
-              'type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name.toJson(),
-        ...switch (enabled) {
-          SdkPresent<bool?>(value: final value) => {
-              'enabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (permissionPolicy) {
-          SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) =>
-            {
-              'permission_policy': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowedDomains) {
-          SdkPresent<List<String>>(value: final value) => {
-              'allowed_domains': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (blockedDomains) {
-          SdkPresent<List<String>>(value: final value) => {
-              'blocked_domains': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maxContentTokens) {
-          SdkPresent<int?>(value: final value) => {
-              'max_content_tokens': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (type_) {
+      SdkPresent<BetaManagedAgentsWebFetchToolConfigParamsType>(value: final value) => {'type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'name': name.toJson(),
+    ...switch (enabled) {
+      SdkPresent<bool?>(value: final value) => {'enabled': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (permissionPolicy) {
+      SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) => {'permission_policy': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowedDomains) {
+      SdkPresent<List<String>>(value: final value) => {'allowed_domains': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (blockedDomains) {
+      SdkPresent<List<String>>(value: final value) => {'blocked_domains': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (maxContentTokens) {
+      SdkPresent<int?>(value: final value) => {'max_content_tokens': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

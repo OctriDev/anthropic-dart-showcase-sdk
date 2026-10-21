@@ -8,44 +8,27 @@ part of 'credentials_beta_true.dart';
 class BetaManagedAgentsTokenEndpointAuthBasicParam {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTokenEndpointAuthBasicParamType type_;
-
   /// OAuth client secret.
   final String clientSecret;
 
-  const BetaManagedAgentsTokenEndpointAuthBasicParam(
-      {required this.type_, required this.clientSecret});
+  const BetaManagedAgentsTokenEndpointAuthBasicParam({required this.type_, required this.clientSecret});
 
-  BetaManagedAgentsTokenEndpointAuthBasicParam Function(
-      {BetaManagedAgentsTokenEndpointAuthBasicParamType type_,
-      String clientSecret}) get copyWith => _copyWith;
+  BetaManagedAgentsTokenEndpointAuthBasicParam Function({BetaManagedAgentsTokenEndpointAuthBasicParamType type_, String clientSecret}) get copyWith => _copyWith;
 
-  BetaManagedAgentsTokenEndpointAuthBasicParam _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? clientSecret = sdkOmittedValue}) =>
-      BetaManagedAgentsTokenEndpointAuthBasicParam(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsTokenEndpointAuthBasicParamType,
-        clientSecret: identical(clientSecret, sdkOmittedValue)
-            ? this.clientSecret
-            : clientSecret as String,
-      );
+  BetaManagedAgentsTokenEndpointAuthBasicParam _copyWith({Object? type_ = sdkOmittedValue, Object? clientSecret = sdkOmittedValue}) => BetaManagedAgentsTokenEndpointAuthBasicParam(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTokenEndpointAuthBasicParamType,
+    clientSecret: identical(clientSecret, sdkOmittedValue) ? this.clientSecret : clientSecret as String,
+  );
 
-  factory BetaManagedAgentsTokenEndpointAuthBasicParam.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsTokenEndpointAuthBasicParam(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsTokenEndpointAuthBasicParamType.fromJson(
-                json['type'] as String)
-            : null)!,
-        clientSecret: (json['client_secret'] as String?)!,
-      );
+  factory BetaManagedAgentsTokenEndpointAuthBasicParam.fromJson(Map<String, dynamic> json) => BetaManagedAgentsTokenEndpointAuthBasicParam(
+    type_: (json['type'] != null ? BetaManagedAgentsTokenEndpointAuthBasicParamType.fromJson(json['type'] as String) : null)!,
+    clientSecret: (json['client_secret'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'client_secret': clientSecret,
-      };
+    'type': type_.toJson(),
+    'client_secret': clientSecret,
+  };
 }

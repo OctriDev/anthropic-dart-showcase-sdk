@@ -23,9 +23,7 @@ import '../types.dart';
 Future<BetaListEffectiveSpendLimitsResponse>
     retrieveBetaOrganizationsSpendLimitsEffective(ClientConfig config,
         {SdkOptional<List<String>?> userIds = const SdkOmitted(),
-        SdkOptional<
-                List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>
-            period = const SdkOmitted(),
+        SdkOptional<List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?> period = const SdkOmitted(),
         SdkOptional<int> limit = const SdkOmitted(),
         SdkOptional<String?> page = const SdkOmitted(),
         SdkOptional<String> anthropicVersion = const SdkOmitted(),
@@ -36,8 +34,7 @@ Future<BetaListEffectiveSpendLimitsResponse>
       validateItems('user_ids[]', userIdsValue, max: 100);
     }
   }
-  if (period is SdkPresent<
-      List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>) {
+  if (period is SdkPresent<List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>) {
     final periodValue = period.value;
     if (periodValue != null) {
       validateItems('period[]', periodValue, max: 3);
@@ -51,58 +48,21 @@ Future<BetaListEffectiveSpendLimitsResponse>
           'GET', '/v1/organizations/spend_limits/effective?beta=true',
           config: config,
           query: {
-            'user_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(userIds),
-                style: 'form', explode: true),
-            'period[]': SdkQueryValue(SdkUtils.unwrapOptional(period),
-                style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'user_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(userIds), style: 'form', explode: true),
+            'period[]': SdkQueryValue(SdkUtils.unwrapOptional(period), style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders(
-              {'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
           operationId: 'retrieveBetaOrganizationsSpendLimitsEffective',
-          fromJsonRaw: (value) => BetaListEffectiveSpendLimitsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaListEffectiveSpendLimitsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
+
 
 /// List each member's effective spend limit and period-to-date spend. Returns one row per (member, period) the member resolves a spend limit for, with the `source` scope the spend limit was inherited from. Paginates by member, so a member's periods never split across pages.
 ///
@@ -117,77 +77,23 @@ Future<BetaListEffectiveSpendLimitsResponse>
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Stream<BetaSpendSummary> retrieveBetaOrganizationsSpendLimitsEffectivePaginated(
-    ClientConfig config,
-    {List<String>? userIds,
-    List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>? period,
-    int? limit,
-    String? page,
-    String? anthropicVersion,
-    RequestOptions? requestOptions}) async* {
+Stream<BetaSpendSummary> retrieveBetaOrganizationsSpendLimitsEffectivePaginated(ClientConfig config, {List<String>? userIds, List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>? period, int? limit, String? page, String? anthropicVersion, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await retrieveBetaOrganizationsSpendLimitsEffective(config,
-        userIds: userIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(userIds),
-        period: period == null
-            ? const SdkOmitted<
-                List<
-                    RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>()
-            : SdkPresent<
-                    List<
-                        RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>(
-                period),
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        requestOptions: requestOptions);
+    final sdkPage = await retrieveBetaOrganizationsSpendLimitsEffective(config, userIds: userIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(userIds), period: period == null ? const SdkOmitted<List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>() : SdkPresent<List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>(period), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) {
-      yield sdkItem;
-    }
+    for (final sdkItem in sdkItems) { yield sdkItem; }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaListEffectiveSpendLimitsResponse, BetaSpendSummary>>
-    retrieveBetaOrganizationsSpendLimitsEffectivePages(ClientConfig config,
-        {List<String>? userIds,
-        List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>? period,
-        int? limit,
-        String? page,
-        String? anthropicVersion,
-        RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaListEffectiveSpendLimitsResponse, BetaSpendSummary>> retrieveBetaOrganizationsSpendLimitsEffectivePages(ClientConfig config, {List<String>? userIds, List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>? period, int? limit, String? page, String? anthropicVersion, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await retrieveBetaOrganizationsSpendLimitsEffective(config,
-        userIds: userIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(userIds),
-        period: period == null
-            ? const SdkOmitted<
-                List<
-                    RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>()
-            : SdkPresent<
-                    List<
-                        RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>(
-                period),
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        requestOptions: requestOptions);
+    final sdkPage = await retrieveBetaOrganizationsSpendLimitsEffective(config, userIds: userIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(userIds), period: period == null ? const SdkOmitted<List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>() : SdkPresent<List<RetrieveBetaOrganizationsSpendLimitsEffectivePeriodItem>?>(period), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;

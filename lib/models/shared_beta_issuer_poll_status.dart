@@ -9,21 +9,16 @@ sealed class BetaIssuerPollStatusLastFetchedAt {
   static const String constructionSurface = 'named';
   const BetaIssuerPollStatusLastFetchedAt();
   factory BetaIssuerPollStatusLastFetchedAt.fromJson(Object? json) {
-    if (json is String) {
-      return BetaIssuerPollStatusLastFetchedAtString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaIssuerPollStatusLastFetchedAt");
+    if (json is String) { return BetaIssuerPollStatusLastFetchedAtString(json); }
+    throw FormatException("No variant matched for BetaIssuerPollStatusLastFetchedAt");
   }
   Object? toJson();
 }
 
-final class BetaIssuerPollStatusLastFetchedAtString
-    extends BetaIssuerPollStatusLastFetchedAt {
+final class BetaIssuerPollStatusLastFetchedAtString extends BetaIssuerPollStatusLastFetchedAt {
   final String value;
   const BetaIssuerPollStatusLastFetchedAtString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 sealed class BetaIssuerPollStatusNextPollAt {
@@ -31,79 +26,48 @@ sealed class BetaIssuerPollStatusNextPollAt {
   static const String constructionSurface = 'named';
   const BetaIssuerPollStatusNextPollAt();
   factory BetaIssuerPollStatusNextPollAt.fromJson(Object? json) {
-    if (json is String) {
-      return BetaIssuerPollStatusNextPollAtString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaIssuerPollStatusNextPollAt");
+    if (json is String) { return BetaIssuerPollStatusNextPollAtString(json); }
+    throw FormatException("No variant matched for BetaIssuerPollStatusNextPollAt");
   }
   Object? toJson();
 }
 
-final class BetaIssuerPollStatusNextPollAtString
-    extends BetaIssuerPollStatusNextPollAt {
+final class BetaIssuerPollStatusNextPollAtString extends BetaIssuerPollStatusNextPollAt {
   final String value;
   const BetaIssuerPollStatusNextPollAtString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Status of automatic JWKS polling for a federation issuer. Anthropic periodically fetches the issuer's signing keys in the background. These fields summarize the most recent fetches so the health of the JWKS endpoint can be monitored.
 class BetaIssuerPollStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Consecutive fetch failures since the last success.
   final int consecutiveFailures;
-
   /// When the last successful fetch completed.
   final String? lastFetchedAt;
-
   /// When the next fetch is scheduled. Null if paused.
   final String? nextPollAt;
 
-  const BetaIssuerPollStatus(
-      {required this.consecutiveFailures,
-      required this.lastFetchedAt,
-      required this.nextPollAt});
+  const BetaIssuerPollStatus({required this.consecutiveFailures, required this.lastFetchedAt, required this.nextPollAt});
 
-  BetaIssuerPollStatus Function(
-      {int consecutiveFailures,
-      String? lastFetchedAt,
-      String? nextPollAt}) get copyWith => _copyWith;
+  BetaIssuerPollStatus Function({int consecutiveFailures, String? lastFetchedAt, String? nextPollAt}) get copyWith => _copyWith;
 
-  BetaIssuerPollStatus _copyWith(
-          {Object? consecutiveFailures = sdkOmittedValue,
-          Object? lastFetchedAt = sdkOmittedValue,
-          Object? nextPollAt = sdkOmittedValue}) =>
-      BetaIssuerPollStatus(
-        consecutiveFailures: identical(consecutiveFailures, sdkOmittedValue)
-            ? this.consecutiveFailures
-            : consecutiveFailures as int,
-        lastFetchedAt: identical(lastFetchedAt, sdkOmittedValue)
-            ? this.lastFetchedAt
-            : lastFetchedAt as String?,
-        nextPollAt: identical(nextPollAt, sdkOmittedValue)
-            ? this.nextPollAt
-            : nextPollAt as String?,
-      );
+  BetaIssuerPollStatus _copyWith({Object? consecutiveFailures = sdkOmittedValue, Object? lastFetchedAt = sdkOmittedValue, Object? nextPollAt = sdkOmittedValue}) => BetaIssuerPollStatus(
+    consecutiveFailures: identical(consecutiveFailures, sdkOmittedValue) ? this.consecutiveFailures : consecutiveFailures as int,
+    lastFetchedAt: identical(lastFetchedAt, sdkOmittedValue) ? this.lastFetchedAt : lastFetchedAt as String?,
+    nextPollAt: identical(nextPollAt, sdkOmittedValue) ? this.nextPollAt : nextPollAt as String?,
+  );
 
-  factory BetaIssuerPollStatus.fromJson(Map<String, dynamic> json) =>
-      BetaIssuerPollStatus(
-        consecutiveFailures: ((json['consecutive_failures'] as num?)?.toInt())!,
-        lastFetchedAt: json.containsKey('last_fetched_at')
-            ? json['last_fetched_at'] as String?
-            : throw ArgumentError.value(
-                null, 'last_fetched_at', 'Required property is missing'),
-        nextPollAt: json.containsKey('next_poll_at')
-            ? json['next_poll_at'] as String?
-            : throw ArgumentError.value(
-                null, 'next_poll_at', 'Required property is missing'),
-      );
+  factory BetaIssuerPollStatus.fromJson(Map<String, dynamic> json) => BetaIssuerPollStatus(
+    consecutiveFailures: ((json['consecutive_failures'] as num?)?.toInt())!,
+    lastFetchedAt: json.containsKey('last_fetched_at') ? json['last_fetched_at'] as String? : throw ArgumentError.value(null, 'last_fetched_at', 'Required property is missing'),
+    nextPollAt: json.containsKey('next_poll_at') ? json['next_poll_at'] as String? : throw ArgumentError.value(null, 'next_poll_at', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'consecutive_failures': consecutiveFailures,
-        'last_fetched_at': lastFetchedAt,
-        'next_poll_at': nextPollAt,
-      };
+    'consecutive_failures': consecutiveFailures,
+    'last_fetched_at': lastFetchedAt,
+    'next_poll_at': nextPollAt,
+  };
 }

@@ -8,35 +8,25 @@ part of 'shared_request.dart';
 class RequestCitationsConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
 
   const RequestCitationsConfig({this.enabled = const SdkOmitted()});
 
-  RequestCitationsConfig Function({SdkOptional<bool> enabled}) get copyWith =>
-      _copyWith;
+  RequestCitationsConfig Function({SdkOptional<bool> enabled}) get copyWith => _copyWith;
 
-  RequestCitationsConfig _copyWith({Object? enabled = sdkOmittedValue}) =>
-      RequestCitationsConfig(
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as SdkOptional<bool>,
-      );
+  RequestCitationsConfig _copyWith({Object? enabled = sdkOmittedValue}) => RequestCitationsConfig(
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
+  );
 
-  factory RequestCitationsConfig.fromJson(Map<String, dynamic> json) =>
-      RequestCitationsConfig(
-        enabled: json['enabled'] != null
-            ? SdkPresent((json['enabled'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory RequestCitationsConfig.fromJson(Map<String, dynamic> json) => RequestCitationsConfig(
+    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (enabled) {
-          SdkPresent<bool>(value: final value) => {
-              'enabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (enabled) {
+      SdkPresent<bool>(value: final value) => {'enabled': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

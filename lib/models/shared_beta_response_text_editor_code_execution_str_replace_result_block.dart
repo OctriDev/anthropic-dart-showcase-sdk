@@ -8,106 +8,47 @@ part of 'shared_beta_response_text.dart';
 class BetaResponseTextEditorCodeExecutionStrReplaceResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `lines` wire field.
   final List<String>? lines;
-
   /// Required `integer` value serialized in the `new_lines` wire field.
   final int? newLines;
-
   /// Required `integer` value serialized in the `new_start` wire field.
   final int? newStart;
-
   /// Required `integer` value serialized in the `old_lines` wire field.
   final int? oldLines;
-
   /// Required `integer` value serialized in the `old_start` wire field.
   final int? oldStart;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType type_;
 
-  const BetaResponseTextEditorCodeExecutionStrReplaceResultBlock(
-      {required this.lines,
-      required this.newLines,
-      required this.newStart,
-      required this.oldLines,
-      required this.oldStart,
-      required this.type_});
+  const BetaResponseTextEditorCodeExecutionStrReplaceResultBlock({required this.lines, required this.newLines, required this.newStart, required this.oldLines, required this.oldStart, required this.type_});
 
-  BetaResponseTextEditorCodeExecutionStrReplaceResultBlock Function(
-          {List<String>? lines,
-          int? newLines,
-          int? newStart,
-          int? oldLines,
-          int? oldStart,
-          BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType type_})
-      get copyWith => _copyWith;
+  BetaResponseTextEditorCodeExecutionStrReplaceResultBlock Function({List<String>? lines, int? newLines, int? newStart, int? oldLines, int? oldStart, BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseTextEditorCodeExecutionStrReplaceResultBlock _copyWith(
-          {Object? lines = sdkOmittedValue,
-          Object? newLines = sdkOmittedValue,
-          Object? newStart = sdkOmittedValue,
-          Object? oldLines = sdkOmittedValue,
-          Object? oldStart = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaResponseTextEditorCodeExecutionStrReplaceResultBlock(
-        lines: identical(lines, sdkOmittedValue)
-            ? this.lines
-            : lines as List<String>?,
-        newLines: identical(newLines, sdkOmittedValue)
-            ? this.newLines
-            : newLines as int?,
-        newStart: identical(newStart, sdkOmittedValue)
-            ? this.newStart
-            : newStart as int?,
-        oldLines: identical(oldLines, sdkOmittedValue)
-            ? this.oldLines
-            : oldLines as int?,
-        oldStart: identical(oldStart, sdkOmittedValue)
-            ? this.oldStart
-            : oldStart as int?,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_
-                as BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType,
-      );
+  BetaResponseTextEditorCodeExecutionStrReplaceResultBlock _copyWith({Object? lines = sdkOmittedValue, Object? newLines = sdkOmittedValue, Object? newStart = sdkOmittedValue, Object? oldLines = sdkOmittedValue, Object? oldStart = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseTextEditorCodeExecutionStrReplaceResultBlock(
+    lines: identical(lines, sdkOmittedValue) ? this.lines : lines as List<String>?,
+    newLines: identical(newLines, sdkOmittedValue) ? this.newLines : newLines as int?,
+    newStart: identical(newStart, sdkOmittedValue) ? this.newStart : newStart as int?,
+    oldLines: identical(oldLines, sdkOmittedValue) ? this.oldLines : oldLines as int?,
+    oldStart: identical(oldStart, sdkOmittedValue) ? this.oldStart : oldStart as int?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType,
+  );
 
-  factory BetaResponseTextEditorCodeExecutionStrReplaceResultBlock.fromJson(
-          Map<String, dynamic> json) =>
-      BetaResponseTextEditorCodeExecutionStrReplaceResultBlock(
-        lines: json.containsKey('lines')
-            ? (json['lines'] as List?)?.map((e) => e as String).toList()
-            : throw ArgumentError.value(
-                null, 'lines', 'Required property is missing'),
-        newLines: json.containsKey('new_lines')
-            ? (json['new_lines'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'new_lines', 'Required property is missing'),
-        newStart: json.containsKey('new_start')
-            ? (json['new_start'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'new_start', 'Required property is missing'),
-        oldLines: json.containsKey('old_lines')
-            ? (json['old_lines'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'old_lines', 'Required property is missing'),
-        oldStart: json.containsKey('old_start')
-            ? (json['old_start'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'old_start', 'Required property is missing'),
-        type_: (json['type'] != null
-            ? BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType
-                .fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaResponseTextEditorCodeExecutionStrReplaceResultBlock.fromJson(Map<String, dynamic> json) => BetaResponseTextEditorCodeExecutionStrReplaceResultBlock(
+    lines: json.containsKey('lines') ? (json['lines'] as List?)?.map((e) => e as String).toList() : throw ArgumentError.value(null, 'lines', 'Required property is missing'),
+    newLines: json.containsKey('new_lines') ? (json['new_lines'] as num?)?.toInt() : throw ArgumentError.value(null, 'new_lines', 'Required property is missing'),
+    newStart: json.containsKey('new_start') ? (json['new_start'] as num?)?.toInt() : throw ArgumentError.value(null, 'new_start', 'Required property is missing'),
+    oldLines: json.containsKey('old_lines') ? (json['old_lines'] as num?)?.toInt() : throw ArgumentError.value(null, 'old_lines', 'Required property is missing'),
+    oldStart: json.containsKey('old_start') ? (json['old_start'] as num?)?.toInt() : throw ArgumentError.value(null, 'old_start', 'Required property is missing'),
+    type_: (json['type'] != null ? BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'lines': lines,
-        'new_lines': newLines,
-        'new_start': newStart,
-        'old_lines': oldLines,
-        'old_start': oldStart,
-        'type': type_.toJson(),
-      };
+    'lines': lines,
+    'new_lines': newLines,
+    'new_start': newStart,
+    'old_lines': oldLines,
+    'old_start': oldStart,
+    'type': type_.toJson(),
+  };
 }

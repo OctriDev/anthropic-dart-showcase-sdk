@@ -8,30 +8,22 @@ part of 'beta_message.dart';
 class BetaMessageStopEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaMessageStopEventType type_;
 
   const BetaMessageStopEvent({required this.type_});
 
-  BetaMessageStopEvent Function({BetaMessageStopEventType type_})
-      get copyWith => _copyWith;
+  BetaMessageStopEvent Function({BetaMessageStopEventType type_}) get copyWith => _copyWith;
 
-  BetaMessageStopEvent _copyWith({Object? type_ = sdkOmittedValue}) =>
-      BetaMessageStopEvent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaMessageStopEventType,
-      );
+  BetaMessageStopEvent _copyWith({Object? type_ = sdkOmittedValue}) => BetaMessageStopEvent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaMessageStopEventType,
+  );
 
-  factory BetaMessageStopEvent.fromJson(Map<String, dynamic> json) =>
-      BetaMessageStopEvent(
-        type_: (json['type'] != null
-            ? BetaMessageStopEventType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaMessageStopEvent.fromJson(Map<String, dynamic> json) => BetaMessageStopEvent(
+    type_: (json['type'] != null ? BetaMessageStopEventType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

@@ -8,48 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMultiagentCoordinatorParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMultiagentCoordinatorParamsType type_;
-
   /// Agents the coordinator may spawn as session threads. 1–20 entries. Each entry is an agent ID string, a versioned `{"type":"agent","id","version"}` reference, or `{"type":"self"}` to allow recursive self-invocation. Entries must reference distinct agents (after resolving `self` and string forms); at most one `self`. Referenced agents must exist, must not be archived, and must not themselves have `multiagent` set (depth limit 1).
   final List<BetaManagedAgentsMultiagentRosterEntryParams> agents;
 
-  const BetaManagedAgentsMultiagentCoordinatorParams(
-      {required this.type_, required this.agents});
+  const BetaManagedAgentsMultiagentCoordinatorParams({required this.type_, required this.agents});
 
-  BetaManagedAgentsMultiagentCoordinatorParams Function(
-          {BetaManagedAgentsMultiagentCoordinatorParamsType type_,
-          List<BetaManagedAgentsMultiagentRosterEntryParams> agents})
-      get copyWith => _copyWith;
+  BetaManagedAgentsMultiagentCoordinatorParams Function({BetaManagedAgentsMultiagentCoordinatorParamsType type_, List<BetaManagedAgentsMultiagentRosterEntryParams> agents}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMultiagentCoordinatorParams _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? agents = sdkOmittedValue}) =>
-      BetaManagedAgentsMultiagentCoordinatorParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsMultiagentCoordinatorParamsType,
-        agents: identical(agents, sdkOmittedValue)
-            ? this.agents
-            : agents as List<BetaManagedAgentsMultiagentRosterEntryParams>,
-      );
+  BetaManagedAgentsMultiagentCoordinatorParams _copyWith({Object? type_ = sdkOmittedValue, Object? agents = sdkOmittedValue}) => BetaManagedAgentsMultiagentCoordinatorParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMultiagentCoordinatorParamsType,
+    agents: identical(agents, sdkOmittedValue) ? this.agents : agents as List<BetaManagedAgentsMultiagentRosterEntryParams>,
+  );
 
-  factory BetaManagedAgentsMultiagentCoordinatorParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMultiagentCoordinatorParams(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMultiagentCoordinatorParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-        agents: ((json['agents'] as List?)
-            ?.map(
-                (e) => BetaManagedAgentsMultiagentRosterEntryParams.fromJson(e))
-            .toList())!,
-      );
+  factory BetaManagedAgentsMultiagentCoordinatorParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMultiagentCoordinatorParams(
+    type_: (json['type'] != null ? BetaManagedAgentsMultiagentCoordinatorParamsType.fromJson(json['type'] as String) : null)!,
+    agents: ((json['agents'] as List?)?.map((e) => BetaManagedAgentsMultiagentRosterEntryParams.fromJson(e)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'agents': agents.map((item) => item.toJson()).toList(),
-      };
+    'type': type_.toJson(),
+    'agents': agents.map((item) => item.toJson()).toList(),
+  };
 }

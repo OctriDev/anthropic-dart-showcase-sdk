@@ -8,44 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsEnvironmentNotFoundRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsEnvironmentNotFoundRunErrorType type_;
-
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsEnvironmentNotFoundRunError(
-      {required this.type_, required this.message});
+  const BetaManagedAgentsEnvironmentNotFoundRunError({required this.type_, required this.message});
 
-  BetaManagedAgentsEnvironmentNotFoundRunError Function(
-      {BetaManagedAgentsEnvironmentNotFoundRunErrorType type_,
-      String message}) get copyWith => _copyWith;
+  BetaManagedAgentsEnvironmentNotFoundRunError Function({BetaManagedAgentsEnvironmentNotFoundRunErrorType type_, String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsEnvironmentNotFoundRunError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      BetaManagedAgentsEnvironmentNotFoundRunError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsEnvironmentNotFoundRunErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-      );
+  BetaManagedAgentsEnvironmentNotFoundRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsEnvironmentNotFoundRunError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsEnvironmentNotFoundRunErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+  );
 
-  factory BetaManagedAgentsEnvironmentNotFoundRunError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsEnvironmentNotFoundRunError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsEnvironmentNotFoundRunErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-      );
+  factory BetaManagedAgentsEnvironmentNotFoundRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsEnvironmentNotFoundRunError(
+    type_: (json['type'] != null ? BetaManagedAgentsEnvironmentNotFoundRunErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-      };
+    'type': type_.toJson(),
+    'message': message,
+  };
 }

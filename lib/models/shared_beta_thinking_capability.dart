@@ -8,40 +8,27 @@ part of 'shared_beta_thinking.dart';
 class BetaThinkingCapability {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether this capability is supported by the model.
   final bool supported;
-
   /// Supported thinking type configurations.
   final BetaThinkingTypes types;
 
   const BetaThinkingCapability({required this.supported, required this.types});
 
-  BetaThinkingCapability Function({bool supported, BetaThinkingTypes types})
-      get copyWith => _copyWith;
+  BetaThinkingCapability Function({bool supported, BetaThinkingTypes types}) get copyWith => _copyWith;
 
-  BetaThinkingCapability _copyWith(
-          {Object? supported = sdkOmittedValue,
-          Object? types = sdkOmittedValue}) =>
-      BetaThinkingCapability(
-        supported: identical(supported, sdkOmittedValue)
-            ? this.supported
-            : supported as bool,
-        types: identical(types, sdkOmittedValue)
-            ? this.types
-            : types as BetaThinkingTypes,
-      );
+  BetaThinkingCapability _copyWith({Object? supported = sdkOmittedValue, Object? types = sdkOmittedValue}) => BetaThinkingCapability(
+    supported: identical(supported, sdkOmittedValue) ? this.supported : supported as bool,
+    types: identical(types, sdkOmittedValue) ? this.types : types as BetaThinkingTypes,
+  );
 
-  factory BetaThinkingCapability.fromJson(Map<String, dynamic> json) =>
-      BetaThinkingCapability(
-        supported: (json['supported'] as bool?)!,
-        types: (json['types'] != null
-            ? BetaThinkingTypes.fromJson(json['types'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory BetaThinkingCapability.fromJson(Map<String, dynamic> json) => BetaThinkingCapability(
+    supported: (json['supported'] as bool?)!,
+    types: (json['types'] != null ? BetaThinkingTypes.fromJson(json['types'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'supported': supported,
-        'types': types.toJson(),
-      };
+    'supported': supported,
+    'types': types.toJson(),
+  };
 }

@@ -8,83 +8,40 @@ part of 'shared_beta_response_web.dart';
 class BetaResponseWebFetchToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional API value serialized in the `caller` wire field.
   final SdkOptional<BetaResponseWebFetchToolResultBlockCaller> caller;
-
   /// Required API value serialized in the `content` wire field.
   final BetaResponseWebFetchToolResultBlockContent content;
-
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseWebFetchToolResultBlockType type_;
 
-  const BetaResponseWebFetchToolResultBlock(
-      {this.caller = const SdkOmitted(),
-      required this.content,
-      required this.toolUseId,
-      required this.type_});
+  const BetaResponseWebFetchToolResultBlock({this.caller = const SdkOmitted(), required this.content, required this.toolUseId, required this.type_});
 
-  BetaResponseWebFetchToolResultBlock Function(
-      {SdkOptional<BetaResponseWebFetchToolResultBlockCaller> caller,
-      BetaResponseWebFetchToolResultBlockContent content,
-      String toolUseId,
-      BetaResponseWebFetchToolResultBlockType type_}) get copyWith => _copyWith;
+  BetaResponseWebFetchToolResultBlock Function({SdkOptional<BetaResponseWebFetchToolResultBlockCaller> caller, BetaResponseWebFetchToolResultBlockContent content, String toolUseId, BetaResponseWebFetchToolResultBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseWebFetchToolResultBlock _copyWith(
-          {Object? caller = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? toolUseId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaResponseWebFetchToolResultBlock(
-        caller: identical(caller, sdkOmittedValue)
-            ? this.caller
-            : caller as SdkOptional<BetaResponseWebFetchToolResultBlockCaller>,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as BetaResponseWebFetchToolResultBlockContent,
-        toolUseId: identical(toolUseId, sdkOmittedValue)
-            ? this.toolUseId
-            : toolUseId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaResponseWebFetchToolResultBlockType,
-      );
+  BetaResponseWebFetchToolResultBlock _copyWith({Object? caller = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseWebFetchToolResultBlock(
+    caller: identical(caller, sdkOmittedValue) ? this.caller : caller as SdkOptional<BetaResponseWebFetchToolResultBlockCaller>,
+    content: identical(content, sdkOmittedValue) ? this.content : content as BetaResponseWebFetchToolResultBlockContent,
+    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseWebFetchToolResultBlockType,
+  );
 
-  factory BetaResponseWebFetchToolResultBlock.fromJson(
-          Map<String, dynamic> json) =>
-      BetaResponseWebFetchToolResultBlock(
-        caller: json['caller'] != null
-            ? SdkPresent((json['caller'] != null
-                ? BetaResponseWebFetchToolResultBlockCaller.fromJson(
-                    json['caller'])
-                : null)!)
-            : const SdkOmitted(),
-        content: (json['content'] != null
-            ? BetaResponseWebFetchToolResultBlockContent.fromJson(
-                json['content'])
-            : null)!,
-        toolUseId: (json['tool_use_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaResponseWebFetchToolResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaResponseWebFetchToolResultBlock.fromJson(Map<String, dynamic> json) => BetaResponseWebFetchToolResultBlock(
+    caller: json['caller'] != null ? SdkPresent((json['caller'] != null ? BetaResponseWebFetchToolResultBlockCaller.fromJson(json['caller']) : null)!) : const SdkOmitted(),
+    content: (json['content'] != null ? BetaResponseWebFetchToolResultBlockContent.fromJson(json['content']) : null)!,
+    toolUseId: (json['tool_use_id'] as String?)!,
+    type_: (json['type'] != null ? BetaResponseWebFetchToolResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (caller) {
-          SdkPresent<BetaResponseWebFetchToolResultBlockCaller>(
-            value: final value
-          ) =>
-            {
-              'caller': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content': content.toJson(),
-        'tool_use_id': toolUseId,
-        'type': type_.toJson(),
-      };
+    ...switch (caller) {
+      SdkPresent<BetaResponseWebFetchToolResultBlockCaller>(value: final value) => {'caller': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'content': content.toJson(),
+    'tool_use_id': toolUseId,
+    'type': type_.toJson(),
+  };
 }

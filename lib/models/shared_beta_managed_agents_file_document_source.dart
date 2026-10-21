@@ -8,43 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsFileDocumentSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsFileDocumentSourceType type_;
-
   /// ID of a previously uploaded file.
   final String fileId;
 
-  const BetaManagedAgentsFileDocumentSource(
-      {required this.type_, required this.fileId});
+  const BetaManagedAgentsFileDocumentSource({required this.type_, required this.fileId});
 
-  BetaManagedAgentsFileDocumentSource Function(
-      {BetaManagedAgentsFileDocumentSourceType type_,
-      String fileId}) get copyWith => _copyWith;
+  BetaManagedAgentsFileDocumentSource Function({BetaManagedAgentsFileDocumentSourceType type_, String fileId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsFileDocumentSource _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? fileId = sdkOmittedValue}) =>
-      BetaManagedAgentsFileDocumentSource(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsFileDocumentSourceType,
-        fileId:
-            identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
-      );
+  BetaManagedAgentsFileDocumentSource _copyWith({Object? type_ = sdkOmittedValue, Object? fileId = sdkOmittedValue}) => BetaManagedAgentsFileDocumentSource(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsFileDocumentSourceType,
+    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
+  );
 
-  factory BetaManagedAgentsFileDocumentSource.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsFileDocumentSource(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsFileDocumentSourceType.fromJson(
-                json['type'] as String)
-            : null)!,
-        fileId: (json['file_id'] as String?)!,
-      );
+  factory BetaManagedAgentsFileDocumentSource.fromJson(Map<String, dynamic> json) => BetaManagedAgentsFileDocumentSource(
+    type_: (json['type'] != null ? BetaManagedAgentsFileDocumentSourceType.fromJson(json['type'] as String) : null)!,
+    fileId: (json['file_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'file_id': fileId,
-      };
+    'type': type_.toJson(),
+    'file_id': fileId,
+  };
 }

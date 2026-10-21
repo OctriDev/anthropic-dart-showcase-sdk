@@ -10,65 +10,32 @@ sealed class BetaManagedAgentsPermissionPolicy {
   const BetaManagedAgentsPermissionPolicy();
   factory BetaManagedAgentsPermissionPolicy.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsAlwaysAllowPolicy.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAllowPolicy(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAlwaysAskPolicy.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAskPolicy(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAlwaysAllowPolicy.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAllowPolicy(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAlwaysAskPolicy.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAskPolicy(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAllowPolicy(
-          BetaManagedAgentsAlwaysAllowPolicy.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAskPolicy(
-          BetaManagedAgentsAlwaysAskPolicy.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"always_allow", "always_ask"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsPermissionPolicy(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsPermissionPolicy");
+    try { return BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAllowPolicy(BetaManagedAgentsAlwaysAllowPolicy.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAskPolicy(BetaManagedAgentsAlwaysAskPolicy.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"always_allow", "always_ask"}.contains(json["type"])) { return UnknownBetaManagedAgentsPermissionPolicy(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsPermissionPolicy");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAllowPolicy
-    extends BetaManagedAgentsPermissionPolicy {
+final class BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAllowPolicy extends BetaManagedAgentsPermissionPolicy {
   final BetaManagedAgentsAlwaysAllowPolicy value;
-  const BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAllowPolicy(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAllowPolicy(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAskPolicy
-    extends BetaManagedAgentsPermissionPolicy {
+final class BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAskPolicy extends BetaManagedAgentsPermissionPolicy {
   final BetaManagedAgentsAlwaysAskPolicy value;
-  const BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAskPolicy(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsPermissionPolicyBetaManagedAgentsAlwaysAskPolicy(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsPermissionPolicy] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsPermissionPolicy
-    extends BetaManagedAgentsPermissionPolicy {
+final class UnknownBetaManagedAgentsPermissionPolicy extends BetaManagedAgentsPermissionPolicy {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsPermissionPolicy(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

@@ -6,6 +6,7 @@ part of 'shared.dart';
 // shared domain models
 /// Specifies who can invoke a tool. Values: direct: The model can call this tool directly. code_execution_20250825: The tool can be called from the code execution environment (v1). code_execution_20260120: The tool can be called from the code execution environment (v2 with persistence). code_execution_20260521: The tool can be called from the code execution environment (v2 with persistence).
 final class AllowedCaller {
+
   final String value;
 
   const AllowedCaller._(this.value);
@@ -13,22 +14,16 @@ final class AllowedCaller {
   factory AllowedCaller.fromJson(String value) => AllowedCaller._(value);
 
   static const direct = AllowedCaller._('direct');
-  static const codeExecution20250825 =
-      AllowedCaller._('code_execution_20250825');
-  static const codeExecution20260120 =
-      AllowedCaller._('code_execution_20260120');
-  static const codeExecution20260521 =
-      AllowedCaller._('code_execution_20260521');
+  static const codeExecution20250825 = AllowedCaller._('code_execution_20250825');
+  static const codeExecution20260120 = AllowedCaller._('code_execution_20260120');
+  static const codeExecution20260521 = AllowedCaller._('code_execution_20260521');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is AllowedCaller && other.value == value;
+  @override bool operator ==(Object other) => other is AllowedCaller && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

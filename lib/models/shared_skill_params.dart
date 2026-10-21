@@ -8,60 +8,35 @@ part of 'shared.dart';
 class SkillParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Skill ID
   final String skillId;
-
   /// Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
   final SkillParamsType type_;
-
   /// Skill version or 'latest' for most recent version
   final SdkOptional<String> version;
 
-  const SkillParams(
-      {required this.skillId,
-      required this.type_,
-      this.version = const SdkOmitted()});
+  const SkillParams({required this.skillId, required this.type_, this.version = const SdkOmitted()});
 
-  SkillParams Function(
-      {String skillId,
-      SkillParamsType type_,
-      SdkOptional<String> version}) get copyWith => _copyWith;
+  SkillParams Function({String skillId, SkillParamsType type_, SdkOptional<String> version}) get copyWith => _copyWith;
 
-  SkillParams _copyWith(
-          {Object? skillId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? version = sdkOmittedValue}) =>
-      SkillParams(
-        skillId: identical(skillId, sdkOmittedValue)
-            ? this.skillId
-            : skillId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SkillParamsType,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as SdkOptional<String>,
-      );
+  SkillParams _copyWith({Object? skillId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? version = sdkOmittedValue}) => SkillParams(
+    skillId: identical(skillId, sdkOmittedValue) ? this.skillId : skillId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SkillParamsType,
+    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String>,
+  );
 
   factory SkillParams.fromJson(Map<String, dynamic> json) => SkillParams(
-        skillId: (json['skill_id'] as String?)!,
-        type_: (json['type'] != null
-            ? SkillParamsType.fromJson(json['type'] as String)
-            : null)!,
-        version: json['version'] != null
-            ? SdkPresent((json['version'] as String?)!)
-            : const SdkOmitted(),
-      );
+    skillId: (json['skill_id'] as String?)!,
+    type_: (json['type'] != null ? SkillParamsType.fromJson(json['type'] as String) : null)!,
+    version: json['version'] != null ? SdkPresent((json['version'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'skill_id': skillId,
-        'type': type_.toJson(),
-        ...switch (version) {
-          SdkPresent<String>(value: final value) => {
-              'version': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'skill_id': skillId,
+    'type': type_.toJson(),
+    ...switch (version) {
+      SdkPresent<String>(value: final value) => {'version': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

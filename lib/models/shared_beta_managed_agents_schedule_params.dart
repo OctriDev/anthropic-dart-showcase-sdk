@@ -9,36 +9,22 @@ sealed class BetaManagedAgentsScheduleParams {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsScheduleParams();
   factory BetaManagedAgentsScheduleParams.fromJson(Object? json) {
-    try {
-      return BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams(
-          BetaManagedAgentsCronScheduleParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"cron"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsScheduleParams(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsScheduleParams");
+    try { return BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams(BetaManagedAgentsCronScheduleParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"cron"}.contains(json["type"])) { return UnknownBetaManagedAgentsScheduleParams(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsScheduleParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams
-    extends BetaManagedAgentsScheduleParams {
+final class BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams extends BetaManagedAgentsScheduleParams {
   final BetaManagedAgentsCronScheduleParams value;
-  const BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsScheduleParamsBetaManagedAgentsCronScheduleParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsScheduleParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsScheduleParams
-    extends BetaManagedAgentsScheduleParams {
+final class UnknownBetaManagedAgentsScheduleParams extends BetaManagedAgentsScheduleParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsScheduleParams(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

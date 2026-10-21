@@ -8,70 +8,37 @@ part of 'shared_response_web.dart';
 class ResponseWebFetchToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required API value serialized in the `caller` wire field.
   final ResponseWebFetchToolResultBlockCaller caller;
-
   /// Required API value serialized in the `content` wire field.
   final ResponseWebFetchToolResultBlockContent content;
-
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
-
   /// Required `string` value serialized in the `type` wire field.
   final ResponseWebFetchToolResultBlockType type_;
 
-  const ResponseWebFetchToolResultBlock(
-      {required this.caller,
-      required this.content,
-      required this.toolUseId,
-      required this.type_});
+  const ResponseWebFetchToolResultBlock({required this.caller, required this.content, required this.toolUseId, required this.type_});
 
-  ResponseWebFetchToolResultBlock Function(
-      {ResponseWebFetchToolResultBlockCaller caller,
-      ResponseWebFetchToolResultBlockContent content,
-      String toolUseId,
-      ResponseWebFetchToolResultBlockType type_}) get copyWith => _copyWith;
+  ResponseWebFetchToolResultBlock Function({ResponseWebFetchToolResultBlockCaller caller, ResponseWebFetchToolResultBlockContent content, String toolUseId, ResponseWebFetchToolResultBlockType type_}) get copyWith => _copyWith;
 
-  ResponseWebFetchToolResultBlock _copyWith(
-          {Object? caller = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? toolUseId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      ResponseWebFetchToolResultBlock(
-        caller: identical(caller, sdkOmittedValue)
-            ? this.caller
-            : caller as ResponseWebFetchToolResultBlockCaller,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as ResponseWebFetchToolResultBlockContent,
-        toolUseId: identical(toolUseId, sdkOmittedValue)
-            ? this.toolUseId
-            : toolUseId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as ResponseWebFetchToolResultBlockType,
-      );
+  ResponseWebFetchToolResultBlock _copyWith({Object? caller = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ResponseWebFetchToolResultBlock(
+    caller: identical(caller, sdkOmittedValue) ? this.caller : caller as ResponseWebFetchToolResultBlockCaller,
+    content: identical(content, sdkOmittedValue) ? this.content : content as ResponseWebFetchToolResultBlockContent,
+    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ResponseWebFetchToolResultBlockType,
+  );
 
-  factory ResponseWebFetchToolResultBlock.fromJson(Map<String, dynamic> json) =>
-      ResponseWebFetchToolResultBlock(
-        caller: (json['caller'] != null
-            ? ResponseWebFetchToolResultBlockCaller.fromJson(json['caller'])
-            : null)!,
-        content: (json['content'] != null
-            ? ResponseWebFetchToolResultBlockContent.fromJson(json['content'])
-            : null)!,
-        toolUseId: (json['tool_use_id'] as String?)!,
-        type_: (json['type'] != null
-            ? ResponseWebFetchToolResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory ResponseWebFetchToolResultBlock.fromJson(Map<String, dynamic> json) => ResponseWebFetchToolResultBlock(
+    caller: (json['caller'] != null ? ResponseWebFetchToolResultBlockCaller.fromJson(json['caller']) : null)!,
+    content: (json['content'] != null ? ResponseWebFetchToolResultBlockContent.fromJson(json['content']) : null)!,
+    toolUseId: (json['tool_use_id'] as String?)!,
+    type_: (json['type'] != null ? ResponseWebFetchToolResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'caller': caller.toJson(),
-        'content': content.toJson(),
-        'tool_use_id': toolUseId,
-        'type': type_.toJson(),
-      };
+    'caller': caller.toJson(),
+    'content': content.toJson(),
+    'tool_use_id': toolUseId,
+    'type': type_.toJson(),
+  };
 }

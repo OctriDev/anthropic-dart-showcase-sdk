@@ -8,94 +8,50 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsAgentCustomToolUseEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAgentCustomToolUseEventType type_;
-
   /// Unique identifier for this event.
   final String id;
-
   /// Name of the custom tool being called.
   final String name;
-
   /// Input parameters for the tool call.
   final Map<String, dynamic> input;
-
   /// Timestamp when this tool use was processed.
   final String processedAt;
-
   /// When set, this event was cross-posted from a subagent's thread to surface its custom tool use on the primary thread's stream. Empty on the thread's own events. Echo this on a `user.custom_tool_result` event to route the result back.
   final SdkOptional<String?> sessionThreadId;
 
-  const BetaManagedAgentsAgentCustomToolUseEvent(
-      {required this.type_,
-      required this.id,
-      required this.name,
-      required this.input,
-      required this.processedAt,
-      this.sessionThreadId = const SdkOmitted()});
+  const BetaManagedAgentsAgentCustomToolUseEvent({required this.type_, required this.id, required this.name, required this.input, required this.processedAt, this.sessionThreadId = const SdkOmitted()});
 
-  BetaManagedAgentsAgentCustomToolUseEvent Function(
-      {BetaManagedAgentsAgentCustomToolUseEventType type_,
-      String id,
-      String name,
-      Map<String, dynamic> input,
-      String processedAt,
-      SdkOptional<String?> sessionThreadId}) get copyWith => _copyWith;
+  BetaManagedAgentsAgentCustomToolUseEvent Function({BetaManagedAgentsAgentCustomToolUseEventType type_, String id, String name, Map<String, dynamic> input, String processedAt, SdkOptional<String?> sessionThreadId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAgentCustomToolUseEvent _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? input = sdkOmittedValue,
-          Object? processedAt = sdkOmittedValue,
-          Object? sessionThreadId = sdkOmittedValue}) =>
-      BetaManagedAgentsAgentCustomToolUseEvent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAgentCustomToolUseEventType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        input: identical(input, sdkOmittedValue)
-            ? this.input
-            : input as Map<String, dynamic>,
-        processedAt: identical(processedAt, sdkOmittedValue)
-            ? this.processedAt
-            : processedAt as String,
-        sessionThreadId: identical(sessionThreadId, sdkOmittedValue)
-            ? this.sessionThreadId
-            : sessionThreadId as SdkOptional<String?>,
-      );
+  BetaManagedAgentsAgentCustomToolUseEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? input = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? sessionThreadId = sdkOmittedValue}) => BetaManagedAgentsAgentCustomToolUseEvent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAgentCustomToolUseEventType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    input: identical(input, sdkOmittedValue) ? this.input : input as Map<String, dynamic>,
+    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
+    sessionThreadId: identical(sessionThreadId, sdkOmittedValue) ? this.sessionThreadId : sessionThreadId as SdkOptional<String?>,
+  );
 
-  factory BetaManagedAgentsAgentCustomToolUseEvent.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsAgentCustomToolUseEvent(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAgentCustomToolUseEventType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        name: (json['name'] as String?)!,
-        input: (json['input'] == null
-            ? null
-            : json['input'] as Map<String, dynamic>)!,
-        processedAt: (json['processed_at'] as String?)!,
-        sessionThreadId: json.containsKey('session_thread_id')
-            ? SdkPresent(json['session_thread_id'] as String?)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsAgentCustomToolUseEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAgentCustomToolUseEvent(
+    type_: (json['type'] != null ? BetaManagedAgentsAgentCustomToolUseEventType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    name: (json['name'] as String?)!,
+    input: (json['input'] == null ? null : json['input'] as Map<String, dynamic>)!,
+    processedAt: (json['processed_at'] as String?)!,
+    sessionThreadId: json.containsKey('session_thread_id') ? SdkPresent(json['session_thread_id'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'name': name,
-        'input': input,
-        'processed_at': processedAt,
-        ...switch (sessionThreadId) {
-          SdkPresent<String?>(value: final value) => {
-              'session_thread_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'name': name,
+    'input': input,
+    'processed_at': processedAt,
+    ...switch (sessionThreadId) {
+      SdkPresent<String?>(value: final value) => {'session_thread_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

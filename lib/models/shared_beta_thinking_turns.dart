@@ -8,37 +8,27 @@ part of 'shared_beta_thinking.dart';
 class BetaThinkingTurns {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaThinkingTurnsType type_;
-
   /// Required `integer` value serialized in the `value` wire field.
   final int value;
 
   const BetaThinkingTurns({required this.type_, required this.value});
 
-  BetaThinkingTurns Function({BetaThinkingTurnsType type_, int value})
-      get copyWith => _copyWith;
+  BetaThinkingTurns Function({BetaThinkingTurnsType type_, int value}) get copyWith => _copyWith;
 
-  BetaThinkingTurns _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
-      BetaThinkingTurns(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaThinkingTurnsType,
-        value: identical(value, sdkOmittedValue) ? this.value : value as int,
-      );
+  BetaThinkingTurns _copyWith({Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) => BetaThinkingTurns(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaThinkingTurnsType,
+    value: identical(value, sdkOmittedValue) ? this.value : value as int,
+  );
 
-  factory BetaThinkingTurns.fromJson(Map<String, dynamic> json) =>
-      BetaThinkingTurns(
-        type_: (json['type'] != null
-            ? BetaThinkingTurnsType.fromJson(json['type'] as String)
-            : null)!,
-        value: ((json['value'] as num?)?.toInt())!,
-      );
+  factory BetaThinkingTurns.fromJson(Map<String, dynamic> json) => BetaThinkingTurns(
+    type_: (json['type'] != null ? BetaThinkingTurnsType.fromJson(json['type'] as String) : null)!,
+    value: ((json['value'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'value': value,
-      };
+    'type': type_.toJson(),
+    'value': value,
+  };
 }

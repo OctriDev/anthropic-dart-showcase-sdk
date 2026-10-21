@@ -8,58 +8,33 @@ part of 'credentials_beta_true.dart';
 class BetaManagedAgentsListCredentialsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// List of credentials.
   final SdkOptional<List<BetaManagedAgentsCredential>> data;
-
   /// Pagination token for the next page, or null if no more results.
   final SdkOptional<String?> nextPage;
 
-  const BetaManagedAgentsListCredentialsResponse(
-      {this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
+  const BetaManagedAgentsListCredentialsResponse({this.data = const SdkOmitted(), this.nextPage = const SdkOmitted()});
 
-  BetaManagedAgentsListCredentialsResponse Function(
-      {SdkOptional<List<BetaManagedAgentsCredential>> data,
-      SdkOptional<String?> nextPage}) get copyWith => _copyWith;
+  BetaManagedAgentsListCredentialsResponse Function({SdkOptional<List<BetaManagedAgentsCredential>> data, SdkOptional<String?> nextPage}) get copyWith => _copyWith;
 
-  BetaManagedAgentsListCredentialsResponse _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaManagedAgentsListCredentialsResponse(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as SdkOptional<List<BetaManagedAgentsCredential>>,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as SdkOptional<String?>,
-      );
+  BetaManagedAgentsListCredentialsResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaManagedAgentsListCredentialsResponse(
+    data: identical(data, sdkOmittedValue) ? this.data : data as SdkOptional<List<BetaManagedAgentsCredential>>,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as SdkOptional<String?>,
+  );
 
-  factory BetaManagedAgentsListCredentialsResponse.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsListCredentialsResponse(
-        data: json['data'] != null
-            ? SdkPresent(((json['data'] as List?)
-                ?.map((e) => BetaManagedAgentsCredential.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        nextPage: json.containsKey('next_page')
-            ? SdkPresent(json['next_page'] as String?)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsListCredentialsResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsListCredentialsResponse(
+    data: json['data'] != null ? SdkPresent(((json['data'] as List?)?.map((e) => BetaManagedAgentsCredential.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    nextPage: json.containsKey('next_page') ? SdkPresent(json['next_page'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (data) {
-          SdkPresent<List<BetaManagedAgentsCredential>>(value: final value) => {
-              'data': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPage) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (data) {
+      SdkPresent<List<BetaManagedAgentsCredential>>(value: final value) => {'data': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPage) {
+      SdkPresent<String?>(value: final value) => {'next_page': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

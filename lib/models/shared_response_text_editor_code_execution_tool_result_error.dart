@@ -8,63 +8,32 @@ part of 'shared_response_text.dart';
 class ResponseTextEditorCodeExecutionToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `error_code` wire field.
   final TextEditorCodeExecutionToolResultErrorCode errorCode;
-
   /// Required `string` value serialized in the `error_message` wire field.
   final String? errorMessage;
-
   /// Required `string` value serialized in the `type` wire field.
   final ResponseTextEditorCodeExecutionToolResultErrorType type_;
 
-  const ResponseTextEditorCodeExecutionToolResultError(
-      {required this.errorCode,
-      required this.errorMessage,
-      required this.type_});
+  const ResponseTextEditorCodeExecutionToolResultError({required this.errorCode, required this.errorMessage, required this.type_});
 
-  ResponseTextEditorCodeExecutionToolResultError Function(
-          {TextEditorCodeExecutionToolResultErrorCode errorCode,
-          String? errorMessage,
-          ResponseTextEditorCodeExecutionToolResultErrorType type_})
-      get copyWith => _copyWith;
+  ResponseTextEditorCodeExecutionToolResultError Function({TextEditorCodeExecutionToolResultErrorCode errorCode, String? errorMessage, ResponseTextEditorCodeExecutionToolResultErrorType type_}) get copyWith => _copyWith;
 
-  ResponseTextEditorCodeExecutionToolResultError _copyWith(
-          {Object? errorCode = sdkOmittedValue,
-          Object? errorMessage = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      ResponseTextEditorCodeExecutionToolResultError(
-        errorCode: identical(errorCode, sdkOmittedValue)
-            ? this.errorCode
-            : errorCode as TextEditorCodeExecutionToolResultErrorCode,
-        errorMessage: identical(errorMessage, sdkOmittedValue)
-            ? this.errorMessage
-            : errorMessage as String?,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as ResponseTextEditorCodeExecutionToolResultErrorType,
-      );
+  ResponseTextEditorCodeExecutionToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? errorMessage = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ResponseTextEditorCodeExecutionToolResultError(
+    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as TextEditorCodeExecutionToolResultErrorCode,
+    errorMessage: identical(errorMessage, sdkOmittedValue) ? this.errorMessage : errorMessage as String?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ResponseTextEditorCodeExecutionToolResultErrorType,
+  );
 
-  factory ResponseTextEditorCodeExecutionToolResultError.fromJson(
-          Map<String, dynamic> json) =>
-      ResponseTextEditorCodeExecutionToolResultError(
-        errorCode: (json['error_code'] != null
-            ? TextEditorCodeExecutionToolResultErrorCode.fromJson(
-                json['error_code'] as String)
-            : null)!,
-        errorMessage: json.containsKey('error_message')
-            ? json['error_message'] as String?
-            : throw ArgumentError.value(
-                null, 'error_message', 'Required property is missing'),
-        type_: (json['type'] != null
-            ? ResponseTextEditorCodeExecutionToolResultErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory ResponseTextEditorCodeExecutionToolResultError.fromJson(Map<String, dynamic> json) => ResponseTextEditorCodeExecutionToolResultError(
+    errorCode: (json['error_code'] != null ? TextEditorCodeExecutionToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
+    errorMessage: json.containsKey('error_message') ? json['error_message'] as String? : throw ArgumentError.value(null, 'error_message', 'Required property is missing'),
+    type_: (json['type'] != null ? ResponseTextEditorCodeExecutionToolResultErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'error_code': errorCode.toJson(),
-        'error_message': errorMessage,
-        'type': type_.toJson(),
-      };
+    'error_code': errorCode.toJson(),
+    'error_message': errorMessage,
+    'type': type_.toJson(),
+  };
 }

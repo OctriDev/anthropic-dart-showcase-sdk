@@ -10,88 +10,40 @@ sealed class BetaManagedAgentsCredentialCreateAuth {
   const BetaManagedAgentsCredentialCreateAuth();
   factory BetaManagedAgentsCredentialCreateAuth.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsMcpOauthCreateParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsMcpOauthCreateParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsStaticBearerCreateParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsStaticBearerCreateParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsEnvironmentVariableCreateParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsEnvironmentVariableCreateParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsMcpOauthCreateParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsMcpOauthCreateParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsStaticBearerCreateParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsStaticBearerCreateParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsEnvironmentVariableCreateParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsEnvironmentVariableCreateParams(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsMcpOauthCreateParams(
-          BetaManagedAgentsMcpOauthCreateParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsStaticBearerCreateParams(
-          BetaManagedAgentsStaticBearerCreateParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsEnvironmentVariableCreateParams(
-          BetaManagedAgentsEnvironmentVariableCreateParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"mcp_oauth", "static_bearer", "environment_variable"}
-            .contains(json["type"])) {
-      return UnknownBetaManagedAgentsCredentialCreateAuth(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsCredentialCreateAuth");
+    try { return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsMcpOauthCreateParams(BetaManagedAgentsMcpOauthCreateParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsStaticBearerCreateParams(BetaManagedAgentsStaticBearerCreateParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsEnvironmentVariableCreateParams(BetaManagedAgentsEnvironmentVariableCreateParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"mcp_oauth", "static_bearer", "environment_variable"}.contains(json["type"])) { return UnknownBetaManagedAgentsCredentialCreateAuth(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsCredentialCreateAuth");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsMcpOauthCreateParams
-    extends BetaManagedAgentsCredentialCreateAuth {
+final class BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsMcpOauthCreateParams extends BetaManagedAgentsCredentialCreateAuth {
   final BetaManagedAgentsMcpOauthCreateParams value;
-  const BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsMcpOauthCreateParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsMcpOauthCreateParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsStaticBearerCreateParams
-    extends BetaManagedAgentsCredentialCreateAuth {
+final class BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsStaticBearerCreateParams extends BetaManagedAgentsCredentialCreateAuth {
   final BetaManagedAgentsStaticBearerCreateParams value;
-  const BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsStaticBearerCreateParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsStaticBearerCreateParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsEnvironmentVariableCreateParams
-    extends BetaManagedAgentsCredentialCreateAuth {
+final class BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsEnvironmentVariableCreateParams extends BetaManagedAgentsCredentialCreateAuth {
   final BetaManagedAgentsEnvironmentVariableCreateParams value;
-  const BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsEnvironmentVariableCreateParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCredentialCreateAuthBetaManagedAgentsEnvironmentVariableCreateParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsCredentialCreateAuth] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsCredentialCreateAuth
-    extends BetaManagedAgentsCredentialCreateAuth {
+final class UnknownBetaManagedAgentsCredentialCreateAuth extends BetaManagedAgentsCredentialCreateAuth {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsCredentialCreateAuth(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

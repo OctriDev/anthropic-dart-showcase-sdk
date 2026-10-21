@@ -8,69 +8,37 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsCustomToolParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsCustomToolParamsType type_;
-
   /// Unique name for the tool. 1-128 characters; letters, digits, underscores, and hyphens.
   final String name;
-
   /// Description of what the tool does, shown to the agent to help it decide when to use the tool.
   final String description;
-
   /// JSON Schema defining the expected input parameters for the tool.
   final BetaManagedAgentsCustomToolInputSchema inputSchema;
 
-  const BetaManagedAgentsCustomToolParams(
-      {required this.type_,
-      required this.name,
-      required this.description,
-      required this.inputSchema});
+  const BetaManagedAgentsCustomToolParams({required this.type_, required this.name, required this.description, required this.inputSchema});
 
-  BetaManagedAgentsCustomToolParams Function(
-          {BetaManagedAgentsCustomToolParamsType type_,
-          String name,
-          String description,
-          BetaManagedAgentsCustomToolInputSchema inputSchema})
-      get copyWith => _copyWith;
+  BetaManagedAgentsCustomToolParams Function({BetaManagedAgentsCustomToolParamsType type_, String name, String description, BetaManagedAgentsCustomToolInputSchema inputSchema}) get copyWith => _copyWith;
 
-  BetaManagedAgentsCustomToolParams _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? inputSchema = sdkOmittedValue}) =>
-      BetaManagedAgentsCustomToolParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsCustomToolParamsType,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String,
-        inputSchema: identical(inputSchema, sdkOmittedValue)
-            ? this.inputSchema
-            : inputSchema as BetaManagedAgentsCustomToolInputSchema,
-      );
+  BetaManagedAgentsCustomToolParams _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? inputSchema = sdkOmittedValue}) => BetaManagedAgentsCustomToolParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsCustomToolParamsType,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String,
+    inputSchema: identical(inputSchema, sdkOmittedValue) ? this.inputSchema : inputSchema as BetaManagedAgentsCustomToolInputSchema,
+  );
 
-  factory BetaManagedAgentsCustomToolParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsCustomToolParams(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsCustomToolParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-        name: (json['name'] as String?)!,
-        description: (json['description'] as String?)!,
-        inputSchema: (json['input_schema'] != null
-            ? BetaManagedAgentsCustomToolInputSchema.fromJson(
-                json['input_schema'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory BetaManagedAgentsCustomToolParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsCustomToolParams(
+    type_: (json['type'] != null ? BetaManagedAgentsCustomToolParamsType.fromJson(json['type'] as String) : null)!,
+    name: (json['name'] as String?)!,
+    description: (json['description'] as String?)!,
+    inputSchema: (json['input_schema'] != null ? BetaManagedAgentsCustomToolInputSchema.fromJson(json['input_schema'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'name': name,
-        'description': description,
-        'input_schema': inputSchema.toJson(),
-      };
+    'type': type_.toJson(),
+    'name': name,
+    'description': description,
+    'input_schema': inputSchema.toJson(),
+  };
 }

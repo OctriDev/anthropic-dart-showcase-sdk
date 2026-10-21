@@ -6,32 +6,25 @@ part of 'shared_beta.dart';
 // shared_beta domain models
 /// Typed representation of the `BetaCostReportTokenType` API schema.
 final class BetaCostReportTokenType {
+
   final String value;
 
   const BetaCostReportTokenType._(this.value);
 
-  factory BetaCostReportTokenType.fromJson(String value) =>
-      BetaCostReportTokenType._(value);
+  factory BetaCostReportTokenType.fromJson(String value) => BetaCostReportTokenType._(value);
 
-  static const cacheCreationEphemeral1hInputTokens =
-      BetaCostReportTokenType._('cache_creation.ephemeral_1h_input_tokens');
-  static const cacheCreationEphemeral5mInputTokens =
-      BetaCostReportTokenType._('cache_creation.ephemeral_5m_input_tokens');
-  static const cacheReadInputTokens =
-      BetaCostReportTokenType._('cache_read_input_tokens');
+  static const cacheCreationEphemeral1hInputTokens = BetaCostReportTokenType._('cache_creation.ephemeral_1h_input_tokens');
+  static const cacheCreationEphemeral5mInputTokens = BetaCostReportTokenType._('cache_creation.ephemeral_5m_input_tokens');
+  static const cacheReadInputTokens = BetaCostReportTokenType._('cache_read_input_tokens');
   static const outputTokens = BetaCostReportTokenType._('output_tokens');
-  static const uncachedInputTokens =
-      BetaCostReportTokenType._('uncached_input_tokens');
+  static const uncachedInputTokens = BetaCostReportTokenType._('uncached_input_tokens');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaCostReportTokenType && other.value == value;
+  @override bool operator ==(Object other) => other is BetaCostReportTokenType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

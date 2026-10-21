@@ -8,46 +8,27 @@ part of 'skills_beta_true.dart';
 class BetaAnalyticsSkillsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `data` wire field.
   final List<BetaAnalyticsSkillActivity> data;
-
   /// Opaque cursor for the next page, or null if no more results
   final String? nextPage;
 
-  const BetaAnalyticsSkillsResponse(
-      {required this.data, required this.nextPage});
+  const BetaAnalyticsSkillsResponse({required this.data, required this.nextPage});
 
-  BetaAnalyticsSkillsResponse Function(
-      {List<BetaAnalyticsSkillActivity> data,
-      String? nextPage}) get copyWith => _copyWith;
+  BetaAnalyticsSkillsResponse Function({List<BetaAnalyticsSkillActivity> data, String? nextPage}) get copyWith => _copyWith;
 
-  BetaAnalyticsSkillsResponse _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaAnalyticsSkillsResponse(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<BetaAnalyticsSkillActivity>,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as String?,
-      );
+  BetaAnalyticsSkillsResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaAnalyticsSkillsResponse(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaAnalyticsSkillActivity>,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
+  );
 
-  factory BetaAnalyticsSkillsResponse.fromJson(Map<String, dynamic> json) =>
-      BetaAnalyticsSkillsResponse(
-        data: ((json['data'] as List?)
-            ?.map((e) =>
-                BetaAnalyticsSkillActivity.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        nextPage: json.containsKey('next_page')
-            ? json['next_page'] as String?
-            : throw ArgumentError.value(
-                null, 'next_page', 'Required property is missing'),
-      );
+  factory BetaAnalyticsSkillsResponse.fromJson(Map<String, dynamic> json) => BetaAnalyticsSkillsResponse(
+    data: ((json['data'] as List?)?.map((e) => BetaAnalyticsSkillActivity.fromJson(e as Map<String, dynamic>)).toList())!,
+    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'next_page': nextPage,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'next_page': nextPage,
+  };
 }

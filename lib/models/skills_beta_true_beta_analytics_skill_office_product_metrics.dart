@@ -8,38 +8,22 @@ part of 'skills_beta_true.dart';
 class BetaAnalyticsSkillOfficeProductMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Number of distinct Office Agent sessions in which the skill was used. A skill counts as used only when it is explicitly activated — the model (or the user, via the skill's slash command) invokes it, reading its instructions into context as part of that activation. Skills that are merely installed or listed as available, or whose content reaches the context without an activation (preloaded, hook-injected, or read as a plain file), are not counted. Approximate (HLL, typical error &lt;2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
   final int? distinctSessionSkillUsedCount;
 
-  const BetaAnalyticsSkillOfficeProductMetrics(
-      {required this.distinctSessionSkillUsedCount});
+  const BetaAnalyticsSkillOfficeProductMetrics({required this.distinctSessionSkillUsedCount});
 
-  BetaAnalyticsSkillOfficeProductMetrics Function(
-      {int? distinctSessionSkillUsedCount}) get copyWith => _copyWith;
+  BetaAnalyticsSkillOfficeProductMetrics Function({int? distinctSessionSkillUsedCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsSkillOfficeProductMetrics _copyWith(
-          {Object? distinctSessionSkillUsedCount = sdkOmittedValue}) =>
-      BetaAnalyticsSkillOfficeProductMetrics(
-        distinctSessionSkillUsedCount:
-            identical(distinctSessionSkillUsedCount, sdkOmittedValue)
-                ? this.distinctSessionSkillUsedCount
-                : distinctSessionSkillUsedCount as int?,
-      );
+  BetaAnalyticsSkillOfficeProductMetrics _copyWith({Object? distinctSessionSkillUsedCount = sdkOmittedValue}) => BetaAnalyticsSkillOfficeProductMetrics(
+    distinctSessionSkillUsedCount: identical(distinctSessionSkillUsedCount, sdkOmittedValue) ? this.distinctSessionSkillUsedCount : distinctSessionSkillUsedCount as int?,
+  );
 
-  factory BetaAnalyticsSkillOfficeProductMetrics.fromJson(
-          Map<String, dynamic> json) =>
-      BetaAnalyticsSkillOfficeProductMetrics(
-        distinctSessionSkillUsedCount:
-            json.containsKey('distinct_session_skill_used_count')
-                ? (json['distinct_session_skill_used_count'] as num?)?.toInt()
-                : throw ArgumentError.value(
-                    null,
-                    'distinct_session_skill_used_count',
-                    'Required property is missing'),
-      );
+  factory BetaAnalyticsSkillOfficeProductMetrics.fromJson(Map<String, dynamic> json) => BetaAnalyticsSkillOfficeProductMetrics(
+    distinctSessionSkillUsedCount: json.containsKey('distinct_session_skill_used_count') ? (json['distinct_session_skill_used_count'] as num?)?.toInt() : throw ArgumentError.value(null, 'distinct_session_skill_used_count', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'distinct_session_skill_used_count': distinctSessionSkillUsedCount,
-      };
+    'distinct_session_skill_used_count': distinctSessionSkillUsedCount,
+  };
 }

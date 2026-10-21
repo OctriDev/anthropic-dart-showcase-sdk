@@ -8,82 +8,43 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsDocumentBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsDocumentBlockType type_;
-
   /// The source of the document data.
   final BetaManagedAgentsDocumentSource source;
-
   /// The title of the document.
   final SdkOptional<String?> title;
-
   /// Additional context about the document for the model.
   final SdkOptional<String?> context;
 
-  const BetaManagedAgentsDocumentBlock(
-      {required this.type_,
-      required this.source,
-      this.title = const SdkOmitted(),
-      this.context = const SdkOmitted()});
+  const BetaManagedAgentsDocumentBlock({required this.type_, required this.source, this.title = const SdkOmitted(), this.context = const SdkOmitted()});
 
-  BetaManagedAgentsDocumentBlock Function(
-      {BetaManagedAgentsDocumentBlockType type_,
-      BetaManagedAgentsDocumentSource source,
-      SdkOptional<String?> title,
-      SdkOptional<String?> context}) get copyWith => _copyWith;
+  BetaManagedAgentsDocumentBlock Function({BetaManagedAgentsDocumentBlockType type_, BetaManagedAgentsDocumentSource source, SdkOptional<String?> title, SdkOptional<String?> context}) get copyWith => _copyWith;
 
-  BetaManagedAgentsDocumentBlock _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? source = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? context = sdkOmittedValue}) =>
-      BetaManagedAgentsDocumentBlock(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsDocumentBlockType,
-        source: identical(source, sdkOmittedValue)
-            ? this.source
-            : source as BetaManagedAgentsDocumentSource,
-        title: identical(title, sdkOmittedValue)
-            ? this.title
-            : title as SdkOptional<String?>,
-        context: identical(context, sdkOmittedValue)
-            ? this.context
-            : context as SdkOptional<String?>,
-      );
+  BetaManagedAgentsDocumentBlock _copyWith({Object? type_ = sdkOmittedValue, Object? source = sdkOmittedValue, Object? title = sdkOmittedValue, Object? context = sdkOmittedValue}) => BetaManagedAgentsDocumentBlock(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsDocumentBlockType,
+    source: identical(source, sdkOmittedValue) ? this.source : source as BetaManagedAgentsDocumentSource,
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String?>,
+    context: identical(context, sdkOmittedValue) ? this.context : context as SdkOptional<String?>,
+  );
 
-  factory BetaManagedAgentsDocumentBlock.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsDocumentBlock(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsDocumentBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-        source: (json['source'] != null
-            ? BetaManagedAgentsDocumentSource.fromJson(json['source'])
-            : null)!,
-        title: json.containsKey('title')
-            ? SdkPresent(json['title'] as String?)
-            : const SdkOmitted(),
-        context: json.containsKey('context')
-            ? SdkPresent(json['context'] as String?)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsDocumentBlock.fromJson(Map<String, dynamic> json) => BetaManagedAgentsDocumentBlock(
+    type_: (json['type'] != null ? BetaManagedAgentsDocumentBlockType.fromJson(json['type'] as String) : null)!,
+    source: (json['source'] != null ? BetaManagedAgentsDocumentSource.fromJson(json['source']) : null)!,
+    title: json.containsKey('title') ? SdkPresent(json['title'] as String?) : const SdkOmitted(),
+    context: json.containsKey('context') ? SdkPresent(json['context'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'source': source.toJson(),
-        ...switch (title) {
-          SdkPresent<String?>(value: final value) => {
-              'title': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (context) {
-          SdkPresent<String?>(value: final value) => {
-              'context': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    'source': source.toJson(),
+    ...switch (title) {
+      SdkPresent<String?>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (context) {
+      SdkPresent<String?>(value: final value) => {'context': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

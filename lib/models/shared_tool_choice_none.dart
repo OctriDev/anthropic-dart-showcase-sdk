@@ -8,7 +8,6 @@ part of 'shared_tool.dart';
 class ToolChoiceNone {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final ToolChoiceNoneType type_;
 
@@ -17,18 +16,14 @@ class ToolChoiceNone {
   ToolChoiceNone Function({ToolChoiceNoneType type_}) get copyWith => _copyWith;
 
   ToolChoiceNone _copyWith({Object? type_ = sdkOmittedValue}) => ToolChoiceNone(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as ToolChoiceNoneType,
-      );
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ToolChoiceNoneType,
+  );
 
   factory ToolChoiceNone.fromJson(Map<String, dynamic> json) => ToolChoiceNone(
-        type_: (json['type'] != null
-            ? ToolChoiceNoneType.fromJson(json['type'] as String)
-            : null)!,
-      );
+    type_: (json['type'] != null ? ToolChoiceNoneType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

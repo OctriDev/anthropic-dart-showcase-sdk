@@ -9,178 +9,91 @@ sealed class MemoryTool20250818CacheControl {
   static const String constructionSurface = 'named';
   const MemoryTool20250818CacheControl();
   factory MemoryTool20250818CacheControl.fromJson(Object? json) {
-    try {
-      return MemoryTool20250818CacheControlCacheControlEphemeral(
-          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownMemoryTool20250818CacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for MemoryTool20250818CacheControl");
+    try { return MemoryTool20250818CacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownMemoryTool20250818CacheControl(json); }
+    throw FormatException("No variant matched for MemoryTool20250818CacheControl");
   }
   Object? toJson();
 }
 
-final class MemoryTool20250818CacheControlCacheControlEphemeral
-    extends MemoryTool20250818CacheControl {
+final class MemoryTool20250818CacheControlCacheControlEphemeral extends MemoryTool20250818CacheControl {
   final CacheControlEphemeral value;
   const MemoryTool20250818CacheControlCacheControlEphemeral(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [MemoryTool20250818CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownMemoryTool20250818CacheControl
-    extends MemoryTool20250818CacheControl {
+final class UnknownMemoryTool20250818CacheControl extends MemoryTool20250818CacheControl {
   final Map<String, dynamic> raw;
   const UnknownMemoryTool20250818CacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `MemoryTool_20250818` API schema.
 class MemoryTool20250818 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<AllowedCaller>> allowedCallers;
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
-
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
-
   /// Optional array value serialized in the `input_examples` wire field.
   final SdkOptional<List<Map<String, dynamic>>> inputExamples;
-
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final MemoryTool20250818Name name;
-
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
-
   /// Required `string` value serialized in the `type` wire field.
   final MemoryTool20250818Type type_;
 
-  const MemoryTool20250818(
-      {this.allowedCallers = const SdkOmitted(),
-      this.cacheControl = const SdkOmitted(),
-      this.deferLoading = const SdkOmitted(),
-      this.inputExamples = const SdkOmitted(),
-      required this.name,
-      this.strict = const SdkOmitted(),
-      required this.type_});
+  const MemoryTool20250818({this.allowedCallers = const SdkOmitted(), this.cacheControl = const SdkOmitted(), this.deferLoading = const SdkOmitted(), this.inputExamples = const SdkOmitted(), required this.name, this.strict = const SdkOmitted(), required this.type_});
 
-  MemoryTool20250818 Function(
-      {SdkOptional<List<AllowedCaller>> allowedCallers,
-      SdkOptional<CacheControlEphemeral?> cacheControl,
-      SdkOptional<bool> deferLoading,
-      SdkOptional<List<Map<String, dynamic>>> inputExamples,
-      MemoryTool20250818Name name,
-      SdkOptional<bool> strict,
-      MemoryTool20250818Type type_}) get copyWith => _copyWith;
+  MemoryTool20250818 Function({SdkOptional<List<AllowedCaller>> allowedCallers, SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<bool> deferLoading, SdkOptional<List<Map<String, dynamic>>> inputExamples, MemoryTool20250818Name name, SdkOptional<bool> strict, MemoryTool20250818Type type_}) get copyWith => _copyWith;
 
-  MemoryTool20250818 _copyWith(
-          {Object? allowedCallers = sdkOmittedValue,
-          Object? cacheControl = sdkOmittedValue,
-          Object? deferLoading = sdkOmittedValue,
-          Object? inputExamples = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? strict = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      MemoryTool20250818(
-        allowedCallers: identical(allowedCallers, sdkOmittedValue)
-            ? this.allowedCallers
-            : allowedCallers as SdkOptional<List<AllowedCaller>>,
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<CacheControlEphemeral?>,
-        deferLoading: identical(deferLoading, sdkOmittedValue)
-            ? this.deferLoading
-            : deferLoading as SdkOptional<bool>,
-        inputExamples: identical(inputExamples, sdkOmittedValue)
-            ? this.inputExamples
-            : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as MemoryTool20250818Name,
-        strict: identical(strict, sdkOmittedValue)
-            ? this.strict
-            : strict as SdkOptional<bool>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as MemoryTool20250818Type,
-      );
+  MemoryTool20250818 _copyWith({Object? allowedCallers = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? inputExamples = sdkOmittedValue, Object? name = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => MemoryTool20250818(
+    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<AllowedCaller>>,
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
+    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
+    inputExamples: identical(inputExamples, sdkOmittedValue) ? this.inputExamples : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as MemoryTool20250818Name,
+    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as MemoryTool20250818Type,
+  );
 
-  factory MemoryTool20250818.fromJson(Map<String, dynamic> json) =>
-      MemoryTool20250818(
-        allowedCallers: json['allowed_callers'] != null
-            ? SdkPresent(((json['allowed_callers'] as List?)
-                ?.map((e) => AllowedCaller.fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? CacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        deferLoading: json['defer_loading'] != null
-            ? SdkPresent((json['defer_loading'] as bool?)!)
-            : const SdkOmitted(),
-        inputExamples: json['input_examples'] != null
-            ? SdkPresent(((json['input_examples'] as List?)
-                ?.map((e) => e as Map<String, dynamic>)
-                .toList())!)
-            : const SdkOmitted(),
-        name: (json['name'] != null
-            ? MemoryTool20250818Name.fromJson(json['name'] as String)
-            : null)!,
-        strict: json['strict'] != null
-            ? SdkPresent((json['strict'] as bool?)!)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? MemoryTool20250818Type.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory MemoryTool20250818.fromJson(Map<String, dynamic> json) => MemoryTool20250818(
+    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => AllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
+    inputExamples: json['input_examples'] != null ? SdkPresent(((json['input_examples'] as List?)?.map((e) => e as Map<String, dynamic>).toList())!) : const SdkOmitted(),
+    name: (json['name'] != null ? MemoryTool20250818Name.fromJson(json['name'] as String) : null)!,
+    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
+    type_: (json['type'] != null ? MemoryTool20250818Type.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (allowedCallers) {
-          SdkPresent<List<AllowedCaller>>(value: final value) => {
-              'allowed_callers': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cacheControl) {
-          SdkPresent<CacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deferLoading) {
-          SdkPresent<bool>(value: final value) => {
-              'defer_loading': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (inputExamples) {
-          SdkPresent<List<Map<String, dynamic>>>(value: final value) => {
-              'input_examples': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name.toJson(),
-        ...switch (strict) {
-          SdkPresent<bool>(value: final value) => {
-              'strict': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-      };
+    ...switch (allowedCallers) {
+      SdkPresent<List<AllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cacheControl) {
+      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deferLoading) {
+      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (inputExamples) {
+      SdkPresent<List<Map<String, dynamic>>>(value: final value) => {'input_examples': value,},
+      _ => const <String, dynamic>{},
+    },
+    'name': name.toJson(),
+    ...switch (strict) {
+      SdkPresent<bool>(value: final value) => {'strict': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+  };
 }

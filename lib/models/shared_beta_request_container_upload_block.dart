@@ -9,101 +9,59 @@ sealed class BetaRequestContainerUploadBlockCacheControl {
   static const String constructionSurface = 'named';
   const BetaRequestContainerUploadBlockCacheControl();
   factory BetaRequestContainerUploadBlockCacheControl.fromJson(Object? json) {
-    try {
-      return BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral(
-          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownBetaRequestContainerUploadBlockCacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaRequestContainerUploadBlockCacheControl");
+    try { return BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestContainerUploadBlockCacheControl(json); }
+    throw FormatException("No variant matched for BetaRequestContainerUploadBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral
-    extends BetaRequestContainerUploadBlockCacheControl {
+final class BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral extends BetaRequestContainerUploadBlockCacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestContainerUploadBlockCacheControlBetaCacheControlEphemeral(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestContainerUploadBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestContainerUploadBlockCacheControl
-    extends BetaRequestContainerUploadBlockCacheControl {
+final class UnknownBetaRequestContainerUploadBlockCacheControl extends BetaRequestContainerUploadBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestContainerUploadBlockCacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// A content block that represents a file to be uploaded to the container Files uploaded via this block will be available in the container's input directory.
 class BetaRequestContainerUploadBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
-
   /// Required `string` value serialized in the `file_id` wire field.
   final String fileId;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestContainerUploadBlockType type_;
 
-  const BetaRequestContainerUploadBlock(
-      {this.cacheControl = const SdkOmitted(),
-      required this.fileId,
-      required this.type_});
+  const BetaRequestContainerUploadBlock({this.cacheControl = const SdkOmitted(), required this.fileId, required this.type_});
 
-  BetaRequestContainerUploadBlock Function(
-      {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
-      String fileId,
-      BetaRequestContainerUploadBlockType type_}) get copyWith => _copyWith;
+  BetaRequestContainerUploadBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, String fileId, BetaRequestContainerUploadBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestContainerUploadBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? fileId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaRequestContainerUploadBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-        fileId:
-            identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaRequestContainerUploadBlockType,
-      );
+  BetaRequestContainerUploadBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? fileId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestContainerUploadBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestContainerUploadBlockType,
+  );
 
-  factory BetaRequestContainerUploadBlock.fromJson(Map<String, dynamic> json) =>
-      BetaRequestContainerUploadBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? BetaCacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        fileId: (json['file_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaRequestContainerUploadBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaRequestContainerUploadBlock.fromJson(Map<String, dynamic> json) => BetaRequestContainerUploadBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    fileId: (json['file_id'] as String?)!,
+    type_: (json['type'] != null ? BetaRequestContainerUploadBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'file_id': fileId,
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'file_id': fileId,
+    'type': type_.toJson(),
+  };
 }

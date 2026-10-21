@@ -8,38 +8,27 @@ part of 'claude_code_beta_true.dart';
 class BetaApprovalMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Number of tool action proposals that the user accepted.
   final int accepted;
-
   /// Number of tool action proposals that the user rejected.
   final int rejected;
 
   const BetaApprovalMetrics({required this.accepted, required this.rejected});
 
-  BetaApprovalMetrics Function({int accepted, int rejected}) get copyWith =>
-      _copyWith;
+  BetaApprovalMetrics Function({int accepted, int rejected}) get copyWith => _copyWith;
 
-  BetaApprovalMetrics _copyWith(
-          {Object? accepted = sdkOmittedValue,
-          Object? rejected = sdkOmittedValue}) =>
-      BetaApprovalMetrics(
-        accepted: identical(accepted, sdkOmittedValue)
-            ? this.accepted
-            : accepted as int,
-        rejected: identical(rejected, sdkOmittedValue)
-            ? this.rejected
-            : rejected as int,
-      );
+  BetaApprovalMetrics _copyWith({Object? accepted = sdkOmittedValue, Object? rejected = sdkOmittedValue}) => BetaApprovalMetrics(
+    accepted: identical(accepted, sdkOmittedValue) ? this.accepted : accepted as int,
+    rejected: identical(rejected, sdkOmittedValue) ? this.rejected : rejected as int,
+  );
 
-  factory BetaApprovalMetrics.fromJson(Map<String, dynamic> json) =>
-      BetaApprovalMetrics(
-        accepted: ((json['accepted'] as num?)?.toInt())!,
-        rejected: ((json['rejected'] as num?)?.toInt())!,
-      );
+  factory BetaApprovalMetrics.fromJson(Map<String, dynamic> json) => BetaApprovalMetrics(
+    accepted: ((json['accepted'] as num?)?.toInt())!,
+    rejected: ((json['rejected'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'accepted': accepted,
-        'rejected': rejected,
-      };
+    'accepted': accepted,
+    'rejected': rejected,
+  };
 }

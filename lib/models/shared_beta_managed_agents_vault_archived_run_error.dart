@@ -8,44 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsVaultArchivedRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsVaultArchivedRunErrorType type_;
-
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsVaultArchivedRunError(
-      {required this.type_, required this.message});
+  const BetaManagedAgentsVaultArchivedRunError({required this.type_, required this.message});
 
-  BetaManagedAgentsVaultArchivedRunError Function(
-      {BetaManagedAgentsVaultArchivedRunErrorType type_,
-      String message}) get copyWith => _copyWith;
+  BetaManagedAgentsVaultArchivedRunError Function({BetaManagedAgentsVaultArchivedRunErrorType type_, String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsVaultArchivedRunError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      BetaManagedAgentsVaultArchivedRunError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsVaultArchivedRunErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-      );
+  BetaManagedAgentsVaultArchivedRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsVaultArchivedRunError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsVaultArchivedRunErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+  );
 
-  factory BetaManagedAgentsVaultArchivedRunError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsVaultArchivedRunError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsVaultArchivedRunErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-      );
+  factory BetaManagedAgentsVaultArchivedRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsVaultArchivedRunError(
+    type_: (json['type'] != null ? BetaManagedAgentsVaultArchivedRunErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-      };
+    'type': type_.toJson(),
+    'message': message,
+  };
 }

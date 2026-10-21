@@ -10,17 +10,14 @@ enum BetaSelfHostedConfigType {
 
   static BetaSelfHostedConfigType fromJson(String value) {
     switch (value) {
-      case 'self_hosted':
-        return BetaSelfHostedConfigType.selfHosted;
-      default:
-        throw ArgumentError('Unknown BetaSelfHostedConfigType: $value');
+      case 'self_hosted': return BetaSelfHostedConfigType.selfHosted;
+      default: throw ArgumentError('Unknown BetaSelfHostedConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaSelfHostedConfigType.selfHosted:
-        return 'self_hosted';
+      case BetaSelfHostedConfigType.selfHosted: return 'self_hosted';
     }
   }
 
@@ -34,17 +31,14 @@ enum BetaSelfHostedConfigParamsType {
 
   static BetaSelfHostedConfigParamsType fromJson(String value) {
     switch (value) {
-      case 'self_hosted':
-        return BetaSelfHostedConfigParamsType.selfHosted;
-      default:
-        throw ArgumentError('Unknown BetaSelfHostedConfigParamsType: $value');
+      case 'self_hosted': return BetaSelfHostedConfigParamsType.selfHosted;
+      default: throw ArgumentError('Unknown BetaSelfHostedConfigParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaSelfHostedConfigParamsType.selfHosted:
-        return 'self_hosted';
+      case BetaSelfHostedConfigParamsType.selfHosted: return 'self_hosted';
     }
   }
 
@@ -54,12 +48,12 @@ enum BetaSelfHostedConfigParamsType {
 
 /// Current state of the work item
 final class BetaSelfHostedWorkState {
+
   final String value;
 
   const BetaSelfHostedWorkState._(this.value);
 
-  factory BetaSelfHostedWorkState.fromJson(String value) =>
-      BetaSelfHostedWorkState._(value);
+  factory BetaSelfHostedWorkState.fromJson(String value) => BetaSelfHostedWorkState._(value);
 
   static const queued = BetaSelfHostedWorkState._('queued');
   static const starting = BetaSelfHostedWorkState._('starting');
@@ -69,15 +63,12 @@ final class BetaSelfHostedWorkState {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaSelfHostedWorkState && other.value == value;
+  @override bool operator ==(Object other) => other is BetaSelfHostedWorkState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The type of object (always 'work')
@@ -86,17 +77,14 @@ enum BetaSelfHostedWorkType {
 
   static BetaSelfHostedWorkType fromJson(String value) {
     switch (value) {
-      case 'work':
-        return BetaSelfHostedWorkType.work;
-      default:
-        throw ArgumentError('Unknown BetaSelfHostedWorkType: $value');
+      case 'work': return BetaSelfHostedWorkType.work;
+      default: throw ArgumentError('Unknown BetaSelfHostedWorkType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaSelfHostedWorkType.work:
-        return 'work';
+      case BetaSelfHostedWorkType.work: return 'work';
     }
   }
 
@@ -106,32 +94,27 @@ enum BetaSelfHostedWorkType {
 
 /// Current state of the work item (active/stopping/stopped)
 final class BetaSelfHostedWorkHeartbeatResponseState {
+
   final String value;
 
   const BetaSelfHostedWorkHeartbeatResponseState._(this.value);
 
-  factory BetaSelfHostedWorkHeartbeatResponseState.fromJson(String value) =>
-      BetaSelfHostedWorkHeartbeatResponseState._(value);
+  factory BetaSelfHostedWorkHeartbeatResponseState.fromJson(String value) => BetaSelfHostedWorkHeartbeatResponseState._(value);
 
   static const queued = BetaSelfHostedWorkHeartbeatResponseState._('queued');
-  static const starting =
-      BetaSelfHostedWorkHeartbeatResponseState._('starting');
+  static const starting = BetaSelfHostedWorkHeartbeatResponseState._('starting');
   static const active = BetaSelfHostedWorkHeartbeatResponseState._('active');
-  static const stopping =
-      BetaSelfHostedWorkHeartbeatResponseState._('stopping');
+  static const stopping = BetaSelfHostedWorkHeartbeatResponseState._('stopping');
   static const stopped = BetaSelfHostedWorkHeartbeatResponseState._('stopped');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaSelfHostedWorkHeartbeatResponseState && other.value == value;
+  @override bool operator ==(Object other) => other is BetaSelfHostedWorkHeartbeatResponseState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The type of response
@@ -140,18 +123,14 @@ enum BetaSelfHostedWorkHeartbeatResponseType {
 
   static BetaSelfHostedWorkHeartbeatResponseType fromJson(String value) {
     switch (value) {
-      case 'work_heartbeat':
-        return BetaSelfHostedWorkHeartbeatResponseType.workHeartbeat;
-      default:
-        throw ArgumentError(
-            'Unknown BetaSelfHostedWorkHeartbeatResponseType: $value');
+      case 'work_heartbeat': return BetaSelfHostedWorkHeartbeatResponseType.workHeartbeat;
+      default: throw ArgumentError('Unknown BetaSelfHostedWorkHeartbeatResponseType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaSelfHostedWorkHeartbeatResponseType.workHeartbeat:
-        return 'work_heartbeat';
+      case BetaSelfHostedWorkHeartbeatResponseType.workHeartbeat: return 'work_heartbeat';
     }
   }
 
@@ -165,17 +144,14 @@ enum BetaSelfHostedWorkQueueStatsType {
 
   static BetaSelfHostedWorkQueueStatsType fromJson(String value) {
     switch (value) {
-      case 'work_queue_stats':
-        return BetaSelfHostedWorkQueueStatsType.workQueueStats;
-      default:
-        throw ArgumentError('Unknown BetaSelfHostedWorkQueueStatsType: $value');
+      case 'work_queue_stats': return BetaSelfHostedWorkQueueStatsType.workQueueStats;
+      default: throw ArgumentError('Unknown BetaSelfHostedWorkQueueStatsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaSelfHostedWorkQueueStatsType.workQueueStats:
-        return 'work_queue_stats';
+      case BetaSelfHostedWorkQueueStatsType.workQueueStats: return 'work_queue_stats';
     }
   }
 
@@ -189,17 +165,14 @@ enum BetaServerToolCaller20260120Type {
 
   static BetaServerToolCaller20260120Type fromJson(String value) {
     switch (value) {
-      case 'code_execution_20260120':
-        return BetaServerToolCaller20260120Type.codeExecution20260120;
-      default:
-        throw ArgumentError('Unknown BetaServerToolCaller20260120Type: $value');
+      case 'code_execution_20260120': return BetaServerToolCaller20260120Type.codeExecution20260120;
+      default: throw ArgumentError('Unknown BetaServerToolCaller20260120Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaServerToolCaller20260120Type.codeExecution20260120:
-        return 'code_execution_20260120';
+      case BetaServerToolCaller20260120Type.codeExecution20260120: return 'code_execution_20260120';
     }
   }
 
@@ -213,17 +186,14 @@ enum BetaServerToolCallerType {
 
   static BetaServerToolCallerType fromJson(String value) {
     switch (value) {
-      case 'code_execution_20250825':
-        return BetaServerToolCallerType.codeExecution20250825;
-      default:
-        throw ArgumentError('Unknown BetaServerToolCallerType: $value');
+      case 'code_execution_20250825': return BetaServerToolCallerType.codeExecution20250825;
+      default: throw ArgumentError('Unknown BetaServerToolCallerType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaServerToolCallerType.codeExecution20250825:
-        return 'code_execution_20250825';
+      case BetaServerToolCallerType.codeExecution20250825: return 'code_execution_20250825';
     }
   }
 
@@ -233,27 +203,24 @@ enum BetaServerToolCallerType {
 
 /// Org-level role. A federation rule may only be created or retargeted to grant `org:admin` scope when this is `admin`. A rule granting `org:admin` whose target is later demoted to `developer` is rejected at token exchange. Rules granting `org:admin` are managed in the Console.
 final class BetaServiceAccountOrganizationRole {
+
   final String value;
 
   const BetaServiceAccountOrganizationRole._(this.value);
 
-  factory BetaServiceAccountOrganizationRole.fromJson(String value) =>
-      BetaServiceAccountOrganizationRole._(value);
+  factory BetaServiceAccountOrganizationRole.fromJson(String value) => BetaServiceAccountOrganizationRole._(value);
 
   static const admin = BetaServiceAccountOrganizationRole._('admin');
   static const developer = BetaServiceAccountOrganizationRole._('developer');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaServiceAccountOrganizationRole && other.value == value;
+  @override bool operator ==(Object other) => other is BetaServiceAccountOrganizationRole && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -262,17 +229,14 @@ enum BetaServiceAccountType {
 
   static BetaServiceAccountType fromJson(String value) {
     switch (value) {
-      case 'service_account':
-        return BetaServiceAccountType.serviceAccount;
-      default:
-        throw ArgumentError('Unknown BetaServiceAccountType: $value');
+      case 'service_account': return BetaServiceAccountType.serviceAccount;
+      default: throw ArgumentError('Unknown BetaServiceAccountType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaServiceAccountType.serviceAccount:
-        return 'service_account';
+      case BetaServiceAccountType.serviceAccount: return 'service_account';
     }
   }
 
@@ -282,31 +246,24 @@ enum BetaServiceAccountType {
 
 /// Org-level role. Defaults to `developer`.
 final class BetaServiceAccountCreateParamsOrganizationRole {
+
   final String value;
 
   const BetaServiceAccountCreateParamsOrganizationRole._(this.value);
 
-  factory BetaServiceAccountCreateParamsOrganizationRole.fromJson(
-          String value) =>
-      BetaServiceAccountCreateParamsOrganizationRole._(value);
+  factory BetaServiceAccountCreateParamsOrganizationRole.fromJson(String value) => BetaServiceAccountCreateParamsOrganizationRole._(value);
 
-  static const admin =
-      BetaServiceAccountCreateParamsOrganizationRole._('admin');
-  static const developer =
-      BetaServiceAccountCreateParamsOrganizationRole._('developer');
+  static const admin = BetaServiceAccountCreateParamsOrganizationRole._('admin');
+  static const developer = BetaServiceAccountCreateParamsOrganizationRole._('developer');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaServiceAccountCreateParamsOrganizationRole &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is BetaServiceAccountCreateParamsOrganizationRole && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -315,17 +272,14 @@ enum BetaServiceAccountTargetType {
 
   static BetaServiceAccountTargetType fromJson(String value) {
     switch (value) {
-      case 'service_account':
-        return BetaServiceAccountTargetType.serviceAccount;
-      default:
-        throw ArgumentError('Unknown BetaServiceAccountTargetType: $value');
+      case 'service_account': return BetaServiceAccountTargetType.serviceAccount;
+      default: throw ArgumentError('Unknown BetaServiceAccountTargetType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaServiceAccountTargetType.serviceAccount:
-        return 'service_account';
+      case BetaServiceAccountTargetType.serviceAccount: return 'service_account';
     }
   }
 

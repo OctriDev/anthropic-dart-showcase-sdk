@@ -8,145 +8,78 @@ sealed class BetaManagedAgentsUserToolConfirmationEventDenyMessage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsUserToolConfirmationEventDenyMessage();
-  factory BetaManagedAgentsUserToolConfirmationEventDenyMessage.fromJson(
-      Object? json) {
-    if (json is String) {
-      return BetaManagedAgentsUserToolConfirmationEventDenyMessageString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsUserToolConfirmationEventDenyMessage");
+  factory BetaManagedAgentsUserToolConfirmationEventDenyMessage.fromJson(Object? json) {
+    if (json is String) { return BetaManagedAgentsUserToolConfirmationEventDenyMessageString(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsUserToolConfirmationEventDenyMessage");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsUserToolConfirmationEventDenyMessageString
-    extends BetaManagedAgentsUserToolConfirmationEventDenyMessage {
+final class BetaManagedAgentsUserToolConfirmationEventDenyMessageString extends BetaManagedAgentsUserToolConfirmationEventDenyMessage {
   final String value;
   const BetaManagedAgentsUserToolConfirmationEventDenyMessageString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// A tool confirmation event that approves or denies a pending tool execution.
 class BetaManagedAgentsUserToolConfirmationEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUserToolConfirmationEventType type_;
-
   /// Unique identifier for this event.
   final String id;
-
   /// The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
   final String toolUseId;
-
   /// The confirmation result: 'allow' or 'deny'.
   final BetaManagedAgentsUserToolConfirmationResult result;
-
   /// Optional message providing context for a 'deny' decision. Only allowed when result is 'deny'.
   final SdkOptional<String?> denyMessage;
-
   /// Timestamp when the confirmation was processed.
   final SdkOptional<String?> processedAt;
-
   /// When set, the confirmation routes to this subagent's thread rather than the primary. Echo this from the `session_thread_id` on the `agent.tool_use` or `agent.mcp_tool_use` event that prompted the approval.
   final SdkOptional<String?> sessionThreadId;
 
-  const BetaManagedAgentsUserToolConfirmationEvent(
-      {required this.type_,
-      required this.id,
-      required this.toolUseId,
-      required this.result,
-      this.denyMessage = const SdkOmitted(),
-      this.processedAt = const SdkOmitted(),
-      this.sessionThreadId = const SdkOmitted()});
+  const BetaManagedAgentsUserToolConfirmationEvent({required this.type_, required this.id, required this.toolUseId, required this.result, this.denyMessage = const SdkOmitted(), this.processedAt = const SdkOmitted(), this.sessionThreadId = const SdkOmitted()});
 
-  BetaManagedAgentsUserToolConfirmationEvent Function(
-      {BetaManagedAgentsUserToolConfirmationEventType type_,
-      String id,
-      String toolUseId,
-      BetaManagedAgentsUserToolConfirmationResult result,
-      SdkOptional<String?> denyMessage,
-      SdkOptional<String?> processedAt,
-      SdkOptional<String?> sessionThreadId}) get copyWith => _copyWith;
+  BetaManagedAgentsUserToolConfirmationEvent Function({BetaManagedAgentsUserToolConfirmationEventType type_, String id, String toolUseId, BetaManagedAgentsUserToolConfirmationResult result, SdkOptional<String?> denyMessage, SdkOptional<String?> processedAt, SdkOptional<String?> sessionThreadId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUserToolConfirmationEvent _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? toolUseId = sdkOmittedValue,
-          Object? result = sdkOmittedValue,
-          Object? denyMessage = sdkOmittedValue,
-          Object? processedAt = sdkOmittedValue,
-          Object? sessionThreadId = sdkOmittedValue}) =>
-      BetaManagedAgentsUserToolConfirmationEvent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsUserToolConfirmationEventType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        toolUseId: identical(toolUseId, sdkOmittedValue)
-            ? this.toolUseId
-            : toolUseId as String,
-        result: identical(result, sdkOmittedValue)
-            ? this.result
-            : result as BetaManagedAgentsUserToolConfirmationResult,
-        denyMessage: identical(denyMessage, sdkOmittedValue)
-            ? this.denyMessage
-            : denyMessage as SdkOptional<String?>,
-        processedAt: identical(processedAt, sdkOmittedValue)
-            ? this.processedAt
-            : processedAt as SdkOptional<String?>,
-        sessionThreadId: identical(sessionThreadId, sdkOmittedValue)
-            ? this.sessionThreadId
-            : sessionThreadId as SdkOptional<String?>,
-      );
+  BetaManagedAgentsUserToolConfirmationEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? result = sdkOmittedValue, Object? denyMessage = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? sessionThreadId = sdkOmittedValue}) => BetaManagedAgentsUserToolConfirmationEvent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUserToolConfirmationEventType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
+    result: identical(result, sdkOmittedValue) ? this.result : result as BetaManagedAgentsUserToolConfirmationResult,
+    denyMessage: identical(denyMessage, sdkOmittedValue) ? this.denyMessage : denyMessage as SdkOptional<String?>,
+    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as SdkOptional<String?>,
+    sessionThreadId: identical(sessionThreadId, sdkOmittedValue) ? this.sessionThreadId : sessionThreadId as SdkOptional<String?>,
+  );
 
-  factory BetaManagedAgentsUserToolConfirmationEvent.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsUserToolConfirmationEvent(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsUserToolConfirmationEventType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        toolUseId: (json['tool_use_id'] as String?)!,
-        result: (json['result'] != null
-            ? BetaManagedAgentsUserToolConfirmationResult.fromJson(
-                json['result'] as String)
-            : null)!,
-        denyMessage: json.containsKey('deny_message')
-            ? SdkPresent(json['deny_message'] as String?)
-            : const SdkOmitted(),
-        processedAt: json.containsKey('processed_at')
-            ? SdkPresent(json['processed_at'] as String?)
-            : const SdkOmitted(),
-        sessionThreadId: json.containsKey('session_thread_id')
-            ? SdkPresent(json['session_thread_id'] as String?)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsUserToolConfirmationEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUserToolConfirmationEvent(
+    type_: (json['type'] != null ? BetaManagedAgentsUserToolConfirmationEventType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    toolUseId: (json['tool_use_id'] as String?)!,
+    result: (json['result'] != null ? BetaManagedAgentsUserToolConfirmationResult.fromJson(json['result'] as String) : null)!,
+    denyMessage: json.containsKey('deny_message') ? SdkPresent(json['deny_message'] as String?) : const SdkOmitted(),
+    processedAt: json.containsKey('processed_at') ? SdkPresent(json['processed_at'] as String?) : const SdkOmitted(),
+    sessionThreadId: json.containsKey('session_thread_id') ? SdkPresent(json['session_thread_id'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'tool_use_id': toolUseId,
-        'result': result.toJson(),
-        ...switch (denyMessage) {
-          SdkPresent<String?>(value: final value) => {
-              'deny_message': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (processedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'processed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sessionThreadId) {
-          SdkPresent<String?>(value: final value) => {
-              'session_thread_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'tool_use_id': toolUseId,
+    'result': result.toJson(),
+    ...switch (denyMessage) {
+      SdkPresent<String?>(value: final value) => {'deny_message': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (processedAt) {
+      SdkPresent<String?>(value: final value) => {'processed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sessionThreadId) {
+      SdkPresent<String?>(value: final value) => {'session_thread_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

@@ -9,36 +9,24 @@ sealed class TextEditor20250728CacheControl {
   static const String constructionSurface = 'named';
   const TextEditor20250728CacheControl();
   factory TextEditor20250728CacheControl.fromJson(Object? json) {
-    try {
-      return TextEditor20250728CacheControlCacheControlEphemeral(
-          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownTextEditor20250728CacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for TextEditor20250728CacheControl");
+    try { return TextEditor20250728CacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownTextEditor20250728CacheControl(json); }
+    throw FormatException("No variant matched for TextEditor20250728CacheControl");
   }
   Object? toJson();
 }
 
-final class TextEditor20250728CacheControlCacheControlEphemeral
-    extends TextEditor20250728CacheControl {
+final class TextEditor20250728CacheControlCacheControlEphemeral extends TextEditor20250728CacheControl {
   final CacheControlEphemeral value;
   const TextEditor20250728CacheControlCacheControlEphemeral(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [TextEditor20250728CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownTextEditor20250728CacheControl
-    extends TextEditor20250728CacheControl {
+final class UnknownTextEditor20250728CacheControl extends TextEditor20250728CacheControl {
   final Map<String, dynamic> raw;
   const UnknownTextEditor20250728CacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class TextEditor20250728MaxCharacters {
@@ -46,181 +34,91 @@ sealed class TextEditor20250728MaxCharacters {
   static const String constructionSurface = 'named';
   const TextEditor20250728MaxCharacters();
   factory TextEditor20250728MaxCharacters.fromJson(Object? json) {
-    if (json is num) {
-      return TextEditor20250728MaxCharactersInt(json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for TextEditor20250728MaxCharacters");
+    if (json is num) { return TextEditor20250728MaxCharactersInt(json.toInt()); }
+    throw FormatException("No variant matched for TextEditor20250728MaxCharacters");
   }
   Object? toJson();
 }
 
-final class TextEditor20250728MaxCharactersInt
-    extends TextEditor20250728MaxCharacters {
+final class TextEditor20250728MaxCharactersInt extends TextEditor20250728MaxCharacters {
   final int value;
   const TextEditor20250728MaxCharactersInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `TextEditor_20250728` API schema.
 class TextEditor20250728 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<AllowedCaller>> allowedCallers;
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
-
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
-
   /// Optional array value serialized in the `input_examples` wire field.
   final SdkOptional<List<Map<String, dynamic>>> inputExamples;
-
   /// Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
   final SdkOptional<int?> maxCharacters;
-
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final TextEditor20250728Name name;
-
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
-
   /// Required `string` value serialized in the `type` wire field.
   final TextEditor20250728Type type_;
 
-  const TextEditor20250728(
-      {this.allowedCallers = const SdkOmitted(),
-      this.cacheControl = const SdkOmitted(),
-      this.deferLoading = const SdkOmitted(),
-      this.inputExamples = const SdkOmitted(),
-      this.maxCharacters = const SdkOmitted(),
-      required this.name,
-      this.strict = const SdkOmitted(),
-      required this.type_});
+  const TextEditor20250728({this.allowedCallers = const SdkOmitted(), this.cacheControl = const SdkOmitted(), this.deferLoading = const SdkOmitted(), this.inputExamples = const SdkOmitted(), this.maxCharacters = const SdkOmitted(), required this.name, this.strict = const SdkOmitted(), required this.type_});
 
-  TextEditor20250728 Function(
-      {SdkOptional<List<AllowedCaller>> allowedCallers,
-      SdkOptional<CacheControlEphemeral?> cacheControl,
-      SdkOptional<bool> deferLoading,
-      SdkOptional<List<Map<String, dynamic>>> inputExamples,
-      SdkOptional<int?> maxCharacters,
-      TextEditor20250728Name name,
-      SdkOptional<bool> strict,
-      TextEditor20250728Type type_}) get copyWith => _copyWith;
+  TextEditor20250728 Function({SdkOptional<List<AllowedCaller>> allowedCallers, SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<bool> deferLoading, SdkOptional<List<Map<String, dynamic>>> inputExamples, SdkOptional<int?> maxCharacters, TextEditor20250728Name name, SdkOptional<bool> strict, TextEditor20250728Type type_}) get copyWith => _copyWith;
 
-  TextEditor20250728 _copyWith(
-          {Object? allowedCallers = sdkOmittedValue,
-          Object? cacheControl = sdkOmittedValue,
-          Object? deferLoading = sdkOmittedValue,
-          Object? inputExamples = sdkOmittedValue,
-          Object? maxCharacters = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? strict = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      TextEditor20250728(
-        allowedCallers: identical(allowedCallers, sdkOmittedValue)
-            ? this.allowedCallers
-            : allowedCallers as SdkOptional<List<AllowedCaller>>,
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<CacheControlEphemeral?>,
-        deferLoading: identical(deferLoading, sdkOmittedValue)
-            ? this.deferLoading
-            : deferLoading as SdkOptional<bool>,
-        inputExamples: identical(inputExamples, sdkOmittedValue)
-            ? this.inputExamples
-            : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
-        maxCharacters: identical(maxCharacters, sdkOmittedValue)
-            ? this.maxCharacters
-            : maxCharacters as SdkOptional<int?>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as TextEditor20250728Name,
-        strict: identical(strict, sdkOmittedValue)
-            ? this.strict
-            : strict as SdkOptional<bool>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as TextEditor20250728Type,
-      );
+  TextEditor20250728 _copyWith({Object? allowedCallers = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? inputExamples = sdkOmittedValue, Object? maxCharacters = sdkOmittedValue, Object? name = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => TextEditor20250728(
+    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<AllowedCaller>>,
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
+    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
+    inputExamples: identical(inputExamples, sdkOmittedValue) ? this.inputExamples : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
+    maxCharacters: identical(maxCharacters, sdkOmittedValue) ? this.maxCharacters : maxCharacters as SdkOptional<int?>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as TextEditor20250728Name,
+    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as TextEditor20250728Type,
+  );
 
-  factory TextEditor20250728.fromJson(Map<String, dynamic> json) =>
-      TextEditor20250728(
-        allowedCallers: json['allowed_callers'] != null
-            ? SdkPresent(((json['allowed_callers'] as List?)
-                ?.map((e) => AllowedCaller.fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? CacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        deferLoading: json['defer_loading'] != null
-            ? SdkPresent((json['defer_loading'] as bool?)!)
-            : const SdkOmitted(),
-        inputExamples: json['input_examples'] != null
-            ? SdkPresent(((json['input_examples'] as List?)
-                ?.map((e) => e as Map<String, dynamic>)
-                .toList())!)
-            : const SdkOmitted(),
-        maxCharacters: json.containsKey('max_characters')
-            ? SdkPresent((json['max_characters'] as num?)?.toInt())
-            : const SdkOmitted(),
-        name: (json['name'] != null
-            ? TextEditor20250728Name.fromJson(json['name'] as String)
-            : null)!,
-        strict: json['strict'] != null
-            ? SdkPresent((json['strict'] as bool?)!)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? TextEditor20250728Type.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory TextEditor20250728.fromJson(Map<String, dynamic> json) => TextEditor20250728(
+    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => AllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
+    inputExamples: json['input_examples'] != null ? SdkPresent(((json['input_examples'] as List?)?.map((e) => e as Map<String, dynamic>).toList())!) : const SdkOmitted(),
+    maxCharacters: json.containsKey('max_characters') ? SdkPresent((json['max_characters'] as num?)?.toInt()) : const SdkOmitted(),
+    name: (json['name'] != null ? TextEditor20250728Name.fromJson(json['name'] as String) : null)!,
+    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
+    type_: (json['type'] != null ? TextEditor20250728Type.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (allowedCallers) {
-          SdkPresent<List<AllowedCaller>>(value: final value) => {
-              'allowed_callers': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cacheControl) {
-          SdkPresent<CacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deferLoading) {
-          SdkPresent<bool>(value: final value) => {
-              'defer_loading': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (inputExamples) {
-          SdkPresent<List<Map<String, dynamic>>>(value: final value) => {
-              'input_examples': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maxCharacters) {
-          SdkPresent<int?>(value: final value) => {
-              'max_characters': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name.toJson(),
-        ...switch (strict) {
-          SdkPresent<bool>(value: final value) => {
-              'strict': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-      };
+    ...switch (allowedCallers) {
+      SdkPresent<List<AllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cacheControl) {
+      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deferLoading) {
+      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (inputExamples) {
+      SdkPresent<List<Map<String, dynamic>>>(value: final value) => {'input_examples': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (maxCharacters) {
+      SdkPresent<int?>(value: final value) => {'max_characters': value,},
+      _ => const <String, dynamic>{},
+    },
+    'name': name.toJson(),
+    ...switch (strict) {
+      SdkPresent<bool>(value: final value) => {'strict': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+  };
 }

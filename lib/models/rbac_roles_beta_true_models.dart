@@ -8,55 +8,32 @@ part of 'rbac_roles_beta_true.dart';
 class BetaRbacRoleList {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `data` wire field.
   final List<BetaRbacRole> data;
-
   /// Indicates whether there are more results beyond this page.
   final bool hasMore;
-
   /// Opaque cursor for the next page. Pass as the `page` parameter on the next request.
   final String? nextPage;
 
-  const BetaRbacRoleList(
-      {required this.data, required this.hasMore, required this.nextPage});
+  const BetaRbacRoleList({required this.data, required this.hasMore, required this.nextPage});
 
-  BetaRbacRoleList Function(
-      {List<BetaRbacRole> data,
-      bool hasMore,
-      String? nextPage}) get copyWith => _copyWith;
+  BetaRbacRoleList Function({List<BetaRbacRole> data, bool hasMore, String? nextPage}) get copyWith => _copyWith;
 
-  BetaRbacRoleList _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? hasMore = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaRbacRoleList(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<BetaRbacRole>,
-        hasMore: identical(hasMore, sdkOmittedValue)
-            ? this.hasMore
-            : hasMore as bool,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as String?,
-      );
+  BetaRbacRoleList _copyWith({Object? data = sdkOmittedValue, Object? hasMore = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaRbacRoleList(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaRbacRole>,
+    hasMore: identical(hasMore, sdkOmittedValue) ? this.hasMore : hasMore as bool,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
+  );
 
-  factory BetaRbacRoleList.fromJson(Map<String, dynamic> json) =>
-      BetaRbacRoleList(
-        data: ((json['data'] as List?)
-            ?.map((e) => BetaRbacRole.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        hasMore: (json['has_more'] as bool?)!,
-        nextPage: json.containsKey('next_page')
-            ? json['next_page'] as String?
-            : throw ArgumentError.value(
-                null, 'next_page', 'Required property is missing'),
-      );
+  factory BetaRbacRoleList.fromJson(Map<String, dynamic> json) => BetaRbacRoleList(
+    data: ((json['data'] as List?)?.map((e) => BetaRbacRole.fromJson(e as Map<String, dynamic>)).toList())!,
+    hasMore: (json['has_more'] as bool?)!,
+    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'has_more': hasMore,
-        'next_page': nextPage,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'has_more': hasMore,
+    'next_page': nextPage,
+  };
 }

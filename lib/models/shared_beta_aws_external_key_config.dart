@@ -8,78 +8,43 @@ part of 'shared_beta.dart';
 class BetaAwsExternalKeyConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Full ARN of the AWS KMS key. On Claude Platform on AWS the key must be a single-Region key in your organization's own AWS account; cross-account keys, multi-Region keys, and alias ARNs are rejected.
   final String kmsArn;
-
   /// AWS region. Derived from `kms_arn` if omitted.
   final SdkOptional<String?> region;
-
   /// IAM role ARN. Deprecated — Anthropic reaches the KMS key through its own intermediate role (or, on Claude Platform on AWS, with credentials AWS issues for the Workspace); this field is ignored.
   final SdkOptional<String?> roleArn;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaAwsExternalKeyConfigType type_;
 
-  const BetaAwsExternalKeyConfig(
-      {required this.kmsArn,
-      this.region = const SdkOmitted(),
-      this.roleArn = const SdkOmitted(),
-      required this.type_});
+  const BetaAwsExternalKeyConfig({required this.kmsArn, this.region = const SdkOmitted(), this.roleArn = const SdkOmitted(), required this.type_});
 
-  BetaAwsExternalKeyConfig Function(
-      {String kmsArn,
-      SdkOptional<String?> region,
-      SdkOptional<String?> roleArn,
-      BetaAwsExternalKeyConfigType type_}) get copyWith => _copyWith;
+  BetaAwsExternalKeyConfig Function({String kmsArn, SdkOptional<String?> region, SdkOptional<String?> roleArn, BetaAwsExternalKeyConfigType type_}) get copyWith => _copyWith;
 
-  BetaAwsExternalKeyConfig _copyWith(
-          {Object? kmsArn = sdkOmittedValue,
-          Object? region = sdkOmittedValue,
-          Object? roleArn = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaAwsExternalKeyConfig(
-        kmsArn:
-            identical(kmsArn, sdkOmittedValue) ? this.kmsArn : kmsArn as String,
-        region: identical(region, sdkOmittedValue)
-            ? this.region
-            : region as SdkOptional<String?>,
-        roleArn: identical(roleArn, sdkOmittedValue)
-            ? this.roleArn
-            : roleArn as SdkOptional<String?>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaAwsExternalKeyConfigType,
-      );
+  BetaAwsExternalKeyConfig _copyWith({Object? kmsArn = sdkOmittedValue, Object? region = sdkOmittedValue, Object? roleArn = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaAwsExternalKeyConfig(
+    kmsArn: identical(kmsArn, sdkOmittedValue) ? this.kmsArn : kmsArn as String,
+    region: identical(region, sdkOmittedValue) ? this.region : region as SdkOptional<String?>,
+    roleArn: identical(roleArn, sdkOmittedValue) ? this.roleArn : roleArn as SdkOptional<String?>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaAwsExternalKeyConfigType,
+  );
 
-  factory BetaAwsExternalKeyConfig.fromJson(Map<String, dynamic> json) =>
-      BetaAwsExternalKeyConfig(
-        kmsArn: (json['kms_arn'] as String?)!,
-        region: json.containsKey('region')
-            ? SdkPresent(json['region'] as String?)
-            : const SdkOmitted(),
-        roleArn: json.containsKey('role_arn')
-            ? SdkPresent(json['role_arn'] as String?)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? BetaAwsExternalKeyConfigType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaAwsExternalKeyConfig.fromJson(Map<String, dynamic> json) => BetaAwsExternalKeyConfig(
+    kmsArn: (json['kms_arn'] as String?)!,
+    region: json.containsKey('region') ? SdkPresent(json['region'] as String?) : const SdkOmitted(),
+    roleArn: json.containsKey('role_arn') ? SdkPresent(json['role_arn'] as String?) : const SdkOmitted(),
+    type_: (json['type'] != null ? BetaAwsExternalKeyConfigType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'kms_arn': kmsArn,
-        ...switch (region) {
-          SdkPresent<String?>(value: final value) => {
-              'region': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (roleArn) {
-          SdkPresent<String?>(value: final value) => {
-              'role_arn': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-      };
+    'kms_arn': kmsArn,
+    ...switch (region) {
+      SdkPresent<String?>(value: final value) => {'region': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (roleArn) {
+      SdkPresent<String?>(value: final value) => {'role_arn': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+  };
 }

@@ -8,44 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionCreationRejectedRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionCreationRejectedRunErrorType type_;
-
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsSessionCreationRejectedRunError(
-      {required this.type_, required this.message});
+  const BetaManagedAgentsSessionCreationRejectedRunError({required this.type_, required this.message});
 
-  BetaManagedAgentsSessionCreationRejectedRunError Function(
-      {BetaManagedAgentsSessionCreationRejectedRunErrorType type_,
-      String message}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionCreationRejectedRunError Function({BetaManagedAgentsSessionCreationRejectedRunErrorType type_, String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionCreationRejectedRunError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionCreationRejectedRunError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSessionCreationRejectedRunErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-      );
+  BetaManagedAgentsSessionCreationRejectedRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsSessionCreationRejectedRunError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionCreationRejectedRunErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+  );
 
-  factory BetaManagedAgentsSessionCreationRejectedRunError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionCreationRejectedRunError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSessionCreationRejectedRunErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-      );
+  factory BetaManagedAgentsSessionCreationRejectedRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionCreationRejectedRunError(
+    type_: (json['type'] != null ? BetaManagedAgentsSessionCreationRejectedRunErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-      };
+    'type': type_.toJson(),
+    'message': message,
+  };
 }

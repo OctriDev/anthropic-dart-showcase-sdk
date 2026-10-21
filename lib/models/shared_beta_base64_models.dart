@@ -8,112 +8,66 @@ part of 'shared_beta_base64.dart';
 class BetaBase64ImageSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `byte`-formatted value serialized in the `data` wire field.
   final List<int> data;
-
   /// Required enumerated value serialized in the `media_type` wire field.
   final BetaBase64ImageSourceMediaType mediaType;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaBase64ImageSourceType type_;
 
-  const BetaBase64ImageSource(
-      {required this.data, required this.mediaType, required this.type_});
+  const BetaBase64ImageSource({required this.data, required this.mediaType, required this.type_});
 
-  BetaBase64ImageSource Function(
-      {List<int> data,
-      BetaBase64ImageSourceMediaType mediaType,
-      BetaBase64ImageSourceType type_}) get copyWith => _copyWith;
+  BetaBase64ImageSource Function({List<int> data, BetaBase64ImageSourceMediaType mediaType, BetaBase64ImageSourceType type_}) get copyWith => _copyWith;
 
-  BetaBase64ImageSource _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? mediaType = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaBase64ImageSource(
-        data: identical(data, sdkOmittedValue) ? this.data : data as List<int>,
-        mediaType: identical(mediaType, sdkOmittedValue)
-            ? this.mediaType
-            : mediaType as BetaBase64ImageSourceMediaType,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaBase64ImageSourceType,
-      );
+  BetaBase64ImageSource _copyWith({Object? data = sdkOmittedValue, Object? mediaType = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaBase64ImageSource(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<int>,
+    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as BetaBase64ImageSourceMediaType,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaBase64ImageSourceType,
+  );
 
-  factory BetaBase64ImageSource.fromJson(Map<String, dynamic> json) =>
-      BetaBase64ImageSource(
-        data: (json['data'] != null
-            ? base64Decode(json['data'] as String)
-            : null)!,
-        mediaType: (json['media_type'] != null
-            ? BetaBase64ImageSourceMediaType.fromJson(
-                json['media_type'] as String)
-            : null)!,
-        type_: (json['type'] != null
-            ? BetaBase64ImageSourceType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaBase64ImageSource.fromJson(Map<String, dynamic> json) => BetaBase64ImageSource(
+    data: (json['data'] != null ? base64Decode(json['data'] as String) : null)!,
+    mediaType: (json['media_type'] != null ? BetaBase64ImageSourceMediaType.fromJson(json['media_type'] as String) : null)!,
+    type_: (json['type'] != null ? BetaBase64ImageSourceType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': base64Encode(data),
-        'media_type': mediaType.toJson(),
-        'type': type_.toJson(),
-      };
+    'data': base64Encode(data),
+    'media_type': mediaType.toJson(),
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaBase64PDFSource` API schema.
 class BetaBase64PDFSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `byte`-formatted value serialized in the `data` wire field.
   final List<int> data;
-
   /// Required `string` value serialized in the `media_type` wire field.
   final BetaBase64PDFSourceMediaType mediaType;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaBase64PDFSourceType type_;
 
-  const BetaBase64PDFSource(
-      {required this.data, required this.mediaType, required this.type_});
+  const BetaBase64PDFSource({required this.data, required this.mediaType, required this.type_});
 
-  BetaBase64PDFSource Function(
-      {List<int> data,
-      BetaBase64PDFSourceMediaType mediaType,
-      BetaBase64PDFSourceType type_}) get copyWith => _copyWith;
+  BetaBase64PDFSource Function({List<int> data, BetaBase64PDFSourceMediaType mediaType, BetaBase64PDFSourceType type_}) get copyWith => _copyWith;
 
-  BetaBase64PDFSource _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? mediaType = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaBase64PDFSource(
-        data: identical(data, sdkOmittedValue) ? this.data : data as List<int>,
-        mediaType: identical(mediaType, sdkOmittedValue)
-            ? this.mediaType
-            : mediaType as BetaBase64PDFSourceMediaType,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaBase64PDFSourceType,
-      );
+  BetaBase64PDFSource _copyWith({Object? data = sdkOmittedValue, Object? mediaType = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaBase64PDFSource(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<int>,
+    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as BetaBase64PDFSourceMediaType,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaBase64PDFSourceType,
+  );
 
-  factory BetaBase64PDFSource.fromJson(Map<String, dynamic> json) =>
-      BetaBase64PDFSource(
-        data: (json['data'] != null
-            ? base64Decode(json['data'] as String)
-            : null)!,
-        mediaType: (json['media_type'] != null
-            ? BetaBase64PDFSourceMediaType.fromJson(
-                json['media_type'] as String)
-            : null)!,
-        type_: (json['type'] != null
-            ? BetaBase64PDFSourceType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaBase64PDFSource.fromJson(Map<String, dynamic> json) => BetaBase64PDFSource(
+    data: (json['data'] != null ? base64Decode(json['data'] as String) : null)!,
+    mediaType: (json['media_type'] != null ? BetaBase64PDFSourceMediaType.fromJson(json['media_type'] as String) : null)!,
+    type_: (json['type'] != null ? BetaBase64PDFSourceType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': base64Encode(data),
-        'media_type': mediaType.toJson(),
-        'type': type_.toJson(),
-      };
+    'data': base64Encode(data),
+    'media_type': mediaType.toJson(),
+    'type': type_.toJson(),
+  };
 }

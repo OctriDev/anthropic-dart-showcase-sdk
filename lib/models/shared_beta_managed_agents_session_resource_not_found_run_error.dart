@@ -8,44 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionResourceNotFoundRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionResourceNotFoundRunErrorType type_;
-
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsSessionResourceNotFoundRunError(
-      {required this.type_, required this.message});
+  const BetaManagedAgentsSessionResourceNotFoundRunError({required this.type_, required this.message});
 
-  BetaManagedAgentsSessionResourceNotFoundRunError Function(
-      {BetaManagedAgentsSessionResourceNotFoundRunErrorType type_,
-      String message}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionResourceNotFoundRunError Function({BetaManagedAgentsSessionResourceNotFoundRunErrorType type_, String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionResourceNotFoundRunError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionResourceNotFoundRunError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSessionResourceNotFoundRunErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-      );
+  BetaManagedAgentsSessionResourceNotFoundRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsSessionResourceNotFoundRunError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionResourceNotFoundRunErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+  );
 
-  factory BetaManagedAgentsSessionResourceNotFoundRunError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionResourceNotFoundRunError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSessionResourceNotFoundRunErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-      );
+  factory BetaManagedAgentsSessionResourceNotFoundRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionResourceNotFoundRunError(
+    type_: (json['type'] != null ? BetaManagedAgentsSessionResourceNotFoundRunErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-      };
+    'type': type_.toJson(),
+    'message': message,
+  };
 }

@@ -8,39 +8,27 @@ part of 'users_beta_true.dart';
 class BetaAnalyticsLinesOfCode {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Lines of code added
   final int addedCount;
-
   /// Lines of code removed
   final int removedCount;
 
-  const BetaAnalyticsLinesOfCode(
-      {required this.addedCount, required this.removedCount});
+  const BetaAnalyticsLinesOfCode({required this.addedCount, required this.removedCount});
 
-  BetaAnalyticsLinesOfCode Function({int addedCount, int removedCount})
-      get copyWith => _copyWith;
+  BetaAnalyticsLinesOfCode Function({int addedCount, int removedCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsLinesOfCode _copyWith(
-          {Object? addedCount = sdkOmittedValue,
-          Object? removedCount = sdkOmittedValue}) =>
-      BetaAnalyticsLinesOfCode(
-        addedCount: identical(addedCount, sdkOmittedValue)
-            ? this.addedCount
-            : addedCount as int,
-        removedCount: identical(removedCount, sdkOmittedValue)
-            ? this.removedCount
-            : removedCount as int,
-      );
+  BetaAnalyticsLinesOfCode _copyWith({Object? addedCount = sdkOmittedValue, Object? removedCount = sdkOmittedValue}) => BetaAnalyticsLinesOfCode(
+    addedCount: identical(addedCount, sdkOmittedValue) ? this.addedCount : addedCount as int,
+    removedCount: identical(removedCount, sdkOmittedValue) ? this.removedCount : removedCount as int,
+  );
 
-  factory BetaAnalyticsLinesOfCode.fromJson(Map<String, dynamic> json) =>
-      BetaAnalyticsLinesOfCode(
-        addedCount: ((json['added_count'] as num?)?.toInt())!,
-        removedCount: ((json['removed_count'] as num?)?.toInt())!,
-      );
+  factory BetaAnalyticsLinesOfCode.fromJson(Map<String, dynamic> json) => BetaAnalyticsLinesOfCode(
+    addedCount: ((json['added_count'] as num?)?.toInt())!,
+    removedCount: ((json['removed_count'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'added_count': addedCount,
-        'removed_count': removedCount,
-      };
+    'added_count': addedCount,
+    'removed_count': removedCount,
+  };
 }

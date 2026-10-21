@@ -10,107 +10,48 @@ sealed class BetaManagedAgentsDocumentSource {
   const BetaManagedAgentsDocumentSource();
   factory BetaManagedAgentsDocumentSource.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsBase64DocumentSource.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsDocumentSourceBetaManagedAgentsBase64DocumentSource(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsPlainTextDocumentSource.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsDocumentSourceBetaManagedAgentsPlainTextDocumentSource(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsURLDocumentSource.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsDocumentSourceBetaManagedAgentsURLDocumentSource(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsFileDocumentSource.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsDocumentSourceBetaManagedAgentsFileDocumentSource(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsBase64DocumentSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDocumentSourceBetaManagedAgentsBase64DocumentSource(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsPlainTextDocumentSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDocumentSourceBetaManagedAgentsPlainTextDocumentSource(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsURLDocumentSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDocumentSourceBetaManagedAgentsURLDocumentSource(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsFileDocumentSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDocumentSourceBetaManagedAgentsFileDocumentSource(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsDocumentSourceBetaManagedAgentsBase64DocumentSource(
-          BetaManagedAgentsBase64DocumentSource.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsDocumentSourceBetaManagedAgentsPlainTextDocumentSource(
-          BetaManagedAgentsPlainTextDocumentSource.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsDocumentSourceBetaManagedAgentsURLDocumentSource(
-          BetaManagedAgentsURLDocumentSource.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsDocumentSourceBetaManagedAgentsFileDocumentSource(
-          BetaManagedAgentsFileDocumentSource.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"base64", "text", "url", "file"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsDocumentSource(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsDocumentSource");
+    try { return BetaManagedAgentsDocumentSourceBetaManagedAgentsBase64DocumentSource(BetaManagedAgentsBase64DocumentSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsDocumentSourceBetaManagedAgentsPlainTextDocumentSource(BetaManagedAgentsPlainTextDocumentSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsDocumentSourceBetaManagedAgentsURLDocumentSource(BetaManagedAgentsURLDocumentSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsDocumentSourceBetaManagedAgentsFileDocumentSource(BetaManagedAgentsFileDocumentSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"base64", "text", "url", "file"}.contains(json["type"])) { return UnknownBetaManagedAgentsDocumentSource(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsDocumentSource");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsDocumentSourceBetaManagedAgentsBase64DocumentSource
-    extends BetaManagedAgentsDocumentSource {
+final class BetaManagedAgentsDocumentSourceBetaManagedAgentsBase64DocumentSource extends BetaManagedAgentsDocumentSource {
   final BetaManagedAgentsBase64DocumentSource value;
-  const BetaManagedAgentsDocumentSourceBetaManagedAgentsBase64DocumentSource(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsDocumentSourceBetaManagedAgentsBase64DocumentSource(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDocumentSourceBetaManagedAgentsPlainTextDocumentSource
-    extends BetaManagedAgentsDocumentSource {
+final class BetaManagedAgentsDocumentSourceBetaManagedAgentsPlainTextDocumentSource extends BetaManagedAgentsDocumentSource {
   final BetaManagedAgentsPlainTextDocumentSource value;
-  const BetaManagedAgentsDocumentSourceBetaManagedAgentsPlainTextDocumentSource(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsDocumentSourceBetaManagedAgentsPlainTextDocumentSource(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDocumentSourceBetaManagedAgentsURLDocumentSource
-    extends BetaManagedAgentsDocumentSource {
+final class BetaManagedAgentsDocumentSourceBetaManagedAgentsURLDocumentSource extends BetaManagedAgentsDocumentSource {
   final BetaManagedAgentsURLDocumentSource value;
-  const BetaManagedAgentsDocumentSourceBetaManagedAgentsURLDocumentSource(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsDocumentSourceBetaManagedAgentsURLDocumentSource(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDocumentSourceBetaManagedAgentsFileDocumentSource
-    extends BetaManagedAgentsDocumentSource {
+final class BetaManagedAgentsDocumentSourceBetaManagedAgentsFileDocumentSource extends BetaManagedAgentsDocumentSource {
   final BetaManagedAgentsFileDocumentSource value;
-  const BetaManagedAgentsDocumentSourceBetaManagedAgentsFileDocumentSource(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsDocumentSourceBetaManagedAgentsFileDocumentSource(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsDocumentSource] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsDocumentSource
-    extends BetaManagedAgentsDocumentSource {
+final class UnknownBetaManagedAgentsDocumentSource extends BetaManagedAgentsDocumentSource {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsDocumentSource(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

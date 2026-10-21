@@ -10,65 +10,32 @@ sealed class BetaManagedAgentsTriggerContext {
   const BetaManagedAgentsTriggerContext();
   factory BetaManagedAgentsTriggerContext.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsScheduleTriggerContext.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsTriggerContextBetaManagedAgentsScheduleTriggerContext(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsManualTriggerContext.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsTriggerContextBetaManagedAgentsManualTriggerContext(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsScheduleTriggerContext.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsTriggerContextBetaManagedAgentsScheduleTriggerContext(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsManualTriggerContext.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsTriggerContextBetaManagedAgentsManualTriggerContext(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsTriggerContextBetaManagedAgentsScheduleTriggerContext(
-          BetaManagedAgentsScheduleTriggerContext.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsTriggerContextBetaManagedAgentsManualTriggerContext(
-          BetaManagedAgentsManualTriggerContext.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"schedule", "manual"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsTriggerContext(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsTriggerContext");
+    try { return BetaManagedAgentsTriggerContextBetaManagedAgentsScheduleTriggerContext(BetaManagedAgentsScheduleTriggerContext.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsTriggerContextBetaManagedAgentsManualTriggerContext(BetaManagedAgentsManualTriggerContext.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"schedule", "manual"}.contains(json["type"])) { return UnknownBetaManagedAgentsTriggerContext(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsTriggerContext");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsTriggerContextBetaManagedAgentsScheduleTriggerContext
-    extends BetaManagedAgentsTriggerContext {
+final class BetaManagedAgentsTriggerContextBetaManagedAgentsScheduleTriggerContext extends BetaManagedAgentsTriggerContext {
   final BetaManagedAgentsScheduleTriggerContext value;
-  const BetaManagedAgentsTriggerContextBetaManagedAgentsScheduleTriggerContext(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsTriggerContextBetaManagedAgentsScheduleTriggerContext(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsTriggerContextBetaManagedAgentsManualTriggerContext
-    extends BetaManagedAgentsTriggerContext {
+final class BetaManagedAgentsTriggerContextBetaManagedAgentsManualTriggerContext extends BetaManagedAgentsTriggerContext {
   final BetaManagedAgentsManualTriggerContext value;
-  const BetaManagedAgentsTriggerContextBetaManagedAgentsManualTriggerContext(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsTriggerContextBetaManagedAgentsManualTriggerContext(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsTriggerContext] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsTriggerContext
-    extends BetaManagedAgentsTriggerContext {
+final class UnknownBetaManagedAgentsTriggerContext extends BetaManagedAgentsTriggerContext {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsTriggerContext(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

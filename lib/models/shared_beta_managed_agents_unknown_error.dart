@@ -8,54 +8,32 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsUnknownError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUnknownErrorType type_;
-
   /// Human-readable error description.
   final String message;
-
   /// What the client should do next.
   final BetaManagedAgentsRetryStatus retryStatus;
 
-  const BetaManagedAgentsUnknownError(
-      {required this.type_, required this.message, required this.retryStatus});
+  const BetaManagedAgentsUnknownError({required this.type_, required this.message, required this.retryStatus});
 
-  BetaManagedAgentsUnknownError Function(
-      {BetaManagedAgentsUnknownErrorType type_,
-      String message,
-      BetaManagedAgentsRetryStatus retryStatus}) get copyWith => _copyWith;
+  BetaManagedAgentsUnknownError Function({BetaManagedAgentsUnknownErrorType type_, String message, BetaManagedAgentsRetryStatus retryStatus}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUnknownError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue,
-          Object? retryStatus = sdkOmittedValue}) =>
-      BetaManagedAgentsUnknownError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsUnknownErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        retryStatus: identical(retryStatus, sdkOmittedValue)
-            ? this.retryStatus
-            : retryStatus as BetaManagedAgentsRetryStatus,
-      );
+  BetaManagedAgentsUnknownError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue, Object? retryStatus = sdkOmittedValue}) => BetaManagedAgentsUnknownError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUnknownErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    retryStatus: identical(retryStatus, sdkOmittedValue) ? this.retryStatus : retryStatus as BetaManagedAgentsRetryStatus,
+  );
 
-  factory BetaManagedAgentsUnknownError.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsUnknownError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsUnknownErrorType.fromJson(json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-        retryStatus: (json['retry_status'] != null
-            ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status'])
-            : null)!,
-      );
+  factory BetaManagedAgentsUnknownError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUnknownError(
+    type_: (json['type'] != null ? BetaManagedAgentsUnknownErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+    retryStatus: (json['retry_status'] != null ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-        'retry_status': retryStatus.toJson(),
-      };
+    'type': type_.toJson(),
+    'message': message,
+    'retry_status': retryStatus.toJson(),
+  };
 }

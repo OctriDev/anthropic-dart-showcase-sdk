@@ -8,52 +8,32 @@ part of 'credentials_beta_true.dart';
 class BetaManagedAgentsStaticBearerCreateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsStaticBearerCreateParamsType type_;
-
   /// Static bearer token value.
   final String token;
-
   /// URL of the MCP server this credential authenticates against.
   final String mcpServerUrl;
 
-  const BetaManagedAgentsStaticBearerCreateParams(
-      {required this.type_, required this.token, required this.mcpServerUrl});
+  const BetaManagedAgentsStaticBearerCreateParams({required this.type_, required this.token, required this.mcpServerUrl});
 
-  BetaManagedAgentsStaticBearerCreateParams Function(
-      {BetaManagedAgentsStaticBearerCreateParamsType type_,
-      String token,
-      String mcpServerUrl}) get copyWith => _copyWith;
+  BetaManagedAgentsStaticBearerCreateParams Function({BetaManagedAgentsStaticBearerCreateParamsType type_, String token, String mcpServerUrl}) get copyWith => _copyWith;
 
-  BetaManagedAgentsStaticBearerCreateParams _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? token = sdkOmittedValue,
-          Object? mcpServerUrl = sdkOmittedValue}) =>
-      BetaManagedAgentsStaticBearerCreateParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsStaticBearerCreateParamsType,
-        token: identical(token, sdkOmittedValue) ? this.token : token as String,
-        mcpServerUrl: identical(mcpServerUrl, sdkOmittedValue)
-            ? this.mcpServerUrl
-            : mcpServerUrl as String,
-      );
+  BetaManagedAgentsStaticBearerCreateParams _copyWith({Object? type_ = sdkOmittedValue, Object? token = sdkOmittedValue, Object? mcpServerUrl = sdkOmittedValue}) => BetaManagedAgentsStaticBearerCreateParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsStaticBearerCreateParamsType,
+    token: identical(token, sdkOmittedValue) ? this.token : token as String,
+    mcpServerUrl: identical(mcpServerUrl, sdkOmittedValue) ? this.mcpServerUrl : mcpServerUrl as String,
+  );
 
-  factory BetaManagedAgentsStaticBearerCreateParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsStaticBearerCreateParams(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsStaticBearerCreateParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-        token: (json['token'] as String?)!,
-        mcpServerUrl: (json['mcp_server_url'] as String?)!,
-      );
+  factory BetaManagedAgentsStaticBearerCreateParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsStaticBearerCreateParams(
+    type_: (json['type'] != null ? BetaManagedAgentsStaticBearerCreateParamsType.fromJson(json['type'] as String) : null)!,
+    token: (json['token'] as String?)!,
+    mcpServerUrl: (json['mcp_server_url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'token': token,
-        'mcp_server_url': mcpServerUrl,
-      };
+    'type': type_.toJson(),
+    'token': token,
+    'mcp_server_url': mcpServerUrl,
+  };
 }

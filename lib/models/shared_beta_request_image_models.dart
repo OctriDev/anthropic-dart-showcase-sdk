@@ -9,125 +9,69 @@ sealed class BetaRequestImageBlockCacheControl {
   static const String constructionSurface = 'named';
   const BetaRequestImageBlockCacheControl();
   factory BetaRequestImageBlockCacheControl.fromJson(Object? json) {
-    try {
-      return BetaRequestImageBlockCacheControlBetaCacheControlEphemeral(
-          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownBetaRequestImageBlockCacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaRequestImageBlockCacheControl");
+    try { return BetaRequestImageBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestImageBlockCacheControl(json); }
+    throw FormatException("No variant matched for BetaRequestImageBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestImageBlockCacheControlBetaCacheControlEphemeral
-    extends BetaRequestImageBlockCacheControl {
+final class BetaRequestImageBlockCacheControlBetaCacheControlEphemeral extends BetaRequestImageBlockCacheControl {
   final BetaCacheControlEphemeral value;
   const BetaRequestImageBlockCacheControlBetaCacheControlEphemeral(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestImageBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestImageBlockCacheControl
-    extends BetaRequestImageBlockCacheControl {
+final class UnknownBetaRequestImageBlockCacheControl extends BetaRequestImageBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestImageBlockCacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaRequestImageBlock` API schema.
 class BetaRequestImageBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
-
   /// Required API value serialized in the `source` wire field.
   final BetaRequestImageBlockSource source;
-
   /// Configures the transformations the server applies to this image before the model observes it. Each key names a condition the server transforms images for; its value selects the transformation applied. Omitted keys keep their default behavior, and an empty object is equivalent to omitting the field.
   final SdkOptional<BetaRequestImageTransformations?> transformations;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestImageBlockType type_;
 
-  const BetaRequestImageBlock(
-      {this.cacheControl = const SdkOmitted(),
-      required this.source,
-      this.transformations = const SdkOmitted(),
-      required this.type_});
+  const BetaRequestImageBlock({this.cacheControl = const SdkOmitted(), required this.source, this.transformations = const SdkOmitted(), required this.type_});
 
-  BetaRequestImageBlock Function(
-      {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
-      BetaRequestImageBlockSource source,
-      SdkOptional<BetaRequestImageTransformations?> transformations,
-      BetaRequestImageBlockType type_}) get copyWith => _copyWith;
+  BetaRequestImageBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, BetaRequestImageBlockSource source, SdkOptional<BetaRequestImageTransformations?> transformations, BetaRequestImageBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestImageBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? source = sdkOmittedValue,
-          Object? transformations = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaRequestImageBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-        source: identical(source, sdkOmittedValue)
-            ? this.source
-            : source as BetaRequestImageBlockSource,
-        transformations: identical(transformations, sdkOmittedValue)
-            ? this.transformations
-            : transformations as SdkOptional<BetaRequestImageTransformations?>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaRequestImageBlockType,
-      );
+  BetaRequestImageBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? source = sdkOmittedValue, Object? transformations = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestImageBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+    source: identical(source, sdkOmittedValue) ? this.source : source as BetaRequestImageBlockSource,
+    transformations: identical(transformations, sdkOmittedValue) ? this.transformations : transformations as SdkOptional<BetaRequestImageTransformations?>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestImageBlockType,
+  );
 
-  factory BetaRequestImageBlock.fromJson(Map<String, dynamic> json) =>
-      BetaRequestImageBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? BetaCacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        source: (json['source'] != null
-            ? BetaRequestImageBlockSource.fromJson(json['source'])
-            : null)!,
-        transformations: json.containsKey('transformations')
-            ? SdkPresent(json['transformations'] != null
-                ? BetaRequestImageTransformations.fromJson(
-                    json['transformations'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? BetaRequestImageBlockType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaRequestImageBlock.fromJson(Map<String, dynamic> json) => BetaRequestImageBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    source: (json['source'] != null ? BetaRequestImageBlockSource.fromJson(json['source']) : null)!,
+    transformations: json.containsKey('transformations') ? SdkPresent(json['transformations'] != null ? BetaRequestImageTransformations.fromJson(json['transformations'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    type_: (json['type'] != null ? BetaRequestImageBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'source': source.toJson(),
-        ...switch (transformations) {
-          SdkPresent<BetaRequestImageTransformations?>(value: final value) => {
-              'transformations': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'source': source.toJson(),
+    ...switch (transformations) {
+      SdkPresent<BetaRequestImageTransformations?>(value: final value) => {'transformations': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+  };
 }
 
 sealed class BetaRequestImageBlockSource {
@@ -136,124 +80,67 @@ sealed class BetaRequestImageBlockSource {
   const BetaRequestImageBlockSource();
   factory BetaRequestImageBlockSource.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaBase64ImageSource.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaRequestImageBlockSourceBetaBase64ImageSource(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaURLImageSource.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaRequestImageBlockSourceBetaURLImageSource(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaFileImageSource.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaRequestImageBlockSourceBetaFileImageSource(value);
-        }
-      } catch (_) {}
+      try { final value = BetaBase64ImageSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestImageBlockSourceBetaBase64ImageSource(value); } } catch (_) {}
+      try { final value = BetaURLImageSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestImageBlockSourceBetaURLImageSource(value); } } catch (_) {}
+      try { final value = BetaFileImageSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestImageBlockSourceBetaFileImageSource(value); } } catch (_) {}
     }
-    try {
-      return BetaRequestImageBlockSourceBetaBase64ImageSource(
-          BetaBase64ImageSource.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaRequestImageBlockSourceBetaURLImageSource(
-          BetaURLImageSource.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaRequestImageBlockSourceBetaFileImageSource(
-          BetaFileImageSource.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"base64", "file", "url"}.contains(json["type"])) {
-      return UnknownBetaRequestImageBlockSource(json);
-    }
+    try { return BetaRequestImageBlockSourceBetaBase64ImageSource(BetaBase64ImageSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaRequestImageBlockSourceBetaURLImageSource(BetaURLImageSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaRequestImageBlockSourceBetaFileImageSource(BetaFileImageSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"base64", "file", "url"}.contains(json["type"])) { return UnknownBetaRequestImageBlockSource(json); }
     throw FormatException("No variant matched for BetaRequestImageBlockSource");
   }
   Object? toJson();
 }
 
-final class BetaRequestImageBlockSourceBetaBase64ImageSource
-    extends BetaRequestImageBlockSource {
+final class BetaRequestImageBlockSourceBetaBase64ImageSource extends BetaRequestImageBlockSource {
   final BetaBase64ImageSource value;
   const BetaRequestImageBlockSourceBetaBase64ImageSource(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaRequestImageBlockSourceBetaURLImageSource
-    extends BetaRequestImageBlockSource {
+final class BetaRequestImageBlockSourceBetaURLImageSource extends BetaRequestImageBlockSource {
   final BetaURLImageSource value;
   const BetaRequestImageBlockSourceBetaURLImageSource(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaRequestImageBlockSourceBetaFileImageSource
-    extends BetaRequestImageBlockSource {
+final class BetaRequestImageBlockSourceBetaFileImageSource extends BetaRequestImageBlockSource {
   final BetaFileImageSource value;
   const BetaRequestImageBlockSourceBetaFileImageSource(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestImageBlockSource] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestImageBlockSource
-    extends BetaRequestImageBlockSource {
+final class UnknownBetaRequestImageBlockSource extends BetaRequestImageBlockSource {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestImageBlockSource(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Configures the transformations the server applies to this image before the model observes it. Each key names a condition the server transforms images for; its value selects the transformation applied. Omitted keys keep their default behavior, and an empty object is equivalent to omitting the field.
 class BetaRequestImageTransformations {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// What the server does when this image exceeds the model's maximum image size. `"downsize"` (the default) scales the image down to fit, which changes the dimensions the model observes without telling you. `"error"` instead rejects the request with a 400 error naming the image's dimensions and the largest dimensions that fit, so you can scale the image deliberately — your image is never silently scaled down.
-  final SdkOptional<BetaRequestImageTransformationsOversizedImage>
-      oversizedImage;
+  final SdkOptional<BetaRequestImageTransformationsOversizedImage> oversizedImage;
 
-  const BetaRequestImageTransformations(
-      {this.oversizedImage = const SdkOmitted()});
+  const BetaRequestImageTransformations({this.oversizedImage = const SdkOmitted()});
 
-  BetaRequestImageTransformations Function(
-      {SdkOptional<BetaRequestImageTransformationsOversizedImage>
-          oversizedImage}) get copyWith => _copyWith;
+  BetaRequestImageTransformations Function({SdkOptional<BetaRequestImageTransformationsOversizedImage> oversizedImage}) get copyWith => _copyWith;
 
-  BetaRequestImageTransformations _copyWith(
-          {Object? oversizedImage = sdkOmittedValue}) =>
-      BetaRequestImageTransformations(
-        oversizedImage: identical(oversizedImage, sdkOmittedValue)
-            ? this.oversizedImage
-            : oversizedImage
-                as SdkOptional<BetaRequestImageTransformationsOversizedImage>,
-      );
+  BetaRequestImageTransformations _copyWith({Object? oversizedImage = sdkOmittedValue}) => BetaRequestImageTransformations(
+    oversizedImage: identical(oversizedImage, sdkOmittedValue) ? this.oversizedImage : oversizedImage as SdkOptional<BetaRequestImageTransformationsOversizedImage>,
+  );
 
-  factory BetaRequestImageTransformations.fromJson(Map<String, dynamic> json) =>
-      BetaRequestImageTransformations(
-        oversizedImage: json['oversized_image'] != null
-            ? SdkPresent((json['oversized_image'] != null
-                ? BetaRequestImageTransformationsOversizedImage.fromJson(
-                    json['oversized_image'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory BetaRequestImageTransformations.fromJson(Map<String, dynamic> json) => BetaRequestImageTransformations(
+    oversizedImage: json['oversized_image'] != null ? SdkPresent((json['oversized_image'] != null ? BetaRequestImageTransformationsOversizedImage.fromJson(json['oversized_image'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (oversizedImage) {
-          SdkPresent<BetaRequestImageTransformationsOversizedImage>(
-            value: final value
-          ) =>
-            {
-              'oversized_image': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (oversizedImage) {
+      SdkPresent<BetaRequestImageTransformationsOversizedImage>(value: final value) => {'oversized_image': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

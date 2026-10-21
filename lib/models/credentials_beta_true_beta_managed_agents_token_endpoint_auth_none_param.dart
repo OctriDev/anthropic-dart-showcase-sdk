@@ -8,34 +8,22 @@ part of 'credentials_beta_true.dart';
 class BetaManagedAgentsTokenEndpointAuthNoneParam {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTokenEndpointAuthNoneParamType type_;
 
   const BetaManagedAgentsTokenEndpointAuthNoneParam({required this.type_});
 
-  BetaManagedAgentsTokenEndpointAuthNoneParam Function(
-          {BetaManagedAgentsTokenEndpointAuthNoneParamType type_})
-      get copyWith => _copyWith;
+  BetaManagedAgentsTokenEndpointAuthNoneParam Function({BetaManagedAgentsTokenEndpointAuthNoneParamType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsTokenEndpointAuthNoneParam _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      BetaManagedAgentsTokenEndpointAuthNoneParam(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsTokenEndpointAuthNoneParamType,
-      );
+  BetaManagedAgentsTokenEndpointAuthNoneParam _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsTokenEndpointAuthNoneParam(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTokenEndpointAuthNoneParamType,
+  );
 
-  factory BetaManagedAgentsTokenEndpointAuthNoneParam.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsTokenEndpointAuthNoneParam(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsTokenEndpointAuthNoneParamType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaManagedAgentsTokenEndpointAuthNoneParam.fromJson(Map<String, dynamic> json) => BetaManagedAgentsTokenEndpointAuthNoneParam(
+    type_: (json['type'] != null ? BetaManagedAgentsTokenEndpointAuthNoneParamType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

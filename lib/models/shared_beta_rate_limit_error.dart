@@ -8,40 +8,27 @@ part of 'shared_beta.dart';
 class BetaRateLimitError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaRateLimitErrorType type_;
 
   const BetaRateLimitError({required this.message, required this.type_});
 
-  BetaRateLimitError Function({String message, BetaRateLimitErrorType type_})
-      get copyWith => _copyWith;
+  BetaRateLimitError Function({String message, BetaRateLimitErrorType type_}) get copyWith => _copyWith;
 
-  BetaRateLimitError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaRateLimitError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaRateLimitErrorType,
-      );
+  BetaRateLimitError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRateLimitError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRateLimitErrorType,
+  );
 
-  factory BetaRateLimitError.fromJson(Map<String, dynamic> json) =>
-      BetaRateLimitError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaRateLimitErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaRateLimitError.fromJson(Map<String, dynamic> json) => BetaRateLimitError(
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? BetaRateLimitErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }

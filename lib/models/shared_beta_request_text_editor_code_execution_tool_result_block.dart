@@ -8,123 +8,65 @@ sealed class BetaRequestTextEditorCodeExecutionToolResultBlockCacheControl {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaRequestTextEditorCodeExecutionToolResultBlockCacheControl();
-  factory BetaRequestTextEditorCodeExecutionToolResultBlockCacheControl.fromJson(
-      Object? json) {
-    try {
-      return BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral(
-          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownBetaRequestTextEditorCodeExecutionToolResultBlockCacheControl(
-          json);
-    }
-    throw FormatException(
-        "No variant matched for BetaRequestTextEditorCodeExecutionToolResultBlockCacheControl");
+  factory BetaRequestTextEditorCodeExecutionToolResultBlockCacheControl.fromJson(Object? json) {
+    try { return BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestTextEditorCodeExecutionToolResultBlockCacheControl(json); }
+    throw FormatException("No variant matched for BetaRequestTextEditorCodeExecutionToolResultBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral
-    extends BetaRequestTextEditorCodeExecutionToolResultBlockCacheControl {
+final class BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral extends BetaRequestTextEditorCodeExecutionToolResultBlockCacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestTextEditorCodeExecutionToolResultBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestTextEditorCodeExecutionToolResultBlockCacheControl
-    extends BetaRequestTextEditorCodeExecutionToolResultBlockCacheControl {
+final class UnknownBetaRequestTextEditorCodeExecutionToolResultBlockCacheControl extends BetaRequestTextEditorCodeExecutionToolResultBlockCacheControl {
   final Map<String, dynamic> raw;
-  const UnknownBetaRequestTextEditorCodeExecutionToolResultBlockCacheControl(
-      this.raw);
-  @override
-  Object? toJson() => raw;
+  const UnknownBetaRequestTextEditorCodeExecutionToolResultBlockCacheControl(this.raw);
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaRequestTextEditorCodeExecutionToolResultBlock` API schema.
 class BetaRequestTextEditorCodeExecutionToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
-
   /// Required API value serialized in the `content` wire field.
   final BetaRequestTextEditorCodeExecutionToolResultBlockContent content;
-
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestTextEditorCodeExecutionToolResultBlockType type_;
 
-  const BetaRequestTextEditorCodeExecutionToolResultBlock(
-      {this.cacheControl = const SdkOmitted(),
-      required this.content,
-      required this.toolUseId,
-      required this.type_});
+  const BetaRequestTextEditorCodeExecutionToolResultBlock({this.cacheControl = const SdkOmitted(), required this.content, required this.toolUseId, required this.type_});
 
-  BetaRequestTextEditorCodeExecutionToolResultBlock Function(
-          {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
-          BetaRequestTextEditorCodeExecutionToolResultBlockContent content,
-          String toolUseId,
-          BetaRequestTextEditorCodeExecutionToolResultBlockType type_})
-      get copyWith => _copyWith;
+  BetaRequestTextEditorCodeExecutionToolResultBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, BetaRequestTextEditorCodeExecutionToolResultBlockContent content, String toolUseId, BetaRequestTextEditorCodeExecutionToolResultBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestTextEditorCodeExecutionToolResultBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? toolUseId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaRequestTextEditorCodeExecutionToolResultBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content
-                as BetaRequestTextEditorCodeExecutionToolResultBlockContent,
-        toolUseId: identical(toolUseId, sdkOmittedValue)
-            ? this.toolUseId
-            : toolUseId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaRequestTextEditorCodeExecutionToolResultBlockType,
-      );
+  BetaRequestTextEditorCodeExecutionToolResultBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestTextEditorCodeExecutionToolResultBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+    content: identical(content, sdkOmittedValue) ? this.content : content as BetaRequestTextEditorCodeExecutionToolResultBlockContent,
+    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestTextEditorCodeExecutionToolResultBlockType,
+  );
 
-  factory BetaRequestTextEditorCodeExecutionToolResultBlock.fromJson(
-          Map<String, dynamic> json) =>
-      BetaRequestTextEditorCodeExecutionToolResultBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? BetaCacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        content: (json['content'] != null
-            ? BetaRequestTextEditorCodeExecutionToolResultBlockContent.fromJson(
-                json['content'])
-            : null)!,
-        toolUseId: (json['tool_use_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaRequestTextEditorCodeExecutionToolResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory BetaRequestTextEditorCodeExecutionToolResultBlock.fromJson(Map<String, dynamic> json) => BetaRequestTextEditorCodeExecutionToolResultBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    content: (json['content'] != null ? BetaRequestTextEditorCodeExecutionToolResultBlockContent.fromJson(json['content']) : null)!,
+    toolUseId: (json['tool_use_id'] as String?)!,
+    type_: (json['type'] != null ? BetaRequestTextEditorCodeExecutionToolResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content': content.toJson(),
-        'tool_use_id': toolUseId,
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'content': content.toJson(),
+    'tool_use_id': toolUseId,
+    'type': type_.toJson(),
+  };
 }

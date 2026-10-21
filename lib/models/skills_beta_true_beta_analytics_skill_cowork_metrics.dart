@@ -8,37 +8,22 @@ part of 'skills_beta_true.dart';
 class BetaAnalyticsSkillCoworkMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Number of distinct Cowork sessions in which the skill was used. A skill counts as used only when it is explicitly activated — the model (or the user, via the skill's slash command) invokes it, reading its instructions into context as part of that activation. Skills that are merely installed or listed as available, or whose content reaches the context without an activation (preloaded, hook-injected, or read as a plain file), are not counted. Approximate (HLL, typical error &lt;2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
   final int? distinctSessionSkillUsedCount;
 
-  const BetaAnalyticsSkillCoworkMetrics(
-      {required this.distinctSessionSkillUsedCount});
+  const BetaAnalyticsSkillCoworkMetrics({required this.distinctSessionSkillUsedCount});
 
-  BetaAnalyticsSkillCoworkMetrics Function({int? distinctSessionSkillUsedCount})
-      get copyWith => _copyWith;
+  BetaAnalyticsSkillCoworkMetrics Function({int? distinctSessionSkillUsedCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsSkillCoworkMetrics _copyWith(
-          {Object? distinctSessionSkillUsedCount = sdkOmittedValue}) =>
-      BetaAnalyticsSkillCoworkMetrics(
-        distinctSessionSkillUsedCount:
-            identical(distinctSessionSkillUsedCount, sdkOmittedValue)
-                ? this.distinctSessionSkillUsedCount
-                : distinctSessionSkillUsedCount as int?,
-      );
+  BetaAnalyticsSkillCoworkMetrics _copyWith({Object? distinctSessionSkillUsedCount = sdkOmittedValue}) => BetaAnalyticsSkillCoworkMetrics(
+    distinctSessionSkillUsedCount: identical(distinctSessionSkillUsedCount, sdkOmittedValue) ? this.distinctSessionSkillUsedCount : distinctSessionSkillUsedCount as int?,
+  );
 
-  factory BetaAnalyticsSkillCoworkMetrics.fromJson(Map<String, dynamic> json) =>
-      BetaAnalyticsSkillCoworkMetrics(
-        distinctSessionSkillUsedCount:
-            json.containsKey('distinct_session_skill_used_count')
-                ? (json['distinct_session_skill_used_count'] as num?)?.toInt()
-                : throw ArgumentError.value(
-                    null,
-                    'distinct_session_skill_used_count',
-                    'Required property is missing'),
-      );
+  factory BetaAnalyticsSkillCoworkMetrics.fromJson(Map<String, dynamic> json) => BetaAnalyticsSkillCoworkMetrics(
+    distinctSessionSkillUsedCount: json.containsKey('distinct_session_skill_used_count') ? (json['distinct_session_skill_used_count'] as num?)?.toInt() : throw ArgumentError.value(null, 'distinct_session_skill_used_count', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'distinct_session_skill_used_count': distinctSessionSkillUsedCount,
-      };
+    'distinct_session_skill_used_count': distinctSessionSkillUsedCount,
+  };
 }

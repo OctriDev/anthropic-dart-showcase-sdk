@@ -10,80 +10,40 @@ sealed class RequestWebSearchToolResultBlockCaller {
   const RequestWebSearchToolResultBlockCaller();
   factory RequestWebSearchToolResultBlockCaller.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = DirectCaller.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestWebSearchToolResultBlockCallerDirectCaller(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ServerToolCaller.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestWebSearchToolResultBlockCallerServerToolCaller(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ServerToolCaller20260120.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestWebSearchToolResultBlockCallerServerToolCaller20260120(
-              value);
-        }
-      } catch (_) {}
+      try { final value = DirectCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestWebSearchToolResultBlockCallerDirectCaller(value); } } catch (_) {}
+      try { final value = ServerToolCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestWebSearchToolResultBlockCallerServerToolCaller(value); } } catch (_) {}
+      try { final value = ServerToolCaller20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestWebSearchToolResultBlockCallerServerToolCaller20260120(value); } } catch (_) {}
     }
-    try {
-      return RequestWebSearchToolResultBlockCallerDirectCaller(
-          DirectCaller.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestWebSearchToolResultBlockCallerServerToolCaller(
-          ServerToolCaller.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestWebSearchToolResultBlockCallerServerToolCaller20260120(
-          ServerToolCaller20260120.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"code_execution_20250825", "code_execution_20260120", "direct"}
-            .contains(json["type"])) {
-      return UnknownRequestWebSearchToolResultBlockCaller(json);
-    }
-    throw FormatException(
-        "No variant matched for RequestWebSearchToolResultBlockCaller");
+    try { return RequestWebSearchToolResultBlockCallerDirectCaller(DirectCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestWebSearchToolResultBlockCallerServerToolCaller(ServerToolCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestWebSearchToolResultBlockCallerServerToolCaller20260120(ServerToolCaller20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"code_execution_20250825", "code_execution_20260120", "direct"}.contains(json["type"])) { return UnknownRequestWebSearchToolResultBlockCaller(json); }
+    throw FormatException("No variant matched for RequestWebSearchToolResultBlockCaller");
   }
   Object? toJson();
 }
 
-final class RequestWebSearchToolResultBlockCallerDirectCaller
-    extends RequestWebSearchToolResultBlockCaller {
+final class RequestWebSearchToolResultBlockCallerDirectCaller extends RequestWebSearchToolResultBlockCaller {
   final DirectCaller value;
   const RequestWebSearchToolResultBlockCallerDirectCaller(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestWebSearchToolResultBlockCallerServerToolCaller
-    extends RequestWebSearchToolResultBlockCaller {
+final class RequestWebSearchToolResultBlockCallerServerToolCaller extends RequestWebSearchToolResultBlockCaller {
   final ServerToolCaller value;
   const RequestWebSearchToolResultBlockCallerServerToolCaller(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestWebSearchToolResultBlockCallerServerToolCaller20260120
-    extends RequestWebSearchToolResultBlockCaller {
+final class RequestWebSearchToolResultBlockCallerServerToolCaller20260120 extends RequestWebSearchToolResultBlockCaller {
   final ServerToolCaller20260120 value;
-  const RequestWebSearchToolResultBlockCallerServerToolCaller20260120(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestWebSearchToolResultBlockCallerServerToolCaller20260120(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [RequestWebSearchToolResultBlockCaller] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestWebSearchToolResultBlockCaller
-    extends RequestWebSearchToolResultBlockCaller {
+final class UnknownRequestWebSearchToolResultBlockCaller extends RequestWebSearchToolResultBlockCaller {
   final Map<String, dynamic> raw;
   const UnknownRequestWebSearchToolResultBlockCaller(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

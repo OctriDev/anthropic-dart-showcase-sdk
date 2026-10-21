@@ -52,17 +52,12 @@ Future<BetaGetMessagesUsageReportResponse>
         SdkOptional<List<String>?> accountIds = const SdkOmitted(),
         SdkOptional<List<String>?> serviceAccountIds = const SdkOmitted(),
         SdkOptional<List<String>?> models = const SdkOmitted(),
-        SdkOptional<List<BetaUsageReportServiceTier>?> serviceTiers =
-            const SdkOmitted(),
-        SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindow =
-            const SdkOmitted(),
-        SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos =
-            const SdkOmitted(),
+        SdkOptional<List<BetaUsageReportServiceTier>?> serviceTiers = const SdkOmitted(),
+        SdkOptional<List<BetaMessagesUsageReportContextWindow>?> contextWindow = const SdkOmitted(),
+        SdkOptional<List<BetaInferenceGeoFilter>?> inferenceGeos = const SdkOmitted(),
         SdkOptional<List<BetaSpeed>?> speeds = const SdkOmitted(),
-        SdkOptional<List<BetaMessagesUsageReportGroupBy>?> groupBy =
-            const SdkOmitted(),
-        SdkOptional<BetaMessagesUsageReportTimeBucketWidth> bucketWidth =
-            const SdkOmitted(),
+        SdkOptional<List<BetaMessagesUsageReportGroupBy>?> groupBy = const SdkOmitted(),
+        SdkOptional<BetaMessagesUsageReportTimeBucketWidth> bucketWidth = const SdkOmitted(),
         SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
         SdkOptional<String> anthropicVersion = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
@@ -72,92 +67,32 @@ Future<BetaGetMessagesUsageReportResponse>
           'GET', '/v1/organizations/usage_report/messages?beta=true',
           config: config,
           query: {
-            'starting_at':
-                SdkQueryValue(startingAt, style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'ending_at': SdkQueryValue(SdkUtils.unwrapOptional(endingAt),
-                style: 'form', explode: true),
-            'api_key_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(apiKeyIds),
-                style: 'form', explode: true),
-            'workspace_ids[]': SdkQueryValue(
-                SdkUtils.unwrapOptional(workspaceIds),
-                style: 'form',
-                explode: true),
-            'account_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(accountIds),
-                style: 'form', explode: true),
-            'service_account_ids[]': SdkQueryValue(
-                SdkUtils.unwrapOptional(serviceAccountIds),
-                style: 'form',
-                explode: true),
-            'models[]': SdkQueryValue(SdkUtils.unwrapOptional(models),
-                style: 'form', explode: true),
-            'service_tiers[]': SdkQueryValue(
-                SdkUtils.unwrapOptional(serviceTiers),
-                style: 'form',
-                explode: true),
-            'context_window[]': SdkQueryValue(
-                SdkUtils.unwrapOptional(contextWindow),
-                style: 'form',
-                explode: true),
-            'inference_geos[]': SdkQueryValue(
-                SdkUtils.unwrapOptional(inferenceGeos),
-                style: 'form',
-                explode: true),
-            'speeds[]': SdkQueryValue(SdkUtils.unwrapOptional(speeds),
-                style: 'form', explode: true),
-            'group_by[]': SdkQueryValue(SdkUtils.unwrapOptional(groupBy),
-                style: 'form', explode: true),
-            'bucket_width': SdkQueryValue(SdkUtils.unwrapOptional(bucketWidth),
-                style: 'form', explode: true)
+            'starting_at': SdkQueryValue(startingAt, style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'ending_at': SdkQueryValue(SdkUtils.unwrapOptional(endingAt), style: 'form', explode: true),
+            'api_key_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(apiKeyIds), style: 'form', explode: true),
+            'workspace_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(workspaceIds), style: 'form', explode: true),
+            'account_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(accountIds), style: 'form', explode: true),
+            'service_account_ids[]': SdkQueryValue(SdkUtils.unwrapOptional(serviceAccountIds), style: 'form', explode: true),
+            'models[]': SdkQueryValue(SdkUtils.unwrapOptional(models), style: 'form', explode: true),
+            'service_tiers[]': SdkQueryValue(SdkUtils.unwrapOptional(serviceTiers), style: 'form', explode: true),
+            'context_window[]': SdkQueryValue(SdkUtils.unwrapOptional(contextWindow), style: 'form', explode: true),
+            'inference_geos[]': SdkQueryValue(SdkUtils.unwrapOptional(inferenceGeos), style: 'form', explode: true),
+            'speeds[]': SdkQueryValue(SdkUtils.unwrapOptional(speeds), style: 'form', explode: true),
+            'group_by[]': SdkQueryValue(SdkUtils.unwrapOptional(groupBy), style: 'form', explode: true),
+            'bucket_width': SdkQueryValue(SdkUtils.unwrapOptional(bucketWidth), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
           operationId: 'listBetaOrganizationsUsageReportMessages',
-          fromJsonRaw: (value) => BetaGetMessagesUsageReportResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaGetMessagesUsageReportResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
+
 
 /// Retrieves organization message usage over time, grouped into time buckets. Set `starting_at` to the RFC 3339 timestamp that begins the reporting range, and use the filters and grouping options to narrow or organize the results. Use the response's `next_page` token as `page` to continue through results.
 ///
@@ -193,83 +128,13 @@ Future<BetaGetMessagesUsageReportResponse>
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Stream<BetaMessagesUsageReportTimeBucket>
-    listBetaOrganizationsUsageReportMessagesPaginated(ClientConfig config,
-        {required String startingAt,
-        int? limit,
-        String? page,
-        String? endingAt,
-        List<String>? apiKeyIds,
-        List<String>? workspaceIds,
-        List<String>? accountIds,
-        List<String>? serviceAccountIds,
-        List<String>? models,
-        List<BetaUsageReportServiceTier>? serviceTiers,
-        List<BetaMessagesUsageReportContextWindow>? contextWindow,
-        List<BetaInferenceGeoFilter>? inferenceGeos,
-        List<BetaSpeed>? speeds,
-        List<BetaMessagesUsageReportGroupBy>? groupBy,
-        BetaMessagesUsageReportTimeBucketWidth? bucketWidth,
-        List<String>? anthropicBeta,
-        String? anthropicVersion,
-        RequestOptions? requestOptions}) async* {
+Stream<BetaMessagesUsageReportTimeBucket> listBetaOrganizationsUsageReportMessagesPaginated(ClientConfig config, {required String startingAt, int? limit, String? page, String? endingAt, List<String>? apiKeyIds, List<String>? workspaceIds, List<String>? accountIds, List<String>? serviceAccountIds, List<String>? models, List<BetaUsageReportServiceTier>? serviceTiers, List<BetaMessagesUsageReportContextWindow>? contextWindow, List<BetaInferenceGeoFilter>? inferenceGeos, List<BetaSpeed>? speeds, List<BetaMessagesUsageReportGroupBy>? groupBy, BetaMessagesUsageReportTimeBucketWidth? bucketWidth, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsUsageReportMessages(config,
-        startingAt: startingAt,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        endingAt: endingAt == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(endingAt),
-        apiKeyIds: apiKeyIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(apiKeyIds),
-        workspaceIds: workspaceIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(workspaceIds),
-        accountIds: accountIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(accountIds),
-        serviceAccountIds: serviceAccountIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(serviceAccountIds),
-        models: models == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(models),
-        serviceTiers: serviceTiers == null
-            ? const SdkOmitted<List<BetaUsageReportServiceTier>?>()
-            : SdkPresent<List<BetaUsageReportServiceTier>?>(serviceTiers),
-        contextWindow: contextWindow == null
-            ? const SdkOmitted<List<BetaMessagesUsageReportContextWindow>?>()
-            : SdkPresent<List<BetaMessagesUsageReportContextWindow>?>(
-                contextWindow),
-        inferenceGeos: inferenceGeos == null
-            ? const SdkOmitted<List<BetaInferenceGeoFilter>?>()
-            : SdkPresent<List<BetaInferenceGeoFilter>?>(inferenceGeos),
-        speeds: speeds == null
-            ? const SdkOmitted<List<BetaSpeed>?>()
-            : SdkPresent<List<BetaSpeed>?>(speeds),
-        groupBy: groupBy == null
-            ? const SdkOmitted<List<BetaMessagesUsageReportGroupBy>?>()
-            : SdkPresent<List<BetaMessagesUsageReportGroupBy>?>(groupBy),
-        bucketWidth: bucketWidth == null
-            ? const SdkOmitted<BetaMessagesUsageReportTimeBucketWidth>()
-            : SdkPresent<BetaMessagesUsageReportTimeBucketWidth>(bucketWidth),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsUsageReportMessages(config, startingAt: startingAt, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), endingAt: endingAt == null ? const SdkOmitted<String?>() : SdkPresent<String?>(endingAt), apiKeyIds: apiKeyIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(apiKeyIds), workspaceIds: workspaceIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(workspaceIds), accountIds: accountIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(accountIds), serviceAccountIds: serviceAccountIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(serviceAccountIds), models: models == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(models), serviceTiers: serviceTiers == null ? const SdkOmitted<List<BetaUsageReportServiceTier>?>() : SdkPresent<List<BetaUsageReportServiceTier>?>(serviceTiers), contextWindow: contextWindow == null ? const SdkOmitted<List<BetaMessagesUsageReportContextWindow>?>() : SdkPresent<List<BetaMessagesUsageReportContextWindow>?>(contextWindow), inferenceGeos: inferenceGeos == null ? const SdkOmitted<List<BetaInferenceGeoFilter>?>() : SdkPresent<List<BetaInferenceGeoFilter>?>(inferenceGeos), speeds: speeds == null ? const SdkOmitted<List<BetaSpeed>?>() : SdkPresent<List<BetaSpeed>?>(speeds), groupBy: groupBy == null ? const SdkOmitted<List<BetaMessagesUsageReportGroupBy>?>() : SdkPresent<List<BetaMessagesUsageReportGroupBy>?>(groupBy), bucketWidth: bucketWidth == null ? const SdkOmitted<BetaMessagesUsageReportTimeBucketWidth>() : SdkPresent<BetaMessagesUsageReportTimeBucketWidth>(bucketWidth), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) {
-      yield sdkItem;
-    }
+    for (final sdkItem in sdkItems) { yield sdkItem; }
     if (sdkPage.hasMore != true) return;
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
@@ -277,80 +142,10 @@ Stream<BetaMessagesUsageReportTimeBucket>
   }
 }
 
-Stream<
-        SdkPage<BetaGetMessagesUsageReportResponse,
-            BetaMessagesUsageReportTimeBucket>>
-    listBetaOrganizationsUsageReportMessagesPages(ClientConfig config,
-        {required String startingAt,
-        int? limit,
-        String? page,
-        String? endingAt,
-        List<String>? apiKeyIds,
-        List<String>? workspaceIds,
-        List<String>? accountIds,
-        List<String>? serviceAccountIds,
-        List<String>? models,
-        List<BetaUsageReportServiceTier>? serviceTiers,
-        List<BetaMessagesUsageReportContextWindow>? contextWindow,
-        List<BetaInferenceGeoFilter>? inferenceGeos,
-        List<BetaSpeed>? speeds,
-        List<BetaMessagesUsageReportGroupBy>? groupBy,
-        BetaMessagesUsageReportTimeBucketWidth? bucketWidth,
-        List<String>? anthropicBeta,
-        String? anthropicVersion,
-        RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaGetMessagesUsageReportResponse, BetaMessagesUsageReportTimeBucket>> listBetaOrganizationsUsageReportMessagesPages(ClientConfig config, {required String startingAt, int? limit, String? page, String? endingAt, List<String>? apiKeyIds, List<String>? workspaceIds, List<String>? accountIds, List<String>? serviceAccountIds, List<String>? models, List<BetaUsageReportServiceTier>? serviceTiers, List<BetaMessagesUsageReportContextWindow>? contextWindow, List<BetaInferenceGeoFilter>? inferenceGeos, List<BetaSpeed>? speeds, List<BetaMessagesUsageReportGroupBy>? groupBy, BetaMessagesUsageReportTimeBucketWidth? bucketWidth, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsUsageReportMessages(config,
-        startingAt: startingAt,
-        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
-        page: sdkCursor == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(sdkCursor),
-        endingAt: endingAt == null
-            ? const SdkOmitted<String?>()
-            : SdkPresent<String?>(endingAt),
-        apiKeyIds: apiKeyIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(apiKeyIds),
-        workspaceIds: workspaceIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(workspaceIds),
-        accountIds: accountIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(accountIds),
-        serviceAccountIds: serviceAccountIds == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(serviceAccountIds),
-        models: models == null
-            ? const SdkOmitted<List<String>?>()
-            : SdkPresent<List<String>?>(models),
-        serviceTiers: serviceTiers == null
-            ? const SdkOmitted<List<BetaUsageReportServiceTier>?>()
-            : SdkPresent<List<BetaUsageReportServiceTier>?>(serviceTiers),
-        contextWindow: contextWindow == null
-            ? const SdkOmitted<List<BetaMessagesUsageReportContextWindow>?>()
-            : SdkPresent<List<BetaMessagesUsageReportContextWindow>?>(
-                contextWindow),
-        inferenceGeos: inferenceGeos == null
-            ? const SdkOmitted<List<BetaInferenceGeoFilter>?>()
-            : SdkPresent<List<BetaInferenceGeoFilter>?>(inferenceGeos),
-        speeds: speeds == null
-            ? const SdkOmitted<List<BetaSpeed>?>()
-            : SdkPresent<List<BetaSpeed>?>(speeds),
-        groupBy: groupBy == null
-            ? const SdkOmitted<List<BetaMessagesUsageReportGroupBy>?>()
-            : SdkPresent<List<BetaMessagesUsageReportGroupBy>?>(groupBy),
-        bucketWidth: bucketWidth == null
-            ? const SdkOmitted<BetaMessagesUsageReportTimeBucketWidth>()
-            : SdkPresent<BetaMessagesUsageReportTimeBucketWidth>(bucketWidth),
-        anthropicBeta: anthropicBeta == null
-            ? const SdkOmitted<List<String>>()
-            : SdkPresent<List<String>>(anthropicBeta),
-        anthropicVersion: anthropicVersion == null
-            ? const SdkOmitted<String>()
-            : SdkPresent<String>(anthropicVersion),
-        requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsUsageReportMessages(config, startingAt: startingAt, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), endingAt: endingAt == null ? const SdkOmitted<String?>() : SdkPresent<String?>(endingAt), apiKeyIds: apiKeyIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(apiKeyIds), workspaceIds: workspaceIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(workspaceIds), accountIds: accountIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(accountIds), serviceAccountIds: serviceAccountIds == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(serviceAccountIds), models: models == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(models), serviceTiers: serviceTiers == null ? const SdkOmitted<List<BetaUsageReportServiceTier>?>() : SdkPresent<List<BetaUsageReportServiceTier>?>(serviceTiers), contextWindow: contextWindow == null ? const SdkOmitted<List<BetaMessagesUsageReportContextWindow>?>() : SdkPresent<List<BetaMessagesUsageReportContextWindow>?>(contextWindow), inferenceGeos: inferenceGeos == null ? const SdkOmitted<List<BetaInferenceGeoFilter>?>() : SdkPresent<List<BetaInferenceGeoFilter>?>(inferenceGeos), speeds: speeds == null ? const SdkOmitted<List<BetaSpeed>?>() : SdkPresent<List<BetaSpeed>?>(speeds), groupBy: groupBy == null ? const SdkOmitted<List<BetaMessagesUsageReportGroupBy>?>() : SdkPresent<List<BetaMessagesUsageReportGroupBy>?>(groupBy), bucketWidth: bucketWidth == null ? const SdkOmitted<BetaMessagesUsageReportTimeBucketWidth>() : SdkPresent<BetaMessagesUsageReportTimeBucketWidth>(bucketWidth), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;

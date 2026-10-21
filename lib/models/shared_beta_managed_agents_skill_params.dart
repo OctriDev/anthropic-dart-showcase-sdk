@@ -10,65 +10,32 @@ sealed class BetaManagedAgentsSkillParams {
   const BetaManagedAgentsSkillParams();
   factory BetaManagedAgentsSkillParams.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsAnthropicSkillParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsCustomSkillParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAnthropicSkillParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsCustomSkillParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(
-          BetaManagedAgentsAnthropicSkillParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(
-          BetaManagedAgentsCustomSkillParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"anthropic", "custom"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsSkillParams(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsSkillParams");
+    try { return BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(BetaManagedAgentsAnthropicSkillParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(BetaManagedAgentsCustomSkillParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"anthropic", "custom"}.contains(json["type"])) { return UnknownBetaManagedAgentsSkillParams(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsSkillParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams
-    extends BetaManagedAgentsSkillParams {
+final class BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams extends BetaManagedAgentsSkillParams {
   final BetaManagedAgentsAnthropicSkillParams value;
-  const BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams
-    extends BetaManagedAgentsSkillParams {
+final class BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams extends BetaManagedAgentsSkillParams {
   final BetaManagedAgentsCustomSkillParams value;
-  const BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSkillParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsSkillParams
-    extends BetaManagedAgentsSkillParams {
+final class UnknownBetaManagedAgentsSkillParams extends BetaManagedAgentsSkillParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSkillParams(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

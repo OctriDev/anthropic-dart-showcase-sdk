@@ -8,41 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsURLDocumentSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsURLDocumentSourceType type_;
-
   /// URL of the document to fetch.
   final String url;
 
-  const BetaManagedAgentsURLDocumentSource(
-      {required this.type_, required this.url});
+  const BetaManagedAgentsURLDocumentSource({required this.type_, required this.url});
 
-  BetaManagedAgentsURLDocumentSource Function(
-      {BetaManagedAgentsURLDocumentSourceType type_,
-      String url}) get copyWith => _copyWith;
+  BetaManagedAgentsURLDocumentSource Function({BetaManagedAgentsURLDocumentSourceType type_, String url}) get copyWith => _copyWith;
 
-  BetaManagedAgentsURLDocumentSource _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
-      BetaManagedAgentsURLDocumentSource(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsURLDocumentSourceType,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  BetaManagedAgentsURLDocumentSource _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaManagedAgentsURLDocumentSource(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsURLDocumentSourceType,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory BetaManagedAgentsURLDocumentSource.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsURLDocumentSource(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsURLDocumentSourceType.fromJson(
-                json['type'] as String)
-            : null)!,
-        url: (json['url'] as String?)!,
-      );
+  factory BetaManagedAgentsURLDocumentSource.fromJson(Map<String, dynamic> json) => BetaManagedAgentsURLDocumentSource(
+    type_: (json['type'] != null ? BetaManagedAgentsURLDocumentSourceType.fromJson(json['type'] as String) : null)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'url': url,
-      };
+    'type': type_.toJson(),
+    'url': url,
+  };
 }

@@ -9,36 +9,24 @@ sealed class WebFetchTool20260309CacheControl {
   static const String constructionSurface = 'named';
   const WebFetchTool20260309CacheControl();
   factory WebFetchTool20260309CacheControl.fromJson(Object? json) {
-    try {
-      return WebFetchTool20260309CacheControlCacheControlEphemeral(
-          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownWebFetchTool20260309CacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for WebFetchTool20260309CacheControl");
+    try { return WebFetchTool20260309CacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownWebFetchTool20260309CacheControl(json); }
+    throw FormatException("No variant matched for WebFetchTool20260309CacheControl");
   }
   Object? toJson();
 }
 
-final class WebFetchTool20260309CacheControlCacheControlEphemeral
-    extends WebFetchTool20260309CacheControl {
+final class WebFetchTool20260309CacheControlCacheControlEphemeral extends WebFetchTool20260309CacheControl {
   final CacheControlEphemeral value;
   const WebFetchTool20260309CacheControlCacheControlEphemeral(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [WebFetchTool20260309CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownWebFetchTool20260309CacheControl
-    extends WebFetchTool20260309CacheControl {
+final class UnknownWebFetchTool20260309CacheControl extends WebFetchTool20260309CacheControl {
   final Map<String, dynamic> raw;
   const UnknownWebFetchTool20260309CacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class WebFetchTool20260309MaxContentTokens {
@@ -46,21 +34,16 @@ sealed class WebFetchTool20260309MaxContentTokens {
   static const String constructionSurface = 'named';
   const WebFetchTool20260309MaxContentTokens();
   factory WebFetchTool20260309MaxContentTokens.fromJson(Object? json) {
-    if (json is num) {
-      return WebFetchTool20260309MaxContentTokensInt(json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for WebFetchTool20260309MaxContentTokens");
+    if (json is num) { return WebFetchTool20260309MaxContentTokensInt(json.toInt()); }
+    throw FormatException("No variant matched for WebFetchTool20260309MaxContentTokens");
   }
   Object? toJson();
 }
 
-final class WebFetchTool20260309MaxContentTokensInt
-    extends WebFetchTool20260309MaxContentTokens {
+final class WebFetchTool20260309MaxContentTokensInt extends WebFetchTool20260309MaxContentTokens {
   final int value;
   const WebFetchTool20260309MaxContentTokensInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 sealed class WebFetchTool20260309MaxUses {
@@ -68,9 +51,7 @@ sealed class WebFetchTool20260309MaxUses {
   static const String constructionSurface = 'named';
   const WebFetchTool20260309MaxUses();
   factory WebFetchTool20260309MaxUses.fromJson(Object? json) {
-    if (json is num) {
-      return WebFetchTool20260309MaxUsesInt(json.toInt());
-    }
+    if (json is num) { return WebFetchTool20260309MaxUsesInt(json.toInt()); }
     throw FormatException("No variant matched for WebFetchTool20260309MaxUses");
   }
   Object? toJson();
@@ -79,245 +60,114 @@ sealed class WebFetchTool20260309MaxUses {
 final class WebFetchTool20260309MaxUsesInt extends WebFetchTool20260309MaxUses {
   final int value;
   const WebFetchTool20260309MaxUsesInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Web fetch tool with use_cache parameter for bypassing cached content.
 class WebFetchTool20260309 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<AllowedCaller>> allowedCallers;
-
   /// List of domains to allow fetching from
   final SdkOptional<List<String>?> allowedDomains;
-
   /// List of domains to block fetching from
   final SdkOptional<List<String>?> blockedDomains;
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
-
   /// Citations configuration for fetched documents. Citations are disabled by default.
   final SdkOptional<RequestCitationsConfig?> citations;
-
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
-
   /// Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
   final SdkOptional<int?> maxContentTokens;
-
   /// Maximum number of times the tool can be used in the API request.
   final SdkOptional<int?> maxUses;
-
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final WebFetchTool20260309Name name;
-
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
-
   /// Required `string` value serialized in the `type` wire field.
   final WebFetchTool20260309Type type_;
-
   /// Whether to use cached content. Set to false to bypass the cache and fetch fresh content. Only set to false when the user explicitly requests fresh content or when fetching rapidly-changing sources.
   final SdkOptional<bool> useCache;
 
-  const WebFetchTool20260309(
-      {this.allowedCallers = const SdkOmitted(),
-      this.allowedDomains = const SdkOmitted(),
-      this.blockedDomains = const SdkOmitted(),
-      this.cacheControl = const SdkOmitted(),
-      this.citations = const SdkOmitted(),
-      this.deferLoading = const SdkOmitted(),
-      this.maxContentTokens = const SdkOmitted(),
-      this.maxUses = const SdkOmitted(),
-      required this.name,
-      this.strict = const SdkOmitted(),
-      required this.type_,
-      this.useCache = const SdkOmitted()});
+  const WebFetchTool20260309({this.allowedCallers = const SdkOmitted(), this.allowedDomains = const SdkOmitted(), this.blockedDomains = const SdkOmitted(), this.cacheControl = const SdkOmitted(), this.citations = const SdkOmitted(), this.deferLoading = const SdkOmitted(), this.maxContentTokens = const SdkOmitted(), this.maxUses = const SdkOmitted(), required this.name, this.strict = const SdkOmitted(), required this.type_, this.useCache = const SdkOmitted()});
 
-  WebFetchTool20260309 Function(
-      {SdkOptional<List<AllowedCaller>> allowedCallers,
-      SdkOptional<List<String>?> allowedDomains,
-      SdkOptional<List<String>?> blockedDomains,
-      SdkOptional<CacheControlEphemeral?> cacheControl,
-      SdkOptional<RequestCitationsConfig?> citations,
-      SdkOptional<bool> deferLoading,
-      SdkOptional<int?> maxContentTokens,
-      SdkOptional<int?> maxUses,
-      WebFetchTool20260309Name name,
-      SdkOptional<bool> strict,
-      WebFetchTool20260309Type type_,
-      SdkOptional<bool> useCache}) get copyWith => _copyWith;
+  WebFetchTool20260309 Function({SdkOptional<List<AllowedCaller>> allowedCallers, SdkOptional<List<String>?> allowedDomains, SdkOptional<List<String>?> blockedDomains, SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<RequestCitationsConfig?> citations, SdkOptional<bool> deferLoading, SdkOptional<int?> maxContentTokens, SdkOptional<int?> maxUses, WebFetchTool20260309Name name, SdkOptional<bool> strict, WebFetchTool20260309Type type_, SdkOptional<bool> useCache}) get copyWith => _copyWith;
 
-  WebFetchTool20260309 _copyWith(
-          {Object? allowedCallers = sdkOmittedValue,
-          Object? allowedDomains = sdkOmittedValue,
-          Object? blockedDomains = sdkOmittedValue,
-          Object? cacheControl = sdkOmittedValue,
-          Object? citations = sdkOmittedValue,
-          Object? deferLoading = sdkOmittedValue,
-          Object? maxContentTokens = sdkOmittedValue,
-          Object? maxUses = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? strict = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? useCache = sdkOmittedValue}) =>
-      WebFetchTool20260309(
-        allowedCallers: identical(allowedCallers, sdkOmittedValue)
-            ? this.allowedCallers
-            : allowedCallers as SdkOptional<List<AllowedCaller>>,
-        allowedDomains: identical(allowedDomains, sdkOmittedValue)
-            ? this.allowedDomains
-            : allowedDomains as SdkOptional<List<String>?>,
-        blockedDomains: identical(blockedDomains, sdkOmittedValue)
-            ? this.blockedDomains
-            : blockedDomains as SdkOptional<List<String>?>,
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<CacheControlEphemeral?>,
-        citations: identical(citations, sdkOmittedValue)
-            ? this.citations
-            : citations as SdkOptional<RequestCitationsConfig?>,
-        deferLoading: identical(deferLoading, sdkOmittedValue)
-            ? this.deferLoading
-            : deferLoading as SdkOptional<bool>,
-        maxContentTokens: identical(maxContentTokens, sdkOmittedValue)
-            ? this.maxContentTokens
-            : maxContentTokens as SdkOptional<int?>,
-        maxUses: identical(maxUses, sdkOmittedValue)
-            ? this.maxUses
-            : maxUses as SdkOptional<int?>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as WebFetchTool20260309Name,
-        strict: identical(strict, sdkOmittedValue)
-            ? this.strict
-            : strict as SdkOptional<bool>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as WebFetchTool20260309Type,
-        useCache: identical(useCache, sdkOmittedValue)
-            ? this.useCache
-            : useCache as SdkOptional<bool>,
-      );
+  WebFetchTool20260309 _copyWith({Object? allowedCallers = sdkOmittedValue, Object? allowedDomains = sdkOmittedValue, Object? blockedDomains = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? citations = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? maxContentTokens = sdkOmittedValue, Object? maxUses = sdkOmittedValue, Object? name = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? useCache = sdkOmittedValue}) => WebFetchTool20260309(
+    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<AllowedCaller>>,
+    allowedDomains: identical(allowedDomains, sdkOmittedValue) ? this.allowedDomains : allowedDomains as SdkOptional<List<String>?>,
+    blockedDomains: identical(blockedDomains, sdkOmittedValue) ? this.blockedDomains : blockedDomains as SdkOptional<List<String>?>,
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
+    citations: identical(citations, sdkOmittedValue) ? this.citations : citations as SdkOptional<RequestCitationsConfig?>,
+    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
+    maxContentTokens: identical(maxContentTokens, sdkOmittedValue) ? this.maxContentTokens : maxContentTokens as SdkOptional<int?>,
+    maxUses: identical(maxUses, sdkOmittedValue) ? this.maxUses : maxUses as SdkOptional<int?>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as WebFetchTool20260309Name,
+    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as WebFetchTool20260309Type,
+    useCache: identical(useCache, sdkOmittedValue) ? this.useCache : useCache as SdkOptional<bool>,
+  );
 
-  factory WebFetchTool20260309.fromJson(Map<String, dynamic> json) =>
-      WebFetchTool20260309(
-        allowedCallers: json['allowed_callers'] != null
-            ? SdkPresent(((json['allowed_callers'] as List?)
-                ?.map((e) => AllowedCaller.fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        allowedDomains: json.containsKey('allowed_domains')
-            ? SdkPresent((json['allowed_domains'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-        blockedDomains: json.containsKey('blocked_domains')
-            ? SdkPresent((json['blocked_domains'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? CacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        citations: json.containsKey('citations')
-            ? SdkPresent(json['citations'] != null
-                ? RequestCitationsConfig.fromJson(
-                    json['citations'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        deferLoading: json['defer_loading'] != null
-            ? SdkPresent((json['defer_loading'] as bool?)!)
-            : const SdkOmitted(),
-        maxContentTokens: json.containsKey('max_content_tokens')
-            ? SdkPresent((json['max_content_tokens'] as num?)?.toInt())
-            : const SdkOmitted(),
-        maxUses: json.containsKey('max_uses')
-            ? SdkPresent((json['max_uses'] as num?)?.toInt())
-            : const SdkOmitted(),
-        name: (json['name'] != null
-            ? WebFetchTool20260309Name.fromJson(json['name'] as String)
-            : null)!,
-        strict: json['strict'] != null
-            ? SdkPresent((json['strict'] as bool?)!)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? WebFetchTool20260309Type.fromJson(json['type'] as String)
-            : null)!,
-        useCache: json['use_cache'] != null
-            ? SdkPresent((json['use_cache'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory WebFetchTool20260309.fromJson(Map<String, dynamic> json) => WebFetchTool20260309(
+    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => AllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
+    allowedDomains: json.containsKey('allowed_domains') ? SdkPresent((json['allowed_domains'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    blockedDomains: json.containsKey('blocked_domains') ? SdkPresent((json['blocked_domains'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    citations: json.containsKey('citations') ? SdkPresent(json['citations'] != null ? RequestCitationsConfig.fromJson(json['citations'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
+    maxContentTokens: json.containsKey('max_content_tokens') ? SdkPresent((json['max_content_tokens'] as num?)?.toInt()) : const SdkOmitted(),
+    maxUses: json.containsKey('max_uses') ? SdkPresent((json['max_uses'] as num?)?.toInt()) : const SdkOmitted(),
+    name: (json['name'] != null ? WebFetchTool20260309Name.fromJson(json['name'] as String) : null)!,
+    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
+    type_: (json['type'] != null ? WebFetchTool20260309Type.fromJson(json['type'] as String) : null)!,
+    useCache: json['use_cache'] != null ? SdkPresent((json['use_cache'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (allowedCallers) {
-          SdkPresent<List<AllowedCaller>>(value: final value) => {
-              'allowed_callers': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowedDomains) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'allowed_domains': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (blockedDomains) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'blocked_domains': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cacheControl) {
-          SdkPresent<CacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (citations) {
-          SdkPresent<RequestCitationsConfig?>(value: final value) => {
-              'citations': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deferLoading) {
-          SdkPresent<bool>(value: final value) => {
-              'defer_loading': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maxContentTokens) {
-          SdkPresent<int?>(value: final value) => {
-              'max_content_tokens': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maxUses) {
-          SdkPresent<int?>(value: final value) => {
-              'max_uses': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name.toJson(),
-        ...switch (strict) {
-          SdkPresent<bool>(value: final value) => {
-              'strict': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-        ...switch (useCache) {
-          SdkPresent<bool>(value: final value) => {
-              'use_cache': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (allowedCallers) {
+      SdkPresent<List<AllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowedDomains) {
+      SdkPresent<List<String>?>(value: final value) => {'allowed_domains': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (blockedDomains) {
+      SdkPresent<List<String>?>(value: final value) => {'blocked_domains': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cacheControl) {
+      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (citations) {
+      SdkPresent<RequestCitationsConfig?>(value: final value) => {'citations': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deferLoading) {
+      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (maxContentTokens) {
+      SdkPresent<int?>(value: final value) => {'max_content_tokens': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (maxUses) {
+      SdkPresent<int?>(value: final value) => {'max_uses': value,},
+      _ => const <String, dynamic>{},
+    },
+    'name': name.toJson(),
+    ...switch (strict) {
+      SdkPresent<bool>(value: final value) => {'strict': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+    ...switch (useCache) {
+      SdkPresent<bool>(value: final value) => {'use_cache': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

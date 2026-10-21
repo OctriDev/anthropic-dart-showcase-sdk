@@ -8,37 +8,27 @@ part of 'shared_beta.dart';
 class BetaURLImageSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaURLImageSourceType type_;
-
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
   const BetaURLImageSource({required this.type_, required this.url});
 
-  BetaURLImageSource Function({BetaURLImageSourceType type_, String url})
-      get copyWith => _copyWith;
+  BetaURLImageSource Function({BetaURLImageSourceType type_, String url}) get copyWith => _copyWith;
 
-  BetaURLImageSource _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
-      BetaURLImageSource(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaURLImageSourceType,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  BetaURLImageSource _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaURLImageSource(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaURLImageSourceType,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory BetaURLImageSource.fromJson(Map<String, dynamic> json) =>
-      BetaURLImageSource(
-        type_: (json['type'] != null
-            ? BetaURLImageSourceType.fromJson(json['type'] as String)
-            : null)!,
-        url: (json['url'] as String?)!,
-      );
+  factory BetaURLImageSource.fromJson(Map<String, dynamic> json) => BetaURLImageSource(
+    type_: (json['type'] != null ? BetaURLImageSourceType.fromJson(json['type'] as String) : null)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'url': url,
-      };
+    'type': type_.toJson(),
+    'url': url,
+  };
 }

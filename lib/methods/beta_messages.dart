@@ -190,19 +190,16 @@ Future<BetaMessage> createBetaMessages(ClientConfig config,
     SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
     SdkOptional<BetaCacheControlEphemeral?> cacheControl = const SdkOmitted(),
     SdkOptional<dynamic> container = const SdkOmitted(),
-    SdkOptional<BetaContextManagementConfig?> contextManagement =
-        const SdkOmitted(),
+    SdkOptional<BetaContextManagementConfig?> contextManagement = const SdkOmitted(),
     SdkOptional<BetaDiagnosticsParam?> diagnostics = const SdkOmitted(),
     SdkOptional<dynamic> fallbackCreditToken = const SdkOmitted(),
     SdkOptional<dynamic> fallbacks = const SdkOmitted(),
     SdkOptional<String?> inferenceGeo = const SdkOmitted(),
-    SdkOptional<List<BetaRequestMCPServerURLDefinition>> mcpServers =
-        const SdkOmitted(),
+    SdkOptional<List<BetaRequestMCPServerURLDefinition>> mcpServers = const SdkOmitted(),
     SdkOptional<BetaMetadata> metadata = const SdkOmitted(),
     SdkOptional<BetaOutputConfig> outputConfig = const SdkOmitted(),
     SdkOptional<BetaJsonOutputFormat?> outputFormat = const SdkOmitted(),
-    SdkOptional<BetaCreateMessageParamsServiceTier> serviceTier =
-        const SdkOmitted(),
+    SdkOptional<BetaCreateMessageParamsServiceTier> serviceTier = const SdkOmitted(),
     SdkOptional<BetaSpeed?> speed = const SdkOmitted(),
     SdkOptional<List<String>> stopSequences = const SdkOmitted(),
     SdkOptional<bool> stream = const SdkOmitted(),
@@ -210,8 +207,7 @@ Future<BetaMessage> createBetaMessages(ClientConfig config,
     SdkOptional<double> temperature = const SdkOmitted(),
     SdkOptional<BetaThinkingConfigParam> thinking = const SdkOmitted(),
     SdkOptional<BetaToolChoice> toolChoice = const SdkOmitted(),
-    SdkOptional<List<BetaCreateMessageParamsToolsItem>> tools =
-        const SdkOmitted(),
+    SdkOptional<List<BetaCreateMessageParamsToolsItem>> tools = const SdkOmitted(),
     SdkOptional<int> topK = const SdkOmitted(),
     SdkOptional<double> topP = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -239,8 +235,7 @@ Future<BetaMessage> createBetaMessages(ClientConfig config,
             'container': SdkUtils.unwrapOptional(container),
             'context_management': SdkUtils.unwrapOptional(contextManagement),
             'diagnostics': SdkUtils.unwrapOptional(diagnostics),
-            'fallback_credit_token':
-                SdkUtils.unwrapOptional(fallbackCreditToken),
+            'fallback_credit_token': SdkUtils.unwrapOptional(fallbackCreditToken),
             'fallbacks': SdkUtils.unwrapOptional(fallbacks),
             'inference_geo': SdkUtils.unwrapOptional(inferenceGeo),
             'mcp_servers': SdkUtils.unwrapOptional(mcpServers),
@@ -260,54 +255,14 @@ Future<BetaMessage> createBetaMessages(ClientConfig config,
             'top_p': SdkUtils.unwrapOptional(topP)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-user-profile-id':
-                SdkUtils.unwrapOptional(anthropicUserProfileId),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-user-profile-id': SdkUtils.unwrapOptional(anthropicUserProfileId), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'createBetaMessages',
-          fromJsonRaw: (value) =>
-              BetaMessage.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaMessage.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Count the number of tokens in a Message. The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it. Learn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)
 ///
@@ -413,28 +368,25 @@ Future<BetaMessage> createBetaMessages(ClientConfig config,
 ///   model in a subsequent `user` message: ```json [ { "type": "tool_result",
 ///   "tool_use_id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV", "content": "259.75 USD" } ]
 ///   ``` Tools can be used for workflows that include running client-side tools…
-Future<BetaCountMessageTokensResponse> countBetaMessagesTokens(
-    ClientConfig config,
-    {required List<BetaInputMessage> messages,
-    required Model model,
-    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-    SdkOptional<String> anthropicVersion = const SdkOmitted(),
-    SdkOptional<String> anthropicUserProfileId = const SdkOmitted(),
-    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-    SdkOptional<BetaCacheControlEphemeral?> cacheControl = const SdkOmitted(),
-    SdkOptional<BetaContextManagementConfig?> contextManagement =
-        const SdkOmitted(),
-    SdkOptional<List<BetaRequestMCPServerURLDefinition>> mcpServers =
-        const SdkOmitted(),
-    SdkOptional<BetaOutputConfig> outputConfig = const SdkOmitted(),
-    SdkOptional<BetaJsonOutputFormat?> outputFormat = const SdkOmitted(),
-    SdkOptional<BetaSpeed?> speed = const SdkOmitted(),
-    SdkOptional<dynamic> system = const SdkOmitted(),
-    SdkOptional<BetaThinkingConfigParam> thinking = const SdkOmitted(),
-    SdkOptional<BetaToolChoice> toolChoice = const SdkOmitted(),
-    SdkOptional<List<BetaCountMessageTokensParamsToolsItem>> tools =
-        const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BetaCountMessageTokensResponse>
+    countBetaMessagesTokens(ClientConfig config,
+        {required List<BetaInputMessage> messages,
+        required Model model,
+        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+        SdkOptional<String> anthropicVersion = const SdkOmitted(),
+        SdkOptional<String> anthropicUserProfileId = const SdkOmitted(),
+        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+        SdkOptional<BetaCacheControlEphemeral?> cacheControl = const SdkOmitted(),
+        SdkOptional<BetaContextManagementConfig?> contextManagement = const SdkOmitted(),
+        SdkOptional<List<BetaRequestMCPServerURLDefinition>> mcpServers = const SdkOmitted(),
+        SdkOptional<BetaOutputConfig> outputConfig = const SdkOmitted(),
+        SdkOptional<BetaJsonOutputFormat?> outputFormat = const SdkOmitted(),
+        SdkOptional<BetaSpeed?> speed = const SdkOmitted(),
+        SdkOptional<dynamic> system = const SdkOmitted(),
+        SdkOptional<BetaThinkingConfigParam> thinking = const SdkOmitted(),
+        SdkOptional<BetaToolChoice> toolChoice = const SdkOmitted(),
+        SdkOptional<List<BetaCountMessageTokensParamsToolsItem>> tools = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (mcpServers is SdkPresent<List<BetaRequestMCPServerURLDefinition>>) {
     validateItems('mcp_servers', mcpServers.value, max: 20);
   }
@@ -457,51 +409,10 @@ Future<BetaCountMessageTokensResponse> countBetaMessagesTokens(
             'tools': SdkUtils.unwrapOptional(tools)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({
-            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
-            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion),
-            'anthropic-user-profile-id':
-                SdkUtils.unwrapOptional(anthropicUserProfileId),
-            'anthropic-workspace-id':
-                SdkUtils.unwrapOptional(anthropicWorkspaceId)
-          }),
+          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion), 'anthropic-user-profile-id': SdkUtils.unwrapOptional(anthropicUserProfileId), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
           operationId: 'countBetaMessagesTokens',
-          fromJsonRaw: (value) => BetaCountMessageTokensResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaCountMessageTokensResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '408': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '412': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '413': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '431': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '499': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '501': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '504': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
-            '529': (value) =>
-                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

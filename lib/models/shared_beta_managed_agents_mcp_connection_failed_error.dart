@@ -8,69 +8,37 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMcpConnectionFailedError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMcpConnectionFailedErrorType type_;
-
   /// Human-readable error description.
   final String message;
-
   /// What the client should do next.
   final BetaManagedAgentsRetryStatus retryStatus;
-
   /// Name of the MCP server that failed to connect.
   final String mcpServerName;
 
-  const BetaManagedAgentsMcpConnectionFailedError(
-      {required this.type_,
-      required this.message,
-      required this.retryStatus,
-      required this.mcpServerName});
+  const BetaManagedAgentsMcpConnectionFailedError({required this.type_, required this.message, required this.retryStatus, required this.mcpServerName});
 
-  BetaManagedAgentsMcpConnectionFailedError Function(
-      {BetaManagedAgentsMcpConnectionFailedErrorType type_,
-      String message,
-      BetaManagedAgentsRetryStatus retryStatus,
-      String mcpServerName}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpConnectionFailedError Function({BetaManagedAgentsMcpConnectionFailedErrorType type_, String message, BetaManagedAgentsRetryStatus retryStatus, String mcpServerName}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpConnectionFailedError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue,
-          Object? retryStatus = sdkOmittedValue,
-          Object? mcpServerName = sdkOmittedValue}) =>
-      BetaManagedAgentsMcpConnectionFailedError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsMcpConnectionFailedErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        retryStatus: identical(retryStatus, sdkOmittedValue)
-            ? this.retryStatus
-            : retryStatus as BetaManagedAgentsRetryStatus,
-        mcpServerName: identical(mcpServerName, sdkOmittedValue)
-            ? this.mcpServerName
-            : mcpServerName as String,
-      );
+  BetaManagedAgentsMcpConnectionFailedError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue, Object? retryStatus = sdkOmittedValue, Object? mcpServerName = sdkOmittedValue}) => BetaManagedAgentsMcpConnectionFailedError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMcpConnectionFailedErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    retryStatus: identical(retryStatus, sdkOmittedValue) ? this.retryStatus : retryStatus as BetaManagedAgentsRetryStatus,
+    mcpServerName: identical(mcpServerName, sdkOmittedValue) ? this.mcpServerName : mcpServerName as String,
+  );
 
-  factory BetaManagedAgentsMcpConnectionFailedError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMcpConnectionFailedError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsMcpConnectionFailedErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-        retryStatus: (json['retry_status'] != null
-            ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status'])
-            : null)!,
-        mcpServerName: (json['mcp_server_name'] as String?)!,
-      );
+  factory BetaManagedAgentsMcpConnectionFailedError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpConnectionFailedError(
+    type_: (json['type'] != null ? BetaManagedAgentsMcpConnectionFailedErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+    retryStatus: (json['retry_status'] != null ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status']) : null)!,
+    mcpServerName: (json['mcp_server_name'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-        'retry_status': retryStatus.toJson(),
-        'mcp_server_name': mcpServerName,
-      };
+    'type': type_.toJson(),
+    'message': message,
+    'retry_status': retryStatus.toJson(),
+    'mcp_server_name': mcpServerName,
+  };
 }

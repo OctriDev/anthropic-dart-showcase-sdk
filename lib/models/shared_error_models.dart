@@ -8,58 +8,34 @@ part of 'shared_error.dart';
 class ErrorResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required API value serialized in the `error` wire field.
   final ErrorResponseError error;
-
   /// Required `string` value serialized in the `request_id` wire field.
   final String? requestId;
-
   /// Required `string` value serialized in the `type` wire field.
   final ErrorResponseType type_;
 
-  const ErrorResponse(
-      {required this.error, required this.requestId, required this.type_});
+  const ErrorResponse({required this.error, required this.requestId, required this.type_});
 
-  ErrorResponse Function(
-      {ErrorResponseError error,
-      String? requestId,
-      ErrorResponseType type_}) get copyWith => _copyWith;
+  ErrorResponse Function({ErrorResponseError error, String? requestId, ErrorResponseType type_}) get copyWith => _copyWith;
 
-  ErrorResponse _copyWith(
-          {Object? error = sdkOmittedValue,
-          Object? requestId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      ErrorResponse(
-        error: identical(error, sdkOmittedValue)
-            ? this.error
-            : error as ErrorResponseError,
-        requestId: identical(requestId, sdkOmittedValue)
-            ? this.requestId
-            : requestId as String?,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as ErrorResponseType,
-      );
+  ErrorResponse _copyWith({Object? error = sdkOmittedValue, Object? requestId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ErrorResponse(
+    error: identical(error, sdkOmittedValue) ? this.error : error as ErrorResponseError,
+    requestId: identical(requestId, sdkOmittedValue) ? this.requestId : requestId as String?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ErrorResponseType,
+  );
 
   factory ErrorResponse.fromJson(Map<String, dynamic> json) => ErrorResponse(
-        error: (json['error'] != null
-            ? ErrorResponseError.fromJson(json['error'])
-            : null)!,
-        requestId: json.containsKey('request_id')
-            ? json['request_id'] as String?
-            : throw ArgumentError.value(
-                null, 'request_id', 'Required property is missing'),
-        type_: (json['type'] != null
-            ? ErrorResponseType.fromJson(json['type'] as String)
-            : null)!,
-      );
+    error: (json['error'] != null ? ErrorResponseError.fromJson(json['error']) : null)!,
+    requestId: json.containsKey('request_id') ? json['request_id'] as String? : throw ArgumentError.value(null, 'request_id', 'Required property is missing'),
+    type_: (json['type'] != null ? ErrorResponseType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'error': error.toJson(),
-        'request_id': requestId,
-        'type': type_.toJson(),
-      };
+    'error': error.toJson(),
+    'request_id': requestId,
+    'type': type_.toJson(),
+  };
 }
 
 sealed class ErrorResponseError {
@@ -68,112 +44,26 @@ sealed class ErrorResponseError {
   const ErrorResponseError();
   factory ErrorResponseError.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = InvalidRequestError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ErrorResponseErrorInvalidRequestError(value);
-        }
-      } catch (_) {}
-      try {
-        final value = AuthenticationError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ErrorResponseErrorAuthenticationError(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BillingError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ErrorResponseErrorBillingError(value);
-        }
-      } catch (_) {}
-      try {
-        final value = PermissionError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ErrorResponseErrorPermissionError(value);
-        }
-      } catch (_) {}
-      try {
-        final value = NotFoundError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ErrorResponseErrorNotFoundError(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RateLimitError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ErrorResponseErrorRateLimitError(value);
-        }
-      } catch (_) {}
-      try {
-        final value = GatewayTimeoutError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ErrorResponseErrorGatewayTimeoutError(value);
-        }
-      } catch (_) {}
-      try {
-        final value = APIError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ErrorResponseErrorAPIError(value);
-        }
-      } catch (_) {}
-      try {
-        final value = OverloadedError.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ErrorResponseErrorOverloadedError(value);
-        }
-      } catch (_) {}
+      try { final value = InvalidRequestError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ErrorResponseErrorInvalidRequestError(value); } } catch (_) {}
+      try { final value = AuthenticationError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ErrorResponseErrorAuthenticationError(value); } } catch (_) {}
+      try { final value = BillingError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ErrorResponseErrorBillingError(value); } } catch (_) {}
+      try { final value = PermissionError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ErrorResponseErrorPermissionError(value); } } catch (_) {}
+      try { final value = NotFoundError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ErrorResponseErrorNotFoundError(value); } } catch (_) {}
+      try { final value = RateLimitError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ErrorResponseErrorRateLimitError(value); } } catch (_) {}
+      try { final value = GatewayTimeoutError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ErrorResponseErrorGatewayTimeoutError(value); } } catch (_) {}
+      try { final value = APIError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ErrorResponseErrorAPIError(value); } } catch (_) {}
+      try { final value = OverloadedError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ErrorResponseErrorOverloadedError(value); } } catch (_) {}
     }
-    try {
-      return ErrorResponseErrorInvalidRequestError(
-          InvalidRequestError.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ErrorResponseErrorAuthenticationError(
-          AuthenticationError.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ErrorResponseErrorBillingError(
-          BillingError.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ErrorResponseErrorPermissionError(
-          PermissionError.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ErrorResponseErrorNotFoundError(
-          NotFoundError.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ErrorResponseErrorRateLimitError(
-          RateLimitError.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ErrorResponseErrorGatewayTimeoutError(
-          GatewayTimeoutError.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ErrorResponseErrorAPIError(
-          APIError.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ErrorResponseErrorOverloadedError(
-          OverloadedError.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "api_error",
-          "authentication_error",
-          "billing_error",
-          "invalid_request_error",
-          "not_found_error",
-          "overloaded_error",
-          "permission_error",
-          "rate_limit_error",
-          "timeout_error"
-        }.contains(json["type"])) {
-      return UnknownErrorResponseError(json);
-    }
+    try { return ErrorResponseErrorInvalidRequestError(InvalidRequestError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ErrorResponseErrorAuthenticationError(AuthenticationError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ErrorResponseErrorBillingError(BillingError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ErrorResponseErrorPermissionError(PermissionError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ErrorResponseErrorNotFoundError(NotFoundError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ErrorResponseErrorRateLimitError(RateLimitError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ErrorResponseErrorGatewayTimeoutError(GatewayTimeoutError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ErrorResponseErrorAPIError(APIError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ErrorResponseErrorOverloadedError(OverloadedError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"api_error", "authentication_error", "billing_error", "invalid_request_error", "not_found_error", "overloaded_error", "permission_error", "rate_limit_error", "timeout_error"}.contains(json["type"])) { return UnknownErrorResponseError(json); }
     throw FormatException("No variant matched for ErrorResponseError");
   }
   Object? toJson();
@@ -182,70 +72,60 @@ sealed class ErrorResponseError {
 final class ErrorResponseErrorInvalidRequestError extends ErrorResponseError {
   final InvalidRequestError value;
   const ErrorResponseErrorInvalidRequestError(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class ErrorResponseErrorAuthenticationError extends ErrorResponseError {
   final AuthenticationError value;
   const ErrorResponseErrorAuthenticationError(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class ErrorResponseErrorBillingError extends ErrorResponseError {
   final BillingError value;
   const ErrorResponseErrorBillingError(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class ErrorResponseErrorPermissionError extends ErrorResponseError {
   final PermissionError value;
   const ErrorResponseErrorPermissionError(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class ErrorResponseErrorNotFoundError extends ErrorResponseError {
   final NotFoundError value;
   const ErrorResponseErrorNotFoundError(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class ErrorResponseErrorRateLimitError extends ErrorResponseError {
   final RateLimitError value;
   const ErrorResponseErrorRateLimitError(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class ErrorResponseErrorGatewayTimeoutError extends ErrorResponseError {
   final GatewayTimeoutError value;
   const ErrorResponseErrorGatewayTimeoutError(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class ErrorResponseErrorAPIError extends ErrorResponseError {
   final APIError value;
   const ErrorResponseErrorAPIError(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class ErrorResponseErrorOverloadedError extends ErrorResponseError {
   final OverloadedError value;
   const ErrorResponseErrorOverloadedError(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [ErrorResponseError] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownErrorResponseError extends ErrorResponseError {
   final Map<String, dynamic> raw;
   const UnknownErrorResponseError(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

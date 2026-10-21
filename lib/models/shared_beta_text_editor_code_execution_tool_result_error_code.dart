@@ -6,36 +6,25 @@ part of 'shared_beta_text.dart';
 // shared_beta_text domain models
 /// Typed representation of the `BetaTextEditorCodeExecutionToolResultErrorCode` API schema.
 final class BetaTextEditorCodeExecutionToolResultErrorCode {
+
   final String value;
 
   const BetaTextEditorCodeExecutionToolResultErrorCode._(this.value);
 
-  factory BetaTextEditorCodeExecutionToolResultErrorCode.fromJson(
-          String value) =>
-      BetaTextEditorCodeExecutionToolResultErrorCode._(value);
+  factory BetaTextEditorCodeExecutionToolResultErrorCode.fromJson(String value) => BetaTextEditorCodeExecutionToolResultErrorCode._(value);
 
-  static const invalidToolInput =
-      BetaTextEditorCodeExecutionToolResultErrorCode._('invalid_tool_input');
-  static const unavailable =
-      BetaTextEditorCodeExecutionToolResultErrorCode._('unavailable');
-  static const tooManyRequests =
-      BetaTextEditorCodeExecutionToolResultErrorCode._('too_many_requests');
-  static const executionTimeExceeded =
-      BetaTextEditorCodeExecutionToolResultErrorCode._(
-          'execution_time_exceeded');
-  static const fileNotFound =
-      BetaTextEditorCodeExecutionToolResultErrorCode._('file_not_found');
+  static const invalidToolInput = BetaTextEditorCodeExecutionToolResultErrorCode._('invalid_tool_input');
+  static const unavailable = BetaTextEditorCodeExecutionToolResultErrorCode._('unavailable');
+  static const tooManyRequests = BetaTextEditorCodeExecutionToolResultErrorCode._('too_many_requests');
+  static const executionTimeExceeded = BetaTextEditorCodeExecutionToolResultErrorCode._('execution_time_exceeded');
+  static const fileNotFound = BetaTextEditorCodeExecutionToolResultErrorCode._('file_not_found');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaTextEditorCodeExecutionToolResultErrorCode &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is BetaTextEditorCodeExecutionToolResultErrorCode && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

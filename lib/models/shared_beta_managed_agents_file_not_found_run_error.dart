@@ -8,44 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsFileNotFoundRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsFileNotFoundRunErrorType type_;
-
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsFileNotFoundRunError(
-      {required this.type_, required this.message});
+  const BetaManagedAgentsFileNotFoundRunError({required this.type_, required this.message});
 
-  BetaManagedAgentsFileNotFoundRunError Function(
-      {BetaManagedAgentsFileNotFoundRunErrorType type_,
-      String message}) get copyWith => _copyWith;
+  BetaManagedAgentsFileNotFoundRunError Function({BetaManagedAgentsFileNotFoundRunErrorType type_, String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsFileNotFoundRunError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      BetaManagedAgentsFileNotFoundRunError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsFileNotFoundRunErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-      );
+  BetaManagedAgentsFileNotFoundRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsFileNotFoundRunError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsFileNotFoundRunErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+  );
 
-  factory BetaManagedAgentsFileNotFoundRunError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsFileNotFoundRunError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsFileNotFoundRunErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-      );
+  factory BetaManagedAgentsFileNotFoundRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsFileNotFoundRunError(
+    type_: (json['type'] != null ? BetaManagedAgentsFileNotFoundRunErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-      };
+    'type': type_.toJson(),
+    'message': message,
+  };
 }

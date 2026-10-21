@@ -9,83 +9,51 @@ sealed class BetaManagedAgentsFileResourceParamsMountPath {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsFileResourceParamsMountPath();
   factory BetaManagedAgentsFileResourceParamsMountPath.fromJson(Object? json) {
-    if (json is String) {
-      return BetaManagedAgentsFileResourceParamsMountPathString(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsFileResourceParamsMountPath");
+    if (json is String) { return BetaManagedAgentsFileResourceParamsMountPathString(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsFileResourceParamsMountPath");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsFileResourceParamsMountPathString
-    extends BetaManagedAgentsFileResourceParamsMountPath {
+final class BetaManagedAgentsFileResourceParamsMountPathString extends BetaManagedAgentsFileResourceParamsMountPath {
   final String value;
   const BetaManagedAgentsFileResourceParamsMountPathString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Mount a file uploaded via the Files API into the session.
 class BetaManagedAgentsFileResourceParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsFileResourceParamsType type_;
-
   /// ID of a previously uploaded file.
   final String fileId;
-
   /// Mount path in the container. Defaults to `/mnt/session/uploads/&lt;file_id&gt;`.
   final SdkOptional<String?> mountPath;
 
-  const BetaManagedAgentsFileResourceParams(
-      {required this.type_,
-      required this.fileId,
-      this.mountPath = const SdkOmitted()});
+  const BetaManagedAgentsFileResourceParams({required this.type_, required this.fileId, this.mountPath = const SdkOmitted()});
 
-  BetaManagedAgentsFileResourceParams Function(
-      {BetaManagedAgentsFileResourceParamsType type_,
-      String fileId,
-      SdkOptional<String?> mountPath}) get copyWith => _copyWith;
+  BetaManagedAgentsFileResourceParams Function({BetaManagedAgentsFileResourceParamsType type_, String fileId, SdkOptional<String?> mountPath}) get copyWith => _copyWith;
 
-  BetaManagedAgentsFileResourceParams _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? fileId = sdkOmittedValue,
-          Object? mountPath = sdkOmittedValue}) =>
-      BetaManagedAgentsFileResourceParams(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsFileResourceParamsType,
-        fileId:
-            identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
-        mountPath: identical(mountPath, sdkOmittedValue)
-            ? this.mountPath
-            : mountPath as SdkOptional<String?>,
-      );
+  BetaManagedAgentsFileResourceParams _copyWith({Object? type_ = sdkOmittedValue, Object? fileId = sdkOmittedValue, Object? mountPath = sdkOmittedValue}) => BetaManagedAgentsFileResourceParams(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsFileResourceParamsType,
+    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
+    mountPath: identical(mountPath, sdkOmittedValue) ? this.mountPath : mountPath as SdkOptional<String?>,
+  );
 
-  factory BetaManagedAgentsFileResourceParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsFileResourceParams(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsFileResourceParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-        fileId: (json['file_id'] as String?)!,
-        mountPath: json.containsKey('mount_path')
-            ? SdkPresent(json['mount_path'] as String?)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsFileResourceParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsFileResourceParams(
+    type_: (json['type'] != null ? BetaManagedAgentsFileResourceParamsType.fromJson(json['type'] as String) : null)!,
+    fileId: (json['file_id'] as String?)!,
+    mountPath: json.containsKey('mount_path') ? SdkPresent(json['mount_path'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'file_id': fileId,
-        ...switch (mountPath) {
-          SdkPresent<String?>(value: final value) => {
-              'mount_path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    'file_id': fileId,
+    ...switch (mountPath) {
+      SdkPresent<String?>(value: final value) => {'mount_path': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

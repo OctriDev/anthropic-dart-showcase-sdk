@@ -8,95 +8,42 @@ sealed class BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth();
-  factory BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth.fromJson(
-      Object? json) {
+  factory BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value =
-            BetaManagedAgentsTokenEndpointAuthNoneResponse.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsTokenEndpointAuthBasicResponse.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsTokenEndpointAuthPostResponse.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsTokenEndpointAuthNoneResponse.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsTokenEndpointAuthBasicResponse.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsTokenEndpointAuthPostResponse.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse(
-          BetaManagedAgentsTokenEndpointAuthNoneResponse.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse(
-          BetaManagedAgentsTokenEndpointAuthBasicResponse.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse(
-          BetaManagedAgentsTokenEndpointAuthPostResponse.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"none", "client_secret_basic", "client_secret_post"}
-            .contains(json["type"])) {
-      return UnknownBetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(
-          json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth");
+    try { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse(BetaManagedAgentsTokenEndpointAuthNoneResponse.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse(BetaManagedAgentsTokenEndpointAuthBasicResponse.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse(BetaManagedAgentsTokenEndpointAuthPostResponse.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"none", "client_secret_basic", "client_secret_post"}.contains(json["type"])) { return UnknownBetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse
-    extends BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth {
+final class BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse extends BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth {
   final BetaManagedAgentsTokenEndpointAuthNoneResponse value;
-  const BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthNoneResponse(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse
-    extends BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth {
+final class BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse extends BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth {
   final BetaManagedAgentsTokenEndpointAuthBasicResponse value;
-  const BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthBasicResponse(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse
-    extends BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth {
+final class BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse extends BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth {
   final BetaManagedAgentsTokenEndpointAuthPostResponse value;
-  const BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthBetaManagedAgentsTokenEndpointAuthPostResponse(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth
-    extends BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth {
+final class UnknownBetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth extends BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth {
   final Map<String, dynamic> raw;
-  const UnknownBetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(
-      this.raw);
-  @override
-  Object? toJson() => raw;
+  const UnknownBetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(this.raw);
+  @override Object? toJson() => raw;
 }

@@ -8,40 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsCommitCheckout {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsCommitCheckoutType type_;
-
   /// Full commit SHA to check out.
   final String sha;
 
-  const BetaManagedAgentsCommitCheckout(
-      {required this.type_, required this.sha});
+  const BetaManagedAgentsCommitCheckout({required this.type_, required this.sha});
 
-  BetaManagedAgentsCommitCheckout Function(
-      {BetaManagedAgentsCommitCheckoutType type_,
-      String sha}) get copyWith => _copyWith;
+  BetaManagedAgentsCommitCheckout Function({BetaManagedAgentsCommitCheckoutType type_, String sha}) get copyWith => _copyWith;
 
-  BetaManagedAgentsCommitCheckout _copyWith(
-          {Object? type_ = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
-      BetaManagedAgentsCommitCheckout(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsCommitCheckoutType,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-      );
+  BetaManagedAgentsCommitCheckout _copyWith({Object? type_ = sdkOmittedValue, Object? sha = sdkOmittedValue}) => BetaManagedAgentsCommitCheckout(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsCommitCheckoutType,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+  );
 
-  factory BetaManagedAgentsCommitCheckout.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsCommitCheckout(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsCommitCheckoutType.fromJson(
-                json['type'] as String)
-            : null)!,
-        sha: (json['sha'] as String?)!,
-      );
+  factory BetaManagedAgentsCommitCheckout.fromJson(Map<String, dynamic> json) => BetaManagedAgentsCommitCheckout(
+    type_: (json['type'] != null ? BetaManagedAgentsCommitCheckoutType.fromJson(json['type'] as String) : null)!,
+    sha: (json['sha'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'sha': sha,
-      };
+    'type': type_.toJson(),
+    'sha': sha,
+  };
 }

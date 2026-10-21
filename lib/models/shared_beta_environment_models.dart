@@ -8,149 +8,72 @@ part of 'shared_beta_environment.dart';
 class BetaEnvironment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// RFC 3339 timestamp when environment was archived, or null if not archived
   final String? archivedAt;
-
   /// Environment configuration (either Anthropic Cloud or self-hosted)
   final BetaEnvironmentConfig config;
-
   /// RFC 3339 timestamp when environment was created
   final String createdAt;
-
   /// User-provided description for the environment; null when unset
   final String? description;
-
   /// Environment identifier (e.g., 'env_...')
   final String id;
-
   /// User-provided metadata key-value pairs
   final Map<String, String> metadata;
-
   /// Human-readable name for the environment
   final String name;
-
   /// The visibility scope for this environment. 'organization' means visible to all accounts. 'account' means visible only to the owning account.
   final SdkOptional<BetaEnvironmentScope> scope;
-
   /// The type of object (always 'environment')
   final BetaEnvironmentType type_;
-
   /// RFC 3339 timestamp when environment was last updated
   final String updatedAt;
 
-  const BetaEnvironment(
-      {required this.archivedAt,
-      required this.config,
-      required this.createdAt,
-      required this.description,
-      required this.id,
-      required this.metadata,
-      required this.name,
-      this.scope = const SdkOmitted(),
-      required this.type_,
-      required this.updatedAt});
+  const BetaEnvironment({required this.archivedAt, required this.config, required this.createdAt, required this.description, required this.id, required this.metadata, required this.name, this.scope = const SdkOmitted(), required this.type_, required this.updatedAt});
 
-  BetaEnvironment Function(
-      {String? archivedAt,
-      BetaEnvironmentConfig config,
-      String createdAt,
-      String? description,
-      String id,
-      Map<String, String> metadata,
-      String name,
-      SdkOptional<BetaEnvironmentScope> scope,
-      BetaEnvironmentType type_,
-      String updatedAt}) get copyWith => _copyWith;
+  BetaEnvironment Function({String? archivedAt, BetaEnvironmentConfig config, String createdAt, String? description, String id, Map<String, String> metadata, String name, SdkOptional<BetaEnvironmentScope> scope, BetaEnvironmentType type_, String updatedAt}) get copyWith => _copyWith;
 
-  BetaEnvironment _copyWith(
-          {Object? archivedAt = sdkOmittedValue,
-          Object? config = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? scope = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      BetaEnvironment(
-        archivedAt: identical(archivedAt, sdkOmittedValue)
-            ? this.archivedAt
-            : archivedAt as String?,
-        config: identical(config, sdkOmittedValue)
-            ? this.config
-            : config as BetaEnvironmentConfig,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as Map<String, String>,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        scope: identical(scope, sdkOmittedValue)
-            ? this.scope
-            : scope as SdkOptional<BetaEnvironmentScope>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaEnvironmentType,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-      );
+  BetaEnvironment _copyWith({Object? archivedAt = sdkOmittedValue, Object? config = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? description = sdkOmittedValue, Object? id = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? name = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => BetaEnvironment(
+    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
+    config: identical(config, sdkOmittedValue) ? this.config : config as BetaEnvironmentConfig,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as Map<String, String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as SdkOptional<BetaEnvironmentScope>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaEnvironmentType,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+  );
 
-  factory BetaEnvironment.fromJson(Map<String, dynamic> json) =>
-      BetaEnvironment(
-        archivedAt: json.containsKey('archived_at')
-            ? json['archived_at'] as String?
-            : throw ArgumentError.value(
-                null, 'archived_at', 'Required property is missing'),
-        config: (json['config'] != null
-            ? BetaEnvironmentConfig.fromJson(json['config'])
-            : null)!,
-        createdAt: (json['created_at'] as String?)!,
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        id: (json['id'] as String?)!,
-        metadata: (json['metadata'] == null
-            ? null
-            : Map<String, dynamic>.from(json['metadata'] as Map)
-                .map((key, value) => MapEntry(key, value as String)))!,
-        name: (json['name'] as String?)!,
-        scope: json['scope'] != null
-            ? SdkPresent((json['scope'] != null
-                ? BetaEnvironmentScope.fromJson(json['scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? BetaEnvironmentType.fromJson(json['type'] as String)
-            : null)!,
-        updatedAt: (json['updated_at'] as String?)!,
-      );
+  factory BetaEnvironment.fromJson(Map<String, dynamic> json) => BetaEnvironment(
+    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
+    config: (json['config'] != null ? BetaEnvironmentConfig.fromJson(json['config']) : null)!,
+    createdAt: (json['created_at'] as String?)!,
+    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
+    id: (json['id'] as String?)!,
+    metadata: (json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String)))!,
+    name: (json['name'] as String?)!,
+    scope: json['scope'] != null ? SdkPresent((json['scope'] != null ? BetaEnvironmentScope.fromJson(json['scope'] as String) : null)!) : const SdkOmitted(),
+    type_: (json['type'] != null ? BetaEnvironmentType.fromJson(json['type'] as String) : null)!,
+    updatedAt: (json['updated_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'archived_at': archivedAt,
-        'config': config.toJson(),
-        'created_at': createdAt,
-        'description': description,
-        'id': id,
-        'metadata': metadata,
-        'name': name,
-        ...switch (scope) {
-          SdkPresent<BetaEnvironmentScope>(value: final value) => {
-              'scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-        'updated_at': updatedAt,
-      };
+    'archived_at': archivedAt,
+    'config': config.toJson(),
+    'created_at': createdAt,
+    'description': description,
+    'id': id,
+    'metadata': metadata,
+    'name': name,
+    ...switch (scope) {
+      SdkPresent<BetaEnvironmentScope>(value: final value) => {'scope': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+    'updated_at': updatedAt,
+  };
 }
 
 sealed class BetaEnvironmentConfig {
@@ -159,32 +82,12 @@ sealed class BetaEnvironmentConfig {
   const BetaEnvironmentConfig();
   factory BetaEnvironmentConfig.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaCloudConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaEnvironmentConfigBetaCloudConfig(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaSelfHostedConfig.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaEnvironmentConfigBetaSelfHostedConfig(value);
-        }
-      } catch (_) {}
+      try { final value = BetaCloudConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaEnvironmentConfigBetaCloudConfig(value); } } catch (_) {}
+      try { final value = BetaSelfHostedConfig.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaEnvironmentConfigBetaSelfHostedConfig(value); } } catch (_) {}
     }
-    try {
-      return BetaEnvironmentConfigBetaCloudConfig(
-          BetaCloudConfig.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaEnvironmentConfigBetaSelfHostedConfig(
-          BetaSelfHostedConfig.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"cloud", "self_hosted"}.contains(json["type"])) {
-      return UnknownBetaEnvironmentConfig(json);
-    }
+    try { return BetaEnvironmentConfigBetaCloudConfig(BetaCloudConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaEnvironmentConfigBetaSelfHostedConfig(BetaSelfHostedConfig.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"cloud", "self_hosted"}.contains(json["type"])) { return UnknownBetaEnvironmentConfig(json); }
     throw FormatException("No variant matched for BetaEnvironmentConfig");
   }
   Object? toJson();
@@ -193,22 +96,18 @@ sealed class BetaEnvironmentConfig {
 final class BetaEnvironmentConfigBetaCloudConfig extends BetaEnvironmentConfig {
   final BetaCloudConfig value;
   const BetaEnvironmentConfigBetaCloudConfig(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaEnvironmentConfigBetaSelfHostedConfig
-    extends BetaEnvironmentConfig {
+final class BetaEnvironmentConfigBetaSelfHostedConfig extends BetaEnvironmentConfig {
   final BetaSelfHostedConfig value;
   const BetaEnvironmentConfigBetaSelfHostedConfig(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaEnvironmentConfig] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaEnvironmentConfig extends BetaEnvironmentConfig {
   final Map<String, dynamic> raw;
   const UnknownBetaEnvironmentConfig(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

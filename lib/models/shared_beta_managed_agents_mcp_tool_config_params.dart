@@ -8,71 +8,38 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMCPToolConfigParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Name of the MCP tool to configure. 1-128 characters.
   final String name;
-
   /// Whether this tool is enabled. Overrides the `default_config` setting.
   final SdkOptional<bool?> enabled;
-
   /// Permission policy for this tool. Overrides the `default_config` setting.
   final SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy;
 
-  const BetaManagedAgentsMCPToolConfigParams(
-      {required this.name,
-      this.enabled = const SdkOmitted(),
-      this.permissionPolicy = const SdkOmitted()});
+  const BetaManagedAgentsMCPToolConfigParams({required this.name, this.enabled = const SdkOmitted(), this.permissionPolicy = const SdkOmitted()});
 
-  BetaManagedAgentsMCPToolConfigParams Function(
-          {String name,
-          SdkOptional<bool?> enabled,
-          SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy})
-      get copyWith => _copyWith;
+  BetaManagedAgentsMCPToolConfigParams Function({String name, SdkOptional<bool?> enabled, SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMCPToolConfigParams _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? enabled = sdkOmittedValue,
-          Object? permissionPolicy = sdkOmittedValue}) =>
-      BetaManagedAgentsMCPToolConfigParams(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as SdkOptional<bool?>,
-        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
-            ? this.permissionPolicy
-            : permissionPolicy
-                as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
-      );
+  BetaManagedAgentsMCPToolConfigParams _copyWith({Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue}) => BetaManagedAgentsMCPToolConfigParams(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
+    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
+  );
 
-  factory BetaManagedAgentsMCPToolConfigParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMCPToolConfigParams(
-        name: (json['name'] as String?)!,
-        enabled: json.containsKey('enabled')
-            ? SdkPresent(json['enabled'] as bool?)
-            : const SdkOmitted(),
-        permissionPolicy: json.containsKey('permission_policy')
-            ? SdkPresent(json['permission_policy'] != null
-                ? BetaManagedAgentsPermissionPolicy.fromJson(
-                    json['permission_policy'])
-                : null)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsMCPToolConfigParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMCPToolConfigParams(
+    name: (json['name'] as String?)!,
+    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
+    permissionPolicy: json.containsKey('permission_policy') ? SdkPresent(json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        ...switch (enabled) {
-          SdkPresent<bool?>(value: final value) => {
-              'enabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (permissionPolicy) {
-          SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) =>
-            {
-              'permission_policy': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'name': name,
+    ...switch (enabled) {
+      SdkPresent<bool?>(value: final value) => {'enabled': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (permissionPolicy) {
+      SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) => {'permission_policy': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

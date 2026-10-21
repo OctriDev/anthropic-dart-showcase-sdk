@@ -8,120 +8,58 @@ part of 'shared_beta_fallback.dart';
 class BetaFallbackConfigV2 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `integer` value serialized in the `max_tokens` wire field.
   final SdkOptional<int?> maxTokens;
-
   /// The model that will complete your prompt. See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
   final Model model;
-
   /// Optional API value serialized in the `output_config` wire field.
   final SdkOptional<BetaOutputConfig?> outputConfig;
-
   /// Optional API value serialized in the `speed` wire field.
   final SdkOptional<BetaSpeed?> speed;
-
   /// Optional API value serialized in the `thinking` wire field.
   final SdkOptional<BetaFallbackConfigV2Thinking?> thinking;
   final Map<String, dynamic> additionalProperties;
 
-  const BetaFallbackConfigV2(
-      {this.maxTokens = const SdkOmitted(),
-      required this.model,
-      this.outputConfig = const SdkOmitted(),
-      this.speed = const SdkOmitted(),
-      this.thinking = const SdkOmitted(),
-      this.additionalProperties = const <String, dynamic>{}});
+  const BetaFallbackConfigV2({this.maxTokens = const SdkOmitted(), required this.model, this.outputConfig = const SdkOmitted(), this.speed = const SdkOmitted(), this.thinking = const SdkOmitted(), this.additionalProperties = const <String, dynamic>{}});
 
-  BetaFallbackConfigV2 Function(
-          {SdkOptional<int?> maxTokens,
-          Model model,
-          SdkOptional<BetaOutputConfig?> outputConfig,
-          SdkOptional<BetaSpeed?> speed,
-          SdkOptional<BetaFallbackConfigV2Thinking?> thinking})
-      get copyWith => _copyWith;
+  BetaFallbackConfigV2 Function({SdkOptional<int?> maxTokens, Model model, SdkOptional<BetaOutputConfig?> outputConfig, SdkOptional<BetaSpeed?> speed, SdkOptional<BetaFallbackConfigV2Thinking?> thinking}) get copyWith => _copyWith;
 
-  BetaFallbackConfigV2 _copyWith(
-          {Object? maxTokens = sdkOmittedValue,
-          Object? model = sdkOmittedValue,
-          Object? outputConfig = sdkOmittedValue,
-          Object? speed = sdkOmittedValue,
-          Object? thinking = sdkOmittedValue}) =>
-      BetaFallbackConfigV2(
-        maxTokens: identical(maxTokens, sdkOmittedValue)
-            ? this.maxTokens
-            : maxTokens as SdkOptional<int?>,
-        model: identical(model, sdkOmittedValue) ? this.model : model as Model,
-        outputConfig: identical(outputConfig, sdkOmittedValue)
-            ? this.outputConfig
-            : outputConfig as SdkOptional<BetaOutputConfig?>,
-        speed: identical(speed, sdkOmittedValue)
-            ? this.speed
-            : speed as SdkOptional<BetaSpeed?>,
-        thinking: identical(thinking, sdkOmittedValue)
-            ? this.thinking
-            : thinking as SdkOptional<BetaFallbackConfigV2Thinking?>,
-        additionalProperties: additionalProperties,
-      );
+  BetaFallbackConfigV2 _copyWith({Object? maxTokens = sdkOmittedValue, Object? model = sdkOmittedValue, Object? outputConfig = sdkOmittedValue, Object? speed = sdkOmittedValue, Object? thinking = sdkOmittedValue}) => BetaFallbackConfigV2(
+    maxTokens: identical(maxTokens, sdkOmittedValue) ? this.maxTokens : maxTokens as SdkOptional<int?>,
+    model: identical(model, sdkOmittedValue) ? this.model : model as Model,
+    outputConfig: identical(outputConfig, sdkOmittedValue) ? this.outputConfig : outputConfig as SdkOptional<BetaOutputConfig?>,
+    speed: identical(speed, sdkOmittedValue) ? this.speed : speed as SdkOptional<BetaSpeed?>,
+    thinking: identical(thinking, sdkOmittedValue) ? this.thinking : thinking as SdkOptional<BetaFallbackConfigV2Thinking?>,
+    additionalProperties: additionalProperties,
+  );
 
-  factory BetaFallbackConfigV2.fromJson(Map<String, dynamic> json) =>
-      BetaFallbackConfigV2(
-        maxTokens: json.containsKey('max_tokens')
-            ? SdkPresent((json['max_tokens'] as num?)?.toInt())
-            : const SdkOmitted(),
-        model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
-        outputConfig: json.containsKey('output_config')
-            ? SdkPresent(json['output_config'] != null
-                ? BetaOutputConfig.fromJson(
-                    json['output_config'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        speed: json.containsKey('speed')
-            ? SdkPresent(json['speed'] != null
-                ? BetaSpeed.fromJson(json['speed'] as String)
-                : null)
-            : const SdkOmitted(),
-        thinking: json.containsKey('thinking')
-            ? SdkPresent(json['thinking'] != null
-                ? BetaFallbackConfigV2Thinking.fromJson(json['thinking'])
-                : null)
-            : const SdkOmitted(),
-        additionalProperties: Map.of(json)
-          ..removeWhere((key, _) => const <String>{
-                'max_tokens',
-                'model',
-                'output_config',
-                'speed',
-                'thinking'
-              }.contains(key)),
-      );
+  factory BetaFallbackConfigV2.fromJson(Map<String, dynamic> json) => BetaFallbackConfigV2(
+    maxTokens: json.containsKey('max_tokens') ? SdkPresent((json['max_tokens'] as num?)?.toInt()) : const SdkOmitted(),
+    model: (json['model'] != null ? Model.fromJson(json['model']) : null)!,
+    outputConfig: json.containsKey('output_config') ? SdkPresent(json['output_config'] != null ? BetaOutputConfig.fromJson(json['output_config'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    speed: json.containsKey('speed') ? SdkPresent(json['speed'] != null ? BetaSpeed.fromJson(json['speed'] as String) : null) : const SdkOmitted(),
+    thinking: json.containsKey('thinking') ? SdkPresent(json['thinking'] != null ? BetaFallbackConfigV2Thinking.fromJson(json['thinking']) : null) : const SdkOmitted(),
+    additionalProperties: Map.of(json)..removeWhere((key, _) => const <String>{'max_tokens', 'model', 'output_config', 'speed', 'thinking'}.contains(key)),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...additionalProperties,
-        ...switch (maxTokens) {
-          SdkPresent<int?>(value: final value) => {
-              'max_tokens': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'model': model.toJson(),
-        ...switch (outputConfig) {
-          SdkPresent<BetaOutputConfig?>(value: final value) => {
-              'output_config': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (speed) {
-          SdkPresent<BetaSpeed?>(value: final value) => {
-              'speed': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (thinking) {
-          SdkPresent<BetaFallbackConfigV2Thinking?>(value: final value) => {
-              'thinking': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...additionalProperties,
+    ...switch (maxTokens) {
+      SdkPresent<int?>(value: final value) => {'max_tokens': value,},
+      _ => const <String, dynamic>{},
+    },
+    'model': model.toJson(),
+    ...switch (outputConfig) {
+      SdkPresent<BetaOutputConfig?>(value: final value) => {'output_config': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (speed) {
+      SdkPresent<BetaSpeed?>(value: final value) => {'speed': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (thinking) {
+      SdkPresent<BetaFallbackConfigV2Thinking?>(value: final value) => {'thinking': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

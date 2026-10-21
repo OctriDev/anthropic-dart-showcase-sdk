@@ -6,25 +6,22 @@ part of 'shared_beta_managed_agents.dart';
 // shared_beta_managed_agents domain models
 /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
 final class BetaManagedAgentsMemoryView {
+
   final String value;
 
   const BetaManagedAgentsMemoryView._(this.value);
 
-  factory BetaManagedAgentsMemoryView.fromJson(String value) =>
-      BetaManagedAgentsMemoryView._(value);
+  factory BetaManagedAgentsMemoryView.fromJson(String value) => BetaManagedAgentsMemoryView._(value);
 
   static const basic = BetaManagedAgentsMemoryView._('basic');
   static const full = BetaManagedAgentsMemoryView._('full');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaManagedAgentsMemoryView && other.value == value;
+  @override bool operator ==(Object other) => other is BetaManagedAgentsMemoryView && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

@@ -8,65 +8,37 @@ part of 'beta_webhook_beta_webhook_session.dart';
 class BetaWebhookSessionStatusRunStartedEventData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebhookSessionStatusRunStartedEventDataType type_;
-
   /// ID of the session that triggered the event.
   final String id;
-
   /// Required `string` value serialized in the `organization_id` wire field.
   final String organizationId;
-
   /// Required `string` value serialized in the `workspace_id` wire field.
   final String workspaceId;
 
-  const BetaWebhookSessionStatusRunStartedEventData(
-      {required this.type_,
-      required this.id,
-      required this.organizationId,
-      required this.workspaceId});
+  const BetaWebhookSessionStatusRunStartedEventData({required this.type_, required this.id, required this.organizationId, required this.workspaceId});
 
-  BetaWebhookSessionStatusRunStartedEventData Function(
-      {BetaWebhookSessionStatusRunStartedEventDataType type_,
-      String id,
-      String organizationId,
-      String workspaceId}) get copyWith => _copyWith;
+  BetaWebhookSessionStatusRunStartedEventData Function({BetaWebhookSessionStatusRunStartedEventDataType type_, String id, String organizationId, String workspaceId}) get copyWith => _copyWith;
 
-  BetaWebhookSessionStatusRunStartedEventData _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? organizationId = sdkOmittedValue,
-          Object? workspaceId = sdkOmittedValue}) =>
-      BetaWebhookSessionStatusRunStartedEventData(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaWebhookSessionStatusRunStartedEventDataType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        organizationId: identical(organizationId, sdkOmittedValue)
-            ? this.organizationId
-            : organizationId as String,
-        workspaceId: identical(workspaceId, sdkOmittedValue)
-            ? this.workspaceId
-            : workspaceId as String,
-      );
+  BetaWebhookSessionStatusRunStartedEventData _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaWebhookSessionStatusRunStartedEventData(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookSessionStatusRunStartedEventDataType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
+    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
+  );
 
-  factory BetaWebhookSessionStatusRunStartedEventData.fromJson(
-          Map<String, dynamic> json) =>
-      BetaWebhookSessionStatusRunStartedEventData(
-        type_: (json['type'] != null
-            ? BetaWebhookSessionStatusRunStartedEventDataType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        organizationId: (json['organization_id'] as String?)!,
-        workspaceId: (json['workspace_id'] as String?)!,
-      );
+  factory BetaWebhookSessionStatusRunStartedEventData.fromJson(Map<String, dynamic> json) => BetaWebhookSessionStatusRunStartedEventData(
+    type_: (json['type'] != null ? BetaWebhookSessionStatusRunStartedEventDataType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    organizationId: (json['organization_id'] as String?)!,
+    workspaceId: (json['workspace_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'organization_id': organizationId,
-        'workspace_id': workspaceId,
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'organization_id': organizationId,
+    'workspace_id': workspaceId,
+  };
 }

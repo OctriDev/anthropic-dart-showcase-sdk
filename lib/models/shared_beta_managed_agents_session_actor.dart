@@ -8,42 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionActorType type_;
-
   /// ID of the session that performed the write (a `sesn_...` value). Look up the session via Retrieve a session for further provenance.
   final String sessionId;
 
-  const BetaManagedAgentsSessionActor(
-      {required this.type_, required this.sessionId});
+  const BetaManagedAgentsSessionActor({required this.type_, required this.sessionId});
 
-  BetaManagedAgentsSessionActor Function(
-      {BetaManagedAgentsSessionActorType type_,
-      String sessionId}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionActor Function({BetaManagedAgentsSessionActorType type_, String sessionId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionActor _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? sessionId = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionActor(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSessionActorType,
-        sessionId: identical(sessionId, sdkOmittedValue)
-            ? this.sessionId
-            : sessionId as String,
-      );
+  BetaManagedAgentsSessionActor _copyWith({Object? type_ = sdkOmittedValue, Object? sessionId = sdkOmittedValue}) => BetaManagedAgentsSessionActor(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionActorType,
+    sessionId: identical(sessionId, sdkOmittedValue) ? this.sessionId : sessionId as String,
+  );
 
-  factory BetaManagedAgentsSessionActor.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionActor(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSessionActorType.fromJson(json['type'] as String)
-            : null)!,
-        sessionId: (json['session_id'] as String?)!,
-      );
+  factory BetaManagedAgentsSessionActor.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionActor(
+    type_: (json['type'] != null ? BetaManagedAgentsSessionActorType.fromJson(json['type'] as String) : null)!,
+    sessionId: (json['session_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'session_id': sessionId,
-      };
+    'type': type_.toJson(),
+    'session_id': sessionId,
+  };
 }

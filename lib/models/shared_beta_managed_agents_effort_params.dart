@@ -9,32 +9,21 @@ sealed class BetaManagedAgentsEffortParams {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsEffortParams();
   factory BetaManagedAgentsEffortParams.fromJson(Object? json) {
-    try {
-      return BetaManagedAgentsEffortParamsBetaManagedAgentsEffortLevel(
-          BetaManagedAgentsEffortLevel.fromJson(json as String));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsEffortParamsBetaManagedAgentsEffort(
-          BetaManagedAgentsEffort.fromJson(json));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsEffortParams");
+    try { return BetaManagedAgentsEffortParamsBetaManagedAgentsEffortLevel(BetaManagedAgentsEffortLevel.fromJson(json as String)); } catch (_) {}
+    try { return BetaManagedAgentsEffortParamsBetaManagedAgentsEffort(BetaManagedAgentsEffort.fromJson(json)); } catch (_) {}
+    throw FormatException("No variant matched for BetaManagedAgentsEffortParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsEffortParamsBetaManagedAgentsEffortLevel
-    extends BetaManagedAgentsEffortParams {
+final class BetaManagedAgentsEffortParamsBetaManagedAgentsEffortLevel extends BetaManagedAgentsEffortParams {
   final BetaManagedAgentsEffortLevel value;
   const BetaManagedAgentsEffortParamsBetaManagedAgentsEffortLevel(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsEffortParamsBetaManagedAgentsEffort
-    extends BetaManagedAgentsEffortParams {
+final class BetaManagedAgentsEffortParamsBetaManagedAgentsEffort extends BetaManagedAgentsEffortParams {
   final BetaManagedAgentsEffort value;
   const BetaManagedAgentsEffortParamsBetaManagedAgentsEffort(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }

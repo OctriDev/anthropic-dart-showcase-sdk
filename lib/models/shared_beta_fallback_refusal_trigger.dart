@@ -8,47 +8,27 @@ part of 'shared_beta_fallback.dart';
 class BetaFallbackRefusalTrigger {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The policy category that triggered the `from` model's refusal at this hop. `null` when the refusal doesn't map to a named category. Same vocabulary as `stop_details.category`.
   final BetaRefusalCategory? category;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaFallbackRefusalTriggerType type_;
 
-  const BetaFallbackRefusalTrigger(
-      {required this.category, required this.type_});
+  const BetaFallbackRefusalTrigger({required this.category, required this.type_});
 
-  BetaFallbackRefusalTrigger Function(
-      {BetaRefusalCategory? category,
-      BetaFallbackRefusalTriggerType type_}) get copyWith => _copyWith;
+  BetaFallbackRefusalTrigger Function({BetaRefusalCategory? category, BetaFallbackRefusalTriggerType type_}) get copyWith => _copyWith;
 
-  BetaFallbackRefusalTrigger _copyWith(
-          {Object? category = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaFallbackRefusalTrigger(
-        category: identical(category, sdkOmittedValue)
-            ? this.category
-            : category as BetaRefusalCategory?,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaFallbackRefusalTriggerType,
-      );
+  BetaFallbackRefusalTrigger _copyWith({Object? category = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaFallbackRefusalTrigger(
+    category: identical(category, sdkOmittedValue) ? this.category : category as BetaRefusalCategory?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaFallbackRefusalTriggerType,
+  );
 
-  factory BetaFallbackRefusalTrigger.fromJson(Map<String, dynamic> json) =>
-      BetaFallbackRefusalTrigger(
-        category: json.containsKey('category')
-            ? json['category'] != null
-                ? BetaRefusalCategory.fromJson(json['category'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'category', 'Required property is missing'),
-        type_: (json['type'] != null
-            ? BetaFallbackRefusalTriggerType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaFallbackRefusalTrigger.fromJson(Map<String, dynamic> json) => BetaFallbackRefusalTrigger(
+    category: json.containsKey('category') ? json['category'] != null ? BetaRefusalCategory.fromJson(json['category'] as String) : null : throw ArgumentError.value(null, 'category', 'Required property is missing'),
+    type_: (json['type'] != null ? BetaFallbackRefusalTriggerType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'category': category?.toJson(),
-        'type': type_.toJson(),
-      };
+    'category': category?.toJson(),
+    'type': type_.toJson(),
+  };
 }

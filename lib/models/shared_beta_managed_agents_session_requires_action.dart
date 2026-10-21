@@ -8,45 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionRequiresAction {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionRequiresActionType type_;
-
   /// The ids of events the agent is blocked on. Resolving fewer than all re-emits `session.status_idle` with the remainder.
   final List<String> eventIds;
 
-  const BetaManagedAgentsSessionRequiresAction(
-      {required this.type_, required this.eventIds});
+  const BetaManagedAgentsSessionRequiresAction({required this.type_, required this.eventIds});
 
-  BetaManagedAgentsSessionRequiresAction Function(
-      {BetaManagedAgentsSessionRequiresActionType type_,
-      List<String> eventIds}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionRequiresAction Function({BetaManagedAgentsSessionRequiresActionType type_, List<String> eventIds}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionRequiresAction _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? eventIds = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionRequiresAction(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSessionRequiresActionType,
-        eventIds: identical(eventIds, sdkOmittedValue)
-            ? this.eventIds
-            : eventIds as List<String>,
-      );
+  BetaManagedAgentsSessionRequiresAction _copyWith({Object? type_ = sdkOmittedValue, Object? eventIds = sdkOmittedValue}) => BetaManagedAgentsSessionRequiresAction(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionRequiresActionType,
+    eventIds: identical(eventIds, sdkOmittedValue) ? this.eventIds : eventIds as List<String>,
+  );
 
-  factory BetaManagedAgentsSessionRequiresAction.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionRequiresAction(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSessionRequiresActionType.fromJson(
-                json['type'] as String)
-            : null)!,
-        eventIds:
-            ((json['event_ids'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory BetaManagedAgentsSessionRequiresAction.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionRequiresAction(
+    type_: (json['type'] != null ? BetaManagedAgentsSessionRequiresActionType.fromJson(json['type'] as String) : null)!,
+    eventIds: ((json['event_ids'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'event_ids': eventIds,
-      };
+    'type': type_.toJson(),
+    'event_ids': eventIds,
+  };
 }

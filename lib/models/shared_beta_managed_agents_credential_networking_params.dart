@@ -10,68 +10,32 @@ sealed class BetaManagedAgentsCredentialNetworkingParams {
   const BetaManagedAgentsCredentialNetworkingParams();
   factory BetaManagedAgentsCredentialNetworkingParams.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value =
-            BetaManagedAgentsUnrestrictedCredentialNetworkingParams.fromJson(
-                json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsUnrestrictedCredentialNetworkingParams(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            BetaManagedAgentsLimitedCredentialNetworkingParams.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsLimitedCredentialNetworkingParams(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsUnrestrictedCredentialNetworkingParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsUnrestrictedCredentialNetworkingParams(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsLimitedCredentialNetworkingParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsLimitedCredentialNetworkingParams(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsUnrestrictedCredentialNetworkingParams(
-          BetaManagedAgentsUnrestrictedCredentialNetworkingParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsLimitedCredentialNetworkingParams(
-          BetaManagedAgentsLimitedCredentialNetworkingParams.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"unrestricted", "limited"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsCredentialNetworkingParams(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsCredentialNetworkingParams");
+    try { return BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsUnrestrictedCredentialNetworkingParams(BetaManagedAgentsUnrestrictedCredentialNetworkingParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsLimitedCredentialNetworkingParams(BetaManagedAgentsLimitedCredentialNetworkingParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"unrestricted", "limited"}.contains(json["type"])) { return UnknownBetaManagedAgentsCredentialNetworkingParams(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsCredentialNetworkingParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsUnrestrictedCredentialNetworkingParams
-    extends BetaManagedAgentsCredentialNetworkingParams {
+final class BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsUnrestrictedCredentialNetworkingParams extends BetaManagedAgentsCredentialNetworkingParams {
   final BetaManagedAgentsUnrestrictedCredentialNetworkingParams value;
-  const BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsUnrestrictedCredentialNetworkingParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsUnrestrictedCredentialNetworkingParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsLimitedCredentialNetworkingParams
-    extends BetaManagedAgentsCredentialNetworkingParams {
+final class BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsLimitedCredentialNetworkingParams extends BetaManagedAgentsCredentialNetworkingParams {
   final BetaManagedAgentsLimitedCredentialNetworkingParams value;
-  const BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsLimitedCredentialNetworkingParams(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsCredentialNetworkingParamsBetaManagedAgentsLimitedCredentialNetworkingParams(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsCredentialNetworkingParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsCredentialNetworkingParams
-    extends BetaManagedAgentsCredentialNetworkingParams {
+final class UnknownBetaManagedAgentsCredentialNetworkingParams extends BetaManagedAgentsCredentialNetworkingParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsCredentialNetworkingParams(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

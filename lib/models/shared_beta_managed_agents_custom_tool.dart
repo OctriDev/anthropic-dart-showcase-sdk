@@ -8,67 +8,37 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsCustomTool {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsCustomToolType type_;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `string` value serialized in the `description` wire field.
   final String description;
-
   /// JSON Schema for custom tool input parameters.
   final BetaManagedAgentsCustomToolInputSchema inputSchema;
 
-  const BetaManagedAgentsCustomTool(
-      {required this.type_,
-      required this.name,
-      required this.description,
-      required this.inputSchema});
+  const BetaManagedAgentsCustomTool({required this.type_, required this.name, required this.description, required this.inputSchema});
 
-  BetaManagedAgentsCustomTool Function(
-          {BetaManagedAgentsCustomToolType type_,
-          String name,
-          String description,
-          BetaManagedAgentsCustomToolInputSchema inputSchema})
-      get copyWith => _copyWith;
+  BetaManagedAgentsCustomTool Function({BetaManagedAgentsCustomToolType type_, String name, String description, BetaManagedAgentsCustomToolInputSchema inputSchema}) get copyWith => _copyWith;
 
-  BetaManagedAgentsCustomTool _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? inputSchema = sdkOmittedValue}) =>
-      BetaManagedAgentsCustomTool(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsCustomToolType,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String,
-        inputSchema: identical(inputSchema, sdkOmittedValue)
-            ? this.inputSchema
-            : inputSchema as BetaManagedAgentsCustomToolInputSchema,
-      );
+  BetaManagedAgentsCustomTool _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? inputSchema = sdkOmittedValue}) => BetaManagedAgentsCustomTool(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsCustomToolType,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String,
+    inputSchema: identical(inputSchema, sdkOmittedValue) ? this.inputSchema : inputSchema as BetaManagedAgentsCustomToolInputSchema,
+  );
 
-  factory BetaManagedAgentsCustomTool.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsCustomTool(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsCustomToolType.fromJson(json['type'] as String)
-            : null)!,
-        name: (json['name'] as String?)!,
-        description: (json['description'] as String?)!,
-        inputSchema: (json['input_schema'] != null
-            ? BetaManagedAgentsCustomToolInputSchema.fromJson(
-                json['input_schema'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory BetaManagedAgentsCustomTool.fromJson(Map<String, dynamic> json) => BetaManagedAgentsCustomTool(
+    type_: (json['type'] != null ? BetaManagedAgentsCustomToolType.fromJson(json['type'] as String) : null)!,
+    name: (json['name'] as String?)!,
+    description: (json['description'] as String?)!,
+    inputSchema: (json['input_schema'] != null ? BetaManagedAgentsCustomToolInputSchema.fromJson(json['input_schema'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'name': name,
-        'description': description,
-        'input_schema': inputSchema.toJson(),
-      };
+    'type': type_.toJson(),
+    'name': name,
+    'description': description,
+    'input_schema': inputSchema.toJson(),
+  };
 }

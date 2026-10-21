@@ -8,46 +8,29 @@ part of 'shared_json.dart';
 class JsonOutputFormat {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The JSON schema of the format
   final Map<String, Object?> schema;
-
   /// Required `string` value serialized in the `type` wire field.
   final JsonOutputFormatType type_;
 
   const JsonOutputFormat({required this.schema, required this.type_});
 
-  JsonOutputFormat Function(
-      {Map<String, Object?> schema,
-      JsonOutputFormatType type_}) get copyWith => _copyWith;
+  JsonOutputFormat Function({Map<String, Object?> schema, JsonOutputFormatType type_}) get copyWith => _copyWith;
 
-  JsonOutputFormat _copyWith(
-          {Object? schema = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      JsonOutputFormat(
-        schema: identical(schema, sdkOmittedValue)
-            ? this.schema
-            : schema as Map<String, Object?>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as JsonOutputFormatType,
-      );
+  JsonOutputFormat _copyWith({Object? schema = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => JsonOutputFormat(
+    schema: identical(schema, sdkOmittedValue) ? this.schema : schema as Map<String, Object?>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as JsonOutputFormatType,
+  );
 
-  factory JsonOutputFormat.fromJson(Map<String, dynamic> json) =>
-      JsonOutputFormat(
-        schema: (json['schema'] == null
-            ? null
-            : Map<String, dynamic>.from(json['schema'] as Map)
-                .map((key, value) => MapEntry(key, value)))!,
-        type_: (json['type'] != null
-            ? JsonOutputFormatType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory JsonOutputFormat.fromJson(Map<String, dynamic> json) => JsonOutputFormat(
+    schema: (json['schema'] == null ? null : Map<String, dynamic>.from(json['schema'] as Map).map((key, value) => MapEntry(key, value)))!,
+    type_: (json['type'] != null ? JsonOutputFormatType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'schema': schema,
-        'type': type_.toJson(),
-      };
+    'schema': schema,
+    'type': type_.toJson(),
+  };
 }
 
 // JsonValue = dynamic

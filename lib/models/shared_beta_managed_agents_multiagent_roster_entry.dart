@@ -10,64 +10,32 @@ sealed class BetaManagedAgentsMultiagentRosterEntry {
   const BetaManagedAgentsMultiagentRosterEntry();
   factory BetaManagedAgentsMultiagentRosterEntry.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsAgentReference.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsAdvisor.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsAgentReference.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsAdvisor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(
-          BetaManagedAgentsAgentReference.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(
-          BetaManagedAgentsAdvisor.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"agent", "advisor"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsMultiagentRosterEntry(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsMultiagentRosterEntry");
+    try { return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(BetaManagedAgentsAgentReference.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(BetaManagedAgentsAdvisor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"agent", "advisor"}.contains(json["type"])) { return UnknownBetaManagedAgentsMultiagentRosterEntry(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsMultiagentRosterEntry");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference
-    extends BetaManagedAgentsMultiagentRosterEntry {
+final class BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference extends BetaManagedAgentsMultiagentRosterEntry {
   final BetaManagedAgentsAgentReference value;
-  const BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAgentReference(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor
-    extends BetaManagedAgentsMultiagentRosterEntry {
+final class BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor extends BetaManagedAgentsMultiagentRosterEntry {
   final BetaManagedAgentsAdvisor value;
-  const BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryBetaManagedAgentsAdvisor(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMultiagentRosterEntry] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMultiagentRosterEntry
-    extends BetaManagedAgentsMultiagentRosterEntry {
+final class UnknownBetaManagedAgentsMultiagentRosterEntry extends BetaManagedAgentsMultiagentRosterEntry {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsMultiagentRosterEntry(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

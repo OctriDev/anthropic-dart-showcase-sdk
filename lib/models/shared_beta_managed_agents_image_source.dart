@@ -10,85 +10,40 @@ sealed class BetaManagedAgentsImageSource {
   const BetaManagedAgentsImageSource();
   factory BetaManagedAgentsImageSource.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaManagedAgentsBase64ImageSource.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsURLImageSource.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaManagedAgentsFileImageSource.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaManagedAgentsBase64ImageSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsURLImageSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource(value); } } catch (_) {}
+      try { final value = BetaManagedAgentsFileImageSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(value); } } catch (_) {}
     }
-    try {
-      return BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(
-          BetaManagedAgentsBase64ImageSource.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource(
-          BetaManagedAgentsURLImageSource.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(
-          BetaManagedAgentsFileImageSource.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"base64", "url", "file"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsImageSource(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsImageSource");
+    try { return BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(BetaManagedAgentsBase64ImageSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource(BetaManagedAgentsURLImageSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(BetaManagedAgentsFileImageSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"base64", "url", "file"}.contains(json["type"])) { return UnknownBetaManagedAgentsImageSource(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsImageSource");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource
-    extends BetaManagedAgentsImageSource {
+final class BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource extends BetaManagedAgentsImageSource {
   final BetaManagedAgentsBase64ImageSource value;
-  const BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsImageSourceBetaManagedAgentsBase64ImageSource(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource
-    extends BetaManagedAgentsImageSource {
+final class BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource extends BetaManagedAgentsImageSource {
   final BetaManagedAgentsURLImageSource value;
   const BetaManagedAgentsImageSourceBetaManagedAgentsURLImageSource(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource
-    extends BetaManagedAgentsImageSource {
+final class BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource extends BetaManagedAgentsImageSource {
   final BetaManagedAgentsFileImageSource value;
-  const BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsImageSourceBetaManagedAgentsFileImageSource(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsImageSource] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsImageSource
-    extends BetaManagedAgentsImageSource {
+final class UnknownBetaManagedAgentsImageSource extends BetaManagedAgentsImageSource {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsImageSource(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

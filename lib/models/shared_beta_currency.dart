@@ -6,6 +6,7 @@ part of 'shared_beta.dart';
 // shared_beta domain models
 /// Typed representation of the `BetaCurrency` API schema.
 final class BetaCurrency {
+
   final String value;
 
   const BetaCurrency._(this.value);
@@ -16,13 +17,10 @@ final class BetaCurrency {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaCurrency && other.value == value;
+  @override bool operator ==(Object other) => other is BetaCurrency && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

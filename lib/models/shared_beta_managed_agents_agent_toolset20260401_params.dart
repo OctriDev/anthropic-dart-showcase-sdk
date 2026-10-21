@@ -8,87 +8,38 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsAgentToolset20260401Params {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAgentToolset20260401ParamsType type_;
-
   /// Default configuration applied to all tools in this set.
-  final SdkOptional<BetaManagedAgentsAgentToolsetDefaultConfigParams?>
-      defaultConfig;
-
+  final SdkOptional<BetaManagedAgentsAgentToolsetDefaultConfigParams?> defaultConfig;
   /// Per-tool configuration overrides.
   final SdkOptional<List<BetaManagedAgentsAgentToolConfigUnionParams>> configs;
 
-  const BetaManagedAgentsAgentToolset20260401Params(
-      {required this.type_,
-      this.defaultConfig = const SdkOmitted(),
-      this.configs = const SdkOmitted()});
+  const BetaManagedAgentsAgentToolset20260401Params({required this.type_, this.defaultConfig = const SdkOmitted(), this.configs = const SdkOmitted()});
 
-  BetaManagedAgentsAgentToolset20260401Params Function(
-      {BetaManagedAgentsAgentToolset20260401ParamsType type_,
-      SdkOptional<BetaManagedAgentsAgentToolsetDefaultConfigParams?>
-          defaultConfig,
-      SdkOptional<List<BetaManagedAgentsAgentToolConfigUnionParams>>
-          configs}) get copyWith => _copyWith;
+  BetaManagedAgentsAgentToolset20260401Params Function({BetaManagedAgentsAgentToolset20260401ParamsType type_, SdkOptional<BetaManagedAgentsAgentToolsetDefaultConfigParams?> defaultConfig, SdkOptional<List<BetaManagedAgentsAgentToolConfigUnionParams>> configs}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAgentToolset20260401Params _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? defaultConfig = sdkOmittedValue,
-          Object? configs = sdkOmittedValue}) =>
-      BetaManagedAgentsAgentToolset20260401Params(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsAgentToolset20260401ParamsType,
-        defaultConfig: identical(defaultConfig, sdkOmittedValue)
-            ? this.defaultConfig
-            : defaultConfig as SdkOptional<
-                BetaManagedAgentsAgentToolsetDefaultConfigParams?>,
-        configs: identical(configs, sdkOmittedValue)
-            ? this.configs
-            : configs as SdkOptional<
-                List<BetaManagedAgentsAgentToolConfigUnionParams>>,
-      );
+  BetaManagedAgentsAgentToolset20260401Params _copyWith({Object? type_ = sdkOmittedValue, Object? defaultConfig = sdkOmittedValue, Object? configs = sdkOmittedValue}) => BetaManagedAgentsAgentToolset20260401Params(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAgentToolset20260401ParamsType,
+    defaultConfig: identical(defaultConfig, sdkOmittedValue) ? this.defaultConfig : defaultConfig as SdkOptional<BetaManagedAgentsAgentToolsetDefaultConfigParams?>,
+    configs: identical(configs, sdkOmittedValue) ? this.configs : configs as SdkOptional<List<BetaManagedAgentsAgentToolConfigUnionParams>>,
+  );
 
-  factory BetaManagedAgentsAgentToolset20260401Params.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsAgentToolset20260401Params(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsAgentToolset20260401ParamsType.fromJson(
-                json['type'] as String)
-            : null)!,
-        defaultConfig: json.containsKey('default_config')
-            ? SdkPresent(json['default_config'] != null
-                ? BetaManagedAgentsAgentToolsetDefaultConfigParams.fromJson(
-                    json['default_config'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        configs: json['configs'] != null
-            ? SdkPresent(((json['configs'] as List?)
-                ?.map((e) =>
-                    BetaManagedAgentsAgentToolConfigUnionParams.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsAgentToolset20260401Params.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAgentToolset20260401Params(
+    type_: (json['type'] != null ? BetaManagedAgentsAgentToolset20260401ParamsType.fromJson(json['type'] as String) : null)!,
+    defaultConfig: json.containsKey('default_config') ? SdkPresent(json['default_config'] != null ? BetaManagedAgentsAgentToolsetDefaultConfigParams.fromJson(json['default_config'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    configs: json['configs'] != null ? SdkPresent(((json['configs'] as List?)?.map((e) => BetaManagedAgentsAgentToolConfigUnionParams.fromJson(e)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        ...switch (defaultConfig) {
-          SdkPresent<BetaManagedAgentsAgentToolsetDefaultConfigParams?>(
-            value: final value
-          ) =>
-            {
-              'default_config': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (configs) {
-          SdkPresent<List<BetaManagedAgentsAgentToolConfigUnionParams>>(
-            value: final value
-          ) =>
-            {
-              'configs': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    ...switch (defaultConfig) {
+      SdkPresent<BetaManagedAgentsAgentToolsetDefaultConfigParams?>(value: final value) => {'default_config': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (configs) {
+      SdkPresent<List<BetaManagedAgentsAgentToolConfigUnionParams>>(value: final value) => {'configs': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

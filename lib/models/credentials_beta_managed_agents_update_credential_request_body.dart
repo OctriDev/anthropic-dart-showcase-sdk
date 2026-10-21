@@ -8,108 +8,58 @@ sealed class BetaManagedAgentsUpdateCredentialRequestBodyDisplayName {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsUpdateCredentialRequestBodyDisplayName();
-  factory BetaManagedAgentsUpdateCredentialRequestBodyDisplayName.fromJson(
-      Object? json) {
-    if (json is String) {
-      return BetaManagedAgentsUpdateCredentialRequestBodyDisplayNameString(
-          json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsUpdateCredentialRequestBodyDisplayName");
+  factory BetaManagedAgentsUpdateCredentialRequestBodyDisplayName.fromJson(Object? json) {
+    if (json is String) { return BetaManagedAgentsUpdateCredentialRequestBodyDisplayNameString(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsUpdateCredentialRequestBodyDisplayName");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsUpdateCredentialRequestBodyDisplayNameString
-    extends BetaManagedAgentsUpdateCredentialRequestBodyDisplayName {
+final class BetaManagedAgentsUpdateCredentialRequestBodyDisplayNameString extends BetaManagedAgentsUpdateCredentialRequestBodyDisplayName {
   final String value;
-  const BetaManagedAgentsUpdateCredentialRequestBodyDisplayNameString(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const BetaManagedAgentsUpdateCredentialRequestBodyDisplayNameString(this.value);
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaManagedAgentsUpdateCredentialRequestBody` API schema.
 class BetaManagedAgentsUpdateCredentialRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Updated human-readable name for the credential. 1-255 characters.
   final SdkOptional<String?> displayName;
-
   /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omitted keys are preserved.
   final SdkOptional<Map<String, String>?> metadata;
-
   /// Updated authentication configuration. The `type` is immutable; the variant sent must match the stored credential's type.
   final SdkOptional<BetaManagedAgentsCredentialUpdateAuth> auth;
 
-  const BetaManagedAgentsUpdateCredentialRequestBody(
-      {this.displayName = const SdkOmitted(),
-      this.metadata = const SdkOmitted(),
-      this.auth = const SdkOmitted()});
+  const BetaManagedAgentsUpdateCredentialRequestBody({this.displayName = const SdkOmitted(), this.metadata = const SdkOmitted(), this.auth = const SdkOmitted()});
 
-  BetaManagedAgentsUpdateCredentialRequestBody Function(
-          {SdkOptional<String?> displayName,
-          SdkOptional<Map<String, String>?> metadata,
-          SdkOptional<BetaManagedAgentsCredentialUpdateAuth> auth})
-      get copyWith => _copyWith;
+  BetaManagedAgentsUpdateCredentialRequestBody Function({SdkOptional<String?> displayName, SdkOptional<Map<String, String>?> metadata, SdkOptional<BetaManagedAgentsCredentialUpdateAuth> auth}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUpdateCredentialRequestBody _copyWith(
-          {Object? displayName = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue,
-          Object? auth = sdkOmittedValue}) =>
-      BetaManagedAgentsUpdateCredentialRequestBody(
-        displayName: identical(displayName, sdkOmittedValue)
-            ? this.displayName
-            : displayName as SdkOptional<String?>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<Map<String, String>?>,
-        auth: identical(auth, sdkOmittedValue)
-            ? this.auth
-            : auth as SdkOptional<BetaManagedAgentsCredentialUpdateAuth>,
-      );
+  BetaManagedAgentsUpdateCredentialRequestBody _copyWith({Object? displayName = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? auth = sdkOmittedValue}) => BetaManagedAgentsUpdateCredentialRequestBody(
+    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as SdkOptional<String?>,
+    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, String>?>,
+    auth: identical(auth, sdkOmittedValue) ? this.auth : auth as SdkOptional<BetaManagedAgentsCredentialUpdateAuth>,
+  );
 
-  factory BetaManagedAgentsUpdateCredentialRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsUpdateCredentialRequestBody(
-        displayName: json.containsKey('display_name')
-            ? SdkPresent(json['display_name'] as String?)
-            : const SdkOmitted(),
-        metadata: json.containsKey('metadata')
-            ? SdkPresent(json['metadata'] == null
-                ? null
-                : Map<String, dynamic>.from(json['metadata'] as Map)
-                    .map((key, value) => MapEntry(key, value as String)))
-            : const SdkOmitted(),
-        auth: json['auth'] != null
-            ? SdkPresent((json['auth'] != null
-                ? BetaManagedAgentsCredentialUpdateAuth.fromJson(json['auth'])
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsUpdateCredentialRequestBody.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUpdateCredentialRequestBody(
+    displayName: json.containsKey('display_name') ? SdkPresent(json['display_name'] as String?) : const SdkOmitted(),
+    metadata: json.containsKey('metadata') ? SdkPresent(json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value as String))) : const SdkOmitted(),
+    auth: json['auth'] != null ? SdkPresent((json['auth'] != null ? BetaManagedAgentsCredentialUpdateAuth.fromJson(json['auth']) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (displayName) {
-          SdkPresent<String?>(value: final value) => {
-              'display_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (metadata) {
-          SdkPresent<Map<String, String>?>(value: final value) => {
-              'metadata': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (auth) {
-          SdkPresent<BetaManagedAgentsCredentialUpdateAuth>(
-            value: final value
-          ) =>
-            {
-              'auth': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (displayName) {
+      SdkPresent<String?>(value: final value) => {'display_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (metadata) {
+      SdkPresent<Map<String, String>?>(value: final value) => {'metadata': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (auth) {
+      SdkPresent<BetaManagedAgentsCredentialUpdateAuth>(value: final value) => {'auth': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

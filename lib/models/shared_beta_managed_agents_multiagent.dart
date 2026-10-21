@@ -9,35 +9,22 @@ sealed class BetaManagedAgentsMultiagent {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMultiagent();
   factory BetaManagedAgentsMultiagent.fromJson(Object? json) {
-    try {
-      return BetaManagedAgentsMultiagentBetaManagedAgentsMultiagentCoordinator(
-          BetaManagedAgentsMultiagentCoordinator.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"coordinator"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsMultiagent(json);
-    }
+    try { return BetaManagedAgentsMultiagentBetaManagedAgentsMultiagentCoordinator(BetaManagedAgentsMultiagentCoordinator.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"coordinator"}.contains(json["type"])) { return UnknownBetaManagedAgentsMultiagent(json); }
     throw FormatException("No variant matched for BetaManagedAgentsMultiagent");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMultiagentBetaManagedAgentsMultiagentCoordinator
-    extends BetaManagedAgentsMultiagent {
+final class BetaManagedAgentsMultiagentBetaManagedAgentsMultiagentCoordinator extends BetaManagedAgentsMultiagent {
   final BetaManagedAgentsMultiagentCoordinator value;
-  const BetaManagedAgentsMultiagentBetaManagedAgentsMultiagentCoordinator(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentBetaManagedAgentsMultiagentCoordinator(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMultiagent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMultiagent
-    extends BetaManagedAgentsMultiagent {
+final class UnknownBetaManagedAgentsMultiagent extends BetaManagedAgentsMultiagent {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsMultiagent(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

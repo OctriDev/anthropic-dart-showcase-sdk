@@ -8,44 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsScheduleTriggerContext {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsScheduleTriggerContextType type_;
-
   /// The UTC instant at which the cron expression matched in the configured timezone, before jitter is applied. At most one run is recorded per (`deployment_id`, `scheduled_at`) pair.
   final String scheduledAt;
 
-  const BetaManagedAgentsScheduleTriggerContext(
-      {required this.type_, required this.scheduledAt});
+  const BetaManagedAgentsScheduleTriggerContext({required this.type_, required this.scheduledAt});
 
-  BetaManagedAgentsScheduleTriggerContext Function(
-      {BetaManagedAgentsScheduleTriggerContextType type_,
-      String scheduledAt}) get copyWith => _copyWith;
+  BetaManagedAgentsScheduleTriggerContext Function({BetaManagedAgentsScheduleTriggerContextType type_, String scheduledAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsScheduleTriggerContext _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? scheduledAt = sdkOmittedValue}) =>
-      BetaManagedAgentsScheduleTriggerContext(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsScheduleTriggerContextType,
-        scheduledAt: identical(scheduledAt, sdkOmittedValue)
-            ? this.scheduledAt
-            : scheduledAt as String,
-      );
+  BetaManagedAgentsScheduleTriggerContext _copyWith({Object? type_ = sdkOmittedValue, Object? scheduledAt = sdkOmittedValue}) => BetaManagedAgentsScheduleTriggerContext(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsScheduleTriggerContextType,
+    scheduledAt: identical(scheduledAt, sdkOmittedValue) ? this.scheduledAt : scheduledAt as String,
+  );
 
-  factory BetaManagedAgentsScheduleTriggerContext.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsScheduleTriggerContext(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsScheduleTriggerContextType.fromJson(
-                json['type'] as String)
-            : null)!,
-        scheduledAt: (json['scheduled_at'] as String?)!,
-      );
+  factory BetaManagedAgentsScheduleTriggerContext.fromJson(Map<String, dynamic> json) => BetaManagedAgentsScheduleTriggerContext(
+    type_: (json['type'] != null ? BetaManagedAgentsScheduleTriggerContextType.fromJson(json['type'] as String) : null)!,
+    scheduledAt: (json['scheduled_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'scheduled_at': scheduledAt,
-      };
+    'type': type_.toJson(),
+    'scheduled_at': scheduledAt,
+  };
 }

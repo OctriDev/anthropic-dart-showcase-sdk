@@ -8,30 +8,22 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsEffortMedium {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsEffortMediumType type_;
 
   const BetaManagedAgentsEffortMedium({required this.type_});
 
-  BetaManagedAgentsEffortMedium Function(
-      {BetaManagedAgentsEffortMediumType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsEffortMedium Function({BetaManagedAgentsEffortMediumType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsEffortMedium _copyWith({Object? type_ = sdkOmittedValue}) =>
-      BetaManagedAgentsEffortMedium(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsEffortMediumType,
-      );
+  BetaManagedAgentsEffortMedium _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsEffortMedium(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsEffortMediumType,
+  );
 
-  factory BetaManagedAgentsEffortMedium.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsEffortMedium(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsEffortMediumType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaManagedAgentsEffortMedium.fromJson(Map<String, dynamic> json) => BetaManagedAgentsEffortMedium(
+    type_: (json['type'] != null ? BetaManagedAgentsEffortMediumType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

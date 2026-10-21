@@ -9,15 +9,8 @@ sealed class BetaDreamOutput {
   static const String constructionSurface = 'named';
   const BetaDreamOutput();
   factory BetaDreamOutput.fromJson(Object? json) {
-    try {
-      return BetaDreamOutputBetaDreamMemoryStoreOutput(
-          BetaDreamMemoryStoreOutput.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"memory_store"}.contains(json["type"])) {
-      return UnknownBetaDreamOutput(json);
-    }
+    try { return BetaDreamOutputBetaDreamMemoryStoreOutput(BetaDreamMemoryStoreOutput.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"memory_store"}.contains(json["type"])) { return UnknownBetaDreamOutput(json); }
     throw FormatException("No variant matched for BetaDreamOutput");
   }
   Object? toJson();
@@ -26,14 +19,12 @@ sealed class BetaDreamOutput {
 final class BetaDreamOutputBetaDreamMemoryStoreOutput extends BetaDreamOutput {
   final BetaDreamMemoryStoreOutput value;
   const BetaDreamOutputBetaDreamMemoryStoreOutput(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaDreamOutput] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaDreamOutput extends BetaDreamOutput {
   final Map<String, dynamic> raw;
   const UnknownBetaDreamOutput(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

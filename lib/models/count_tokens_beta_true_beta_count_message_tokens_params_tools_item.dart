@@ -10,560 +10,232 @@ sealed class BetaCountMessageTokensParamsToolsItem {
   const BetaCountMessageTokensParamsToolsItem();
   factory BetaCountMessageTokensParamsToolsItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaTool.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaTool(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaBashTool20241022.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaBashTool20241022(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaBashTool20250124.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaBashTool20250124(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaCodeExecutionTool20250522.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250522(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaCodeExecutionTool20250825.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250825(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaCodeExecutionTool20260120.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260120(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaCodeExecutionTool20260521.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260521(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaBrowserToolset20260801.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaBrowserToolset20260801(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaComputerUseTool20241022.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20241022(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaMemoryTool20250818.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaMemoryTool20250818(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaComputerUseTool20250124.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20250124(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaTextEditor20241022.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaTextEditor20241022(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaComputerUseTool20251124.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20251124(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaComputerToolset20260801.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaComputerToolset20260801(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaTextEditor20250124.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250124(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaTextEditor20250429.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250429(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaTextEditor20250728.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250728(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaWebSearchTool20250305.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20250305(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaWebFetchTool20250910.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20250910(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaWebSearchTool20260209.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260209(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaWebFetchTool20260209.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260209(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaWebFetchTool20260309.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260309(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaWebSearchTool20260318.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260318(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaWebFetchTool20260318.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260318(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaAdvisorTool20260301.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaAdvisorTool20260301(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaToolSearchToolBM2520251119.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaToolSearchToolBM2520251119(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaToolSearchToolRegex20251119.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaToolSearchToolRegex20251119(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaMCPToolset.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaCountMessageTokensParamsToolsItemBetaMCPToolset(value);
-        }
-      } catch (_) {}
+      try { final value = BetaTool.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaTool(value); } } catch (_) {}
+      try { final value = BetaBashTool20241022.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaBashTool20241022(value); } } catch (_) {}
+      try { final value = BetaBashTool20250124.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaBashTool20250124(value); } } catch (_) {}
+      try { final value = BetaCodeExecutionTool20250522.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250522(value); } } catch (_) {}
+      try { final value = BetaCodeExecutionTool20250825.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250825(value); } } catch (_) {}
+      try { final value = BetaCodeExecutionTool20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260120(value); } } catch (_) {}
+      try { final value = BetaCodeExecutionTool20260521.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260521(value); } } catch (_) {}
+      try { final value = BetaBrowserToolset20260801.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaBrowserToolset20260801(value); } } catch (_) {}
+      try { final value = BetaComputerUseTool20241022.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20241022(value); } } catch (_) {}
+      try { final value = BetaMemoryTool20250818.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaMemoryTool20250818(value); } } catch (_) {}
+      try { final value = BetaComputerUseTool20250124.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20250124(value); } } catch (_) {}
+      try { final value = BetaTextEditor20241022.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaTextEditor20241022(value); } } catch (_) {}
+      try { final value = BetaComputerUseTool20251124.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20251124(value); } } catch (_) {}
+      try { final value = BetaComputerToolset20260801.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaComputerToolset20260801(value); } } catch (_) {}
+      try { final value = BetaTextEditor20250124.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250124(value); } } catch (_) {}
+      try { final value = BetaTextEditor20250429.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250429(value); } } catch (_) {}
+      try { final value = BetaTextEditor20250728.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250728(value); } } catch (_) {}
+      try { final value = BetaWebSearchTool20250305.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20250305(value); } } catch (_) {}
+      try { final value = BetaWebFetchTool20250910.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20250910(value); } } catch (_) {}
+      try { final value = BetaWebSearchTool20260209.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260209(value); } } catch (_) {}
+      try { final value = BetaWebFetchTool20260209.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260209(value); } } catch (_) {}
+      try { final value = BetaWebFetchTool20260309.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260309(value); } } catch (_) {}
+      try { final value = BetaWebSearchTool20260318.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260318(value); } } catch (_) {}
+      try { final value = BetaWebFetchTool20260318.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260318(value); } } catch (_) {}
+      try { final value = BetaAdvisorTool20260301.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaAdvisorTool20260301(value); } } catch (_) {}
+      try { final value = BetaToolSearchToolBM2520251119.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaToolSearchToolBM2520251119(value); } } catch (_) {}
+      try { final value = BetaToolSearchToolRegex20251119.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaToolSearchToolRegex20251119(value); } } catch (_) {}
+      try { final value = BetaMCPToolset.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaCountMessageTokensParamsToolsItemBetaMCPToolset(value); } } catch (_) {}
     }
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaTool(
-          BetaTool.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaBashTool20241022(
-          BetaBashTool20241022.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaBashTool20250124(
-          BetaBashTool20250124.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250522(
-          BetaCodeExecutionTool20250522.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250825(
-          BetaCodeExecutionTool20250825.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260120(
-          BetaCodeExecutionTool20260120.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260521(
-          BetaCodeExecutionTool20260521.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaBrowserToolset20260801(
-          BetaBrowserToolset20260801.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20241022(
-          BetaComputerUseTool20241022.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaMemoryTool20250818(
-          BetaMemoryTool20250818.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20250124(
-          BetaComputerUseTool20250124.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaTextEditor20241022(
-          BetaTextEditor20241022.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20251124(
-          BetaComputerUseTool20251124.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaComputerToolset20260801(
-          BetaComputerToolset20260801.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250124(
-          BetaTextEditor20250124.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250429(
-          BetaTextEditor20250429.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250728(
-          BetaTextEditor20250728.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20250305(
-          BetaWebSearchTool20250305.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20250910(
-          BetaWebFetchTool20250910.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260209(
-          BetaWebSearchTool20260209.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260209(
-          BetaWebFetchTool20260209.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260309(
-          BetaWebFetchTool20260309.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260318(
-          BetaWebSearchTool20260318.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260318(
-          BetaWebFetchTool20260318.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaAdvisorTool20260301(
-          BetaAdvisorTool20260301.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaToolSearchToolBM2520251119(
-          BetaToolSearchToolBM2520251119.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaToolSearchToolRegex20251119(
-          BetaToolSearchToolRegex20251119.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaCountMessageTokensParamsToolsItemBetaMCPToolset(
-          BetaMCPToolset.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for BetaCountMessageTokensParamsToolsItem");
+    try { return BetaCountMessageTokensParamsToolsItemBetaTool(BetaTool.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaBashTool20241022(BetaBashTool20241022.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaBashTool20250124(BetaBashTool20250124.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250522(BetaCodeExecutionTool20250522.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250825(BetaCodeExecutionTool20250825.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260120(BetaCodeExecutionTool20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260521(BetaCodeExecutionTool20260521.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaBrowserToolset20260801(BetaBrowserToolset20260801.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20241022(BetaComputerUseTool20241022.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaMemoryTool20250818(BetaMemoryTool20250818.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20250124(BetaComputerUseTool20250124.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaTextEditor20241022(BetaTextEditor20241022.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20251124(BetaComputerUseTool20251124.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaComputerToolset20260801(BetaComputerToolset20260801.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250124(BetaTextEditor20250124.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250429(BetaTextEditor20250429.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaTextEditor20250728(BetaTextEditor20250728.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20250305(BetaWebSearchTool20250305.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20250910(BetaWebFetchTool20250910.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260209(BetaWebSearchTool20260209.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260209(BetaWebFetchTool20260209.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260309(BetaWebFetchTool20260309.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260318(BetaWebSearchTool20260318.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260318(BetaWebFetchTool20260318.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaAdvisorTool20260301(BetaAdvisorTool20260301.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaToolSearchToolBM2520251119(BetaToolSearchToolBM2520251119.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaToolSearchToolRegex20251119(BetaToolSearchToolRegex20251119.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaCountMessageTokensParamsToolsItemBetaMCPToolset(BetaMCPToolset.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for BetaCountMessageTokensParamsToolsItem");
   }
   Object? toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaTool
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaTool extends BetaCountMessageTokensParamsToolsItem {
   final BetaTool value;
   const BetaCountMessageTokensParamsToolsItemBetaTool(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaBashTool20241022
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaBashTool20241022 extends BetaCountMessageTokensParamsToolsItem {
   final BetaBashTool20241022 value;
   const BetaCountMessageTokensParamsToolsItemBetaBashTool20241022(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaBashTool20250124
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaBashTool20250124 extends BetaCountMessageTokensParamsToolsItem {
   final BetaBashTool20250124 value;
   const BetaCountMessageTokensParamsToolsItemBetaBashTool20250124(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250522
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250522 extends BetaCountMessageTokensParamsToolsItem {
   final BetaCodeExecutionTool20250522 value;
-  const BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250522(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250522(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250825
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250825 extends BetaCountMessageTokensParamsToolsItem {
   final BetaCodeExecutionTool20250825 value;
-  const BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250825(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20250825(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260120
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260120 extends BetaCountMessageTokensParamsToolsItem {
   final BetaCodeExecutionTool20260120 value;
-  const BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260120(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260120(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260521
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260521 extends BetaCountMessageTokensParamsToolsItem {
   final BetaCodeExecutionTool20260521 value;
-  const BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260521(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaCodeExecutionTool20260521(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaBrowserToolset20260801
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaBrowserToolset20260801 extends BetaCountMessageTokensParamsToolsItem {
   final BetaBrowserToolset20260801 value;
-  const BetaCountMessageTokensParamsToolsItemBetaBrowserToolset20260801(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaBrowserToolset20260801(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20241022
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20241022 extends BetaCountMessageTokensParamsToolsItem {
   final BetaComputerUseTool20241022 value;
-  const BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20241022(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20241022(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaMemoryTool20250818
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaMemoryTool20250818 extends BetaCountMessageTokensParamsToolsItem {
   final BetaMemoryTool20250818 value;
   const BetaCountMessageTokensParamsToolsItemBetaMemoryTool20250818(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20250124
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20250124 extends BetaCountMessageTokensParamsToolsItem {
   final BetaComputerUseTool20250124 value;
-  const BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20250124(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20250124(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaTextEditor20241022
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaTextEditor20241022 extends BetaCountMessageTokensParamsToolsItem {
   final BetaTextEditor20241022 value;
   const BetaCountMessageTokensParamsToolsItemBetaTextEditor20241022(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20251124
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20251124 extends BetaCountMessageTokensParamsToolsItem {
   final BetaComputerUseTool20251124 value;
-  const BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20251124(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaComputerUseTool20251124(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaComputerToolset20260801
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaComputerToolset20260801 extends BetaCountMessageTokensParamsToolsItem {
   final BetaComputerToolset20260801 value;
-  const BetaCountMessageTokensParamsToolsItemBetaComputerToolset20260801(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaComputerToolset20260801(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaTextEditor20250124
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaTextEditor20250124 extends BetaCountMessageTokensParamsToolsItem {
   final BetaTextEditor20250124 value;
   const BetaCountMessageTokensParamsToolsItemBetaTextEditor20250124(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaTextEditor20250429
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaTextEditor20250429 extends BetaCountMessageTokensParamsToolsItem {
   final BetaTextEditor20250429 value;
   const BetaCountMessageTokensParamsToolsItemBetaTextEditor20250429(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaTextEditor20250728
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaTextEditor20250728 extends BetaCountMessageTokensParamsToolsItem {
   final BetaTextEditor20250728 value;
   const BetaCountMessageTokensParamsToolsItemBetaTextEditor20250728(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20250305
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20250305 extends BetaCountMessageTokensParamsToolsItem {
   final BetaWebSearchTool20250305 value;
-  const BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20250305(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20250305(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20250910
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20250910 extends BetaCountMessageTokensParamsToolsItem {
   final BetaWebFetchTool20250910 value;
-  const BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20250910(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20250910(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260209
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260209 extends BetaCountMessageTokensParamsToolsItem {
   final BetaWebSearchTool20260209 value;
-  const BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260209(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260209(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260209
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260209 extends BetaCountMessageTokensParamsToolsItem {
   final BetaWebFetchTool20260209 value;
-  const BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260209(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260209(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260309
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260309 extends BetaCountMessageTokensParamsToolsItem {
   final BetaWebFetchTool20260309 value;
-  const BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260309(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260309(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260318
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260318 extends BetaCountMessageTokensParamsToolsItem {
   final BetaWebSearchTool20260318 value;
-  const BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260318(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaWebSearchTool20260318(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260318
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260318 extends BetaCountMessageTokensParamsToolsItem {
   final BetaWebFetchTool20260318 value;
-  const BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260318(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaWebFetchTool20260318(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaAdvisorTool20260301
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaAdvisorTool20260301 extends BetaCountMessageTokensParamsToolsItem {
   final BetaAdvisorTool20260301 value;
-  const BetaCountMessageTokensParamsToolsItemBetaAdvisorTool20260301(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaAdvisorTool20260301(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaToolSearchToolBM2520251119
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaToolSearchToolBM2520251119 extends BetaCountMessageTokensParamsToolsItem {
   final BetaToolSearchToolBM2520251119 value;
-  const BetaCountMessageTokensParamsToolsItemBetaToolSearchToolBM2520251119(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaToolSearchToolBM2520251119(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaToolSearchToolRegex20251119
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaToolSearchToolRegex20251119 extends BetaCountMessageTokensParamsToolsItem {
   final BetaToolSearchToolRegex20251119 value;
-  const BetaCountMessageTokensParamsToolsItemBetaToolSearchToolRegex20251119(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaCountMessageTokensParamsToolsItemBetaToolSearchToolRegex20251119(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaCountMessageTokensParamsToolsItemBetaMCPToolset
-    extends BetaCountMessageTokensParamsToolsItem {
+final class BetaCountMessageTokensParamsToolsItemBetaMCPToolset extends BetaCountMessageTokensParamsToolsItem {
   final BetaMCPToolset value;
   const BetaCountMessageTokensParamsToolsItemBetaMCPToolset(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }

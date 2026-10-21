@@ -8,40 +8,27 @@ part of 'shared.dart';
 class PermissionError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final PermissionErrorType type_;
 
   const PermissionError({required this.message, required this.type_});
 
-  PermissionError Function({String message, PermissionErrorType type_})
-      get copyWith => _copyWith;
+  PermissionError Function({String message, PermissionErrorType type_}) get copyWith => _copyWith;
 
-  PermissionError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      PermissionError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as PermissionErrorType,
-      );
+  PermissionError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => PermissionError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as PermissionErrorType,
+  );
 
-  factory PermissionError.fromJson(Map<String, dynamic> json) =>
-      PermissionError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? PermissionErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory PermissionError.fromJson(Map<String, dynamic> json) => PermissionError(
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? PermissionErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }

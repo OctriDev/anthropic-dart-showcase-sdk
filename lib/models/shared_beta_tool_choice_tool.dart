@@ -8,60 +8,35 @@ part of 'shared_beta_tool.dart';
 class BetaToolChoiceTool {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether to disable parallel tool use. Defaults to `false`. If set to `true`, the model will output exactly one tool use.
   final SdkOptional<bool> disableParallelToolUse;
-
   /// The name of the tool to use.
   final String name;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaToolChoiceToolType type_;
 
-  const BetaToolChoiceTool(
-      {this.disableParallelToolUse = const SdkOmitted(),
-      required this.name,
-      required this.type_});
+  const BetaToolChoiceTool({this.disableParallelToolUse = const SdkOmitted(), required this.name, required this.type_});
 
-  BetaToolChoiceTool Function(
-      {SdkOptional<bool> disableParallelToolUse,
-      String name,
-      BetaToolChoiceToolType type_}) get copyWith => _copyWith;
+  BetaToolChoiceTool Function({SdkOptional<bool> disableParallelToolUse, String name, BetaToolChoiceToolType type_}) get copyWith => _copyWith;
 
-  BetaToolChoiceTool _copyWith(
-          {Object? disableParallelToolUse = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaToolChoiceTool(
-        disableParallelToolUse:
-            identical(disableParallelToolUse, sdkOmittedValue)
-                ? this.disableParallelToolUse
-                : disableParallelToolUse as SdkOptional<bool>,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaToolChoiceToolType,
-      );
+  BetaToolChoiceTool _copyWith({Object? disableParallelToolUse = sdkOmittedValue, Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaToolChoiceTool(
+    disableParallelToolUse: identical(disableParallelToolUse, sdkOmittedValue) ? this.disableParallelToolUse : disableParallelToolUse as SdkOptional<bool>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaToolChoiceToolType,
+  );
 
-  factory BetaToolChoiceTool.fromJson(Map<String, dynamic> json) =>
-      BetaToolChoiceTool(
-        disableParallelToolUse: json['disable_parallel_tool_use'] != null
-            ? SdkPresent((json['disable_parallel_tool_use'] as bool?)!)
-            : const SdkOmitted(),
-        name: (json['name'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaToolChoiceToolType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaToolChoiceTool.fromJson(Map<String, dynamic> json) => BetaToolChoiceTool(
+    disableParallelToolUse: json['disable_parallel_tool_use'] != null ? SdkPresent((json['disable_parallel_tool_use'] as bool?)!) : const SdkOmitted(),
+    name: (json['name'] as String?)!,
+    type_: (json['type'] != null ? BetaToolChoiceToolType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (disableParallelToolUse) {
-          SdkPresent<bool>(value: final value) => {
-              'disable_parallel_tool_use': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name,
-        'type': type_.toJson(),
-      };
+    ...switch (disableParallelToolUse) {
+      SdkPresent<bool>(value: final value) => {'disable_parallel_tool_use': value,},
+      _ => const <String, dynamic>{},
+    },
+    'name': name,
+    'type': type_.toJson(),
+  };
 }

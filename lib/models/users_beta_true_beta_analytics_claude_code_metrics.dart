@@ -8,46 +8,27 @@ part of 'users_beta_true.dart';
 class BetaAnalyticsClaudeCodeMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Core Claude Code activity metrics for a single user on a given day.
   final BetaAnalyticsCoreCodeMetrics coreMetrics;
-
   /// Per-tool accepted/rejected counts for Claude Code file modification tools.
   final BetaAnalyticsToolActions toolActions;
 
-  const BetaAnalyticsClaudeCodeMetrics(
-      {required this.coreMetrics, required this.toolActions});
+  const BetaAnalyticsClaudeCodeMetrics({required this.coreMetrics, required this.toolActions});
 
-  BetaAnalyticsClaudeCodeMetrics Function(
-      {BetaAnalyticsCoreCodeMetrics coreMetrics,
-      BetaAnalyticsToolActions toolActions}) get copyWith => _copyWith;
+  BetaAnalyticsClaudeCodeMetrics Function({BetaAnalyticsCoreCodeMetrics coreMetrics, BetaAnalyticsToolActions toolActions}) get copyWith => _copyWith;
 
-  BetaAnalyticsClaudeCodeMetrics _copyWith(
-          {Object? coreMetrics = sdkOmittedValue,
-          Object? toolActions = sdkOmittedValue}) =>
-      BetaAnalyticsClaudeCodeMetrics(
-        coreMetrics: identical(coreMetrics, sdkOmittedValue)
-            ? this.coreMetrics
-            : coreMetrics as BetaAnalyticsCoreCodeMetrics,
-        toolActions: identical(toolActions, sdkOmittedValue)
-            ? this.toolActions
-            : toolActions as BetaAnalyticsToolActions,
-      );
+  BetaAnalyticsClaudeCodeMetrics _copyWith({Object? coreMetrics = sdkOmittedValue, Object? toolActions = sdkOmittedValue}) => BetaAnalyticsClaudeCodeMetrics(
+    coreMetrics: identical(coreMetrics, sdkOmittedValue) ? this.coreMetrics : coreMetrics as BetaAnalyticsCoreCodeMetrics,
+    toolActions: identical(toolActions, sdkOmittedValue) ? this.toolActions : toolActions as BetaAnalyticsToolActions,
+  );
 
-  factory BetaAnalyticsClaudeCodeMetrics.fromJson(Map<String, dynamic> json) =>
-      BetaAnalyticsClaudeCodeMetrics(
-        coreMetrics: (json['core_metrics'] != null
-            ? BetaAnalyticsCoreCodeMetrics.fromJson(
-                json['core_metrics'] as Map<String, dynamic>)
-            : null)!,
-        toolActions: (json['tool_actions'] != null
-            ? BetaAnalyticsToolActions.fromJson(
-                json['tool_actions'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory BetaAnalyticsClaudeCodeMetrics.fromJson(Map<String, dynamic> json) => BetaAnalyticsClaudeCodeMetrics(
+    coreMetrics: (json['core_metrics'] != null ? BetaAnalyticsCoreCodeMetrics.fromJson(json['core_metrics'] as Map<String, dynamic>) : null)!,
+    toolActions: (json['tool_actions'] != null ? BetaAnalyticsToolActions.fromJson(json['tool_actions'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'core_metrics': coreMetrics.toJson(),
-        'tool_actions': toolActions.toJson(),
-      };
+    'core_metrics': coreMetrics.toJson(),
+    'tool_actions': toolActions.toJson(),
+  };
 }

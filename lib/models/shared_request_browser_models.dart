@@ -9,131 +9,69 @@ sealed class RequestBrowserStateBlockCacheControl {
   static const String constructionSurface = 'named';
   const RequestBrowserStateBlockCacheControl();
   factory RequestBrowserStateBlockCacheControl.fromJson(Object? json) {
-    try {
-      return RequestBrowserStateBlockCacheControlCacheControlEphemeral(
-          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownRequestBrowserStateBlockCacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for RequestBrowserStateBlockCacheControl");
+    try { return RequestBrowserStateBlockCacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownRequestBrowserStateBlockCacheControl(json); }
+    throw FormatException("No variant matched for RequestBrowserStateBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class RequestBrowserStateBlockCacheControlCacheControlEphemeral
-    extends RequestBrowserStateBlockCacheControl {
+final class RequestBrowserStateBlockCacheControlCacheControlEphemeral extends RequestBrowserStateBlockCacheControl {
   final CacheControlEphemeral value;
   const RequestBrowserStateBlockCacheControlCacheControlEphemeral(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [RequestBrowserStateBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestBrowserStateBlockCacheControl
-    extends RequestBrowserStateBlockCacheControl {
+final class UnknownRequestBrowserStateBlockCacheControl extends RequestBrowserStateBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownRequestBrowserStateBlockCacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// The caller's browser state after a browser toolset member call — the full inventory of open tabs, which tab is active, and any side effects (tabs opened, download state changes) the call produced. At most one per `tool_result`, only on a non-error result answering a browser toolset member `tool_use`. The server renders the model-visible text from it; the model never sees the raw fields.
 class RequestBrowserStateBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
-
   /// Tabs opened and download state changes during this call. "Nothing to report" is expressed by omitting the field, never by an empty list.
-  final SdkOptional<List<RequestBrowserStateBlockStateChangesItem>?>
-      stateChanges;
-
+  final SdkOptional<List<RequestBrowserStateBlockStateChangesItem>?> stateChanges;
   /// All tabs open in the browser after this call — the full inventory, not a delta. May be empty. Whenever non-empty, exactly one entry carries `active: true`.
   final List<BrowserStateTabEntry> tabs;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestBrowserStateBlockType type_;
 
-  const RequestBrowserStateBlock(
-      {this.cacheControl = const SdkOmitted(),
-      this.stateChanges = const SdkOmitted(),
-      required this.tabs,
-      required this.type_});
+  const RequestBrowserStateBlock({this.cacheControl = const SdkOmitted(), this.stateChanges = const SdkOmitted(), required this.tabs, required this.type_});
 
-  RequestBrowserStateBlock Function(
-      {SdkOptional<CacheControlEphemeral?> cacheControl,
-      SdkOptional<List<RequestBrowserStateBlockStateChangesItem>?> stateChanges,
-      List<BrowserStateTabEntry> tabs,
-      RequestBrowserStateBlockType type_}) get copyWith => _copyWith;
+  RequestBrowserStateBlock Function({SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<List<RequestBrowserStateBlockStateChangesItem>?> stateChanges, List<BrowserStateTabEntry> tabs, RequestBrowserStateBlockType type_}) get copyWith => _copyWith;
 
-  RequestBrowserStateBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? stateChanges = sdkOmittedValue,
-          Object? tabs = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestBrowserStateBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<CacheControlEphemeral?>,
-        stateChanges: identical(stateChanges, sdkOmittedValue)
-            ? this.stateChanges
-            : stateChanges
-                as SdkOptional<List<RequestBrowserStateBlockStateChangesItem>?>,
-        tabs: identical(tabs, sdkOmittedValue)
-            ? this.tabs
-            : tabs as List<BrowserStateTabEntry>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestBrowserStateBlockType,
-      );
+  RequestBrowserStateBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? stateChanges = sdkOmittedValue, Object? tabs = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestBrowserStateBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
+    stateChanges: identical(stateChanges, sdkOmittedValue) ? this.stateChanges : stateChanges as SdkOptional<List<RequestBrowserStateBlockStateChangesItem>?>,
+    tabs: identical(tabs, sdkOmittedValue) ? this.tabs : tabs as List<BrowserStateTabEntry>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestBrowserStateBlockType,
+  );
 
-  factory RequestBrowserStateBlock.fromJson(Map<String, dynamic> json) =>
-      RequestBrowserStateBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? CacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        stateChanges: json.containsKey('state_changes')
-            ? SdkPresent((json['state_changes'] as List?)
-                ?.map(
-                    (e) => RequestBrowserStateBlockStateChangesItem.fromJson(e))
-                .toList())
-            : const SdkOmitted(),
-        tabs: ((json['tabs'] as List?)
-            ?.map(
-                (e) => BrowserStateTabEntry.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        type_: (json['type'] != null
-            ? RequestBrowserStateBlockType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory RequestBrowserStateBlock.fromJson(Map<String, dynamic> json) => RequestBrowserStateBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    stateChanges: json.containsKey('state_changes') ? SdkPresent((json['state_changes'] as List?)?.map((e) => RequestBrowserStateBlockStateChangesItem.fromJson(e)).toList()) : const SdkOmitted(),
+    tabs: ((json['tabs'] as List?)?.map((e) => BrowserStateTabEntry.fromJson(e as Map<String, dynamic>)).toList())!,
+    type_: (json['type'] != null ? RequestBrowserStateBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<CacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (stateChanges) {
-          SdkPresent<List<RequestBrowserStateBlockStateChangesItem>?>(
-            value: final value
-          ) =>
-            {
-              'state_changes': value?.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'tabs': tabs.map((item) => item.toJson()).toList(),
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (stateChanges) {
+      SdkPresent<List<RequestBrowserStateBlockStateChangesItem>?>(value: final value) => {'state_changes': value?.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    'tabs': tabs.map((item) => item.toJson()).toList(),
+    'type': type_.toJson(),
+  };
 }
 
 sealed class RequestBrowserStateBlockStateChangesItem {
@@ -142,111 +80,48 @@ sealed class RequestBrowserStateBlockStateChangesItem {
   const RequestBrowserStateBlockStateChangesItem();
   factory RequestBrowserStateBlockStateChangesItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BrowserStateChangeTabOpened.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestBrowserStateBlockStateChangesItemBrowserStateChangeTabOpened(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BrowserStateChangeDownloadStarted.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadStarted(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BrowserStateChangeDownloadCompleted.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadCompleted(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BrowserStateChangeDownloadFailed.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadFailed(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BrowserStateChangeTabOpened.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestBrowserStateBlockStateChangesItemBrowserStateChangeTabOpened(value); } } catch (_) {}
+      try { final value = BrowserStateChangeDownloadStarted.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadStarted(value); } } catch (_) {}
+      try { final value = BrowserStateChangeDownloadCompleted.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadCompleted(value); } } catch (_) {}
+      try { final value = BrowserStateChangeDownloadFailed.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadFailed(value); } } catch (_) {}
     }
-    try {
-      return RequestBrowserStateBlockStateChangesItemBrowserStateChangeTabOpened(
-          BrowserStateChangeTabOpened.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadStarted(
-          BrowserStateChangeDownloadStarted.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadCompleted(
-          BrowserStateChangeDownloadCompleted.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadFailed(
-          BrowserStateChangeDownloadFailed.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "download_completed",
-          "download_failed",
-          "download_started",
-          "tab_opened"
-        }.contains(json["type"])) {
-      return UnknownRequestBrowserStateBlockStateChangesItem(json);
-    }
-    throw FormatException(
-        "No variant matched for RequestBrowserStateBlockStateChangesItem");
+    try { return RequestBrowserStateBlockStateChangesItemBrowserStateChangeTabOpened(BrowserStateChangeTabOpened.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadStarted(BrowserStateChangeDownloadStarted.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadCompleted(BrowserStateChangeDownloadCompleted.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadFailed(BrowserStateChangeDownloadFailed.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"download_completed", "download_failed", "download_started", "tab_opened"}.contains(json["type"])) { return UnknownRequestBrowserStateBlockStateChangesItem(json); }
+    throw FormatException("No variant matched for RequestBrowserStateBlockStateChangesItem");
   }
   Object? toJson();
 }
 
-final class RequestBrowserStateBlockStateChangesItemBrowserStateChangeTabOpened
-    extends RequestBrowserStateBlockStateChangesItem {
+final class RequestBrowserStateBlockStateChangesItemBrowserStateChangeTabOpened extends RequestBrowserStateBlockStateChangesItem {
   final BrowserStateChangeTabOpened value;
-  const RequestBrowserStateBlockStateChangesItemBrowserStateChangeTabOpened(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestBrowserStateBlockStateChangesItemBrowserStateChangeTabOpened(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadStarted
-    extends RequestBrowserStateBlockStateChangesItem {
+final class RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadStarted extends RequestBrowserStateBlockStateChangesItem {
   final BrowserStateChangeDownloadStarted value;
-  const RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadStarted(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadStarted(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadCompleted
-    extends RequestBrowserStateBlockStateChangesItem {
+final class RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadCompleted extends RequestBrowserStateBlockStateChangesItem {
   final BrowserStateChangeDownloadCompleted value;
-  const RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadCompleted(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadCompleted(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadFailed
-    extends RequestBrowserStateBlockStateChangesItem {
+final class RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadFailed extends RequestBrowserStateBlockStateChangesItem {
   final BrowserStateChangeDownloadFailed value;
-  const RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadFailed(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const RequestBrowserStateBlockStateChangesItemBrowserStateChangeDownloadFailed(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [RequestBrowserStateBlockStateChangesItem] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestBrowserStateBlockStateChangesItem
-    extends RequestBrowserStateBlockStateChangesItem {
+final class UnknownRequestBrowserStateBlockStateChangesItem extends RequestBrowserStateBlockStateChangesItem {
   final Map<String, dynamic> raw;
   const UnknownRequestBrowserStateBlockStateChangesItem(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

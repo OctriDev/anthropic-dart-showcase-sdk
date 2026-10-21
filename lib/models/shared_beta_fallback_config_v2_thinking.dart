@@ -10,77 +10,40 @@ sealed class BetaFallbackConfigV2Thinking {
   const BetaFallbackConfigV2Thinking();
   factory BetaFallbackConfigV2Thinking.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaThinkingConfigEnabled.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaFallbackConfigV2ThinkingBetaThinkingConfigEnabled(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaThinkingConfigDisabled.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaFallbackConfigV2ThinkingBetaThinkingConfigDisabled(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaThinkingConfigAdaptive.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaFallbackConfigV2ThinkingBetaThinkingConfigAdaptive(value);
-        }
-      } catch (_) {}
+      try { final value = BetaThinkingConfigEnabled.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaFallbackConfigV2ThinkingBetaThinkingConfigEnabled(value); } } catch (_) {}
+      try { final value = BetaThinkingConfigDisabled.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaFallbackConfigV2ThinkingBetaThinkingConfigDisabled(value); } } catch (_) {}
+      try { final value = BetaThinkingConfigAdaptive.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaFallbackConfigV2ThinkingBetaThinkingConfigAdaptive(value); } } catch (_) {}
     }
-    try {
-      return BetaFallbackConfigV2ThinkingBetaThinkingConfigEnabled(
-          BetaThinkingConfigEnabled.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaFallbackConfigV2ThinkingBetaThinkingConfigDisabled(
-          BetaThinkingConfigDisabled.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaFallbackConfigV2ThinkingBetaThinkingConfigAdaptive(
-          BetaThinkingConfigAdaptive.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"adaptive", "disabled", "enabled"}.contains(json["type"])) {
-      return UnknownBetaFallbackConfigV2Thinking(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaFallbackConfigV2Thinking");
+    try { return BetaFallbackConfigV2ThinkingBetaThinkingConfigEnabled(BetaThinkingConfigEnabled.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaFallbackConfigV2ThinkingBetaThinkingConfigDisabled(BetaThinkingConfigDisabled.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaFallbackConfigV2ThinkingBetaThinkingConfigAdaptive(BetaThinkingConfigAdaptive.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"adaptive", "disabled", "enabled"}.contains(json["type"])) { return UnknownBetaFallbackConfigV2Thinking(json); }
+    throw FormatException("No variant matched for BetaFallbackConfigV2Thinking");
   }
   Object? toJson();
 }
 
-final class BetaFallbackConfigV2ThinkingBetaThinkingConfigEnabled
-    extends BetaFallbackConfigV2Thinking {
+final class BetaFallbackConfigV2ThinkingBetaThinkingConfigEnabled extends BetaFallbackConfigV2Thinking {
   final BetaThinkingConfigEnabled value;
   const BetaFallbackConfigV2ThinkingBetaThinkingConfigEnabled(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaFallbackConfigV2ThinkingBetaThinkingConfigDisabled
-    extends BetaFallbackConfigV2Thinking {
+final class BetaFallbackConfigV2ThinkingBetaThinkingConfigDisabled extends BetaFallbackConfigV2Thinking {
   final BetaThinkingConfigDisabled value;
   const BetaFallbackConfigV2ThinkingBetaThinkingConfigDisabled(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaFallbackConfigV2ThinkingBetaThinkingConfigAdaptive
-    extends BetaFallbackConfigV2Thinking {
+final class BetaFallbackConfigV2ThinkingBetaThinkingConfigAdaptive extends BetaFallbackConfigV2Thinking {
   final BetaThinkingConfigAdaptive value;
   const BetaFallbackConfigV2ThinkingBetaThinkingConfigAdaptive(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaFallbackConfigV2Thinking] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaFallbackConfigV2Thinking
-    extends BetaFallbackConfigV2Thinking {
+final class UnknownBetaFallbackConfigV2Thinking extends BetaFallbackConfigV2Thinking {
   final Map<String, dynamic> raw;
   const UnknownBetaFallbackConfigV2Thinking(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

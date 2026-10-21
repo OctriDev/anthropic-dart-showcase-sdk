@@ -8,44 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSkillNotFoundRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSkillNotFoundRunErrorType type_;
-
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsSkillNotFoundRunError(
-      {required this.type_, required this.message});
+  const BetaManagedAgentsSkillNotFoundRunError({required this.type_, required this.message});
 
-  BetaManagedAgentsSkillNotFoundRunError Function(
-      {BetaManagedAgentsSkillNotFoundRunErrorType type_,
-      String message}) get copyWith => _copyWith;
+  BetaManagedAgentsSkillNotFoundRunError Function({BetaManagedAgentsSkillNotFoundRunErrorType type_, String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSkillNotFoundRunError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      BetaManagedAgentsSkillNotFoundRunError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSkillNotFoundRunErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-      );
+  BetaManagedAgentsSkillNotFoundRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsSkillNotFoundRunError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSkillNotFoundRunErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+  );
 
-  factory BetaManagedAgentsSkillNotFoundRunError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSkillNotFoundRunError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSkillNotFoundRunErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-      );
+  factory BetaManagedAgentsSkillNotFoundRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSkillNotFoundRunError(
+    type_: (json['type'] != null ? BetaManagedAgentsSkillNotFoundRunErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-      };
+    'type': type_.toJson(),
+    'message': message,
+  };
 }

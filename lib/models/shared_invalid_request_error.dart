@@ -8,40 +8,27 @@ part of 'shared.dart';
 class InvalidRequestError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `type` wire field.
   final InvalidRequestErrorType type_;
 
   const InvalidRequestError({required this.message, required this.type_});
 
-  InvalidRequestError Function({String message, InvalidRequestErrorType type_})
-      get copyWith => _copyWith;
+  InvalidRequestError Function({String message, InvalidRequestErrorType type_}) get copyWith => _copyWith;
 
-  InvalidRequestError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      InvalidRequestError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as InvalidRequestErrorType,
-      );
+  InvalidRequestError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => InvalidRequestError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as InvalidRequestErrorType,
+  );
 
-  factory InvalidRequestError.fromJson(Map<String, dynamic> json) =>
-      InvalidRequestError(
-        message: (json['message'] as String?)!,
-        type_: (json['type'] != null
-            ? InvalidRequestErrorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory InvalidRequestError.fromJson(Map<String, dynamic> json) => InvalidRequestError(
+    message: (json['message'] as String?)!,
+    type_: (json['type'] != null ? InvalidRequestErrorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'type': type_.toJson(),
-      };
+    'message': message,
+    'type': type_.toJson(),
+  };
 }

@@ -8,95 +8,48 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMcpOauthRefreshResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Token endpoint URL used to refresh the access token.
   final String tokenEndpoint;
-
   /// OAuth client ID.
   final String clientId;
-
   /// OAuth resource indicator.
   final SdkOptional<String?> resource;
-
   /// OAuth scope for the refresh request.
   final SdkOptional<String?> scope;
-
   /// Required object value serialized in the `token_endpoint_auth` wire field.
-  final BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth
-      tokenEndpointAuth;
+  final BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth tokenEndpointAuth;
 
-  const BetaManagedAgentsMcpOauthRefreshResponse(
-      {required this.tokenEndpoint,
-      required this.clientId,
-      this.resource = const SdkOmitted(),
-      this.scope = const SdkOmitted(),
-      required this.tokenEndpointAuth});
+  const BetaManagedAgentsMcpOauthRefreshResponse({required this.tokenEndpoint, required this.clientId, this.resource = const SdkOmitted(), this.scope = const SdkOmitted(), required this.tokenEndpointAuth});
 
-  BetaManagedAgentsMcpOauthRefreshResponse Function(
-      {String tokenEndpoint,
-      String clientId,
-      SdkOptional<String?> resource,
-      SdkOptional<String?> scope,
-      BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth
-          tokenEndpointAuth}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpOauthRefreshResponse Function({String tokenEndpoint, String clientId, SdkOptional<String?> resource, SdkOptional<String?> scope, BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth tokenEndpointAuth}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpOauthRefreshResponse _copyWith(
-          {Object? tokenEndpoint = sdkOmittedValue,
-          Object? clientId = sdkOmittedValue,
-          Object? resource = sdkOmittedValue,
-          Object? scope = sdkOmittedValue,
-          Object? tokenEndpointAuth = sdkOmittedValue}) =>
-      BetaManagedAgentsMcpOauthRefreshResponse(
-        tokenEndpoint: identical(tokenEndpoint, sdkOmittedValue)
-            ? this.tokenEndpoint
-            : tokenEndpoint as String,
-        clientId: identical(clientId, sdkOmittedValue)
-            ? this.clientId
-            : clientId as String,
-        resource: identical(resource, sdkOmittedValue)
-            ? this.resource
-            : resource as SdkOptional<String?>,
-        scope: identical(scope, sdkOmittedValue)
-            ? this.scope
-            : scope as SdkOptional<String?>,
-        tokenEndpointAuth: identical(tokenEndpointAuth, sdkOmittedValue)
-            ? this.tokenEndpointAuth
-            : tokenEndpointAuth
-                as BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth,
-      );
+  BetaManagedAgentsMcpOauthRefreshResponse _copyWith({Object? tokenEndpoint = sdkOmittedValue, Object? clientId = sdkOmittedValue, Object? resource = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? tokenEndpointAuth = sdkOmittedValue}) => BetaManagedAgentsMcpOauthRefreshResponse(
+    tokenEndpoint: identical(tokenEndpoint, sdkOmittedValue) ? this.tokenEndpoint : tokenEndpoint as String,
+    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as String,
+    resource: identical(resource, sdkOmittedValue) ? this.resource : resource as SdkOptional<String?>,
+    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as SdkOptional<String?>,
+    tokenEndpointAuth: identical(tokenEndpointAuth, sdkOmittedValue) ? this.tokenEndpointAuth : tokenEndpointAuth as BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth,
+  );
 
-  factory BetaManagedAgentsMcpOauthRefreshResponse.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsMcpOauthRefreshResponse(
-        tokenEndpoint: (json['token_endpoint'] as String?)!,
-        clientId: (json['client_id'] as String?)!,
-        resource: json.containsKey('resource')
-            ? SdkPresent(json['resource'] as String?)
-            : const SdkOmitted(),
-        scope: json.containsKey('scope')
-            ? SdkPresent(json['scope'] as String?)
-            : const SdkOmitted(),
-        tokenEndpointAuth: (json['token_endpoint_auth'] != null
-            ? BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth
-                .fromJson(json['token_endpoint_auth'])
-            : null)!,
-      );
+  factory BetaManagedAgentsMcpOauthRefreshResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpOauthRefreshResponse(
+    tokenEndpoint: (json['token_endpoint'] as String?)!,
+    clientId: (json['client_id'] as String?)!,
+    resource: json.containsKey('resource') ? SdkPresent(json['resource'] as String?) : const SdkOmitted(),
+    scope: json.containsKey('scope') ? SdkPresent(json['scope'] as String?) : const SdkOmitted(),
+    tokenEndpointAuth: (json['token_endpoint_auth'] != null ? BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth.fromJson(json['token_endpoint_auth']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'token_endpoint': tokenEndpoint,
-        'client_id': clientId,
-        ...switch (resource) {
-          SdkPresent<String?>(value: final value) => {
-              'resource': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (scope) {
-          SdkPresent<String?>(value: final value) => {
-              'scope': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'token_endpoint_auth': tokenEndpointAuth.toJson(),
-      };
+    'token_endpoint': tokenEndpoint,
+    'client_id': clientId,
+    ...switch (resource) {
+      SdkPresent<String?>(value: final value) => {'resource': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (scope) {
+      SdkPresent<String?>(value: final value) => {'scope': value,},
+      _ => const <String, dynamic>{},
+    },
+    'token_endpoint_auth': tokenEndpointAuth.toJson(),
+  };
 }

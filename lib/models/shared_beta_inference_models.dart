@@ -6,6 +6,7 @@ part of 'shared_beta_inference.dart';
 // shared_beta_inference domain models
 /// Typed representation of the `BetaInferenceGeo` API schema.
 final class BetaInferenceGeo {
+
   final String value;
 
   const BetaInferenceGeo._(this.value);
@@ -17,25 +18,22 @@ final class BetaInferenceGeo {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaInferenceGeo && other.value == value;
+  @override bool operator ==(Object other) => other is BetaInferenceGeo && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Typed representation of the `BetaInferenceGeoFilter` API schema.
 final class BetaInferenceGeoFilter {
+
   final String value;
 
   const BetaInferenceGeoFilter._(this.value);
 
-  factory BetaInferenceGeoFilter.fromJson(String value) =>
-      BetaInferenceGeoFilter._(value);
+  factory BetaInferenceGeoFilter.fromJson(String value) => BetaInferenceGeoFilter._(value);
 
   static const global = BetaInferenceGeoFilter._('global');
   static const notAvailable = BetaInferenceGeoFilter._('not_available');
@@ -43,13 +41,10 @@ final class BetaInferenceGeoFilter {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaInferenceGeoFilter && other.value == value;
+  @override bool operator ==(Object other) => other is BetaInferenceGeoFilter && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

@@ -6,31 +6,24 @@ part of 'shared_beta.dart';
 // shared_beta domain models
 /// Typed representation of the `BetaNoBillingWorkspaceRoleSchema` API schema.
 final class BetaNoBillingWorkspaceRoleSchema {
+
   final String value;
 
   const BetaNoBillingWorkspaceRoleSchema._(this.value);
 
-  factory BetaNoBillingWorkspaceRoleSchema.fromJson(String value) =>
-      BetaNoBillingWorkspaceRoleSchema._(value);
+  factory BetaNoBillingWorkspaceRoleSchema.fromJson(String value) => BetaNoBillingWorkspaceRoleSchema._(value);
 
-  static const workspaceAdmin =
-      BetaNoBillingWorkspaceRoleSchema._('workspace_admin');
-  static const workspaceDeveloper =
-      BetaNoBillingWorkspaceRoleSchema._('workspace_developer');
-  static const workspaceRestrictedDeveloper =
-      BetaNoBillingWorkspaceRoleSchema._('workspace_restricted_developer');
-  static const workspaceUser =
-      BetaNoBillingWorkspaceRoleSchema._('workspace_user');
+  static const workspaceAdmin = BetaNoBillingWorkspaceRoleSchema._('workspace_admin');
+  static const workspaceDeveloper = BetaNoBillingWorkspaceRoleSchema._('workspace_developer');
+  static const workspaceRestrictedDeveloper = BetaNoBillingWorkspaceRoleSchema._('workspace_restricted_developer');
+  static const workspaceUser = BetaNoBillingWorkspaceRoleSchema._('workspace_user');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaNoBillingWorkspaceRoleSchema && other.value == value;
+  @override bool operator ==(Object other) => other is BetaNoBillingWorkspaceRoleSchema && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

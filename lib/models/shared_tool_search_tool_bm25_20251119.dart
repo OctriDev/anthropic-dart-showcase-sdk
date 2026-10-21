@@ -9,158 +9,83 @@ sealed class ToolSearchToolBM2520251119CacheControl {
   static const String constructionSurface = 'named';
   const ToolSearchToolBM2520251119CacheControl();
   factory ToolSearchToolBM2520251119CacheControl.fromJson(Object? json) {
-    try {
-      return ToolSearchToolBM2520251119CacheControlCacheControlEphemeral(
-          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownToolSearchToolBM2520251119CacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for ToolSearchToolBM2520251119CacheControl");
+    try { return ToolSearchToolBM2520251119CacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownToolSearchToolBM2520251119CacheControl(json); }
+    throw FormatException("No variant matched for ToolSearchToolBM2520251119CacheControl");
   }
   Object? toJson();
 }
 
-final class ToolSearchToolBM2520251119CacheControlCacheControlEphemeral
-    extends ToolSearchToolBM2520251119CacheControl {
+final class ToolSearchToolBM2520251119CacheControlCacheControlEphemeral extends ToolSearchToolBM2520251119CacheControl {
   final CacheControlEphemeral value;
   const ToolSearchToolBM2520251119CacheControlCacheControlEphemeral(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [ToolSearchToolBM2520251119CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownToolSearchToolBM2520251119CacheControl
-    extends ToolSearchToolBM2520251119CacheControl {
+final class UnknownToolSearchToolBM2520251119CacheControl extends ToolSearchToolBM2520251119CacheControl {
   final Map<String, dynamic> raw;
   const UnknownToolSearchToolBM2520251119CacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `ToolSearchToolBM25_20251119` API schema.
 class ToolSearchToolBM2520251119 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<AllowedCaller>> allowedCallers;
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
-
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
-
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final ToolSearchToolBM2520251119Name name;
-
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
-
   /// Required enumerated value serialized in the `type` wire field.
   final ToolSearchToolBM2520251119Type type_;
 
-  const ToolSearchToolBM2520251119(
-      {this.allowedCallers = const SdkOmitted(),
-      this.cacheControl = const SdkOmitted(),
-      this.deferLoading = const SdkOmitted(),
-      required this.name,
-      this.strict = const SdkOmitted(),
-      required this.type_});
+  const ToolSearchToolBM2520251119({this.allowedCallers = const SdkOmitted(), this.cacheControl = const SdkOmitted(), this.deferLoading = const SdkOmitted(), required this.name, this.strict = const SdkOmitted(), required this.type_});
 
-  ToolSearchToolBM2520251119 Function(
-      {SdkOptional<List<AllowedCaller>> allowedCallers,
-      SdkOptional<CacheControlEphemeral?> cacheControl,
-      SdkOptional<bool> deferLoading,
-      ToolSearchToolBM2520251119Name name,
-      SdkOptional<bool> strict,
-      ToolSearchToolBM2520251119Type type_}) get copyWith => _copyWith;
+  ToolSearchToolBM2520251119 Function({SdkOptional<List<AllowedCaller>> allowedCallers, SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<bool> deferLoading, ToolSearchToolBM2520251119Name name, SdkOptional<bool> strict, ToolSearchToolBM2520251119Type type_}) get copyWith => _copyWith;
 
-  ToolSearchToolBM2520251119 _copyWith(
-          {Object? allowedCallers = sdkOmittedValue,
-          Object? cacheControl = sdkOmittedValue,
-          Object? deferLoading = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? strict = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      ToolSearchToolBM2520251119(
-        allowedCallers: identical(allowedCallers, sdkOmittedValue)
-            ? this.allowedCallers
-            : allowedCallers as SdkOptional<List<AllowedCaller>>,
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<CacheControlEphemeral?>,
-        deferLoading: identical(deferLoading, sdkOmittedValue)
-            ? this.deferLoading
-            : deferLoading as SdkOptional<bool>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as ToolSearchToolBM2520251119Name,
-        strict: identical(strict, sdkOmittedValue)
-            ? this.strict
-            : strict as SdkOptional<bool>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as ToolSearchToolBM2520251119Type,
-      );
+  ToolSearchToolBM2520251119 _copyWith({Object? allowedCallers = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? name = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ToolSearchToolBM2520251119(
+    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<AllowedCaller>>,
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
+    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as ToolSearchToolBM2520251119Name,
+    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ToolSearchToolBM2520251119Type,
+  );
 
-  factory ToolSearchToolBM2520251119.fromJson(Map<String, dynamic> json) =>
-      ToolSearchToolBM2520251119(
-        allowedCallers: json['allowed_callers'] != null
-            ? SdkPresent(((json['allowed_callers'] as List?)
-                ?.map((e) => AllowedCaller.fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? CacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        deferLoading: json['defer_loading'] != null
-            ? SdkPresent((json['defer_loading'] as bool?)!)
-            : const SdkOmitted(),
-        name: (json['name'] != null
-            ? ToolSearchToolBM2520251119Name.fromJson(json['name'] as String)
-            : null)!,
-        strict: json['strict'] != null
-            ? SdkPresent((json['strict'] as bool?)!)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? ToolSearchToolBM2520251119Type.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory ToolSearchToolBM2520251119.fromJson(Map<String, dynamic> json) => ToolSearchToolBM2520251119(
+    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => AllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
+    name: (json['name'] != null ? ToolSearchToolBM2520251119Name.fromJson(json['name'] as String) : null)!,
+    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
+    type_: (json['type'] != null ? ToolSearchToolBM2520251119Type.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (allowedCallers) {
-          SdkPresent<List<AllowedCaller>>(value: final value) => {
-              'allowed_callers': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cacheControl) {
-          SdkPresent<CacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deferLoading) {
-          SdkPresent<bool>(value: final value) => {
-              'defer_loading': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name.toJson(),
-        ...switch (strict) {
-          SdkPresent<bool>(value: final value) => {
-              'strict': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-      };
+    ...switch (allowedCallers) {
+      SdkPresent<List<AllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cacheControl) {
+      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deferLoading) {
+      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
+      _ => const <String, dynamic>{},
+    },
+    'name': name.toJson(),
+    ...switch (strict) {
+      SdkPresent<bool>(value: final value) => {'strict': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+  };
 }

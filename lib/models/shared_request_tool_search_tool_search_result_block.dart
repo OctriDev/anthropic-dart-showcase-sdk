@@ -8,48 +8,27 @@ part of 'shared_request_tool.dart';
 class RequestToolSearchToolSearchResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `tool_references` wire field.
   final List<RequestToolReferenceBlock> toolReferences;
-
   /// Required `string` value serialized in the `type` wire field.
   final RequestToolSearchToolSearchResultBlockType type_;
 
-  const RequestToolSearchToolSearchResultBlock(
-      {required this.toolReferences, required this.type_});
+  const RequestToolSearchToolSearchResultBlock({required this.toolReferences, required this.type_});
 
-  RequestToolSearchToolSearchResultBlock Function(
-          {List<RequestToolReferenceBlock> toolReferences,
-          RequestToolSearchToolSearchResultBlockType type_})
-      get copyWith => _copyWith;
+  RequestToolSearchToolSearchResultBlock Function({List<RequestToolReferenceBlock> toolReferences, RequestToolSearchToolSearchResultBlockType type_}) get copyWith => _copyWith;
 
-  RequestToolSearchToolSearchResultBlock _copyWith(
-          {Object? toolReferences = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RequestToolSearchToolSearchResultBlock(
-        toolReferences: identical(toolReferences, sdkOmittedValue)
-            ? this.toolReferences
-            : toolReferences as List<RequestToolReferenceBlock>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RequestToolSearchToolSearchResultBlockType,
-      );
+  RequestToolSearchToolSearchResultBlock _copyWith({Object? toolReferences = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestToolSearchToolSearchResultBlock(
+    toolReferences: identical(toolReferences, sdkOmittedValue) ? this.toolReferences : toolReferences as List<RequestToolReferenceBlock>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestToolSearchToolSearchResultBlockType,
+  );
 
-  factory RequestToolSearchToolSearchResultBlock.fromJson(
-          Map<String, dynamic> json) =>
-      RequestToolSearchToolSearchResultBlock(
-        toolReferences: ((json['tool_references'] as List?)
-            ?.map((e) =>
-                RequestToolReferenceBlock.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        type_: (json['type'] != null
-            ? RequestToolSearchToolSearchResultBlockType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RequestToolSearchToolSearchResultBlock.fromJson(Map<String, dynamic> json) => RequestToolSearchToolSearchResultBlock(
+    toolReferences: ((json['tool_references'] as List?)?.map((e) => RequestToolReferenceBlock.fromJson(e as Map<String, dynamic>)).toList())!,
+    type_: (json['type'] != null ? RequestToolSearchToolSearchResultBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'tool_references': toolReferences.map((item) => item.toJson()).toList(),
-        'type': type_.toJson(),
-      };
+    'tool_references': toolReferences.map((item) => item.toJson()).toList(),
+    'type': type_.toJson(),
+  };
 }

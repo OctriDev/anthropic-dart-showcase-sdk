@@ -8,76 +8,47 @@ sealed class BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecret {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecret();
-  factory BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecret.fromJson(
-      Object? json) {
-    if (json is String) {
-      return BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecretString(
-          json);
-    }
-    throw FormatException(
-        "No variant matched for BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecret");
+  factory BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecret.fromJson(Object? json) {
+    if (json is String) { return BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecretString(json); }
+    throw FormatException("No variant matched for BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecret");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecretString
-    extends BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecret {
+final class BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecretString extends BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecret {
   final String value;
-  const BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecretString(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const BetaManagedAgentsTokenEndpointAuthBasicUpdateParamClientSecretString(this.value);
+  @override Object? toJson() => value;
 }
 
 /// Updated HTTP Basic authentication parameters for the token endpoint.
 class BetaManagedAgentsTokenEndpointAuthBasicUpdateParam {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType type_;
-
   /// Updated OAuth client secret.
   final SdkOptional<String?> clientSecret;
 
-  const BetaManagedAgentsTokenEndpointAuthBasicUpdateParam(
-      {required this.type_, this.clientSecret = const SdkOmitted()});
+  const BetaManagedAgentsTokenEndpointAuthBasicUpdateParam({required this.type_, this.clientSecret = const SdkOmitted()});
 
-  BetaManagedAgentsTokenEndpointAuthBasicUpdateParam Function(
-      {BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType type_,
-      SdkOptional<String?> clientSecret}) get copyWith => _copyWith;
+  BetaManagedAgentsTokenEndpointAuthBasicUpdateParam Function({BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType type_, SdkOptional<String?> clientSecret}) get copyWith => _copyWith;
 
-  BetaManagedAgentsTokenEndpointAuthBasicUpdateParam _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? clientSecret = sdkOmittedValue}) =>
-      BetaManagedAgentsTokenEndpointAuthBasicUpdateParam(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType,
-        clientSecret: identical(clientSecret, sdkOmittedValue)
-            ? this.clientSecret
-            : clientSecret as SdkOptional<String?>,
-      );
+  BetaManagedAgentsTokenEndpointAuthBasicUpdateParam _copyWith({Object? type_ = sdkOmittedValue, Object? clientSecret = sdkOmittedValue}) => BetaManagedAgentsTokenEndpointAuthBasicUpdateParam(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType,
+    clientSecret: identical(clientSecret, sdkOmittedValue) ? this.clientSecret : clientSecret as SdkOptional<String?>,
+  );
 
-  factory BetaManagedAgentsTokenEndpointAuthBasicUpdateParam.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsTokenEndpointAuthBasicUpdateParam(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType.fromJson(
-                json['type'] as String)
-            : null)!,
-        clientSecret: json.containsKey('client_secret')
-            ? SdkPresent(json['client_secret'] as String?)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsTokenEndpointAuthBasicUpdateParam.fromJson(Map<String, dynamic> json) => BetaManagedAgentsTokenEndpointAuthBasicUpdateParam(
+    type_: (json['type'] != null ? BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType.fromJson(json['type'] as String) : null)!,
+    clientSecret: json.containsKey('client_secret') ? SdkPresent(json['client_secret'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        ...switch (clientSecret) {
-          SdkPresent<String?>(value: final value) => {
-              'client_secret': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    ...switch (clientSecret) {
+      SdkPresent<String?>(value: final value) => {'client_secret': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

@@ -10,18 +10,14 @@ enum BetaManagedAgentsDocumentBlockType {
 
   static BetaManagedAgentsDocumentBlockType fromJson(String value) {
     switch (value) {
-      case 'document':
-        return BetaManagedAgentsDocumentBlockType.document;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsDocumentBlockType: $value');
+      case 'document': return BetaManagedAgentsDocumentBlockType.document;
+      default: throw ArgumentError('Unknown BetaManagedAgentsDocumentBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsDocumentBlockType.document:
-        return 'document';
+      case BetaManagedAgentsDocumentBlockType.document: return 'document';
     }
   }
 
@@ -35,18 +31,14 @@ enum BetaManagedAgentsEditToolConfigName {
 
   static BetaManagedAgentsEditToolConfigName fromJson(String value) {
     switch (value) {
-      case 'edit':
-        return BetaManagedAgentsEditToolConfigName.edit;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsEditToolConfigName: $value');
+      case 'edit': return BetaManagedAgentsEditToolConfigName.edit;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEditToolConfigName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEditToolConfigName.edit:
-        return 'edit';
+      case BetaManagedAgentsEditToolConfigName.edit: return 'edit';
     }
   }
 
@@ -60,18 +52,14 @@ enum BetaManagedAgentsEditToolConfigType {
 
   static BetaManagedAgentsEditToolConfigType fromJson(String value) {
     switch (value) {
-      case 'edit':
-        return BetaManagedAgentsEditToolConfigType.edit;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsEditToolConfigType: $value');
+      case 'edit': return BetaManagedAgentsEditToolConfigType.edit;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEditToolConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEditToolConfigType.edit:
-        return 'edit';
+      case BetaManagedAgentsEditToolConfigType.edit: return 'edit';
     }
   }
 
@@ -85,18 +73,14 @@ enum BetaManagedAgentsEditToolConfigParamsName {
 
   static BetaManagedAgentsEditToolConfigParamsName fromJson(String value) {
     switch (value) {
-      case 'edit':
-        return BetaManagedAgentsEditToolConfigParamsName.edit;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsEditToolConfigParamsName: $value');
+      case 'edit': return BetaManagedAgentsEditToolConfigParamsName.edit;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEditToolConfigParamsName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEditToolConfigParamsName.edit:
-        return 'edit';
+      case BetaManagedAgentsEditToolConfigParamsName.edit: return 'edit';
     }
   }
 
@@ -110,18 +94,14 @@ enum BetaManagedAgentsEditToolConfigParamsType {
 
   static BetaManagedAgentsEditToolConfigParamsType fromJson(String value) {
     switch (value) {
-      case 'edit':
-        return BetaManagedAgentsEditToolConfigParamsType.edit;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsEditToolConfigParamsType: $value');
+      case 'edit': return BetaManagedAgentsEditToolConfigParamsType.edit;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEditToolConfigParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEditToolConfigParamsType.edit:
-        return 'edit';
+      case BetaManagedAgentsEditToolConfigParamsType.edit: return 'edit';
     }
   }
 
@@ -135,17 +115,14 @@ enum BetaManagedAgentsEffortHighType {
 
   static BetaManagedAgentsEffortHighType fromJson(String value) {
     switch (value) {
-      case 'high':
-        return BetaManagedAgentsEffortHighType.high;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsEffortHighType: $value');
+      case 'high': return BetaManagedAgentsEffortHighType.high;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEffortHighType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEffortHighType.high:
-        return 'high';
+      case BetaManagedAgentsEffortHighType.high: return 'high';
     }
   }
 
@@ -159,17 +136,14 @@ enum BetaManagedAgentsEffortLowType {
 
   static BetaManagedAgentsEffortLowType fromJson(String value) {
     switch (value) {
-      case 'low':
-        return BetaManagedAgentsEffortLowType.low;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsEffortLowType: $value');
+      case 'low': return BetaManagedAgentsEffortLowType.low;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEffortLowType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEffortLowType.low:
-        return 'low';
+      case BetaManagedAgentsEffortLowType.low: return 'low';
     }
   }
 
@@ -183,17 +157,14 @@ enum BetaManagedAgentsEffortMaxType {
 
   static BetaManagedAgentsEffortMaxType fromJson(String value) {
     switch (value) {
-      case 'max':
-        return BetaManagedAgentsEffortMaxType.max;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsEffortMaxType: $value');
+      case 'max': return BetaManagedAgentsEffortMaxType.max;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEffortMaxType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEffortMaxType.max:
-        return 'max';
+      case BetaManagedAgentsEffortMaxType.max: return 'max';
     }
   }
 
@@ -207,18 +178,14 @@ enum BetaManagedAgentsEffortMediumType {
 
   static BetaManagedAgentsEffortMediumType fromJson(String value) {
     switch (value) {
-      case 'medium':
-        return BetaManagedAgentsEffortMediumType.medium;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsEffortMediumType: $value');
+      case 'medium': return BetaManagedAgentsEffortMediumType.medium;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEffortMediumType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEffortMediumType.medium:
-        return 'medium';
+      case BetaManagedAgentsEffortMediumType.medium: return 'medium';
     }
   }
 
@@ -232,17 +199,14 @@ enum BetaManagedAgentsEffortXhighType {
 
   static BetaManagedAgentsEffortXhighType fromJson(String value) {
     switch (value) {
-      case 'xhigh':
-        return BetaManagedAgentsEffortXhighType.xhigh;
-      default:
-        throw ArgumentError('Unknown BetaManagedAgentsEffortXhighType: $value');
+      case 'xhigh': return BetaManagedAgentsEffortXhighType.xhigh;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEffortXhighType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEffortXhighType.xhigh:
-        return 'xhigh';
+      case BetaManagedAgentsEffortXhighType.xhigh: return 'xhigh';
     }
   }
 
@@ -254,23 +218,16 @@ enum BetaManagedAgentsEffortXhighType {
 enum BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType {
   environmentArchivedError;
 
-  static BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType
-      fromJson(String value) {
+  static BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType fromJson(String value) {
     switch (value) {
-      case 'environment_archived_error':
-        return BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType
-            .environmentArchivedError;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType: $value');
+      case 'environment_archived_error': return BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType.environmentArchivedError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType
-            .environmentArchivedError:
-        return 'environment_archived_error';
+      case BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType.environmentArchivedError: return 'environment_archived_error';
     }
   }
 
@@ -282,23 +239,16 @@ enum BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType {
 enum BetaManagedAgentsEnvironmentArchivedRunErrorType {
   environmentArchivedError;
 
-  static BetaManagedAgentsEnvironmentArchivedRunErrorType fromJson(
-      String value) {
+  static BetaManagedAgentsEnvironmentArchivedRunErrorType fromJson(String value) {
     switch (value) {
-      case 'environment_archived_error':
-        return BetaManagedAgentsEnvironmentArchivedRunErrorType
-            .environmentArchivedError;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsEnvironmentArchivedRunErrorType: $value');
+      case 'environment_archived_error': return BetaManagedAgentsEnvironmentArchivedRunErrorType.environmentArchivedError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEnvironmentArchivedRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEnvironmentArchivedRunErrorType
-            .environmentArchivedError:
-        return 'environment_archived_error';
+      case BetaManagedAgentsEnvironmentArchivedRunErrorType.environmentArchivedError: return 'environment_archived_error';
     }
   }
 
@@ -310,23 +260,16 @@ enum BetaManagedAgentsEnvironmentArchivedRunErrorType {
 enum BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType {
   environmentNotFoundError;
 
-  static BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType
-      fromJson(String value) {
+  static BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType fromJson(String value) {
     switch (value) {
-      case 'environment_not_found_error':
-        return BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType
-            .environmentNotFoundError;
-      default:
-        throw ArgumentError(
-            'Unknown BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType: $value');
+      case 'environment_not_found_error': return BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType.environmentNotFoundError;
+      default: throw ArgumentError('Unknown BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType
-            .environmentNotFoundError:
-        return 'environment_not_found_error';
+      case BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType.environmentNotFoundError: return 'environment_not_found_error';
     }
   }
 

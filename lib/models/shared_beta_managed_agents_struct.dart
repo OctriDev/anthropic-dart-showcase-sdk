@@ -12,14 +12,13 @@ class BetaManagedAgentsStruct {
 
   const BetaManagedAgentsStruct({this.value = const <String, dynamic>{}});
 
-  factory BetaManagedAgentsStruct.fromJson(Map<String, dynamic> json) =>
-      BetaManagedAgentsStruct(
-        value: json.map((key, value) => MapEntry(key, value)),
-      );
+  factory BetaManagedAgentsStruct.fromJson(Map<String, dynamic> json) => BetaManagedAgentsStruct(
+    value: json.map((key, value) => MapEntry(key, value)),
+  );
 
   Map<String, dynamic> toJson() => value.map(
-        (key, value) => MapEntry(key, value),
-      );
+    (key, value) => MapEntry(key, value),
+  );
 
   dynamic operator [](String key) => value[key];
   Iterable<String> get keys => value.keys;

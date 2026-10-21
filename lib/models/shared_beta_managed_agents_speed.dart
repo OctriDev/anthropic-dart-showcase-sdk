@@ -6,25 +6,22 @@ part of 'shared_beta_managed_agents.dart';
 // shared_beta_managed_agents domain models
 /// Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Not all models support `fast`; invalid combinations are rejected at create time.
 final class BetaManagedAgentsSpeed {
+
   final String value;
 
   const BetaManagedAgentsSpeed._(this.value);
 
-  factory BetaManagedAgentsSpeed.fromJson(String value) =>
-      BetaManagedAgentsSpeed._(value);
+  factory BetaManagedAgentsSpeed.fromJson(String value) => BetaManagedAgentsSpeed._(value);
 
   static const standard = BetaManagedAgentsSpeed._('standard');
   static const fast = BetaManagedAgentsSpeed._('fast');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaManagedAgentsSpeed && other.value == value;
+  @override bool operator ==(Object other) => other is BetaManagedAgentsSpeed && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

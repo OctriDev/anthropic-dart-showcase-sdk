@@ -8,141 +8,90 @@ part of 'members.dart';
 class BetaDeleteRbacGroupMemberResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// ID of the RBAC Group.
   final String groupId;
-
   /// Deleted object type. For RBAC Group Members, this is always `"rbac_group_member_deleted"`.
   final BetaDeleteRbacGroupMemberResponseType type_;
-
   /// ID of the User.
   final String userId;
 
-  const BetaDeleteRbacGroupMemberResponse(
-      {required this.groupId, required this.type_, required this.userId});
+  const BetaDeleteRbacGroupMemberResponse({required this.groupId, required this.type_, required this.userId});
 
-  BetaDeleteRbacGroupMemberResponse Function(
-      {String groupId,
-      BetaDeleteRbacGroupMemberResponseType type_,
-      String userId}) get copyWith => _copyWith;
+  BetaDeleteRbacGroupMemberResponse Function({String groupId, BetaDeleteRbacGroupMemberResponseType type_, String userId}) get copyWith => _copyWith;
 
-  BetaDeleteRbacGroupMemberResponse _copyWith(
-          {Object? groupId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? userId = sdkOmittedValue}) =>
-      BetaDeleteRbacGroupMemberResponse(
-        groupId: identical(groupId, sdkOmittedValue)
-            ? this.groupId
-            : groupId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaDeleteRbacGroupMemberResponseType,
-        userId:
-            identical(userId, sdkOmittedValue) ? this.userId : userId as String,
-      );
+  BetaDeleteRbacGroupMemberResponse _copyWith({Object? groupId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? userId = sdkOmittedValue}) => BetaDeleteRbacGroupMemberResponse(
+    groupId: identical(groupId, sdkOmittedValue) ? this.groupId : groupId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaDeleteRbacGroupMemberResponseType,
+    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as String,
+  );
 
-  factory BetaDeleteRbacGroupMemberResponse.fromJson(
-          Map<String, dynamic> json) =>
-      BetaDeleteRbacGroupMemberResponse(
-        groupId: (json['group_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaDeleteRbacGroupMemberResponseType.fromJson(
-                json['type'] as String)
-            : null)!,
-        userId: (json['user_id'] as String?)!,
-      );
+  factory BetaDeleteRbacGroupMemberResponse.fromJson(Map<String, dynamic> json) => BetaDeleteRbacGroupMemberResponse(
+    groupId: (json['group_id'] as String?)!,
+    type_: (json['type'] != null ? BetaDeleteRbacGroupMemberResponseType.fromJson(json['type'] as String) : null)!,
+    userId: (json['user_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'group_id': groupId,
-        'type': type_.toJson(),
-        'user_id': userId,
-      };
+    'group_id': groupId,
+    'type': type_.toJson(),
+    'user_id': userId,
+  };
 }
 
 /// Typed representation of the `BetaDeleteWorkspaceMemberResponse` API schema.
 class BetaDeleteWorkspaceMemberResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Deleted object type. For Workspace Members, this is always `"workspace_member_deleted"`.
   final BetaDeleteWorkspaceMemberResponseType type_;
-
   /// ID of the User.
   final String userId;
-
   /// ID of the Workspace.
   final String workspaceId;
 
-  const BetaDeleteWorkspaceMemberResponse(
-      {required this.type_, required this.userId, required this.workspaceId});
+  const BetaDeleteWorkspaceMemberResponse({required this.type_, required this.userId, required this.workspaceId});
 
-  BetaDeleteWorkspaceMemberResponse Function(
-      {BetaDeleteWorkspaceMemberResponseType type_,
-      String userId,
-      String workspaceId}) get copyWith => _copyWith;
+  BetaDeleteWorkspaceMemberResponse Function({BetaDeleteWorkspaceMemberResponseType type_, String userId, String workspaceId}) get copyWith => _copyWith;
 
-  BetaDeleteWorkspaceMemberResponse _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? userId = sdkOmittedValue,
-          Object? workspaceId = sdkOmittedValue}) =>
-      BetaDeleteWorkspaceMemberResponse(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaDeleteWorkspaceMemberResponseType,
-        userId:
-            identical(userId, sdkOmittedValue) ? this.userId : userId as String,
-        workspaceId: identical(workspaceId, sdkOmittedValue)
-            ? this.workspaceId
-            : workspaceId as String,
-      );
+  BetaDeleteWorkspaceMemberResponse _copyWith({Object? type_ = sdkOmittedValue, Object? userId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaDeleteWorkspaceMemberResponse(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaDeleteWorkspaceMemberResponseType,
+    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as String,
+    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
+  );
 
-  factory BetaDeleteWorkspaceMemberResponse.fromJson(
-          Map<String, dynamic> json) =>
-      BetaDeleteWorkspaceMemberResponse(
-        type_: (json['type'] != null
-            ? BetaDeleteWorkspaceMemberResponseType.fromJson(
-                json['type'] as String)
-            : null)!,
-        userId: (json['user_id'] as String?)!,
-        workspaceId: (json['workspace_id'] as String?)!,
-      );
+  factory BetaDeleteWorkspaceMemberResponse.fromJson(Map<String, dynamic> json) => BetaDeleteWorkspaceMemberResponse(
+    type_: (json['type'] != null ? BetaDeleteWorkspaceMemberResponseType.fromJson(json['type'] as String) : null)!,
+    userId: (json['user_id'] as String?)!,
+    workspaceId: (json['workspace_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'user_id': userId,
-        'workspace_id': workspaceId,
-      };
+    'type': type_.toJson(),
+    'user_id': userId,
+    'workspace_id': workspaceId,
+  };
 }
 
 /// Typed representation of the `BetaUpdateWorkspaceMemberParams` API schema.
 class BetaUpdateWorkspaceMemberParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// New workspace role for the User.
   final BetaWorkspaceRoleSchema workspaceRole;
 
   const BetaUpdateWorkspaceMemberParams({required this.workspaceRole});
 
-  BetaUpdateWorkspaceMemberParams Function(
-      {BetaWorkspaceRoleSchema workspaceRole}) get copyWith => _copyWith;
+  BetaUpdateWorkspaceMemberParams Function({BetaWorkspaceRoleSchema workspaceRole}) get copyWith => _copyWith;
 
-  BetaUpdateWorkspaceMemberParams _copyWith(
-          {Object? workspaceRole = sdkOmittedValue}) =>
-      BetaUpdateWorkspaceMemberParams(
-        workspaceRole: identical(workspaceRole, sdkOmittedValue)
-            ? this.workspaceRole
-            : workspaceRole as BetaWorkspaceRoleSchema,
-      );
+  BetaUpdateWorkspaceMemberParams _copyWith({Object? workspaceRole = sdkOmittedValue}) => BetaUpdateWorkspaceMemberParams(
+    workspaceRole: identical(workspaceRole, sdkOmittedValue) ? this.workspaceRole : workspaceRole as BetaWorkspaceRoleSchema,
+  );
 
-  factory BetaUpdateWorkspaceMemberParams.fromJson(Map<String, dynamic> json) =>
-      BetaUpdateWorkspaceMemberParams(
-        workspaceRole: (json['workspace_role'] != null
-            ? BetaWorkspaceRoleSchema.fromJson(json['workspace_role'] as String)
-            : null)!,
-      );
+  factory BetaUpdateWorkspaceMemberParams.fromJson(Map<String, dynamic> json) => BetaUpdateWorkspaceMemberParams(
+    workspaceRole: (json['workspace_role'] != null ? BetaWorkspaceRoleSchema.fromJson(json['workspace_role'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'workspace_role': workspaceRole.toJson(),
-      };
+    'workspace_role': workspaceRole.toJson(),
+  };
 }

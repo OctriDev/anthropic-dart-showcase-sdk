@@ -8,92 +8,47 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionThreadStatusIdleEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionThreadStatusIdleEventType type_;
-
   /// Unique identifier for this event.
   final String id;
-
   /// Public sthr_ ID of the thread that went idle.
   final String sessionThreadId;
-
   /// Timestamp of the status transition.
   final String processedAt;
-
   /// Name of the agent the thread runs.
   final String agentName;
-
   /// Required object value serialized in the `stop_reason` wire field.
   final BetaManagedAgentsSessionThreadStatusIdleEventStopReason stopReason;
 
-  const BetaManagedAgentsSessionThreadStatusIdleEvent(
-      {required this.type_,
-      required this.id,
-      required this.sessionThreadId,
-      required this.processedAt,
-      required this.agentName,
-      required this.stopReason});
+  const BetaManagedAgentsSessionThreadStatusIdleEvent({required this.type_, required this.id, required this.sessionThreadId, required this.processedAt, required this.agentName, required this.stopReason});
 
-  BetaManagedAgentsSessionThreadStatusIdleEvent Function(
-          {BetaManagedAgentsSessionThreadStatusIdleEventType type_,
-          String id,
-          String sessionThreadId,
-          String processedAt,
-          String agentName,
-          BetaManagedAgentsSessionThreadStatusIdleEventStopReason stopReason})
-      get copyWith => _copyWith;
+  BetaManagedAgentsSessionThreadStatusIdleEvent Function({BetaManagedAgentsSessionThreadStatusIdleEventType type_, String id, String sessionThreadId, String processedAt, String agentName, BetaManagedAgentsSessionThreadStatusIdleEventStopReason stopReason}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionThreadStatusIdleEvent _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? sessionThreadId = sdkOmittedValue,
-          Object? processedAt = sdkOmittedValue,
-          Object? agentName = sdkOmittedValue,
-          Object? stopReason = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionThreadStatusIdleEvent(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsSessionThreadStatusIdleEventType,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        sessionThreadId: identical(sessionThreadId, sdkOmittedValue)
-            ? this.sessionThreadId
-            : sessionThreadId as String,
-        processedAt: identical(processedAt, sdkOmittedValue)
-            ? this.processedAt
-            : processedAt as String,
-        agentName: identical(agentName, sdkOmittedValue)
-            ? this.agentName
-            : agentName as String,
-        stopReason: identical(stopReason, sdkOmittedValue)
-            ? this.stopReason
-            : stopReason
-                as BetaManagedAgentsSessionThreadStatusIdleEventStopReason,
-      );
+  BetaManagedAgentsSessionThreadStatusIdleEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? sessionThreadId = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? agentName = sdkOmittedValue, Object? stopReason = sdkOmittedValue}) => BetaManagedAgentsSessionThreadStatusIdleEvent(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionThreadStatusIdleEventType,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    sessionThreadId: identical(sessionThreadId, sdkOmittedValue) ? this.sessionThreadId : sessionThreadId as String,
+    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
+    agentName: identical(agentName, sdkOmittedValue) ? this.agentName : agentName as String,
+    stopReason: identical(stopReason, sdkOmittedValue) ? this.stopReason : stopReason as BetaManagedAgentsSessionThreadStatusIdleEventStopReason,
+  );
 
-  factory BetaManagedAgentsSessionThreadStatusIdleEvent.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionThreadStatusIdleEvent(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsSessionThreadStatusIdleEventType.fromJson(
-                json['type'] as String)
-            : null)!,
-        id: (json['id'] as String?)!,
-        sessionThreadId: (json['session_thread_id'] as String?)!,
-        processedAt: (json['processed_at'] as String?)!,
-        agentName: (json['agent_name'] as String?)!,
-        stopReason: (json['stop_reason'] != null
-            ? BetaManagedAgentsSessionThreadStatusIdleEventStopReason.fromJson(
-                json['stop_reason'])
-            : null)!,
-      );
+  factory BetaManagedAgentsSessionThreadStatusIdleEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionThreadStatusIdleEvent(
+    type_: (json['type'] != null ? BetaManagedAgentsSessionThreadStatusIdleEventType.fromJson(json['type'] as String) : null)!,
+    id: (json['id'] as String?)!,
+    sessionThreadId: (json['session_thread_id'] as String?)!,
+    processedAt: (json['processed_at'] as String?)!,
+    agentName: (json['agent_name'] as String?)!,
+    stopReason: (json['stop_reason'] != null ? BetaManagedAgentsSessionThreadStatusIdleEventStopReason.fromJson(json['stop_reason']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'id': id,
-        'session_thread_id': sessionThreadId,
-        'processed_at': processedAt,
-        'agent_name': agentName,
-        'stop_reason': stopReason.toJson(),
-      };
+    'type': type_.toJson(),
+    'id': id,
+    'session_thread_id': sessionThreadId,
+    'processed_at': processedAt,
+    'agent_name': agentName,
+    'stop_reason': stopReason.toJson(),
+  };
 }

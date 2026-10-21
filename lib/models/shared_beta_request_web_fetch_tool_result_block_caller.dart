@@ -10,83 +10,40 @@ sealed class BetaRequestWebFetchToolResultBlockCaller {
   const BetaRequestWebFetchToolResultBlockCaller();
   factory BetaRequestWebFetchToolResultBlockCaller.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaDirectCaller.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaRequestWebFetchToolResultBlockCallerBetaDirectCaller(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaServerToolCaller.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaServerToolCaller20260120.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller20260120(
-              value);
-        }
-      } catch (_) {}
+      try { final value = BetaDirectCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestWebFetchToolResultBlockCallerBetaDirectCaller(value); } } catch (_) {}
+      try { final value = BetaServerToolCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller(value); } } catch (_) {}
+      try { final value = BetaServerToolCaller20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller20260120(value); } } catch (_) {}
     }
-    try {
-      return BetaRequestWebFetchToolResultBlockCallerBetaDirectCaller(
-          BetaDirectCaller.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller(
-          BetaServerToolCaller.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller20260120(
-          BetaServerToolCaller20260120.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"code_execution_20250825", "code_execution_20260120", "direct"}
-            .contains(json["type"])) {
-      return UnknownBetaRequestWebFetchToolResultBlockCaller(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaRequestWebFetchToolResultBlockCaller");
+    try { return BetaRequestWebFetchToolResultBlockCallerBetaDirectCaller(BetaDirectCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller(BetaServerToolCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller20260120(BetaServerToolCaller20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"code_execution_20250825", "code_execution_20260120", "direct"}.contains(json["type"])) { return UnknownBetaRequestWebFetchToolResultBlockCaller(json); }
+    throw FormatException("No variant matched for BetaRequestWebFetchToolResultBlockCaller");
   }
   Object? toJson();
 }
 
-final class BetaRequestWebFetchToolResultBlockCallerBetaDirectCaller
-    extends BetaRequestWebFetchToolResultBlockCaller {
+final class BetaRequestWebFetchToolResultBlockCallerBetaDirectCaller extends BetaRequestWebFetchToolResultBlockCaller {
   final BetaDirectCaller value;
   const BetaRequestWebFetchToolResultBlockCallerBetaDirectCaller(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller
-    extends BetaRequestWebFetchToolResultBlockCaller {
+final class BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller extends BetaRequestWebFetchToolResultBlockCaller {
   final BetaServerToolCaller value;
-  const BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller20260120
-    extends BetaRequestWebFetchToolResultBlockCaller {
+final class BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller20260120 extends BetaRequestWebFetchToolResultBlockCaller {
   final BetaServerToolCaller20260120 value;
-  const BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller20260120(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestWebFetchToolResultBlockCallerBetaServerToolCaller20260120(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestWebFetchToolResultBlockCaller] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestWebFetchToolResultBlockCaller
-    extends BetaRequestWebFetchToolResultBlockCaller {
+final class UnknownBetaRequestWebFetchToolResultBlockCaller extends BetaRequestWebFetchToolResultBlockCaller {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestWebFetchToolResultBlockCaller(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

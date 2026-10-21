@@ -8,74 +8,41 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionThreadStats {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Elapsed time since thread creation in seconds. For archived threads, frozen at the final update.
   final SdkOptional<double> durationSeconds;
-
   /// Time in seconds for the thread to begin running. Zero for child threads, which start immediately.
   final SdkOptional<double> startupSeconds;
-
   /// Cumulative time in seconds the thread spent actively running. Excludes idle time.
   final SdkOptional<double> activeSeconds;
 
-  const BetaManagedAgentsSessionThreadStats(
-      {this.durationSeconds = const SdkOmitted(),
-      this.startupSeconds = const SdkOmitted(),
-      this.activeSeconds = const SdkOmitted()});
+  const BetaManagedAgentsSessionThreadStats({this.durationSeconds = const SdkOmitted(), this.startupSeconds = const SdkOmitted(), this.activeSeconds = const SdkOmitted()});
 
-  BetaManagedAgentsSessionThreadStats Function(
-      {SdkOptional<double> durationSeconds,
-      SdkOptional<double> startupSeconds,
-      SdkOptional<double> activeSeconds}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionThreadStats Function({SdkOptional<double> durationSeconds, SdkOptional<double> startupSeconds, SdkOptional<double> activeSeconds}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionThreadStats _copyWith(
-          {Object? durationSeconds = sdkOmittedValue,
-          Object? startupSeconds = sdkOmittedValue,
-          Object? activeSeconds = sdkOmittedValue}) =>
-      BetaManagedAgentsSessionThreadStats(
-        durationSeconds: identical(durationSeconds, sdkOmittedValue)
-            ? this.durationSeconds
-            : durationSeconds as SdkOptional<double>,
-        startupSeconds: identical(startupSeconds, sdkOmittedValue)
-            ? this.startupSeconds
-            : startupSeconds as SdkOptional<double>,
-        activeSeconds: identical(activeSeconds, sdkOmittedValue)
-            ? this.activeSeconds
-            : activeSeconds as SdkOptional<double>,
-      );
+  BetaManagedAgentsSessionThreadStats _copyWith({Object? durationSeconds = sdkOmittedValue, Object? startupSeconds = sdkOmittedValue, Object? activeSeconds = sdkOmittedValue}) => BetaManagedAgentsSessionThreadStats(
+    durationSeconds: identical(durationSeconds, sdkOmittedValue) ? this.durationSeconds : durationSeconds as SdkOptional<double>,
+    startupSeconds: identical(startupSeconds, sdkOmittedValue) ? this.startupSeconds : startupSeconds as SdkOptional<double>,
+    activeSeconds: identical(activeSeconds, sdkOmittedValue) ? this.activeSeconds : activeSeconds as SdkOptional<double>,
+  );
 
-  factory BetaManagedAgentsSessionThreadStats.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsSessionThreadStats(
-        durationSeconds: json['duration_seconds'] != null
-            ? SdkPresent(((json['duration_seconds'] as num?)?.toDouble())!)
-            : const SdkOmitted(),
-        startupSeconds: json['startup_seconds'] != null
-            ? SdkPresent(((json['startup_seconds'] as num?)?.toDouble())!)
-            : const SdkOmitted(),
-        activeSeconds: json['active_seconds'] != null
-            ? SdkPresent(((json['active_seconds'] as num?)?.toDouble())!)
-            : const SdkOmitted(),
-      );
+  factory BetaManagedAgentsSessionThreadStats.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionThreadStats(
+    durationSeconds: json['duration_seconds'] != null ? SdkPresent(((json['duration_seconds'] as num?)?.toDouble())!) : const SdkOmitted(),
+    startupSeconds: json['startup_seconds'] != null ? SdkPresent(((json['startup_seconds'] as num?)?.toDouble())!) : const SdkOmitted(),
+    activeSeconds: json['active_seconds'] != null ? SdkPresent(((json['active_seconds'] as num?)?.toDouble())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (durationSeconds) {
-          SdkPresent<double>(value: final value) => {
-              'duration_seconds': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startupSeconds) {
-          SdkPresent<double>(value: final value) => {
-              'startup_seconds': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (activeSeconds) {
-          SdkPresent<double>(value: final value) => {
-              'active_seconds': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (durationSeconds) {
+      SdkPresent<double>(value: final value) => {'duration_seconds': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startupSeconds) {
+      SdkPresent<double>(value: final value) => {'startup_seconds': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (activeSeconds) {
+      SdkPresent<double>(value: final value) => {'active_seconds': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

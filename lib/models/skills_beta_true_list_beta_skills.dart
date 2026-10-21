@@ -8,43 +8,27 @@ part of 'skills_beta_true.dart';
 class BetaListSkillsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// List of skills.
   final List<BetaSkill> data;
-
   /// Token for fetching the next page of results. If `null`, there are no more results available. Pass this value to the `page` parameter in the next request to get the next page.
   final String? nextPage;
 
   const BetaListSkillsResponse({required this.data, required this.nextPage});
 
-  BetaListSkillsResponse Function({List<BetaSkill> data, String? nextPage})
-      get copyWith => _copyWith;
+  BetaListSkillsResponse Function({List<BetaSkill> data, String? nextPage}) get copyWith => _copyWith;
 
-  BetaListSkillsResponse _copyWith(
-          {Object? data = sdkOmittedValue,
-          Object? nextPage = sdkOmittedValue}) =>
-      BetaListSkillsResponse(
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as List<BetaSkill>,
-        nextPage: identical(nextPage, sdkOmittedValue)
-            ? this.nextPage
-            : nextPage as String?,
-      );
+  BetaListSkillsResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaListSkillsResponse(
+    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaSkill>,
+    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
+  );
 
-  factory BetaListSkillsResponse.fromJson(Map<String, dynamic> json) =>
-      BetaListSkillsResponse(
-        data: ((json['data'] as List?)
-            ?.map((e) => BetaSkill.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        nextPage: json.containsKey('next_page')
-            ? json['next_page'] as String?
-            : throw ArgumentError.value(
-                null, 'next_page', 'Required property is missing'),
-      );
+  factory BetaListSkillsResponse.fromJson(Map<String, dynamic> json) => BetaListSkillsResponse(
+    data: ((json['data'] as List?)?.map((e) => BetaSkill.fromJson(e as Map<String, dynamic>)).toList())!,
+    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'data': data.map((item) => item.toJson()).toList(),
-        'next_page': nextPage,
-      };
+    'data': data.map((item) => item.toJson()).toList(),
+    'next_page': nextPage,
+  };
 }

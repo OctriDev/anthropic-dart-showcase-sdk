@@ -8,36 +8,27 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsInjectionLocationResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether the placeholder is substituted in request header values.
   final bool header;
-
   /// Whether the placeholder is substituted in the request body.
   final bool body;
 
-  const BetaManagedAgentsInjectionLocationResponse(
-      {required this.header, required this.body});
+  const BetaManagedAgentsInjectionLocationResponse({required this.header, required this.body});
 
-  BetaManagedAgentsInjectionLocationResponse Function({bool header, bool body})
-      get copyWith => _copyWith;
+  BetaManagedAgentsInjectionLocationResponse Function({bool header, bool body}) get copyWith => _copyWith;
 
-  BetaManagedAgentsInjectionLocationResponse _copyWith(
-          {Object? header = sdkOmittedValue, Object? body = sdkOmittedValue}) =>
-      BetaManagedAgentsInjectionLocationResponse(
-        header:
-            identical(header, sdkOmittedValue) ? this.header : header as bool,
-        body: identical(body, sdkOmittedValue) ? this.body : body as bool,
-      );
+  BetaManagedAgentsInjectionLocationResponse _copyWith({Object? header = sdkOmittedValue, Object? body = sdkOmittedValue}) => BetaManagedAgentsInjectionLocationResponse(
+    header: identical(header, sdkOmittedValue) ? this.header : header as bool,
+    body: identical(body, sdkOmittedValue) ? this.body : body as bool,
+  );
 
-  factory BetaManagedAgentsInjectionLocationResponse.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsInjectionLocationResponse(
-        header: (json['header'] as bool?)!,
-        body: (json['body'] as bool?)!,
-      );
+  factory BetaManagedAgentsInjectionLocationResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsInjectionLocationResponse(
+    header: (json['header'] as bool?)!,
+    body: (json['body'] as bool?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'header': header,
-        'body': body,
-      };
+    'header': header,
+    'body': body,
+  };
 }

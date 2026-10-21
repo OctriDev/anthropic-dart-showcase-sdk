@@ -8,29 +8,22 @@ part of 'count_tokens.dart';
 class CountMessageTokensResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The total number of tokens across the provided list of messages, system prompt, and tools.
   final int inputTokens;
 
   const CountMessageTokensResponse({required this.inputTokens});
 
-  CountMessageTokensResponse Function({int inputTokens}) get copyWith =>
-      _copyWith;
+  CountMessageTokensResponse Function({int inputTokens}) get copyWith => _copyWith;
 
-  CountMessageTokensResponse _copyWith(
-          {Object? inputTokens = sdkOmittedValue}) =>
-      CountMessageTokensResponse(
-        inputTokens: identical(inputTokens, sdkOmittedValue)
-            ? this.inputTokens
-            : inputTokens as int,
-      );
+  CountMessageTokensResponse _copyWith({Object? inputTokens = sdkOmittedValue}) => CountMessageTokensResponse(
+    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as int,
+  );
 
-  factory CountMessageTokensResponse.fromJson(Map<String, dynamic> json) =>
-      CountMessageTokensResponse(
-        inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
-      );
+  factory CountMessageTokensResponse.fromJson(Map<String, dynamic> json) => CountMessageTokensResponse(
+    inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'input_tokens': inputTokens,
-      };
+    'input_tokens': inputTokens,
+  };
 }

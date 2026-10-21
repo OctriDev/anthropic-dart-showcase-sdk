@@ -8,65 +8,37 @@ part of 'shared_beta_dream.dart';
 class BetaDreamUsage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Total uncached input tokens consumed across every pipeline stage.
   final int inputTokens;
-
   /// Total output tokens generated across every pipeline stage.
   final int outputTokens;
-
   /// Total tokens read from prompt cache.
   final int cacheReadInputTokens;
-
   /// Total tokens used to create prompt-cache entries (sum of all TTL tiers).
   final int cacheCreationInputTokens;
 
-  const BetaDreamUsage(
-      {required this.inputTokens,
-      required this.outputTokens,
-      required this.cacheReadInputTokens,
-      required this.cacheCreationInputTokens});
+  const BetaDreamUsage({required this.inputTokens, required this.outputTokens, required this.cacheReadInputTokens, required this.cacheCreationInputTokens});
 
-  BetaDreamUsage Function(
-      {int inputTokens,
-      int outputTokens,
-      int cacheReadInputTokens,
-      int cacheCreationInputTokens}) get copyWith => _copyWith;
+  BetaDreamUsage Function({int inputTokens, int outputTokens, int cacheReadInputTokens, int cacheCreationInputTokens}) get copyWith => _copyWith;
 
-  BetaDreamUsage _copyWith(
-          {Object? inputTokens = sdkOmittedValue,
-          Object? outputTokens = sdkOmittedValue,
-          Object? cacheReadInputTokens = sdkOmittedValue,
-          Object? cacheCreationInputTokens = sdkOmittedValue}) =>
-      BetaDreamUsage(
-        inputTokens: identical(inputTokens, sdkOmittedValue)
-            ? this.inputTokens
-            : inputTokens as int,
-        outputTokens: identical(outputTokens, sdkOmittedValue)
-            ? this.outputTokens
-            : outputTokens as int,
-        cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue)
-            ? this.cacheReadInputTokens
-            : cacheReadInputTokens as int,
-        cacheCreationInputTokens:
-            identical(cacheCreationInputTokens, sdkOmittedValue)
-                ? this.cacheCreationInputTokens
-                : cacheCreationInputTokens as int,
-      );
+  BetaDreamUsage _copyWith({Object? inputTokens = sdkOmittedValue, Object? outputTokens = sdkOmittedValue, Object? cacheReadInputTokens = sdkOmittedValue, Object? cacheCreationInputTokens = sdkOmittedValue}) => BetaDreamUsage(
+    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as int,
+    outputTokens: identical(outputTokens, sdkOmittedValue) ? this.outputTokens : outputTokens as int,
+    cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue) ? this.cacheReadInputTokens : cacheReadInputTokens as int,
+    cacheCreationInputTokens: identical(cacheCreationInputTokens, sdkOmittedValue) ? this.cacheCreationInputTokens : cacheCreationInputTokens as int,
+  );
 
   factory BetaDreamUsage.fromJson(Map<String, dynamic> json) => BetaDreamUsage(
-        inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
-        outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
-        cacheReadInputTokens:
-            ((json['cache_read_input_tokens'] as num?)?.toInt())!,
-        cacheCreationInputTokens:
-            ((json['cache_creation_input_tokens'] as num?)?.toInt())!,
-      );
+    inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
+    outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
+    cacheReadInputTokens: ((json['cache_read_input_tokens'] as num?)?.toInt())!,
+    cacheCreationInputTokens: ((json['cache_creation_input_tokens'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'input_tokens': inputTokens,
-        'output_tokens': outputTokens,
-        'cache_read_input_tokens': cacheReadInputTokens,
-        'cache_creation_input_tokens': cacheCreationInputTokens,
-      };
+    'input_tokens': inputTokens,
+    'output_tokens': outputTokens,
+    'cache_read_input_tokens': cacheReadInputTokens,
+    'cache_creation_input_tokens': cacheCreationInputTokens,
+  };
 }

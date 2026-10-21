@@ -9,35 +9,22 @@ sealed class BetaManagedAgentsMCPServer {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMCPServer();
   factory BetaManagedAgentsMCPServer.fromJson(Object? json) {
-    try {
-      return BetaManagedAgentsMCPServerBetaManagedAgentsMCPServerURLDefinition(
-          BetaManagedAgentsMCPServerURLDefinition.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"url"}.contains(json["type"])) {
-      return UnknownBetaManagedAgentsMCPServer(json);
-    }
+    try { return BetaManagedAgentsMCPServerBetaManagedAgentsMCPServerURLDefinition(BetaManagedAgentsMCPServerURLDefinition.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"url"}.contains(json["type"])) { return UnknownBetaManagedAgentsMCPServer(json); }
     throw FormatException("No variant matched for BetaManagedAgentsMCPServer");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMCPServerBetaManagedAgentsMCPServerURLDefinition
-    extends BetaManagedAgentsMCPServer {
+final class BetaManagedAgentsMCPServerBetaManagedAgentsMCPServerURLDefinition extends BetaManagedAgentsMCPServer {
   final BetaManagedAgentsMCPServerURLDefinition value;
-  const BetaManagedAgentsMCPServerBetaManagedAgentsMCPServerURLDefinition(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaManagedAgentsMCPServerBetaManagedAgentsMCPServerURLDefinition(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMCPServer] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMCPServer
-    extends BetaManagedAgentsMCPServer {
+final class UnknownBetaManagedAgentsMCPServer extends BetaManagedAgentsMCPServer {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsMCPServer(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }

@@ -8,44 +8,27 @@ part of 'workspaces_beta_true.dart';
 class BetaServiceAccountWorkspaceMemberCreateFromSAParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Tagged workspace ID to add the service account to.
   final String workspaceId;
-
   /// Role to assign to the service account in this workspace.
   final BetaNoBillingWorkspaceRoleSchema workspaceRole;
 
-  const BetaServiceAccountWorkspaceMemberCreateFromSAParams(
-      {required this.workspaceId, required this.workspaceRole});
+  const BetaServiceAccountWorkspaceMemberCreateFromSAParams({required this.workspaceId, required this.workspaceRole});
 
-  BetaServiceAccountWorkspaceMemberCreateFromSAParams Function(
-          {String workspaceId, BetaNoBillingWorkspaceRoleSchema workspaceRole})
-      get copyWith => _copyWith;
+  BetaServiceAccountWorkspaceMemberCreateFromSAParams Function({String workspaceId, BetaNoBillingWorkspaceRoleSchema workspaceRole}) get copyWith => _copyWith;
 
-  BetaServiceAccountWorkspaceMemberCreateFromSAParams _copyWith(
-          {Object? workspaceId = sdkOmittedValue,
-          Object? workspaceRole = sdkOmittedValue}) =>
-      BetaServiceAccountWorkspaceMemberCreateFromSAParams(
-        workspaceId: identical(workspaceId, sdkOmittedValue)
-            ? this.workspaceId
-            : workspaceId as String,
-        workspaceRole: identical(workspaceRole, sdkOmittedValue)
-            ? this.workspaceRole
-            : workspaceRole as BetaNoBillingWorkspaceRoleSchema,
-      );
+  BetaServiceAccountWorkspaceMemberCreateFromSAParams _copyWith({Object? workspaceId = sdkOmittedValue, Object? workspaceRole = sdkOmittedValue}) => BetaServiceAccountWorkspaceMemberCreateFromSAParams(
+    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
+    workspaceRole: identical(workspaceRole, sdkOmittedValue) ? this.workspaceRole : workspaceRole as BetaNoBillingWorkspaceRoleSchema,
+  );
 
-  factory BetaServiceAccountWorkspaceMemberCreateFromSAParams.fromJson(
-          Map<String, dynamic> json) =>
-      BetaServiceAccountWorkspaceMemberCreateFromSAParams(
-        workspaceId: (json['workspace_id'] as String?)!,
-        workspaceRole: (json['workspace_role'] != null
-            ? BetaNoBillingWorkspaceRoleSchema.fromJson(
-                json['workspace_role'] as String)
-            : null)!,
-      );
+  factory BetaServiceAccountWorkspaceMemberCreateFromSAParams.fromJson(Map<String, dynamic> json) => BetaServiceAccountWorkspaceMemberCreateFromSAParams(
+    workspaceId: (json['workspace_id'] as String?)!,
+    workspaceRole: (json['workspace_role'] != null ? BetaNoBillingWorkspaceRoleSchema.fromJson(json['workspace_role'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'workspace_id': workspaceId,
-        'workspace_role': workspaceRole.toJson(),
-      };
+    'workspace_id': workspaceId,
+    'workspace_role': workspaceRole.toJson(),
+  };
 }

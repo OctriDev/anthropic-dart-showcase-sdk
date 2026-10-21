@@ -9,101 +9,59 @@ sealed class BetaRequestToolReferenceBlockCacheControl {
   static const String constructionSurface = 'named';
   const BetaRequestToolReferenceBlockCacheControl();
   factory BetaRequestToolReferenceBlockCacheControl.fromJson(Object? json) {
-    try {
-      return BetaRequestToolReferenceBlockCacheControlBetaCacheControlEphemeral(
-          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"ephemeral"}.contains(json["type"])) {
-      return UnknownBetaRequestToolReferenceBlockCacheControl(json);
-    }
-    throw FormatException(
-        "No variant matched for BetaRequestToolReferenceBlockCacheControl");
+    try { return BetaRequestToolReferenceBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestToolReferenceBlockCacheControl(json); }
+    throw FormatException("No variant matched for BetaRequestToolReferenceBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestToolReferenceBlockCacheControlBetaCacheControlEphemeral
-    extends BetaRequestToolReferenceBlockCacheControl {
+final class BetaRequestToolReferenceBlockCacheControlBetaCacheControlEphemeral extends BetaRequestToolReferenceBlockCacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaRequestToolReferenceBlockCacheControlBetaCacheControlEphemeral(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const BetaRequestToolReferenceBlockCacheControlBetaCacheControlEphemeral(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestToolReferenceBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestToolReferenceBlockCacheControl
-    extends BetaRequestToolReferenceBlockCacheControl {
+final class UnknownBetaRequestToolReferenceBlockCacheControl extends BetaRequestToolReferenceBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestToolReferenceBlockCacheControl(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Tool reference block that can be included in tool_result content.
 class BetaRequestToolReferenceBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
-
   /// Required `string` value serialized in the `tool_name` wire field.
   final String toolName;
-
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestToolReferenceBlockType type_;
 
-  const BetaRequestToolReferenceBlock(
-      {this.cacheControl = const SdkOmitted(),
-      required this.toolName,
-      required this.type_});
+  const BetaRequestToolReferenceBlock({this.cacheControl = const SdkOmitted(), required this.toolName, required this.type_});
 
-  BetaRequestToolReferenceBlock Function(
-      {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
-      String toolName,
-      BetaRequestToolReferenceBlockType type_}) get copyWith => _copyWith;
+  BetaRequestToolReferenceBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, String toolName, BetaRequestToolReferenceBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestToolReferenceBlock _copyWith(
-          {Object? cacheControl = sdkOmittedValue,
-          Object? toolName = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaRequestToolReferenceBlock(
-        cacheControl: identical(cacheControl, sdkOmittedValue)
-            ? this.cacheControl
-            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-        toolName: identical(toolName, sdkOmittedValue)
-            ? this.toolName
-            : toolName as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaRequestToolReferenceBlockType,
-      );
+  BetaRequestToolReferenceBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? toolName = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestToolReferenceBlock(
+    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+    toolName: identical(toolName, sdkOmittedValue) ? this.toolName : toolName as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestToolReferenceBlockType,
+  );
 
-  factory BetaRequestToolReferenceBlock.fromJson(Map<String, dynamic> json) =>
-      BetaRequestToolReferenceBlock(
-        cacheControl: json.containsKey('cache_control')
-            ? SdkPresent(json['cache_control'] != null
-                ? BetaCacheControlEphemeral.fromJson(
-                    json['cache_control'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        toolName: (json['tool_name'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaRequestToolReferenceBlockType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaRequestToolReferenceBlock.fromJson(Map<String, dynamic> json) => BetaRequestToolReferenceBlock(
+    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    toolName: (json['tool_name'] as String?)!,
+    type_: (json['type'] != null ? BetaRequestToolReferenceBlockType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cacheControl) {
-          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
-              'cache_control': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'tool_name': toolName,
-        'type': type_.toJson(),
-      };
+    ...switch (cacheControl) {
+      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'tool_name': toolName,
+    'type': type_.toJson(),
+  };
 }

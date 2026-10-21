@@ -8,56 +8,32 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsModelRateLimitedError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsModelRateLimitedErrorType type_;
-
   /// Human-readable error description.
   final String message;
-
   /// What the client should do next.
   final BetaManagedAgentsRetryStatus retryStatus;
 
-  const BetaManagedAgentsModelRateLimitedError(
-      {required this.type_, required this.message, required this.retryStatus});
+  const BetaManagedAgentsModelRateLimitedError({required this.type_, required this.message, required this.retryStatus});
 
-  BetaManagedAgentsModelRateLimitedError Function(
-      {BetaManagedAgentsModelRateLimitedErrorType type_,
-      String message,
-      BetaManagedAgentsRetryStatus retryStatus}) get copyWith => _copyWith;
+  BetaManagedAgentsModelRateLimitedError Function({BetaManagedAgentsModelRateLimitedErrorType type_, String message, BetaManagedAgentsRetryStatus retryStatus}) get copyWith => _copyWith;
 
-  BetaManagedAgentsModelRateLimitedError _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? message = sdkOmittedValue,
-          Object? retryStatus = sdkOmittedValue}) =>
-      BetaManagedAgentsModelRateLimitedError(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaManagedAgentsModelRateLimitedErrorType,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        retryStatus: identical(retryStatus, sdkOmittedValue)
-            ? this.retryStatus
-            : retryStatus as BetaManagedAgentsRetryStatus,
-      );
+  BetaManagedAgentsModelRateLimitedError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue, Object? retryStatus = sdkOmittedValue}) => BetaManagedAgentsModelRateLimitedError(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsModelRateLimitedErrorType,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    retryStatus: identical(retryStatus, sdkOmittedValue) ? this.retryStatus : retryStatus as BetaManagedAgentsRetryStatus,
+  );
 
-  factory BetaManagedAgentsModelRateLimitedError.fromJson(
-          Map<String, dynamic> json) =>
-      BetaManagedAgentsModelRateLimitedError(
-        type_: (json['type'] != null
-            ? BetaManagedAgentsModelRateLimitedErrorType.fromJson(
-                json['type'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-        retryStatus: (json['retry_status'] != null
-            ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status'])
-            : null)!,
-      );
+  factory BetaManagedAgentsModelRateLimitedError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsModelRateLimitedError(
+    type_: (json['type'] != null ? BetaManagedAgentsModelRateLimitedErrorType.fromJson(json['type'] as String) : null)!,
+    message: (json['message'] as String?)!,
+    retryStatus: (json['retry_status'] != null ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'message': message,
-        'retry_status': retryStatus.toJson(),
-      };
+    'type': type_.toJson(),
+    'message': message,
+    'retry_status': retryStatus.toJson(),
+  };
 }

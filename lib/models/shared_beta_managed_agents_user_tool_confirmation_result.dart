@@ -6,26 +6,22 @@ part of 'shared_beta_managed_agents.dart';
 // shared_beta_managed_agents domain models
 /// UserToolConfirmationResult enum
 final class BetaManagedAgentsUserToolConfirmationResult {
+
   final String value;
 
   const BetaManagedAgentsUserToolConfirmationResult._(this.value);
 
-  factory BetaManagedAgentsUserToolConfirmationResult.fromJson(String value) =>
-      BetaManagedAgentsUserToolConfirmationResult._(value);
+  factory BetaManagedAgentsUserToolConfirmationResult.fromJson(String value) => BetaManagedAgentsUserToolConfirmationResult._(value);
 
   static const allow = BetaManagedAgentsUserToolConfirmationResult._('allow');
   static const deny = BetaManagedAgentsUserToolConfirmationResult._('deny');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is BetaManagedAgentsUserToolConfirmationResult &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is BetaManagedAgentsUserToolConfirmationResult && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

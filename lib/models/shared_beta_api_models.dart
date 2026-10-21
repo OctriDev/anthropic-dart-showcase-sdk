@@ -9,9 +9,7 @@ sealed class BetaApiKeyExpiresAt {
   static const String constructionSurface = 'named';
   const BetaApiKeyExpiresAt();
   factory BetaApiKeyExpiresAt.fromJson(Object? json) {
-    if (json is String) {
-      return BetaApiKeyExpiresAtString(json);
-    }
+    if (json is String) { return BetaApiKeyExpiresAtString(json); }
     throw FormatException("No variant matched for BetaApiKeyExpiresAt");
   }
   Object? toJson();
@@ -20,203 +18,105 @@ sealed class BetaApiKeyExpiresAt {
 final class BetaApiKeyExpiresAtString extends BetaApiKeyExpiresAt {
   final String value;
   const BetaApiKeyExpiresAtString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaApiKey` API schema.
 class BetaApiKey {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// RFC 3339 datetime string indicating when the API Key was created.
   final String createdAt;
-
   /// The ID and type of the actor that created the API key, or `null` when the creator is not recorded (legacy, workload-identity-federated, or system-created keys).
   final BetaCreatedBy? createdBy;
-
   /// RFC 3339 datetime string indicating when the API Key expires, or `null` if it never expires.
   final String? expiresAt;
-
   /// ID of the API key.
   final String id;
-
   /// Name of the API key.
   final String name;
-
   /// Partially redacted hint for the API key.
   final String? partialKeyHint;
-
   /// The principal the API key acts as (a User or a Service Account), or `null` if the API key is not bound to a principal.
   final BetaApiKeyPrincipal? principal;
-
   /// Where the API key belongs: its Workspace (`{"type": "workspace", "workspace_id": "wrkspc_..."}`, with the Workspace's real ID even when it is the organization's default Workspace), or the organization (`{"type": "organization"}`) for a principal-bound API key that has no Workspace.
   final BetaApiKeyScope scope;
-
   /// Status of the API key.
   final BetaApiKeyStatus status;
-
   /// Object type. For API Keys, this is always `"api_key"`.
   final BetaApiKeyType type_;
-
   /// Deprecated: use `scope` instead. ID of the Workspace associated with the API key, or `null` if the API key belongs to the default Workspace. Also `null` for a principal-bound API key that has no Workspace; `scope` tells the two apart.
   final String? workspaceId;
 
-  const BetaApiKey(
-      {required this.createdAt,
-      required this.createdBy,
-      required this.expiresAt,
-      required this.id,
-      required this.name,
-      required this.partialKeyHint,
-      required this.principal,
-      required this.scope,
-      required this.status,
-      required this.type_,
-      required this.workspaceId});
+  const BetaApiKey({required this.createdAt, required this.createdBy, required this.expiresAt, required this.id, required this.name, required this.partialKeyHint, required this.principal, required this.scope, required this.status, required this.type_, required this.workspaceId});
 
-  BetaApiKey Function(
-      {String createdAt,
-      BetaCreatedBy? createdBy,
-      String? expiresAt,
-      String id,
-      String name,
-      String? partialKeyHint,
-      BetaApiKeyPrincipal? principal,
-      BetaApiKeyScope scope,
-      BetaApiKeyStatus status,
-      BetaApiKeyType type_,
-      String? workspaceId}) get copyWith => _copyWith;
+  BetaApiKey Function({String createdAt, BetaCreatedBy? createdBy, String? expiresAt, String id, String name, String? partialKeyHint, BetaApiKeyPrincipal? principal, BetaApiKeyScope scope, BetaApiKeyStatus status, BetaApiKeyType type_, String? workspaceId}) get copyWith => _copyWith;
 
-  BetaApiKey _copyWith(
-          {Object? createdAt = sdkOmittedValue,
-          Object? createdBy = sdkOmittedValue,
-          Object? expiresAt = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? partialKeyHint = sdkOmittedValue,
-          Object? principal = sdkOmittedValue,
-          Object? scope = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? workspaceId = sdkOmittedValue}) =>
-      BetaApiKey(
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        createdBy: identical(createdBy, sdkOmittedValue)
-            ? this.createdBy
-            : createdBy as BetaCreatedBy?,
-        expiresAt: identical(expiresAt, sdkOmittedValue)
-            ? this.expiresAt
-            : expiresAt as String?,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        partialKeyHint: identical(partialKeyHint, sdkOmittedValue)
-            ? this.partialKeyHint
-            : partialKeyHint as String?,
-        principal: identical(principal, sdkOmittedValue)
-            ? this.principal
-            : principal as BetaApiKeyPrincipal?,
-        scope: identical(scope, sdkOmittedValue)
-            ? this.scope
-            : scope as BetaApiKeyScope,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as BetaApiKeyStatus,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaApiKeyType,
-        workspaceId: identical(workspaceId, sdkOmittedValue)
-            ? this.workspaceId
-            : workspaceId as String?,
-      );
+  BetaApiKey _copyWith({Object? createdAt = sdkOmittedValue, Object? createdBy = sdkOmittedValue, Object? expiresAt = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? partialKeyHint = sdkOmittedValue, Object? principal = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? status = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaApiKey(
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    createdBy: identical(createdBy, sdkOmittedValue) ? this.createdBy : createdBy as BetaCreatedBy?,
+    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as String?,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    partialKeyHint: identical(partialKeyHint, sdkOmittedValue) ? this.partialKeyHint : partialKeyHint as String?,
+    principal: identical(principal, sdkOmittedValue) ? this.principal : principal as BetaApiKeyPrincipal?,
+    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as BetaApiKeyScope,
+    status: identical(status, sdkOmittedValue) ? this.status : status as BetaApiKeyStatus,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaApiKeyType,
+    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String?,
+  );
 
   factory BetaApiKey.fromJson(Map<String, dynamic> json) => BetaApiKey(
-        createdAt: (json['created_at'] as String?)!,
-        createdBy: json.containsKey('created_by')
-            ? json['created_by'] != null
-                ? BetaCreatedBy.fromJson(
-                    json['created_by'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'created_by', 'Required property is missing'),
-        expiresAt: json.containsKey('expires_at')
-            ? json['expires_at'] as String?
-            : throw ArgumentError.value(
-                null, 'expires_at', 'Required property is missing'),
-        id: (json['id'] as String?)!,
-        name: (json['name'] as String?)!,
-        partialKeyHint: json.containsKey('partial_key_hint')
-            ? json['partial_key_hint'] as String?
-            : throw ArgumentError.value(
-                null, 'partial_key_hint', 'Required property is missing'),
-        principal: json.containsKey('principal')
-            ? json['principal'] != null
-                ? BetaApiKeyPrincipal.fromJson(json['principal'])
-                : null
-            : throw ArgumentError.value(
-                null, 'principal', 'Required property is missing'),
-        scope: (json['scope'] != null
-            ? BetaApiKeyScope.fromJson(json['scope'])
-            : null)!,
-        status: (json['status'] != null
-            ? BetaApiKeyStatus.fromJson(json['status'] as String)
-            : null)!,
-        type_: (json['type'] != null
-            ? BetaApiKeyType.fromJson(json['type'] as String)
-            : null)!,
-        workspaceId: json.containsKey('workspace_id')
-            ? json['workspace_id'] as String?
-            : throw ArgumentError.value(
-                null, 'workspace_id', 'Required property is missing'),
-      );
+    createdAt: (json['created_at'] as String?)!,
+    createdBy: json.containsKey('created_by') ? json['created_by'] != null ? BetaCreatedBy.fromJson(json['created_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'created_by', 'Required property is missing'),
+    expiresAt: json.containsKey('expires_at') ? json['expires_at'] as String? : throw ArgumentError.value(null, 'expires_at', 'Required property is missing'),
+    id: (json['id'] as String?)!,
+    name: (json['name'] as String?)!,
+    partialKeyHint: json.containsKey('partial_key_hint') ? json['partial_key_hint'] as String? : throw ArgumentError.value(null, 'partial_key_hint', 'Required property is missing'),
+    principal: json.containsKey('principal') ? json['principal'] != null ? BetaApiKeyPrincipal.fromJson(json['principal']) : null : throw ArgumentError.value(null, 'principal', 'Required property is missing'),
+    scope: (json['scope'] != null ? BetaApiKeyScope.fromJson(json['scope']) : null)!,
+    status: (json['status'] != null ? BetaApiKeyStatus.fromJson(json['status'] as String) : null)!,
+    type_: (json['type'] != null ? BetaApiKeyType.fromJson(json['type'] as String) : null)!,
+    workspaceId: json.containsKey('workspace_id') ? json['workspace_id'] as String? : throw ArgumentError.value(null, 'workspace_id', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'created_at': createdAt,
-        'created_by': createdBy?.toJson(),
-        'expires_at': expiresAt,
-        'id': id,
-        'name': name,
-        'partial_key_hint': partialKeyHint,
-        'principal': principal?.toJson(),
-        'scope': scope.toJson(),
-        'status': status.toJson(),
-        'type': type_.toJson(),
-        'workspace_id': workspaceId,
-      };
+    'created_at': createdAt,
+    'created_by': createdBy?.toJson(),
+    'expires_at': expiresAt,
+    'id': id,
+    'name': name,
+    'partial_key_hint': partialKeyHint,
+    'principal': principal?.toJson(),
+    'scope': scope.toJson(),
+    'status': status.toJson(),
+    'type': type_.toJson(),
+    'workspace_id': workspaceId,
+  };
 }
 
 /// Typed representation of the `BetaApiKeyOrganizationScope` API schema.
 class BetaApiKeyOrganizationScope {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Scope type. Always `"organization"`: the API key has no Workspace. Only a principal-bound API key can have this scope.
   final BetaApiKeyOrganizationScopeType type_;
 
   const BetaApiKeyOrganizationScope({required this.type_});
 
-  BetaApiKeyOrganizationScope Function({BetaApiKeyOrganizationScopeType type_})
-      get copyWith => _copyWith;
+  BetaApiKeyOrganizationScope Function({BetaApiKeyOrganizationScopeType type_}) get copyWith => _copyWith;
 
-  BetaApiKeyOrganizationScope _copyWith({Object? type_ = sdkOmittedValue}) =>
-      BetaApiKeyOrganizationScope(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaApiKeyOrganizationScopeType,
-      );
+  BetaApiKeyOrganizationScope _copyWith({Object? type_ = sdkOmittedValue}) => BetaApiKeyOrganizationScope(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaApiKeyOrganizationScopeType,
+  );
 
-  factory BetaApiKeyOrganizationScope.fromJson(Map<String, dynamic> json) =>
-      BetaApiKeyOrganizationScope(
-        type_: (json['type'] != null
-            ? BetaApiKeyOrganizationScopeType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaApiKeyOrganizationScope.fromJson(Map<String, dynamic> json) => BetaApiKeyOrganizationScope(
+    type_: (json['type'] != null ? BetaApiKeyOrganizationScopeType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }
 
 sealed class BetaApiKeyPrincipal {
@@ -225,32 +125,12 @@ sealed class BetaApiKeyPrincipal {
   const BetaApiKeyPrincipal();
   factory BetaApiKeyPrincipal.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaApiKeyUserActor.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaApiKeyPrincipalBetaApiKeyUserActor(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaApiKeyServiceAccountActor.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaApiKeyPrincipalBetaApiKeyServiceAccountActor(value);
-        }
-      } catch (_) {}
+      try { final value = BetaApiKeyUserActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaApiKeyPrincipalBetaApiKeyUserActor(value); } } catch (_) {}
+      try { final value = BetaApiKeyServiceAccountActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaApiKeyPrincipalBetaApiKeyServiceAccountActor(value); } } catch (_) {}
     }
-    try {
-      return BetaApiKeyPrincipalBetaApiKeyUserActor(
-          BetaApiKeyUserActor.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaApiKeyPrincipalBetaApiKeyServiceAccountActor(
-          BetaApiKeyServiceAccountActor.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"service_account_actor", "user_actor"}.contains(json["type"])) {
-      return UnknownBetaApiKeyPrincipal(json);
-    }
+    try { return BetaApiKeyPrincipalBetaApiKeyUserActor(BetaApiKeyUserActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaApiKeyPrincipalBetaApiKeyServiceAccountActor(BetaApiKeyServiceAccountActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"service_account_actor", "user_actor"}.contains(json["type"])) { return UnknownBetaApiKeyPrincipal(json); }
     throw FormatException("No variant matched for BetaApiKeyPrincipal");
   }
   Object? toJson();
@@ -259,24 +139,20 @@ sealed class BetaApiKeyPrincipal {
 final class BetaApiKeyPrincipalBetaApiKeyUserActor extends BetaApiKeyPrincipal {
   final BetaApiKeyUserActor value;
   const BetaApiKeyPrincipalBetaApiKeyUserActor(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class BetaApiKeyPrincipalBetaApiKeyServiceAccountActor
-    extends BetaApiKeyPrincipal {
+final class BetaApiKeyPrincipalBetaApiKeyServiceAccountActor extends BetaApiKeyPrincipal {
   final BetaApiKeyServiceAccountActor value;
   const BetaApiKeyPrincipalBetaApiKeyServiceAccountActor(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaApiKeyPrincipal] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaApiKeyPrincipal extends BetaApiKeyPrincipal {
   final Map<String, dynamic> raw;
   const UnknownBetaApiKeyPrincipal(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 sealed class BetaApiKeyScope {
@@ -285,32 +161,12 @@ sealed class BetaApiKeyScope {
   const BetaApiKeyScope();
   factory BetaApiKeyScope.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = BetaApiKeyOrganizationScope.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaApiKeyScopeBetaApiKeyOrganizationScope(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BetaApiKeyWorkspaceScope.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return BetaApiKeyScopeBetaApiKeyWorkspaceScope(value);
-        }
-      } catch (_) {}
+      try { final value = BetaApiKeyOrganizationScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaApiKeyScopeBetaApiKeyOrganizationScope(value); } } catch (_) {}
+      try { final value = BetaApiKeyWorkspaceScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaApiKeyScopeBetaApiKeyWorkspaceScope(value); } } catch (_) {}
     }
-    try {
-      return BetaApiKeyScopeBetaApiKeyOrganizationScope(
-          BetaApiKeyOrganizationScope.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return BetaApiKeyScopeBetaApiKeyWorkspaceScope(
-          BetaApiKeyWorkspaceScope.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {"organization", "workspace"}.contains(json["type"])) {
-      return UnknownBetaApiKeyScope(json);
-    }
+    try { return BetaApiKeyScopeBetaApiKeyOrganizationScope(BetaApiKeyOrganizationScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return BetaApiKeyScopeBetaApiKeyWorkspaceScope(BetaApiKeyWorkspaceScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"organization", "workspace"}.contains(json["type"])) { return UnknownBetaApiKeyScope(json); }
     throw FormatException("No variant matched for BetaApiKeyScope");
   }
   Object? toJson();
@@ -319,150 +175,105 @@ sealed class BetaApiKeyScope {
 final class BetaApiKeyScopeBetaApiKeyOrganizationScope extends BetaApiKeyScope {
   final BetaApiKeyOrganizationScope value;
   const BetaApiKeyScopeBetaApiKeyOrganizationScope(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class BetaApiKeyScopeBetaApiKeyWorkspaceScope extends BetaApiKeyScope {
   final BetaApiKeyWorkspaceScope value;
   const BetaApiKeyScopeBetaApiKeyWorkspaceScope(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [BetaApiKeyScope] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaApiKeyScope extends BetaApiKeyScope {
   final Map<String, dynamic> raw;
   const UnknownBetaApiKeyScope(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaApiKeyServiceAccountActor` API schema.
 class BetaApiKeyServiceAccountActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// ID of the Service Account the API key acts as.
   final String serviceAccountId;
-
   /// Principal type. Always `"service_account_actor"` for a Service Account.
   final BetaApiKeyServiceAccountActorType type_;
 
-  const BetaApiKeyServiceAccountActor(
-      {required this.serviceAccountId, required this.type_});
+  const BetaApiKeyServiceAccountActor({required this.serviceAccountId, required this.type_});
 
-  BetaApiKeyServiceAccountActor Function(
-      {String serviceAccountId,
-      BetaApiKeyServiceAccountActorType type_}) get copyWith => _copyWith;
+  BetaApiKeyServiceAccountActor Function({String serviceAccountId, BetaApiKeyServiceAccountActorType type_}) get copyWith => _copyWith;
 
-  BetaApiKeyServiceAccountActor _copyWith(
-          {Object? serviceAccountId = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      BetaApiKeyServiceAccountActor(
-        serviceAccountId: identical(serviceAccountId, sdkOmittedValue)
-            ? this.serviceAccountId
-            : serviceAccountId as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaApiKeyServiceAccountActorType,
-      );
+  BetaApiKeyServiceAccountActor _copyWith({Object? serviceAccountId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaApiKeyServiceAccountActor(
+    serviceAccountId: identical(serviceAccountId, sdkOmittedValue) ? this.serviceAccountId : serviceAccountId as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaApiKeyServiceAccountActorType,
+  );
 
-  factory BetaApiKeyServiceAccountActor.fromJson(Map<String, dynamic> json) =>
-      BetaApiKeyServiceAccountActor(
-        serviceAccountId: (json['service_account_id'] as String?)!,
-        type_: (json['type'] != null
-            ? BetaApiKeyServiceAccountActorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory BetaApiKeyServiceAccountActor.fromJson(Map<String, dynamic> json) => BetaApiKeyServiceAccountActor(
+    serviceAccountId: (json['service_account_id'] as String?)!,
+    type_: (json['type'] != null ? BetaApiKeyServiceAccountActorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'service_account_id': serviceAccountId,
-        'type': type_.toJson(),
-      };
+    'service_account_id': serviceAccountId,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `BetaApiKeyUserActor` API schema.
 class BetaApiKeyUserActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Principal type. Always `"user_actor"` for a User.
   final BetaApiKeyUserActorType type_;
-
   /// ID of the User the API key acts as.
   final String userId;
 
   const BetaApiKeyUserActor({required this.type_, required this.userId});
 
-  BetaApiKeyUserActor Function({BetaApiKeyUserActorType type_, String userId})
-      get copyWith => _copyWith;
+  BetaApiKeyUserActor Function({BetaApiKeyUserActorType type_, String userId}) get copyWith => _copyWith;
 
-  BetaApiKeyUserActor _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? userId = sdkOmittedValue}) =>
-      BetaApiKeyUserActor(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaApiKeyUserActorType,
-        userId:
-            identical(userId, sdkOmittedValue) ? this.userId : userId as String,
-      );
+  BetaApiKeyUserActor _copyWith({Object? type_ = sdkOmittedValue, Object? userId = sdkOmittedValue}) => BetaApiKeyUserActor(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaApiKeyUserActorType,
+    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as String,
+  );
 
-  factory BetaApiKeyUserActor.fromJson(Map<String, dynamic> json) =>
-      BetaApiKeyUserActor(
-        type_: (json['type'] != null
-            ? BetaApiKeyUserActorType.fromJson(json['type'] as String)
-            : null)!,
-        userId: (json['user_id'] as String?)!,
-      );
+  factory BetaApiKeyUserActor.fromJson(Map<String, dynamic> json) => BetaApiKeyUserActor(
+    type_: (json['type'] != null ? BetaApiKeyUserActorType.fromJson(json['type'] as String) : null)!,
+    userId: (json['user_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'user_id': userId,
-      };
+    'type': type_.toJson(),
+    'user_id': userId,
+  };
 }
 
 /// Typed representation of the `BetaApiKeyWorkspaceScope` API schema.
 class BetaApiKeyWorkspaceScope {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Scope type. Always `"workspace"`: the API key belongs to one Workspace.
   final BetaApiKeyWorkspaceScopeType type_;
-
   /// ID of the Workspace the API key belongs to. Unlike the deprecated top-level `workspace_id`, this is the Workspace's real ID even for the organization's default Workspace.
   final String workspaceId;
 
-  const BetaApiKeyWorkspaceScope(
-      {required this.type_, required this.workspaceId});
+  const BetaApiKeyWorkspaceScope({required this.type_, required this.workspaceId});
 
-  BetaApiKeyWorkspaceScope Function(
-      {BetaApiKeyWorkspaceScopeType type_,
-      String workspaceId}) get copyWith => _copyWith;
+  BetaApiKeyWorkspaceScope Function({BetaApiKeyWorkspaceScopeType type_, String workspaceId}) get copyWith => _copyWith;
 
-  BetaApiKeyWorkspaceScope _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? workspaceId = sdkOmittedValue}) =>
-      BetaApiKeyWorkspaceScope(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as BetaApiKeyWorkspaceScopeType,
-        workspaceId: identical(workspaceId, sdkOmittedValue)
-            ? this.workspaceId
-            : workspaceId as String,
-      );
+  BetaApiKeyWorkspaceScope _copyWith({Object? type_ = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaApiKeyWorkspaceScope(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaApiKeyWorkspaceScopeType,
+    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
+  );
 
-  factory BetaApiKeyWorkspaceScope.fromJson(Map<String, dynamic> json) =>
-      BetaApiKeyWorkspaceScope(
-        type_: (json['type'] != null
-            ? BetaApiKeyWorkspaceScopeType.fromJson(json['type'] as String)
-            : null)!,
-        workspaceId: (json['workspace_id'] as String?)!,
-      );
+  factory BetaApiKeyWorkspaceScope.fromJson(Map<String, dynamic> json) => BetaApiKeyWorkspaceScope(
+    type_: (json['type'] != null ? BetaApiKeyWorkspaceScopeType.fromJson(json['type'] as String) : null)!,
+    workspaceId: (json['workspace_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        'workspace_id': workspaceId,
-      };
+    'type': type_.toJson(),
+    'workspace_id': workspaceId,
+  };
 }
