@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_beta_analytics.dart';
 
-part 'projects_beta_true_part1.dart';
+part 'projects_beta_true_models.dart';

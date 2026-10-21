@@ -14,4 +14,4 @@ import 'shared_response_text.dart';
 import 'shared_response_tool.dart';
 import 'shared_response_web.dart';
 
-part 'shared_content_part1.dart';
+part 'shared_content_models.dart';

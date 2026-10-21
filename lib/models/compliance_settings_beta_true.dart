@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'compliance_settings_beta_true_part1.dart';
+part 'compliance_settings_beta_true_models.dart';

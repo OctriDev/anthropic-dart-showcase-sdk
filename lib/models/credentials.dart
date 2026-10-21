@@ -6,5 +6,14 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta_managed_agents.dart';
 
-part 'credentials_part1.dart';
-part 'credentials_part2.dart';
+part 'credentials_beta_managed_agents_credential_update_auth.dart';
+part 'credentials_beta_managed_agents_environment_variable_update_params.dart';
+part 'credentials_beta_managed_agents_injection_location_update_params.dart';
+part 'credentials_beta_managed_agents_mcp_oauth_refresh_update_params.dart';
+part 'credentials_beta_managed_agents_mcp_oauth_refresh_update_params_token_endpoint_auth.dart';
+part 'credentials_beta_managed_agents_mcp_oauth_update_params.dart';
+part 'credentials_beta_managed_agents_static_bearer_update_params.dart';
+part 'credentials_beta_managed_agents_token_endpoint_auth_basic_update_param.dart';
+part 'credentials_beta_managed_agents_token_endpoint_auth_post_update_param.dart';
+part 'credentials_beta_managed_agents_update_credential_request_body.dart';
+part 'credentials_delete_beta_vaults_credentials.dart';

@@ -60,21 +60,21 @@ import '../types.dart';
 ///   endpoint's sort column and to `desc` when `order_by` names a metric (a top-N
 ///   ranking). Applies to `order_by`, or to the endpoint's default sort field
 ///   when `order_by` is omitted.
-Future<BetaAnalyticsPluginsResponse> listBetaOrganizationsAnalyticsPlugins(
+Future<BetaAnalyticsPluginsResponse> listBetaOrganizationAnalyticsPlugins(
     ClientConfig config,
     {SdkOptional<String?> date = const SdkOmitted(),
     SdkOptional<String?> startingDate = const SdkOmitted(),
     SdkOptional<String?> endingDate = const SdkOmitted(),
     SdkOptional<int?> limit = const SdkOmitted(),
     SdkOptional<String?> page = const SdkOmitted(),
-    SdkOptional<List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?>
+    SdkOptional<List<ListBetaOrganizationAnalyticsPluginsGroupByItem>?>
         groupBy = const SdkOmitted(),
     SdkOptional<List<String>?> filter = const SdkOmitted(),
     SdkOptional<String?> orderBy = const SdkOmitted(),
     SdkOptional<String?> order = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   if (groupBy
-      is SdkPresent<List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?>) {
+      is SdkPresent<List<ListBetaOrganizationAnalyticsPluginsGroupByItem>?>) {
     final groupByValue = groupBy.value;
     if (groupByValue != null) {
       validateItems('group_by[]', groupByValue, max: 100);
@@ -113,7 +113,7 @@ Future<BetaAnalyticsPluginsResponse> listBetaOrganizationsAnalyticsPlugins(
                 style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          operationId: 'listBetaOrganizationsAnalyticsPlugins',
+          operationId: 'listBetaOrganizationAnalyticsPlugins',
           fromJsonRaw: (value) => BetaAnalyticsPluginsResponse.fromJson(
               value as Map<String, dynamic>),
           options: requestOptions,
@@ -208,20 +208,20 @@ Future<BetaAnalyticsPluginsResponse> listBetaOrganizationsAnalyticsPlugins(
 ///   ranking). Applies to `order_by`, or to the endpoint's default sort field
 ///   when `order_by` is omitted.
 Stream<BetaAnalyticsPluginActivity>
-    listBetaOrganizationsAnalyticsPluginsPaginated(ClientConfig config,
+    listBetaOrganizationAnalyticsPluginsPaginated(ClientConfig config,
         {String? date,
         String? startingDate,
         String? endingDate,
         int? limit,
         String? page,
-        List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>? groupBy,
+        List<ListBetaOrganizationAnalyticsPluginsGroupByItem>? groupBy,
         List<String>? filter,
         String? orderBy,
         String? order,
         RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsAnalyticsPlugins(config,
+    final sdkPage = await listBetaOrganizationAnalyticsPlugins(config,
         date: date == null
             ? const SdkOmitted<String?>()
             : SdkPresent<String?>(date),
@@ -238,9 +238,9 @@ Stream<BetaAnalyticsPluginActivity>
             : SdkPresent<String?>(sdkCursor),
         groupBy: groupBy == null
             ? const SdkOmitted<
-                List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?>()
+                List<ListBetaOrganizationAnalyticsPluginsGroupByItem>?>()
             : SdkPresent<
-                    List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?>(
+                    List<ListBetaOrganizationAnalyticsPluginsGroupByItem>?>(
                 groupBy),
         filter: filter == null
             ? const SdkOmitted<List<String>?>()
@@ -264,20 +264,20 @@ Stream<BetaAnalyticsPluginActivity>
 }
 
 Stream<SdkPage<BetaAnalyticsPluginsResponse, BetaAnalyticsPluginActivity>>
-    listBetaOrganizationsAnalyticsPluginsPages(ClientConfig config,
+    listBetaOrganizationAnalyticsPluginsPages(ClientConfig config,
         {String? date,
         String? startingDate,
         String? endingDate,
         int? limit,
         String? page,
-        List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>? groupBy,
+        List<ListBetaOrganizationAnalyticsPluginsGroupByItem>? groupBy,
         List<String>? filter,
         String? orderBy,
         String? order,
         RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsAnalyticsPlugins(config,
+    final sdkPage = await listBetaOrganizationAnalyticsPlugins(config,
         date: date == null
             ? const SdkOmitted<String?>()
             : SdkPresent<String?>(date),
@@ -294,9 +294,9 @@ Stream<SdkPage<BetaAnalyticsPluginsResponse, BetaAnalyticsPluginActivity>>
             : SdkPresent<String?>(sdkCursor),
         groupBy: groupBy == null
             ? const SdkOmitted<
-                List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?>()
+                List<ListBetaOrganizationAnalyticsPluginsGroupByItem>?>()
             : SdkPresent<
-                    List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?>(
+                    List<ListBetaOrganizationAnalyticsPluginsGroupByItem>?>(
                 groupBy),
         filter: filter == null
             ? const SdkOmitted<List<String>?>()

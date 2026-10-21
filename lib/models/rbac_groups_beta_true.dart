@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_beta_rbac.dart';
 
-part 'rbac_groups_beta_true_part1.dart';
+part 'rbac_groups_beta_true_models.dart';

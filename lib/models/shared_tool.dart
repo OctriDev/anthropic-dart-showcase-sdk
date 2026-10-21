@@ -8,5 +8,12 @@ import 'shared.dart';
 import 'shared_cache.dart';
 import 'shared_input.dart';
 
-part 'shared_tool_part1.dart';
-part 'shared_tool_part2.dart';
+part 'shared_tool2.dart';
+part 'shared_tool_choice.dart';
+part 'shared_tool_choice_any.dart';
+part 'shared_tool_choice_auto.dart';
+part 'shared_tool_choice_none.dart';
+part 'shared_tool_choice_tool.dart';
+part 'shared_tool_search_tool_bm25_20251119.dart';
+part 'shared_tool_search_tool_regex_20251119.dart';
+part 'shared_tool_search_tool_result_error_code.dart';

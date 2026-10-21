@@ -16,4 +16,4 @@ import 'shared_beta_response_context.dart';
 import 'shared_beta_thinking.dart';
 import 'shared_beta_usage.dart';
 
-part 'shared_beta_message_part1.dart';
+part 'shared_beta_message_models.dart';

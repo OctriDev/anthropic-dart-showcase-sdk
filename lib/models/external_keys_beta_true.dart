@@ -8,4 +8,4 @@ import 'shared_beta.dart';
 import 'shared_beta_azure.dart';
 import 'shared_beta_external.dart';
 
-part 'external_keys_beta_true_part1.dart';
+part 'external_keys_beta_true_models.dart';

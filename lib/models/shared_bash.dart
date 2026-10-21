@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared.dart';
 import 'shared_cache.dart';
 
-part 'shared_bash_part1.dart';
+part 'shared_bash_models.dart';

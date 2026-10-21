@@ -7,5 +7,12 @@ import 'inline.dart';
 import 'shared_cache.dart';
 import 'shared_request_code.dart';
 
-part 'shared_request_part1.dart';
-part 'shared_request_part2.dart';
+part 'shared_request_char_location_citation.dart';
+part 'shared_request_citations_config.dart';
+part 'shared_request_container_upload_block.dart';
+part 'shared_request_content_block_location_citation.dart';
+part 'shared_request_counts.dart';
+part 'shared_request_encrypted_code_execution_result_block.dart';
+part 'shared_request_page_location_citation.dart';
+part 'shared_request_redacted_thinking_block.dart';
+part 'shared_request_thinking_block.dart';

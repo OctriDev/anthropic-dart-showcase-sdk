@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared.dart';
 
-part 'shared_error_part1.dart';
+part 'shared_error_models.dart';

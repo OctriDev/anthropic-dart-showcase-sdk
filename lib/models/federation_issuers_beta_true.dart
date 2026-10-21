@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'shared_beta_federation.dart';
 import 'shared_beta_jwks.dart';
 
-part 'federation_issuers_beta_true_part1.dart';
+part 'federation_issuers_beta_true_models.dart';

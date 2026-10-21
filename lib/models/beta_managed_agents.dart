@@ -4,4 +4,4 @@
 // beta_managed_agents domain model library.
 import '../sdk_utils.dart';
 
-part 'beta_managed_agents_part1.dart';
+part 'beta_managed_agents_models.dart';

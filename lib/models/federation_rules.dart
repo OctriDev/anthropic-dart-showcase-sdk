@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'shared_beta.dart';
 import 'shared_beta_service.dart';
 
-part 'federation_rules_part1.dart';
+part 'federation_rules_models.dart';

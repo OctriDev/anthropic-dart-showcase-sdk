@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared_beta_allowed.dart';
 import 'shared_beta_cache.dart';
 
-part 'shared_beta_bash_part1.dart';
+part 'shared_beta_bash_models.dart';

@@ -8,4 +8,4 @@ import 'shared_beta.dart';
 import 'shared_beta_spend.dart';
 import 'shared_beta_user.dart';
 
-part 'approve_beta_true_part1.dart';
+part 'approve_beta_true_models.dart';

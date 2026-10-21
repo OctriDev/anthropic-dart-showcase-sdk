@@ -7,5 +7,13 @@ import 'inline.dart';
 import 'shared_beta_cache.dart';
 import 'shared_beta_request_code.dart';
 
-part 'shared_beta_request_part1.dart';
-part 'shared_beta_request_part2.dart';
+part 'shared_beta_request_char_location_citation.dart';
+part 'shared_beta_request_citations_config.dart';
+part 'shared_beta_request_compaction_block.dart';
+part 'shared_beta_request_container_upload_block.dart';
+part 'shared_beta_request_content_block_location_citation.dart';
+part 'shared_beta_request_counts.dart';
+part 'shared_beta_request_encrypted_code_execution_result_block.dart';
+part 'shared_beta_request_page_location_citation.dart';
+part 'shared_beta_request_redacted_thinking_block.dart';
+part 'shared_beta_request_thinking_block.dart';

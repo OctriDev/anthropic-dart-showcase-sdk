@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'mcp_oauth_validate_beta_true_part1.dart';
+part 'mcp_oauth_validate_beta_true_models.dart';

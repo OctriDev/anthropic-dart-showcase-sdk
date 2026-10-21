@@ -2,4 +2,4 @@
 // This file is machine-generated from your OpenAPI spec.
 
 // shared_beta_inference domain model library.
-part 'shared_beta_inference_part1.dart';
+part 'shared_beta_inference_models.dart';

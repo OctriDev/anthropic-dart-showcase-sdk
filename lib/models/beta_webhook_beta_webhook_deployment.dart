@@ -5,5 +5,12 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'beta_webhook_beta_webhook_deployment_part1.dart';
-part 'beta_webhook_beta_webhook_deployment_part2.dart';
+part 'beta_webhook_beta_webhook_deployment_archived_event_data.dart';
+part 'beta_webhook_beta_webhook_deployment_created_event_data.dart';
+part 'beta_webhook_beta_webhook_deployment_deleted_event_data.dart';
+part 'beta_webhook_beta_webhook_deployment_paused_event_data.dart';
+part 'beta_webhook_beta_webhook_deployment_run_failed_event_data.dart';
+part 'beta_webhook_beta_webhook_deployment_run_started_event_data.dart';
+part 'beta_webhook_beta_webhook_deployment_run_succeeded_event_data.dart';
+part 'beta_webhook_beta_webhook_deployment_unpaused_event_data.dart';
+part 'beta_webhook_beta_webhook_deployment_updated_event_data.dart';

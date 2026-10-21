@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared_beta.dart';
 import 'shared_beta_azure.dart';
 
-part 'external_keys_part1.dart';
+part 'external_keys_models.dart';

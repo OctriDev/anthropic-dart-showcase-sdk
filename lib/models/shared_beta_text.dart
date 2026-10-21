@@ -7,5 +7,8 @@ import 'inline.dart';
 import 'shared_beta_allowed.dart';
 import 'shared_beta_cache.dart';
 
-part 'shared_beta_text_part1.dart';
-part 'shared_beta_text_part2.dart';
+part 'shared_beta_text_editor_20241022.dart';
+part 'shared_beta_text_editor_20250124.dart';
+part 'shared_beta_text_editor_20250429.dart';
+part 'shared_beta_text_editor_20250728.dart';
+part 'shared_beta_text_editor_code_execution_tool_result_error_code.dart';

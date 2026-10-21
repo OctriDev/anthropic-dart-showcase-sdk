@@ -8,4 +8,4 @@ import 'shared_cache.dart';
 import 'shared_request.dart';
 import 'shared_request_text.dart';
 
-part 'shared_request_search_part1.dart';
+part 'shared_request_search_models.dart';

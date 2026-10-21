@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta_invite.dart';
 
-part 'invites_beta_true_part1.dart';
+part 'invites_beta_true_models.dart';

@@ -4,4 +4,4 @@
 // connectors_beta_true domain model library.
 import '../sdk_utils.dart';
 
-part 'connectors_beta_true_part1.dart';
+part 'connectors_beta_true_models.dart';

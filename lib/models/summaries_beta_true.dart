@@ -4,5 +4,4 @@
 // summaries_beta_true domain model library.
 import '../sdk_utils.dart';
 
-part 'summaries_beta_true_part1.dart';
-part 'summaries_beta_true_part2.dart';
+part 'summaries_beta_true_models.dart';

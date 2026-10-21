@@ -5,5 +5,16 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'claude_code_beta_true_part1.dart';
-part 'claude_code_beta_true_part2.dart';
+part 'claude_code_beta_true_beta_approval_metrics.dart';
+part 'claude_code_beta_true_beta_claude_code_api_actor.dart';
+part 'claude_code_beta_true_beta_claude_code_usage_report_item.dart';
+part 'claude_code_beta_true_beta_claude_code_usage_report_item_actor.dart';
+part 'claude_code_beta_true_beta_claude_code_user_actor.dart';
+part 'claude_code_beta_true_beta_core_metrics.dart';
+part 'claude_code_beta_true_beta_customer_type.dart';
+part 'claude_code_beta_true_beta_estimated_cost.dart';
+part 'claude_code_beta_true_beta_get_claude_code_usage_report_response.dart';
+part 'claude_code_beta_true_beta_lines_of_code.dart';
+part 'claude_code_beta_true_beta_model_breakdown.dart';
+part 'claude_code_beta_true_beta_subscription_type.dart';
+part 'claude_code_beta_true_beta_token_usage.dart';

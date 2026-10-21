@@ -17,5 +17,6 @@ import 'shared_thinking.dart';
 import 'shared_tool.dart';
 import 'shared_web.dart';
 
-part 'count_tokens_part1.dart';
-part 'count_tokens_part2.dart';
+part 'count_tokens_count_message_tokens_params.dart';
+part 'count_tokens_count_message_tokens_params_tools_item.dart';
+part 'count_tokens_count_message_tokens_response.dart';

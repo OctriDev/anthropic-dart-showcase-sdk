@@ -5,6 +5,20 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'beta_webhook_beta_webhook_session_part1.dart';
-part 'beta_webhook_beta_webhook_session_part2.dart';
-part 'beta_webhook_beta_webhook_session_part3.dart';
+part 'beta_webhook_beta_webhook_session_archived_event_data.dart';
+part 'beta_webhook_beta_webhook_session_budget_reached_event_data.dart';
+part 'beta_webhook_beta_webhook_session_created_event_data.dart';
+part 'beta_webhook_beta_webhook_session_deleted_event_data.dart';
+part 'beta_webhook_beta_webhook_session_idled_event_data.dart';
+part 'beta_webhook_beta_webhook_session_outcome_evaluation_ended_event_data.dart';
+part 'beta_webhook_beta_webhook_session_pending_event_data.dart';
+part 'beta_webhook_beta_webhook_session_requires_action_event_data.dart';
+part 'beta_webhook_beta_webhook_session_running_event_data.dart';
+part 'beta_webhook_beta_webhook_session_status_idled_event_data.dart';
+part 'beta_webhook_beta_webhook_session_status_rescheduled_event_data.dart';
+part 'beta_webhook_beta_webhook_session_status_run_started_event_data.dart';
+part 'beta_webhook_beta_webhook_session_status_terminated_event_data.dart';
+part 'beta_webhook_beta_webhook_session_thread_created_event_data.dart';
+part 'beta_webhook_beta_webhook_session_thread_idled_event_data.dart';
+part 'beta_webhook_beta_webhook_session_thread_terminated_event_data.dart';
+part 'beta_webhook_beta_webhook_session_updated_event_data.dart';

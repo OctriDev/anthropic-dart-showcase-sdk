@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta.dart';
 
-part 'service_accounts_part1.dart';
+part 'service_accounts_models.dart';

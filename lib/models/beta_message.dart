@@ -16,5 +16,9 @@ import 'shared_beta_server.dart';
 import 'shared_beta_thinking.dart';
 import 'shared_beta_usage.dart';
 
-part 'beta_message_part1.dart';
-part 'beta_message_part2.dart';
+part 'beta_message_delta.dart';
+part 'beta_message_delta_event.dart';
+part 'beta_message_delta_usage.dart';
+part 'beta_message_start_event.dart';
+part 'beta_message_stop_event.dart';
+part 'beta_message_stream_event.dart';

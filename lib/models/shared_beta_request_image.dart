@@ -9,4 +9,4 @@ import 'shared_beta_base64.dart';
 import 'shared_beta_cache.dart';
 import 'shared_beta_file.dart';
 
-part 'shared_beta_request_image_part1.dart';
+part 'shared_beta_request_image_models.dart';

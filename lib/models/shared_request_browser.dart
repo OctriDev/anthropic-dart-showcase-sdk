@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared_browser.dart';
 import 'shared_cache.dart';
 
-part 'shared_request_browser_part1.dart';
+part 'shared_request_browser_models.dart';

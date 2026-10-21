@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared.dart';
 import 'shared_server.dart';
 
-part 'shared_response_server_part1.dart';
+part 'shared_response_server_models.dart';

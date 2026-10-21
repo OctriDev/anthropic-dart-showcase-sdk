@@ -26,6 +26,6 @@ import 'shared_beta_thinking.dart';
 import 'shared_beta_tool.dart';
 import 'shared_beta_web.dart';
 
-part 'shared_beta_create_part1.dart';
-part 'shared_beta_create_part2.dart';
-part 'shared_beta_create_part3.dart';
+part 'shared_beta_create_message_params_cache_control.dart';
+part 'shared_beta_create_message_params.dart';
+part 'shared_beta_create_message_params_tools_item.dart';

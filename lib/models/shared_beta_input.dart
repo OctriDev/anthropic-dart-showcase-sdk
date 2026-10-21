@@ -19,5 +19,8 @@ import 'shared_beta_request_text.dart';
 import 'shared_beta_request_tool.dart';
 import 'shared_beta_request_web.dart';
 
-part 'shared_beta_input_part1.dart';
-part 'shared_beta_input_part2.dart';
+part 'shared_beta_input_content_block.dart';
+part 'shared_beta_input_message.dart';
+part 'shared_beta_input_schema.dart';
+part 'shared_beta_input_tokens_clear_at_least.dart';
+part 'shared_beta_input_tokens_trigger.dart';

@@ -4,4 +4,4 @@
 // shared_beta_mcptool domain model library.
 import '../sdk_utils.dart';
 
-part 'shared_beta_mcptool_part1.dart';
+part 'shared_beta_mcptool_models.dart';

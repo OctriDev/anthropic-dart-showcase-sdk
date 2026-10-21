@@ -8,4 +8,4 @@ import 'shared_beta.dart';
 import 'shared_beta_base64.dart';
 import 'shared_beta_response.dart';
 
-part 'shared_beta_response_document_part1.dart';
+part 'shared_beta_response_document_models.dart';

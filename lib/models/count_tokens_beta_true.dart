@@ -22,5 +22,7 @@ import 'shared_beta_thinking.dart';
 import 'shared_beta_tool.dart';
 import 'shared_beta_web.dart';
 
-part 'count_tokens_beta_true_part1.dart';
-part 'count_tokens_beta_true_part2.dart';
+part 'count_tokens_beta_true_beta_context_management_response.dart';
+part 'count_tokens_beta_true_beta_count_message_tokens_params.dart';
+part 'count_tokens_beta_true_beta_count_message_tokens_params_tools_item.dart';
+part 'count_tokens_beta_true_beta_count_message_tokens_response.dart';

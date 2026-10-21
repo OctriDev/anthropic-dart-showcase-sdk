@@ -17,5 +17,8 @@ import 'shared_beta_response_text.dart';
 import 'shared_beta_response_tool.dart';
 import 'shared_beta_response_web.dart';
 
-part 'beta_content_block_part1.dart';
-part 'beta_content_block_part2.dart';
+part 'beta_content_block_delta_event.dart';
+part 'beta_content_block_delta_event_delta.dart';
+part 'beta_content_block_start_event.dart';
+part 'beta_content_block_start_event_content_block.dart';
+part 'beta_content_block_stop_event.dart';

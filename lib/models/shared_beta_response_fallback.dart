@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared.dart';
 import 'shared_beta_fallback.dart';
 
-part 'shared_beta_response_fallback_part1.dart';
+part 'shared_beta_response_fallback_models.dart';

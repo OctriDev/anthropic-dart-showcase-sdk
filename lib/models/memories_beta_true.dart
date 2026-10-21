@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta_managed_agents.dart';
 
-part 'memories_beta_true_part1.dart';
+part 'memories_beta_true_models.dart';

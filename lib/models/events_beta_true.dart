@@ -6,6 +6,15 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta_managed_agents.dart';
 
-part 'events_beta_true_part1.dart';
-part 'events_beta_true_part2.dart';
-part 'events_beta_true_part3.dart';
+part 'events_beta_true_beta_managed_agents_event_params.dart';
+part 'events_beta_true_beta_managed_agents_input_event.dart';
+part 'events_beta_true_beta_managed_agents_send_session_events.dart';
+part 'events_beta_true_beta_managed_agents_send_session_events_params.dart';
+part 'events_beta_true_beta_managed_agents_user_custom_tool_result_event_params.dart';
+part 'events_beta_true_beta_managed_agents_user_interrupt_event_params.dart';
+part 'events_beta_true_beta_managed_agents_user_tool_confirmation_event_params.dart';
+part 'events_beta_true_beta_managed_agents_user_tool_result_event_params.dart';
+part 'events_beta_true_list_beta_sessions_events.dart';
+part 'events_beta_true_list_beta_sessions_threads_events.dart';
+part 'events_beta_true_beta_managed_agents_session_event.dart';
+part 'events_beta_true_beta_managed_agents_session_event_beta_managed_agents_session_thread_status_res.dart';

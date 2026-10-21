@@ -9,5 +9,9 @@ import 'shared_beta_organization.dart';
 import 'shared_beta_rbac.dart';
 import 'shared_beta_user.dart';
 
-part 'shared_beta_spend_part1.dart';
-part 'shared_beta_spend_part2.dart';
+part 'shared_beta_spend_limit.dart';
+part 'shared_beta_spend_limit_increase_request_schema.dart';
+part 'shared_beta_spend_limit_increase_request_schema_resolved_by.dart';
+part 'shared_beta_spend_limit_scope.dart';
+part 'shared_beta_spend_summary.dart';
+part 'shared_beta_spend_summary_source.dart';

@@ -7,5 +7,12 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta_skill.dart';
 
-part 'skills_beta_true_part1.dart';
-part 'skills_beta_true_part2.dart';
+part 'skills_beta_true_beta_analytics_skill_activity.dart';
+part 'skills_beta_true_beta_analytics_skill_chat_metrics.dart';
+part 'skills_beta_true_beta_analytics_skill_claude_code_metrics.dart';
+part 'skills_beta_true_beta_analytics_skill_cowork_metrics.dart';
+part 'skills_beta_true_beta_analytics_skill_office_metrics.dart';
+part 'skills_beta_true_beta_analytics_skill_office_product_metrics.dart';
+part 'skills_beta_true_beta_analytics_skills_response.dart';
+part 'skills_beta_true_create_beta_skills.dart';
+part 'skills_beta_true_list_beta_skills.dart';

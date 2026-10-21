@@ -7,4 +7,4 @@ import 'shared_beta.dart';
 import 'shared_beta_federation.dart';
 import 'shared_beta_service.dart';
 
-part 'federation_rules_beta_true_part1.dart';
+part 'federation_rules_beta_true_models.dart';

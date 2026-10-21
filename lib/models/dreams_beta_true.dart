@@ -7,4 +7,4 @@ import 'shared_beta.dart';
 import 'shared_beta_dream.dart';
 import 'shared_beta_output.dart';
 
-part 'dreams_beta_true_part1.dart';
+part 'dreams_beta_true_models.dart';

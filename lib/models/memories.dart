@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'memories_part1.dart';
+part 'memories_models.dart';

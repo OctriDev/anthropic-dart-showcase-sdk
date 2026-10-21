@@ -6,5 +6,8 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta_managed_agents.dart';
 
-part 'sessions_beta_true_part1.dart';
-part 'sessions_beta_true_part2.dart';
+part 'sessions_beta_true_beta_managed_agents_agent_with_overrides_params.dart';
+part 'sessions_beta_true_beta_managed_agents_create_session_agent_union_params.dart';
+part 'sessions_beta_true_beta_managed_agents_create_session_params.dart';
+part 'sessions_beta_true_beta_managed_agents_session_initial_event_params.dart';
+part 'sessions_beta_true_list_beta_sessions.dart';

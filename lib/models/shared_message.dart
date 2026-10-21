@@ -10,4 +10,4 @@ import 'shared_content.dart';
 import 'shared_refusal.dart';
 import 'shared_request.dart';
 
-part 'shared_message_part1.dart';
+part 'shared_message_models.dart';

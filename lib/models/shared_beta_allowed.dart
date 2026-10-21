@@ -2,4 +2,4 @@
 // This file is machine-generated from your OpenAPI spec.
 
 // shared_beta_allowed domain model library.
-part 'shared_beta_allowed_part1.dart';
+part 'shared_beta_allowed_models.dart';

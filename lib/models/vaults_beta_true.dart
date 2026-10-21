@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_beta_managed_agents.dart';
 
-part 'vaults_beta_true_part1.dart';
+part 'vaults_beta_true_models.dart';

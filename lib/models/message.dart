@@ -8,4 +8,4 @@ import 'inline.dart';
 import 'message_delta.dart';
 import 'shared_message.dart';
 
-part 'message_part1.dart';
+part 'message_models.dart';

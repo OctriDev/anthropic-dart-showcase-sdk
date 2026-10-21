@@ -6363,13 +6363,13 @@ class BetaOrganizationsAnalyticsPluginsNamespace {
       SdkOptional<String?> endingDate = const SdkOmitted(),
       SdkOptional<int?> limit = const SdkOmitted(),
       SdkOptional<String?> page = const SdkOmitted(),
-      SdkOptional<List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?>
+      SdkOptional<List<ListBetaOrganizationAnalyticsPluginsGroupByItem>?>
           groupBy = const SdkOmitted(),
       SdkOptional<List<String>?> filter = const SdkOmitted(),
       SdkOptional<String?> orderBy = const SdkOmitted(),
       SdkOptional<String?> order = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return plugins_methods.listBetaOrganizationsAnalyticsPlugins(_config,
+    return plugins_methods.listBetaOrganizationAnalyticsPlugins(_config,
         date: date,
         startingDate: startingDate,
         endingDate: endingDate,
@@ -6389,12 +6389,12 @@ class BetaOrganizationsAnalyticsPluginsNamespace {
       String? endingDate,
       int? limit,
       String? page,
-      List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>? groupBy,
+      List<ListBetaOrganizationAnalyticsPluginsGroupByItem>? groupBy,
       List<String>? filter,
       String? orderBy,
       String? order,
       RequestOptions? requestOptions}) async* {
-    yield* plugins_methods.listBetaOrganizationsAnalyticsPluginsPaginated(
+    yield* plugins_methods.listBetaOrganizationAnalyticsPluginsPaginated(
         _config,
         date: date,
         startingDate: startingDate,

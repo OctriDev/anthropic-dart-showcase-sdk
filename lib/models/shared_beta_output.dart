@@ -8,4 +8,4 @@ import 'shared_beta.dart';
 import 'shared_beta_effort.dart';
 import 'shared_beta_json.dart';
 
-part 'shared_beta_output_part1.dart';
+part 'shared_beta_output_models.dart';

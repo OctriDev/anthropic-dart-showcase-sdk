@@ -10,5 +10,11 @@ import 'shared_request_search.dart';
 import 'shared_request_web.dart';
 import 'shared_text.dart';
 
-part 'shared_request_text_part1.dart';
-part 'shared_request_text_part2.dart';
+part 'shared_request_text_block.dart';
+part 'shared_request_text_block_citations_item.dart';
+part 'shared_request_text_editor_code_execution_create_result_block.dart';
+part 'shared_request_text_editor_code_execution_str_replace_result_block.dart';
+part 'shared_request_text_editor_code_execution_tool_result_block.dart';
+part 'shared_request_text_editor_code_execution_tool_result_block_content.dart';
+part 'shared_request_text_editor_code_execution_tool_result_error.dart';
+part 'shared_request_text_editor_code_execution_view_result_block.dart';

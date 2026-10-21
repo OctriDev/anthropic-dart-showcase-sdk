@@ -7,5 +7,13 @@ import 'inline.dart';
 import 'shared_beta.dart';
 import 'shared_beta_output.dart';
 
-part 'shared_beta_dream_part1.dart';
-part 'shared_beta_dream_part2.dart';
+part 'shared_beta_dream2.dart';
+part 'shared_beta_dream_error.dart';
+part 'shared_beta_dream_input.dart';
+part 'shared_beta_dream_memory_store_input.dart';
+part 'shared_beta_dream_memory_store_output.dart';
+part 'shared_beta_dream_model_config.dart';
+part 'shared_beta_dream_output.dart';
+part 'shared_beta_dream_sessions_input.dart';
+part 'shared_beta_dream_status.dart';
+part 'shared_beta_dream_usage.dart';

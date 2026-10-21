@@ -6,5 +6,12 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_response_code.dart';
 
-part 'shared_response_part1.dart';
-part 'shared_response_part2.dart';
+part 'shared_response_char_location_citation.dart';
+part 'shared_response_citations_config.dart';
+part 'shared_response_container_upload_block.dart';
+part 'shared_response_content_block_location_citation.dart';
+part 'shared_response_encrypted_code_execution_result_block.dart';
+part 'shared_response_page_location_citation.dart';
+part 'shared_response_redacted_thinking_block.dart';
+part 'shared_response_search_result_location_citation.dart';
+part 'shared_response_thinking_block.dart';

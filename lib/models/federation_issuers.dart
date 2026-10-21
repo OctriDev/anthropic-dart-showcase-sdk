@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_beta_jwks.dart';
 
-part 'federation_issuers_part1.dart';
+part 'federation_issuers_models.dart';

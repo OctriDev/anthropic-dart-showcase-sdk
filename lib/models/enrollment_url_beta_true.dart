@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'enrollment_url_beta_true_part1.dart';
+part 'enrollment_url_beta_true_models.dart';

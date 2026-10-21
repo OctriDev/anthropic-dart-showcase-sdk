@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared_beta_cloud.dart';
 import 'shared_beta_self.dart';
 
-part 'shared_beta_environment_part1.dart';
+part 'shared_beta_environment_models.dart';

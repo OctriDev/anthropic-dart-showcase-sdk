@@ -1466,7 +1466,7 @@ const _selectedOperationSecurity = <String, List<List<String>>>{
   "listBetaOrganizationsAnalyticsConnectors": [
     <String>["ApiKeyAuth"]
   ],
-  "listBetaOrganizationsAnalyticsPlugins": [
+  "listBetaOrganizationAnalyticsPlugins": [
     <String>["ApiKeyAuth"]
   ],
   "listBetaOrganizationsAnalyticsArtifacts": [

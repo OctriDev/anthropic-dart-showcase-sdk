@@ -6,4 +6,4 @@ import 'dart:convert';
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'shared_beta_base64_part1.dart';
+part 'shared_beta_base64_models.dart';
