@@ -7,4 +7,4 @@ import '../sdk_utils.dart';
 import 'shared_beta_managed_agents.dart';
 import 'shared_beta_skill.dart';
 
-part 'versions_beta_true_part1.dart';
+part 'versions_beta_true_models.dart';

@@ -8,5 +8,5 @@ import 'shared_beta.dart';
 import 'shared_beta_analytics.dart';
 import 'shared_beta_inference.dart';
 
-part 'cost_report_beta_true_part1.dart';
-part 'cost_report_beta_true_part2.dart';
+part 'cost_report_beta_true_retrieve_beta_organizations_analytics_cost_report.dart';
+part 'cost_report_beta_true_retrieve_beta_organizations_cost_report.dart';

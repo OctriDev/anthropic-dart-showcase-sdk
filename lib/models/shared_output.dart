@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'shared.dart';
 import 'shared_json.dart';
 
-part 'shared_output_part1.dart';
+part 'shared_output_models.dart';

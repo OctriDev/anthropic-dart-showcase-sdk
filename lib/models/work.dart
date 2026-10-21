@@ -4,4 +4,4 @@
 // work domain model library.
 import '../sdk_utils.dart';
 
-part 'work_part1.dart';
+part 'work_models.dart';

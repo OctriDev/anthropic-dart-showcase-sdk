@@ -19,6 +19,5 @@ import 'shared_thinking.dart';
 import 'shared_tool.dart';
 import 'shared_web.dart';
 
-part 'shared_create_part1.dart';
-part 'shared_create_part2.dart';
-part 'shared_create_part3.dart';
+part 'shared_create_message_params.dart';
+part 'shared_create_message_params_tools_item.dart';

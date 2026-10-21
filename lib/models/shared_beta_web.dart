@@ -9,8 +9,12 @@ import 'shared_beta_cache.dart';
 import 'shared_beta_request.dart';
 import 'shared_beta_user.dart';
 
-part 'shared_beta_web_part1.dart';
-part 'shared_beta_web_part2.dart';
-part 'shared_beta_web_part3.dart';
-part 'shared_beta_web_part4.dart';
-part 'shared_beta_web_part5.dart';
+part 'shared_beta_web_fetch_tool_20250910.dart';
+part 'shared_beta_web_fetch_tool_20260209.dart';
+part 'shared_beta_web_fetch_tool_20260309.dart';
+part 'shared_beta_web_fetch_tool_20260318.dart';
+part 'shared_beta_web_fetch_tool_result_error_code.dart';
+part 'shared_beta_web_search_tool_20250305.dart';
+part 'shared_beta_web_search_tool_20260209.dart';
+part 'shared_beta_web_search_tool_20260318.dart';
+part 'shared_beta_web_search_tool_result_error_code.dart';

@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'shared_beta_organization.dart';
 import 'shared_beta_tunnel.dart';
 
-part 'certificates_beta_true_part1.dart';
+part 'certificates_beta_true_models.dart';

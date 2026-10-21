@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared_beta_allowed.dart';
 import 'shared_beta_inference.dart';
 
-part 'workspaces_part1.dart';
+part 'workspaces_models.dart';

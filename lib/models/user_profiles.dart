@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_beta_user.dart';
 
-part 'user_profiles_part1.dart';
+part 'user_profiles_models.dart';

@@ -19,5 +19,5 @@ import 'shared_thinking.dart';
 import 'shared_tool.dart';
 import 'shared_web.dart';
 
-part 'create_message_params_part1.dart';
-part 'create_message_params_part2.dart';
+part 'create_message_params_without_stream.dart';
+part 'create_message_params_without_stream_tools_item.dart';

@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared_beta_advisor.dart';
 import 'shared_beta_cache.dart';
 
-part 'shared_beta_request_advisor_part1.dart';
+part 'shared_beta_request_advisor_models.dart';

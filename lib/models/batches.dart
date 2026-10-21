@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared_create.dart';
 import 'shared_message.dart';
 
-part 'batches_part1.dart';
+part 'batches_models.dart';

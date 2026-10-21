@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_bash.dart';
 
-part 'shared_response_bash_part1.dart';
+part 'shared_response_bash_models.dart';

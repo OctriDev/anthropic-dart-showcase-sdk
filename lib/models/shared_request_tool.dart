@@ -14,6 +14,12 @@ import 'shared_request_text.dart';
 import 'shared_server.dart';
 import 'shared_tool.dart';
 
-part 'shared_request_tool_part1.dart';
-part 'shared_request_tool_part2.dart';
-part 'shared_request_tool_part3.dart';
+part 'shared_request_tool_reference_block.dart';
+part 'shared_request_tool_result_block.dart';
+part 'shared_request_tool_result_block_content_item.dart';
+part 'shared_request_tool_search_tool_result_block.dart';
+part 'shared_request_tool_search_tool_result_block_content.dart';
+part 'shared_request_tool_search_tool_result_error.dart';
+part 'shared_request_tool_search_tool_search_result_block.dart';
+part 'shared_request_tool_use_block.dart';
+part 'shared_request_tool_use_block_caller.dart';

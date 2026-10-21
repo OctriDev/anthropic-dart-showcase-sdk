@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta_workspace.dart';
 
-part 'shared_beta_service_part1.dart';
+part 'shared_beta_service_models.dart';

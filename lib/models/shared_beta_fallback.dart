@@ -11,5 +11,12 @@ import 'shared_beta_output.dart';
 import 'shared_beta_refusal.dart';
 import 'shared_beta_thinking.dart';
 
-part 'shared_beta_fallback_part1.dart';
-part 'shared_beta_fallback_part2.dart';
+part 'shared_beta_fallback_config_v2.dart';
+part 'shared_beta_fallback_config_v2_thinking.dart';
+part 'shared_beta_fallback_credit_not_applied.dart';
+part 'shared_beta_fallback_credit_redeemed.dart';
+part 'shared_beta_fallback_credit_token_param.dart';
+part 'shared_beta_fallback_credit_usage.dart';
+part 'shared_beta_fallback_credit_usage_status.dart';
+part 'shared_beta_fallback_message_iteration_usage.dart';
+part 'shared_beta_fallback_refusal_trigger.dart';

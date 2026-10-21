@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'permissions_beta_true_part1.dart';
+part 'permissions_beta_true_models.dart';

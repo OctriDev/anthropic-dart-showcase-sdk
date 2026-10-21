@@ -4,4 +4,4 @@
 // deny_beta_true domain model library.
 import '../sdk_utils.dart';
 
-part 'deny_beta_true_part1.dart';
+part 'deny_beta_true_models.dart';

@@ -8,5 +8,6 @@ import 'shared_beta.dart';
 import 'shared_beta_jwks.dart';
 import 'shared_beta_service.dart';
 
-part 'shared_beta_federation_part1.dart';
-part 'shared_beta_federation_part2.dart';
+part 'shared_beta_federation_issuer.dart';
+part 'shared_beta_federation_issuer_jwks.dart';
+part 'shared_beta_federation_rule.dart';

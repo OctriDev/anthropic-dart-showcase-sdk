@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared.dart';
 
-part 'shared_beta_request_fallback_part1.dart';
+part 'shared_beta_request_fallback_models.dart';

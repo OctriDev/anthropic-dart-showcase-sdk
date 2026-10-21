@@ -6,4 +6,4 @@ import 'dart:convert';
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'skills_part1.dart';
+part 'skills_models.dart';

@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_beta_managed_agents.dart';
 
-part 'memory_versions_beta_true_part1.dart';
+part 'memory_versions_beta_true_models.dart';

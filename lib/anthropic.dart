@@ -3708,17 +3708,17 @@ class BetaOrganizationsAnalyticsPluginsNamespace {
       SdkOptional<String?> endingDate = const SdkOmitted(),
       SdkOptional<int?> limit = const SdkOmitted(),
       SdkOptional<String?> page = const SdkOmitted(),
-      SdkOptional<List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?> groupBy = const SdkOmitted(),
+      SdkOptional<List<ListBetaOrganizationAnalyticsPluginsGroupByItem>?> groupBy = const SdkOmitted(),
       SdkOptional<List<String>?> filter = const SdkOmitted(),
       SdkOptional<String?> orderBy = const SdkOmitted(),
       SdkOptional<String?> order = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return plugins_methods.listBetaOrganizationsAnalyticsPlugins(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+    return plugins_methods.listBetaOrganizationAnalyticsPlugins(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
   }
 
   /// Get per-plugin install + invocation usage for a given day, with pagination. Returns plugin usage metrics for the organization across Cowork and Claude Code, sorted by plugin name. The `plugin_name` value `third-party` is an aggregate bucket, not a plugin: it collects plugin activity, from either surface, for which the reporting client did not provide a plugin name — so an organization's own plugins can contribute both to their own named rows and to this bucket. Use `group_by[]` to break usage out per member, per RBAC group, or per product surface (Cowork / Claude Code), and `filter[]` to scope results; the parameter descriptions list the supported dimensions. Requires an API key with the `read:analytics` scope. `starting_date` / `ending_date` select range-rollup mode like `/skills`.
-  Stream<BetaAnalyticsPluginActivity> listPaginated({String? date, String? startingDate, String? endingDate, int? limit, String? page, List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>? groupBy, List<String>? filter, String? orderBy, String? order, RequestOptions? requestOptions}) async* {
-    yield* plugins_methods.listBetaOrganizationsAnalyticsPluginsPaginated(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
+  Stream<BetaAnalyticsPluginActivity> listPaginated({String? date, String? startingDate, String? endingDate, int? limit, String? page, List<ListBetaOrganizationAnalyticsPluginsGroupByItem>? groupBy, List<String>? filter, String? orderBy, String? order, RequestOptions? requestOptions}) async* {
+    yield* plugins_methods.listBetaOrganizationAnalyticsPluginsPaginated(_config, date: date, startingDate: startingDate, endingDate: endingDate, limit: limit, page: page, groupBy: groupBy, filter: filter, orderBy: orderBy, order: order, requestOptions: requestOptions);
   }
 
 }

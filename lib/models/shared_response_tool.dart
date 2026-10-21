@@ -8,4 +8,4 @@ import 'shared.dart';
 import 'shared_server.dart';
 import 'shared_tool.dart';
 
-part 'shared_response_tool_part1.dart';
+part 'shared_response_tool_models.dart';

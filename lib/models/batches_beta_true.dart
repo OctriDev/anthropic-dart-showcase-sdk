@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'shared_beta_create.dart';
 import 'shared_beta_message.dart';
 
-part 'batches_beta_true_part1.dart';
+part 'batches_beta_true_models.dart';

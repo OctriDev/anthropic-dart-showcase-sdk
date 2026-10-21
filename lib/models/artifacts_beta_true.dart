@@ -4,4 +4,4 @@
 // artifacts_beta_true domain model library.
 import '../sdk_utils.dart';
 
-part 'artifacts_beta_true_part1.dart';
+part 'artifacts_beta_true_models.dart';

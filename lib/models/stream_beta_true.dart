@@ -6,7 +6,8 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta_managed_agents.dart';
 
-part 'stream_beta_true_part1.dart';
-part 'stream_beta_true_part2.dart';
-part 'stream_beta_true_part3.dart';
-part 'stream_beta_true_part4.dart';
+part 'stream_beta_true_shared.dart';
+part 'stream_beta_true_beta_managed_agents_stream_session_events.dart';
+part 'stream_beta_true_beta_managed_agents_stream_session_events_beta_managed_agents_user_tool_result_.dart';
+part 'stream_beta_true_beta_managed_agents_stream_session_thread_events.dart';
+part 'stream_beta_true_beta_managed_agents_stream_session_thread_events_beta_managed_agents_user_tool_.dart';

@@ -6,5 +6,10 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta_organization.dart';
 
-part 'shared_beta_user_part1.dart';
-part 'shared_beta_user_part2.dart';
+part 'shared_beta_user2.dart';
+part 'shared_beta_user_actor_schema.dart';
+part 'shared_beta_user_location.dart';
+part 'shared_beta_user_profile.dart';
+part 'shared_beta_user_profile_access_type.dart';
+part 'shared_beta_user_profile_trust_grant.dart';
+part 'shared_beta_user_scope.dart';

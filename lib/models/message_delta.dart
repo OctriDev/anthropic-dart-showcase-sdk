@@ -10,4 +10,4 @@ import 'shared_output.dart';
 import 'shared_refusal.dart';
 import 'shared_server.dart';
 
-part 'message_delta_part1.dart';
+part 'message_delta_models.dart';

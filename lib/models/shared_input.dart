@@ -15,4 +15,4 @@ import 'shared_request_text.dart';
 import 'shared_request_tool.dart';
 import 'shared_request_web.dart';
 
-part 'shared_input_part1.dart';
+part 'shared_input_models.dart';

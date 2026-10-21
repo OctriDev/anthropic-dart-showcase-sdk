@@ -9,5 +9,9 @@ import 'shared_beta_allowed.dart';
 import 'shared_beta_inference.dart';
 import 'shared_beta_workspace.dart';
 
-part 'workspaces_beta_true_part1.dart';
-part 'workspaces_beta_true_part2.dart';
+part 'workspaces_beta_true_create_beta_organizations_federation_rules_workspaces.dart';
+part 'workspaces_beta_true_create_beta_organizations_workspaces.dart';
+part 'workspaces_beta_true_shared.dart';
+part 'workspaces_beta_true_list_beta_organizations_federation_rules_workspaces.dart';
+part 'workspaces_beta_true_list_beta_organizations_workspaces.dart';
+part 'workspaces_beta_true_create_beta_organizations_service_accounts_workspaces.dart';

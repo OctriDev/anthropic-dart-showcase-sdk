@@ -8,4 +8,4 @@ import 'shared.dart';
 import 'shared_beta_allowed.dart';
 import 'shared_beta_cache.dart';
 
-part 'shared_beta_advisor_part1.dart';
+part 'shared_beta_advisor_models.dart';

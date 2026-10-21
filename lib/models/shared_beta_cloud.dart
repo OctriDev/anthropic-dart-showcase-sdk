@@ -8,4 +8,4 @@ import 'shared_beta.dart';
 import 'shared_beta_limited.dart';
 import 'shared_beta_packages.dart';
 
-part 'shared_beta_cloud_part1.dart';
+part 'shared_beta_cloud_models.dart';

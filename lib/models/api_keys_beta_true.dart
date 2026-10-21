@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_beta_api.dart';
 
-part 'api_keys_beta_true_part1.dart';
+part 'api_keys_beta_true_models.dart';

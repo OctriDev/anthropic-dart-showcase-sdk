@@ -9,4 +9,4 @@ import 'shared_beta_context.dart';
 import 'shared_beta_effort.dart';
 import 'shared_beta_thinking.dart';
 
-part 'shared_beta_model_part1.dart';
+part 'shared_beta_model_models.dart';

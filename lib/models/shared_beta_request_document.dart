@@ -11,4 +11,4 @@ import 'shared_beta_content.dart';
 import 'shared_beta_file.dart';
 import 'shared_beta_request.dart';
 
-part 'shared_beta_request_document_part1.dart';
+part 'shared_beta_request_document_models.dart';

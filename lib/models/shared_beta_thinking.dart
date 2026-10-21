@@ -6,5 +6,14 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta.dart';
 
-part 'shared_beta_thinking_part1.dart';
-part 'shared_beta_thinking_part2.dart';
+part 'shared_beta_thinking_block_binding.dart';
+part 'shared_beta_thinking_capability.dart';
+part 'shared_beta_thinking_config_adaptive.dart';
+part 'shared_beta_thinking_config_disabled.dart';
+part 'shared_beta_thinking_config_enabled.dart';
+part 'shared_beta_thinking_config_param.dart';
+part 'shared_beta_thinking_display_mode.dart';
+part 'shared_beta_thinking_dropped_input_transformation.dart';
+part 'shared_beta_thinking_prefix_mismatch_behavior.dart';
+part 'shared_beta_thinking_turns.dart';
+part 'shared_beta_thinking_types.dart';

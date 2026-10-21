@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta.dart';
 
-part 'shared_beta_dreaming_part1.dart';
+part 'shared_beta_dreaming_models.dart';

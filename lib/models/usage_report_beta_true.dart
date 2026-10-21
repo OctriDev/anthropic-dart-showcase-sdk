@@ -9,4 +9,4 @@ import 'shared_beta_cache.dart';
 import 'shared_beta_inference.dart';
 import 'shared_beta_server.dart';
 
-part 'usage_report_beta_true_part1.dart';
+part 'usage_report_beta_true_models.dart';

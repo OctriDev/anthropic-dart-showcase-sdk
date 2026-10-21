@@ -8,4 +8,4 @@ import 'shared_beta_cache.dart';
 import 'shared_beta_code.dart';
 import 'shared_beta_request.dart';
 
-part 'shared_beta_request_code_part1.dart';
+part 'shared_beta_request_code_models.dart';

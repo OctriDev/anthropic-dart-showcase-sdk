@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta_workspace.dart';
 
-part 'members_part1.dart';
+part 'members_models.dart';

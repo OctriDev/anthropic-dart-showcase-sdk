@@ -8,4 +8,4 @@ import 'shared.dart';
 import 'shared_base64.dart';
 import 'shared_response.dart';
 
-part 'shared_response_document_part1.dart';
+part 'shared_response_document_models.dart';

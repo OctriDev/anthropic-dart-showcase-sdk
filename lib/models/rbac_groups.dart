@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'rbac_groups_part1.dart';
+part 'rbac_groups_models.dart';

@@ -12,4 +12,4 @@ import 'shared_beta_message.dart';
 import 'shared_beta_output.dart';
 import 'shared_beta_server.dart';
 
-part 'shared_beta_usage_part1.dart';
+part 'shared_beta_usage_models.dart';

@@ -55,10 +55,10 @@ import 'package:octridev_anthropic/methods/beta_agents_versions.dart' as sdk_met
 import 'package:octridev_anthropic/methods/beta_deployment_runs.dart' as sdk_methods_46;
 import 'package:octridev_anthropic/methods/beta_memory_stores_memory_versions.dart' as sdk_methods_47;
 import 'package:octridev_anthropic/methods/beta_models.dart' as sdk_methods_48;
-import 'package:octridev_anthropic/methods/beta_organizations_analytics_apps_chat_projects.dart' as sdk_methods_49;
-import 'package:octridev_anthropic/methods/beta_organizations_analytics_artifacts.dart' as sdk_methods_50;
-import 'package:octridev_anthropic/methods/beta_organizations_analytics_connectors.dart' as sdk_methods_51;
-import 'package:octridev_anthropic/methods/beta_organizations_analytics_plugins.dart' as sdk_methods_52;
+import 'package:octridev_anthropic/methods/beta_organizations_analytics_plugins.dart' as sdk_methods_49;
+import 'package:octridev_anthropic/methods/beta_organizations_analytics_apps_chat_projects.dart' as sdk_methods_50;
+import 'package:octridev_anthropic/methods/beta_organizations_analytics_artifacts.dart' as sdk_methods_51;
+import 'package:octridev_anthropic/methods/beta_organizations_analytics_connectors.dart' as sdk_methods_52;
 import 'package:octridev_anthropic/methods/beta_organizations_analytics_skills.dart' as sdk_methods_53;
 import 'package:octridev_anthropic/methods/beta_organizations_analytics_summaries.dart' as sdk_methods_54;
 import 'package:octridev_anthropic/methods/beta_organizations_analytics_users.dart' as sdk_methods_55;
@@ -4616,8 +4616,58 @@ void main() {
       );
     });
 
+    test("listBetaOrganizationAnalyticsPlugins reaches the mock and decodes its response", () async {
+      final actual = await sdk_methods_49.listBetaOrganizationAnalyticsPlugins(
+        config,
+        date: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
+        startingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
+        endingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
+        limit: SdkPresent<int?>((jsonDecode("1") as num).toInt()),
+        page: SdkPresent<String?>((jsonDecode("\"page\"") as String)),
+        groupBy: SdkPresent<List<ListBetaOrganizationAnalyticsPluginsGroupByItem>?>((jsonDecode("[\"product\"]") as List).map((element) => ListBetaOrganizationAnalyticsPluginsGroupByItem.fromJson(element as String)).toList()),
+        filter: SdkPresent<List<String>?>((jsonDecode("[\"filter[]\"]") as List).map((element) => (element as String)).toList()),
+        orderBy: SdkPresent<String?>((jsonDecode("\"order_by\"") as String)),
+        order: SdkPresent<String?>((jsonDecode("\"asc\"") as String)),
+      );
+      expect(
+        mismatch(
+          normal(actual),
+          SdkUtils.decodeJson("{\"data\":[{\"claude_code_metrics\":{\"distinct_session_plugin_used_count\":1},\"cowork_metrics\":{\"distinct_session_plugin_used_count\":1},\"distinct_user_count\":1,\"install_count\":1,\"invocation_count\":1,\"plugin_id\":\"plugin-1\",\"plugin_name\":\"Example Name\",\"product\":\"product\",\"rbac_group_id\":\"rbac_group-1\",\"rbac_group_name\":\"Example Name\",\"user_id\":\"user-1\"}],\"next_page\":\"next_page\"}"),
+        ),
+        isNull,
+      );
+    });
+
+    test("listBetaOrganizationAnalyticsPlugins answers 400 with its declared error body", () async {
+      SdkConfig.getConfig().baseUrl = '$baseUrl/__mockStatus/400';
+      addTearDown(() => SdkConfig.getConfig().baseUrl = baseUrl);
+      final SdkHttpError error;
+      try {
+        await sdk_methods_49.listBetaOrganizationAnalyticsPlugins(
+        config,
+        date: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
+        startingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
+        endingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
+        limit: SdkPresent<int?>((jsonDecode("1") as num).toInt()),
+        page: SdkPresent<String?>((jsonDecode("\"page\"") as String)),
+        groupBy: SdkPresent<List<ListBetaOrganizationAnalyticsPluginsGroupByItem>?>((jsonDecode("[\"product\"]") as List).map((element) => ListBetaOrganizationAnalyticsPluginsGroupByItem.fromJson(element as String)).toList()),
+        filter: SdkPresent<List<String>?>((jsonDecode("[\"filter[]\"]") as List).map((element) => (element as String)).toList()),
+        orderBy: SdkPresent<String?>((jsonDecode("\"order_by\"") as String)),
+        order: SdkPresent<String?>((jsonDecode("\"asc\"") as String)),
+      );
+        fail('did not raise its declared error');
+      } on SdkHttpError catch (caught) {
+        error = caught;
+      }
+      expect(error.statusCode, 400);
+      expect(
+        mismatch(normal(error.data), SdkUtils.decodeJson("{\"error\":{\"message\":\"Invalid request\",\"type\":\"invalid_request_error\"},\"request_id\":null,\"type\":\"error\"}")),
+        isNull,
+      );
+    });
+
     test("listBetaOrganizationsAnalyticsAppsChatProjects reaches the mock and decodes its response", () async {
-      final actual = await sdk_methods_49.listBetaOrganizationsAnalyticsAppsChatProjects(
+      final actual = await sdk_methods_50.listBetaOrganizationsAnalyticsAppsChatProjects(
         config,
         date: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
         startingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
@@ -4643,7 +4693,7 @@ void main() {
       addTearDown(() => SdkConfig.getConfig().baseUrl = baseUrl);
       final SdkHttpError error;
       try {
-        await sdk_methods_49.listBetaOrganizationsAnalyticsAppsChatProjects(
+        await sdk_methods_50.listBetaOrganizationsAnalyticsAppsChatProjects(
         config,
         date: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
         startingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
@@ -4667,7 +4717,7 @@ void main() {
     });
 
     test("listBetaOrganizationsAnalyticsArtifacts reaches the mock and decodes its response", () async {
-      final actual = await sdk_methods_50.listBetaOrganizationsAnalyticsArtifacts(
+      final actual = await sdk_methods_51.listBetaOrganizationsAnalyticsArtifacts(
         config,
         date: (jsonDecode("\"2024-01-01\"") as String),
         limit: SdkPresent<int?>((jsonDecode("1") as num).toInt()),
@@ -4689,7 +4739,7 @@ void main() {
       addTearDown(() => SdkConfig.getConfig().baseUrl = baseUrl);
       final SdkHttpError error;
       try {
-        await sdk_methods_50.listBetaOrganizationsAnalyticsArtifacts(
+        await sdk_methods_51.listBetaOrganizationsAnalyticsArtifacts(
         config,
         date: (jsonDecode("\"2024-01-01\"") as String),
         limit: SdkPresent<int?>((jsonDecode("1") as num).toInt()),
@@ -4709,7 +4759,7 @@ void main() {
     });
 
     test("listBetaOrganizationsAnalyticsConnectors reaches the mock and decodes its response", () async {
-      final actual = await sdk_methods_51.listBetaOrganizationsAnalyticsConnectors(
+      final actual = await sdk_methods_52.listBetaOrganizationsAnalyticsConnectors(
         config,
         date: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
         startingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
@@ -4735,7 +4785,7 @@ void main() {
       addTearDown(() => SdkConfig.getConfig().baseUrl = baseUrl);
       final SdkHttpError error;
       try {
-        await sdk_methods_51.listBetaOrganizationsAnalyticsConnectors(
+        await sdk_methods_52.listBetaOrganizationsAnalyticsConnectors(
         config,
         date: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
         startingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
@@ -4743,56 +4793,6 @@ void main() {
         limit: SdkPresent<int?>((jsonDecode("1") as num).toInt()),
         page: SdkPresent<String?>((jsonDecode("\"page\"") as String)),
         groupBy: SdkPresent<List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>((jsonDecode("[\"product\"]") as List).map((element) => ListBetaOrganizationsAnalyticsConnectorsGroupByItem.fromJson(element as String)).toList()),
-        filter: SdkPresent<List<String>?>((jsonDecode("[\"filter[]\"]") as List).map((element) => (element as String)).toList()),
-        orderBy: SdkPresent<String?>((jsonDecode("\"order_by\"") as String)),
-        order: SdkPresent<String?>((jsonDecode("\"asc\"") as String)),
-      );
-        fail('did not raise its declared error');
-      } on SdkHttpError catch (caught) {
-        error = caught;
-      }
-      expect(error.statusCode, 400);
-      expect(
-        mismatch(normal(error.data), SdkUtils.decodeJson("{\"error\":{\"message\":\"Invalid request\",\"type\":\"invalid_request_error\"},\"request_id\":null,\"type\":\"error\"}")),
-        isNull,
-      );
-    });
-
-    test("listBetaOrganizationsAnalyticsPlugins reaches the mock and decodes its response", () async {
-      final actual = await sdk_methods_52.listBetaOrganizationsAnalyticsPlugins(
-        config,
-        date: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
-        startingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
-        endingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
-        limit: SdkPresent<int?>((jsonDecode("1") as num).toInt()),
-        page: SdkPresent<String?>((jsonDecode("\"page\"") as String)),
-        groupBy: SdkPresent<List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?>((jsonDecode("[\"product\"]") as List).map((element) => ListBetaOrganizationsAnalyticsPluginsGroupByItem.fromJson(element as String)).toList()),
-        filter: SdkPresent<List<String>?>((jsonDecode("[\"filter[]\"]") as List).map((element) => (element as String)).toList()),
-        orderBy: SdkPresent<String?>((jsonDecode("\"order_by\"") as String)),
-        order: SdkPresent<String?>((jsonDecode("\"asc\"") as String)),
-      );
-      expect(
-        mismatch(
-          normal(actual),
-          SdkUtils.decodeJson("{\"data\":[{\"claude_code_metrics\":{\"distinct_session_plugin_used_count\":1},\"cowork_metrics\":{\"distinct_session_plugin_used_count\":1},\"distinct_user_count\":1,\"install_count\":1,\"invocation_count\":1,\"plugin_id\":\"plugin-1\",\"plugin_name\":\"Example Name\",\"product\":\"product\",\"rbac_group_id\":\"rbac_group-1\",\"rbac_group_name\":\"Example Name\",\"user_id\":\"user-1\"}],\"next_page\":\"next_page\"}"),
-        ),
-        isNull,
-      );
-    });
-
-    test("listBetaOrganizationsAnalyticsPlugins answers 400 with its declared error body", () async {
-      SdkConfig.getConfig().baseUrl = '$baseUrl/__mockStatus/400';
-      addTearDown(() => SdkConfig.getConfig().baseUrl = baseUrl);
-      final SdkHttpError error;
-      try {
-        await sdk_methods_52.listBetaOrganizationsAnalyticsPlugins(
-        config,
-        date: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
-        startingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
-        endingDate: SdkPresent<String?>((jsonDecode("\"2024-01-01\"") as String)),
-        limit: SdkPresent<int?>((jsonDecode("1") as num).toInt()),
-        page: SdkPresent<String?>((jsonDecode("\"page\"") as String)),
-        groupBy: SdkPresent<List<ListBetaOrganizationsAnalyticsPluginsGroupByItem>?>((jsonDecode("[\"product\"]") as List).map((element) => ListBetaOrganizationsAnalyticsPluginsGroupByItem.fromJson(element as String)).toList()),
         filter: SdkPresent<List<String>?>((jsonDecode("[\"filter[]\"]") as List).map((element) => (element as String)).toList()),
         orderBy: SdkPresent<String?>((jsonDecode("\"order_by\"") as String)),
         order: SdkPresent<String?>((jsonDecode("\"asc\"") as String)),

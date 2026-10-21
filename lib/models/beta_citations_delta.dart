@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared_beta_response.dart';
 import 'shared_beta_response_web.dart';
 
-part 'beta_citations_delta_part1.dart';
+part 'beta_citations_delta_models.dart';

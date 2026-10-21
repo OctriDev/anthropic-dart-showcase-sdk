@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'beta_webhook_beta_webhook_memory_part1.dart';
+part 'beta_webhook_beta_webhook_memory_models.dart';

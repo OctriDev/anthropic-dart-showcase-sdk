@@ -11,5 +11,6 @@ import 'beta_webhook_beta_webhook_session.dart';
 import 'beta_webhook_beta_webhook_vault.dart';
 import 'inline.dart';
 
-part 'beta_webhook_beta_webhook_event_part1.dart';
-part 'beta_webhook_beta_webhook_event_part2.dart';
+part 'beta_webhook_beta_webhook_event2.dart';
+part 'beta_webhook_beta_webhook_event_data.dart';
+part 'beta_webhook_beta_webhook_event_data_beta_webhook_deployment_created_event_data.dart';

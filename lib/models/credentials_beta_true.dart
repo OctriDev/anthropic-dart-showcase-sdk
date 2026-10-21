@@ -6,5 +6,15 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_beta_managed_agents.dart';
 
-part 'credentials_beta_true_part1.dart';
-part 'credentials_beta_true_part2.dart';
+part 'credentials_beta_true_beta_managed_agents_create_credential_request_body.dart';
+part 'credentials_beta_true_beta_managed_agents_credential_create_auth.dart';
+part 'credentials_beta_true_beta_managed_agents_environment_variable_create_params.dart';
+part 'credentials_beta_true_beta_managed_agents_injection_location_params.dart';
+part 'credentials_beta_true_beta_managed_agents_mcp_oauth_create_params.dart';
+part 'credentials_beta_true_beta_managed_agents_mcp_oauth_refresh_params.dart';
+part 'credentials_beta_true_beta_managed_agents_mcp_oauth_refresh_params_token_endpoint_auth.dart';
+part 'credentials_beta_true_beta_managed_agents_static_bearer_create_params.dart';
+part 'credentials_beta_true_beta_managed_agents_token_endpoint_auth_basic_param.dart';
+part 'credentials_beta_true_beta_managed_agents_token_endpoint_auth_none_param.dart';
+part 'credentials_beta_true_beta_managed_agents_token_endpoint_auth_post_param.dart';
+part 'credentials_beta_true_list_beta_vaults_credentials.dart';
