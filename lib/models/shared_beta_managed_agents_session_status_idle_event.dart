@@ -8,37 +8,69 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionStatusIdleEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionStatusIdleEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Timestamp of status change.
   final String processedAt;
+
   /// Required object value serialized in the `stop_reason` wire field.
   final BetaManagedAgentsSessionStatusIdleEventStopReason stopReason;
 
-  const BetaManagedAgentsSessionStatusIdleEvent({required this.type_, required this.id, required this.processedAt, required this.stopReason});
+  const BetaManagedAgentsSessionStatusIdleEvent(
+      {required this.type_,
+      required this.id,
+      required this.processedAt,
+      required this.stopReason});
 
-  BetaManagedAgentsSessionStatusIdleEvent Function({BetaManagedAgentsSessionStatusIdleEventType type_, String id, String processedAt, BetaManagedAgentsSessionStatusIdleEventStopReason stopReason}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionStatusIdleEvent Function(
+          {BetaManagedAgentsSessionStatusIdleEventType type_,
+          String id,
+          String processedAt,
+          BetaManagedAgentsSessionStatusIdleEventStopReason stopReason})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionStatusIdleEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? stopReason = sdkOmittedValue}) => BetaManagedAgentsSessionStatusIdleEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionStatusIdleEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
-    stopReason: identical(stopReason, sdkOmittedValue) ? this.stopReason : stopReason as BetaManagedAgentsSessionStatusIdleEventStopReason,
-  );
+  BetaManagedAgentsSessionStatusIdleEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue,
+          Object? stopReason = sdkOmittedValue}) =>
+      BetaManagedAgentsSessionStatusIdleEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSessionStatusIdleEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as String,
+        stopReason: identical(stopReason, sdkOmittedValue)
+            ? this.stopReason
+            : stopReason as BetaManagedAgentsSessionStatusIdleEventStopReason,
+      );
 
-  factory BetaManagedAgentsSessionStatusIdleEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionStatusIdleEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsSessionStatusIdleEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    processedAt: (json['processed_at'] as String?)!,
-    stopReason: (json['stop_reason'] != null ? BetaManagedAgentsSessionStatusIdleEventStopReason.fromJson(json['stop_reason']) : null)!,
-  );
+  factory BetaManagedAgentsSessionStatusIdleEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSessionStatusIdleEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSessionStatusIdleEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        processedAt: (json['processed_at'] as String?)!,
+        stopReason: (json['stop_reason'] != null
+            ? BetaManagedAgentsSessionStatusIdleEventStopReason.fromJson(
+                json['stop_reason'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'processed_at': processedAt,
-    'stop_reason': stopReason.toJson(),
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'processed_at': processedAt,
+        'stop_reason': stopReason.toJson(),
+      };
 }

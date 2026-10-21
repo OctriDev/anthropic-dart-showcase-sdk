@@ -10,270 +10,506 @@ sealed class BetaManagedAgentsSkillParams {
   const BetaManagedAgentsSkillParams();
   factory BetaManagedAgentsSkillParams.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsAnthropicSkillParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsCustomSkillParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsAnthropicSkillParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsCustomSkillParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(BetaManagedAgentsAnthropicSkillParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(BetaManagedAgentsCustomSkillParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"anthropic", "custom"}.contains(json["type"])) { return UnknownBetaManagedAgentsSkillParams(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsSkillParams");
+    try {
+      return BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(
+          BetaManagedAgentsAnthropicSkillParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(
+          BetaManagedAgentsCustomSkillParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"anthropic", "custom"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsSkillParams(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsSkillParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams extends BetaManagedAgentsSkillParams {
+final class BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams
+    extends BetaManagedAgentsSkillParams {
   final BetaManagedAgentsAnthropicSkillParams value;
-  const BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSkillParamsBetaManagedAgentsAnthropicSkillParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams extends BetaManagedAgentsSkillParams {
+final class BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams
+    extends BetaManagedAgentsSkillParams {
   final BetaManagedAgentsCustomSkillParams value;
-  const BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSkillParamsBetaManagedAgentsCustomSkillParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSkillParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsSkillParams extends BetaManagedAgentsSkillParams {
+final class UnknownBetaManagedAgentsSkillParams
+    extends BetaManagedAgentsSkillParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSkillParams(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Emitted when a model request completes.
 class BetaManagedAgentsSpanModelRequestEndEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSpanModelRequestEndEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Timestamp when the model request completed.
   final String processedAt;
+
   /// Whether the model request resulted in an error.
   final bool? isError;
+
   /// Token usage for this model request.
   final BetaManagedAgentsSpanModelUsage modelUsage;
+
   /// The id of the corresponding `span.model_request_start` event.
   final String modelRequestStartId;
 
-  const BetaManagedAgentsSpanModelRequestEndEvent({required this.type_, required this.id, required this.processedAt, required this.isError, required this.modelUsage, required this.modelRequestStartId});
+  const BetaManagedAgentsSpanModelRequestEndEvent(
+      {required this.type_,
+      required this.id,
+      required this.processedAt,
+      required this.isError,
+      required this.modelUsage,
+      required this.modelRequestStartId});
 
-  BetaManagedAgentsSpanModelRequestEndEvent Function({BetaManagedAgentsSpanModelRequestEndEventType type_, String id, String processedAt, bool? isError, BetaManagedAgentsSpanModelUsage modelUsage, String modelRequestStartId}) get copyWith => _copyWith;
+  BetaManagedAgentsSpanModelRequestEndEvent Function(
+      {BetaManagedAgentsSpanModelRequestEndEventType type_,
+      String id,
+      String processedAt,
+      bool? isError,
+      BetaManagedAgentsSpanModelUsage modelUsage,
+      String modelRequestStartId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSpanModelRequestEndEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? isError = sdkOmittedValue, Object? modelUsage = sdkOmittedValue, Object? modelRequestStartId = sdkOmittedValue}) => BetaManagedAgentsSpanModelRequestEndEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSpanModelRequestEndEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
-    isError: identical(isError, sdkOmittedValue) ? this.isError : isError as bool?,
-    modelUsage: identical(modelUsage, sdkOmittedValue) ? this.modelUsage : modelUsage as BetaManagedAgentsSpanModelUsage,
-    modelRequestStartId: identical(modelRequestStartId, sdkOmittedValue) ? this.modelRequestStartId : modelRequestStartId as String,
-  );
+  BetaManagedAgentsSpanModelRequestEndEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue,
+          Object? isError = sdkOmittedValue,
+          Object? modelUsage = sdkOmittedValue,
+          Object? modelRequestStartId = sdkOmittedValue}) =>
+      BetaManagedAgentsSpanModelRequestEndEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSpanModelRequestEndEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as String,
+        isError: identical(isError, sdkOmittedValue)
+            ? this.isError
+            : isError as bool?,
+        modelUsage: identical(modelUsage, sdkOmittedValue)
+            ? this.modelUsage
+            : modelUsage as BetaManagedAgentsSpanModelUsage,
+        modelRequestStartId: identical(modelRequestStartId, sdkOmittedValue)
+            ? this.modelRequestStartId
+            : modelRequestStartId as String,
+      );
 
-  factory BetaManagedAgentsSpanModelRequestEndEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSpanModelRequestEndEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsSpanModelRequestEndEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    processedAt: (json['processed_at'] as String?)!,
-    isError: json.containsKey('is_error') ? json['is_error'] as bool? : throw ArgumentError.value(null, 'is_error', 'Required property is missing'),
-    modelUsage: (json['model_usage'] != null ? BetaManagedAgentsSpanModelUsage.fromJson(json['model_usage'] as Map<String, dynamic>) : null)!,
-    modelRequestStartId: (json['model_request_start_id'] as String?)!,
-  );
+  factory BetaManagedAgentsSpanModelRequestEndEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSpanModelRequestEndEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSpanModelRequestEndEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        processedAt: (json['processed_at'] as String?)!,
+        isError: json.containsKey('is_error')
+            ? json['is_error'] as bool?
+            : throw ArgumentError.value(
+                null, 'is_error', 'Required property is missing'),
+        modelUsage: (json['model_usage'] != null
+            ? BetaManagedAgentsSpanModelUsage.fromJson(
+                json['model_usage'] as Map<String, dynamic>)
+            : null)!,
+        modelRequestStartId: (json['model_request_start_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'processed_at': processedAt,
-    'is_error': isError,
-    'model_usage': modelUsage.toJson(),
-    'model_request_start_id': modelRequestStartId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'processed_at': processedAt,
+        'is_error': isError,
+        'model_usage': modelUsage.toJson(),
+        'model_request_start_id': modelRequestStartId,
+      };
 }
 
 /// Emitted when a model request is initiated by the agent.
 class BetaManagedAgentsSpanModelRequestStartEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSpanModelRequestStartEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Timestamp when the model request started.
   final String processedAt;
 
-  const BetaManagedAgentsSpanModelRequestStartEvent({required this.type_, required this.id, required this.processedAt});
+  const BetaManagedAgentsSpanModelRequestStartEvent(
+      {required this.type_, required this.id, required this.processedAt});
 
-  BetaManagedAgentsSpanModelRequestStartEvent Function({BetaManagedAgentsSpanModelRequestStartEventType type_, String id, String processedAt}) get copyWith => _copyWith;
+  BetaManagedAgentsSpanModelRequestStartEvent Function(
+      {BetaManagedAgentsSpanModelRequestStartEventType type_,
+      String id,
+      String processedAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSpanModelRequestStartEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue}) => BetaManagedAgentsSpanModelRequestStartEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSpanModelRequestStartEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
-  );
+  BetaManagedAgentsSpanModelRequestStartEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue}) =>
+      BetaManagedAgentsSpanModelRequestStartEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSpanModelRequestStartEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as String,
+      );
 
-  factory BetaManagedAgentsSpanModelRequestStartEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSpanModelRequestStartEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsSpanModelRequestStartEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    processedAt: (json['processed_at'] as String?)!,
-  );
+  factory BetaManagedAgentsSpanModelRequestStartEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSpanModelRequestStartEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSpanModelRequestStartEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        processedAt: (json['processed_at'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'processed_at': processedAt,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'processed_at': processedAt,
+      };
 }
 
 /// Token usage for a single model request.
 class BetaManagedAgentsSpanModelUsage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Input tokens consumed by this request.
   final int inputTokens;
+
   /// Output tokens generated by this request.
   final int outputTokens;
+
   /// Tokens used to create prompt cache in this request.
   final int cacheCreationInputTokens;
+
   /// Tokens read from prompt cache in this request.
   final int cacheReadInputTokens;
+
   /// Inference speed tier this request actually ran at. Mirrors `usage.speed` on /v1/messages. Only present when the fast-mode beta is active.
   final SdkOptional<BetaManagedAgentsSpeed?> speed;
 
-  const BetaManagedAgentsSpanModelUsage({required this.inputTokens, required this.outputTokens, required this.cacheCreationInputTokens, required this.cacheReadInputTokens, this.speed = const SdkOmitted()});
+  const BetaManagedAgentsSpanModelUsage(
+      {required this.inputTokens,
+      required this.outputTokens,
+      required this.cacheCreationInputTokens,
+      required this.cacheReadInputTokens,
+      this.speed = const SdkOmitted()});
 
-  BetaManagedAgentsSpanModelUsage Function({int inputTokens, int outputTokens, int cacheCreationInputTokens, int cacheReadInputTokens, SdkOptional<BetaManagedAgentsSpeed?> speed}) get copyWith => _copyWith;
+  BetaManagedAgentsSpanModelUsage Function(
+      {int inputTokens,
+      int outputTokens,
+      int cacheCreationInputTokens,
+      int cacheReadInputTokens,
+      SdkOptional<BetaManagedAgentsSpeed?> speed}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSpanModelUsage _copyWith({Object? inputTokens = sdkOmittedValue, Object? outputTokens = sdkOmittedValue, Object? cacheCreationInputTokens = sdkOmittedValue, Object? cacheReadInputTokens = sdkOmittedValue, Object? speed = sdkOmittedValue}) => BetaManagedAgentsSpanModelUsage(
-    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as int,
-    outputTokens: identical(outputTokens, sdkOmittedValue) ? this.outputTokens : outputTokens as int,
-    cacheCreationInputTokens: identical(cacheCreationInputTokens, sdkOmittedValue) ? this.cacheCreationInputTokens : cacheCreationInputTokens as int,
-    cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue) ? this.cacheReadInputTokens : cacheReadInputTokens as int,
-    speed: identical(speed, sdkOmittedValue) ? this.speed : speed as SdkOptional<BetaManagedAgentsSpeed?>,
-  );
+  BetaManagedAgentsSpanModelUsage _copyWith(
+          {Object? inputTokens = sdkOmittedValue,
+          Object? outputTokens = sdkOmittedValue,
+          Object? cacheCreationInputTokens = sdkOmittedValue,
+          Object? cacheReadInputTokens = sdkOmittedValue,
+          Object? speed = sdkOmittedValue}) =>
+      BetaManagedAgentsSpanModelUsage(
+        inputTokens: identical(inputTokens, sdkOmittedValue)
+            ? this.inputTokens
+            : inputTokens as int,
+        outputTokens: identical(outputTokens, sdkOmittedValue)
+            ? this.outputTokens
+            : outputTokens as int,
+        cacheCreationInputTokens:
+            identical(cacheCreationInputTokens, sdkOmittedValue)
+                ? this.cacheCreationInputTokens
+                : cacheCreationInputTokens as int,
+        cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue)
+            ? this.cacheReadInputTokens
+            : cacheReadInputTokens as int,
+        speed: identical(speed, sdkOmittedValue)
+            ? this.speed
+            : speed as SdkOptional<BetaManagedAgentsSpeed?>,
+      );
 
-  factory BetaManagedAgentsSpanModelUsage.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSpanModelUsage(
-    inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
-    outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
-    cacheCreationInputTokens: ((json['cache_creation_input_tokens'] as num?)?.toInt())!,
-    cacheReadInputTokens: ((json['cache_read_input_tokens'] as num?)?.toInt())!,
-    speed: json.containsKey('speed') ? SdkPresent(json['speed'] != null ? BetaManagedAgentsSpeed.fromJson(json['speed'] as String) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsSpanModelUsage.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsSpanModelUsage(
+        inputTokens: ((json['input_tokens'] as num?)?.toInt())!,
+        outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
+        cacheCreationInputTokens:
+            ((json['cache_creation_input_tokens'] as num?)?.toInt())!,
+        cacheReadInputTokens:
+            ((json['cache_read_input_tokens'] as num?)?.toInt())!,
+        speed: json.containsKey('speed')
+            ? SdkPresent(json['speed'] != null
+                ? BetaManagedAgentsSpeed.fromJson(json['speed'] as String)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'input_tokens': inputTokens,
-    'output_tokens': outputTokens,
-    'cache_creation_input_tokens': cacheCreationInputTokens,
-    'cache_read_input_tokens': cacheReadInputTokens,
-    ...switch (speed) {
-      SdkPresent<BetaManagedAgentsSpeed?>(value: final value) => {'speed': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'input_tokens': inputTokens,
+        'output_tokens': outputTokens,
+        'cache_creation_input_tokens': cacheCreationInputTokens,
+        'cache_read_input_tokens': cacheReadInputTokens,
+        ...switch (speed) {
+          SdkPresent<BetaManagedAgentsSpeed?>(value: final value) => {
+              'speed': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Emitted when an outcome evaluation cycle completes. Carries the verdict and aggregate token usage. A verdict of `needs_revision` means another evaluation cycle follows; `satisfied`, `max_iterations_reached`, `failed`, or `interrupted` are terminal — no further evaluation cycles follow.
 class BetaManagedAgentsSpanOutcomeEvaluationEndEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSpanOutcomeEvaluationEndEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Timestamp when outcome evaluation ended.
   final String processedAt;
+
   /// The id of the corresponding `span.outcome_evaluation_start` event.
   final String outcomeEvaluationStartId;
+
   /// 0-indexed revision cycle, matching the corresponding `span.outcome_evaluation_start`.
   final int iteration;
+
   /// Evaluation verdict. 'satisfied': criteria met, session goes idle. 'needs_revision': criteria not met, another revision cycle follows. 'max_iterations_reached': evaluation budget exhausted with criteria still unmet — one final acknowledgment turn follows before the session goes idle, but no further evaluation runs. 'failed': grader determined the rubric does not apply to the deliverables. 'interrupted': user sent an interrupt while evaluation was in progress.
   final String result;
+
   /// Human-readable explanation of the verdict. For `needs_revision`, describes which criteria failed and why.
   final String explanation;
+
   /// Aggregate token usage for this evaluation cycle. Sums across all grader model requests within the cycle.
   final BetaManagedAgentsSpanModelUsage usage;
+
   /// The `outc_` ID of the outcome being evaluated.
   final String outcomeId;
 
-  const BetaManagedAgentsSpanOutcomeEvaluationEndEvent({required this.type_, required this.id, required this.processedAt, required this.outcomeEvaluationStartId, required this.iteration, required this.result, required this.explanation, required this.usage, required this.outcomeId});
+  const BetaManagedAgentsSpanOutcomeEvaluationEndEvent(
+      {required this.type_,
+      required this.id,
+      required this.processedAt,
+      required this.outcomeEvaluationStartId,
+      required this.iteration,
+      required this.result,
+      required this.explanation,
+      required this.usage,
+      required this.outcomeId});
 
-  BetaManagedAgentsSpanOutcomeEvaluationEndEvent Function({BetaManagedAgentsSpanOutcomeEvaluationEndEventType type_, String id, String processedAt, String outcomeEvaluationStartId, int iteration, String result, String explanation, BetaManagedAgentsSpanModelUsage usage, String outcomeId}) get copyWith => _copyWith;
+  BetaManagedAgentsSpanOutcomeEvaluationEndEvent Function(
+      {BetaManagedAgentsSpanOutcomeEvaluationEndEventType type_,
+      String id,
+      String processedAt,
+      String outcomeEvaluationStartId,
+      int iteration,
+      String result,
+      String explanation,
+      BetaManagedAgentsSpanModelUsage usage,
+      String outcomeId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSpanOutcomeEvaluationEndEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? outcomeEvaluationStartId = sdkOmittedValue, Object? iteration = sdkOmittedValue, Object? result = sdkOmittedValue, Object? explanation = sdkOmittedValue, Object? usage = sdkOmittedValue, Object? outcomeId = sdkOmittedValue}) => BetaManagedAgentsSpanOutcomeEvaluationEndEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSpanOutcomeEvaluationEndEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
-    outcomeEvaluationStartId: identical(outcomeEvaluationStartId, sdkOmittedValue) ? this.outcomeEvaluationStartId : outcomeEvaluationStartId as String,
-    iteration: identical(iteration, sdkOmittedValue) ? this.iteration : iteration as int,
-    result: identical(result, sdkOmittedValue) ? this.result : result as String,
-    explanation: identical(explanation, sdkOmittedValue) ? this.explanation : explanation as String,
-    usage: identical(usage, sdkOmittedValue) ? this.usage : usage as BetaManagedAgentsSpanModelUsage,
-    outcomeId: identical(outcomeId, sdkOmittedValue) ? this.outcomeId : outcomeId as String,
-  );
+  BetaManagedAgentsSpanOutcomeEvaluationEndEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue,
+          Object? outcomeEvaluationStartId = sdkOmittedValue,
+          Object? iteration = sdkOmittedValue,
+          Object? result = sdkOmittedValue,
+          Object? explanation = sdkOmittedValue,
+          Object? usage = sdkOmittedValue,
+          Object? outcomeId = sdkOmittedValue}) =>
+      BetaManagedAgentsSpanOutcomeEvaluationEndEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSpanOutcomeEvaluationEndEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as String,
+        outcomeEvaluationStartId:
+            identical(outcomeEvaluationStartId, sdkOmittedValue)
+                ? this.outcomeEvaluationStartId
+                : outcomeEvaluationStartId as String,
+        iteration: identical(iteration, sdkOmittedValue)
+            ? this.iteration
+            : iteration as int,
+        result:
+            identical(result, sdkOmittedValue) ? this.result : result as String,
+        explanation: identical(explanation, sdkOmittedValue)
+            ? this.explanation
+            : explanation as String,
+        usage: identical(usage, sdkOmittedValue)
+            ? this.usage
+            : usage as BetaManagedAgentsSpanModelUsage,
+        outcomeId: identical(outcomeId, sdkOmittedValue)
+            ? this.outcomeId
+            : outcomeId as String,
+      );
 
-  factory BetaManagedAgentsSpanOutcomeEvaluationEndEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSpanOutcomeEvaluationEndEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsSpanOutcomeEvaluationEndEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    processedAt: (json['processed_at'] as String?)!,
-    outcomeEvaluationStartId: (json['outcome_evaluation_start_id'] as String?)!,
-    iteration: ((json['iteration'] as num?)?.toInt())!,
-    result: (json['result'] as String?)!,
-    explanation: (json['explanation'] as String?)!,
-    usage: (json['usage'] != null ? BetaManagedAgentsSpanModelUsage.fromJson(json['usage'] as Map<String, dynamic>) : null)!,
-    outcomeId: (json['outcome_id'] as String?)!,
-  );
+  factory BetaManagedAgentsSpanOutcomeEvaluationEndEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSpanOutcomeEvaluationEndEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSpanOutcomeEvaluationEndEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        processedAt: (json['processed_at'] as String?)!,
+        outcomeEvaluationStartId:
+            (json['outcome_evaluation_start_id'] as String?)!,
+        iteration: ((json['iteration'] as num?)?.toInt())!,
+        result: (json['result'] as String?)!,
+        explanation: (json['explanation'] as String?)!,
+        usage: (json['usage'] != null
+            ? BetaManagedAgentsSpanModelUsage.fromJson(
+                json['usage'] as Map<String, dynamic>)
+            : null)!,
+        outcomeId: (json['outcome_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'processed_at': processedAt,
-    'outcome_evaluation_start_id': outcomeEvaluationStartId,
-    'iteration': iteration,
-    'result': result,
-    'explanation': explanation,
-    'usage': usage.toJson(),
-    'outcome_id': outcomeId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'processed_at': processedAt,
+        'outcome_evaluation_start_id': outcomeEvaluationStartId,
+        'iteration': iteration,
+        'result': result,
+        'explanation': explanation,
+        'usage': usage.toJson(),
+        'outcome_id': outcomeId,
+      };
 }
 
 /// Periodic heartbeat emitted while an outcome evaluation cycle is in progress. Distinguishes 'evaluation is actively running' from 'evaluation is stuck' between the corresponding `span.outcome_evaluation_start` and `span.outcome_evaluation_end` events.
 class BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Timestamp when this heartbeat was emitted.
   final String processedAt;
+
   /// 0-indexed revision cycle, matching the corresponding `span.outcome_evaluation_start`.
   final int iteration;
+
   /// The `outc_` ID of the outcome being evaluated.
   final String outcomeId;
 
-  const BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent({required this.type_, required this.id, required this.processedAt, required this.iteration, required this.outcomeId});
+  const BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent(
+      {required this.type_,
+      required this.id,
+      required this.processedAt,
+      required this.iteration,
+      required this.outcomeId});
 
-  BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent Function({BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType type_, String id, String processedAt, int iteration, String outcomeId}) get copyWith => _copyWith;
+  BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent Function(
+      {BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType type_,
+      String id,
+      String processedAt,
+      int iteration,
+      String outcomeId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? iteration = sdkOmittedValue, Object? outcomeId = sdkOmittedValue}) => BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
-    iteration: identical(iteration, sdkOmittedValue) ? this.iteration : iteration as int,
-    outcomeId: identical(outcomeId, sdkOmittedValue) ? this.outcomeId : outcomeId as String,
-  );
+  BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue,
+          Object? iteration = sdkOmittedValue,
+          Object? outcomeId = sdkOmittedValue}) =>
+      BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as String,
+        iteration: identical(iteration, sdkOmittedValue)
+            ? this.iteration
+            : iteration as int,
+        outcomeId: identical(outcomeId, sdkOmittedValue)
+            ? this.outcomeId
+            : outcomeId as String,
+      );
 
-  factory BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    processedAt: (json['processed_at'] as String?)!,
-    iteration: ((json['iteration'] as num?)?.toInt())!,
-    outcomeId: (json['outcome_id'] as String?)!,
-  );
+  factory BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        processedAt: (json['processed_at'] as String?)!,
+        iteration: ((json['iteration'] as num?)?.toInt())!,
+        outcomeId: (json['outcome_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'processed_at': processedAt,
-    'iteration': iteration,
-    'outcome_id': outcomeId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'processed_at': processedAt,
+        'iteration': iteration,
+        'outcome_id': outcomeId,
+      };
 }

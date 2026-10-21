@@ -6,203 +6,350 @@ part of 'mcp_oauth_validate_beta_true.dart';
 // mcp_oauth_validate_beta_true domain models
 /// Outcome of a refresh-token exchange attempted during credential validation.
 final class BetaManagedAgentsCredentialRefreshStatus {
-
   final String value;
 
   const BetaManagedAgentsCredentialRefreshStatus._(this.value);
 
-  factory BetaManagedAgentsCredentialRefreshStatus.fromJson(String value) => BetaManagedAgentsCredentialRefreshStatus._(value);
+  factory BetaManagedAgentsCredentialRefreshStatus.fromJson(String value) =>
+      BetaManagedAgentsCredentialRefreshStatus._(value);
 
-  static const succeeded = BetaManagedAgentsCredentialRefreshStatus._('succeeded');
+  static const succeeded =
+      BetaManagedAgentsCredentialRefreshStatus._('succeeded');
   static const failed = BetaManagedAgentsCredentialRefreshStatus._('failed');
-  static const connectError = BetaManagedAgentsCredentialRefreshStatus._('connect_error');
-  static const noRefreshToken = BetaManagedAgentsCredentialRefreshStatus._('no_refresh_token');
+  static const connectError =
+      BetaManagedAgentsCredentialRefreshStatus._('connect_error');
+  static const noRefreshToken =
+      BetaManagedAgentsCredentialRefreshStatus._('no_refresh_token');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsCredentialRefreshStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsCredentialRefreshStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Result of live-probing a credential against its configured MCP server.
 class BetaManagedAgentsCredentialValidation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsCredentialValidationType type_;
+
   /// Unique identifier of the credential that was validated.
   final String credentialId;
+
   /// Identifier of the vault containing the credential.
   final String vaultId;
+
   /// Overall verdict of the validation probe.
   final BetaManagedAgentsCredentialValidationStatus status;
+
   /// When the validation probe was performed.
   final String validatedAt;
+
   /// Whether the credential has a refresh token configured.
   final bool hasRefreshToken;
+
   /// Details of the failing MCP probe step. Null when the probe succeeded.
   final BetaManagedAgentsMcpProbe? mcpProbe;
+
   /// Details of the refresh-token exchange attempted on a 401. Null when no refresh was attempted.
   final BetaManagedAgentsRefreshObject? refresh;
 
-  const BetaManagedAgentsCredentialValidation({required this.type_, required this.credentialId, required this.vaultId, required this.status, required this.validatedAt, required this.hasRefreshToken, required this.mcpProbe, required this.refresh});
+  const BetaManagedAgentsCredentialValidation(
+      {required this.type_,
+      required this.credentialId,
+      required this.vaultId,
+      required this.status,
+      required this.validatedAt,
+      required this.hasRefreshToken,
+      required this.mcpProbe,
+      required this.refresh});
 
-  BetaManagedAgentsCredentialValidation Function({BetaManagedAgentsCredentialValidationType type_, String credentialId, String vaultId, BetaManagedAgentsCredentialValidationStatus status, String validatedAt, bool hasRefreshToken, BetaManagedAgentsMcpProbe? mcpProbe, BetaManagedAgentsRefreshObject? refresh}) get copyWith => _copyWith;
+  BetaManagedAgentsCredentialValidation Function(
+      {BetaManagedAgentsCredentialValidationType type_,
+      String credentialId,
+      String vaultId,
+      BetaManagedAgentsCredentialValidationStatus status,
+      String validatedAt,
+      bool hasRefreshToken,
+      BetaManagedAgentsMcpProbe? mcpProbe,
+      BetaManagedAgentsRefreshObject? refresh}) get copyWith => _copyWith;
 
-  BetaManagedAgentsCredentialValidation _copyWith({Object? type_ = sdkOmittedValue, Object? credentialId = sdkOmittedValue, Object? vaultId = sdkOmittedValue, Object? status = sdkOmittedValue, Object? validatedAt = sdkOmittedValue, Object? hasRefreshToken = sdkOmittedValue, Object? mcpProbe = sdkOmittedValue, Object? refresh = sdkOmittedValue}) => BetaManagedAgentsCredentialValidation(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsCredentialValidationType,
-    credentialId: identical(credentialId, sdkOmittedValue) ? this.credentialId : credentialId as String,
-    vaultId: identical(vaultId, sdkOmittedValue) ? this.vaultId : vaultId as String,
-    status: identical(status, sdkOmittedValue) ? this.status : status as BetaManagedAgentsCredentialValidationStatus,
-    validatedAt: identical(validatedAt, sdkOmittedValue) ? this.validatedAt : validatedAt as String,
-    hasRefreshToken: identical(hasRefreshToken, sdkOmittedValue) ? this.hasRefreshToken : hasRefreshToken as bool,
-    mcpProbe: identical(mcpProbe, sdkOmittedValue) ? this.mcpProbe : mcpProbe as BetaManagedAgentsMcpProbe?,
-    refresh: identical(refresh, sdkOmittedValue) ? this.refresh : refresh as BetaManagedAgentsRefreshObject?,
-  );
+  BetaManagedAgentsCredentialValidation _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? credentialId = sdkOmittedValue,
+          Object? vaultId = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? validatedAt = sdkOmittedValue,
+          Object? hasRefreshToken = sdkOmittedValue,
+          Object? mcpProbe = sdkOmittedValue,
+          Object? refresh = sdkOmittedValue}) =>
+      BetaManagedAgentsCredentialValidation(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsCredentialValidationType,
+        credentialId: identical(credentialId, sdkOmittedValue)
+            ? this.credentialId
+            : credentialId as String,
+        vaultId: identical(vaultId, sdkOmittedValue)
+            ? this.vaultId
+            : vaultId as String,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as BetaManagedAgentsCredentialValidationStatus,
+        validatedAt: identical(validatedAt, sdkOmittedValue)
+            ? this.validatedAt
+            : validatedAt as String,
+        hasRefreshToken: identical(hasRefreshToken, sdkOmittedValue)
+            ? this.hasRefreshToken
+            : hasRefreshToken as bool,
+        mcpProbe: identical(mcpProbe, sdkOmittedValue)
+            ? this.mcpProbe
+            : mcpProbe as BetaManagedAgentsMcpProbe?,
+        refresh: identical(refresh, sdkOmittedValue)
+            ? this.refresh
+            : refresh as BetaManagedAgentsRefreshObject?,
+      );
 
-  factory BetaManagedAgentsCredentialValidation.fromJson(Map<String, dynamic> json) => BetaManagedAgentsCredentialValidation(
-    type_: (json['type'] != null ? BetaManagedAgentsCredentialValidationType.fromJson(json['type'] as String) : null)!,
-    credentialId: (json['credential_id'] as String?)!,
-    vaultId: (json['vault_id'] as String?)!,
-    status: (json['status'] != null ? BetaManagedAgentsCredentialValidationStatus.fromJson(json['status'] as String) : null)!,
-    validatedAt: (json['validated_at'] as String?)!,
-    hasRefreshToken: (json['has_refresh_token'] as bool?)!,
-    mcpProbe: json.containsKey('mcp_probe') ? json['mcp_probe'] != null ? BetaManagedAgentsMcpProbe.fromJson(json['mcp_probe'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'mcp_probe', 'Required property is missing'),
-    refresh: json.containsKey('refresh') ? json['refresh'] != null ? BetaManagedAgentsRefreshObject.fromJson(json['refresh'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'refresh', 'Required property is missing'),
-  );
+  factory BetaManagedAgentsCredentialValidation.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsCredentialValidation(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsCredentialValidationType.fromJson(
+                json['type'] as String)
+            : null)!,
+        credentialId: (json['credential_id'] as String?)!,
+        vaultId: (json['vault_id'] as String?)!,
+        status: (json['status'] != null
+            ? BetaManagedAgentsCredentialValidationStatus.fromJson(
+                json['status'] as String)
+            : null)!,
+        validatedAt: (json['validated_at'] as String?)!,
+        hasRefreshToken: (json['has_refresh_token'] as bool?)!,
+        mcpProbe: json.containsKey('mcp_probe')
+            ? json['mcp_probe'] != null
+                ? BetaManagedAgentsMcpProbe.fromJson(
+                    json['mcp_probe'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'mcp_probe', 'Required property is missing'),
+        refresh: json.containsKey('refresh')
+            ? json['refresh'] != null
+                ? BetaManagedAgentsRefreshObject.fromJson(
+                    json['refresh'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'refresh', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'credential_id': credentialId,
-    'vault_id': vaultId,
-    'status': status.toJson(),
-    'validated_at': validatedAt,
-    'has_refresh_token': hasRefreshToken,
-    'mcp_probe': mcpProbe?.toJson(),
-    'refresh': refresh?.toJson(),
-  };
+        'type': type_.toJson(),
+        'credential_id': credentialId,
+        'vault_id': vaultId,
+        'status': status.toJson(),
+        'validated_at': validatedAt,
+        'has_refresh_token': hasRefreshToken,
+        'mcp_probe': mcpProbe?.toJson(),
+        'refresh': refresh?.toJson(),
+      };
 }
 
 /// Overall verdict of a credential validation probe.
 final class BetaManagedAgentsCredentialValidationStatus {
-
   final String value;
 
   const BetaManagedAgentsCredentialValidationStatus._(this.value);
 
-  factory BetaManagedAgentsCredentialValidationStatus.fromJson(String value) => BetaManagedAgentsCredentialValidationStatus._(value);
+  factory BetaManagedAgentsCredentialValidationStatus.fromJson(String value) =>
+      BetaManagedAgentsCredentialValidationStatus._(value);
 
   static const valid = BetaManagedAgentsCredentialValidationStatus._('valid');
-  static const invalid = BetaManagedAgentsCredentialValidationStatus._('invalid');
-  static const unknown = BetaManagedAgentsCredentialValidationStatus._('unknown');
+  static const invalid =
+      BetaManagedAgentsCredentialValidationStatus._('invalid');
+  static const unknown =
+      BetaManagedAgentsCredentialValidationStatus._('unknown');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsCredentialValidationStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsCredentialValidationStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The failing step of an MCP validation probe.
 class BetaManagedAgentsMcpProbe {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The MCP method that failed (for example `initialize` or `tools/list`).
   final String method;
+
   /// The captured HTTP error response. Null when no HTTP response was received (timeout, DNS, TLS).
   final BetaManagedAgentsRefreshHttpResponse? httpResponse;
 
-  const BetaManagedAgentsMcpProbe({required this.method, required this.httpResponse});
+  const BetaManagedAgentsMcpProbe(
+      {required this.method, required this.httpResponse});
 
-  BetaManagedAgentsMcpProbe Function({String method, BetaManagedAgentsRefreshHttpResponse? httpResponse}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpProbe Function(
+          {String method, BetaManagedAgentsRefreshHttpResponse? httpResponse})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpProbe _copyWith({Object? method = sdkOmittedValue, Object? httpResponse = sdkOmittedValue}) => BetaManagedAgentsMcpProbe(
-    method: identical(method, sdkOmittedValue) ? this.method : method as String,
-    httpResponse: identical(httpResponse, sdkOmittedValue) ? this.httpResponse : httpResponse as BetaManagedAgentsRefreshHttpResponse?,
-  );
+  BetaManagedAgentsMcpProbe _copyWith(
+          {Object? method = sdkOmittedValue,
+          Object? httpResponse = sdkOmittedValue}) =>
+      BetaManagedAgentsMcpProbe(
+        method:
+            identical(method, sdkOmittedValue) ? this.method : method as String,
+        httpResponse: identical(httpResponse, sdkOmittedValue)
+            ? this.httpResponse
+            : httpResponse as BetaManagedAgentsRefreshHttpResponse?,
+      );
 
-  factory BetaManagedAgentsMcpProbe.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpProbe(
-    method: (json['method'] as String?)!,
-    httpResponse: json.containsKey('http_response') ? json['http_response'] != null ? BetaManagedAgentsRefreshHttpResponse.fromJson(json['http_response'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'http_response', 'Required property is missing'),
-  );
+  factory BetaManagedAgentsMcpProbe.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsMcpProbe(
+        method: (json['method'] as String?)!,
+        httpResponse: json.containsKey('http_response')
+            ? json['http_response'] != null
+                ? BetaManagedAgentsRefreshHttpResponse.fromJson(
+                    json['http_response'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'http_response', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'method': method,
-    'http_response': httpResponse?.toJson(),
-  };
+        'method': method,
+        'http_response': httpResponse?.toJson(),
+      };
 }
 
 /// An HTTP response captured during a credential validation probe.
 class BetaManagedAgentsRefreshHttpResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// HTTP status code.
   final int statusCode;
+
   /// Value of the `Content-Type` response header.
   final String contentType;
+
   /// Response body. May be truncated and has sensitive values scrubbed.
   final String body;
+
   /// Whether `body` was truncated.
   final bool bodyTruncated;
 
-  const BetaManagedAgentsRefreshHttpResponse({required this.statusCode, required this.contentType, required this.body, required this.bodyTruncated});
+  const BetaManagedAgentsRefreshHttpResponse(
+      {required this.statusCode,
+      required this.contentType,
+      required this.body,
+      required this.bodyTruncated});
 
-  BetaManagedAgentsRefreshHttpResponse Function({int statusCode, String contentType, String body, bool bodyTruncated}) get copyWith => _copyWith;
+  BetaManagedAgentsRefreshHttpResponse Function(
+      {int statusCode,
+      String contentType,
+      String body,
+      bool bodyTruncated}) get copyWith => _copyWith;
 
-  BetaManagedAgentsRefreshHttpResponse _copyWith({Object? statusCode = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? body = sdkOmittedValue, Object? bodyTruncated = sdkOmittedValue}) => BetaManagedAgentsRefreshHttpResponse(
-    statusCode: identical(statusCode, sdkOmittedValue) ? this.statusCode : statusCode as int,
-    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as String,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-    bodyTruncated: identical(bodyTruncated, sdkOmittedValue) ? this.bodyTruncated : bodyTruncated as bool,
-  );
+  BetaManagedAgentsRefreshHttpResponse _copyWith(
+          {Object? statusCode = sdkOmittedValue,
+          Object? contentType = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? bodyTruncated = sdkOmittedValue}) =>
+      BetaManagedAgentsRefreshHttpResponse(
+        statusCode: identical(statusCode, sdkOmittedValue)
+            ? this.statusCode
+            : statusCode as int,
+        contentType: identical(contentType, sdkOmittedValue)
+            ? this.contentType
+            : contentType as String,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+        bodyTruncated: identical(bodyTruncated, sdkOmittedValue)
+            ? this.bodyTruncated
+            : bodyTruncated as bool,
+      );
 
-  factory BetaManagedAgentsRefreshHttpResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsRefreshHttpResponse(
-    statusCode: ((json['status_code'] as num?)?.toInt())!,
-    contentType: (json['content_type'] as String?)!,
-    body: (json['body'] as String?)!,
-    bodyTruncated: (json['body_truncated'] as bool?)!,
-  );
+  factory BetaManagedAgentsRefreshHttpResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsRefreshHttpResponse(
+        statusCode: ((json['status_code'] as num?)?.toInt())!,
+        contentType: (json['content_type'] as String?)!,
+        body: (json['body'] as String?)!,
+        bodyTruncated: (json['body_truncated'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'status_code': statusCode,
-    'content_type': contentType,
-    'body': body,
-    'body_truncated': bodyTruncated,
-  };
+        'status_code': statusCode,
+        'content_type': contentType,
+        'body': body,
+        'body_truncated': bodyTruncated,
+      };
 }
 
 /// Outcome of a refresh-token exchange attempted during credential validation.
 class BetaManagedAgentsRefreshObject {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Outcome of the refresh attempt.
   final BetaManagedAgentsCredentialRefreshStatus status;
+
   /// The captured HTTP error response from the token endpoint. Populated only when `status` is `failed`.
   final BetaManagedAgentsRefreshHttpResponse? httpResponse;
 
-  const BetaManagedAgentsRefreshObject({required this.status, required this.httpResponse});
+  const BetaManagedAgentsRefreshObject(
+      {required this.status, required this.httpResponse});
 
-  BetaManagedAgentsRefreshObject Function({BetaManagedAgentsCredentialRefreshStatus status, BetaManagedAgentsRefreshHttpResponse? httpResponse}) get copyWith => _copyWith;
+  BetaManagedAgentsRefreshObject Function(
+          {BetaManagedAgentsCredentialRefreshStatus status,
+          BetaManagedAgentsRefreshHttpResponse? httpResponse})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsRefreshObject _copyWith({Object? status = sdkOmittedValue, Object? httpResponse = sdkOmittedValue}) => BetaManagedAgentsRefreshObject(
-    status: identical(status, sdkOmittedValue) ? this.status : status as BetaManagedAgentsCredentialRefreshStatus,
-    httpResponse: identical(httpResponse, sdkOmittedValue) ? this.httpResponse : httpResponse as BetaManagedAgentsRefreshHttpResponse?,
-  );
+  BetaManagedAgentsRefreshObject _copyWith(
+          {Object? status = sdkOmittedValue,
+          Object? httpResponse = sdkOmittedValue}) =>
+      BetaManagedAgentsRefreshObject(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as BetaManagedAgentsCredentialRefreshStatus,
+        httpResponse: identical(httpResponse, sdkOmittedValue)
+            ? this.httpResponse
+            : httpResponse as BetaManagedAgentsRefreshHttpResponse?,
+      );
 
-  factory BetaManagedAgentsRefreshObject.fromJson(Map<String, dynamic> json) => BetaManagedAgentsRefreshObject(
-    status: (json['status'] != null ? BetaManagedAgentsCredentialRefreshStatus.fromJson(json['status'] as String) : null)!,
-    httpResponse: json.containsKey('http_response') ? json['http_response'] != null ? BetaManagedAgentsRefreshHttpResponse.fromJson(json['http_response'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'http_response', 'Required property is missing'),
-  );
+  factory BetaManagedAgentsRefreshObject.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsRefreshObject(
+        status: (json['status'] != null
+            ? BetaManagedAgentsCredentialRefreshStatus.fromJson(
+                json['status'] as String)
+            : null)!,
+        httpResponse: json.containsKey('http_response')
+            ? json['http_response'] != null
+                ? BetaManagedAgentsRefreshHttpResponse.fromJson(
+                    json['http_response'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'http_response', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'status': status.toJson(),
-    'http_response': httpResponse?.toJson(),
-  };
+        'status': status.toJson(),
+        'http_response': httpResponse?.toJson(),
+      };
 }

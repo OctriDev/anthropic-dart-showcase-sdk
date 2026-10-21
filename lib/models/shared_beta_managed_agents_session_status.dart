@@ -6,12 +6,12 @@ part of 'shared_beta_managed_agents.dart';
 // shared_beta_managed_agents domain models
 /// SessionStatus enum
 final class BetaManagedAgentsSessionStatus {
-
   final String value;
 
   const BetaManagedAgentsSessionStatus._(this.value);
 
-  factory BetaManagedAgentsSessionStatus.fromJson(String value) => BetaManagedAgentsSessionStatus._(value);
+  factory BetaManagedAgentsSessionStatus.fromJson(String value) =>
+      BetaManagedAgentsSessionStatus._(value);
 
   static const rescheduling = BetaManagedAgentsSessionStatus._('rescheduling');
   static const running = BetaManagedAgentsSessionStatus._('running');
@@ -20,10 +20,13 @@ final class BetaManagedAgentsSessionStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsSessionStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsSessionStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

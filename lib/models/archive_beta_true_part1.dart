@@ -9,22 +9,35 @@ sealed class BetaManagedAgentsArchiveMemoryStoreResponse {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsArchiveMemoryStoreResponse();
   factory BetaManagedAgentsArchiveMemoryStoreResponse.fromJson(Object? json) {
-    try { return BetaManagedAgentsArchiveMemoryStoreResponseBetaManagedAgentsMemoryStore(BetaManagedAgentsMemoryStore.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"memory_store"}.contains(json["type"])) { return UnknownBetaManagedAgentsArchiveMemoryStoreResponse(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsArchiveMemoryStoreResponse");
+    try {
+      return BetaManagedAgentsArchiveMemoryStoreResponseBetaManagedAgentsMemoryStore(
+          BetaManagedAgentsMemoryStore.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"memory_store"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsArchiveMemoryStoreResponse(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsArchiveMemoryStoreResponse");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsArchiveMemoryStoreResponseBetaManagedAgentsMemoryStore extends BetaManagedAgentsArchiveMemoryStoreResponse {
+final class BetaManagedAgentsArchiveMemoryStoreResponseBetaManagedAgentsMemoryStore
+    extends BetaManagedAgentsArchiveMemoryStoreResponse {
   final BetaManagedAgentsMemoryStore value;
-  const BetaManagedAgentsArchiveMemoryStoreResponseBetaManagedAgentsMemoryStore(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsArchiveMemoryStoreResponseBetaManagedAgentsMemoryStore(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsArchiveMemoryStoreResponse] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsArchiveMemoryStoreResponse extends BetaManagedAgentsArchiveMemoryStoreResponse {
+final class UnknownBetaManagedAgentsArchiveMemoryStoreResponse
+    extends BetaManagedAgentsArchiveMemoryStoreResponse {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsArchiveMemoryStoreResponse(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

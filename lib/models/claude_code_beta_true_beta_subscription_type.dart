@@ -6,22 +6,25 @@ part of 'claude_code_beta_true.dart';
 // claude_code_beta_true domain models
 /// Typed representation of the `BetaSubscriptionType` API schema.
 final class BetaSubscriptionType {
-
   final String value;
 
   const BetaSubscriptionType._(this.value);
 
-  factory BetaSubscriptionType.fromJson(String value) => BetaSubscriptionType._(value);
+  factory BetaSubscriptionType.fromJson(String value) =>
+      BetaSubscriptionType._(value);
 
   static const enterprise = BetaSubscriptionType._('enterprise');
   static const team = BetaSubscriptionType._('team');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaSubscriptionType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaSubscriptionType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

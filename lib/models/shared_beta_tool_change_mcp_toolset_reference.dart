@@ -8,27 +8,44 @@ part of 'shared_beta_tool.dart';
 class BetaToolChangeMCPToolsetReference {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `server_name` wire field.
   final String serverName;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaToolChangeMCPToolsetReferenceType type_;
 
-  const BetaToolChangeMCPToolsetReference({required this.serverName, required this.type_});
+  const BetaToolChangeMCPToolsetReference(
+      {required this.serverName, required this.type_});
 
-  BetaToolChangeMCPToolsetReference Function({String serverName, BetaToolChangeMCPToolsetReferenceType type_}) get copyWith => _copyWith;
+  BetaToolChangeMCPToolsetReference Function(
+      {String serverName,
+      BetaToolChangeMCPToolsetReferenceType type_}) get copyWith => _copyWith;
 
-  BetaToolChangeMCPToolsetReference _copyWith({Object? serverName = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaToolChangeMCPToolsetReference(
-    serverName: identical(serverName, sdkOmittedValue) ? this.serverName : serverName as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaToolChangeMCPToolsetReferenceType,
-  );
+  BetaToolChangeMCPToolsetReference _copyWith(
+          {Object? serverName = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaToolChangeMCPToolsetReference(
+        serverName: identical(serverName, sdkOmittedValue)
+            ? this.serverName
+            : serverName as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaToolChangeMCPToolsetReferenceType,
+      );
 
-  factory BetaToolChangeMCPToolsetReference.fromJson(Map<String, dynamic> json) => BetaToolChangeMCPToolsetReference(
-    serverName: (json['server_name'] as String?)!,
-    type_: (json['type'] != null ? BetaToolChangeMCPToolsetReferenceType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaToolChangeMCPToolsetReference.fromJson(
+          Map<String, dynamic> json) =>
+      BetaToolChangeMCPToolsetReference(
+        serverName: (json['server_name'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaToolChangeMCPToolsetReferenceType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'server_name': serverName,
-    'type': type_.toJson(),
-  };
+        'server_name': serverName,
+        'type': type_.toJson(),
+      };
 }

@@ -6,12 +6,12 @@ part of 'shared_beta_managed_agents.dart';
 // shared_beta_managed_agents domain models
 /// AgentEvaluatedPermission enum
 final class BetaManagedAgentsAgentEvaluatedPermission {
-
   final String value;
 
   const BetaManagedAgentsAgentEvaluatedPermission._(this.value);
 
-  factory BetaManagedAgentsAgentEvaluatedPermission.fromJson(String value) => BetaManagedAgentsAgentEvaluatedPermission._(value);
+  factory BetaManagedAgentsAgentEvaluatedPermission.fromJson(String value) =>
+      BetaManagedAgentsAgentEvaluatedPermission._(value);
 
   static const allow = BetaManagedAgentsAgentEvaluatedPermission._('allow');
   static const ask = BetaManagedAgentsAgentEvaluatedPermission._('ask');
@@ -19,10 +19,14 @@ final class BetaManagedAgentsAgentEvaluatedPermission {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsAgentEvaluatedPermission && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsAgentEvaluatedPermission &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

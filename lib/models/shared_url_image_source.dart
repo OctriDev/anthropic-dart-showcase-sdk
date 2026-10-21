@@ -8,27 +8,36 @@ part of 'shared.dart';
 class URLImageSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final URLImageSourceType type_;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
   const URLImageSource({required this.type_, required this.url});
 
-  URLImageSource Function({URLImageSourceType type_, String url}) get copyWith => _copyWith;
+  URLImageSource Function({URLImageSourceType type_, String url})
+      get copyWith => _copyWith;
 
-  URLImageSource _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => URLImageSource(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as URLImageSourceType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  URLImageSource _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      URLImageSource(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as URLImageSourceType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
   factory URLImageSource.fromJson(Map<String, dynamic> json) => URLImageSource(
-    type_: (json['type'] != null ? URLImageSourceType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+        type_: (json['type'] != null
+            ? URLImageSourceType.fromJson(json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'type': type_.toJson(),
+        'url': url,
+      };
 }

@@ -8,112 +8,182 @@ part of 'skills_beta_true.dart';
 class BetaAnalyticsSkillOfficeProductMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Number of distinct Office Agent sessions in which the skill was used. A skill counts as used only when it is explicitly activated — the model (or the user, via the skill's slash command) invokes it, reading its instructions into context as part of that activation. Skills that are merely installed or listed as available, or whose content reaches the context without an activation (preloaded, hook-injected, or read as a plain file), are not counted. Approximate (HLL, typical error &lt;2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
   final int? distinctSessionSkillUsedCount;
 
-  const BetaAnalyticsSkillOfficeProductMetrics({required this.distinctSessionSkillUsedCount});
+  const BetaAnalyticsSkillOfficeProductMetrics(
+      {required this.distinctSessionSkillUsedCount});
 
-  BetaAnalyticsSkillOfficeProductMetrics Function({int? distinctSessionSkillUsedCount}) get copyWith => _copyWith;
+  BetaAnalyticsSkillOfficeProductMetrics Function(
+      {int? distinctSessionSkillUsedCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsSkillOfficeProductMetrics _copyWith({Object? distinctSessionSkillUsedCount = sdkOmittedValue}) => BetaAnalyticsSkillOfficeProductMetrics(
-    distinctSessionSkillUsedCount: identical(distinctSessionSkillUsedCount, sdkOmittedValue) ? this.distinctSessionSkillUsedCount : distinctSessionSkillUsedCount as int?,
-  );
+  BetaAnalyticsSkillOfficeProductMetrics _copyWith(
+          {Object? distinctSessionSkillUsedCount = sdkOmittedValue}) =>
+      BetaAnalyticsSkillOfficeProductMetrics(
+        distinctSessionSkillUsedCount:
+            identical(distinctSessionSkillUsedCount, sdkOmittedValue)
+                ? this.distinctSessionSkillUsedCount
+                : distinctSessionSkillUsedCount as int?,
+      );
 
-  factory BetaAnalyticsSkillOfficeProductMetrics.fromJson(Map<String, dynamic> json) => BetaAnalyticsSkillOfficeProductMetrics(
-    distinctSessionSkillUsedCount: json.containsKey('distinct_session_skill_used_count') ? (json['distinct_session_skill_used_count'] as num?)?.toInt() : throw ArgumentError.value(null, 'distinct_session_skill_used_count', 'Required property is missing'),
-  );
+  factory BetaAnalyticsSkillOfficeProductMetrics.fromJson(
+          Map<String, dynamic> json) =>
+      BetaAnalyticsSkillOfficeProductMetrics(
+        distinctSessionSkillUsedCount:
+            json.containsKey('distinct_session_skill_used_count')
+                ? (json['distinct_session_skill_used_count'] as num?)?.toInt()
+                : throw ArgumentError.value(
+                    null,
+                    'distinct_session_skill_used_count',
+                    'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'distinct_session_skill_used_count': distinctSessionSkillUsedCount,
-  };
+        'distinct_session_skill_used_count': distinctSessionSkillUsedCount,
+      };
 }
 
 /// Response for GET /v1/organizations/analytics/skills.
 class BetaAnalyticsSkillsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `data` wire field.
   final List<BetaAnalyticsSkillActivity> data;
+
   /// Opaque cursor for the next page, or null if no more results
   final String? nextPage;
 
-  const BetaAnalyticsSkillsResponse({required this.data, required this.nextPage});
+  const BetaAnalyticsSkillsResponse(
+      {required this.data, required this.nextPage});
 
-  BetaAnalyticsSkillsResponse Function({List<BetaAnalyticsSkillActivity> data, String? nextPage}) get copyWith => _copyWith;
+  BetaAnalyticsSkillsResponse Function(
+      {List<BetaAnalyticsSkillActivity> data,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaAnalyticsSkillsResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaAnalyticsSkillsResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaAnalyticsSkillActivity>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaAnalyticsSkillsResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaAnalyticsSkillsResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaAnalyticsSkillActivity>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaAnalyticsSkillsResponse.fromJson(Map<String, dynamic> json) => BetaAnalyticsSkillsResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaAnalyticsSkillActivity.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  );
+  factory BetaAnalyticsSkillsResponse.fromJson(Map<String, dynamic> json) =>
+      BetaAnalyticsSkillsResponse(
+        data: ((json['data'] as List?)
+            ?.map((e) =>
+                BetaAnalyticsSkillActivity.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        nextPage: json.containsKey('next_page')
+            ? json['next_page'] as String?
+            : throw ArgumentError.value(
+                null, 'next_page', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'next_page': nextPage,
+      };
 }
 
 /// Typed representation of the `BetaBody_create_skill_v1_skills_post` API schema.
 class BetaBodyCreateSkillV1SkillsPost {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Files to upload for the skill. All files must be in the same top-level directory and must include a SKILL.md file at the root of that directory.
   final List<List<int>> files;
+
   /// Human-readable, single-line label for the Skill. Maximum 255 characters. Always set: derived from the SKILL.md frontmatter `name` when omitted at creation. Not unique.
   final SdkOptional<String?> displayName;
 
-  const BetaBodyCreateSkillV1SkillsPost({required this.files, this.displayName = const SdkOmitted()});
+  const BetaBodyCreateSkillV1SkillsPost(
+      {required this.files, this.displayName = const SdkOmitted()});
 
-  BetaBodyCreateSkillV1SkillsPost Function({List<List<int>> files, SdkOptional<String?> displayName}) get copyWith => _copyWith;
+  BetaBodyCreateSkillV1SkillsPost Function(
+      {List<List<int>> files,
+      SdkOptional<String?> displayName}) get copyWith => _copyWith;
 
-  BetaBodyCreateSkillV1SkillsPost _copyWith({Object? files = sdkOmittedValue, Object? displayName = sdkOmittedValue}) => BetaBodyCreateSkillV1SkillsPost(
-    files: identical(files, sdkOmittedValue) ? this.files : files as List<List<int>>,
-    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as SdkOptional<String?>,
-  );
+  BetaBodyCreateSkillV1SkillsPost _copyWith(
+          {Object? files = sdkOmittedValue,
+          Object? displayName = sdkOmittedValue}) =>
+      BetaBodyCreateSkillV1SkillsPost(
+        files: identical(files, sdkOmittedValue)
+            ? this.files
+            : files as List<List<int>>,
+        displayName: identical(displayName, sdkOmittedValue)
+            ? this.displayName
+            : displayName as SdkOptional<String?>,
+      );
 
-  factory BetaBodyCreateSkillV1SkillsPost.fromJson(Map<String, dynamic> json) => BetaBodyCreateSkillV1SkillsPost(
-    files: ((json['files'] as List?)?.map((e) => base64Decode(e as String)).toList())!,
-    displayName: json.containsKey('display_name') ? SdkPresent(json['display_name'] as String?) : const SdkOmitted(),
-  );
+  factory BetaBodyCreateSkillV1SkillsPost.fromJson(Map<String, dynamic> json) =>
+      BetaBodyCreateSkillV1SkillsPost(
+        files: ((json['files'] as List?)
+            ?.map((e) => base64Decode(e as String))
+            .toList())!,
+        displayName: json.containsKey('display_name')
+            ? SdkPresent(json['display_name'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'files': files.map(base64Encode).toList(),
-    ...switch (displayName) {
-      SdkPresent<String?>(value: final value) => {'display_name': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'files': files.map(base64Encode).toList(),
+        ...switch (displayName) {
+          SdkPresent<String?>(value: final value) => {
+              'display_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `BetaListSkillsResponse` API schema.
 class BetaListSkillsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// List of skills.
   final List<BetaSkill> data;
+
   /// Token for fetching the next page of results. If `null`, there are no more results available. Pass this value to the `page` parameter in the next request to get the next page.
   final String? nextPage;
 
   const BetaListSkillsResponse({required this.data, required this.nextPage});
 
-  BetaListSkillsResponse Function({List<BetaSkill> data, String? nextPage}) get copyWith => _copyWith;
+  BetaListSkillsResponse Function({List<BetaSkill> data, String? nextPage})
+      get copyWith => _copyWith;
 
-  BetaListSkillsResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaListSkillsResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaSkill>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaListSkillsResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaListSkillsResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaSkill>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaListSkillsResponse.fromJson(Map<String, dynamic> json) => BetaListSkillsResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaSkill.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  );
+  factory BetaListSkillsResponse.fromJson(Map<String, dynamic> json) =>
+      BetaListSkillsResponse(
+        data: ((json['data'] as List?)
+            ?.map((e) => BetaSkill.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        nextPage: json.containsKey('next_page')
+            ? json['next_page'] as String?
+            : throw ArgumentError.value(
+                null, 'next_page', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'next_page': nextPage,
+      };
 }

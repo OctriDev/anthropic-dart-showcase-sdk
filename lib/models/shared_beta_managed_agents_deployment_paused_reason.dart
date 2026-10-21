@@ -10,32 +10,67 @@ sealed class BetaManagedAgentsDeploymentPausedReason {
   const BetaManagedAgentsDeploymentPausedReason();
   factory BetaManagedAgentsDeploymentPausedReason.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsManualDeploymentPausedReason.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsErrorDeploymentPausedReason.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(value); } } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsManualDeploymentPausedReason.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsErrorDeploymentPausedReason.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(BetaManagedAgentsManualDeploymentPausedReason.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(BetaManagedAgentsErrorDeploymentPausedReason.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"manual", "error"}.contains(json["type"])) { return UnknownBetaManagedAgentsDeploymentPausedReason(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsDeploymentPausedReason");
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(
+          BetaManagedAgentsManualDeploymentPausedReason.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(
+          BetaManagedAgentsErrorDeploymentPausedReason.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"manual", "error"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsDeploymentPausedReason(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsDeploymentPausedReason");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason extends BetaManagedAgentsDeploymentPausedReason {
+final class BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason
+    extends BetaManagedAgentsDeploymentPausedReason {
   final BetaManagedAgentsManualDeploymentPausedReason value;
-  const BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsManualDeploymentPausedReason(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason extends BetaManagedAgentsDeploymentPausedReason {
+final class BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason
+    extends BetaManagedAgentsDeploymentPausedReason {
   final BetaManagedAgentsErrorDeploymentPausedReason value;
-  const BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsDeploymentPausedReasonBetaManagedAgentsErrorDeploymentPausedReason(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsDeploymentPausedReason] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsDeploymentPausedReason extends BetaManagedAgentsDeploymentPausedReason {
+final class UnknownBetaManagedAgentsDeploymentPausedReason
+    extends BetaManagedAgentsDeploymentPausedReason {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsDeploymentPausedReason(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

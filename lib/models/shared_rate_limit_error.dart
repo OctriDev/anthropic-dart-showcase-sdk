@@ -8,27 +8,39 @@ part of 'shared.dart';
 class RateLimitError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final RateLimitErrorType type_;
 
   const RateLimitError({required this.message, required this.type_});
 
-  RateLimitError Function({String message, RateLimitErrorType type_}) get copyWith => _copyWith;
+  RateLimitError Function({String message, RateLimitErrorType type_})
+      get copyWith => _copyWith;
 
-  RateLimitError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RateLimitError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RateLimitErrorType,
-  );
+  RateLimitError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RateLimitError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RateLimitErrorType,
+      );
 
   factory RateLimitError.fromJson(Map<String, dynamic> json) => RateLimitError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? RateLimitErrorType.fromJson(json['type'] as String) : null)!,
-  );
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? RateLimitErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }

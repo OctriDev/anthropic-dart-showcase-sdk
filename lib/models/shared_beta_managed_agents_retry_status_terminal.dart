@@ -8,22 +8,34 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsRetryStatusTerminal {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsRetryStatusTerminalType type_;
 
   const BetaManagedAgentsRetryStatusTerminal({required this.type_});
 
-  BetaManagedAgentsRetryStatusTerminal Function({BetaManagedAgentsRetryStatusTerminalType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsRetryStatusTerminal Function(
+          {BetaManagedAgentsRetryStatusTerminalType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsRetryStatusTerminal _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsRetryStatusTerminal(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsRetryStatusTerminalType,
-  );
+  BetaManagedAgentsRetryStatusTerminal _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsRetryStatusTerminal(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsRetryStatusTerminalType,
+      );
 
-  factory BetaManagedAgentsRetryStatusTerminal.fromJson(Map<String, dynamic> json) => BetaManagedAgentsRetryStatusTerminal(
-    type_: (json['type'] != null ? BetaManagedAgentsRetryStatusTerminalType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsRetryStatusTerminal.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsRetryStatusTerminal(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsRetryStatusTerminalType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

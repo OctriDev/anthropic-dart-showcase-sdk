@@ -8,35 +8,66 @@ part of 'shared_beta_fallback.dart';
 class BetaFallbackCreditNotApplied {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Why the reprice was not applied. A closed enum; additions to the redemption-check vocabulary arrive as deliberate schema updates.
   final BetaFallbackCreditNotAppliedReason reason;
+
   /// Request fields to remove before retrying, so the retry can redeem this token. Present exactly when `reason` is `variant_fields_present` — never null, never an empty array; absent otherwise. Fields are named only from your own request, and only after the sealed variant hash matched. A served best-effort retry has already been billed at normal price; nothing redeems retroactively, but a corrected re-send inside the token's five-minute window can still redeem.
   final SdkOptional<List<String>?> removeToRedeem;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaFallbackCreditNotAppliedType type_;
 
-  const BetaFallbackCreditNotApplied({required this.reason, this.removeToRedeem = const SdkOmitted(), required this.type_});
+  const BetaFallbackCreditNotApplied(
+      {required this.reason,
+      this.removeToRedeem = const SdkOmitted(),
+      required this.type_});
 
-  BetaFallbackCreditNotApplied Function({BetaFallbackCreditNotAppliedReason reason, SdkOptional<List<String>?> removeToRedeem, BetaFallbackCreditNotAppliedType type_}) get copyWith => _copyWith;
+  BetaFallbackCreditNotApplied Function(
+      {BetaFallbackCreditNotAppliedReason reason,
+      SdkOptional<List<String>?> removeToRedeem,
+      BetaFallbackCreditNotAppliedType type_}) get copyWith => _copyWith;
 
-  BetaFallbackCreditNotApplied _copyWith({Object? reason = sdkOmittedValue, Object? removeToRedeem = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaFallbackCreditNotApplied(
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as BetaFallbackCreditNotAppliedReason,
-    removeToRedeem: identical(removeToRedeem, sdkOmittedValue) ? this.removeToRedeem : removeToRedeem as SdkOptional<List<String>?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaFallbackCreditNotAppliedType,
-  );
+  BetaFallbackCreditNotApplied _copyWith(
+          {Object? reason = sdkOmittedValue,
+          Object? removeToRedeem = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaFallbackCreditNotApplied(
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as BetaFallbackCreditNotAppliedReason,
+        removeToRedeem: identical(removeToRedeem, sdkOmittedValue)
+            ? this.removeToRedeem
+            : removeToRedeem as SdkOptional<List<String>?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaFallbackCreditNotAppliedType,
+      );
 
-  factory BetaFallbackCreditNotApplied.fromJson(Map<String, dynamic> json) => BetaFallbackCreditNotApplied(
-    reason: (json['reason'] != null ? BetaFallbackCreditNotAppliedReason.fromJson(json['reason'] as String) : null)!,
-    removeToRedeem: json.containsKey('remove_to_redeem') ? SdkPresent((json['remove_to_redeem'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaFallbackCreditNotAppliedType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaFallbackCreditNotApplied.fromJson(Map<String, dynamic> json) =>
+      BetaFallbackCreditNotApplied(
+        reason: (json['reason'] != null
+            ? BetaFallbackCreditNotAppliedReason.fromJson(
+                json['reason'] as String)
+            : null)!,
+        removeToRedeem: json.containsKey('remove_to_redeem')
+            ? SdkPresent((json['remove_to_redeem'] as List?)
+                ?.map((e) => e as String)
+                .toList())
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaFallbackCreditNotAppliedType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'reason': reason.toJson(),
-    ...switch (removeToRedeem) {
-      SdkPresent<List<String>?>(value: final value) => {'remove_to_redeem': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        'reason': reason.toJson(),
+        ...switch (removeToRedeem) {
+          SdkPresent<List<String>?>(value: final value) => {
+              'remove_to_redeem': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

@@ -8,203 +8,373 @@ part of 'shared_beta_request_bash.dart';
 class BetaRequestBashCodeExecutionOutputBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `file_id` wire field.
   final String fileId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestBashCodeExecutionOutputBlockType type_;
 
-  const BetaRequestBashCodeExecutionOutputBlock({required this.fileId, required this.type_});
+  const BetaRequestBashCodeExecutionOutputBlock(
+      {required this.fileId, required this.type_});
 
-  BetaRequestBashCodeExecutionOutputBlock Function({String fileId, BetaRequestBashCodeExecutionOutputBlockType type_}) get copyWith => _copyWith;
+  BetaRequestBashCodeExecutionOutputBlock Function(
+          {String fileId, BetaRequestBashCodeExecutionOutputBlockType type_})
+      get copyWith => _copyWith;
 
-  BetaRequestBashCodeExecutionOutputBlock _copyWith({Object? fileId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestBashCodeExecutionOutputBlock(
-    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestBashCodeExecutionOutputBlockType,
-  );
+  BetaRequestBashCodeExecutionOutputBlock _copyWith(
+          {Object? fileId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestBashCodeExecutionOutputBlock(
+        fileId:
+            identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestBashCodeExecutionOutputBlockType,
+      );
 
-  factory BetaRequestBashCodeExecutionOutputBlock.fromJson(Map<String, dynamic> json) => BetaRequestBashCodeExecutionOutputBlock(
-    fileId: (json['file_id'] as String?)!,
-    type_: (json['type'] != null ? BetaRequestBashCodeExecutionOutputBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestBashCodeExecutionOutputBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestBashCodeExecutionOutputBlock(
+        fileId: (json['file_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaRequestBashCodeExecutionOutputBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'file_id': fileId,
-    'type': type_.toJson(),
-  };
+        'file_id': fileId,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaRequestBashCodeExecutionResultBlock` API schema.
 class BetaRequestBashCodeExecutionResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `content` wire field.
   final List<BetaRequestBashCodeExecutionOutputBlock> content;
+
   /// Required `integer` value serialized in the `return_code` wire field.
   final int returnCode;
+
   /// Required `string` value serialized in the `stderr` wire field.
   final String stderr;
+
   /// Required `string` value serialized in the `stdout` wire field.
   final String stdout;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestBashCodeExecutionResultBlockType type_;
 
-  const BetaRequestBashCodeExecutionResultBlock({required this.content, required this.returnCode, required this.stderr, required this.stdout, required this.type_});
+  const BetaRequestBashCodeExecutionResultBlock(
+      {required this.content,
+      required this.returnCode,
+      required this.stderr,
+      required this.stdout,
+      required this.type_});
 
-  BetaRequestBashCodeExecutionResultBlock Function({List<BetaRequestBashCodeExecutionOutputBlock> content, int returnCode, String stderr, String stdout, BetaRequestBashCodeExecutionResultBlockType type_}) get copyWith => _copyWith;
+  BetaRequestBashCodeExecutionResultBlock Function(
+          {List<BetaRequestBashCodeExecutionOutputBlock> content,
+          int returnCode,
+          String stderr,
+          String stdout,
+          BetaRequestBashCodeExecutionResultBlockType type_})
+      get copyWith => _copyWith;
 
-  BetaRequestBashCodeExecutionResultBlock _copyWith({Object? content = sdkOmittedValue, Object? returnCode = sdkOmittedValue, Object? stderr = sdkOmittedValue, Object? stdout = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestBashCodeExecutionResultBlock(
-    content: identical(content, sdkOmittedValue) ? this.content : content as List<BetaRequestBashCodeExecutionOutputBlock>,
-    returnCode: identical(returnCode, sdkOmittedValue) ? this.returnCode : returnCode as int,
-    stderr: identical(stderr, sdkOmittedValue) ? this.stderr : stderr as String,
-    stdout: identical(stdout, sdkOmittedValue) ? this.stdout : stdout as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestBashCodeExecutionResultBlockType,
-  );
+  BetaRequestBashCodeExecutionResultBlock _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? returnCode = sdkOmittedValue,
+          Object? stderr = sdkOmittedValue,
+          Object? stdout = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestBashCodeExecutionResultBlock(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as List<BetaRequestBashCodeExecutionOutputBlock>,
+        returnCode: identical(returnCode, sdkOmittedValue)
+            ? this.returnCode
+            : returnCode as int,
+        stderr:
+            identical(stderr, sdkOmittedValue) ? this.stderr : stderr as String,
+        stdout:
+            identical(stdout, sdkOmittedValue) ? this.stdout : stdout as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestBashCodeExecutionResultBlockType,
+      );
 
-  factory BetaRequestBashCodeExecutionResultBlock.fromJson(Map<String, dynamic> json) => BetaRequestBashCodeExecutionResultBlock(
-    content: ((json['content'] as List?)?.map((e) => BetaRequestBashCodeExecutionOutputBlock.fromJson(e as Map<String, dynamic>)).toList())!,
-    returnCode: ((json['return_code'] as num?)?.toInt())!,
-    stderr: (json['stderr'] as String?)!,
-    stdout: (json['stdout'] as String?)!,
-    type_: (json['type'] != null ? BetaRequestBashCodeExecutionResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestBashCodeExecutionResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestBashCodeExecutionResultBlock(
+        content: ((json['content'] as List?)
+            ?.map((e) => BetaRequestBashCodeExecutionOutputBlock.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        returnCode: ((json['return_code'] as num?)?.toInt())!,
+        stderr: (json['stderr'] as String?)!,
+        stdout: (json['stdout'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaRequestBashCodeExecutionResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content.map((item) => item.toJson()).toList(),
-    'return_code': returnCode,
-    'stderr': stderr,
-    'stdout': stdout,
-    'type': type_.toJson(),
-  };
+        'content': content.map((item) => item.toJson()).toList(),
+        'return_code': returnCode,
+        'stderr': stderr,
+        'stdout': stdout,
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaRequestBashCodeExecutionToolResultBlockCacheControl {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaRequestBashCodeExecutionToolResultBlockCacheControl();
-  factory BetaRequestBashCodeExecutionToolResultBlockCacheControl.fromJson(Object? json) {
-    try { return BetaRequestBashCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestBashCodeExecutionToolResultBlockCacheControl(json); }
-    throw FormatException("No variant matched for BetaRequestBashCodeExecutionToolResultBlockCacheControl");
+  factory BetaRequestBashCodeExecutionToolResultBlockCacheControl.fromJson(
+      Object? json) {
+    try {
+      return BetaRequestBashCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral(
+          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownBetaRequestBashCodeExecutionToolResultBlockCacheControl(
+          json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRequestBashCodeExecutionToolResultBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestBashCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral extends BetaRequestBashCodeExecutionToolResultBlockCacheControl {
+final class BetaRequestBashCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral
+    extends BetaRequestBashCodeExecutionToolResultBlockCacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaRequestBashCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestBashCodeExecutionToolResultBlockCacheControlBetaCacheControlEphemeral(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestBashCodeExecutionToolResultBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestBashCodeExecutionToolResultBlockCacheControl extends BetaRequestBashCodeExecutionToolResultBlockCacheControl {
+final class UnknownBetaRequestBashCodeExecutionToolResultBlockCacheControl
+    extends BetaRequestBashCodeExecutionToolResultBlockCacheControl {
   final Map<String, dynamic> raw;
-  const UnknownBetaRequestBashCodeExecutionToolResultBlockCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  const UnknownBetaRequestBashCodeExecutionToolResultBlockCacheControl(
+      this.raw);
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaRequestBashCodeExecutionToolResultBlock` API schema.
 class BetaRequestBashCodeExecutionToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
+
   /// Required API value serialized in the `content` wire field.
   final BetaRequestBashCodeExecutionToolResultBlockContent content;
+
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestBashCodeExecutionToolResultBlockType type_;
 
-  const BetaRequestBashCodeExecutionToolResultBlock({this.cacheControl = const SdkOmitted(), required this.content, required this.toolUseId, required this.type_});
+  const BetaRequestBashCodeExecutionToolResultBlock(
+      {this.cacheControl = const SdkOmitted(),
+      required this.content,
+      required this.toolUseId,
+      required this.type_});
 
-  BetaRequestBashCodeExecutionToolResultBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, BetaRequestBashCodeExecutionToolResultBlockContent content, String toolUseId, BetaRequestBashCodeExecutionToolResultBlockType type_}) get copyWith => _copyWith;
+  BetaRequestBashCodeExecutionToolResultBlock Function(
+          {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
+          BetaRequestBashCodeExecutionToolResultBlockContent content,
+          String toolUseId,
+          BetaRequestBashCodeExecutionToolResultBlockType type_})
+      get copyWith => _copyWith;
 
-  BetaRequestBashCodeExecutionToolResultBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestBashCodeExecutionToolResultBlock(
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-    content: identical(content, sdkOmittedValue) ? this.content : content as BetaRequestBashCodeExecutionToolResultBlockContent,
-    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestBashCodeExecutionToolResultBlockType,
-  );
+  BetaRequestBashCodeExecutionToolResultBlock _copyWith(
+          {Object? cacheControl = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? toolUseId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestBashCodeExecutionToolResultBlock(
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as BetaRequestBashCodeExecutionToolResultBlockContent,
+        toolUseId: identical(toolUseId, sdkOmittedValue)
+            ? this.toolUseId
+            : toolUseId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestBashCodeExecutionToolResultBlockType,
+      );
 
-  factory BetaRequestBashCodeExecutionToolResultBlock.fromJson(Map<String, dynamic> json) => BetaRequestBashCodeExecutionToolResultBlock(
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    content: (json['content'] != null ? BetaRequestBashCodeExecutionToolResultBlockContent.fromJson(json['content']) : null)!,
-    toolUseId: (json['tool_use_id'] as String?)!,
-    type_: (json['type'] != null ? BetaRequestBashCodeExecutionToolResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestBashCodeExecutionToolResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestBashCodeExecutionToolResultBlock(
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? BetaCacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        content: (json['content'] != null
+            ? BetaRequestBashCodeExecutionToolResultBlockContent.fromJson(
+                json['content'])
+            : null)!,
+        toolUseId: (json['tool_use_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaRequestBashCodeExecutionToolResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (cacheControl) {
-      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'content': content.toJson(),
-    'tool_use_id': toolUseId,
-    'type': type_.toJson(),
-  };
+        ...switch (cacheControl) {
+          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'content': content.toJson(),
+        'tool_use_id': toolUseId,
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaRequestBashCodeExecutionToolResultBlockContent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaRequestBashCodeExecutionToolResultBlockContent();
-  factory BetaRequestBashCodeExecutionToolResultBlockContent.fromJson(Object? json) {
+  factory BetaRequestBashCodeExecutionToolResultBlockContent.fromJson(
+      Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaRequestBashCodeExecutionToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionToolResultError(value); } } catch (_) {}
-      try { final value = BetaRequestBashCodeExecutionResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionResultBlock(value); } } catch (_) {}
+      try {
+        final value =
+            BetaRequestBashCodeExecutionToolResultError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionToolResultError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestBashCodeExecutionResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionResultBlock(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionToolResultError(BetaRequestBashCodeExecutionToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionResultBlock(BetaRequestBashCodeExecutionResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"bash_code_execution_tool_result_error", "bash_code_execution_result"}.contains(json["type"])) { return UnknownBetaRequestBashCodeExecutionToolResultBlockContent(json); }
-    throw FormatException("No variant matched for BetaRequestBashCodeExecutionToolResultBlockContent");
+    try {
+      return BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionToolResultError(
+          BetaRequestBashCodeExecutionToolResultError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionResultBlock(
+          BetaRequestBashCodeExecutionResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "bash_code_execution_tool_result_error",
+          "bash_code_execution_result"
+        }.contains(json["type"])) {
+      return UnknownBetaRequestBashCodeExecutionToolResultBlockContent(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRequestBashCodeExecutionToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionToolResultError extends BetaRequestBashCodeExecutionToolResultBlockContent {
+final class BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionToolResultError
+    extends BetaRequestBashCodeExecutionToolResultBlockContent {
   final BetaRequestBashCodeExecutionToolResultError value;
-  const BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionToolResultError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionToolResultError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionResultBlock extends BetaRequestBashCodeExecutionToolResultBlockContent {
+final class BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionResultBlock
+    extends BetaRequestBashCodeExecutionToolResultBlockContent {
   final BetaRequestBashCodeExecutionResultBlock value;
-  const BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestBashCodeExecutionToolResultBlockContentBetaRequestBashCodeExecutionResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestBashCodeExecutionToolResultBlockContent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestBashCodeExecutionToolResultBlockContent extends BetaRequestBashCodeExecutionToolResultBlockContent {
+final class UnknownBetaRequestBashCodeExecutionToolResultBlockContent
+    extends BetaRequestBashCodeExecutionToolResultBlockContent {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestBashCodeExecutionToolResultBlockContent(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaRequestBashCodeExecutionToolResultError` API schema.
 class BetaRequestBashCodeExecutionToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `error_code` wire field.
   final BetaBashCodeExecutionToolResultErrorCode errorCode;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestBashCodeExecutionToolResultErrorType type_;
 
-  const BetaRequestBashCodeExecutionToolResultError({required this.errorCode, required this.type_});
+  const BetaRequestBashCodeExecutionToolResultError(
+      {required this.errorCode, required this.type_});
 
-  BetaRequestBashCodeExecutionToolResultError Function({BetaBashCodeExecutionToolResultErrorCode errorCode, BetaRequestBashCodeExecutionToolResultErrorType type_}) get copyWith => _copyWith;
+  BetaRequestBashCodeExecutionToolResultError Function(
+          {BetaBashCodeExecutionToolResultErrorCode errorCode,
+          BetaRequestBashCodeExecutionToolResultErrorType type_})
+      get copyWith => _copyWith;
 
-  BetaRequestBashCodeExecutionToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestBashCodeExecutionToolResultError(
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as BetaBashCodeExecutionToolResultErrorCode,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestBashCodeExecutionToolResultErrorType,
-  );
+  BetaRequestBashCodeExecutionToolResultError _copyWith(
+          {Object? errorCode = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestBashCodeExecutionToolResultError(
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as BetaBashCodeExecutionToolResultErrorCode,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestBashCodeExecutionToolResultErrorType,
+      );
 
-  factory BetaRequestBashCodeExecutionToolResultError.fromJson(Map<String, dynamic> json) => BetaRequestBashCodeExecutionToolResultError(
-    errorCode: (json['error_code'] != null ? BetaBashCodeExecutionToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
-    type_: (json['type'] != null ? BetaRequestBashCodeExecutionToolResultErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestBashCodeExecutionToolResultError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestBashCodeExecutionToolResultError(
+        errorCode: (json['error_code'] != null
+            ? BetaBashCodeExecutionToolResultErrorCode.fromJson(
+                json['error_code'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaRequestBashCodeExecutionToolResultErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'error_code': errorCode.toJson(),
-    'type': type_.toJson(),
-  };
+        'error_code': errorCode.toJson(),
+        'type': type_.toJson(),
+      };
 }

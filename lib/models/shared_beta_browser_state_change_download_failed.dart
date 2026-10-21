@@ -9,56 +9,93 @@ sealed class BetaBrowserStateChangeDownloadFailedError {
   static const String constructionSurface = 'named';
   const BetaBrowserStateChangeDownloadFailedError();
   factory BetaBrowserStateChangeDownloadFailedError.fromJson(Object? json) {
-    if (json is String) { return BetaBrowserStateChangeDownloadFailedErrorString(json); }
-    throw FormatException("No variant matched for BetaBrowserStateChangeDownloadFailedError");
+    if (json is String) {
+      return BetaBrowserStateChangeDownloadFailedErrorString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaBrowserStateChangeDownloadFailedError");
   }
   Object? toJson();
 }
 
-final class BetaBrowserStateChangeDownloadFailedErrorString extends BetaBrowserStateChangeDownloadFailedError {
+final class BetaBrowserStateChangeDownloadFailedErrorString
+    extends BetaBrowserStateChangeDownloadFailedError {
   final String value;
   const BetaBrowserStateChangeDownloadFailedErrorString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// A file download that failed — or was cancelled — during this call.
 class BetaBrowserStateChangeDownloadFailed {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The caller-assigned identifier for this download, stable across the state changes reporting it.
   final String downloadId;
+
   /// The failure or cancellation detail, when known.
   final SdkOptional<String?> error;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaBrowserStateChangeDownloadFailedType type_;
+
   /// The final post-redirect URL the download was served from.
   final String url;
 
-  const BetaBrowserStateChangeDownloadFailed({required this.downloadId, this.error = const SdkOmitted(), required this.type_, required this.url});
+  const BetaBrowserStateChangeDownloadFailed(
+      {required this.downloadId,
+      this.error = const SdkOmitted(),
+      required this.type_,
+      required this.url});
 
-  BetaBrowserStateChangeDownloadFailed Function({String downloadId, SdkOptional<String?> error, BetaBrowserStateChangeDownloadFailedType type_, String url}) get copyWith => _copyWith;
+  BetaBrowserStateChangeDownloadFailed Function(
+      {String downloadId,
+      SdkOptional<String?> error,
+      BetaBrowserStateChangeDownloadFailedType type_,
+      String url}) get copyWith => _copyWith;
 
-  BetaBrowserStateChangeDownloadFailed _copyWith({Object? downloadId = sdkOmittedValue, Object? error = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaBrowserStateChangeDownloadFailed(
-    downloadId: identical(downloadId, sdkOmittedValue) ? this.downloadId : downloadId as String,
-    error: identical(error, sdkOmittedValue) ? this.error : error as SdkOptional<String?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaBrowserStateChangeDownloadFailedType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BetaBrowserStateChangeDownloadFailed _copyWith(
+          {Object? downloadId = sdkOmittedValue,
+          Object? error = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      BetaBrowserStateChangeDownloadFailed(
+        downloadId: identical(downloadId, sdkOmittedValue)
+            ? this.downloadId
+            : downloadId as String,
+        error: identical(error, sdkOmittedValue)
+            ? this.error
+            : error as SdkOptional<String?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaBrowserStateChangeDownloadFailedType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BetaBrowserStateChangeDownloadFailed.fromJson(Map<String, dynamic> json) => BetaBrowserStateChangeDownloadFailed(
-    downloadId: (json['download_id'] as String?)!,
-    error: json.containsKey('error') ? SdkPresent(json['error'] as String?) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaBrowserStateChangeDownloadFailedType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BetaBrowserStateChangeDownloadFailed.fromJson(
+          Map<String, dynamic> json) =>
+      BetaBrowserStateChangeDownloadFailed(
+        downloadId: (json['download_id'] as String?)!,
+        error: json.containsKey('error')
+            ? SdkPresent(json['error'] as String?)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaBrowserStateChangeDownloadFailedType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'download_id': downloadId,
-    ...switch (error) {
-      SdkPresent<String?>(value: final value) => {'error': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'download_id': downloadId,
+        ...switch (error) {
+          SdkPresent<String?>(value: final value) => {
+              'error': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+        'url': url,
+      };
 }

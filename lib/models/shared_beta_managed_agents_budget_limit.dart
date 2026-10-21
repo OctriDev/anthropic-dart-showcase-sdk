@@ -8,27 +8,45 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsBudgetLimit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsBudgetLimitType type_;
+
   /// Maximum list cost the session may accrue. List price is used regardless of any negotiated discount, so the cap fires at or before the actual charge.
   final BetaMonetaryAmount maxListCost;
 
-  const BetaManagedAgentsBudgetLimit({required this.type_, required this.maxListCost});
+  const BetaManagedAgentsBudgetLimit(
+      {required this.type_, required this.maxListCost});
 
-  BetaManagedAgentsBudgetLimit Function({BetaManagedAgentsBudgetLimitType type_, BetaMonetaryAmount maxListCost}) get copyWith => _copyWith;
+  BetaManagedAgentsBudgetLimit Function(
+      {BetaManagedAgentsBudgetLimitType type_,
+      BetaMonetaryAmount maxListCost}) get copyWith => _copyWith;
 
-  BetaManagedAgentsBudgetLimit _copyWith({Object? type_ = sdkOmittedValue, Object? maxListCost = sdkOmittedValue}) => BetaManagedAgentsBudgetLimit(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsBudgetLimitType,
-    maxListCost: identical(maxListCost, sdkOmittedValue) ? this.maxListCost : maxListCost as BetaMonetaryAmount,
-  );
+  BetaManagedAgentsBudgetLimit _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? maxListCost = sdkOmittedValue}) =>
+      BetaManagedAgentsBudgetLimit(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsBudgetLimitType,
+        maxListCost: identical(maxListCost, sdkOmittedValue)
+            ? this.maxListCost
+            : maxListCost as BetaMonetaryAmount,
+      );
 
-  factory BetaManagedAgentsBudgetLimit.fromJson(Map<String, dynamic> json) => BetaManagedAgentsBudgetLimit(
-    type_: (json['type'] != null ? BetaManagedAgentsBudgetLimitType.fromJson(json['type'] as String) : null)!,
-    maxListCost: (json['max_list_cost'] != null ? BetaMonetaryAmount.fromJson(json['max_list_cost'] as Map<String, dynamic>) : null)!,
-  );
+  factory BetaManagedAgentsBudgetLimit.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsBudgetLimit(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsBudgetLimitType.fromJson(json['type'] as String)
+            : null)!,
+        maxListCost: (json['max_list_cost'] != null
+            ? BetaMonetaryAmount.fromJson(
+                json['max_list_cost'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'max_list_cost': maxListCost.toJson(),
-  };
+        'type': type_.toJson(),
+        'max_list_cost': maxListCost.toJson(),
+      };
 }

@@ -6,7 +6,6 @@ part of 'shared_beta.dart';
 // shared_beta domain models
 /// Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Not all models support `fast`; invalid combinations are rejected at create time.
 final class BetaSpeed {
-
   final String value;
 
   const BetaSpeed._(this.value);
@@ -18,10 +17,12 @@ final class BetaSpeed {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaSpeed && other.value == value;
+  @override
+  bool operator ==(Object other) => other is BetaSpeed && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

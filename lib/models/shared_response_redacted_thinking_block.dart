@@ -8,27 +8,39 @@ part of 'shared_response.dart';
 class ResponseRedactedThinkingBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The contents of this redacted thinking block, returned when portions of the model's thinking were safety-redacted. This field is opaque and encrypted, with no readable content. Pass `redacted_thinking` blocks back to the API unchanged when continuing a multi-turn conversation. See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking#redacted-thinking-blocks) for details.
   final String data;
+
   /// Required `string` value serialized in the `type` wire field.
   final ResponseRedactedThinkingBlockType type_;
 
-  const ResponseRedactedThinkingBlock({required this.data, required this.type_});
+  const ResponseRedactedThinkingBlock(
+      {required this.data, required this.type_});
 
-  ResponseRedactedThinkingBlock Function({String data, ResponseRedactedThinkingBlockType type_}) get copyWith => _copyWith;
+  ResponseRedactedThinkingBlock Function(
+      {String data,
+      ResponseRedactedThinkingBlockType type_}) get copyWith => _copyWith;
 
-  ResponseRedactedThinkingBlock _copyWith({Object? data = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ResponseRedactedThinkingBlock(
-    data: identical(data, sdkOmittedValue) ? this.data : data as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ResponseRedactedThinkingBlockType,
-  );
+  ResponseRedactedThinkingBlock _copyWith(
+          {Object? data = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      ResponseRedactedThinkingBlock(
+        data: identical(data, sdkOmittedValue) ? this.data : data as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ResponseRedactedThinkingBlockType,
+      );
 
-  factory ResponseRedactedThinkingBlock.fromJson(Map<String, dynamic> json) => ResponseRedactedThinkingBlock(
-    data: (json['data'] as String?)!,
-    type_: (json['type'] != null ? ResponseRedactedThinkingBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory ResponseRedactedThinkingBlock.fromJson(Map<String, dynamic> json) =>
+      ResponseRedactedThinkingBlock(
+        data: (json['data'] as String?)!,
+        type_: (json['type'] != null
+            ? ResponseRedactedThinkingBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data,
-    'type': type_.toJson(),
-  };
+        'data': data,
+        'type': type_.toJson(),
+      };
 }

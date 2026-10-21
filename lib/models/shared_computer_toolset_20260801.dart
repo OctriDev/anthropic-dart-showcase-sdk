@@ -9,62 +9,110 @@ sealed class ComputerToolset20260801CacheControl {
   static const String constructionSurface = 'named';
   const ComputerToolset20260801CacheControl();
   factory ComputerToolset20260801CacheControl.fromJson(Object? json) {
-    try { return ComputerToolset20260801CacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownComputerToolset20260801CacheControl(json); }
-    throw FormatException("No variant matched for ComputerToolset20260801CacheControl");
+    try {
+      return ComputerToolset20260801CacheControlCacheControlEphemeral(
+          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownComputerToolset20260801CacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for ComputerToolset20260801CacheControl");
   }
   Object? toJson();
 }
 
-final class ComputerToolset20260801CacheControlCacheControlEphemeral extends ComputerToolset20260801CacheControl {
+final class ComputerToolset20260801CacheControlCacheControlEphemeral
+    extends ComputerToolset20260801CacheControl {
   final CacheControlEphemeral value;
   const ComputerToolset20260801CacheControlCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [ComputerToolset20260801CacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownComputerToolset20260801CacheControl extends ComputerToolset20260801CacheControl {
+final class UnknownComputerToolset20260801CacheControl
+    extends ComputerToolset20260801CacheControl {
   final Map<String, dynamic> raw;
   const UnknownComputerToolset20260801CacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// The computer toolset: a single ``tools[]`` entry (carrying no ``name``) that declares the computer tool family. The model is served the family's tool with any members disabled via ``configs`` removed from its schema. Every member is enabled by default, zoom included. The single-tool options ``display_number`` and ``enable_zoom`` are not fields of a toolset entry — it carries only ``type``, ``configs``, and ``cache_control``; zoom is controlled via ``configs.zoom.enabled``.
 class ComputerToolset20260801 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
+
   /// Sparse per-member overrides, keyed by member name. Absent, null, and {} are equivalent; a member's defaults apply wherever its key is absent.
   final SdkOptional<ComputerToolsetConfigs?> configs;
+
   /// Required `string` value serialized in the `type` wire field.
   final ComputerToolset20260801Type type_;
 
-  const ComputerToolset20260801({this.cacheControl = const SdkOmitted(), this.configs = const SdkOmitted(), required this.type_});
+  const ComputerToolset20260801(
+      {this.cacheControl = const SdkOmitted(),
+      this.configs = const SdkOmitted(),
+      required this.type_});
 
-  ComputerToolset20260801 Function({SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<ComputerToolsetConfigs?> configs, ComputerToolset20260801Type type_}) get copyWith => _copyWith;
+  ComputerToolset20260801 Function(
+      {SdkOptional<CacheControlEphemeral?> cacheControl,
+      SdkOptional<ComputerToolsetConfigs?> configs,
+      ComputerToolset20260801Type type_}) get copyWith => _copyWith;
 
-  ComputerToolset20260801 _copyWith({Object? cacheControl = sdkOmittedValue, Object? configs = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ComputerToolset20260801(
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
-    configs: identical(configs, sdkOmittedValue) ? this.configs : configs as SdkOptional<ComputerToolsetConfigs?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ComputerToolset20260801Type,
-  );
+  ComputerToolset20260801 _copyWith(
+          {Object? cacheControl = sdkOmittedValue,
+          Object? configs = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      ComputerToolset20260801(
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<CacheControlEphemeral?>,
+        configs: identical(configs, sdkOmittedValue)
+            ? this.configs
+            : configs as SdkOptional<ComputerToolsetConfigs?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ComputerToolset20260801Type,
+      );
 
-  factory ComputerToolset20260801.fromJson(Map<String, dynamic> json) => ComputerToolset20260801(
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    configs: json.containsKey('configs') ? SdkPresent(json['configs'] != null ? ComputerToolsetConfigs.fromJson(json['configs'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    type_: (json['type'] != null ? ComputerToolset20260801Type.fromJson(json['type'] as String) : null)!,
-  );
+  factory ComputerToolset20260801.fromJson(Map<String, dynamic> json) =>
+      ComputerToolset20260801(
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? CacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        configs: json.containsKey('configs')
+            ? SdkPresent(json['configs'] != null
+                ? ComputerToolsetConfigs.fromJson(
+                    json['configs'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? ComputerToolset20260801Type.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (cacheControl) {
-      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (configs) {
-      SdkPresent<ComputerToolsetConfigs?>(value: final value) => {'configs': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (cacheControl) {
+          SdkPresent<CacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (configs) {
+          SdkPresent<ComputerToolsetConfigs?>(value: final value) => {
+              'configs': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

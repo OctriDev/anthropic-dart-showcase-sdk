@@ -8,42 +8,82 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSearchResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSearchResultBlockType type_;
+
   /// The URL source of the search result.
   final String source;
+
   /// The title of the search result.
   final String title;
+
   /// Array of text content blocks from the search result.
   final List<BetaManagedAgentsSearchResultContent> content;
+
   /// Citation settings for this search result.
   final BetaManagedAgentsSearchResultCitations citations;
 
-  const BetaManagedAgentsSearchResultBlock({required this.type_, required this.source, required this.title, required this.content, required this.citations});
+  const BetaManagedAgentsSearchResultBlock(
+      {required this.type_,
+      required this.source,
+      required this.title,
+      required this.content,
+      required this.citations});
 
-  BetaManagedAgentsSearchResultBlock Function({BetaManagedAgentsSearchResultBlockType type_, String source, String title, List<BetaManagedAgentsSearchResultContent> content, BetaManagedAgentsSearchResultCitations citations}) get copyWith => _copyWith;
+  BetaManagedAgentsSearchResultBlock Function(
+          {BetaManagedAgentsSearchResultBlockType type_,
+          String source,
+          String title,
+          List<BetaManagedAgentsSearchResultContent> content,
+          BetaManagedAgentsSearchResultCitations citations})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsSearchResultBlock _copyWith({Object? type_ = sdkOmittedValue, Object? source = sdkOmittedValue, Object? title = sdkOmittedValue, Object? content = sdkOmittedValue, Object? citations = sdkOmittedValue}) => BetaManagedAgentsSearchResultBlock(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSearchResultBlockType,
-    source: identical(source, sdkOmittedValue) ? this.source : source as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    content: identical(content, sdkOmittedValue) ? this.content : content as List<BetaManagedAgentsSearchResultContent>,
-    citations: identical(citations, sdkOmittedValue) ? this.citations : citations as BetaManagedAgentsSearchResultCitations,
-  );
+  BetaManagedAgentsSearchResultBlock _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? source = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? citations = sdkOmittedValue}) =>
+      BetaManagedAgentsSearchResultBlock(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSearchResultBlockType,
+        source:
+            identical(source, sdkOmittedValue) ? this.source : source as String,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as List<BetaManagedAgentsSearchResultContent>,
+        citations: identical(citations, sdkOmittedValue)
+            ? this.citations
+            : citations as BetaManagedAgentsSearchResultCitations,
+      );
 
-  factory BetaManagedAgentsSearchResultBlock.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSearchResultBlock(
-    type_: (json['type'] != null ? BetaManagedAgentsSearchResultBlockType.fromJson(json['type'] as String) : null)!,
-    source: (json['source'] as String?)!,
-    title: (json['title'] as String?)!,
-    content: ((json['content'] as List?)?.map((e) => BetaManagedAgentsSearchResultContent.fromJson(e as Map<String, dynamic>)).toList())!,
-    citations: (json['citations'] != null ? BetaManagedAgentsSearchResultCitations.fromJson(json['citations'] as Map<String, dynamic>) : null)!,
-  );
+  factory BetaManagedAgentsSearchResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSearchResultBlock(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSearchResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+        source: (json['source'] as String?)!,
+        title: (json['title'] as String?)!,
+        content: ((json['content'] as List?)
+            ?.map((e) => BetaManagedAgentsSearchResultContent.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        citations: (json['citations'] != null
+            ? BetaManagedAgentsSearchResultCitations.fromJson(
+                json['citations'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'source': source,
-    'title': title,
-    'content': content.map((item) => item.toJson()).toList(),
-    'citations': citations.toJson(),
-  };
+        'type': type_.toJson(),
+        'source': source,
+        'title': title,
+        'content': content.map((item) => item.toJson()).toList(),
+        'citations': citations.toJson(),
+      };
 }

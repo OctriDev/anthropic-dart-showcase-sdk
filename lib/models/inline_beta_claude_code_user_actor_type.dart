@@ -10,14 +10,17 @@ enum BetaClaudeCodeUserActorType {
 
   static BetaClaudeCodeUserActorType fromJson(String value) {
     switch (value) {
-      case 'user_actor': return BetaClaudeCodeUserActorType.userActor;
-      default: throw ArgumentError('Unknown BetaClaudeCodeUserActorType: $value');
+      case 'user_actor':
+        return BetaClaudeCodeUserActorType.userActor;
+      default:
+        throw ArgumentError('Unknown BetaClaudeCodeUserActorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaClaudeCodeUserActorType.userActor: return 'user_actor';
+      case BetaClaudeCodeUserActorType.userActor:
+        return 'user_actor';
     }
   }
 
@@ -31,14 +34,18 @@ enum BetaClearThinking20251015KeepVariant1 {
 
   static BetaClearThinking20251015KeepVariant1 fromJson(String value) {
     switch (value) {
-      case 'all': return BetaClearThinking20251015KeepVariant1.all;
-      default: throw ArgumentError('Unknown BetaClearThinking20251015KeepVariant1: $value');
+      case 'all':
+        return BetaClearThinking20251015KeepVariant1.all;
+      default:
+        throw ArgumentError(
+            'Unknown BetaClearThinking20251015KeepVariant1: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaClearThinking20251015KeepVariant1.all: return 'all';
+      case BetaClearThinking20251015KeepVariant1.all:
+        return 'all';
     }
   }
 
@@ -52,14 +59,17 @@ enum BetaClearThinking20251015Type {
 
   static BetaClearThinking20251015Type fromJson(String value) {
     switch (value) {
-      case 'clear_thinking_20251015': return BetaClearThinking20251015Type.clearThinking20251015;
-      default: throw ArgumentError('Unknown BetaClearThinking20251015Type: $value');
+      case 'clear_thinking_20251015':
+        return BetaClearThinking20251015Type.clearThinking20251015;
+      default:
+        throw ArgumentError('Unknown BetaClearThinking20251015Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaClearThinking20251015Type.clearThinking20251015: return 'clear_thinking_20251015';
+      case BetaClearThinking20251015Type.clearThinking20251015:
+        return 'clear_thinking_20251015';
     }
   }
 
@@ -73,14 +83,17 @@ enum BetaClearToolUses20250919Type {
 
   static BetaClearToolUses20250919Type fromJson(String value) {
     switch (value) {
-      case 'clear_tool_uses_20250919': return BetaClearToolUses20250919Type.clearToolUses20250919;
-      default: throw ArgumentError('Unknown BetaClearToolUses20250919Type: $value');
+      case 'clear_tool_uses_20250919':
+        return BetaClearToolUses20250919Type.clearToolUses20250919;
+      default:
+        throw ArgumentError('Unknown BetaClearToolUses20250919Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaClearToolUses20250919Type.clearToolUses20250919: return 'clear_tool_uses_20250919';
+      case BetaClearToolUses20250919Type.clearToolUses20250919:
+        return 'clear_tool_uses_20250919';
     }
   }
 
@@ -94,14 +107,17 @@ enum BetaCloudConfigType {
 
   static BetaCloudConfigType fromJson(String value) {
     switch (value) {
-      case 'cloud': return BetaCloudConfigType.cloud;
-      default: throw ArgumentError('Unknown BetaCloudConfigType: $value');
+      case 'cloud':
+        return BetaCloudConfigType.cloud;
+      default:
+        throw ArgumentError('Unknown BetaCloudConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCloudConfigType.cloud: return 'cloud';
+      case BetaCloudConfigType.cloud:
+        return 'cloud';
     }
   }
 
@@ -115,14 +131,17 @@ enum BetaCloudConfigParamsType {
 
   static BetaCloudConfigParamsType fromJson(String value) {
     switch (value) {
-      case 'cloud': return BetaCloudConfigParamsType.cloud;
-      default: throw ArgumentError('Unknown BetaCloudConfigParamsType: $value');
+      case 'cloud':
+        return BetaCloudConfigParamsType.cloud;
+      default:
+        throw ArgumentError('Unknown BetaCloudConfigParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCloudConfigParamsType.cloud: return 'cloud';
+      case BetaCloudConfigParamsType.cloud:
+        return 'cloud';
     }
   }
 
@@ -136,14 +155,18 @@ enum BetaCodeExecutionTool20250522Name {
 
   static BetaCodeExecutionTool20250522Name fromJson(String value) {
     switch (value) {
-      case 'code_execution': return BetaCodeExecutionTool20250522Name.codeExecution;
-      default: throw ArgumentError('Unknown BetaCodeExecutionTool20250522Name: $value');
+      case 'code_execution':
+        return BetaCodeExecutionTool20250522Name.codeExecution;
+      default:
+        throw ArgumentError(
+            'Unknown BetaCodeExecutionTool20250522Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCodeExecutionTool20250522Name.codeExecution: return 'code_execution';
+      case BetaCodeExecutionTool20250522Name.codeExecution:
+        return 'code_execution';
     }
   }
 
@@ -157,14 +180,18 @@ enum BetaCodeExecutionTool20250522Type {
 
   static BetaCodeExecutionTool20250522Type fromJson(String value) {
     switch (value) {
-      case 'code_execution_20250522': return BetaCodeExecutionTool20250522Type.codeExecution20250522;
-      default: throw ArgumentError('Unknown BetaCodeExecutionTool20250522Type: $value');
+      case 'code_execution_20250522':
+        return BetaCodeExecutionTool20250522Type.codeExecution20250522;
+      default:
+        throw ArgumentError(
+            'Unknown BetaCodeExecutionTool20250522Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCodeExecutionTool20250522Type.codeExecution20250522: return 'code_execution_20250522';
+      case BetaCodeExecutionTool20250522Type.codeExecution20250522:
+        return 'code_execution_20250522';
     }
   }
 
@@ -178,14 +205,18 @@ enum BetaCodeExecutionTool20250825Name {
 
   static BetaCodeExecutionTool20250825Name fromJson(String value) {
     switch (value) {
-      case 'code_execution': return BetaCodeExecutionTool20250825Name.codeExecution;
-      default: throw ArgumentError('Unknown BetaCodeExecutionTool20250825Name: $value');
+      case 'code_execution':
+        return BetaCodeExecutionTool20250825Name.codeExecution;
+      default:
+        throw ArgumentError(
+            'Unknown BetaCodeExecutionTool20250825Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCodeExecutionTool20250825Name.codeExecution: return 'code_execution';
+      case BetaCodeExecutionTool20250825Name.codeExecution:
+        return 'code_execution';
     }
   }
 
@@ -199,14 +230,18 @@ enum BetaCodeExecutionTool20250825Type {
 
   static BetaCodeExecutionTool20250825Type fromJson(String value) {
     switch (value) {
-      case 'code_execution_20250825': return BetaCodeExecutionTool20250825Type.codeExecution20250825;
-      default: throw ArgumentError('Unknown BetaCodeExecutionTool20250825Type: $value');
+      case 'code_execution_20250825':
+        return BetaCodeExecutionTool20250825Type.codeExecution20250825;
+      default:
+        throw ArgumentError(
+            'Unknown BetaCodeExecutionTool20250825Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCodeExecutionTool20250825Type.codeExecution20250825: return 'code_execution_20250825';
+      case BetaCodeExecutionTool20250825Type.codeExecution20250825:
+        return 'code_execution_20250825';
     }
   }
 
@@ -220,14 +255,18 @@ enum BetaCodeExecutionTool20260120Name {
 
   static BetaCodeExecutionTool20260120Name fromJson(String value) {
     switch (value) {
-      case 'code_execution': return BetaCodeExecutionTool20260120Name.codeExecution;
-      default: throw ArgumentError('Unknown BetaCodeExecutionTool20260120Name: $value');
+      case 'code_execution':
+        return BetaCodeExecutionTool20260120Name.codeExecution;
+      default:
+        throw ArgumentError(
+            'Unknown BetaCodeExecutionTool20260120Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCodeExecutionTool20260120Name.codeExecution: return 'code_execution';
+      case BetaCodeExecutionTool20260120Name.codeExecution:
+        return 'code_execution';
     }
   }
 
@@ -241,14 +280,18 @@ enum BetaCodeExecutionTool20260120Type {
 
   static BetaCodeExecutionTool20260120Type fromJson(String value) {
     switch (value) {
-      case 'code_execution_20260120': return BetaCodeExecutionTool20260120Type.codeExecution20260120;
-      default: throw ArgumentError('Unknown BetaCodeExecutionTool20260120Type: $value');
+      case 'code_execution_20260120':
+        return BetaCodeExecutionTool20260120Type.codeExecution20260120;
+      default:
+        throw ArgumentError(
+            'Unknown BetaCodeExecutionTool20260120Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCodeExecutionTool20260120Type.codeExecution20260120: return 'code_execution_20260120';
+      case BetaCodeExecutionTool20260120Type.codeExecution20260120:
+        return 'code_execution_20260120';
     }
   }
 
@@ -262,14 +305,18 @@ enum BetaCodeExecutionTool20260521Name {
 
   static BetaCodeExecutionTool20260521Name fromJson(String value) {
     switch (value) {
-      case 'code_execution': return BetaCodeExecutionTool20260521Name.codeExecution;
-      default: throw ArgumentError('Unknown BetaCodeExecutionTool20260521Name: $value');
+      case 'code_execution':
+        return BetaCodeExecutionTool20260521Name.codeExecution;
+      default:
+        throw ArgumentError(
+            'Unknown BetaCodeExecutionTool20260521Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCodeExecutionTool20260521Name.codeExecution: return 'code_execution';
+      case BetaCodeExecutionTool20260521Name.codeExecution:
+        return 'code_execution';
     }
   }
 

@@ -5,52 +5,93 @@ part of 'shared_request_tool.dart';
 
 // shared_request_tool domain models (part 2)
 /// A [RequestToolSearchToolResultBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestToolSearchToolResultBlockCacheControl extends RequestToolSearchToolResultBlockCacheControl {
+final class UnknownRequestToolSearchToolResultBlockCacheControl
+    extends RequestToolSearchToolResultBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownRequestToolSearchToolResultBlockCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `RequestToolSearchToolResultBlock` API schema.
 class RequestToolSearchToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
+
   /// Required API value serialized in the `content` wire field.
   final RequestToolSearchToolResultBlockContent content;
+
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
+
   /// Required `string` value serialized in the `type` wire field.
   final RequestToolSearchToolResultBlockType type_;
 
-  const RequestToolSearchToolResultBlock({this.cacheControl = const SdkOmitted(), required this.content, required this.toolUseId, required this.type_});
+  const RequestToolSearchToolResultBlock(
+      {this.cacheControl = const SdkOmitted(),
+      required this.content,
+      required this.toolUseId,
+      required this.type_});
 
-  RequestToolSearchToolResultBlock Function({SdkOptional<CacheControlEphemeral?> cacheControl, RequestToolSearchToolResultBlockContent content, String toolUseId, RequestToolSearchToolResultBlockType type_}) get copyWith => _copyWith;
+  RequestToolSearchToolResultBlock Function(
+      {SdkOptional<CacheControlEphemeral?> cacheControl,
+      RequestToolSearchToolResultBlockContent content,
+      String toolUseId,
+      RequestToolSearchToolResultBlockType type_}) get copyWith => _copyWith;
 
-  RequestToolSearchToolResultBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestToolSearchToolResultBlock(
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
-    content: identical(content, sdkOmittedValue) ? this.content : content as RequestToolSearchToolResultBlockContent,
-    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestToolSearchToolResultBlockType,
-  );
+  RequestToolSearchToolResultBlock _copyWith(
+          {Object? cacheControl = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? toolUseId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RequestToolSearchToolResultBlock(
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<CacheControlEphemeral?>,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as RequestToolSearchToolResultBlockContent,
+        toolUseId: identical(toolUseId, sdkOmittedValue)
+            ? this.toolUseId
+            : toolUseId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RequestToolSearchToolResultBlockType,
+      );
 
-  factory RequestToolSearchToolResultBlock.fromJson(Map<String, dynamic> json) => RequestToolSearchToolResultBlock(
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    content: (json['content'] != null ? RequestToolSearchToolResultBlockContent.fromJson(json['content']) : null)!,
-    toolUseId: (json['tool_use_id'] as String?)!,
-    type_: (json['type'] != null ? RequestToolSearchToolResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RequestToolSearchToolResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      RequestToolSearchToolResultBlock(
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? CacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        content: (json['content'] != null
+            ? RequestToolSearchToolResultBlockContent.fromJson(json['content'])
+            : null)!,
+        toolUseId: (json['tool_use_id'] as String?)!,
+        type_: (json['type'] != null
+            ? RequestToolSearchToolResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (cacheControl) {
-      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'content': content.toJson(),
-    'tool_use_id': toolUseId,
-    'type': type_.toJson(),
-  };
+        ...switch (cacheControl) {
+          SdkPresent<CacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'content': content.toJson(),
+        'tool_use_id': toolUseId,
+        'type': type_.toJson(),
+      };
 }
 
 sealed class RequestToolSearchToolResultBlockContent {
@@ -59,100 +100,188 @@ sealed class RequestToolSearchToolResultBlockContent {
   const RequestToolSearchToolResultBlockContent();
   factory RequestToolSearchToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = RequestToolSearchToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(value); } } catch (_) {}
-      try { final value = RequestToolSearchToolSearchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(value); } } catch (_) {}
+      try {
+        final value = RequestToolSearchToolResultError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = RequestToolSearchToolSearchResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(RequestToolSearchToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(RequestToolSearchToolSearchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"tool_search_tool_result_error", "tool_search_tool_search_result"}.contains(json["type"])) { return UnknownRequestToolSearchToolResultBlockContent(json); }
-    throw FormatException("No variant matched for RequestToolSearchToolResultBlockContent");
+    try {
+      return RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(
+          RequestToolSearchToolResultError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(
+          RequestToolSearchToolSearchResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "tool_search_tool_result_error",
+          "tool_search_tool_search_result"
+        }.contains(json["type"])) {
+      return UnknownRequestToolSearchToolResultBlockContent(json);
+    }
+    throw FormatException(
+        "No variant matched for RequestToolSearchToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError extends RequestToolSearchToolResultBlockContent {
+final class RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError
+    extends RequestToolSearchToolResultBlockContent {
   final RequestToolSearchToolResultError value;
-  const RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(this.value);
-  @override Object? toJson() => value.toJson();
+  const RequestToolSearchToolResultBlockContentRequestToolSearchToolResultError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock extends RequestToolSearchToolResultBlockContent {
+final class RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock
+    extends RequestToolSearchToolResultBlockContent {
   final RequestToolSearchToolSearchResultBlock value;
-  const RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const RequestToolSearchToolResultBlockContentRequestToolSearchToolSearchResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [RequestToolSearchToolResultBlockContent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestToolSearchToolResultBlockContent extends RequestToolSearchToolResultBlockContent {
+final class UnknownRequestToolSearchToolResultBlockContent
+    extends RequestToolSearchToolResultBlockContent {
   final Map<String, dynamic> raw;
   const UnknownRequestToolSearchToolResultBlockContent(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `RequestToolSearchToolResultError` API schema.
 class RequestToolSearchToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `error_code` wire field.
   final ToolSearchToolResultErrorCode errorCode;
+
   /// Optional `string` value serialized in the `error_message` wire field.
   final SdkOptional<String?> errorMessage;
+
   /// Required `string` value serialized in the `type` wire field.
   final RequestToolSearchToolResultErrorType type_;
 
-  const RequestToolSearchToolResultError({required this.errorCode, this.errorMessage = const SdkOmitted(), required this.type_});
+  const RequestToolSearchToolResultError(
+      {required this.errorCode,
+      this.errorMessage = const SdkOmitted(),
+      required this.type_});
 
-  RequestToolSearchToolResultError Function({ToolSearchToolResultErrorCode errorCode, SdkOptional<String?> errorMessage, RequestToolSearchToolResultErrorType type_}) get copyWith => _copyWith;
+  RequestToolSearchToolResultError Function(
+      {ToolSearchToolResultErrorCode errorCode,
+      SdkOptional<String?> errorMessage,
+      RequestToolSearchToolResultErrorType type_}) get copyWith => _copyWith;
 
-  RequestToolSearchToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? errorMessage = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestToolSearchToolResultError(
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as ToolSearchToolResultErrorCode,
-    errorMessage: identical(errorMessage, sdkOmittedValue) ? this.errorMessage : errorMessage as SdkOptional<String?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestToolSearchToolResultErrorType,
-  );
+  RequestToolSearchToolResultError _copyWith(
+          {Object? errorCode = sdkOmittedValue,
+          Object? errorMessage = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RequestToolSearchToolResultError(
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as ToolSearchToolResultErrorCode,
+        errorMessage: identical(errorMessage, sdkOmittedValue)
+            ? this.errorMessage
+            : errorMessage as SdkOptional<String?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RequestToolSearchToolResultErrorType,
+      );
 
-  factory RequestToolSearchToolResultError.fromJson(Map<String, dynamic> json) => RequestToolSearchToolResultError(
-    errorCode: (json['error_code'] != null ? ToolSearchToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
-    errorMessage: json.containsKey('error_message') ? SdkPresent(json['error_message'] as String?) : const SdkOmitted(),
-    type_: (json['type'] != null ? RequestToolSearchToolResultErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RequestToolSearchToolResultError.fromJson(
+          Map<String, dynamic> json) =>
+      RequestToolSearchToolResultError(
+        errorCode: (json['error_code'] != null
+            ? ToolSearchToolResultErrorCode.fromJson(
+                json['error_code'] as String)
+            : null)!,
+        errorMessage: json.containsKey('error_message')
+            ? SdkPresent(json['error_message'] as String?)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? RequestToolSearchToolResultErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'error_code': errorCode.toJson(),
-    ...switch (errorMessage) {
-      SdkPresent<String?>(value: final value) => {'error_message': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        'error_code': errorCode.toJson(),
+        ...switch (errorMessage) {
+          SdkPresent<String?>(value: final value) => {
+              'error_message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `RequestToolSearchToolSearchResultBlock` API schema.
 class RequestToolSearchToolSearchResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `tool_references` wire field.
   final List<RequestToolReferenceBlock> toolReferences;
+
   /// Required `string` value serialized in the `type` wire field.
   final RequestToolSearchToolSearchResultBlockType type_;
 
-  const RequestToolSearchToolSearchResultBlock({required this.toolReferences, required this.type_});
+  const RequestToolSearchToolSearchResultBlock(
+      {required this.toolReferences, required this.type_});
 
-  RequestToolSearchToolSearchResultBlock Function({List<RequestToolReferenceBlock> toolReferences, RequestToolSearchToolSearchResultBlockType type_}) get copyWith => _copyWith;
+  RequestToolSearchToolSearchResultBlock Function(
+          {List<RequestToolReferenceBlock> toolReferences,
+          RequestToolSearchToolSearchResultBlockType type_})
+      get copyWith => _copyWith;
 
-  RequestToolSearchToolSearchResultBlock _copyWith({Object? toolReferences = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestToolSearchToolSearchResultBlock(
-    toolReferences: identical(toolReferences, sdkOmittedValue) ? this.toolReferences : toolReferences as List<RequestToolReferenceBlock>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestToolSearchToolSearchResultBlockType,
-  );
+  RequestToolSearchToolSearchResultBlock _copyWith(
+          {Object? toolReferences = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RequestToolSearchToolSearchResultBlock(
+        toolReferences: identical(toolReferences, sdkOmittedValue)
+            ? this.toolReferences
+            : toolReferences as List<RequestToolReferenceBlock>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RequestToolSearchToolSearchResultBlockType,
+      );
 
-  factory RequestToolSearchToolSearchResultBlock.fromJson(Map<String, dynamic> json) => RequestToolSearchToolSearchResultBlock(
-    toolReferences: ((json['tool_references'] as List?)?.map((e) => RequestToolReferenceBlock.fromJson(e as Map<String, dynamic>)).toList())!,
-    type_: (json['type'] != null ? RequestToolSearchToolSearchResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RequestToolSearchToolSearchResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      RequestToolSearchToolSearchResultBlock(
+        toolReferences: ((json['tool_references'] as List?)
+            ?.map((e) =>
+                RequestToolReferenceBlock.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        type_: (json['type'] != null
+            ? RequestToolSearchToolSearchResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'tool_references': toolReferences.map((item) => item.toJson()).toList(),
-    'type': type_.toJson(),
-  };
+        'tool_references': toolReferences.map((item) => item.toJson()).toList(),
+        'type': type_.toJson(),
+      };
 }
 
 sealed class RequestToolUseBlockCacheControl {
@@ -160,24 +289,36 @@ sealed class RequestToolUseBlockCacheControl {
   static const String constructionSurface = 'named';
   const RequestToolUseBlockCacheControl();
   factory RequestToolUseBlockCacheControl.fromJson(Object? json) {
-    try { return RequestToolUseBlockCacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownRequestToolUseBlockCacheControl(json); }
-    throw FormatException("No variant matched for RequestToolUseBlockCacheControl");
+    try {
+      return RequestToolUseBlockCacheControlCacheControlEphemeral(
+          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownRequestToolUseBlockCacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for RequestToolUseBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class RequestToolUseBlockCacheControlCacheControlEphemeral extends RequestToolUseBlockCacheControl {
+final class RequestToolUseBlockCacheControlCacheControlEphemeral
+    extends RequestToolUseBlockCacheControl {
   final CacheControlEphemeral value;
   const RequestToolUseBlockCacheControlCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [RequestToolUseBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestToolUseBlockCacheControl extends RequestToolUseBlockCacheControl {
+final class UnknownRequestToolUseBlockCacheControl
+    extends RequestToolUseBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownRequestToolUseBlockCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 sealed class RequestToolUseBlockToolsetName {
@@ -185,79 +326,146 @@ sealed class RequestToolUseBlockToolsetName {
   static const String constructionSurface = 'named';
   const RequestToolUseBlockToolsetName();
   factory RequestToolUseBlockToolsetName.fromJson(Object? json) {
-    if (json is String) { return RequestToolUseBlockToolsetNameString(json); }
-    throw FormatException("No variant matched for RequestToolUseBlockToolsetName");
+    if (json is String) {
+      return RequestToolUseBlockToolsetNameString(json);
+    }
+    throw FormatException(
+        "No variant matched for RequestToolUseBlockToolsetName");
   }
   Object? toJson();
 }
 
-final class RequestToolUseBlockToolsetNameString extends RequestToolUseBlockToolsetName {
+final class RequestToolUseBlockToolsetNameString
+    extends RequestToolUseBlockToolsetName {
   final String value;
   const RequestToolUseBlockToolsetNameString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `RequestToolUseBlock` API schema.
 class RequestToolUseBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
+
   /// Optional API value serialized in the `caller` wire field.
   final SdkOptional<RequestToolUseBlockCaller> caller;
+
   /// Required `string` value serialized in the `id` wire field.
   final String id;
+
   /// Required object value serialized in the `input` wire field.
   final Map<String, Object?> input;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// For a toolset member tool_use, the toolset family this member belongs to.
   final SdkOptional<String?> toolsetName;
+
   /// Required `string` value serialized in the `type` wire field.
   final RequestToolUseBlockType type_;
 
-  const RequestToolUseBlock({this.cacheControl = const SdkOmitted(), this.caller = const SdkOmitted(), required this.id, required this.input, required this.name, this.toolsetName = const SdkOmitted(), required this.type_});
+  const RequestToolUseBlock(
+      {this.cacheControl = const SdkOmitted(),
+      this.caller = const SdkOmitted(),
+      required this.id,
+      required this.input,
+      required this.name,
+      this.toolsetName = const SdkOmitted(),
+      required this.type_});
 
-  RequestToolUseBlock Function({SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<RequestToolUseBlockCaller> caller, String id, Map<String, Object?> input, String name, SdkOptional<String?> toolsetName, RequestToolUseBlockType type_}) get copyWith => _copyWith;
+  RequestToolUseBlock Function(
+      {SdkOptional<CacheControlEphemeral?> cacheControl,
+      SdkOptional<RequestToolUseBlockCaller> caller,
+      String id,
+      Map<String, Object?> input,
+      String name,
+      SdkOptional<String?> toolsetName,
+      RequestToolUseBlockType type_}) get copyWith => _copyWith;
 
-  RequestToolUseBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? caller = sdkOmittedValue, Object? id = sdkOmittedValue, Object? input = sdkOmittedValue, Object? name = sdkOmittedValue, Object? toolsetName = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestToolUseBlock(
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
-    caller: identical(caller, sdkOmittedValue) ? this.caller : caller as SdkOptional<RequestToolUseBlockCaller>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    input: identical(input, sdkOmittedValue) ? this.input : input as Map<String, Object?>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    toolsetName: identical(toolsetName, sdkOmittedValue) ? this.toolsetName : toolsetName as SdkOptional<String?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestToolUseBlockType,
-  );
+  RequestToolUseBlock _copyWith(
+          {Object? cacheControl = sdkOmittedValue,
+          Object? caller = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? input = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? toolsetName = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RequestToolUseBlock(
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<CacheControlEphemeral?>,
+        caller: identical(caller, sdkOmittedValue)
+            ? this.caller
+            : caller as SdkOptional<RequestToolUseBlockCaller>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        input: identical(input, sdkOmittedValue)
+            ? this.input
+            : input as Map<String, Object?>,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        toolsetName: identical(toolsetName, sdkOmittedValue)
+            ? this.toolsetName
+            : toolsetName as SdkOptional<String?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RequestToolUseBlockType,
+      );
 
-  factory RequestToolUseBlock.fromJson(Map<String, dynamic> json) => RequestToolUseBlock(
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    caller: json['caller'] != null ? SdkPresent((json['caller'] != null ? RequestToolUseBlockCaller.fromJson(json['caller']) : null)!) : const SdkOmitted(),
-    id: (json['id'] as String?)!,
-    input: (json['input'] == null ? null : Map<String, dynamic>.from(json['input'] as Map).map((key, value) => MapEntry(key, value)))!,
-    name: (json['name'] as String?)!,
-    toolsetName: json.containsKey('toolset_name') ? SdkPresent(json['toolset_name'] as String?) : const SdkOmitted(),
-    type_: (json['type'] != null ? RequestToolUseBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RequestToolUseBlock.fromJson(Map<String, dynamic> json) =>
+      RequestToolUseBlock(
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? CacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        caller: json['caller'] != null
+            ? SdkPresent((json['caller'] != null
+                ? RequestToolUseBlockCaller.fromJson(json['caller'])
+                : null)!)
+            : const SdkOmitted(),
+        id: (json['id'] as String?)!,
+        input: (json['input'] == null
+            ? null
+            : Map<String, dynamic>.from(json['input'] as Map)
+                .map((key, value) => MapEntry(key, value)))!,
+        name: (json['name'] as String?)!,
+        toolsetName: json.containsKey('toolset_name')
+            ? SdkPresent(json['toolset_name'] as String?)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? RequestToolUseBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (cacheControl) {
-      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (caller) {
-      SdkPresent<RequestToolUseBlockCaller>(value: final value) => {'caller': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'id': id,
-    'input': input,
-    'name': name,
-    ...switch (toolsetName) {
-      SdkPresent<String?>(value: final value) => {'toolset_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (cacheControl) {
+          SdkPresent<CacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (caller) {
+          SdkPresent<RequestToolUseBlockCaller>(value: final value) => {
+              'caller': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'id': id,
+        'input': input,
+        'name': name,
+        ...switch (toolsetName) {
+          SdkPresent<String?>(value: final value) => {
+              'toolset_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }
 
 sealed class RequestToolUseBlockCaller {
@@ -266,21 +474,52 @@ sealed class RequestToolUseBlockCaller {
   const RequestToolUseBlockCaller();
   factory RequestToolUseBlockCaller.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = DirectCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolUseBlockCallerDirectCaller(value); } } catch (_) {}
-      try { final value = ServerToolCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolUseBlockCallerServerToolCaller(value); } } catch (_) {}
-      try { final value = ServerToolCaller20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolUseBlockCallerServerToolCaller20260120(value); } } catch (_) {}
+      try {
+        final value = DirectCaller.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RequestToolUseBlockCallerDirectCaller(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ServerToolCaller.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RequestToolUseBlockCallerServerToolCaller(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ServerToolCaller20260120.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RequestToolUseBlockCallerServerToolCaller20260120(value);
+        }
+      } catch (_) {}
     }
-    try { return RequestToolUseBlockCallerDirectCaller(DirectCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return RequestToolUseBlockCallerServerToolCaller(ServerToolCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return RequestToolUseBlockCallerServerToolCaller20260120(ServerToolCaller20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"code_execution_20250825", "code_execution_20260120", "direct"}.contains(json["type"])) { return UnknownRequestToolUseBlockCaller(json); }
+    try {
+      return RequestToolUseBlockCallerDirectCaller(
+          DirectCaller.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return RequestToolUseBlockCallerServerToolCaller(
+          ServerToolCaller.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return RequestToolUseBlockCallerServerToolCaller20260120(
+          ServerToolCaller20260120.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"code_execution_20250825", "code_execution_20260120", "direct"}
+            .contains(json["type"])) {
+      return UnknownRequestToolUseBlockCaller(json);
+    }
     throw FormatException("No variant matched for RequestToolUseBlockCaller");
   }
   Object? toJson();
 }
 
-final class RequestToolUseBlockCallerDirectCaller extends RequestToolUseBlockCaller {
+final class RequestToolUseBlockCallerDirectCaller
+    extends RequestToolUseBlockCaller {
   final DirectCaller value;
   const RequestToolUseBlockCallerDirectCaller(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

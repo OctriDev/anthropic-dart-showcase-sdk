@@ -8,22 +8,30 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSearchResultCitations {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether citations are enabled for this search result.
   final bool enabled;
 
   const BetaManagedAgentsSearchResultCitations({required this.enabled});
 
-  BetaManagedAgentsSearchResultCitations Function({bool enabled}) get copyWith => _copyWith;
+  BetaManagedAgentsSearchResultCitations Function({bool enabled})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsSearchResultCitations _copyWith({Object? enabled = sdkOmittedValue}) => BetaManagedAgentsSearchResultCitations(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-  );
+  BetaManagedAgentsSearchResultCitations _copyWith(
+          {Object? enabled = sdkOmittedValue}) =>
+      BetaManagedAgentsSearchResultCitations(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+      );
 
-  factory BetaManagedAgentsSearchResultCitations.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSearchResultCitations(
-    enabled: (json['enabled'] as bool?)!,
-  );
+  factory BetaManagedAgentsSearchResultCitations.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSearchResultCitations(
+        enabled: (json['enabled'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-  };
+        'enabled': enabled,
+      };
 }

@@ -8,37 +8,75 @@ part of 'users_beta_true.dart';
 class BetaAnalyticsToolActions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Accepted/rejected counts for a single Claude Code tool type.
   final BetaAnalyticsToolActionCounts editTool;
+
   /// Accepted/rejected counts for a single Claude Code tool type.
   final BetaAnalyticsToolActionCounts multiEditTool;
+
   /// Accepted/rejected counts for a single Claude Code tool type.
   final BetaAnalyticsToolActionCounts notebookEditTool;
+
   /// Accepted/rejected counts for a single Claude Code tool type.
   final BetaAnalyticsToolActionCounts writeTool;
 
-  const BetaAnalyticsToolActions({required this.editTool, required this.multiEditTool, required this.notebookEditTool, required this.writeTool});
+  const BetaAnalyticsToolActions(
+      {required this.editTool,
+      required this.multiEditTool,
+      required this.notebookEditTool,
+      required this.writeTool});
 
-  BetaAnalyticsToolActions Function({BetaAnalyticsToolActionCounts editTool, BetaAnalyticsToolActionCounts multiEditTool, BetaAnalyticsToolActionCounts notebookEditTool, BetaAnalyticsToolActionCounts writeTool}) get copyWith => _copyWith;
+  BetaAnalyticsToolActions Function(
+      {BetaAnalyticsToolActionCounts editTool,
+      BetaAnalyticsToolActionCounts multiEditTool,
+      BetaAnalyticsToolActionCounts notebookEditTool,
+      BetaAnalyticsToolActionCounts writeTool}) get copyWith => _copyWith;
 
-  BetaAnalyticsToolActions _copyWith({Object? editTool = sdkOmittedValue, Object? multiEditTool = sdkOmittedValue, Object? notebookEditTool = sdkOmittedValue, Object? writeTool = sdkOmittedValue}) => BetaAnalyticsToolActions(
-    editTool: identical(editTool, sdkOmittedValue) ? this.editTool : editTool as BetaAnalyticsToolActionCounts,
-    multiEditTool: identical(multiEditTool, sdkOmittedValue) ? this.multiEditTool : multiEditTool as BetaAnalyticsToolActionCounts,
-    notebookEditTool: identical(notebookEditTool, sdkOmittedValue) ? this.notebookEditTool : notebookEditTool as BetaAnalyticsToolActionCounts,
-    writeTool: identical(writeTool, sdkOmittedValue) ? this.writeTool : writeTool as BetaAnalyticsToolActionCounts,
-  );
+  BetaAnalyticsToolActions _copyWith(
+          {Object? editTool = sdkOmittedValue,
+          Object? multiEditTool = sdkOmittedValue,
+          Object? notebookEditTool = sdkOmittedValue,
+          Object? writeTool = sdkOmittedValue}) =>
+      BetaAnalyticsToolActions(
+        editTool: identical(editTool, sdkOmittedValue)
+            ? this.editTool
+            : editTool as BetaAnalyticsToolActionCounts,
+        multiEditTool: identical(multiEditTool, sdkOmittedValue)
+            ? this.multiEditTool
+            : multiEditTool as BetaAnalyticsToolActionCounts,
+        notebookEditTool: identical(notebookEditTool, sdkOmittedValue)
+            ? this.notebookEditTool
+            : notebookEditTool as BetaAnalyticsToolActionCounts,
+        writeTool: identical(writeTool, sdkOmittedValue)
+            ? this.writeTool
+            : writeTool as BetaAnalyticsToolActionCounts,
+      );
 
-  factory BetaAnalyticsToolActions.fromJson(Map<String, dynamic> json) => BetaAnalyticsToolActions(
-    editTool: (json['edit_tool'] != null ? BetaAnalyticsToolActionCounts.fromJson(json['edit_tool'] as Map<String, dynamic>) : null)!,
-    multiEditTool: (json['multi_edit_tool'] != null ? BetaAnalyticsToolActionCounts.fromJson(json['multi_edit_tool'] as Map<String, dynamic>) : null)!,
-    notebookEditTool: (json['notebook_edit_tool'] != null ? BetaAnalyticsToolActionCounts.fromJson(json['notebook_edit_tool'] as Map<String, dynamic>) : null)!,
-    writeTool: (json['write_tool'] != null ? BetaAnalyticsToolActionCounts.fromJson(json['write_tool'] as Map<String, dynamic>) : null)!,
-  );
+  factory BetaAnalyticsToolActions.fromJson(Map<String, dynamic> json) =>
+      BetaAnalyticsToolActions(
+        editTool: (json['edit_tool'] != null
+            ? BetaAnalyticsToolActionCounts.fromJson(
+                json['edit_tool'] as Map<String, dynamic>)
+            : null)!,
+        multiEditTool: (json['multi_edit_tool'] != null
+            ? BetaAnalyticsToolActionCounts.fromJson(
+                json['multi_edit_tool'] as Map<String, dynamic>)
+            : null)!,
+        notebookEditTool: (json['notebook_edit_tool'] != null
+            ? BetaAnalyticsToolActionCounts.fromJson(
+                json['notebook_edit_tool'] as Map<String, dynamic>)
+            : null)!,
+        writeTool: (json['write_tool'] != null
+            ? BetaAnalyticsToolActionCounts.fromJson(
+                json['write_tool'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'edit_tool': editTool.toJson(),
-    'multi_edit_tool': multiEditTool.toJson(),
-    'notebook_edit_tool': notebookEditTool.toJson(),
-    'write_tool': writeTool.toJson(),
-  };
+        'edit_tool': editTool.toJson(),
+        'multi_edit_tool': multiEditTool.toJson(),
+        'notebook_edit_tool': notebookEditTool.toJson(),
+        'write_tool': writeTool.toJson(),
+      };
 }

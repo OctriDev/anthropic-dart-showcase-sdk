@@ -9,33 +9,45 @@ sealed class BetaFederationIssuerUpdateParamsIssuerUrl {
   static const String constructionSurface = 'named';
   const BetaFederationIssuerUpdateParamsIssuerUrl();
   factory BetaFederationIssuerUpdateParamsIssuerUrl.fromJson(Object? json) {
-    if (json is String) { return BetaFederationIssuerUpdateParamsIssuerUrlString(json); }
-    throw FormatException("No variant matched for BetaFederationIssuerUpdateParamsIssuerUrl");
+    if (json is String) {
+      return BetaFederationIssuerUpdateParamsIssuerUrlString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaFederationIssuerUpdateParamsIssuerUrl");
   }
   Object? toJson();
 }
 
-final class BetaFederationIssuerUpdateParamsIssuerUrlString extends BetaFederationIssuerUpdateParamsIssuerUrl {
+final class BetaFederationIssuerUpdateParamsIssuerUrlString
+    extends BetaFederationIssuerUpdateParamsIssuerUrl {
   final String value;
   const BetaFederationIssuerUpdateParamsIssuerUrlString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BetaFederationIssuerUpdateParamsMaxJwtLifetimeSeconds {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaFederationIssuerUpdateParamsMaxJwtLifetimeSeconds();
-  factory BetaFederationIssuerUpdateParamsMaxJwtLifetimeSeconds.fromJson(Object? json) {
-    if (json is num) { return BetaFederationIssuerUpdateParamsMaxJwtLifetimeSecondsInt(json.toInt()); }
-    throw FormatException("No variant matched for BetaFederationIssuerUpdateParamsMaxJwtLifetimeSeconds");
+  factory BetaFederationIssuerUpdateParamsMaxJwtLifetimeSeconds.fromJson(
+      Object? json) {
+    if (json is num) {
+      return BetaFederationIssuerUpdateParamsMaxJwtLifetimeSecondsInt(
+          json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for BetaFederationIssuerUpdateParamsMaxJwtLifetimeSeconds");
   }
   Object? toJson();
 }
 
-final class BetaFederationIssuerUpdateParamsMaxJwtLifetimeSecondsInt extends BetaFederationIssuerUpdateParamsMaxJwtLifetimeSeconds {
+final class BetaFederationIssuerUpdateParamsMaxJwtLifetimeSecondsInt
+    extends BetaFederationIssuerUpdateParamsMaxJwtLifetimeSeconds {
   final int value;
   const BetaFederationIssuerUpdateParamsMaxJwtLifetimeSecondsInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BetaFederationIssuerUpdateParamsName {
@@ -43,83 +55,156 @@ sealed class BetaFederationIssuerUpdateParamsName {
   static const String constructionSurface = 'named';
   const BetaFederationIssuerUpdateParamsName();
   factory BetaFederationIssuerUpdateParamsName.fromJson(Object? json) {
-    if (json is String) { return BetaFederationIssuerUpdateParamsNameString(json); }
-    throw FormatException("No variant matched for BetaFederationIssuerUpdateParamsName");
+    if (json is String) {
+      return BetaFederationIssuerUpdateParamsNameString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaFederationIssuerUpdateParamsName");
   }
   Object? toJson();
 }
 
-final class BetaFederationIssuerUpdateParamsNameString extends BetaFederationIssuerUpdateParamsName {
+final class BetaFederationIssuerUpdateParamsNameString
+    extends BetaFederationIssuerUpdateParamsName {
   final String value;
   const BetaFederationIssuerUpdateParamsNameString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Partial update. Set fields are applied; omitted fields are unchanged. Setting `jwks` replaces the whole JWKS configuration at once.
 class BetaFederationIssuerUpdateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether the jwt-bearer exchange enforces JTI single-use (replay protection) for tokens from this issuer. Applies only to assertions carrying a `jti` claim; tokens without one are accepted without single-use enforcement.
   final SdkOptional<bool?> checkJti;
+
   /// Replaces the `iss` claim value to match against. For discovery-mode issuers without a `discovery_base`, this is also the URL Anthropic fetches the OIDC discovery document and signing keys from, so changing it repoints the JWKS source. Changing the issuer URL to a well-known shared platform is rejected while any live rule under this issuer would not constrain tenant identity.
   final SdkOptional<String?> issuerUrl;
+
   /// Replaces the entire JWKS configuration.
   final SdkOptional<BetaFederationIssuerUpdateParamsJwks?> jwks;
+
   /// Only `false` is accepted, to re-enable polling after the system pauses it. Polling is paused automatically; sending `true` is rejected.
   final SdkOptional<bool?> jwksPollingDisabled;
+
   /// Maximum allowed iat→exp spread for assertions from this issuer (1-176400 seconds, i.e. up to 49h). Assertions must carry both `iat` and `exp`; a missing `iat` is rejected.
   final SdkOptional<int?> maxJwtLifetimeSeconds;
+
   /// Replaces the slug identifier (lowercase, digits, hyphens). Unique within the organization; a duplicate name returns 409.
   final SdkOptional<String?> name;
 
-  const BetaFederationIssuerUpdateParams({this.checkJti = const SdkOmitted(), this.issuerUrl = const SdkOmitted(), this.jwks = const SdkOmitted(), this.jwksPollingDisabled = const SdkOmitted(), this.maxJwtLifetimeSeconds = const SdkOmitted(), this.name = const SdkOmitted()});
+  const BetaFederationIssuerUpdateParams(
+      {this.checkJti = const SdkOmitted(),
+      this.issuerUrl = const SdkOmitted(),
+      this.jwks = const SdkOmitted(),
+      this.jwksPollingDisabled = const SdkOmitted(),
+      this.maxJwtLifetimeSeconds = const SdkOmitted(),
+      this.name = const SdkOmitted()});
 
-  BetaFederationIssuerUpdateParams Function({SdkOptional<bool?> checkJti, SdkOptional<String?> issuerUrl, SdkOptional<BetaFederationIssuerUpdateParamsJwks?> jwks, SdkOptional<bool?> jwksPollingDisabled, SdkOptional<int?> maxJwtLifetimeSeconds, SdkOptional<String?> name}) get copyWith => _copyWith;
+  BetaFederationIssuerUpdateParams Function(
+      {SdkOptional<bool?> checkJti,
+      SdkOptional<String?> issuerUrl,
+      SdkOptional<BetaFederationIssuerUpdateParamsJwks?> jwks,
+      SdkOptional<bool?> jwksPollingDisabled,
+      SdkOptional<int?> maxJwtLifetimeSeconds,
+      SdkOptional<String?> name}) get copyWith => _copyWith;
 
-  BetaFederationIssuerUpdateParams _copyWith({Object? checkJti = sdkOmittedValue, Object? issuerUrl = sdkOmittedValue, Object? jwks = sdkOmittedValue, Object? jwksPollingDisabled = sdkOmittedValue, Object? maxJwtLifetimeSeconds = sdkOmittedValue, Object? name = sdkOmittedValue}) => BetaFederationIssuerUpdateParams(
-    checkJti: identical(checkJti, sdkOmittedValue) ? this.checkJti : checkJti as SdkOptional<bool?>,
-    issuerUrl: identical(issuerUrl, sdkOmittedValue) ? this.issuerUrl : issuerUrl as SdkOptional<String?>,
-    jwks: identical(jwks, sdkOmittedValue) ? this.jwks : jwks as SdkOptional<BetaFederationIssuerUpdateParamsJwks?>,
-    jwksPollingDisabled: identical(jwksPollingDisabled, sdkOmittedValue) ? this.jwksPollingDisabled : jwksPollingDisabled as SdkOptional<bool?>,
-    maxJwtLifetimeSeconds: identical(maxJwtLifetimeSeconds, sdkOmittedValue) ? this.maxJwtLifetimeSeconds : maxJwtLifetimeSeconds as SdkOptional<int?>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
-  );
+  BetaFederationIssuerUpdateParams _copyWith(
+          {Object? checkJti = sdkOmittedValue,
+          Object? issuerUrl = sdkOmittedValue,
+          Object? jwks = sdkOmittedValue,
+          Object? jwksPollingDisabled = sdkOmittedValue,
+          Object? maxJwtLifetimeSeconds = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      BetaFederationIssuerUpdateParams(
+        checkJti: identical(checkJti, sdkOmittedValue)
+            ? this.checkJti
+            : checkJti as SdkOptional<bool?>,
+        issuerUrl: identical(issuerUrl, sdkOmittedValue)
+            ? this.issuerUrl
+            : issuerUrl as SdkOptional<String?>,
+        jwks: identical(jwks, sdkOmittedValue)
+            ? this.jwks
+            : jwks as SdkOptional<BetaFederationIssuerUpdateParamsJwks?>,
+        jwksPollingDisabled: identical(jwksPollingDisabled, sdkOmittedValue)
+            ? this.jwksPollingDisabled
+            : jwksPollingDisabled as SdkOptional<bool?>,
+        maxJwtLifetimeSeconds: identical(maxJwtLifetimeSeconds, sdkOmittedValue)
+            ? this.maxJwtLifetimeSeconds
+            : maxJwtLifetimeSeconds as SdkOptional<int?>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String?>,
+      );
 
-  factory BetaFederationIssuerUpdateParams.fromJson(Map<String, dynamic> json) => BetaFederationIssuerUpdateParams(
-    checkJti: json.containsKey('check_jti') ? SdkPresent(json['check_jti'] as bool?) : const SdkOmitted(),
-    issuerUrl: json.containsKey('issuer_url') ? SdkPresent(json['issuer_url'] as String?) : const SdkOmitted(),
-    jwks: json.containsKey('jwks') ? SdkPresent(json['jwks'] != null ? BetaFederationIssuerUpdateParamsJwks.fromJson(json['jwks']) : null) : const SdkOmitted(),
-    jwksPollingDisabled: json.containsKey('jwks_polling_disabled') ? SdkPresent(json['jwks_polling_disabled'] as bool?) : const SdkOmitted(),
-    maxJwtLifetimeSeconds: json.containsKey('max_jwt_lifetime_seconds') ? SdkPresent((json['max_jwt_lifetime_seconds'] as num?)?.toInt()) : const SdkOmitted(),
-    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
-  );
+  factory BetaFederationIssuerUpdateParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaFederationIssuerUpdateParams(
+        checkJti: json.containsKey('check_jti')
+            ? SdkPresent(json['check_jti'] as bool?)
+            : const SdkOmitted(),
+        issuerUrl: json.containsKey('issuer_url')
+            ? SdkPresent(json['issuer_url'] as String?)
+            : const SdkOmitted(),
+        jwks: json.containsKey('jwks')
+            ? SdkPresent(json['jwks'] != null
+                ? BetaFederationIssuerUpdateParamsJwks.fromJson(json['jwks'])
+                : null)
+            : const SdkOmitted(),
+        jwksPollingDisabled: json.containsKey('jwks_polling_disabled')
+            ? SdkPresent(json['jwks_polling_disabled'] as bool?)
+            : const SdkOmitted(),
+        maxJwtLifetimeSeconds: json.containsKey('max_jwt_lifetime_seconds')
+            ? SdkPresent((json['max_jwt_lifetime_seconds'] as num?)?.toInt())
+            : const SdkOmitted(),
+        name: json.containsKey('name')
+            ? SdkPresent(json['name'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (checkJti) {
-      SdkPresent<bool?>(value: final value) => {'check_jti': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (issuerUrl) {
-      SdkPresent<String?>(value: final value) => {'issuer_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (jwks) {
-      SdkPresent<BetaFederationIssuerUpdateParamsJwks?>(value: final value) => {'jwks': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (jwksPollingDisabled) {
-      SdkPresent<bool?>(value: final value) => {'jwks_polling_disabled': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (maxJwtLifetimeSeconds) {
-      SdkPresent<int?>(value: final value) => {'max_jwt_lifetime_seconds': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String?>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (checkJti) {
+          SdkPresent<bool?>(value: final value) => {
+              'check_jti': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issuerUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'issuer_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (jwks) {
+          SdkPresent<BetaFederationIssuerUpdateParamsJwks?>(
+            value: final value
+          ) =>
+            {
+              'jwks': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (jwksPollingDisabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'jwks_polling_disabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (maxJwtLifetimeSeconds) {
+          SdkPresent<int?>(value: final value) => {
+              'max_jwt_lifetime_seconds': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String?>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class BetaFederationIssuerUpdateParamsJwks {
@@ -128,40 +213,77 @@ sealed class BetaFederationIssuerUpdateParamsJwks {
   const BetaFederationIssuerUpdateParamsJwks();
   factory BetaFederationIssuerUpdateParamsJwks.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaJwksDiscovery.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaFederationIssuerUpdateParamsJwksBetaJwksDiscovery(value); } } catch (_) {}
-      try { final value = BetaJwksExplicitUrl.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaFederationIssuerUpdateParamsJwksBetaJwksExplicitUrl(value); } } catch (_) {}
-      try { final value = BetaJwksInline.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaFederationIssuerUpdateParamsJwksBetaJwksInline(value); } } catch (_) {}
+      try {
+        final value = BetaJwksDiscovery.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaFederationIssuerUpdateParamsJwksBetaJwksDiscovery(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaJwksExplicitUrl.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaFederationIssuerUpdateParamsJwksBetaJwksExplicitUrl(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaJwksInline.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaFederationIssuerUpdateParamsJwksBetaJwksInline(value);
+        }
+      } catch (_) {}
     }
-    try { return BetaFederationIssuerUpdateParamsJwksBetaJwksDiscovery(BetaJwksDiscovery.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaFederationIssuerUpdateParamsJwksBetaJwksExplicitUrl(BetaJwksExplicitUrl.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaFederationIssuerUpdateParamsJwksBetaJwksInline(BetaJwksInline.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"discovery", "explicit_url", "inline"}.contains(json["type"])) { return UnknownBetaFederationIssuerUpdateParamsJwks(json); }
-    throw FormatException("No variant matched for BetaFederationIssuerUpdateParamsJwks");
+    try {
+      return BetaFederationIssuerUpdateParamsJwksBetaJwksDiscovery(
+          BetaJwksDiscovery.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaFederationIssuerUpdateParamsJwksBetaJwksExplicitUrl(
+          BetaJwksExplicitUrl.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaFederationIssuerUpdateParamsJwksBetaJwksInline(
+          BetaJwksInline.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"discovery", "explicit_url", "inline"}.contains(json["type"])) {
+      return UnknownBetaFederationIssuerUpdateParamsJwks(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaFederationIssuerUpdateParamsJwks");
   }
   Object? toJson();
 }
 
-final class BetaFederationIssuerUpdateParamsJwksBetaJwksDiscovery extends BetaFederationIssuerUpdateParamsJwks {
+final class BetaFederationIssuerUpdateParamsJwksBetaJwksDiscovery
+    extends BetaFederationIssuerUpdateParamsJwks {
   final BetaJwksDiscovery value;
   const BetaFederationIssuerUpdateParamsJwksBetaJwksDiscovery(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaFederationIssuerUpdateParamsJwksBetaJwksExplicitUrl extends BetaFederationIssuerUpdateParamsJwks {
+final class BetaFederationIssuerUpdateParamsJwksBetaJwksExplicitUrl
+    extends BetaFederationIssuerUpdateParamsJwks {
   final BetaJwksExplicitUrl value;
   const BetaFederationIssuerUpdateParamsJwksBetaJwksExplicitUrl(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaFederationIssuerUpdateParamsJwksBetaJwksInline extends BetaFederationIssuerUpdateParamsJwks {
+final class BetaFederationIssuerUpdateParamsJwksBetaJwksInline
+    extends BetaFederationIssuerUpdateParamsJwks {
   final BetaJwksInline value;
   const BetaFederationIssuerUpdateParamsJwksBetaJwksInline(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaFederationIssuerUpdateParamsJwks] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaFederationIssuerUpdateParamsJwks extends BetaFederationIssuerUpdateParamsJwks {
+final class UnknownBetaFederationIssuerUpdateParamsJwks
+    extends BetaFederationIssuerUpdateParamsJwks {
   final Map<String, dynamic> raw;
   const UnknownBetaFederationIssuerUpdateParamsJwks(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

@@ -8,22 +8,30 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsEffortHigh {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsEffortHighType type_;
 
   const BetaManagedAgentsEffortHigh({required this.type_});
 
-  BetaManagedAgentsEffortHigh Function({BetaManagedAgentsEffortHighType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsEffortHigh Function({BetaManagedAgentsEffortHighType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsEffortHigh _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsEffortHigh(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsEffortHighType,
-  );
+  BetaManagedAgentsEffortHigh _copyWith({Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsEffortHigh(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsEffortHighType,
+      );
 
-  factory BetaManagedAgentsEffortHigh.fromJson(Map<String, dynamic> json) => BetaManagedAgentsEffortHigh(
-    type_: (json['type'] != null ? BetaManagedAgentsEffortHighType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsEffortHigh.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsEffortHigh(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsEffortHighType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

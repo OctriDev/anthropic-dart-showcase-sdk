@@ -6,12 +6,12 @@ part of 'shared_beta_managed_agents.dart';
 // shared_beta_managed_agents domain models
 /// How hard Claude works on each turn. Higher levels favor reasoning depth over latency. Not all models accept every level; invalid combinations are rejected at create time.
 final class BetaManagedAgentsEffortLevel {
-
   final String value;
 
   const BetaManagedAgentsEffortLevel._(this.value);
 
-  factory BetaManagedAgentsEffortLevel.fromJson(String value) => BetaManagedAgentsEffortLevel._(value);
+  factory BetaManagedAgentsEffortLevel.fromJson(String value) =>
+      BetaManagedAgentsEffortLevel._(value);
 
   static const low = BetaManagedAgentsEffortLevel._('low');
   static const medium = BetaManagedAgentsEffortLevel._('medium');
@@ -21,10 +21,13 @@ final class BetaManagedAgentsEffortLevel {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsEffortLevel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsEffortLevel && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

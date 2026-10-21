@@ -8,27 +8,41 @@ part of 'shared_beta.dart';
 class BetaGatewayTimeoutError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaGatewayTimeoutErrorType type_;
 
   const BetaGatewayTimeoutError({required this.message, required this.type_});
 
-  BetaGatewayTimeoutError Function({String message, BetaGatewayTimeoutErrorType type_}) get copyWith => _copyWith;
+  BetaGatewayTimeoutError Function(
+      {String message,
+      BetaGatewayTimeoutErrorType type_}) get copyWith => _copyWith;
 
-  BetaGatewayTimeoutError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaGatewayTimeoutError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaGatewayTimeoutErrorType,
-  );
+  BetaGatewayTimeoutError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaGatewayTimeoutError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaGatewayTimeoutErrorType,
+      );
 
-  factory BetaGatewayTimeoutError.fromJson(Map<String, dynamic> json) => BetaGatewayTimeoutError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? BetaGatewayTimeoutErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaGatewayTimeoutError.fromJson(Map<String, dynamic> json) =>
+      BetaGatewayTimeoutError(
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaGatewayTimeoutErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }

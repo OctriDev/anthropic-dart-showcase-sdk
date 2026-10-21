@@ -8,57 +8,121 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsDeploymentRun {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsDeploymentRunType type_;
+
   /// Unique identifier for this run (`drun_...`).
   final String id;
+
   /// ID of the deployment that produced this run.
   final String deploymentId;
+
   /// What triggered this run and trigger-specific metadata.
   final BetaManagedAgentsTriggerContext triggerContext;
+
   /// Populated on success. Null on creation failure. Exactly one of `session_id` or `error` is non-null.
   final String? sessionId;
+
   /// Populated on creation failure. Null on success. Exactly one of `session_id` or `error` is non-null.
   final BetaManagedAgentsRunError? error;
+
   /// Snapshot of the agent at fire time. Always fully resolved — deployments pin agent + version.
   final BetaManagedAgentsAgentReference agent;
+
   /// Time this run record was persisted.
   final String createdAt;
 
-  const BetaManagedAgentsDeploymentRun({required this.type_, required this.id, required this.deploymentId, required this.triggerContext, required this.sessionId, required this.error, required this.agent, required this.createdAt});
+  const BetaManagedAgentsDeploymentRun(
+      {required this.type_,
+      required this.id,
+      required this.deploymentId,
+      required this.triggerContext,
+      required this.sessionId,
+      required this.error,
+      required this.agent,
+      required this.createdAt});
 
-  BetaManagedAgentsDeploymentRun Function({BetaManagedAgentsDeploymentRunType type_, String id, String deploymentId, BetaManagedAgentsTriggerContext triggerContext, String? sessionId, BetaManagedAgentsRunError? error, BetaManagedAgentsAgentReference agent, String createdAt}) get copyWith => _copyWith;
+  BetaManagedAgentsDeploymentRun Function(
+      {BetaManagedAgentsDeploymentRunType type_,
+      String id,
+      String deploymentId,
+      BetaManagedAgentsTriggerContext triggerContext,
+      String? sessionId,
+      BetaManagedAgentsRunError? error,
+      BetaManagedAgentsAgentReference agent,
+      String createdAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsDeploymentRun _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? deploymentId = sdkOmittedValue, Object? triggerContext = sdkOmittedValue, Object? sessionId = sdkOmittedValue, Object? error = sdkOmittedValue, Object? agent = sdkOmittedValue, Object? createdAt = sdkOmittedValue}) => BetaManagedAgentsDeploymentRun(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsDeploymentRunType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    deploymentId: identical(deploymentId, sdkOmittedValue) ? this.deploymentId : deploymentId as String,
-    triggerContext: identical(triggerContext, sdkOmittedValue) ? this.triggerContext : triggerContext as BetaManagedAgentsTriggerContext,
-    sessionId: identical(sessionId, sdkOmittedValue) ? this.sessionId : sessionId as String?,
-    error: identical(error, sdkOmittedValue) ? this.error : error as BetaManagedAgentsRunError?,
-    agent: identical(agent, sdkOmittedValue) ? this.agent : agent as BetaManagedAgentsAgentReference,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-  );
+  BetaManagedAgentsDeploymentRun _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? deploymentId = sdkOmittedValue,
+          Object? triggerContext = sdkOmittedValue,
+          Object? sessionId = sdkOmittedValue,
+          Object? error = sdkOmittedValue,
+          Object? agent = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue}) =>
+      BetaManagedAgentsDeploymentRun(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsDeploymentRunType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        deploymentId: identical(deploymentId, sdkOmittedValue)
+            ? this.deploymentId
+            : deploymentId as String,
+        triggerContext: identical(triggerContext, sdkOmittedValue)
+            ? this.triggerContext
+            : triggerContext as BetaManagedAgentsTriggerContext,
+        sessionId: identical(sessionId, sdkOmittedValue)
+            ? this.sessionId
+            : sessionId as String?,
+        error: identical(error, sdkOmittedValue)
+            ? this.error
+            : error as BetaManagedAgentsRunError?,
+        agent: identical(agent, sdkOmittedValue)
+            ? this.agent
+            : agent as BetaManagedAgentsAgentReference,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+      );
 
-  factory BetaManagedAgentsDeploymentRun.fromJson(Map<String, dynamic> json) => BetaManagedAgentsDeploymentRun(
-    type_: (json['type'] != null ? BetaManagedAgentsDeploymentRunType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    deploymentId: (json['deployment_id'] as String?)!,
-    triggerContext: (json['trigger_context'] != null ? BetaManagedAgentsTriggerContext.fromJson(json['trigger_context']) : null)!,
-    sessionId: json.containsKey('session_id') ? json['session_id'] as String? : throw ArgumentError.value(null, 'session_id', 'Required property is missing'),
-    error: json.containsKey('error') ? json['error'] != null ? BetaManagedAgentsRunError.fromJson(json['error']) : null : throw ArgumentError.value(null, 'error', 'Required property is missing'),
-    agent: (json['agent'] != null ? BetaManagedAgentsAgentReference.fromJson(json['agent'] as Map<String, dynamic>) : null)!,
-    createdAt: (json['created_at'] as String?)!,
-  );
+  factory BetaManagedAgentsDeploymentRun.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsDeploymentRun(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsDeploymentRunType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        deploymentId: (json['deployment_id'] as String?)!,
+        triggerContext: (json['trigger_context'] != null
+            ? BetaManagedAgentsTriggerContext.fromJson(json['trigger_context'])
+            : null)!,
+        sessionId: json.containsKey('session_id')
+            ? json['session_id'] as String?
+            : throw ArgumentError.value(
+                null, 'session_id', 'Required property is missing'),
+        error: json.containsKey('error')
+            ? json['error'] != null
+                ? BetaManagedAgentsRunError.fromJson(json['error'])
+                : null
+            : throw ArgumentError.value(
+                null, 'error', 'Required property is missing'),
+        agent: (json['agent'] != null
+            ? BetaManagedAgentsAgentReference.fromJson(
+                json['agent'] as Map<String, dynamic>)
+            : null)!,
+        createdAt: (json['created_at'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'deployment_id': deploymentId,
-    'trigger_context': triggerContext.toJson(),
-    'session_id': sessionId,
-    'error': error?.toJson(),
-    'agent': agent.toJson(),
-    'created_at': createdAt,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'deployment_id': deploymentId,
+        'trigger_context': triggerContext.toJson(),
+        'session_id': sessionId,
+        'error': error?.toJson(),
+        'agent': agent.toJson(),
+        'created_at': createdAt,
+      };
 }

@@ -10,14 +10,17 @@ enum BetaOrganizationScopeType {
 
   static BetaOrganizationScopeType fromJson(String value) {
     switch (value) {
-      case 'organization': return BetaOrganizationScopeType.organization;
-      default: throw ArgumentError('Unknown BetaOrganizationScopeType: $value');
+      case 'organization':
+        return BetaOrganizationScopeType.organization;
+      default:
+        throw ArgumentError('Unknown BetaOrganizationScopeType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaOrganizationScopeType.organization: return 'organization';
+      case BetaOrganizationScopeType.organization:
+        return 'organization';
     }
   }
 
@@ -31,14 +34,17 @@ enum BetaOrganizationTunnelType {
 
   static BetaOrganizationTunnelType fromJson(String value) {
     switch (value) {
-      case 'tunnel': return BetaOrganizationTunnelType.tunnel;
-      default: throw ArgumentError('Unknown BetaOrganizationTunnelType: $value');
+      case 'tunnel':
+        return BetaOrganizationTunnelType.tunnel;
+      default:
+        throw ArgumentError('Unknown BetaOrganizationTunnelType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaOrganizationTunnelType.tunnel: return 'tunnel';
+      case BetaOrganizationTunnelType.tunnel:
+        return 'tunnel';
     }
   }
 
@@ -52,14 +58,18 @@ enum BetaOrganizationTunnelCertificateType {
 
   static BetaOrganizationTunnelCertificateType fromJson(String value) {
     switch (value) {
-      case 'tunnel_certificate': return BetaOrganizationTunnelCertificateType.tunnelCertificate;
-      default: throw ArgumentError('Unknown BetaOrganizationTunnelCertificateType: $value');
+      case 'tunnel_certificate':
+        return BetaOrganizationTunnelCertificateType.tunnelCertificate;
+      default:
+        throw ArgumentError(
+            'Unknown BetaOrganizationTunnelCertificateType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaOrganizationTunnelCertificateType.tunnelCertificate: return 'tunnel_certificate';
+      case BetaOrganizationTunnelCertificateType.tunnelCertificate:
+        return 'tunnel_certificate';
     }
   }
 
@@ -73,14 +83,17 @@ enum BetaOrganizationTunnelTokenType {
 
   static BetaOrganizationTunnelTokenType fromJson(String value) {
     switch (value) {
-      case 'tunnel_token': return BetaOrganizationTunnelTokenType.tunnelToken;
-      default: throw ArgumentError('Unknown BetaOrganizationTunnelTokenType: $value');
+      case 'tunnel_token':
+        return BetaOrganizationTunnelTokenType.tunnelToken;
+      default:
+        throw ArgumentError('Unknown BetaOrganizationTunnelTokenType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaOrganizationTunnelTokenType.tunnelToken: return 'tunnel_token';
+      case BetaOrganizationTunnelTokenType.tunnelToken:
+        return 'tunnel_token';
     }
   }
 
@@ -94,14 +107,17 @@ enum BetaOrgServiceScopeType {
 
   static BetaOrgServiceScopeType fromJson(String value) {
     switch (value) {
-      case 'organization_service': return BetaOrgServiceScopeType.organizationService;
-      default: throw ArgumentError('Unknown BetaOrgServiceScopeType: $value');
+      case 'organization_service':
+        return BetaOrgServiceScopeType.organizationService;
+      default:
+        throw ArgumentError('Unknown BetaOrgServiceScopeType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaOrgServiceScopeType.organizationService: return 'organization_service';
+      case BetaOrgServiceScopeType.organizationService:
+        return 'organization_service';
     }
   }
 
@@ -115,14 +131,17 @@ enum BetaOutputBehaviorCreateNewType {
 
   static BetaOutputBehaviorCreateNewType fromJson(String value) {
     switch (value) {
-      case 'create_new': return BetaOutputBehaviorCreateNewType.createNew;
-      default: throw ArgumentError('Unknown BetaOutputBehaviorCreateNewType: $value');
+      case 'create_new':
+        return BetaOutputBehaviorCreateNewType.createNew;
+      default:
+        throw ArgumentError('Unknown BetaOutputBehaviorCreateNewType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaOutputBehaviorCreateNewType.createNew: return 'create_new';
+      case BetaOutputBehaviorCreateNewType.createNew:
+        return 'create_new';
     }
   }
 
@@ -136,14 +155,18 @@ enum BetaOutputBehaviorUpdateExistingType {
 
   static BetaOutputBehaviorUpdateExistingType fromJson(String value) {
     switch (value) {
-      case 'update_existing': return BetaOutputBehaviorUpdateExistingType.updateExisting;
-      default: throw ArgumentError('Unknown BetaOutputBehaviorUpdateExistingType: $value');
+      case 'update_existing':
+        return BetaOutputBehaviorUpdateExistingType.updateExisting;
+      default:
+        throw ArgumentError(
+            'Unknown BetaOutputBehaviorUpdateExistingType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaOutputBehaviorUpdateExistingType.updateExisting: return 'update_existing';
+      case BetaOutputBehaviorUpdateExistingType.updateExisting:
+        return 'update_existing';
     }
   }
 
@@ -157,14 +180,17 @@ enum BetaOverloadedErrorType {
 
   static BetaOverloadedErrorType fromJson(String value) {
     switch (value) {
-      case 'overloaded_error': return BetaOverloadedErrorType.overloadedError;
-      default: throw ArgumentError('Unknown BetaOverloadedErrorType: $value');
+      case 'overloaded_error':
+        return BetaOverloadedErrorType.overloadedError;
+      default:
+        throw ArgumentError('Unknown BetaOverloadedErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaOverloadedErrorType.overloadedError: return 'overloaded_error';
+      case BetaOverloadedErrorType.overloadedError:
+        return 'overloaded_error';
     }
   }
 
@@ -178,14 +204,17 @@ enum BetaPackagesType {
 
   static BetaPackagesType fromJson(String value) {
     switch (value) {
-      case 'packages': return BetaPackagesType.packages;
-      default: throw ArgumentError('Unknown BetaPackagesType: $value');
+      case 'packages':
+        return BetaPackagesType.packages;
+      default:
+        throw ArgumentError('Unknown BetaPackagesType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaPackagesType.packages: return 'packages';
+      case BetaPackagesType.packages:
+        return 'packages';
     }
   }
 
@@ -199,14 +228,17 @@ enum BetaPackagesParamsType {
 
   static BetaPackagesParamsType fromJson(String value) {
     switch (value) {
-      case 'packages': return BetaPackagesParamsType.packages;
-      default: throw ArgumentError('Unknown BetaPackagesParamsType: $value');
+      case 'packages':
+        return BetaPackagesParamsType.packages;
+      default:
+        throw ArgumentError('Unknown BetaPackagesParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaPackagesParamsType.packages: return 'packages';
+      case BetaPackagesParamsType.packages:
+        return 'packages';
     }
   }
 
@@ -220,14 +252,17 @@ enum BetaPermissionErrorType {
 
   static BetaPermissionErrorType fromJson(String value) {
     switch (value) {
-      case 'permission_error': return BetaPermissionErrorType.permissionError;
-      default: throw ArgumentError('Unknown BetaPermissionErrorType: $value');
+      case 'permission_error':
+        return BetaPermissionErrorType.permissionError;
+      default:
+        throw ArgumentError('Unknown BetaPermissionErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaPermissionErrorType.permissionError: return 'permission_error';
+      case BetaPermissionErrorType.permissionError:
+        return 'permission_error';
     }
   }
 
@@ -241,14 +276,17 @@ enum BetaPlainTextSourceMediaType {
 
   static BetaPlainTextSourceMediaType fromJson(String value) {
     switch (value) {
-      case 'text/plain': return BetaPlainTextSourceMediaType.textPlain;
-      default: throw ArgumentError('Unknown BetaPlainTextSourceMediaType: $value');
+      case 'text/plain':
+        return BetaPlainTextSourceMediaType.textPlain;
+      default:
+        throw ArgumentError('Unknown BetaPlainTextSourceMediaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaPlainTextSourceMediaType.textPlain: return 'text/plain';
+      case BetaPlainTextSourceMediaType.textPlain:
+        return 'text/plain';
     }
   }
 
@@ -262,14 +300,17 @@ enum BetaPlainTextSourceType {
 
   static BetaPlainTextSourceType fromJson(String value) {
     switch (value) {
-      case 'text': return BetaPlainTextSourceType.text;
-      default: throw ArgumentError('Unknown BetaPlainTextSourceType: $value');
+      case 'text':
+        return BetaPlainTextSourceType.text;
+      default:
+        throw ArgumentError('Unknown BetaPlainTextSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaPlainTextSourceType.text: return 'text';
+      case BetaPlainTextSourceType.text:
+        return 'text';
     }
   }
 

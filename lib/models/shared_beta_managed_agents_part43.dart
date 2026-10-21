@@ -8,273 +8,561 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsWebSearchToolConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaManagedAgentsWebSearchToolConfigType type_;
+
   /// Required `string` value serialized in the `name` wire field.
   final BetaManagedAgentsWebSearchToolConfigName name;
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
+
   /// Permission policy for tool execution.
   final BetaManagedAgentsPermissionPolicy permissionPolicy;
+
   /// Optional array value serialized in the `allowed_domains` wire field.
   final SdkOptional<List<String>> allowedDomains;
+
   /// Optional array value serialized in the `blocked_domains` wire field.
   final SdkOptional<List<String>> blockedDomains;
+
   /// Optional API value serialized in the `user_location` wire field.
   final SdkOptional<BetaManagedAgentsUserLocation?> userLocation;
 
-  const BetaManagedAgentsWebSearchToolConfig({required this.type_, required this.name, required this.enabled, required this.permissionPolicy, this.allowedDomains = const SdkOmitted(), this.blockedDomains = const SdkOmitted(), this.userLocation = const SdkOmitted()});
+  const BetaManagedAgentsWebSearchToolConfig(
+      {required this.type_,
+      required this.name,
+      required this.enabled,
+      required this.permissionPolicy,
+      this.allowedDomains = const SdkOmitted(),
+      this.blockedDomains = const SdkOmitted(),
+      this.userLocation = const SdkOmitted()});
 
-  BetaManagedAgentsWebSearchToolConfig Function({BetaManagedAgentsWebSearchToolConfigType type_, BetaManagedAgentsWebSearchToolConfigName name, bool enabled, BetaManagedAgentsPermissionPolicy permissionPolicy, SdkOptional<List<String>> allowedDomains, SdkOptional<List<String>> blockedDomains, SdkOptional<BetaManagedAgentsUserLocation?> userLocation}) get copyWith => _copyWith;
+  BetaManagedAgentsWebSearchToolConfig Function(
+          {BetaManagedAgentsWebSearchToolConfigType type_,
+          BetaManagedAgentsWebSearchToolConfigName name,
+          bool enabled,
+          BetaManagedAgentsPermissionPolicy permissionPolicy,
+          SdkOptional<List<String>> allowedDomains,
+          SdkOptional<List<String>> blockedDomains,
+          SdkOptional<BetaManagedAgentsUserLocation?> userLocation})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsWebSearchToolConfig _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue, Object? allowedDomains = sdkOmittedValue, Object? blockedDomains = sdkOmittedValue, Object? userLocation = sdkOmittedValue}) => BetaManagedAgentsWebSearchToolConfig(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsWebSearchToolConfigType,
-    name: identical(name, sdkOmittedValue) ? this.name : name as BetaManagedAgentsWebSearchToolConfigName,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as BetaManagedAgentsPermissionPolicy,
-    allowedDomains: identical(allowedDomains, sdkOmittedValue) ? this.allowedDomains : allowedDomains as SdkOptional<List<String>>,
-    blockedDomains: identical(blockedDomains, sdkOmittedValue) ? this.blockedDomains : blockedDomains as SdkOptional<List<String>>,
-    userLocation: identical(userLocation, sdkOmittedValue) ? this.userLocation : userLocation as SdkOptional<BetaManagedAgentsUserLocation?>,
-  );
+  BetaManagedAgentsWebSearchToolConfig _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue,
+          Object? permissionPolicy = sdkOmittedValue,
+          Object? allowedDomains = sdkOmittedValue,
+          Object? blockedDomains = sdkOmittedValue,
+          Object? userLocation = sdkOmittedValue}) =>
+      BetaManagedAgentsWebSearchToolConfig(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsWebSearchToolConfigType,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as BetaManagedAgentsWebSearchToolConfigName,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
+            ? this.permissionPolicy
+            : permissionPolicy as BetaManagedAgentsPermissionPolicy,
+        allowedDomains: identical(allowedDomains, sdkOmittedValue)
+            ? this.allowedDomains
+            : allowedDomains as SdkOptional<List<String>>,
+        blockedDomains: identical(blockedDomains, sdkOmittedValue)
+            ? this.blockedDomains
+            : blockedDomains as SdkOptional<List<String>>,
+        userLocation: identical(userLocation, sdkOmittedValue)
+            ? this.userLocation
+            : userLocation as SdkOptional<BetaManagedAgentsUserLocation?>,
+      );
 
-  factory BetaManagedAgentsWebSearchToolConfig.fromJson(Map<String, dynamic> json) => BetaManagedAgentsWebSearchToolConfig(
-    type_: (json['type'] != null ? BetaManagedAgentsWebSearchToolConfigType.fromJson(json['type'] as String) : null)!,
-    name: (json['name'] != null ? BetaManagedAgentsWebSearchToolConfigName.fromJson(json['name'] as String) : null)!,
-    enabled: (json['enabled'] as bool?)!,
-    permissionPolicy: (json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null)!,
-    allowedDomains: json['allowed_domains'] != null ? SdkPresent(((json['allowed_domains'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    blockedDomains: json['blocked_domains'] != null ? SdkPresent(((json['blocked_domains'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    userLocation: json.containsKey('user_location') ? SdkPresent(json['user_location'] != null ? BetaManagedAgentsUserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsWebSearchToolConfig.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsWebSearchToolConfig(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsWebSearchToolConfigType.fromJson(
+                json['type'] as String)
+            : null)!,
+        name: (json['name'] != null
+            ? BetaManagedAgentsWebSearchToolConfigName.fromJson(
+                json['name'] as String)
+            : null)!,
+        enabled: (json['enabled'] as bool?)!,
+        permissionPolicy: (json['permission_policy'] != null
+            ? BetaManagedAgentsPermissionPolicy.fromJson(
+                json['permission_policy'])
+            : null)!,
+        allowedDomains: json['allowed_domains'] != null
+            ? SdkPresent(((json['allowed_domains'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        blockedDomains: json['blocked_domains'] != null
+            ? SdkPresent(((json['blocked_domains'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        userLocation: json.containsKey('user_location')
+            ? SdkPresent(json['user_location'] != null
+                ? BetaManagedAgentsUserLocation.fromJson(
+                    json['user_location'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'name': name.toJson(),
-    'enabled': enabled,
-    'permission_policy': permissionPolicy.toJson(),
-    ...switch (allowedDomains) {
-      SdkPresent<List<String>>(value: final value) => {'allowed_domains': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (blockedDomains) {
-      SdkPresent<List<String>>(value: final value) => {'blocked_domains': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (userLocation) {
-      SdkPresent<BetaManagedAgentsUserLocation?>(value: final value) => {'user_location': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        'name': name.toJson(),
+        'enabled': enabled,
+        'permission_policy': permissionPolicy.toJson(),
+        ...switch (allowedDomains) {
+          SdkPresent<List<String>>(value: final value) => {
+              'allowed_domains': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (blockedDomains) {
+          SdkPresent<List<String>>(value: final value) => {
+              'blocked_domains': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userLocation) {
+          SdkPresent<BetaManagedAgentsUserLocation?>(value: final value) => {
+              'user_location': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Configuration override for the web_search tool.
 class BetaManagedAgentsWebSearchToolConfigParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `type` wire field.
   final SdkOptional<BetaManagedAgentsWebSearchToolConfigParamsType> type_;
+
   /// Must be "web_search".
   final BetaManagedAgentsWebSearchToolConfigParamsName name;
+
   /// Whether this tool is enabled and available to Claude. Overrides the default_config setting.
   final SdkOptional<bool?> enabled;
+
   /// Permission policy for this tool. Controls whether tool calls are auto-approved or require confirmation.
   final SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy;
+
   /// Only return search results whose host is one of these domains or a subdomain of one. Each entry is a plain hostname like "docs.example.com" (no scheme or port; an optional path suffix is accepted). At most 64 entries; an empty list is rejected (omit the field instead). Cannot be combined with blocked_domains.
   final SdkOptional<List<String>> allowedDomains;
+
   /// Never return search results whose host is one of these domains or a subdomain of one. Each entry is a plain hostname like "ads.example.com" (no scheme or port; an optional path suffix is accepted). At most 64 entries; an empty list is rejected (omit the field instead). Cannot be combined with allowed_domains.
   final SdkOptional<List<String>> blockedDomains;
+
   /// Approximate user location for search result localization.
   final SdkOptional<BetaManagedAgentsUserLocation?> userLocation;
 
-  const BetaManagedAgentsWebSearchToolConfigParams({this.type_ = const SdkOmitted(), required this.name, this.enabled = const SdkOmitted(), this.permissionPolicy = const SdkOmitted(), this.allowedDomains = const SdkOmitted(), this.blockedDomains = const SdkOmitted(), this.userLocation = const SdkOmitted()});
+  const BetaManagedAgentsWebSearchToolConfigParams(
+      {this.type_ = const SdkOmitted(),
+      required this.name,
+      this.enabled = const SdkOmitted(),
+      this.permissionPolicy = const SdkOmitted(),
+      this.allowedDomains = const SdkOmitted(),
+      this.blockedDomains = const SdkOmitted(),
+      this.userLocation = const SdkOmitted()});
 
-  BetaManagedAgentsWebSearchToolConfigParams Function({SdkOptional<BetaManagedAgentsWebSearchToolConfigParamsType> type_, BetaManagedAgentsWebSearchToolConfigParamsName name, SdkOptional<bool?> enabled, SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy, SdkOptional<List<String>> allowedDomains, SdkOptional<List<String>> blockedDomains, SdkOptional<BetaManagedAgentsUserLocation?> userLocation}) get copyWith => _copyWith;
+  BetaManagedAgentsWebSearchToolConfigParams Function(
+          {SdkOptional<BetaManagedAgentsWebSearchToolConfigParamsType> type_,
+          BetaManagedAgentsWebSearchToolConfigParamsName name,
+          SdkOptional<bool?> enabled,
+          SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy,
+          SdkOptional<List<String>> allowedDomains,
+          SdkOptional<List<String>> blockedDomains,
+          SdkOptional<BetaManagedAgentsUserLocation?> userLocation})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsWebSearchToolConfigParams _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue, Object? allowedDomains = sdkOmittedValue, Object? blockedDomains = sdkOmittedValue, Object? userLocation = sdkOmittedValue}) => BetaManagedAgentsWebSearchToolConfigParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<BetaManagedAgentsWebSearchToolConfigParamsType>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as BetaManagedAgentsWebSearchToolConfigParamsName,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
-    allowedDomains: identical(allowedDomains, sdkOmittedValue) ? this.allowedDomains : allowedDomains as SdkOptional<List<String>>,
-    blockedDomains: identical(blockedDomains, sdkOmittedValue) ? this.blockedDomains : blockedDomains as SdkOptional<List<String>>,
-    userLocation: identical(userLocation, sdkOmittedValue) ? this.userLocation : userLocation as SdkOptional<BetaManagedAgentsUserLocation?>,
-  );
+  BetaManagedAgentsWebSearchToolConfigParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue,
+          Object? permissionPolicy = sdkOmittedValue,
+          Object? allowedDomains = sdkOmittedValue,
+          Object? blockedDomains = sdkOmittedValue,
+          Object? userLocation = sdkOmittedValue}) =>
+      BetaManagedAgentsWebSearchToolConfigParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as SdkOptional<BetaManagedAgentsWebSearchToolConfigParamsType>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as BetaManagedAgentsWebSearchToolConfigParamsName,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
+            ? this.permissionPolicy
+            : permissionPolicy
+                as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
+        allowedDomains: identical(allowedDomains, sdkOmittedValue)
+            ? this.allowedDomains
+            : allowedDomains as SdkOptional<List<String>>,
+        blockedDomains: identical(blockedDomains, sdkOmittedValue)
+            ? this.blockedDomains
+            : blockedDomains as SdkOptional<List<String>>,
+        userLocation: identical(userLocation, sdkOmittedValue)
+            ? this.userLocation
+            : userLocation as SdkOptional<BetaManagedAgentsUserLocation?>,
+      );
 
-  factory BetaManagedAgentsWebSearchToolConfigParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsWebSearchToolConfigParams(
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? BetaManagedAgentsWebSearchToolConfigParamsType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    name: (json['name'] != null ? BetaManagedAgentsWebSearchToolConfigParamsName.fromJson(json['name'] as String) : null)!,
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-    permissionPolicy: json.containsKey('permission_policy') ? SdkPresent(json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null) : const SdkOmitted(),
-    allowedDomains: json['allowed_domains'] != null ? SdkPresent(((json['allowed_domains'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    blockedDomains: json['blocked_domains'] != null ? SdkPresent(((json['blocked_domains'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    userLocation: json.containsKey('user_location') ? SdkPresent(json['user_location'] != null ? BetaManagedAgentsUserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsWebSearchToolConfigParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsWebSearchToolConfigParams(
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? BetaManagedAgentsWebSearchToolConfigParamsType.fromJson(
+                    json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        name: (json['name'] != null
+            ? BetaManagedAgentsWebSearchToolConfigParamsName.fromJson(
+                json['name'] as String)
+            : null)!,
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+        permissionPolicy: json.containsKey('permission_policy')
+            ? SdkPresent(json['permission_policy'] != null
+                ? BetaManagedAgentsPermissionPolicy.fromJson(
+                    json['permission_policy'])
+                : null)
+            : const SdkOmitted(),
+        allowedDomains: json['allowed_domains'] != null
+            ? SdkPresent(((json['allowed_domains'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        blockedDomains: json['blocked_domains'] != null
+            ? SdkPresent(((json['blocked_domains'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        userLocation: json.containsKey('user_location')
+            ? SdkPresent(json['user_location'] != null
+                ? BetaManagedAgentsUserLocation.fromJson(
+                    json['user_location'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (type_) {
-      SdkPresent<BetaManagedAgentsWebSearchToolConfigParamsType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'name': name.toJson(),
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (permissionPolicy) {
-      SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) => {'permission_policy': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (allowedDomains) {
-      SdkPresent<List<String>>(value: final value) => {'allowed_domains': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (blockedDomains) {
-      SdkPresent<List<String>>(value: final value) => {'blocked_domains': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (userLocation) {
-      SdkPresent<BetaManagedAgentsUserLocation?>(value: final value) => {'user_location': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (type_) {
+          SdkPresent<BetaManagedAgentsWebSearchToolConfigParamsType>(
+            value: final value
+          ) =>
+            {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name.toJson(),
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (permissionPolicy) {
+          SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) =>
+            {
+              'permission_policy': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (allowedDomains) {
+          SdkPresent<List<String>>(value: final value) => {
+              'allowed_domains': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (blockedDomains) {
+          SdkPresent<List<String>>(value: final value) => {
+              'blocked_domains': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userLocation) {
+          SdkPresent<BetaManagedAgentsUserLocation?>(value: final value) => {
+              'user_location': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The deployment's workspace was archived.
 class BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType type_;
 
-  const BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError({required this.type_});
+  const BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError(
+      {required this.type_});
 
-  BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError Function({BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError Function(
+      {BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType
+          type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType,
-  );
+  BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType,
+      );
 
-  factory BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError(
-    type_: (json['type'] != null ? BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType
+                .fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// The deployment's workspace was archived.
 class BetaManagedAgentsWorkspaceArchivedRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsWorkspaceArchivedRunErrorType type_;
+
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsWorkspaceArchivedRunError({required this.type_, required this.message});
+  const BetaManagedAgentsWorkspaceArchivedRunError(
+      {required this.type_, required this.message});
 
-  BetaManagedAgentsWorkspaceArchivedRunError Function({BetaManagedAgentsWorkspaceArchivedRunErrorType type_, String message}) get copyWith => _copyWith;
+  BetaManagedAgentsWorkspaceArchivedRunError Function(
+      {BetaManagedAgentsWorkspaceArchivedRunErrorType type_,
+      String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsWorkspaceArchivedRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsWorkspaceArchivedRunError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsWorkspaceArchivedRunErrorType,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-  );
+  BetaManagedAgentsWorkspaceArchivedRunError _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? message = sdkOmittedValue}) =>
+      BetaManagedAgentsWorkspaceArchivedRunError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsWorkspaceArchivedRunErrorType,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+      );
 
-  factory BetaManagedAgentsWorkspaceArchivedRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsWorkspaceArchivedRunError(
-    type_: (json['type'] != null ? BetaManagedAgentsWorkspaceArchivedRunErrorType.fromJson(json['type'] as String) : null)!,
-    message: (json['message'] as String?)!,
-  );
+  factory BetaManagedAgentsWorkspaceArchivedRunError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsWorkspaceArchivedRunError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsWorkspaceArchivedRunErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+        message: (json['message'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'message': message,
-  };
+        'type': type_.toJson(),
+        'message': message,
+      };
 }
 
 /// Configuration for the write tool.
 class BetaManagedAgentsWriteToolConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaManagedAgentsWriteToolConfigType type_;
+
   /// Required `string` value serialized in the `name` wire field.
   final BetaManagedAgentsWriteToolConfigName name;
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
+
   /// Permission policy for tool execution.
   final BetaManagedAgentsPermissionPolicy permissionPolicy;
 
-  const BetaManagedAgentsWriteToolConfig({required this.type_, required this.name, required this.enabled, required this.permissionPolicy});
+  const BetaManagedAgentsWriteToolConfig(
+      {required this.type_,
+      required this.name,
+      required this.enabled,
+      required this.permissionPolicy});
 
-  BetaManagedAgentsWriteToolConfig Function({BetaManagedAgentsWriteToolConfigType type_, BetaManagedAgentsWriteToolConfigName name, bool enabled, BetaManagedAgentsPermissionPolicy permissionPolicy}) get copyWith => _copyWith;
+  BetaManagedAgentsWriteToolConfig Function(
+          {BetaManagedAgentsWriteToolConfigType type_,
+          BetaManagedAgentsWriteToolConfigName name,
+          bool enabled,
+          BetaManagedAgentsPermissionPolicy permissionPolicy})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsWriteToolConfig _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue}) => BetaManagedAgentsWriteToolConfig(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsWriteToolConfigType,
-    name: identical(name, sdkOmittedValue) ? this.name : name as BetaManagedAgentsWriteToolConfigName,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as BetaManagedAgentsPermissionPolicy,
-  );
+  BetaManagedAgentsWriteToolConfig _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue,
+          Object? permissionPolicy = sdkOmittedValue}) =>
+      BetaManagedAgentsWriteToolConfig(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsWriteToolConfigType,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as BetaManagedAgentsWriteToolConfigName,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
+            ? this.permissionPolicy
+            : permissionPolicy as BetaManagedAgentsPermissionPolicy,
+      );
 
-  factory BetaManagedAgentsWriteToolConfig.fromJson(Map<String, dynamic> json) => BetaManagedAgentsWriteToolConfig(
-    type_: (json['type'] != null ? BetaManagedAgentsWriteToolConfigType.fromJson(json['type'] as String) : null)!,
-    name: (json['name'] != null ? BetaManagedAgentsWriteToolConfigName.fromJson(json['name'] as String) : null)!,
-    enabled: (json['enabled'] as bool?)!,
-    permissionPolicy: (json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null)!,
-  );
+  factory BetaManagedAgentsWriteToolConfig.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsWriteToolConfig(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsWriteToolConfigType.fromJson(
+                json['type'] as String)
+            : null)!,
+        name: (json['name'] != null
+            ? BetaManagedAgentsWriteToolConfigName.fromJson(
+                json['name'] as String)
+            : null)!,
+        enabled: (json['enabled'] as bool?)!,
+        permissionPolicy: (json['permission_policy'] != null
+            ? BetaManagedAgentsPermissionPolicy.fromJson(
+                json['permission_policy'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'name': name.toJson(),
-    'enabled': enabled,
-    'permission_policy': permissionPolicy.toJson(),
-  };
+        'type': type_.toJson(),
+        'name': name.toJson(),
+        'enabled': enabled,
+        'permission_policy': permissionPolicy.toJson(),
+      };
 }
 
 /// Configuration override for the write tool.
 class BetaManagedAgentsWriteToolConfigParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `type` wire field.
   final SdkOptional<BetaManagedAgentsWriteToolConfigParamsType> type_;
+
   /// Must be "write".
   final BetaManagedAgentsWriteToolConfigParamsName name;
+
   /// Whether this tool is enabled and available to Claude. Overrides the default_config setting.
   final SdkOptional<bool?> enabled;
+
   /// Permission policy for this tool. Controls whether tool calls are auto-approved or require confirmation.
   final SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy;
 
-  const BetaManagedAgentsWriteToolConfigParams({this.type_ = const SdkOmitted(), required this.name, this.enabled = const SdkOmitted(), this.permissionPolicy = const SdkOmitted()});
+  const BetaManagedAgentsWriteToolConfigParams(
+      {this.type_ = const SdkOmitted(),
+      required this.name,
+      this.enabled = const SdkOmitted(),
+      this.permissionPolicy = const SdkOmitted()});
 
-  BetaManagedAgentsWriteToolConfigParams Function({SdkOptional<BetaManagedAgentsWriteToolConfigParamsType> type_, BetaManagedAgentsWriteToolConfigParamsName name, SdkOptional<bool?> enabled, SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy}) get copyWith => _copyWith;
+  BetaManagedAgentsWriteToolConfigParams Function(
+          {SdkOptional<BetaManagedAgentsWriteToolConfigParamsType> type_,
+          BetaManagedAgentsWriteToolConfigParamsName name,
+          SdkOptional<bool?> enabled,
+          SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsWriteToolConfigParams _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue}) => BetaManagedAgentsWriteToolConfigParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<BetaManagedAgentsWriteToolConfigParamsType>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as BetaManagedAgentsWriteToolConfigParamsName,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
-  );
+  BetaManagedAgentsWriteToolConfigParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue,
+          Object? permissionPolicy = sdkOmittedValue}) =>
+      BetaManagedAgentsWriteToolConfigParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<BetaManagedAgentsWriteToolConfigParamsType>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as BetaManagedAgentsWriteToolConfigParamsName,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
+            ? this.permissionPolicy
+            : permissionPolicy
+                as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
+      );
 
-  factory BetaManagedAgentsWriteToolConfigParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsWriteToolConfigParams(
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? BetaManagedAgentsWriteToolConfigParamsType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    name: (json['name'] != null ? BetaManagedAgentsWriteToolConfigParamsName.fromJson(json['name'] as String) : null)!,
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-    permissionPolicy: json.containsKey('permission_policy') ? SdkPresent(json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsWriteToolConfigParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsWriteToolConfigParams(
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? BetaManagedAgentsWriteToolConfigParamsType.fromJson(
+                    json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        name: (json['name'] != null
+            ? BetaManagedAgentsWriteToolConfigParamsName.fromJson(
+                json['name'] as String)
+            : null)!,
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+        permissionPolicy: json.containsKey('permission_policy')
+            ? SdkPresent(json['permission_policy'] != null
+                ? BetaManagedAgentsPermissionPolicy.fromJson(
+                    json['permission_policy'])
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (type_) {
-      SdkPresent<BetaManagedAgentsWriteToolConfigParamsType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'name': name.toJson(),
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (permissionPolicy) {
-      SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) => {'permission_policy': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (type_) {
+          SdkPresent<BetaManagedAgentsWriteToolConfigParamsType>(
+            value: final value
+          ) =>
+            {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name.toJson(),
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (permissionPolicy) {
+          SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) =>
+            {
+              'permission_policy': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

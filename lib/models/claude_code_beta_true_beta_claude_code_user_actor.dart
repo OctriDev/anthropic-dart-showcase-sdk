@@ -8,27 +8,42 @@ part of 'claude_code_beta_true.dart';
 class BetaClaudeCodeUserActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Email address of the user who performed Claude Code actions.
   final String emailAddress;
+
   /// Actor type. Always `"user_actor"` for a user.
   final BetaClaudeCodeUserActorType type_;
 
-  const BetaClaudeCodeUserActor({required this.emailAddress, required this.type_});
+  const BetaClaudeCodeUserActor(
+      {required this.emailAddress, required this.type_});
 
-  BetaClaudeCodeUserActor Function({String emailAddress, BetaClaudeCodeUserActorType type_}) get copyWith => _copyWith;
+  BetaClaudeCodeUserActor Function(
+      {String emailAddress,
+      BetaClaudeCodeUserActorType type_}) get copyWith => _copyWith;
 
-  BetaClaudeCodeUserActor _copyWith({Object? emailAddress = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaClaudeCodeUserActor(
-    emailAddress: identical(emailAddress, sdkOmittedValue) ? this.emailAddress : emailAddress as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaClaudeCodeUserActorType,
-  );
+  BetaClaudeCodeUserActor _copyWith(
+          {Object? emailAddress = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaClaudeCodeUserActor(
+        emailAddress: identical(emailAddress, sdkOmittedValue)
+            ? this.emailAddress
+            : emailAddress as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaClaudeCodeUserActorType,
+      );
 
-  factory BetaClaudeCodeUserActor.fromJson(Map<String, dynamic> json) => BetaClaudeCodeUserActor(
-    emailAddress: (json['email_address'] as String?)!,
-    type_: (json['type'] != null ? BetaClaudeCodeUserActorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaClaudeCodeUserActor.fromJson(Map<String, dynamic> json) =>
+      BetaClaudeCodeUserActor(
+        emailAddress: (json['email_address'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaClaudeCodeUserActorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'email_address': emailAddress,
-    'type': type_.toJson(),
-  };
+        'email_address': emailAddress,
+        'type': type_.toJson(),
+      };
 }

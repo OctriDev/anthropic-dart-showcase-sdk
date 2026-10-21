@@ -8,27 +8,40 @@ part of 'shared_beta.dart';
 class BetaBillingError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaBillingErrorType type_;
 
   const BetaBillingError({required this.message, required this.type_});
 
-  BetaBillingError Function({String message, BetaBillingErrorType type_}) get copyWith => _copyWith;
+  BetaBillingError Function({String message, BetaBillingErrorType type_})
+      get copyWith => _copyWith;
 
-  BetaBillingError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaBillingError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaBillingErrorType,
-  );
+  BetaBillingError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaBillingError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaBillingErrorType,
+      );
 
-  factory BetaBillingError.fromJson(Map<String, dynamic> json) => BetaBillingError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? BetaBillingErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaBillingError.fromJson(Map<String, dynamic> json) =>
+      BetaBillingError(
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaBillingErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }

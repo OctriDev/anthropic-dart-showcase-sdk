@@ -8,32 +8,53 @@ part of 'claude_code_beta_true.dart';
 class BetaModelBreakdown {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Estimated cost for using this model
   final BetaEstimatedCost estimatedCost;
+
   /// Name of the AI model used for Claude Code interactions.
   final String model;
+
   /// Token usage breakdown for this model
   final BetaTokenUsage tokens;
 
-  const BetaModelBreakdown({required this.estimatedCost, required this.model, required this.tokens});
+  const BetaModelBreakdown(
+      {required this.estimatedCost, required this.model, required this.tokens});
 
-  BetaModelBreakdown Function({BetaEstimatedCost estimatedCost, String model, BetaTokenUsage tokens}) get copyWith => _copyWith;
+  BetaModelBreakdown Function(
+      {BetaEstimatedCost estimatedCost,
+      String model,
+      BetaTokenUsage tokens}) get copyWith => _copyWith;
 
-  BetaModelBreakdown _copyWith({Object? estimatedCost = sdkOmittedValue, Object? model = sdkOmittedValue, Object? tokens = sdkOmittedValue}) => BetaModelBreakdown(
-    estimatedCost: identical(estimatedCost, sdkOmittedValue) ? this.estimatedCost : estimatedCost as BetaEstimatedCost,
-    model: identical(model, sdkOmittedValue) ? this.model : model as String,
-    tokens: identical(tokens, sdkOmittedValue) ? this.tokens : tokens as BetaTokenUsage,
-  );
+  BetaModelBreakdown _copyWith(
+          {Object? estimatedCost = sdkOmittedValue,
+          Object? model = sdkOmittedValue,
+          Object? tokens = sdkOmittedValue}) =>
+      BetaModelBreakdown(
+        estimatedCost: identical(estimatedCost, sdkOmittedValue)
+            ? this.estimatedCost
+            : estimatedCost as BetaEstimatedCost,
+        model: identical(model, sdkOmittedValue) ? this.model : model as String,
+        tokens: identical(tokens, sdkOmittedValue)
+            ? this.tokens
+            : tokens as BetaTokenUsage,
+      );
 
-  factory BetaModelBreakdown.fromJson(Map<String, dynamic> json) => BetaModelBreakdown(
-    estimatedCost: (json['estimated_cost'] != null ? BetaEstimatedCost.fromJson(json['estimated_cost'] as Map<String, dynamic>) : null)!,
-    model: (json['model'] as String?)!,
-    tokens: (json['tokens'] != null ? BetaTokenUsage.fromJson(json['tokens'] as Map<String, dynamic>) : null)!,
-  );
+  factory BetaModelBreakdown.fromJson(Map<String, dynamic> json) =>
+      BetaModelBreakdown(
+        estimatedCost: (json['estimated_cost'] != null
+            ? BetaEstimatedCost.fromJson(
+                json['estimated_cost'] as Map<String, dynamic>)
+            : null)!,
+        model: (json['model'] as String?)!,
+        tokens: (json['tokens'] != null
+            ? BetaTokenUsage.fromJson(json['tokens'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'estimated_cost': estimatedCost.toJson(),
-    'model': model,
-    'tokens': tokens.toJson(),
-  };
+        'estimated_cost': estimatedCost.toJson(),
+        'model': model,
+        'tokens': tokens.toJson(),
+      };
 }

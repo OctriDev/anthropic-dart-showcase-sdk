@@ -10,14 +10,18 @@ enum BetaBrowserStateChangeTabOpenedType {
 
   static BetaBrowserStateChangeTabOpenedType fromJson(String value) {
     switch (value) {
-      case 'tab_opened': return BetaBrowserStateChangeTabOpenedType.tabOpened;
-      default: throw ArgumentError('Unknown BetaBrowserStateChangeTabOpenedType: $value');
+      case 'tab_opened':
+        return BetaBrowserStateChangeTabOpenedType.tabOpened;
+      default:
+        throw ArgumentError(
+            'Unknown BetaBrowserStateChangeTabOpenedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBrowserStateChangeTabOpenedType.tabOpened: return 'tab_opened';
+      case BetaBrowserStateChangeTabOpenedType.tabOpened:
+        return 'tab_opened';
     }
   }
 
@@ -31,14 +35,17 @@ enum BetaBrowserToolset20260801Type {
 
   static BetaBrowserToolset20260801Type fromJson(String value) {
     switch (value) {
-      case 'browser_toolset_20260801': return BetaBrowserToolset20260801Type.browserToolset20260801;
-      default: throw ArgumentError('Unknown BetaBrowserToolset20260801Type: $value');
+      case 'browser_toolset_20260801':
+        return BetaBrowserToolset20260801Type.browserToolset20260801;
+      default:
+        throw ArgumentError('Unknown BetaBrowserToolset20260801Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaBrowserToolset20260801Type.browserToolset20260801: return 'browser_toolset_20260801';
+      case BetaBrowserToolset20260801Type.browserToolset20260801:
+        return 'browser_toolset_20260801';
     }
   }
 
@@ -48,24 +55,27 @@ enum BetaBrowserToolset20260801Type {
 
 /// The time-to-live for the cache control breakpoint. This may be one the following values: - `5m`: 5 minutes - `1h`: 1 hour Defaults to `5m`. See [prompt caching pricing](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) for details.
 final class BetaCacheControlEphemeralTtl {
-
   final String value;
 
   const BetaCacheControlEphemeralTtl._(this.value);
 
-  factory BetaCacheControlEphemeralTtl.fromJson(String value) => BetaCacheControlEphemeralTtl._(value);
+  factory BetaCacheControlEphemeralTtl.fromJson(String value) =>
+      BetaCacheControlEphemeralTtl._(value);
 
   static const v5m = BetaCacheControlEphemeralTtl._('5m');
   static const v1h = BetaCacheControlEphemeralTtl._('1h');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaCacheControlEphemeralTtl && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaCacheControlEphemeralTtl && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -74,14 +84,17 @@ enum BetaCacheControlEphemeralType {
 
   static BetaCacheControlEphemeralType fromJson(String value) {
     switch (value) {
-      case 'ephemeral': return BetaCacheControlEphemeralType.ephemeral;
-      default: throw ArgumentError('Unknown BetaCacheControlEphemeralType: $value');
+      case 'ephemeral':
+        return BetaCacheControlEphemeralType.ephemeral;
+      default:
+        throw ArgumentError('Unknown BetaCacheControlEphemeralType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCacheControlEphemeralType.ephemeral: return 'ephemeral';
+      case BetaCacheControlEphemeralType.ephemeral:
+        return 'ephemeral';
     }
   }
 
@@ -95,14 +108,17 @@ enum BetaCacheMissMessagesChangedType {
 
   static BetaCacheMissMessagesChangedType fromJson(String value) {
     switch (value) {
-      case 'messages_changed': return BetaCacheMissMessagesChangedType.messagesChanged;
-      default: throw ArgumentError('Unknown BetaCacheMissMessagesChangedType: $value');
+      case 'messages_changed':
+        return BetaCacheMissMessagesChangedType.messagesChanged;
+      default:
+        throw ArgumentError('Unknown BetaCacheMissMessagesChangedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCacheMissMessagesChangedType.messagesChanged: return 'messages_changed';
+      case BetaCacheMissMessagesChangedType.messagesChanged:
+        return 'messages_changed';
     }
   }
 
@@ -116,14 +132,17 @@ enum BetaCacheMissModelChangedType {
 
   static BetaCacheMissModelChangedType fromJson(String value) {
     switch (value) {
-      case 'model_changed': return BetaCacheMissModelChangedType.modelChanged;
-      default: throw ArgumentError('Unknown BetaCacheMissModelChangedType: $value');
+      case 'model_changed':
+        return BetaCacheMissModelChangedType.modelChanged;
+      default:
+        throw ArgumentError('Unknown BetaCacheMissModelChangedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCacheMissModelChangedType.modelChanged: return 'model_changed';
+      case BetaCacheMissModelChangedType.modelChanged:
+        return 'model_changed';
     }
   }
 
@@ -137,14 +156,18 @@ enum BetaCacheMissPreviousMessageNotFoundType {
 
   static BetaCacheMissPreviousMessageNotFoundType fromJson(String value) {
     switch (value) {
-      case 'previous_message_not_found': return BetaCacheMissPreviousMessageNotFoundType.previousMessageNotFound;
-      default: throw ArgumentError('Unknown BetaCacheMissPreviousMessageNotFoundType: $value');
+      case 'previous_message_not_found':
+        return BetaCacheMissPreviousMessageNotFoundType.previousMessageNotFound;
+      default:
+        throw ArgumentError(
+            'Unknown BetaCacheMissPreviousMessageNotFoundType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCacheMissPreviousMessageNotFoundType.previousMessageNotFound: return 'previous_message_not_found';
+      case BetaCacheMissPreviousMessageNotFoundType.previousMessageNotFound:
+        return 'previous_message_not_found';
     }
   }
 
@@ -158,14 +181,17 @@ enum BetaCacheMissSystemChangedType {
 
   static BetaCacheMissSystemChangedType fromJson(String value) {
     switch (value) {
-      case 'system_changed': return BetaCacheMissSystemChangedType.systemChanged;
-      default: throw ArgumentError('Unknown BetaCacheMissSystemChangedType: $value');
+      case 'system_changed':
+        return BetaCacheMissSystemChangedType.systemChanged;
+      default:
+        throw ArgumentError('Unknown BetaCacheMissSystemChangedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCacheMissSystemChangedType.systemChanged: return 'system_changed';
+      case BetaCacheMissSystemChangedType.systemChanged:
+        return 'system_changed';
     }
   }
 
@@ -179,14 +205,17 @@ enum BetaCacheMissToolsChangedType {
 
   static BetaCacheMissToolsChangedType fromJson(String value) {
     switch (value) {
-      case 'tools_changed': return BetaCacheMissToolsChangedType.toolsChanged;
-      default: throw ArgumentError('Unknown BetaCacheMissToolsChangedType: $value');
+      case 'tools_changed':
+        return BetaCacheMissToolsChangedType.toolsChanged;
+      default:
+        throw ArgumentError('Unknown BetaCacheMissToolsChangedType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCacheMissToolsChangedType.toolsChanged: return 'tools_changed';
+      case BetaCacheMissToolsChangedType.toolsChanged:
+        return 'tools_changed';
     }
   }
 
@@ -200,14 +229,17 @@ enum BetaCacheMissUnavailableType {
 
   static BetaCacheMissUnavailableType fromJson(String value) {
     switch (value) {
-      case 'unavailable': return BetaCacheMissUnavailableType.unavailable;
-      default: throw ArgumentError('Unknown BetaCacheMissUnavailableType: $value');
+      case 'unavailable':
+        return BetaCacheMissUnavailableType.unavailable;
+      default:
+        throw ArgumentError('Unknown BetaCacheMissUnavailableType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCacheMissUnavailableType.unavailable: return 'unavailable';
+      case BetaCacheMissUnavailableType.unavailable:
+        return 'unavailable';
     }
   }
 
@@ -221,14 +253,17 @@ enum BetaCanceledResultType {
 
   static BetaCanceledResultType fromJson(String value) {
     switch (value) {
-      case 'canceled': return BetaCanceledResultType.canceled;
-      default: throw ArgumentError('Unknown BetaCanceledResultType: $value');
+      case 'canceled':
+        return BetaCanceledResultType.canceled;
+      default:
+        throw ArgumentError('Unknown BetaCanceledResultType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCanceledResultType.canceled: return 'canceled';
+      case BetaCanceledResultType.canceled:
+        return 'canceled';
     }
   }
 
@@ -242,14 +277,17 @@ enum BetaCitationsDeltaType {
 
   static BetaCitationsDeltaType fromJson(String value) {
     switch (value) {
-      case 'citations_delta': return BetaCitationsDeltaType.citationsDelta;
-      default: throw ArgumentError('Unknown BetaCitationsDeltaType: $value');
+      case 'citations_delta':
+        return BetaCitationsDeltaType.citationsDelta;
+      default:
+        throw ArgumentError('Unknown BetaCitationsDeltaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCitationsDeltaType.citationsDelta: return 'citations_delta';
+      case BetaCitationsDeltaType.citationsDelta:
+        return 'citations_delta';
     }
   }
 
@@ -263,14 +301,17 @@ enum BetaClaudeCodeApiActorType {
 
   static BetaClaudeCodeApiActorType fromJson(String value) {
     switch (value) {
-      case 'api_actor': return BetaClaudeCodeApiActorType.apiActor;
-      default: throw ArgumentError('Unknown BetaClaudeCodeApiActorType: $value');
+      case 'api_actor':
+        return BetaClaudeCodeApiActorType.apiActor;
+      default:
+        throw ArgumentError('Unknown BetaClaudeCodeApiActorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaClaudeCodeApiActorType.apiActor: return 'api_actor';
+      case BetaClaudeCodeApiActorType.apiActor:
+        return 'api_actor';
     }
   }
 

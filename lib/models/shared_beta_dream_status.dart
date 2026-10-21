@@ -6,7 +6,6 @@ part of 'shared_beta_dream.dart';
 // shared_beta_dream domain models
 /// Lifecycle status of a Dream.
 final class BetaDreamStatus {
-
   final String value;
 
   const BetaDreamStatus._(this.value);
@@ -21,10 +20,13 @@ final class BetaDreamStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaDreamStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaDreamStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

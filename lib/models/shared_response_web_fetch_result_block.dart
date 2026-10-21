@@ -8,37 +8,69 @@ part of 'shared_response_web.dart';
 class ResponseWebFetchResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `content` wire field.
   final ResponseDocumentBlock content;
+
   /// ISO 8601 timestamp when the content was retrieved
   final String? retrievedAt;
+
   /// Required `string` value serialized in the `type` wire field.
   final ResponseWebFetchResultBlockType type_;
+
   /// Fetched content URL
   final String url;
 
-  const ResponseWebFetchResultBlock({required this.content, required this.retrievedAt, required this.type_, required this.url});
+  const ResponseWebFetchResultBlock(
+      {required this.content,
+      required this.retrievedAt,
+      required this.type_,
+      required this.url});
 
-  ResponseWebFetchResultBlock Function({ResponseDocumentBlock content, String? retrievedAt, ResponseWebFetchResultBlockType type_, String url}) get copyWith => _copyWith;
+  ResponseWebFetchResultBlock Function(
+      {ResponseDocumentBlock content,
+      String? retrievedAt,
+      ResponseWebFetchResultBlockType type_,
+      String url}) get copyWith => _copyWith;
 
-  ResponseWebFetchResultBlock _copyWith({Object? content = sdkOmittedValue, Object? retrievedAt = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => ResponseWebFetchResultBlock(
-    content: identical(content, sdkOmittedValue) ? this.content : content as ResponseDocumentBlock,
-    retrievedAt: identical(retrievedAt, sdkOmittedValue) ? this.retrievedAt : retrievedAt as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ResponseWebFetchResultBlockType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  ResponseWebFetchResultBlock _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? retrievedAt = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      ResponseWebFetchResultBlock(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as ResponseDocumentBlock,
+        retrievedAt: identical(retrievedAt, sdkOmittedValue)
+            ? this.retrievedAt
+            : retrievedAt as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ResponseWebFetchResultBlockType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory ResponseWebFetchResultBlock.fromJson(Map<String, dynamic> json) => ResponseWebFetchResultBlock(
-    content: (json['content'] != null ? ResponseDocumentBlock.fromJson(json['content'] as Map<String, dynamic>) : null)!,
-    retrievedAt: json.containsKey('retrieved_at') ? json['retrieved_at'] as String? : throw ArgumentError.value(null, 'retrieved_at', 'Required property is missing'),
-    type_: (json['type'] != null ? ResponseWebFetchResultBlockType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory ResponseWebFetchResultBlock.fromJson(Map<String, dynamic> json) =>
+      ResponseWebFetchResultBlock(
+        content: (json['content'] != null
+            ? ResponseDocumentBlock.fromJson(
+                json['content'] as Map<String, dynamic>)
+            : null)!,
+        retrievedAt: json.containsKey('retrieved_at')
+            ? json['retrieved_at'] as String?
+            : throw ArgumentError.value(
+                null, 'retrieved_at', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? ResponseWebFetchResultBlockType.fromJson(json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content.toJson(),
-    'retrieved_at': retrievedAt,
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'content': content.toJson(),
+        'retrieved_at': retrievedAt,
+        'type': type_.toJson(),
+        'url': url,
+      };
 }

@@ -8,27 +8,44 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsStaticBearerAuthResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsStaticBearerAuthResponseType type_;
+
   /// URL of the MCP server this credential authenticates against.
   final String mcpServerUrl;
 
-  const BetaManagedAgentsStaticBearerAuthResponse({required this.type_, required this.mcpServerUrl});
+  const BetaManagedAgentsStaticBearerAuthResponse(
+      {required this.type_, required this.mcpServerUrl});
 
-  BetaManagedAgentsStaticBearerAuthResponse Function({BetaManagedAgentsStaticBearerAuthResponseType type_, String mcpServerUrl}) get copyWith => _copyWith;
+  BetaManagedAgentsStaticBearerAuthResponse Function(
+      {BetaManagedAgentsStaticBearerAuthResponseType type_,
+      String mcpServerUrl}) get copyWith => _copyWith;
 
-  BetaManagedAgentsStaticBearerAuthResponse _copyWith({Object? type_ = sdkOmittedValue, Object? mcpServerUrl = sdkOmittedValue}) => BetaManagedAgentsStaticBearerAuthResponse(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsStaticBearerAuthResponseType,
-    mcpServerUrl: identical(mcpServerUrl, sdkOmittedValue) ? this.mcpServerUrl : mcpServerUrl as String,
-  );
+  BetaManagedAgentsStaticBearerAuthResponse _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? mcpServerUrl = sdkOmittedValue}) =>
+      BetaManagedAgentsStaticBearerAuthResponse(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsStaticBearerAuthResponseType,
+        mcpServerUrl: identical(mcpServerUrl, sdkOmittedValue)
+            ? this.mcpServerUrl
+            : mcpServerUrl as String,
+      );
 
-  factory BetaManagedAgentsStaticBearerAuthResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsStaticBearerAuthResponse(
-    type_: (json['type'] != null ? BetaManagedAgentsStaticBearerAuthResponseType.fromJson(json['type'] as String) : null)!,
-    mcpServerUrl: (json['mcp_server_url'] as String?)!,
-  );
+  factory BetaManagedAgentsStaticBearerAuthResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsStaticBearerAuthResponse(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsStaticBearerAuthResponseType.fromJson(
+                json['type'] as String)
+            : null)!,
+        mcpServerUrl: (json['mcp_server_url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'mcp_server_url': mcpServerUrl,
-  };
+        'type': type_.toJson(),
+        'mcp_server_url': mcpServerUrl,
+      };
 }

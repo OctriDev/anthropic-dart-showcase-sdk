@@ -8,93 +8,150 @@ part of 'shared_thinking.dart';
 class ThinkingConfigAdaptive {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
   final SdkOptional<ThinkingDisplayMode?> display;
+
   /// Required `string` value serialized in the `type` wire field.
   final ThinkingConfigAdaptiveType type_;
 
-  const ThinkingConfigAdaptive({this.display = const SdkOmitted(), required this.type_});
+  const ThinkingConfigAdaptive(
+      {this.display = const SdkOmitted(), required this.type_});
 
-  ThinkingConfigAdaptive Function({SdkOptional<ThinkingDisplayMode?> display, ThinkingConfigAdaptiveType type_}) get copyWith => _copyWith;
+  ThinkingConfigAdaptive Function(
+      {SdkOptional<ThinkingDisplayMode?> display,
+      ThinkingConfigAdaptiveType type_}) get copyWith => _copyWith;
 
-  ThinkingConfigAdaptive _copyWith({Object? display = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ThinkingConfigAdaptive(
-    display: identical(display, sdkOmittedValue) ? this.display : display as SdkOptional<ThinkingDisplayMode?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ThinkingConfigAdaptiveType,
-  );
+  ThinkingConfigAdaptive _copyWith(
+          {Object? display = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      ThinkingConfigAdaptive(
+        display: identical(display, sdkOmittedValue)
+            ? this.display
+            : display as SdkOptional<ThinkingDisplayMode?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ThinkingConfigAdaptiveType,
+      );
 
-  factory ThinkingConfigAdaptive.fromJson(Map<String, dynamic> json) => ThinkingConfigAdaptive(
-    display: json.containsKey('display') ? SdkPresent(json['display'] != null ? ThinkingDisplayMode.fromJson(json['display'] as String) : null) : const SdkOmitted(),
-    type_: (json['type'] != null ? ThinkingConfigAdaptiveType.fromJson(json['type'] as String) : null)!,
-  );
+  factory ThinkingConfigAdaptive.fromJson(Map<String, dynamic> json) =>
+      ThinkingConfigAdaptive(
+        display: json.containsKey('display')
+            ? SdkPresent(json['display'] != null
+                ? ThinkingDisplayMode.fromJson(json['display'] as String)
+                : null)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? ThinkingConfigAdaptiveType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (display) {
-      SdkPresent<ThinkingDisplayMode?>(value: final value) => {'display': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (display) {
+          SdkPresent<ThinkingDisplayMode?>(value: final value) => {
+              'display': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `ThinkingConfigDisabled` API schema.
 class ThinkingConfigDisabled {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final ThinkingConfigDisabledType type_;
 
   const ThinkingConfigDisabled({required this.type_});
 
-  ThinkingConfigDisabled Function({ThinkingConfigDisabledType type_}) get copyWith => _copyWith;
+  ThinkingConfigDisabled Function({ThinkingConfigDisabledType type_})
+      get copyWith => _copyWith;
 
-  ThinkingConfigDisabled _copyWith({Object? type_ = sdkOmittedValue}) => ThinkingConfigDisabled(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ThinkingConfigDisabledType,
-  );
+  ThinkingConfigDisabled _copyWith({Object? type_ = sdkOmittedValue}) =>
+      ThinkingConfigDisabled(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ThinkingConfigDisabledType,
+      );
 
-  factory ThinkingConfigDisabled.fromJson(Map<String, dynamic> json) => ThinkingConfigDisabled(
-    type_: (json['type'] != null ? ThinkingConfigDisabledType.fromJson(json['type'] as String) : null)!,
-  );
+  factory ThinkingConfigDisabled.fromJson(Map<String, dynamic> json) =>
+      ThinkingConfigDisabled(
+        type_: (json['type'] != null
+            ? ThinkingConfigDisabledType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `ThinkingConfigEnabled` API schema.
 class ThinkingConfigEnabled {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. Must be ≥1024 and less than `max_tokens`. See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) for details.
   final int budgetTokens;
+
   /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
   final SdkOptional<ThinkingDisplayMode?> display;
+
   /// Required `string` value serialized in the `type` wire field.
   final ThinkingConfigEnabledType type_;
 
-  const ThinkingConfigEnabled({required this.budgetTokens, this.display = const SdkOmitted(), required this.type_});
+  const ThinkingConfigEnabled(
+      {required this.budgetTokens,
+      this.display = const SdkOmitted(),
+      required this.type_});
 
-  ThinkingConfigEnabled Function({int budgetTokens, SdkOptional<ThinkingDisplayMode?> display, ThinkingConfigEnabledType type_}) get copyWith => _copyWith;
+  ThinkingConfigEnabled Function(
+      {int budgetTokens,
+      SdkOptional<ThinkingDisplayMode?> display,
+      ThinkingConfigEnabledType type_}) get copyWith => _copyWith;
 
-  ThinkingConfigEnabled _copyWith({Object? budgetTokens = sdkOmittedValue, Object? display = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ThinkingConfigEnabled(
-    budgetTokens: identical(budgetTokens, sdkOmittedValue) ? this.budgetTokens : budgetTokens as int,
-    display: identical(display, sdkOmittedValue) ? this.display : display as SdkOptional<ThinkingDisplayMode?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ThinkingConfigEnabledType,
-  );
+  ThinkingConfigEnabled _copyWith(
+          {Object? budgetTokens = sdkOmittedValue,
+          Object? display = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      ThinkingConfigEnabled(
+        budgetTokens: identical(budgetTokens, sdkOmittedValue)
+            ? this.budgetTokens
+            : budgetTokens as int,
+        display: identical(display, sdkOmittedValue)
+            ? this.display
+            : display as SdkOptional<ThinkingDisplayMode?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ThinkingConfigEnabledType,
+      );
 
-  factory ThinkingConfigEnabled.fromJson(Map<String, dynamic> json) => ThinkingConfigEnabled(
-    budgetTokens: ((json['budget_tokens'] as num?)?.toInt())!,
-    display: json.containsKey('display') ? SdkPresent(json['display'] != null ? ThinkingDisplayMode.fromJson(json['display'] as String) : null) : const SdkOmitted(),
-    type_: (json['type'] != null ? ThinkingConfigEnabledType.fromJson(json['type'] as String) : null)!,
-  );
+  factory ThinkingConfigEnabled.fromJson(Map<String, dynamic> json) =>
+      ThinkingConfigEnabled(
+        budgetTokens: ((json['budget_tokens'] as num?)?.toInt())!,
+        display: json.containsKey('display')
+            ? SdkPresent(json['display'] != null
+                ? ThinkingDisplayMode.fromJson(json['display'] as String)
+                : null)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? ThinkingConfigEnabledType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'budget_tokens': budgetTokens,
-    ...switch (display) {
-      SdkPresent<ThinkingDisplayMode?>(value: final value) => {'display': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        'budget_tokens': budgetTokens,
+        ...switch (display) {
+          SdkPresent<ThinkingDisplayMode?>(value: final value) => {
+              'display': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }
 
 sealed class ThinkingConfigParam {
@@ -103,62 +160,100 @@ sealed class ThinkingConfigParam {
   const ThinkingConfigParam();
   factory ThinkingConfigParam.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = ThinkingConfigEnabled.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ThinkingConfigParamThinkingConfigEnabled(value); } } catch (_) {}
-      try { final value = ThinkingConfigDisabled.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ThinkingConfigParamThinkingConfigDisabled(value); } } catch (_) {}
-      try { final value = ThinkingConfigAdaptive.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ThinkingConfigParamThinkingConfigAdaptive(value); } } catch (_) {}
+      try {
+        final value = ThinkingConfigEnabled.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ThinkingConfigParamThinkingConfigEnabled(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ThinkingConfigDisabled.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ThinkingConfigParamThinkingConfigDisabled(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ThinkingConfigAdaptive.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ThinkingConfigParamThinkingConfigAdaptive(value);
+        }
+      } catch (_) {}
     }
-    try { return ThinkingConfigParamThinkingConfigEnabled(ThinkingConfigEnabled.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ThinkingConfigParamThinkingConfigDisabled(ThinkingConfigDisabled.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ThinkingConfigParamThinkingConfigAdaptive(ThinkingConfigAdaptive.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"adaptive", "disabled", "enabled"}.contains(json["type"])) { return UnknownThinkingConfigParam(json); }
+    try {
+      return ThinkingConfigParamThinkingConfigEnabled(
+          ThinkingConfigEnabled.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ThinkingConfigParamThinkingConfigDisabled(
+          ThinkingConfigDisabled.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ThinkingConfigParamThinkingConfigAdaptive(
+          ThinkingConfigAdaptive.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"adaptive", "disabled", "enabled"}.contains(json["type"])) {
+      return UnknownThinkingConfigParam(json);
+    }
     throw FormatException("No variant matched for ThinkingConfigParam");
   }
   Object? toJson();
 }
 
-final class ThinkingConfigParamThinkingConfigEnabled extends ThinkingConfigParam {
+final class ThinkingConfigParamThinkingConfigEnabled
+    extends ThinkingConfigParam {
   final ThinkingConfigEnabled value;
   const ThinkingConfigParamThinkingConfigEnabled(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class ThinkingConfigParamThinkingConfigDisabled extends ThinkingConfigParam {
+final class ThinkingConfigParamThinkingConfigDisabled
+    extends ThinkingConfigParam {
   final ThinkingConfigDisabled value;
   const ThinkingConfigParamThinkingConfigDisabled(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class ThinkingConfigParamThinkingConfigAdaptive extends ThinkingConfigParam {
+final class ThinkingConfigParamThinkingConfigAdaptive
+    extends ThinkingConfigParam {
   final ThinkingConfigAdaptive value;
   const ThinkingConfigParamThinkingConfigAdaptive(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [ThinkingConfigParam] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownThinkingConfigParam extends ThinkingConfigParam {
   final Map<String, dynamic> raw;
   const UnknownThinkingConfigParam(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `ThinkingDisplayMode` API schema.
 final class ThinkingDisplayMode {
-
   final String value;
 
   const ThinkingDisplayMode._(this.value);
 
-  factory ThinkingDisplayMode.fromJson(String value) => ThinkingDisplayMode._(value);
+  factory ThinkingDisplayMode.fromJson(String value) =>
+      ThinkingDisplayMode._(value);
 
   static const summarized = ThinkingDisplayMode._('summarized');
   static const omitted = ThinkingDisplayMode._('omitted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ThinkingDisplayMode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ThinkingDisplayMode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -39,21 +39,62 @@ Future<BetaTunnelListResponse> listBetaOrganizationsTunnels(ClientConfig config,
           'GET', '/v1/organizations/tunnels?beta=true',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'workspace_id': SdkQueryValue(SdkUtils.unwrapOptional(workspaceId), style: 'form', explode: true),
-            'include_archived': SdkQueryValue(SdkUtils.unwrapOptional(includeArchived), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'workspace_id': SdkQueryValue(SdkUtils.unwrapOptional(workspaceId),
+                style: 'form', explode: true),
+            'include_archived': SdkQueryValue(
+                SdkUtils.unwrapOptional(includeArchived),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': anthropicBeta, 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': anthropicBeta,
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
+          }),
           operationId: 'listBetaOrganizationsTunnels',
-          fromJsonRaw: (value) => BetaTunnelListResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaTunnelListResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. List the organization's tunnels. Results span the caller's organization, ordered by creation time (newest first). Use `workspace_id` to filter to a single workspace; archived tunnels are excluded unless `include_archived` is set.
 ///
@@ -71,23 +112,71 @@ Future<BetaTunnelListResponse> listBetaOrganizationsTunnels(ClientConfig config,
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
 ///
 /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-Stream<BetaOrganizationTunnel> listBetaOrganizationsTunnelsPaginated(ClientConfig config, {required List<String> anthropicBeta, String? page, int? limit, String? workspaceId, bool? includeArchived, String? anthropicVersion, RequestOptions? requestOptions}) async* {
+Stream<BetaOrganizationTunnel> listBetaOrganizationsTunnelsPaginated(
+    ClientConfig config,
+    {required List<String> anthropicBeta,
+    String? page,
+    int? limit,
+    String? workspaceId,
+    bool? includeArchived,
+    String? anthropicVersion,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsTunnels(config, anthropicBeta: anthropicBeta, page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), workspaceId: workspaceId == null ? const SdkOmitted<String?>() : SdkPresent<String?>(workspaceId), includeArchived: includeArchived == null ? const SdkOmitted<bool>() : SdkPresent<bool>(includeArchived), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsTunnels(config,
+        anthropicBeta: anthropicBeta,
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        workspaceId: workspaceId == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(workspaceId),
+        includeArchived: includeArchived == null
+            ? const SdkOmitted<bool>()
+            : SdkPresent<bool>(includeArchived),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaTunnelListResponse, BetaOrganizationTunnel>> listBetaOrganizationsTunnelsPages(ClientConfig config, {required List<String> anthropicBeta, String? page, int? limit, String? workspaceId, bool? includeArchived, String? anthropicVersion, RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaTunnelListResponse, BetaOrganizationTunnel>>
+    listBetaOrganizationsTunnelsPages(ClientConfig config,
+        {required List<String> anthropicBeta,
+        String? page,
+        int? limit,
+        String? workspaceId,
+        bool? includeArchived,
+        String? anthropicVersion,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsTunnels(config, anthropicBeta: anthropicBeta, page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), workspaceId: workspaceId == null ? const SdkOmitted<String?>() : SdkPresent<String?>(workspaceId), includeArchived: includeArchived == null ? const SdkOmitted<bool>() : SdkPresent<bool>(includeArchived), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsTunnels(config,
+        anthropicBeta: anthropicBeta,
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        workspaceId: workspaceId == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(workspaceId),
+        includeArchived: includeArchived == null
+            ? const SdkOmitted<bool>()
+            : SdkPresent<bool>(includeArchived),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;
@@ -97,7 +186,6 @@ Stream<SdkPage<BetaTunnelListResponse, BetaOrganizationTunnel>> listBetaOrganiza
     sdkCursor = sdkNext;
   }
 }
-
 
 /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. Retrieve a single tunnel in the caller's organization by ID.
 ///
@@ -109,24 +197,60 @@ Stream<SdkPage<BetaTunnelListResponse, BetaOrganizationTunnel>> listBetaOrganiza
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
 ///
 /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-Future<BetaOrganizationTunnel>
-    retrieveBetaOrganizationsTunnels(ClientConfig config,
-        {required String tunnelId,
-        required List<String> anthropicBeta,
-        SdkOptional<String> anthropicVersion = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaOrganizationTunnel> retrieveBetaOrganizationsTunnels(
+    ClientConfig config,
+    {required String tunnelId,
+    required List<String> anthropicBeta,
+    SdkOptional<String> anthropicVersion = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaOrganizationTunnel>('GET',
           '/v1/organizations/tunnels/${Uri.encodeComponent(tunnelId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': anthropicBeta, 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': anthropicBeta,
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
+          }),
           operationId: 'retrieveBetaOrganizationsTunnels',
-          fromJsonRaw: (value) => BetaOrganizationTunnel.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaOrganizationTunnel.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. Archive a tunnel. Archival is irreversible. Every non-archived certificate on the tunnel is archived in the same operation, the hostname is retired and never re-allocated, and the tunnel token is invalidated. Retrying against an already-archived tunnel returns the existing record unchanged.
 ///
@@ -138,24 +262,60 @@ Future<BetaOrganizationTunnel>
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
 ///
 /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-Future<BetaOrganizationTunnel>
-    archiveBetaOrganizationsTunnels(ClientConfig config,
-        {required String tunnelId,
-        required List<String> anthropicBeta,
-        SdkOptional<String> anthropicVersion = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaOrganizationTunnel> archiveBetaOrganizationsTunnels(
+    ClientConfig config,
+    {required String tunnelId,
+    required List<String> anthropicBeta,
+    SdkOptional<String> anthropicVersion = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaOrganizationTunnel>('POST',
           '/v1/organizations/tunnels/${Uri.encodeComponent(tunnelId.toString())}/archive?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': anthropicBeta, 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': anthropicBeta,
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
+          }),
           operationId: 'archiveBetaOrganizationsTunnels',
-          fromJsonRaw: (value) => BetaOrganizationTunnel.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaOrganizationTunnel.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use `/v1/tunnels` with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window. Return the tunnel's current connection token. The value is fetched live on each call; Anthropic does not store it. Repeated calls return the same value until the token is rotated. Exposed as `POST` so the token does not appear in intermediary access logs.
 ///
@@ -167,24 +327,60 @@ Future<BetaOrganizationTunnel>
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
 ///
 /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-Future<BetaOrganizationTunnelToken>
-    revealBetaOrganizationsTunnelsToken(ClientConfig config,
-        {required String tunnelId,
-        required List<String> anthropicBeta,
-        SdkOptional<String> anthropicVersion = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaOrganizationTunnelToken> revealBetaOrganizationsTunnelsToken(
+    ClientConfig config,
+    {required String tunnelId,
+    required List<String> anthropicBeta,
+    SdkOptional<String> anthropicVersion = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaOrganizationTunnelToken>('POST',
           '/v1/organizations/tunnels/${Uri.encodeComponent(tunnelId.toString())}/reveal_token?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': anthropicBeta, 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': anthropicBeta,
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
+          }),
           operationId: 'revealBetaOrganizationsTunnelsToken',
-          fromJsonRaw: (value) => BetaOrganizationTunnelToken.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaOrganizationTunnelToken.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Rotates a tunnel's token, invalidating the previous token for new connections and returning a fresh value. Established connections remain active, but connectors restarted after rotation must use the new token; provide `reason` to record operational context. This operation is closing down and will be removed after the migration window; use the replacement tunnel endpoint for new integrations.
 ///
@@ -198,22 +394,59 @@ Future<BetaOrganizationTunnelToken>
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
 ///
 /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-Future<BetaOrganizationTunnelToken>
-    rotateBetaOrganizationsTunnelsToken(ClientConfig config,
-        {required String tunnelId,
-        required List<String> anthropicBeta,
-        SdkOptional<String> anthropicVersion = const SdkOmitted(),
-        SdkOptional<BetaRotateTunnelTokenParams> body = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaOrganizationTunnelToken> rotateBetaOrganizationsTunnelsToken(
+    ClientConfig config,
+    {required String tunnelId,
+    required List<String> anthropicBeta,
+    SdkOptional<String> anthropicVersion = const SdkOmitted(),
+    SdkOptional<BetaRotateTunnelTokenParams> body = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaOrganizationTunnelToken>('POST',
           '/v1/organizations/tunnels/${Uri.encodeComponent(tunnelId.toString())}/rotate_token?beta=true',
           config: config,
           body: SdkUtils.unwrapOptional(body),
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': anthropicBeta, 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': anthropicBeta,
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
+          }),
           operationId: 'rotateBetaOrganizationsTunnelsToken',
-          fromJsonRaw: (value) => BetaOrganizationTunnelToken.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaOrganizationTunnelToken.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }

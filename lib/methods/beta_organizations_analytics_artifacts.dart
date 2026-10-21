@@ -37,16 +37,18 @@ import '../types.dart';
 ///   each covered UTC day (time-of-usage attribution); `user_id` takes a tagged
 ///   user id (`user_...`), as emitted in responses. An unsupported dimension
 ///   returns 400. At most 100 entries.
-Future<BetaAnalyticsArtifactsResponse>
-    listBetaOrganizationsAnalyticsArtifacts(ClientConfig config,
-        {required String date,
-        SdkOptional<int?> limit = const SdkOmitted(),
-        SdkOptional<String?> page = const SdkOmitted(),
-        SdkOptional<List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?> groupBy = const SdkOmitted(),
-        SdkOptional<List<String>?> filter = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaAnalyticsArtifactsResponse> listBetaOrganizationsAnalyticsArtifacts(
+    ClientConfig config,
+    {required String date,
+    SdkOptional<int?> limit = const SdkOmitted(),
+    SdkOptional<String?> page = const SdkOmitted(),
+    SdkOptional<List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>
+        groupBy = const SdkOmitted(),
+    SdkOptional<List<String>?> filter = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   sdkValidateDate('date', date);
-  if (groupBy is SdkPresent<List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>) {
+  if (groupBy is SdkPresent<
+      List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>) {
     final groupByValue = groupBy.value;
     if (groupByValue != null) {
       validateItems('group_by[]', groupByValue, max: 100);
@@ -64,20 +66,56 @@ Future<BetaAnalyticsArtifactsResponse>
           config: config,
           query: {
             'date': SdkQueryValue(date, style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'group_by[]': SdkQueryValue(SdkUtils.unwrapOptional(groupBy), style: 'form', explode: true),
-            'filter[]': SdkQueryValue(SdkUtils.unwrapOptional(filter), style: 'form', explode: true)
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'group_by[]': SdkQueryValue(SdkUtils.unwrapOptional(groupBy),
+                style: 'form', explode: true),
+            'filter[]': SdkQueryValue(SdkUtils.unwrapOptional(filter),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listBetaOrganizationsAnalyticsArtifacts',
-          fromJsonRaw: (value) => BetaAnalyticsArtifactsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaAnalyticsArtifactsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// Get artifact-creation activity for a given day, broken out by MIME type. Returns the full (`artifact_type`, `is_shared`) cube for the organization; `next_page` is null except for grouped queries, which paginate. The cube can be broken out per product, per member, or per RBAC group via `group_by[]`, and scoped via `filter[]`. Requires an API key with the `read:analytics` scope.
 ///
@@ -109,23 +147,71 @@ Future<BetaAnalyticsArtifactsResponse>
 ///   each covered UTC day (time-of-usage attribution); `user_id` takes a tagged
 ///   user id (`user_...`), as emitted in responses. An unsupported dimension
 ///   returns 400. At most 100 entries.
-Stream<BetaAnalyticsArtifactActivity> listBetaOrganizationsAnalyticsArtifactsPaginated(ClientConfig config, {required String date, int? limit, String? page, List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>? groupBy, List<String>? filter, RequestOptions? requestOptions}) async* {
+Stream<BetaAnalyticsArtifactActivity>
+    listBetaOrganizationsAnalyticsArtifactsPaginated(ClientConfig config,
+        {required String date,
+        int? limit,
+        String? page,
+        List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>? groupBy,
+        List<String>? filter,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsAnalyticsArtifacts(config, date: date, limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), groupBy: groupBy == null ? const SdkOmitted<List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>() : SdkPresent<List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>(groupBy), filter: filter == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(filter), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsAnalyticsArtifacts(config,
+        date: date,
+        limit:
+            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        groupBy: groupBy == null
+            ? const SdkOmitted<
+                List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>()
+            : SdkPresent<
+                    List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>(
+                groupBy),
+        filter: filter == null
+            ? const SdkOmitted<List<String>?>()
+            : SdkPresent<List<String>?>(filter),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaAnalyticsArtifactsResponse, BetaAnalyticsArtifactActivity>> listBetaOrganizationsAnalyticsArtifactsPages(ClientConfig config, {required String date, int? limit, String? page, List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>? groupBy, List<String>? filter, RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaAnalyticsArtifactsResponse, BetaAnalyticsArtifactActivity>>
+    listBetaOrganizationsAnalyticsArtifactsPages(ClientConfig config,
+        {required String date,
+        int? limit,
+        String? page,
+        List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>? groupBy,
+        List<String>? filter,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsAnalyticsArtifacts(config, date: date, limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), groupBy: groupBy == null ? const SdkOmitted<List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>() : SdkPresent<List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>(groupBy), filter: filter == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(filter), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsAnalyticsArtifacts(config,
+        date: date,
+        limit:
+            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        groupBy: groupBy == null
+            ? const SdkOmitted<
+                List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>()
+            : SdkPresent<
+                    List<ListBetaOrganizationsAnalyticsArtifactsGroupByItem>?>(
+                groupBy),
+        filter: filter == null
+            ? const SdkOmitted<List<String>?>()
+            : SdkPresent<List<String>?>(filter),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;

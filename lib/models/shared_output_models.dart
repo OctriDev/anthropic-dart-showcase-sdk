@@ -8,41 +8,67 @@ part of 'shared_output.dart';
 class OutputConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
   final SdkOptional<EffortLevel?> effort;
+
   /// A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
   final SdkOptional<JsonOutputFormat?> format;
 
-  const OutputConfig({this.effort = const SdkOmitted(), this.format = const SdkOmitted()});
+  const OutputConfig(
+      {this.effort = const SdkOmitted(), this.format = const SdkOmitted()});
 
-  OutputConfig Function({SdkOptional<EffortLevel?> effort, SdkOptional<JsonOutputFormat?> format}) get copyWith => _copyWith;
+  OutputConfig Function(
+      {SdkOptional<EffortLevel?> effort,
+      SdkOptional<JsonOutputFormat?> format}) get copyWith => _copyWith;
 
-  OutputConfig _copyWith({Object? effort = sdkOmittedValue, Object? format = sdkOmittedValue}) => OutputConfig(
-    effort: identical(effort, sdkOmittedValue) ? this.effort : effort as SdkOptional<EffortLevel?>,
-    format: identical(format, sdkOmittedValue) ? this.format : format as SdkOptional<JsonOutputFormat?>,
-  );
+  OutputConfig _copyWith(
+          {Object? effort = sdkOmittedValue,
+          Object? format = sdkOmittedValue}) =>
+      OutputConfig(
+        effort: identical(effort, sdkOmittedValue)
+            ? this.effort
+            : effort as SdkOptional<EffortLevel?>,
+        format: identical(format, sdkOmittedValue)
+            ? this.format
+            : format as SdkOptional<JsonOutputFormat?>,
+      );
 
   factory OutputConfig.fromJson(Map<String, dynamic> json) => OutputConfig(
-    effort: json.containsKey('effort') ? SdkPresent(json['effort'] != null ? EffortLevel.fromJson(json['effort'] as String) : null) : const SdkOmitted(),
-    format: json.containsKey('format') ? SdkPresent(json['format'] != null ? JsonOutputFormat.fromJson(json['format'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+        effort: json.containsKey('effort')
+            ? SdkPresent(json['effort'] != null
+                ? EffortLevel.fromJson(json['effort'] as String)
+                : null)
+            : const SdkOmitted(),
+        format: json.containsKey('format')
+            ? SdkPresent(json['format'] != null
+                ? JsonOutputFormat.fromJson(
+                    json['format'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (effort) {
-      SdkPresent<EffortLevel?>(value: final value) => {'effort': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (format) {
-      SdkPresent<JsonOutputFormat?>(value: final value) => {'format': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (effort) {
+          SdkPresent<EffortLevel?>(value: final value) => {
+              'effort': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (format) {
+          SdkPresent<JsonOutputFormat?>(value: final value) => {
+              'format': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `OutputTokensDetails` API schema.
 class OutputTokensDetails {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Number of output tokens the model generated as internal reasoning, including the thinking-block delimiter tokens. Reflects the raw reasoning the model produced, not the (possibly shorter) summarized thinking text returned in the response body. Computed by re-tokenizing the raw reasoning text, so it may differ from the model's exact generation count by a small number of tokens. Always ≤ `output_tokens`; `output_tokens - thinking_tokens` approximates the non-reasoning output.
   final int thinkingTokens;
 
@@ -50,15 +76,19 @@ class OutputTokensDetails {
 
   OutputTokensDetails Function({int thinkingTokens}) get copyWith => _copyWith;
 
-  OutputTokensDetails _copyWith({Object? thinkingTokens = sdkOmittedValue}) => OutputTokensDetails(
-    thinkingTokens: identical(thinkingTokens, sdkOmittedValue) ? this.thinkingTokens : thinkingTokens as int,
-  );
+  OutputTokensDetails _copyWith({Object? thinkingTokens = sdkOmittedValue}) =>
+      OutputTokensDetails(
+        thinkingTokens: identical(thinkingTokens, sdkOmittedValue)
+            ? this.thinkingTokens
+            : thinkingTokens as int,
+      );
 
-  factory OutputTokensDetails.fromJson(Map<String, dynamic> json) => OutputTokensDetails(
-    thinkingTokens: ((json['thinking_tokens'] as num?)?.toInt())!,
-  );
+  factory OutputTokensDetails.fromJson(Map<String, dynamic> json) =>
+      OutputTokensDetails(
+        thinkingTokens: ((json['thinking_tokens'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'thinking_tokens': thinkingTokens,
-  };
+        'thinking_tokens': thinkingTokens,
+      };
 }

@@ -8,27 +8,47 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsDeploymentUserMessageEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsDeploymentUserMessageEventType type_;
+
   /// Array of content blocks for the user message.
   final List<BetaManagedAgentsUserContentBlock> content;
 
-  const BetaManagedAgentsDeploymentUserMessageEvent({required this.type_, required this.content});
+  const BetaManagedAgentsDeploymentUserMessageEvent(
+      {required this.type_, required this.content});
 
-  BetaManagedAgentsDeploymentUserMessageEvent Function({BetaManagedAgentsDeploymentUserMessageEventType type_, List<BetaManagedAgentsUserContentBlock> content}) get copyWith => _copyWith;
+  BetaManagedAgentsDeploymentUserMessageEvent Function(
+          {BetaManagedAgentsDeploymentUserMessageEventType type_,
+          List<BetaManagedAgentsUserContentBlock> content})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsDeploymentUserMessageEvent _copyWith({Object? type_ = sdkOmittedValue, Object? content = sdkOmittedValue}) => BetaManagedAgentsDeploymentUserMessageEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsDeploymentUserMessageEventType,
-    content: identical(content, sdkOmittedValue) ? this.content : content as List<BetaManagedAgentsUserContentBlock>,
-  );
+  BetaManagedAgentsDeploymentUserMessageEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? content = sdkOmittedValue}) =>
+      BetaManagedAgentsDeploymentUserMessageEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsDeploymentUserMessageEventType,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as List<BetaManagedAgentsUserContentBlock>,
+      );
 
-  factory BetaManagedAgentsDeploymentUserMessageEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsDeploymentUserMessageEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsDeploymentUserMessageEventType.fromJson(json['type'] as String) : null)!,
-    content: ((json['content'] as List?)?.map((e) => BetaManagedAgentsUserContentBlock.fromJson(e)).toList())!,
-  );
+  factory BetaManagedAgentsDeploymentUserMessageEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsDeploymentUserMessageEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsDeploymentUserMessageEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        content: ((json['content'] as List?)
+            ?.map((e) => BetaManagedAgentsUserContentBlock.fromJson(e))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'content': content.map((item) => item.toJson()).toList(),
-  };
+        'type': type_.toJson(),
+        'content': content.map((item) => item.toJson()).toList(),
+      };
 }

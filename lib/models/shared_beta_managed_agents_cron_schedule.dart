@@ -8,48 +8,92 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsCronSchedule {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsCronScheduleType type_;
+
   /// 5-field POSIX cron expression: minute hour day-of-month month day-of-week (e.g., "0 9 * * 1-5" for weekdays at 9am). Day-of-week is 0-7 where 0 and 7 both mean Sunday. Extended cron syntax - seconds or year fields, and the special characters L, W, #, and ? - is not supported, nor are predefined shortcuts (@daily).
   final String expression;
+
   /// IANA timezone identifier (e.g., "America/Los_Angeles", "UTC").
   final String timezone;
+
   /// Time the most recent scheduled run actually started. Null until one completes; preserved after the deployment is archived. Manual runs do not update this.
   final SdkOptional<String?> lastRunAt;
+
   /// Up to 5 timestamps of upcoming cron occurrences. Non-empty for active and paused deployments (reflects what the schedule would do if unpaused); empty once the deployment is archived (`archived_at` set). Each fire is offset by a small per-schedule jitter, so a run will actually start at or shortly after its listed time.
   final SdkOptional<List<String>> upcomingRunsAt;
 
-  const BetaManagedAgentsCronSchedule({required this.type_, required this.expression, required this.timezone, this.lastRunAt = const SdkOmitted(), this.upcomingRunsAt = const SdkOmitted()});
+  const BetaManagedAgentsCronSchedule(
+      {required this.type_,
+      required this.expression,
+      required this.timezone,
+      this.lastRunAt = const SdkOmitted(),
+      this.upcomingRunsAt = const SdkOmitted()});
 
-  BetaManagedAgentsCronSchedule Function({BetaManagedAgentsCronScheduleType type_, String expression, String timezone, SdkOptional<String?> lastRunAt, SdkOptional<List<String>> upcomingRunsAt}) get copyWith => _copyWith;
+  BetaManagedAgentsCronSchedule Function(
+      {BetaManagedAgentsCronScheduleType type_,
+      String expression,
+      String timezone,
+      SdkOptional<String?> lastRunAt,
+      SdkOptional<List<String>> upcomingRunsAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsCronSchedule _copyWith({Object? type_ = sdkOmittedValue, Object? expression = sdkOmittedValue, Object? timezone = sdkOmittedValue, Object? lastRunAt = sdkOmittedValue, Object? upcomingRunsAt = sdkOmittedValue}) => BetaManagedAgentsCronSchedule(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsCronScheduleType,
-    expression: identical(expression, sdkOmittedValue) ? this.expression : expression as String,
-    timezone: identical(timezone, sdkOmittedValue) ? this.timezone : timezone as String,
-    lastRunAt: identical(lastRunAt, sdkOmittedValue) ? this.lastRunAt : lastRunAt as SdkOptional<String?>,
-    upcomingRunsAt: identical(upcomingRunsAt, sdkOmittedValue) ? this.upcomingRunsAt : upcomingRunsAt as SdkOptional<List<String>>,
-  );
+  BetaManagedAgentsCronSchedule _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? expression = sdkOmittedValue,
+          Object? timezone = sdkOmittedValue,
+          Object? lastRunAt = sdkOmittedValue,
+          Object? upcomingRunsAt = sdkOmittedValue}) =>
+      BetaManagedAgentsCronSchedule(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsCronScheduleType,
+        expression: identical(expression, sdkOmittedValue)
+            ? this.expression
+            : expression as String,
+        timezone: identical(timezone, sdkOmittedValue)
+            ? this.timezone
+            : timezone as String,
+        lastRunAt: identical(lastRunAt, sdkOmittedValue)
+            ? this.lastRunAt
+            : lastRunAt as SdkOptional<String?>,
+        upcomingRunsAt: identical(upcomingRunsAt, sdkOmittedValue)
+            ? this.upcomingRunsAt
+            : upcomingRunsAt as SdkOptional<List<String>>,
+      );
 
-  factory BetaManagedAgentsCronSchedule.fromJson(Map<String, dynamic> json) => BetaManagedAgentsCronSchedule(
-    type_: (json['type'] != null ? BetaManagedAgentsCronScheduleType.fromJson(json['type'] as String) : null)!,
-    expression: (json['expression'] as String?)!,
-    timezone: (json['timezone'] as String?)!,
-    lastRunAt: json.containsKey('last_run_at') ? SdkPresent(json['last_run_at'] as String?) : const SdkOmitted(),
-    upcomingRunsAt: json['upcoming_runs_at'] != null ? SdkPresent(((json['upcoming_runs_at'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsCronSchedule.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsCronSchedule(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsCronScheduleType.fromJson(json['type'] as String)
+            : null)!,
+        expression: (json['expression'] as String?)!,
+        timezone: (json['timezone'] as String?)!,
+        lastRunAt: json.containsKey('last_run_at')
+            ? SdkPresent(json['last_run_at'] as String?)
+            : const SdkOmitted(),
+        upcomingRunsAt: json['upcoming_runs_at'] != null
+            ? SdkPresent(((json['upcoming_runs_at'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'expression': expression,
-    'timezone': timezone,
-    ...switch (lastRunAt) {
-      SdkPresent<String?>(value: final value) => {'last_run_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (upcomingRunsAt) {
-      SdkPresent<List<String>>(value: final value) => {'upcoming_runs_at': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        'expression': expression,
+        'timezone': timezone,
+        ...switch (lastRunAt) {
+          SdkPresent<String?>(value: final value) => {
+              'last_run_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (upcomingRunsAt) {
+          SdkPresent<List<String>>(value: final value) => {
+              'upcoming_runs_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

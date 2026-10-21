@@ -8,32 +8,54 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMCPToolConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
+
   /// Permission policy for tool execution.
   final BetaManagedAgentsPermissionPolicy permissionPolicy;
 
-  const BetaManagedAgentsMCPToolConfig({required this.name, required this.enabled, required this.permissionPolicy});
+  const BetaManagedAgentsMCPToolConfig(
+      {required this.name,
+      required this.enabled,
+      required this.permissionPolicy});
 
-  BetaManagedAgentsMCPToolConfig Function({String name, bool enabled, BetaManagedAgentsPermissionPolicy permissionPolicy}) get copyWith => _copyWith;
+  BetaManagedAgentsMCPToolConfig Function(
+          {String name,
+          bool enabled,
+          BetaManagedAgentsPermissionPolicy permissionPolicy})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsMCPToolConfig _copyWith({Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue}) => BetaManagedAgentsMCPToolConfig(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as BetaManagedAgentsPermissionPolicy,
-  );
+  BetaManagedAgentsMCPToolConfig _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue,
+          Object? permissionPolicy = sdkOmittedValue}) =>
+      BetaManagedAgentsMCPToolConfig(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
+            ? this.permissionPolicy
+            : permissionPolicy as BetaManagedAgentsPermissionPolicy,
+      );
 
-  factory BetaManagedAgentsMCPToolConfig.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMCPToolConfig(
-    name: (json['name'] as String?)!,
-    enabled: (json['enabled'] as bool?)!,
-    permissionPolicy: (json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null)!,
-  );
+  factory BetaManagedAgentsMCPToolConfig.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsMCPToolConfig(
+        name: (json['name'] as String?)!,
+        enabled: (json['enabled'] as bool?)!,
+        permissionPolicy: (json['permission_policy'] != null
+            ? BetaManagedAgentsPermissionPolicy.fromJson(
+                json['permission_policy'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'enabled': enabled,
-    'permission_policy': permissionPolicy.toJson(),
-  };
+        'name': name,
+        'enabled': enabled,
+        'permission_policy': permissionPolicy.toJson(),
+      };
 }

@@ -8,42 +8,79 @@ part of 'shared_beta_input.dart';
 class BetaInputSchema {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `properties` wire field.
   final SdkOptional<Map<String, Object?>?> properties;
+
   /// Optional array value serialized in the `required` wire field.
   final SdkOptional<List<String>?> required_;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaInputSchemaType type_;
   final Map<String, dynamic> additionalProperties;
 
-  const BetaInputSchema({this.properties = const SdkOmitted(), this.required_ = const SdkOmitted(), required this.type_, this.additionalProperties = const <String, dynamic>{}});
+  const BetaInputSchema(
+      {this.properties = const SdkOmitted(),
+      this.required_ = const SdkOmitted(),
+      required this.type_,
+      this.additionalProperties = const <String, dynamic>{}});
 
-  BetaInputSchema Function({SdkOptional<Map<String, Object?>?> properties, SdkOptional<List<String>?> required_, BetaInputSchemaType type_}) get copyWith => _copyWith;
+  BetaInputSchema Function(
+      {SdkOptional<Map<String, Object?>?> properties,
+      SdkOptional<List<String>?> required_,
+      BetaInputSchemaType type_}) get copyWith => _copyWith;
 
-  BetaInputSchema _copyWith({Object? properties = sdkOmittedValue, Object? required_ = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaInputSchema(
-    properties: identical(properties, sdkOmittedValue) ? this.properties : properties as SdkOptional<Map<String, Object?>?>,
-    required_: identical(required_, sdkOmittedValue) ? this.required_ : required_ as SdkOptional<List<String>?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaInputSchemaType,
-    additionalProperties: additionalProperties,
-  );
+  BetaInputSchema _copyWith(
+          {Object? properties = sdkOmittedValue,
+          Object? required_ = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaInputSchema(
+        properties: identical(properties, sdkOmittedValue)
+            ? this.properties
+            : properties as SdkOptional<Map<String, Object?>?>,
+        required_: identical(required_, sdkOmittedValue)
+            ? this.required_
+            : required_ as SdkOptional<List<String>?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaInputSchemaType,
+        additionalProperties: additionalProperties,
+      );
 
-  factory BetaInputSchema.fromJson(Map<String, dynamic> json) => BetaInputSchema(
-    properties: json.containsKey('properties') ? SdkPresent(json['properties'] == null ? null : Map<String, dynamic>.from(json['properties'] as Map).map((key, value) => MapEntry(key, value))) : const SdkOmitted(),
-    required_: json.containsKey('required') ? SdkPresent((json['required'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaInputSchemaType.fromJson(json['type'] as String) : null)!,
-    additionalProperties: Map.of(json)..removeWhere((key, _) => const <String>{'properties', 'required', 'type'}.contains(key)),
-  );
+  factory BetaInputSchema.fromJson(Map<String, dynamic> json) =>
+      BetaInputSchema(
+        properties: json.containsKey('properties')
+            ? SdkPresent(json['properties'] == null
+                ? null
+                : Map<String, dynamic>.from(json['properties'] as Map)
+                    .map((key, value) => MapEntry(key, value)))
+            : const SdkOmitted(),
+        required_: json.containsKey('required')
+            ? SdkPresent(
+                (json['required'] as List?)?.map((e) => e as String).toList())
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaInputSchemaType.fromJson(json['type'] as String)
+            : null)!,
+        additionalProperties: Map.of(json)
+          ..removeWhere((key, _) =>
+              const <String>{'properties', 'required', 'type'}.contains(key)),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...additionalProperties,
-    ...switch (properties) {
-      SdkPresent<Map<String, Object?>?>(value: final value) => {'properties': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (required_) {
-      SdkPresent<List<String>?>(value: final value) => {'required': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...additionalProperties,
+        ...switch (properties) {
+          SdkPresent<Map<String, Object?>?>(value: final value) => {
+              'properties': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (required_) {
+          SdkPresent<List<String>?>(value: final value) => {
+              'required': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

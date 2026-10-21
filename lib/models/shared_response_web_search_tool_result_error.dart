@@ -8,27 +8,47 @@ part of 'shared_response_web.dart';
 class ResponseWebSearchToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `error_code` wire field.
   final WebSearchToolResultErrorCode errorCode;
+
   /// Required `string` value serialized in the `type` wire field.
   final ResponseWebSearchToolResultErrorType type_;
 
-  const ResponseWebSearchToolResultError({required this.errorCode, required this.type_});
+  const ResponseWebSearchToolResultError(
+      {required this.errorCode, required this.type_});
 
-  ResponseWebSearchToolResultError Function({WebSearchToolResultErrorCode errorCode, ResponseWebSearchToolResultErrorType type_}) get copyWith => _copyWith;
+  ResponseWebSearchToolResultError Function(
+      {WebSearchToolResultErrorCode errorCode,
+      ResponseWebSearchToolResultErrorType type_}) get copyWith => _copyWith;
 
-  ResponseWebSearchToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ResponseWebSearchToolResultError(
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as WebSearchToolResultErrorCode,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ResponseWebSearchToolResultErrorType,
-  );
+  ResponseWebSearchToolResultError _copyWith(
+          {Object? errorCode = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      ResponseWebSearchToolResultError(
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as WebSearchToolResultErrorCode,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ResponseWebSearchToolResultErrorType,
+      );
 
-  factory ResponseWebSearchToolResultError.fromJson(Map<String, dynamic> json) => ResponseWebSearchToolResultError(
-    errorCode: (json['error_code'] != null ? WebSearchToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
-    type_: (json['type'] != null ? ResponseWebSearchToolResultErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory ResponseWebSearchToolResultError.fromJson(
+          Map<String, dynamic> json) =>
+      ResponseWebSearchToolResultError(
+        errorCode: (json['error_code'] != null
+            ? WebSearchToolResultErrorCode.fromJson(
+                json['error_code'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? ResponseWebSearchToolResultErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'error_code': errorCode.toJson(),
-    'type': type_.toJson(),
-  };
+        'error_code': errorCode.toJson(),
+        'type': type_.toJson(),
+      };
 }

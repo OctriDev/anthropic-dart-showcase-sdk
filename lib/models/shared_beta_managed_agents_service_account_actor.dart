@@ -8,27 +8,44 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsServiceAccountActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaManagedAgentsServiceAccountActorType type_;
+
   /// ID of the service account that performed the write (a `svac_...` value).
   final String serviceAccountId;
 
-  const BetaManagedAgentsServiceAccountActor({required this.type_, required this.serviceAccountId});
+  const BetaManagedAgentsServiceAccountActor(
+      {required this.type_, required this.serviceAccountId});
 
-  BetaManagedAgentsServiceAccountActor Function({BetaManagedAgentsServiceAccountActorType type_, String serviceAccountId}) get copyWith => _copyWith;
+  BetaManagedAgentsServiceAccountActor Function(
+      {BetaManagedAgentsServiceAccountActorType type_,
+      String serviceAccountId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsServiceAccountActor _copyWith({Object? type_ = sdkOmittedValue, Object? serviceAccountId = sdkOmittedValue}) => BetaManagedAgentsServiceAccountActor(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsServiceAccountActorType,
-    serviceAccountId: identical(serviceAccountId, sdkOmittedValue) ? this.serviceAccountId : serviceAccountId as String,
-  );
+  BetaManagedAgentsServiceAccountActor _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? serviceAccountId = sdkOmittedValue}) =>
+      BetaManagedAgentsServiceAccountActor(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsServiceAccountActorType,
+        serviceAccountId: identical(serviceAccountId, sdkOmittedValue)
+            ? this.serviceAccountId
+            : serviceAccountId as String,
+      );
 
-  factory BetaManagedAgentsServiceAccountActor.fromJson(Map<String, dynamic> json) => BetaManagedAgentsServiceAccountActor(
-    type_: (json['type'] != null ? BetaManagedAgentsServiceAccountActorType.fromJson(json['type'] as String) : null)!,
-    serviceAccountId: (json['service_account_id'] as String?)!,
-  );
+  factory BetaManagedAgentsServiceAccountActor.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsServiceAccountActor(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsServiceAccountActorType.fromJson(
+                json['type'] as String)
+            : null)!,
+        serviceAccountId: (json['service_account_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'service_account_id': serviceAccountId,
-  };
+        'type': type_.toJson(),
+        'service_account_id': serviceAccountId,
+      };
 }

@@ -8,37 +8,74 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsEnvironmentVariableAuthResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsEnvironmentVariableAuthResponseType type_;
+
   /// Name of the environment variable.
   final String secretName;
+
   /// Outbound hosts the secret value is substituted on.
   final BetaManagedAgentsCredentialNetworkingResponse networking;
+
   /// Where in the outbound request the secret value is substituted.
   final BetaManagedAgentsInjectionLocationResponse injectionLocation;
 
-  const BetaManagedAgentsEnvironmentVariableAuthResponse({required this.type_, required this.secretName, required this.networking, required this.injectionLocation});
+  const BetaManagedAgentsEnvironmentVariableAuthResponse(
+      {required this.type_,
+      required this.secretName,
+      required this.networking,
+      required this.injectionLocation});
 
-  BetaManagedAgentsEnvironmentVariableAuthResponse Function({BetaManagedAgentsEnvironmentVariableAuthResponseType type_, String secretName, BetaManagedAgentsCredentialNetworkingResponse networking, BetaManagedAgentsInjectionLocationResponse injectionLocation}) get copyWith => _copyWith;
+  BetaManagedAgentsEnvironmentVariableAuthResponse Function(
+          {BetaManagedAgentsEnvironmentVariableAuthResponseType type_,
+          String secretName,
+          BetaManagedAgentsCredentialNetworkingResponse networking,
+          BetaManagedAgentsInjectionLocationResponse injectionLocation})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsEnvironmentVariableAuthResponse _copyWith({Object? type_ = sdkOmittedValue, Object? secretName = sdkOmittedValue, Object? networking = sdkOmittedValue, Object? injectionLocation = sdkOmittedValue}) => BetaManagedAgentsEnvironmentVariableAuthResponse(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsEnvironmentVariableAuthResponseType,
-    secretName: identical(secretName, sdkOmittedValue) ? this.secretName : secretName as String,
-    networking: identical(networking, sdkOmittedValue) ? this.networking : networking as BetaManagedAgentsCredentialNetworkingResponse,
-    injectionLocation: identical(injectionLocation, sdkOmittedValue) ? this.injectionLocation : injectionLocation as BetaManagedAgentsInjectionLocationResponse,
-  );
+  BetaManagedAgentsEnvironmentVariableAuthResponse _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? secretName = sdkOmittedValue,
+          Object? networking = sdkOmittedValue,
+          Object? injectionLocation = sdkOmittedValue}) =>
+      BetaManagedAgentsEnvironmentVariableAuthResponse(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsEnvironmentVariableAuthResponseType,
+        secretName: identical(secretName, sdkOmittedValue)
+            ? this.secretName
+            : secretName as String,
+        networking: identical(networking, sdkOmittedValue)
+            ? this.networking
+            : networking as BetaManagedAgentsCredentialNetworkingResponse,
+        injectionLocation: identical(injectionLocation, sdkOmittedValue)
+            ? this.injectionLocation
+            : injectionLocation as BetaManagedAgentsInjectionLocationResponse,
+      );
 
-  factory BetaManagedAgentsEnvironmentVariableAuthResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsEnvironmentVariableAuthResponse(
-    type_: (json['type'] != null ? BetaManagedAgentsEnvironmentVariableAuthResponseType.fromJson(json['type'] as String) : null)!,
-    secretName: (json['secret_name'] as String?)!,
-    networking: (json['networking'] != null ? BetaManagedAgentsCredentialNetworkingResponse.fromJson(json['networking']) : null)!,
-    injectionLocation: (json['injection_location'] != null ? BetaManagedAgentsInjectionLocationResponse.fromJson(json['injection_location'] as Map<String, dynamic>) : null)!,
-  );
+  factory BetaManagedAgentsEnvironmentVariableAuthResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsEnvironmentVariableAuthResponse(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsEnvironmentVariableAuthResponseType.fromJson(
+                json['type'] as String)
+            : null)!,
+        secretName: (json['secret_name'] as String?)!,
+        networking: (json['networking'] != null
+            ? BetaManagedAgentsCredentialNetworkingResponse.fromJson(
+                json['networking'])
+            : null)!,
+        injectionLocation: (json['injection_location'] != null
+            ? BetaManagedAgentsInjectionLocationResponse.fromJson(
+                json['injection_location'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'secret_name': secretName,
-    'networking': networking.toJson(),
-    'injection_location': injectionLocation.toJson(),
-  };
+        'type': type_.toJson(),
+        'secret_name': secretName,
+        'networking': networking.toJson(),
+        'injection_location': injectionLocation.toJson(),
+      };
 }

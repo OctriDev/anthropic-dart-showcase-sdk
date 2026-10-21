@@ -10,40 +10,88 @@ sealed class BetaManagedAgentsSessionResourceParams {
   const BetaManagedAgentsSessionResourceParams();
   factory BetaManagedAgentsSessionResourceParams.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsGitHubRepositoryResourceParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsGitHubRepositoryResourceParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsFileResourceParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsFileResourceParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsMemoryStoreResourceParam.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsMemoryStoreResourceParam(value); } } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsGitHubRepositoryResourceParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsGitHubRepositoryResourceParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsFileResourceParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsFileResourceParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsMemoryStoreResourceParam.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsMemoryStoreResourceParam(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsGitHubRepositoryResourceParams(BetaManagedAgentsGitHubRepositoryResourceParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsFileResourceParams(BetaManagedAgentsFileResourceParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsMemoryStoreResourceParam(BetaManagedAgentsMemoryStoreResourceParam.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"github_repository", "file", "memory_store"}.contains(json["type"])) { return UnknownBetaManagedAgentsSessionResourceParams(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsSessionResourceParams");
+    try {
+      return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsGitHubRepositoryResourceParams(
+          BetaManagedAgentsGitHubRepositoryResourceParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsFileResourceParams(
+          BetaManagedAgentsFileResourceParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionResourceParamsBetaManagedAgentsMemoryStoreResourceParam(
+          BetaManagedAgentsMemoryStoreResourceParam.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"github_repository", "file", "memory_store"}
+            .contains(json["type"])) {
+      return UnknownBetaManagedAgentsSessionResourceParams(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsSessionResourceParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsSessionResourceParamsBetaManagedAgentsGitHubRepositoryResourceParams extends BetaManagedAgentsSessionResourceParams {
+final class BetaManagedAgentsSessionResourceParamsBetaManagedAgentsGitHubRepositoryResourceParams
+    extends BetaManagedAgentsSessionResourceParams {
   final BetaManagedAgentsGitHubRepositoryResourceParams value;
-  const BetaManagedAgentsSessionResourceParamsBetaManagedAgentsGitHubRepositoryResourceParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionResourceParamsBetaManagedAgentsGitHubRepositoryResourceParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionResourceParamsBetaManagedAgentsFileResourceParams extends BetaManagedAgentsSessionResourceParams {
+final class BetaManagedAgentsSessionResourceParamsBetaManagedAgentsFileResourceParams
+    extends BetaManagedAgentsSessionResourceParams {
   final BetaManagedAgentsFileResourceParams value;
-  const BetaManagedAgentsSessionResourceParamsBetaManagedAgentsFileResourceParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionResourceParamsBetaManagedAgentsFileResourceParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionResourceParamsBetaManagedAgentsMemoryStoreResourceParam extends BetaManagedAgentsSessionResourceParams {
+final class BetaManagedAgentsSessionResourceParamsBetaManagedAgentsMemoryStoreResourceParam
+    extends BetaManagedAgentsSessionResourceParams {
   final BetaManagedAgentsMemoryStoreResourceParam value;
-  const BetaManagedAgentsSessionResourceParamsBetaManagedAgentsMemoryStoreResourceParam(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionResourceParamsBetaManagedAgentsMemoryStoreResourceParam(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSessionResourceParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsSessionResourceParams extends BetaManagedAgentsSessionResourceParams {
+final class UnknownBetaManagedAgentsSessionResourceParams
+    extends BetaManagedAgentsSessionResourceParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSessionResourceParams(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

@@ -8,6 +8,7 @@ part of 'shared_response.dart';
 class ResponseCitationsConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
 
@@ -15,15 +16,19 @@ class ResponseCitationsConfig {
 
   ResponseCitationsConfig Function({bool enabled}) get copyWith => _copyWith;
 
-  ResponseCitationsConfig _copyWith({Object? enabled = sdkOmittedValue}) => ResponseCitationsConfig(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-  );
+  ResponseCitationsConfig _copyWith({Object? enabled = sdkOmittedValue}) =>
+      ResponseCitationsConfig(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+      );
 
-  factory ResponseCitationsConfig.fromJson(Map<String, dynamic> json) => ResponseCitationsConfig(
-    enabled: (json['enabled'] as bool?)!,
-  );
+  factory ResponseCitationsConfig.fromJson(Map<String, dynamic> json) =>
+      ResponseCitationsConfig(
+        enabled: (json['enabled'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-  };
+        'enabled': enabled,
+      };
 }

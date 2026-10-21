@@ -10,40 +10,88 @@ sealed class BetaManagedAgentsCredentialUpdateAuth {
   const BetaManagedAgentsCredentialUpdateAuth();
   factory BetaManagedAgentsCredentialUpdateAuth.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsMcpOauthUpdateParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsMcpOauthUpdateParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsStaticBearerUpdateParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsStaticBearerUpdateParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsEnvironmentVariableUpdateParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsEnvironmentVariableUpdateParams(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsMcpOauthUpdateParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsMcpOauthUpdateParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsStaticBearerUpdateParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsStaticBearerUpdateParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsEnvironmentVariableUpdateParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsEnvironmentVariableUpdateParams(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsMcpOauthUpdateParams(BetaManagedAgentsMcpOauthUpdateParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsStaticBearerUpdateParams(BetaManagedAgentsStaticBearerUpdateParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsEnvironmentVariableUpdateParams(BetaManagedAgentsEnvironmentVariableUpdateParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"mcp_oauth", "static_bearer", "environment_variable"}.contains(json["type"])) { return UnknownBetaManagedAgentsCredentialUpdateAuth(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsCredentialUpdateAuth");
+    try {
+      return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsMcpOauthUpdateParams(
+          BetaManagedAgentsMcpOauthUpdateParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsStaticBearerUpdateParams(
+          BetaManagedAgentsStaticBearerUpdateParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsEnvironmentVariableUpdateParams(
+          BetaManagedAgentsEnvironmentVariableUpdateParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"mcp_oauth", "static_bearer", "environment_variable"}
+            .contains(json["type"])) {
+      return UnknownBetaManagedAgentsCredentialUpdateAuth(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsCredentialUpdateAuth");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsMcpOauthUpdateParams extends BetaManagedAgentsCredentialUpdateAuth {
+final class BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsMcpOauthUpdateParams
+    extends BetaManagedAgentsCredentialUpdateAuth {
   final BetaManagedAgentsMcpOauthUpdateParams value;
-  const BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsMcpOauthUpdateParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsMcpOauthUpdateParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsStaticBearerUpdateParams extends BetaManagedAgentsCredentialUpdateAuth {
+final class BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsStaticBearerUpdateParams
+    extends BetaManagedAgentsCredentialUpdateAuth {
   final BetaManagedAgentsStaticBearerUpdateParams value;
-  const BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsStaticBearerUpdateParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsStaticBearerUpdateParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsEnvironmentVariableUpdateParams extends BetaManagedAgentsCredentialUpdateAuth {
+final class BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsEnvironmentVariableUpdateParams
+    extends BetaManagedAgentsCredentialUpdateAuth {
   final BetaManagedAgentsEnvironmentVariableUpdateParams value;
-  const BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsEnvironmentVariableUpdateParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsCredentialUpdateAuthBetaManagedAgentsEnvironmentVariableUpdateParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsCredentialUpdateAuth] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsCredentialUpdateAuth extends BetaManagedAgentsCredentialUpdateAuth {
+final class UnknownBetaManagedAgentsCredentialUpdateAuth
+    extends BetaManagedAgentsCredentialUpdateAuth {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsCredentialUpdateAuth(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

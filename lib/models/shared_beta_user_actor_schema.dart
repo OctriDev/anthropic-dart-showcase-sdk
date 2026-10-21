@@ -8,42 +8,79 @@ part of 'shared_beta_user.dart';
 class BetaUserActorSchema {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// True only when the underlying account has been deleted.
   final bool deleted;
+
   /// The user's email address. Null when the account is unavailable or has been deleted.
   final String? emailAddress;
+
   /// The user's current display name. Null when the account is unavailable, has been deleted, or has no name set.
   final String? name;
+
   /// Actor type. Always `user_actor`.
   final BetaUserActorSchemaType type_;
+
   /// Tagged ID of the user.
   final String userId;
 
-  const BetaUserActorSchema({required this.deleted, required this.emailAddress, required this.name, required this.type_, required this.userId});
+  const BetaUserActorSchema(
+      {required this.deleted,
+      required this.emailAddress,
+      required this.name,
+      required this.type_,
+      required this.userId});
 
-  BetaUserActorSchema Function({bool deleted, String? emailAddress, String? name, BetaUserActorSchemaType type_, String userId}) get copyWith => _copyWith;
+  BetaUserActorSchema Function(
+      {bool deleted,
+      String? emailAddress,
+      String? name,
+      BetaUserActorSchemaType type_,
+      String userId}) get copyWith => _copyWith;
 
-  BetaUserActorSchema _copyWith({Object? deleted = sdkOmittedValue, Object? emailAddress = sdkOmittedValue, Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? userId = sdkOmittedValue}) => BetaUserActorSchema(
-    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as bool,
-    emailAddress: identical(emailAddress, sdkOmittedValue) ? this.emailAddress : emailAddress as String?,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaUserActorSchemaType,
-    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as String,
-  );
+  BetaUserActorSchema _copyWith(
+          {Object? deleted = sdkOmittedValue,
+          Object? emailAddress = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? userId = sdkOmittedValue}) =>
+      BetaUserActorSchema(
+        deleted: identical(deleted, sdkOmittedValue)
+            ? this.deleted
+            : deleted as bool,
+        emailAddress: identical(emailAddress, sdkOmittedValue)
+            ? this.emailAddress
+            : emailAddress as String?,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaUserActorSchemaType,
+        userId:
+            identical(userId, sdkOmittedValue) ? this.userId : userId as String,
+      );
 
-  factory BetaUserActorSchema.fromJson(Map<String, dynamic> json) => BetaUserActorSchema(
-    deleted: (json['deleted'] as bool?)!,
-    emailAddress: json.containsKey('email_address') ? json['email_address'] as String? : throw ArgumentError.value(null, 'email_address', 'Required property is missing'),
-    name: json.containsKey('name') ? json['name'] as String? : throw ArgumentError.value(null, 'name', 'Required property is missing'),
-    type_: (json['type'] != null ? BetaUserActorSchemaType.fromJson(json['type'] as String) : null)!,
-    userId: (json['user_id'] as String?)!,
-  );
+  factory BetaUserActorSchema.fromJson(Map<String, dynamic> json) =>
+      BetaUserActorSchema(
+        deleted: (json['deleted'] as bool?)!,
+        emailAddress: json.containsKey('email_address')
+            ? json['email_address'] as String?
+            : throw ArgumentError.value(
+                null, 'email_address', 'Required property is missing'),
+        name: json.containsKey('name')
+            ? json['name'] as String?
+            : throw ArgumentError.value(
+                null, 'name', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? BetaUserActorSchemaType.fromJson(json['type'] as String)
+            : null)!,
+        userId: (json['user_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'deleted': deleted,
-    'email_address': emailAddress,
-    'name': name,
-    'type': type_.toJson(),
-    'user_id': userId,
-  };
+        'deleted': deleted,
+        'email_address': emailAddress,
+        'name': name,
+        'type': type_.toJson(),
+        'user_id': userId,
+      };
 }

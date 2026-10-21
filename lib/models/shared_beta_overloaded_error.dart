@@ -8,27 +8,40 @@ part of 'shared_beta.dart';
 class BetaOverloadedError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaOverloadedErrorType type_;
 
   const BetaOverloadedError({required this.message, required this.type_});
 
-  BetaOverloadedError Function({String message, BetaOverloadedErrorType type_}) get copyWith => _copyWith;
+  BetaOverloadedError Function({String message, BetaOverloadedErrorType type_})
+      get copyWith => _copyWith;
 
-  BetaOverloadedError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaOverloadedError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaOverloadedErrorType,
-  );
+  BetaOverloadedError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaOverloadedError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaOverloadedErrorType,
+      );
 
-  factory BetaOverloadedError.fromJson(Map<String, dynamic> json) => BetaOverloadedError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? BetaOverloadedErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaOverloadedError.fromJson(Map<String, dynamic> json) =>
+      BetaOverloadedError(
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaOverloadedErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }

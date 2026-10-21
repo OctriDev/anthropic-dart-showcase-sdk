@@ -10,12 +10,32 @@ sealed class BetaDreamInput {
   const BetaDreamInput();
   factory BetaDreamInput.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaDreamMemoryStoreInput.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaDreamInputBetaDreamMemoryStoreInput(value); } } catch (_) {}
-      try { final value = BetaDreamSessionsInput.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaDreamInputBetaDreamSessionsInput(value); } } catch (_) {}
+      try {
+        final value = BetaDreamMemoryStoreInput.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaDreamInputBetaDreamMemoryStoreInput(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaDreamSessionsInput.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaDreamInputBetaDreamSessionsInput(value);
+        }
+      } catch (_) {}
     }
-    try { return BetaDreamInputBetaDreamMemoryStoreInput(BetaDreamMemoryStoreInput.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaDreamInputBetaDreamSessionsInput(BetaDreamSessionsInput.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"memory_store", "sessions"}.contains(json["type"])) { return UnknownBetaDreamInput(json); }
+    try {
+      return BetaDreamInputBetaDreamMemoryStoreInput(
+          BetaDreamMemoryStoreInput.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaDreamInputBetaDreamSessionsInput(
+          BetaDreamSessionsInput.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"memory_store", "sessions"}.contains(json["type"])) {
+      return UnknownBetaDreamInput(json);
+    }
     throw FormatException("No variant matched for BetaDreamInput");
   }
   Object? toJson();
@@ -24,18 +44,21 @@ sealed class BetaDreamInput {
 final class BetaDreamInputBetaDreamMemoryStoreInput extends BetaDreamInput {
   final BetaDreamMemoryStoreInput value;
   const BetaDreamInputBetaDreamMemoryStoreInput(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class BetaDreamInputBetaDreamSessionsInput extends BetaDreamInput {
   final BetaDreamSessionsInput value;
   const BetaDreamInputBetaDreamSessionsInput(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaDreamInput] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaDreamInput extends BetaDreamInput {
   final Map<String, dynamic> raw;
   const UnknownBetaDreamInput(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

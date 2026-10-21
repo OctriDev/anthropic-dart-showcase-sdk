@@ -8,22 +8,34 @@ part of 'summaries_beta_true.dart';
 class BetaAnalyticsActivitySummaryResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `summaries` wire field.
   final List<BetaAnalyticsSingleDayActivitySummary> summaries;
 
   const BetaAnalyticsActivitySummaryResponse({required this.summaries});
 
-  BetaAnalyticsActivitySummaryResponse Function({List<BetaAnalyticsSingleDayActivitySummary> summaries}) get copyWith => _copyWith;
+  BetaAnalyticsActivitySummaryResponse Function(
+          {List<BetaAnalyticsSingleDayActivitySummary> summaries})
+      get copyWith => _copyWith;
 
-  BetaAnalyticsActivitySummaryResponse _copyWith({Object? summaries = sdkOmittedValue}) => BetaAnalyticsActivitySummaryResponse(
-    summaries: identical(summaries, sdkOmittedValue) ? this.summaries : summaries as List<BetaAnalyticsSingleDayActivitySummary>,
-  );
+  BetaAnalyticsActivitySummaryResponse _copyWith(
+          {Object? summaries = sdkOmittedValue}) =>
+      BetaAnalyticsActivitySummaryResponse(
+        summaries: identical(summaries, sdkOmittedValue)
+            ? this.summaries
+            : summaries as List<BetaAnalyticsSingleDayActivitySummary>,
+      );
 
-  factory BetaAnalyticsActivitySummaryResponse.fromJson(Map<String, dynamic> json) => BetaAnalyticsActivitySummaryResponse(
-    summaries: ((json['summaries'] as List?)?.map((e) => BetaAnalyticsSingleDayActivitySummary.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory BetaAnalyticsActivitySummaryResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaAnalyticsActivitySummaryResponse(
+        summaries: ((json['summaries'] as List?)
+            ?.map((e) => BetaAnalyticsSingleDayActivitySummary.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'summaries': summaries.map((item) => item.toJson()).toList(),
-  };
+        'summaries': summaries.map((item) => item.toJson()).toList(),
+      };
 }

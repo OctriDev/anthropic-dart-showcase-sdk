@@ -8,33 +8,56 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsServerToolUsage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Number of server-executed web search requests.
   final SdkOptional<int> webSearchRequests;
+
   /// Number of server-executed web fetch requests.
   final SdkOptional<int> webFetchRequests;
 
-  const BetaManagedAgentsServerToolUsage({this.webSearchRequests = const SdkOmitted(), this.webFetchRequests = const SdkOmitted()});
+  const BetaManagedAgentsServerToolUsage(
+      {this.webSearchRequests = const SdkOmitted(),
+      this.webFetchRequests = const SdkOmitted()});
 
-  BetaManagedAgentsServerToolUsage Function({SdkOptional<int> webSearchRequests, SdkOptional<int> webFetchRequests}) get copyWith => _copyWith;
+  BetaManagedAgentsServerToolUsage Function(
+      {SdkOptional<int> webSearchRequests,
+      SdkOptional<int> webFetchRequests}) get copyWith => _copyWith;
 
-  BetaManagedAgentsServerToolUsage _copyWith({Object? webSearchRequests = sdkOmittedValue, Object? webFetchRequests = sdkOmittedValue}) => BetaManagedAgentsServerToolUsage(
-    webSearchRequests: identical(webSearchRequests, sdkOmittedValue) ? this.webSearchRequests : webSearchRequests as SdkOptional<int>,
-    webFetchRequests: identical(webFetchRequests, sdkOmittedValue) ? this.webFetchRequests : webFetchRequests as SdkOptional<int>,
-  );
+  BetaManagedAgentsServerToolUsage _copyWith(
+          {Object? webSearchRequests = sdkOmittedValue,
+          Object? webFetchRequests = sdkOmittedValue}) =>
+      BetaManagedAgentsServerToolUsage(
+        webSearchRequests: identical(webSearchRequests, sdkOmittedValue)
+            ? this.webSearchRequests
+            : webSearchRequests as SdkOptional<int>,
+        webFetchRequests: identical(webFetchRequests, sdkOmittedValue)
+            ? this.webFetchRequests
+            : webFetchRequests as SdkOptional<int>,
+      );
 
-  factory BetaManagedAgentsServerToolUsage.fromJson(Map<String, dynamic> json) => BetaManagedAgentsServerToolUsage(
-    webSearchRequests: json['web_search_requests'] != null ? SdkPresent(((json['web_search_requests'] as num?)?.toInt())!) : const SdkOmitted(),
-    webFetchRequests: json['web_fetch_requests'] != null ? SdkPresent(((json['web_fetch_requests'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsServerToolUsage.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsServerToolUsage(
+        webSearchRequests: json['web_search_requests'] != null
+            ? SdkPresent(((json['web_search_requests'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        webFetchRequests: json['web_fetch_requests'] != null
+            ? SdkPresent(((json['web_fetch_requests'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (webSearchRequests) {
-      SdkPresent<int>(value: final value) => {'web_search_requests': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (webFetchRequests) {
-      SdkPresent<int>(value: final value) => {'web_fetch_requests': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (webSearchRequests) {
+          SdkPresent<int>(value: final value) => {
+              'web_search_requests': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (webFetchRequests) {
+          SdkPresent<int>(value: final value) => {
+              'web_fetch_requests': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

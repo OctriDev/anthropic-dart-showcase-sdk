@@ -9,90 +9,157 @@ sealed class BetaInviteSchemaAcceptedAt {
   static const String constructionSurface = 'named';
   const BetaInviteSchemaAcceptedAt();
   factory BetaInviteSchemaAcceptedAt.fromJson(Object? json) {
-    if (json is String) { return BetaInviteSchemaAcceptedAtString(json); }
+    if (json is String) {
+      return BetaInviteSchemaAcceptedAtString(json);
+    }
     throw FormatException("No variant matched for BetaInviteSchemaAcceptedAt");
   }
   Object? toJson();
 }
 
-final class BetaInviteSchemaAcceptedAtString extends BetaInviteSchemaAcceptedAt {
+final class BetaInviteSchemaAcceptedAtString
+    extends BetaInviteSchemaAcceptedAt {
   final String value;
   const BetaInviteSchemaAcceptedAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaInviteSchema` API schema.
 class BetaInviteSchema {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// RFC 3339 datetime string indicating when the Invite was accepted, or null.
   final String? acceptedAt;
+
   /// Email of the User being invited.
   final String email;
+
   /// RFC 3339 datetime string indicating when the Invite expires.
   final String expiresAt;
+
   /// ID of the Invite.
   final String id;
+
   /// RFC 3339 datetime string indicating when the Invite was created.
   final String invitedAt;
+
   /// RBAC group IDs recorded on the Invite (Claude Enterprise organizations), to be assigned to the User when the Invite is accepted. `[]` when none.
   final List<String> rbacGroupIds;
+
   /// Organization role of the User.
   final BetaOrganizationRoleSchema role;
+
   /// Status of the Invite.
   final BetaInviteStatusSchema status;
+
   /// Object type. For Invites, this is always `"invite"`.
   final BetaInviteSchemaType type_;
 
-  const BetaInviteSchema({required this.acceptedAt, required this.email, required this.expiresAt, required this.id, required this.invitedAt, required this.rbacGroupIds, required this.role, required this.status, required this.type_});
+  const BetaInviteSchema(
+      {required this.acceptedAt,
+      required this.email,
+      required this.expiresAt,
+      required this.id,
+      required this.invitedAt,
+      required this.rbacGroupIds,
+      required this.role,
+      required this.status,
+      required this.type_});
 
-  BetaInviteSchema Function({String? acceptedAt, String email, String expiresAt, String id, String invitedAt, List<String> rbacGroupIds, BetaOrganizationRoleSchema role, BetaInviteStatusSchema status, BetaInviteSchemaType type_}) get copyWith => _copyWith;
+  BetaInviteSchema Function(
+      {String? acceptedAt,
+      String email,
+      String expiresAt,
+      String id,
+      String invitedAt,
+      List<String> rbacGroupIds,
+      BetaOrganizationRoleSchema role,
+      BetaInviteStatusSchema status,
+      BetaInviteSchemaType type_}) get copyWith => _copyWith;
 
-  BetaInviteSchema _copyWith({Object? acceptedAt = sdkOmittedValue, Object? email = sdkOmittedValue, Object? expiresAt = sdkOmittedValue, Object? id = sdkOmittedValue, Object? invitedAt = sdkOmittedValue, Object? rbacGroupIds = sdkOmittedValue, Object? role = sdkOmittedValue, Object? status = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaInviteSchema(
-    acceptedAt: identical(acceptedAt, sdkOmittedValue) ? this.acceptedAt : acceptedAt as String?,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String,
-    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    invitedAt: identical(invitedAt, sdkOmittedValue) ? this.invitedAt : invitedAt as String,
-    rbacGroupIds: identical(rbacGroupIds, sdkOmittedValue) ? this.rbacGroupIds : rbacGroupIds as List<String>,
-    role: identical(role, sdkOmittedValue) ? this.role : role as BetaOrganizationRoleSchema,
-    status: identical(status, sdkOmittedValue) ? this.status : status as BetaInviteStatusSchema,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaInviteSchemaType,
-  );
+  BetaInviteSchema _copyWith(
+          {Object? acceptedAt = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? expiresAt = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? invitedAt = sdkOmittedValue,
+          Object? rbacGroupIds = sdkOmittedValue,
+          Object? role = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaInviteSchema(
+        acceptedAt: identical(acceptedAt, sdkOmittedValue)
+            ? this.acceptedAt
+            : acceptedAt as String?,
+        email: identical(email, sdkOmittedValue) ? this.email : email as String,
+        expiresAt: identical(expiresAt, sdkOmittedValue)
+            ? this.expiresAt
+            : expiresAt as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        invitedAt: identical(invitedAt, sdkOmittedValue)
+            ? this.invitedAt
+            : invitedAt as String,
+        rbacGroupIds: identical(rbacGroupIds, sdkOmittedValue)
+            ? this.rbacGroupIds
+            : rbacGroupIds as List<String>,
+        role: identical(role, sdkOmittedValue)
+            ? this.role
+            : role as BetaOrganizationRoleSchema,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as BetaInviteStatusSchema,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaInviteSchemaType,
+      );
 
-  factory BetaInviteSchema.fromJson(Map<String, dynamic> json) => BetaInviteSchema(
-    acceptedAt: json.containsKey('accepted_at') ? json['accepted_at'] as String? : throw ArgumentError.value(null, 'accepted_at', 'Required property is missing'),
-    email: (json['email'] as String?)!,
-    expiresAt: (json['expires_at'] as String?)!,
-    id: (json['id'] as String?)!,
-    invitedAt: (json['invited_at'] as String?)!,
-    rbacGroupIds: ((json['rbac_group_ids'] as List?)?.map((e) => e as String).toList())!,
-    role: (json['role'] != null ? BetaOrganizationRoleSchema.fromJson(json['role'] as String) : null)!,
-    status: (json['status'] != null ? BetaInviteStatusSchema.fromJson(json['status'] as String) : null)!,
-    type_: (json['type'] != null ? BetaInviteSchemaType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaInviteSchema.fromJson(Map<String, dynamic> json) =>
+      BetaInviteSchema(
+        acceptedAt: json.containsKey('accepted_at')
+            ? json['accepted_at'] as String?
+            : throw ArgumentError.value(
+                null, 'accepted_at', 'Required property is missing'),
+        email: (json['email'] as String?)!,
+        expiresAt: (json['expires_at'] as String?)!,
+        id: (json['id'] as String?)!,
+        invitedAt: (json['invited_at'] as String?)!,
+        rbacGroupIds: ((json['rbac_group_ids'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+        role: (json['role'] != null
+            ? BetaOrganizationRoleSchema.fromJson(json['role'] as String)
+            : null)!,
+        status: (json['status'] != null
+            ? BetaInviteStatusSchema.fromJson(json['status'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaInviteSchemaType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'accepted_at': acceptedAt,
-    'email': email,
-    'expires_at': expiresAt,
-    'id': id,
-    'invited_at': invitedAt,
-    'rbac_group_ids': rbacGroupIds,
-    'role': role.toJson(),
-    'status': status.toJson(),
-    'type': type_.toJson(),
-  };
+        'accepted_at': acceptedAt,
+        'email': email,
+        'expires_at': expiresAt,
+        'id': id,
+        'invited_at': invitedAt,
+        'rbac_group_ids': rbacGroupIds,
+        'role': role.toJson(),
+        'status': status.toJson(),
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaInviteStatusSchema` API schema.
 final class BetaInviteStatusSchema {
-
   final String value;
 
   const BetaInviteStatusSchema._(this.value);
 
-  factory BetaInviteStatusSchema.fromJson(String value) => BetaInviteStatusSchema._(value);
+  factory BetaInviteStatusSchema.fromJson(String value) =>
+      BetaInviteStatusSchema._(value);
 
   static const accepted = BetaInviteStatusSchema._('accepted');
   static const deleted = BetaInviteStatusSchema._('deleted');
@@ -101,10 +168,13 @@ final class BetaInviteStatusSchema {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaInviteStatusSchema && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaInviteStatusSchema && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

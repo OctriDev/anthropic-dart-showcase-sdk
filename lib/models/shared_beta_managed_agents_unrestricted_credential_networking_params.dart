@@ -8,22 +8,36 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsUnrestrictedCredentialNetworkingParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType type_;
 
-  const BetaManagedAgentsUnrestrictedCredentialNetworkingParams({required this.type_});
+  const BetaManagedAgentsUnrestrictedCredentialNetworkingParams(
+      {required this.type_});
 
-  BetaManagedAgentsUnrestrictedCredentialNetworkingParams Function({BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsUnrestrictedCredentialNetworkingParams Function(
+          {BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsUnrestrictedCredentialNetworkingParams _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsUnrestrictedCredentialNetworkingParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType,
-  );
+  BetaManagedAgentsUnrestrictedCredentialNetworkingParams _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsUnrestrictedCredentialNetworkingParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType,
+      );
 
-  factory BetaManagedAgentsUnrestrictedCredentialNetworkingParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUnrestrictedCredentialNetworkingParams(
-    type_: (json['type'] != null ? BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsUnrestrictedCredentialNetworkingParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUnrestrictedCredentialNetworkingParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUnrestrictedCredentialNetworkingParamsType
+                .fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

@@ -9,22 +9,32 @@ sealed class BetaManagedAgentsBudget {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsBudget();
   factory BetaManagedAgentsBudget.fromJson(Object? json) {
-    try { return BetaManagedAgentsBudgetBetaManagedAgentsBudgetLimit(BetaManagedAgentsBudgetLimit.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"limit"}.contains(json["type"])) { return UnknownBetaManagedAgentsBudget(json); }
+    try {
+      return BetaManagedAgentsBudgetBetaManagedAgentsBudgetLimit(
+          BetaManagedAgentsBudgetLimit.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"limit"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsBudget(json);
+    }
     throw FormatException("No variant matched for BetaManagedAgentsBudget");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsBudgetBetaManagedAgentsBudgetLimit extends BetaManagedAgentsBudget {
+final class BetaManagedAgentsBudgetBetaManagedAgentsBudgetLimit
+    extends BetaManagedAgentsBudget {
   final BetaManagedAgentsBudgetLimit value;
   const BetaManagedAgentsBudgetBetaManagedAgentsBudgetLimit(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsBudget] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaManagedAgentsBudget extends BetaManagedAgentsBudget {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsBudget(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

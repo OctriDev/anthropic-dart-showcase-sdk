@@ -9,67 +9,121 @@ sealed class RequestTextBlockCacheControl {
   static const String constructionSurface = 'named';
   const RequestTextBlockCacheControl();
   factory RequestTextBlockCacheControl.fromJson(Object? json) {
-    try { return RequestTextBlockCacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownRequestTextBlockCacheControl(json); }
-    throw FormatException("No variant matched for RequestTextBlockCacheControl");
+    try {
+      return RequestTextBlockCacheControlCacheControlEphemeral(
+          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownRequestTextBlockCacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for RequestTextBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class RequestTextBlockCacheControlCacheControlEphemeral extends RequestTextBlockCacheControl {
+final class RequestTextBlockCacheControlCacheControlEphemeral
+    extends RequestTextBlockCacheControl {
   final CacheControlEphemeral value;
   const RequestTextBlockCacheControlCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [RequestTextBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestTextBlockCacheControl extends RequestTextBlockCacheControl {
+final class UnknownRequestTextBlockCacheControl
+    extends RequestTextBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownRequestTextBlockCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `RequestTextBlock` API schema.
 class RequestTextBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
+
   /// Optional array value serialized in the `citations` wire field.
   final SdkOptional<List<RequestTextBlockCitationsItem>?> citations;
+
   /// Required `string` value serialized in the `text` wire field.
   final String text;
+
   /// Required `string` value serialized in the `type` wire field.
   final RequestTextBlockType type_;
 
-  const RequestTextBlock({this.cacheControl = const SdkOmitted(), this.citations = const SdkOmitted(), required this.text, required this.type_});
+  const RequestTextBlock(
+      {this.cacheControl = const SdkOmitted(),
+      this.citations = const SdkOmitted(),
+      required this.text,
+      required this.type_});
 
-  RequestTextBlock Function({SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<List<RequestTextBlockCitationsItem>?> citations, String text, RequestTextBlockType type_}) get copyWith => _copyWith;
+  RequestTextBlock Function(
+      {SdkOptional<CacheControlEphemeral?> cacheControl,
+      SdkOptional<List<RequestTextBlockCitationsItem>?> citations,
+      String text,
+      RequestTextBlockType type_}) get copyWith => _copyWith;
 
-  RequestTextBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? citations = sdkOmittedValue, Object? text = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestTextBlock(
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
-    citations: identical(citations, sdkOmittedValue) ? this.citations : citations as SdkOptional<List<RequestTextBlockCitationsItem>?>,
-    text: identical(text, sdkOmittedValue) ? this.text : text as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestTextBlockType,
-  );
+  RequestTextBlock _copyWith(
+          {Object? cacheControl = sdkOmittedValue,
+          Object? citations = sdkOmittedValue,
+          Object? text = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RequestTextBlock(
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<CacheControlEphemeral?>,
+        citations: identical(citations, sdkOmittedValue)
+            ? this.citations
+            : citations as SdkOptional<List<RequestTextBlockCitationsItem>?>,
+        text: identical(text, sdkOmittedValue) ? this.text : text as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RequestTextBlockType,
+      );
 
-  factory RequestTextBlock.fromJson(Map<String, dynamic> json) => RequestTextBlock(
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    citations: json.containsKey('citations') ? SdkPresent((json['citations'] as List?)?.map((e) => RequestTextBlockCitationsItem.fromJson(e)).toList()) : const SdkOmitted(),
-    text: (json['text'] as String?)!,
-    type_: (json['type'] != null ? RequestTextBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RequestTextBlock.fromJson(Map<String, dynamic> json) =>
+      RequestTextBlock(
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? CacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        citations: json.containsKey('citations')
+            ? SdkPresent((json['citations'] as List?)
+                ?.map((e) => RequestTextBlockCitationsItem.fromJson(e))
+                .toList())
+            : const SdkOmitted(),
+        text: (json['text'] as String?)!,
+        type_: (json['type'] != null
+            ? RequestTextBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (cacheControl) {
-      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (citations) {
-      SdkPresent<List<RequestTextBlockCitationsItem>?>(value: final value) => {'citations': value?.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    'text': text,
-    'type': type_.toJson(),
-  };
+        ...switch (cacheControl) {
+          SdkPresent<CacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (citations) {
+          SdkPresent<List<RequestTextBlockCitationsItem>?>(
+            value: final value
+          ) =>
+            {
+              'citations': value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'text': text,
+        'type': type_.toJson(),
+      };
 }

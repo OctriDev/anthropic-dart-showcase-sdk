@@ -24,17 +24,17 @@ import '../types.dart';
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Future<BetaGetCostReportResponse>
-    retrieveBetaOrganizationsCostReport(ClientConfig config,
-        {required String startingAt,
-        SdkOptional<int> limit = const SdkOmitted(),
-        SdkOptional<String?> page = const SdkOmitted(),
-        SdkOptional<String?> endingAt = const SdkOmitted(),
-        SdkOptional<List<BetaCostReportGroupBy>?> groupBy = const SdkOmitted(),
-        SdkOptional<BetaCostReportTimeBucketWidth> bucketWidth = const SdkOmitted(),
-        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-        SdkOptional<String> anthropicVersion = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaGetCostReportResponse> retrieveBetaOrganizationsCostReport(
+    ClientConfig config,
+    {required String startingAt,
+    SdkOptional<int> limit = const SdkOmitted(),
+    SdkOptional<String?> page = const SdkOmitted(),
+    SdkOptional<String?> endingAt = const SdkOmitted(),
+    SdkOptional<List<BetaCostReportGroupBy>?> groupBy = const SdkOmitted(),
+    SdkOptional<BetaCostReportTimeBucketWidth> bucketWidth = const SdkOmitted(),
+    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+    SdkOptional<String> anthropicVersion = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   sdkValidateDateTime('starting_at', startingAt);
   if (limit is SdkPresent<int>) {
     validateRange('limit', limit.value, min: 1, max: 31);
@@ -44,23 +44,64 @@ Future<BetaGetCostReportResponse>
           'GET', '/v1/organizations/cost_report?beta=true',
           config: config,
           query: {
-            'starting_at': SdkQueryValue(startingAt, style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'ending_at': SdkQueryValue(SdkUtils.unwrapOptional(endingAt), style: 'form', explode: true),
-            'group_by[]': SdkQueryValue(SdkUtils.unwrapOptional(groupBy), style: 'form', explode: true),
-            'bucket_width': SdkQueryValue(SdkUtils.unwrapOptional(bucketWidth), style: 'form', explode: true)
+            'starting_at':
+                SdkQueryValue(startingAt, style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'ending_at': SdkQueryValue(SdkUtils.unwrapOptional(endingAt),
+                style: 'form', explode: true),
+            'group_by[]': SdkQueryValue(SdkUtils.unwrapOptional(groupBy),
+                style: 'form', explode: true),
+            'bucket_width': SdkQueryValue(SdkUtils.unwrapOptional(bucketWidth),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
+          }),
           operationId: 'retrieveBetaOrganizationsCostReport',
-          fromJsonRaw: (value) => BetaGetCostReportResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaGetCostReportResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// Retrieves organization costs over time in daily buckets. Set `starting_at` to the RFC 3339 timestamp that begins the reporting range, and use `group_by[]` to organize results by description or workspace. Use the response's `next_page` token as `page` to continue through results.
 ///
@@ -79,13 +120,46 @@ Future<BetaGetCostReportResponse>
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Stream<BetaCostReportTimeBucket> retrieveBetaOrganizationsCostReportPaginated(ClientConfig config, {required String startingAt, int? limit, String? page, String? endingAt, List<BetaCostReportGroupBy>? groupBy, BetaCostReportTimeBucketWidth? bucketWidth, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
+Stream<BetaCostReportTimeBucket> retrieveBetaOrganizationsCostReportPaginated(
+    ClientConfig config,
+    {required String startingAt,
+    int? limit,
+    String? page,
+    String? endingAt,
+    List<BetaCostReportGroupBy>? groupBy,
+    BetaCostReportTimeBucketWidth? bucketWidth,
+    List<String>? anthropicBeta,
+    String? anthropicVersion,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await retrieveBetaOrganizationsCostReport(config, startingAt: startingAt, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), endingAt: endingAt == null ? const SdkOmitted<String?>() : SdkPresent<String?>(endingAt), groupBy: groupBy == null ? const SdkOmitted<List<BetaCostReportGroupBy>?>() : SdkPresent<List<BetaCostReportGroupBy>?>(groupBy), bucketWidth: bucketWidth == null ? const SdkOmitted<BetaCostReportTimeBucketWidth>() : SdkPresent<BetaCostReportTimeBucketWidth>(bucketWidth), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
+    final sdkPage = await retrieveBetaOrganizationsCostReport(config,
+        startingAt: startingAt,
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        endingAt: endingAt == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(endingAt),
+        groupBy: groupBy == null
+            ? const SdkOmitted<List<BetaCostReportGroupBy>?>()
+            : SdkPresent<List<BetaCostReportGroupBy>?>(groupBy),
+        bucketWidth: bucketWidth == null
+            ? const SdkOmitted<BetaCostReportTimeBucketWidth>()
+            : SdkPresent<BetaCostReportTimeBucketWidth>(bucketWidth),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     if (sdkPage.hasMore != true) return;
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
@@ -93,10 +167,41 @@ Stream<BetaCostReportTimeBucket> retrieveBetaOrganizationsCostReportPaginated(Cl
   }
 }
 
-Stream<SdkPage<BetaGetCostReportResponse, BetaCostReportTimeBucket>> retrieveBetaOrganizationsCostReportPages(ClientConfig config, {required String startingAt, int? limit, String? page, String? endingAt, List<BetaCostReportGroupBy>? groupBy, BetaCostReportTimeBucketWidth? bucketWidth, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaGetCostReportResponse, BetaCostReportTimeBucket>>
+    retrieveBetaOrganizationsCostReportPages(ClientConfig config,
+        {required String startingAt,
+        int? limit,
+        String? page,
+        String? endingAt,
+        List<BetaCostReportGroupBy>? groupBy,
+        BetaCostReportTimeBucketWidth? bucketWidth,
+        List<String>? anthropicBeta,
+        String? anthropicVersion,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await retrieveBetaOrganizationsCostReport(config, startingAt: startingAt, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), endingAt: endingAt == null ? const SdkOmitted<String?>() : SdkPresent<String?>(endingAt), groupBy: groupBy == null ? const SdkOmitted<List<BetaCostReportGroupBy>?>() : SdkPresent<List<BetaCostReportGroupBy>?>(groupBy), bucketWidth: bucketWidth == null ? const SdkOmitted<BetaCostReportTimeBucketWidth>() : SdkPresent<BetaCostReportTimeBucketWidth>(bucketWidth), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
+    final sdkPage = await retrieveBetaOrganizationsCostReport(config,
+        startingAt: startingAt,
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        endingAt: endingAt == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(endingAt),
+        groupBy: groupBy == null
+            ? const SdkOmitted<List<BetaCostReportGroupBy>?>()
+            : SdkPresent<List<BetaCostReportGroupBy>?>(groupBy),
+        bucketWidth: bucketWidth == null
+            ? const SdkOmitted<BetaCostReportTimeBucketWidth>()
+            : SdkPresent<BetaCostReportTimeBucketWidth>(bucketWidth),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;

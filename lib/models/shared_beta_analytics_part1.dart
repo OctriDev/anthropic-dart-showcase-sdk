@@ -6,12 +6,12 @@ part of 'shared_beta_analytics.dart';
 // shared_beta_analytics domain models
 /// Typed representation of the `BetaAnalyticsCostType` API schema.
 final class BetaAnalyticsCostType {
-
   final String value;
 
   const BetaAnalyticsCostType._(this.value);
 
-  factory BetaAnalyticsCostType.fromJson(String value) => BetaAnalyticsCostType._(value);
+  factory BetaAnalyticsCostType.fromJson(String value) =>
+      BetaAnalyticsCostType._(value);
 
   static const codeExecution = BetaAnalyticsCostType._('code_execution');
   static const tokens = BetaAnalyticsCostType._('tokens');
@@ -19,137 +19,201 @@ final class BetaAnalyticsCostType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaAnalyticsCostType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaAnalyticsCostType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Publicly documented product surfaces. `claude-tag` is Claude Tag, the Claude product in Slack.
 final class BetaAnalyticsProductFilter {
-
   final String value;
 
   const BetaAnalyticsProductFilter._(this.value);
 
-  factory BetaAnalyticsProductFilter.fromJson(String value) => BetaAnalyticsProductFilter._(value);
+  factory BetaAnalyticsProductFilter.fromJson(String value) =>
+      BetaAnalyticsProductFilter._(value);
 
   static const chat = BetaAnalyticsProductFilter._('chat');
   static const claudeTag = BetaAnalyticsProductFilter._('claude-tag');
   static const claudeCode = BetaAnalyticsProductFilter._('claude_code');
   static const claudeDesign = BetaAnalyticsProductFilter._('claude_design');
-  static const claudeInChrome = BetaAnalyticsProductFilter._('claude_in_chrome');
+  static const claudeInChrome =
+      BetaAnalyticsProductFilter._('claude_in_chrome');
   static const cowork = BetaAnalyticsProductFilter._('cowork');
   static const officeAgent = BetaAnalyticsProductFilter._('office_agent');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaAnalyticsProductFilter && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaAnalyticsProductFilter && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `BetaAnalyticsSortOrder` API schema.
 final class BetaAnalyticsSortOrder {
-
   final String value;
 
   const BetaAnalyticsSortOrder._(this.value);
 
-  factory BetaAnalyticsSortOrder.fromJson(String value) => BetaAnalyticsSortOrder._(value);
+  factory BetaAnalyticsSortOrder.fromJson(String value) =>
+      BetaAnalyticsSortOrder._(value);
 
   static const asc = BetaAnalyticsSortOrder._('asc');
   static const desc = BetaAnalyticsSortOrder._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaAnalyticsSortOrder && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaAnalyticsSortOrder && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// A user in the organization, identified by tagged id and email address.
 class BetaAnalyticsUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Email address of the user
   final String emailAddress;
+
   /// Tagged user identifier (e.g. `user_...`)
   final String id;
+
   /// Object type. Always `user`.
   final BetaAnalyticsUserType type_;
 
-  const BetaAnalyticsUser({required this.emailAddress, required this.id, required this.type_});
+  const BetaAnalyticsUser(
+      {required this.emailAddress, required this.id, required this.type_});
 
-  BetaAnalyticsUser Function({String emailAddress, String id, BetaAnalyticsUserType type_}) get copyWith => _copyWith;
+  BetaAnalyticsUser Function(
+      {String emailAddress,
+      String id,
+      BetaAnalyticsUserType type_}) get copyWith => _copyWith;
 
-  BetaAnalyticsUser _copyWith({Object? emailAddress = sdkOmittedValue, Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaAnalyticsUser(
-    emailAddress: identical(emailAddress, sdkOmittedValue) ? this.emailAddress : emailAddress as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaAnalyticsUserType,
-  );
+  BetaAnalyticsUser _copyWith(
+          {Object? emailAddress = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaAnalyticsUser(
+        emailAddress: identical(emailAddress, sdkOmittedValue)
+            ? this.emailAddress
+            : emailAddress as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaAnalyticsUserType,
+      );
 
-  factory BetaAnalyticsUser.fromJson(Map<String, dynamic> json) => BetaAnalyticsUser(
-    emailAddress: (json['email_address'] as String?)!,
-    id: (json['id'] as String?)!,
-    type_: (json['type'] != null ? BetaAnalyticsUserType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaAnalyticsUser.fromJson(Map<String, dynamic> json) =>
+      BetaAnalyticsUser(
+        emailAddress: (json['email_address'] as String?)!,
+        id: (json['id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaAnalyticsUserType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'email_address': emailAddress,
-    'id': id,
-    'type': type_.toJson(),
-  };
+        'email_address': emailAddress,
+        'id': id,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaAnalyticsUserActor` API schema.
 class BetaAnalyticsUserActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// True when the account has been deleted, or when the user is no longer a member of the organization or its associated organizations (for example, their membership was removed or they were deprovisioned via your identity provider). `email` stays populated for removed users and is null when the account has been deleted. `name` follows the rules described on that field. The `user_id` is still populated for reconciliation.
   final bool deleted;
+
   /// The user's email address, including for users who are no longer members of the organization or its associated organizations. Null when the account has been deleted (check `deleted`) and for system-minted service accounts, which have no person's mailbox behind them (check `name`).
   final String? email;
+
   /// The user's full name. Null when the user has not set a name. Returns `"Deleted User"` when the account itself has been deleted, or when the user is no longer a member of the organization or its associated organizations and the organization has chosen to hide the names of removed users. Otherwise, the name stays populated for removed users. Rows for system-minted service accounts render the service name (for example, `"Claude Security"` for usage by Anthropic's security-patching service) or null.
   final String? name;
+
   /// Actor type. Always `"user_actor"`.
   final BetaAnalyticsUserActorType type_;
+
   /// Tagged user ID.
   final String userId;
 
-  const BetaAnalyticsUserActor({required this.deleted, required this.email, required this.name, required this.type_, required this.userId});
+  const BetaAnalyticsUserActor(
+      {required this.deleted,
+      required this.email,
+      required this.name,
+      required this.type_,
+      required this.userId});
 
-  BetaAnalyticsUserActor Function({bool deleted, String? email, String? name, BetaAnalyticsUserActorType type_, String userId}) get copyWith => _copyWith;
+  BetaAnalyticsUserActor Function(
+      {bool deleted,
+      String? email,
+      String? name,
+      BetaAnalyticsUserActorType type_,
+      String userId}) get copyWith => _copyWith;
 
-  BetaAnalyticsUserActor _copyWith({Object? deleted = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? userId = sdkOmittedValue}) => BetaAnalyticsUserActor(
-    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as bool,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String?,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaAnalyticsUserActorType,
-    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as String,
-  );
+  BetaAnalyticsUserActor _copyWith(
+          {Object? deleted = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? userId = sdkOmittedValue}) =>
+      BetaAnalyticsUserActor(
+        deleted: identical(deleted, sdkOmittedValue)
+            ? this.deleted
+            : deleted as bool,
+        email:
+            identical(email, sdkOmittedValue) ? this.email : email as String?,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaAnalyticsUserActorType,
+        userId:
+            identical(userId, sdkOmittedValue) ? this.userId : userId as String,
+      );
 
-  factory BetaAnalyticsUserActor.fromJson(Map<String, dynamic> json) => BetaAnalyticsUserActor(
-    deleted: (json['deleted'] as bool?)!,
-    email: json.containsKey('email') ? json['email'] as String? : throw ArgumentError.value(null, 'email', 'Required property is missing'),
-    name: json.containsKey('name') ? json['name'] as String? : throw ArgumentError.value(null, 'name', 'Required property is missing'),
-    type_: (json['type'] != null ? BetaAnalyticsUserActorType.fromJson(json['type'] as String) : null)!,
-    userId: (json['user_id'] as String?)!,
-  );
+  factory BetaAnalyticsUserActor.fromJson(Map<String, dynamic> json) =>
+      BetaAnalyticsUserActor(
+        deleted: (json['deleted'] as bool?)!,
+        email: json.containsKey('email')
+            ? json['email'] as String?
+            : throw ArgumentError.value(
+                null, 'email', 'Required property is missing'),
+        name: json.containsKey('name')
+            ? json['name'] as String?
+            : throw ArgumentError.value(
+                null, 'name', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? BetaAnalyticsUserActorType.fromJson(json['type'] as String)
+            : null)!,
+        userId: (json['user_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'deleted': deleted,
-    'email': email,
-    'name': name,
-    'type': type_.toJson(),
-    'user_id': userId,
-  };
+        'deleted': deleted,
+        'email': email,
+        'name': name,
+        'type': type_.toJson(),
+        'user_id': userId,
+      };
 }

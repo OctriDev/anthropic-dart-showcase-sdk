@@ -8,22 +8,32 @@ part of 'events_beta_true.dart';
 class BetaManagedAgentsSendSessionEventsParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Events to send to the `session`.
   final List<BetaManagedAgentsEventParams> events;
 
   const BetaManagedAgentsSendSessionEventsParams({required this.events});
 
-  BetaManagedAgentsSendSessionEventsParams Function({List<BetaManagedAgentsEventParams> events}) get copyWith => _copyWith;
+  BetaManagedAgentsSendSessionEventsParams Function(
+      {List<BetaManagedAgentsEventParams> events}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSendSessionEventsParams _copyWith({Object? events = sdkOmittedValue}) => BetaManagedAgentsSendSessionEventsParams(
-    events: identical(events, sdkOmittedValue) ? this.events : events as List<BetaManagedAgentsEventParams>,
-  );
+  BetaManagedAgentsSendSessionEventsParams _copyWith(
+          {Object? events = sdkOmittedValue}) =>
+      BetaManagedAgentsSendSessionEventsParams(
+        events: identical(events, sdkOmittedValue)
+            ? this.events
+            : events as List<BetaManagedAgentsEventParams>,
+      );
 
-  factory BetaManagedAgentsSendSessionEventsParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSendSessionEventsParams(
-    events: ((json['events'] as List?)?.map((e) => BetaManagedAgentsEventParams.fromJson(e)).toList())!,
-  );
+  factory BetaManagedAgentsSendSessionEventsParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSendSessionEventsParams(
+        events: ((json['events'] as List?)
+            ?.map((e) => BetaManagedAgentsEventParams.fromJson(e))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'events': events.map((item) => item.toJson()).toList(),
-  };
+        'events': events.map((item) => item.toJson()).toList(),
+      };
 }

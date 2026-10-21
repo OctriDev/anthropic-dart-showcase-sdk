@@ -8,27 +8,42 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsApiActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsApiActorType type_;
+
   /// ID of the API key that performed the write. This identifies the key, not the secret.
   final String apiKeyId;
 
-  const BetaManagedAgentsApiActor({required this.type_, required this.apiKeyId});
+  const BetaManagedAgentsApiActor(
+      {required this.type_, required this.apiKeyId});
 
-  BetaManagedAgentsApiActor Function({BetaManagedAgentsApiActorType type_, String apiKeyId}) get copyWith => _copyWith;
+  BetaManagedAgentsApiActor Function(
+      {BetaManagedAgentsApiActorType type_,
+      String apiKeyId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsApiActor _copyWith({Object? type_ = sdkOmittedValue, Object? apiKeyId = sdkOmittedValue}) => BetaManagedAgentsApiActor(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsApiActorType,
-    apiKeyId: identical(apiKeyId, sdkOmittedValue) ? this.apiKeyId : apiKeyId as String,
-  );
+  BetaManagedAgentsApiActor _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? apiKeyId = sdkOmittedValue}) =>
+      BetaManagedAgentsApiActor(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsApiActorType,
+        apiKeyId: identical(apiKeyId, sdkOmittedValue)
+            ? this.apiKeyId
+            : apiKeyId as String,
+      );
 
-  factory BetaManagedAgentsApiActor.fromJson(Map<String, dynamic> json) => BetaManagedAgentsApiActor(
-    type_: (json['type'] != null ? BetaManagedAgentsApiActorType.fromJson(json['type'] as String) : null)!,
-    apiKeyId: (json['api_key_id'] as String?)!,
-  );
+  factory BetaManagedAgentsApiActor.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsApiActor(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsApiActorType.fromJson(json['type'] as String)
+            : null)!,
+        apiKeyId: (json['api_key_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'api_key_id': apiKeyId,
-  };
+        'type': type_.toJson(),
+        'api_key_id': apiKeyId,
+      };
 }

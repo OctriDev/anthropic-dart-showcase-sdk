@@ -8,27 +8,41 @@ part of 'credentials.dart';
 class BetaManagedAgentsDeletedCredential {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsDeletedCredentialType type_;
+
   /// Unique identifier of the deleted credential.
   final String id;
 
-  const BetaManagedAgentsDeletedCredential({required this.type_, required this.id});
+  const BetaManagedAgentsDeletedCredential(
+      {required this.type_, required this.id});
 
-  BetaManagedAgentsDeletedCredential Function({BetaManagedAgentsDeletedCredentialType type_, String id}) get copyWith => _copyWith;
+  BetaManagedAgentsDeletedCredential Function(
+      {BetaManagedAgentsDeletedCredentialType type_,
+      String id}) get copyWith => _copyWith;
 
-  BetaManagedAgentsDeletedCredential _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue}) => BetaManagedAgentsDeletedCredential(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsDeletedCredentialType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-  );
+  BetaManagedAgentsDeletedCredential _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue}) =>
+      BetaManagedAgentsDeletedCredential(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsDeletedCredentialType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+      );
 
-  factory BetaManagedAgentsDeletedCredential.fromJson(Map<String, dynamic> json) => BetaManagedAgentsDeletedCredential(
-    type_: (json['type'] != null ? BetaManagedAgentsDeletedCredentialType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-  );
+  factory BetaManagedAgentsDeletedCredential.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsDeletedCredential(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsDeletedCredentialType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-  };
+        'type': type_.toJson(),
+        'id': id,
+      };
 }

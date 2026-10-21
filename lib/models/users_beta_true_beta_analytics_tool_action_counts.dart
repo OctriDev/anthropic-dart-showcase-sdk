@@ -8,27 +8,39 @@ part of 'users_beta_true.dart';
 class BetaAnalyticsToolActionCounts {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Number of tool proposals accepted
   final int acceptedCount;
+
   /// Number of tool proposals rejected
   final int rejectedCount;
 
-  const BetaAnalyticsToolActionCounts({required this.acceptedCount, required this.rejectedCount});
+  const BetaAnalyticsToolActionCounts(
+      {required this.acceptedCount, required this.rejectedCount});
 
-  BetaAnalyticsToolActionCounts Function({int acceptedCount, int rejectedCount}) get copyWith => _copyWith;
+  BetaAnalyticsToolActionCounts Function({int acceptedCount, int rejectedCount})
+      get copyWith => _copyWith;
 
-  BetaAnalyticsToolActionCounts _copyWith({Object? acceptedCount = sdkOmittedValue, Object? rejectedCount = sdkOmittedValue}) => BetaAnalyticsToolActionCounts(
-    acceptedCount: identical(acceptedCount, sdkOmittedValue) ? this.acceptedCount : acceptedCount as int,
-    rejectedCount: identical(rejectedCount, sdkOmittedValue) ? this.rejectedCount : rejectedCount as int,
-  );
+  BetaAnalyticsToolActionCounts _copyWith(
+          {Object? acceptedCount = sdkOmittedValue,
+          Object? rejectedCount = sdkOmittedValue}) =>
+      BetaAnalyticsToolActionCounts(
+        acceptedCount: identical(acceptedCount, sdkOmittedValue)
+            ? this.acceptedCount
+            : acceptedCount as int,
+        rejectedCount: identical(rejectedCount, sdkOmittedValue)
+            ? this.rejectedCount
+            : rejectedCount as int,
+      );
 
-  factory BetaAnalyticsToolActionCounts.fromJson(Map<String, dynamic> json) => BetaAnalyticsToolActionCounts(
-    acceptedCount: ((json['accepted_count'] as num?)?.toInt())!,
-    rejectedCount: ((json['rejected_count'] as num?)?.toInt())!,
-  );
+  factory BetaAnalyticsToolActionCounts.fromJson(Map<String, dynamic> json) =>
+      BetaAnalyticsToolActionCounts(
+        acceptedCount: ((json['accepted_count'] as num?)?.toInt())!,
+        rejectedCount: ((json['rejected_count'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'accepted_count': acceptedCount,
-    'rejected_count': rejectedCount,
-  };
+        'accepted_count': acceptedCount,
+        'rejected_count': rejectedCount,
+      };
 }

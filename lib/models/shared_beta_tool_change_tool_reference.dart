@@ -8,27 +8,38 @@ part of 'shared_beta_tool.dart';
 class BetaToolChangeToolReference {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaToolChangeToolReferenceType type_;
 
   const BetaToolChangeToolReference({required this.name, required this.type_});
 
-  BetaToolChangeToolReference Function({String name, BetaToolChangeToolReferenceType type_}) get copyWith => _copyWith;
+  BetaToolChangeToolReference Function(
+      {String name,
+      BetaToolChangeToolReferenceType type_}) get copyWith => _copyWith;
 
-  BetaToolChangeToolReference _copyWith({Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaToolChangeToolReference(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaToolChangeToolReferenceType,
-  );
+  BetaToolChangeToolReference _copyWith(
+          {Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      BetaToolChangeToolReference(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaToolChangeToolReferenceType,
+      );
 
-  factory BetaToolChangeToolReference.fromJson(Map<String, dynamic> json) => BetaToolChangeToolReference(
-    name: (json['name'] as String?)!,
-    type_: (json['type'] != null ? BetaToolChangeToolReferenceType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaToolChangeToolReference.fromJson(Map<String, dynamic> json) =>
+      BetaToolChangeToolReference(
+        name: (json['name'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaToolChangeToolReferenceType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'type': type_.toJson(),
-  };
+        'name': name,
+        'type': type_.toJson(),
+      };
 }

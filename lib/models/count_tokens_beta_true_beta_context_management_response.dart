@@ -8,22 +8,30 @@ part of 'count_tokens_beta_true.dart';
 class BetaContextManagementResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The original token count before context management was applied
   final int originalInputTokens;
 
   const BetaContextManagementResponse({required this.originalInputTokens});
 
-  BetaContextManagementResponse Function({int originalInputTokens}) get copyWith => _copyWith;
+  BetaContextManagementResponse Function({int originalInputTokens})
+      get copyWith => _copyWith;
 
-  BetaContextManagementResponse _copyWith({Object? originalInputTokens = sdkOmittedValue}) => BetaContextManagementResponse(
-    originalInputTokens: identical(originalInputTokens, sdkOmittedValue) ? this.originalInputTokens : originalInputTokens as int,
-  );
+  BetaContextManagementResponse _copyWith(
+          {Object? originalInputTokens = sdkOmittedValue}) =>
+      BetaContextManagementResponse(
+        originalInputTokens: identical(originalInputTokens, sdkOmittedValue)
+            ? this.originalInputTokens
+            : originalInputTokens as int,
+      );
 
-  factory BetaContextManagementResponse.fromJson(Map<String, dynamic> json) => BetaContextManagementResponse(
-    originalInputTokens: ((json['original_input_tokens'] as num?)?.toInt())!,
-  );
+  factory BetaContextManagementResponse.fromJson(Map<String, dynamic> json) =>
+      BetaContextManagementResponse(
+        originalInputTokens:
+            ((json['original_input_tokens'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'original_input_tokens': originalInputTokens,
-  };
+        'original_input_tokens': originalInputTokens,
+      };
 }

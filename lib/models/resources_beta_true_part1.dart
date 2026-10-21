@@ -9,24 +9,37 @@ sealed class BetaManagedAgentsAddSessionResource {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsAddSessionResource();
   factory BetaManagedAgentsAddSessionResource.fromJson(Object? json) {
-    try { return BetaManagedAgentsAddSessionResourceBetaManagedAgentsFileResource(BetaManagedAgentsFileResource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"file"}.contains(json["type"])) { return UnknownBetaManagedAgentsAddSessionResource(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsAddSessionResource");
+    try {
+      return BetaManagedAgentsAddSessionResourceBetaManagedAgentsFileResource(
+          BetaManagedAgentsFileResource.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"file"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsAddSessionResource(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsAddSessionResource");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsAddSessionResourceBetaManagedAgentsFileResource extends BetaManagedAgentsAddSessionResource {
+final class BetaManagedAgentsAddSessionResourceBetaManagedAgentsFileResource
+    extends BetaManagedAgentsAddSessionResource {
   final BetaManagedAgentsFileResource value;
-  const BetaManagedAgentsAddSessionResourceBetaManagedAgentsFileResource(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsAddSessionResourceBetaManagedAgentsFileResource(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsAddSessionResource] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsAddSessionResource extends BetaManagedAgentsAddSessionResource {
+final class UnknownBetaManagedAgentsAddSessionResource
+    extends BetaManagedAgentsAddSessionResource {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsAddSessionResource(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsAddSessionResourceParams {
@@ -34,54 +47,88 @@ sealed class BetaManagedAgentsAddSessionResourceParams {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsAddSessionResourceParams();
   factory BetaManagedAgentsAddSessionResourceParams.fromJson(Object? json) {
-    try { return BetaManagedAgentsAddSessionResourceParamsBetaManagedAgentsFileResourceParams(BetaManagedAgentsFileResourceParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"file"}.contains(json["type"])) { return UnknownBetaManagedAgentsAddSessionResourceParams(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsAddSessionResourceParams");
+    try {
+      return BetaManagedAgentsAddSessionResourceParamsBetaManagedAgentsFileResourceParams(
+          BetaManagedAgentsFileResourceParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"file"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsAddSessionResourceParams(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsAddSessionResourceParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsAddSessionResourceParamsBetaManagedAgentsFileResourceParams extends BetaManagedAgentsAddSessionResourceParams {
+final class BetaManagedAgentsAddSessionResourceParamsBetaManagedAgentsFileResourceParams
+    extends BetaManagedAgentsAddSessionResourceParams {
   final BetaManagedAgentsFileResourceParams value;
-  const BetaManagedAgentsAddSessionResourceParamsBetaManagedAgentsFileResourceParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsAddSessionResourceParamsBetaManagedAgentsFileResourceParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsAddSessionResourceParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsAddSessionResourceParams extends BetaManagedAgentsAddSessionResourceParams {
+final class UnknownBetaManagedAgentsAddSessionResourceParams
+    extends BetaManagedAgentsAddSessionResourceParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsAddSessionResourceParams(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Paginated list of resources attached to a session.
 class BetaManagedAgentsListSessionResources {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Resources for the session, ordered by `created_at`.
   final List<BetaManagedAgentsSessionResource> data;
+
   /// Opaque cursor for the next page. Null when no more results.
   final SdkOptional<String?> nextPage;
 
-  const BetaManagedAgentsListSessionResources({required this.data, this.nextPage = const SdkOmitted()});
+  const BetaManagedAgentsListSessionResources(
+      {required this.data, this.nextPage = const SdkOmitted()});
 
-  BetaManagedAgentsListSessionResources Function({List<BetaManagedAgentsSessionResource> data, SdkOptional<String?> nextPage}) get copyWith => _copyWith;
+  BetaManagedAgentsListSessionResources Function(
+      {List<BetaManagedAgentsSessionResource> data,
+      SdkOptional<String?> nextPage}) get copyWith => _copyWith;
 
-  BetaManagedAgentsListSessionResources _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaManagedAgentsListSessionResources(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaManagedAgentsSessionResource>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as SdkOptional<String?>,
-  );
+  BetaManagedAgentsListSessionResources _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaManagedAgentsListSessionResources(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaManagedAgentsSessionResource>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as SdkOptional<String?>,
+      );
 
-  factory BetaManagedAgentsListSessionResources.fromJson(Map<String, dynamic> json) => BetaManagedAgentsListSessionResources(
-    data: ((json['data'] as List?)?.map((e) => BetaManagedAgentsSessionResource.fromJson(e)).toList())!,
-    nextPage: json.containsKey('next_page') ? SdkPresent(json['next_page'] as String?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsListSessionResources.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsListSessionResources(
+        data: ((json['data'] as List?)
+            ?.map((e) => BetaManagedAgentsSessionResource.fromJson(e))
+            .toList())!,
+        nextPage: json.containsKey('next_page')
+            ? SdkPresent(json['next_page'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    ...switch (nextPage) {
-      SdkPresent<String?>(value: final value) => {'next_page': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        ...switch (nextPage) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

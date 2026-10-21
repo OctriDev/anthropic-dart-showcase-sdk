@@ -34,19 +34,57 @@ Future<BetaServiceAccountWorkspaceMemberListResponse>
           '/v1/organizations/workspaces/${Uri.encodeComponent(workspaceId.toString())}/service_accounts?beta=true',
           config: config,
           query: {
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
+          }),
           operationId: 'listBetaOrganizationsWorkspacesServiceAccounts',
-          fromJsonRaw: (value) => BetaServiceAccountWorkspaceMemberListResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaServiceAccountWorkspaceMemberListResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. List the service accounts that are members of a workspace. Each entry includes the service account's `workspace_role`. Use `limit` and the `next_page` cursor to paginate. Archived workspaces return 400; use `GET /service_accounts/{id}/workspaces` to audit memberships of an archived workspace. The implicit default-workspace membership is not included in this list. Memberships of archived service accounts are omitted from the results.
 ///
@@ -59,23 +97,65 @@ Future<BetaServiceAccountWorkspaceMemberListResponse>
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Stream<BetaServiceAccountWorkspaceMember> listBetaOrganizationsWorkspacesServiceAccountsPaginated(ClientConfig config, {required String workspaceId, int? limit, String? page, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
+Stream<BetaServiceAccountWorkspaceMember>
+    listBetaOrganizationsWorkspacesServiceAccountsPaginated(ClientConfig config,
+        {required String workspaceId,
+        int? limit,
+        String? page,
+        List<String>? anthropicBeta,
+        String? anthropicVersion,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsWorkspacesServiceAccounts(config, workspaceId: workspaceId, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsWorkspacesServiceAccounts(config,
+        workspaceId: workspaceId,
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaServiceAccountWorkspaceMemberListResponse, BetaServiceAccountWorkspaceMember>> listBetaOrganizationsWorkspacesServiceAccountsPages(ClientConfig config, {required String workspaceId, int? limit, String? page, List<String>? anthropicBeta, String? anthropicVersion, RequestOptions? requestOptions}) async* {
+Stream<
+        SdkPage<BetaServiceAccountWorkspaceMemberListResponse,
+            BetaServiceAccountWorkspaceMember>>
+    listBetaOrganizationsWorkspacesServiceAccountsPages(ClientConfig config,
+        {required String workspaceId,
+        int? limit,
+        String? page,
+        List<String>? anthropicBeta,
+        String? anthropicVersion,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsWorkspacesServiceAccounts(config, workspaceId: workspaceId, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsWorkspacesServiceAccounts(config,
+        workspaceId: workspaceId,
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;
@@ -85,7 +165,6 @@ Stream<SdkPage<BetaServiceAccountWorkspaceMemberListResponse, BetaServiceAccount
     sdkCursor = sdkNext;
   }
 }
-
 
 /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Add a service account to a workspace with the given `workspace_role`. The role determines what the service account can do in the workspace and which workspace-scoped permissions it can be granted when authenticating through federation. Every service account is already an implicit `workspace_user` member of the default workspace; adding it explicitly assigns a chosen role. If the service account is already an explicit member of the workspace, its `workspace_role` is replaced with the value supplied here. Archived workspaces return 400. Archived service accounts cannot be added and are rejected.
 ///
@@ -114,14 +193,50 @@ Future<BetaServiceAccountWorkspaceMember>
             'workspace_role': workspaceRole
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
+          }),
           operationId: 'createBetaOrganizationsWorkspacesServiceAccounts',
-          fromJsonRaw: (value) => BetaServiceAccountWorkspaceMember.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaServiceAccountWorkspaceMember.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Retrieve a service account's membership in a workspace. Returns the membership record, including the service account's `workspace_role` in this workspace. Archived workspaces return 400. For the default workspace, returns the implicit (`implicit: true`) membership when no explicit membership exists; an explicitly added membership is returned with its assigned role. An archived service account returns 404.
 ///
@@ -144,14 +259,50 @@ Future<BetaServiceAccountWorkspaceMember>
           '/v1/organizations/workspaces/${Uri.encodeComponent(workspaceId.toString())}/service_accounts/${Uri.encodeComponent(serviceAccountId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
+          }),
           operationId: 'retrieveBetaOrganizationsWorkspacesServiceAccounts',
-          fromJsonRaw: (value) => BetaServiceAccountWorkspaceMember.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaServiceAccountWorkspaceMember.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Change a service account's role in a workspace. The new `workspace_role` replaces the current one. Only explicit memberships can be updated; to set a role on the implicit default-workspace membership, add the service account explicitly with `POST /workspaces/{workspace_id}/service_accounts`. Archived workspaces return 400. Archived service accounts cannot be updated and are rejected.
 ///
@@ -177,14 +328,50 @@ Future<BetaServiceAccountWorkspaceMember>
           config: config,
           body: {'workspace_role': workspaceRole},
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
+          }),
           operationId: 'updateBetaOrganizationsWorkspacesServiceAccounts',
-          fromJsonRaw: (value) => BetaServiceAccountWorkspaceMember.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaServiceAccountWorkspaceMember.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See Manage WIF with the Admin API. Remove a service account from a workspace. Removal is idempotent (returns 200 even if the membership was already removed). A DELETE against the implicit default-workspace membership returns 200 but is a no-op and the membership persists; deleting an explicit default-workspace row reverts to the implicit `workspace_user` membership. Archived workspaces return 400.
 ///
@@ -203,14 +390,53 @@ Future<BetaServiceAccountWorkspaceMemberDeleteResponse>
         SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
         SdkOptional<String> anthropicVersion = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<BetaServiceAccountWorkspaceMemberDeleteResponse>('DELETE',
+  return (await sdkRequest<BetaServiceAccountWorkspaceMemberDeleteResponse>(
+          'DELETE',
           '/v1/organizations/workspaces/${Uri.encodeComponent(workspaceId.toString())}/service_accounts/${Uri.encodeComponent(serviceAccountId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)
+          }),
           operationId: 'deleteBetaOrganizationsWorkspacesServiceAccounts',
-          fromJsonRaw: (value) => BetaServiceAccountWorkspaceMemberDeleteResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaServiceAccountWorkspaceMemberDeleteResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '529': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }

@@ -10,14 +10,18 @@ enum BetaCodeExecutionTool20260521Type {
 
   static BetaCodeExecutionTool20260521Type fromJson(String value) {
     switch (value) {
-      case 'code_execution_20260521': return BetaCodeExecutionTool20260521Type.codeExecution20260521;
-      default: throw ArgumentError('Unknown BetaCodeExecutionTool20260521Type: $value');
+      case 'code_execution_20260521':
+        return BetaCodeExecutionTool20260521Type.codeExecution20260521;
+      default:
+        throw ArgumentError(
+            'Unknown BetaCodeExecutionTool20260521Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCodeExecutionTool20260521Type.codeExecution20260521: return 'code_execution_20260521';
+      case BetaCodeExecutionTool20260521Type.codeExecution20260521:
+        return 'code_execution_20260521';
     }
   }
 
@@ -31,14 +35,17 @@ enum BetaCompact20260112Type {
 
   static BetaCompact20260112Type fromJson(String value) {
     switch (value) {
-      case 'compact_20260112': return BetaCompact20260112Type.compact20260112;
-      default: throw ArgumentError('Unknown BetaCompact20260112Type: $value');
+      case 'compact_20260112':
+        return BetaCompact20260112Type.compact20260112;
+      default:
+        throw ArgumentError('Unknown BetaCompact20260112Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCompact20260112Type.compact20260112: return 'compact_20260112';
+      case BetaCompact20260112Type.compact20260112:
+        return 'compact_20260112';
     }
   }
 
@@ -52,14 +59,18 @@ enum BetaCompactionContentBlockDeltaType {
 
   static BetaCompactionContentBlockDeltaType fromJson(String value) {
     switch (value) {
-      case 'compaction_delta': return BetaCompactionContentBlockDeltaType.compactionDelta;
-      default: throw ArgumentError('Unknown BetaCompactionContentBlockDeltaType: $value');
+      case 'compaction_delta':
+        return BetaCompactionContentBlockDeltaType.compactionDelta;
+      default:
+        throw ArgumentError(
+            'Unknown BetaCompactionContentBlockDeltaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCompactionContentBlockDeltaType.compactionDelta: return 'compaction_delta';
+      case BetaCompactionContentBlockDeltaType.compactionDelta:
+        return 'compaction_delta';
     }
   }
 
@@ -73,14 +84,17 @@ enum BetaCompactionIterationUsageType {
 
   static BetaCompactionIterationUsageType fromJson(String value) {
     switch (value) {
-      case 'compaction': return BetaCompactionIterationUsageType.compaction;
-      default: throw ArgumentError('Unknown BetaCompactionIterationUsageType: $value');
+      case 'compaction':
+        return BetaCompactionIterationUsageType.compaction;
+      default:
+        throw ArgumentError('Unknown BetaCompactionIterationUsageType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaCompactionIterationUsageType.compaction: return 'compaction';
+      case BetaCompactionIterationUsageType.compaction:
+        return 'compaction';
     }
   }
 
@@ -94,14 +108,17 @@ enum BetaComplianceSettingsType {
 
   static BetaComplianceSettingsType fromJson(String value) {
     switch (value) {
-      case 'compliance_settings': return BetaComplianceSettingsType.complianceSettings;
-      default: throw ArgumentError('Unknown BetaComplianceSettingsType: $value');
+      case 'compliance_settings':
+        return BetaComplianceSettingsType.complianceSettings;
+      default:
+        throw ArgumentError('Unknown BetaComplianceSettingsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComplianceSettingsType.complianceSettings: return 'compliance_settings';
+      case BetaComplianceSettingsType.complianceSettings:
+        return 'compliance_settings';
     }
   }
 
@@ -115,14 +132,18 @@ enum BetaComplianceSettingsStateDisabledType {
 
   static BetaComplianceSettingsStateDisabledType fromJson(String value) {
     switch (value) {
-      case 'disabled': return BetaComplianceSettingsStateDisabledType.disabled;
-      default: throw ArgumentError('Unknown BetaComplianceSettingsStateDisabledType: $value');
+      case 'disabled':
+        return BetaComplianceSettingsStateDisabledType.disabled;
+      default:
+        throw ArgumentError(
+            'Unknown BetaComplianceSettingsStateDisabledType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComplianceSettingsStateDisabledType.disabled: return 'disabled';
+      case BetaComplianceSettingsStateDisabledType.disabled:
+        return 'disabled';
     }
   }
 
@@ -136,14 +157,18 @@ enum BetaComplianceSettingsStateDisabledParamsType {
 
   static BetaComplianceSettingsStateDisabledParamsType fromJson(String value) {
     switch (value) {
-      case 'disabled': return BetaComplianceSettingsStateDisabledParamsType.disabled;
-      default: throw ArgumentError('Unknown BetaComplianceSettingsStateDisabledParamsType: $value');
+      case 'disabled':
+        return BetaComplianceSettingsStateDisabledParamsType.disabled;
+      default:
+        throw ArgumentError(
+            'Unknown BetaComplianceSettingsStateDisabledParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComplianceSettingsStateDisabledParamsType.disabled: return 'disabled';
+      case BetaComplianceSettingsStateDisabledParamsType.disabled:
+        return 'disabled';
     }
   }
 
@@ -157,14 +182,18 @@ enum BetaComplianceSettingsStateEnabledType {
 
   static BetaComplianceSettingsStateEnabledType fromJson(String value) {
     switch (value) {
-      case 'enabled': return BetaComplianceSettingsStateEnabledType.enabled;
-      default: throw ArgumentError('Unknown BetaComplianceSettingsStateEnabledType: $value');
+      case 'enabled':
+        return BetaComplianceSettingsStateEnabledType.enabled;
+      default:
+        throw ArgumentError(
+            'Unknown BetaComplianceSettingsStateEnabledType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComplianceSettingsStateEnabledType.enabled: return 'enabled';
+      case BetaComplianceSettingsStateEnabledType.enabled:
+        return 'enabled';
     }
   }
 
@@ -178,14 +207,18 @@ enum BetaComplianceSettingsStateEnabledParamsType {
 
   static BetaComplianceSettingsStateEnabledParamsType fromJson(String value) {
     switch (value) {
-      case 'enabled': return BetaComplianceSettingsStateEnabledParamsType.enabled;
-      default: throw ArgumentError('Unknown BetaComplianceSettingsStateEnabledParamsType: $value');
+      case 'enabled':
+        return BetaComplianceSettingsStateEnabledParamsType.enabled;
+      default:
+        throw ArgumentError(
+            'Unknown BetaComplianceSettingsStateEnabledParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComplianceSettingsStateEnabledParamsType.enabled: return 'enabled';
+      case BetaComplianceSettingsStateEnabledParamsType.enabled:
+        return 'enabled';
     }
   }
 
@@ -199,14 +232,17 @@ enum BetaComputerToolset20260801Type {
 
   static BetaComputerToolset20260801Type fromJson(String value) {
     switch (value) {
-      case 'computer_toolset_20260801': return BetaComputerToolset20260801Type.computerToolset20260801;
-      default: throw ArgumentError('Unknown BetaComputerToolset20260801Type: $value');
+      case 'computer_toolset_20260801':
+        return BetaComputerToolset20260801Type.computerToolset20260801;
+      default:
+        throw ArgumentError('Unknown BetaComputerToolset20260801Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComputerToolset20260801Type.computerToolset20260801: return 'computer_toolset_20260801';
+      case BetaComputerToolset20260801Type.computerToolset20260801:
+        return 'computer_toolset_20260801';
     }
   }
 
@@ -220,14 +256,17 @@ enum BetaComputerUseTool20241022Name {
 
   static BetaComputerUseTool20241022Name fromJson(String value) {
     switch (value) {
-      case 'computer': return BetaComputerUseTool20241022Name.computer;
-      default: throw ArgumentError('Unknown BetaComputerUseTool20241022Name: $value');
+      case 'computer':
+        return BetaComputerUseTool20241022Name.computer;
+      default:
+        throw ArgumentError('Unknown BetaComputerUseTool20241022Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComputerUseTool20241022Name.computer: return 'computer';
+      case BetaComputerUseTool20241022Name.computer:
+        return 'computer';
     }
   }
 
@@ -241,14 +280,17 @@ enum BetaComputerUseTool20241022Type {
 
   static BetaComputerUseTool20241022Type fromJson(String value) {
     switch (value) {
-      case 'computer_20241022': return BetaComputerUseTool20241022Type.computer20241022;
-      default: throw ArgumentError('Unknown BetaComputerUseTool20241022Type: $value');
+      case 'computer_20241022':
+        return BetaComputerUseTool20241022Type.computer20241022;
+      default:
+        throw ArgumentError('Unknown BetaComputerUseTool20241022Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComputerUseTool20241022Type.computer20241022: return 'computer_20241022';
+      case BetaComputerUseTool20241022Type.computer20241022:
+        return 'computer_20241022';
     }
   }
 
@@ -262,14 +304,17 @@ enum BetaComputerUseTool20250124Name {
 
   static BetaComputerUseTool20250124Name fromJson(String value) {
     switch (value) {
-      case 'computer': return BetaComputerUseTool20250124Name.computer;
-      default: throw ArgumentError('Unknown BetaComputerUseTool20250124Name: $value');
+      case 'computer':
+        return BetaComputerUseTool20250124Name.computer;
+      default:
+        throw ArgumentError('Unknown BetaComputerUseTool20250124Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaComputerUseTool20250124Name.computer: return 'computer';
+      case BetaComputerUseTool20250124Name.computer:
+        return 'computer';
     }
   }
 

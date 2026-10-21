@@ -8,27 +8,42 @@ part of 'shared_beta_dream.dart';
 class BetaDreamSessionsInput {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaDreamSessionsInputType type_;
+
   /// Required array value serialized in the `session_ids` wire field.
   final List<String> sessionIds;
 
   const BetaDreamSessionsInput({required this.type_, required this.sessionIds});
 
-  BetaDreamSessionsInput Function({BetaDreamSessionsInputType type_, List<String> sessionIds}) get copyWith => _copyWith;
+  BetaDreamSessionsInput Function(
+      {BetaDreamSessionsInputType type_,
+      List<String> sessionIds}) get copyWith => _copyWith;
 
-  BetaDreamSessionsInput _copyWith({Object? type_ = sdkOmittedValue, Object? sessionIds = sdkOmittedValue}) => BetaDreamSessionsInput(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaDreamSessionsInputType,
-    sessionIds: identical(sessionIds, sdkOmittedValue) ? this.sessionIds : sessionIds as List<String>,
-  );
+  BetaDreamSessionsInput _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? sessionIds = sdkOmittedValue}) =>
+      BetaDreamSessionsInput(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaDreamSessionsInputType,
+        sessionIds: identical(sessionIds, sdkOmittedValue)
+            ? this.sessionIds
+            : sessionIds as List<String>,
+      );
 
-  factory BetaDreamSessionsInput.fromJson(Map<String, dynamic> json) => BetaDreamSessionsInput(
-    type_: (json['type'] != null ? BetaDreamSessionsInputType.fromJson(json['type'] as String) : null)!,
-    sessionIds: ((json['session_ids'] as List?)?.map((e) => e as String).toList())!,
-  );
+  factory BetaDreamSessionsInput.fromJson(Map<String, dynamic> json) =>
+      BetaDreamSessionsInput(
+        type_: (json['type'] != null
+            ? BetaDreamSessionsInputType.fromJson(json['type'] as String)
+            : null)!,
+        sessionIds:
+            ((json['session_ids'] as List?)?.map((e) => e as String).toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'session_ids': sessionIds,
-  };
+        'type': type_.toJson(),
+        'session_ids': sessionIds,
+      };
 }

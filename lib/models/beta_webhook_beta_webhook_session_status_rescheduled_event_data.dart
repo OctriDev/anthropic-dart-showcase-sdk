@@ -8,37 +8,65 @@ part of 'beta_webhook_beta_webhook_session.dart';
 class BetaWebhookSessionStatusRescheduledEventData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebhookSessionStatusRescheduledEventDataType type_;
+
   /// ID of the session that triggered the event.
   final String id;
+
   /// Required `string` value serialized in the `organization_id` wire field.
   final String organizationId;
+
   /// Required `string` value serialized in the `workspace_id` wire field.
   final String workspaceId;
 
-  const BetaWebhookSessionStatusRescheduledEventData({required this.type_, required this.id, required this.organizationId, required this.workspaceId});
+  const BetaWebhookSessionStatusRescheduledEventData(
+      {required this.type_,
+      required this.id,
+      required this.organizationId,
+      required this.workspaceId});
 
-  BetaWebhookSessionStatusRescheduledEventData Function({BetaWebhookSessionStatusRescheduledEventDataType type_, String id, String organizationId, String workspaceId}) get copyWith => _copyWith;
+  BetaWebhookSessionStatusRescheduledEventData Function(
+      {BetaWebhookSessionStatusRescheduledEventDataType type_,
+      String id,
+      String organizationId,
+      String workspaceId}) get copyWith => _copyWith;
 
-  BetaWebhookSessionStatusRescheduledEventData _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaWebhookSessionStatusRescheduledEventData(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookSessionStatusRescheduledEventDataType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaWebhookSessionStatusRescheduledEventData _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? organizationId = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaWebhookSessionStatusRescheduledEventData(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWebhookSessionStatusRescheduledEventDataType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaWebhookSessionStatusRescheduledEventData.fromJson(Map<String, dynamic> json) => BetaWebhookSessionStatusRescheduledEventData(
-    type_: (json['type'] != null ? BetaWebhookSessionStatusRescheduledEventDataType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    organizationId: (json['organization_id'] as String?)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaWebhookSessionStatusRescheduledEventData.fromJson(
+          Map<String, dynamic> json) =>
+      BetaWebhookSessionStatusRescheduledEventData(
+        type_: (json['type'] != null
+            ? BetaWebhookSessionStatusRescheduledEventDataType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        organizationId: (json['organization_id'] as String?)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'organization_id': organizationId,
-    'workspace_id': workspaceId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'organization_id': organizationId,
+        'workspace_id': workspaceId,
+      };
 }

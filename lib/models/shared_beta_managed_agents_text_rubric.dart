@@ -8,27 +8,42 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsTextRubric {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTextRubricType type_;
+
   /// Rubric content. Plain text or markdown — the grader treats it as freeform text.
   final String content;
 
-  const BetaManagedAgentsTextRubric({required this.type_, required this.content});
+  const BetaManagedAgentsTextRubric(
+      {required this.type_, required this.content});
 
-  BetaManagedAgentsTextRubric Function({BetaManagedAgentsTextRubricType type_, String content}) get copyWith => _copyWith;
+  BetaManagedAgentsTextRubric Function(
+      {BetaManagedAgentsTextRubricType type_,
+      String content}) get copyWith => _copyWith;
 
-  BetaManagedAgentsTextRubric _copyWith({Object? type_ = sdkOmittedValue, Object? content = sdkOmittedValue}) => BetaManagedAgentsTextRubric(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTextRubricType,
-    content: identical(content, sdkOmittedValue) ? this.content : content as String,
-  );
+  BetaManagedAgentsTextRubric _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? content = sdkOmittedValue}) =>
+      BetaManagedAgentsTextRubric(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsTextRubricType,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as String,
+      );
 
-  factory BetaManagedAgentsTextRubric.fromJson(Map<String, dynamic> json) => BetaManagedAgentsTextRubric(
-    type_: (json['type'] != null ? BetaManagedAgentsTextRubricType.fromJson(json['type'] as String) : null)!,
-    content: (json['content'] as String?)!,
-  );
+  factory BetaManagedAgentsTextRubric.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsTextRubric(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsTextRubricType.fromJson(json['type'] as String)
+            : null)!,
+        content: (json['content'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'content': content,
-  };
+        'type': type_.toJson(),
+        'content': content,
+      };
 }

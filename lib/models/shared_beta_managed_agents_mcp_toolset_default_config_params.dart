@@ -8,33 +8,62 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMCPToolsetDefaultConfigParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether tools are enabled by default. Defaults to true if not specified.
   final SdkOptional<bool?> enabled;
+
   /// Default permission policy for tools from this server.
   final SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy;
 
-  const BetaManagedAgentsMCPToolsetDefaultConfigParams({this.enabled = const SdkOmitted(), this.permissionPolicy = const SdkOmitted()});
+  const BetaManagedAgentsMCPToolsetDefaultConfigParams(
+      {this.enabled = const SdkOmitted(),
+      this.permissionPolicy = const SdkOmitted()});
 
-  BetaManagedAgentsMCPToolsetDefaultConfigParams Function({SdkOptional<bool?> enabled, SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy}) get copyWith => _copyWith;
+  BetaManagedAgentsMCPToolsetDefaultConfigParams Function(
+          {SdkOptional<bool?> enabled,
+          SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsMCPToolsetDefaultConfigParams _copyWith({Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue}) => BetaManagedAgentsMCPToolsetDefaultConfigParams(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
-  );
+  BetaManagedAgentsMCPToolsetDefaultConfigParams _copyWith(
+          {Object? enabled = sdkOmittedValue,
+          Object? permissionPolicy = sdkOmittedValue}) =>
+      BetaManagedAgentsMCPToolsetDefaultConfigParams(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
+            ? this.permissionPolicy
+            : permissionPolicy
+                as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
+      );
 
-  factory BetaManagedAgentsMCPToolsetDefaultConfigParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMCPToolsetDefaultConfigParams(
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-    permissionPolicy: json.containsKey('permission_policy') ? SdkPresent(json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsMCPToolsetDefaultConfigParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMCPToolsetDefaultConfigParams(
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+        permissionPolicy: json.containsKey('permission_policy')
+            ? SdkPresent(json['permission_policy'] != null
+                ? BetaManagedAgentsPermissionPolicy.fromJson(
+                    json['permission_policy'])
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (permissionPolicy) {
-      SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) => {'permission_policy': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (permissionPolicy) {
+          SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) =>
+            {
+              'permission_policy': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

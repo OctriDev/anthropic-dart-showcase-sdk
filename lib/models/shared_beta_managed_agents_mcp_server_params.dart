@@ -9,22 +9,36 @@ sealed class BetaManagedAgentsMCPServerParams {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMCPServerParams();
   factory BetaManagedAgentsMCPServerParams.fromJson(Object? json) {
-    try { return BetaManagedAgentsMCPServerParamsBetaManagedAgentsURLMCPServerParams(BetaManagedAgentsURLMCPServerParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"url"}.contains(json["type"])) { return UnknownBetaManagedAgentsMCPServerParams(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsMCPServerParams");
+    try {
+      return BetaManagedAgentsMCPServerParamsBetaManagedAgentsURLMCPServerParams(
+          BetaManagedAgentsURLMCPServerParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"url"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsMCPServerParams(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsMCPServerParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMCPServerParamsBetaManagedAgentsURLMCPServerParams extends BetaManagedAgentsMCPServerParams {
+final class BetaManagedAgentsMCPServerParamsBetaManagedAgentsURLMCPServerParams
+    extends BetaManagedAgentsMCPServerParams {
   final BetaManagedAgentsURLMCPServerParams value;
-  const BetaManagedAgentsMCPServerParamsBetaManagedAgentsURLMCPServerParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMCPServerParamsBetaManagedAgentsURLMCPServerParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMCPServerParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMCPServerParams extends BetaManagedAgentsMCPServerParams {
+final class UnknownBetaManagedAgentsMCPServerParams
+    extends BetaManagedAgentsMCPServerParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsMCPServerParams(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

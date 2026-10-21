@@ -8,32 +8,53 @@ part of 'shared_beta.dart';
 class BetaPlainTextSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `data` wire field.
   final String data;
+
   /// Required `string` value serialized in the `media_type` wire field.
   final BetaPlainTextSourceMediaType mediaType;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaPlainTextSourceType type_;
 
-  const BetaPlainTextSource({required this.data, required this.mediaType, required this.type_});
+  const BetaPlainTextSource(
+      {required this.data, required this.mediaType, required this.type_});
 
-  BetaPlainTextSource Function({String data, BetaPlainTextSourceMediaType mediaType, BetaPlainTextSourceType type_}) get copyWith => _copyWith;
+  BetaPlainTextSource Function(
+      {String data,
+      BetaPlainTextSourceMediaType mediaType,
+      BetaPlainTextSourceType type_}) get copyWith => _copyWith;
 
-  BetaPlainTextSource _copyWith({Object? data = sdkOmittedValue, Object? mediaType = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaPlainTextSource(
-    data: identical(data, sdkOmittedValue) ? this.data : data as String,
-    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as BetaPlainTextSourceMediaType,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaPlainTextSourceType,
-  );
+  BetaPlainTextSource _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? mediaType = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaPlainTextSource(
+        data: identical(data, sdkOmittedValue) ? this.data : data as String,
+        mediaType: identical(mediaType, sdkOmittedValue)
+            ? this.mediaType
+            : mediaType as BetaPlainTextSourceMediaType,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaPlainTextSourceType,
+      );
 
-  factory BetaPlainTextSource.fromJson(Map<String, dynamic> json) => BetaPlainTextSource(
-    data: (json['data'] as String?)!,
-    mediaType: (json['media_type'] != null ? BetaPlainTextSourceMediaType.fromJson(json['media_type'] as String) : null)!,
-    type_: (json['type'] != null ? BetaPlainTextSourceType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaPlainTextSource.fromJson(Map<String, dynamic> json) =>
+      BetaPlainTextSource(
+        data: (json['data'] as String?)!,
+        mediaType: (json['media_type'] != null
+            ? BetaPlainTextSourceMediaType.fromJson(
+                json['media_type'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaPlainTextSourceType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data,
-    'media_type': mediaType.toJson(),
-    'type': type_.toJson(),
-  };
+        'data': data,
+        'media_type': mediaType.toJson(),
+        'type': type_.toJson(),
+      };
 }

@@ -8,32 +8,62 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsAgentToolset20260401 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAgentToolset20260401Type type_;
+
   /// Resolved default configuration for agent tools.
   final BetaManagedAgentsAgentToolsetDefaultConfig defaultConfig;
+
   /// Required array value serialized in the `configs` wire field.
   final List<BetaManagedAgentsAgentToolConfigUnion> configs;
 
-  const BetaManagedAgentsAgentToolset20260401({required this.type_, required this.defaultConfig, required this.configs});
+  const BetaManagedAgentsAgentToolset20260401(
+      {required this.type_,
+      required this.defaultConfig,
+      required this.configs});
 
-  BetaManagedAgentsAgentToolset20260401 Function({BetaManagedAgentsAgentToolset20260401Type type_, BetaManagedAgentsAgentToolsetDefaultConfig defaultConfig, List<BetaManagedAgentsAgentToolConfigUnion> configs}) get copyWith => _copyWith;
+  BetaManagedAgentsAgentToolset20260401 Function(
+          {BetaManagedAgentsAgentToolset20260401Type type_,
+          BetaManagedAgentsAgentToolsetDefaultConfig defaultConfig,
+          List<BetaManagedAgentsAgentToolConfigUnion> configs})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsAgentToolset20260401 _copyWith({Object? type_ = sdkOmittedValue, Object? defaultConfig = sdkOmittedValue, Object? configs = sdkOmittedValue}) => BetaManagedAgentsAgentToolset20260401(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAgentToolset20260401Type,
-    defaultConfig: identical(defaultConfig, sdkOmittedValue) ? this.defaultConfig : defaultConfig as BetaManagedAgentsAgentToolsetDefaultConfig,
-    configs: identical(configs, sdkOmittedValue) ? this.configs : configs as List<BetaManagedAgentsAgentToolConfigUnion>,
-  );
+  BetaManagedAgentsAgentToolset20260401 _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? defaultConfig = sdkOmittedValue,
+          Object? configs = sdkOmittedValue}) =>
+      BetaManagedAgentsAgentToolset20260401(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsAgentToolset20260401Type,
+        defaultConfig: identical(defaultConfig, sdkOmittedValue)
+            ? this.defaultConfig
+            : defaultConfig as BetaManagedAgentsAgentToolsetDefaultConfig,
+        configs: identical(configs, sdkOmittedValue)
+            ? this.configs
+            : configs as List<BetaManagedAgentsAgentToolConfigUnion>,
+      );
 
-  factory BetaManagedAgentsAgentToolset20260401.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAgentToolset20260401(
-    type_: (json['type'] != null ? BetaManagedAgentsAgentToolset20260401Type.fromJson(json['type'] as String) : null)!,
-    defaultConfig: (json['default_config'] != null ? BetaManagedAgentsAgentToolsetDefaultConfig.fromJson(json['default_config'] as Map<String, dynamic>) : null)!,
-    configs: ((json['configs'] as List?)?.map((e) => BetaManagedAgentsAgentToolConfigUnion.fromJson(e)).toList())!,
-  );
+  factory BetaManagedAgentsAgentToolset20260401.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsAgentToolset20260401(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsAgentToolset20260401Type.fromJson(
+                json['type'] as String)
+            : null)!,
+        defaultConfig: (json['default_config'] != null
+            ? BetaManagedAgentsAgentToolsetDefaultConfig.fromJson(
+                json['default_config'] as Map<String, dynamic>)
+            : null)!,
+        configs: ((json['configs'] as List?)
+            ?.map((e) => BetaManagedAgentsAgentToolConfigUnion.fromJson(e))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'default_config': defaultConfig.toJson(),
-    'configs': configs.map((item) => item.toJson()).toList(),
-  };
+        'type': type_.toJson(),
+        'default_config': defaultConfig.toJson(),
+        'configs': configs.map((item) => item.toJson()).toList(),
+      };
 }

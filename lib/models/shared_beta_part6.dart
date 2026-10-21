@@ -8,59 +8,90 @@ part of 'shared_beta.dart';
 class BetaSystemMessageOutputConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
   final SdkOptional<BetaEffortLevel?> effort;
 
   const BetaSystemMessageOutputConfig({this.effort = const SdkOmitted()});
 
-  BetaSystemMessageOutputConfig Function({SdkOptional<BetaEffortLevel?> effort}) get copyWith => _copyWith;
+  BetaSystemMessageOutputConfig Function({SdkOptional<BetaEffortLevel?> effort})
+      get copyWith => _copyWith;
 
-  BetaSystemMessageOutputConfig _copyWith({Object? effort = sdkOmittedValue}) => BetaSystemMessageOutputConfig(
-    effort: identical(effort, sdkOmittedValue) ? this.effort : effort as SdkOptional<BetaEffortLevel?>,
-  );
+  BetaSystemMessageOutputConfig _copyWith({Object? effort = sdkOmittedValue}) =>
+      BetaSystemMessageOutputConfig(
+        effort: identical(effort, sdkOmittedValue)
+            ? this.effort
+            : effort as SdkOptional<BetaEffortLevel?>,
+      );
 
-  factory BetaSystemMessageOutputConfig.fromJson(Map<String, dynamic> json) => BetaSystemMessageOutputConfig(
-    effort: json.containsKey('effort') ? SdkPresent(json['effort'] != null ? BetaEffortLevel.fromJson(json['effort'] as String) : null) : const SdkOmitted(),
-  );
+  factory BetaSystemMessageOutputConfig.fromJson(Map<String, dynamic> json) =>
+      BetaSystemMessageOutputConfig(
+        effort: json.containsKey('effort')
+            ? SdkPresent(json['effort'] != null
+                ? BetaEffortLevel.fromJson(json['effort'] as String)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (effort) {
-      SdkPresent<BetaEffortLevel?>(value: final value) => {'effort': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (effort) {
+          SdkPresent<BetaEffortLevel?>(value: final value) => {
+              'effort': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The `output_behavior.memory_store_id` target is still held by a prior `{type: "update_existing"}` dream — one that is `pending` or `running`, or was canceled with its final writes still landing. Rarely the named dream has just finished (`completed`/`failed`) and its execution is still closing; an immediate retry then almost always succeeds. The message names the holding dream when the server can identify it (rarely omitted); poll it to a terminal state or cancel it, then retry. Carried with `x-should-retry: false`.
 class BetaTargetStoreHeldError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaTargetStoreHeldErrorType type_;
+
   /// Human-readable description of the conflict, naming the dream that holds the target store when the server can identify it.
   final SdkOptional<String> message;
 
-  const BetaTargetStoreHeldError({required this.type_, this.message = const SdkOmitted()});
+  const BetaTargetStoreHeldError(
+      {required this.type_, this.message = const SdkOmitted()});
 
-  BetaTargetStoreHeldError Function({BetaTargetStoreHeldErrorType type_, SdkOptional<String> message}) get copyWith => _copyWith;
+  BetaTargetStoreHeldError Function(
+      {BetaTargetStoreHeldErrorType type_,
+      SdkOptional<String> message}) get copyWith => _copyWith;
 
-  BetaTargetStoreHeldError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaTargetStoreHeldError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaTargetStoreHeldErrorType,
-    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
-  );
+  BetaTargetStoreHeldError _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? message = sdkOmittedValue}) =>
+      BetaTargetStoreHeldError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaTargetStoreHeldErrorType,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<String>,
+      );
 
-  factory BetaTargetStoreHeldError.fromJson(Map<String, dynamic> json) => BetaTargetStoreHeldError(
-    type_: (json['type'] != null ? BetaTargetStoreHeldErrorType.fromJson(json['type'] as String) : null)!,
-    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
-  );
+  factory BetaTargetStoreHeldError.fromJson(Map<String, dynamic> json) =>
+      BetaTargetStoreHeldError(
+        type_: (json['type'] != null
+            ? BetaTargetStoreHeldErrorType.fromJson(json['type'] as String)
+            : null)!,
+        message: json['message'] != null
+            ? SdkPresent((json['message'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (message) {
-      SdkPresent<String>(value: final value) => {'message': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (message) {
+          SdkPresent<String>(value: final value) => {
+              'message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 // BetaTimestamp = String
@@ -70,157 +101,222 @@ sealed class BetaTokenTaskBudgetRemaining {
   static const String constructionSurface = 'named';
   const BetaTokenTaskBudgetRemaining();
   factory BetaTokenTaskBudgetRemaining.fromJson(Object? json) {
-    if (json is num) { return BetaTokenTaskBudgetRemainingInt(json.toInt()); }
-    throw FormatException("No variant matched for BetaTokenTaskBudgetRemaining");
+    if (json is num) {
+      return BetaTokenTaskBudgetRemainingInt(json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for BetaTokenTaskBudgetRemaining");
   }
   Object? toJson();
 }
 
-final class BetaTokenTaskBudgetRemainingInt extends BetaTokenTaskBudgetRemaining {
+final class BetaTokenTaskBudgetRemainingInt
+    extends BetaTokenTaskBudgetRemaining {
   final int value;
   const BetaTokenTaskBudgetRemainingInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// User-configurable total token budget across contexts.
 class BetaTokenTaskBudget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Remaining tokens in the budget. Use this to track usage across contexts when implementing compaction client-side. Defaults to total if not provided.
   final SdkOptional<int?> remaining;
+
   /// Total token budget across all contexts in the session.
   final int total;
+
   /// The budget type. Currently only 'tokens' is supported.
   final BetaTokenTaskBudgetType type_;
 
-  const BetaTokenTaskBudget({this.remaining = const SdkOmitted(), required this.total, required this.type_});
+  const BetaTokenTaskBudget(
+      {this.remaining = const SdkOmitted(),
+      required this.total,
+      required this.type_});
 
-  BetaTokenTaskBudget Function({SdkOptional<int?> remaining, int total, BetaTokenTaskBudgetType type_}) get copyWith => _copyWith;
+  BetaTokenTaskBudget Function(
+      {SdkOptional<int?> remaining,
+      int total,
+      BetaTokenTaskBudgetType type_}) get copyWith => _copyWith;
 
-  BetaTokenTaskBudget _copyWith({Object? remaining = sdkOmittedValue, Object? total = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaTokenTaskBudget(
-    remaining: identical(remaining, sdkOmittedValue) ? this.remaining : remaining as SdkOptional<int?>,
-    total: identical(total, sdkOmittedValue) ? this.total : total as int,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaTokenTaskBudgetType,
-  );
+  BetaTokenTaskBudget _copyWith(
+          {Object? remaining = sdkOmittedValue,
+          Object? total = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaTokenTaskBudget(
+        remaining: identical(remaining, sdkOmittedValue)
+            ? this.remaining
+            : remaining as SdkOptional<int?>,
+        total: identical(total, sdkOmittedValue) ? this.total : total as int,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaTokenTaskBudgetType,
+      );
 
-  factory BetaTokenTaskBudget.fromJson(Map<String, dynamic> json) => BetaTokenTaskBudget(
-    remaining: json.containsKey('remaining') ? SdkPresent((json['remaining'] as num?)?.toInt()) : const SdkOmitted(),
-    total: ((json['total'] as num?)?.toInt())!,
-    type_: (json['type'] != null ? BetaTokenTaskBudgetType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaTokenTaskBudget.fromJson(Map<String, dynamic> json) =>
+      BetaTokenTaskBudget(
+        remaining: json.containsKey('remaining')
+            ? SdkPresent((json['remaining'] as num?)?.toInt())
+            : const SdkOmitted(),
+        total: ((json['total'] as num?)?.toInt())!,
+        type_: (json['type'] != null
+            ? BetaTokenTaskBudgetType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (remaining) {
-      SdkPresent<int?>(value: final value) => {'remaining': value,},
-      _ => const <String, dynamic>{},
-    },
-    'total': total,
-    'type': type_.toJson(),
-  };
+        ...switch (remaining) {
+          SdkPresent<int?>(value: final value) => {
+              'remaining': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'total': total,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaUnattachedAttachment` API schema.
 class BetaUnattachedAttachment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaUnattachedAttachmentType type_;
 
   const BetaUnattachedAttachment({required this.type_});
 
-  BetaUnattachedAttachment Function({BetaUnattachedAttachmentType type_}) get copyWith => _copyWith;
+  BetaUnattachedAttachment Function({BetaUnattachedAttachmentType type_})
+      get copyWith => _copyWith;
 
-  BetaUnattachedAttachment _copyWith({Object? type_ = sdkOmittedValue}) => BetaUnattachedAttachment(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaUnattachedAttachmentType,
-  );
+  BetaUnattachedAttachment _copyWith({Object? type_ = sdkOmittedValue}) =>
+      BetaUnattachedAttachment(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaUnattachedAttachmentType,
+      );
 
-  factory BetaUnattachedAttachment.fromJson(Map<String, dynamic> json) => BetaUnattachedAttachment(
-    type_: (json['type'] != null ? BetaUnattachedAttachmentType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaUnattachedAttachment.fromJson(Map<String, dynamic> json) =>
+      BetaUnattachedAttachment(
+        type_: (json['type'] != null
+            ? BetaUnattachedAttachmentType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// Unrestricted network access.
 class BetaUnrestrictedNetwork {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Network policy type
   final BetaUnrestrictedNetworkType type_;
 
   const BetaUnrestrictedNetwork({required this.type_});
 
-  BetaUnrestrictedNetwork Function({BetaUnrestrictedNetworkType type_}) get copyWith => _copyWith;
+  BetaUnrestrictedNetwork Function({BetaUnrestrictedNetworkType type_})
+      get copyWith => _copyWith;
 
-  BetaUnrestrictedNetwork _copyWith({Object? type_ = sdkOmittedValue}) => BetaUnrestrictedNetwork(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaUnrestrictedNetworkType,
-  );
+  BetaUnrestrictedNetwork _copyWith({Object? type_ = sdkOmittedValue}) =>
+      BetaUnrestrictedNetwork(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaUnrestrictedNetworkType,
+      );
 
-  factory BetaUnrestrictedNetwork.fromJson(Map<String, dynamic> json) => BetaUnrestrictedNetwork(
-    type_: (json['type'] != null ? BetaUnrestrictedNetworkType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaUnrestrictedNetwork.fromJson(Map<String, dynamic> json) =>
+      BetaUnrestrictedNetwork(
+        type_: (json['type'] != null
+            ? BetaUnrestrictedNetworkType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaURLImageSource` API schema.
 class BetaURLImageSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaURLImageSourceType type_;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
   const BetaURLImageSource({required this.type_, required this.url});
 
-  BetaURLImageSource Function({BetaURLImageSourceType type_, String url}) get copyWith => _copyWith;
+  BetaURLImageSource Function({BetaURLImageSourceType type_, String url})
+      get copyWith => _copyWith;
 
-  BetaURLImageSource _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaURLImageSource(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaURLImageSourceType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BetaURLImageSource _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      BetaURLImageSource(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaURLImageSourceType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BetaURLImageSource.fromJson(Map<String, dynamic> json) => BetaURLImageSource(
-    type_: (json['type'] != null ? BetaURLImageSourceType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BetaURLImageSource.fromJson(Map<String, dynamic> json) =>
+      BetaURLImageSource(
+        type_: (json['type'] != null
+            ? BetaURLImageSourceType.fromJson(json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'type': type_.toJson(),
+        'url': url,
+      };
 }
 
 /// Typed representation of the `BetaURLPDFSource` API schema.
 class BetaURLPDFSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaURLPDFSourceType type_;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
   const BetaURLPDFSource({required this.type_, required this.url});
 
-  BetaURLPDFSource Function({BetaURLPDFSourceType type_, String url}) get copyWith => _copyWith;
+  BetaURLPDFSource Function({BetaURLPDFSourceType type_, String url})
+      get copyWith => _copyWith;
 
-  BetaURLPDFSource _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaURLPDFSource(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaURLPDFSourceType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BetaURLPDFSource _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      BetaURLPDFSource(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaURLPDFSourceType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BetaURLPDFSource.fromJson(Map<String, dynamic> json) => BetaURLPDFSource(
-    type_: (json['type'] != null ? BetaURLPDFSourceType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BetaURLPDFSource.fromJson(Map<String, dynamic> json) =>
+      BetaURLPDFSource(
+        type_: (json['type'] != null
+            ? BetaURLPDFSourceType.fromJson(json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'type': type_.toJson(),
+        'url': url,
+      };
 }

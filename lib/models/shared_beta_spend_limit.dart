@@ -8,57 +8,113 @@ part of 'shared_beta_spend.dart';
 class BetaSpendLimit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Limit amount as a non-negative integer decimal string in the minor unit of `currency` (cents for USD): "50000" is $500.00. `null` means no numeric cap is configured at this scope — see the effective report for whether a limit applies.
   final String? amount;
+
   /// RFC 3339 datetime at which the spend limit was created.
   final String createdAt;
+
   /// ISO 4217 code of the organization's billing currency; the unit for `amount`.
   final String currency;
+
   /// Unique tagged ID of the spend limit (`spl_...`).
   final String id;
+
   /// Length of the window the limit resets over. `amount` caps spend within each period.
   final BetaSpendLimitPeriod period;
+
   /// What the limit applies to. A tagged union on `type`; each variant carries the identifier for its scope.
   final BetaSpendLimitScope scope;
+
   /// Object type. Always `spend_limit`.
   final BetaSpendLimitType type_;
+
   /// RFC 3339 datetime at which the spend limit was last modified.
   final String updatedAt;
 
-  const BetaSpendLimit({required this.amount, required this.createdAt, required this.currency, required this.id, required this.period, required this.scope, required this.type_, required this.updatedAt});
+  const BetaSpendLimit(
+      {required this.amount,
+      required this.createdAt,
+      required this.currency,
+      required this.id,
+      required this.period,
+      required this.scope,
+      required this.type_,
+      required this.updatedAt});
 
-  BetaSpendLimit Function({String? amount, String createdAt, String currency, String id, BetaSpendLimitPeriod period, BetaSpendLimitScope scope, BetaSpendLimitType type_, String updatedAt}) get copyWith => _copyWith;
+  BetaSpendLimit Function(
+      {String? amount,
+      String createdAt,
+      String currency,
+      String id,
+      BetaSpendLimitPeriod period,
+      BetaSpendLimitScope scope,
+      BetaSpendLimitType type_,
+      String updatedAt}) get copyWith => _copyWith;
 
-  BetaSpendLimit _copyWith({Object? amount = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? currency = sdkOmittedValue, Object? id = sdkOmittedValue, Object? period = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => BetaSpendLimit(
-    amount: identical(amount, sdkOmittedValue) ? this.amount : amount as String?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    currency: identical(currency, sdkOmittedValue) ? this.currency : currency as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    period: identical(period, sdkOmittedValue) ? this.period : period as BetaSpendLimitPeriod,
-    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as BetaSpendLimitScope,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaSpendLimitType,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-  );
+  BetaSpendLimit _copyWith(
+          {Object? amount = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? currency = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? period = sdkOmittedValue,
+          Object? scope = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue}) =>
+      BetaSpendLimit(
+        amount: identical(amount, sdkOmittedValue)
+            ? this.amount
+            : amount as String?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        currency: identical(currency, sdkOmittedValue)
+            ? this.currency
+            : currency as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        period: identical(period, sdkOmittedValue)
+            ? this.period
+            : period as BetaSpendLimitPeriod,
+        scope: identical(scope, sdkOmittedValue)
+            ? this.scope
+            : scope as BetaSpendLimitScope,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaSpendLimitType,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+      );
 
   factory BetaSpendLimit.fromJson(Map<String, dynamic> json) => BetaSpendLimit(
-    amount: json.containsKey('amount') ? json['amount'] as String? : throw ArgumentError.value(null, 'amount', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    currency: (json['currency'] as String?)!,
-    id: (json['id'] as String?)!,
-    period: (json['period'] != null ? BetaSpendLimitPeriod.fromJson(json['period'] as String) : null)!,
-    scope: (json['scope'] != null ? BetaSpendLimitScope.fromJson(json['scope']) : null)!,
-    type_: (json['type'] != null ? BetaSpendLimitType.fromJson(json['type'] as String) : null)!,
-    updatedAt: (json['updated_at'] as String?)!,
-  );
+        amount: json.containsKey('amount')
+            ? json['amount'] as String?
+            : throw ArgumentError.value(
+                null, 'amount', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        currency: (json['currency'] as String?)!,
+        id: (json['id'] as String?)!,
+        period: (json['period'] != null
+            ? BetaSpendLimitPeriod.fromJson(json['period'] as String)
+            : null)!,
+        scope: (json['scope'] != null
+            ? BetaSpendLimitScope.fromJson(json['scope'])
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaSpendLimitType.fromJson(json['type'] as String)
+            : null)!,
+        updatedAt: (json['updated_at'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'amount': amount,
-    'created_at': createdAt,
-    'currency': currency,
-    'id': id,
-    'period': period.toJson(),
-    'scope': scope.toJson(),
-    'type': type_.toJson(),
-    'updated_at': updatedAt,
-  };
+        'amount': amount,
+        'created_at': createdAt,
+        'currency': currency,
+        'id': id,
+        'period': period.toJson(),
+        'scope': scope.toJson(),
+        'type': type_.toJson(),
+        'updated_at': updatedAt,
+      };
 }

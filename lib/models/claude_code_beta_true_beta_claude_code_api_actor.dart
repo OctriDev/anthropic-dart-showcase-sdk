@@ -8,27 +8,41 @@ part of 'claude_code_beta_true.dart';
 class BetaClaudeCodeApiActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Name of the API key used to perform Claude Code actions.
   final String apiKeyName;
+
   /// Actor type. Always `"api_actor"` for an API key.
   final BetaClaudeCodeApiActorType type_;
 
   const BetaClaudeCodeApiActor({required this.apiKeyName, required this.type_});
 
-  BetaClaudeCodeApiActor Function({String apiKeyName, BetaClaudeCodeApiActorType type_}) get copyWith => _copyWith;
+  BetaClaudeCodeApiActor Function(
+      {String apiKeyName,
+      BetaClaudeCodeApiActorType type_}) get copyWith => _copyWith;
 
-  BetaClaudeCodeApiActor _copyWith({Object? apiKeyName = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaClaudeCodeApiActor(
-    apiKeyName: identical(apiKeyName, sdkOmittedValue) ? this.apiKeyName : apiKeyName as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaClaudeCodeApiActorType,
-  );
+  BetaClaudeCodeApiActor _copyWith(
+          {Object? apiKeyName = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaClaudeCodeApiActor(
+        apiKeyName: identical(apiKeyName, sdkOmittedValue)
+            ? this.apiKeyName
+            : apiKeyName as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaClaudeCodeApiActorType,
+      );
 
-  factory BetaClaudeCodeApiActor.fromJson(Map<String, dynamic> json) => BetaClaudeCodeApiActor(
-    apiKeyName: (json['api_key_name'] as String?)!,
-    type_: (json['type'] != null ? BetaClaudeCodeApiActorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaClaudeCodeApiActor.fromJson(Map<String, dynamic> json) =>
+      BetaClaudeCodeApiActor(
+        apiKeyName: (json['api_key_name'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaClaudeCodeApiActorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'api_key_name': apiKeyName,
-    'type': type_.toJson(),
-  };
+        'api_key_name': apiKeyName,
+        'type': type_.toJson(),
+      };
 }

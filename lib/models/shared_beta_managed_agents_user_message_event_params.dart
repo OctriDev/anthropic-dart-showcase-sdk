@@ -8,27 +8,47 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsUserMessageEventParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUserMessageEventParamsType type_;
+
   /// Array of content blocks for the user message.
   final List<BetaManagedAgentsUserContentBlock> content;
 
-  const BetaManagedAgentsUserMessageEventParams({required this.type_, required this.content});
+  const BetaManagedAgentsUserMessageEventParams(
+      {required this.type_, required this.content});
 
-  BetaManagedAgentsUserMessageEventParams Function({BetaManagedAgentsUserMessageEventParamsType type_, List<BetaManagedAgentsUserContentBlock> content}) get copyWith => _copyWith;
+  BetaManagedAgentsUserMessageEventParams Function(
+          {BetaManagedAgentsUserMessageEventParamsType type_,
+          List<BetaManagedAgentsUserContentBlock> content})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsUserMessageEventParams _copyWith({Object? type_ = sdkOmittedValue, Object? content = sdkOmittedValue}) => BetaManagedAgentsUserMessageEventParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUserMessageEventParamsType,
-    content: identical(content, sdkOmittedValue) ? this.content : content as List<BetaManagedAgentsUserContentBlock>,
-  );
+  BetaManagedAgentsUserMessageEventParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? content = sdkOmittedValue}) =>
+      BetaManagedAgentsUserMessageEventParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsUserMessageEventParamsType,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as List<BetaManagedAgentsUserContentBlock>,
+      );
 
-  factory BetaManagedAgentsUserMessageEventParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUserMessageEventParams(
-    type_: (json['type'] != null ? BetaManagedAgentsUserMessageEventParamsType.fromJson(json['type'] as String) : null)!,
-    content: ((json['content'] as List?)?.map((e) => BetaManagedAgentsUserContentBlock.fromJson(e)).toList())!,
-  );
+  factory BetaManagedAgentsUserMessageEventParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUserMessageEventParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUserMessageEventParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        content: ((json['content'] as List?)
+            ?.map((e) => BetaManagedAgentsUserContentBlock.fromJson(e))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'content': content.map((item) => item.toJson()).toList(),
-  };
+        'type': type_.toJson(),
+        'content': content.map((item) => item.toJson()).toList(),
+      };
 }

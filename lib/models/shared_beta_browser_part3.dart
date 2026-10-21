@@ -8,278 +8,454 @@ part of 'shared_beta_browser.dart';
 class BetaBrowserMouseMoveConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Defer loading for this member. Must resolve to the same value on every enabled member of the toolset.
   final SdkOptional<bool?> deferLoading;
+
   /// Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
   final SdkOptional<bool?> enabled;
 
-  const BetaBrowserMouseMoveConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
+  const BetaBrowserMouseMoveConfig(
+      {this.deferLoading = const SdkOmitted(),
+      this.enabled = const SdkOmitted()});
 
-  BetaBrowserMouseMoveConfig Function({SdkOptional<bool?> deferLoading, SdkOptional<bool?> enabled}) get copyWith => _copyWith;
+  BetaBrowserMouseMoveConfig Function(
+      {SdkOptional<bool?> deferLoading,
+      SdkOptional<bool?> enabled}) get copyWith => _copyWith;
 
-  BetaBrowserMouseMoveConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BetaBrowserMouseMoveConfig(
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool?>,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-  );
+  BetaBrowserMouseMoveConfig _copyWith(
+          {Object? deferLoading = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue}) =>
+      BetaBrowserMouseMoveConfig(
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool?>,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+      );
 
-  factory BetaBrowserMouseMoveConfig.fromJson(Map<String, dynamic> json) => BetaBrowserMouseMoveConfig(
-    deferLoading: json.containsKey('defer_loading') ? SdkPresent(json['defer_loading'] as bool?) : const SdkOmitted(),
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-  );
+  factory BetaBrowserMouseMoveConfig.fromJson(Map<String, dynamic> json) =>
+      BetaBrowserMouseMoveConfig(
+        deferLoading: json.containsKey('defer_loading')
+            ? SdkPresent(json['defer_loading'] as bool?)
+            : const SdkOmitted(),
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deferLoading) {
-      SdkPresent<bool?>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (deferLoading) {
+          SdkPresent<bool?>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// ``navigate``'s config overrides.
 class BetaBrowserNavigateConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Defer loading for this member. Must resolve to the same value on every enabled member of the toolset.
   final SdkOptional<bool?> deferLoading;
+
   /// Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
   final SdkOptional<bool?> enabled;
 
-  const BetaBrowserNavigateConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
+  const BetaBrowserNavigateConfig(
+      {this.deferLoading = const SdkOmitted(),
+      this.enabled = const SdkOmitted()});
 
-  BetaBrowserNavigateConfig Function({SdkOptional<bool?> deferLoading, SdkOptional<bool?> enabled}) get copyWith => _copyWith;
+  BetaBrowserNavigateConfig Function(
+      {SdkOptional<bool?> deferLoading,
+      SdkOptional<bool?> enabled}) get copyWith => _copyWith;
 
-  BetaBrowserNavigateConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BetaBrowserNavigateConfig(
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool?>,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-  );
+  BetaBrowserNavigateConfig _copyWith(
+          {Object? deferLoading = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue}) =>
+      BetaBrowserNavigateConfig(
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool?>,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+      );
 
-  factory BetaBrowserNavigateConfig.fromJson(Map<String, dynamic> json) => BetaBrowserNavigateConfig(
-    deferLoading: json.containsKey('defer_loading') ? SdkPresent(json['defer_loading'] as bool?) : const SdkOmitted(),
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-  );
+  factory BetaBrowserNavigateConfig.fromJson(Map<String, dynamic> json) =>
+      BetaBrowserNavigateConfig(
+        deferLoading: json.containsKey('defer_loading')
+            ? SdkPresent(json['defer_loading'] as bool?)
+            : const SdkOmitted(),
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deferLoading) {
-      SdkPresent<bool?>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (deferLoading) {
+          SdkPresent<bool?>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// ``new_tab``'s config overrides.
 class BetaBrowserNewTabConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Defer loading for this member. Must resolve to the same value on every enabled member of the toolset.
   final SdkOptional<bool?> deferLoading;
+
   /// Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
   final SdkOptional<bool?> enabled;
 
-  const BetaBrowserNewTabConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
+  const BetaBrowserNewTabConfig(
+      {this.deferLoading = const SdkOmitted(),
+      this.enabled = const SdkOmitted()});
 
-  BetaBrowserNewTabConfig Function({SdkOptional<bool?> deferLoading, SdkOptional<bool?> enabled}) get copyWith => _copyWith;
+  BetaBrowserNewTabConfig Function(
+      {SdkOptional<bool?> deferLoading,
+      SdkOptional<bool?> enabled}) get copyWith => _copyWith;
 
-  BetaBrowserNewTabConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BetaBrowserNewTabConfig(
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool?>,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-  );
+  BetaBrowserNewTabConfig _copyWith(
+          {Object? deferLoading = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue}) =>
+      BetaBrowserNewTabConfig(
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool?>,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+      );
 
-  factory BetaBrowserNewTabConfig.fromJson(Map<String, dynamic> json) => BetaBrowserNewTabConfig(
-    deferLoading: json.containsKey('defer_loading') ? SdkPresent(json['defer_loading'] as bool?) : const SdkOmitted(),
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-  );
+  factory BetaBrowserNewTabConfig.fromJson(Map<String, dynamic> json) =>
+      BetaBrowserNewTabConfig(
+        deferLoading: json.containsKey('defer_loading')
+            ? SdkPresent(json['defer_loading'] as bool?)
+            : const SdkOmitted(),
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deferLoading) {
-      SdkPresent<bool?>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (deferLoading) {
+          SdkPresent<bool?>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// ``read_console``'s config overrides.
 class BetaBrowserReadConsoleConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Defer loading for this member. Must resolve to the same value on every enabled member of the toolset.
   final SdkOptional<bool?> deferLoading;
+
   /// Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
   final SdkOptional<bool?> enabled;
 
-  const BetaBrowserReadConsoleConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
+  const BetaBrowserReadConsoleConfig(
+      {this.deferLoading = const SdkOmitted(),
+      this.enabled = const SdkOmitted()});
 
-  BetaBrowserReadConsoleConfig Function({SdkOptional<bool?> deferLoading, SdkOptional<bool?> enabled}) get copyWith => _copyWith;
+  BetaBrowserReadConsoleConfig Function(
+      {SdkOptional<bool?> deferLoading,
+      SdkOptional<bool?> enabled}) get copyWith => _copyWith;
 
-  BetaBrowserReadConsoleConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BetaBrowserReadConsoleConfig(
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool?>,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-  );
+  BetaBrowserReadConsoleConfig _copyWith(
+          {Object? deferLoading = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue}) =>
+      BetaBrowserReadConsoleConfig(
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool?>,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+      );
 
-  factory BetaBrowserReadConsoleConfig.fromJson(Map<String, dynamic> json) => BetaBrowserReadConsoleConfig(
-    deferLoading: json.containsKey('defer_loading') ? SdkPresent(json['defer_loading'] as bool?) : const SdkOmitted(),
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-  );
+  factory BetaBrowserReadConsoleConfig.fromJson(Map<String, dynamic> json) =>
+      BetaBrowserReadConsoleConfig(
+        deferLoading: json.containsKey('defer_loading')
+            ? SdkPresent(json['defer_loading'] as bool?)
+            : const SdkOmitted(),
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deferLoading) {
-      SdkPresent<bool?>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (deferLoading) {
+          SdkPresent<bool?>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// ``read_network``'s config overrides.
 class BetaBrowserReadNetworkConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Defer loading for this member. Must resolve to the same value on every enabled member of the toolset.
   final SdkOptional<bool?> deferLoading;
+
   /// Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
   final SdkOptional<bool?> enabled;
 
-  const BetaBrowserReadNetworkConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
+  const BetaBrowserReadNetworkConfig(
+      {this.deferLoading = const SdkOmitted(),
+      this.enabled = const SdkOmitted()});
 
-  BetaBrowserReadNetworkConfig Function({SdkOptional<bool?> deferLoading, SdkOptional<bool?> enabled}) get copyWith => _copyWith;
+  BetaBrowserReadNetworkConfig Function(
+      {SdkOptional<bool?> deferLoading,
+      SdkOptional<bool?> enabled}) get copyWith => _copyWith;
 
-  BetaBrowserReadNetworkConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BetaBrowserReadNetworkConfig(
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool?>,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-  );
+  BetaBrowserReadNetworkConfig _copyWith(
+          {Object? deferLoading = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue}) =>
+      BetaBrowserReadNetworkConfig(
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool?>,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+      );
 
-  factory BetaBrowserReadNetworkConfig.fromJson(Map<String, dynamic> json) => BetaBrowserReadNetworkConfig(
-    deferLoading: json.containsKey('defer_loading') ? SdkPresent(json['defer_loading'] as bool?) : const SdkOmitted(),
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-  );
+  factory BetaBrowserReadNetworkConfig.fromJson(Map<String, dynamic> json) =>
+      BetaBrowserReadNetworkConfig(
+        deferLoading: json.containsKey('defer_loading')
+            ? SdkPresent(json['defer_loading'] as bool?)
+            : const SdkOmitted(),
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deferLoading) {
-      SdkPresent<bool?>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (deferLoading) {
+          SdkPresent<bool?>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// ``read_page``'s config overrides.
 class BetaBrowserReadPageConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Defer loading for this member. Must resolve to the same value on every enabled member of the toolset.
   final SdkOptional<bool?> deferLoading;
+
   /// Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
   final SdkOptional<bool?> enabled;
 
-  const BetaBrowserReadPageConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
+  const BetaBrowserReadPageConfig(
+      {this.deferLoading = const SdkOmitted(),
+      this.enabled = const SdkOmitted()});
 
-  BetaBrowserReadPageConfig Function({SdkOptional<bool?> deferLoading, SdkOptional<bool?> enabled}) get copyWith => _copyWith;
+  BetaBrowserReadPageConfig Function(
+      {SdkOptional<bool?> deferLoading,
+      SdkOptional<bool?> enabled}) get copyWith => _copyWith;
 
-  BetaBrowserReadPageConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BetaBrowserReadPageConfig(
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool?>,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-  );
+  BetaBrowserReadPageConfig _copyWith(
+          {Object? deferLoading = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue}) =>
+      BetaBrowserReadPageConfig(
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool?>,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+      );
 
-  factory BetaBrowserReadPageConfig.fromJson(Map<String, dynamic> json) => BetaBrowserReadPageConfig(
-    deferLoading: json.containsKey('defer_loading') ? SdkPresent(json['defer_loading'] as bool?) : const SdkOmitted(),
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-  );
+  factory BetaBrowserReadPageConfig.fromJson(Map<String, dynamic> json) =>
+      BetaBrowserReadPageConfig(
+        deferLoading: json.containsKey('defer_loading')
+            ? SdkPresent(json['defer_loading'] as bool?)
+            : const SdkOmitted(),
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deferLoading) {
-      SdkPresent<bool?>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (deferLoading) {
+          SdkPresent<bool?>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// ``right_click``'s config overrides.
 class BetaBrowserRightClickConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Defer loading for this member. Must resolve to the same value on every enabled member of the toolset.
   final SdkOptional<bool?> deferLoading;
+
   /// Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
   final SdkOptional<bool?> enabled;
 
-  const BetaBrowserRightClickConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
+  const BetaBrowserRightClickConfig(
+      {this.deferLoading = const SdkOmitted(),
+      this.enabled = const SdkOmitted()});
 
-  BetaBrowserRightClickConfig Function({SdkOptional<bool?> deferLoading, SdkOptional<bool?> enabled}) get copyWith => _copyWith;
+  BetaBrowserRightClickConfig Function(
+      {SdkOptional<bool?> deferLoading,
+      SdkOptional<bool?> enabled}) get copyWith => _copyWith;
 
-  BetaBrowserRightClickConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BetaBrowserRightClickConfig(
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool?>,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-  );
+  BetaBrowserRightClickConfig _copyWith(
+          {Object? deferLoading = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue}) =>
+      BetaBrowserRightClickConfig(
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool?>,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+      );
 
-  factory BetaBrowserRightClickConfig.fromJson(Map<String, dynamic> json) => BetaBrowserRightClickConfig(
-    deferLoading: json.containsKey('defer_loading') ? SdkPresent(json['defer_loading'] as bool?) : const SdkOmitted(),
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-  );
+  factory BetaBrowserRightClickConfig.fromJson(Map<String, dynamic> json) =>
+      BetaBrowserRightClickConfig(
+        deferLoading: json.containsKey('defer_loading')
+            ? SdkPresent(json['defer_loading'] as bool?)
+            : const SdkOmitted(),
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deferLoading) {
-      SdkPresent<bool?>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (deferLoading) {
+          SdkPresent<bool?>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// ``screenshot``'s config overrides.
 class BetaBrowserScreenshotConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Defer loading for this member. Must resolve to the same value on every enabled member of the toolset.
   final SdkOptional<bool?> deferLoading;
+
   /// Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
   final SdkOptional<bool?> enabled;
 
-  const BetaBrowserScreenshotConfig({this.deferLoading = const SdkOmitted(), this.enabled = const SdkOmitted()});
+  const BetaBrowserScreenshotConfig(
+      {this.deferLoading = const SdkOmitted(),
+      this.enabled = const SdkOmitted()});
 
-  BetaBrowserScreenshotConfig Function({SdkOptional<bool?> deferLoading, SdkOptional<bool?> enabled}) get copyWith => _copyWith;
+  BetaBrowserScreenshotConfig Function(
+      {SdkOptional<bool?> deferLoading,
+      SdkOptional<bool?> enabled}) get copyWith => _copyWith;
 
-  BetaBrowserScreenshotConfig _copyWith({Object? deferLoading = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BetaBrowserScreenshotConfig(
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool?>,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-  );
+  BetaBrowserScreenshotConfig _copyWith(
+          {Object? deferLoading = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue}) =>
+      BetaBrowserScreenshotConfig(
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool?>,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+      );
 
-  factory BetaBrowserScreenshotConfig.fromJson(Map<String, dynamic> json) => BetaBrowserScreenshotConfig(
-    deferLoading: json.containsKey('defer_loading') ? SdkPresent(json['defer_loading'] as bool?) : const SdkOmitted(),
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-  );
+  factory BetaBrowserScreenshotConfig.fromJson(Map<String, dynamic> json) =>
+      BetaBrowserScreenshotConfig(
+        deferLoading: json.containsKey('defer_loading')
+            ? SdkPresent(json['defer_loading'] as bool?)
+            : const SdkOmitted(),
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deferLoading) {
-      SdkPresent<bool?>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (deferLoading) {
+          SdkPresent<bool?>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

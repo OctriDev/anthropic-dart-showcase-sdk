@@ -33,20 +33,56 @@ Future<BetaGetClaudeCodeUsageReportResponse>
           'GET', '/v1/organizations/usage_report/claude_code?beta=true',
           config: config,
           query: {
-            'starting_at': SdkQueryValue(startingAt, style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'starting_at':
+                SdkQueryValue(startingAt, style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
+          extraHeaders: SdkUtils.serializeHeaders(
+              {'anthropic-version': SdkUtils.unwrapOptional(anthropicVersion)}),
           operationId: 'retrieveBetaOrganizationsUsageReportClaudeCode',
-          fromJsonRaw: (value) => BetaGetClaudeCodeUsageReportResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaGetClaudeCodeUsageReportResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// Retrieve daily aggregated usage metrics for Claude Code users. Enables organizations to analyze developer productivity and build custom dashboards.
 ///
@@ -57,13 +93,30 @@ Future<BetaGetClaudeCodeUsageReportResponse>
 /// [anthropicVersion] The version of the Claude API you want to use. Read more
 ///   about versioning and our version history
 ///   [here](https://platform.claude.com/docs/en/api/versioning).
-Stream<BetaClaudeCodeUsageReportItem> retrieveBetaOrganizationsUsageReportClaudeCodePaginated(ClientConfig config, {required String startingAt, int? limit, String? page, String? anthropicVersion, RequestOptions? requestOptions}) async* {
+Stream<BetaClaudeCodeUsageReportItem>
+    retrieveBetaOrganizationsUsageReportClaudeCodePaginated(ClientConfig config,
+        {required String startingAt,
+        int? limit,
+        String? page,
+        String? anthropicVersion,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await retrieveBetaOrganizationsUsageReportClaudeCode(config, startingAt: startingAt, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
+    final sdkPage = await retrieveBetaOrganizationsUsageReportClaudeCode(config,
+        startingAt: startingAt,
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     if (sdkPage.hasMore != true) return;
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
@@ -71,10 +124,27 @@ Stream<BetaClaudeCodeUsageReportItem> retrieveBetaOrganizationsUsageReportClaude
   }
 }
 
-Stream<SdkPage<BetaGetClaudeCodeUsageReportResponse, BetaClaudeCodeUsageReportItem>> retrieveBetaOrganizationsUsageReportClaudeCodePages(ClientConfig config, {required String startingAt, int? limit, String? page, String? anthropicVersion, RequestOptions? requestOptions}) async* {
+Stream<
+        SdkPage<BetaGetClaudeCodeUsageReportResponse,
+            BetaClaudeCodeUsageReportItem>>
+    retrieveBetaOrganizationsUsageReportClaudeCodePages(ClientConfig config,
+        {required String startingAt,
+        int? limit,
+        String? page,
+        String? anthropicVersion,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await retrieveBetaOrganizationsUsageReportClaudeCode(config, startingAt: startingAt, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), anthropicVersion: anthropicVersion == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicVersion), requestOptions: requestOptions);
+    final sdkPage = await retrieveBetaOrganizationsUsageReportClaudeCode(config,
+        startingAt: startingAt,
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        anthropicVersion: anthropicVersion == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicVersion),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;

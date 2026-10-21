@@ -8,39 +8,77 @@ part of 'shared_beta_response_document.dart';
 class BetaResponseDocumentBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Citation configuration for the document
   final BetaResponseCitationsConfig? citations;
+
   /// Required API value serialized in the `source` wire field.
   final BetaResponseDocumentBlockSource source;
+
   /// The title of the document
   final String? title;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseDocumentBlockType type_;
 
-  const BetaResponseDocumentBlock({required this.citations, required this.source, required this.title, required this.type_});
+  const BetaResponseDocumentBlock(
+      {required this.citations,
+      required this.source,
+      required this.title,
+      required this.type_});
 
-  BetaResponseDocumentBlock Function({BetaResponseCitationsConfig? citations, BetaResponseDocumentBlockSource source, String? title, BetaResponseDocumentBlockType type_}) get copyWith => _copyWith;
+  BetaResponseDocumentBlock Function(
+      {BetaResponseCitationsConfig? citations,
+      BetaResponseDocumentBlockSource source,
+      String? title,
+      BetaResponseDocumentBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseDocumentBlock _copyWith({Object? citations = sdkOmittedValue, Object? source = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseDocumentBlock(
-    citations: identical(citations, sdkOmittedValue) ? this.citations : citations as BetaResponseCitationsConfig?,
-    source: identical(source, sdkOmittedValue) ? this.source : source as BetaResponseDocumentBlockSource,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseDocumentBlockType,
-  );
+  BetaResponseDocumentBlock _copyWith(
+          {Object? citations = sdkOmittedValue,
+          Object? source = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseDocumentBlock(
+        citations: identical(citations, sdkOmittedValue)
+            ? this.citations
+            : citations as BetaResponseCitationsConfig?,
+        source: identical(source, sdkOmittedValue)
+            ? this.source
+            : source as BetaResponseDocumentBlockSource,
+        title:
+            identical(title, sdkOmittedValue) ? this.title : title as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseDocumentBlockType,
+      );
 
-  factory BetaResponseDocumentBlock.fromJson(Map<String, dynamic> json) => BetaResponseDocumentBlock(
-    citations: json.containsKey('citations') ? json['citations'] != null ? BetaResponseCitationsConfig.fromJson(json['citations'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'citations', 'Required property is missing'),
-    source: (json['source'] != null ? BetaResponseDocumentBlockSource.fromJson(json['source']) : null)!,
-    title: json.containsKey('title') ? json['title'] as String? : throw ArgumentError.value(null, 'title', 'Required property is missing'),
-    type_: (json['type'] != null ? BetaResponseDocumentBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseDocumentBlock.fromJson(Map<String, dynamic> json) =>
+      BetaResponseDocumentBlock(
+        citations: json.containsKey('citations')
+            ? json['citations'] != null
+                ? BetaResponseCitationsConfig.fromJson(
+                    json['citations'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'citations', 'Required property is missing'),
+        source: (json['source'] != null
+            ? BetaResponseDocumentBlockSource.fromJson(json['source'])
+            : null)!,
+        title: json.containsKey('title')
+            ? json['title'] as String?
+            : throw ArgumentError.value(
+                null, 'title', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? BetaResponseDocumentBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'citations': citations?.toJson(),
-    'source': source.toJson(),
-    'title': title,
-    'type': type_.toJson(),
-  };
+        'citations': citations?.toJson(),
+        'source': source.toJson(),
+        'title': title,
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaResponseDocumentBlockSource {
@@ -49,32 +87,59 @@ sealed class BetaResponseDocumentBlockSource {
   const BetaResponseDocumentBlockSource();
   factory BetaResponseDocumentBlockSource.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaBase64PDFSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseDocumentBlockSourceBetaBase64PDFSource(value); } } catch (_) {}
-      try { final value = BetaPlainTextSource.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseDocumentBlockSourceBetaPlainTextSource(value); } } catch (_) {}
+      try {
+        final value = BetaBase64PDFSource.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseDocumentBlockSourceBetaBase64PDFSource(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaPlainTextSource.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseDocumentBlockSourceBetaPlainTextSource(value);
+        }
+      } catch (_) {}
     }
-    try { return BetaResponseDocumentBlockSourceBetaBase64PDFSource(BetaBase64PDFSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaResponseDocumentBlockSourceBetaPlainTextSource(BetaPlainTextSource.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"base64", "text"}.contains(json["type"])) { return UnknownBetaResponseDocumentBlockSource(json); }
-    throw FormatException("No variant matched for BetaResponseDocumentBlockSource");
+    try {
+      return BetaResponseDocumentBlockSourceBetaBase64PDFSource(
+          BetaBase64PDFSource.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaResponseDocumentBlockSourceBetaPlainTextSource(
+          BetaPlainTextSource.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"base64", "text"}.contains(json["type"])) {
+      return UnknownBetaResponseDocumentBlockSource(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaResponseDocumentBlockSource");
   }
   Object? toJson();
 }
 
-final class BetaResponseDocumentBlockSourceBetaBase64PDFSource extends BetaResponseDocumentBlockSource {
+final class BetaResponseDocumentBlockSourceBetaBase64PDFSource
+    extends BetaResponseDocumentBlockSource {
   final BetaBase64PDFSource value;
   const BetaResponseDocumentBlockSourceBetaBase64PDFSource(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaResponseDocumentBlockSourceBetaPlainTextSource extends BetaResponseDocumentBlockSource {
+final class BetaResponseDocumentBlockSourceBetaPlainTextSource
+    extends BetaResponseDocumentBlockSource {
   final BetaPlainTextSource value;
   const BetaResponseDocumentBlockSourceBetaPlainTextSource(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaResponseDocumentBlockSource] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaResponseDocumentBlockSource extends BetaResponseDocumentBlockSource {
+final class UnknownBetaResponseDocumentBlockSource
+    extends BetaResponseDocumentBlockSource {
   final Map<String, dynamic> raw;
   const UnknownBetaResponseDocumentBlockSource(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

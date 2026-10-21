@@ -8,42 +8,81 @@ part of 'shared_response.dart';
 class ResponseEncryptedCodeExecutionResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `content` wire field.
   final List<ResponseCodeExecutionOutputBlock> content;
+
   /// Required `string` value serialized in the `encrypted_stdout` wire field.
   final String encryptedStdout;
+
   /// Required `integer` value serialized in the `return_code` wire field.
   final int returnCode;
+
   /// Required `string` value serialized in the `stderr` wire field.
   final String stderr;
+
   /// Required `string` value serialized in the `type` wire field.
   final ResponseEncryptedCodeExecutionResultBlockType type_;
 
-  const ResponseEncryptedCodeExecutionResultBlock({required this.content, required this.encryptedStdout, required this.returnCode, required this.stderr, required this.type_});
+  const ResponseEncryptedCodeExecutionResultBlock(
+      {required this.content,
+      required this.encryptedStdout,
+      required this.returnCode,
+      required this.stderr,
+      required this.type_});
 
-  ResponseEncryptedCodeExecutionResultBlock Function({List<ResponseCodeExecutionOutputBlock> content, String encryptedStdout, int returnCode, String stderr, ResponseEncryptedCodeExecutionResultBlockType type_}) get copyWith => _copyWith;
+  ResponseEncryptedCodeExecutionResultBlock Function(
+          {List<ResponseCodeExecutionOutputBlock> content,
+          String encryptedStdout,
+          int returnCode,
+          String stderr,
+          ResponseEncryptedCodeExecutionResultBlockType type_})
+      get copyWith => _copyWith;
 
-  ResponseEncryptedCodeExecutionResultBlock _copyWith({Object? content = sdkOmittedValue, Object? encryptedStdout = sdkOmittedValue, Object? returnCode = sdkOmittedValue, Object? stderr = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ResponseEncryptedCodeExecutionResultBlock(
-    content: identical(content, sdkOmittedValue) ? this.content : content as List<ResponseCodeExecutionOutputBlock>,
-    encryptedStdout: identical(encryptedStdout, sdkOmittedValue) ? this.encryptedStdout : encryptedStdout as String,
-    returnCode: identical(returnCode, sdkOmittedValue) ? this.returnCode : returnCode as int,
-    stderr: identical(stderr, sdkOmittedValue) ? this.stderr : stderr as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ResponseEncryptedCodeExecutionResultBlockType,
-  );
+  ResponseEncryptedCodeExecutionResultBlock _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? encryptedStdout = sdkOmittedValue,
+          Object? returnCode = sdkOmittedValue,
+          Object? stderr = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      ResponseEncryptedCodeExecutionResultBlock(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as List<ResponseCodeExecutionOutputBlock>,
+        encryptedStdout: identical(encryptedStdout, sdkOmittedValue)
+            ? this.encryptedStdout
+            : encryptedStdout as String,
+        returnCode: identical(returnCode, sdkOmittedValue)
+            ? this.returnCode
+            : returnCode as int,
+        stderr:
+            identical(stderr, sdkOmittedValue) ? this.stderr : stderr as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ResponseEncryptedCodeExecutionResultBlockType,
+      );
 
-  factory ResponseEncryptedCodeExecutionResultBlock.fromJson(Map<String, dynamic> json) => ResponseEncryptedCodeExecutionResultBlock(
-    content: ((json['content'] as List?)?.map((e) => ResponseCodeExecutionOutputBlock.fromJson(e as Map<String, dynamic>)).toList())!,
-    encryptedStdout: (json['encrypted_stdout'] as String?)!,
-    returnCode: ((json['return_code'] as num?)?.toInt())!,
-    stderr: (json['stderr'] as String?)!,
-    type_: (json['type'] != null ? ResponseEncryptedCodeExecutionResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory ResponseEncryptedCodeExecutionResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      ResponseEncryptedCodeExecutionResultBlock(
+        content: ((json['content'] as List?)
+            ?.map((e) => ResponseCodeExecutionOutputBlock.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        encryptedStdout: (json['encrypted_stdout'] as String?)!,
+        returnCode: ((json['return_code'] as num?)?.toInt())!,
+        stderr: (json['stderr'] as String?)!,
+        type_: (json['type'] != null
+            ? ResponseEncryptedCodeExecutionResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content.map((item) => item.toJson()).toList(),
-    'encrypted_stdout': encryptedStdout,
-    'return_code': returnCode,
-    'stderr': stderr,
-    'type': type_.toJson(),
-  };
+        'content': content.map((item) => item.toJson()).toList(),
+        'encrypted_stdout': encryptedStdout,
+        'return_code': returnCode,
+        'stderr': stderr,
+        'type': type_.toJson(),
+      };
 }

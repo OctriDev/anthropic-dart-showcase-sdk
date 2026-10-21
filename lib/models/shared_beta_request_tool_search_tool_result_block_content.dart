@@ -10,32 +10,68 @@ sealed class BetaRequestToolSearchToolResultBlockContent {
   const BetaRequestToolSearchToolResultBlockContent();
   factory BetaRequestToolSearchToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaRequestToolSearchToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolResultError(value); } } catch (_) {}
-      try { final value = BetaRequestToolSearchToolSearchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolSearchResultBlock(value); } } catch (_) {}
+      try {
+        final value = BetaRequestToolSearchToolResultError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolResultError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestToolSearchToolSearchResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolSearchResultBlock(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolResultError(BetaRequestToolSearchToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolSearchResultBlock(BetaRequestToolSearchToolSearchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"tool_search_tool_result_error", "tool_search_tool_search_result"}.contains(json["type"])) { return UnknownBetaRequestToolSearchToolResultBlockContent(json); }
-    throw FormatException("No variant matched for BetaRequestToolSearchToolResultBlockContent");
+    try {
+      return BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolResultError(
+          BetaRequestToolSearchToolResultError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolSearchResultBlock(
+          BetaRequestToolSearchToolSearchResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "tool_search_tool_result_error",
+          "tool_search_tool_search_result"
+        }.contains(json["type"])) {
+      return UnknownBetaRequestToolSearchToolResultBlockContent(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRequestToolSearchToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolResultError extends BetaRequestToolSearchToolResultBlockContent {
+final class BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolResultError
+    extends BetaRequestToolSearchToolResultBlockContent {
   final BetaRequestToolSearchToolResultError value;
-  const BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolResultError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolResultError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolSearchResultBlock extends BetaRequestToolSearchToolResultBlockContent {
+final class BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolSearchResultBlock
+    extends BetaRequestToolSearchToolResultBlockContent {
   final BetaRequestToolSearchToolSearchResultBlock value;
-  const BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolSearchResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestToolSearchToolResultBlockContentBetaRequestToolSearchToolSearchResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestToolSearchToolResultBlockContent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestToolSearchToolResultBlockContent extends BetaRequestToolSearchToolResultBlockContent {
+final class UnknownBetaRequestToolSearchToolResultBlockContent
+    extends BetaRequestToolSearchToolResultBlockContent {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestToolSearchToolResultBlockContent(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

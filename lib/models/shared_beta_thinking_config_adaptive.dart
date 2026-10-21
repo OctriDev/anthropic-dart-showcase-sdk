@@ -8,38 +8,73 @@ part of 'shared_beta_thinking.dart';
 class BetaThinkingConfigAdaptive {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Controls for block binding: what happens when a thinking block this request sends back fails the conversation check. `null`, absent or an empty object means every default.
   final SdkOptional<BetaThinkingBlockBinding?> blockBinding;
+
   /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
   final SdkOptional<BetaThinkingDisplayMode?> display;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaThinkingConfigAdaptiveType type_;
 
-  const BetaThinkingConfigAdaptive({this.blockBinding = const SdkOmitted(), this.display = const SdkOmitted(), required this.type_});
+  const BetaThinkingConfigAdaptive(
+      {this.blockBinding = const SdkOmitted(),
+      this.display = const SdkOmitted(),
+      required this.type_});
 
-  BetaThinkingConfigAdaptive Function({SdkOptional<BetaThinkingBlockBinding?> blockBinding, SdkOptional<BetaThinkingDisplayMode?> display, BetaThinkingConfigAdaptiveType type_}) get copyWith => _copyWith;
+  BetaThinkingConfigAdaptive Function(
+      {SdkOptional<BetaThinkingBlockBinding?> blockBinding,
+      SdkOptional<BetaThinkingDisplayMode?> display,
+      BetaThinkingConfigAdaptiveType type_}) get copyWith => _copyWith;
 
-  BetaThinkingConfigAdaptive _copyWith({Object? blockBinding = sdkOmittedValue, Object? display = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaThinkingConfigAdaptive(
-    blockBinding: identical(blockBinding, sdkOmittedValue) ? this.blockBinding : blockBinding as SdkOptional<BetaThinkingBlockBinding?>,
-    display: identical(display, sdkOmittedValue) ? this.display : display as SdkOptional<BetaThinkingDisplayMode?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaThinkingConfigAdaptiveType,
-  );
+  BetaThinkingConfigAdaptive _copyWith(
+          {Object? blockBinding = sdkOmittedValue,
+          Object? display = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaThinkingConfigAdaptive(
+        blockBinding: identical(blockBinding, sdkOmittedValue)
+            ? this.blockBinding
+            : blockBinding as SdkOptional<BetaThinkingBlockBinding?>,
+        display: identical(display, sdkOmittedValue)
+            ? this.display
+            : display as SdkOptional<BetaThinkingDisplayMode?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaThinkingConfigAdaptiveType,
+      );
 
-  factory BetaThinkingConfigAdaptive.fromJson(Map<String, dynamic> json) => BetaThinkingConfigAdaptive(
-    blockBinding: json.containsKey('block_binding') ? SdkPresent(json['block_binding'] != null ? BetaThinkingBlockBinding.fromJson(json['block_binding'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    display: json.containsKey('display') ? SdkPresent(json['display'] != null ? BetaThinkingDisplayMode.fromJson(json['display'] as String) : null) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaThinkingConfigAdaptiveType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaThinkingConfigAdaptive.fromJson(Map<String, dynamic> json) =>
+      BetaThinkingConfigAdaptive(
+        blockBinding: json.containsKey('block_binding')
+            ? SdkPresent(json['block_binding'] != null
+                ? BetaThinkingBlockBinding.fromJson(
+                    json['block_binding'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        display: json.containsKey('display')
+            ? SdkPresent(json['display'] != null
+                ? BetaThinkingDisplayMode.fromJson(json['display'] as String)
+                : null)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaThinkingConfigAdaptiveType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (blockBinding) {
-      SdkPresent<BetaThinkingBlockBinding?>(value: final value) => {'block_binding': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (display) {
-      SdkPresent<BetaThinkingDisplayMode?>(value: final value) => {'display': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (blockBinding) {
+          SdkPresent<BetaThinkingBlockBinding?>(value: final value) => {
+              'block_binding': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (display) {
+          SdkPresent<BetaThinkingDisplayMode?>(value: final value) => {
+              'display': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

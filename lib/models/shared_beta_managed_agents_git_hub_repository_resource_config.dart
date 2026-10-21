@@ -8,43 +8,85 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsGitHubRepositoryResourceConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsGitHubRepositoryResourceConfigType type_;
+
   /// Github URL of the repository
   final String url;
+
   /// Mount path in the container. Defaults to `/workspace/&lt;repo-name&gt;`.
   final SdkOptional<String?> mountPath;
+
   /// Branch or commit to check out. Defaults to the repository's default branch.
   final SdkOptional<BetaManagedAgentsRepositoryCheckout?> checkout;
 
-  const BetaManagedAgentsGitHubRepositoryResourceConfig({required this.type_, required this.url, this.mountPath = const SdkOmitted(), this.checkout = const SdkOmitted()});
+  const BetaManagedAgentsGitHubRepositoryResourceConfig(
+      {required this.type_,
+      required this.url,
+      this.mountPath = const SdkOmitted(),
+      this.checkout = const SdkOmitted()});
 
-  BetaManagedAgentsGitHubRepositoryResourceConfig Function({BetaManagedAgentsGitHubRepositoryResourceConfigType type_, String url, SdkOptional<String?> mountPath, SdkOptional<BetaManagedAgentsRepositoryCheckout?> checkout}) get copyWith => _copyWith;
+  BetaManagedAgentsGitHubRepositoryResourceConfig Function(
+          {BetaManagedAgentsGitHubRepositoryResourceConfigType type_,
+          String url,
+          SdkOptional<String?> mountPath,
+          SdkOptional<BetaManagedAgentsRepositoryCheckout?> checkout})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsGitHubRepositoryResourceConfig _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue, Object? mountPath = sdkOmittedValue, Object? checkout = sdkOmittedValue}) => BetaManagedAgentsGitHubRepositoryResourceConfig(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsGitHubRepositoryResourceConfigType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    mountPath: identical(mountPath, sdkOmittedValue) ? this.mountPath : mountPath as SdkOptional<String?>,
-    checkout: identical(checkout, sdkOmittedValue) ? this.checkout : checkout as SdkOptional<BetaManagedAgentsRepositoryCheckout?>,
-  );
+  BetaManagedAgentsGitHubRepositoryResourceConfig _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? mountPath = sdkOmittedValue,
+          Object? checkout = sdkOmittedValue}) =>
+      BetaManagedAgentsGitHubRepositoryResourceConfig(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsGitHubRepositoryResourceConfigType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        mountPath: identical(mountPath, sdkOmittedValue)
+            ? this.mountPath
+            : mountPath as SdkOptional<String?>,
+        checkout: identical(checkout, sdkOmittedValue)
+            ? this.checkout
+            : checkout as SdkOptional<BetaManagedAgentsRepositoryCheckout?>,
+      );
 
-  factory BetaManagedAgentsGitHubRepositoryResourceConfig.fromJson(Map<String, dynamic> json) => BetaManagedAgentsGitHubRepositoryResourceConfig(
-    type_: (json['type'] != null ? BetaManagedAgentsGitHubRepositoryResourceConfigType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-    mountPath: json.containsKey('mount_path') ? SdkPresent(json['mount_path'] as String?) : const SdkOmitted(),
-    checkout: json.containsKey('checkout') ? SdkPresent(json['checkout'] != null ? BetaManagedAgentsRepositoryCheckout.fromJson(json['checkout']) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsGitHubRepositoryResourceConfig.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsGitHubRepositoryResourceConfig(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsGitHubRepositoryResourceConfigType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+        mountPath: json.containsKey('mount_path')
+            ? SdkPresent(json['mount_path'] as String?)
+            : const SdkOmitted(),
+        checkout: json.containsKey('checkout')
+            ? SdkPresent(json['checkout'] != null
+                ? BetaManagedAgentsRepositoryCheckout.fromJson(json['checkout'])
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'url': url,
-    ...switch (mountPath) {
-      SdkPresent<String?>(value: final value) => {'mount_path': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (checkout) {
-      SdkPresent<BetaManagedAgentsRepositoryCheckout?>(value: final value) => {'checkout': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        'url': url,
+        ...switch (mountPath) {
+          SdkPresent<String?>(value: final value) => {
+              'mount_path': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (checkout) {
+          SdkPresent<BetaManagedAgentsRepositoryCheckout?>(
+            value: final value
+          ) =>
+            {
+              'checkout': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

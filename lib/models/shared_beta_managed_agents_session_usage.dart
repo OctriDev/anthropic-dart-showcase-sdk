@@ -8,73 +8,155 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionUsage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Total input tokens consumed across all turns.
   final SdkOptional<int> inputTokens;
+
   /// Total output tokens generated across all turns.
   final SdkOptional<int> outputTokens;
+
   /// Total tokens read from prompt cache.
   final SdkOptional<int> cacheReadInputTokens;
+
   /// Tokens used to create prompt cache entries, broken down by cache TTL.
   final SdkOptional<BetaManagedAgentsCacheCreationUsage> cacheCreation;
+
   /// Cumulative list cost of the session across all turns, priced at public list rates. Absent until cost tracking is available for the session.
   final SdkOptional<BetaMonetaryAmount?> listCost;
+
   /// Cumulative server-executed tool usage across all turns. Absent until server-tool tracking is available for the session.
   final SdkOptional<BetaManagedAgentsServerToolUsage?> serverToolUse;
+
   /// Cumulative time in seconds during which the session had at least one thread in running status. Overlapping activity from concurrent threads is counted once, unlike `stats.active_seconds`, which sums each thread's own active time. This is the duration the session's runtime cost is priced on.
   final SdkOptional<double> activeSeconds;
 
-  const BetaManagedAgentsSessionUsage({this.inputTokens = const SdkOmitted(), this.outputTokens = const SdkOmitted(), this.cacheReadInputTokens = const SdkOmitted(), this.cacheCreation = const SdkOmitted(), this.listCost = const SdkOmitted(), this.serverToolUse = const SdkOmitted(), this.activeSeconds = const SdkOmitted()});
+  const BetaManagedAgentsSessionUsage(
+      {this.inputTokens = const SdkOmitted(),
+      this.outputTokens = const SdkOmitted(),
+      this.cacheReadInputTokens = const SdkOmitted(),
+      this.cacheCreation = const SdkOmitted(),
+      this.listCost = const SdkOmitted(),
+      this.serverToolUse = const SdkOmitted(),
+      this.activeSeconds = const SdkOmitted()});
 
-  BetaManagedAgentsSessionUsage Function({SdkOptional<int> inputTokens, SdkOptional<int> outputTokens, SdkOptional<int> cacheReadInputTokens, SdkOptional<BetaManagedAgentsCacheCreationUsage> cacheCreation, SdkOptional<BetaMonetaryAmount?> listCost, SdkOptional<BetaManagedAgentsServerToolUsage?> serverToolUse, SdkOptional<double> activeSeconds}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionUsage Function(
+      {SdkOptional<int> inputTokens,
+      SdkOptional<int> outputTokens,
+      SdkOptional<int> cacheReadInputTokens,
+      SdkOptional<BetaManagedAgentsCacheCreationUsage> cacheCreation,
+      SdkOptional<BetaMonetaryAmount?> listCost,
+      SdkOptional<BetaManagedAgentsServerToolUsage?> serverToolUse,
+      SdkOptional<double> activeSeconds}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionUsage _copyWith({Object? inputTokens = sdkOmittedValue, Object? outputTokens = sdkOmittedValue, Object? cacheReadInputTokens = sdkOmittedValue, Object? cacheCreation = sdkOmittedValue, Object? listCost = sdkOmittedValue, Object? serverToolUse = sdkOmittedValue, Object? activeSeconds = sdkOmittedValue}) => BetaManagedAgentsSessionUsage(
-    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as SdkOptional<int>,
-    outputTokens: identical(outputTokens, sdkOmittedValue) ? this.outputTokens : outputTokens as SdkOptional<int>,
-    cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue) ? this.cacheReadInputTokens : cacheReadInputTokens as SdkOptional<int>,
-    cacheCreation: identical(cacheCreation, sdkOmittedValue) ? this.cacheCreation : cacheCreation as SdkOptional<BetaManagedAgentsCacheCreationUsage>,
-    listCost: identical(listCost, sdkOmittedValue) ? this.listCost : listCost as SdkOptional<BetaMonetaryAmount?>,
-    serverToolUse: identical(serverToolUse, sdkOmittedValue) ? this.serverToolUse : serverToolUse as SdkOptional<BetaManagedAgentsServerToolUsage?>,
-    activeSeconds: identical(activeSeconds, sdkOmittedValue) ? this.activeSeconds : activeSeconds as SdkOptional<double>,
-  );
+  BetaManagedAgentsSessionUsage _copyWith(
+          {Object? inputTokens = sdkOmittedValue,
+          Object? outputTokens = sdkOmittedValue,
+          Object? cacheReadInputTokens = sdkOmittedValue,
+          Object? cacheCreation = sdkOmittedValue,
+          Object? listCost = sdkOmittedValue,
+          Object? serverToolUse = sdkOmittedValue,
+          Object? activeSeconds = sdkOmittedValue}) =>
+      BetaManagedAgentsSessionUsage(
+        inputTokens: identical(inputTokens, sdkOmittedValue)
+            ? this.inputTokens
+            : inputTokens as SdkOptional<int>,
+        outputTokens: identical(outputTokens, sdkOmittedValue)
+            ? this.outputTokens
+            : outputTokens as SdkOptional<int>,
+        cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue)
+            ? this.cacheReadInputTokens
+            : cacheReadInputTokens as SdkOptional<int>,
+        cacheCreation: identical(cacheCreation, sdkOmittedValue)
+            ? this.cacheCreation
+            : cacheCreation as SdkOptional<BetaManagedAgentsCacheCreationUsage>,
+        listCost: identical(listCost, sdkOmittedValue)
+            ? this.listCost
+            : listCost as SdkOptional<BetaMonetaryAmount?>,
+        serverToolUse: identical(serverToolUse, sdkOmittedValue)
+            ? this.serverToolUse
+            : serverToolUse as SdkOptional<BetaManagedAgentsServerToolUsage?>,
+        activeSeconds: identical(activeSeconds, sdkOmittedValue)
+            ? this.activeSeconds
+            : activeSeconds as SdkOptional<double>,
+      );
 
-  factory BetaManagedAgentsSessionUsage.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionUsage(
-    inputTokens: json['input_tokens'] != null ? SdkPresent(((json['input_tokens'] as num?)?.toInt())!) : const SdkOmitted(),
-    outputTokens: json['output_tokens'] != null ? SdkPresent(((json['output_tokens'] as num?)?.toInt())!) : const SdkOmitted(),
-    cacheReadInputTokens: json['cache_read_input_tokens'] != null ? SdkPresent(((json['cache_read_input_tokens'] as num?)?.toInt())!) : const SdkOmitted(),
-    cacheCreation: json['cache_creation'] != null ? SdkPresent((json['cache_creation'] != null ? BetaManagedAgentsCacheCreationUsage.fromJson(json['cache_creation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    listCost: json.containsKey('list_cost') ? SdkPresent(json['list_cost'] != null ? BetaMonetaryAmount.fromJson(json['list_cost'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    serverToolUse: json.containsKey('server_tool_use') ? SdkPresent(json['server_tool_use'] != null ? BetaManagedAgentsServerToolUsage.fromJson(json['server_tool_use'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    activeSeconds: json['active_seconds'] != null ? SdkPresent(((json['active_seconds'] as num?)?.toDouble())!) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsSessionUsage.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsSessionUsage(
+        inputTokens: json['input_tokens'] != null
+            ? SdkPresent(((json['input_tokens'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        outputTokens: json['output_tokens'] != null
+            ? SdkPresent(((json['output_tokens'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        cacheReadInputTokens: json['cache_read_input_tokens'] != null
+            ? SdkPresent(((json['cache_read_input_tokens'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        cacheCreation: json['cache_creation'] != null
+            ? SdkPresent((json['cache_creation'] != null
+                ? BetaManagedAgentsCacheCreationUsage.fromJson(
+                    json['cache_creation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        listCost: json.containsKey('list_cost')
+            ? SdkPresent(json['list_cost'] != null
+                ? BetaMonetaryAmount.fromJson(
+                    json['list_cost'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        serverToolUse: json.containsKey('server_tool_use')
+            ? SdkPresent(json['server_tool_use'] != null
+                ? BetaManagedAgentsServerToolUsage.fromJson(
+                    json['server_tool_use'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        activeSeconds: json['active_seconds'] != null
+            ? SdkPresent(((json['active_seconds'] as num?)?.toDouble())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (inputTokens) {
-      SdkPresent<int>(value: final value) => {'input_tokens': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (outputTokens) {
-      SdkPresent<int>(value: final value) => {'output_tokens': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (cacheReadInputTokens) {
-      SdkPresent<int>(value: final value) => {'cache_read_input_tokens': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (cacheCreation) {
-      SdkPresent<BetaManagedAgentsCacheCreationUsage>(value: final value) => {'cache_creation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (listCost) {
-      SdkPresent<BetaMonetaryAmount?>(value: final value) => {'list_cost': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (serverToolUse) {
-      SdkPresent<BetaManagedAgentsServerToolUsage?>(value: final value) => {'server_tool_use': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (activeSeconds) {
-      SdkPresent<double>(value: final value) => {'active_seconds': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (inputTokens) {
+          SdkPresent<int>(value: final value) => {
+              'input_tokens': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (outputTokens) {
+          SdkPresent<int>(value: final value) => {
+              'output_tokens': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cacheReadInputTokens) {
+          SdkPresent<int>(value: final value) => {
+              'cache_read_input_tokens': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cacheCreation) {
+          SdkPresent<BetaManagedAgentsCacheCreationUsage>(value: final value) =>
+            {
+              'cache_creation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (listCost) {
+          SdkPresent<BetaMonetaryAmount?>(value: final value) => {
+              'list_cost': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (serverToolUse) {
+          SdkPresent<BetaManagedAgentsServerToolUsage?>(value: final value) => {
+              'server_tool_use': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (activeSeconds) {
+          SdkPresent<double>(value: final value) => {
+              'active_seconds': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

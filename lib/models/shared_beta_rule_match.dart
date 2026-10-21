@@ -9,7 +9,9 @@ sealed class BetaRuleMatchAudience {
   static const String constructionSurface = 'named';
   const BetaRuleMatchAudience();
   factory BetaRuleMatchAudience.fromJson(Object? json) {
-    if (json is String) { return BetaRuleMatchAudienceString(json); }
+    if (json is String) {
+      return BetaRuleMatchAudienceString(json);
+    }
     throw FormatException("No variant matched for BetaRuleMatchAudience");
   }
   Object? toJson();
@@ -18,7 +20,8 @@ sealed class BetaRuleMatchAudience {
 final class BetaRuleMatchAudienceString extends BetaRuleMatchAudience {
   final String value;
   const BetaRuleMatchAudienceString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BetaRuleMatchCondition {
@@ -26,7 +29,9 @@ sealed class BetaRuleMatchCondition {
   static const String constructionSurface = 'named';
   const BetaRuleMatchCondition();
   factory BetaRuleMatchCondition.fromJson(Object? json) {
-    if (json is String) { return BetaRuleMatchConditionString(json); }
+    if (json is String) {
+      return BetaRuleMatchConditionString(json);
+    }
     throw FormatException("No variant matched for BetaRuleMatchCondition");
   }
   Object? toJson();
@@ -35,7 +40,8 @@ sealed class BetaRuleMatchCondition {
 final class BetaRuleMatchConditionString extends BetaRuleMatchCondition {
   final String value;
   const BetaRuleMatchConditionString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BetaRuleMatchSubjectPrefix {
@@ -43,65 +49,113 @@ sealed class BetaRuleMatchSubjectPrefix {
   static const String constructionSurface = 'named';
   const BetaRuleMatchSubjectPrefix();
   factory BetaRuleMatchSubjectPrefix.fromJson(Object? json) {
-    if (json is String) { return BetaRuleMatchSubjectPrefixString(json); }
+    if (json is String) {
+      return BetaRuleMatchSubjectPrefixString(json);
+    }
     throw FormatException("No variant matched for BetaRuleMatchSubjectPrefix");
   }
   Object? toJson();
 }
 
-final class BetaRuleMatchSubjectPrefixString extends BetaRuleMatchSubjectPrefix {
+final class BetaRuleMatchSubjectPrefixString
+    extends BetaRuleMatchSubjectPrefix {
   final String value;
   const BetaRuleMatchSubjectPrefixString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Does the incoming JWT qualify? All populated fields must pass; omitted fields are skipped. At least one of `subject_prefix` (other than a wildcard-only value like `*`), `claims`, or `condition` is required; `audience` alone is not sufficient.
 class BetaRuleMatch {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Exact match against the `aud` claim (any element if array). When omitted, the JWT's `aud` must still equal Anthropic's expected audience for the issuer; setting this field overrides that default.
   final SdkOptional<String?> audience;
+
   /// Exact-match `{claim: value}` pairs against top-level claims. Only string-valued claims can be matched; use `condition` for non-string claims.
   final SdkOptional<Map<String, String>?> claims;
+
   /// CEL expression over claims for logic the structural fields can't express. Must evaluate to a boolean and may reference only the `claims` variable; a constant-true expression (such as `true`) is rejected with 400.
   final SdkOptional<String?> condition;
+
   /// Match the verified JWT `sub` claim. Exact match unless the value ends with `*`, in which case it is a prefix match. Example: `repo:my-org/my-repo:ref:refs/heads/main`.
   final SdkOptional<String?> subjectPrefix;
 
-  const BetaRuleMatch({this.audience = const SdkOmitted(), this.claims = const SdkOmitted(), this.condition = const SdkOmitted(), this.subjectPrefix = const SdkOmitted()});
+  const BetaRuleMatch(
+      {this.audience = const SdkOmitted(),
+      this.claims = const SdkOmitted(),
+      this.condition = const SdkOmitted(),
+      this.subjectPrefix = const SdkOmitted()});
 
-  BetaRuleMatch Function({SdkOptional<String?> audience, SdkOptional<Map<String, String>?> claims, SdkOptional<String?> condition, SdkOptional<String?> subjectPrefix}) get copyWith => _copyWith;
+  BetaRuleMatch Function(
+      {SdkOptional<String?> audience,
+      SdkOptional<Map<String, String>?> claims,
+      SdkOptional<String?> condition,
+      SdkOptional<String?> subjectPrefix}) get copyWith => _copyWith;
 
-  BetaRuleMatch _copyWith({Object? audience = sdkOmittedValue, Object? claims = sdkOmittedValue, Object? condition = sdkOmittedValue, Object? subjectPrefix = sdkOmittedValue}) => BetaRuleMatch(
-    audience: identical(audience, sdkOmittedValue) ? this.audience : audience as SdkOptional<String?>,
-    claims: identical(claims, sdkOmittedValue) ? this.claims : claims as SdkOptional<Map<String, String>?>,
-    condition: identical(condition, sdkOmittedValue) ? this.condition : condition as SdkOptional<String?>,
-    subjectPrefix: identical(subjectPrefix, sdkOmittedValue) ? this.subjectPrefix : subjectPrefix as SdkOptional<String?>,
-  );
+  BetaRuleMatch _copyWith(
+          {Object? audience = sdkOmittedValue,
+          Object? claims = sdkOmittedValue,
+          Object? condition = sdkOmittedValue,
+          Object? subjectPrefix = sdkOmittedValue}) =>
+      BetaRuleMatch(
+        audience: identical(audience, sdkOmittedValue)
+            ? this.audience
+            : audience as SdkOptional<String?>,
+        claims: identical(claims, sdkOmittedValue)
+            ? this.claims
+            : claims as SdkOptional<Map<String, String>?>,
+        condition: identical(condition, sdkOmittedValue)
+            ? this.condition
+            : condition as SdkOptional<String?>,
+        subjectPrefix: identical(subjectPrefix, sdkOmittedValue)
+            ? this.subjectPrefix
+            : subjectPrefix as SdkOptional<String?>,
+      );
 
   factory BetaRuleMatch.fromJson(Map<String, dynamic> json) => BetaRuleMatch(
-    audience: json.containsKey('audience') ? SdkPresent(json['audience'] as String?) : const SdkOmitted(),
-    claims: json.containsKey('claims') ? SdkPresent(json['claims'] == null ? null : Map<String, dynamic>.from(json['claims'] as Map).map((key, value) => MapEntry(key, value as String))) : const SdkOmitted(),
-    condition: json.containsKey('condition') ? SdkPresent(json['condition'] as String?) : const SdkOmitted(),
-    subjectPrefix: json.containsKey('subject_prefix') ? SdkPresent(json['subject_prefix'] as String?) : const SdkOmitted(),
-  );
+        audience: json.containsKey('audience')
+            ? SdkPresent(json['audience'] as String?)
+            : const SdkOmitted(),
+        claims: json.containsKey('claims')
+            ? SdkPresent(json['claims'] == null
+                ? null
+                : Map<String, dynamic>.from(json['claims'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))
+            : const SdkOmitted(),
+        condition: json.containsKey('condition')
+            ? SdkPresent(json['condition'] as String?)
+            : const SdkOmitted(),
+        subjectPrefix: json.containsKey('subject_prefix')
+            ? SdkPresent(json['subject_prefix'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (audience) {
-      SdkPresent<String?>(value: final value) => {'audience': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (claims) {
-      SdkPresent<Map<String, String>?>(value: final value) => {'claims': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (condition) {
-      SdkPresent<String?>(value: final value) => {'condition': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (subjectPrefix) {
-      SdkPresent<String?>(value: final value) => {'subject_prefix': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (audience) {
+          SdkPresent<String?>(value: final value) => {
+              'audience': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (claims) {
+          SdkPresent<Map<String, String>?>(value: final value) => {
+              'claims': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (condition) {
+          SdkPresent<String?>(value: final value) => {
+              'condition': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subjectPrefix) {
+          SdkPresent<String?>(value: final value) => {
+              'subject_prefix': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

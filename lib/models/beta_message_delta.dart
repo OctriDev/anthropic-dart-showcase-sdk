@@ -8,37 +8,83 @@ part of 'beta_message.dart';
 class BetaMessageDelta {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Information about the container used in this request. This will be non-null if a container tool (e.g. code execution) was used.
   final BetaContainer? container;
+
   /// Structured information about why model output stopped. This is `null` when the `stop_reason` has no additional detail to report.
   final BetaRefusalStopDetails? stopDetails;
+
   /// Required API value serialized in the `stop_reason` wire field.
   final BetaStopReason? stopReason;
+
   /// Required `string` value serialized in the `stop_sequence` wire field.
   final String? stopSequence;
 
-  const BetaMessageDelta({required this.container, required this.stopDetails, required this.stopReason, required this.stopSequence});
+  const BetaMessageDelta(
+      {required this.container,
+      required this.stopDetails,
+      required this.stopReason,
+      required this.stopSequence});
 
-  BetaMessageDelta Function({BetaContainer? container, BetaRefusalStopDetails? stopDetails, BetaStopReason? stopReason, String? stopSequence}) get copyWith => _copyWith;
+  BetaMessageDelta Function(
+      {BetaContainer? container,
+      BetaRefusalStopDetails? stopDetails,
+      BetaStopReason? stopReason,
+      String? stopSequence}) get copyWith => _copyWith;
 
-  BetaMessageDelta _copyWith({Object? container = sdkOmittedValue, Object? stopDetails = sdkOmittedValue, Object? stopReason = sdkOmittedValue, Object? stopSequence = sdkOmittedValue}) => BetaMessageDelta(
-    container: identical(container, sdkOmittedValue) ? this.container : container as BetaContainer?,
-    stopDetails: identical(stopDetails, sdkOmittedValue) ? this.stopDetails : stopDetails as BetaRefusalStopDetails?,
-    stopReason: identical(stopReason, sdkOmittedValue) ? this.stopReason : stopReason as BetaStopReason?,
-    stopSequence: identical(stopSequence, sdkOmittedValue) ? this.stopSequence : stopSequence as String?,
-  );
+  BetaMessageDelta _copyWith(
+          {Object? container = sdkOmittedValue,
+          Object? stopDetails = sdkOmittedValue,
+          Object? stopReason = sdkOmittedValue,
+          Object? stopSequence = sdkOmittedValue}) =>
+      BetaMessageDelta(
+        container: identical(container, sdkOmittedValue)
+            ? this.container
+            : container as BetaContainer?,
+        stopDetails: identical(stopDetails, sdkOmittedValue)
+            ? this.stopDetails
+            : stopDetails as BetaRefusalStopDetails?,
+        stopReason: identical(stopReason, sdkOmittedValue)
+            ? this.stopReason
+            : stopReason as BetaStopReason?,
+        stopSequence: identical(stopSequence, sdkOmittedValue)
+            ? this.stopSequence
+            : stopSequence as String?,
+      );
 
-  factory BetaMessageDelta.fromJson(Map<String, dynamic> json) => BetaMessageDelta(
-    container: json.containsKey('container') ? json['container'] != null ? BetaContainer.fromJson(json['container'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'container', 'Required property is missing'),
-    stopDetails: json.containsKey('stop_details') ? json['stop_details'] != null ? BetaRefusalStopDetails.fromJson(json['stop_details'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'stop_details', 'Required property is missing'),
-    stopReason: json.containsKey('stop_reason') ? json['stop_reason'] != null ? BetaStopReason.fromJson(json['stop_reason'] as String) : null : throw ArgumentError.value(null, 'stop_reason', 'Required property is missing'),
-    stopSequence: json.containsKey('stop_sequence') ? json['stop_sequence'] as String? : throw ArgumentError.value(null, 'stop_sequence', 'Required property is missing'),
-  );
+  factory BetaMessageDelta.fromJson(Map<String, dynamic> json) =>
+      BetaMessageDelta(
+        container: json.containsKey('container')
+            ? json['container'] != null
+                ? BetaContainer.fromJson(
+                    json['container'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'container', 'Required property is missing'),
+        stopDetails: json.containsKey('stop_details')
+            ? json['stop_details'] != null
+                ? BetaRefusalStopDetails.fromJson(
+                    json['stop_details'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'stop_details', 'Required property is missing'),
+        stopReason: json.containsKey('stop_reason')
+            ? json['stop_reason'] != null
+                ? BetaStopReason.fromJson(json['stop_reason'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'stop_reason', 'Required property is missing'),
+        stopSequence: json.containsKey('stop_sequence')
+            ? json['stop_sequence'] as String?
+            : throw ArgumentError.value(
+                null, 'stop_sequence', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'container': container?.toJson(),
-    'stop_details': stopDetails?.toJson(),
-    'stop_reason': stopReason?.toJson(),
-    'stop_sequence': stopSequence,
-  };
+        'container': container?.toJson(),
+        'stop_details': stopDetails?.toJson(),
+        'stop_reason': stopReason?.toJson(),
+        'stop_sequence': stopSequence,
+      };
 }

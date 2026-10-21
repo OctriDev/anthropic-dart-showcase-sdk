@@ -6,7 +6,6 @@ part of 'shared_refusal.dart';
 // shared_refusal domain models
 /// The policy category that triggered a refusal.
 final class RefusalCategory {
-
   final String value;
 
   const RefusalCategory._(this.value);
@@ -21,44 +20,75 @@ final class RefusalCategory {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RefusalCategory && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RefusalCategory && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Structured information about a refusal.
 class RefusalStopDetails {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The policy category that triggered the refusal. `null` when the refusal doesn't map to a named category.
   final RefusalCategory? category;
+
   /// Human-readable explanation of the refusal. This text is not guaranteed to be stable. `null` when no explanation is available for the category.
   final String? explanation;
+
   /// Required `string` value serialized in the `type` wire field.
   final RefusalStopDetailsType type_;
 
-  const RefusalStopDetails({required this.category, required this.explanation, required this.type_});
+  const RefusalStopDetails(
+      {required this.category, required this.explanation, required this.type_});
 
-  RefusalStopDetails Function({RefusalCategory? category, String? explanation, RefusalStopDetailsType type_}) get copyWith => _copyWith;
+  RefusalStopDetails Function(
+      {RefusalCategory? category,
+      String? explanation,
+      RefusalStopDetailsType type_}) get copyWith => _copyWith;
 
-  RefusalStopDetails _copyWith({Object? category = sdkOmittedValue, Object? explanation = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RefusalStopDetails(
-    category: identical(category, sdkOmittedValue) ? this.category : category as RefusalCategory?,
-    explanation: identical(explanation, sdkOmittedValue) ? this.explanation : explanation as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RefusalStopDetailsType,
-  );
+  RefusalStopDetails _copyWith(
+          {Object? category = sdkOmittedValue,
+          Object? explanation = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RefusalStopDetails(
+        category: identical(category, sdkOmittedValue)
+            ? this.category
+            : category as RefusalCategory?,
+        explanation: identical(explanation, sdkOmittedValue)
+            ? this.explanation
+            : explanation as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RefusalStopDetailsType,
+      );
 
-  factory RefusalStopDetails.fromJson(Map<String, dynamic> json) => RefusalStopDetails(
-    category: json.containsKey('category') ? json['category'] != null ? RefusalCategory.fromJson(json['category'] as String) : null : throw ArgumentError.value(null, 'category', 'Required property is missing'),
-    explanation: json.containsKey('explanation') ? json['explanation'] as String? : throw ArgumentError.value(null, 'explanation', 'Required property is missing'),
-    type_: (json['type'] != null ? RefusalStopDetailsType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RefusalStopDetails.fromJson(Map<String, dynamic> json) =>
+      RefusalStopDetails(
+        category: json.containsKey('category')
+            ? json['category'] != null
+                ? RefusalCategory.fromJson(json['category'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'category', 'Required property is missing'),
+        explanation: json.containsKey('explanation')
+            ? json['explanation'] as String?
+            : throw ArgumentError.value(
+                null, 'explanation', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? RefusalStopDetailsType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'category': category?.toJson(),
-    'explanation': explanation,
-    'type': type_.toJson(),
-  };
+        'category': category?.toJson(),
+        'explanation': explanation,
+        'type': type_.toJson(),
+      };
 }

@@ -8,30 +8,50 @@ part of 'files_beta_true.dart';
 class BetaFileListResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// List of file metadata objects.
   final List<BetaFileMetadataSchema> data;
+
   /// Opaque cursor for the next page. Supply as `?page=` to fetch the next page; null when there are no more results.
   final SdkOptional<String?> nextPage;
 
-  const BetaFileListResponse({required this.data, this.nextPage = const SdkOmitted()});
+  const BetaFileListResponse(
+      {required this.data, this.nextPage = const SdkOmitted()});
 
-  BetaFileListResponse Function({List<BetaFileMetadataSchema> data, SdkOptional<String?> nextPage}) get copyWith => _copyWith;
+  BetaFileListResponse Function(
+      {List<BetaFileMetadataSchema> data,
+      SdkOptional<String?> nextPage}) get copyWith => _copyWith;
 
-  BetaFileListResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaFileListResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaFileMetadataSchema>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as SdkOptional<String?>,
-  );
+  BetaFileListResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaFileListResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaFileMetadataSchema>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as SdkOptional<String?>,
+      );
 
-  factory BetaFileListResponse.fromJson(Map<String, dynamic> json) => BetaFileListResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaFileMetadataSchema.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? SdkPresent(json['next_page'] as String?) : const SdkOmitted(),
-  );
+  factory BetaFileListResponse.fromJson(Map<String, dynamic> json) =>
+      BetaFileListResponse(
+        data: ((json['data'] as List?)
+            ?.map((e) =>
+                BetaFileMetadataSchema.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        nextPage: json.containsKey('next_page')
+            ? SdkPresent(json['next_page'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    ...switch (nextPage) {
-      SdkPresent<String?>(value: final value) => {'next_page': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        ...switch (nextPage) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

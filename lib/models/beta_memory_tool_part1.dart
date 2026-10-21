@@ -10,276 +10,501 @@ sealed class BetaMemoryTool20250818Command {
   const BetaMemoryTool20250818Command();
   factory BetaMemoryTool20250818Command.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaMemoryTool20250818ViewCommand.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMemoryTool20250818CommandBetaMemoryTool20250818ViewCommand(value); } } catch (_) {}
-      try { final value = BetaMemoryTool20250818CreateCommand.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMemoryTool20250818CommandBetaMemoryTool20250818CreateCommand(value); } } catch (_) {}
-      try { final value = BetaMemoryTool20250818StrReplaceCommand.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMemoryTool20250818CommandBetaMemoryTool20250818StrReplaceCommand(value); } } catch (_) {}
-      try { final value = BetaMemoryTool20250818InsertCommand.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMemoryTool20250818CommandBetaMemoryTool20250818InsertCommand(value); } } catch (_) {}
-      try { final value = BetaMemoryTool20250818DeleteCommand.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMemoryTool20250818CommandBetaMemoryTool20250818DeleteCommand(value); } } catch (_) {}
-      try { final value = BetaMemoryTool20250818RenameCommand.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaMemoryTool20250818CommandBetaMemoryTool20250818RenameCommand(value); } } catch (_) {}
+      try {
+        final value = BetaMemoryTool20250818ViewCommand.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaMemoryTool20250818CommandBetaMemoryTool20250818ViewCommand(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaMemoryTool20250818CreateCommand.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaMemoryTool20250818CommandBetaMemoryTool20250818CreateCommand(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaMemoryTool20250818StrReplaceCommand.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaMemoryTool20250818CommandBetaMemoryTool20250818StrReplaceCommand(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaMemoryTool20250818InsertCommand.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaMemoryTool20250818CommandBetaMemoryTool20250818InsertCommand(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaMemoryTool20250818DeleteCommand.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaMemoryTool20250818CommandBetaMemoryTool20250818DeleteCommand(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaMemoryTool20250818RenameCommand.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaMemoryTool20250818CommandBetaMemoryTool20250818RenameCommand(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaMemoryTool20250818CommandBetaMemoryTool20250818ViewCommand(BetaMemoryTool20250818ViewCommand.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaMemoryTool20250818CommandBetaMemoryTool20250818CreateCommand(BetaMemoryTool20250818CreateCommand.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaMemoryTool20250818CommandBetaMemoryTool20250818StrReplaceCommand(BetaMemoryTool20250818StrReplaceCommand.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaMemoryTool20250818CommandBetaMemoryTool20250818InsertCommand(BetaMemoryTool20250818InsertCommand.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaMemoryTool20250818CommandBetaMemoryTool20250818DeleteCommand(BetaMemoryTool20250818DeleteCommand.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaMemoryTool20250818CommandBetaMemoryTool20250818RenameCommand(BetaMemoryTool20250818RenameCommand.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["command"] is String && !const {"view", "create", "str_replace", "insert", "delete", "rename"}.contains(json["command"])) { return UnknownBetaMemoryTool20250818Command(json); }
-    throw FormatException("No variant matched for BetaMemoryTool20250818Command");
+    try {
+      return BetaMemoryTool20250818CommandBetaMemoryTool20250818ViewCommand(
+          BetaMemoryTool20250818ViewCommand.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaMemoryTool20250818CommandBetaMemoryTool20250818CreateCommand(
+          BetaMemoryTool20250818CreateCommand.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaMemoryTool20250818CommandBetaMemoryTool20250818StrReplaceCommand(
+          BetaMemoryTool20250818StrReplaceCommand.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaMemoryTool20250818CommandBetaMemoryTool20250818InsertCommand(
+          BetaMemoryTool20250818InsertCommand.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaMemoryTool20250818CommandBetaMemoryTool20250818DeleteCommand(
+          BetaMemoryTool20250818DeleteCommand.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaMemoryTool20250818CommandBetaMemoryTool20250818RenameCommand(
+          BetaMemoryTool20250818RenameCommand.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["command"] is String &&
+        !const {"view", "create", "str_replace", "insert", "delete", "rename"}
+            .contains(json["command"])) {
+      return UnknownBetaMemoryTool20250818Command(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaMemoryTool20250818Command");
   }
   Object? toJson();
 }
 
-final class BetaMemoryTool20250818CommandBetaMemoryTool20250818ViewCommand extends BetaMemoryTool20250818Command {
+final class BetaMemoryTool20250818CommandBetaMemoryTool20250818ViewCommand
+    extends BetaMemoryTool20250818Command {
   final BetaMemoryTool20250818ViewCommand value;
-  const BetaMemoryTool20250818CommandBetaMemoryTool20250818ViewCommand(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaMemoryTool20250818CommandBetaMemoryTool20250818ViewCommand(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaMemoryTool20250818CommandBetaMemoryTool20250818CreateCommand extends BetaMemoryTool20250818Command {
+final class BetaMemoryTool20250818CommandBetaMemoryTool20250818CreateCommand
+    extends BetaMemoryTool20250818Command {
   final BetaMemoryTool20250818CreateCommand value;
-  const BetaMemoryTool20250818CommandBetaMemoryTool20250818CreateCommand(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaMemoryTool20250818CommandBetaMemoryTool20250818CreateCommand(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaMemoryTool20250818CommandBetaMemoryTool20250818StrReplaceCommand extends BetaMemoryTool20250818Command {
+final class BetaMemoryTool20250818CommandBetaMemoryTool20250818StrReplaceCommand
+    extends BetaMemoryTool20250818Command {
   final BetaMemoryTool20250818StrReplaceCommand value;
-  const BetaMemoryTool20250818CommandBetaMemoryTool20250818StrReplaceCommand(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaMemoryTool20250818CommandBetaMemoryTool20250818StrReplaceCommand(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaMemoryTool20250818CommandBetaMemoryTool20250818InsertCommand extends BetaMemoryTool20250818Command {
+final class BetaMemoryTool20250818CommandBetaMemoryTool20250818InsertCommand
+    extends BetaMemoryTool20250818Command {
   final BetaMemoryTool20250818InsertCommand value;
-  const BetaMemoryTool20250818CommandBetaMemoryTool20250818InsertCommand(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaMemoryTool20250818CommandBetaMemoryTool20250818InsertCommand(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaMemoryTool20250818CommandBetaMemoryTool20250818DeleteCommand extends BetaMemoryTool20250818Command {
+final class BetaMemoryTool20250818CommandBetaMemoryTool20250818DeleteCommand
+    extends BetaMemoryTool20250818Command {
   final BetaMemoryTool20250818DeleteCommand value;
-  const BetaMemoryTool20250818CommandBetaMemoryTool20250818DeleteCommand(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaMemoryTool20250818CommandBetaMemoryTool20250818DeleteCommand(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaMemoryTool20250818CommandBetaMemoryTool20250818RenameCommand extends BetaMemoryTool20250818Command {
+final class BetaMemoryTool20250818CommandBetaMemoryTool20250818RenameCommand
+    extends BetaMemoryTool20250818Command {
   final BetaMemoryTool20250818RenameCommand value;
-  const BetaMemoryTool20250818CommandBetaMemoryTool20250818RenameCommand(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaMemoryTool20250818CommandBetaMemoryTool20250818RenameCommand(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaMemoryTool20250818Command] whose `command` names no branch this SDK knows, kept as received.
-final class UnknownBetaMemoryTool20250818Command extends BetaMemoryTool20250818Command {
+final class UnknownBetaMemoryTool20250818Command
+    extends BetaMemoryTool20250818Command {
   final Map<String, dynamic> raw;
   const UnknownBetaMemoryTool20250818Command(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaMemoryTool_20250818_CreateCommand` API schema.
 class BetaMemoryTool20250818CreateCommand {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Command type identifier
   final BetaMemoryTool20250818CreateCommandCommand command;
+
   /// Path where the file should be created
   final String path;
+
   /// Content to write to the file
   final String fileText;
 
-  const BetaMemoryTool20250818CreateCommand({required this.command, required this.path, required this.fileText});
+  const BetaMemoryTool20250818CreateCommand(
+      {required this.command, required this.path, required this.fileText});
 
-  BetaMemoryTool20250818CreateCommand Function({BetaMemoryTool20250818CreateCommandCommand command, String path, String fileText}) get copyWith => _copyWith;
+  BetaMemoryTool20250818CreateCommand Function(
+      {BetaMemoryTool20250818CreateCommandCommand command,
+      String path,
+      String fileText}) get copyWith => _copyWith;
 
-  BetaMemoryTool20250818CreateCommand _copyWith({Object? command = sdkOmittedValue, Object? path = sdkOmittedValue, Object? fileText = sdkOmittedValue}) => BetaMemoryTool20250818CreateCommand(
-    command: identical(command, sdkOmittedValue) ? this.command : command as BetaMemoryTool20250818CreateCommandCommand,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    fileText: identical(fileText, sdkOmittedValue) ? this.fileText : fileText as String,
-  );
+  BetaMemoryTool20250818CreateCommand _copyWith(
+          {Object? command = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? fileText = sdkOmittedValue}) =>
+      BetaMemoryTool20250818CreateCommand(
+        command: identical(command, sdkOmittedValue)
+            ? this.command
+            : command as BetaMemoryTool20250818CreateCommandCommand,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        fileText: identical(fileText, sdkOmittedValue)
+            ? this.fileText
+            : fileText as String,
+      );
 
-  factory BetaMemoryTool20250818CreateCommand.fromJson(Map<String, dynamic> json) => BetaMemoryTool20250818CreateCommand(
-    command: (json['command'] != null ? BetaMemoryTool20250818CreateCommandCommand.fromJson(json['command'] as String) : null)!,
-    path: (json['path'] as String?)!,
-    fileText: (json['file_text'] as String?)!,
-  );
+  factory BetaMemoryTool20250818CreateCommand.fromJson(
+          Map<String, dynamic> json) =>
+      BetaMemoryTool20250818CreateCommand(
+        command: (json['command'] != null
+            ? BetaMemoryTool20250818CreateCommandCommand.fromJson(
+                json['command'] as String)
+            : null)!,
+        path: (json['path'] as String?)!,
+        fileText: (json['file_text'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'command': command.toJson(),
-    'path': path,
-    'file_text': fileText,
-  };
+        'command': command.toJson(),
+        'path': path,
+        'file_text': fileText,
+      };
 }
 
 /// Typed representation of the `BetaMemoryTool_20250818_DeleteCommand` API schema.
 class BetaMemoryTool20250818DeleteCommand {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Command type identifier
   final BetaMemoryTool20250818DeleteCommandCommand command;
+
   /// Path to the file or directory to delete
   final String path;
 
-  const BetaMemoryTool20250818DeleteCommand({required this.command, required this.path});
+  const BetaMemoryTool20250818DeleteCommand(
+      {required this.command, required this.path});
 
-  BetaMemoryTool20250818DeleteCommand Function({BetaMemoryTool20250818DeleteCommandCommand command, String path}) get copyWith => _copyWith;
+  BetaMemoryTool20250818DeleteCommand Function(
+      {BetaMemoryTool20250818DeleteCommandCommand command,
+      String path}) get copyWith => _copyWith;
 
-  BetaMemoryTool20250818DeleteCommand _copyWith({Object? command = sdkOmittedValue, Object? path = sdkOmittedValue}) => BetaMemoryTool20250818DeleteCommand(
-    command: identical(command, sdkOmittedValue) ? this.command : command as BetaMemoryTool20250818DeleteCommandCommand,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-  );
+  BetaMemoryTool20250818DeleteCommand _copyWith(
+          {Object? command = sdkOmittedValue,
+          Object? path = sdkOmittedValue}) =>
+      BetaMemoryTool20250818DeleteCommand(
+        command: identical(command, sdkOmittedValue)
+            ? this.command
+            : command as BetaMemoryTool20250818DeleteCommandCommand,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+      );
 
-  factory BetaMemoryTool20250818DeleteCommand.fromJson(Map<String, dynamic> json) => BetaMemoryTool20250818DeleteCommand(
-    command: (json['command'] != null ? BetaMemoryTool20250818DeleteCommandCommand.fromJson(json['command'] as String) : null)!,
-    path: (json['path'] as String?)!,
-  );
+  factory BetaMemoryTool20250818DeleteCommand.fromJson(
+          Map<String, dynamic> json) =>
+      BetaMemoryTool20250818DeleteCommand(
+        command: (json['command'] != null
+            ? BetaMemoryTool20250818DeleteCommandCommand.fromJson(
+                json['command'] as String)
+            : null)!,
+        path: (json['path'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'command': command.toJson(),
-    'path': path,
-  };
+        'command': command.toJson(),
+        'path': path,
+      };
 }
 
 /// Typed representation of the `BetaMemoryTool_20250818_InsertCommand` API schema.
 class BetaMemoryTool20250818InsertCommand {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Command type identifier
   final BetaMemoryTool20250818InsertCommandCommand command;
+
   /// Path to the file where text should be inserted
   final String path;
+
   /// Line number where text should be inserted
   final int insertLine;
+
   /// Text to insert at the specified line
   final String insertText;
 
-  const BetaMemoryTool20250818InsertCommand({required this.command, required this.path, required this.insertLine, required this.insertText});
+  const BetaMemoryTool20250818InsertCommand(
+      {required this.command,
+      required this.path,
+      required this.insertLine,
+      required this.insertText});
 
-  BetaMemoryTool20250818InsertCommand Function({BetaMemoryTool20250818InsertCommandCommand command, String path, int insertLine, String insertText}) get copyWith => _copyWith;
+  BetaMemoryTool20250818InsertCommand Function(
+      {BetaMemoryTool20250818InsertCommandCommand command,
+      String path,
+      int insertLine,
+      String insertText}) get copyWith => _copyWith;
 
-  BetaMemoryTool20250818InsertCommand _copyWith({Object? command = sdkOmittedValue, Object? path = sdkOmittedValue, Object? insertLine = sdkOmittedValue, Object? insertText = sdkOmittedValue}) => BetaMemoryTool20250818InsertCommand(
-    command: identical(command, sdkOmittedValue) ? this.command : command as BetaMemoryTool20250818InsertCommandCommand,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    insertLine: identical(insertLine, sdkOmittedValue) ? this.insertLine : insertLine as int,
-    insertText: identical(insertText, sdkOmittedValue) ? this.insertText : insertText as String,
-  );
+  BetaMemoryTool20250818InsertCommand _copyWith(
+          {Object? command = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? insertLine = sdkOmittedValue,
+          Object? insertText = sdkOmittedValue}) =>
+      BetaMemoryTool20250818InsertCommand(
+        command: identical(command, sdkOmittedValue)
+            ? this.command
+            : command as BetaMemoryTool20250818InsertCommandCommand,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        insertLine: identical(insertLine, sdkOmittedValue)
+            ? this.insertLine
+            : insertLine as int,
+        insertText: identical(insertText, sdkOmittedValue)
+            ? this.insertText
+            : insertText as String,
+      );
 
-  factory BetaMemoryTool20250818InsertCommand.fromJson(Map<String, dynamic> json) => BetaMemoryTool20250818InsertCommand(
-    command: (json['command'] != null ? BetaMemoryTool20250818InsertCommandCommand.fromJson(json['command'] as String) : null)!,
-    path: (json['path'] as String?)!,
-    insertLine: ((json['insert_line'] as num?)?.toInt())!,
-    insertText: (json['insert_text'] as String?)!,
-  );
+  factory BetaMemoryTool20250818InsertCommand.fromJson(
+          Map<String, dynamic> json) =>
+      BetaMemoryTool20250818InsertCommand(
+        command: (json['command'] != null
+            ? BetaMemoryTool20250818InsertCommandCommand.fromJson(
+                json['command'] as String)
+            : null)!,
+        path: (json['path'] as String?)!,
+        insertLine: ((json['insert_line'] as num?)?.toInt())!,
+        insertText: (json['insert_text'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'command': command.toJson(),
-    'path': path,
-    'insert_line': insertLine,
-    'insert_text': insertText,
-  };
+        'command': command.toJson(),
+        'path': path,
+        'insert_line': insertLine,
+        'insert_text': insertText,
+      };
 }
 
 /// Typed representation of the `BetaMemoryTool_20250818_RenameCommand` API schema.
 class BetaMemoryTool20250818RenameCommand {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Command type identifier
   final BetaMemoryTool20250818RenameCommandCommand command;
+
   /// Current path of the file or directory
   final String oldPath;
+
   /// New path for the file or directory
   final String newPath;
 
-  const BetaMemoryTool20250818RenameCommand({required this.command, required this.oldPath, required this.newPath});
+  const BetaMemoryTool20250818RenameCommand(
+      {required this.command, required this.oldPath, required this.newPath});
 
-  BetaMemoryTool20250818RenameCommand Function({BetaMemoryTool20250818RenameCommandCommand command, String oldPath, String newPath}) get copyWith => _copyWith;
+  BetaMemoryTool20250818RenameCommand Function(
+      {BetaMemoryTool20250818RenameCommandCommand command,
+      String oldPath,
+      String newPath}) get copyWith => _copyWith;
 
-  BetaMemoryTool20250818RenameCommand _copyWith({Object? command = sdkOmittedValue, Object? oldPath = sdkOmittedValue, Object? newPath = sdkOmittedValue}) => BetaMemoryTool20250818RenameCommand(
-    command: identical(command, sdkOmittedValue) ? this.command : command as BetaMemoryTool20250818RenameCommandCommand,
-    oldPath: identical(oldPath, sdkOmittedValue) ? this.oldPath : oldPath as String,
-    newPath: identical(newPath, sdkOmittedValue) ? this.newPath : newPath as String,
-  );
+  BetaMemoryTool20250818RenameCommand _copyWith(
+          {Object? command = sdkOmittedValue,
+          Object? oldPath = sdkOmittedValue,
+          Object? newPath = sdkOmittedValue}) =>
+      BetaMemoryTool20250818RenameCommand(
+        command: identical(command, sdkOmittedValue)
+            ? this.command
+            : command as BetaMemoryTool20250818RenameCommandCommand,
+        oldPath: identical(oldPath, sdkOmittedValue)
+            ? this.oldPath
+            : oldPath as String,
+        newPath: identical(newPath, sdkOmittedValue)
+            ? this.newPath
+            : newPath as String,
+      );
 
-  factory BetaMemoryTool20250818RenameCommand.fromJson(Map<String, dynamic> json) => BetaMemoryTool20250818RenameCommand(
-    command: (json['command'] != null ? BetaMemoryTool20250818RenameCommandCommand.fromJson(json['command'] as String) : null)!,
-    oldPath: (json['old_path'] as String?)!,
-    newPath: (json['new_path'] as String?)!,
-  );
+  factory BetaMemoryTool20250818RenameCommand.fromJson(
+          Map<String, dynamic> json) =>
+      BetaMemoryTool20250818RenameCommand(
+        command: (json['command'] != null
+            ? BetaMemoryTool20250818RenameCommandCommand.fromJson(
+                json['command'] as String)
+            : null)!,
+        oldPath: (json['old_path'] as String?)!,
+        newPath: (json['new_path'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'command': command.toJson(),
-    'old_path': oldPath,
-    'new_path': newPath,
-  };
+        'command': command.toJson(),
+        'old_path': oldPath,
+        'new_path': newPath,
+      };
 }
 
 /// Typed representation of the `BetaMemoryTool_20250818_StrReplaceCommand` API schema.
 class BetaMemoryTool20250818StrReplaceCommand {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Command type identifier
   final BetaMemoryTool20250818StrReplaceCommandCommand command;
+
   /// Path to the file where text should be replaced
   final String path;
+
   /// Text to search for and replace
   final String oldStr;
+
   /// Text to replace with
   final String newStr;
 
-  const BetaMemoryTool20250818StrReplaceCommand({required this.command, required this.path, required this.oldStr, required this.newStr});
+  const BetaMemoryTool20250818StrReplaceCommand(
+      {required this.command,
+      required this.path,
+      required this.oldStr,
+      required this.newStr});
 
-  BetaMemoryTool20250818StrReplaceCommand Function({BetaMemoryTool20250818StrReplaceCommandCommand command, String path, String oldStr, String newStr}) get copyWith => _copyWith;
+  BetaMemoryTool20250818StrReplaceCommand Function(
+      {BetaMemoryTool20250818StrReplaceCommandCommand command,
+      String path,
+      String oldStr,
+      String newStr}) get copyWith => _copyWith;
 
-  BetaMemoryTool20250818StrReplaceCommand _copyWith({Object? command = sdkOmittedValue, Object? path = sdkOmittedValue, Object? oldStr = sdkOmittedValue, Object? newStr = sdkOmittedValue}) => BetaMemoryTool20250818StrReplaceCommand(
-    command: identical(command, sdkOmittedValue) ? this.command : command as BetaMemoryTool20250818StrReplaceCommandCommand,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    oldStr: identical(oldStr, sdkOmittedValue) ? this.oldStr : oldStr as String,
-    newStr: identical(newStr, sdkOmittedValue) ? this.newStr : newStr as String,
-  );
+  BetaMemoryTool20250818StrReplaceCommand _copyWith(
+          {Object? command = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? oldStr = sdkOmittedValue,
+          Object? newStr = sdkOmittedValue}) =>
+      BetaMemoryTool20250818StrReplaceCommand(
+        command: identical(command, sdkOmittedValue)
+            ? this.command
+            : command as BetaMemoryTool20250818StrReplaceCommandCommand,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        oldStr:
+            identical(oldStr, sdkOmittedValue) ? this.oldStr : oldStr as String,
+        newStr:
+            identical(newStr, sdkOmittedValue) ? this.newStr : newStr as String,
+      );
 
-  factory BetaMemoryTool20250818StrReplaceCommand.fromJson(Map<String, dynamic> json) => BetaMemoryTool20250818StrReplaceCommand(
-    command: (json['command'] != null ? BetaMemoryTool20250818StrReplaceCommandCommand.fromJson(json['command'] as String) : null)!,
-    path: (json['path'] as String?)!,
-    oldStr: (json['old_str'] as String?)!,
-    newStr: (json['new_str'] as String?)!,
-  );
+  factory BetaMemoryTool20250818StrReplaceCommand.fromJson(
+          Map<String, dynamic> json) =>
+      BetaMemoryTool20250818StrReplaceCommand(
+        command: (json['command'] != null
+            ? BetaMemoryTool20250818StrReplaceCommandCommand.fromJson(
+                json['command'] as String)
+            : null)!,
+        path: (json['path'] as String?)!,
+        oldStr: (json['old_str'] as String?)!,
+        newStr: (json['new_str'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'command': command.toJson(),
-    'path': path,
-    'old_str': oldStr,
-    'new_str': newStr,
-  };
+        'command': command.toJson(),
+        'path': path,
+        'old_str': oldStr,
+        'new_str': newStr,
+      };
 }
 
 /// Typed representation of the `BetaMemoryTool_20250818_ViewCommand` API schema.
 class BetaMemoryTool20250818ViewCommand {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Command type identifier
   final BetaMemoryTool20250818ViewCommandCommand command;
+
   /// Path to directory or file to view
   final String path;
+
   /// Optional line range for viewing specific lines
   final SdkOptional<List<int>> viewRange;
 
-  const BetaMemoryTool20250818ViewCommand({required this.command, required this.path, this.viewRange = const SdkOmitted()});
+  const BetaMemoryTool20250818ViewCommand(
+      {required this.command,
+      required this.path,
+      this.viewRange = const SdkOmitted()});
 
-  BetaMemoryTool20250818ViewCommand Function({BetaMemoryTool20250818ViewCommandCommand command, String path, SdkOptional<List<int>> viewRange}) get copyWith => _copyWith;
+  BetaMemoryTool20250818ViewCommand Function(
+      {BetaMemoryTool20250818ViewCommandCommand command,
+      String path,
+      SdkOptional<List<int>> viewRange}) get copyWith => _copyWith;
 
-  BetaMemoryTool20250818ViewCommand _copyWith({Object? command = sdkOmittedValue, Object? path = sdkOmittedValue, Object? viewRange = sdkOmittedValue}) => BetaMemoryTool20250818ViewCommand(
-    command: identical(command, sdkOmittedValue) ? this.command : command as BetaMemoryTool20250818ViewCommandCommand,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    viewRange: identical(viewRange, sdkOmittedValue) ? this.viewRange : viewRange as SdkOptional<List<int>>,
-  );
+  BetaMemoryTool20250818ViewCommand _copyWith(
+          {Object? command = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? viewRange = sdkOmittedValue}) =>
+      BetaMemoryTool20250818ViewCommand(
+        command: identical(command, sdkOmittedValue)
+            ? this.command
+            : command as BetaMemoryTool20250818ViewCommandCommand,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        viewRange: identical(viewRange, sdkOmittedValue)
+            ? this.viewRange
+            : viewRange as SdkOptional<List<int>>,
+      );
 
-  factory BetaMemoryTool20250818ViewCommand.fromJson(Map<String, dynamic> json) => BetaMemoryTool20250818ViewCommand(
-    command: (json['command'] != null ? BetaMemoryTool20250818ViewCommandCommand.fromJson(json['command'] as String) : null)!,
-    path: (json['path'] as String?)!,
-    viewRange: json['view_range'] != null ? SdkPresent(((json['view_range'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-  );
+  factory BetaMemoryTool20250818ViewCommand.fromJson(
+          Map<String, dynamic> json) =>
+      BetaMemoryTool20250818ViewCommand(
+        command: (json['command'] != null
+            ? BetaMemoryTool20250818ViewCommandCommand.fromJson(
+                json['command'] as String)
+            : null)!,
+        path: (json['path'] as String?)!,
+        viewRange: json['view_range'] != null
+            ? SdkPresent(((json['view_range'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'command': command.toJson(),
-    'path': path,
-    ...switch (viewRange) {
-      SdkPresent<List<int>>(value: final value) => {'view_range': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'command': command.toJson(),
+        'path': path,
+        ...switch (viewRange) {
+          SdkPresent<List<int>>(value: final value) => {
+              'view_range': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

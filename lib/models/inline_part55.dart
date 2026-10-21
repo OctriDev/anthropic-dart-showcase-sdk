@@ -10,14 +10,20 @@ enum BetaWebhookVaultCredentialDeletedEventDataType {
 
   static BetaWebhookVaultCredentialDeletedEventDataType fromJson(String value) {
     switch (value) {
-      case 'vault_credential.deleted': return BetaWebhookVaultCredentialDeletedEventDataType.vaultCredentialDeleted;
-      default: throw ArgumentError('Unknown BetaWebhookVaultCredentialDeletedEventDataType: $value');
+      case 'vault_credential.deleted':
+        return BetaWebhookVaultCredentialDeletedEventDataType
+            .vaultCredentialDeleted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookVaultCredentialDeletedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookVaultCredentialDeletedEventDataType.vaultCredentialDeleted: return 'vault_credential.deleted';
+      case BetaWebhookVaultCredentialDeletedEventDataType
+            .vaultCredentialDeleted:
+        return 'vault_credential.deleted';
     }
   }
 
@@ -29,16 +35,23 @@ enum BetaWebhookVaultCredentialDeletedEventDataType {
 enum BetaWebhookVaultCredentialRefreshFailedEventDataType {
   vaultCredentialRefreshFailed;
 
-  static BetaWebhookVaultCredentialRefreshFailedEventDataType fromJson(String value) {
+  static BetaWebhookVaultCredentialRefreshFailedEventDataType fromJson(
+      String value) {
     switch (value) {
-      case 'vault_credential.refresh_failed': return BetaWebhookVaultCredentialRefreshFailedEventDataType.vaultCredentialRefreshFailed;
-      default: throw ArgumentError('Unknown BetaWebhookVaultCredentialRefreshFailedEventDataType: $value');
+      case 'vault_credential.refresh_failed':
+        return BetaWebhookVaultCredentialRefreshFailedEventDataType
+            .vaultCredentialRefreshFailed;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookVaultCredentialRefreshFailedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookVaultCredentialRefreshFailedEventDataType.vaultCredentialRefreshFailed: return 'vault_credential.refresh_failed';
+      case BetaWebhookVaultCredentialRefreshFailedEventDataType
+            .vaultCredentialRefreshFailed:
+        return 'vault_credential.refresh_failed';
     }
   }
 
@@ -52,14 +65,18 @@ enum BetaWebhookVaultDeletedEventDataType {
 
   static BetaWebhookVaultDeletedEventDataType fromJson(String value) {
     switch (value) {
-      case 'vault.deleted': return BetaWebhookVaultDeletedEventDataType.vaultDeleted;
-      default: throw ArgumentError('Unknown BetaWebhookVaultDeletedEventDataType: $value');
+      case 'vault.deleted':
+        return BetaWebhookVaultDeletedEventDataType.vaultDeleted;
+      default:
+        throw ArgumentError(
+            'Unknown BetaWebhookVaultDeletedEventDataType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebhookVaultDeletedEventDataType.vaultDeleted: return 'vault.deleted';
+      case BetaWebhookVaultDeletedEventDataType.vaultDeleted:
+        return 'vault.deleted';
     }
   }
 
@@ -73,14 +90,17 @@ enum BetaWebSearchTool20250305Name {
 
   static BetaWebSearchTool20250305Name fromJson(String value) {
     switch (value) {
-      case 'web_search': return BetaWebSearchTool20250305Name.webSearch;
-      default: throw ArgumentError('Unknown BetaWebSearchTool20250305Name: $value');
+      case 'web_search':
+        return BetaWebSearchTool20250305Name.webSearch;
+      default:
+        throw ArgumentError('Unknown BetaWebSearchTool20250305Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebSearchTool20250305Name.webSearch: return 'web_search';
+      case BetaWebSearchTool20250305Name.webSearch:
+        return 'web_search';
     }
   }
 
@@ -94,14 +114,17 @@ enum BetaWebSearchTool20250305Type {
 
   static BetaWebSearchTool20250305Type fromJson(String value) {
     switch (value) {
-      case 'web_search_20250305': return BetaWebSearchTool20250305Type.webSearch20250305;
-      default: throw ArgumentError('Unknown BetaWebSearchTool20250305Type: $value');
+      case 'web_search_20250305':
+        return BetaWebSearchTool20250305Type.webSearch20250305;
+      default:
+        throw ArgumentError('Unknown BetaWebSearchTool20250305Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebSearchTool20250305Type.webSearch20250305: return 'web_search_20250305';
+      case BetaWebSearchTool20250305Type.webSearch20250305:
+        return 'web_search_20250305';
     }
   }
 
@@ -115,14 +138,17 @@ enum BetaWebSearchTool20260209Name {
 
   static BetaWebSearchTool20260209Name fromJson(String value) {
     switch (value) {
-      case 'web_search': return BetaWebSearchTool20260209Name.webSearch;
-      default: throw ArgumentError('Unknown BetaWebSearchTool20260209Name: $value');
+      case 'web_search':
+        return BetaWebSearchTool20260209Name.webSearch;
+      default:
+        throw ArgumentError('Unknown BetaWebSearchTool20260209Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebSearchTool20260209Name.webSearch: return 'web_search';
+      case BetaWebSearchTool20260209Name.webSearch:
+        return 'web_search';
     }
   }
 
@@ -136,14 +162,17 @@ enum BetaWebSearchTool20260209Type {
 
   static BetaWebSearchTool20260209Type fromJson(String value) {
     switch (value) {
-      case 'web_search_20260209': return BetaWebSearchTool20260209Type.webSearch20260209;
-      default: throw ArgumentError('Unknown BetaWebSearchTool20260209Type: $value');
+      case 'web_search_20260209':
+        return BetaWebSearchTool20260209Type.webSearch20260209;
+      default:
+        throw ArgumentError('Unknown BetaWebSearchTool20260209Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebSearchTool20260209Type.webSearch20260209: return 'web_search_20260209';
+      case BetaWebSearchTool20260209Type.webSearch20260209:
+        return 'web_search_20260209';
     }
   }
 
@@ -157,14 +186,17 @@ enum BetaWebSearchTool20260318Name {
 
   static BetaWebSearchTool20260318Name fromJson(String value) {
     switch (value) {
-      case 'web_search': return BetaWebSearchTool20260318Name.webSearch;
-      default: throw ArgumentError('Unknown BetaWebSearchTool20260318Name: $value');
+      case 'web_search':
+        return BetaWebSearchTool20260318Name.webSearch;
+      default:
+        throw ArgumentError('Unknown BetaWebSearchTool20260318Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebSearchTool20260318Name.webSearch: return 'web_search';
+      case BetaWebSearchTool20260318Name.webSearch:
+        return 'web_search';
     }
   }
 
@@ -174,24 +206,29 @@ enum BetaWebSearchTool20260318Name {
 
 /// How this tool's result blocks appear in the API response when the result was consumed by a completed code_execution call in the same turn. 'full' returns the complete content (default). 'excluded' drops the nested server_tool_use and result block pair entirely. Results from direct calls, or from code_execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
 final class BetaWebSearchTool20260318ResponseInclusion {
-
   final String value;
 
   const BetaWebSearchTool20260318ResponseInclusion._(this.value);
 
-  factory BetaWebSearchTool20260318ResponseInclusion.fromJson(String value) => BetaWebSearchTool20260318ResponseInclusion._(value);
+  factory BetaWebSearchTool20260318ResponseInclusion.fromJson(String value) =>
+      BetaWebSearchTool20260318ResponseInclusion._(value);
 
   static const full = BetaWebSearchTool20260318ResponseInclusion._('full');
-  static const excluded = BetaWebSearchTool20260318ResponseInclusion._('excluded');
+  static const excluded =
+      BetaWebSearchTool20260318ResponseInclusion._('excluded');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaWebSearchTool20260318ResponseInclusion && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaWebSearchTool20260318ResponseInclusion &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -200,14 +237,17 @@ enum BetaWebSearchTool20260318Type {
 
   static BetaWebSearchTool20260318Type fromJson(String value) {
     switch (value) {
-      case 'web_search_20260318': return BetaWebSearchTool20260318Type.webSearch20260318;
-      default: throw ArgumentError('Unknown BetaWebSearchTool20260318Type: $value');
+      case 'web_search_20260318':
+        return BetaWebSearchTool20260318Type.webSearch20260318;
+      default:
+        throw ArgumentError('Unknown BetaWebSearchTool20260318Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWebSearchTool20260318Type.webSearch20260318: return 'web_search_20260318';
+      case BetaWebSearchTool20260318Type.webSearch20260318:
+        return 'web_search_20260318';
     }
   }
 
@@ -221,14 +261,17 @@ enum BetaWorkspaceType {
 
   static BetaWorkspaceType fromJson(String value) {
     switch (value) {
-      case 'workspace': return BetaWorkspaceType.workspace;
-      default: throw ArgumentError('Unknown BetaWorkspaceType: $value');
+      case 'workspace':
+        return BetaWorkspaceType.workspace;
+      default:
+        throw ArgumentError('Unknown BetaWorkspaceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWorkspaceType.workspace: return 'workspace';
+      case BetaWorkspaceType.workspace:
+        return 'workspace';
     }
   }
 
@@ -242,14 +285,17 @@ enum BetaWorkspaceMemberSchemaType {
 
   static BetaWorkspaceMemberSchemaType fromJson(String value) {
     switch (value) {
-      case 'workspace_member': return BetaWorkspaceMemberSchemaType.workspaceMember;
-      default: throw ArgumentError('Unknown BetaWorkspaceMemberSchemaType: $value');
+      case 'workspace_member':
+        return BetaWorkspaceMemberSchemaType.workspaceMember;
+      default:
+        throw ArgumentError('Unknown BetaWorkspaceMemberSchemaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaWorkspaceMemberSchemaType.workspaceMember: return 'workspace_member';
+      case BetaWorkspaceMemberSchemaType.workspaceMember:
+        return 'workspace_member';
     }
   }
 
@@ -259,12 +305,12 @@ enum BetaWorkspaceMemberSchemaType {
 
 /// The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`.
 final class BetaWorkspaceRateLimitGroupType {
-
   final String value;
 
   const BetaWorkspaceRateLimitGroupType._(this.value);
 
-  factory BetaWorkspaceRateLimitGroupType.fromJson(String value) => BetaWorkspaceRateLimitGroupType._(value);
+  factory BetaWorkspaceRateLimitGroupType.fromJson(String value) =>
+      BetaWorkspaceRateLimitGroupType._(value);
 
   static const batch = BetaWorkspaceRateLimitGroupType._('batch');
   static const files = BetaWorkspaceRateLimitGroupType._('files');
@@ -275,10 +321,13 @@ final class BetaWorkspaceRateLimitGroupType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaWorkspaceRateLimitGroupType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaWorkspaceRateLimitGroupType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

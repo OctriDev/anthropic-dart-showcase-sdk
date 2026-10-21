@@ -8,27 +8,36 @@ part of 'shared_beta.dart';
 class BetaCreatedBy {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// ID of the actor that created the object.
   final String id;
+
   /// Type of the actor that created the object.
   final BetaCreatedByType type_;
 
   const BetaCreatedBy({required this.id, required this.type_});
 
-  BetaCreatedBy Function({String id, BetaCreatedByType type_}) get copyWith => _copyWith;
+  BetaCreatedBy Function({String id, BetaCreatedByType type_}) get copyWith =>
+      _copyWith;
 
-  BetaCreatedBy _copyWith({Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaCreatedBy(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaCreatedByType,
-  );
+  BetaCreatedBy _copyWith(
+          {Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      BetaCreatedBy(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaCreatedByType,
+      );
 
   factory BetaCreatedBy.fromJson(Map<String, dynamic> json) => BetaCreatedBy(
-    id: (json['id'] as String?)!,
-    type_: (json['type'] != null ? BetaCreatedByType.fromJson(json['type'] as String) : null)!,
-  );
+        id: (json['id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaCreatedByType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': type_.toJson(),
-  };
+        'id': id,
+        'type': type_.toJson(),
+      };
 }

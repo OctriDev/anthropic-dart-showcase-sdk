@@ -8,87 +8,202 @@ part of 'shared_beta_dream.dart';
 class BetaDream {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaDreamType type_;
+
   /// Required `string` value serialized in the `id` wire field.
   final String id;
+
   /// Required array value serialized in the `inputs` wire field.
   final List<BetaDreamInput> inputs;
+
   /// Required array value serialized in the `outputs` wire field.
   final List<BetaDreamOutput> outputs;
+
   /// Lifecycle status of a Dream.
   final BetaDreamStatus status;
+
   /// A timestamp in RFC 3339 format
   final String createdAt;
+
   /// Required API value serialized in the `ended_at` wire field.
   final String? endedAt;
+
   /// Required API value serialized in the `archived_at` wire field.
   final String? archivedAt;
+
   /// Required API value serialized in the `error` wire field.
   final BetaDreamError? error;
+
   /// Model identifier and configuration applied to every pipeline stage. Same wire shape as the Agents API ModelConfig.
   final BetaDreamModelConfig model;
+
   /// Required `string` value serialized in the `instructions` wire field.
   final String? instructions;
+
   /// Required `string` value serialized in the `session_id` wire field.
   final String? sessionId;
+
   /// Cumulative token usage for the dream across every pipeline stage.
   final BetaDreamUsage usage;
+
   /// Required object value serialized in the `output_behavior` wire field.
   final BetaOutputBehavior outputBehavior;
 
-  const BetaDream({required this.type_, required this.id, required this.inputs, required this.outputs, required this.status, required this.createdAt, required this.endedAt, required this.archivedAt, required this.error, required this.model, required this.instructions, required this.sessionId, required this.usage, required this.outputBehavior});
+  const BetaDream(
+      {required this.type_,
+      required this.id,
+      required this.inputs,
+      required this.outputs,
+      required this.status,
+      required this.createdAt,
+      required this.endedAt,
+      required this.archivedAt,
+      required this.error,
+      required this.model,
+      required this.instructions,
+      required this.sessionId,
+      required this.usage,
+      required this.outputBehavior});
 
-  BetaDream Function({BetaDreamType type_, String id, List<BetaDreamInput> inputs, List<BetaDreamOutput> outputs, BetaDreamStatus status, String createdAt, String? endedAt, String? archivedAt, BetaDreamError? error, BetaDreamModelConfig model, String? instructions, String? sessionId, BetaDreamUsage usage, BetaOutputBehavior outputBehavior}) get copyWith => _copyWith;
+  BetaDream Function(
+      {BetaDreamType type_,
+      String id,
+      List<BetaDreamInput> inputs,
+      List<BetaDreamOutput> outputs,
+      BetaDreamStatus status,
+      String createdAt,
+      String? endedAt,
+      String? archivedAt,
+      BetaDreamError? error,
+      BetaDreamModelConfig model,
+      String? instructions,
+      String? sessionId,
+      BetaDreamUsage usage,
+      BetaOutputBehavior outputBehavior}) get copyWith => _copyWith;
 
-  BetaDream _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? inputs = sdkOmittedValue, Object? outputs = sdkOmittedValue, Object? status = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? endedAt = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? error = sdkOmittedValue, Object? model = sdkOmittedValue, Object? instructions = sdkOmittedValue, Object? sessionId = sdkOmittedValue, Object? usage = sdkOmittedValue, Object? outputBehavior = sdkOmittedValue}) => BetaDream(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaDreamType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    inputs: identical(inputs, sdkOmittedValue) ? this.inputs : inputs as List<BetaDreamInput>,
-    outputs: identical(outputs, sdkOmittedValue) ? this.outputs : outputs as List<BetaDreamOutput>,
-    status: identical(status, sdkOmittedValue) ? this.status : status as BetaDreamStatus,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    endedAt: identical(endedAt, sdkOmittedValue) ? this.endedAt : endedAt as String?,
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
-    error: identical(error, sdkOmittedValue) ? this.error : error as BetaDreamError?,
-    model: identical(model, sdkOmittedValue) ? this.model : model as BetaDreamModelConfig,
-    instructions: identical(instructions, sdkOmittedValue) ? this.instructions : instructions as String?,
-    sessionId: identical(sessionId, sdkOmittedValue) ? this.sessionId : sessionId as String?,
-    usage: identical(usage, sdkOmittedValue) ? this.usage : usage as BetaDreamUsage,
-    outputBehavior: identical(outputBehavior, sdkOmittedValue) ? this.outputBehavior : outputBehavior as BetaOutputBehavior,
-  );
+  BetaDream _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? inputs = sdkOmittedValue,
+          Object? outputs = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? endedAt = sdkOmittedValue,
+          Object? archivedAt = sdkOmittedValue,
+          Object? error = sdkOmittedValue,
+          Object? model = sdkOmittedValue,
+          Object? instructions = sdkOmittedValue,
+          Object? sessionId = sdkOmittedValue,
+          Object? usage = sdkOmittedValue,
+          Object? outputBehavior = sdkOmittedValue}) =>
+      BetaDream(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaDreamType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        inputs: identical(inputs, sdkOmittedValue)
+            ? this.inputs
+            : inputs as List<BetaDreamInput>,
+        outputs: identical(outputs, sdkOmittedValue)
+            ? this.outputs
+            : outputs as List<BetaDreamOutput>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as BetaDreamStatus,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        endedAt: identical(endedAt, sdkOmittedValue)
+            ? this.endedAt
+            : endedAt as String?,
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as String?,
+        error: identical(error, sdkOmittedValue)
+            ? this.error
+            : error as BetaDreamError?,
+        model: identical(model, sdkOmittedValue)
+            ? this.model
+            : model as BetaDreamModelConfig,
+        instructions: identical(instructions, sdkOmittedValue)
+            ? this.instructions
+            : instructions as String?,
+        sessionId: identical(sessionId, sdkOmittedValue)
+            ? this.sessionId
+            : sessionId as String?,
+        usage: identical(usage, sdkOmittedValue)
+            ? this.usage
+            : usage as BetaDreamUsage,
+        outputBehavior: identical(outputBehavior, sdkOmittedValue)
+            ? this.outputBehavior
+            : outputBehavior as BetaOutputBehavior,
+      );
 
   factory BetaDream.fromJson(Map<String, dynamic> json) => BetaDream(
-    type_: (json['type'] != null ? BetaDreamType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    inputs: ((json['inputs'] as List?)?.map((e) => BetaDreamInput.fromJson(e)).toList())!,
-    outputs: ((json['outputs'] as List?)?.map((e) => BetaDreamOutput.fromJson(e)).toList())!,
-    status: (json['status'] != null ? BetaDreamStatus.fromJson(json['status'] as String) : null)!,
-    createdAt: (json['created_at'] as String?)!,
-    endedAt: json.containsKey('ended_at') ? json['ended_at'] as String? : throw ArgumentError.value(null, 'ended_at', 'Required property is missing'),
-    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
-    error: json.containsKey('error') ? json['error'] != null ? BetaDreamError.fromJson(json['error'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'error', 'Required property is missing'),
-    model: (json['model'] != null ? BetaDreamModelConfig.fromJson(json['model'] as Map<String, dynamic>) : null)!,
-    instructions: json.containsKey('instructions') ? json['instructions'] as String? : throw ArgumentError.value(null, 'instructions', 'Required property is missing'),
-    sessionId: json.containsKey('session_id') ? json['session_id'] as String? : throw ArgumentError.value(null, 'session_id', 'Required property is missing'),
-    usage: (json['usage'] != null ? BetaDreamUsage.fromJson(json['usage'] as Map<String, dynamic>) : null)!,
-    outputBehavior: (json['output_behavior'] != null ? BetaOutputBehavior.fromJson(json['output_behavior']) : null)!,
-  );
+        type_: (json['type'] != null
+            ? BetaDreamType.fromJson(json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        inputs: ((json['inputs'] as List?)
+            ?.map((e) => BetaDreamInput.fromJson(e))
+            .toList())!,
+        outputs: ((json['outputs'] as List?)
+            ?.map((e) => BetaDreamOutput.fromJson(e))
+            .toList())!,
+        status: (json['status'] != null
+            ? BetaDreamStatus.fromJson(json['status'] as String)
+            : null)!,
+        createdAt: (json['created_at'] as String?)!,
+        endedAt: json.containsKey('ended_at')
+            ? json['ended_at'] as String?
+            : throw ArgumentError.value(
+                null, 'ended_at', 'Required property is missing'),
+        archivedAt: json.containsKey('archived_at')
+            ? json['archived_at'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_at', 'Required property is missing'),
+        error: json.containsKey('error')
+            ? json['error'] != null
+                ? BetaDreamError.fromJson(json['error'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'error', 'Required property is missing'),
+        model: (json['model'] != null
+            ? BetaDreamModelConfig.fromJson(
+                json['model'] as Map<String, dynamic>)
+            : null)!,
+        instructions: json.containsKey('instructions')
+            ? json['instructions'] as String?
+            : throw ArgumentError.value(
+                null, 'instructions', 'Required property is missing'),
+        sessionId: json.containsKey('session_id')
+            ? json['session_id'] as String?
+            : throw ArgumentError.value(
+                null, 'session_id', 'Required property is missing'),
+        usage: (json['usage'] != null
+            ? BetaDreamUsage.fromJson(json['usage'] as Map<String, dynamic>)
+            : null)!,
+        outputBehavior: (json['output_behavior'] != null
+            ? BetaOutputBehavior.fromJson(json['output_behavior'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'inputs': inputs.map((item) => item.toJson()).toList(),
-    'outputs': outputs.map((item) => item.toJson()).toList(),
-    'status': status.toJson(),
-    'created_at': createdAt,
-    'ended_at': endedAt,
-    'archived_at': archivedAt,
-    'error': error?.toJson(),
-    'model': model.toJson(),
-    'instructions': instructions,
-    'session_id': sessionId,
-    'usage': usage.toJson(),
-    'output_behavior': outputBehavior.toJson(),
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'inputs': inputs.map((item) => item.toJson()).toList(),
+        'outputs': outputs.map((item) => item.toJson()).toList(),
+        'status': status.toJson(),
+        'created_at': createdAt,
+        'ended_at': endedAt,
+        'archived_at': archivedAt,
+        'error': error?.toJson(),
+        'model': model.toJson(),
+        'instructions': instructions,
+        'session_id': sessionId,
+        'usage': usage.toJson(),
+        'output_behavior': outputBehavior.toJson(),
+      };
 }

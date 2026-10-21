@@ -8,63 +8,119 @@ sealed class BetaManagedAgentsMcpOauthUpdateParamsAccessToken {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMcpOauthUpdateParamsAccessToken();
-  factory BetaManagedAgentsMcpOauthUpdateParamsAccessToken.fromJson(Object? json) {
-    if (json is String) { return BetaManagedAgentsMcpOauthUpdateParamsAccessTokenString(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsMcpOauthUpdateParamsAccessToken");
+  factory BetaManagedAgentsMcpOauthUpdateParamsAccessToken.fromJson(
+      Object? json) {
+    if (json is String) {
+      return BetaManagedAgentsMcpOauthUpdateParamsAccessTokenString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsMcpOauthUpdateParamsAccessToken");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMcpOauthUpdateParamsAccessTokenString extends BetaManagedAgentsMcpOauthUpdateParamsAccessToken {
+final class BetaManagedAgentsMcpOauthUpdateParamsAccessTokenString
+    extends BetaManagedAgentsMcpOauthUpdateParamsAccessToken {
   final String value;
   const BetaManagedAgentsMcpOauthUpdateParamsAccessTokenString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Parameters for updating an MCP OAuth credential. The `mcp_server_url` is immutable.
 class BetaManagedAgentsMcpOauthUpdateParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMcpOauthUpdateParamsType type_;
+
   /// Updated OAuth access token.
   final SdkOptional<String?> accessToken;
+
   /// Optional API value serialized in the `expires_at` wire field.
   final SdkOptional<String?> expiresAt;
+
   /// Updated refresh token configuration.
   final SdkOptional<BetaManagedAgentsMcpOauthRefreshUpdateParams?> refresh;
 
-  const BetaManagedAgentsMcpOauthUpdateParams({required this.type_, this.accessToken = const SdkOmitted(), this.expiresAt = const SdkOmitted(), this.refresh = const SdkOmitted()});
+  const BetaManagedAgentsMcpOauthUpdateParams(
+      {required this.type_,
+      this.accessToken = const SdkOmitted(),
+      this.expiresAt = const SdkOmitted(),
+      this.refresh = const SdkOmitted()});
 
-  BetaManagedAgentsMcpOauthUpdateParams Function({BetaManagedAgentsMcpOauthUpdateParamsType type_, SdkOptional<String?> accessToken, SdkOptional<String?> expiresAt, SdkOptional<BetaManagedAgentsMcpOauthRefreshUpdateParams?> refresh}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpOauthUpdateParams Function(
+          {BetaManagedAgentsMcpOauthUpdateParamsType type_,
+          SdkOptional<String?> accessToken,
+          SdkOptional<String?> expiresAt,
+          SdkOptional<BetaManagedAgentsMcpOauthRefreshUpdateParams?> refresh})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpOauthUpdateParams _copyWith({Object? type_ = sdkOmittedValue, Object? accessToken = sdkOmittedValue, Object? expiresAt = sdkOmittedValue, Object? refresh = sdkOmittedValue}) => BetaManagedAgentsMcpOauthUpdateParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMcpOauthUpdateParamsType,
-    accessToken: identical(accessToken, sdkOmittedValue) ? this.accessToken : accessToken as SdkOptional<String?>,
-    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as SdkOptional<String?>,
-    refresh: identical(refresh, sdkOmittedValue) ? this.refresh : refresh as SdkOptional<BetaManagedAgentsMcpOauthRefreshUpdateParams?>,
-  );
+  BetaManagedAgentsMcpOauthUpdateParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? accessToken = sdkOmittedValue,
+          Object? expiresAt = sdkOmittedValue,
+          Object? refresh = sdkOmittedValue}) =>
+      BetaManagedAgentsMcpOauthUpdateParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsMcpOauthUpdateParamsType,
+        accessToken: identical(accessToken, sdkOmittedValue)
+            ? this.accessToken
+            : accessToken as SdkOptional<String?>,
+        expiresAt: identical(expiresAt, sdkOmittedValue)
+            ? this.expiresAt
+            : expiresAt as SdkOptional<String?>,
+        refresh: identical(refresh, sdkOmittedValue)
+            ? this.refresh
+            : refresh
+                as SdkOptional<BetaManagedAgentsMcpOauthRefreshUpdateParams?>,
+      );
 
-  factory BetaManagedAgentsMcpOauthUpdateParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpOauthUpdateParams(
-    type_: (json['type'] != null ? BetaManagedAgentsMcpOauthUpdateParamsType.fromJson(json['type'] as String) : null)!,
-    accessToken: json.containsKey('access_token') ? SdkPresent(json['access_token'] as String?) : const SdkOmitted(),
-    expiresAt: json.containsKey('expires_at') ? SdkPresent(json['expires_at'] as String?) : const SdkOmitted(),
-    refresh: json.containsKey('refresh') ? SdkPresent(json['refresh'] != null ? BetaManagedAgentsMcpOauthRefreshUpdateParams.fromJson(json['refresh'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsMcpOauthUpdateParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMcpOauthUpdateParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsMcpOauthUpdateParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        accessToken: json.containsKey('access_token')
+            ? SdkPresent(json['access_token'] as String?)
+            : const SdkOmitted(),
+        expiresAt: json.containsKey('expires_at')
+            ? SdkPresent(json['expires_at'] as String?)
+            : const SdkOmitted(),
+        refresh: json.containsKey('refresh')
+            ? SdkPresent(json['refresh'] != null
+                ? BetaManagedAgentsMcpOauthRefreshUpdateParams.fromJson(
+                    json['refresh'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (accessToken) {
-      SdkPresent<String?>(value: final value) => {'access_token': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (expiresAt) {
-      SdkPresent<String?>(value: final value) => {'expires_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (refresh) {
-      SdkPresent<BetaManagedAgentsMcpOauthRefreshUpdateParams?>(value: final value) => {'refresh': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (accessToken) {
+          SdkPresent<String?>(value: final value) => {
+              'access_token': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (expiresAt) {
+          SdkPresent<String?>(value: final value) => {
+              'expires_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (refresh) {
+          SdkPresent<BetaManagedAgentsMcpOauthRefreshUpdateParams?>(
+            value: final value
+          ) =>
+            {
+              'refresh': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

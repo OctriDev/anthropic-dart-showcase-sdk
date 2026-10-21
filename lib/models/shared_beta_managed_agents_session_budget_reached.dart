@@ -8,22 +8,34 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionBudgetReached {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionBudgetReachedType type_;
 
   const BetaManagedAgentsSessionBudgetReached({required this.type_});
 
-  BetaManagedAgentsSessionBudgetReached Function({BetaManagedAgentsSessionBudgetReachedType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionBudgetReached Function(
+          {BetaManagedAgentsSessionBudgetReachedType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionBudgetReached _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsSessionBudgetReached(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionBudgetReachedType,
-  );
+  BetaManagedAgentsSessionBudgetReached _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsSessionBudgetReached(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSessionBudgetReachedType,
+      );
 
-  factory BetaManagedAgentsSessionBudgetReached.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionBudgetReached(
-    type_: (json['type'] != null ? BetaManagedAgentsSessionBudgetReachedType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsSessionBudgetReached.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSessionBudgetReached(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSessionBudgetReachedType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

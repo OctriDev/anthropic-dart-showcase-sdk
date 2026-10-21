@@ -8,32 +8,52 @@ part of 'shared.dart';
 class PlainTextSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `data` wire field.
   final String data;
+
   /// Required `string` value serialized in the `media_type` wire field.
   final PlainTextSourceMediaType mediaType;
+
   /// Required `string` value serialized in the `type` wire field.
   final PlainTextSourceType type_;
 
-  const PlainTextSource({required this.data, required this.mediaType, required this.type_});
+  const PlainTextSource(
+      {required this.data, required this.mediaType, required this.type_});
 
-  PlainTextSource Function({String data, PlainTextSourceMediaType mediaType, PlainTextSourceType type_}) get copyWith => _copyWith;
+  PlainTextSource Function(
+      {String data,
+      PlainTextSourceMediaType mediaType,
+      PlainTextSourceType type_}) get copyWith => _copyWith;
 
-  PlainTextSource _copyWith({Object? data = sdkOmittedValue, Object? mediaType = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => PlainTextSource(
-    data: identical(data, sdkOmittedValue) ? this.data : data as String,
-    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as PlainTextSourceMediaType,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as PlainTextSourceType,
-  );
+  PlainTextSource _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? mediaType = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      PlainTextSource(
+        data: identical(data, sdkOmittedValue) ? this.data : data as String,
+        mediaType: identical(mediaType, sdkOmittedValue)
+            ? this.mediaType
+            : mediaType as PlainTextSourceMediaType,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as PlainTextSourceType,
+      );
 
-  factory PlainTextSource.fromJson(Map<String, dynamic> json) => PlainTextSource(
-    data: (json['data'] as String?)!,
-    mediaType: (json['media_type'] != null ? PlainTextSourceMediaType.fromJson(json['media_type'] as String) : null)!,
-    type_: (json['type'] != null ? PlainTextSourceType.fromJson(json['type'] as String) : null)!,
-  );
+  factory PlainTextSource.fromJson(Map<String, dynamic> json) =>
+      PlainTextSource(
+        data: (json['data'] as String?)!,
+        mediaType: (json['media_type'] != null
+            ? PlainTextSourceMediaType.fromJson(json['media_type'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? PlainTextSourceType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data,
-    'media_type': mediaType.toJson(),
-    'type': type_.toJson(),
-  };
+        'data': data,
+        'media_type': mediaType.toJson(),
+        'type': type_.toJson(),
+      };
 }

@@ -8,56 +8,115 @@ part of 'shared_beta_request_text.dart';
 class BetaRequestTextEditorCodeExecutionViewResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `content` wire field.
   final String content;
+
   /// Required enumerated value serialized in the `file_type` wire field.
   final BetaRequestTextEditorCodeExecutionViewResultBlockFileType fileType;
+
   /// Optional `integer` value serialized in the `num_lines` wire field.
   final SdkOptional<int?> numLines;
+
   /// Optional `integer` value serialized in the `start_line` wire field.
   final SdkOptional<int?> startLine;
+
   /// Optional `integer` value serialized in the `total_lines` wire field.
   final SdkOptional<int?> totalLines;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestTextEditorCodeExecutionViewResultBlockType type_;
 
-  const BetaRequestTextEditorCodeExecutionViewResultBlock({required this.content, required this.fileType, this.numLines = const SdkOmitted(), this.startLine = const SdkOmitted(), this.totalLines = const SdkOmitted(), required this.type_});
+  const BetaRequestTextEditorCodeExecutionViewResultBlock(
+      {required this.content,
+      required this.fileType,
+      this.numLines = const SdkOmitted(),
+      this.startLine = const SdkOmitted(),
+      this.totalLines = const SdkOmitted(),
+      required this.type_});
 
-  BetaRequestTextEditorCodeExecutionViewResultBlock Function({String content, BetaRequestTextEditorCodeExecutionViewResultBlockFileType fileType, SdkOptional<int?> numLines, SdkOptional<int?> startLine, SdkOptional<int?> totalLines, BetaRequestTextEditorCodeExecutionViewResultBlockType type_}) get copyWith => _copyWith;
+  BetaRequestTextEditorCodeExecutionViewResultBlock Function(
+          {String content,
+          BetaRequestTextEditorCodeExecutionViewResultBlockFileType fileType,
+          SdkOptional<int?> numLines,
+          SdkOptional<int?> startLine,
+          SdkOptional<int?> totalLines,
+          BetaRequestTextEditorCodeExecutionViewResultBlockType type_})
+      get copyWith => _copyWith;
 
-  BetaRequestTextEditorCodeExecutionViewResultBlock _copyWith({Object? content = sdkOmittedValue, Object? fileType = sdkOmittedValue, Object? numLines = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? totalLines = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestTextEditorCodeExecutionViewResultBlock(
-    content: identical(content, sdkOmittedValue) ? this.content : content as String,
-    fileType: identical(fileType, sdkOmittedValue) ? this.fileType : fileType as BetaRequestTextEditorCodeExecutionViewResultBlockFileType,
-    numLines: identical(numLines, sdkOmittedValue) ? this.numLines : numLines as SdkOptional<int?>,
-    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as SdkOptional<int?>,
-    totalLines: identical(totalLines, sdkOmittedValue) ? this.totalLines : totalLines as SdkOptional<int?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestTextEditorCodeExecutionViewResultBlockType,
-  );
+  BetaRequestTextEditorCodeExecutionViewResultBlock _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? fileType = sdkOmittedValue,
+          Object? numLines = sdkOmittedValue,
+          Object? startLine = sdkOmittedValue,
+          Object? totalLines = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestTextEditorCodeExecutionViewResultBlock(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as String,
+        fileType: identical(fileType, sdkOmittedValue)
+            ? this.fileType
+            : fileType
+                as BetaRequestTextEditorCodeExecutionViewResultBlockFileType,
+        numLines: identical(numLines, sdkOmittedValue)
+            ? this.numLines
+            : numLines as SdkOptional<int?>,
+        startLine: identical(startLine, sdkOmittedValue)
+            ? this.startLine
+            : startLine as SdkOptional<int?>,
+        totalLines: identical(totalLines, sdkOmittedValue)
+            ? this.totalLines
+            : totalLines as SdkOptional<int?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestTextEditorCodeExecutionViewResultBlockType,
+      );
 
-  factory BetaRequestTextEditorCodeExecutionViewResultBlock.fromJson(Map<String, dynamic> json) => BetaRequestTextEditorCodeExecutionViewResultBlock(
-    content: (json['content'] as String?)!,
-    fileType: (json['file_type'] != null ? BetaRequestTextEditorCodeExecutionViewResultBlockFileType.fromJson(json['file_type'] as String) : null)!,
-    numLines: json.containsKey('num_lines') ? SdkPresent((json['num_lines'] as num?)?.toInt()) : const SdkOmitted(),
-    startLine: json.containsKey('start_line') ? SdkPresent((json['start_line'] as num?)?.toInt()) : const SdkOmitted(),
-    totalLines: json.containsKey('total_lines') ? SdkPresent((json['total_lines'] as num?)?.toInt()) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaRequestTextEditorCodeExecutionViewResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestTextEditorCodeExecutionViewResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestTextEditorCodeExecutionViewResultBlock(
+        content: (json['content'] as String?)!,
+        fileType: (json['file_type'] != null
+            ? BetaRequestTextEditorCodeExecutionViewResultBlockFileType
+                .fromJson(json['file_type'] as String)
+            : null)!,
+        numLines: json.containsKey('num_lines')
+            ? SdkPresent((json['num_lines'] as num?)?.toInt())
+            : const SdkOmitted(),
+        startLine: json.containsKey('start_line')
+            ? SdkPresent((json['start_line'] as num?)?.toInt())
+            : const SdkOmitted(),
+        totalLines: json.containsKey('total_lines')
+            ? SdkPresent((json['total_lines'] as num?)?.toInt())
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaRequestTextEditorCodeExecutionViewResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content,
-    'file_type': fileType.toJson(),
-    ...switch (numLines) {
-      SdkPresent<int?>(value: final value) => {'num_lines': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (startLine) {
-      SdkPresent<int?>(value: final value) => {'start_line': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (totalLines) {
-      SdkPresent<int?>(value: final value) => {'total_lines': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        'content': content,
+        'file_type': fileType.toJson(),
+        ...switch (numLines) {
+          SdkPresent<int?>(value: final value) => {
+              'num_lines': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startLine) {
+          SdkPresent<int?>(value: final value) => {
+              'start_line': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (totalLines) {
+          SdkPresent<int?>(value: final value) => {
+              'total_lines': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

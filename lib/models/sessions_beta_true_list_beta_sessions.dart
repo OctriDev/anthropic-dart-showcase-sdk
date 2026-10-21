@@ -8,41 +8,76 @@ part of 'sessions_beta_true.dart';
 class BetaManagedAgentsListSessions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// List of sessions.
   final SdkOptional<List<BetaManagedAgentsSession>> data;
+
   /// Opaque cursor for the next page. Null when no more results.
   final SdkOptional<String?> nextPage;
+
   /// Opaque cursor for the previous page. Null when on the first page. Pass as the `page` parameter to navigate backward.
   final SdkOptional<String?> prevPage;
 
-  const BetaManagedAgentsListSessions({this.data = const SdkOmitted(), this.nextPage = const SdkOmitted(), this.prevPage = const SdkOmitted()});
+  const BetaManagedAgentsListSessions(
+      {this.data = const SdkOmitted(),
+      this.nextPage = const SdkOmitted(),
+      this.prevPage = const SdkOmitted()});
 
-  BetaManagedAgentsListSessions Function({SdkOptional<List<BetaManagedAgentsSession>> data, SdkOptional<String?> nextPage, SdkOptional<String?> prevPage}) get copyWith => _copyWith;
+  BetaManagedAgentsListSessions Function(
+      {SdkOptional<List<BetaManagedAgentsSession>> data,
+      SdkOptional<String?> nextPage,
+      SdkOptional<String?> prevPage}) get copyWith => _copyWith;
 
-  BetaManagedAgentsListSessions _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue, Object? prevPage = sdkOmittedValue}) => BetaManagedAgentsListSessions(
-    data: identical(data, sdkOmittedValue) ? this.data : data as SdkOptional<List<BetaManagedAgentsSession>>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as SdkOptional<String?>,
-    prevPage: identical(prevPage, sdkOmittedValue) ? this.prevPage : prevPage as SdkOptional<String?>,
-  );
+  BetaManagedAgentsListSessions _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue,
+          Object? prevPage = sdkOmittedValue}) =>
+      BetaManagedAgentsListSessions(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as SdkOptional<List<BetaManagedAgentsSession>>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as SdkOptional<String?>,
+        prevPage: identical(prevPage, sdkOmittedValue)
+            ? this.prevPage
+            : prevPage as SdkOptional<String?>,
+      );
 
-  factory BetaManagedAgentsListSessions.fromJson(Map<String, dynamic> json) => BetaManagedAgentsListSessions(
-    data: json['data'] != null ? SdkPresent(((json['data'] as List?)?.map((e) => BetaManagedAgentsSession.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    nextPage: json.containsKey('next_page') ? SdkPresent(json['next_page'] as String?) : const SdkOmitted(),
-    prevPage: json.containsKey('prev_page') ? SdkPresent(json['prev_page'] as String?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsListSessions.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsListSessions(
+        data: json['data'] != null
+            ? SdkPresent(((json['data'] as List?)
+                ?.map((e) => BetaManagedAgentsSession.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        nextPage: json.containsKey('next_page')
+            ? SdkPresent(json['next_page'] as String?)
+            : const SdkOmitted(),
+        prevPage: json.containsKey('prev_page')
+            ? SdkPresent(json['prev_page'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (data) {
-      SdkPresent<List<BetaManagedAgentsSession>>(value: final value) => {'data': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPage) {
-      SdkPresent<String?>(value: final value) => {'next_page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (prevPage) {
-      SdkPresent<String?>(value: final value) => {'prev_page': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (data) {
+          SdkPresent<List<BetaManagedAgentsSession>>(value: final value) => {
+              'data': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPage) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (prevPage) {
+          SdkPresent<String?>(value: final value) => {
+              'prev_page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

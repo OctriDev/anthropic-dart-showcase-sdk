@@ -8,46 +8,89 @@ part of 'shared_beta.dart';
 class BetaCompact20260112 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Additional instructions for summarization.
   final SdkOptional<String?> instructions;
+
   /// Whether to pause after compaction and return the compaction block to the user.
   final SdkOptional<bool> pauseAfterCompaction;
+
   /// When to trigger compaction. Defaults to 150000 input tokens.
   final SdkOptional<BetaInputTokensTrigger?> trigger;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaCompact20260112Type type_;
 
-  const BetaCompact20260112({this.instructions = const SdkOmitted(), this.pauseAfterCompaction = const SdkOmitted(), this.trigger = const SdkOmitted(), required this.type_});
+  const BetaCompact20260112(
+      {this.instructions = const SdkOmitted(),
+      this.pauseAfterCompaction = const SdkOmitted(),
+      this.trigger = const SdkOmitted(),
+      required this.type_});
 
-  BetaCompact20260112 Function({SdkOptional<String?> instructions, SdkOptional<bool> pauseAfterCompaction, SdkOptional<BetaInputTokensTrigger?> trigger, BetaCompact20260112Type type_}) get copyWith => _copyWith;
+  BetaCompact20260112 Function(
+      {SdkOptional<String?> instructions,
+      SdkOptional<bool> pauseAfterCompaction,
+      SdkOptional<BetaInputTokensTrigger?> trigger,
+      BetaCompact20260112Type type_}) get copyWith => _copyWith;
 
-  BetaCompact20260112 _copyWith({Object? instructions = sdkOmittedValue, Object? pauseAfterCompaction = sdkOmittedValue, Object? trigger = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaCompact20260112(
-    instructions: identical(instructions, sdkOmittedValue) ? this.instructions : instructions as SdkOptional<String?>,
-    pauseAfterCompaction: identical(pauseAfterCompaction, sdkOmittedValue) ? this.pauseAfterCompaction : pauseAfterCompaction as SdkOptional<bool>,
-    trigger: identical(trigger, sdkOmittedValue) ? this.trigger : trigger as SdkOptional<BetaInputTokensTrigger?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaCompact20260112Type,
-  );
+  BetaCompact20260112 _copyWith(
+          {Object? instructions = sdkOmittedValue,
+          Object? pauseAfterCompaction = sdkOmittedValue,
+          Object? trigger = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaCompact20260112(
+        instructions: identical(instructions, sdkOmittedValue)
+            ? this.instructions
+            : instructions as SdkOptional<String?>,
+        pauseAfterCompaction: identical(pauseAfterCompaction, sdkOmittedValue)
+            ? this.pauseAfterCompaction
+            : pauseAfterCompaction as SdkOptional<bool>,
+        trigger: identical(trigger, sdkOmittedValue)
+            ? this.trigger
+            : trigger as SdkOptional<BetaInputTokensTrigger?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaCompact20260112Type,
+      );
 
-  factory BetaCompact20260112.fromJson(Map<String, dynamic> json) => BetaCompact20260112(
-    instructions: json.containsKey('instructions') ? SdkPresent(json['instructions'] as String?) : const SdkOmitted(),
-    pauseAfterCompaction: json['pause_after_compaction'] != null ? SdkPresent((json['pause_after_compaction'] as bool?)!) : const SdkOmitted(),
-    trigger: json.containsKey('trigger') ? SdkPresent(json['trigger'] != null ? BetaInputTokensTrigger.fromJson(json['trigger'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaCompact20260112Type.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaCompact20260112.fromJson(Map<String, dynamic> json) =>
+      BetaCompact20260112(
+        instructions: json.containsKey('instructions')
+            ? SdkPresent(json['instructions'] as String?)
+            : const SdkOmitted(),
+        pauseAfterCompaction: json['pause_after_compaction'] != null
+            ? SdkPresent((json['pause_after_compaction'] as bool?)!)
+            : const SdkOmitted(),
+        trigger: json.containsKey('trigger')
+            ? SdkPresent(json['trigger'] != null
+                ? BetaInputTokensTrigger.fromJson(
+                    json['trigger'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaCompact20260112Type.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (instructions) {
-      SdkPresent<String?>(value: final value) => {'instructions': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pauseAfterCompaction) {
-      SdkPresent<bool>(value: final value) => {'pause_after_compaction': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (trigger) {
-      SdkPresent<BetaInputTokensTrigger?>(value: final value) => {'trigger': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (instructions) {
+          SdkPresent<String?>(value: final value) => {
+              'instructions': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pauseAfterCompaction) {
+          SdkPresent<bool>(value: final value) => {
+              'pause_after_compaction': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (trigger) {
+          SdkPresent<BetaInputTokensTrigger?>(value: final value) => {
+              'trigger': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

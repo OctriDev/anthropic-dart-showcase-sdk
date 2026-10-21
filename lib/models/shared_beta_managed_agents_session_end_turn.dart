@@ -8,22 +8,32 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionEndTurn {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionEndTurnType type_;
 
   const BetaManagedAgentsSessionEndTurn({required this.type_});
 
-  BetaManagedAgentsSessionEndTurn Function({BetaManagedAgentsSessionEndTurnType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionEndTurn Function(
+      {BetaManagedAgentsSessionEndTurnType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionEndTurn _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsSessionEndTurn(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionEndTurnType,
-  );
+  BetaManagedAgentsSessionEndTurn _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsSessionEndTurn(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSessionEndTurnType,
+      );
 
-  factory BetaManagedAgentsSessionEndTurn.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionEndTurn(
-    type_: (json['type'] != null ? BetaManagedAgentsSessionEndTurnType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsSessionEndTurn.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsSessionEndTurn(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSessionEndTurnType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

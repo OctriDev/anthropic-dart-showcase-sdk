@@ -6,22 +6,25 @@ part of 'shared_beta_managed_agents.dart';
 // shared_beta_managed_agents domain models
 /// ListOrder enum
 final class BetaManagedAgentsListOrder {
-
   final String value;
 
   const BetaManagedAgentsListOrder._(this.value);
 
-  factory BetaManagedAgentsListOrder.fromJson(String value) => BetaManagedAgentsListOrder._(value);
+  factory BetaManagedAgentsListOrder.fromJson(String value) =>
+      BetaManagedAgentsListOrder._(value);
 
   static const asc = BetaManagedAgentsListOrder._('asc');
   static const desc = BetaManagedAgentsListOrder._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsListOrder && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsListOrder && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -8,32 +8,50 @@ part of 'enrollment_url_beta_true.dart';
 class BetaEnrollmentUrl {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Enrollment URL to send to the end user. Valid until `expires_at`.
   final String url;
+
   /// When this enrollment URL expires, in RFC 3339 format.
   final String expiresAt;
+
   /// Object type. Always `enrollment_url`.
   final BetaEnrollmentUrlType type_;
 
-  const BetaEnrollmentUrl({required this.url, required this.expiresAt, required this.type_});
+  const BetaEnrollmentUrl(
+      {required this.url, required this.expiresAt, required this.type_});
 
-  BetaEnrollmentUrl Function({String url, String expiresAt, BetaEnrollmentUrlType type_}) get copyWith => _copyWith;
+  BetaEnrollmentUrl Function(
+      {String url,
+      String expiresAt,
+      BetaEnrollmentUrlType type_}) get copyWith => _copyWith;
 
-  BetaEnrollmentUrl _copyWith({Object? url = sdkOmittedValue, Object? expiresAt = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaEnrollmentUrl(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaEnrollmentUrlType,
-  );
+  BetaEnrollmentUrl _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? expiresAt = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaEnrollmentUrl(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        expiresAt: identical(expiresAt, sdkOmittedValue)
+            ? this.expiresAt
+            : expiresAt as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaEnrollmentUrlType,
+      );
 
-  factory BetaEnrollmentUrl.fromJson(Map<String, dynamic> json) => BetaEnrollmentUrl(
-    url: (json['url'] as String?)!,
-    expiresAt: (json['expires_at'] as String?)!,
-    type_: (json['type'] != null ? BetaEnrollmentUrlType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaEnrollmentUrl.fromJson(Map<String, dynamic> json) =>
+      BetaEnrollmentUrl(
+        url: (json['url'] as String?)!,
+        expiresAt: (json['expires_at'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaEnrollmentUrlType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'expires_at': expiresAt,
-    'type': type_.toJson(),
-  };
+        'url': url,
+        'expires_at': expiresAt,
+        'type': type_.toJson(),
+      };
 }

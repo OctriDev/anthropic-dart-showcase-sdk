@@ -8,33 +8,62 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsAgentToolsetDefaultConfigParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether tools are enabled and available to Claude by default. Defaults to true if not specified.
   final SdkOptional<bool?> enabled;
+
   /// Default permission policy for tools. Controls whether tool calls are auto-approved or require confirmation.
   final SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy;
 
-  const BetaManagedAgentsAgentToolsetDefaultConfigParams({this.enabled = const SdkOmitted(), this.permissionPolicy = const SdkOmitted()});
+  const BetaManagedAgentsAgentToolsetDefaultConfigParams(
+      {this.enabled = const SdkOmitted(),
+      this.permissionPolicy = const SdkOmitted()});
 
-  BetaManagedAgentsAgentToolsetDefaultConfigParams Function({SdkOptional<bool?> enabled, SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy}) get copyWith => _copyWith;
+  BetaManagedAgentsAgentToolsetDefaultConfigParams Function(
+          {SdkOptional<bool?> enabled,
+          SdkOptional<BetaManagedAgentsPermissionPolicy?> permissionPolicy})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsAgentToolsetDefaultConfigParams _copyWith({Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue}) => BetaManagedAgentsAgentToolsetDefaultConfigParams(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool?>,
-    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
-  );
+  BetaManagedAgentsAgentToolsetDefaultConfigParams _copyWith(
+          {Object? enabled = sdkOmittedValue,
+          Object? permissionPolicy = sdkOmittedValue}) =>
+      BetaManagedAgentsAgentToolsetDefaultConfigParams(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool?>,
+        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
+            ? this.permissionPolicy
+            : permissionPolicy
+                as SdkOptional<BetaManagedAgentsPermissionPolicy?>,
+      );
 
-  factory BetaManagedAgentsAgentToolsetDefaultConfigParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAgentToolsetDefaultConfigParams(
-    enabled: json.containsKey('enabled') ? SdkPresent(json['enabled'] as bool?) : const SdkOmitted(),
-    permissionPolicy: json.containsKey('permission_policy') ? SdkPresent(json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsAgentToolsetDefaultConfigParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsAgentToolsetDefaultConfigParams(
+        enabled: json.containsKey('enabled')
+            ? SdkPresent(json['enabled'] as bool?)
+            : const SdkOmitted(),
+        permissionPolicy: json.containsKey('permission_policy')
+            ? SdkPresent(json['permission_policy'] != null
+                ? BetaManagedAgentsPermissionPolicy.fromJson(
+                    json['permission_policy'])
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (enabled) {
-      SdkPresent<bool?>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (permissionPolicy) {
-      SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) => {'permission_policy': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (enabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (permissionPolicy) {
+          SdkPresent<BetaManagedAgentsPermissionPolicy?>(value: final value) =>
+            {
+              'permission_policy': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

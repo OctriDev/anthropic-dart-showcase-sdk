@@ -8,271 +8,467 @@ part of 'beta_webhook_beta_webhook_deployment.dart';
 class BetaWebhookDeploymentArchivedEventData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebhookDeploymentArchivedEventDataType type_;
+
   /// ID of the deployment that triggered the event.
   final String id;
+
   /// Required `string` value serialized in the `organization_id` wire field.
   final String organizationId;
+
   /// Required `string` value serialized in the `workspace_id` wire field.
   final String workspaceId;
 
-  const BetaWebhookDeploymentArchivedEventData({required this.type_, required this.id, required this.organizationId, required this.workspaceId});
+  const BetaWebhookDeploymentArchivedEventData(
+      {required this.type_,
+      required this.id,
+      required this.organizationId,
+      required this.workspaceId});
 
-  BetaWebhookDeploymentArchivedEventData Function({BetaWebhookDeploymentArchivedEventDataType type_, String id, String organizationId, String workspaceId}) get copyWith => _copyWith;
+  BetaWebhookDeploymentArchivedEventData Function(
+      {BetaWebhookDeploymentArchivedEventDataType type_,
+      String id,
+      String organizationId,
+      String workspaceId}) get copyWith => _copyWith;
 
-  BetaWebhookDeploymentArchivedEventData _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaWebhookDeploymentArchivedEventData(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookDeploymentArchivedEventDataType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaWebhookDeploymentArchivedEventData _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? organizationId = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaWebhookDeploymentArchivedEventData(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWebhookDeploymentArchivedEventDataType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaWebhookDeploymentArchivedEventData.fromJson(Map<String, dynamic> json) => BetaWebhookDeploymentArchivedEventData(
-    type_: (json['type'] != null ? BetaWebhookDeploymentArchivedEventDataType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    organizationId: (json['organization_id'] as String?)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaWebhookDeploymentArchivedEventData.fromJson(
+          Map<String, dynamic> json) =>
+      BetaWebhookDeploymentArchivedEventData(
+        type_: (json['type'] != null
+            ? BetaWebhookDeploymentArchivedEventDataType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        organizationId: (json['organization_id'] as String?)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'organization_id': organizationId,
-    'workspace_id': workspaceId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'organization_id': organizationId,
+        'workspace_id': workspaceId,
+      };
 }
 
 /// Typed representation of the `BetaWebhookDeploymentCreatedEventData` API schema.
 class BetaWebhookDeploymentCreatedEventData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebhookDeploymentCreatedEventDataType type_;
+
   /// ID of the deployment that triggered the event.
   final String id;
+
   /// Required `string` value serialized in the `organization_id` wire field.
   final String organizationId;
+
   /// Required `string` value serialized in the `workspace_id` wire field.
   final String workspaceId;
 
-  const BetaWebhookDeploymentCreatedEventData({required this.type_, required this.id, required this.organizationId, required this.workspaceId});
+  const BetaWebhookDeploymentCreatedEventData(
+      {required this.type_,
+      required this.id,
+      required this.organizationId,
+      required this.workspaceId});
 
-  BetaWebhookDeploymentCreatedEventData Function({BetaWebhookDeploymentCreatedEventDataType type_, String id, String organizationId, String workspaceId}) get copyWith => _copyWith;
+  BetaWebhookDeploymentCreatedEventData Function(
+      {BetaWebhookDeploymentCreatedEventDataType type_,
+      String id,
+      String organizationId,
+      String workspaceId}) get copyWith => _copyWith;
 
-  BetaWebhookDeploymentCreatedEventData _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaWebhookDeploymentCreatedEventData(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookDeploymentCreatedEventDataType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaWebhookDeploymentCreatedEventData _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? organizationId = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaWebhookDeploymentCreatedEventData(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWebhookDeploymentCreatedEventDataType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaWebhookDeploymentCreatedEventData.fromJson(Map<String, dynamic> json) => BetaWebhookDeploymentCreatedEventData(
-    type_: (json['type'] != null ? BetaWebhookDeploymentCreatedEventDataType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    organizationId: (json['organization_id'] as String?)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaWebhookDeploymentCreatedEventData.fromJson(
+          Map<String, dynamic> json) =>
+      BetaWebhookDeploymentCreatedEventData(
+        type_: (json['type'] != null
+            ? BetaWebhookDeploymentCreatedEventDataType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        organizationId: (json['organization_id'] as String?)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'organization_id': organizationId,
-    'workspace_id': workspaceId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'organization_id': organizationId,
+        'workspace_id': workspaceId,
+      };
 }
 
 /// Typed representation of the `BetaWebhookDeploymentDeletedEventData` API schema.
 class BetaWebhookDeploymentDeletedEventData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebhookDeploymentDeletedEventDataType type_;
+
   /// ID of the deployment that triggered the event.
   final String id;
+
   /// Required `string` value serialized in the `organization_id` wire field.
   final String organizationId;
+
   /// Required `string` value serialized in the `workspace_id` wire field.
   final String workspaceId;
 
-  const BetaWebhookDeploymentDeletedEventData({required this.type_, required this.id, required this.organizationId, required this.workspaceId});
+  const BetaWebhookDeploymentDeletedEventData(
+      {required this.type_,
+      required this.id,
+      required this.organizationId,
+      required this.workspaceId});
 
-  BetaWebhookDeploymentDeletedEventData Function({BetaWebhookDeploymentDeletedEventDataType type_, String id, String organizationId, String workspaceId}) get copyWith => _copyWith;
+  BetaWebhookDeploymentDeletedEventData Function(
+      {BetaWebhookDeploymentDeletedEventDataType type_,
+      String id,
+      String organizationId,
+      String workspaceId}) get copyWith => _copyWith;
 
-  BetaWebhookDeploymentDeletedEventData _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaWebhookDeploymentDeletedEventData(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookDeploymentDeletedEventDataType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaWebhookDeploymentDeletedEventData _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? organizationId = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaWebhookDeploymentDeletedEventData(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWebhookDeploymentDeletedEventDataType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaWebhookDeploymentDeletedEventData.fromJson(Map<String, dynamic> json) => BetaWebhookDeploymentDeletedEventData(
-    type_: (json['type'] != null ? BetaWebhookDeploymentDeletedEventDataType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    organizationId: (json['organization_id'] as String?)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaWebhookDeploymentDeletedEventData.fromJson(
+          Map<String, dynamic> json) =>
+      BetaWebhookDeploymentDeletedEventData(
+        type_: (json['type'] != null
+            ? BetaWebhookDeploymentDeletedEventDataType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        organizationId: (json['organization_id'] as String?)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'organization_id': organizationId,
-    'workspace_id': workspaceId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'organization_id': organizationId,
+        'workspace_id': workspaceId,
+      };
 }
 
 /// Typed representation of the `BetaWebhookDeploymentPausedEventData` API schema.
 class BetaWebhookDeploymentPausedEventData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebhookDeploymentPausedEventDataType type_;
+
   /// ID of the deployment that triggered the event.
   final String id;
+
   /// Required `string` value serialized in the `organization_id` wire field.
   final String organizationId;
+
   /// Required `string` value serialized in the `workspace_id` wire field.
   final String workspaceId;
 
-  const BetaWebhookDeploymentPausedEventData({required this.type_, required this.id, required this.organizationId, required this.workspaceId});
+  const BetaWebhookDeploymentPausedEventData(
+      {required this.type_,
+      required this.id,
+      required this.organizationId,
+      required this.workspaceId});
 
-  BetaWebhookDeploymentPausedEventData Function({BetaWebhookDeploymentPausedEventDataType type_, String id, String organizationId, String workspaceId}) get copyWith => _copyWith;
+  BetaWebhookDeploymentPausedEventData Function(
+      {BetaWebhookDeploymentPausedEventDataType type_,
+      String id,
+      String organizationId,
+      String workspaceId}) get copyWith => _copyWith;
 
-  BetaWebhookDeploymentPausedEventData _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaWebhookDeploymentPausedEventData(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookDeploymentPausedEventDataType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaWebhookDeploymentPausedEventData _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? organizationId = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaWebhookDeploymentPausedEventData(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWebhookDeploymentPausedEventDataType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaWebhookDeploymentPausedEventData.fromJson(Map<String, dynamic> json) => BetaWebhookDeploymentPausedEventData(
-    type_: (json['type'] != null ? BetaWebhookDeploymentPausedEventDataType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    organizationId: (json['organization_id'] as String?)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaWebhookDeploymentPausedEventData.fromJson(
+          Map<String, dynamic> json) =>
+      BetaWebhookDeploymentPausedEventData(
+        type_: (json['type'] != null
+            ? BetaWebhookDeploymentPausedEventDataType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        organizationId: (json['organization_id'] as String?)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'organization_id': organizationId,
-    'workspace_id': workspaceId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'organization_id': organizationId,
+        'workspace_id': workspaceId,
+      };
 }
 
 /// Typed representation of the `BetaWebhookDeploymentRunFailedEventData` API schema.
 class BetaWebhookDeploymentRunFailedEventData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebhookDeploymentRunFailedEventDataType type_;
+
   /// ID of the deployment run that triggered the event.
   final String id;
+
   /// Required `string` value serialized in the `organization_id` wire field.
   final String organizationId;
+
   /// Required `string` value serialized in the `workspace_id` wire field.
   final String workspaceId;
 
-  const BetaWebhookDeploymentRunFailedEventData({required this.type_, required this.id, required this.organizationId, required this.workspaceId});
+  const BetaWebhookDeploymentRunFailedEventData(
+      {required this.type_,
+      required this.id,
+      required this.organizationId,
+      required this.workspaceId});
 
-  BetaWebhookDeploymentRunFailedEventData Function({BetaWebhookDeploymentRunFailedEventDataType type_, String id, String organizationId, String workspaceId}) get copyWith => _copyWith;
+  BetaWebhookDeploymentRunFailedEventData Function(
+      {BetaWebhookDeploymentRunFailedEventDataType type_,
+      String id,
+      String organizationId,
+      String workspaceId}) get copyWith => _copyWith;
 
-  BetaWebhookDeploymentRunFailedEventData _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaWebhookDeploymentRunFailedEventData(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookDeploymentRunFailedEventDataType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaWebhookDeploymentRunFailedEventData _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? organizationId = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaWebhookDeploymentRunFailedEventData(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWebhookDeploymentRunFailedEventDataType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaWebhookDeploymentRunFailedEventData.fromJson(Map<String, dynamic> json) => BetaWebhookDeploymentRunFailedEventData(
-    type_: (json['type'] != null ? BetaWebhookDeploymentRunFailedEventDataType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    organizationId: (json['organization_id'] as String?)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaWebhookDeploymentRunFailedEventData.fromJson(
+          Map<String, dynamic> json) =>
+      BetaWebhookDeploymentRunFailedEventData(
+        type_: (json['type'] != null
+            ? BetaWebhookDeploymentRunFailedEventDataType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        organizationId: (json['organization_id'] as String?)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'organization_id': organizationId,
-    'workspace_id': workspaceId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'organization_id': organizationId,
+        'workspace_id': workspaceId,
+      };
 }
 
 /// Typed representation of the `BetaWebhookDeploymentRunStartedEventData` API schema.
 class BetaWebhookDeploymentRunStartedEventData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebhookDeploymentRunStartedEventDataType type_;
+
   /// ID of the deployment run that triggered the event.
   final String id;
+
   /// Required `string` value serialized in the `organization_id` wire field.
   final String organizationId;
+
   /// Required `string` value serialized in the `workspace_id` wire field.
   final String workspaceId;
 
-  const BetaWebhookDeploymentRunStartedEventData({required this.type_, required this.id, required this.organizationId, required this.workspaceId});
+  const BetaWebhookDeploymentRunStartedEventData(
+      {required this.type_,
+      required this.id,
+      required this.organizationId,
+      required this.workspaceId});
 
-  BetaWebhookDeploymentRunStartedEventData Function({BetaWebhookDeploymentRunStartedEventDataType type_, String id, String organizationId, String workspaceId}) get copyWith => _copyWith;
+  BetaWebhookDeploymentRunStartedEventData Function(
+      {BetaWebhookDeploymentRunStartedEventDataType type_,
+      String id,
+      String organizationId,
+      String workspaceId}) get copyWith => _copyWith;
 
-  BetaWebhookDeploymentRunStartedEventData _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaWebhookDeploymentRunStartedEventData(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookDeploymentRunStartedEventDataType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaWebhookDeploymentRunStartedEventData _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? organizationId = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaWebhookDeploymentRunStartedEventData(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWebhookDeploymentRunStartedEventDataType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaWebhookDeploymentRunStartedEventData.fromJson(Map<String, dynamic> json) => BetaWebhookDeploymentRunStartedEventData(
-    type_: (json['type'] != null ? BetaWebhookDeploymentRunStartedEventDataType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    organizationId: (json['organization_id'] as String?)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaWebhookDeploymentRunStartedEventData.fromJson(
+          Map<String, dynamic> json) =>
+      BetaWebhookDeploymentRunStartedEventData(
+        type_: (json['type'] != null
+            ? BetaWebhookDeploymentRunStartedEventDataType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        organizationId: (json['organization_id'] as String?)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'organization_id': organizationId,
-    'workspace_id': workspaceId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'organization_id': organizationId,
+        'workspace_id': workspaceId,
+      };
 }
 
 /// Typed representation of the `BetaWebhookDeploymentRunSucceededEventData` API schema.
 class BetaWebhookDeploymentRunSucceededEventData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebhookDeploymentRunSucceededEventDataType type_;
+
   /// ID of the deployment run that triggered the event.
   final String id;
+
   /// Required `string` value serialized in the `organization_id` wire field.
   final String organizationId;
+
   /// Required `string` value serialized in the `workspace_id` wire field.
   final String workspaceId;
 
-  const BetaWebhookDeploymentRunSucceededEventData({required this.type_, required this.id, required this.organizationId, required this.workspaceId});
+  const BetaWebhookDeploymentRunSucceededEventData(
+      {required this.type_,
+      required this.id,
+      required this.organizationId,
+      required this.workspaceId});
 
-  BetaWebhookDeploymentRunSucceededEventData Function({BetaWebhookDeploymentRunSucceededEventDataType type_, String id, String organizationId, String workspaceId}) get copyWith => _copyWith;
+  BetaWebhookDeploymentRunSucceededEventData Function(
+      {BetaWebhookDeploymentRunSucceededEventDataType type_,
+      String id,
+      String organizationId,
+      String workspaceId}) get copyWith => _copyWith;
 
-  BetaWebhookDeploymentRunSucceededEventData _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaWebhookDeploymentRunSucceededEventData(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookDeploymentRunSucceededEventDataType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaWebhookDeploymentRunSucceededEventData _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? organizationId = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaWebhookDeploymentRunSucceededEventData(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWebhookDeploymentRunSucceededEventDataType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaWebhookDeploymentRunSucceededEventData.fromJson(Map<String, dynamic> json) => BetaWebhookDeploymentRunSucceededEventData(
-    type_: (json['type'] != null ? BetaWebhookDeploymentRunSucceededEventDataType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    organizationId: (json['organization_id'] as String?)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaWebhookDeploymentRunSucceededEventData.fromJson(
+          Map<String, dynamic> json) =>
+      BetaWebhookDeploymentRunSucceededEventData(
+        type_: (json['type'] != null
+            ? BetaWebhookDeploymentRunSucceededEventDataType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        organizationId: (json['organization_id'] as String?)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'organization_id': organizationId,
-    'workspace_id': workspaceId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'organization_id': organizationId,
+        'workspace_id': workspaceId,
+      };
 }

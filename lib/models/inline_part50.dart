@@ -10,14 +10,17 @@ enum BetaUnattachedAttachmentType {
 
   static BetaUnattachedAttachmentType fromJson(String value) {
     switch (value) {
-      case 'unattached': return BetaUnattachedAttachmentType.unattached;
-      default: throw ArgumentError('Unknown BetaUnattachedAttachmentType: $value');
+      case 'unattached':
+        return BetaUnattachedAttachmentType.unattached;
+      default:
+        throw ArgumentError('Unknown BetaUnattachedAttachmentType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaUnattachedAttachmentType.unattached: return 'unattached';
+      case BetaUnattachedAttachmentType.unattached:
+        return 'unattached';
     }
   }
 
@@ -31,14 +34,17 @@ enum BetaUnrestrictedNetworkType {
 
   static BetaUnrestrictedNetworkType fromJson(String value) {
     switch (value) {
-      case 'unrestricted': return BetaUnrestrictedNetworkType.unrestricted;
-      default: throw ArgumentError('Unknown BetaUnrestrictedNetworkType: $value');
+      case 'unrestricted':
+        return BetaUnrestrictedNetworkType.unrestricted;
+      default:
+        throw ArgumentError('Unknown BetaUnrestrictedNetworkType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaUnrestrictedNetworkType.unrestricted: return 'unrestricted';
+      case BetaUnrestrictedNetworkType.unrestricted:
+        return 'unrestricted';
     }
   }
 
@@ -48,12 +54,12 @@ enum BetaUnrestrictedNetworkType {
 
 /// New role for the User. The accepted values depend on the organization type. Console and API organizations accept `user`, `developer`, `billing`, and `claude_code_user`; `admin` cannot be assigned through the API. Claude Enterprise organizations accept `user` and `managed`.
 final class BetaUpdateUserParamsRole {
-
   final String value;
 
   const BetaUpdateUserParamsRole._(this.value);
 
-  factory BetaUpdateUserParamsRole.fromJson(String value) => BetaUpdateUserParamsRole._(value);
+  factory BetaUpdateUserParamsRole.fromJson(String value) =>
+      BetaUpdateUserParamsRole._(value);
 
   static const billing = BetaUpdateUserParamsRole._('billing');
   static const claudeCodeUser = BetaUpdateUserParamsRole._('claude_code_user');
@@ -63,12 +69,15 @@ final class BetaUpdateUserParamsRole {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaUpdateUserParamsRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaUpdateUserParamsRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -77,14 +86,17 @@ enum BetaURLImageSourceType {
 
   static BetaURLImageSourceType fromJson(String value) {
     switch (value) {
-      case 'url': return BetaURLImageSourceType.url;
-      default: throw ArgumentError('Unknown BetaURLImageSourceType: $value');
+      case 'url':
+        return BetaURLImageSourceType.url;
+      default:
+        throw ArgumentError('Unknown BetaURLImageSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaURLImageSourceType.url: return 'url';
+      case BetaURLImageSourceType.url:
+        return 'url';
     }
   }
 
@@ -98,14 +110,17 @@ enum BetaURLPDFSourceType {
 
   static BetaURLPDFSourceType fromJson(String value) {
     switch (value) {
-      case 'url': return BetaURLPDFSourceType.url;
-      default: throw ArgumentError('Unknown BetaURLPDFSourceType: $value');
+      case 'url':
+        return BetaURLPDFSourceType.url;
+      default:
+        throw ArgumentError('Unknown BetaURLPDFSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaURLPDFSourceType.url: return 'url';
+      case BetaURLPDFSourceType.url:
+        return 'url';
     }
   }
 
@@ -115,12 +130,12 @@ enum BetaURLPDFSourceType {
 
 /// Required enumerated value serialized in the `service_tier` wire field.
 final class BetaUsageServiceTierVariant0 {
-
   final String value;
 
   const BetaUsageServiceTierVariant0._(this.value);
 
-  factory BetaUsageServiceTierVariant0.fromJson(String value) => BetaUsageServiceTierVariant0._(value);
+  factory BetaUsageServiceTierVariant0.fromJson(String value) =>
+      BetaUsageServiceTierVariant0._(value);
 
   static const standard = BetaUsageServiceTierVariant0._('standard');
   static const priority = BetaUsageServiceTierVariant0._('priority');
@@ -128,12 +143,15 @@ final class BetaUsageServiceTierVariant0 {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaUsageServiceTierVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaUsageServiceTierVariant0 && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Object type. For Users, this is always `"user"`.
@@ -142,14 +160,17 @@ enum BetaUserType {
 
   static BetaUserType fromJson(String value) {
     switch (value) {
-      case 'user': return BetaUserType.user;
-      default: throw ArgumentError('Unknown BetaUserType: $value');
+      case 'user':
+        return BetaUserType.user;
+      default:
+        throw ArgumentError('Unknown BetaUserType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaUserType.user: return 'user';
+      case BetaUserType.user:
+        return 'user';
     }
   }
 
@@ -163,14 +184,17 @@ enum BetaUserActorSchemaType {
 
   static BetaUserActorSchemaType fromJson(String value) {
     switch (value) {
-      case 'user_actor': return BetaUserActorSchemaType.userActor;
-      default: throw ArgumentError('Unknown BetaUserActorSchemaType: $value');
+      case 'user_actor':
+        return BetaUserActorSchemaType.userActor;
+      default:
+        throw ArgumentError('Unknown BetaUserActorSchemaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaUserActorSchemaType.userActor: return 'user_actor';
+      case BetaUserActorSchemaType.userActor:
+        return 'user_actor';
     }
   }
 
@@ -184,14 +208,17 @@ enum BetaUserLocationType {
 
   static BetaUserLocationType fromJson(String value) {
     switch (value) {
-      case 'approximate': return BetaUserLocationType.approximate;
-      default: throw ArgumentError('Unknown BetaUserLocationType: $value');
+      case 'approximate':
+        return BetaUserLocationType.approximate;
+      default:
+        throw ArgumentError('Unknown BetaUserLocationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaUserLocationType.approximate: return 'approximate';
+      case BetaUserLocationType.approximate:
+        return 'approximate';
     }
   }
 
@@ -201,33 +228,36 @@ enum BetaUserLocationType {
 
 /// Object type. Always `user_profile`.
 final class BetaUserProfileType {
-
   final String value;
 
   const BetaUserProfileType._(this.value);
 
-  factory BetaUserProfileType.fromJson(String value) => BetaUserProfileType._(value);
+  factory BetaUserProfileType.fromJson(String value) =>
+      BetaUserProfileType._(value);
 
   static const userProfile = BetaUserProfileType._('user_profile');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaUserProfileType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaUserProfileType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Status of the trust grant.
 final class BetaUserProfileTrustGrantStatus {
-
   final String value;
 
   const BetaUserProfileTrustGrantStatus._(this.value);
 
-  factory BetaUserProfileTrustGrantStatus.fromJson(String value) => BetaUserProfileTrustGrantStatus._(value);
+  factory BetaUserProfileTrustGrantStatus.fromJson(String value) =>
+      BetaUserProfileTrustGrantStatus._(value);
 
   static const active = BetaUserProfileTrustGrantStatus._('active');
   static const pending = BetaUserProfileTrustGrantStatus._('pending');
@@ -235,12 +265,15 @@ final class BetaUserProfileTrustGrantStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaUserProfileTrustGrantStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaUserProfileTrustGrantStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Scope type. Always `user` for this scope.
@@ -249,14 +282,17 @@ enum BetaUserScopeType {
 
   static BetaUserScopeType fromJson(String value) {
     switch (value) {
-      case 'user': return BetaUserScopeType.user;
-      default: throw ArgumentError('Unknown BetaUserScopeType: $value');
+      case 'user':
+        return BetaUserScopeType.user;
+      default:
+        throw ArgumentError('Unknown BetaUserScopeType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaUserScopeType.user: return 'user';
+      case BetaUserScopeType.user:
+        return 'user';
     }
   }
 
@@ -266,22 +302,25 @@ enum BetaUserScopeType {
 
 /// `success` — encrypt/decrypt roundtrip succeeded. `failure` — the roundtrip failed or timed out; see `error`.
 final class BetaValidateExternalKeyResponseStatus {
-
   final String value;
 
   const BetaValidateExternalKeyResponseStatus._(this.value);
 
-  factory BetaValidateExternalKeyResponseStatus.fromJson(String value) => BetaValidateExternalKeyResponseStatus._(value);
+  factory BetaValidateExternalKeyResponseStatus.fromJson(String value) =>
+      BetaValidateExternalKeyResponseStatus._(value);
 
   static const failure = BetaValidateExternalKeyResponseStatus._('failure');
   static const success = BetaValidateExternalKeyResponseStatus._('success');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaValidateExternalKeyResponseStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaValidateExternalKeyResponseStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
