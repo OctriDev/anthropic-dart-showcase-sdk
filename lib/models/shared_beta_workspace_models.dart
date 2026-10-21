@@ -9,7 +9,9 @@ sealed class BetaWorkspaceArchivedAt {
   static const String constructionSurface = 'named';
   const BetaWorkspaceArchivedAt();
   factory BetaWorkspaceArchivedAt.fromJson(Object? json) {
-    if (json is String) { return BetaWorkspaceArchivedAtString(json); }
+    if (json is String) {
+      return BetaWorkspaceArchivedAtString(json);
+    }
     throw FormatException("No variant matched for BetaWorkspaceArchivedAt");
   }
   Object? toJson();
@@ -18,138 +20,245 @@ sealed class BetaWorkspaceArchivedAt {
 final class BetaWorkspaceArchivedAtString extends BetaWorkspaceArchivedAt {
   final String value;
   const BetaWorkspaceArchivedAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaWorkspace` API schema.
 class BetaWorkspace {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// RFC 3339 datetime string indicating when the Workspace was archived, or `null` if the Workspace is not archived.
   final String? archivedAt;
+
   /// Identifier for this Workspace's encryption compartment. When you configure a customer-managed encryption key (CMEK) on AWS, reference this value in your KMS key-policy condition so the key is scoped to this compartment. On GCP and Azure, Anthropic enforces the compartment binding automatically; you do not need to reference this value in your key configuration. See the CMEK integration guide for the required key configuration; unless your organization is on Claude Platform on AWS, it includes a separate value used during key validation. On Claude Platform on AWS there is no separate validation value: the key is validated against this Workspace's own value when it is attached, so if your key policy uses the compartment condition, add this value to it before attaching the key.
   final String compartmentId;
+
   /// RFC 3339 datetime string indicating when the Workspace was created.
   final String createdAt;
+
   /// Data residency configuration.
   final BetaDataResidency dataResidency;
+
   /// Hex color code representing the Workspace in the Anthropic Console.
   final String displayColor;
+
   /// ID of the customer-managed encryption key (CMEK) configuration to use for this Workspace. Setting this field requires CMEK to be enabled for your organization. When set, data stored for this Workspace is encrypted with the referenced key. Create key configurations with the External Keys API. On Claude Platform on AWS the value is the AWS KMS key ARN, and the key must be a single-Region key in the same AWS account and Region as the Workspace. On that platform the key is validated against this Workspace when it is attached, so a key-policy problem is reported as an error on this request. This field is write-once: once a key is attached to a Workspace it cannot be detached or replaced. To rotate key material, rotate the underlying key on your cloud KMS; the `external_key_id` stays the same.
   final String? externalKeyId;
+
   /// ID of the Workspace.
   final String id;
+
   /// Name of the Workspace.
   final String name;
+
   /// User-defined tags as string key-value pairs. Keys may not begin with `anthropic`.
   final Map<String, String> tags;
+
   /// Object type. For Workspaces, this is always `"workspace"`.
   final BetaWorkspaceType type_;
 
-  const BetaWorkspace({required this.archivedAt, required this.compartmentId, required this.createdAt, required this.dataResidency, required this.displayColor, required this.externalKeyId, required this.id, required this.name, required this.tags, required this.type_});
+  const BetaWorkspace(
+      {required this.archivedAt,
+      required this.compartmentId,
+      required this.createdAt,
+      required this.dataResidency,
+      required this.displayColor,
+      required this.externalKeyId,
+      required this.id,
+      required this.name,
+      required this.tags,
+      required this.type_});
 
-  BetaWorkspace Function({String? archivedAt, String compartmentId, String createdAt, BetaDataResidency dataResidency, String displayColor, String? externalKeyId, String id, String name, Map<String, String> tags, BetaWorkspaceType type_}) get copyWith => _copyWith;
+  BetaWorkspace Function(
+      {String? archivedAt,
+      String compartmentId,
+      String createdAt,
+      BetaDataResidency dataResidency,
+      String displayColor,
+      String? externalKeyId,
+      String id,
+      String name,
+      Map<String, String> tags,
+      BetaWorkspaceType type_}) get copyWith => _copyWith;
 
-  BetaWorkspace _copyWith({Object? archivedAt = sdkOmittedValue, Object? compartmentId = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? dataResidency = sdkOmittedValue, Object? displayColor = sdkOmittedValue, Object? externalKeyId = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? tags = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaWorkspace(
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
-    compartmentId: identical(compartmentId, sdkOmittedValue) ? this.compartmentId : compartmentId as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    dataResidency: identical(dataResidency, sdkOmittedValue) ? this.dataResidency : dataResidency as BetaDataResidency,
-    displayColor: identical(displayColor, sdkOmittedValue) ? this.displayColor : displayColor as String,
-    externalKeyId: identical(externalKeyId, sdkOmittedValue) ? this.externalKeyId : externalKeyId as String?,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    tags: identical(tags, sdkOmittedValue) ? this.tags : tags as Map<String, String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWorkspaceType,
-  );
+  BetaWorkspace _copyWith(
+          {Object? archivedAt = sdkOmittedValue,
+          Object? compartmentId = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? dataResidency = sdkOmittedValue,
+          Object? displayColor = sdkOmittedValue,
+          Object? externalKeyId = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? tags = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaWorkspace(
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as String?,
+        compartmentId: identical(compartmentId, sdkOmittedValue)
+            ? this.compartmentId
+            : compartmentId as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        dataResidency: identical(dataResidency, sdkOmittedValue)
+            ? this.dataResidency
+            : dataResidency as BetaDataResidency,
+        displayColor: identical(displayColor, sdkOmittedValue)
+            ? this.displayColor
+            : displayColor as String,
+        externalKeyId: identical(externalKeyId, sdkOmittedValue)
+            ? this.externalKeyId
+            : externalKeyId as String?,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        tags: identical(tags, sdkOmittedValue)
+            ? this.tags
+            : tags as Map<String, String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWorkspaceType,
+      );
 
   factory BetaWorkspace.fromJson(Map<String, dynamic> json) => BetaWorkspace(
-    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
-    compartmentId: (json['compartment_id'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    dataResidency: (json['data_residency'] != null ? BetaDataResidency.fromJson(json['data_residency'] as Map<String, dynamic>) : null)!,
-    displayColor: (json['display_color'] as String?)!,
-    externalKeyId: json.containsKey('external_key_id') ? json['external_key_id'] as String? : throw ArgumentError.value(null, 'external_key_id', 'Required property is missing'),
-    id: (json['id'] as String?)!,
-    name: (json['name'] as String?)!,
-    tags: (json['tags'] == null ? null : Map<String, dynamic>.from(json['tags'] as Map).map((key, value) => MapEntry(key, value as String)))!,
-    type_: (json['type'] != null ? BetaWorkspaceType.fromJson(json['type'] as String) : null)!,
-  );
+        archivedAt: json.containsKey('archived_at')
+            ? json['archived_at'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_at', 'Required property is missing'),
+        compartmentId: (json['compartment_id'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        dataResidency: (json['data_residency'] != null
+            ? BetaDataResidency.fromJson(
+                json['data_residency'] as Map<String, dynamic>)
+            : null)!,
+        displayColor: (json['display_color'] as String?)!,
+        externalKeyId: json.containsKey('external_key_id')
+            ? json['external_key_id'] as String?
+            : throw ArgumentError.value(
+                null, 'external_key_id', 'Required property is missing'),
+        id: (json['id'] as String?)!,
+        name: (json['name'] as String?)!,
+        tags: (json['tags'] == null
+            ? null
+            : Map<String, dynamic>.from(json['tags'] as Map)
+                .map((key, value) => MapEntry(key, value as String)))!,
+        type_: (json['type'] != null
+            ? BetaWorkspaceType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'archived_at': archivedAt,
-    'compartment_id': compartmentId,
-    'created_at': createdAt,
-    'data_residency': dataResidency.toJson(),
-    'display_color': displayColor,
-    'external_key_id': externalKeyId,
-    'id': id,
-    'name': name,
-    'tags': tags,
-    'type': type_.toJson(),
-  };
+        'archived_at': archivedAt,
+        'compartment_id': compartmentId,
+        'created_at': createdAt,
+        'data_residency': dataResidency.toJson(),
+        'display_color': displayColor,
+        'external_key_id': externalKeyId,
+        'id': id,
+        'name': name,
+        'tags': tags,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaWorkspaceMemberSchema` API schema.
 class BetaWorkspaceMemberSchema {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Object type. For Workspace Members, this is always `"workspace_member"`.
   final BetaWorkspaceMemberSchemaType type_;
+
   /// ID of the User.
   final String userId;
+
   /// ID of the Workspace.
   final String workspaceId;
+
   /// Role of the Workspace Member.
   final BetaWorkspaceRoleSchema workspaceRole;
 
-  const BetaWorkspaceMemberSchema({required this.type_, required this.userId, required this.workspaceId, required this.workspaceRole});
+  const BetaWorkspaceMemberSchema(
+      {required this.type_,
+      required this.userId,
+      required this.workspaceId,
+      required this.workspaceRole});
 
-  BetaWorkspaceMemberSchema Function({BetaWorkspaceMemberSchemaType type_, String userId, String workspaceId, BetaWorkspaceRoleSchema workspaceRole}) get copyWith => _copyWith;
+  BetaWorkspaceMemberSchema Function(
+      {BetaWorkspaceMemberSchemaType type_,
+      String userId,
+      String workspaceId,
+      BetaWorkspaceRoleSchema workspaceRole}) get copyWith => _copyWith;
 
-  BetaWorkspaceMemberSchema _copyWith({Object? type_ = sdkOmittedValue, Object? userId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue, Object? workspaceRole = sdkOmittedValue}) => BetaWorkspaceMemberSchema(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWorkspaceMemberSchemaType,
-    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-    workspaceRole: identical(workspaceRole, sdkOmittedValue) ? this.workspaceRole : workspaceRole as BetaWorkspaceRoleSchema,
-  );
+  BetaWorkspaceMemberSchema _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? userId = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue,
+          Object? workspaceRole = sdkOmittedValue}) =>
+      BetaWorkspaceMemberSchema(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWorkspaceMemberSchemaType,
+        userId:
+            identical(userId, sdkOmittedValue) ? this.userId : userId as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+        workspaceRole: identical(workspaceRole, sdkOmittedValue)
+            ? this.workspaceRole
+            : workspaceRole as BetaWorkspaceRoleSchema,
+      );
 
-  factory BetaWorkspaceMemberSchema.fromJson(Map<String, dynamic> json) => BetaWorkspaceMemberSchema(
-    type_: (json['type'] != null ? BetaWorkspaceMemberSchemaType.fromJson(json['type'] as String) : null)!,
-    userId: (json['user_id'] as String?)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-    workspaceRole: (json['workspace_role'] != null ? BetaWorkspaceRoleSchema.fromJson(json['workspace_role'] as String) : null)!,
-  );
+  factory BetaWorkspaceMemberSchema.fromJson(Map<String, dynamic> json) =>
+      BetaWorkspaceMemberSchema(
+        type_: (json['type'] != null
+            ? BetaWorkspaceMemberSchemaType.fromJson(json['type'] as String)
+            : null)!,
+        userId: (json['user_id'] as String?)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+        workspaceRole: (json['workspace_role'] != null
+            ? BetaWorkspaceRoleSchema.fromJson(json['workspace_role'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'user_id': userId,
-    'workspace_id': workspaceId,
-    'workspace_role': workspaceRole.toJson(),
-  };
+        'type': type_.toJson(),
+        'user_id': userId,
+        'workspace_id': workspaceId,
+        'workspace_role': workspaceRole.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaWorkspaceRoleSchema` API schema.
 final class BetaWorkspaceRoleSchema {
-
   final String value;
 
   const BetaWorkspaceRoleSchema._(this.value);
 
-  factory BetaWorkspaceRoleSchema.fromJson(String value) => BetaWorkspaceRoleSchema._(value);
+  factory BetaWorkspaceRoleSchema.fromJson(String value) =>
+      BetaWorkspaceRoleSchema._(value);
 
   static const workspaceAdmin = BetaWorkspaceRoleSchema._('workspace_admin');
-  static const workspaceBilling = BetaWorkspaceRoleSchema._('workspace_billing');
-  static const workspaceDeveloper = BetaWorkspaceRoleSchema._('workspace_developer');
-  static const workspaceRestrictedDeveloper = BetaWorkspaceRoleSchema._('workspace_restricted_developer');
+  static const workspaceBilling =
+      BetaWorkspaceRoleSchema._('workspace_billing');
+  static const workspaceDeveloper =
+      BetaWorkspaceRoleSchema._('workspace_developer');
+  static const workspaceRestrictedDeveloper =
+      BetaWorkspaceRoleSchema._('workspace_restricted_developer');
   static const workspaceUser = BetaWorkspaceRoleSchema._('workspace_user');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaWorkspaceRoleSchema && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaWorkspaceRoleSchema && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

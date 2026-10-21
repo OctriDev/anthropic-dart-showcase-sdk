@@ -9,63 +9,111 @@ sealed class RequestCharLocationCitationDocumentTitle {
   static const String constructionSurface = 'named';
   const RequestCharLocationCitationDocumentTitle();
   factory RequestCharLocationCitationDocumentTitle.fromJson(Object? json) {
-    if (json is String) { return RequestCharLocationCitationDocumentTitleString(json); }
-    throw FormatException("No variant matched for RequestCharLocationCitationDocumentTitle");
+    if (json is String) {
+      return RequestCharLocationCitationDocumentTitleString(json);
+    }
+    throw FormatException(
+        "No variant matched for RequestCharLocationCitationDocumentTitle");
   }
   Object? toJson();
 }
 
-final class RequestCharLocationCitationDocumentTitleString extends RequestCharLocationCitationDocumentTitle {
+final class RequestCharLocationCitationDocumentTitleString
+    extends RequestCharLocationCitationDocumentTitle {
   final String value;
   const RequestCharLocationCitationDocumentTitleString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `RequestCharLocationCitation` API schema.
 class RequestCharLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `cited_text` wire field.
   final String citedText;
+
   /// Required `integer` value serialized in the `document_index` wire field.
   final int documentIndex;
+
   /// Required API value serialized in the `document_title` wire field.
   final String? documentTitle;
+
   /// Required `integer` value serialized in the `end_char_index` wire field.
   final int endCharIndex;
+
   /// Required `integer` value serialized in the `start_char_index` wire field.
   final int startCharIndex;
+
   /// Required `string` value serialized in the `type` wire field.
   final RequestCharLocationCitationType type_;
 
-  const RequestCharLocationCitation({required this.citedText, required this.documentIndex, required this.documentTitle, required this.endCharIndex, required this.startCharIndex, required this.type_});
+  const RequestCharLocationCitation(
+      {required this.citedText,
+      required this.documentIndex,
+      required this.documentTitle,
+      required this.endCharIndex,
+      required this.startCharIndex,
+      required this.type_});
 
-  RequestCharLocationCitation Function({String citedText, int documentIndex, String? documentTitle, int endCharIndex, int startCharIndex, RequestCharLocationCitationType type_}) get copyWith => _copyWith;
+  RequestCharLocationCitation Function(
+      {String citedText,
+      int documentIndex,
+      String? documentTitle,
+      int endCharIndex,
+      int startCharIndex,
+      RequestCharLocationCitationType type_}) get copyWith => _copyWith;
 
-  RequestCharLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? documentIndex = sdkOmittedValue, Object? documentTitle = sdkOmittedValue, Object? endCharIndex = sdkOmittedValue, Object? startCharIndex = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestCharLocationCitation(
-    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
-    documentIndex: identical(documentIndex, sdkOmittedValue) ? this.documentIndex : documentIndex as int,
-    documentTitle: identical(documentTitle, sdkOmittedValue) ? this.documentTitle : documentTitle as String?,
-    endCharIndex: identical(endCharIndex, sdkOmittedValue) ? this.endCharIndex : endCharIndex as int,
-    startCharIndex: identical(startCharIndex, sdkOmittedValue) ? this.startCharIndex : startCharIndex as int,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestCharLocationCitationType,
-  );
+  RequestCharLocationCitation _copyWith(
+          {Object? citedText = sdkOmittedValue,
+          Object? documentIndex = sdkOmittedValue,
+          Object? documentTitle = sdkOmittedValue,
+          Object? endCharIndex = sdkOmittedValue,
+          Object? startCharIndex = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RequestCharLocationCitation(
+        citedText: identical(citedText, sdkOmittedValue)
+            ? this.citedText
+            : citedText as String,
+        documentIndex: identical(documentIndex, sdkOmittedValue)
+            ? this.documentIndex
+            : documentIndex as int,
+        documentTitle: identical(documentTitle, sdkOmittedValue)
+            ? this.documentTitle
+            : documentTitle as String?,
+        endCharIndex: identical(endCharIndex, sdkOmittedValue)
+            ? this.endCharIndex
+            : endCharIndex as int,
+        startCharIndex: identical(startCharIndex, sdkOmittedValue)
+            ? this.startCharIndex
+            : startCharIndex as int,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RequestCharLocationCitationType,
+      );
 
-  factory RequestCharLocationCitation.fromJson(Map<String, dynamic> json) => RequestCharLocationCitation(
-    citedText: (json['cited_text'] as String?)!,
-    documentIndex: ((json['document_index'] as num?)?.toInt())!,
-    documentTitle: json.containsKey('document_title') ? json['document_title'] as String? : throw ArgumentError.value(null, 'document_title', 'Required property is missing'),
-    endCharIndex: ((json['end_char_index'] as num?)?.toInt())!,
-    startCharIndex: ((json['start_char_index'] as num?)?.toInt())!,
-    type_: (json['type'] != null ? RequestCharLocationCitationType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RequestCharLocationCitation.fromJson(Map<String, dynamic> json) =>
+      RequestCharLocationCitation(
+        citedText: (json['cited_text'] as String?)!,
+        documentIndex: ((json['document_index'] as num?)?.toInt())!,
+        documentTitle: json.containsKey('document_title')
+            ? json['document_title'] as String?
+            : throw ArgumentError.value(
+                null, 'document_title', 'Required property is missing'),
+        endCharIndex: ((json['end_char_index'] as num?)?.toInt())!,
+        startCharIndex: ((json['start_char_index'] as num?)?.toInt())!,
+        type_: (json['type'] != null
+            ? RequestCharLocationCitationType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'cited_text': citedText,
-    'document_index': documentIndex,
-    'document_title': documentTitle,
-    'end_char_index': endCharIndex,
-    'start_char_index': startCharIndex,
-    'type': type_.toJson(),
-  };
+        'cited_text': citedText,
+        'document_index': documentIndex,
+        'document_title': documentTitle,
+        'end_char_index': endCharIndex,
+        'start_char_index': startCharIndex,
+        'type': type_.toJson(),
+      };
 }

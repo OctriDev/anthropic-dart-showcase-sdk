@@ -8,102 +8,177 @@ part of 'shared_beta_response_advisor.dart';
 class BetaResponseAdvisorRedactedResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Opaque blob containing the advisor's output. Round-trip verbatim; do not inspect or modify.
   final String encryptedContent;
+
   /// The advisor sub-inference's stop reason (same values as the top-level message `stop_reason`).
   final String? stopReason;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseAdvisorRedactedResultBlockType type_;
 
-  const BetaResponseAdvisorRedactedResultBlock({required this.encryptedContent, required this.stopReason, required this.type_});
+  const BetaResponseAdvisorRedactedResultBlock(
+      {required this.encryptedContent,
+      required this.stopReason,
+      required this.type_});
 
-  BetaResponseAdvisorRedactedResultBlock Function({String encryptedContent, String? stopReason, BetaResponseAdvisorRedactedResultBlockType type_}) get copyWith => _copyWith;
+  BetaResponseAdvisorRedactedResultBlock Function(
+          {String encryptedContent,
+          String? stopReason,
+          BetaResponseAdvisorRedactedResultBlockType type_})
+      get copyWith => _copyWith;
 
-  BetaResponseAdvisorRedactedResultBlock _copyWith({Object? encryptedContent = sdkOmittedValue, Object? stopReason = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseAdvisorRedactedResultBlock(
-    encryptedContent: identical(encryptedContent, sdkOmittedValue) ? this.encryptedContent : encryptedContent as String,
-    stopReason: identical(stopReason, sdkOmittedValue) ? this.stopReason : stopReason as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseAdvisorRedactedResultBlockType,
-  );
+  BetaResponseAdvisorRedactedResultBlock _copyWith(
+          {Object? encryptedContent = sdkOmittedValue,
+          Object? stopReason = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseAdvisorRedactedResultBlock(
+        encryptedContent: identical(encryptedContent, sdkOmittedValue)
+            ? this.encryptedContent
+            : encryptedContent as String,
+        stopReason: identical(stopReason, sdkOmittedValue)
+            ? this.stopReason
+            : stopReason as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseAdvisorRedactedResultBlockType,
+      );
 
-  factory BetaResponseAdvisorRedactedResultBlock.fromJson(Map<String, dynamic> json) => BetaResponseAdvisorRedactedResultBlock(
-    encryptedContent: (json['encrypted_content'] as String?)!,
-    stopReason: json.containsKey('stop_reason') ? json['stop_reason'] as String? : throw ArgumentError.value(null, 'stop_reason', 'Required property is missing'),
-    type_: (json['type'] != null ? BetaResponseAdvisorRedactedResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseAdvisorRedactedResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseAdvisorRedactedResultBlock(
+        encryptedContent: (json['encrypted_content'] as String?)!,
+        stopReason: json.containsKey('stop_reason')
+            ? json['stop_reason'] as String?
+            : throw ArgumentError.value(
+                null, 'stop_reason', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? BetaResponseAdvisorRedactedResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'encrypted_content': encryptedContent,
-    'stop_reason': stopReason,
-    'type': type_.toJson(),
-  };
+        'encrypted_content': encryptedContent,
+        'stop_reason': stopReason,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaResponseAdvisorResultBlock` API schema.
 class BetaResponseAdvisorResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The advisor sub-inference's stop reason (same values as the top-level message `stop_reason`). `max_tokens` indicates the advisor's output was truncated at the tool's `max_tokens` value or the advisor model's policy cap.
   final String? stopReason;
+
   /// Required `string` value serialized in the `text` wire field.
   final String text;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseAdvisorResultBlockType type_;
 
-  const BetaResponseAdvisorResultBlock({required this.stopReason, required this.text, required this.type_});
+  const BetaResponseAdvisorResultBlock(
+      {required this.stopReason, required this.text, required this.type_});
 
-  BetaResponseAdvisorResultBlock Function({String? stopReason, String text, BetaResponseAdvisorResultBlockType type_}) get copyWith => _copyWith;
+  BetaResponseAdvisorResultBlock Function(
+      {String? stopReason,
+      String text,
+      BetaResponseAdvisorResultBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseAdvisorResultBlock _copyWith({Object? stopReason = sdkOmittedValue, Object? text = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseAdvisorResultBlock(
-    stopReason: identical(stopReason, sdkOmittedValue) ? this.stopReason : stopReason as String?,
-    text: identical(text, sdkOmittedValue) ? this.text : text as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseAdvisorResultBlockType,
-  );
+  BetaResponseAdvisorResultBlock _copyWith(
+          {Object? stopReason = sdkOmittedValue,
+          Object? text = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseAdvisorResultBlock(
+        stopReason: identical(stopReason, sdkOmittedValue)
+            ? this.stopReason
+            : stopReason as String?,
+        text: identical(text, sdkOmittedValue) ? this.text : text as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseAdvisorResultBlockType,
+      );
 
-  factory BetaResponseAdvisorResultBlock.fromJson(Map<String, dynamic> json) => BetaResponseAdvisorResultBlock(
-    stopReason: json.containsKey('stop_reason') ? json['stop_reason'] as String? : throw ArgumentError.value(null, 'stop_reason', 'Required property is missing'),
-    text: (json['text'] as String?)!,
-    type_: (json['type'] != null ? BetaResponseAdvisorResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseAdvisorResultBlock.fromJson(Map<String, dynamic> json) =>
+      BetaResponseAdvisorResultBlock(
+        stopReason: json.containsKey('stop_reason')
+            ? json['stop_reason'] as String?
+            : throw ArgumentError.value(
+                null, 'stop_reason', 'Required property is missing'),
+        text: (json['text'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaResponseAdvisorResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'stop_reason': stopReason,
-    'text': text,
-    'type': type_.toJson(),
-  };
+        'stop_reason': stopReason,
+        'text': text,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaResponseAdvisorToolResultBlock` API schema.
 class BetaResponseAdvisorToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required API value serialized in the `content` wire field.
   final BetaResponseAdvisorToolResultBlockContent content;
+
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseAdvisorToolResultBlockType type_;
 
-  const BetaResponseAdvisorToolResultBlock({required this.content, required this.toolUseId, required this.type_});
+  const BetaResponseAdvisorToolResultBlock(
+      {required this.content, required this.toolUseId, required this.type_});
 
-  BetaResponseAdvisorToolResultBlock Function({BetaResponseAdvisorToolResultBlockContent content, String toolUseId, BetaResponseAdvisorToolResultBlockType type_}) get copyWith => _copyWith;
+  BetaResponseAdvisorToolResultBlock Function(
+      {BetaResponseAdvisorToolResultBlockContent content,
+      String toolUseId,
+      BetaResponseAdvisorToolResultBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseAdvisorToolResultBlock _copyWith({Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseAdvisorToolResultBlock(
-    content: identical(content, sdkOmittedValue) ? this.content : content as BetaResponseAdvisorToolResultBlockContent,
-    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseAdvisorToolResultBlockType,
-  );
+  BetaResponseAdvisorToolResultBlock _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? toolUseId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseAdvisorToolResultBlock(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as BetaResponseAdvisorToolResultBlockContent,
+        toolUseId: identical(toolUseId, sdkOmittedValue)
+            ? this.toolUseId
+            : toolUseId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseAdvisorToolResultBlockType,
+      );
 
-  factory BetaResponseAdvisorToolResultBlock.fromJson(Map<String, dynamic> json) => BetaResponseAdvisorToolResultBlock(
-    content: (json['content'] != null ? BetaResponseAdvisorToolResultBlockContent.fromJson(json['content']) : null)!,
-    toolUseId: (json['tool_use_id'] as String?)!,
-    type_: (json['type'] != null ? BetaResponseAdvisorToolResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseAdvisorToolResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseAdvisorToolResultBlock(
+        content: (json['content'] != null
+            ? BetaResponseAdvisorToolResultBlockContent.fromJson(
+                json['content'])
+            : null)!,
+        toolUseId: (json['tool_use_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaResponseAdvisorToolResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content.toJson(),
-    'tool_use_id': toolUseId,
-    'type': type_.toJson(),
-  };
+        'content': content.toJson(),
+        'tool_use_id': toolUseId,
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaResponseAdvisorToolResultBlockContent {
@@ -112,69 +187,139 @@ sealed class BetaResponseAdvisorToolResultBlockContent {
   const BetaResponseAdvisorToolResultBlockContent();
   factory BetaResponseAdvisorToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaResponseAdvisorToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorToolResultError(value); } } catch (_) {}
-      try { final value = BetaResponseAdvisorResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorResultBlock(value); } } catch (_) {}
-      try { final value = BetaResponseAdvisorRedactedResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorRedactedResultBlock(value); } } catch (_) {}
+      try {
+        final value = BetaResponseAdvisorToolResultError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorToolResultError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaResponseAdvisorResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorResultBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaResponseAdvisorRedactedResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorRedactedResultBlock(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorToolResultError(BetaResponseAdvisorToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorResultBlock(BetaResponseAdvisorResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorRedactedResultBlock(BetaResponseAdvisorRedactedResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"advisor_tool_result_error", "advisor_result", "advisor_redacted_result"}.contains(json["type"])) { return UnknownBetaResponseAdvisorToolResultBlockContent(json); }
-    throw FormatException("No variant matched for BetaResponseAdvisorToolResultBlockContent");
+    try {
+      return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorToolResultError(
+          BetaResponseAdvisorToolResultError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorResultBlock(
+          BetaResponseAdvisorResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorRedactedResultBlock(
+          BetaResponseAdvisorRedactedResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "advisor_tool_result_error",
+          "advisor_result",
+          "advisor_redacted_result"
+        }.contains(json["type"])) {
+      return UnknownBetaResponseAdvisorToolResultBlockContent(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaResponseAdvisorToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorToolResultError extends BetaResponseAdvisorToolResultBlockContent {
+final class BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorToolResultError
+    extends BetaResponseAdvisorToolResultBlockContent {
   final BetaResponseAdvisorToolResultError value;
-  const BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorToolResultError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorToolResultError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorResultBlock extends BetaResponseAdvisorToolResultBlockContent {
+final class BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorResultBlock
+    extends BetaResponseAdvisorToolResultBlockContent {
   final BetaResponseAdvisorResultBlock value;
-  const BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorRedactedResultBlock extends BetaResponseAdvisorToolResultBlockContent {
+final class BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorRedactedResultBlock
+    extends BetaResponseAdvisorToolResultBlockContent {
   final BetaResponseAdvisorRedactedResultBlock value;
-  const BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorRedactedResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaResponseAdvisorToolResultBlockContentBetaResponseAdvisorRedactedResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaResponseAdvisorToolResultBlockContent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaResponseAdvisorToolResultBlockContent extends BetaResponseAdvisorToolResultBlockContent {
+final class UnknownBetaResponseAdvisorToolResultBlockContent
+    extends BetaResponseAdvisorToolResultBlockContent {
   final Map<String, dynamic> raw;
   const UnknownBetaResponseAdvisorToolResultBlockContent(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaResponseAdvisorToolResultError` API schema.
 class BetaResponseAdvisorToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `error_code` wire field.
   final BetaAdvisorToolResultErrorCode errorCode;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseAdvisorToolResultErrorType type_;
 
-  const BetaResponseAdvisorToolResultError({required this.errorCode, required this.type_});
+  const BetaResponseAdvisorToolResultError(
+      {required this.errorCode, required this.type_});
 
-  BetaResponseAdvisorToolResultError Function({BetaAdvisorToolResultErrorCode errorCode, BetaResponseAdvisorToolResultErrorType type_}) get copyWith => _copyWith;
+  BetaResponseAdvisorToolResultError Function(
+      {BetaAdvisorToolResultErrorCode errorCode,
+      BetaResponseAdvisorToolResultErrorType type_}) get copyWith => _copyWith;
 
-  BetaResponseAdvisorToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseAdvisorToolResultError(
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as BetaAdvisorToolResultErrorCode,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseAdvisorToolResultErrorType,
-  );
+  BetaResponseAdvisorToolResultError _copyWith(
+          {Object? errorCode = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseAdvisorToolResultError(
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as BetaAdvisorToolResultErrorCode,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseAdvisorToolResultErrorType,
+      );
 
-  factory BetaResponseAdvisorToolResultError.fromJson(Map<String, dynamic> json) => BetaResponseAdvisorToolResultError(
-    errorCode: (json['error_code'] != null ? BetaAdvisorToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
-    type_: (json['type'] != null ? BetaResponseAdvisorToolResultErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseAdvisorToolResultError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseAdvisorToolResultError(
+        errorCode: (json['error_code'] != null
+            ? BetaAdvisorToolResultErrorCode.fromJson(
+                json['error_code'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaResponseAdvisorToolResultErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'error_code': errorCode.toJson(),
-    'type': type_.toJson(),
-  };
+        'error_code': errorCode.toJson(),
+        'type': type_.toJson(),
+      };
 }

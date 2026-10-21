@@ -8,22 +8,30 @@ part of 'workspaces_beta_true.dart';
 class BetaAddFederationRuleWorkspaceParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Tagged ID of the workspace to enable this rule for.
   final String workspaceId;
 
   const BetaAddFederationRuleWorkspaceParams({required this.workspaceId});
 
-  BetaAddFederationRuleWorkspaceParams Function({String workspaceId}) get copyWith => _copyWith;
+  BetaAddFederationRuleWorkspaceParams Function({String workspaceId})
+      get copyWith => _copyWith;
 
-  BetaAddFederationRuleWorkspaceParams _copyWith({Object? workspaceId = sdkOmittedValue}) => BetaAddFederationRuleWorkspaceParams(
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaAddFederationRuleWorkspaceParams _copyWith(
+          {Object? workspaceId = sdkOmittedValue}) =>
+      BetaAddFederationRuleWorkspaceParams(
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaAddFederationRuleWorkspaceParams.fromJson(Map<String, dynamic> json) => BetaAddFederationRuleWorkspaceParams(
-    workspaceId: (json['workspace_id'] as String?)!,
-  );
+  factory BetaAddFederationRuleWorkspaceParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaAddFederationRuleWorkspaceParams(
+        workspaceId: (json['workspace_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'workspace_id': workspaceId,
-  };
+        'workspace_id': workspaceId,
+      };
 }

@@ -9,7 +9,9 @@ sealed class BetaMetadataUserId {
   static const String constructionSurface = 'named';
   const BetaMetadataUserId();
   factory BetaMetadataUserId.fromJson(Object? json) {
-    if (json is String) { return BetaMetadataUserIdString(json); }
+    if (json is String) {
+      return BetaMetadataUserIdString(json);
+    }
     throw FormatException("No variant matched for BetaMetadataUserId");
   }
   Object? toJson();
@@ -18,32 +20,41 @@ sealed class BetaMetadataUserId {
 final class BetaMetadataUserIdString extends BetaMetadataUserId {
   final String value;
   const BetaMetadataUserIdString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaMetadata` API schema.
 class BetaMetadata {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// An external identifier for the user who is associated with the request. This should be a uuid, hash value, or other opaque identifier. Anthropic may use this id to help detect abuse. Do not include any identifying information such as name, email address, or phone number.
   final SdkOptional<String?> userId;
 
   const BetaMetadata({this.userId = const SdkOmitted()});
 
-  BetaMetadata Function({SdkOptional<String?> userId}) get copyWith => _copyWith;
+  BetaMetadata Function({SdkOptional<String?> userId}) get copyWith =>
+      _copyWith;
 
   BetaMetadata _copyWith({Object? userId = sdkOmittedValue}) => BetaMetadata(
-    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as SdkOptional<String?>,
-  );
+        userId: identical(userId, sdkOmittedValue)
+            ? this.userId
+            : userId as SdkOptional<String?>,
+      );
 
   factory BetaMetadata.fromJson(Map<String, dynamic> json) => BetaMetadata(
-    userId: json.containsKey('user_id') ? SdkPresent(json['user_id'] as String?) : const SdkOmitted(),
-  );
+        userId: json.containsKey('user_id')
+            ? SdkPresent(json['user_id'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (userId) {
-      SdkPresent<String?>(value: final value) => {'user_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (userId) {
+          SdkPresent<String?>(value: final value) => {
+              'user_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

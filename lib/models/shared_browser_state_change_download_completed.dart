@@ -9,16 +9,21 @@ sealed class BrowserStateChangeDownloadCompletedPath {
   static const String constructionSurface = 'named';
   const BrowserStateChangeDownloadCompletedPath();
   factory BrowserStateChangeDownloadCompletedPath.fromJson(Object? json) {
-    if (json is String) { return BrowserStateChangeDownloadCompletedPathString(json); }
-    throw FormatException("No variant matched for BrowserStateChangeDownloadCompletedPath");
+    if (json is String) {
+      return BrowserStateChangeDownloadCompletedPathString(json);
+    }
+    throw FormatException(
+        "No variant matched for BrowserStateChangeDownloadCompletedPath");
   }
   Object? toJson();
 }
 
-final class BrowserStateChangeDownloadCompletedPathString extends BrowserStateChangeDownloadCompletedPath {
+final class BrowserStateChangeDownloadCompletedPathString
+    extends BrowserStateChangeDownloadCompletedPath {
   final String value;
   const BrowserStateChangeDownloadCompletedPathString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BrowserStateChangeDownloadCompletedSizeBytes {
@@ -26,64 +31,111 @@ sealed class BrowserStateChangeDownloadCompletedSizeBytes {
   static const String constructionSurface = 'named';
   const BrowserStateChangeDownloadCompletedSizeBytes();
   factory BrowserStateChangeDownloadCompletedSizeBytes.fromJson(Object? json) {
-    if (json is num) { return BrowserStateChangeDownloadCompletedSizeBytesInt(json.toInt()); }
-    throw FormatException("No variant matched for BrowserStateChangeDownloadCompletedSizeBytes");
+    if (json is num) {
+      return BrowserStateChangeDownloadCompletedSizeBytesInt(json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for BrowserStateChangeDownloadCompletedSizeBytes");
   }
   Object? toJson();
 }
 
-final class BrowserStateChangeDownloadCompletedSizeBytesInt extends BrowserStateChangeDownloadCompletedSizeBytes {
+final class BrowserStateChangeDownloadCompletedSizeBytesInt
+    extends BrowserStateChangeDownloadCompletedSizeBytes {
   final int value;
   const BrowserStateChangeDownloadCompletedSizeBytesInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// A file download that finished during this call, reported with the same `download_id` as its `download_started` — or without a prior `download_started`, when the download finished during the call that started it (at most one state change per `download_id` per result).
 class BrowserStateChangeDownloadCompleted {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The caller-assigned identifier for this download, stable across the state changes reporting it.
   final String downloadId;
+
   /// Where the executor saved the file, on the executor's filesystem. Only included when another tool in the same environment can read the file at that path.
   final SdkOptional<String?> path;
+
   /// The completed download's size.
   final SdkOptional<int?> sizeBytes;
+
   /// Required `string` value serialized in the `type` wire field.
   final BrowserStateChangeDownloadCompletedType type_;
+
   /// The final post-redirect URL the download was served from.
   final String url;
 
-  const BrowserStateChangeDownloadCompleted({required this.downloadId, this.path = const SdkOmitted(), this.sizeBytes = const SdkOmitted(), required this.type_, required this.url});
+  const BrowserStateChangeDownloadCompleted(
+      {required this.downloadId,
+      this.path = const SdkOmitted(),
+      this.sizeBytes = const SdkOmitted(),
+      required this.type_,
+      required this.url});
 
-  BrowserStateChangeDownloadCompleted Function({String downloadId, SdkOptional<String?> path, SdkOptional<int?> sizeBytes, BrowserStateChangeDownloadCompletedType type_, String url}) get copyWith => _copyWith;
+  BrowserStateChangeDownloadCompleted Function(
+      {String downloadId,
+      SdkOptional<String?> path,
+      SdkOptional<int?> sizeBytes,
+      BrowserStateChangeDownloadCompletedType type_,
+      String url}) get copyWith => _copyWith;
 
-  BrowserStateChangeDownloadCompleted _copyWith({Object? downloadId = sdkOmittedValue, Object? path = sdkOmittedValue, Object? sizeBytes = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BrowserStateChangeDownloadCompleted(
-    downloadId: identical(downloadId, sdkOmittedValue) ? this.downloadId : downloadId as String,
-    path: identical(path, sdkOmittedValue) ? this.path : path as SdkOptional<String?>,
-    sizeBytes: identical(sizeBytes, sdkOmittedValue) ? this.sizeBytes : sizeBytes as SdkOptional<int?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BrowserStateChangeDownloadCompletedType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BrowserStateChangeDownloadCompleted _copyWith(
+          {Object? downloadId = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? sizeBytes = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      BrowserStateChangeDownloadCompleted(
+        downloadId: identical(downloadId, sdkOmittedValue)
+            ? this.downloadId
+            : downloadId as String,
+        path: identical(path, sdkOmittedValue)
+            ? this.path
+            : path as SdkOptional<String?>,
+        sizeBytes: identical(sizeBytes, sdkOmittedValue)
+            ? this.sizeBytes
+            : sizeBytes as SdkOptional<int?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BrowserStateChangeDownloadCompletedType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BrowserStateChangeDownloadCompleted.fromJson(Map<String, dynamic> json) => BrowserStateChangeDownloadCompleted(
-    downloadId: (json['download_id'] as String?)!,
-    path: json.containsKey('path') ? SdkPresent(json['path'] as String?) : const SdkOmitted(),
-    sizeBytes: json.containsKey('size_bytes') ? SdkPresent((json['size_bytes'] as num?)?.toInt()) : const SdkOmitted(),
-    type_: (json['type'] != null ? BrowserStateChangeDownloadCompletedType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BrowserStateChangeDownloadCompleted.fromJson(
+          Map<String, dynamic> json) =>
+      BrowserStateChangeDownloadCompleted(
+        downloadId: (json['download_id'] as String?)!,
+        path: json.containsKey('path')
+            ? SdkPresent(json['path'] as String?)
+            : const SdkOmitted(),
+        sizeBytes: json.containsKey('size_bytes')
+            ? SdkPresent((json['size_bytes'] as num?)?.toInt())
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BrowserStateChangeDownloadCompletedType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'download_id': downloadId,
-    ...switch (path) {
-      SdkPresent<String?>(value: final value) => {'path': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sizeBytes) {
-      SdkPresent<int?>(value: final value) => {'size_bytes': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'download_id': downloadId,
+        ...switch (path) {
+          SdkPresent<String?>(value: final value) => {
+              'path': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sizeBytes) {
+          SdkPresent<int?>(value: final value) => {
+              'size_bytes': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+        'url': url,
+      };
 }

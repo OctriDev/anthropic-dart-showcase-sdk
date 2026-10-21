@@ -8,27 +8,39 @@ part of 'shared_beta.dart';
 class BetaAPIError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaAPIErrorType type_;
 
   const BetaAPIError({required this.message, required this.type_});
 
-  BetaAPIError Function({String message, BetaAPIErrorType type_}) get copyWith => _copyWith;
+  BetaAPIError Function({String message, BetaAPIErrorType type_})
+      get copyWith => _copyWith;
 
-  BetaAPIError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaAPIError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaAPIErrorType,
-  );
+  BetaAPIError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaAPIError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaAPIErrorType,
+      );
 
   factory BetaAPIError.fromJson(Map<String, dynamic> json) => BetaAPIError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? BetaAPIErrorType.fromJson(json['type'] as String) : null)!,
-  );
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaAPIErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }

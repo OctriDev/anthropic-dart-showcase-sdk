@@ -9,24 +9,37 @@ sealed class BetaManagedAgentsAgentUnionParamsVariant1 {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsAgentUnionParamsVariant1();
   factory BetaManagedAgentsAgentUnionParamsVariant1.fromJson(Object? json) {
-    try { return BetaManagedAgentsAgentUnionParamsVariant1BetaManagedAgentsAgentParams(BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"agent"}.contains(json["type"])) { return UnknownBetaManagedAgentsAgentUnionParamsVariant1(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsAgentUnionParamsVariant1");
+    try {
+      return BetaManagedAgentsAgentUnionParamsVariant1BetaManagedAgentsAgentParams(
+          BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"agent"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsAgentUnionParamsVariant1(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsAgentUnionParamsVariant1");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsAgentUnionParamsVariant1BetaManagedAgentsAgentParams extends BetaManagedAgentsAgentUnionParamsVariant1 {
+final class BetaManagedAgentsAgentUnionParamsVariant1BetaManagedAgentsAgentParams
+    extends BetaManagedAgentsAgentUnionParamsVariant1 {
   final BetaManagedAgentsAgentParams value;
-  const BetaManagedAgentsAgentUnionParamsVariant1BetaManagedAgentsAgentParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentUnionParamsVariant1BetaManagedAgentsAgentParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsAgentUnionParamsVariant1] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsAgentUnionParamsVariant1 extends BetaManagedAgentsAgentUnionParamsVariant1 {
+final class UnknownBetaManagedAgentsAgentUnionParamsVariant1
+    extends BetaManagedAgentsAgentUnionParamsVariant1 {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsAgentUnionParamsVariant1(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsAgentUnionParams {
@@ -34,21 +47,32 @@ sealed class BetaManagedAgentsAgentUnionParams {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsAgentUnionParams();
   factory BetaManagedAgentsAgentUnionParams.fromJson(Object? json) {
-    if (json is String) { return BetaManagedAgentsAgentUnionParamsString(json); }
-    try { return BetaManagedAgentsAgentUnionParamsBetaManagedAgentsAgentParams(BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for BetaManagedAgentsAgentUnionParams");
+    if (json is String) {
+      return BetaManagedAgentsAgentUnionParamsString(json);
+    }
+    try {
+      return BetaManagedAgentsAgentUnionParamsBetaManagedAgentsAgentParams(
+          BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsAgentUnionParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsAgentUnionParamsString extends BetaManagedAgentsAgentUnionParams {
+final class BetaManagedAgentsAgentUnionParamsString
+    extends BetaManagedAgentsAgentUnionParams {
   final String value;
   const BetaManagedAgentsAgentUnionParamsString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class BetaManagedAgentsAgentUnionParamsBetaManagedAgentsAgentParams extends BetaManagedAgentsAgentUnionParams {
+final class BetaManagedAgentsAgentUnionParamsBetaManagedAgentsAgentParams
+    extends BetaManagedAgentsAgentUnionParams {
   final BetaManagedAgentsAgentParams value;
-  const BetaManagedAgentsAgentUnionParamsBetaManagedAgentsAgentParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsAgentUnionParamsBetaManagedAgentsAgentParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

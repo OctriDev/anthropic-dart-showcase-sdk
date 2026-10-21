@@ -8,42 +8,80 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsCredentialHostUnreachableError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsCredentialHostUnreachableErrorType type_;
+
   /// Human-readable error description.
   final String message;
+
   /// What the client should do next.
   final BetaManagedAgentsRetryStatus retryStatus;
+
   /// ID of the vault containing the affected credential.
   final String vaultId;
+
   /// ID of the affected credential.
   final String credentialId;
 
-  const BetaManagedAgentsCredentialHostUnreachableError({required this.type_, required this.message, required this.retryStatus, required this.vaultId, required this.credentialId});
+  const BetaManagedAgentsCredentialHostUnreachableError(
+      {required this.type_,
+      required this.message,
+      required this.retryStatus,
+      required this.vaultId,
+      required this.credentialId});
 
-  BetaManagedAgentsCredentialHostUnreachableError Function({BetaManagedAgentsCredentialHostUnreachableErrorType type_, String message, BetaManagedAgentsRetryStatus retryStatus, String vaultId, String credentialId}) get copyWith => _copyWith;
+  BetaManagedAgentsCredentialHostUnreachableError Function(
+      {BetaManagedAgentsCredentialHostUnreachableErrorType type_,
+      String message,
+      BetaManagedAgentsRetryStatus retryStatus,
+      String vaultId,
+      String credentialId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsCredentialHostUnreachableError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue, Object? retryStatus = sdkOmittedValue, Object? vaultId = sdkOmittedValue, Object? credentialId = sdkOmittedValue}) => BetaManagedAgentsCredentialHostUnreachableError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsCredentialHostUnreachableErrorType,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    retryStatus: identical(retryStatus, sdkOmittedValue) ? this.retryStatus : retryStatus as BetaManagedAgentsRetryStatus,
-    vaultId: identical(vaultId, sdkOmittedValue) ? this.vaultId : vaultId as String,
-    credentialId: identical(credentialId, sdkOmittedValue) ? this.credentialId : credentialId as String,
-  );
+  BetaManagedAgentsCredentialHostUnreachableError _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? retryStatus = sdkOmittedValue,
+          Object? vaultId = sdkOmittedValue,
+          Object? credentialId = sdkOmittedValue}) =>
+      BetaManagedAgentsCredentialHostUnreachableError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsCredentialHostUnreachableErrorType,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        retryStatus: identical(retryStatus, sdkOmittedValue)
+            ? this.retryStatus
+            : retryStatus as BetaManagedAgentsRetryStatus,
+        vaultId: identical(vaultId, sdkOmittedValue)
+            ? this.vaultId
+            : vaultId as String,
+        credentialId: identical(credentialId, sdkOmittedValue)
+            ? this.credentialId
+            : credentialId as String,
+      );
 
-  factory BetaManagedAgentsCredentialHostUnreachableError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsCredentialHostUnreachableError(
-    type_: (json['type'] != null ? BetaManagedAgentsCredentialHostUnreachableErrorType.fromJson(json['type'] as String) : null)!,
-    message: (json['message'] as String?)!,
-    retryStatus: (json['retry_status'] != null ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status']) : null)!,
-    vaultId: (json['vault_id'] as String?)!,
-    credentialId: (json['credential_id'] as String?)!,
-  );
+  factory BetaManagedAgentsCredentialHostUnreachableError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsCredentialHostUnreachableError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsCredentialHostUnreachableErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+        message: (json['message'] as String?)!,
+        retryStatus: (json['retry_status'] != null
+            ? BetaManagedAgentsRetryStatus.fromJson(json['retry_status'])
+            : null)!,
+        vaultId: (json['vault_id'] as String?)!,
+        credentialId: (json['credential_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'message': message,
-    'retry_status': retryStatus.toJson(),
-    'vault_id': vaultId,
-    'credential_id': credentialId,
-  };
+        'type': type_.toJson(),
+        'message': message,
+        'retry_status': retryStatus.toJson(),
+        'vault_id': vaultId,
+        'credential_id': credentialId,
+      };
 }

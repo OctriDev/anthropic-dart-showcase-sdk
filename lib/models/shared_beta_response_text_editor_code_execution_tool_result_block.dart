@@ -8,32 +8,59 @@ part of 'shared_beta_response_text.dart';
 class BetaResponseTextEditorCodeExecutionToolResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required API value serialized in the `content` wire field.
   final BetaResponseTextEditorCodeExecutionToolResultBlockContent content;
+
   /// Required `string` value serialized in the `tool_use_id` wire field.
   final String toolUseId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseTextEditorCodeExecutionToolResultBlockType type_;
 
-  const BetaResponseTextEditorCodeExecutionToolResultBlock({required this.content, required this.toolUseId, required this.type_});
+  const BetaResponseTextEditorCodeExecutionToolResultBlock(
+      {required this.content, required this.toolUseId, required this.type_});
 
-  BetaResponseTextEditorCodeExecutionToolResultBlock Function({BetaResponseTextEditorCodeExecutionToolResultBlockContent content, String toolUseId, BetaResponseTextEditorCodeExecutionToolResultBlockType type_}) get copyWith => _copyWith;
+  BetaResponseTextEditorCodeExecutionToolResultBlock Function(
+          {BetaResponseTextEditorCodeExecutionToolResultBlockContent content,
+          String toolUseId,
+          BetaResponseTextEditorCodeExecutionToolResultBlockType type_})
+      get copyWith => _copyWith;
 
-  BetaResponseTextEditorCodeExecutionToolResultBlock _copyWith({Object? content = sdkOmittedValue, Object? toolUseId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseTextEditorCodeExecutionToolResultBlock(
-    content: identical(content, sdkOmittedValue) ? this.content : content as BetaResponseTextEditorCodeExecutionToolResultBlockContent,
-    toolUseId: identical(toolUseId, sdkOmittedValue) ? this.toolUseId : toolUseId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseTextEditorCodeExecutionToolResultBlockType,
-  );
+  BetaResponseTextEditorCodeExecutionToolResultBlock _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? toolUseId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseTextEditorCodeExecutionToolResultBlock(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content
+                as BetaResponseTextEditorCodeExecutionToolResultBlockContent,
+        toolUseId: identical(toolUseId, sdkOmittedValue)
+            ? this.toolUseId
+            : toolUseId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseTextEditorCodeExecutionToolResultBlockType,
+      );
 
-  factory BetaResponseTextEditorCodeExecutionToolResultBlock.fromJson(Map<String, dynamic> json) => BetaResponseTextEditorCodeExecutionToolResultBlock(
-    content: (json['content'] != null ? BetaResponseTextEditorCodeExecutionToolResultBlockContent.fromJson(json['content']) : null)!,
-    toolUseId: (json['tool_use_id'] as String?)!,
-    type_: (json['type'] != null ? BetaResponseTextEditorCodeExecutionToolResultBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseTextEditorCodeExecutionToolResultBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseTextEditorCodeExecutionToolResultBlock(
+        content: (json['content'] != null
+            ? BetaResponseTextEditorCodeExecutionToolResultBlockContent
+                .fromJson(json['content'])
+            : null)!,
+        toolUseId: (json['tool_use_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaResponseTextEditorCodeExecutionToolResultBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content.toJson(),
-    'tool_use_id': toolUseId,
-    'type': type_.toJson(),
-  };
+        'content': content.toJson(),
+        'tool_use_id': toolUseId,
+        'type': type_.toJson(),
+      };
 }

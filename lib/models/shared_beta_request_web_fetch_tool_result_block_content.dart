@@ -10,32 +10,66 @@ sealed class BetaRequestWebFetchToolResultBlockContent {
   const BetaRequestWebFetchToolResultBlockContent();
   factory BetaRequestWebFetchToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaRequestWebFetchToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchToolResultError(value); } } catch (_) {}
-      try { final value = BetaRequestWebFetchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchResultBlock(value); } } catch (_) {}
+      try {
+        final value = BetaRequestWebFetchToolResultError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchToolResultError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRequestWebFetchResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchResultBlock(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchToolResultError(BetaRequestWebFetchToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchResultBlock(BetaRequestWebFetchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"web_fetch_tool_result_error", "web_fetch_result"}.contains(json["type"])) { return UnknownBetaRequestWebFetchToolResultBlockContent(json); }
-    throw FormatException("No variant matched for BetaRequestWebFetchToolResultBlockContent");
+    try {
+      return BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchToolResultError(
+          BetaRequestWebFetchToolResultError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchResultBlock(
+          BetaRequestWebFetchResultBlock.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"web_fetch_tool_result_error", "web_fetch_result"}
+            .contains(json["type"])) {
+      return UnknownBetaRequestWebFetchToolResultBlockContent(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRequestWebFetchToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchToolResultError extends BetaRequestWebFetchToolResultBlockContent {
+final class BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchToolResultError
+    extends BetaRequestWebFetchToolResultBlockContent {
   final BetaRequestWebFetchToolResultError value;
-  const BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchToolResultError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchToolResultError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchResultBlock extends BetaRequestWebFetchToolResultBlockContent {
+final class BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchResultBlock
+    extends BetaRequestWebFetchToolResultBlockContent {
   final BetaRequestWebFetchResultBlock value;
-  const BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestWebFetchToolResultBlockContentBetaRequestWebFetchResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestWebFetchToolResultBlockContent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestWebFetchToolResultBlockContent extends BetaRequestWebFetchToolResultBlockContent {
+final class UnknownBetaRequestWebFetchToolResultBlockContent
+    extends BetaRequestWebFetchToolResultBlockContent {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestWebFetchToolResultBlockContent(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

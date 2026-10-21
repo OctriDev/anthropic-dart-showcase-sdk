@@ -8,57 +8,101 @@ sealed class BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterations {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterations();
-  factory BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterations.fromJson(Object? json) {
-    if (json is num) { return BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterationsInt(json.toInt()); }
-    throw FormatException("No variant matched for BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterations");
+  factory BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterations.fromJson(
+      Object? json) {
+    if (json is num) {
+      return BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterationsInt(
+          json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterations");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterationsInt extends BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterations {
+final class BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterationsInt
+    extends BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterations {
   final int value;
-  const BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterationsInt(this.value);
-  @override Object? toJson() => value;
+  const BetaManagedAgentsUserDefineOutcomeEventParamsMaxIterationsInt(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
 /// Parameters for defining an outcome the agent should work toward. The agent begins work on receipt.
 class BetaManagedAgentsUserDefineOutcomeEventParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUserDefineOutcomeEventParamsType type_;
+
   /// What the agent should produce. This is the task specification.
   final String description;
+
   /// How to grade the outcome. Text or file reference.
   final BetaManagedAgentsRubricParams rubric;
+
   /// Eval→revision cycles before giving up. Default 3, max 20.
   final SdkOptional<int?> maxIterations;
 
-  const BetaManagedAgentsUserDefineOutcomeEventParams({required this.type_, required this.description, required this.rubric, this.maxIterations = const SdkOmitted()});
+  const BetaManagedAgentsUserDefineOutcomeEventParams(
+      {required this.type_,
+      required this.description,
+      required this.rubric,
+      this.maxIterations = const SdkOmitted()});
 
-  BetaManagedAgentsUserDefineOutcomeEventParams Function({BetaManagedAgentsUserDefineOutcomeEventParamsType type_, String description, BetaManagedAgentsRubricParams rubric, SdkOptional<int?> maxIterations}) get copyWith => _copyWith;
+  BetaManagedAgentsUserDefineOutcomeEventParams Function(
+      {BetaManagedAgentsUserDefineOutcomeEventParamsType type_,
+      String description,
+      BetaManagedAgentsRubricParams rubric,
+      SdkOptional<int?> maxIterations}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUserDefineOutcomeEventParams _copyWith({Object? type_ = sdkOmittedValue, Object? description = sdkOmittedValue, Object? rubric = sdkOmittedValue, Object? maxIterations = sdkOmittedValue}) => BetaManagedAgentsUserDefineOutcomeEventParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUserDefineOutcomeEventParamsType,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String,
-    rubric: identical(rubric, sdkOmittedValue) ? this.rubric : rubric as BetaManagedAgentsRubricParams,
-    maxIterations: identical(maxIterations, sdkOmittedValue) ? this.maxIterations : maxIterations as SdkOptional<int?>,
-  );
+  BetaManagedAgentsUserDefineOutcomeEventParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? rubric = sdkOmittedValue,
+          Object? maxIterations = sdkOmittedValue}) =>
+      BetaManagedAgentsUserDefineOutcomeEventParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsUserDefineOutcomeEventParamsType,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String,
+        rubric: identical(rubric, sdkOmittedValue)
+            ? this.rubric
+            : rubric as BetaManagedAgentsRubricParams,
+        maxIterations: identical(maxIterations, sdkOmittedValue)
+            ? this.maxIterations
+            : maxIterations as SdkOptional<int?>,
+      );
 
-  factory BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUserDefineOutcomeEventParams(
-    type_: (json['type'] != null ? BetaManagedAgentsUserDefineOutcomeEventParamsType.fromJson(json['type'] as String) : null)!,
-    description: (json['description'] as String?)!,
-    rubric: (json['rubric'] != null ? BetaManagedAgentsRubricParams.fromJson(json['rubric']) : null)!,
-    maxIterations: json.containsKey('max_iterations') ? SdkPresent((json['max_iterations'] as num?)?.toInt()) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUserDefineOutcomeEventParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUserDefineOutcomeEventParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        description: (json['description'] as String?)!,
+        rubric: (json['rubric'] != null
+            ? BetaManagedAgentsRubricParams.fromJson(json['rubric'])
+            : null)!,
+        maxIterations: json.containsKey('max_iterations')
+            ? SdkPresent((json['max_iterations'] as num?)?.toInt())
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'description': description,
-    'rubric': rubric.toJson(),
-    ...switch (maxIterations) {
-      SdkPresent<int?>(value: final value) => {'max_iterations': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        'description': description,
+        'rubric': rubric.toJson(),
+        ...switch (maxIterations) {
+          SdkPresent<int?>(value: final value) => {
+              'max_iterations': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

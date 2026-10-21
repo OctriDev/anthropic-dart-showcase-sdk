@@ -6,55 +6,68 @@ part of 'shared_beta_organization.dart';
 // shared_beta_organization domain models
 /// Typed representation of the `BetaOrganizationRoleSchema` API schema.
 final class BetaOrganizationRoleSchema {
-
   final String value;
 
   const BetaOrganizationRoleSchema._(this.value);
 
-  factory BetaOrganizationRoleSchema.fromJson(String value) => BetaOrganizationRoleSchema._(value);
+  factory BetaOrganizationRoleSchema.fromJson(String value) =>
+      BetaOrganizationRoleSchema._(value);
 
   static const admin = BetaOrganizationRoleSchema._('admin');
   static const billing = BetaOrganizationRoleSchema._('billing');
-  static const claudeCodeUser = BetaOrganizationRoleSchema._('claude_code_user');
+  static const claudeCodeUser =
+      BetaOrganizationRoleSchema._('claude_code_user');
   static const developer = BetaOrganizationRoleSchema._('developer');
   static const managed = BetaOrganizationRoleSchema._('managed');
-  static const membershipAdmin = BetaOrganizationRoleSchema._('membership_admin');
+  static const membershipAdmin =
+      BetaOrganizationRoleSchema._('membership_admin');
   static const owner = BetaOrganizationRoleSchema._('owner');
   static const primaryOwner = BetaOrganizationRoleSchema._('primary_owner');
   static const user = BetaOrganizationRoleSchema._('user');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaOrganizationRoleSchema && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaOrganizationRoleSchema && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `BetaOrganizationScope` API schema.
 class BetaOrganizationScope {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaOrganizationScopeType type_;
 
   const BetaOrganizationScope({required this.type_});
 
-  BetaOrganizationScope Function({BetaOrganizationScopeType type_}) get copyWith => _copyWith;
+  BetaOrganizationScope Function({BetaOrganizationScopeType type_})
+      get copyWith => _copyWith;
 
-  BetaOrganizationScope _copyWith({Object? type_ = sdkOmittedValue}) => BetaOrganizationScope(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaOrganizationScopeType,
-  );
+  BetaOrganizationScope _copyWith({Object? type_ = sdkOmittedValue}) =>
+      BetaOrganizationScope(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaOrganizationScopeType,
+      );
 
-  factory BetaOrganizationScope.fromJson(Map<String, dynamic> json) => BetaOrganizationScope(
-    type_: (json['type'] != null ? BetaOrganizationScopeType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaOrganizationScope.fromJson(Map<String, dynamic> json) =>
+      BetaOrganizationScope(
+        type_: (json['type'] != null
+            ? BetaOrganizationScopeType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaOrganizationTunnelArchivedAt {
@@ -62,70 +75,127 @@ sealed class BetaOrganizationTunnelArchivedAt {
   static const String constructionSurface = 'named';
   const BetaOrganizationTunnelArchivedAt();
   factory BetaOrganizationTunnelArchivedAt.fromJson(Object? json) {
-    if (json is String) { return BetaOrganizationTunnelArchivedAtString(json); }
-    throw FormatException("No variant matched for BetaOrganizationTunnelArchivedAt");
+    if (json is String) {
+      return BetaOrganizationTunnelArchivedAtString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaOrganizationTunnelArchivedAt");
   }
   Object? toJson();
 }
 
-final class BetaOrganizationTunnelArchivedAtString extends BetaOrganizationTunnelArchivedAt {
+final class BetaOrganizationTunnelArchivedAtString
+    extends BetaOrganizationTunnelArchivedAt {
   final String value;
   const BetaOrganizationTunnelArchivedAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaOrganizationTunnel` API schema.
 class BetaOrganizationTunnel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// RFC 3339 datetime string indicating when the Tunnel was archived, or `null` if it is not archived.
   final String? archivedAt;
+
   /// RFC 3339 datetime string indicating when the Tunnel was created.
   final String createdAt;
+
   /// Human-readable name for the Tunnel (1–255 characters), or `null` if unset.
   final String? displayName;
+
   /// Anthropic-assigned hostname for the Tunnel. MCP server URLs whose host is a subdomain of this value are routed through the Tunnel. Globally unique and never reused, even after the Tunnel is archived.
   final String domain;
+
   /// ID of the Tunnel.
   final String id;
+
   /// Object type. Always `tunnel` for Tunnels.
   final BetaOrganizationTunnelType type_;
+
   /// ID of the Workspace this Tunnel belongs to, or `null` for the default Workspace. Immutable after creation.
   final String? workspaceId;
 
-  const BetaOrganizationTunnel({required this.archivedAt, required this.createdAt, required this.displayName, required this.domain, required this.id, required this.type_, required this.workspaceId});
+  const BetaOrganizationTunnel(
+      {required this.archivedAt,
+      required this.createdAt,
+      required this.displayName,
+      required this.domain,
+      required this.id,
+      required this.type_,
+      required this.workspaceId});
 
-  BetaOrganizationTunnel Function({String? archivedAt, String createdAt, String? displayName, String domain, String id, BetaOrganizationTunnelType type_, String? workspaceId}) get copyWith => _copyWith;
+  BetaOrganizationTunnel Function(
+      {String? archivedAt,
+      String createdAt,
+      String? displayName,
+      String domain,
+      String id,
+      BetaOrganizationTunnelType type_,
+      String? workspaceId}) get copyWith => _copyWith;
 
-  BetaOrganizationTunnel _copyWith({Object? archivedAt = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? displayName = sdkOmittedValue, Object? domain = sdkOmittedValue, Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaOrganizationTunnel(
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as String?,
-    domain: identical(domain, sdkOmittedValue) ? this.domain : domain as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaOrganizationTunnelType,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String?,
-  );
+  BetaOrganizationTunnel _copyWith(
+          {Object? archivedAt = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? displayName = sdkOmittedValue,
+          Object? domain = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaOrganizationTunnel(
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as String?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        displayName: identical(displayName, sdkOmittedValue)
+            ? this.displayName
+            : displayName as String?,
+        domain:
+            identical(domain, sdkOmittedValue) ? this.domain : domain as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaOrganizationTunnelType,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String?,
+      );
 
-  factory BetaOrganizationTunnel.fromJson(Map<String, dynamic> json) => BetaOrganizationTunnel(
-    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    displayName: json.containsKey('display_name') ? json['display_name'] as String? : throw ArgumentError.value(null, 'display_name', 'Required property is missing'),
-    domain: (json['domain'] as String?)!,
-    id: (json['id'] as String?)!,
-    type_: (json['type'] != null ? BetaOrganizationTunnelType.fromJson(json['type'] as String) : null)!,
-    workspaceId: json.containsKey('workspace_id') ? json['workspace_id'] as String? : throw ArgumentError.value(null, 'workspace_id', 'Required property is missing'),
-  );
+  factory BetaOrganizationTunnel.fromJson(Map<String, dynamic> json) =>
+      BetaOrganizationTunnel(
+        archivedAt: json.containsKey('archived_at')
+            ? json['archived_at'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_at', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        displayName: json.containsKey('display_name')
+            ? json['display_name'] as String?
+            : throw ArgumentError.value(
+                null, 'display_name', 'Required property is missing'),
+        domain: (json['domain'] as String?)!,
+        id: (json['id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaOrganizationTunnelType.fromJson(json['type'] as String)
+            : null)!,
+        workspaceId: json.containsKey('workspace_id')
+            ? json['workspace_id'] as String?
+            : throw ArgumentError.value(
+                null, 'workspace_id', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'archived_at': archivedAt,
-    'created_at': createdAt,
-    'display_name': displayName,
-    'domain': domain,
-    'id': id,
-    'type': type_.toJson(),
-    'workspace_id': workspaceId,
-  };
+        'archived_at': archivedAt,
+        'created_at': createdAt,
+        'display_name': displayName,
+        'domain': domain,
+        'id': id,
+        'type': type_.toJson(),
+        'workspace_id': workspaceId,
+      };
 }
 
 sealed class BetaOrganizationTunnelCertificateArchivedAt {
@@ -133,16 +203,21 @@ sealed class BetaOrganizationTunnelCertificateArchivedAt {
   static const String constructionSurface = 'named';
   const BetaOrganizationTunnelCertificateArchivedAt();
   factory BetaOrganizationTunnelCertificateArchivedAt.fromJson(Object? json) {
-    if (json is String) { return BetaOrganizationTunnelCertificateArchivedAtString(json); }
-    throw FormatException("No variant matched for BetaOrganizationTunnelCertificateArchivedAt");
+    if (json is String) {
+      return BetaOrganizationTunnelCertificateArchivedAtString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaOrganizationTunnelCertificateArchivedAt");
   }
   Object? toJson();
 }
 
-final class BetaOrganizationTunnelCertificateArchivedAtString extends BetaOrganizationTunnelCertificateArchivedAt {
+final class BetaOrganizationTunnelCertificateArchivedAtString
+    extends BetaOrganizationTunnelCertificateArchivedAt {
   final String value;
   const BetaOrganizationTunnelCertificateArchivedAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BetaOrganizationTunnelCertificateExpiresAt {
@@ -150,102 +225,177 @@ sealed class BetaOrganizationTunnelCertificateExpiresAt {
   static const String constructionSurface = 'named';
   const BetaOrganizationTunnelCertificateExpiresAt();
   factory BetaOrganizationTunnelCertificateExpiresAt.fromJson(Object? json) {
-    if (json is String) { return BetaOrganizationTunnelCertificateExpiresAtString(json); }
-    throw FormatException("No variant matched for BetaOrganizationTunnelCertificateExpiresAt");
+    if (json is String) {
+      return BetaOrganizationTunnelCertificateExpiresAtString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaOrganizationTunnelCertificateExpiresAt");
   }
   Object? toJson();
 }
 
-final class BetaOrganizationTunnelCertificateExpiresAtString extends BetaOrganizationTunnelCertificateExpiresAt {
+final class BetaOrganizationTunnelCertificateExpiresAtString
+    extends BetaOrganizationTunnelCertificateExpiresAt {
   final String value;
   const BetaOrganizationTunnelCertificateExpiresAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaOrganizationTunnelCertificate` API schema.
 class BetaOrganizationTunnelCertificate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// RFC 3339 datetime string indicating when the certificate was archived, or `null` if it is not archived.
   final String? archivedAt;
+
   /// RFC 3339 datetime string indicating when the certificate was registered.
   final String createdAt;
+
   /// RFC 3339 datetime string indicating when the certificate expires, or `null` if it does not expire.
   final String? expiresAt;
+
   /// The certificate's SHA-256 fingerprint, as a lowercase hex string.
   final String fingerprint;
+
   /// ID of the Tunnel Certificate.
   final String id;
+
   /// ID of the Tunnel this certificate is registered against.
   final String tunnelId;
+
   /// Object type. Always `tunnel_certificate` for Tunnel Certificates.
   final BetaOrganizationTunnelCertificateType type_;
 
-  const BetaOrganizationTunnelCertificate({required this.archivedAt, required this.createdAt, required this.expiresAt, required this.fingerprint, required this.id, required this.tunnelId, required this.type_});
+  const BetaOrganizationTunnelCertificate(
+      {required this.archivedAt,
+      required this.createdAt,
+      required this.expiresAt,
+      required this.fingerprint,
+      required this.id,
+      required this.tunnelId,
+      required this.type_});
 
-  BetaOrganizationTunnelCertificate Function({String? archivedAt, String createdAt, String? expiresAt, String fingerprint, String id, String tunnelId, BetaOrganizationTunnelCertificateType type_}) get copyWith => _copyWith;
+  BetaOrganizationTunnelCertificate Function(
+      {String? archivedAt,
+      String createdAt,
+      String? expiresAt,
+      String fingerprint,
+      String id,
+      String tunnelId,
+      BetaOrganizationTunnelCertificateType type_}) get copyWith => _copyWith;
 
-  BetaOrganizationTunnelCertificate _copyWith({Object? archivedAt = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? expiresAt = sdkOmittedValue, Object? fingerprint = sdkOmittedValue, Object? id = sdkOmittedValue, Object? tunnelId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaOrganizationTunnelCertificate(
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as String?,
-    fingerprint: identical(fingerprint, sdkOmittedValue) ? this.fingerprint : fingerprint as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    tunnelId: identical(tunnelId, sdkOmittedValue) ? this.tunnelId : tunnelId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaOrganizationTunnelCertificateType,
-  );
+  BetaOrganizationTunnelCertificate _copyWith(
+          {Object? archivedAt = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? expiresAt = sdkOmittedValue,
+          Object? fingerprint = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? tunnelId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaOrganizationTunnelCertificate(
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as String?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        expiresAt: identical(expiresAt, sdkOmittedValue)
+            ? this.expiresAt
+            : expiresAt as String?,
+        fingerprint: identical(fingerprint, sdkOmittedValue)
+            ? this.fingerprint
+            : fingerprint as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        tunnelId: identical(tunnelId, sdkOmittedValue)
+            ? this.tunnelId
+            : tunnelId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaOrganizationTunnelCertificateType,
+      );
 
-  factory BetaOrganizationTunnelCertificate.fromJson(Map<String, dynamic> json) => BetaOrganizationTunnelCertificate(
-    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    expiresAt: json.containsKey('expires_at') ? json['expires_at'] as String? : throw ArgumentError.value(null, 'expires_at', 'Required property is missing'),
-    fingerprint: (json['fingerprint'] as String?)!,
-    id: (json['id'] as String?)!,
-    tunnelId: (json['tunnel_id'] as String?)!,
-    type_: (json['type'] != null ? BetaOrganizationTunnelCertificateType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaOrganizationTunnelCertificate.fromJson(
+          Map<String, dynamic> json) =>
+      BetaOrganizationTunnelCertificate(
+        archivedAt: json.containsKey('archived_at')
+            ? json['archived_at'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_at', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        expiresAt: json.containsKey('expires_at')
+            ? json['expires_at'] as String?
+            : throw ArgumentError.value(
+                null, 'expires_at', 'Required property is missing'),
+        fingerprint: (json['fingerprint'] as String?)!,
+        id: (json['id'] as String?)!,
+        tunnelId: (json['tunnel_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaOrganizationTunnelCertificateType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'archived_at': archivedAt,
-    'created_at': createdAt,
-    'expires_at': expiresAt,
-    'fingerprint': fingerprint,
-    'id': id,
-    'tunnel_id': tunnelId,
-    'type': type_.toJson(),
-  };
+        'archived_at': archivedAt,
+        'created_at': createdAt,
+        'expires_at': expiresAt,
+        'fingerprint': fingerprint,
+        'id': id,
+        'tunnel_id': tunnelId,
+        'type': type_.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaOrganizationTunnelToken` API schema.
 class BetaOrganizationTunnelToken {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Stable identifier for the current token value. Changes when the token is rotated.
   final String id;
+
   /// The tunnel's connection token.
   final String tunnelToken;
+
   /// Object type. Always `tunnel_token` for Tunnel Tokens.
   final BetaOrganizationTunnelTokenType type_;
 
-  const BetaOrganizationTunnelToken({required this.id, required this.tunnelToken, required this.type_});
+  const BetaOrganizationTunnelToken(
+      {required this.id, required this.tunnelToken, required this.type_});
 
-  BetaOrganizationTunnelToken Function({String id, String tunnelToken, BetaOrganizationTunnelTokenType type_}) get copyWith => _copyWith;
+  BetaOrganizationTunnelToken Function(
+      {String id,
+      String tunnelToken,
+      BetaOrganizationTunnelTokenType type_}) get copyWith => _copyWith;
 
-  BetaOrganizationTunnelToken _copyWith({Object? id = sdkOmittedValue, Object? tunnelToken = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaOrganizationTunnelToken(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    tunnelToken: identical(tunnelToken, sdkOmittedValue) ? this.tunnelToken : tunnelToken as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaOrganizationTunnelTokenType,
-  );
+  BetaOrganizationTunnelToken _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? tunnelToken = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaOrganizationTunnelToken(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        tunnelToken: identical(tunnelToken, sdkOmittedValue)
+            ? this.tunnelToken
+            : tunnelToken as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaOrganizationTunnelTokenType,
+      );
 
-  factory BetaOrganizationTunnelToken.fromJson(Map<String, dynamic> json) => BetaOrganizationTunnelToken(
-    id: (json['id'] as String?)!,
-    tunnelToken: (json['tunnel_token'] as String?)!,
-    type_: (json['type'] != null ? BetaOrganizationTunnelTokenType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaOrganizationTunnelToken.fromJson(Map<String, dynamic> json) =>
+      BetaOrganizationTunnelToken(
+        id: (json['id'] as String?)!,
+        tunnelToken: (json['tunnel_token'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaOrganizationTunnelTokenType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'tunnel_token': tunnelToken,
-    'type': type_.toJson(),
-  };
+        'id': id,
+        'tunnel_token': tunnelToken,
+        'type': type_.toJson(),
+      };
 }

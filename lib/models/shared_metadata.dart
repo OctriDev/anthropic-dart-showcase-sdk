@@ -9,7 +9,9 @@ sealed class MetadataUserId {
   static const String constructionSurface = 'named';
   const MetadataUserId();
   factory MetadataUserId.fromJson(Object? json) {
-    if (json is String) { return MetadataUserIdString(json); }
+    if (json is String) {
+      return MetadataUserIdString(json);
+    }
     throw FormatException("No variant matched for MetadataUserId");
   }
   Object? toJson();
@@ -18,13 +20,15 @@ sealed class MetadataUserId {
 final class MetadataUserIdString extends MetadataUserId {
   final String value;
   const MetadataUserIdString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `Metadata` API schema.
 class Metadata {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// An external identifier for the user who is associated with the request. This should be a uuid, hash value, or other opaque identifier. Anthropic may use this id to help detect abuse. Do not include any identifying information such as name, email address, or phone number.
   final SdkOptional<String?> userId;
 
@@ -33,17 +37,23 @@ class Metadata {
   Metadata Function({SdkOptional<String?> userId}) get copyWith => _copyWith;
 
   Metadata _copyWith({Object? userId = sdkOmittedValue}) => Metadata(
-    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as SdkOptional<String?>,
-  );
+        userId: identical(userId, sdkOmittedValue)
+            ? this.userId
+            : userId as SdkOptional<String?>,
+      );
 
   factory Metadata.fromJson(Map<String, dynamic> json) => Metadata(
-    userId: json.containsKey('user_id') ? SdkPresent(json['user_id'] as String?) : const SdkOmitted(),
-  );
+        userId: json.containsKey('user_id')
+            ? SdkPresent(json['user_id'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (userId) {
-      SdkPresent<String?>(value: final value) => {'user_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (userId) {
+          SdkPresent<String?>(value: final value) => {
+              'user_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

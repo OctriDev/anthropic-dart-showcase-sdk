@@ -8,67 +8,143 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionThreadAgent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionThreadAgentType type_;
+
   /// Required `string` value serialized in the `id` wire field.
   final String id;
+
   /// Required `int32`-formatted value serialized in the `version` wire field.
   final int version;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
+
   /// Model identifier and configuration.
   final BetaManagedAgentsModelConfig model;
+
   /// Required `string` value serialized in the `system` wire field.
   final String? system;
+
   /// Required array value serialized in the `tools` wire field.
   final List<BetaManagedAgentsAgentTool> tools;
+
   /// Required array value serialized in the `mcp_servers` wire field.
   final List<BetaManagedAgentsMCPServer> mcpServers;
+
   /// Required array value serialized in the `skills` wire field.
   final List<BetaManagedAgentsSkill> skills;
 
-  const BetaManagedAgentsSessionThreadAgent({required this.type_, required this.id, required this.version, required this.name, required this.description, required this.model, required this.system, required this.tools, required this.mcpServers, required this.skills});
+  const BetaManagedAgentsSessionThreadAgent(
+      {required this.type_,
+      required this.id,
+      required this.version,
+      required this.name,
+      required this.description,
+      required this.model,
+      required this.system,
+      required this.tools,
+      required this.mcpServers,
+      required this.skills});
 
-  BetaManagedAgentsSessionThreadAgent Function({BetaManagedAgentsSessionThreadAgentType type_, String id, int version, String name, String? description, BetaManagedAgentsModelConfig model, String? system, List<BetaManagedAgentsAgentTool> tools, List<BetaManagedAgentsMCPServer> mcpServers, List<BetaManagedAgentsSkill> skills}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionThreadAgent Function(
+      {BetaManagedAgentsSessionThreadAgentType type_,
+      String id,
+      int version,
+      String name,
+      String? description,
+      BetaManagedAgentsModelConfig model,
+      String? system,
+      List<BetaManagedAgentsAgentTool> tools,
+      List<BetaManagedAgentsMCPServer> mcpServers,
+      List<BetaManagedAgentsSkill> skills}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionThreadAgent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? version = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? model = sdkOmittedValue, Object? system = sdkOmittedValue, Object? tools = sdkOmittedValue, Object? mcpServers = sdkOmittedValue, Object? skills = sdkOmittedValue}) => BetaManagedAgentsSessionThreadAgent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionThreadAgentType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    version: identical(version, sdkOmittedValue) ? this.version : version as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    model: identical(model, sdkOmittedValue) ? this.model : model as BetaManagedAgentsModelConfig,
-    system: identical(system, sdkOmittedValue) ? this.system : system as String?,
-    tools: identical(tools, sdkOmittedValue) ? this.tools : tools as List<BetaManagedAgentsAgentTool>,
-    mcpServers: identical(mcpServers, sdkOmittedValue) ? this.mcpServers : mcpServers as List<BetaManagedAgentsMCPServer>,
-    skills: identical(skills, sdkOmittedValue) ? this.skills : skills as List<BetaManagedAgentsSkill>,
-  );
+  BetaManagedAgentsSessionThreadAgent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? version = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? model = sdkOmittedValue,
+          Object? system = sdkOmittedValue,
+          Object? tools = sdkOmittedValue,
+          Object? mcpServers = sdkOmittedValue,
+          Object? skills = sdkOmittedValue}) =>
+      BetaManagedAgentsSessionThreadAgent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSessionThreadAgentType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        version:
+            identical(version, sdkOmittedValue) ? this.version : version as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        model: identical(model, sdkOmittedValue)
+            ? this.model
+            : model as BetaManagedAgentsModelConfig,
+        system: identical(system, sdkOmittedValue)
+            ? this.system
+            : system as String?,
+        tools: identical(tools, sdkOmittedValue)
+            ? this.tools
+            : tools as List<BetaManagedAgentsAgentTool>,
+        mcpServers: identical(mcpServers, sdkOmittedValue)
+            ? this.mcpServers
+            : mcpServers as List<BetaManagedAgentsMCPServer>,
+        skills: identical(skills, sdkOmittedValue)
+            ? this.skills
+            : skills as List<BetaManagedAgentsSkill>,
+      );
 
-  factory BetaManagedAgentsSessionThreadAgent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionThreadAgent(
-    type_: (json['type'] != null ? BetaManagedAgentsSessionThreadAgentType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    version: ((json['version'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    model: (json['model'] != null ? BetaManagedAgentsModelConfig.fromJson(json['model'] as Map<String, dynamic>) : null)!,
-    system: json.containsKey('system') ? json['system'] as String? : throw ArgumentError.value(null, 'system', 'Required property is missing'),
-    tools: ((json['tools'] as List?)?.map((e) => BetaManagedAgentsAgentTool.fromJson(e)).toList())!,
-    mcpServers: ((json['mcp_servers'] as List?)?.map((e) => BetaManagedAgentsMCPServer.fromJson(e)).toList())!,
-    skills: ((json['skills'] as List?)?.map((e) => BetaManagedAgentsSkill.fromJson(e)).toList())!,
-  );
+  factory BetaManagedAgentsSessionThreadAgent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSessionThreadAgent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSessionThreadAgentType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        version: ((json['version'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        model: (json['model'] != null
+            ? BetaManagedAgentsModelConfig.fromJson(
+                json['model'] as Map<String, dynamic>)
+            : null)!,
+        system: json.containsKey('system')
+            ? json['system'] as String?
+            : throw ArgumentError.value(
+                null, 'system', 'Required property is missing'),
+        tools: ((json['tools'] as List?)
+            ?.map((e) => BetaManagedAgentsAgentTool.fromJson(e))
+            .toList())!,
+        mcpServers: ((json['mcp_servers'] as List?)
+            ?.map((e) => BetaManagedAgentsMCPServer.fromJson(e))
+            .toList())!,
+        skills: ((json['skills'] as List?)
+            ?.map((e) => BetaManagedAgentsSkill.fromJson(e))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'version': version,
-    'name': name,
-    'description': description,
-    'model': model.toJson(),
-    'system': system,
-    'tools': tools.map((item) => item.toJson()).toList(),
-    'mcp_servers': mcpServers.map((item) => item.toJson()).toList(),
-    'skills': skills.map((item) => item.toJson()).toList(),
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'version': version,
+        'name': name,
+        'description': description,
+        'model': model.toJson(),
+        'system': system,
+        'tools': tools.map((item) => item.toJson()).toList(),
+        'mcp_servers': mcpServers.map((item) => item.toJson()).toList(),
+        'skills': skills.map((item) => item.toJson()).toList(),
+      };
 }

@@ -8,27 +8,47 @@ part of 'shared_beta_request_web.dart';
 class BetaRequestWebFetchToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `error_code` wire field.
   final BetaWebFetchToolResultErrorCode errorCode;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestWebFetchToolResultErrorType type_;
 
-  const BetaRequestWebFetchToolResultError({required this.errorCode, required this.type_});
+  const BetaRequestWebFetchToolResultError(
+      {required this.errorCode, required this.type_});
 
-  BetaRequestWebFetchToolResultError Function({BetaWebFetchToolResultErrorCode errorCode, BetaRequestWebFetchToolResultErrorType type_}) get copyWith => _copyWith;
+  BetaRequestWebFetchToolResultError Function(
+      {BetaWebFetchToolResultErrorCode errorCode,
+      BetaRequestWebFetchToolResultErrorType type_}) get copyWith => _copyWith;
 
-  BetaRequestWebFetchToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestWebFetchToolResultError(
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as BetaWebFetchToolResultErrorCode,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestWebFetchToolResultErrorType,
-  );
+  BetaRequestWebFetchToolResultError _copyWith(
+          {Object? errorCode = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestWebFetchToolResultError(
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as BetaWebFetchToolResultErrorCode,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestWebFetchToolResultErrorType,
+      );
 
-  factory BetaRequestWebFetchToolResultError.fromJson(Map<String, dynamic> json) => BetaRequestWebFetchToolResultError(
-    errorCode: (json['error_code'] != null ? BetaWebFetchToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
-    type_: (json['type'] != null ? BetaRequestWebFetchToolResultErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestWebFetchToolResultError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestWebFetchToolResultError(
+        errorCode: (json['error_code'] != null
+            ? BetaWebFetchToolResultErrorCode.fromJson(
+                json['error_code'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaRequestWebFetchToolResultErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'error_code': errorCode.toJson(),
-    'type': type_.toJson(),
-  };
+        'error_code': errorCode.toJson(),
+        'type': type_.toJson(),
+      };
 }

@@ -8,52 +8,106 @@ part of 'shared_beta_response.dart';
 class BetaResponsePageLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `cited_text` wire field.
   final String citedText;
+
   /// Required `integer` value serialized in the `document_index` wire field.
   final int documentIndex;
+
   /// Required `string` value serialized in the `document_title` wire field.
   final String? documentTitle;
+
   /// Required `integer` value serialized in the `end_page_number` wire field.
   final int endPageNumber;
+
   /// Required `string` value serialized in the `file_id` wire field.
   final String? fileId;
+
   /// Required `integer` value serialized in the `start_page_number` wire field.
   final int startPageNumber;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponsePageLocationCitationType type_;
 
-  const BetaResponsePageLocationCitation({required this.citedText, required this.documentIndex, required this.documentTitle, required this.endPageNumber, required this.fileId, required this.startPageNumber, required this.type_});
+  const BetaResponsePageLocationCitation(
+      {required this.citedText,
+      required this.documentIndex,
+      required this.documentTitle,
+      required this.endPageNumber,
+      required this.fileId,
+      required this.startPageNumber,
+      required this.type_});
 
-  BetaResponsePageLocationCitation Function({String citedText, int documentIndex, String? documentTitle, int endPageNumber, String? fileId, int startPageNumber, BetaResponsePageLocationCitationType type_}) get copyWith => _copyWith;
+  BetaResponsePageLocationCitation Function(
+      {String citedText,
+      int documentIndex,
+      String? documentTitle,
+      int endPageNumber,
+      String? fileId,
+      int startPageNumber,
+      BetaResponsePageLocationCitationType type_}) get copyWith => _copyWith;
 
-  BetaResponsePageLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? documentIndex = sdkOmittedValue, Object? documentTitle = sdkOmittedValue, Object? endPageNumber = sdkOmittedValue, Object? fileId = sdkOmittedValue, Object? startPageNumber = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponsePageLocationCitation(
-    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
-    documentIndex: identical(documentIndex, sdkOmittedValue) ? this.documentIndex : documentIndex as int,
-    documentTitle: identical(documentTitle, sdkOmittedValue) ? this.documentTitle : documentTitle as String?,
-    endPageNumber: identical(endPageNumber, sdkOmittedValue) ? this.endPageNumber : endPageNumber as int,
-    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String?,
-    startPageNumber: identical(startPageNumber, sdkOmittedValue) ? this.startPageNumber : startPageNumber as int,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponsePageLocationCitationType,
-  );
+  BetaResponsePageLocationCitation _copyWith(
+          {Object? citedText = sdkOmittedValue,
+          Object? documentIndex = sdkOmittedValue,
+          Object? documentTitle = sdkOmittedValue,
+          Object? endPageNumber = sdkOmittedValue,
+          Object? fileId = sdkOmittedValue,
+          Object? startPageNumber = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponsePageLocationCitation(
+        citedText: identical(citedText, sdkOmittedValue)
+            ? this.citedText
+            : citedText as String,
+        documentIndex: identical(documentIndex, sdkOmittedValue)
+            ? this.documentIndex
+            : documentIndex as int,
+        documentTitle: identical(documentTitle, sdkOmittedValue)
+            ? this.documentTitle
+            : documentTitle as String?,
+        endPageNumber: identical(endPageNumber, sdkOmittedValue)
+            ? this.endPageNumber
+            : endPageNumber as int,
+        fileId: identical(fileId, sdkOmittedValue)
+            ? this.fileId
+            : fileId as String?,
+        startPageNumber: identical(startPageNumber, sdkOmittedValue)
+            ? this.startPageNumber
+            : startPageNumber as int,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponsePageLocationCitationType,
+      );
 
-  factory BetaResponsePageLocationCitation.fromJson(Map<String, dynamic> json) => BetaResponsePageLocationCitation(
-    citedText: (json['cited_text'] as String?)!,
-    documentIndex: ((json['document_index'] as num?)?.toInt())!,
-    documentTitle: json.containsKey('document_title') ? json['document_title'] as String? : throw ArgumentError.value(null, 'document_title', 'Required property is missing'),
-    endPageNumber: ((json['end_page_number'] as num?)?.toInt())!,
-    fileId: json.containsKey('file_id') ? json['file_id'] as String? : throw ArgumentError.value(null, 'file_id', 'Required property is missing'),
-    startPageNumber: ((json['start_page_number'] as num?)?.toInt())!,
-    type_: (json['type'] != null ? BetaResponsePageLocationCitationType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponsePageLocationCitation.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponsePageLocationCitation(
+        citedText: (json['cited_text'] as String?)!,
+        documentIndex: ((json['document_index'] as num?)?.toInt())!,
+        documentTitle: json.containsKey('document_title')
+            ? json['document_title'] as String?
+            : throw ArgumentError.value(
+                null, 'document_title', 'Required property is missing'),
+        endPageNumber: ((json['end_page_number'] as num?)?.toInt())!,
+        fileId: json.containsKey('file_id')
+            ? json['file_id'] as String?
+            : throw ArgumentError.value(
+                null, 'file_id', 'Required property is missing'),
+        startPageNumber: ((json['start_page_number'] as num?)?.toInt())!,
+        type_: (json['type'] != null
+            ? BetaResponsePageLocationCitationType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'cited_text': citedText,
-    'document_index': documentIndex,
-    'document_title': documentTitle,
-    'end_page_number': endPageNumber,
-    'file_id': fileId,
-    'start_page_number': startPageNumber,
-    'type': type_.toJson(),
-  };
+        'cited_text': citedText,
+        'document_index': documentIndex,
+        'document_title': documentTitle,
+        'end_page_number': endPageNumber,
+        'file_id': fileId,
+        'start_page_number': startPageNumber,
+        'type': type_.toJson(),
+      };
 }

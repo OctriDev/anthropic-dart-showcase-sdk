@@ -8,27 +8,40 @@ part of 'shared_beta.dart';
 class BetaPermissionError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaPermissionErrorType type_;
 
   const BetaPermissionError({required this.message, required this.type_});
 
-  BetaPermissionError Function({String message, BetaPermissionErrorType type_}) get copyWith => _copyWith;
+  BetaPermissionError Function({String message, BetaPermissionErrorType type_})
+      get copyWith => _copyWith;
 
-  BetaPermissionError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaPermissionError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaPermissionErrorType,
-  );
+  BetaPermissionError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaPermissionError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaPermissionErrorType,
+      );
 
-  factory BetaPermissionError.fromJson(Map<String, dynamic> json) => BetaPermissionError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? BetaPermissionErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaPermissionError.fromJson(Map<String, dynamic> json) =>
+      BetaPermissionError(
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaPermissionErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }

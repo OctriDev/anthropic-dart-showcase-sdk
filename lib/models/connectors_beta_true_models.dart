@@ -8,291 +8,575 @@ part of 'connectors_beta_true.dart';
 class BetaAnalyticsConnectorActivity {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Claude.ai activity metrics for a single connector on a given day.
   final BetaAnalyticsConnectorChatMetrics chatMetrics;
+
   /// Claude Code activity metrics for a single connector on a given day.
   final BetaAnalyticsConnectorClaudeCodeMetrics claudeCodeMetrics;
+
   /// Human-readable display name for rows whose `connector_name` is an opaque connector id rather than a readable name, resolved at request time from the organization's connectors (including connectors that have since been removed). `connector_name` remains the row's stable key for sorting and pagination, and `filter[]=connector_name:{value}` also matches these rows by display name. Display names are not unique, and the same connector's claude.ai usage can appear under a separate row with a readable `connector_name`. Null when `connector_name` is already a readable name, when the id cannot be resolved to one of the organization's connectors, or when display-name resolution is not enabled for this organization.
   final SdkOptional<String?> connectorDisplayName;
+
   /// Name of the connector. Some rows carry an opaque connector id here instead of a readable name; `connector_display_name` holds the resolved name for those rows.
   final String connectorName;
+
   /// Cowork activity metrics for a single connector on a given day.
   final BetaAnalyticsConnectorCoworkMetrics coworkMetrics;
+
   /// Number of distinct users who used the connector on the requested day, or, in date-range mode, over the requested window — recomputed as an exact distinct count over the window's per-member daily rows, never a sum of per-day values.
   final int distinctUserCount;
+
   /// Number of distinct users whose use of this connector on the requested day ran on their own individual credential, connected through their own consent flow. Companion bucket to `managed_auth_distinct_user_count`, which carries the measurement, attribution, and null rules. Users whose requests used no stored credential count in neither bucket.
   final SdkOptional<int?> individualAuthDistinctUserCount;
+
   /// Number of distinct users whose use of this connector on the requested day ran on Enterprise Managed Auth (an organization-managed credential provisioned through the organization's identity provider), read from the token record each request used. Null, never 0, when managed-auth reporting is not enabled for the organization, the value cannot be attributed to the row, no credentialed requests and no managed-token mint events (a managed credential being provisioned for a user's use of the connector) were observed that day, or the day predates 2026-07-01, the first day the backing data exists (forward-only data, no backfill). When credentialed requests or mint events were observed and attributed, both managed-auth fields populate, reporting 0 for a bucket with no users; the two counts are independent, not a partition — a user whose requests that day used both kinds of credential counts in both. Mint events carry user but not surface attribution, so they count as observed auth activity on `user_id` and `rbac_group_id` cuts — attributed to the user the credential was provisioned for — but never on a cut that references `product` (group or filter). Date-range rollup mode (`starting_date`/`ending_date`) computes both fields exactly over the window — distinct users with at least one qualifying day — when the whole window starts on or after 2026-07-01, with the null-versus-0 and mint-event rules applying with the window in place of the day; a range starting earlier reports every managed-auth field as null, never a partial-window value.
   final SdkOptional<int?> managedAuthDistinctUserCount;
+
   /// Office Agent activity metrics for a single connector on a given day, broken out by Office product.
   final BetaAnalyticsConnectorOfficeMetrics officeMetrics;
+
   /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, or `office_agent` (the canonical Cost & Usage product naming; an `office_agent` row's per-surface breakdown is in its `office_metrics`). On `/plugins` only `cowork` and `claude_code` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, and `cowork` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
   final SdkOptional<String?> product;
+
   /// Tagged RBAC group identifier (`rbac_group_...`), matching the spend-limits API spelling. Present only when the request grouped by `rbac_group_id`.
   final SdkOptional<String?> rbacGroupId;
+
   /// Resolved RBAC group display name, alongside `rbac_group_id` when name resolution is available. Null if the group has been deleted or its name could not be resolved; `rbac_group_id` remains the stable key.
   final SdkOptional<String?> rbacGroupName;
+
   /// Number of connector tool calls on the requested day whose trusted read-only annotation marked them read-only. Call count, not distinct users. Every call recorded on a classified surface lands in exactly one of `read_call_count`, `write_call_count`, or `unclassified_call_count`, so the three sum to the day's classified calls. Classification is forward-only per surface: claude.ai from 2026-06-01, Claude Code from 2026-05-30, Claude in Office from 2026-05-29, Cowork from 2026-06-02 (Cowork clients predating annotation forwarding land in `unclassified_call_count`). Null, never 0, when the value cannot be stated: the read/write split is not enabled for this organization, or the day predates 2026-05-29. For a date-range total, sum the per-day values, but treat a window that extends before 2026-05-29 as null rather than summing only its covered days — date-range rollup mode (`starting_date`/`ending_date`) applies both rules server-side.
   final SdkOptional<int?> readCallCount;
+
   /// Number of connector tool calls on the requested day with no trusted read-only annotation — the annotation is optional in the MCP spec and is discarded when connector access controls are active, so unclassified calls are common. This field shows how much of the day's classified activity the read/write split actually covers. Call count, not distinct users. One of the three call-classification buckets; see `read_call_count` for the per-surface data-start dates, null conditions, and date-range guidance.
   final SdkOptional<int?> unclassifiedCallCount;
+
   /// Tagged user identifier (e.g. `user_...`). Present only when the request grouped by `user_id`.
   final SdkOptional<String?> userId;
+
   /// Number of connector tool calls on the requested day whose trusted read-only annotation marked them not read-only. Call count, not distinct users. One of the three call-classification buckets; see `read_call_count` for the per-surface data-start dates, null conditions, and date-range guidance.
   final SdkOptional<int?> writeCallCount;
 
-  const BetaAnalyticsConnectorActivity({required this.chatMetrics, required this.claudeCodeMetrics, this.connectorDisplayName = const SdkOmitted(), required this.connectorName, required this.coworkMetrics, required this.distinctUserCount, this.individualAuthDistinctUserCount = const SdkOmitted(), this.managedAuthDistinctUserCount = const SdkOmitted(), required this.officeMetrics, this.product = const SdkOmitted(), this.rbacGroupId = const SdkOmitted(), this.rbacGroupName = const SdkOmitted(), this.readCallCount = const SdkOmitted(), this.unclassifiedCallCount = const SdkOmitted(), this.userId = const SdkOmitted(), this.writeCallCount = const SdkOmitted()});
+  const BetaAnalyticsConnectorActivity(
+      {required this.chatMetrics,
+      required this.claudeCodeMetrics,
+      this.connectorDisplayName = const SdkOmitted(),
+      required this.connectorName,
+      required this.coworkMetrics,
+      required this.distinctUserCount,
+      this.individualAuthDistinctUserCount = const SdkOmitted(),
+      this.managedAuthDistinctUserCount = const SdkOmitted(),
+      required this.officeMetrics,
+      this.product = const SdkOmitted(),
+      this.rbacGroupId = const SdkOmitted(),
+      this.rbacGroupName = const SdkOmitted(),
+      this.readCallCount = const SdkOmitted(),
+      this.unclassifiedCallCount = const SdkOmitted(),
+      this.userId = const SdkOmitted(),
+      this.writeCallCount = const SdkOmitted()});
 
-  BetaAnalyticsConnectorActivity Function({BetaAnalyticsConnectorChatMetrics chatMetrics, BetaAnalyticsConnectorClaudeCodeMetrics claudeCodeMetrics, SdkOptional<String?> connectorDisplayName, String connectorName, BetaAnalyticsConnectorCoworkMetrics coworkMetrics, int distinctUserCount, SdkOptional<int?> individualAuthDistinctUserCount, SdkOptional<int?> managedAuthDistinctUserCount, BetaAnalyticsConnectorOfficeMetrics officeMetrics, SdkOptional<String?> product, SdkOptional<String?> rbacGroupId, SdkOptional<String?> rbacGroupName, SdkOptional<int?> readCallCount, SdkOptional<int?> unclassifiedCallCount, SdkOptional<String?> userId, SdkOptional<int?> writeCallCount}) get copyWith => _copyWith;
+  BetaAnalyticsConnectorActivity Function(
+      {BetaAnalyticsConnectorChatMetrics chatMetrics,
+      BetaAnalyticsConnectorClaudeCodeMetrics claudeCodeMetrics,
+      SdkOptional<String?> connectorDisplayName,
+      String connectorName,
+      BetaAnalyticsConnectorCoworkMetrics coworkMetrics,
+      int distinctUserCount,
+      SdkOptional<int?> individualAuthDistinctUserCount,
+      SdkOptional<int?> managedAuthDistinctUserCount,
+      BetaAnalyticsConnectorOfficeMetrics officeMetrics,
+      SdkOptional<String?> product,
+      SdkOptional<String?> rbacGroupId,
+      SdkOptional<String?> rbacGroupName,
+      SdkOptional<int?> readCallCount,
+      SdkOptional<int?> unclassifiedCallCount,
+      SdkOptional<String?> userId,
+      SdkOptional<int?> writeCallCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsConnectorActivity _copyWith({Object? chatMetrics = sdkOmittedValue, Object? claudeCodeMetrics = sdkOmittedValue, Object? connectorDisplayName = sdkOmittedValue, Object? connectorName = sdkOmittedValue, Object? coworkMetrics = sdkOmittedValue, Object? distinctUserCount = sdkOmittedValue, Object? individualAuthDistinctUserCount = sdkOmittedValue, Object? managedAuthDistinctUserCount = sdkOmittedValue, Object? officeMetrics = sdkOmittedValue, Object? product = sdkOmittedValue, Object? rbacGroupId = sdkOmittedValue, Object? rbacGroupName = sdkOmittedValue, Object? readCallCount = sdkOmittedValue, Object? unclassifiedCallCount = sdkOmittedValue, Object? userId = sdkOmittedValue, Object? writeCallCount = sdkOmittedValue}) => BetaAnalyticsConnectorActivity(
-    chatMetrics: identical(chatMetrics, sdkOmittedValue) ? this.chatMetrics : chatMetrics as BetaAnalyticsConnectorChatMetrics,
-    claudeCodeMetrics: identical(claudeCodeMetrics, sdkOmittedValue) ? this.claudeCodeMetrics : claudeCodeMetrics as BetaAnalyticsConnectorClaudeCodeMetrics,
-    connectorDisplayName: identical(connectorDisplayName, sdkOmittedValue) ? this.connectorDisplayName : connectorDisplayName as SdkOptional<String?>,
-    connectorName: identical(connectorName, sdkOmittedValue) ? this.connectorName : connectorName as String,
-    coworkMetrics: identical(coworkMetrics, sdkOmittedValue) ? this.coworkMetrics : coworkMetrics as BetaAnalyticsConnectorCoworkMetrics,
-    distinctUserCount: identical(distinctUserCount, sdkOmittedValue) ? this.distinctUserCount : distinctUserCount as int,
-    individualAuthDistinctUserCount: identical(individualAuthDistinctUserCount, sdkOmittedValue) ? this.individualAuthDistinctUserCount : individualAuthDistinctUserCount as SdkOptional<int?>,
-    managedAuthDistinctUserCount: identical(managedAuthDistinctUserCount, sdkOmittedValue) ? this.managedAuthDistinctUserCount : managedAuthDistinctUserCount as SdkOptional<int?>,
-    officeMetrics: identical(officeMetrics, sdkOmittedValue) ? this.officeMetrics : officeMetrics as BetaAnalyticsConnectorOfficeMetrics,
-    product: identical(product, sdkOmittedValue) ? this.product : product as SdkOptional<String?>,
-    rbacGroupId: identical(rbacGroupId, sdkOmittedValue) ? this.rbacGroupId : rbacGroupId as SdkOptional<String?>,
-    rbacGroupName: identical(rbacGroupName, sdkOmittedValue) ? this.rbacGroupName : rbacGroupName as SdkOptional<String?>,
-    readCallCount: identical(readCallCount, sdkOmittedValue) ? this.readCallCount : readCallCount as SdkOptional<int?>,
-    unclassifiedCallCount: identical(unclassifiedCallCount, sdkOmittedValue) ? this.unclassifiedCallCount : unclassifiedCallCount as SdkOptional<int?>,
-    userId: identical(userId, sdkOmittedValue) ? this.userId : userId as SdkOptional<String?>,
-    writeCallCount: identical(writeCallCount, sdkOmittedValue) ? this.writeCallCount : writeCallCount as SdkOptional<int?>,
-  );
+  BetaAnalyticsConnectorActivity _copyWith(
+          {Object? chatMetrics = sdkOmittedValue,
+          Object? claudeCodeMetrics = sdkOmittedValue,
+          Object? connectorDisplayName = sdkOmittedValue,
+          Object? connectorName = sdkOmittedValue,
+          Object? coworkMetrics = sdkOmittedValue,
+          Object? distinctUserCount = sdkOmittedValue,
+          Object? individualAuthDistinctUserCount = sdkOmittedValue,
+          Object? managedAuthDistinctUserCount = sdkOmittedValue,
+          Object? officeMetrics = sdkOmittedValue,
+          Object? product = sdkOmittedValue,
+          Object? rbacGroupId = sdkOmittedValue,
+          Object? rbacGroupName = sdkOmittedValue,
+          Object? readCallCount = sdkOmittedValue,
+          Object? unclassifiedCallCount = sdkOmittedValue,
+          Object? userId = sdkOmittedValue,
+          Object? writeCallCount = sdkOmittedValue}) =>
+      BetaAnalyticsConnectorActivity(
+        chatMetrics: identical(chatMetrics, sdkOmittedValue)
+            ? this.chatMetrics
+            : chatMetrics as BetaAnalyticsConnectorChatMetrics,
+        claudeCodeMetrics: identical(claudeCodeMetrics, sdkOmittedValue)
+            ? this.claudeCodeMetrics
+            : claudeCodeMetrics as BetaAnalyticsConnectorClaudeCodeMetrics,
+        connectorDisplayName: identical(connectorDisplayName, sdkOmittedValue)
+            ? this.connectorDisplayName
+            : connectorDisplayName as SdkOptional<String?>,
+        connectorName: identical(connectorName, sdkOmittedValue)
+            ? this.connectorName
+            : connectorName as String,
+        coworkMetrics: identical(coworkMetrics, sdkOmittedValue)
+            ? this.coworkMetrics
+            : coworkMetrics as BetaAnalyticsConnectorCoworkMetrics,
+        distinctUserCount: identical(distinctUserCount, sdkOmittedValue)
+            ? this.distinctUserCount
+            : distinctUserCount as int,
+        individualAuthDistinctUserCount:
+            identical(individualAuthDistinctUserCount, sdkOmittedValue)
+                ? this.individualAuthDistinctUserCount
+                : individualAuthDistinctUserCount as SdkOptional<int?>,
+        managedAuthDistinctUserCount:
+            identical(managedAuthDistinctUserCount, sdkOmittedValue)
+                ? this.managedAuthDistinctUserCount
+                : managedAuthDistinctUserCount as SdkOptional<int?>,
+        officeMetrics: identical(officeMetrics, sdkOmittedValue)
+            ? this.officeMetrics
+            : officeMetrics as BetaAnalyticsConnectorOfficeMetrics,
+        product: identical(product, sdkOmittedValue)
+            ? this.product
+            : product as SdkOptional<String?>,
+        rbacGroupId: identical(rbacGroupId, sdkOmittedValue)
+            ? this.rbacGroupId
+            : rbacGroupId as SdkOptional<String?>,
+        rbacGroupName: identical(rbacGroupName, sdkOmittedValue)
+            ? this.rbacGroupName
+            : rbacGroupName as SdkOptional<String?>,
+        readCallCount: identical(readCallCount, sdkOmittedValue)
+            ? this.readCallCount
+            : readCallCount as SdkOptional<int?>,
+        unclassifiedCallCount: identical(unclassifiedCallCount, sdkOmittedValue)
+            ? this.unclassifiedCallCount
+            : unclassifiedCallCount as SdkOptional<int?>,
+        userId: identical(userId, sdkOmittedValue)
+            ? this.userId
+            : userId as SdkOptional<String?>,
+        writeCallCount: identical(writeCallCount, sdkOmittedValue)
+            ? this.writeCallCount
+            : writeCallCount as SdkOptional<int?>,
+      );
 
-  factory BetaAnalyticsConnectorActivity.fromJson(Map<String, dynamic> json) => BetaAnalyticsConnectorActivity(
-    chatMetrics: (json['chat_metrics'] != null ? BetaAnalyticsConnectorChatMetrics.fromJson(json['chat_metrics'] as Map<String, dynamic>) : null)!,
-    claudeCodeMetrics: (json['claude_code_metrics'] != null ? BetaAnalyticsConnectorClaudeCodeMetrics.fromJson(json['claude_code_metrics'] as Map<String, dynamic>) : null)!,
-    connectorDisplayName: json.containsKey('connector_display_name') ? SdkPresent(json['connector_display_name'] as String?) : const SdkOmitted(),
-    connectorName: (json['connector_name'] as String?)!,
-    coworkMetrics: (json['cowork_metrics'] != null ? BetaAnalyticsConnectorCoworkMetrics.fromJson(json['cowork_metrics'] as Map<String, dynamic>) : null)!,
-    distinctUserCount: ((json['distinct_user_count'] as num?)?.toInt())!,
-    individualAuthDistinctUserCount: json.containsKey('individual_auth_distinct_user_count') ? SdkPresent((json['individual_auth_distinct_user_count'] as num?)?.toInt()) : const SdkOmitted(),
-    managedAuthDistinctUserCount: json.containsKey('managed_auth_distinct_user_count') ? SdkPresent((json['managed_auth_distinct_user_count'] as num?)?.toInt()) : const SdkOmitted(),
-    officeMetrics: (json['office_metrics'] != null ? BetaAnalyticsConnectorOfficeMetrics.fromJson(json['office_metrics'] as Map<String, dynamic>) : null)!,
-    product: json.containsKey('product') ? SdkPresent(json['product'] as String?) : const SdkOmitted(),
-    rbacGroupId: json.containsKey('rbac_group_id') ? SdkPresent(json['rbac_group_id'] as String?) : const SdkOmitted(),
-    rbacGroupName: json.containsKey('rbac_group_name') ? SdkPresent(json['rbac_group_name'] as String?) : const SdkOmitted(),
-    readCallCount: json.containsKey('read_call_count') ? SdkPresent((json['read_call_count'] as num?)?.toInt()) : const SdkOmitted(),
-    unclassifiedCallCount: json.containsKey('unclassified_call_count') ? SdkPresent((json['unclassified_call_count'] as num?)?.toInt()) : const SdkOmitted(),
-    userId: json.containsKey('user_id') ? SdkPresent(json['user_id'] as String?) : const SdkOmitted(),
-    writeCallCount: json.containsKey('write_call_count') ? SdkPresent((json['write_call_count'] as num?)?.toInt()) : const SdkOmitted(),
-  );
+  factory BetaAnalyticsConnectorActivity.fromJson(Map<String, dynamic> json) =>
+      BetaAnalyticsConnectorActivity(
+        chatMetrics: (json['chat_metrics'] != null
+            ? BetaAnalyticsConnectorChatMetrics.fromJson(
+                json['chat_metrics'] as Map<String, dynamic>)
+            : null)!,
+        claudeCodeMetrics: (json['claude_code_metrics'] != null
+            ? BetaAnalyticsConnectorClaudeCodeMetrics.fromJson(
+                json['claude_code_metrics'] as Map<String, dynamic>)
+            : null)!,
+        connectorDisplayName: json.containsKey('connector_display_name')
+            ? SdkPresent(json['connector_display_name'] as String?)
+            : const SdkOmitted(),
+        connectorName: (json['connector_name'] as String?)!,
+        coworkMetrics: (json['cowork_metrics'] != null
+            ? BetaAnalyticsConnectorCoworkMetrics.fromJson(
+                json['cowork_metrics'] as Map<String, dynamic>)
+            : null)!,
+        distinctUserCount: ((json['distinct_user_count'] as num?)?.toInt())!,
+        individualAuthDistinctUserCount: json
+                .containsKey('individual_auth_distinct_user_count')
+            ? SdkPresent(
+                (json['individual_auth_distinct_user_count'] as num?)?.toInt())
+            : const SdkOmitted(),
+        managedAuthDistinctUserCount:
+            json.containsKey('managed_auth_distinct_user_count')
+                ? SdkPresent(
+                    (json['managed_auth_distinct_user_count'] as num?)?.toInt())
+                : const SdkOmitted(),
+        officeMetrics: (json['office_metrics'] != null
+            ? BetaAnalyticsConnectorOfficeMetrics.fromJson(
+                json['office_metrics'] as Map<String, dynamic>)
+            : null)!,
+        product: json.containsKey('product')
+            ? SdkPresent(json['product'] as String?)
+            : const SdkOmitted(),
+        rbacGroupId: json.containsKey('rbac_group_id')
+            ? SdkPresent(json['rbac_group_id'] as String?)
+            : const SdkOmitted(),
+        rbacGroupName: json.containsKey('rbac_group_name')
+            ? SdkPresent(json['rbac_group_name'] as String?)
+            : const SdkOmitted(),
+        readCallCount: json.containsKey('read_call_count')
+            ? SdkPresent((json['read_call_count'] as num?)?.toInt())
+            : const SdkOmitted(),
+        unclassifiedCallCount: json.containsKey('unclassified_call_count')
+            ? SdkPresent((json['unclassified_call_count'] as num?)?.toInt())
+            : const SdkOmitted(),
+        userId: json.containsKey('user_id')
+            ? SdkPresent(json['user_id'] as String?)
+            : const SdkOmitted(),
+        writeCallCount: json.containsKey('write_call_count')
+            ? SdkPresent((json['write_call_count'] as num?)?.toInt())
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'chat_metrics': chatMetrics.toJson(),
-    'claude_code_metrics': claudeCodeMetrics.toJson(),
-    ...switch (connectorDisplayName) {
-      SdkPresent<String?>(value: final value) => {'connector_display_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    'connector_name': connectorName,
-    'cowork_metrics': coworkMetrics.toJson(),
-    'distinct_user_count': distinctUserCount,
-    ...switch (individualAuthDistinctUserCount) {
-      SdkPresent<int?>(value: final value) => {'individual_auth_distinct_user_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (managedAuthDistinctUserCount) {
-      SdkPresent<int?>(value: final value) => {'managed_auth_distinct_user_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    'office_metrics': officeMetrics.toJson(),
-    ...switch (product) {
-      SdkPresent<String?>(value: final value) => {'product': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rbacGroupId) {
-      SdkPresent<String?>(value: final value) => {'rbac_group_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rbacGroupName) {
-      SdkPresent<String?>(value: final value) => {'rbac_group_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (readCallCount) {
-      SdkPresent<int?>(value: final value) => {'read_call_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (unclassifiedCallCount) {
-      SdkPresent<int?>(value: final value) => {'unclassified_call_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (userId) {
-      SdkPresent<String?>(value: final value) => {'user_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (writeCallCount) {
-      SdkPresent<int?>(value: final value) => {'write_call_count': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'chat_metrics': chatMetrics.toJson(),
+        'claude_code_metrics': claudeCodeMetrics.toJson(),
+        ...switch (connectorDisplayName) {
+          SdkPresent<String?>(value: final value) => {
+              'connector_display_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'connector_name': connectorName,
+        'cowork_metrics': coworkMetrics.toJson(),
+        'distinct_user_count': distinctUserCount,
+        ...switch (individualAuthDistinctUserCount) {
+          SdkPresent<int?>(value: final value) => {
+              'individual_auth_distinct_user_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (managedAuthDistinctUserCount) {
+          SdkPresent<int?>(value: final value) => {
+              'managed_auth_distinct_user_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'office_metrics': officeMetrics.toJson(),
+        ...switch (product) {
+          SdkPresent<String?>(value: final value) => {
+              'product': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rbacGroupId) {
+          SdkPresent<String?>(value: final value) => {
+              'rbac_group_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rbacGroupName) {
+          SdkPresent<String?>(value: final value) => {
+              'rbac_group_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (readCallCount) {
+          SdkPresent<int?>(value: final value) => {
+              'read_call_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (unclassifiedCallCount) {
+          SdkPresent<int?>(value: final value) => {
+              'unclassified_call_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userId) {
+          SdkPresent<String?>(value: final value) => {
+              'user_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (writeCallCount) {
+          SdkPresent<int?>(value: final value) => {
+              'write_call_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Claude.ai activity metrics for a single connector on a given day.
 class BetaAnalyticsConnectorChatMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Number of distinct conversations in which the connector was used. Approximate (HLL, typical error &lt;2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
   final int? distinctConversationConnectorUsedCount;
 
-  const BetaAnalyticsConnectorChatMetrics({required this.distinctConversationConnectorUsedCount});
+  const BetaAnalyticsConnectorChatMetrics(
+      {required this.distinctConversationConnectorUsedCount});
 
-  BetaAnalyticsConnectorChatMetrics Function({int? distinctConversationConnectorUsedCount}) get copyWith => _copyWith;
+  BetaAnalyticsConnectorChatMetrics Function(
+      {int? distinctConversationConnectorUsedCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsConnectorChatMetrics _copyWith({Object? distinctConversationConnectorUsedCount = sdkOmittedValue}) => BetaAnalyticsConnectorChatMetrics(
-    distinctConversationConnectorUsedCount: identical(distinctConversationConnectorUsedCount, sdkOmittedValue) ? this.distinctConversationConnectorUsedCount : distinctConversationConnectorUsedCount as int?,
-  );
+  BetaAnalyticsConnectorChatMetrics _copyWith(
+          {Object? distinctConversationConnectorUsedCount = sdkOmittedValue}) =>
+      BetaAnalyticsConnectorChatMetrics(
+        distinctConversationConnectorUsedCount:
+            identical(distinctConversationConnectorUsedCount, sdkOmittedValue)
+                ? this.distinctConversationConnectorUsedCount
+                : distinctConversationConnectorUsedCount as int?,
+      );
 
-  factory BetaAnalyticsConnectorChatMetrics.fromJson(Map<String, dynamic> json) => BetaAnalyticsConnectorChatMetrics(
-    distinctConversationConnectorUsedCount: json.containsKey('distinct_conversation_connector_used_count') ? (json['distinct_conversation_connector_used_count'] as num?)?.toInt() : throw ArgumentError.value(null, 'distinct_conversation_connector_used_count', 'Required property is missing'),
-  );
+  factory BetaAnalyticsConnectorChatMetrics.fromJson(
+          Map<String, dynamic> json) =>
+      BetaAnalyticsConnectorChatMetrics(
+        distinctConversationConnectorUsedCount:
+            json.containsKey('distinct_conversation_connector_used_count')
+                ? (json['distinct_conversation_connector_used_count'] as num?)
+                    ?.toInt()
+                : throw ArgumentError.value(
+                    null,
+                    'distinct_conversation_connector_used_count',
+                    'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'distinct_conversation_connector_used_count': distinctConversationConnectorUsedCount,
-  };
+        'distinct_conversation_connector_used_count':
+            distinctConversationConnectorUsedCount,
+      };
 }
 
 /// Claude Code activity metrics for a single connector on a given day.
 class BetaAnalyticsConnectorClaudeCodeMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Number of distinct Claude Code sessions in which the connector was used. Approximate (HLL, typical error &lt;2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
   final int? distinctSessionConnectorUsedCount;
 
-  const BetaAnalyticsConnectorClaudeCodeMetrics({required this.distinctSessionConnectorUsedCount});
+  const BetaAnalyticsConnectorClaudeCodeMetrics(
+      {required this.distinctSessionConnectorUsedCount});
 
-  BetaAnalyticsConnectorClaudeCodeMetrics Function({int? distinctSessionConnectorUsedCount}) get copyWith => _copyWith;
+  BetaAnalyticsConnectorClaudeCodeMetrics Function(
+      {int? distinctSessionConnectorUsedCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsConnectorClaudeCodeMetrics _copyWith({Object? distinctSessionConnectorUsedCount = sdkOmittedValue}) => BetaAnalyticsConnectorClaudeCodeMetrics(
-    distinctSessionConnectorUsedCount: identical(distinctSessionConnectorUsedCount, sdkOmittedValue) ? this.distinctSessionConnectorUsedCount : distinctSessionConnectorUsedCount as int?,
-  );
+  BetaAnalyticsConnectorClaudeCodeMetrics _copyWith(
+          {Object? distinctSessionConnectorUsedCount = sdkOmittedValue}) =>
+      BetaAnalyticsConnectorClaudeCodeMetrics(
+        distinctSessionConnectorUsedCount:
+            identical(distinctSessionConnectorUsedCount, sdkOmittedValue)
+                ? this.distinctSessionConnectorUsedCount
+                : distinctSessionConnectorUsedCount as int?,
+      );
 
-  factory BetaAnalyticsConnectorClaudeCodeMetrics.fromJson(Map<String, dynamic> json) => BetaAnalyticsConnectorClaudeCodeMetrics(
-    distinctSessionConnectorUsedCount: json.containsKey('distinct_session_connector_used_count') ? (json['distinct_session_connector_used_count'] as num?)?.toInt() : throw ArgumentError.value(null, 'distinct_session_connector_used_count', 'Required property is missing'),
-  );
+  factory BetaAnalyticsConnectorClaudeCodeMetrics.fromJson(
+          Map<String, dynamic> json) =>
+      BetaAnalyticsConnectorClaudeCodeMetrics(
+        distinctSessionConnectorUsedCount: json
+                .containsKey('distinct_session_connector_used_count')
+            ? (json['distinct_session_connector_used_count'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null,
+                'distinct_session_connector_used_count',
+                'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'distinct_session_connector_used_count': distinctSessionConnectorUsedCount,
-  };
+        'distinct_session_connector_used_count':
+            distinctSessionConnectorUsedCount,
+      };
 }
 
 /// Cowork activity metrics for a single connector on a given day.
 class BetaAnalyticsConnectorCoworkMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Number of distinct Cowork sessions in which the connector was used. Approximate (HLL, typical error &lt;2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
   final int? distinctSessionConnectorUsedCount;
 
-  const BetaAnalyticsConnectorCoworkMetrics({required this.distinctSessionConnectorUsedCount});
+  const BetaAnalyticsConnectorCoworkMetrics(
+      {required this.distinctSessionConnectorUsedCount});
 
-  BetaAnalyticsConnectorCoworkMetrics Function({int? distinctSessionConnectorUsedCount}) get copyWith => _copyWith;
+  BetaAnalyticsConnectorCoworkMetrics Function(
+      {int? distinctSessionConnectorUsedCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsConnectorCoworkMetrics _copyWith({Object? distinctSessionConnectorUsedCount = sdkOmittedValue}) => BetaAnalyticsConnectorCoworkMetrics(
-    distinctSessionConnectorUsedCount: identical(distinctSessionConnectorUsedCount, sdkOmittedValue) ? this.distinctSessionConnectorUsedCount : distinctSessionConnectorUsedCount as int?,
-  );
+  BetaAnalyticsConnectorCoworkMetrics _copyWith(
+          {Object? distinctSessionConnectorUsedCount = sdkOmittedValue}) =>
+      BetaAnalyticsConnectorCoworkMetrics(
+        distinctSessionConnectorUsedCount:
+            identical(distinctSessionConnectorUsedCount, sdkOmittedValue)
+                ? this.distinctSessionConnectorUsedCount
+                : distinctSessionConnectorUsedCount as int?,
+      );
 
-  factory BetaAnalyticsConnectorCoworkMetrics.fromJson(Map<String, dynamic> json) => BetaAnalyticsConnectorCoworkMetrics(
-    distinctSessionConnectorUsedCount: json.containsKey('distinct_session_connector_used_count') ? (json['distinct_session_connector_used_count'] as num?)?.toInt() : throw ArgumentError.value(null, 'distinct_session_connector_used_count', 'Required property is missing'),
-  );
+  factory BetaAnalyticsConnectorCoworkMetrics.fromJson(
+          Map<String, dynamic> json) =>
+      BetaAnalyticsConnectorCoworkMetrics(
+        distinctSessionConnectorUsedCount: json
+                .containsKey('distinct_session_connector_used_count')
+            ? (json['distinct_session_connector_used_count'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null,
+                'distinct_session_connector_used_count',
+                'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'distinct_session_connector_used_count': distinctSessionConnectorUsedCount,
-  };
+        'distinct_session_connector_used_count':
+            distinctSessionConnectorUsedCount,
+      };
 }
 
 /// Office Agent activity metrics for a single connector on a given day, broken out by Office product.
 class BetaAnalyticsConnectorOfficeMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Office Agent activity metrics for a single connector on a given day within one Office product.
   final BetaAnalyticsConnectorOfficeProductMetrics excel;
+
   /// Office Agent activity metrics for a single connector on a given day within one Office product.
   final BetaAnalyticsConnectorOfficeProductMetrics outlook;
+
   /// Office Agent activity metrics for a single connector on a given day within one Office product.
   final BetaAnalyticsConnectorOfficeProductMetrics powerpoint;
+
   /// Office Agent activity metrics for a single connector on a given day within one Office product.
   final BetaAnalyticsConnectorOfficeProductMetrics word;
 
-  const BetaAnalyticsConnectorOfficeMetrics({required this.excel, required this.outlook, required this.powerpoint, required this.word});
+  const BetaAnalyticsConnectorOfficeMetrics(
+      {required this.excel,
+      required this.outlook,
+      required this.powerpoint,
+      required this.word});
 
-  BetaAnalyticsConnectorOfficeMetrics Function({BetaAnalyticsConnectorOfficeProductMetrics excel, BetaAnalyticsConnectorOfficeProductMetrics outlook, BetaAnalyticsConnectorOfficeProductMetrics powerpoint, BetaAnalyticsConnectorOfficeProductMetrics word}) get copyWith => _copyWith;
+  BetaAnalyticsConnectorOfficeMetrics Function(
+          {BetaAnalyticsConnectorOfficeProductMetrics excel,
+          BetaAnalyticsConnectorOfficeProductMetrics outlook,
+          BetaAnalyticsConnectorOfficeProductMetrics powerpoint,
+          BetaAnalyticsConnectorOfficeProductMetrics word})
+      get copyWith => _copyWith;
 
-  BetaAnalyticsConnectorOfficeMetrics _copyWith({Object? excel = sdkOmittedValue, Object? outlook = sdkOmittedValue, Object? powerpoint = sdkOmittedValue, Object? word = sdkOmittedValue}) => BetaAnalyticsConnectorOfficeMetrics(
-    excel: identical(excel, sdkOmittedValue) ? this.excel : excel as BetaAnalyticsConnectorOfficeProductMetrics,
-    outlook: identical(outlook, sdkOmittedValue) ? this.outlook : outlook as BetaAnalyticsConnectorOfficeProductMetrics,
-    powerpoint: identical(powerpoint, sdkOmittedValue) ? this.powerpoint : powerpoint as BetaAnalyticsConnectorOfficeProductMetrics,
-    word: identical(word, sdkOmittedValue) ? this.word : word as BetaAnalyticsConnectorOfficeProductMetrics,
-  );
+  BetaAnalyticsConnectorOfficeMetrics _copyWith(
+          {Object? excel = sdkOmittedValue,
+          Object? outlook = sdkOmittedValue,
+          Object? powerpoint = sdkOmittedValue,
+          Object? word = sdkOmittedValue}) =>
+      BetaAnalyticsConnectorOfficeMetrics(
+        excel: identical(excel, sdkOmittedValue)
+            ? this.excel
+            : excel as BetaAnalyticsConnectorOfficeProductMetrics,
+        outlook: identical(outlook, sdkOmittedValue)
+            ? this.outlook
+            : outlook as BetaAnalyticsConnectorOfficeProductMetrics,
+        powerpoint: identical(powerpoint, sdkOmittedValue)
+            ? this.powerpoint
+            : powerpoint as BetaAnalyticsConnectorOfficeProductMetrics,
+        word: identical(word, sdkOmittedValue)
+            ? this.word
+            : word as BetaAnalyticsConnectorOfficeProductMetrics,
+      );
 
-  factory BetaAnalyticsConnectorOfficeMetrics.fromJson(Map<String, dynamic> json) => BetaAnalyticsConnectorOfficeMetrics(
-    excel: (json['excel'] != null ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(json['excel'] as Map<String, dynamic>) : null)!,
-    outlook: (json['outlook'] != null ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(json['outlook'] as Map<String, dynamic>) : null)!,
-    powerpoint: (json['powerpoint'] != null ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(json['powerpoint'] as Map<String, dynamic>) : null)!,
-    word: (json['word'] != null ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(json['word'] as Map<String, dynamic>) : null)!,
-  );
+  factory BetaAnalyticsConnectorOfficeMetrics.fromJson(
+          Map<String, dynamic> json) =>
+      BetaAnalyticsConnectorOfficeMetrics(
+        excel: (json['excel'] != null
+            ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(
+                json['excel'] as Map<String, dynamic>)
+            : null)!,
+        outlook: (json['outlook'] != null
+            ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(
+                json['outlook'] as Map<String, dynamic>)
+            : null)!,
+        powerpoint: (json['powerpoint'] != null
+            ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(
+                json['powerpoint'] as Map<String, dynamic>)
+            : null)!,
+        word: (json['word'] != null
+            ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(
+                json['word'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'excel': excel.toJson(),
-    'outlook': outlook.toJson(),
-    'powerpoint': powerpoint.toJson(),
-    'word': word.toJson(),
-  };
+        'excel': excel.toJson(),
+        'outlook': outlook.toJson(),
+        'powerpoint': powerpoint.toJson(),
+        'word': word.toJson(),
+      };
 }
 
 /// Office Agent activity metrics for a single connector on a given day within one Office product.
 class BetaAnalyticsConnectorOfficeProductMetrics {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Number of distinct Office Agent sessions in which the connector was used. Approximate (HLL, typical error &lt;2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
   final int? distinctSessionConnectorUsedCount;
 
-  const BetaAnalyticsConnectorOfficeProductMetrics({required this.distinctSessionConnectorUsedCount});
+  const BetaAnalyticsConnectorOfficeProductMetrics(
+      {required this.distinctSessionConnectorUsedCount});
 
-  BetaAnalyticsConnectorOfficeProductMetrics Function({int? distinctSessionConnectorUsedCount}) get copyWith => _copyWith;
+  BetaAnalyticsConnectorOfficeProductMetrics Function(
+      {int? distinctSessionConnectorUsedCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsConnectorOfficeProductMetrics _copyWith({Object? distinctSessionConnectorUsedCount = sdkOmittedValue}) => BetaAnalyticsConnectorOfficeProductMetrics(
-    distinctSessionConnectorUsedCount: identical(distinctSessionConnectorUsedCount, sdkOmittedValue) ? this.distinctSessionConnectorUsedCount : distinctSessionConnectorUsedCount as int?,
-  );
+  BetaAnalyticsConnectorOfficeProductMetrics _copyWith(
+          {Object? distinctSessionConnectorUsedCount = sdkOmittedValue}) =>
+      BetaAnalyticsConnectorOfficeProductMetrics(
+        distinctSessionConnectorUsedCount:
+            identical(distinctSessionConnectorUsedCount, sdkOmittedValue)
+                ? this.distinctSessionConnectorUsedCount
+                : distinctSessionConnectorUsedCount as int?,
+      );
 
-  factory BetaAnalyticsConnectorOfficeProductMetrics.fromJson(Map<String, dynamic> json) => BetaAnalyticsConnectorOfficeProductMetrics(
-    distinctSessionConnectorUsedCount: json.containsKey('distinct_session_connector_used_count') ? (json['distinct_session_connector_used_count'] as num?)?.toInt() : throw ArgumentError.value(null, 'distinct_session_connector_used_count', 'Required property is missing'),
-  );
+  factory BetaAnalyticsConnectorOfficeProductMetrics.fromJson(
+          Map<String, dynamic> json) =>
+      BetaAnalyticsConnectorOfficeProductMetrics(
+        distinctSessionConnectorUsedCount: json
+                .containsKey('distinct_session_connector_used_count')
+            ? (json['distinct_session_connector_used_count'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null,
+                'distinct_session_connector_used_count',
+                'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'distinct_session_connector_used_count': distinctSessionConnectorUsedCount,
-  };
+        'distinct_session_connector_used_count':
+            distinctSessionConnectorUsedCount,
+      };
 }
 
 /// Response for GET /v1/organizations/analytics/connectors.
 class BetaAnalyticsConnectorsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `data` wire field.
   final List<BetaAnalyticsConnectorActivity> data;
+
   /// Opaque cursor for the next page, or null if no more results
   final String? nextPage;
 
-  const BetaAnalyticsConnectorsResponse({required this.data, required this.nextPage});
+  const BetaAnalyticsConnectorsResponse(
+      {required this.data, required this.nextPage});
 
-  BetaAnalyticsConnectorsResponse Function({List<BetaAnalyticsConnectorActivity> data, String? nextPage}) get copyWith => _copyWith;
+  BetaAnalyticsConnectorsResponse Function(
+      {List<BetaAnalyticsConnectorActivity> data,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaAnalyticsConnectorsResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaAnalyticsConnectorsResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaAnalyticsConnectorActivity>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaAnalyticsConnectorsResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaAnalyticsConnectorsResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaAnalyticsConnectorActivity>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaAnalyticsConnectorsResponse.fromJson(Map<String, dynamic> json) => BetaAnalyticsConnectorsResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaAnalyticsConnectorActivity.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  );
+  factory BetaAnalyticsConnectorsResponse.fromJson(Map<String, dynamic> json) =>
+      BetaAnalyticsConnectorsResponse(
+        data: ((json['data'] as List?)
+            ?.map((e) => BetaAnalyticsConnectorActivity.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        nextPage: json.containsKey('next_page')
+            ? json['next_page'] as String?
+            : throw ArgumentError.value(
+                null, 'next_page', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'next_page': nextPage,
+      };
 }

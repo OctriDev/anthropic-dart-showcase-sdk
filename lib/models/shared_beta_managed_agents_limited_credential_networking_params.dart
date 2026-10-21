@@ -8,27 +8,46 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsLimitedCredentialNetworkingParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsLimitedCredentialNetworkingParamsType type_;
+
   /// Hostnames on which the secret will be substituted. Each entry is a bare hostname (`api.example.com`), an IPv4 address (`192.0.2.1`), or a `*.`-prefixed wildcard (`*.example.com`). URLs, ports, paths, and IPv6 addresses are not accepted. At most 16 entries.
   final List<String> allowedHosts;
 
-  const BetaManagedAgentsLimitedCredentialNetworkingParams({required this.type_, required this.allowedHosts});
+  const BetaManagedAgentsLimitedCredentialNetworkingParams(
+      {required this.type_, required this.allowedHosts});
 
-  BetaManagedAgentsLimitedCredentialNetworkingParams Function({BetaManagedAgentsLimitedCredentialNetworkingParamsType type_, List<String> allowedHosts}) get copyWith => _copyWith;
+  BetaManagedAgentsLimitedCredentialNetworkingParams Function(
+      {BetaManagedAgentsLimitedCredentialNetworkingParamsType type_,
+      List<String> allowedHosts}) get copyWith => _copyWith;
 
-  BetaManagedAgentsLimitedCredentialNetworkingParams _copyWith({Object? type_ = sdkOmittedValue, Object? allowedHosts = sdkOmittedValue}) => BetaManagedAgentsLimitedCredentialNetworkingParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsLimitedCredentialNetworkingParamsType,
-    allowedHosts: identical(allowedHosts, sdkOmittedValue) ? this.allowedHosts : allowedHosts as List<String>,
-  );
+  BetaManagedAgentsLimitedCredentialNetworkingParams _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? allowedHosts = sdkOmittedValue}) =>
+      BetaManagedAgentsLimitedCredentialNetworkingParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsLimitedCredentialNetworkingParamsType,
+        allowedHosts: identical(allowedHosts, sdkOmittedValue)
+            ? this.allowedHosts
+            : allowedHosts as List<String>,
+      );
 
-  factory BetaManagedAgentsLimitedCredentialNetworkingParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsLimitedCredentialNetworkingParams(
-    type_: (json['type'] != null ? BetaManagedAgentsLimitedCredentialNetworkingParamsType.fromJson(json['type'] as String) : null)!,
-    allowedHosts: ((json['allowed_hosts'] as List?)?.map((e) => e as String).toList())!,
-  );
+  factory BetaManagedAgentsLimitedCredentialNetworkingParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsLimitedCredentialNetworkingParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsLimitedCredentialNetworkingParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        allowedHosts: ((json['allowed_hosts'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'allowed_hosts': allowedHosts,
-  };
+        'type': type_.toJson(),
+        'allowed_hosts': allowedHosts,
+      };
 }

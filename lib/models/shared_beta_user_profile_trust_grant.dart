@@ -8,22 +8,30 @@ part of 'shared_beta_user.dart';
 class BetaUserProfileTrustGrant {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Status of the trust grant.
   final BetaUserProfileTrustGrantStatus status;
 
   const BetaUserProfileTrustGrant({required this.status});
 
-  BetaUserProfileTrustGrant Function({BetaUserProfileTrustGrantStatus status}) get copyWith => _copyWith;
+  BetaUserProfileTrustGrant Function({BetaUserProfileTrustGrantStatus status})
+      get copyWith => _copyWith;
 
-  BetaUserProfileTrustGrant _copyWith({Object? status = sdkOmittedValue}) => BetaUserProfileTrustGrant(
-    status: identical(status, sdkOmittedValue) ? this.status : status as BetaUserProfileTrustGrantStatus,
-  );
+  BetaUserProfileTrustGrant _copyWith({Object? status = sdkOmittedValue}) =>
+      BetaUserProfileTrustGrant(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as BetaUserProfileTrustGrantStatus,
+      );
 
-  factory BetaUserProfileTrustGrant.fromJson(Map<String, dynamic> json) => BetaUserProfileTrustGrant(
-    status: (json['status'] != null ? BetaUserProfileTrustGrantStatus.fromJson(json['status'] as String) : null)!,
-  );
+  factory BetaUserProfileTrustGrant.fromJson(Map<String, dynamic> json) =>
+      BetaUserProfileTrustGrant(
+        status: (json['status'] != null
+            ? BetaUserProfileTrustGrantStatus.fromJson(json['status'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'status': status.toJson(),
-  };
+        'status': status.toJson(),
+      };
 }

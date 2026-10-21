@@ -8,22 +8,37 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
-  final BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType type_;
+  final BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType
+      type_;
 
-  const BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError({required this.type_});
+  const BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
+      {required this.type_});
 
-  BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError Function({BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError Function(
+      {BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType
+          type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType,
-  );
+  BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError
+      _copyWith({Object? type_ = sdkOmittedValue}) =>
+          BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
+            type_: identical(type_, sdkOmittedValue)
+                ? this.type_
+                : type_
+                    as BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType,
+          );
 
-  factory BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
-    type_: (json['type'] != null ? BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType
+                .fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

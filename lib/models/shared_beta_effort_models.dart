@@ -8,54 +8,109 @@ part of 'shared_beta_effort.dart';
 class BetaEffortCapability {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether the model supports high effort level.
   final BetaCapabilitySupport high;
+
   /// Whether the model supports low effort level.
   final BetaCapabilitySupport low;
+
   /// Whether the model supports max effort level.
   final BetaCapabilitySupport max;
+
   /// Whether the model supports medium effort level.
   final BetaCapabilitySupport medium;
+
   /// Whether this capability is supported by the model.
   final bool supported;
+
   /// Whether the model supports xhigh effort level.
   final BetaCapabilitySupport? xhigh;
 
-  const BetaEffortCapability({required this.high, required this.low, required this.max, required this.medium, required this.supported, required this.xhigh});
+  const BetaEffortCapability(
+      {required this.high,
+      required this.low,
+      required this.max,
+      required this.medium,
+      required this.supported,
+      required this.xhigh});
 
-  BetaEffortCapability Function({BetaCapabilitySupport high, BetaCapabilitySupport low, BetaCapabilitySupport max, BetaCapabilitySupport medium, bool supported, BetaCapabilitySupport? xhigh}) get copyWith => _copyWith;
+  BetaEffortCapability Function(
+      {BetaCapabilitySupport high,
+      BetaCapabilitySupport low,
+      BetaCapabilitySupport max,
+      BetaCapabilitySupport medium,
+      bool supported,
+      BetaCapabilitySupport? xhigh}) get copyWith => _copyWith;
 
-  BetaEffortCapability _copyWith({Object? high = sdkOmittedValue, Object? low = sdkOmittedValue, Object? max = sdkOmittedValue, Object? medium = sdkOmittedValue, Object? supported = sdkOmittedValue, Object? xhigh = sdkOmittedValue}) => BetaEffortCapability(
-    high: identical(high, sdkOmittedValue) ? this.high : high as BetaCapabilitySupport,
-    low: identical(low, sdkOmittedValue) ? this.low : low as BetaCapabilitySupport,
-    max: identical(max, sdkOmittedValue) ? this.max : max as BetaCapabilitySupport,
-    medium: identical(medium, sdkOmittedValue) ? this.medium : medium as BetaCapabilitySupport,
-    supported: identical(supported, sdkOmittedValue) ? this.supported : supported as bool,
-    xhigh: identical(xhigh, sdkOmittedValue) ? this.xhigh : xhigh as BetaCapabilitySupport?,
-  );
+  BetaEffortCapability _copyWith(
+          {Object? high = sdkOmittedValue,
+          Object? low = sdkOmittedValue,
+          Object? max = sdkOmittedValue,
+          Object? medium = sdkOmittedValue,
+          Object? supported = sdkOmittedValue,
+          Object? xhigh = sdkOmittedValue}) =>
+      BetaEffortCapability(
+        high: identical(high, sdkOmittedValue)
+            ? this.high
+            : high as BetaCapabilitySupport,
+        low: identical(low, sdkOmittedValue)
+            ? this.low
+            : low as BetaCapabilitySupport,
+        max: identical(max, sdkOmittedValue)
+            ? this.max
+            : max as BetaCapabilitySupport,
+        medium: identical(medium, sdkOmittedValue)
+            ? this.medium
+            : medium as BetaCapabilitySupport,
+        supported: identical(supported, sdkOmittedValue)
+            ? this.supported
+            : supported as bool,
+        xhigh: identical(xhigh, sdkOmittedValue)
+            ? this.xhigh
+            : xhigh as BetaCapabilitySupport?,
+      );
 
-  factory BetaEffortCapability.fromJson(Map<String, dynamic> json) => BetaEffortCapability(
-    high: (json['high'] != null ? BetaCapabilitySupport.fromJson(json['high'] as Map<String, dynamic>) : null)!,
-    low: (json['low'] != null ? BetaCapabilitySupport.fromJson(json['low'] as Map<String, dynamic>) : null)!,
-    max: (json['max'] != null ? BetaCapabilitySupport.fromJson(json['max'] as Map<String, dynamic>) : null)!,
-    medium: (json['medium'] != null ? BetaCapabilitySupport.fromJson(json['medium'] as Map<String, dynamic>) : null)!,
-    supported: (json['supported'] as bool?)!,
-    xhigh: json.containsKey('xhigh') ? json['xhigh'] != null ? BetaCapabilitySupport.fromJson(json['xhigh'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'xhigh', 'Required property is missing'),
-  );
+  factory BetaEffortCapability.fromJson(Map<String, dynamic> json) =>
+      BetaEffortCapability(
+        high: (json['high'] != null
+            ? BetaCapabilitySupport.fromJson(
+                json['high'] as Map<String, dynamic>)
+            : null)!,
+        low: (json['low'] != null
+            ? BetaCapabilitySupport.fromJson(
+                json['low'] as Map<String, dynamic>)
+            : null)!,
+        max: (json['max'] != null
+            ? BetaCapabilitySupport.fromJson(
+                json['max'] as Map<String, dynamic>)
+            : null)!,
+        medium: (json['medium'] != null
+            ? BetaCapabilitySupport.fromJson(
+                json['medium'] as Map<String, dynamic>)
+            : null)!,
+        supported: (json['supported'] as bool?)!,
+        xhigh: json.containsKey('xhigh')
+            ? json['xhigh'] != null
+                ? BetaCapabilitySupport.fromJson(
+                    json['xhigh'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'xhigh', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'high': high.toJson(),
-    'low': low.toJson(),
-    'max': max.toJson(),
-    'medium': medium.toJson(),
-    'supported': supported,
-    'xhigh': xhigh?.toJson(),
-  };
+        'high': high.toJson(),
+        'low': low.toJson(),
+        'max': max.toJson(),
+        'medium': medium.toJson(),
+        'supported': supported,
+        'xhigh': xhigh?.toJson(),
+      };
 }
 
 /// All possible effort levels.
 final class BetaEffortLevel {
-
   final String value;
 
   const BetaEffortLevel._(this.value);
@@ -70,10 +125,13 @@ final class BetaEffortLevel {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaEffortLevel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaEffortLevel && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

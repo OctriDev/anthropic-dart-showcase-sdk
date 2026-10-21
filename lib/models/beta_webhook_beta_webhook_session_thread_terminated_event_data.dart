@@ -8,42 +8,76 @@ part of 'beta_webhook_beta_webhook_session.dart';
 class BetaWebhookSessionThreadTerminatedEventData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebhookSessionThreadTerminatedEventDataType type_;
+
   /// ID of the session that triggered the event.
   final String id;
+
   /// Required `string` value serialized in the `organization_id` wire field.
   final String organizationId;
+
   /// Required `string` value serialized in the `workspace_id` wire field.
   final String workspaceId;
+
   /// ID of the session thread this event refers to.
   final String sessionThreadId;
 
-  const BetaWebhookSessionThreadTerminatedEventData({required this.type_, required this.id, required this.organizationId, required this.workspaceId, required this.sessionThreadId});
+  const BetaWebhookSessionThreadTerminatedEventData(
+      {required this.type_,
+      required this.id,
+      required this.organizationId,
+      required this.workspaceId,
+      required this.sessionThreadId});
 
-  BetaWebhookSessionThreadTerminatedEventData Function({BetaWebhookSessionThreadTerminatedEventDataType type_, String id, String organizationId, String workspaceId, String sessionThreadId}) get copyWith => _copyWith;
+  BetaWebhookSessionThreadTerminatedEventData Function(
+      {BetaWebhookSessionThreadTerminatedEventDataType type_,
+      String id,
+      String organizationId,
+      String workspaceId,
+      String sessionThreadId}) get copyWith => _copyWith;
 
-  BetaWebhookSessionThreadTerminatedEventData _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue, Object? sessionThreadId = sdkOmittedValue}) => BetaWebhookSessionThreadTerminatedEventData(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookSessionThreadTerminatedEventDataType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-    sessionThreadId: identical(sessionThreadId, sdkOmittedValue) ? this.sessionThreadId : sessionThreadId as String,
-  );
+  BetaWebhookSessionThreadTerminatedEventData _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? organizationId = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue,
+          Object? sessionThreadId = sdkOmittedValue}) =>
+      BetaWebhookSessionThreadTerminatedEventData(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWebhookSessionThreadTerminatedEventDataType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+        sessionThreadId: identical(sessionThreadId, sdkOmittedValue)
+            ? this.sessionThreadId
+            : sessionThreadId as String,
+      );
 
-  factory BetaWebhookSessionThreadTerminatedEventData.fromJson(Map<String, dynamic> json) => BetaWebhookSessionThreadTerminatedEventData(
-    type_: (json['type'] != null ? BetaWebhookSessionThreadTerminatedEventDataType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    organizationId: (json['organization_id'] as String?)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-    sessionThreadId: (json['session_thread_id'] as String?)!,
-  );
+  factory BetaWebhookSessionThreadTerminatedEventData.fromJson(
+          Map<String, dynamic> json) =>
+      BetaWebhookSessionThreadTerminatedEventData(
+        type_: (json['type'] != null
+            ? BetaWebhookSessionThreadTerminatedEventDataType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        organizationId: (json['organization_id'] as String?)!,
+        workspaceId: (json['workspace_id'] as String?)!,
+        sessionThreadId: (json['session_thread_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'organization_id': organizationId,
-    'workspace_id': workspaceId,
-    'session_thread_id': sessionThreadId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'organization_id': organizationId,
+        'workspace_id': workspaceId,
+        'session_thread_id': sessionThreadId,
+      };
 }

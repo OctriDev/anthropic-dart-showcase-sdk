@@ -8,32 +8,50 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMCPServerURLDefinition {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMCPServerURLDefinitionType type_;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
-  const BetaManagedAgentsMCPServerURLDefinition({required this.type_, required this.name, required this.url});
+  const BetaManagedAgentsMCPServerURLDefinition(
+      {required this.type_, required this.name, required this.url});
 
-  BetaManagedAgentsMCPServerURLDefinition Function({BetaManagedAgentsMCPServerURLDefinitionType type_, String name, String url}) get copyWith => _copyWith;
+  BetaManagedAgentsMCPServerURLDefinition Function(
+      {BetaManagedAgentsMCPServerURLDefinitionType type_,
+      String name,
+      String url}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMCPServerURLDefinition _copyWith({Object? type_ = sdkOmittedValue, Object? name = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaManagedAgentsMCPServerURLDefinition(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMCPServerURLDefinitionType,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BetaManagedAgentsMCPServerURLDefinition _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      BetaManagedAgentsMCPServerURLDefinition(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsMCPServerURLDefinitionType,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BetaManagedAgentsMCPServerURLDefinition.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMCPServerURLDefinition(
-    type_: (json['type'] != null ? BetaManagedAgentsMCPServerURLDefinitionType.fromJson(json['type'] as String) : null)!,
-    name: (json['name'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BetaManagedAgentsMCPServerURLDefinition.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMCPServerURLDefinition(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsMCPServerURLDefinitionType.fromJson(
+                json['type'] as String)
+            : null)!,
+        name: (json['name'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'name': name,
-    'url': url,
-  };
+        'type': type_.toJson(),
+        'name': name,
+        'url': url,
+      };
 }

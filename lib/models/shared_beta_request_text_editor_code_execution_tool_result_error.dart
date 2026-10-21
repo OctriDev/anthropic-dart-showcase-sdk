@@ -8,35 +8,67 @@ part of 'shared_beta_request_text.dart';
 class BetaRequestTextEditorCodeExecutionToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `error_code` wire field.
   final BetaTextEditorCodeExecutionToolResultErrorCode errorCode;
+
   /// Optional `string` value serialized in the `error_message` wire field.
   final SdkOptional<String?> errorMessage;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestTextEditorCodeExecutionToolResultErrorType type_;
 
-  const BetaRequestTextEditorCodeExecutionToolResultError({required this.errorCode, this.errorMessage = const SdkOmitted(), required this.type_});
+  const BetaRequestTextEditorCodeExecutionToolResultError(
+      {required this.errorCode,
+      this.errorMessage = const SdkOmitted(),
+      required this.type_});
 
-  BetaRequestTextEditorCodeExecutionToolResultError Function({BetaTextEditorCodeExecutionToolResultErrorCode errorCode, SdkOptional<String?> errorMessage, BetaRequestTextEditorCodeExecutionToolResultErrorType type_}) get copyWith => _copyWith;
+  BetaRequestTextEditorCodeExecutionToolResultError Function(
+          {BetaTextEditorCodeExecutionToolResultErrorCode errorCode,
+          SdkOptional<String?> errorMessage,
+          BetaRequestTextEditorCodeExecutionToolResultErrorType type_})
+      get copyWith => _copyWith;
 
-  BetaRequestTextEditorCodeExecutionToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? errorMessage = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestTextEditorCodeExecutionToolResultError(
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as BetaTextEditorCodeExecutionToolResultErrorCode,
-    errorMessage: identical(errorMessage, sdkOmittedValue) ? this.errorMessage : errorMessage as SdkOptional<String?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestTextEditorCodeExecutionToolResultErrorType,
-  );
+  BetaRequestTextEditorCodeExecutionToolResultError _copyWith(
+          {Object? errorCode = sdkOmittedValue,
+          Object? errorMessage = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestTextEditorCodeExecutionToolResultError(
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as BetaTextEditorCodeExecutionToolResultErrorCode,
+        errorMessage: identical(errorMessage, sdkOmittedValue)
+            ? this.errorMessage
+            : errorMessage as SdkOptional<String?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestTextEditorCodeExecutionToolResultErrorType,
+      );
 
-  factory BetaRequestTextEditorCodeExecutionToolResultError.fromJson(Map<String, dynamic> json) => BetaRequestTextEditorCodeExecutionToolResultError(
-    errorCode: (json['error_code'] != null ? BetaTextEditorCodeExecutionToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
-    errorMessage: json.containsKey('error_message') ? SdkPresent(json['error_message'] as String?) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaRequestTextEditorCodeExecutionToolResultErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestTextEditorCodeExecutionToolResultError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestTextEditorCodeExecutionToolResultError(
+        errorCode: (json['error_code'] != null
+            ? BetaTextEditorCodeExecutionToolResultErrorCode.fromJson(
+                json['error_code'] as String)
+            : null)!,
+        errorMessage: json.containsKey('error_message')
+            ? SdkPresent(json['error_message'] as String?)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaRequestTextEditorCodeExecutionToolResultErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'error_code': errorCode.toJson(),
-    ...switch (errorMessage) {
-      SdkPresent<String?>(value: final value) => {'error_message': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        'error_code': errorCode.toJson(),
+        ...switch (errorMessage) {
+          SdkPresent<String?>(value: final value) => {
+              'error_message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

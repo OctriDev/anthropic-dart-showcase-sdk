@@ -10,14 +10,17 @@ enum BetaTextEditor20250728Type {
 
   static BetaTextEditor20250728Type fromJson(String value) {
     switch (value) {
-      case 'text_editor_20250728': return BetaTextEditor20250728Type.textEditor20250728;
-      default: throw ArgumentError('Unknown BetaTextEditor20250728Type: $value');
+      case 'text_editor_20250728':
+        return BetaTextEditor20250728Type.textEditor20250728;
+      default:
+        throw ArgumentError('Unknown BetaTextEditor20250728Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTextEditor20250728Type.textEditor20250728: return 'text_editor_20250728';
+      case BetaTextEditor20250728Type.textEditor20250728:
+        return 'text_editor_20250728';
     }
   }
 
@@ -31,14 +34,17 @@ enum BetaThinkingConfigAdaptiveType {
 
   static BetaThinkingConfigAdaptiveType fromJson(String value) {
     switch (value) {
-      case 'adaptive': return BetaThinkingConfigAdaptiveType.adaptive;
-      default: throw ArgumentError('Unknown BetaThinkingConfigAdaptiveType: $value');
+      case 'adaptive':
+        return BetaThinkingConfigAdaptiveType.adaptive;
+      default:
+        throw ArgumentError('Unknown BetaThinkingConfigAdaptiveType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaThinkingConfigAdaptiveType.adaptive: return 'adaptive';
+      case BetaThinkingConfigAdaptiveType.adaptive:
+        return 'adaptive';
     }
   }
 
@@ -52,14 +58,17 @@ enum BetaThinkingConfigDisabledType {
 
   static BetaThinkingConfigDisabledType fromJson(String value) {
     switch (value) {
-      case 'disabled': return BetaThinkingConfigDisabledType.disabled;
-      default: throw ArgumentError('Unknown BetaThinkingConfigDisabledType: $value');
+      case 'disabled':
+        return BetaThinkingConfigDisabledType.disabled;
+      default:
+        throw ArgumentError('Unknown BetaThinkingConfigDisabledType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaThinkingConfigDisabledType.disabled: return 'disabled';
+      case BetaThinkingConfigDisabledType.disabled:
+        return 'disabled';
     }
   }
 
@@ -73,14 +82,17 @@ enum BetaThinkingConfigEnabledType {
 
   static BetaThinkingConfigEnabledType fromJson(String value) {
     switch (value) {
-      case 'enabled': return BetaThinkingConfigEnabledType.enabled;
-      default: throw ArgumentError('Unknown BetaThinkingConfigEnabledType: $value');
+      case 'enabled':
+        return BetaThinkingConfigEnabledType.enabled;
+      default:
+        throw ArgumentError('Unknown BetaThinkingConfigEnabledType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaThinkingConfigEnabledType.enabled: return 'enabled';
+      case BetaThinkingConfigEnabledType.enabled:
+        return 'enabled';
     }
   }
 
@@ -94,14 +106,18 @@ enum BetaThinkingContentBlockDeltaType {
 
   static BetaThinkingContentBlockDeltaType fromJson(String value) {
     switch (value) {
-      case 'thinking_delta': return BetaThinkingContentBlockDeltaType.thinkingDelta;
-      default: throw ArgumentError('Unknown BetaThinkingContentBlockDeltaType: $value');
+      case 'thinking_delta':
+        return BetaThinkingContentBlockDeltaType.thinkingDelta;
+      default:
+        throw ArgumentError(
+            'Unknown BetaThinkingContentBlockDeltaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaThinkingContentBlockDeltaType.thinkingDelta: return 'thinking_delta';
+      case BetaThinkingContentBlockDeltaType.thinkingDelta:
+        return 'thinking_delta';
     }
   }
 
@@ -111,26 +127,36 @@ enum BetaThinkingContentBlockDeltaType {
 
 /// Which binding check removed the block: `model_binding_mismatch` — it was created by a model whose reasoning the requested model may not read; `prefix_binding_mismatch` — the conversation before it differs from the conversation it was created in (the rest of that turn's consecutive thinking blocks are removed with it, each with this reason); `organization_binding_mismatch` — it was created under a different organization (an Anthropic organization, AWS account or Google Cloud project) and this organization is not one of its additional organizations; `end_user_binding_mismatch` — it was created for a different end user, or was removed by the consumer-organization binding. A block that would fail several checks reports one reason, in this order of precedence: `organization_binding_mismatch`, `end_user_binding_mismatch`, `model_binding_mismatch`, `prefix_binding_mismatch`.
 final class BetaThinkingDroppedInputTransformationReason {
-
   final String value;
 
   const BetaThinkingDroppedInputTransformationReason._(this.value);
 
-  factory BetaThinkingDroppedInputTransformationReason.fromJson(String value) => BetaThinkingDroppedInputTransformationReason._(value);
+  factory BetaThinkingDroppedInputTransformationReason.fromJson(String value) =>
+      BetaThinkingDroppedInputTransformationReason._(value);
 
-  static const modelBindingMismatch = BetaThinkingDroppedInputTransformationReason._('model_binding_mismatch');
-  static const prefixBindingMismatch = BetaThinkingDroppedInputTransformationReason._('prefix_binding_mismatch');
-  static const organizationBindingMismatch = BetaThinkingDroppedInputTransformationReason._('organization_binding_mismatch');
-  static const endUserBindingMismatch = BetaThinkingDroppedInputTransformationReason._('end_user_binding_mismatch');
+  static const modelBindingMismatch =
+      BetaThinkingDroppedInputTransformationReason._('model_binding_mismatch');
+  static const prefixBindingMismatch =
+      BetaThinkingDroppedInputTransformationReason._('prefix_binding_mismatch');
+  static const organizationBindingMismatch =
+      BetaThinkingDroppedInputTransformationReason._(
+          'organization_binding_mismatch');
+  static const endUserBindingMismatch =
+      BetaThinkingDroppedInputTransformationReason._(
+          'end_user_binding_mismatch');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaThinkingDroppedInputTransformationReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaThinkingDroppedInputTransformationReason &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Always `thinking_dropped` for this entry type.
@@ -139,14 +165,18 @@ enum BetaThinkingDroppedInputTransformationType {
 
   static BetaThinkingDroppedInputTransformationType fromJson(String value) {
     switch (value) {
-      case 'thinking_dropped': return BetaThinkingDroppedInputTransformationType.thinkingDropped;
-      default: throw ArgumentError('Unknown BetaThinkingDroppedInputTransformationType: $value');
+      case 'thinking_dropped':
+        return BetaThinkingDroppedInputTransformationType.thinkingDropped;
+      default:
+        throw ArgumentError(
+            'Unknown BetaThinkingDroppedInputTransformationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaThinkingDroppedInputTransformationType.thinkingDropped: return 'thinking_dropped';
+      case BetaThinkingDroppedInputTransformationType.thinkingDropped:
+        return 'thinking_dropped';
     }
   }
 
@@ -160,14 +190,17 @@ enum BetaThinkingTurnsType {
 
   static BetaThinkingTurnsType fromJson(String value) {
     switch (value) {
-      case 'thinking_turns': return BetaThinkingTurnsType.thinkingTurns;
-      default: throw ArgumentError('Unknown BetaThinkingTurnsType: $value');
+      case 'thinking_turns':
+        return BetaThinkingTurnsType.thinkingTurns;
+      default:
+        throw ArgumentError('Unknown BetaThinkingTurnsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaThinkingTurnsType.thinkingTurns: return 'thinking_turns';
+      case BetaThinkingTurnsType.thinkingTurns:
+        return 'thinking_turns';
     }
   }
 
@@ -181,14 +214,17 @@ enum BetaTokenTaskBudgetType {
 
   static BetaTokenTaskBudgetType fromJson(String value) {
     switch (value) {
-      case 'tokens': return BetaTokenTaskBudgetType.tokens;
-      default: throw ArgumentError('Unknown BetaTokenTaskBudgetType: $value');
+      case 'tokens':
+        return BetaTokenTaskBudgetType.tokens;
+      default:
+        throw ArgumentError('Unknown BetaTokenTaskBudgetType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTokenTaskBudgetType.tokens: return 'tokens';
+      case BetaTokenTaskBudgetType.tokens:
+        return 'tokens';
     }
   }
 
@@ -202,14 +238,17 @@ enum BetaToolTypeVariant1 {
 
   static BetaToolTypeVariant1 fromJson(String value) {
     switch (value) {
-      case 'custom': return BetaToolTypeVariant1.custom;
-      default: throw ArgumentError('Unknown BetaToolTypeVariant1: $value');
+      case 'custom':
+        return BetaToolTypeVariant1.custom;
+      default:
+        throw ArgumentError('Unknown BetaToolTypeVariant1: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolTypeVariant1.custom: return 'custom';
+      case BetaToolTypeVariant1.custom:
+        return 'custom';
     }
   }
 
@@ -223,14 +262,18 @@ enum BetaToolChangeMCPToolReferenceType {
 
   static BetaToolChangeMCPToolReferenceType fromJson(String value) {
     switch (value) {
-      case 'mcp_tool_reference': return BetaToolChangeMCPToolReferenceType.mcpToolReference;
-      default: throw ArgumentError('Unknown BetaToolChangeMCPToolReferenceType: $value');
+      case 'mcp_tool_reference':
+        return BetaToolChangeMCPToolReferenceType.mcpToolReference;
+      default:
+        throw ArgumentError(
+            'Unknown BetaToolChangeMCPToolReferenceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolChangeMCPToolReferenceType.mcpToolReference: return 'mcp_tool_reference';
+      case BetaToolChangeMCPToolReferenceType.mcpToolReference:
+        return 'mcp_tool_reference';
     }
   }
 
@@ -244,14 +287,18 @@ enum BetaToolChangeMCPToolsetReferenceType {
 
   static BetaToolChangeMCPToolsetReferenceType fromJson(String value) {
     switch (value) {
-      case 'mcp_toolset_reference': return BetaToolChangeMCPToolsetReferenceType.mcpToolsetReference;
-      default: throw ArgumentError('Unknown BetaToolChangeMCPToolsetReferenceType: $value');
+      case 'mcp_toolset_reference':
+        return BetaToolChangeMCPToolsetReferenceType.mcpToolsetReference;
+      default:
+        throw ArgumentError(
+            'Unknown BetaToolChangeMCPToolsetReferenceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolChangeMCPToolsetReferenceType.mcpToolsetReference: return 'mcp_toolset_reference';
+      case BetaToolChangeMCPToolsetReferenceType.mcpToolsetReference:
+        return 'mcp_toolset_reference';
     }
   }
 
@@ -265,14 +312,17 @@ enum BetaToolChangeToolReferenceType {
 
   static BetaToolChangeToolReferenceType fromJson(String value) {
     switch (value) {
-      case 'tool_reference': return BetaToolChangeToolReferenceType.toolReference;
-      default: throw ArgumentError('Unknown BetaToolChangeToolReferenceType: $value');
+      case 'tool_reference':
+        return BetaToolChangeToolReferenceType.toolReference;
+      default:
+        throw ArgumentError('Unknown BetaToolChangeToolReferenceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolChangeToolReferenceType.toolReference: return 'tool_reference';
+      case BetaToolChangeToolReferenceType.toolReference:
+        return 'tool_reference';
     }
   }
 

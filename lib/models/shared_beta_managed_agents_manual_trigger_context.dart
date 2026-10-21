@@ -8,22 +8,34 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsManualTriggerContext {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsManualTriggerContextType type_;
 
   const BetaManagedAgentsManualTriggerContext({required this.type_});
 
-  BetaManagedAgentsManualTriggerContext Function({BetaManagedAgentsManualTriggerContextType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsManualTriggerContext Function(
+          {BetaManagedAgentsManualTriggerContextType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsManualTriggerContext _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsManualTriggerContext(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsManualTriggerContextType,
-  );
+  BetaManagedAgentsManualTriggerContext _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsManualTriggerContext(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsManualTriggerContextType,
+      );
 
-  factory BetaManagedAgentsManualTriggerContext.fromJson(Map<String, dynamic> json) => BetaManagedAgentsManualTriggerContext(
-    type_: (json['type'] != null ? BetaManagedAgentsManualTriggerContextType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsManualTriggerContext.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsManualTriggerContext(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsManualTriggerContextType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

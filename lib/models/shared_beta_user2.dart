@@ -8,47 +8,82 @@ part of 'shared_beta_user.dart';
 class BetaUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// RFC 3339 datetime string indicating when the User joined the Organization.
   final String addedAt;
+
   /// Email of the User.
   final String email;
+
   /// ID of the User.
   final String id;
+
   /// Name of the User.
   final String name;
+
   /// Organization role of the User.
   final BetaOrganizationRoleSchema role;
+
   /// Object type. For Users, this is always `"user"`.
   final BetaUserType type_;
 
-  const BetaUser({required this.addedAt, required this.email, required this.id, required this.name, required this.role, required this.type_});
+  const BetaUser(
+      {required this.addedAt,
+      required this.email,
+      required this.id,
+      required this.name,
+      required this.role,
+      required this.type_});
 
-  BetaUser Function({String addedAt, String email, String id, String name, BetaOrganizationRoleSchema role, BetaUserType type_}) get copyWith => _copyWith;
+  BetaUser Function(
+      {String addedAt,
+      String email,
+      String id,
+      String name,
+      BetaOrganizationRoleSchema role,
+      BetaUserType type_}) get copyWith => _copyWith;
 
-  BetaUser _copyWith({Object? addedAt = sdkOmittedValue, Object? email = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? role = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaUser(
-    addedAt: identical(addedAt, sdkOmittedValue) ? this.addedAt : addedAt as String,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    role: identical(role, sdkOmittedValue) ? this.role : role as BetaOrganizationRoleSchema,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaUserType,
-  );
+  BetaUser _copyWith(
+          {Object? addedAt = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? role = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaUser(
+        addedAt: identical(addedAt, sdkOmittedValue)
+            ? this.addedAt
+            : addedAt as String,
+        email: identical(email, sdkOmittedValue) ? this.email : email as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        role: identical(role, sdkOmittedValue)
+            ? this.role
+            : role as BetaOrganizationRoleSchema,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaUserType,
+      );
 
   factory BetaUser.fromJson(Map<String, dynamic> json) => BetaUser(
-    addedAt: (json['added_at'] as String?)!,
-    email: (json['email'] as String?)!,
-    id: (json['id'] as String?)!,
-    name: (json['name'] as String?)!,
-    role: (json['role'] != null ? BetaOrganizationRoleSchema.fromJson(json['role'] as String) : null)!,
-    type_: (json['type'] != null ? BetaUserType.fromJson(json['type'] as String) : null)!,
-  );
+        addedAt: (json['added_at'] as String?)!,
+        email: (json['email'] as String?)!,
+        id: (json['id'] as String?)!,
+        name: (json['name'] as String?)!,
+        role: (json['role'] != null
+            ? BetaOrganizationRoleSchema.fromJson(json['role'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaUserType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'added_at': addedAt,
-    'email': email,
-    'id': id,
-    'name': name,
-    'role': role.toJson(),
-    'type': type_.toJson(),
-  };
+        'added_at': addedAt,
+        'email': email,
+        'id': id,
+        'name': name,
+        'role': role.toJson(),
+        'type': type_.toJson(),
+      };
 }

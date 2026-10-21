@@ -8,22 +8,34 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsRetryStatusRetrying {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsRetryStatusRetryingType type_;
 
   const BetaManagedAgentsRetryStatusRetrying({required this.type_});
 
-  BetaManagedAgentsRetryStatusRetrying Function({BetaManagedAgentsRetryStatusRetryingType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsRetryStatusRetrying Function(
+          {BetaManagedAgentsRetryStatusRetryingType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsRetryStatusRetrying _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsRetryStatusRetrying(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsRetryStatusRetryingType,
-  );
+  BetaManagedAgentsRetryStatusRetrying _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsRetryStatusRetrying(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsRetryStatusRetryingType,
+      );
 
-  factory BetaManagedAgentsRetryStatusRetrying.fromJson(Map<String, dynamic> json) => BetaManagedAgentsRetryStatusRetrying(
-    type_: (json['type'] != null ? BetaManagedAgentsRetryStatusRetryingType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsRetryStatusRetrying.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsRetryStatusRetrying(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsRetryStatusRetryingType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

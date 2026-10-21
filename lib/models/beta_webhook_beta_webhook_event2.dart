@@ -8,37 +8,65 @@ part of 'beta_webhook_beta_webhook_event.dart';
 class BetaWebhookEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Object type. Always `event` for webhook payloads.
   final BetaWebhookEventType type_;
+
   /// Unique event identifier for idempotency.
   final String id;
+
   /// RFC 3339 timestamp when the event occurred.
   final String createdAt;
+
   /// Required API value serialized in the `data` wire field.
   final BetaWebhookEventData data;
 
-  const BetaWebhookEvent({required this.type_, required this.id, required this.createdAt, required this.data});
+  const BetaWebhookEvent(
+      {required this.type_,
+      required this.id,
+      required this.createdAt,
+      required this.data});
 
-  BetaWebhookEvent Function({BetaWebhookEventType type_, String id, String createdAt, BetaWebhookEventData data}) get copyWith => _copyWith;
+  BetaWebhookEvent Function(
+      {BetaWebhookEventType type_,
+      String id,
+      String createdAt,
+      BetaWebhookEventData data}) get copyWith => _copyWith;
 
-  BetaWebhookEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? data = sdkOmittedValue}) => BetaWebhookEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    data: identical(data, sdkOmittedValue) ? this.data : data as BetaWebhookEventData,
-  );
+  BetaWebhookEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? data = sdkOmittedValue}) =>
+      BetaWebhookEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWebhookEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as BetaWebhookEventData,
+      );
 
-  factory BetaWebhookEvent.fromJson(Map<String, dynamic> json) => BetaWebhookEvent(
-    type_: (json['type'] != null ? BetaWebhookEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    data: (json['data'] != null ? BetaWebhookEventData.fromJson(json['data']) : null)!,
-  );
+  factory BetaWebhookEvent.fromJson(Map<String, dynamic> json) =>
+      BetaWebhookEvent(
+        type_: (json['type'] != null
+            ? BetaWebhookEventType.fromJson(json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        data: (json['data'] != null
+            ? BetaWebhookEventData.fromJson(json['data'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'created_at': createdAt,
-    'data': data.toJson(),
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'created_at': createdAt,
+        'data': data.toJson(),
+      };
 }

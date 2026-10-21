@@ -8,27 +8,38 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsTextBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTextBlockType type_;
+
   /// The text content.
   final String text;
 
   const BetaManagedAgentsTextBlock({required this.type_, required this.text});
 
-  BetaManagedAgentsTextBlock Function({BetaManagedAgentsTextBlockType type_, String text}) get copyWith => _copyWith;
+  BetaManagedAgentsTextBlock Function(
+      {BetaManagedAgentsTextBlockType type_,
+      String text}) get copyWith => _copyWith;
 
-  BetaManagedAgentsTextBlock _copyWith({Object? type_ = sdkOmittedValue, Object? text = sdkOmittedValue}) => BetaManagedAgentsTextBlock(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTextBlockType,
-    text: identical(text, sdkOmittedValue) ? this.text : text as String,
-  );
+  BetaManagedAgentsTextBlock _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? text = sdkOmittedValue}) =>
+      BetaManagedAgentsTextBlock(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsTextBlockType,
+        text: identical(text, sdkOmittedValue) ? this.text : text as String,
+      );
 
-  factory BetaManagedAgentsTextBlock.fromJson(Map<String, dynamic> json) => BetaManagedAgentsTextBlock(
-    type_: (json['type'] != null ? BetaManagedAgentsTextBlockType.fromJson(json['type'] as String) : null)!,
-    text: (json['text'] as String?)!,
-  );
+  factory BetaManagedAgentsTextBlock.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsTextBlock(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsTextBlockType.fromJson(json['type'] as String)
+            : null)!,
+        text: (json['text'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'text': text,
-  };
+        'type': type_.toJson(),
+        'text': text,
+      };
 }

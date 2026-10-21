@@ -9,59 +9,100 @@ sealed class RequestToolReferenceBlockCacheControl {
   static const String constructionSurface = 'named';
   const RequestToolReferenceBlockCacheControl();
   factory RequestToolReferenceBlockCacheControl.fromJson(Object? json) {
-    try { return RequestToolReferenceBlockCacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownRequestToolReferenceBlockCacheControl(json); }
-    throw FormatException("No variant matched for RequestToolReferenceBlockCacheControl");
+    try {
+      return RequestToolReferenceBlockCacheControlCacheControlEphemeral(
+          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownRequestToolReferenceBlockCacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for RequestToolReferenceBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class RequestToolReferenceBlockCacheControlCacheControlEphemeral extends RequestToolReferenceBlockCacheControl {
+final class RequestToolReferenceBlockCacheControlCacheControlEphemeral
+    extends RequestToolReferenceBlockCacheControl {
   final CacheControlEphemeral value;
   const RequestToolReferenceBlockCacheControlCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [RequestToolReferenceBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestToolReferenceBlockCacheControl extends RequestToolReferenceBlockCacheControl {
+final class UnknownRequestToolReferenceBlockCacheControl
+    extends RequestToolReferenceBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownRequestToolReferenceBlockCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Tool reference block that can be included in tool_result content.
 class RequestToolReferenceBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
+
   /// Required `string` value serialized in the `tool_name` wire field.
   final String toolName;
+
   /// Required `string` value serialized in the `type` wire field.
   final RequestToolReferenceBlockType type_;
 
-  const RequestToolReferenceBlock({this.cacheControl = const SdkOmitted(), required this.toolName, required this.type_});
+  const RequestToolReferenceBlock(
+      {this.cacheControl = const SdkOmitted(),
+      required this.toolName,
+      required this.type_});
 
-  RequestToolReferenceBlock Function({SdkOptional<CacheControlEphemeral?> cacheControl, String toolName, RequestToolReferenceBlockType type_}) get copyWith => _copyWith;
+  RequestToolReferenceBlock Function(
+      {SdkOptional<CacheControlEphemeral?> cacheControl,
+      String toolName,
+      RequestToolReferenceBlockType type_}) get copyWith => _copyWith;
 
-  RequestToolReferenceBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? toolName = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestToolReferenceBlock(
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
-    toolName: identical(toolName, sdkOmittedValue) ? this.toolName : toolName as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestToolReferenceBlockType,
-  );
+  RequestToolReferenceBlock _copyWith(
+          {Object? cacheControl = sdkOmittedValue,
+          Object? toolName = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RequestToolReferenceBlock(
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<CacheControlEphemeral?>,
+        toolName: identical(toolName, sdkOmittedValue)
+            ? this.toolName
+            : toolName as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RequestToolReferenceBlockType,
+      );
 
-  factory RequestToolReferenceBlock.fromJson(Map<String, dynamic> json) => RequestToolReferenceBlock(
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    toolName: (json['tool_name'] as String?)!,
-    type_: (json['type'] != null ? RequestToolReferenceBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RequestToolReferenceBlock.fromJson(Map<String, dynamic> json) =>
+      RequestToolReferenceBlock(
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? CacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        toolName: (json['tool_name'] as String?)!,
+        type_: (json['type'] != null
+            ? RequestToolReferenceBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (cacheControl) {
-      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'tool_name': toolName,
-    'type': type_.toJson(),
-  };
+        ...switch (cacheControl) {
+          SdkPresent<CacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'tool_name': toolName,
+        'type': type_.toJson(),
+      };
 }

@@ -6,7 +6,6 @@ part of 'shared_beta.dart';
 // shared_beta domain models
 /// Typed representation of the `BetaStopReason` API schema.
 final class BetaStopReason {
-
   final String value;
 
   const BetaStopReason._(this.value);
@@ -20,14 +19,18 @@ final class BetaStopReason {
   static const pauseTurn = BetaStopReason._('pause_turn');
   static const compaction = BetaStopReason._('compaction');
   static const refusal = BetaStopReason._('refusal');
-  static const modelContextWindowExceeded = BetaStopReason._('model_context_window_exceeded');
+  static const modelContextWindowExceeded =
+      BetaStopReason._('model_context_window_exceeded');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaStopReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaStopReason && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

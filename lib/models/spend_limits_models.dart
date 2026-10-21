@@ -8,27 +8,38 @@ part of 'spend_limits.dart';
 class BetaDeleteSpendLimitResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `id` wire field.
   final String id;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaDeleteSpendLimitResponseType type_;
 
   const BetaDeleteSpendLimitResponse({required this.id, required this.type_});
 
-  BetaDeleteSpendLimitResponse Function({String id, BetaDeleteSpendLimitResponseType type_}) get copyWith => _copyWith;
+  BetaDeleteSpendLimitResponse Function(
+      {String id,
+      BetaDeleteSpendLimitResponseType type_}) get copyWith => _copyWith;
 
-  BetaDeleteSpendLimitResponse _copyWith({Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaDeleteSpendLimitResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaDeleteSpendLimitResponseType,
-  );
+  BetaDeleteSpendLimitResponse _copyWith(
+          {Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      BetaDeleteSpendLimitResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaDeleteSpendLimitResponseType,
+      );
 
-  factory BetaDeleteSpendLimitResponse.fromJson(Map<String, dynamic> json) => BetaDeleteSpendLimitResponse(
-    id: (json['id'] as String?)!,
-    type_: (json['type'] != null ? BetaDeleteSpendLimitResponseType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaDeleteSpendLimitResponse.fromJson(Map<String, dynamic> json) =>
+      BetaDeleteSpendLimitResponse(
+        id: (json['id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaDeleteSpendLimitResponseType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': type_.toJson(),
-  };
+        'id': id,
+        'type': type_.toJson(),
+      };
 }

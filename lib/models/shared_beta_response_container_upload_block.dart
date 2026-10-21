@@ -8,27 +8,43 @@ part of 'shared_beta_response.dart';
 class BetaResponseContainerUploadBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `file_id` wire field.
   final String fileId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseContainerUploadBlockType type_;
 
-  const BetaResponseContainerUploadBlock({required this.fileId, required this.type_});
+  const BetaResponseContainerUploadBlock(
+      {required this.fileId, required this.type_});
 
-  BetaResponseContainerUploadBlock Function({String fileId, BetaResponseContainerUploadBlockType type_}) get copyWith => _copyWith;
+  BetaResponseContainerUploadBlock Function(
+      {String fileId,
+      BetaResponseContainerUploadBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseContainerUploadBlock _copyWith({Object? fileId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseContainerUploadBlock(
-    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseContainerUploadBlockType,
-  );
+  BetaResponseContainerUploadBlock _copyWith(
+          {Object? fileId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseContainerUploadBlock(
+        fileId:
+            identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseContainerUploadBlockType,
+      );
 
-  factory BetaResponseContainerUploadBlock.fromJson(Map<String, dynamic> json) => BetaResponseContainerUploadBlock(
-    fileId: (json['file_id'] as String?)!,
-    type_: (json['type'] != null ? BetaResponseContainerUploadBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseContainerUploadBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaResponseContainerUploadBlock(
+        fileId: (json['file_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaResponseContainerUploadBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'file_id': fileId,
-    'type': type_.toJson(),
-  };
+        'file_id': fileId,
+        'type': type_.toJson(),
+      };
 }

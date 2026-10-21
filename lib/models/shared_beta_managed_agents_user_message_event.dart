@@ -8,40 +8,74 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsUserMessageEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUserMessageEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Array of content blocks comprising the user message.
   final List<BetaManagedAgentsUserContentBlock> content;
+
   /// Timestamp when the agent finished processing this message.
   final SdkOptional<String?> processedAt;
 
-  const BetaManagedAgentsUserMessageEvent({required this.type_, required this.id, required this.content, this.processedAt = const SdkOmitted()});
+  const BetaManagedAgentsUserMessageEvent(
+      {required this.type_,
+      required this.id,
+      required this.content,
+      this.processedAt = const SdkOmitted()});
 
-  BetaManagedAgentsUserMessageEvent Function({BetaManagedAgentsUserMessageEventType type_, String id, List<BetaManagedAgentsUserContentBlock> content, SdkOptional<String?> processedAt}) get copyWith => _copyWith;
+  BetaManagedAgentsUserMessageEvent Function(
+      {BetaManagedAgentsUserMessageEventType type_,
+      String id,
+      List<BetaManagedAgentsUserContentBlock> content,
+      SdkOptional<String?> processedAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsUserMessageEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? content = sdkOmittedValue, Object? processedAt = sdkOmittedValue}) => BetaManagedAgentsUserMessageEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUserMessageEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    content: identical(content, sdkOmittedValue) ? this.content : content as List<BetaManagedAgentsUserContentBlock>,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as SdkOptional<String?>,
-  );
+  BetaManagedAgentsUserMessageEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue}) =>
+      BetaManagedAgentsUserMessageEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsUserMessageEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as List<BetaManagedAgentsUserContentBlock>,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as SdkOptional<String?>,
+      );
 
-  factory BetaManagedAgentsUserMessageEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUserMessageEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsUserMessageEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    content: ((json['content'] as List?)?.map((e) => BetaManagedAgentsUserContentBlock.fromJson(e)).toList())!,
-    processedAt: json.containsKey('processed_at') ? SdkPresent(json['processed_at'] as String?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsUserMessageEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUserMessageEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUserMessageEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        content: ((json['content'] as List?)
+            ?.map((e) => BetaManagedAgentsUserContentBlock.fromJson(e))
+            .toList())!,
+        processedAt: json.containsKey('processed_at')
+            ? SdkPresent(json['processed_at'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'content': content.map((item) => item.toJson()).toList(),
-    ...switch (processedAt) {
-      SdkPresent<String?>(value: final value) => {'processed_at': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'content': content.map((item) => item.toJson()).toList(),
+        ...switch (processedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'processed_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

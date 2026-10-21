@@ -8,40 +8,73 @@ part of 'shared_request_web.dart';
 class RequestWebFetchResultBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `content` wire field.
   final RequestDocumentBlock content;
+
   /// ISO 8601 timestamp when the content was retrieved
   final SdkOptional<String?> retrievedAt;
+
   /// Required `string` value serialized in the `type` wire field.
   final RequestWebFetchResultBlockType type_;
+
   /// Fetched content URL
   final String url;
 
-  const RequestWebFetchResultBlock({required this.content, this.retrievedAt = const SdkOmitted(), required this.type_, required this.url});
+  const RequestWebFetchResultBlock(
+      {required this.content,
+      this.retrievedAt = const SdkOmitted(),
+      required this.type_,
+      required this.url});
 
-  RequestWebFetchResultBlock Function({RequestDocumentBlock content, SdkOptional<String?> retrievedAt, RequestWebFetchResultBlockType type_, String url}) get copyWith => _copyWith;
+  RequestWebFetchResultBlock Function(
+      {RequestDocumentBlock content,
+      SdkOptional<String?> retrievedAt,
+      RequestWebFetchResultBlockType type_,
+      String url}) get copyWith => _copyWith;
 
-  RequestWebFetchResultBlock _copyWith({Object? content = sdkOmittedValue, Object? retrievedAt = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => RequestWebFetchResultBlock(
-    content: identical(content, sdkOmittedValue) ? this.content : content as RequestDocumentBlock,
-    retrievedAt: identical(retrievedAt, sdkOmittedValue) ? this.retrievedAt : retrievedAt as SdkOptional<String?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestWebFetchResultBlockType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  RequestWebFetchResultBlock _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? retrievedAt = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      RequestWebFetchResultBlock(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as RequestDocumentBlock,
+        retrievedAt: identical(retrievedAt, sdkOmittedValue)
+            ? this.retrievedAt
+            : retrievedAt as SdkOptional<String?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RequestWebFetchResultBlockType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory RequestWebFetchResultBlock.fromJson(Map<String, dynamic> json) => RequestWebFetchResultBlock(
-    content: (json['content'] != null ? RequestDocumentBlock.fromJson(json['content'] as Map<String, dynamic>) : null)!,
-    retrievedAt: json.containsKey('retrieved_at') ? SdkPresent(json['retrieved_at'] as String?) : const SdkOmitted(),
-    type_: (json['type'] != null ? RequestWebFetchResultBlockType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory RequestWebFetchResultBlock.fromJson(Map<String, dynamic> json) =>
+      RequestWebFetchResultBlock(
+        content: (json['content'] != null
+            ? RequestDocumentBlock.fromJson(
+                json['content'] as Map<String, dynamic>)
+            : null)!,
+        retrievedAt: json.containsKey('retrieved_at')
+            ? SdkPresent(json['retrieved_at'] as String?)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? RequestWebFetchResultBlockType.fromJson(json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content.toJson(),
-    ...switch (retrievedAt) {
-      SdkPresent<String?>(value: final value) => {'retrieved_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'content': content.toJson(),
+        ...switch (retrievedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'retrieved_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+        'url': url,
+      };
 }

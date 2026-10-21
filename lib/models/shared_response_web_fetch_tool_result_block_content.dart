@@ -10,32 +10,65 @@ sealed class ResponseWebFetchToolResultBlockContent {
   const ResponseWebFetchToolResultBlockContent();
   factory ResponseWebFetchToolResultBlockContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = ResponseWebFetchToolResultError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseWebFetchToolResultBlockContentResponseWebFetchToolResultError(value); } } catch (_) {}
-      try { final value = ResponseWebFetchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ResponseWebFetchToolResultBlockContentResponseWebFetchResultBlock(value); } } catch (_) {}
+      try {
+        final value = ResponseWebFetchToolResultError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ResponseWebFetchToolResultBlockContentResponseWebFetchToolResultError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = ResponseWebFetchResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ResponseWebFetchToolResultBlockContentResponseWebFetchResultBlock(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return ResponseWebFetchToolResultBlockContentResponseWebFetchToolResultError(ResponseWebFetchToolResultError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ResponseWebFetchToolResultBlockContentResponseWebFetchResultBlock(ResponseWebFetchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"web_fetch_tool_result_error", "web_fetch_result"}.contains(json["type"])) { return UnknownResponseWebFetchToolResultBlockContent(json); }
-    throw FormatException("No variant matched for ResponseWebFetchToolResultBlockContent");
+    try {
+      return ResponseWebFetchToolResultBlockContentResponseWebFetchToolResultError(
+          ResponseWebFetchToolResultError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ResponseWebFetchToolResultBlockContentResponseWebFetchResultBlock(
+          ResponseWebFetchResultBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"web_fetch_tool_result_error", "web_fetch_result"}
+            .contains(json["type"])) {
+      return UnknownResponseWebFetchToolResultBlockContent(json);
+    }
+    throw FormatException(
+        "No variant matched for ResponseWebFetchToolResultBlockContent");
   }
   Object? toJson();
 }
 
-final class ResponseWebFetchToolResultBlockContentResponseWebFetchToolResultError extends ResponseWebFetchToolResultBlockContent {
+final class ResponseWebFetchToolResultBlockContentResponseWebFetchToolResultError
+    extends ResponseWebFetchToolResultBlockContent {
   final ResponseWebFetchToolResultError value;
-  const ResponseWebFetchToolResultBlockContentResponseWebFetchToolResultError(this.value);
-  @override Object? toJson() => value.toJson();
+  const ResponseWebFetchToolResultBlockContentResponseWebFetchToolResultError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class ResponseWebFetchToolResultBlockContentResponseWebFetchResultBlock extends ResponseWebFetchToolResultBlockContent {
+final class ResponseWebFetchToolResultBlockContentResponseWebFetchResultBlock
+    extends ResponseWebFetchToolResultBlockContent {
   final ResponseWebFetchResultBlock value;
-  const ResponseWebFetchToolResultBlockContentResponseWebFetchResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  const ResponseWebFetchToolResultBlockContentResponseWebFetchResultBlock(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [ResponseWebFetchToolResultBlockContent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownResponseWebFetchToolResultBlockContent extends ResponseWebFetchToolResultBlockContent {
+final class UnknownResponseWebFetchToolResultBlockContent
+    extends ResponseWebFetchToolResultBlockContent {
   final Map<String, dynamic> raw;
   const UnknownResponseWebFetchToolResultBlockContent(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

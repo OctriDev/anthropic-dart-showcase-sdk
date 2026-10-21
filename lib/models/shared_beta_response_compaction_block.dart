@@ -8,32 +8,60 @@ part of 'shared_beta_response.dart';
 class BetaResponseCompactionBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Summary of compacted content, or null if compaction failed
   final String? content;
+
   /// Opaque metadata from prior compaction, to be round-tripped verbatim
   final String? encryptedContent;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaResponseCompactionBlockType type_;
 
-  const BetaResponseCompactionBlock({required this.content, required this.encryptedContent, required this.type_});
+  const BetaResponseCompactionBlock(
+      {required this.content,
+      required this.encryptedContent,
+      required this.type_});
 
-  BetaResponseCompactionBlock Function({String? content, String? encryptedContent, BetaResponseCompactionBlockType type_}) get copyWith => _copyWith;
+  BetaResponseCompactionBlock Function(
+      {String? content,
+      String? encryptedContent,
+      BetaResponseCompactionBlockType type_}) get copyWith => _copyWith;
 
-  BetaResponseCompactionBlock _copyWith({Object? content = sdkOmittedValue, Object? encryptedContent = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaResponseCompactionBlock(
-    content: identical(content, sdkOmittedValue) ? this.content : content as String?,
-    encryptedContent: identical(encryptedContent, sdkOmittedValue) ? this.encryptedContent : encryptedContent as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaResponseCompactionBlockType,
-  );
+  BetaResponseCompactionBlock _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? encryptedContent = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaResponseCompactionBlock(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as String?,
+        encryptedContent: identical(encryptedContent, sdkOmittedValue)
+            ? this.encryptedContent
+            : encryptedContent as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaResponseCompactionBlockType,
+      );
 
-  factory BetaResponseCompactionBlock.fromJson(Map<String, dynamic> json) => BetaResponseCompactionBlock(
-    content: json.containsKey('content') ? json['content'] as String? : throw ArgumentError.value(null, 'content', 'Required property is missing'),
-    encryptedContent: json.containsKey('encrypted_content') ? json['encrypted_content'] as String? : throw ArgumentError.value(null, 'encrypted_content', 'Required property is missing'),
-    type_: (json['type'] != null ? BetaResponseCompactionBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaResponseCompactionBlock.fromJson(Map<String, dynamic> json) =>
+      BetaResponseCompactionBlock(
+        content: json.containsKey('content')
+            ? json['content'] as String?
+            : throw ArgumentError.value(
+                null, 'content', 'Required property is missing'),
+        encryptedContent: json.containsKey('encrypted_content')
+            ? json['encrypted_content'] as String?
+            : throw ArgumentError.value(
+                null, 'encrypted_content', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? BetaResponseCompactionBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content,
-    'encrypted_content': encryptedContent,
-    'type': type_.toJson(),
-  };
+        'content': content,
+        'encrypted_content': encryptedContent,
+        'type': type_.toJson(),
+      };
 }

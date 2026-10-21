@@ -9,22 +9,32 @@ sealed class BetaManagedAgentsSchedule {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsSchedule();
   factory BetaManagedAgentsSchedule.fromJson(Object? json) {
-    try { return BetaManagedAgentsScheduleBetaManagedAgentsCronSchedule(BetaManagedAgentsCronSchedule.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"cron"}.contains(json["type"])) { return UnknownBetaManagedAgentsSchedule(json); }
+    try {
+      return BetaManagedAgentsScheduleBetaManagedAgentsCronSchedule(
+          BetaManagedAgentsCronSchedule.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"cron"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsSchedule(json);
+    }
     throw FormatException("No variant matched for BetaManagedAgentsSchedule");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsScheduleBetaManagedAgentsCronSchedule extends BetaManagedAgentsSchedule {
+final class BetaManagedAgentsScheduleBetaManagedAgentsCronSchedule
+    extends BetaManagedAgentsSchedule {
   final BetaManagedAgentsCronSchedule value;
   const BetaManagedAgentsScheduleBetaManagedAgentsCronSchedule(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSchedule] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaManagedAgentsSchedule extends BetaManagedAgentsSchedule {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSchedule(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

@@ -10,64 +10,150 @@ sealed class BetaContentBlockDeltaEventDelta {
   const BetaContentBlockDeltaEventDelta();
   factory BetaContentBlockDeltaEventDelta.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaTextContentBlockDelta.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaContentBlockDeltaEventDeltaBetaTextContentBlockDelta(value); } } catch (_) {}
-      try { final value = BetaInputJsonContentBlockDelta.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaContentBlockDeltaEventDeltaBetaInputJsonContentBlockDelta(value); } } catch (_) {}
-      try { final value = BetaCitationsDelta.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaContentBlockDeltaEventDeltaBetaCitationsDelta(value); } } catch (_) {}
-      try { final value = BetaThinkingContentBlockDelta.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaContentBlockDeltaEventDeltaBetaThinkingContentBlockDelta(value); } } catch (_) {}
-      try { final value = BetaSignatureContentBlockDelta.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaContentBlockDeltaEventDeltaBetaSignatureContentBlockDelta(value); } } catch (_) {}
-      try { final value = BetaCompactionContentBlockDelta.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaContentBlockDeltaEventDeltaBetaCompactionContentBlockDelta(value); } } catch (_) {}
+      try {
+        final value = BetaTextContentBlockDelta.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaContentBlockDeltaEventDeltaBetaTextContentBlockDelta(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaInputJsonContentBlockDelta.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaContentBlockDeltaEventDeltaBetaInputJsonContentBlockDelta(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaCitationsDelta.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaContentBlockDeltaEventDeltaBetaCitationsDelta(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaThinkingContentBlockDelta.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaContentBlockDeltaEventDeltaBetaThinkingContentBlockDelta(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaSignatureContentBlockDelta.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaContentBlockDeltaEventDeltaBetaSignatureContentBlockDelta(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaCompactionContentBlockDelta.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaContentBlockDeltaEventDeltaBetaCompactionContentBlockDelta(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaContentBlockDeltaEventDeltaBetaTextContentBlockDelta(BetaTextContentBlockDelta.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaContentBlockDeltaEventDeltaBetaInputJsonContentBlockDelta(BetaInputJsonContentBlockDelta.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaContentBlockDeltaEventDeltaBetaCitationsDelta(BetaCitationsDelta.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaContentBlockDeltaEventDeltaBetaThinkingContentBlockDelta(BetaThinkingContentBlockDelta.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaContentBlockDeltaEventDeltaBetaSignatureContentBlockDelta(BetaSignatureContentBlockDelta.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaContentBlockDeltaEventDeltaBetaCompactionContentBlockDelta(BetaCompactionContentBlockDelta.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"citations_delta", "compaction_delta", "input_json_delta", "signature_delta", "text_delta", "thinking_delta"}.contains(json["type"])) { return UnknownBetaContentBlockDeltaEventDelta(json); }
-    throw FormatException("No variant matched for BetaContentBlockDeltaEventDelta");
+    try {
+      return BetaContentBlockDeltaEventDeltaBetaTextContentBlockDelta(
+          BetaTextContentBlockDelta.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaContentBlockDeltaEventDeltaBetaInputJsonContentBlockDelta(
+          BetaInputJsonContentBlockDelta.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaContentBlockDeltaEventDeltaBetaCitationsDelta(
+          BetaCitationsDelta.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaContentBlockDeltaEventDeltaBetaThinkingContentBlockDelta(
+          BetaThinkingContentBlockDelta.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaContentBlockDeltaEventDeltaBetaSignatureContentBlockDelta(
+          BetaSignatureContentBlockDelta.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaContentBlockDeltaEventDeltaBetaCompactionContentBlockDelta(
+          BetaCompactionContentBlockDelta.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "citations_delta",
+          "compaction_delta",
+          "input_json_delta",
+          "signature_delta",
+          "text_delta",
+          "thinking_delta"
+        }.contains(json["type"])) {
+      return UnknownBetaContentBlockDeltaEventDelta(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaContentBlockDeltaEventDelta");
   }
   Object? toJson();
 }
 
-final class BetaContentBlockDeltaEventDeltaBetaTextContentBlockDelta extends BetaContentBlockDeltaEventDelta {
+final class BetaContentBlockDeltaEventDeltaBetaTextContentBlockDelta
+    extends BetaContentBlockDeltaEventDelta {
   final BetaTextContentBlockDelta value;
   const BetaContentBlockDeltaEventDeltaBetaTextContentBlockDelta(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaContentBlockDeltaEventDeltaBetaInputJsonContentBlockDelta extends BetaContentBlockDeltaEventDelta {
+final class BetaContentBlockDeltaEventDeltaBetaInputJsonContentBlockDelta
+    extends BetaContentBlockDeltaEventDelta {
   final BetaInputJsonContentBlockDelta value;
-  const BetaContentBlockDeltaEventDeltaBetaInputJsonContentBlockDelta(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaContentBlockDeltaEventDeltaBetaInputJsonContentBlockDelta(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaContentBlockDeltaEventDeltaBetaCitationsDelta extends BetaContentBlockDeltaEventDelta {
+final class BetaContentBlockDeltaEventDeltaBetaCitationsDelta
+    extends BetaContentBlockDeltaEventDelta {
   final BetaCitationsDelta value;
   const BetaContentBlockDeltaEventDeltaBetaCitationsDelta(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaContentBlockDeltaEventDeltaBetaThinkingContentBlockDelta extends BetaContentBlockDeltaEventDelta {
+final class BetaContentBlockDeltaEventDeltaBetaThinkingContentBlockDelta
+    extends BetaContentBlockDeltaEventDelta {
   final BetaThinkingContentBlockDelta value;
-  const BetaContentBlockDeltaEventDeltaBetaThinkingContentBlockDelta(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaContentBlockDeltaEventDeltaBetaThinkingContentBlockDelta(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaContentBlockDeltaEventDeltaBetaSignatureContentBlockDelta extends BetaContentBlockDeltaEventDelta {
+final class BetaContentBlockDeltaEventDeltaBetaSignatureContentBlockDelta
+    extends BetaContentBlockDeltaEventDelta {
   final BetaSignatureContentBlockDelta value;
-  const BetaContentBlockDeltaEventDeltaBetaSignatureContentBlockDelta(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaContentBlockDeltaEventDeltaBetaSignatureContentBlockDelta(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaContentBlockDeltaEventDeltaBetaCompactionContentBlockDelta extends BetaContentBlockDeltaEventDelta {
+final class BetaContentBlockDeltaEventDeltaBetaCompactionContentBlockDelta
+    extends BetaContentBlockDeltaEventDelta {
   final BetaCompactionContentBlockDelta value;
-  const BetaContentBlockDeltaEventDeltaBetaCompactionContentBlockDelta(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaContentBlockDeltaEventDeltaBetaCompactionContentBlockDelta(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaContentBlockDeltaEventDelta] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaContentBlockDeltaEventDelta extends BetaContentBlockDeltaEventDelta {
+final class UnknownBetaContentBlockDeltaEventDelta
+    extends BetaContentBlockDeltaEventDelta {
   final Map<String, dynamic> raw;
   const UnknownBetaContentBlockDeltaEventDelta(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

@@ -8,27 +8,40 @@ part of 'shared.dart';
 class AuthenticationError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `type` wire field.
   final AuthenticationErrorType type_;
 
   const AuthenticationError({required this.message, required this.type_});
 
-  AuthenticationError Function({String message, AuthenticationErrorType type_}) get copyWith => _copyWith;
+  AuthenticationError Function({String message, AuthenticationErrorType type_})
+      get copyWith => _copyWith;
 
-  AuthenticationError _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => AuthenticationError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as AuthenticationErrorType,
-  );
+  AuthenticationError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      AuthenticationError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as AuthenticationErrorType,
+      );
 
-  factory AuthenticationError.fromJson(Map<String, dynamic> json) => AuthenticationError(
-    message: (json['message'] as String?)!,
-    type_: (json['type'] != null ? AuthenticationErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory AuthenticationError.fromJson(Map<String, dynamic> json) =>
+      AuthenticationError(
+        message: (json['message'] as String?)!,
+        type_: (json['type'] != null
+            ? AuthenticationErrorType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'type': type_.toJson(),
-  };
+        'message': message,
+        'type': type_.toJson(),
+      };
 }

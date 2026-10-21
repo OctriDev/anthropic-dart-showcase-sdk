@@ -8,22 +8,37 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
-  final BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType type_;
+  final BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType
+      type_;
 
-  const BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError({required this.type_});
+  const BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError(
+      {required this.type_});
 
-  BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError Function({BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError Function(
+      {BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType
+          type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType,
-  );
+  BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType,
+      );
 
-  factory BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError(
-    type_: (json['type'] != null ? BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonErrorType
+                .fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

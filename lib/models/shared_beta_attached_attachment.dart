@@ -8,22 +8,30 @@ part of 'shared_beta.dart';
 class BetaAttachedAttachment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaAttachedAttachmentType type_;
 
   const BetaAttachedAttachment({required this.type_});
 
-  BetaAttachedAttachment Function({BetaAttachedAttachmentType type_}) get copyWith => _copyWith;
+  BetaAttachedAttachment Function({BetaAttachedAttachmentType type_})
+      get copyWith => _copyWith;
 
-  BetaAttachedAttachment _copyWith({Object? type_ = sdkOmittedValue}) => BetaAttachedAttachment(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaAttachedAttachmentType,
-  );
+  BetaAttachedAttachment _copyWith({Object? type_ = sdkOmittedValue}) =>
+      BetaAttachedAttachment(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaAttachedAttachmentType,
+      );
 
-  factory BetaAttachedAttachment.fromJson(Map<String, dynamic> json) => BetaAttachedAttachment(
-    type_: (json['type'] != null ? BetaAttachedAttachmentType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaAttachedAttachment.fromJson(Map<String, dynamic> json) =>
+      BetaAttachedAttachment(
+        type_: (json['type'] != null
+            ? BetaAttachedAttachmentType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

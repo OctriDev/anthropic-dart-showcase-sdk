@@ -8,27 +8,44 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionRateLimitedRunError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionRateLimitedRunErrorType type_;
+
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsSessionRateLimitedRunError({required this.type_, required this.message});
+  const BetaManagedAgentsSessionRateLimitedRunError(
+      {required this.type_, required this.message});
 
-  BetaManagedAgentsSessionRateLimitedRunError Function({BetaManagedAgentsSessionRateLimitedRunErrorType type_, String message}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionRateLimitedRunError Function(
+      {BetaManagedAgentsSessionRateLimitedRunErrorType type_,
+      String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionRateLimitedRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsSessionRateLimitedRunError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionRateLimitedRunErrorType,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-  );
+  BetaManagedAgentsSessionRateLimitedRunError _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? message = sdkOmittedValue}) =>
+      BetaManagedAgentsSessionRateLimitedRunError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSessionRateLimitedRunErrorType,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+      );
 
-  factory BetaManagedAgentsSessionRateLimitedRunError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionRateLimitedRunError(
-    type_: (json['type'] != null ? BetaManagedAgentsSessionRateLimitedRunErrorType.fromJson(json['type'] as String) : null)!,
-    message: (json['message'] as String?)!,
-  );
+  factory BetaManagedAgentsSessionRateLimitedRunError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSessionRateLimitedRunError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSessionRateLimitedRunErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+        message: (json['message'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'message': message,
-  };
+        'type': type_.toJson(),
+        'message': message,
+      };
 }

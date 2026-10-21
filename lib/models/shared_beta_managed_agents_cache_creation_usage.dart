@@ -8,33 +8,60 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsCacheCreationUsage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Tokens used to create 1-hour ephemeral cache entries.
   final SdkOptional<int> ephemeral1hInputTokens;
+
   /// Tokens used to create 5-minute ephemeral cache entries.
   final SdkOptional<int> ephemeral5mInputTokens;
 
-  const BetaManagedAgentsCacheCreationUsage({this.ephemeral1hInputTokens = const SdkOmitted(), this.ephemeral5mInputTokens = const SdkOmitted()});
+  const BetaManagedAgentsCacheCreationUsage(
+      {this.ephemeral1hInputTokens = const SdkOmitted(),
+      this.ephemeral5mInputTokens = const SdkOmitted()});
 
-  BetaManagedAgentsCacheCreationUsage Function({SdkOptional<int> ephemeral1hInputTokens, SdkOptional<int> ephemeral5mInputTokens}) get copyWith => _copyWith;
+  BetaManagedAgentsCacheCreationUsage Function(
+      {SdkOptional<int> ephemeral1hInputTokens,
+      SdkOptional<int> ephemeral5mInputTokens}) get copyWith => _copyWith;
 
-  BetaManagedAgentsCacheCreationUsage _copyWith({Object? ephemeral1hInputTokens = sdkOmittedValue, Object? ephemeral5mInputTokens = sdkOmittedValue}) => BetaManagedAgentsCacheCreationUsage(
-    ephemeral1hInputTokens: identical(ephemeral1hInputTokens, sdkOmittedValue) ? this.ephemeral1hInputTokens : ephemeral1hInputTokens as SdkOptional<int>,
-    ephemeral5mInputTokens: identical(ephemeral5mInputTokens, sdkOmittedValue) ? this.ephemeral5mInputTokens : ephemeral5mInputTokens as SdkOptional<int>,
-  );
+  BetaManagedAgentsCacheCreationUsage _copyWith(
+          {Object? ephemeral1hInputTokens = sdkOmittedValue,
+          Object? ephemeral5mInputTokens = sdkOmittedValue}) =>
+      BetaManagedAgentsCacheCreationUsage(
+        ephemeral1hInputTokens:
+            identical(ephemeral1hInputTokens, sdkOmittedValue)
+                ? this.ephemeral1hInputTokens
+                : ephemeral1hInputTokens as SdkOptional<int>,
+        ephemeral5mInputTokens:
+            identical(ephemeral5mInputTokens, sdkOmittedValue)
+                ? this.ephemeral5mInputTokens
+                : ephemeral5mInputTokens as SdkOptional<int>,
+      );
 
-  factory BetaManagedAgentsCacheCreationUsage.fromJson(Map<String, dynamic> json) => BetaManagedAgentsCacheCreationUsage(
-    ephemeral1hInputTokens: json['ephemeral_1h_input_tokens'] != null ? SdkPresent(((json['ephemeral_1h_input_tokens'] as num?)?.toInt())!) : const SdkOmitted(),
-    ephemeral5mInputTokens: json['ephemeral_5m_input_tokens'] != null ? SdkPresent(((json['ephemeral_5m_input_tokens'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsCacheCreationUsage.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsCacheCreationUsage(
+        ephemeral1hInputTokens: json['ephemeral_1h_input_tokens'] != null
+            ? SdkPresent(
+                ((json['ephemeral_1h_input_tokens'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        ephemeral5mInputTokens: json['ephemeral_5m_input_tokens'] != null
+            ? SdkPresent(
+                ((json['ephemeral_5m_input_tokens'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (ephemeral1hInputTokens) {
-      SdkPresent<int>(value: final value) => {'ephemeral_1h_input_tokens': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (ephemeral5mInputTokens) {
-      SdkPresent<int>(value: final value) => {'ephemeral_5m_input_tokens': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (ephemeral1hInputTokens) {
+          SdkPresent<int>(value: final value) => {
+              'ephemeral_1h_input_tokens': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ephemeral5mInputTokens) {
+          SdkPresent<int>(value: final value) => {
+              'ephemeral_5m_input_tokens': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

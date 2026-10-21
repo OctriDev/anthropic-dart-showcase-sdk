@@ -8,16 +8,23 @@ part of 'inline.dart';
 enum ResponseTextEditorCodeExecutionToolResultBlockType {
   textEditorCodeExecutionToolResult;
 
-  static ResponseTextEditorCodeExecutionToolResultBlockType fromJson(String value) {
+  static ResponseTextEditorCodeExecutionToolResultBlockType fromJson(
+      String value) {
     switch (value) {
-      case 'text_editor_code_execution_tool_result': return ResponseTextEditorCodeExecutionToolResultBlockType.textEditorCodeExecutionToolResult;
-      default: throw ArgumentError('Unknown ResponseTextEditorCodeExecutionToolResultBlockType: $value');
+      case 'text_editor_code_execution_tool_result':
+        return ResponseTextEditorCodeExecutionToolResultBlockType
+            .textEditorCodeExecutionToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown ResponseTextEditorCodeExecutionToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseTextEditorCodeExecutionToolResultBlockType.textEditorCodeExecutionToolResult: return 'text_editor_code_execution_tool_result';
+      case ResponseTextEditorCodeExecutionToolResultBlockType
+            .textEditorCodeExecutionToolResult:
+        return 'text_editor_code_execution_tool_result';
     }
   }
 
@@ -29,16 +36,23 @@ enum ResponseTextEditorCodeExecutionToolResultBlockType {
 enum ResponseTextEditorCodeExecutionToolResultErrorType {
   textEditorCodeExecutionToolResultError;
 
-  static ResponseTextEditorCodeExecutionToolResultErrorType fromJson(String value) {
+  static ResponseTextEditorCodeExecutionToolResultErrorType fromJson(
+      String value) {
     switch (value) {
-      case 'text_editor_code_execution_tool_result_error': return ResponseTextEditorCodeExecutionToolResultErrorType.textEditorCodeExecutionToolResultError;
-      default: throw ArgumentError('Unknown ResponseTextEditorCodeExecutionToolResultErrorType: $value');
+      case 'text_editor_code_execution_tool_result_error':
+        return ResponseTextEditorCodeExecutionToolResultErrorType
+            .textEditorCodeExecutionToolResultError;
+      default:
+        throw ArgumentError(
+            'Unknown ResponseTextEditorCodeExecutionToolResultErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseTextEditorCodeExecutionToolResultErrorType.textEditorCodeExecutionToolResultError: return 'text_editor_code_execution_tool_result_error';
+      case ResponseTextEditorCodeExecutionToolResultErrorType
+            .textEditorCodeExecutionToolResultError:
+        return 'text_editor_code_execution_tool_result_error';
     }
   }
 
@@ -48,41 +62,56 @@ enum ResponseTextEditorCodeExecutionToolResultErrorType {
 
 /// Required enumerated value serialized in the `file_type` wire field.
 final class ResponseTextEditorCodeExecutionViewResultBlockFileType {
-
   final String value;
 
   const ResponseTextEditorCodeExecutionViewResultBlockFileType._(this.value);
 
-  factory ResponseTextEditorCodeExecutionViewResultBlockFileType.fromJson(String value) => ResponseTextEditorCodeExecutionViewResultBlockFileType._(value);
+  factory ResponseTextEditorCodeExecutionViewResultBlockFileType.fromJson(
+          String value) =>
+      ResponseTextEditorCodeExecutionViewResultBlockFileType._(value);
 
-  static const text = ResponseTextEditorCodeExecutionViewResultBlockFileType._('text');
-  static const image = ResponseTextEditorCodeExecutionViewResultBlockFileType._('image');
-  static const pdf = ResponseTextEditorCodeExecutionViewResultBlockFileType._('pdf');
+  static const text =
+      ResponseTextEditorCodeExecutionViewResultBlockFileType._('text');
+  static const image =
+      ResponseTextEditorCodeExecutionViewResultBlockFileType._('image');
+  static const pdf =
+      ResponseTextEditorCodeExecutionViewResultBlockFileType._('pdf');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ResponseTextEditorCodeExecutionViewResultBlockFileType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ResponseTextEditorCodeExecutionViewResultBlockFileType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
 enum ResponseTextEditorCodeExecutionViewResultBlockType {
   textEditorCodeExecutionViewResult;
 
-  static ResponseTextEditorCodeExecutionViewResultBlockType fromJson(String value) {
+  static ResponseTextEditorCodeExecutionViewResultBlockType fromJson(
+      String value) {
     switch (value) {
-      case 'text_editor_code_execution_view_result': return ResponseTextEditorCodeExecutionViewResultBlockType.textEditorCodeExecutionViewResult;
-      default: throw ArgumentError('Unknown ResponseTextEditorCodeExecutionViewResultBlockType: $value');
+      case 'text_editor_code_execution_view_result':
+        return ResponseTextEditorCodeExecutionViewResultBlockType
+            .textEditorCodeExecutionViewResult;
+      default:
+        throw ArgumentError(
+            'Unknown ResponseTextEditorCodeExecutionViewResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseTextEditorCodeExecutionViewResultBlockType.textEditorCodeExecutionViewResult: return 'text_editor_code_execution_view_result';
+      case ResponseTextEditorCodeExecutionViewResultBlockType
+            .textEditorCodeExecutionViewResult:
+        return 'text_editor_code_execution_view_result';
     }
   }
 
@@ -96,14 +125,17 @@ enum ResponseThinkingBlockType {
 
   static ResponseThinkingBlockType fromJson(String value) {
     switch (value) {
-      case 'thinking': return ResponseThinkingBlockType.thinking;
-      default: throw ArgumentError('Unknown ResponseThinkingBlockType: $value');
+      case 'thinking':
+        return ResponseThinkingBlockType.thinking;
+      default:
+        throw ArgumentError('Unknown ResponseThinkingBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseThinkingBlockType.thinking: return 'thinking';
+      case ResponseThinkingBlockType.thinking:
+        return 'thinking';
     }
   }
 
@@ -117,14 +149,17 @@ enum ResponseToolReferenceBlockType {
 
   static ResponseToolReferenceBlockType fromJson(String value) {
     switch (value) {
-      case 'tool_reference': return ResponseToolReferenceBlockType.toolReference;
-      default: throw ArgumentError('Unknown ResponseToolReferenceBlockType: $value');
+      case 'tool_reference':
+        return ResponseToolReferenceBlockType.toolReference;
+      default:
+        throw ArgumentError('Unknown ResponseToolReferenceBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseToolReferenceBlockType.toolReference: return 'tool_reference';
+      case ResponseToolReferenceBlockType.toolReference:
+        return 'tool_reference';
     }
   }
 
@@ -138,14 +173,18 @@ enum ResponseToolSearchToolResultBlockType {
 
   static ResponseToolSearchToolResultBlockType fromJson(String value) {
     switch (value) {
-      case 'tool_search_tool_result': return ResponseToolSearchToolResultBlockType.toolSearchToolResult;
-      default: throw ArgumentError('Unknown ResponseToolSearchToolResultBlockType: $value');
+      case 'tool_search_tool_result':
+        return ResponseToolSearchToolResultBlockType.toolSearchToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown ResponseToolSearchToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseToolSearchToolResultBlockType.toolSearchToolResult: return 'tool_search_tool_result';
+      case ResponseToolSearchToolResultBlockType.toolSearchToolResult:
+        return 'tool_search_tool_result';
     }
   }
 
@@ -159,14 +198,18 @@ enum ResponseToolSearchToolResultErrorType {
 
   static ResponseToolSearchToolResultErrorType fromJson(String value) {
     switch (value) {
-      case 'tool_search_tool_result_error': return ResponseToolSearchToolResultErrorType.toolSearchToolResultError;
-      default: throw ArgumentError('Unknown ResponseToolSearchToolResultErrorType: $value');
+      case 'tool_search_tool_result_error':
+        return ResponseToolSearchToolResultErrorType.toolSearchToolResultError;
+      default:
+        throw ArgumentError(
+            'Unknown ResponseToolSearchToolResultErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseToolSearchToolResultErrorType.toolSearchToolResultError: return 'tool_search_tool_result_error';
+      case ResponseToolSearchToolResultErrorType.toolSearchToolResultError:
+        return 'tool_search_tool_result_error';
     }
   }
 
@@ -180,14 +223,20 @@ enum ResponseToolSearchToolSearchResultBlockType {
 
   static ResponseToolSearchToolSearchResultBlockType fromJson(String value) {
     switch (value) {
-      case 'tool_search_tool_search_result': return ResponseToolSearchToolSearchResultBlockType.toolSearchToolSearchResult;
-      default: throw ArgumentError('Unknown ResponseToolSearchToolSearchResultBlockType: $value');
+      case 'tool_search_tool_search_result':
+        return ResponseToolSearchToolSearchResultBlockType
+            .toolSearchToolSearchResult;
+      default:
+        throw ArgumentError(
+            'Unknown ResponseToolSearchToolSearchResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseToolSearchToolSearchResultBlockType.toolSearchToolSearchResult: return 'tool_search_tool_search_result';
+      case ResponseToolSearchToolSearchResultBlockType
+            .toolSearchToolSearchResult:
+        return 'tool_search_tool_search_result';
     }
   }
 
@@ -201,14 +250,17 @@ enum ResponseToolUseBlockType {
 
   static ResponseToolUseBlockType fromJson(String value) {
     switch (value) {
-      case 'tool_use': return ResponseToolUseBlockType.toolUse;
-      default: throw ArgumentError('Unknown ResponseToolUseBlockType: $value');
+      case 'tool_use':
+        return ResponseToolUseBlockType.toolUse;
+      default:
+        throw ArgumentError('Unknown ResponseToolUseBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseToolUseBlockType.toolUse: return 'tool_use';
+      case ResponseToolUseBlockType.toolUse:
+        return 'tool_use';
     }
   }
 
@@ -222,14 +274,17 @@ enum ResponseWebFetchResultBlockType {
 
   static ResponseWebFetchResultBlockType fromJson(String value) {
     switch (value) {
-      case 'web_fetch_result': return ResponseWebFetchResultBlockType.webFetchResult;
-      default: throw ArgumentError('Unknown ResponseWebFetchResultBlockType: $value');
+      case 'web_fetch_result':
+        return ResponseWebFetchResultBlockType.webFetchResult;
+      default:
+        throw ArgumentError('Unknown ResponseWebFetchResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseWebFetchResultBlockType.webFetchResult: return 'web_fetch_result';
+      case ResponseWebFetchResultBlockType.webFetchResult:
+        return 'web_fetch_result';
     }
   }
 
@@ -243,14 +298,18 @@ enum ResponseWebFetchToolResultBlockType {
 
   static ResponseWebFetchToolResultBlockType fromJson(String value) {
     switch (value) {
-      case 'web_fetch_tool_result': return ResponseWebFetchToolResultBlockType.webFetchToolResult;
-      default: throw ArgumentError('Unknown ResponseWebFetchToolResultBlockType: $value');
+      case 'web_fetch_tool_result':
+        return ResponseWebFetchToolResultBlockType.webFetchToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown ResponseWebFetchToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseWebFetchToolResultBlockType.webFetchToolResult: return 'web_fetch_tool_result';
+      case ResponseWebFetchToolResultBlockType.webFetchToolResult:
+        return 'web_fetch_tool_result';
     }
   }
 
@@ -264,14 +323,18 @@ enum ResponseWebFetchToolResultErrorType {
 
   static ResponseWebFetchToolResultErrorType fromJson(String value) {
     switch (value) {
-      case 'web_fetch_tool_result_error': return ResponseWebFetchToolResultErrorType.webFetchToolResultError;
-      default: throw ArgumentError('Unknown ResponseWebFetchToolResultErrorType: $value');
+      case 'web_fetch_tool_result_error':
+        return ResponseWebFetchToolResultErrorType.webFetchToolResultError;
+      default:
+        throw ArgumentError(
+            'Unknown ResponseWebFetchToolResultErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ResponseWebFetchToolResultErrorType.webFetchToolResultError: return 'web_fetch_tool_result_error';
+      case ResponseWebFetchToolResultErrorType.webFetchToolResultError:
+        return 'web_fetch_tool_result_error';
     }
   }
 

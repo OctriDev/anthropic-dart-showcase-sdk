@@ -9,79 +9,149 @@ sealed class BetaRequestServerToolUseBlockCacheControl {
   static const String constructionSurface = 'named';
   const BetaRequestServerToolUseBlockCacheControl();
   factory BetaRequestServerToolUseBlockCacheControl.fromJson(Object? json) {
-    try { return BetaRequestServerToolUseBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestServerToolUseBlockCacheControl(json); }
-    throw FormatException("No variant matched for BetaRequestServerToolUseBlockCacheControl");
+    try {
+      return BetaRequestServerToolUseBlockCacheControlBetaCacheControlEphemeral(
+          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownBetaRequestServerToolUseBlockCacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRequestServerToolUseBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestServerToolUseBlockCacheControlBetaCacheControlEphemeral extends BetaRequestServerToolUseBlockCacheControl {
+final class BetaRequestServerToolUseBlockCacheControlBetaCacheControlEphemeral
+    extends BetaRequestServerToolUseBlockCacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaRequestServerToolUseBlockCacheControlBetaCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestServerToolUseBlockCacheControlBetaCacheControlEphemeral(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestServerToolUseBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestServerToolUseBlockCacheControl extends BetaRequestServerToolUseBlockCacheControl {
+final class UnknownBetaRequestServerToolUseBlockCacheControl
+    extends BetaRequestServerToolUseBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestServerToolUseBlockCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `BetaRequestServerToolUseBlock` API schema.
 class BetaRequestServerToolUseBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
+
   /// Optional API value serialized in the `caller` wire field.
   final SdkOptional<BetaRequestServerToolUseBlockCaller> caller;
+
   /// Required `string` value serialized in the `id` wire field.
   final String id;
+
   /// Required object value serialized in the `input` wire field.
   final Map<String, Object?> input;
+
   /// Required enumerated value serialized in the `name` wire field.
   final BetaRequestServerToolUseBlockName name;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestServerToolUseBlockType type_;
 
-  const BetaRequestServerToolUseBlock({this.cacheControl = const SdkOmitted(), this.caller = const SdkOmitted(), required this.id, required this.input, required this.name, required this.type_});
+  const BetaRequestServerToolUseBlock(
+      {this.cacheControl = const SdkOmitted(),
+      this.caller = const SdkOmitted(),
+      required this.id,
+      required this.input,
+      required this.name,
+      required this.type_});
 
-  BetaRequestServerToolUseBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<BetaRequestServerToolUseBlockCaller> caller, String id, Map<String, Object?> input, BetaRequestServerToolUseBlockName name, BetaRequestServerToolUseBlockType type_}) get copyWith => _copyWith;
+  BetaRequestServerToolUseBlock Function(
+      {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
+      SdkOptional<BetaRequestServerToolUseBlockCaller> caller,
+      String id,
+      Map<String, Object?> input,
+      BetaRequestServerToolUseBlockName name,
+      BetaRequestServerToolUseBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestServerToolUseBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? caller = sdkOmittedValue, Object? id = sdkOmittedValue, Object? input = sdkOmittedValue, Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestServerToolUseBlock(
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-    caller: identical(caller, sdkOmittedValue) ? this.caller : caller as SdkOptional<BetaRequestServerToolUseBlockCaller>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    input: identical(input, sdkOmittedValue) ? this.input : input as Map<String, Object?>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as BetaRequestServerToolUseBlockName,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestServerToolUseBlockType,
-  );
+  BetaRequestServerToolUseBlock _copyWith(
+          {Object? cacheControl = sdkOmittedValue,
+          Object? caller = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? input = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestServerToolUseBlock(
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+        caller: identical(caller, sdkOmittedValue)
+            ? this.caller
+            : caller as SdkOptional<BetaRequestServerToolUseBlockCaller>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        input: identical(input, sdkOmittedValue)
+            ? this.input
+            : input as Map<String, Object?>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as BetaRequestServerToolUseBlockName,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestServerToolUseBlockType,
+      );
 
-  factory BetaRequestServerToolUseBlock.fromJson(Map<String, dynamic> json) => BetaRequestServerToolUseBlock(
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    caller: json['caller'] != null ? SdkPresent((json['caller'] != null ? BetaRequestServerToolUseBlockCaller.fromJson(json['caller']) : null)!) : const SdkOmitted(),
-    id: (json['id'] as String?)!,
-    input: (json['input'] == null ? null : Map<String, dynamic>.from(json['input'] as Map).map((key, value) => MapEntry(key, value)))!,
-    name: (json['name'] != null ? BetaRequestServerToolUseBlockName.fromJson(json['name'] as String) : null)!,
-    type_: (json['type'] != null ? BetaRequestServerToolUseBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestServerToolUseBlock.fromJson(Map<String, dynamic> json) =>
+      BetaRequestServerToolUseBlock(
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? BetaCacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        caller: json['caller'] != null
+            ? SdkPresent((json['caller'] != null
+                ? BetaRequestServerToolUseBlockCaller.fromJson(json['caller'])
+                : null)!)
+            : const SdkOmitted(),
+        id: (json['id'] as String?)!,
+        input: (json['input'] == null
+            ? null
+            : Map<String, dynamic>.from(json['input'] as Map)
+                .map((key, value) => MapEntry(key, value)))!,
+        name: (json['name'] != null
+            ? BetaRequestServerToolUseBlockName.fromJson(json['name'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaRequestServerToolUseBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (cacheControl) {
-      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (caller) {
-      SdkPresent<BetaRequestServerToolUseBlockCaller>(value: final value) => {'caller': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'id': id,
-    'input': input,
-    'name': name.toJson(),
-    'type': type_.toJson(),
-  };
+        ...switch (cacheControl) {
+          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (caller) {
+          SdkPresent<BetaRequestServerToolUseBlockCaller>(value: final value) =>
+            {
+              'caller': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'id': id,
+        'input': input,
+        'name': name.toJson(),
+        'type': type_.toJson(),
+      };
 }
 
 sealed class BetaRequestServerToolUseBlockCaller {
@@ -90,40 +160,80 @@ sealed class BetaRequestServerToolUseBlockCaller {
   const BetaRequestServerToolUseBlockCaller();
   factory BetaRequestServerToolUseBlockCaller.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaDirectCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestServerToolUseBlockCallerBetaDirectCaller(value); } } catch (_) {}
-      try { final value = BetaServerToolCaller.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestServerToolUseBlockCallerBetaServerToolCaller(value); } } catch (_) {}
-      try { final value = BetaServerToolCaller20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestServerToolUseBlockCallerBetaServerToolCaller20260120(value); } } catch (_) {}
+      try {
+        final value = BetaDirectCaller.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestServerToolUseBlockCallerBetaDirectCaller(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaServerToolCaller.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestServerToolUseBlockCallerBetaServerToolCaller(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaServerToolCaller20260120.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestServerToolUseBlockCallerBetaServerToolCaller20260120(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaRequestServerToolUseBlockCallerBetaDirectCaller(BetaDirectCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRequestServerToolUseBlockCallerBetaServerToolCaller(BetaServerToolCaller.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRequestServerToolUseBlockCallerBetaServerToolCaller20260120(BetaServerToolCaller20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"code_execution_20250825", "code_execution_20260120", "direct"}.contains(json["type"])) { return UnknownBetaRequestServerToolUseBlockCaller(json); }
-    throw FormatException("No variant matched for BetaRequestServerToolUseBlockCaller");
+    try {
+      return BetaRequestServerToolUseBlockCallerBetaDirectCaller(
+          BetaDirectCaller.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRequestServerToolUseBlockCallerBetaServerToolCaller(
+          BetaServerToolCaller.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRequestServerToolUseBlockCallerBetaServerToolCaller20260120(
+          BetaServerToolCaller20260120.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"code_execution_20250825", "code_execution_20260120", "direct"}
+            .contains(json["type"])) {
+      return UnknownBetaRequestServerToolUseBlockCaller(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRequestServerToolUseBlockCaller");
   }
   Object? toJson();
 }
 
-final class BetaRequestServerToolUseBlockCallerBetaDirectCaller extends BetaRequestServerToolUseBlockCaller {
+final class BetaRequestServerToolUseBlockCallerBetaDirectCaller
+    extends BetaRequestServerToolUseBlockCaller {
   final BetaDirectCaller value;
   const BetaRequestServerToolUseBlockCallerBetaDirectCaller(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRequestServerToolUseBlockCallerBetaServerToolCaller extends BetaRequestServerToolUseBlockCaller {
+final class BetaRequestServerToolUseBlockCallerBetaServerToolCaller
+    extends BetaRequestServerToolUseBlockCaller {
   final BetaServerToolCaller value;
   const BetaRequestServerToolUseBlockCallerBetaServerToolCaller(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRequestServerToolUseBlockCallerBetaServerToolCaller20260120 extends BetaRequestServerToolUseBlockCaller {
+final class BetaRequestServerToolUseBlockCallerBetaServerToolCaller20260120
+    extends BetaRequestServerToolUseBlockCaller {
   final BetaServerToolCaller20260120 value;
-  const BetaRequestServerToolUseBlockCallerBetaServerToolCaller20260120(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestServerToolUseBlockCallerBetaServerToolCaller20260120(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestServerToolUseBlockCaller] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestServerToolUseBlockCaller extends BetaRequestServerToolUseBlockCaller {
+final class UnknownBetaRequestServerToolUseBlockCaller
+    extends BetaRequestServerToolUseBlockCaller {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestServerToolUseBlockCaller(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

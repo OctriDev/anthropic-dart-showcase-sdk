@@ -8,27 +8,38 @@ part of 'shared_beta_input.dart';
 class BetaInputTokensClearAtLeast {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaInputTokensClearAtLeastType type_;
+
   /// Required `integer` value serialized in the `value` wire field.
   final int value;
 
   const BetaInputTokensClearAtLeast({required this.type_, required this.value});
 
-  BetaInputTokensClearAtLeast Function({BetaInputTokensClearAtLeastType type_, int value}) get copyWith => _copyWith;
+  BetaInputTokensClearAtLeast Function(
+      {BetaInputTokensClearAtLeastType type_,
+      int value}) get copyWith => _copyWith;
 
-  BetaInputTokensClearAtLeast _copyWith({Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) => BetaInputTokensClearAtLeast(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaInputTokensClearAtLeastType,
-    value: identical(value, sdkOmittedValue) ? this.value : value as int,
-  );
+  BetaInputTokensClearAtLeast _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      BetaInputTokensClearAtLeast(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaInputTokensClearAtLeastType,
+        value: identical(value, sdkOmittedValue) ? this.value : value as int,
+      );
 
-  factory BetaInputTokensClearAtLeast.fromJson(Map<String, dynamic> json) => BetaInputTokensClearAtLeast(
-    type_: (json['type'] != null ? BetaInputTokensClearAtLeastType.fromJson(json['type'] as String) : null)!,
-    value: ((json['value'] as num?)?.toInt())!,
-  );
+  factory BetaInputTokensClearAtLeast.fromJson(Map<String, dynamic> json) =>
+      BetaInputTokensClearAtLeast(
+        type_: (json['type'] != null
+            ? BetaInputTokensClearAtLeastType.fromJson(json['type'] as String)
+            : null)!,
+        value: ((json['value'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'value': value,
-  };
+        'type': type_.toJson(),
+        'value': value,
+      };
 }

@@ -8,92 +8,170 @@ part of 'shared_beta_azure.dart';
 class BetaAzureExternalKeyConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Azure AD application (client) ID. Omit to use Anthropic's multitenant app. Provide only if using a single-tenant app registration in the customer's directory.
   final SdkOptional<String?> clientId;
+
   /// Name of the key within the vault.
   final String keyName;
+
   /// Azure AD tenant ID.
   final String tenantId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaAzureExternalKeyConfigType type_;
+
   /// Key Vault data-plane URI — `https://{vault-name}.vault.azure.net` or `https://{hsm-name}.managedhsm.azure.net`.
   final String vaultUri;
 
-  const BetaAzureExternalKeyConfig({this.clientId = const SdkOmitted(), required this.keyName, required this.tenantId, required this.type_, required this.vaultUri});
+  const BetaAzureExternalKeyConfig(
+      {this.clientId = const SdkOmitted(),
+      required this.keyName,
+      required this.tenantId,
+      required this.type_,
+      required this.vaultUri});
 
-  BetaAzureExternalKeyConfig Function({SdkOptional<String?> clientId, String keyName, String tenantId, BetaAzureExternalKeyConfigType type_, String vaultUri}) get copyWith => _copyWith;
+  BetaAzureExternalKeyConfig Function(
+      {SdkOptional<String?> clientId,
+      String keyName,
+      String tenantId,
+      BetaAzureExternalKeyConfigType type_,
+      String vaultUri}) get copyWith => _copyWith;
 
-  BetaAzureExternalKeyConfig _copyWith({Object? clientId = sdkOmittedValue, Object? keyName = sdkOmittedValue, Object? tenantId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? vaultUri = sdkOmittedValue}) => BetaAzureExternalKeyConfig(
-    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as SdkOptional<String?>,
-    keyName: identical(keyName, sdkOmittedValue) ? this.keyName : keyName as String,
-    tenantId: identical(tenantId, sdkOmittedValue) ? this.tenantId : tenantId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaAzureExternalKeyConfigType,
-    vaultUri: identical(vaultUri, sdkOmittedValue) ? this.vaultUri : vaultUri as String,
-  );
+  BetaAzureExternalKeyConfig _copyWith(
+          {Object? clientId = sdkOmittedValue,
+          Object? keyName = sdkOmittedValue,
+          Object? tenantId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? vaultUri = sdkOmittedValue}) =>
+      BetaAzureExternalKeyConfig(
+        clientId: identical(clientId, sdkOmittedValue)
+            ? this.clientId
+            : clientId as SdkOptional<String?>,
+        keyName: identical(keyName, sdkOmittedValue)
+            ? this.keyName
+            : keyName as String,
+        tenantId: identical(tenantId, sdkOmittedValue)
+            ? this.tenantId
+            : tenantId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaAzureExternalKeyConfigType,
+        vaultUri: identical(vaultUri, sdkOmittedValue)
+            ? this.vaultUri
+            : vaultUri as String,
+      );
 
-  factory BetaAzureExternalKeyConfig.fromJson(Map<String, dynamic> json) => BetaAzureExternalKeyConfig(
-    clientId: json.containsKey('client_id') ? SdkPresent(json['client_id'] as String?) : const SdkOmitted(),
-    keyName: (json['key_name'] as String?)!,
-    tenantId: (json['tenant_id'] as String?)!,
-    type_: (json['type'] != null ? BetaAzureExternalKeyConfigType.fromJson(json['type'] as String) : null)!,
-    vaultUri: (json['vault_uri'] as String?)!,
-  );
+  factory BetaAzureExternalKeyConfig.fromJson(Map<String, dynamic> json) =>
+      BetaAzureExternalKeyConfig(
+        clientId: json.containsKey('client_id')
+            ? SdkPresent(json['client_id'] as String?)
+            : const SdkOmitted(),
+        keyName: (json['key_name'] as String?)!,
+        tenantId: (json['tenant_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaAzureExternalKeyConfigType.fromJson(json['type'] as String)
+            : null)!,
+        vaultUri: (json['vault_uri'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (clientId) {
-      SdkPresent<String?>(value: final value) => {'client_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'key_name': keyName,
-    'tenant_id': tenantId,
-    'type': type_.toJson(),
-    'vault_uri': vaultUri,
-  };
+        ...switch (clientId) {
+          SdkPresent<String?>(value: final value) => {
+              'client_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'key_name': keyName,
+        'tenant_id': tenantId,
+        'type': type_.toJson(),
+        'vault_uri': vaultUri,
+      };
 }
 
 /// Azure Key Vault provider configuration.
 class BetaAzureExternalKeyConfigParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Azure AD application (client) ID. Omit to use Anthropic's multitenant app. Provide only if using a single-tenant app registration in the customer's directory.
   final SdkOptional<String?> clientId;
+
   /// Name of the key within the vault.
   final String keyName;
+
   /// Azure AD tenant ID.
   final String tenantId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaAzureExternalKeyConfigParamsType type_;
+
   /// Key Vault data-plane URI — `https://{vault-name}.vault.azure.net` or `https://{hsm-name}.managedhsm.azure.net`.
   final String vaultUri;
 
-  const BetaAzureExternalKeyConfigParams({this.clientId = const SdkOmitted(), required this.keyName, required this.tenantId, required this.type_, required this.vaultUri});
+  const BetaAzureExternalKeyConfigParams(
+      {this.clientId = const SdkOmitted(),
+      required this.keyName,
+      required this.tenantId,
+      required this.type_,
+      required this.vaultUri});
 
-  BetaAzureExternalKeyConfigParams Function({SdkOptional<String?> clientId, String keyName, String tenantId, BetaAzureExternalKeyConfigParamsType type_, String vaultUri}) get copyWith => _copyWith;
+  BetaAzureExternalKeyConfigParams Function(
+      {SdkOptional<String?> clientId,
+      String keyName,
+      String tenantId,
+      BetaAzureExternalKeyConfigParamsType type_,
+      String vaultUri}) get copyWith => _copyWith;
 
-  BetaAzureExternalKeyConfigParams _copyWith({Object? clientId = sdkOmittedValue, Object? keyName = sdkOmittedValue, Object? tenantId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? vaultUri = sdkOmittedValue}) => BetaAzureExternalKeyConfigParams(
-    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as SdkOptional<String?>,
-    keyName: identical(keyName, sdkOmittedValue) ? this.keyName : keyName as String,
-    tenantId: identical(tenantId, sdkOmittedValue) ? this.tenantId : tenantId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaAzureExternalKeyConfigParamsType,
-    vaultUri: identical(vaultUri, sdkOmittedValue) ? this.vaultUri : vaultUri as String,
-  );
+  BetaAzureExternalKeyConfigParams _copyWith(
+          {Object? clientId = sdkOmittedValue,
+          Object? keyName = sdkOmittedValue,
+          Object? tenantId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? vaultUri = sdkOmittedValue}) =>
+      BetaAzureExternalKeyConfigParams(
+        clientId: identical(clientId, sdkOmittedValue)
+            ? this.clientId
+            : clientId as SdkOptional<String?>,
+        keyName: identical(keyName, sdkOmittedValue)
+            ? this.keyName
+            : keyName as String,
+        tenantId: identical(tenantId, sdkOmittedValue)
+            ? this.tenantId
+            : tenantId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaAzureExternalKeyConfigParamsType,
+        vaultUri: identical(vaultUri, sdkOmittedValue)
+            ? this.vaultUri
+            : vaultUri as String,
+      );
 
-  factory BetaAzureExternalKeyConfigParams.fromJson(Map<String, dynamic> json) => BetaAzureExternalKeyConfigParams(
-    clientId: json.containsKey('client_id') ? SdkPresent(json['client_id'] as String?) : const SdkOmitted(),
-    keyName: (json['key_name'] as String?)!,
-    tenantId: (json['tenant_id'] as String?)!,
-    type_: (json['type'] != null ? BetaAzureExternalKeyConfigParamsType.fromJson(json['type'] as String) : null)!,
-    vaultUri: (json['vault_uri'] as String?)!,
-  );
+  factory BetaAzureExternalKeyConfigParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaAzureExternalKeyConfigParams(
+        clientId: json.containsKey('client_id')
+            ? SdkPresent(json['client_id'] as String?)
+            : const SdkOmitted(),
+        keyName: (json['key_name'] as String?)!,
+        tenantId: (json['tenant_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaAzureExternalKeyConfigParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        vaultUri: (json['vault_uri'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (clientId) {
-      SdkPresent<String?>(value: final value) => {'client_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'key_name': keyName,
-    'tenant_id': tenantId,
-    'type': type_.toJson(),
-    'vault_uri': vaultUri,
-  };
+        ...switch (clientId) {
+          SdkPresent<String?>(value: final value) => {
+              'client_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'key_name': keyName,
+        'tenant_id': tenantId,
+        'type': type_.toJson(),
+        'vault_uri': vaultUri,
+      };
 }

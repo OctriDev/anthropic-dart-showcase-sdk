@@ -8,27 +8,46 @@ part of 'users_beta_true.dart';
 class BetaAnalyticsUsersResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `data` wire field.
   final List<BetaAnalyticsUserActivity> data;
+
   /// Opaque cursor for the next page, or null if no more results
   final String? nextPage;
 
-  const BetaAnalyticsUsersResponse({required this.data, required this.nextPage});
+  const BetaAnalyticsUsersResponse(
+      {required this.data, required this.nextPage});
 
-  BetaAnalyticsUsersResponse Function({List<BetaAnalyticsUserActivity> data, String? nextPage}) get copyWith => _copyWith;
+  BetaAnalyticsUsersResponse Function(
+      {List<BetaAnalyticsUserActivity> data,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaAnalyticsUsersResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaAnalyticsUsersResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaAnalyticsUserActivity>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaAnalyticsUsersResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaAnalyticsUsersResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaAnalyticsUserActivity>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaAnalyticsUsersResponse.fromJson(Map<String, dynamic> json) => BetaAnalyticsUsersResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaAnalyticsUserActivity.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  );
+  factory BetaAnalyticsUsersResponse.fromJson(Map<String, dynamic> json) =>
+      BetaAnalyticsUsersResponse(
+        data: ((json['data'] as List?)
+            ?.map((e) =>
+                BetaAnalyticsUserActivity.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        nextPage: json.containsKey('next_page')
+            ? json['next_page'] as String?
+            : throw ArgumentError.value(
+                null, 'next_page', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'next_page': nextPage,
+      };
 }

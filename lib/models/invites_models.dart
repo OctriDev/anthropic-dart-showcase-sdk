@@ -8,27 +8,38 @@ part of 'invites.dart';
 class BetaDeleteInviteResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// ID of the Invite.
   final String id;
+
   /// Deleted object type. For Invites, this is always `"invite_deleted"`.
   final BetaDeleteInviteResponseType type_;
 
   const BetaDeleteInviteResponse({required this.id, required this.type_});
 
-  BetaDeleteInviteResponse Function({String id, BetaDeleteInviteResponseType type_}) get copyWith => _copyWith;
+  BetaDeleteInviteResponse Function(
+      {String id,
+      BetaDeleteInviteResponseType type_}) get copyWith => _copyWith;
 
-  BetaDeleteInviteResponse _copyWith({Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaDeleteInviteResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaDeleteInviteResponseType,
-  );
+  BetaDeleteInviteResponse _copyWith(
+          {Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      BetaDeleteInviteResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaDeleteInviteResponseType,
+      );
 
-  factory BetaDeleteInviteResponse.fromJson(Map<String, dynamic> json) => BetaDeleteInviteResponse(
-    id: (json['id'] as String?)!,
-    type_: (json['type'] != null ? BetaDeleteInviteResponseType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaDeleteInviteResponse.fromJson(Map<String, dynamic> json) =>
+      BetaDeleteInviteResponse(
+        id: (json['id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaDeleteInviteResponseType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': type_.toJson(),
-  };
+        'id': id,
+        'type': type_.toJson(),
+      };
 }

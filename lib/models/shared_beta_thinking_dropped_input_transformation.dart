@@ -8,32 +8,56 @@ part of 'shared_beta_thinking.dart';
 class BetaThinkingDroppedInputTransformation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Where the removed block was in your request, as `messages.{i}.content.{j}`: `i` indexes the `messages` array you sent and `j` that message's `content` array — the same form error messages use.
   final String path;
+
   /// Which binding check removed the block: `model_binding_mismatch` — it was created by a model whose reasoning the requested model may not read; `prefix_binding_mismatch` — the conversation before it differs from the conversation it was created in (the rest of that turn's consecutive thinking blocks are removed with it, each with this reason); `organization_binding_mismatch` — it was created under a different organization (an Anthropic organization, AWS account or Google Cloud project) and this organization is not one of its additional organizations; `end_user_binding_mismatch` — it was created for a different end user, or was removed by the consumer-organization binding. A block that would fail several checks reports one reason, in this order of precedence: `organization_binding_mismatch`, `end_user_binding_mismatch`, `model_binding_mismatch`, `prefix_binding_mismatch`.
   final BetaThinkingDroppedInputTransformationReason reason;
+
   /// Always `thinking_dropped` for this entry type.
   final BetaThinkingDroppedInputTransformationType type_;
 
-  const BetaThinkingDroppedInputTransformation({required this.path, required this.reason, required this.type_});
+  const BetaThinkingDroppedInputTransformation(
+      {required this.path, required this.reason, required this.type_});
 
-  BetaThinkingDroppedInputTransformation Function({String path, BetaThinkingDroppedInputTransformationReason reason, BetaThinkingDroppedInputTransformationType type_}) get copyWith => _copyWith;
+  BetaThinkingDroppedInputTransformation Function(
+          {String path,
+          BetaThinkingDroppedInputTransformationReason reason,
+          BetaThinkingDroppedInputTransformationType type_})
+      get copyWith => _copyWith;
 
-  BetaThinkingDroppedInputTransformation _copyWith({Object? path = sdkOmittedValue, Object? reason = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaThinkingDroppedInputTransformation(
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as BetaThinkingDroppedInputTransformationReason,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaThinkingDroppedInputTransformationType,
-  );
+  BetaThinkingDroppedInputTransformation _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? reason = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaThinkingDroppedInputTransformation(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as BetaThinkingDroppedInputTransformationReason,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaThinkingDroppedInputTransformationType,
+      );
 
-  factory BetaThinkingDroppedInputTransformation.fromJson(Map<String, dynamic> json) => BetaThinkingDroppedInputTransformation(
-    path: (json['path'] as String?)!,
-    reason: (json['reason'] != null ? BetaThinkingDroppedInputTransformationReason.fromJson(json['reason'] as String) : null)!,
-    type_: (json['type'] != null ? BetaThinkingDroppedInputTransformationType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaThinkingDroppedInputTransformation.fromJson(
+          Map<String, dynamic> json) =>
+      BetaThinkingDroppedInputTransformation(
+        path: (json['path'] as String?)!,
+        reason: (json['reason'] != null
+            ? BetaThinkingDroppedInputTransformationReason.fromJson(
+                json['reason'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaThinkingDroppedInputTransformationType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'path': path,
-    'reason': reason.toJson(),
-    'type': type_.toJson(),
-  };
+        'path': path,
+        'reason': reason.toJson(),
+        'type': type_.toJson(),
+      };
 }

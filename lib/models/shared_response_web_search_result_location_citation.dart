@@ -9,58 +9,99 @@ sealed class ResponseWebSearchResultLocationCitationTitle {
   static const String constructionSurface = 'named';
   const ResponseWebSearchResultLocationCitationTitle();
   factory ResponseWebSearchResultLocationCitationTitle.fromJson(Object? json) {
-    if (json is String) { return ResponseWebSearchResultLocationCitationTitleString(json); }
-    throw FormatException("No variant matched for ResponseWebSearchResultLocationCitationTitle");
+    if (json is String) {
+      return ResponseWebSearchResultLocationCitationTitleString(json);
+    }
+    throw FormatException(
+        "No variant matched for ResponseWebSearchResultLocationCitationTitle");
   }
   Object? toJson();
 }
 
-final class ResponseWebSearchResultLocationCitationTitleString extends ResponseWebSearchResultLocationCitationTitle {
+final class ResponseWebSearchResultLocationCitationTitleString
+    extends ResponseWebSearchResultLocationCitationTitle {
   final String value;
   const ResponseWebSearchResultLocationCitationTitleString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `ResponseWebSearchResultLocationCitation` API schema.
 class ResponseWebSearchResultLocationCitation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `cited_text` wire field.
   final String citedText;
+
   /// Required `string` value serialized in the `encrypted_index` wire field.
   final String encryptedIndex;
+
   /// Required API value serialized in the `title` wire field.
   final String? title;
+
   /// Required `string` value serialized in the `type` wire field.
   final ResponseWebSearchResultLocationCitationType type_;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
-  const ResponseWebSearchResultLocationCitation({required this.citedText, required this.encryptedIndex, required this.title, required this.type_, required this.url});
+  const ResponseWebSearchResultLocationCitation(
+      {required this.citedText,
+      required this.encryptedIndex,
+      required this.title,
+      required this.type_,
+      required this.url});
 
-  ResponseWebSearchResultLocationCitation Function({String citedText, String encryptedIndex, String? title, ResponseWebSearchResultLocationCitationType type_, String url}) get copyWith => _copyWith;
+  ResponseWebSearchResultLocationCitation Function(
+      {String citedText,
+      String encryptedIndex,
+      String? title,
+      ResponseWebSearchResultLocationCitationType type_,
+      String url}) get copyWith => _copyWith;
 
-  ResponseWebSearchResultLocationCitation _copyWith({Object? citedText = sdkOmittedValue, Object? encryptedIndex = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => ResponseWebSearchResultLocationCitation(
-    citedText: identical(citedText, sdkOmittedValue) ? this.citedText : citedText as String,
-    encryptedIndex: identical(encryptedIndex, sdkOmittedValue) ? this.encryptedIndex : encryptedIndex as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ResponseWebSearchResultLocationCitationType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  ResponseWebSearchResultLocationCitation _copyWith(
+          {Object? citedText = sdkOmittedValue,
+          Object? encryptedIndex = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      ResponseWebSearchResultLocationCitation(
+        citedText: identical(citedText, sdkOmittedValue)
+            ? this.citedText
+            : citedText as String,
+        encryptedIndex: identical(encryptedIndex, sdkOmittedValue)
+            ? this.encryptedIndex
+            : encryptedIndex as String,
+        title:
+            identical(title, sdkOmittedValue) ? this.title : title as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ResponseWebSearchResultLocationCitationType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory ResponseWebSearchResultLocationCitation.fromJson(Map<String, dynamic> json) => ResponseWebSearchResultLocationCitation(
-    citedText: (json['cited_text'] as String?)!,
-    encryptedIndex: (json['encrypted_index'] as String?)!,
-    title: json.containsKey('title') ? json['title'] as String? : throw ArgumentError.value(null, 'title', 'Required property is missing'),
-    type_: (json['type'] != null ? ResponseWebSearchResultLocationCitationType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  );
+  factory ResponseWebSearchResultLocationCitation.fromJson(
+          Map<String, dynamic> json) =>
+      ResponseWebSearchResultLocationCitation(
+        citedText: (json['cited_text'] as String?)!,
+        encryptedIndex: (json['encrypted_index'] as String?)!,
+        title: json.containsKey('title')
+            ? json['title'] as String?
+            : throw ArgumentError.value(
+                null, 'title', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? ResponseWebSearchResultLocationCitationType.fromJson(
+                json['type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'cited_text': citedText,
-    'encrypted_index': encryptedIndex,
-    'title': title,
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'cited_text': citedText,
+        'encrypted_index': encryptedIndex,
+        'title': title,
+        'type': type_.toJson(),
+        'url': url,
+      };
 }

@@ -8,30 +8,49 @@ part of 'shared_tool.dart';
 class ToolChoiceAuto {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether to disable parallel tool use. Defaults to `false`. If set to `true`, the model will output at most one tool use.
   final SdkOptional<bool> disableParallelToolUse;
+
   /// Required `string` value serialized in the `type` wire field.
   final ToolChoiceAutoType type_;
 
-  const ToolChoiceAuto({this.disableParallelToolUse = const SdkOmitted(), required this.type_});
+  const ToolChoiceAuto(
+      {this.disableParallelToolUse = const SdkOmitted(), required this.type_});
 
-  ToolChoiceAuto Function({SdkOptional<bool> disableParallelToolUse, ToolChoiceAutoType type_}) get copyWith => _copyWith;
+  ToolChoiceAuto Function(
+      {SdkOptional<bool> disableParallelToolUse,
+      ToolChoiceAutoType type_}) get copyWith => _copyWith;
 
-  ToolChoiceAuto _copyWith({Object? disableParallelToolUse = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ToolChoiceAuto(
-    disableParallelToolUse: identical(disableParallelToolUse, sdkOmittedValue) ? this.disableParallelToolUse : disableParallelToolUse as SdkOptional<bool>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ToolChoiceAutoType,
-  );
+  ToolChoiceAuto _copyWith(
+          {Object? disableParallelToolUse = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      ToolChoiceAuto(
+        disableParallelToolUse:
+            identical(disableParallelToolUse, sdkOmittedValue)
+                ? this.disableParallelToolUse
+                : disableParallelToolUse as SdkOptional<bool>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ToolChoiceAutoType,
+      );
 
   factory ToolChoiceAuto.fromJson(Map<String, dynamic> json) => ToolChoiceAuto(
-    disableParallelToolUse: json['disable_parallel_tool_use'] != null ? SdkPresent((json['disable_parallel_tool_use'] as bool?)!) : const SdkOmitted(),
-    type_: (json['type'] != null ? ToolChoiceAutoType.fromJson(json['type'] as String) : null)!,
-  );
+        disableParallelToolUse: json['disable_parallel_tool_use'] != null
+            ? SdkPresent((json['disable_parallel_tool_use'] as bool?)!)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? ToolChoiceAutoType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (disableParallelToolUse) {
-      SdkPresent<bool>(value: final value) => {'disable_parallel_tool_use': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (disableParallelToolUse) {
+          SdkPresent<bool>(value: final value) => {
+              'disable_parallel_tool_use': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

@@ -9,7 +9,10 @@ sealed class ToolType {
   static const String constructionSurface = 'named';
   const ToolType();
   factory ToolType.fromJson(Object? json) {
-    try { return ToolTypeToolTypeVariant1(ToolTypeVariant1.fromJson(json as String)); } catch (_) {}
+    try {
+      return ToolTypeToolTypeVariant1(
+          ToolTypeVariant1.fromJson(json as String));
+    } catch (_) {}
     throw FormatException("No variant matched for ToolType");
   }
   Object? toJson();
@@ -18,7 +21,8 @@ sealed class ToolType {
 final class ToolTypeToolTypeVariant1 extends ToolType {
   final ToolTypeVariant1 value;
   const ToolTypeToolTypeVariant1(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 sealed class ToolCacheControl {
@@ -26,8 +30,15 @@ sealed class ToolCacheControl {
   static const String constructionSurface = 'named';
   const ToolCacheControl();
   factory ToolCacheControl.fromJson(Object? json) {
-    try { return ToolCacheControlCacheControlEphemeral(CacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownToolCacheControl(json); }
+    try {
+      return ToolCacheControlCacheControlEphemeral(
+          CacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownToolCacheControl(json);
+    }
     throw FormatException("No variant matched for ToolCacheControl");
   }
   Object? toJson();
@@ -36,105 +47,210 @@ sealed class ToolCacheControl {
 final class ToolCacheControlCacheControlEphemeral extends ToolCacheControl {
   final CacheControlEphemeral value;
   const ToolCacheControlCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [ToolCacheControl] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownToolCacheControl extends ToolCacheControl {
   final Map<String, dynamic> raw;
   const UnknownToolCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// Typed representation of the `Tool` API schema.
 class Tool {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional API value serialized in the `type` wire field.
   final SdkOptional<ToolTypeVariant1?> type_;
+
   /// Description of what this tool does. Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
   final SdkOptional<String> description;
+
   /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
   final String name;
+
   /// [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input. This defines the shape of the `input` that your tool accepts and that the model will produce.
   final InputSchema inputSchema;
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<CacheControlEphemeral?> cacheControl;
+
   /// When true, guarantees schema validation on tool names and inputs
   final SdkOptional<bool> strict;
+
   /// Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
   final SdkOptional<bool?> eagerInputStreaming;
+
   /// Optional array value serialized in the `allowed_callers` wire field.
   final SdkOptional<List<AllowedCaller>> allowedCallers;
+
   /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
   final SdkOptional<bool> deferLoading;
+
   /// Optional array value serialized in the `input_examples` wire field.
   final SdkOptional<List<Map<String, dynamic>>> inputExamples;
 
-  const Tool({this.type_ = const SdkOmitted(), this.description = const SdkOmitted(), required this.name, required this.inputSchema, this.cacheControl = const SdkOmitted(), this.strict = const SdkOmitted(), this.eagerInputStreaming = const SdkOmitted(), this.allowedCallers = const SdkOmitted(), this.deferLoading = const SdkOmitted(), this.inputExamples = const SdkOmitted()});
+  const Tool(
+      {this.type_ = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      required this.name,
+      required this.inputSchema,
+      this.cacheControl = const SdkOmitted(),
+      this.strict = const SdkOmitted(),
+      this.eagerInputStreaming = const SdkOmitted(),
+      this.allowedCallers = const SdkOmitted(),
+      this.deferLoading = const SdkOmitted(),
+      this.inputExamples = const SdkOmitted()});
 
-  Tool Function({SdkOptional<ToolTypeVariant1?> type_, SdkOptional<String> description, String name, InputSchema inputSchema, SdkOptional<CacheControlEphemeral?> cacheControl, SdkOptional<bool> strict, SdkOptional<bool?> eagerInputStreaming, SdkOptional<List<AllowedCaller>> allowedCallers, SdkOptional<bool> deferLoading, SdkOptional<List<Map<String, dynamic>>> inputExamples}) get copyWith => _copyWith;
+  Tool Function(
+          {SdkOptional<ToolTypeVariant1?> type_,
+          SdkOptional<String> description,
+          String name,
+          InputSchema inputSchema,
+          SdkOptional<CacheControlEphemeral?> cacheControl,
+          SdkOptional<bool> strict,
+          SdkOptional<bool?> eagerInputStreaming,
+          SdkOptional<List<AllowedCaller>> allowedCallers,
+          SdkOptional<bool> deferLoading,
+          SdkOptional<List<Map<String, dynamic>>> inputExamples})
+      get copyWith => _copyWith;
 
-  Tool _copyWith({Object? type_ = sdkOmittedValue, Object? description = sdkOmittedValue, Object? name = sdkOmittedValue, Object? inputSchema = sdkOmittedValue, Object? cacheControl = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? eagerInputStreaming = sdkOmittedValue, Object? allowedCallers = sdkOmittedValue, Object? deferLoading = sdkOmittedValue, Object? inputExamples = sdkOmittedValue}) => Tool(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<ToolTypeVariant1?>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    inputSchema: identical(inputSchema, sdkOmittedValue) ? this.inputSchema : inputSchema as InputSchema,
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<CacheControlEphemeral?>,
-    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as SdkOptional<bool>,
-    eagerInputStreaming: identical(eagerInputStreaming, sdkOmittedValue) ? this.eagerInputStreaming : eagerInputStreaming as SdkOptional<bool?>,
-    allowedCallers: identical(allowedCallers, sdkOmittedValue) ? this.allowedCallers : allowedCallers as SdkOptional<List<AllowedCaller>>,
-    deferLoading: identical(deferLoading, sdkOmittedValue) ? this.deferLoading : deferLoading as SdkOptional<bool>,
-    inputExamples: identical(inputExamples, sdkOmittedValue) ? this.inputExamples : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
-  );
+  Tool _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? inputSchema = sdkOmittedValue,
+          Object? cacheControl = sdkOmittedValue,
+          Object? strict = sdkOmittedValue,
+          Object? eagerInputStreaming = sdkOmittedValue,
+          Object? allowedCallers = sdkOmittedValue,
+          Object? deferLoading = sdkOmittedValue,
+          Object? inputExamples = sdkOmittedValue}) =>
+      Tool(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<ToolTypeVariant1?>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        inputSchema: identical(inputSchema, sdkOmittedValue)
+            ? this.inputSchema
+            : inputSchema as InputSchema,
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<CacheControlEphemeral?>,
+        strict: identical(strict, sdkOmittedValue)
+            ? this.strict
+            : strict as SdkOptional<bool>,
+        eagerInputStreaming: identical(eagerInputStreaming, sdkOmittedValue)
+            ? this.eagerInputStreaming
+            : eagerInputStreaming as SdkOptional<bool?>,
+        allowedCallers: identical(allowedCallers, sdkOmittedValue)
+            ? this.allowedCallers
+            : allowedCallers as SdkOptional<List<AllowedCaller>>,
+        deferLoading: identical(deferLoading, sdkOmittedValue)
+            ? this.deferLoading
+            : deferLoading as SdkOptional<bool>,
+        inputExamples: identical(inputExamples, sdkOmittedValue)
+            ? this.inputExamples
+            : inputExamples as SdkOptional<List<Map<String, dynamic>>>,
+      );
 
   factory Tool.fromJson(Map<String, dynamic> json) => Tool(
-    type_: json.containsKey('type') ? SdkPresent(json['type'] != null ? ToolTypeVariant1.fromJson(json['type'] as String) : null) : const SdkOmitted(),
-    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
-    name: (json['name'] as String?)!,
-    inputSchema: (json['input_schema'] != null ? InputSchema.fromJson(json['input_schema'] as Map<String, dynamic>) : null)!,
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? CacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    strict: json['strict'] != null ? SdkPresent((json['strict'] as bool?)!) : const SdkOmitted(),
-    eagerInputStreaming: json.containsKey('eager_input_streaming') ? SdkPresent(json['eager_input_streaming'] as bool?) : const SdkOmitted(),
-    allowedCallers: json['allowed_callers'] != null ? SdkPresent(((json['allowed_callers'] as List?)?.map((e) => AllowedCaller.fromJson(e as String)).toList())!) : const SdkOmitted(),
-    deferLoading: json['defer_loading'] != null ? SdkPresent((json['defer_loading'] as bool?)!) : const SdkOmitted(),
-    inputExamples: json['input_examples'] != null ? SdkPresent(((json['input_examples'] as List?)?.map((e) => e as Map<String, dynamic>).toList())!) : const SdkOmitted(),
-  );
+        type_: json.containsKey('type')
+            ? SdkPresent(json['type'] != null
+                ? ToolTypeVariant1.fromJson(json['type'] as String)
+                : null)
+            : const SdkOmitted(),
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
+            : const SdkOmitted(),
+        name: (json['name'] as String?)!,
+        inputSchema: (json['input_schema'] != null
+            ? InputSchema.fromJson(json['input_schema'] as Map<String, dynamic>)
+            : null)!,
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? CacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        strict: json['strict'] != null
+            ? SdkPresent((json['strict'] as bool?)!)
+            : const SdkOmitted(),
+        eagerInputStreaming: json.containsKey('eager_input_streaming')
+            ? SdkPresent(json['eager_input_streaming'] as bool?)
+            : const SdkOmitted(),
+        allowedCallers: json['allowed_callers'] != null
+            ? SdkPresent(((json['allowed_callers'] as List?)
+                ?.map((e) => AllowedCaller.fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+        deferLoading: json['defer_loading'] != null
+            ? SdkPresent((json['defer_loading'] as bool?)!)
+            : const SdkOmitted(),
+        inputExamples: json['input_examples'] != null
+            ? SdkPresent(((json['input_examples'] as List?)
+                ?.map((e) => e as Map<String, dynamic>)
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (type_) {
-      SdkPresent<ToolTypeVariant1?>(value: final value) => {'type': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    'name': name,
-    'input_schema': inputSchema.toJson(),
-    ...switch (cacheControl) {
-      SdkPresent<CacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (strict) {
-      SdkPresent<bool>(value: final value) => {'strict': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (eagerInputStreaming) {
-      SdkPresent<bool?>(value: final value) => {'eager_input_streaming': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (allowedCallers) {
-      SdkPresent<List<AllowedCaller>>(value: final value) => {'allowed_callers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deferLoading) {
-      SdkPresent<bool>(value: final value) => {'defer_loading': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (inputExamples) {
-      SdkPresent<List<Map<String, dynamic>>>(value: final value) => {'input_examples': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (type_) {
+          SdkPresent<ToolTypeVariant1?>(value: final value) => {
+              'type': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name,
+        'input_schema': inputSchema.toJson(),
+        ...switch (cacheControl) {
+          SdkPresent<CacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (strict) {
+          SdkPresent<bool>(value: final value) => {
+              'strict': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (eagerInputStreaming) {
+          SdkPresent<bool?>(value: final value) => {
+              'eager_input_streaming': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (allowedCallers) {
+          SdkPresent<List<AllowedCaller>>(value: final value) => {
+              'allowed_callers': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deferLoading) {
+          SdkPresent<bool>(value: final value) => {
+              'defer_loading': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (inputExamples) {
+          SdkPresent<List<Map<String, dynamic>>>(value: final value) => {
+              'input_examples': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

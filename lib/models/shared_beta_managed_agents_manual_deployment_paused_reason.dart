@@ -8,22 +8,34 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsManualDeploymentPausedReason {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsManualDeploymentPausedReasonType type_;
 
   const BetaManagedAgentsManualDeploymentPausedReason({required this.type_});
 
-  BetaManagedAgentsManualDeploymentPausedReason Function({BetaManagedAgentsManualDeploymentPausedReasonType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsManualDeploymentPausedReason Function(
+          {BetaManagedAgentsManualDeploymentPausedReasonType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsManualDeploymentPausedReason _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsManualDeploymentPausedReason(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsManualDeploymentPausedReasonType,
-  );
+  BetaManagedAgentsManualDeploymentPausedReason _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsManualDeploymentPausedReason(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsManualDeploymentPausedReasonType,
+      );
 
-  factory BetaManagedAgentsManualDeploymentPausedReason.fromJson(Map<String, dynamic> json) => BetaManagedAgentsManualDeploymentPausedReason(
-    type_: (json['type'] != null ? BetaManagedAgentsManualDeploymentPausedReasonType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsManualDeploymentPausedReason.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsManualDeploymentPausedReason(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsManualDeploymentPausedReasonType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

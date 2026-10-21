@@ -8,22 +8,35 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsUnknownDeploymentPausedReasonError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUnknownDeploymentPausedReasonErrorType type_;
 
-  const BetaManagedAgentsUnknownDeploymentPausedReasonError({required this.type_});
+  const BetaManagedAgentsUnknownDeploymentPausedReasonError(
+      {required this.type_});
 
-  BetaManagedAgentsUnknownDeploymentPausedReasonError Function({BetaManagedAgentsUnknownDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsUnknownDeploymentPausedReasonError Function(
+          {BetaManagedAgentsUnknownDeploymentPausedReasonErrorType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsUnknownDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsUnknownDeploymentPausedReasonError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUnknownDeploymentPausedReasonErrorType,
-  );
+  BetaManagedAgentsUnknownDeploymentPausedReasonError _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsUnknownDeploymentPausedReasonError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsUnknownDeploymentPausedReasonErrorType,
+      );
 
-  factory BetaManagedAgentsUnknownDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsUnknownDeploymentPausedReasonError(
-    type_: (json['type'] != null ? BetaManagedAgentsUnknownDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsUnknownDeploymentPausedReasonError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsUnknownDeploymentPausedReasonError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsUnknownDeploymentPausedReasonErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

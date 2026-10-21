@@ -6,26 +6,33 @@ part of 'shared_web.dart';
 // shared_web domain models
 /// Typed representation of the `WebSearchToolResultErrorCode` API schema.
 final class WebSearchToolResultErrorCode {
-
   final String value;
 
   const WebSearchToolResultErrorCode._(this.value);
 
-  factory WebSearchToolResultErrorCode.fromJson(String value) => WebSearchToolResultErrorCode._(value);
+  factory WebSearchToolResultErrorCode.fromJson(String value) =>
+      WebSearchToolResultErrorCode._(value);
 
-  static const invalidToolInput = WebSearchToolResultErrorCode._('invalid_tool_input');
+  static const invalidToolInput =
+      WebSearchToolResultErrorCode._('invalid_tool_input');
   static const unavailable = WebSearchToolResultErrorCode._('unavailable');
-  static const maxUsesExceeded = WebSearchToolResultErrorCode._('max_uses_exceeded');
-  static const tooManyRequests = WebSearchToolResultErrorCode._('too_many_requests');
+  static const maxUsesExceeded =
+      WebSearchToolResultErrorCode._('max_uses_exceeded');
+  static const tooManyRequests =
+      WebSearchToolResultErrorCode._('too_many_requests');
   static const queryTooLong = WebSearchToolResultErrorCode._('query_too_long');
-  static const requestTooLarge = WebSearchToolResultErrorCode._('request_too_large');
+  static const requestTooLarge =
+      WebSearchToolResultErrorCode._('request_too_large');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebSearchToolResultErrorCode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebSearchToolResultErrorCode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

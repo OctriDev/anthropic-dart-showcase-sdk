@@ -8,32 +8,52 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionStatusRunningEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionStatusRunningEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Timestamp of status change.
   final String processedAt;
 
-  const BetaManagedAgentsSessionStatusRunningEvent({required this.type_, required this.id, required this.processedAt});
+  const BetaManagedAgentsSessionStatusRunningEvent(
+      {required this.type_, required this.id, required this.processedAt});
 
-  BetaManagedAgentsSessionStatusRunningEvent Function({BetaManagedAgentsSessionStatusRunningEventType type_, String id, String processedAt}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionStatusRunningEvent Function(
+      {BetaManagedAgentsSessionStatusRunningEventType type_,
+      String id,
+      String processedAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionStatusRunningEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue}) => BetaManagedAgentsSessionStatusRunningEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionStatusRunningEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
-  );
+  BetaManagedAgentsSessionStatusRunningEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue}) =>
+      BetaManagedAgentsSessionStatusRunningEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSessionStatusRunningEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as String,
+      );
 
-  factory BetaManagedAgentsSessionStatusRunningEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionStatusRunningEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsSessionStatusRunningEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    processedAt: (json['processed_at'] as String?)!,
-  );
+  factory BetaManagedAgentsSessionStatusRunningEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSessionStatusRunningEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSessionStatusRunningEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        processedAt: (json['processed_at'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'processed_at': processedAt,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'processed_at': processedAt,
+      };
 }

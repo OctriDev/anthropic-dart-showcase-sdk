@@ -6,24 +6,29 @@ part of 'shared_beta_managed_agents.dart';
 // shared_beta_managed_agents domain models
 /// SessionThreadStatus enum
 final class BetaManagedAgentsSessionThreadStatus {
-
   final String value;
 
   const BetaManagedAgentsSessionThreadStatus._(this.value);
 
-  factory BetaManagedAgentsSessionThreadStatus.fromJson(String value) => BetaManagedAgentsSessionThreadStatus._(value);
+  factory BetaManagedAgentsSessionThreadStatus.fromJson(String value) =>
+      BetaManagedAgentsSessionThreadStatus._(value);
 
   static const running = BetaManagedAgentsSessionThreadStatus._('running');
   static const idle = BetaManagedAgentsSessionThreadStatus._('idle');
-  static const rescheduling = BetaManagedAgentsSessionThreadStatus._('rescheduling');
-  static const terminated = BetaManagedAgentsSessionThreadStatus._('terminated');
+  static const rescheduling =
+      BetaManagedAgentsSessionThreadStatus._('rescheduling');
+  static const terminated =
+      BetaManagedAgentsSessionThreadStatus._('terminated');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsSessionThreadStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsSessionThreadStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -8,27 +8,40 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsAdvisorParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAdvisorParamsType type_;
+
   /// A Claude model id. The model must be permitted as an advisor for this agent's model — see the sessions/threads/advisor spec.
   final String model;
 
-  const BetaManagedAgentsAdvisorParams({required this.type_, required this.model});
+  const BetaManagedAgentsAdvisorParams(
+      {required this.type_, required this.model});
 
-  BetaManagedAgentsAdvisorParams Function({BetaManagedAgentsAdvisorParamsType type_, String model}) get copyWith => _copyWith;
+  BetaManagedAgentsAdvisorParams Function(
+      {BetaManagedAgentsAdvisorParamsType type_,
+      String model}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAdvisorParams _copyWith({Object? type_ = sdkOmittedValue, Object? model = sdkOmittedValue}) => BetaManagedAgentsAdvisorParams(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAdvisorParamsType,
-    model: identical(model, sdkOmittedValue) ? this.model : model as String,
-  );
+  BetaManagedAgentsAdvisorParams _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? model = sdkOmittedValue}) =>
+      BetaManagedAgentsAdvisorParams(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsAdvisorParamsType,
+        model: identical(model, sdkOmittedValue) ? this.model : model as String,
+      );
 
-  factory BetaManagedAgentsAdvisorParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAdvisorParams(
-    type_: (json['type'] != null ? BetaManagedAgentsAdvisorParamsType.fromJson(json['type'] as String) : null)!,
-    model: (json['model'] as String?)!,
-  );
+  factory BetaManagedAgentsAdvisorParams.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsAdvisorParams(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsAdvisorParamsType.fromJson(
+                json['type'] as String)
+            : null)!,
+        model: (json['model'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'model': model,
-  };
+        'type': type_.toJson(),
+        'model': model,
+      };
 }

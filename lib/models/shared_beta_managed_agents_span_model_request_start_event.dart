@@ -8,32 +8,52 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSpanModelRequestStartEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSpanModelRequestStartEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Timestamp when the model request started.
   final String processedAt;
 
-  const BetaManagedAgentsSpanModelRequestStartEvent({required this.type_, required this.id, required this.processedAt});
+  const BetaManagedAgentsSpanModelRequestStartEvent(
+      {required this.type_, required this.id, required this.processedAt});
 
-  BetaManagedAgentsSpanModelRequestStartEvent Function({BetaManagedAgentsSpanModelRequestStartEventType type_, String id, String processedAt}) get copyWith => _copyWith;
+  BetaManagedAgentsSpanModelRequestStartEvent Function(
+      {BetaManagedAgentsSpanModelRequestStartEventType type_,
+      String id,
+      String processedAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSpanModelRequestStartEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue}) => BetaManagedAgentsSpanModelRequestStartEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSpanModelRequestStartEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
-  );
+  BetaManagedAgentsSpanModelRequestStartEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue}) =>
+      BetaManagedAgentsSpanModelRequestStartEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSpanModelRequestStartEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as String,
+      );
 
-  factory BetaManagedAgentsSpanModelRequestStartEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSpanModelRequestStartEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsSpanModelRequestStartEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    processedAt: (json['processed_at'] as String?)!,
-  );
+  factory BetaManagedAgentsSpanModelRequestStartEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSpanModelRequestStartEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSpanModelRequestStartEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        processedAt: (json['processed_at'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'processed_at': processedAt,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'processed_at': processedAt,
+      };
 }

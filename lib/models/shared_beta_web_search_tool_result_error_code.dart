@@ -6,26 +6,34 @@ part of 'shared_beta_web.dart';
 // shared_beta_web domain models
 /// Typed representation of the `BetaWebSearchToolResultErrorCode` API schema.
 final class BetaWebSearchToolResultErrorCode {
-
   final String value;
 
   const BetaWebSearchToolResultErrorCode._(this.value);
 
-  factory BetaWebSearchToolResultErrorCode.fromJson(String value) => BetaWebSearchToolResultErrorCode._(value);
+  factory BetaWebSearchToolResultErrorCode.fromJson(String value) =>
+      BetaWebSearchToolResultErrorCode._(value);
 
-  static const invalidToolInput = BetaWebSearchToolResultErrorCode._('invalid_tool_input');
+  static const invalidToolInput =
+      BetaWebSearchToolResultErrorCode._('invalid_tool_input');
   static const unavailable = BetaWebSearchToolResultErrorCode._('unavailable');
-  static const maxUsesExceeded = BetaWebSearchToolResultErrorCode._('max_uses_exceeded');
-  static const tooManyRequests = BetaWebSearchToolResultErrorCode._('too_many_requests');
-  static const queryTooLong = BetaWebSearchToolResultErrorCode._('query_too_long');
-  static const requestTooLarge = BetaWebSearchToolResultErrorCode._('request_too_large');
+  static const maxUsesExceeded =
+      BetaWebSearchToolResultErrorCode._('max_uses_exceeded');
+  static const tooManyRequests =
+      BetaWebSearchToolResultErrorCode._('too_many_requests');
+  static const queryTooLong =
+      BetaWebSearchToolResultErrorCode._('query_too_long');
+  static const requestTooLarge =
+      BetaWebSearchToolResultErrorCode._('request_too_large');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaWebSearchToolResultErrorCode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaWebSearchToolResultErrorCode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

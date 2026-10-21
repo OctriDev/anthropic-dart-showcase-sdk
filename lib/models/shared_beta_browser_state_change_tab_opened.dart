@@ -8,27 +8,40 @@ part of 'shared_beta_browser.dart';
 class BetaBrowserStateChangeTabOpened {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The `tab_id` of the opened tab, present in `tabs`.
   final String tabId;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaBrowserStateChangeTabOpenedType type_;
 
-  const BetaBrowserStateChangeTabOpened({required this.tabId, required this.type_});
+  const BetaBrowserStateChangeTabOpened(
+      {required this.tabId, required this.type_});
 
-  BetaBrowserStateChangeTabOpened Function({String tabId, BetaBrowserStateChangeTabOpenedType type_}) get copyWith => _copyWith;
+  BetaBrowserStateChangeTabOpened Function(
+      {String tabId,
+      BetaBrowserStateChangeTabOpenedType type_}) get copyWith => _copyWith;
 
-  BetaBrowserStateChangeTabOpened _copyWith({Object? tabId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaBrowserStateChangeTabOpened(
-    tabId: identical(tabId, sdkOmittedValue) ? this.tabId : tabId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaBrowserStateChangeTabOpenedType,
-  );
+  BetaBrowserStateChangeTabOpened _copyWith(
+          {Object? tabId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      BetaBrowserStateChangeTabOpened(
+        tabId: identical(tabId, sdkOmittedValue) ? this.tabId : tabId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaBrowserStateChangeTabOpenedType,
+      );
 
-  factory BetaBrowserStateChangeTabOpened.fromJson(Map<String, dynamic> json) => BetaBrowserStateChangeTabOpened(
-    tabId: (json['tab_id'] as String?)!,
-    type_: (json['type'] != null ? BetaBrowserStateChangeTabOpenedType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaBrowserStateChangeTabOpened.fromJson(Map<String, dynamic> json) =>
+      BetaBrowserStateChangeTabOpened(
+        tabId: (json['tab_id'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaBrowserStateChangeTabOpenedType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'tab_id': tabId,
-    'type': type_.toJson(),
-  };
+        'tab_id': tabId,
+        'type': type_.toJson(),
+      };
 }

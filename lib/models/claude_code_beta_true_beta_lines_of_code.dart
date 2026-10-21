@@ -8,8 +8,10 @@ part of 'claude_code_beta_true.dart';
 class BetaLinesOfCode {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Total number of lines of code added across all files by Claude Code.
   final int added;
+
   /// Total number of lines of code removed across all files by Claude Code.
   final int removed;
 
@@ -17,18 +19,23 @@ class BetaLinesOfCode {
 
   BetaLinesOfCode Function({int added, int removed}) get copyWith => _copyWith;
 
-  BetaLinesOfCode _copyWith({Object? added = sdkOmittedValue, Object? removed = sdkOmittedValue}) => BetaLinesOfCode(
-    added: identical(added, sdkOmittedValue) ? this.added : added as int,
-    removed: identical(removed, sdkOmittedValue) ? this.removed : removed as int,
-  );
+  BetaLinesOfCode _copyWith(
+          {Object? added = sdkOmittedValue,
+          Object? removed = sdkOmittedValue}) =>
+      BetaLinesOfCode(
+        added: identical(added, sdkOmittedValue) ? this.added : added as int,
+        removed:
+            identical(removed, sdkOmittedValue) ? this.removed : removed as int,
+      );
 
-  factory BetaLinesOfCode.fromJson(Map<String, dynamic> json) => BetaLinesOfCode(
-    added: ((json['added'] as num?)?.toInt())!,
-    removed: ((json['removed'] as num?)?.toInt())!,
-  );
+  factory BetaLinesOfCode.fromJson(Map<String, dynamic> json) =>
+      BetaLinesOfCode(
+        added: ((json['added'] as num?)?.toInt())!,
+        removed: ((json['removed'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'added': added,
-    'removed': removed,
-  };
+        'added': added,
+        'removed': removed,
+      };
 }

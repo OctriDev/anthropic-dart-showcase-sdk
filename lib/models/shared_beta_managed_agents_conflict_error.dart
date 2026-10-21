@@ -8,30 +8,50 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsConflictError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsConflictErrorType type_;
+
   /// Optional `string` value serialized in the `message` wire field.
   final SdkOptional<String> message;
 
-  const BetaManagedAgentsConflictError({required this.type_, this.message = const SdkOmitted()});
+  const BetaManagedAgentsConflictError(
+      {required this.type_, this.message = const SdkOmitted()});
 
-  BetaManagedAgentsConflictError Function({BetaManagedAgentsConflictErrorType type_, SdkOptional<String> message}) get copyWith => _copyWith;
+  BetaManagedAgentsConflictError Function(
+      {BetaManagedAgentsConflictErrorType type_,
+      SdkOptional<String> message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsConflictError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsConflictError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsConflictErrorType,
-    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
-  );
+  BetaManagedAgentsConflictError _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? message = sdkOmittedValue}) =>
+      BetaManagedAgentsConflictError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsConflictErrorType,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<String>,
+      );
 
-  factory BetaManagedAgentsConflictError.fromJson(Map<String, dynamic> json) => BetaManagedAgentsConflictError(
-    type_: (json['type'] != null ? BetaManagedAgentsConflictErrorType.fromJson(json['type'] as String) : null)!,
-    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsConflictError.fromJson(Map<String, dynamic> json) =>
+      BetaManagedAgentsConflictError(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsConflictErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+        message: json['message'] != null
+            ? SdkPresent((json['message'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (message) {
-      SdkPresent<String>(value: final value) => {'message': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (message) {
+          SdkPresent<String>(value: final value) => {
+              'message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

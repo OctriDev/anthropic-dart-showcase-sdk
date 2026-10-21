@@ -8,22 +8,34 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsTokenEndpointAuthBasicResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTokenEndpointAuthBasicResponseType type_;
 
   const BetaManagedAgentsTokenEndpointAuthBasicResponse({required this.type_});
 
-  BetaManagedAgentsTokenEndpointAuthBasicResponse Function({BetaManagedAgentsTokenEndpointAuthBasicResponseType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsTokenEndpointAuthBasicResponse Function(
+          {BetaManagedAgentsTokenEndpointAuthBasicResponseType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsTokenEndpointAuthBasicResponse _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsTokenEndpointAuthBasicResponse(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTokenEndpointAuthBasicResponseType,
-  );
+  BetaManagedAgentsTokenEndpointAuthBasicResponse _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsTokenEndpointAuthBasicResponse(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsTokenEndpointAuthBasicResponseType,
+      );
 
-  factory BetaManagedAgentsTokenEndpointAuthBasicResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsTokenEndpointAuthBasicResponse(
-    type_: (json['type'] != null ? BetaManagedAgentsTokenEndpointAuthBasicResponseType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsTokenEndpointAuthBasicResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsTokenEndpointAuthBasicResponse(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsTokenEndpointAuthBasicResponseType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

@@ -9,70 +9,126 @@ sealed class BetaRequestCompactionBlockCacheControl {
   static const String constructionSurface = 'named';
   const BetaRequestCompactionBlockCacheControl();
   factory BetaRequestCompactionBlockCacheControl.fromJson(Object? json) {
-    try { return BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral(BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"ephemeral"}.contains(json["type"])) { return UnknownBetaRequestCompactionBlockCacheControl(json); }
-    throw FormatException("No variant matched for BetaRequestCompactionBlockCacheControl");
+    try {
+      return BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral(
+          BetaCacheControlEphemeral.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"ephemeral"}.contains(json["type"])) {
+      return UnknownBetaRequestCompactionBlockCacheControl(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRequestCompactionBlockCacheControl");
   }
   Object? toJson();
 }
 
-final class BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral extends BetaRequestCompactionBlockCacheControl {
+final class BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral
+    extends BetaRequestCompactionBlockCacheControl {
   final BetaCacheControlEphemeral value;
-  const BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestCompactionBlockCacheControlBetaCacheControlEphemeral(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestCompactionBlockCacheControl] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestCompactionBlockCacheControl extends BetaRequestCompactionBlockCacheControl {
+final class UnknownBetaRequestCompactionBlockCacheControl
+    extends BetaRequestCompactionBlockCacheControl {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestCompactionBlockCacheControl(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 /// A compaction block containing summary of previous context. Users should round-trip these blocks from responses to subsequent requests to maintain context across compaction boundaries. When content is None, the block represents a failed compaction. The server treats these as no-ops. Empty string content is not allowed.
 class BetaRequestCompactionBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Create a cache control breakpoint at this content block.
   final SdkOptional<BetaCacheControlEphemeral?> cacheControl;
+
   /// Summary of previously compacted content, or null if compaction failed
   final SdkOptional<String?> content;
+
   /// Opaque metadata from prior compaction, to be round-tripped verbatim
   final SdkOptional<String?> encryptedContent;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestCompactionBlockType type_;
 
-  const BetaRequestCompactionBlock({this.cacheControl = const SdkOmitted(), this.content = const SdkOmitted(), this.encryptedContent = const SdkOmitted(), required this.type_});
+  const BetaRequestCompactionBlock(
+      {this.cacheControl = const SdkOmitted(),
+      this.content = const SdkOmitted(),
+      this.encryptedContent = const SdkOmitted(),
+      required this.type_});
 
-  BetaRequestCompactionBlock Function({SdkOptional<BetaCacheControlEphemeral?> cacheControl, SdkOptional<String?> content, SdkOptional<String?> encryptedContent, BetaRequestCompactionBlockType type_}) get copyWith => _copyWith;
+  BetaRequestCompactionBlock Function(
+      {SdkOptional<BetaCacheControlEphemeral?> cacheControl,
+      SdkOptional<String?> content,
+      SdkOptional<String?> encryptedContent,
+      BetaRequestCompactionBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestCompactionBlock _copyWith({Object? cacheControl = sdkOmittedValue, Object? content = sdkOmittedValue, Object? encryptedContent = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestCompactionBlock(
-    cacheControl: identical(cacheControl, sdkOmittedValue) ? this.cacheControl : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
-    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<String?>,
-    encryptedContent: identical(encryptedContent, sdkOmittedValue) ? this.encryptedContent : encryptedContent as SdkOptional<String?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestCompactionBlockType,
-  );
+  BetaRequestCompactionBlock _copyWith(
+          {Object? cacheControl = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? encryptedContent = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestCompactionBlock(
+        cacheControl: identical(cacheControl, sdkOmittedValue)
+            ? this.cacheControl
+            : cacheControl as SdkOptional<BetaCacheControlEphemeral?>,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as SdkOptional<String?>,
+        encryptedContent: identical(encryptedContent, sdkOmittedValue)
+            ? this.encryptedContent
+            : encryptedContent as SdkOptional<String?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestCompactionBlockType,
+      );
 
-  factory BetaRequestCompactionBlock.fromJson(Map<String, dynamic> json) => BetaRequestCompactionBlock(
-    cacheControl: json.containsKey('cache_control') ? SdkPresent(json['cache_control'] != null ? BetaCacheControlEphemeral.fromJson(json['cache_control'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    content: json.containsKey('content') ? SdkPresent(json['content'] as String?) : const SdkOmitted(),
-    encryptedContent: json.containsKey('encrypted_content') ? SdkPresent(json['encrypted_content'] as String?) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaRequestCompactionBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestCompactionBlock.fromJson(Map<String, dynamic> json) =>
+      BetaRequestCompactionBlock(
+        cacheControl: json.containsKey('cache_control')
+            ? SdkPresent(json['cache_control'] != null
+                ? BetaCacheControlEphemeral.fromJson(
+                    json['cache_control'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        content: json.containsKey('content')
+            ? SdkPresent(json['content'] as String?)
+            : const SdkOmitted(),
+        encryptedContent: json.containsKey('encrypted_content')
+            ? SdkPresent(json['encrypted_content'] as String?)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaRequestCompactionBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (cacheControl) {
-      SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {'cache_control': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (content) {
-      SdkPresent<String?>(value: final value) => {'content': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (encryptedContent) {
-      SdkPresent<String?>(value: final value) => {'encrypted_content': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (cacheControl) {
+          SdkPresent<BetaCacheControlEphemeral?>(value: final value) => {
+              'cache_control': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (content) {
+          SdkPresent<String?>(value: final value) => {
+              'content': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (encryptedContent) {
+          SdkPresent<String?>(value: final value) => {
+              'encrypted_content': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

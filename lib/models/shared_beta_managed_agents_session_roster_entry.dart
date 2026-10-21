@@ -10,32 +10,63 @@ sealed class BetaManagedAgentsSessionRosterEntry {
   const BetaManagedAgentsSessionRosterEntry();
   factory BetaManagedAgentsSessionRosterEntry.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsSessionThreadAgent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionRosterEntryBetaManagedAgentsSessionThreadAgent(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsAdvisor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionRosterEntryBetaManagedAgentsAdvisor(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsSessionThreadAgent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionRosterEntryBetaManagedAgentsSessionThreadAgent(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsAdvisor.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionRosterEntryBetaManagedAgentsAdvisor(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsSessionRosterEntryBetaManagedAgentsSessionThreadAgent(BetaManagedAgentsSessionThreadAgent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionRosterEntryBetaManagedAgentsAdvisor(BetaManagedAgentsAdvisor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"agent", "advisor"}.contains(json["type"])) { return UnknownBetaManagedAgentsSessionRosterEntry(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsSessionRosterEntry");
+    try {
+      return BetaManagedAgentsSessionRosterEntryBetaManagedAgentsSessionThreadAgent(
+          BetaManagedAgentsSessionThreadAgent.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionRosterEntryBetaManagedAgentsAdvisor(
+          BetaManagedAgentsAdvisor.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"agent", "advisor"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsSessionRosterEntry(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsSessionRosterEntry");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsSessionRosterEntryBetaManagedAgentsSessionThreadAgent extends BetaManagedAgentsSessionRosterEntry {
+final class BetaManagedAgentsSessionRosterEntryBetaManagedAgentsSessionThreadAgent
+    extends BetaManagedAgentsSessionRosterEntry {
   final BetaManagedAgentsSessionThreadAgent value;
-  const BetaManagedAgentsSessionRosterEntryBetaManagedAgentsSessionThreadAgent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionRosterEntryBetaManagedAgentsSessionThreadAgent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionRosterEntryBetaManagedAgentsAdvisor extends BetaManagedAgentsSessionRosterEntry {
+final class BetaManagedAgentsSessionRosterEntryBetaManagedAgentsAdvisor
+    extends BetaManagedAgentsSessionRosterEntry {
   final BetaManagedAgentsAdvisor value;
   const BetaManagedAgentsSessionRosterEntryBetaManagedAgentsAdvisor(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSessionRosterEntry] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsSessionRosterEntry extends BetaManagedAgentsSessionRosterEntry {
+final class UnknownBetaManagedAgentsSessionRosterEntry
+    extends BetaManagedAgentsSessionRosterEntry {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSessionRosterEntry(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

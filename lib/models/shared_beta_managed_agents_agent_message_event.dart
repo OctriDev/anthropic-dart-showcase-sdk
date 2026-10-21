@@ -8,37 +8,67 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsAgentMessageEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAgentMessageEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Array of text blocks comprising the agent response.
   final List<BetaManagedAgentsAgentMessageContentBlock> content;
+
   /// Timestamp when this response was generated.
   final String processedAt;
 
-  const BetaManagedAgentsAgentMessageEvent({required this.type_, required this.id, required this.content, required this.processedAt});
+  const BetaManagedAgentsAgentMessageEvent(
+      {required this.type_,
+      required this.id,
+      required this.content,
+      required this.processedAt});
 
-  BetaManagedAgentsAgentMessageEvent Function({BetaManagedAgentsAgentMessageEventType type_, String id, List<BetaManagedAgentsAgentMessageContentBlock> content, String processedAt}) get copyWith => _copyWith;
+  BetaManagedAgentsAgentMessageEvent Function(
+      {BetaManagedAgentsAgentMessageEventType type_,
+      String id,
+      List<BetaManagedAgentsAgentMessageContentBlock> content,
+      String processedAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAgentMessageEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? content = sdkOmittedValue, Object? processedAt = sdkOmittedValue}) => BetaManagedAgentsAgentMessageEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAgentMessageEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    content: identical(content, sdkOmittedValue) ? this.content : content as List<BetaManagedAgentsAgentMessageContentBlock>,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
-  );
+  BetaManagedAgentsAgentMessageEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue}) =>
+      BetaManagedAgentsAgentMessageEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsAgentMessageEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as List<BetaManagedAgentsAgentMessageContentBlock>,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as String,
+      );
 
-  factory BetaManagedAgentsAgentMessageEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsAgentMessageEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsAgentMessageEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    content: ((json['content'] as List?)?.map((e) => BetaManagedAgentsAgentMessageContentBlock.fromJson(e)).toList())!,
-    processedAt: (json['processed_at'] as String?)!,
-  );
+  factory BetaManagedAgentsAgentMessageEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsAgentMessageEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsAgentMessageEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        content: ((json['content'] as List?)
+            ?.map((e) => BetaManagedAgentsAgentMessageContentBlock.fromJson(e))
+            .toList())!,
+        processedAt: (json['processed_at'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'content': content.map((item) => item.toJson()).toList(),
-    'processed_at': processedAt,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'content': content.map((item) => item.toJson()).toList(),
+        'processed_at': processedAt,
+      };
 }

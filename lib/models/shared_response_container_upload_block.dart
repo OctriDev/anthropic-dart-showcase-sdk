@@ -8,27 +8,41 @@ part of 'shared_response.dart';
 class ResponseContainerUploadBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `file_id` wire field.
   final String fileId;
+
   /// Required `string` value serialized in the `type` wire field.
   final ResponseContainerUploadBlockType type_;
 
-  const ResponseContainerUploadBlock({required this.fileId, required this.type_});
+  const ResponseContainerUploadBlock(
+      {required this.fileId, required this.type_});
 
-  ResponseContainerUploadBlock Function({String fileId, ResponseContainerUploadBlockType type_}) get copyWith => _copyWith;
+  ResponseContainerUploadBlock Function(
+      {String fileId,
+      ResponseContainerUploadBlockType type_}) get copyWith => _copyWith;
 
-  ResponseContainerUploadBlock _copyWith({Object? fileId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ResponseContainerUploadBlock(
-    fileId: identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ResponseContainerUploadBlockType,
-  );
+  ResponseContainerUploadBlock _copyWith(
+          {Object? fileId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      ResponseContainerUploadBlock(
+        fileId:
+            identical(fileId, sdkOmittedValue) ? this.fileId : fileId as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ResponseContainerUploadBlockType,
+      );
 
-  factory ResponseContainerUploadBlock.fromJson(Map<String, dynamic> json) => ResponseContainerUploadBlock(
-    fileId: (json['file_id'] as String?)!,
-    type_: (json['type'] != null ? ResponseContainerUploadBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory ResponseContainerUploadBlock.fromJson(Map<String, dynamic> json) =>
+      ResponseContainerUploadBlock(
+        fileId: (json['file_id'] as String?)!,
+        type_: (json['type'] != null
+            ? ResponseContainerUploadBlockType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'file_id': fileId,
-    'type': type_.toJson(),
-  };
+        'file_id': fileId,
+        'type': type_.toJson(),
+      };
 }

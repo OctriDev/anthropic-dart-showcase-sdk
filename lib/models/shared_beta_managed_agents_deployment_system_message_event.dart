@@ -8,27 +8,47 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsDeploymentSystemMessageEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsDeploymentSystemMessageEventType type_;
+
   /// System content blocks to append. Text-only.
   final List<BetaManagedAgentsSystemContentBlock> content;
 
-  const BetaManagedAgentsDeploymentSystemMessageEvent({required this.type_, required this.content});
+  const BetaManagedAgentsDeploymentSystemMessageEvent(
+      {required this.type_, required this.content});
 
-  BetaManagedAgentsDeploymentSystemMessageEvent Function({BetaManagedAgentsDeploymentSystemMessageEventType type_, List<BetaManagedAgentsSystemContentBlock> content}) get copyWith => _copyWith;
+  BetaManagedAgentsDeploymentSystemMessageEvent Function(
+          {BetaManagedAgentsDeploymentSystemMessageEventType type_,
+          List<BetaManagedAgentsSystemContentBlock> content})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsDeploymentSystemMessageEvent _copyWith({Object? type_ = sdkOmittedValue, Object? content = sdkOmittedValue}) => BetaManagedAgentsDeploymentSystemMessageEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsDeploymentSystemMessageEventType,
-    content: identical(content, sdkOmittedValue) ? this.content : content as List<BetaManagedAgentsSystemContentBlock>,
-  );
+  BetaManagedAgentsDeploymentSystemMessageEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? content = sdkOmittedValue}) =>
+      BetaManagedAgentsDeploymentSystemMessageEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsDeploymentSystemMessageEventType,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as List<BetaManagedAgentsSystemContentBlock>,
+      );
 
-  factory BetaManagedAgentsDeploymentSystemMessageEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsDeploymentSystemMessageEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsDeploymentSystemMessageEventType.fromJson(json['type'] as String) : null)!,
-    content: ((json['content'] as List?)?.map((e) => BetaManagedAgentsSystemContentBlock.fromJson(e)).toList())!,
-  );
+  factory BetaManagedAgentsDeploymentSystemMessageEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsDeploymentSystemMessageEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsDeploymentSystemMessageEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        content: ((json['content'] as List?)
+            ?.map((e) => BetaManagedAgentsSystemContentBlock.fromJson(e))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'content': content.map((item) => item.toJson()).toList(),
-  };
+        'type': type_.toJson(),
+        'content': content.map((item) => item.toJson()).toList(),
+      };
 }

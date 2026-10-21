@@ -8,27 +8,37 @@ part of 'claude_code_beta_true.dart';
 class BetaEstimatedCost {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Estimated cost amount in minor currency units (e.g., cents for USD).
   final int amount;
+
   /// Currency code for the estimated cost (e.g., 'USD').
   final String currency;
 
   const BetaEstimatedCost({required this.amount, required this.currency});
 
-  BetaEstimatedCost Function({int amount, String currency}) get copyWith => _copyWith;
+  BetaEstimatedCost Function({int amount, String currency}) get copyWith =>
+      _copyWith;
 
-  BetaEstimatedCost _copyWith({Object? amount = sdkOmittedValue, Object? currency = sdkOmittedValue}) => BetaEstimatedCost(
-    amount: identical(amount, sdkOmittedValue) ? this.amount : amount as int,
-    currency: identical(currency, sdkOmittedValue) ? this.currency : currency as String,
-  );
+  BetaEstimatedCost _copyWith(
+          {Object? amount = sdkOmittedValue,
+          Object? currency = sdkOmittedValue}) =>
+      BetaEstimatedCost(
+        amount:
+            identical(amount, sdkOmittedValue) ? this.amount : amount as int,
+        currency: identical(currency, sdkOmittedValue)
+            ? this.currency
+            : currency as String,
+      );
 
-  factory BetaEstimatedCost.fromJson(Map<String, dynamic> json) => BetaEstimatedCost(
-    amount: ((json['amount'] as num?)?.toInt())!,
-    currency: (json['currency'] as String?)!,
-  );
+  factory BetaEstimatedCost.fromJson(Map<String, dynamic> json) =>
+      BetaEstimatedCost(
+        amount: ((json['amount'] as num?)?.toInt())!,
+        currency: (json['currency'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'amount': amount,
-    'currency': currency,
-  };
+        'amount': amount,
+        'currency': currency,
+      };
 }

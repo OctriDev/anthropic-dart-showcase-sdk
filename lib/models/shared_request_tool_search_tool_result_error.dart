@@ -8,35 +8,66 @@ part of 'shared_request_tool.dart';
 class RequestToolSearchToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `error_code` wire field.
   final ToolSearchToolResultErrorCode errorCode;
+
   /// Optional `string` value serialized in the `error_message` wire field.
   final SdkOptional<String?> errorMessage;
+
   /// Required `string` value serialized in the `type` wire field.
   final RequestToolSearchToolResultErrorType type_;
 
-  const RequestToolSearchToolResultError({required this.errorCode, this.errorMessage = const SdkOmitted(), required this.type_});
+  const RequestToolSearchToolResultError(
+      {required this.errorCode,
+      this.errorMessage = const SdkOmitted(),
+      required this.type_});
 
-  RequestToolSearchToolResultError Function({ToolSearchToolResultErrorCode errorCode, SdkOptional<String?> errorMessage, RequestToolSearchToolResultErrorType type_}) get copyWith => _copyWith;
+  RequestToolSearchToolResultError Function(
+      {ToolSearchToolResultErrorCode errorCode,
+      SdkOptional<String?> errorMessage,
+      RequestToolSearchToolResultErrorType type_}) get copyWith => _copyWith;
 
-  RequestToolSearchToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? errorMessage = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RequestToolSearchToolResultError(
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as ToolSearchToolResultErrorCode,
-    errorMessage: identical(errorMessage, sdkOmittedValue) ? this.errorMessage : errorMessage as SdkOptional<String?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RequestToolSearchToolResultErrorType,
-  );
+  RequestToolSearchToolResultError _copyWith(
+          {Object? errorCode = sdkOmittedValue,
+          Object? errorMessage = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RequestToolSearchToolResultError(
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as ToolSearchToolResultErrorCode,
+        errorMessage: identical(errorMessage, sdkOmittedValue)
+            ? this.errorMessage
+            : errorMessage as SdkOptional<String?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RequestToolSearchToolResultErrorType,
+      );
 
-  factory RequestToolSearchToolResultError.fromJson(Map<String, dynamic> json) => RequestToolSearchToolResultError(
-    errorCode: (json['error_code'] != null ? ToolSearchToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
-    errorMessage: json.containsKey('error_message') ? SdkPresent(json['error_message'] as String?) : const SdkOmitted(),
-    type_: (json['type'] != null ? RequestToolSearchToolResultErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RequestToolSearchToolResultError.fromJson(
+          Map<String, dynamic> json) =>
+      RequestToolSearchToolResultError(
+        errorCode: (json['error_code'] != null
+            ? ToolSearchToolResultErrorCode.fromJson(
+                json['error_code'] as String)
+            : null)!,
+        errorMessage: json.containsKey('error_message')
+            ? SdkPresent(json['error_message'] as String?)
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? RequestToolSearchToolResultErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'error_code': errorCode.toJson(),
-    ...switch (errorMessage) {
-      SdkPresent<String?>(value: final value) => {'error_message': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        'error_code': errorCode.toJson(),
+        ...switch (errorMessage) {
+          SdkPresent<String?>(value: final value) => {
+              'error_message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

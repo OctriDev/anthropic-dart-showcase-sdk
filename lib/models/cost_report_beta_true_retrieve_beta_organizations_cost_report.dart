@@ -6,175 +6,302 @@ part of 'cost_report_beta_true.dart';
 // cost_report_beta_true domain models
 /// Typed representation of the `BetaCostReportGroupBy` API schema.
 final class BetaCostReportGroupBy {
-
   final String value;
 
   const BetaCostReportGroupBy._(this.value);
 
-  factory BetaCostReportGroupBy.fromJson(String value) => BetaCostReportGroupBy._(value);
+  factory BetaCostReportGroupBy.fromJson(String value) =>
+      BetaCostReportGroupBy._(value);
 
   static const description = BetaCostReportGroupBy._('description');
   static const workspaceId = BetaCostReportGroupBy._('workspace_id');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaCostReportGroupBy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaCostReportGroupBy && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `BetaCostReportItem` API schema.
 class BetaCostReportItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Currency code for the cost amount. Currently always `"USD"`.
   final String currency;
+
   /// Cost amount in lowest currency units (e.g. cents) as a decimal string. For example, `"123.45"` in `"USD"` represents `$1.23`.
   final String amount;
+
   /// ID of the Workspace this cost is associated with. `null` if not grouping by workspace or for the default workspace.
   final String? workspaceId;
+
   /// Description of the cost item. `null` if not grouping by description.
   final String? description;
+
   /// Type of cost. `null` if not grouping by description.
   final BetaCostType? costType;
+
   /// Input context window used. `null` if not grouping by description or for non-token costs.
   final BetaMessagesUsageReportContextWindow? contextWindow;
+
   /// Model name used. `null` if not grouping by description or for non-token costs.
   final String? model;
+
   /// Service tier used. `null` if not grouping by description or for non-token costs.
   final BetaCostReportServiceTier? serviceTier;
+
   /// Type of token. `null` if not grouping by description or for non-token costs.
   final BetaCostReportTokenType? tokenType;
+
   /// Inference geo used matching requests' `inference_geo` parameter if set, otherwise the workspace's `default_inference_geo`. For models that do not support specifying `inference_geo` the value is `"not_available"`. Always `null` if not grouping by inference geo.
   final BetaInferenceGeoFilter? inferenceGeo;
 
-  const BetaCostReportItem({required this.currency, required this.amount, required this.workspaceId, required this.description, required this.costType, required this.contextWindow, required this.model, required this.serviceTier, required this.tokenType, required this.inferenceGeo});
+  const BetaCostReportItem(
+      {required this.currency,
+      required this.amount,
+      required this.workspaceId,
+      required this.description,
+      required this.costType,
+      required this.contextWindow,
+      required this.model,
+      required this.serviceTier,
+      required this.tokenType,
+      required this.inferenceGeo});
 
-  BetaCostReportItem Function({String currency, String amount, String? workspaceId, String? description, BetaCostType? costType, BetaMessagesUsageReportContextWindow? contextWindow, String? model, BetaCostReportServiceTier? serviceTier, BetaCostReportTokenType? tokenType, BetaInferenceGeoFilter? inferenceGeo}) get copyWith => _copyWith;
+  BetaCostReportItem Function(
+      {String currency,
+      String amount,
+      String? workspaceId,
+      String? description,
+      BetaCostType? costType,
+      BetaMessagesUsageReportContextWindow? contextWindow,
+      String? model,
+      BetaCostReportServiceTier? serviceTier,
+      BetaCostReportTokenType? tokenType,
+      BetaInferenceGeoFilter? inferenceGeo}) get copyWith => _copyWith;
 
-  BetaCostReportItem _copyWith({Object? currency = sdkOmittedValue, Object? amount = sdkOmittedValue, Object? workspaceId = sdkOmittedValue, Object? description = sdkOmittedValue, Object? costType = sdkOmittedValue, Object? contextWindow = sdkOmittedValue, Object? model = sdkOmittedValue, Object? serviceTier = sdkOmittedValue, Object? tokenType = sdkOmittedValue, Object? inferenceGeo = sdkOmittedValue}) => BetaCostReportItem(
-    currency: identical(currency, sdkOmittedValue) ? this.currency : currency as String,
-    amount: identical(amount, sdkOmittedValue) ? this.amount : amount as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String?,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    costType: identical(costType, sdkOmittedValue) ? this.costType : costType as BetaCostType?,
-    contextWindow: identical(contextWindow, sdkOmittedValue) ? this.contextWindow : contextWindow as BetaMessagesUsageReportContextWindow?,
-    model: identical(model, sdkOmittedValue) ? this.model : model as String?,
-    serviceTier: identical(serviceTier, sdkOmittedValue) ? this.serviceTier : serviceTier as BetaCostReportServiceTier?,
-    tokenType: identical(tokenType, sdkOmittedValue) ? this.tokenType : tokenType as BetaCostReportTokenType?,
-    inferenceGeo: identical(inferenceGeo, sdkOmittedValue) ? this.inferenceGeo : inferenceGeo as BetaInferenceGeoFilter?,
-  );
+  BetaCostReportItem _copyWith(
+          {Object? currency = sdkOmittedValue,
+          Object? amount = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? costType = sdkOmittedValue,
+          Object? contextWindow = sdkOmittedValue,
+          Object? model = sdkOmittedValue,
+          Object? serviceTier = sdkOmittedValue,
+          Object? tokenType = sdkOmittedValue,
+          Object? inferenceGeo = sdkOmittedValue}) =>
+      BetaCostReportItem(
+        currency: identical(currency, sdkOmittedValue)
+            ? this.currency
+            : currency as String,
+        amount:
+            identical(amount, sdkOmittedValue) ? this.amount : amount as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String?,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        costType: identical(costType, sdkOmittedValue)
+            ? this.costType
+            : costType as BetaCostType?,
+        contextWindow: identical(contextWindow, sdkOmittedValue)
+            ? this.contextWindow
+            : contextWindow as BetaMessagesUsageReportContextWindow?,
+        model:
+            identical(model, sdkOmittedValue) ? this.model : model as String?,
+        serviceTier: identical(serviceTier, sdkOmittedValue)
+            ? this.serviceTier
+            : serviceTier as BetaCostReportServiceTier?,
+        tokenType: identical(tokenType, sdkOmittedValue)
+            ? this.tokenType
+            : tokenType as BetaCostReportTokenType?,
+        inferenceGeo: identical(inferenceGeo, sdkOmittedValue)
+            ? this.inferenceGeo
+            : inferenceGeo as BetaInferenceGeoFilter?,
+      );
 
-  factory BetaCostReportItem.fromJson(Map<String, dynamic> json) => BetaCostReportItem(
-    currency: (json['currency'] as String?)!,
-    amount: (json['amount'] as String?)!,
-    workspaceId: json.containsKey('workspace_id') ? json['workspace_id'] as String? : throw ArgumentError.value(null, 'workspace_id', 'Required property is missing'),
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    costType: json.containsKey('cost_type') ? json['cost_type'] != null ? BetaCostType.fromJson(json['cost_type'] as String) : null : throw ArgumentError.value(null, 'cost_type', 'Required property is missing'),
-    contextWindow: json.containsKey('context_window') ? json['context_window'] != null ? BetaMessagesUsageReportContextWindow.fromJson(json['context_window'] as String) : null : throw ArgumentError.value(null, 'context_window', 'Required property is missing'),
-    model: json.containsKey('model') ? json['model'] as String? : throw ArgumentError.value(null, 'model', 'Required property is missing'),
-    serviceTier: json.containsKey('service_tier') ? json['service_tier'] != null ? BetaCostReportServiceTier.fromJson(json['service_tier'] as String) : null : throw ArgumentError.value(null, 'service_tier', 'Required property is missing'),
-    tokenType: json.containsKey('token_type') ? json['token_type'] != null ? BetaCostReportTokenType.fromJson(json['token_type'] as String) : null : throw ArgumentError.value(null, 'token_type', 'Required property is missing'),
-    inferenceGeo: json.containsKey('inference_geo') ? json['inference_geo'] != null ? BetaInferenceGeoFilter.fromJson(json['inference_geo'] as String) : null : throw ArgumentError.value(null, 'inference_geo', 'Required property is missing'),
-  );
+  factory BetaCostReportItem.fromJson(Map<String, dynamic> json) =>
+      BetaCostReportItem(
+        currency: (json['currency'] as String?)!,
+        amount: (json['amount'] as String?)!,
+        workspaceId: json.containsKey('workspace_id')
+            ? json['workspace_id'] as String?
+            : throw ArgumentError.value(
+                null, 'workspace_id', 'Required property is missing'),
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        costType: json.containsKey('cost_type')
+            ? json['cost_type'] != null
+                ? BetaCostType.fromJson(json['cost_type'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'cost_type', 'Required property is missing'),
+        contextWindow: json.containsKey('context_window')
+            ? json['context_window'] != null
+                ? BetaMessagesUsageReportContextWindow.fromJson(
+                    json['context_window'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'context_window', 'Required property is missing'),
+        model: json.containsKey('model')
+            ? json['model'] as String?
+            : throw ArgumentError.value(
+                null, 'model', 'Required property is missing'),
+        serviceTier: json.containsKey('service_tier')
+            ? json['service_tier'] != null
+                ? BetaCostReportServiceTier.fromJson(
+                    json['service_tier'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'service_tier', 'Required property is missing'),
+        tokenType: json.containsKey('token_type')
+            ? json['token_type'] != null
+                ? BetaCostReportTokenType.fromJson(json['token_type'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'token_type', 'Required property is missing'),
+        inferenceGeo: json.containsKey('inference_geo')
+            ? json['inference_geo'] != null
+                ? BetaInferenceGeoFilter.fromJson(
+                    json['inference_geo'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'inference_geo', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'currency': currency,
-    'amount': amount,
-    'workspace_id': workspaceId,
-    'description': description,
-    'cost_type': costType?.toJson(),
-    'context_window': contextWindow?.toJson(),
-    'model': model,
-    'service_tier': serviceTier?.toJson(),
-    'token_type': tokenType?.toJson(),
-    'inference_geo': inferenceGeo?.toJson(),
-  };
+        'currency': currency,
+        'amount': amount,
+        'workspace_id': workspaceId,
+        'description': description,
+        'cost_type': costType?.toJson(),
+        'context_window': contextWindow?.toJson(),
+        'model': model,
+        'service_tier': serviceTier?.toJson(),
+        'token_type': tokenType?.toJson(),
+        'inference_geo': inferenceGeo?.toJson(),
+      };
 }
 
 /// Typed representation of the `BetaCostReportServiceTier` API schema.
 final class BetaCostReportServiceTier {
-
   final String value;
 
   const BetaCostReportServiceTier._(this.value);
 
-  factory BetaCostReportServiceTier.fromJson(String value) => BetaCostReportServiceTier._(value);
+  factory BetaCostReportServiceTier.fromJson(String value) =>
+      BetaCostReportServiceTier._(value);
 
   static const batch = BetaCostReportServiceTier._('batch');
   static const standard = BetaCostReportServiceTier._('standard');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaCostReportServiceTier && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaCostReportServiceTier && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `BetaCostReportTimeBucket` API schema.
 class BetaCostReportTimeBucket {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Start of the time bucket (inclusive) in RFC 3339 format.
   final String startingAt;
+
   /// End of the time bucket (exclusive) in RFC 3339 format.
   final String endingAt;
+
   /// List of cost items for this time bucket. There may be multiple items if one or more `group_by[]` parameters are specified.
   final List<BetaCostReportItem> results;
 
-  const BetaCostReportTimeBucket({required this.startingAt, required this.endingAt, required this.results});
+  const BetaCostReportTimeBucket(
+      {required this.startingAt,
+      required this.endingAt,
+      required this.results});
 
-  BetaCostReportTimeBucket Function({String startingAt, String endingAt, List<BetaCostReportItem> results}) get copyWith => _copyWith;
+  BetaCostReportTimeBucket Function(
+      {String startingAt,
+      String endingAt,
+      List<BetaCostReportItem> results}) get copyWith => _copyWith;
 
-  BetaCostReportTimeBucket _copyWith({Object? startingAt = sdkOmittedValue, Object? endingAt = sdkOmittedValue, Object? results = sdkOmittedValue}) => BetaCostReportTimeBucket(
-    startingAt: identical(startingAt, sdkOmittedValue) ? this.startingAt : startingAt as String,
-    endingAt: identical(endingAt, sdkOmittedValue) ? this.endingAt : endingAt as String,
-    results: identical(results, sdkOmittedValue) ? this.results : results as List<BetaCostReportItem>,
-  );
+  BetaCostReportTimeBucket _copyWith(
+          {Object? startingAt = sdkOmittedValue,
+          Object? endingAt = sdkOmittedValue,
+          Object? results = sdkOmittedValue}) =>
+      BetaCostReportTimeBucket(
+        startingAt: identical(startingAt, sdkOmittedValue)
+            ? this.startingAt
+            : startingAt as String,
+        endingAt: identical(endingAt, sdkOmittedValue)
+            ? this.endingAt
+            : endingAt as String,
+        results: identical(results, sdkOmittedValue)
+            ? this.results
+            : results as List<BetaCostReportItem>,
+      );
 
-  factory BetaCostReportTimeBucket.fromJson(Map<String, dynamic> json) => BetaCostReportTimeBucket(
-    startingAt: (json['starting_at'] as String?)!,
-    endingAt: (json['ending_at'] as String?)!,
-    results: ((json['results'] as List?)?.map((e) => BetaCostReportItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory BetaCostReportTimeBucket.fromJson(Map<String, dynamic> json) =>
+      BetaCostReportTimeBucket(
+        startingAt: (json['starting_at'] as String?)!,
+        endingAt: (json['ending_at'] as String?)!,
+        results: ((json['results'] as List?)
+            ?.map((e) => BetaCostReportItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'starting_at': startingAt,
-    'ending_at': endingAt,
-    'results': results.map((item) => item.toJson()).toList(),
-  };
+        'starting_at': startingAt,
+        'ending_at': endingAt,
+        'results': results.map((item) => item.toJson()).toList(),
+      };
 }
 
 /// Typed representation of the `BetaCostReportTimeBucketWidth` API schema.
 final class BetaCostReportTimeBucketWidth {
-
   final String value;
 
   const BetaCostReportTimeBucketWidth._(this.value);
 
-  factory BetaCostReportTimeBucketWidth.fromJson(String value) => BetaCostReportTimeBucketWidth._(value);
+  factory BetaCostReportTimeBucketWidth.fromJson(String value) =>
+      BetaCostReportTimeBucketWidth._(value);
 
   static const v1d = BetaCostReportTimeBucketWidth._('1d');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaCostReportTimeBucketWidth && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaCostReportTimeBucketWidth && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `BetaCostType` API schema.
 final class BetaCostType {
-
   final String value;
 
   const BetaCostType._(this.value);
@@ -188,44 +315,71 @@ final class BetaCostType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaCostType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaCostType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `BetaGetCostReportResponse` API schema.
 class BetaGetCostReportResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// List of time buckets for this page, oldest first: one per `bucket_width` interval, including intervals with no costs (their `results` list is empty). A page holds at most `limit` buckets.
   final List<BetaCostReportTimeBucket> data;
+
   /// Indicates if there are more results.
   final bool hasMore;
+
   /// Opaque cursor for the next page, or `null` when `has_more` is false. Pass it as the `page` parameter in the next request.
   final String? nextPage;
 
-  const BetaGetCostReportResponse({required this.data, required this.hasMore, required this.nextPage});
+  const BetaGetCostReportResponse(
+      {required this.data, required this.hasMore, required this.nextPage});
 
-  BetaGetCostReportResponse Function({List<BetaCostReportTimeBucket> data, bool hasMore, String? nextPage}) get copyWith => _copyWith;
+  BetaGetCostReportResponse Function(
+      {List<BetaCostReportTimeBucket> data,
+      bool hasMore,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaGetCostReportResponse _copyWith({Object? data = sdkOmittedValue, Object? hasMore = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaGetCostReportResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaCostReportTimeBucket>,
-    hasMore: identical(hasMore, sdkOmittedValue) ? this.hasMore : hasMore as bool,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaGetCostReportResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? hasMore = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaGetCostReportResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaCostReportTimeBucket>,
+        hasMore: identical(hasMore, sdkOmittedValue)
+            ? this.hasMore
+            : hasMore as bool,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaGetCostReportResponse.fromJson(Map<String, dynamic> json) => BetaGetCostReportResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaCostReportTimeBucket.fromJson(e as Map<String, dynamic>)).toList())!,
-    hasMore: (json['has_more'] as bool?)!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  );
+  factory BetaGetCostReportResponse.fromJson(Map<String, dynamic> json) =>
+      BetaGetCostReportResponse(
+        data: ((json['data'] as List?)
+            ?.map((e) =>
+                BetaCostReportTimeBucket.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        hasMore: (json['has_more'] as bool?)!,
+        nextPage: json.containsKey('next_page')
+            ? json['next_page'] as String?
+            : throw ArgumentError.value(
+                null, 'next_page', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'has_more': hasMore,
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'has_more': hasMore,
+        'next_page': nextPage,
+      };
 }

@@ -10,32 +10,60 @@ sealed class BetaFallbackCreditUsageStatus {
   const BetaFallbackCreditUsageStatus();
   factory BetaFallbackCreditUsageStatus.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaFallbackCreditRedeemed.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaFallbackCreditUsageStatusBetaFallbackCreditRedeemed(value); } } catch (_) {}
-      try { final value = BetaFallbackCreditNotApplied.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaFallbackCreditUsageStatusBetaFallbackCreditNotApplied(value); } } catch (_) {}
+      try {
+        final value = BetaFallbackCreditRedeemed.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaFallbackCreditUsageStatusBetaFallbackCreditRedeemed(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaFallbackCreditNotApplied.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaFallbackCreditUsageStatusBetaFallbackCreditNotApplied(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaFallbackCreditUsageStatusBetaFallbackCreditRedeemed(BetaFallbackCreditRedeemed.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaFallbackCreditUsageStatusBetaFallbackCreditNotApplied(BetaFallbackCreditNotApplied.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"not_applied", "redeemed"}.contains(json["type"])) { return UnknownBetaFallbackCreditUsageStatus(json); }
-    throw FormatException("No variant matched for BetaFallbackCreditUsageStatus");
+    try {
+      return BetaFallbackCreditUsageStatusBetaFallbackCreditRedeemed(
+          BetaFallbackCreditRedeemed.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaFallbackCreditUsageStatusBetaFallbackCreditNotApplied(
+          BetaFallbackCreditNotApplied.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"not_applied", "redeemed"}.contains(json["type"])) {
+      return UnknownBetaFallbackCreditUsageStatus(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaFallbackCreditUsageStatus");
   }
   Object? toJson();
 }
 
-final class BetaFallbackCreditUsageStatusBetaFallbackCreditRedeemed extends BetaFallbackCreditUsageStatus {
+final class BetaFallbackCreditUsageStatusBetaFallbackCreditRedeemed
+    extends BetaFallbackCreditUsageStatus {
   final BetaFallbackCreditRedeemed value;
   const BetaFallbackCreditUsageStatusBetaFallbackCreditRedeemed(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaFallbackCreditUsageStatusBetaFallbackCreditNotApplied extends BetaFallbackCreditUsageStatus {
+final class BetaFallbackCreditUsageStatusBetaFallbackCreditNotApplied
+    extends BetaFallbackCreditUsageStatus {
   final BetaFallbackCreditNotApplied value;
   const BetaFallbackCreditUsageStatusBetaFallbackCreditNotApplied(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaFallbackCreditUsageStatus] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaFallbackCreditUsageStatus extends BetaFallbackCreditUsageStatus {
+final class UnknownBetaFallbackCreditUsageStatus
+    extends BetaFallbackCreditUsageStatus {
   final Map<String, dynamic> raw;
   const UnknownBetaFallbackCreditUsageStatus(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

@@ -8,27 +8,44 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMCPToolsetDefaultConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
+
   /// Permission policy for tool execution.
   final BetaManagedAgentsPermissionPolicy permissionPolicy;
 
-  const BetaManagedAgentsMCPToolsetDefaultConfig({required this.enabled, required this.permissionPolicy});
+  const BetaManagedAgentsMCPToolsetDefaultConfig(
+      {required this.enabled, required this.permissionPolicy});
 
-  BetaManagedAgentsMCPToolsetDefaultConfig Function({bool enabled, BetaManagedAgentsPermissionPolicy permissionPolicy}) get copyWith => _copyWith;
+  BetaManagedAgentsMCPToolsetDefaultConfig Function(
+          {bool enabled, BetaManagedAgentsPermissionPolicy permissionPolicy})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsMCPToolsetDefaultConfig _copyWith({Object? enabled = sdkOmittedValue, Object? permissionPolicy = sdkOmittedValue}) => BetaManagedAgentsMCPToolsetDefaultConfig(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-    permissionPolicy: identical(permissionPolicy, sdkOmittedValue) ? this.permissionPolicy : permissionPolicy as BetaManagedAgentsPermissionPolicy,
-  );
+  BetaManagedAgentsMCPToolsetDefaultConfig _copyWith(
+          {Object? enabled = sdkOmittedValue,
+          Object? permissionPolicy = sdkOmittedValue}) =>
+      BetaManagedAgentsMCPToolsetDefaultConfig(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+        permissionPolicy: identical(permissionPolicy, sdkOmittedValue)
+            ? this.permissionPolicy
+            : permissionPolicy as BetaManagedAgentsPermissionPolicy,
+      );
 
-  factory BetaManagedAgentsMCPToolsetDefaultConfig.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMCPToolsetDefaultConfig(
-    enabled: (json['enabled'] as bool?)!,
-    permissionPolicy: (json['permission_policy'] != null ? BetaManagedAgentsPermissionPolicy.fromJson(json['permission_policy']) : null)!,
-  );
+  factory BetaManagedAgentsMCPToolsetDefaultConfig.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMCPToolsetDefaultConfig(
+        enabled: (json['enabled'] as bool?)!,
+        permissionPolicy: (json['permission_policy'] != null
+            ? BetaManagedAgentsPermissionPolicy.fromJson(
+                json['permission_policy'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-    'permission_policy': permissionPolicy.toJson(),
-  };
+        'enabled': enabled,
+        'permission_policy': permissionPolicy.toJson(),
+      };
 }

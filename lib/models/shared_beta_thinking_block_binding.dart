@@ -8,25 +8,44 @@ part of 'shared_beta_thinking.dart';
 class BetaThinkingBlockBinding {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// "error" (default) | "drop_block". What happens when a thinking block in `messages` fails the conversation check (it was created in a different conversation, or the messages before it have changed since). "error" fails the request with a 400 error. "drop_block" removes the failing blocks and the request proceeds; each removal is reported in `input_transformations`.
   final SdkOptional<BetaThinkingPrefixMismatchBehavior?> prefixMismatchBehavior;
 
-  const BetaThinkingBlockBinding({this.prefixMismatchBehavior = const SdkOmitted()});
+  const BetaThinkingBlockBinding(
+      {this.prefixMismatchBehavior = const SdkOmitted()});
 
-  BetaThinkingBlockBinding Function({SdkOptional<BetaThinkingPrefixMismatchBehavior?> prefixMismatchBehavior}) get copyWith => _copyWith;
+  BetaThinkingBlockBinding Function(
+      {SdkOptional<BetaThinkingPrefixMismatchBehavior?>
+          prefixMismatchBehavior}) get copyWith => _copyWith;
 
-  BetaThinkingBlockBinding _copyWith({Object? prefixMismatchBehavior = sdkOmittedValue}) => BetaThinkingBlockBinding(
-    prefixMismatchBehavior: identical(prefixMismatchBehavior, sdkOmittedValue) ? this.prefixMismatchBehavior : prefixMismatchBehavior as SdkOptional<BetaThinkingPrefixMismatchBehavior?>,
-  );
+  BetaThinkingBlockBinding _copyWith(
+          {Object? prefixMismatchBehavior = sdkOmittedValue}) =>
+      BetaThinkingBlockBinding(
+        prefixMismatchBehavior:
+            identical(prefixMismatchBehavior, sdkOmittedValue)
+                ? this.prefixMismatchBehavior
+                : prefixMismatchBehavior
+                    as SdkOptional<BetaThinkingPrefixMismatchBehavior?>,
+      );
 
-  factory BetaThinkingBlockBinding.fromJson(Map<String, dynamic> json) => BetaThinkingBlockBinding(
-    prefixMismatchBehavior: json.containsKey('prefix_mismatch_behavior') ? SdkPresent(json['prefix_mismatch_behavior'] != null ? BetaThinkingPrefixMismatchBehavior.fromJson(json['prefix_mismatch_behavior'] as String) : null) : const SdkOmitted(),
-  );
+  factory BetaThinkingBlockBinding.fromJson(Map<String, dynamic> json) =>
+      BetaThinkingBlockBinding(
+        prefixMismatchBehavior: json.containsKey('prefix_mismatch_behavior')
+            ? SdkPresent(json['prefix_mismatch_behavior'] != null
+                ? BetaThinkingPrefixMismatchBehavior.fromJson(
+                    json['prefix_mismatch_behavior'] as String)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (prefixMismatchBehavior) {
-      SdkPresent<BetaThinkingPrefixMismatchBehavior?>(value: final value) => {'prefix_mismatch_behavior': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (prefixMismatchBehavior) {
+          SdkPresent<BetaThinkingPrefixMismatchBehavior?>(value: final value) =>
+            {
+              'prefix_mismatch_behavior': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

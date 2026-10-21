@@ -8,40 +8,64 @@ part of 'shared_beta_browser.dart';
 class BetaBrowserStateTabEntry {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether this tab is the active tab after this call. Whenever `tabs` is non-empty, exactly one entry is marked `active: true`.
   final SdkOptional<bool> active;
+
   /// The caller-assigned identifier for this tab, unique within the inventory.
   final String tabId;
+
   /// The title of the page the tab is showing. May be empty.
   final String title;
+
   /// The URL of the page the tab is showing. May be empty.
   final String url;
 
-  const BetaBrowserStateTabEntry({this.active = const SdkOmitted(), required this.tabId, required this.title, required this.url});
+  const BetaBrowserStateTabEntry(
+      {this.active = const SdkOmitted(),
+      required this.tabId,
+      required this.title,
+      required this.url});
 
-  BetaBrowserStateTabEntry Function({SdkOptional<bool> active, String tabId, String title, String url}) get copyWith => _copyWith;
+  BetaBrowserStateTabEntry Function(
+      {SdkOptional<bool> active,
+      String tabId,
+      String title,
+      String url}) get copyWith => _copyWith;
 
-  BetaBrowserStateTabEntry _copyWith({Object? active = sdkOmittedValue, Object? tabId = sdkOmittedValue, Object? title = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaBrowserStateTabEntry(
-    active: identical(active, sdkOmittedValue) ? this.active : active as SdkOptional<bool>,
-    tabId: identical(tabId, sdkOmittedValue) ? this.tabId : tabId as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BetaBrowserStateTabEntry _copyWith(
+          {Object? active = sdkOmittedValue,
+          Object? tabId = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      BetaBrowserStateTabEntry(
+        active: identical(active, sdkOmittedValue)
+            ? this.active
+            : active as SdkOptional<bool>,
+        tabId: identical(tabId, sdkOmittedValue) ? this.tabId : tabId as String,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BetaBrowserStateTabEntry.fromJson(Map<String, dynamic> json) => BetaBrowserStateTabEntry(
-    active: json['active'] != null ? SdkPresent((json['active'] as bool?)!) : const SdkOmitted(),
-    tabId: (json['tab_id'] as String?)!,
-    title: (json['title'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BetaBrowserStateTabEntry.fromJson(Map<String, dynamic> json) =>
+      BetaBrowserStateTabEntry(
+        active: json['active'] != null
+            ? SdkPresent((json['active'] as bool?)!)
+            : const SdkOmitted(),
+        tabId: (json['tab_id'] as String?)!,
+        title: (json['title'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (active) {
-      SdkPresent<bool>(value: final value) => {'active': value,},
-      _ => const <String, dynamic>{},
-    },
-    'tab_id': tabId,
-    'title': title,
-    'url': url,
-  };
+        ...switch (active) {
+          SdkPresent<bool>(value: final value) => {
+              'active': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'tab_id': tabId,
+        'title': title,
+        'url': url,
+      };
 }

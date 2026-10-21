@@ -8,27 +8,40 @@ part of 'shared_beta.dart';
 class BetaOrgServiceScope {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `service` wire field.
   final String service;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaOrgServiceScopeType type_;
 
   const BetaOrgServiceScope({required this.service, required this.type_});
 
-  BetaOrgServiceScope Function({String service, BetaOrgServiceScopeType type_}) get copyWith => _copyWith;
+  BetaOrgServiceScope Function({String service, BetaOrgServiceScopeType type_})
+      get copyWith => _copyWith;
 
-  BetaOrgServiceScope _copyWith({Object? service = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaOrgServiceScope(
-    service: identical(service, sdkOmittedValue) ? this.service : service as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaOrgServiceScopeType,
-  );
+  BetaOrgServiceScope _copyWith(
+          {Object? service = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaOrgServiceScope(
+        service: identical(service, sdkOmittedValue)
+            ? this.service
+            : service as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaOrgServiceScopeType,
+      );
 
-  factory BetaOrgServiceScope.fromJson(Map<String, dynamic> json) => BetaOrgServiceScope(
-    service: (json['service'] as String?)!,
-    type_: (json['type'] != null ? BetaOrgServiceScopeType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaOrgServiceScope.fromJson(Map<String, dynamic> json) =>
+      BetaOrgServiceScope(
+        service: (json['service'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaOrgServiceScopeType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'service': service,
-    'type': type_.toJson(),
-  };
+        'service': service,
+        'type': type_.toJson(),
+      };
 }

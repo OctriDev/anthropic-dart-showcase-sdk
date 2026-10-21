@@ -8,42 +8,76 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSpanOutcomeEvaluationStartEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSpanOutcomeEvaluationStartEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Timestamp when outcome evaluation started.
   final String processedAt;
+
   /// 0-indexed revision cycle. 0 is the first evaluation; 1 is the re-evaluation after the first revision; etc.
   final int iteration;
+
   /// The `outc_` ID of the outcome being evaluated.
   final String outcomeId;
 
-  const BetaManagedAgentsSpanOutcomeEvaluationStartEvent({required this.type_, required this.id, required this.processedAt, required this.iteration, required this.outcomeId});
+  const BetaManagedAgentsSpanOutcomeEvaluationStartEvent(
+      {required this.type_,
+      required this.id,
+      required this.processedAt,
+      required this.iteration,
+      required this.outcomeId});
 
-  BetaManagedAgentsSpanOutcomeEvaluationStartEvent Function({BetaManagedAgentsSpanOutcomeEvaluationStartEventType type_, String id, String processedAt, int iteration, String outcomeId}) get copyWith => _copyWith;
+  BetaManagedAgentsSpanOutcomeEvaluationStartEvent Function(
+      {BetaManagedAgentsSpanOutcomeEvaluationStartEventType type_,
+      String id,
+      String processedAt,
+      int iteration,
+      String outcomeId}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSpanOutcomeEvaluationStartEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? iteration = sdkOmittedValue, Object? outcomeId = sdkOmittedValue}) => BetaManagedAgentsSpanOutcomeEvaluationStartEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSpanOutcomeEvaluationStartEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
-    iteration: identical(iteration, sdkOmittedValue) ? this.iteration : iteration as int,
-    outcomeId: identical(outcomeId, sdkOmittedValue) ? this.outcomeId : outcomeId as String,
-  );
+  BetaManagedAgentsSpanOutcomeEvaluationStartEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue,
+          Object? iteration = sdkOmittedValue,
+          Object? outcomeId = sdkOmittedValue}) =>
+      BetaManagedAgentsSpanOutcomeEvaluationStartEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSpanOutcomeEvaluationStartEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as String,
+        iteration: identical(iteration, sdkOmittedValue)
+            ? this.iteration
+            : iteration as int,
+        outcomeId: identical(outcomeId, sdkOmittedValue)
+            ? this.outcomeId
+            : outcomeId as String,
+      );
 
-  factory BetaManagedAgentsSpanOutcomeEvaluationStartEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSpanOutcomeEvaluationStartEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsSpanOutcomeEvaluationStartEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    processedAt: (json['processed_at'] as String?)!,
-    iteration: ((json['iteration'] as num?)?.toInt())!,
-    outcomeId: (json['outcome_id'] as String?)!,
-  );
+  factory BetaManagedAgentsSpanOutcomeEvaluationStartEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSpanOutcomeEvaluationStartEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSpanOutcomeEvaluationStartEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        processedAt: (json['processed_at'] as String?)!,
+        iteration: ((json['iteration'] as num?)?.toInt())!,
+        outcomeId: (json['outcome_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'processed_at': processedAt,
-    'iteration': iteration,
-    'outcome_id': outcomeId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'processed_at': processedAt,
+        'iteration': iteration,
+        'outcome_id': outcomeId,
+      };
 }

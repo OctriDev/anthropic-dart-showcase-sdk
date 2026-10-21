@@ -10,144 +10,382 @@ sealed class BetaManagedAgentsRunError {
   const BetaManagedAgentsRunError();
   factory BetaManagedAgentsRunError.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsEnvironmentArchivedRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentArchivedRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsAgentArchivedRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsAgentArchivedRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsEnvironmentNotFoundRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentNotFoundRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsVaultNotFoundRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsVaultNotFoundRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsVaultArchivedRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsVaultArchivedRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsFileNotFoundRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsMemoryStoreArchivedRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSkillNotFoundRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSessionResourceNotFoundRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsWorkspaceArchivedRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsOrganizationDisabledRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSessionRateLimitedRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSessionCreationRejectedRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsUnknownRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsUnknownRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSelfHostedResourcesUnsupportedRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsMcpEgressBlockedRunError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError(value); } } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsEnvironmentArchivedRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentArchivedRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsAgentArchivedRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsAgentArchivedRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsEnvironmentNotFoundRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentNotFoundRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsVaultNotFoundRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsVaultNotFoundRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsVaultArchivedRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsVaultArchivedRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsFileNotFoundRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsMemoryStoreArchivedRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsSkillNotFoundRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsSessionResourceNotFoundRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsWorkspaceArchivedRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsOrganizationDisabledRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsSessionRateLimitedRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsSessionCreationRejectedRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsUnknownRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsUnknownRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsSelfHostedResourcesUnsupportedRunError.fromJson(
+                json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsMcpEgressBlockedRunError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentArchivedRunError(BetaManagedAgentsEnvironmentArchivedRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsAgentArchivedRunError(BetaManagedAgentsAgentArchivedRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentNotFoundRunError(BetaManagedAgentsEnvironmentNotFoundRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsVaultNotFoundRunError(BetaManagedAgentsVaultNotFoundRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsVaultArchivedRunError(BetaManagedAgentsVaultArchivedRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError(BetaManagedAgentsFileNotFoundRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError(BetaManagedAgentsMemoryStoreArchivedRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError(BetaManagedAgentsSkillNotFoundRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError(BetaManagedAgentsSessionResourceNotFoundRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError(BetaManagedAgentsWorkspaceArchivedRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError(BetaManagedAgentsOrganizationDisabledRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError(BetaManagedAgentsSessionRateLimitedRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError(BetaManagedAgentsSessionCreationRejectedRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsUnknownRunError(BetaManagedAgentsUnknownRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError(BetaManagedAgentsSelfHostedResourcesUnsupportedRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError(BetaManagedAgentsMcpEgressBlockedRunError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"environment_archived_error", "agent_archived_error", "environment_not_found_error", "vault_not_found_error", "vault_archived_error", "file_not_found_error", "memory_store_archived_error", "skill_not_found_error", "session_resource_not_found_error", "workspace_archived_error", "organization_disabled_error", "session_rate_limited_error", "session_creation_rejected_error", "unknown_error", "self_hosted_resources_unsupported_error", "mcp_egress_blocked_error"}.contains(json["type"])) { return UnknownBetaManagedAgentsRunError(json); }
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentArchivedRunError(
+          BetaManagedAgentsEnvironmentArchivedRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsAgentArchivedRunError(
+          BetaManagedAgentsAgentArchivedRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentNotFoundRunError(
+          BetaManagedAgentsEnvironmentNotFoundRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsVaultNotFoundRunError(
+          BetaManagedAgentsVaultNotFoundRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsVaultArchivedRunError(
+          BetaManagedAgentsVaultArchivedRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError(
+          BetaManagedAgentsFileNotFoundRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError(
+          BetaManagedAgentsMemoryStoreArchivedRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError(
+          BetaManagedAgentsSkillNotFoundRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError(
+          BetaManagedAgentsSessionResourceNotFoundRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError(
+          BetaManagedAgentsWorkspaceArchivedRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError(
+          BetaManagedAgentsOrganizationDisabledRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError(
+          BetaManagedAgentsSessionRateLimitedRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError(
+          BetaManagedAgentsSessionCreationRejectedRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsUnknownRunError(
+          BetaManagedAgentsUnknownRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError(
+          BetaManagedAgentsSelfHostedResourcesUnsupportedRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError(
+          BetaManagedAgentsMcpEgressBlockedRunError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "environment_archived_error",
+          "agent_archived_error",
+          "environment_not_found_error",
+          "vault_not_found_error",
+          "vault_archived_error",
+          "file_not_found_error",
+          "memory_store_archived_error",
+          "skill_not_found_error",
+          "session_resource_not_found_error",
+          "workspace_archived_error",
+          "organization_disabled_error",
+          "session_rate_limited_error",
+          "session_creation_rejected_error",
+          "unknown_error",
+          "self_hosted_resources_unsupported_error",
+          "mcp_egress_blocked_error"
+        }.contains(json["type"])) {
+      return UnknownBetaManagedAgentsRunError(json);
+    }
     throw FormatException("No variant matched for BetaManagedAgentsRunError");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentArchivedRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentArchivedRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsEnvironmentArchivedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentArchivedRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentArchivedRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsAgentArchivedRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsAgentArchivedRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsAgentArchivedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsAgentArchivedRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsAgentArchivedRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentNotFoundRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentNotFoundRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsEnvironmentNotFoundRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentNotFoundRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsEnvironmentNotFoundRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsVaultNotFoundRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsVaultNotFoundRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsVaultNotFoundRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsVaultNotFoundRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsVaultNotFoundRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsVaultArchivedRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsVaultArchivedRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsVaultArchivedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsVaultArchivedRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsVaultArchivedRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsFileNotFoundRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsFileNotFoundRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsMemoryStoreArchivedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsMemoryStoreArchivedRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsSkillNotFoundRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsSkillNotFoundRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsSessionResourceNotFoundRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionResourceNotFoundRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsWorkspaceArchivedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsWorkspaceArchivedRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsOrganizationDisabledRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsOrganizationDisabledRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsSessionRateLimitedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionRateLimitedRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsSessionCreationRejectedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsSessionCreationRejectedRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsUnknownRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsUnknownRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsUnknownRunError value;
   const BetaManagedAgentsRunErrorBetaManagedAgentsUnknownRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsSelfHostedResourcesUnsupportedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsSelfHostedResourcesUnsupportedRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError extends BetaManagedAgentsRunError {
+final class BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError
+    extends BetaManagedAgentsRunError {
   final BetaManagedAgentsMcpEgressBlockedRunError value;
-  const BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRunErrorBetaManagedAgentsMcpEgressBlockedRunError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsRunError] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaManagedAgentsRunError extends BetaManagedAgentsRunError {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsRunError(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

@@ -8,27 +8,41 @@ part of 'shared_beta_request.dart';
 class BetaRequestRedactedThinkingBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The `data` value of this redacted thinking block, exactly as returned by the API in a previous response. Opaque and encrypted; pass it back unchanged.
   final String data;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestRedactedThinkingBlockType type_;
 
-  const BetaRequestRedactedThinkingBlock({required this.data, required this.type_});
+  const BetaRequestRedactedThinkingBlock(
+      {required this.data, required this.type_});
 
-  BetaRequestRedactedThinkingBlock Function({String data, BetaRequestRedactedThinkingBlockType type_}) get copyWith => _copyWith;
+  BetaRequestRedactedThinkingBlock Function(
+      {String data,
+      BetaRequestRedactedThinkingBlockType type_}) get copyWith => _copyWith;
 
-  BetaRequestRedactedThinkingBlock _copyWith({Object? data = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestRedactedThinkingBlock(
-    data: identical(data, sdkOmittedValue) ? this.data : data as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestRedactedThinkingBlockType,
-  );
+  BetaRequestRedactedThinkingBlock _copyWith(
+          {Object? data = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      BetaRequestRedactedThinkingBlock(
+        data: identical(data, sdkOmittedValue) ? this.data : data as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestRedactedThinkingBlockType,
+      );
 
-  factory BetaRequestRedactedThinkingBlock.fromJson(Map<String, dynamic> json) => BetaRequestRedactedThinkingBlock(
-    data: (json['data'] as String?)!,
-    type_: (json['type'] != null ? BetaRequestRedactedThinkingBlockType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestRedactedThinkingBlock.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestRedactedThinkingBlock(
+        data: (json['data'] as String?)!,
+        type_: (json['type'] != null
+            ? BetaRequestRedactedThinkingBlockType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'data': data,
-    'type': type_.toJson(),
-  };
+        'data': data,
+        'type': type_.toJson(),
+      };
 }

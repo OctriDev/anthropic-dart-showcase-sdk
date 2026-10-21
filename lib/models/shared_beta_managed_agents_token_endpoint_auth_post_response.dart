@@ -8,22 +8,34 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsTokenEndpointAuthPostResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTokenEndpointAuthPostResponseType type_;
 
   const BetaManagedAgentsTokenEndpointAuthPostResponse({required this.type_});
 
-  BetaManagedAgentsTokenEndpointAuthPostResponse Function({BetaManagedAgentsTokenEndpointAuthPostResponseType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsTokenEndpointAuthPostResponse Function(
+          {BetaManagedAgentsTokenEndpointAuthPostResponseType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsTokenEndpointAuthPostResponse _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsTokenEndpointAuthPostResponse(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTokenEndpointAuthPostResponseType,
-  );
+  BetaManagedAgentsTokenEndpointAuthPostResponse _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsTokenEndpointAuthPostResponse(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsTokenEndpointAuthPostResponseType,
+      );
 
-  factory BetaManagedAgentsTokenEndpointAuthPostResponse.fromJson(Map<String, dynamic> json) => BetaManagedAgentsTokenEndpointAuthPostResponse(
-    type_: (json['type'] != null ? BetaManagedAgentsTokenEndpointAuthPostResponseType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaManagedAgentsTokenEndpointAuthPostResponse.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsTokenEndpointAuthPostResponse(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsTokenEndpointAuthPostResponseType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

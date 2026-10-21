@@ -8,46 +8,91 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsModelConfigParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The model that will power your agent. See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
   final BetaManagedAgentsModel id;
+
   /// Inference speed mode. Defaults to `standard`.
   final SdkOptional<BetaManagedAgentsSpeed?> speed;
+
   /// How hard Claude works on each inference call. Accepts a bare level string (`"high"`) or `{"type": "high"}`. On create, omitting it resolves the per-model default; on update, omitting it leaves the stored value unchanged.
   final SdkOptional<BetaManagedAgentsEffortParams?> effort;
+
   /// Geographic region for model inference. When unset, requests fall through to the workspace's default_inference_geo. On update, `model` is whole-object replacement — omitting inference_geo clears it.
   final SdkOptional<String?> inferenceGeo;
 
-  const BetaManagedAgentsModelConfigParams({required this.id, this.speed = const SdkOmitted(), this.effort = const SdkOmitted(), this.inferenceGeo = const SdkOmitted()});
+  const BetaManagedAgentsModelConfigParams(
+      {required this.id,
+      this.speed = const SdkOmitted(),
+      this.effort = const SdkOmitted(),
+      this.inferenceGeo = const SdkOmitted()});
 
-  BetaManagedAgentsModelConfigParams Function({BetaManagedAgentsModel id, SdkOptional<BetaManagedAgentsSpeed?> speed, SdkOptional<BetaManagedAgentsEffortParams?> effort, SdkOptional<String?> inferenceGeo}) get copyWith => _copyWith;
+  BetaManagedAgentsModelConfigParams Function(
+      {BetaManagedAgentsModel id,
+      SdkOptional<BetaManagedAgentsSpeed?> speed,
+      SdkOptional<BetaManagedAgentsEffortParams?> effort,
+      SdkOptional<String?> inferenceGeo}) get copyWith => _copyWith;
 
-  BetaManagedAgentsModelConfigParams _copyWith({Object? id = sdkOmittedValue, Object? speed = sdkOmittedValue, Object? effort = sdkOmittedValue, Object? inferenceGeo = sdkOmittedValue}) => BetaManagedAgentsModelConfigParams(
-    id: identical(id, sdkOmittedValue) ? this.id : id as BetaManagedAgentsModel,
-    speed: identical(speed, sdkOmittedValue) ? this.speed : speed as SdkOptional<BetaManagedAgentsSpeed?>,
-    effort: identical(effort, sdkOmittedValue) ? this.effort : effort as SdkOptional<BetaManagedAgentsEffortParams?>,
-    inferenceGeo: identical(inferenceGeo, sdkOmittedValue) ? this.inferenceGeo : inferenceGeo as SdkOptional<String?>,
-  );
+  BetaManagedAgentsModelConfigParams _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? speed = sdkOmittedValue,
+          Object? effort = sdkOmittedValue,
+          Object? inferenceGeo = sdkOmittedValue}) =>
+      BetaManagedAgentsModelConfigParams(
+        id: identical(id, sdkOmittedValue)
+            ? this.id
+            : id as BetaManagedAgentsModel,
+        speed: identical(speed, sdkOmittedValue)
+            ? this.speed
+            : speed as SdkOptional<BetaManagedAgentsSpeed?>,
+        effort: identical(effort, sdkOmittedValue)
+            ? this.effort
+            : effort as SdkOptional<BetaManagedAgentsEffortParams?>,
+        inferenceGeo: identical(inferenceGeo, sdkOmittedValue)
+            ? this.inferenceGeo
+            : inferenceGeo as SdkOptional<String?>,
+      );
 
-  factory BetaManagedAgentsModelConfigParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsModelConfigParams(
-    id: (json['id'] != null ? BetaManagedAgentsModel.fromJson(json['id']) : null)!,
-    speed: json.containsKey('speed') ? SdkPresent(json['speed'] != null ? BetaManagedAgentsSpeed.fromJson(json['speed'] as String) : null) : const SdkOmitted(),
-    effort: json.containsKey('effort') ? SdkPresent(json['effort'] != null ? BetaManagedAgentsEffortParams.fromJson(json['effort']) : null) : const SdkOmitted(),
-    inferenceGeo: json.containsKey('inference_geo') ? SdkPresent(json['inference_geo'] as String?) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsModelConfigParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsModelConfigParams(
+        id: (json['id'] != null
+            ? BetaManagedAgentsModel.fromJson(json['id'])
+            : null)!,
+        speed: json.containsKey('speed')
+            ? SdkPresent(json['speed'] != null
+                ? BetaManagedAgentsSpeed.fromJson(json['speed'] as String)
+                : null)
+            : const SdkOmitted(),
+        effort: json.containsKey('effort')
+            ? SdkPresent(json['effort'] != null
+                ? BetaManagedAgentsEffortParams.fromJson(json['effort'])
+                : null)
+            : const SdkOmitted(),
+        inferenceGeo: json.containsKey('inference_geo')
+            ? SdkPresent(json['inference_geo'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id.toJson(),
-    ...switch (speed) {
-      SdkPresent<BetaManagedAgentsSpeed?>(value: final value) => {'speed': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (effort) {
-      SdkPresent<BetaManagedAgentsEffortParams?>(value: final value) => {'effort': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (inferenceGeo) {
-      SdkPresent<String?>(value: final value) => {'inference_geo': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id.toJson(),
+        ...switch (speed) {
+          SdkPresent<BetaManagedAgentsSpeed?>(value: final value) => {
+              'speed': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (effort) {
+          SdkPresent<BetaManagedAgentsEffortParams?>(value: final value) => {
+              'effort': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (inferenceGeo) {
+          SdkPresent<String?>(value: final value) => {
+              'inference_geo': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

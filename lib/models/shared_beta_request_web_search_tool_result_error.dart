@@ -8,27 +8,47 @@ part of 'shared_beta_request_web.dart';
 class BetaRequestWebSearchToolResultError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `error_code` wire field.
   final BetaWebSearchToolResultErrorCode errorCode;
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaRequestWebSearchToolResultErrorType type_;
 
-  const BetaRequestWebSearchToolResultError({required this.errorCode, required this.type_});
+  const BetaRequestWebSearchToolResultError(
+      {required this.errorCode, required this.type_});
 
-  BetaRequestWebSearchToolResultError Function({BetaWebSearchToolResultErrorCode errorCode, BetaRequestWebSearchToolResultErrorType type_}) get copyWith => _copyWith;
+  BetaRequestWebSearchToolResultError Function(
+      {BetaWebSearchToolResultErrorCode errorCode,
+      BetaRequestWebSearchToolResultErrorType type_}) get copyWith => _copyWith;
 
-  BetaRequestWebSearchToolResultError _copyWith({Object? errorCode = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaRequestWebSearchToolResultError(
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as BetaWebSearchToolResultErrorCode,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaRequestWebSearchToolResultErrorType,
-  );
+  BetaRequestWebSearchToolResultError _copyWith(
+          {Object? errorCode = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaRequestWebSearchToolResultError(
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as BetaWebSearchToolResultErrorCode,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaRequestWebSearchToolResultErrorType,
+      );
 
-  factory BetaRequestWebSearchToolResultError.fromJson(Map<String, dynamic> json) => BetaRequestWebSearchToolResultError(
-    errorCode: (json['error_code'] != null ? BetaWebSearchToolResultErrorCode.fromJson(json['error_code'] as String) : null)!,
-    type_: (json['type'] != null ? BetaRequestWebSearchToolResultErrorType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaRequestWebSearchToolResultError.fromJson(
+          Map<String, dynamic> json) =>
+      BetaRequestWebSearchToolResultError(
+        errorCode: (json['error_code'] != null
+            ? BetaWebSearchToolResultErrorCode.fromJson(
+                json['error_code'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? BetaRequestWebSearchToolResultErrorType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'error_code': errorCode.toJson(),
-    'type': type_.toJson(),
-  };
+        'error_code': errorCode.toJson(),
+        'type': type_.toJson(),
+      };
 }

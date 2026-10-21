@@ -9,86 +9,150 @@ sealed class BetaManagedAgentsMcpOauthRefreshParamsScope {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMcpOauthRefreshParamsScope();
   factory BetaManagedAgentsMcpOauthRefreshParamsScope.fromJson(Object? json) {
-    if (json is String) { return BetaManagedAgentsMcpOauthRefreshParamsScopeString(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsMcpOauthRefreshParamsScope");
+    if (json is String) {
+      return BetaManagedAgentsMcpOauthRefreshParamsScopeString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsMcpOauthRefreshParamsScope");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMcpOauthRefreshParamsScopeString extends BetaManagedAgentsMcpOauthRefreshParamsScope {
+final class BetaManagedAgentsMcpOauthRefreshParamsScopeString
+    extends BetaManagedAgentsMcpOauthRefreshParamsScope {
   final String value;
   const BetaManagedAgentsMcpOauthRefreshParamsScopeString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class BetaManagedAgentsMcpOauthRefreshParamsResource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMcpOauthRefreshParamsResource();
-  factory BetaManagedAgentsMcpOauthRefreshParamsResource.fromJson(Object? json) {
-    if (json is String) { return BetaManagedAgentsMcpOauthRefreshParamsResourceString(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsMcpOauthRefreshParamsResource");
+  factory BetaManagedAgentsMcpOauthRefreshParamsResource.fromJson(
+      Object? json) {
+    if (json is String) {
+      return BetaManagedAgentsMcpOauthRefreshParamsResourceString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsMcpOauthRefreshParamsResource");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMcpOauthRefreshParamsResourceString extends BetaManagedAgentsMcpOauthRefreshParamsResource {
+final class BetaManagedAgentsMcpOauthRefreshParamsResourceString
+    extends BetaManagedAgentsMcpOauthRefreshParamsResource {
   final String value;
   const BetaManagedAgentsMcpOauthRefreshParamsResourceString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// OAuth refresh token parameters for creating a credential with refresh support.
 class BetaManagedAgentsMcpOauthRefreshParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// OAuth refresh token.
   final String refreshToken;
+
   /// Token endpoint URL used to refresh the access token.
   final String tokenEndpoint;
+
   /// OAuth client ID.
   final String clientId;
+
   /// OAuth scope for the refresh request.
   final SdkOptional<String?> scope;
+
   /// OAuth resource indicator.
   final SdkOptional<String?> resource;
+
   /// Required object value serialized in the `token_endpoint_auth` wire field.
-  final BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth tokenEndpointAuth;
+  final BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth
+      tokenEndpointAuth;
 
-  const BetaManagedAgentsMcpOauthRefreshParams({required this.refreshToken, required this.tokenEndpoint, required this.clientId, this.scope = const SdkOmitted(), this.resource = const SdkOmitted(), required this.tokenEndpointAuth});
+  const BetaManagedAgentsMcpOauthRefreshParams(
+      {required this.refreshToken,
+      required this.tokenEndpoint,
+      required this.clientId,
+      this.scope = const SdkOmitted(),
+      this.resource = const SdkOmitted(),
+      required this.tokenEndpointAuth});
 
-  BetaManagedAgentsMcpOauthRefreshParams Function({String refreshToken, String tokenEndpoint, String clientId, SdkOptional<String?> scope, SdkOptional<String?> resource, BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth tokenEndpointAuth}) get copyWith => _copyWith;
+  BetaManagedAgentsMcpOauthRefreshParams Function(
+      {String refreshToken,
+      String tokenEndpoint,
+      String clientId,
+      SdkOptional<String?> scope,
+      SdkOptional<String?> resource,
+      BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth
+          tokenEndpointAuth}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMcpOauthRefreshParams _copyWith({Object? refreshToken = sdkOmittedValue, Object? tokenEndpoint = sdkOmittedValue, Object? clientId = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? resource = sdkOmittedValue, Object? tokenEndpointAuth = sdkOmittedValue}) => BetaManagedAgentsMcpOauthRefreshParams(
-    refreshToken: identical(refreshToken, sdkOmittedValue) ? this.refreshToken : refreshToken as String,
-    tokenEndpoint: identical(tokenEndpoint, sdkOmittedValue) ? this.tokenEndpoint : tokenEndpoint as String,
-    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as String,
-    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as SdkOptional<String?>,
-    resource: identical(resource, sdkOmittedValue) ? this.resource : resource as SdkOptional<String?>,
-    tokenEndpointAuth: identical(tokenEndpointAuth, sdkOmittedValue) ? this.tokenEndpointAuth : tokenEndpointAuth as BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth,
-  );
+  BetaManagedAgentsMcpOauthRefreshParams _copyWith(
+          {Object? refreshToken = sdkOmittedValue,
+          Object? tokenEndpoint = sdkOmittedValue,
+          Object? clientId = sdkOmittedValue,
+          Object? scope = sdkOmittedValue,
+          Object? resource = sdkOmittedValue,
+          Object? tokenEndpointAuth = sdkOmittedValue}) =>
+      BetaManagedAgentsMcpOauthRefreshParams(
+        refreshToken: identical(refreshToken, sdkOmittedValue)
+            ? this.refreshToken
+            : refreshToken as String,
+        tokenEndpoint: identical(tokenEndpoint, sdkOmittedValue)
+            ? this.tokenEndpoint
+            : tokenEndpoint as String,
+        clientId: identical(clientId, sdkOmittedValue)
+            ? this.clientId
+            : clientId as String,
+        scope: identical(scope, sdkOmittedValue)
+            ? this.scope
+            : scope as SdkOptional<String?>,
+        resource: identical(resource, sdkOmittedValue)
+            ? this.resource
+            : resource as SdkOptional<String?>,
+        tokenEndpointAuth: identical(tokenEndpointAuth, sdkOmittedValue)
+            ? this.tokenEndpointAuth
+            : tokenEndpointAuth
+                as BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth,
+      );
 
-  factory BetaManagedAgentsMcpOauthRefreshParams.fromJson(Map<String, dynamic> json) => BetaManagedAgentsMcpOauthRefreshParams(
-    refreshToken: (json['refresh_token'] as String?)!,
-    tokenEndpoint: (json['token_endpoint'] as String?)!,
-    clientId: (json['client_id'] as String?)!,
-    scope: json.containsKey('scope') ? SdkPresent(json['scope'] as String?) : const SdkOmitted(),
-    resource: json.containsKey('resource') ? SdkPresent(json['resource'] as String?) : const SdkOmitted(),
-    tokenEndpointAuth: (json['token_endpoint_auth'] != null ? BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth.fromJson(json['token_endpoint_auth']) : null)!,
-  );
+  factory BetaManagedAgentsMcpOauthRefreshParams.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsMcpOauthRefreshParams(
+        refreshToken: (json['refresh_token'] as String?)!,
+        tokenEndpoint: (json['token_endpoint'] as String?)!,
+        clientId: (json['client_id'] as String?)!,
+        scope: json.containsKey('scope')
+            ? SdkPresent(json['scope'] as String?)
+            : const SdkOmitted(),
+        resource: json.containsKey('resource')
+            ? SdkPresent(json['resource'] as String?)
+            : const SdkOmitted(),
+        tokenEndpointAuth: (json['token_endpoint_auth'] != null
+            ? BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth.fromJson(
+                json['token_endpoint_auth'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'refresh_token': refreshToken,
-    'token_endpoint': tokenEndpoint,
-    'client_id': clientId,
-    ...switch (scope) {
-      SdkPresent<String?>(value: final value) => {'scope': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (resource) {
-      SdkPresent<String?>(value: final value) => {'resource': value,},
-      _ => const <String, dynamic>{},
-    },
-    'token_endpoint_auth': tokenEndpointAuth.toJson(),
-  };
+        'refresh_token': refreshToken,
+        'token_endpoint': tokenEndpoint,
+        'client_id': clientId,
+        ...switch (scope) {
+          SdkPresent<String?>(value: final value) => {
+              'scope': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (resource) {
+          SdkPresent<String?>(value: final value) => {
+              'resource': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'token_endpoint_auth': tokenEndpointAuth.toJson(),
+      };
 }

@@ -8,37 +8,67 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsSessionErrorEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsSessionErrorEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Timestamp when the error occurred.
   final String processedAt;
+
   /// Required object value serialized in the `error` wire field.
   final BetaManagedAgentsSessionErrorEventError error;
 
-  const BetaManagedAgentsSessionErrorEvent({required this.type_, required this.id, required this.processedAt, required this.error});
+  const BetaManagedAgentsSessionErrorEvent(
+      {required this.type_,
+      required this.id,
+      required this.processedAt,
+      required this.error});
 
-  BetaManagedAgentsSessionErrorEvent Function({BetaManagedAgentsSessionErrorEventType type_, String id, String processedAt, BetaManagedAgentsSessionErrorEventError error}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionErrorEvent Function(
+      {BetaManagedAgentsSessionErrorEventType type_,
+      String id,
+      String processedAt,
+      BetaManagedAgentsSessionErrorEventError error}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionErrorEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue, Object? error = sdkOmittedValue}) => BetaManagedAgentsSessionErrorEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionErrorEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
-    error: identical(error, sdkOmittedValue) ? this.error : error as BetaManagedAgentsSessionErrorEventError,
-  );
+  BetaManagedAgentsSessionErrorEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue,
+          Object? error = sdkOmittedValue}) =>
+      BetaManagedAgentsSessionErrorEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsSessionErrorEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as String,
+        error: identical(error, sdkOmittedValue)
+            ? this.error
+            : error as BetaManagedAgentsSessionErrorEventError,
+      );
 
-  factory BetaManagedAgentsSessionErrorEvent.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSessionErrorEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsSessionErrorEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    processedAt: (json['processed_at'] as String?)!,
-    error: (json['error'] != null ? BetaManagedAgentsSessionErrorEventError.fromJson(json['error']) : null)!,
-  );
+  factory BetaManagedAgentsSessionErrorEvent.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSessionErrorEvent(
+        type_: (json['type'] != null
+            ? BetaManagedAgentsSessionErrorEventType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: (json['id'] as String?)!,
+        processedAt: (json['processed_at'] as String?)!,
+        error: (json['error'] != null
+            ? BetaManagedAgentsSessionErrorEventError.fromJson(json['error'])
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'processed_at': processedAt,
-    'error': error.toJson(),
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'processed_at': processedAt,
+        'error': error.toJson(),
+      };
 }

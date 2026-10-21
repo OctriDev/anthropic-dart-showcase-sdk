@@ -8,27 +8,39 @@ part of 'shared_beta.dart';
 class BetaMonetaryAmount {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Uppercase ISO-4217 currency code. `USD` is the only currency currently supported; the accepted set is closed and grows only when a new currency is priced.
   final BetaCurrency currency;
+
   /// Amount in minor units of the currency, as an integer decimal string with no leading zeros: "2500" is $25.00 and "50" is fifty cents. A string rather than a number so no float rounding is ever applied.
   final String amount;
 
   const BetaMonetaryAmount({required this.currency, required this.amount});
 
-  BetaMonetaryAmount Function({BetaCurrency currency, String amount}) get copyWith => _copyWith;
+  BetaMonetaryAmount Function({BetaCurrency currency, String amount})
+      get copyWith => _copyWith;
 
-  BetaMonetaryAmount _copyWith({Object? currency = sdkOmittedValue, Object? amount = sdkOmittedValue}) => BetaMonetaryAmount(
-    currency: identical(currency, sdkOmittedValue) ? this.currency : currency as BetaCurrency,
-    amount: identical(amount, sdkOmittedValue) ? this.amount : amount as String,
-  );
+  BetaMonetaryAmount _copyWith(
+          {Object? currency = sdkOmittedValue,
+          Object? amount = sdkOmittedValue}) =>
+      BetaMonetaryAmount(
+        currency: identical(currency, sdkOmittedValue)
+            ? this.currency
+            : currency as BetaCurrency,
+        amount:
+            identical(amount, sdkOmittedValue) ? this.amount : amount as String,
+      );
 
-  factory BetaMonetaryAmount.fromJson(Map<String, dynamic> json) => BetaMonetaryAmount(
-    currency: (json['currency'] != null ? BetaCurrency.fromJson(json['currency'] as String) : null)!,
-    amount: (json['amount'] as String?)!,
-  );
+  factory BetaMonetaryAmount.fromJson(Map<String, dynamic> json) =>
+      BetaMonetaryAmount(
+        currency: (json['currency'] != null
+            ? BetaCurrency.fromJson(json['currency'] as String)
+            : null)!,
+        amount: (json['amount'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'currency': currency.toJson(),
-    'amount': amount,
-  };
+        'currency': currency.toJson(),
+        'amount': amount,
+      };
 }

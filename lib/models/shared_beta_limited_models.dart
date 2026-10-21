@@ -8,85 +8,157 @@ part of 'shared_beta_limited.dart';
 class BetaLimitedNetwork {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Permits outbound access to MCP server endpoints configured on the agent, beyond those listed in the `allowed_hosts` array.
   final bool allowMcpServers;
+
   /// Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array.
   final bool allowPackageManagers;
+
   /// Specifies domains the container can reach.
   final List<String> allowedHosts;
+
   /// Network policy type
   final BetaLimitedNetworkType type_;
 
-  const BetaLimitedNetwork({required this.allowMcpServers, required this.allowPackageManagers, required this.allowedHosts, required this.type_});
+  const BetaLimitedNetwork(
+      {required this.allowMcpServers,
+      required this.allowPackageManagers,
+      required this.allowedHosts,
+      required this.type_});
 
-  BetaLimitedNetwork Function({bool allowMcpServers, bool allowPackageManagers, List<String> allowedHosts, BetaLimitedNetworkType type_}) get copyWith => _copyWith;
+  BetaLimitedNetwork Function(
+      {bool allowMcpServers,
+      bool allowPackageManagers,
+      List<String> allowedHosts,
+      BetaLimitedNetworkType type_}) get copyWith => _copyWith;
 
-  BetaLimitedNetwork _copyWith({Object? allowMcpServers = sdkOmittedValue, Object? allowPackageManagers = sdkOmittedValue, Object? allowedHosts = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaLimitedNetwork(
-    allowMcpServers: identical(allowMcpServers, sdkOmittedValue) ? this.allowMcpServers : allowMcpServers as bool,
-    allowPackageManagers: identical(allowPackageManagers, sdkOmittedValue) ? this.allowPackageManagers : allowPackageManagers as bool,
-    allowedHosts: identical(allowedHosts, sdkOmittedValue) ? this.allowedHosts : allowedHosts as List<String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaLimitedNetworkType,
-  );
+  BetaLimitedNetwork _copyWith(
+          {Object? allowMcpServers = sdkOmittedValue,
+          Object? allowPackageManagers = sdkOmittedValue,
+          Object? allowedHosts = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaLimitedNetwork(
+        allowMcpServers: identical(allowMcpServers, sdkOmittedValue)
+            ? this.allowMcpServers
+            : allowMcpServers as bool,
+        allowPackageManagers: identical(allowPackageManagers, sdkOmittedValue)
+            ? this.allowPackageManagers
+            : allowPackageManagers as bool,
+        allowedHosts: identical(allowedHosts, sdkOmittedValue)
+            ? this.allowedHosts
+            : allowedHosts as List<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaLimitedNetworkType,
+      );
 
-  factory BetaLimitedNetwork.fromJson(Map<String, dynamic> json) => BetaLimitedNetwork(
-    allowMcpServers: (json['allow_mcp_servers'] as bool?)!,
-    allowPackageManagers: (json['allow_package_managers'] as bool?)!,
-    allowedHosts: ((json['allowed_hosts'] as List?)?.map((e) => e as String).toList())!,
-    type_: (json['type'] != null ? BetaLimitedNetworkType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaLimitedNetwork.fromJson(Map<String, dynamic> json) =>
+      BetaLimitedNetwork(
+        allowMcpServers: (json['allow_mcp_servers'] as bool?)!,
+        allowPackageManagers: (json['allow_package_managers'] as bool?)!,
+        allowedHosts: ((json['allowed_hosts'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+        type_: (json['type'] != null
+            ? BetaLimitedNetworkType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'allow_mcp_servers': allowMcpServers,
-    'allow_package_managers': allowPackageManagers,
-    'allowed_hosts': allowedHosts,
-    'type': type_.toJson(),
-  };
+        'allow_mcp_servers': allowMcpServers,
+        'allow_package_managers': allowPackageManagers,
+        'allowed_hosts': allowedHosts,
+        'type': type_.toJson(),
+      };
 }
 
 /// Limited network request params. Fields default to null; on update, omitted fields preserve the existing value.
 class BetaLimitedNetworkParams {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Permits outbound access to MCP server endpoints configured on the agent, beyond those listed in the `allowed_hosts` array. Defaults to `false`.
   final SdkOptional<bool?> allowMcpServers;
+
   /// Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array. Defaults to `false` on creation. Must be `true` when `packages` are specified.
   final SdkOptional<bool?> allowPackageManagers;
+
   /// Specifies domains the container can reach.
   final SdkOptional<List<String>?> allowedHosts;
+
   /// Network policy type
   final BetaLimitedNetworkParamsType type_;
 
-  const BetaLimitedNetworkParams({this.allowMcpServers = const SdkOmitted(), this.allowPackageManagers = const SdkOmitted(), this.allowedHosts = const SdkOmitted(), required this.type_});
+  const BetaLimitedNetworkParams(
+      {this.allowMcpServers = const SdkOmitted(),
+      this.allowPackageManagers = const SdkOmitted(),
+      this.allowedHosts = const SdkOmitted(),
+      required this.type_});
 
-  BetaLimitedNetworkParams Function({SdkOptional<bool?> allowMcpServers, SdkOptional<bool?> allowPackageManagers, SdkOptional<List<String>?> allowedHosts, BetaLimitedNetworkParamsType type_}) get copyWith => _copyWith;
+  BetaLimitedNetworkParams Function(
+      {SdkOptional<bool?> allowMcpServers,
+      SdkOptional<bool?> allowPackageManagers,
+      SdkOptional<List<String>?> allowedHosts,
+      BetaLimitedNetworkParamsType type_}) get copyWith => _copyWith;
 
-  BetaLimitedNetworkParams _copyWith({Object? allowMcpServers = sdkOmittedValue, Object? allowPackageManagers = sdkOmittedValue, Object? allowedHosts = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => BetaLimitedNetworkParams(
-    allowMcpServers: identical(allowMcpServers, sdkOmittedValue) ? this.allowMcpServers : allowMcpServers as SdkOptional<bool?>,
-    allowPackageManagers: identical(allowPackageManagers, sdkOmittedValue) ? this.allowPackageManagers : allowPackageManagers as SdkOptional<bool?>,
-    allowedHosts: identical(allowedHosts, sdkOmittedValue) ? this.allowedHosts : allowedHosts as SdkOptional<List<String>?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaLimitedNetworkParamsType,
-  );
+  BetaLimitedNetworkParams _copyWith(
+          {Object? allowMcpServers = sdkOmittedValue,
+          Object? allowPackageManagers = sdkOmittedValue,
+          Object? allowedHosts = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      BetaLimitedNetworkParams(
+        allowMcpServers: identical(allowMcpServers, sdkOmittedValue)
+            ? this.allowMcpServers
+            : allowMcpServers as SdkOptional<bool?>,
+        allowPackageManagers: identical(allowPackageManagers, sdkOmittedValue)
+            ? this.allowPackageManagers
+            : allowPackageManagers as SdkOptional<bool?>,
+        allowedHosts: identical(allowedHosts, sdkOmittedValue)
+            ? this.allowedHosts
+            : allowedHosts as SdkOptional<List<String>?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaLimitedNetworkParamsType,
+      );
 
-  factory BetaLimitedNetworkParams.fromJson(Map<String, dynamic> json) => BetaLimitedNetworkParams(
-    allowMcpServers: json.containsKey('allow_mcp_servers') ? SdkPresent(json['allow_mcp_servers'] as bool?) : const SdkOmitted(),
-    allowPackageManagers: json.containsKey('allow_package_managers') ? SdkPresent(json['allow_package_managers'] as bool?) : const SdkOmitted(),
-    allowedHosts: json.containsKey('allowed_hosts') ? SdkPresent((json['allowed_hosts'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
-    type_: (json['type'] != null ? BetaLimitedNetworkParamsType.fromJson(json['type'] as String) : null)!,
-  );
+  factory BetaLimitedNetworkParams.fromJson(Map<String, dynamic> json) =>
+      BetaLimitedNetworkParams(
+        allowMcpServers: json.containsKey('allow_mcp_servers')
+            ? SdkPresent(json['allow_mcp_servers'] as bool?)
+            : const SdkOmitted(),
+        allowPackageManagers: json.containsKey('allow_package_managers')
+            ? SdkPresent(json['allow_package_managers'] as bool?)
+            : const SdkOmitted(),
+        allowedHosts: json.containsKey('allowed_hosts')
+            ? SdkPresent((json['allowed_hosts'] as List?)
+                ?.map((e) => e as String)
+                .toList())
+            : const SdkOmitted(),
+        type_: (json['type'] != null
+            ? BetaLimitedNetworkParamsType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (allowMcpServers) {
-      SdkPresent<bool?>(value: final value) => {'allow_mcp_servers': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (allowPackageManagers) {
-      SdkPresent<bool?>(value: final value) => {'allow_package_managers': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (allowedHosts) {
-      SdkPresent<List<String>?>(value: final value) => {'allowed_hosts': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_.toJson(),
-  };
+        ...switch (allowMcpServers) {
+          SdkPresent<bool?>(value: final value) => {
+              'allow_mcp_servers': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (allowPackageManagers) {
+          SdkPresent<bool?>(value: final value) => {
+              'allow_package_managers': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (allowedHosts) {
+          SdkPresent<List<String>?>(value: final value) => {
+              'allowed_hosts': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_.toJson(),
+      };
 }

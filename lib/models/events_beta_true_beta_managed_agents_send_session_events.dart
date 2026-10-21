@@ -8,25 +8,40 @@ part of 'events_beta_true.dart';
 class BetaManagedAgentsSendSessionEvents {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Sent events
   final SdkOptional<List<BetaManagedAgentsInputEvent>> data;
 
   const BetaManagedAgentsSendSessionEvents({this.data = const SdkOmitted()});
 
-  BetaManagedAgentsSendSessionEvents Function({SdkOptional<List<BetaManagedAgentsInputEvent>> data}) get copyWith => _copyWith;
+  BetaManagedAgentsSendSessionEvents Function(
+          {SdkOptional<List<BetaManagedAgentsInputEvent>> data})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsSendSessionEvents _copyWith({Object? data = sdkOmittedValue}) => BetaManagedAgentsSendSessionEvents(
-    data: identical(data, sdkOmittedValue) ? this.data : data as SdkOptional<List<BetaManagedAgentsInputEvent>>,
-  );
+  BetaManagedAgentsSendSessionEvents _copyWith(
+          {Object? data = sdkOmittedValue}) =>
+      BetaManagedAgentsSendSessionEvents(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as SdkOptional<List<BetaManagedAgentsInputEvent>>,
+      );
 
-  factory BetaManagedAgentsSendSessionEvents.fromJson(Map<String, dynamic> json) => BetaManagedAgentsSendSessionEvents(
-    data: json['data'] != null ? SdkPresent(((json['data'] as List?)?.map((e) => BetaManagedAgentsInputEvent.fromJson(e)).toList())!) : const SdkOmitted(),
-  );
+  factory BetaManagedAgentsSendSessionEvents.fromJson(
+          Map<String, dynamic> json) =>
+      BetaManagedAgentsSendSessionEvents(
+        data: json['data'] != null
+            ? SdkPresent(((json['data'] as List?)
+                ?.map((e) => BetaManagedAgentsInputEvent.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (data) {
-      SdkPresent<List<BetaManagedAgentsInputEvent>>(value: final value) => {'data': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (data) {
+          SdkPresent<List<BetaManagedAgentsInputEvent>>(value: final value) => {
+              'data': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
