@@ -5,26 +5,44 @@ part of 'shared_beta_managed_agents.dart';
 
 // shared_beta_managed_agents domain models
 /// The deployment's organization is disabled.
-class BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError implements SdkJsonModel {
+class BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
-  final BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType type_;
+  final BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
+      type_;
 
-  const BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError({required this.type_});
+  const BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
+      {required this.type_});
 
-  BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError Function({BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError Function(
+      {BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
+          type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType,
-  );
+  BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType,
+      );
 
-  factory BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
-    type_: (json['type'] != null ? BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
+            type_: (json['type'] != null
+                ? BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType
+                    .fromJson(json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

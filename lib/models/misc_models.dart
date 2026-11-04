@@ -6,7 +6,6 @@ part of 'misc.dart';
 // misc domain models
 /// Typed representation of the `ErrorType` API schema.
 final class ErrorType {
-
   final String value;
 
   const ErrorType._(this.value);
@@ -25,10 +24,12 @@ final class ErrorType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ErrorType && other.value == value;
+  @override
+  bool operator ==(Object other) => other is ErrorType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

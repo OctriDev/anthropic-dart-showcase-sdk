@@ -10,16 +10,52 @@ sealed class ToolChoice {
   const ToolChoice();
   factory ToolChoice.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = ToolChoiceAuto.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ToolChoiceToolChoiceAuto(value); } } catch (_) {}
-      try { final value = ToolChoiceAny.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ToolChoiceToolChoiceAny(value); } } catch (_) {}
-      try { final value = ToolChoiceTool.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ToolChoiceToolChoiceTool(value); } } catch (_) {}
-      try { final value = ToolChoiceNone.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ToolChoiceToolChoiceNone(value); } } catch (_) {}
+      try {
+        final value = ToolChoiceAuto.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ToolChoiceToolChoiceAuto(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ToolChoiceAny.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ToolChoiceToolChoiceAny(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ToolChoiceTool.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ToolChoiceToolChoiceTool(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ToolChoiceNone.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ToolChoiceToolChoiceNone(value);
+        }
+      } catch (_) {}
     }
-    try { return ToolChoiceToolChoiceAuto(ToolChoiceAuto.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ToolChoiceToolChoiceAny(ToolChoiceAny.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ToolChoiceToolChoiceTool(ToolChoiceTool.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ToolChoiceToolChoiceNone(ToolChoiceNone.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"any", "auto", "none", "tool"}.contains(json["type"])) { return UnknownToolChoice(json); }
+    try {
+      return ToolChoiceToolChoiceAuto(
+          ToolChoiceAuto.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ToolChoiceToolChoiceAny(
+          ToolChoiceAny.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ToolChoiceToolChoiceTool(
+          ToolChoiceTool.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ToolChoiceToolChoiceNone(
+          ToolChoiceNone.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"any", "auto", "none", "tool"}.contains(json["type"])) {
+      return UnknownToolChoice(json);
+    }
     throw FormatException("No variant matched for ToolChoice");
   }
   Object? toJson();
@@ -28,30 +64,35 @@ sealed class ToolChoice {
 final class ToolChoiceToolChoiceAuto extends ToolChoice {
   final ToolChoiceAuto value;
   const ToolChoiceToolChoiceAuto(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ToolChoiceToolChoiceAny extends ToolChoice {
   final ToolChoiceAny value;
   const ToolChoiceToolChoiceAny(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ToolChoiceToolChoiceTool extends ToolChoice {
   final ToolChoiceTool value;
   const ToolChoiceToolChoiceTool(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class ToolChoiceToolChoiceNone extends ToolChoice {
   final ToolChoiceNone value;
   const ToolChoiceToolChoiceNone(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [ToolChoice] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownToolChoice extends ToolChoice {
   final Map<String, dynamic> raw;
   const UnknownToolChoice(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

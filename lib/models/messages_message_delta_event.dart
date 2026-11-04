@@ -8,33 +8,60 @@ part of 'messages.dart';
 class MessageDeltaEvent implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `delta` wire field.
   final MessageDelta delta;
+
   /// Required `string` value serialized in the `type` wire field.
   final MessageDeltaEventType type_;
+
   /// Billing and rate-limit usage. Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems. Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response. For example, `output_tokens` will be non-zero, even for an empty string response from Claude. Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
   final MessageDeltaUsage usage;
 
-  const MessageDeltaEvent({required this.delta, required this.type_, required this.usage});
+  const MessageDeltaEvent(
+      {required this.delta, required this.type_, required this.usage});
 
-  MessageDeltaEvent Function({MessageDelta delta, MessageDeltaEventType type_, MessageDeltaUsage usage}) get copyWith => _copyWith;
+  MessageDeltaEvent Function(
+      {MessageDelta delta,
+      MessageDeltaEventType type_,
+      MessageDeltaUsage usage}) get copyWith => _copyWith;
 
-  MessageDeltaEvent _copyWith({Object? delta = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? usage = sdkOmittedValue}) => MessageDeltaEvent(
-    delta: identical(delta, sdkOmittedValue) ? this.delta : delta as MessageDelta,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as MessageDeltaEventType,
-    usage: identical(usage, sdkOmittedValue) ? this.usage : usage as MessageDeltaUsage,
-  );
+  MessageDeltaEvent _copyWith(
+          {Object? delta = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? usage = sdkOmittedValue}) =>
+      MessageDeltaEvent(
+        delta: identical(delta, sdkOmittedValue)
+            ? this.delta
+            : delta as MessageDelta,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as MessageDeltaEventType,
+        usage: identical(usage, sdkOmittedValue)
+            ? this.usage
+            : usage as MessageDeltaUsage,
+      );
 
-  factory MessageDeltaEvent.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(MessageDeltaEvent(
-    delta: (json['delta'] != null ? MessageDelta.fromJson(json['delta'] as Map<String, dynamic>) : null)!,
-    type_: (json['type'] != null ? MessageDeltaEventType.fromJson(json['type'] as String) : null)!,
-    usage: (json['usage'] != null ? MessageDeltaUsage.fromJson(json['usage'] as Map<String, dynamic>) : null)!,
-  ), json);
+  factory MessageDeltaEvent.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          MessageDeltaEvent(
+            delta: (json['delta'] != null
+                ? MessageDelta.fromJson(json['delta'] as Map<String, dynamic>)
+                : null)!,
+            type_: (json['type'] != null
+                ? MessageDeltaEventType.fromJson(json['type'] as String)
+                : null)!,
+            usage: (json['usage'] != null
+                ? MessageDeltaUsage.fromJson(
+                    json['usage'] as Map<String, dynamic>)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'delta': delta.toJson(),
-    'type': type_.toJson(),
-    'usage': usage.toJson(),
-  };
+        'delta': delta.toJson(),
+        'type': type_.toJson(),
+        'usage': usage.toJson(),
+      };
 }

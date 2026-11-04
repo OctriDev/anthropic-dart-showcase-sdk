@@ -8,108 +8,173 @@ part of 'certificates_beta_true.dart';
 class BetaCreateTunnelCertificateParams implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// PEM-encoded X.509 CA certificate. Must contain exactly one certificate and no private-key material.
   final String caCertificatePem;
 
   const BetaCreateTunnelCertificateParams({required this.caCertificatePem});
 
-  BetaCreateTunnelCertificateParams Function({String caCertificatePem}) get copyWith => _copyWith;
+  BetaCreateTunnelCertificateParams Function({String caCertificatePem})
+      get copyWith => _copyWith;
 
-  BetaCreateTunnelCertificateParams _copyWith({Object? caCertificatePem = sdkOmittedValue}) => BetaCreateTunnelCertificateParams(
-    caCertificatePem: identical(caCertificatePem, sdkOmittedValue) ? this.caCertificatePem : caCertificatePem as String,
-  );
+  BetaCreateTunnelCertificateParams _copyWith(
+          {Object? caCertificatePem = sdkOmittedValue}) =>
+      BetaCreateTunnelCertificateParams(
+        caCertificatePem: identical(caCertificatePem, sdkOmittedValue)
+            ? this.caCertificatePem
+            : caCertificatePem as String,
+      );
 
-  factory BetaCreateTunnelCertificateParams.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaCreateTunnelCertificateParams(
-    caCertificatePem: (json['ca_certificate_pem'] as String?)!,
-  ), json);
+  factory BetaCreateTunnelCertificateParams.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaCreateTunnelCertificateParams(
+            caCertificatePem: (json['ca_certificate_pem'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'ca_certificate_pem': caCertificatePem,
-  };
+        'ca_certificate_pem': caCertificatePem,
+      };
 }
 
 /// Typed representation of the `BetaCreateTunnelCertificateRequestBody` API schema.
 class BetaCreateTunnelCertificateRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// PEM-encoded X.509 CA certificate. Must contain exactly one certificate and no private-key material. Maximum 8KB.
   final String caCertificatePem;
 
-  const BetaCreateTunnelCertificateRequestBody({required this.caCertificatePem});
+  const BetaCreateTunnelCertificateRequestBody(
+      {required this.caCertificatePem});
 
-  BetaCreateTunnelCertificateRequestBody Function({String caCertificatePem}) get copyWith => _copyWith;
+  BetaCreateTunnelCertificateRequestBody Function({String caCertificatePem})
+      get copyWith => _copyWith;
 
-  BetaCreateTunnelCertificateRequestBody _copyWith({Object? caCertificatePem = sdkOmittedValue}) => BetaCreateTunnelCertificateRequestBody(
-    caCertificatePem: identical(caCertificatePem, sdkOmittedValue) ? this.caCertificatePem : caCertificatePem as String,
-  );
+  BetaCreateTunnelCertificateRequestBody _copyWith(
+          {Object? caCertificatePem = sdkOmittedValue}) =>
+      BetaCreateTunnelCertificateRequestBody(
+        caCertificatePem: identical(caCertificatePem, sdkOmittedValue)
+            ? this.caCertificatePem
+            : caCertificatePem as String,
+      );
 
-  factory BetaCreateTunnelCertificateRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaCreateTunnelCertificateRequestBody(
-    caCertificatePem: (json['ca_certificate_pem'] as String?)!,
-  ), json);
+  factory BetaCreateTunnelCertificateRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaCreateTunnelCertificateRequestBody(
+            caCertificatePem: (json['ca_certificate_pem'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'ca_certificate_pem': caCertificatePem,
-  };
+        'ca_certificate_pem': caCertificatePem,
+      };
 }
 
 /// The tunnel's certificates.
 class BetaListTunnelCertificatesResponse implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// List of certificates, ordered by created_at descending.
   final List<BetaTunnelCertificate> data;
+
   /// Pagination cursor for the next page, or null if no more results.
   final String? nextPage;
 
-  const BetaListTunnelCertificatesResponse({required this.data, required this.nextPage});
+  const BetaListTunnelCertificatesResponse(
+      {required this.data, required this.nextPage});
 
-  BetaListTunnelCertificatesResponse Function({List<BetaTunnelCertificate> data, String? nextPage}) get copyWith => _copyWith;
+  BetaListTunnelCertificatesResponse Function(
+      {List<BetaTunnelCertificate> data,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaListTunnelCertificatesResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaListTunnelCertificatesResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaTunnelCertificate>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaListTunnelCertificatesResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaListTunnelCertificatesResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaTunnelCertificate>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaListTunnelCertificatesResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaListTunnelCertificatesResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaTunnelCertificate.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  ), json);
+  factory BetaListTunnelCertificatesResponse.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaListTunnelCertificatesResponse(
+            data: ((json['data'] as List?)
+                ?.map((e) =>
+                    BetaTunnelCertificate.fromJson(e as Map<String, dynamic>))
+                .toList())!,
+            nextPage: json.containsKey('next_page')
+                ? json['next_page'] as String?
+                : throw ArgumentError.value(
+                    null, 'next_page', 'Required property is missing'),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'next_page': nextPage,
+      };
 }
 
 /// Typed representation of the `BetaTunnelCertificateListResponse` API schema.
 class BetaTunnelCertificateListResponse implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `data` wire field.
   final List<BetaOrganizationTunnelCertificate> data;
+
   /// Opaque cursor for the next page, or `null` if there are no more results.
   final String? nextPage;
 
-  const BetaTunnelCertificateListResponse({required this.data, required this.nextPage});
+  const BetaTunnelCertificateListResponse(
+      {required this.data, required this.nextPage});
 
-  BetaTunnelCertificateListResponse Function({List<BetaOrganizationTunnelCertificate> data, String? nextPage}) get copyWith => _copyWith;
+  BetaTunnelCertificateListResponse Function(
+      {List<BetaOrganizationTunnelCertificate> data,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaTunnelCertificateListResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaTunnelCertificateListResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaOrganizationTunnelCertificate>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaTunnelCertificateListResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaTunnelCertificateListResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaOrganizationTunnelCertificate>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaTunnelCertificateListResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaTunnelCertificateListResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaOrganizationTunnelCertificate.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  ), json);
+  factory BetaTunnelCertificateListResponse.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaTunnelCertificateListResponse(
+            data: ((json['data'] as List?)
+                ?.map((e) => BetaOrganizationTunnelCertificate.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!,
+            nextPage: json.containsKey('next_page')
+                ? json['next_page'] as String?
+                : throw ArgumentError.value(
+                    null, 'next_page', 'Required property is missing'),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'next_page': nextPage,
+      };
 }

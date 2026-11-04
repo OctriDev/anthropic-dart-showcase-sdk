@@ -8,38 +8,68 @@ part of 'beta_webhook_beta_webhook_vault.dart';
 class BetaWebhookVaultCreatedEventData implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaWebhookVaultCreatedEventDataType type_;
+
   /// ID of the vault that triggered the event.
   final String id;
+
   /// Required `string` value serialized in the `organization_id` wire field.
   final String organizationId;
+
   /// Required `string` value serialized in the `workspace_id` wire field.
   final String workspaceId;
 
-  const BetaWebhookVaultCreatedEventData({required this.type_, required this.id, required this.organizationId, required this.workspaceId});
+  const BetaWebhookVaultCreatedEventData(
+      {required this.type_,
+      required this.id,
+      required this.organizationId,
+      required this.workspaceId});
 
-  BetaWebhookVaultCreatedEventData Function({BetaWebhookVaultCreatedEventDataType type_, String id, String organizationId, String workspaceId}) get copyWith => _copyWith;
+  BetaWebhookVaultCreatedEventData Function(
+      {BetaWebhookVaultCreatedEventDataType type_,
+      String id,
+      String organizationId,
+      String workspaceId}) get copyWith => _copyWith;
 
-  BetaWebhookVaultCreatedEventData _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? workspaceId = sdkOmittedValue}) => BetaWebhookVaultCreatedEventData(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaWebhookVaultCreatedEventDataType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as String,
-    workspaceId: identical(workspaceId, sdkOmittedValue) ? this.workspaceId : workspaceId as String,
-  );
+  BetaWebhookVaultCreatedEventData _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? organizationId = sdkOmittedValue,
+          Object? workspaceId = sdkOmittedValue}) =>
+      BetaWebhookVaultCreatedEventData(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaWebhookVaultCreatedEventDataType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        organizationId: identical(organizationId, sdkOmittedValue)
+            ? this.organizationId
+            : organizationId as String,
+        workspaceId: identical(workspaceId, sdkOmittedValue)
+            ? this.workspaceId
+            : workspaceId as String,
+      );
 
-  factory BetaWebhookVaultCreatedEventData.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaWebhookVaultCreatedEventData(
-    type_: (json['type'] != null ? BetaWebhookVaultCreatedEventDataType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    organizationId: (json['organization_id'] as String?)!,
-    workspaceId: (json['workspace_id'] as String?)!,
-  ), json);
+  factory BetaWebhookVaultCreatedEventData.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaWebhookVaultCreatedEventData(
+            type_: (json['type'] != null
+                ? BetaWebhookVaultCreatedEventDataType.fromJson(
+                    json['type'] as String)
+                : null)!,
+            id: (json['id'] as String?)!,
+            organizationId: (json['organization_id'] as String?)!,
+            workspaceId: (json['workspace_id'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'organization_id': organizationId,
-    'workspace_id': workspaceId,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'organization_id': organizationId,
+        'workspace_id': workspaceId,
+      };
 }

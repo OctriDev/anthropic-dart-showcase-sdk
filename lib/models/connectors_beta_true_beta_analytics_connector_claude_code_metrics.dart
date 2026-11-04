@@ -8,23 +8,43 @@ part of 'connectors_beta_true.dart';
 class BetaAnalyticsConnectorClaudeCodeMetrics implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Number of distinct Claude Code sessions in which the connector was used. Approximate (HLL, typical error &lt;2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
   final int? distinctSessionConnectorUsedCount;
 
-  const BetaAnalyticsConnectorClaudeCodeMetrics({required this.distinctSessionConnectorUsedCount});
+  const BetaAnalyticsConnectorClaudeCodeMetrics(
+      {required this.distinctSessionConnectorUsedCount});
 
-  BetaAnalyticsConnectorClaudeCodeMetrics Function({int? distinctSessionConnectorUsedCount}) get copyWith => _copyWith;
+  BetaAnalyticsConnectorClaudeCodeMetrics Function(
+      {int? distinctSessionConnectorUsedCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsConnectorClaudeCodeMetrics _copyWith({Object? distinctSessionConnectorUsedCount = sdkOmittedValue}) => BetaAnalyticsConnectorClaudeCodeMetrics(
-    distinctSessionConnectorUsedCount: identical(distinctSessionConnectorUsedCount, sdkOmittedValue) ? this.distinctSessionConnectorUsedCount : distinctSessionConnectorUsedCount as int?,
-  );
+  BetaAnalyticsConnectorClaudeCodeMetrics _copyWith(
+          {Object? distinctSessionConnectorUsedCount = sdkOmittedValue}) =>
+      BetaAnalyticsConnectorClaudeCodeMetrics(
+        distinctSessionConnectorUsedCount:
+            identical(distinctSessionConnectorUsedCount, sdkOmittedValue)
+                ? this.distinctSessionConnectorUsedCount
+                : distinctSessionConnectorUsedCount as int?,
+      );
 
-  factory BetaAnalyticsConnectorClaudeCodeMetrics.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaAnalyticsConnectorClaudeCodeMetrics(
-    distinctSessionConnectorUsedCount: json.containsKey('distinct_session_connector_used_count') ? (json['distinct_session_connector_used_count'] as num?)?.toInt() : throw ArgumentError.value(null, 'distinct_session_connector_used_count', 'Required property is missing'),
-  ), json);
+  factory BetaAnalyticsConnectorClaudeCodeMetrics.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaAnalyticsConnectorClaudeCodeMetrics(
+            distinctSessionConnectorUsedCount:
+                json.containsKey('distinct_session_connector_used_count')
+                    ? (json['distinct_session_connector_used_count'] as num?)
+                        ?.toInt()
+                    : throw ArgumentError.value(
+                        null,
+                        'distinct_session_connector_used_count',
+                        'Required property is missing'),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'distinct_session_connector_used_count': distinctSessionConnectorUsedCount,
-  };
+        'distinct_session_connector_used_count':
+            distinctSessionConnectorUsedCount,
+      };
 }

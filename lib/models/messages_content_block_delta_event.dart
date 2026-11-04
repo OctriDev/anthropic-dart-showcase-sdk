@@ -8,33 +8,55 @@ part of 'messages.dart';
 class ContentBlockDeltaEvent implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required API value serialized in the `delta` wire field.
   final ContentBlockDeltaEventDelta delta;
+
   /// Required `integer` value serialized in the `index` wire field.
   final int index;
+
   /// Required `string` value serialized in the `type` wire field.
   final ContentBlockDeltaEventType type_;
 
-  const ContentBlockDeltaEvent({required this.delta, required this.index, required this.type_});
+  const ContentBlockDeltaEvent(
+      {required this.delta, required this.index, required this.type_});
 
-  ContentBlockDeltaEvent Function({ContentBlockDeltaEventDelta delta, int index, ContentBlockDeltaEventType type_}) get copyWith => _copyWith;
+  ContentBlockDeltaEvent Function(
+      {ContentBlockDeltaEventDelta delta,
+      int index,
+      ContentBlockDeltaEventType type_}) get copyWith => _copyWith;
 
-  ContentBlockDeltaEvent _copyWith({Object? delta = sdkOmittedValue, Object? index = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ContentBlockDeltaEvent(
-    delta: identical(delta, sdkOmittedValue) ? this.delta : delta as ContentBlockDeltaEventDelta,
-    index: identical(index, sdkOmittedValue) ? this.index : index as int,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ContentBlockDeltaEventType,
-  );
+  ContentBlockDeltaEvent _copyWith(
+          {Object? delta = sdkOmittedValue,
+          Object? index = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      ContentBlockDeltaEvent(
+        delta: identical(delta, sdkOmittedValue)
+            ? this.delta
+            : delta as ContentBlockDeltaEventDelta,
+        index: identical(index, sdkOmittedValue) ? this.index : index as int,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ContentBlockDeltaEventType,
+      );
 
-  factory ContentBlockDeltaEvent.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ContentBlockDeltaEvent(
-    delta: (json['delta'] != null ? ContentBlockDeltaEventDelta.fromJson(json['delta']) : null)!,
-    index: ((json['index'] as num?)?.toInt())!,
-    type_: (json['type'] != null ? ContentBlockDeltaEventType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory ContentBlockDeltaEvent.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ContentBlockDeltaEvent(
+            delta: (json['delta'] != null
+                ? ContentBlockDeltaEventDelta.fromJson(json['delta'])
+                : null)!,
+            index: ((json['index'] as num?)?.toInt())!,
+            type_: (json['type'] != null
+                ? ContentBlockDeltaEventType.fromJson(json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'delta': delta.toJson(),
-    'index': index,
-    'type': type_.toJson(),
-  };
+        'delta': delta.toJson(),
+        'index': index,
+        'type': type_.toJson(),
+      };
 }

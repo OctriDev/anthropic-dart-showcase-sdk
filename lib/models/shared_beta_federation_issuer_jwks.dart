@@ -10,40 +10,75 @@ sealed class BetaFederationIssuerJwks {
   const BetaFederationIssuerJwks();
   factory BetaFederationIssuerJwks.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaJwksDiscovery.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaFederationIssuerJwksBetaJwksDiscovery(value); } } catch (_) {}
-      try { final value = BetaJwksExplicitUrl.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaFederationIssuerJwksBetaJwksExplicitUrl(value); } } catch (_) {}
-      try { final value = BetaJwksInline.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaFederationIssuerJwksBetaJwksInline(value); } } catch (_) {}
+      try {
+        final value = BetaJwksDiscovery.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaFederationIssuerJwksBetaJwksDiscovery(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaJwksExplicitUrl.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaFederationIssuerJwksBetaJwksExplicitUrl(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaJwksInline.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaFederationIssuerJwksBetaJwksInline(value);
+        }
+      } catch (_) {}
     }
-    try { return BetaFederationIssuerJwksBetaJwksDiscovery(BetaJwksDiscovery.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaFederationIssuerJwksBetaJwksExplicitUrl(BetaJwksExplicitUrl.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaFederationIssuerJwksBetaJwksInline(BetaJwksInline.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"discovery", "explicit_url", "inline"}.contains(json["type"])) { return UnknownBetaFederationIssuerJwks(json); }
+    try {
+      return BetaFederationIssuerJwksBetaJwksDiscovery(
+          BetaJwksDiscovery.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaFederationIssuerJwksBetaJwksExplicitUrl(
+          BetaJwksExplicitUrl.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaFederationIssuerJwksBetaJwksInline(
+          BetaJwksInline.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"discovery", "explicit_url", "inline"}.contains(json["type"])) {
+      return UnknownBetaFederationIssuerJwks(json);
+    }
     throw FormatException("No variant matched for BetaFederationIssuerJwks");
   }
   Object? toJson();
 }
 
-final class BetaFederationIssuerJwksBetaJwksDiscovery extends BetaFederationIssuerJwks {
+final class BetaFederationIssuerJwksBetaJwksDiscovery
+    extends BetaFederationIssuerJwks {
   final BetaJwksDiscovery value;
   const BetaFederationIssuerJwksBetaJwksDiscovery(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaFederationIssuerJwksBetaJwksExplicitUrl extends BetaFederationIssuerJwks {
+final class BetaFederationIssuerJwksBetaJwksExplicitUrl
+    extends BetaFederationIssuerJwks {
   final BetaJwksExplicitUrl value;
   const BetaFederationIssuerJwksBetaJwksExplicitUrl(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaFederationIssuerJwksBetaJwksInline extends BetaFederationIssuerJwks {
+final class BetaFederationIssuerJwksBetaJwksInline
+    extends BetaFederationIssuerJwks {
   final BetaJwksInline value;
   const BetaFederationIssuerJwksBetaJwksInline(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaFederationIssuerJwks] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaFederationIssuerJwks extends BetaFederationIssuerJwks {
   final Map<String, dynamic> raw;
   const UnknownBetaFederationIssuerJwks(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

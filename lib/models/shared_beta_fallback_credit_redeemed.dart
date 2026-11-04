@@ -8,23 +8,34 @@ part of 'shared_beta_fallback.dart';
 class BetaFallbackCreditRedeemed implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaFallbackCreditRedeemedType type_;
 
   const BetaFallbackCreditRedeemed({required this.type_});
 
-  BetaFallbackCreditRedeemed Function({BetaFallbackCreditRedeemedType type_}) get copyWith => _copyWith;
+  BetaFallbackCreditRedeemed Function({BetaFallbackCreditRedeemedType type_})
+      get copyWith => _copyWith;
 
-  BetaFallbackCreditRedeemed _copyWith({Object? type_ = sdkOmittedValue}) => BetaFallbackCreditRedeemed(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaFallbackCreditRedeemedType,
-  );
+  BetaFallbackCreditRedeemed _copyWith({Object? type_ = sdkOmittedValue}) =>
+      BetaFallbackCreditRedeemed(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaFallbackCreditRedeemedType,
+      );
 
-  factory BetaFallbackCreditRedeemed.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaFallbackCreditRedeemed(
-    type_: (json['type'] != null ? BetaFallbackCreditRedeemedType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory BetaFallbackCreditRedeemed.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaFallbackCreditRedeemed(
+            type_: (json['type'] != null
+                ? BetaFallbackCreditRedeemedType.fromJson(
+                    json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

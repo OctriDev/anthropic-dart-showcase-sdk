@@ -10,14 +10,17 @@ enum GatewayTimeoutErrorType {
 
   static GatewayTimeoutErrorType fromJson(String value) {
     switch (value) {
-      case 'timeout_error': return GatewayTimeoutErrorType.timeoutError;
-      default: throw ArgumentError('Unknown GatewayTimeoutErrorType: $value');
+      case 'timeout_error':
+        return GatewayTimeoutErrorType.timeoutError;
+      default:
+        throw ArgumentError('Unknown GatewayTimeoutErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case GatewayTimeoutErrorType.timeoutError: return 'timeout_error';
+      case GatewayTimeoutErrorType.timeoutError:
+        return 'timeout_error';
     }
   }
 
@@ -31,14 +34,17 @@ enum InputJsonContentBlockDeltaType {
 
   static InputJsonContentBlockDeltaType fromJson(String value) {
     switch (value) {
-      case 'input_json_delta': return InputJsonContentBlockDeltaType.inputJsonDelta;
-      default: throw ArgumentError('Unknown InputJsonContentBlockDeltaType: $value');
+      case 'input_json_delta':
+        return InputJsonContentBlockDeltaType.inputJsonDelta;
+      default:
+        throw ArgumentError('Unknown InputJsonContentBlockDeltaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case InputJsonContentBlockDeltaType.inputJsonDelta: return 'input_json_delta';
+      case InputJsonContentBlockDeltaType.inputJsonDelta:
+        return 'input_json_delta';
     }
   }
 
@@ -48,7 +54,6 @@ enum InputJsonContentBlockDeltaType {
 
 /// Required enumerated value serialized in the `role` wire field.
 final class InputMessageRole {
-
   final String value;
 
   const InputMessageRole._(this.value);
@@ -61,12 +66,15 @@ final class InputMessageRole {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is InputMessageRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is InputMessageRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -75,14 +83,17 @@ enum InputSchemaType {
 
   static InputSchemaType fromJson(String value) {
     switch (value) {
-      case 'object': return InputSchemaType.object;
-      default: throw ArgumentError('Unknown InputSchemaType: $value');
+      case 'object':
+        return InputSchemaType.object;
+      default:
+        throw ArgumentError('Unknown InputSchemaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case InputSchemaType.object: return 'object';
+      case InputSchemaType.object:
+        return 'object';
     }
   }
 
@@ -96,14 +107,17 @@ enum InvalidRequestErrorType {
 
   static InvalidRequestErrorType fromJson(String value) {
     switch (value) {
-      case 'invalid_request_error': return InvalidRequestErrorType.invalidRequestError;
-      default: throw ArgumentError('Unknown InvalidRequestErrorType: $value');
+      case 'invalid_request_error':
+        return InvalidRequestErrorType.invalidRequestError;
+      default:
+        throw ArgumentError('Unknown InvalidRequestErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case InvalidRequestErrorType.invalidRequestError: return 'invalid_request_error';
+      case InvalidRequestErrorType.invalidRequestError:
+        return 'invalid_request_error';
     }
   }
 
@@ -117,14 +131,17 @@ enum JsonOutputFormatType {
 
   static JsonOutputFormatType fromJson(String value) {
     switch (value) {
-      case 'json_schema': return JsonOutputFormatType.jsonSchema;
-      default: throw ArgumentError('Unknown JsonOutputFormatType: $value');
+      case 'json_schema':
+        return JsonOutputFormatType.jsonSchema;
+      default:
+        throw ArgumentError('Unknown JsonOutputFormatType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case JsonOutputFormatType.jsonSchema: return 'json_schema';
+      case JsonOutputFormatType.jsonSchema:
+        return 'json_schema';
     }
   }
 
@@ -138,14 +155,17 @@ enum MemoryTool20250818Name {
 
   static MemoryTool20250818Name fromJson(String value) {
     switch (value) {
-      case 'memory': return MemoryTool20250818Name.memory;
-      default: throw ArgumentError('Unknown MemoryTool20250818Name: $value');
+      case 'memory':
+        return MemoryTool20250818Name.memory;
+      default:
+        throw ArgumentError('Unknown MemoryTool20250818Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case MemoryTool20250818Name.memory: return 'memory';
+      case MemoryTool20250818Name.memory:
+        return 'memory';
     }
   }
 
@@ -159,14 +179,17 @@ enum MemoryTool20250818Type {
 
   static MemoryTool20250818Type fromJson(String value) {
     switch (value) {
-      case 'memory_20250818': return MemoryTool20250818Type.memory20250818;
-      default: throw ArgumentError('Unknown MemoryTool20250818Type: $value');
+      case 'memory_20250818':
+        return MemoryTool20250818Type.memory20250818;
+      default:
+        throw ArgumentError('Unknown MemoryTool20250818Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case MemoryTool20250818Type.memory20250818: return 'memory_20250818';
+      case MemoryTool20250818Type.memory20250818:
+        return 'memory_20250818';
     }
   }
 
@@ -180,14 +203,17 @@ enum MessageRole {
 
   static MessageRole fromJson(String value) {
     switch (value) {
-      case 'assistant': return MessageRole.assistant;
-      default: throw ArgumentError('Unknown MessageRole: $value');
+      case 'assistant':
+        return MessageRole.assistant;
+      default:
+        throw ArgumentError('Unknown MessageRole: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case MessageRole.assistant: return 'assistant';
+      case MessageRole.assistant:
+        return 'assistant';
     }
   }
 
@@ -201,14 +227,17 @@ enum MessageType {
 
   static MessageType fromJson(String value) {
     switch (value) {
-      case 'message': return MessageType.message;
-      default: throw ArgumentError('Unknown MessageType: $value');
+      case 'message':
+        return MessageType.message;
+      default:
+        throw ArgumentError('Unknown MessageType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case MessageType.message: return 'message';
+      case MessageType.message:
+        return 'message';
     }
   }
 
@@ -218,12 +247,12 @@ enum MessageType {
 
 /// Processing status of the Message Batch.
 final class MessageBatchProcessingStatus {
-
   final String value;
 
   const MessageBatchProcessingStatus._(this.value);
 
-  factory MessageBatchProcessingStatus.fromJson(String value) => MessageBatchProcessingStatus._(value);
+  factory MessageBatchProcessingStatus.fromJson(String value) =>
+      MessageBatchProcessingStatus._(value);
 
   static const inProgress = MessageBatchProcessingStatus._('in_progress');
   static const canceling = MessageBatchProcessingStatus._('canceling');
@@ -231,12 +260,15 @@ final class MessageBatchProcessingStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MessageBatchProcessingStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MessageBatchProcessingStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Object type. For Message Batches, this is always `"message_batch"`.
@@ -245,14 +277,17 @@ enum MessageBatchType {
 
   static MessageBatchType fromJson(String value) {
     switch (value) {
-      case 'message_batch': return MessageBatchType.messageBatch;
-      default: throw ArgumentError('Unknown MessageBatchType: $value');
+      case 'message_batch':
+        return MessageBatchType.messageBatch;
+      default:
+        throw ArgumentError('Unknown MessageBatchType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case MessageBatchType.messageBatch: return 'message_batch';
+      case MessageBatchType.messageBatch:
+        return 'message_batch';
     }
   }
 
@@ -266,14 +301,17 @@ enum MessageDeltaEventType {
 
   static MessageDeltaEventType fromJson(String value) {
     switch (value) {
-      case 'message_delta': return MessageDeltaEventType.messageDelta;
-      default: throw ArgumentError('Unknown MessageDeltaEventType: $value');
+      case 'message_delta':
+        return MessageDeltaEventType.messageDelta;
+      default:
+        throw ArgumentError('Unknown MessageDeltaEventType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case MessageDeltaEventType.messageDelta: return 'message_delta';
+      case MessageDeltaEventType.messageDelta:
+        return 'message_delta';
     }
   }
 

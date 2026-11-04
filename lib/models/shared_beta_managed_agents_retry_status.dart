@@ -10,40 +10,86 @@ sealed class BetaManagedAgentsRetryStatus {
   const BetaManagedAgentsRetryStatus();
   factory BetaManagedAgentsRetryStatus.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsRetryStatusRetrying.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusRetrying(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsRetryStatusExhausted.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusExhausted(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsRetryStatusTerminal.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusTerminal(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsRetryStatusRetrying.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusRetrying(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsRetryStatusExhausted.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusExhausted(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsRetryStatusTerminal.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusTerminal(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusRetrying(BetaManagedAgentsRetryStatusRetrying.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusExhausted(BetaManagedAgentsRetryStatusExhausted.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusTerminal(BetaManagedAgentsRetryStatusTerminal.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"retrying", "exhausted", "terminal"}.contains(json["type"])) { return UnknownBetaManagedAgentsRetryStatus(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsRetryStatus");
+    try {
+      return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusRetrying(
+          BetaManagedAgentsRetryStatusRetrying.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusExhausted(
+          BetaManagedAgentsRetryStatusExhausted.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusTerminal(
+          BetaManagedAgentsRetryStatusTerminal.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"retrying", "exhausted", "terminal"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsRetryStatus(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsRetryStatus");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusRetrying extends BetaManagedAgentsRetryStatus {
+final class BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusRetrying
+    extends BetaManagedAgentsRetryStatus {
   final BetaManagedAgentsRetryStatusRetrying value;
-  const BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusRetrying(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusRetrying(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusExhausted extends BetaManagedAgentsRetryStatus {
+final class BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusExhausted
+    extends BetaManagedAgentsRetryStatus {
   final BetaManagedAgentsRetryStatusExhausted value;
-  const BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusExhausted(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusExhausted(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusTerminal extends BetaManagedAgentsRetryStatus {
+final class BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusTerminal
+    extends BetaManagedAgentsRetryStatus {
   final BetaManagedAgentsRetryStatusTerminal value;
-  const BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusTerminal(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsRetryStatusBetaManagedAgentsRetryStatusTerminal(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsRetryStatus] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsRetryStatus extends BetaManagedAgentsRetryStatus {
+final class UnknownBetaManagedAgentsRetryStatus
+    extends BetaManagedAgentsRetryStatus {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsRetryStatus(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

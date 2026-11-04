@@ -10,14 +10,17 @@ enum ToolChoiceNoneType {
 
   static ToolChoiceNoneType fromJson(String value) {
     switch (value) {
-      case 'none': return ToolChoiceNoneType.none;
-      default: throw ArgumentError('Unknown ToolChoiceNoneType: $value');
+      case 'none':
+        return ToolChoiceNoneType.none;
+      default:
+        throw ArgumentError('Unknown ToolChoiceNoneType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ToolChoiceNoneType.none: return 'none';
+      case ToolChoiceNoneType.none:
+        return 'none';
     }
   }
 
@@ -31,14 +34,17 @@ enum ToolChoiceToolType {
 
   static ToolChoiceToolType fromJson(String value) {
     switch (value) {
-      case 'tool': return ToolChoiceToolType.tool;
-      default: throw ArgumentError('Unknown ToolChoiceToolType: $value');
+      case 'tool':
+        return ToolChoiceToolType.tool;
+      default:
+        throw ArgumentError('Unknown ToolChoiceToolType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ToolChoiceToolType.tool: return 'tool';
+      case ToolChoiceToolType.tool:
+        return 'tool';
     }
   }
 
@@ -52,14 +58,17 @@ enum ToolSearchToolBM2520251119Name {
 
   static ToolSearchToolBM2520251119Name fromJson(String value) {
     switch (value) {
-      case 'tool_search_tool_bm25': return ToolSearchToolBM2520251119Name.toolSearchToolBm25;
-      default: throw ArgumentError('Unknown ToolSearchToolBM2520251119Name: $value');
+      case 'tool_search_tool_bm25':
+        return ToolSearchToolBM2520251119Name.toolSearchToolBm25;
+      default:
+        throw ArgumentError('Unknown ToolSearchToolBM2520251119Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ToolSearchToolBM2520251119Name.toolSearchToolBm25: return 'tool_search_tool_bm25';
+      case ToolSearchToolBM2520251119Name.toolSearchToolBm25:
+        return 'tool_search_tool_bm25';
     }
   }
 
@@ -69,24 +78,29 @@ enum ToolSearchToolBM2520251119Name {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class ToolSearchToolBM2520251119Type {
-
   final String value;
 
   const ToolSearchToolBM2520251119Type._(this.value);
 
-  factory ToolSearchToolBM2520251119Type.fromJson(String value) => ToolSearchToolBM2520251119Type._(value);
+  factory ToolSearchToolBM2520251119Type.fromJson(String value) =>
+      ToolSearchToolBM2520251119Type._(value);
 
-  static const toolSearchToolBm2520251119 = ToolSearchToolBM2520251119Type._('tool_search_tool_bm25_20251119');
-  static const toolSearchToolBm25 = ToolSearchToolBM2520251119Type._('tool_search_tool_bm25');
+  static const toolSearchToolBm2520251119 =
+      ToolSearchToolBM2520251119Type._('tool_search_tool_bm25_20251119');
+  static const toolSearchToolBm25 =
+      ToolSearchToolBM2520251119Type._('tool_search_tool_bm25');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ToolSearchToolBM2520251119Type && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ToolSearchToolBM2520251119Type && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
@@ -95,14 +109,17 @@ enum ToolSearchToolRegex20251119Name {
 
   static ToolSearchToolRegex20251119Name fromJson(String value) {
     switch (value) {
-      case 'tool_search_tool_regex': return ToolSearchToolRegex20251119Name.toolSearchToolRegex;
-      default: throw ArgumentError('Unknown ToolSearchToolRegex20251119Name: $value');
+      case 'tool_search_tool_regex':
+        return ToolSearchToolRegex20251119Name.toolSearchToolRegex;
+      default:
+        throw ArgumentError('Unknown ToolSearchToolRegex20251119Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ToolSearchToolRegex20251119Name.toolSearchToolRegex: return 'tool_search_tool_regex';
+      case ToolSearchToolRegex20251119Name.toolSearchToolRegex:
+        return 'tool_search_tool_regex';
     }
   }
 
@@ -112,24 +129,29 @@ enum ToolSearchToolRegex20251119Name {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class ToolSearchToolRegex20251119Type {
-
   final String value;
 
   const ToolSearchToolRegex20251119Type._(this.value);
 
-  factory ToolSearchToolRegex20251119Type.fromJson(String value) => ToolSearchToolRegex20251119Type._(value);
+  factory ToolSearchToolRegex20251119Type.fromJson(String value) =>
+      ToolSearchToolRegex20251119Type._(value);
 
-  static const toolSearchToolRegex20251119 = ToolSearchToolRegex20251119Type._('tool_search_tool_regex_20251119');
-  static const toolSearchToolRegex = ToolSearchToolRegex20251119Type._('tool_search_tool_regex');
+  static const toolSearchToolRegex20251119 =
+      ToolSearchToolRegex20251119Type._('tool_search_tool_regex_20251119');
+  static const toolSearchToolRegex =
+      ToolSearchToolRegex20251119Type._('tool_search_tool_regex');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ToolSearchToolRegex20251119Type && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ToolSearchToolRegex20251119Type && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -138,14 +160,17 @@ enum URLImageSourceType {
 
   static URLImageSourceType fromJson(String value) {
     switch (value) {
-      case 'url': return URLImageSourceType.url;
-      default: throw ArgumentError('Unknown URLImageSourceType: $value');
+      case 'url':
+        return URLImageSourceType.url;
+      default:
+        throw ArgumentError('Unknown URLImageSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case URLImageSourceType.url: return 'url';
+      case URLImageSourceType.url:
+        return 'url';
     }
   }
 
@@ -159,14 +184,17 @@ enum URLPDFSourceType {
 
   static URLPDFSourceType fromJson(String value) {
     switch (value) {
-      case 'url': return URLPDFSourceType.url;
-      default: throw ArgumentError('Unknown URLPDFSourceType: $value');
+      case 'url':
+        return URLPDFSourceType.url;
+      default:
+        throw ArgumentError('Unknown URLPDFSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case URLPDFSourceType.url: return 'url';
+      case URLPDFSourceType.url:
+        return 'url';
     }
   }
 
@@ -176,12 +204,12 @@ enum URLPDFSourceType {
 
 /// Required enumerated value serialized in the `service_tier` wire field.
 final class UsageServiceTierVariant0 {
-
   final String value;
 
   const UsageServiceTierVariant0._(this.value);
 
-  factory UsageServiceTierVariant0.fromJson(String value) => UsageServiceTierVariant0._(value);
+  factory UsageServiceTierVariant0.fromJson(String value) =>
+      UsageServiceTierVariant0._(value);
 
   static const standard = UsageServiceTierVariant0._('standard');
   static const priority = UsageServiceTierVariant0._('priority');
@@ -189,12 +217,15 @@ final class UsageServiceTierVariant0 {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UsageServiceTierVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UsageServiceTierVariant0 && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -203,14 +234,17 @@ enum UserLocationType {
 
   static UserLocationType fromJson(String value) {
     switch (value) {
-      case 'approximate': return UserLocationType.approximate;
-      default: throw ArgumentError('Unknown UserLocationType: $value');
+      case 'approximate':
+        return UserLocationType.approximate;
+      default:
+        throw ArgumentError('Unknown UserLocationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case UserLocationType.approximate: return 'approximate';
+      case UserLocationType.approximate:
+        return 'approximate';
     }
   }
 
@@ -224,14 +258,17 @@ enum WebFetchTool20250910Name {
 
   static WebFetchTool20250910Name fromJson(String value) {
     switch (value) {
-      case 'web_fetch': return WebFetchTool20250910Name.webFetch;
-      default: throw ArgumentError('Unknown WebFetchTool20250910Name: $value');
+      case 'web_fetch':
+        return WebFetchTool20250910Name.webFetch;
+      default:
+        throw ArgumentError('Unknown WebFetchTool20250910Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebFetchTool20250910Name.webFetch: return 'web_fetch';
+      case WebFetchTool20250910Name.webFetch:
+        return 'web_fetch';
     }
   }
 
@@ -245,14 +282,17 @@ enum WebFetchTool20250910Type {
 
   static WebFetchTool20250910Type fromJson(String value) {
     switch (value) {
-      case 'web_fetch_20250910': return WebFetchTool20250910Type.webFetch20250910;
-      default: throw ArgumentError('Unknown WebFetchTool20250910Type: $value');
+      case 'web_fetch_20250910':
+        return WebFetchTool20250910Type.webFetch20250910;
+      default:
+        throw ArgumentError('Unknown WebFetchTool20250910Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebFetchTool20250910Type.webFetch20250910: return 'web_fetch_20250910';
+      case WebFetchTool20250910Type.webFetch20250910:
+        return 'web_fetch_20250910';
     }
   }
 
@@ -266,14 +306,17 @@ enum WebFetchTool20260209Name {
 
   static WebFetchTool20260209Name fromJson(String value) {
     switch (value) {
-      case 'web_fetch': return WebFetchTool20260209Name.webFetch;
-      default: throw ArgumentError('Unknown WebFetchTool20260209Name: $value');
+      case 'web_fetch':
+        return WebFetchTool20260209Name.webFetch;
+      default:
+        throw ArgumentError('Unknown WebFetchTool20260209Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case WebFetchTool20260209Name.webFetch: return 'web_fetch';
+      case WebFetchTool20260209Name.webFetch:
+        return 'web_fetch';
     }
   }
 

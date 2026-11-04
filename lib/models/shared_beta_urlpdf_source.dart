@@ -8,28 +8,40 @@ part of 'shared_beta.dart';
 class BetaURLPDFSource implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaURLPDFSourceType type_;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
   const BetaURLPDFSource({required this.type_, required this.url});
 
-  BetaURLPDFSource Function({BetaURLPDFSourceType type_, String url}) get copyWith => _copyWith;
+  BetaURLPDFSource Function({BetaURLPDFSourceType type_, String url})
+      get copyWith => _copyWith;
 
-  BetaURLPDFSource _copyWith({Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => BetaURLPDFSource(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaURLPDFSourceType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BetaURLPDFSource _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      BetaURLPDFSource(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaURLPDFSourceType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BetaURLPDFSource.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaURLPDFSource(
-    type_: (json['type'] != null ? BetaURLPDFSourceType.fromJson(json['type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-  ), json);
+  factory BetaURLPDFSource.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaURLPDFSource(
+            type_: (json['type'] != null
+                ? BetaURLPDFSourceType.fromJson(json['type'] as String)
+                : null)!,
+            url: (json['url'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'url': url,
-  };
+        'type': type_.toJson(),
+        'url': url,
+      };
 }

@@ -4,51 +4,74 @@
 part of 'stream_beta_true.dart';
 
 // stream_beta_true domain models
-final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsUserToolResultEvent extends BetaManagedAgentsStreamSessionThreadEvents {
+final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsUserToolResultEvent
+    extends BetaManagedAgentsStreamSessionThreadEvents {
   final BetaManagedAgentsUserToolResultEvent value;
-  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsUserToolResultEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsUserToolResultEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionThreadStatusRescheduledEvent extends BetaManagedAgentsStreamSessionThreadEvents {
+final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionThreadStatusRescheduledEvent
+    extends BetaManagedAgentsStreamSessionThreadEvents {
   final BetaManagedAgentsSessionThreadStatusRescheduledEvent value;
-  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionThreadStatusRescheduledEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionThreadStatusRescheduledEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionUpdatedEvent extends BetaManagedAgentsStreamSessionThreadEvents {
+final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionUpdatedEvent
+    extends BetaManagedAgentsStreamSessionThreadEvents {
   final BetaManagedAgentsSessionUpdatedEvent value;
-  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionUpdatedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionUpdatedEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsEventStartEvent extends BetaManagedAgentsStreamSessionThreadEvents {
+final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsEventStartEvent
+    extends BetaManagedAgentsStreamSessionThreadEvents {
   final BetaManagedAgentsEventStartEvent value;
-  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsEventStartEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsEventStartEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsEventDeltaEvent extends BetaManagedAgentsStreamSessionThreadEvents {
+final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsEventDeltaEvent
+    extends BetaManagedAgentsStreamSessionThreadEvents {
   final BetaManagedAgentsEventDeltaEvent value;
-  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsEventDeltaEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsEventDeltaEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSystemMessageEvent extends BetaManagedAgentsStreamSessionThreadEvents {
+final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSystemMessageEvent
+    extends BetaManagedAgentsStreamSessionThreadEvents {
   final BetaManagedAgentsSystemMessageEvent value;
-  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSystemMessageEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSystemMessageEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionUsageEvent extends BetaManagedAgentsStreamSessionThreadEvents {
+final class BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionUsageEvent
+    extends BetaManagedAgentsStreamSessionThreadEvents {
   final BetaManagedAgentsSessionUsageEvent value;
-  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionUsageEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsStreamSessionThreadEventsBetaManagedAgentsSessionUsageEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsStreamSessionThreadEvents] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsStreamSessionThreadEvents extends BetaManagedAgentsStreamSessionThreadEvents {
+final class UnknownBetaManagedAgentsStreamSessionThreadEvents
+    extends BetaManagedAgentsStreamSessionThreadEvents {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsStreamSessionThreadEvents(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

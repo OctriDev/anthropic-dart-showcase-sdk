@@ -8,28 +8,40 @@ part of 'messages.dart';
 class ContentBlockStopEvent implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `index` wire field.
   final int index;
+
   /// Required `string` value serialized in the `type` wire field.
   final ContentBlockStopEventType type_;
 
   const ContentBlockStopEvent({required this.index, required this.type_});
 
-  ContentBlockStopEvent Function({int index, ContentBlockStopEventType type_}) get copyWith => _copyWith;
+  ContentBlockStopEvent Function({int index, ContentBlockStopEventType type_})
+      get copyWith => _copyWith;
 
-  ContentBlockStopEvent _copyWith({Object? index = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ContentBlockStopEvent(
-    index: identical(index, sdkOmittedValue) ? this.index : index as int,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ContentBlockStopEventType,
-  );
+  ContentBlockStopEvent _copyWith(
+          {Object? index = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      ContentBlockStopEvent(
+        index: identical(index, sdkOmittedValue) ? this.index : index as int,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ContentBlockStopEventType,
+      );
 
-  factory ContentBlockStopEvent.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ContentBlockStopEvent(
-    index: ((json['index'] as num?)?.toInt())!,
-    type_: (json['type'] != null ? ContentBlockStopEventType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory ContentBlockStopEvent.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ContentBlockStopEvent(
+            index: ((json['index'] as num?)?.toInt())!,
+            type_: (json['type'] != null
+                ? ContentBlockStopEventType.fromJson(json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'index': index,
-    'type': type_.toJson(),
-  };
+        'index': index,
+        'type': type_.toJson(),
+      };
 }

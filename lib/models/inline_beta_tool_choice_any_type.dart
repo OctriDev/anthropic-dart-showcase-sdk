@@ -10,14 +10,17 @@ enum BetaToolChoiceAnyType {
 
   static BetaToolChoiceAnyType fromJson(String value) {
     switch (value) {
-      case 'any': return BetaToolChoiceAnyType.any;
-      default: throw ArgumentError('Unknown BetaToolChoiceAnyType: $value');
+      case 'any':
+        return BetaToolChoiceAnyType.any;
+      default:
+        throw ArgumentError('Unknown BetaToolChoiceAnyType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolChoiceAnyType.any: return 'any';
+      case BetaToolChoiceAnyType.any:
+        return 'any';
     }
   }
 
@@ -31,14 +34,17 @@ enum BetaToolChoiceAutoType {
 
   static BetaToolChoiceAutoType fromJson(String value) {
     switch (value) {
-      case 'auto': return BetaToolChoiceAutoType.auto;
-      default: throw ArgumentError('Unknown BetaToolChoiceAutoType: $value');
+      case 'auto':
+        return BetaToolChoiceAutoType.auto;
+      default:
+        throw ArgumentError('Unknown BetaToolChoiceAutoType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolChoiceAutoType.auto: return 'auto';
+      case BetaToolChoiceAutoType.auto:
+        return 'auto';
     }
   }
 
@@ -52,14 +58,17 @@ enum BetaToolChoiceNoneType {
 
   static BetaToolChoiceNoneType fromJson(String value) {
     switch (value) {
-      case 'none': return BetaToolChoiceNoneType.none;
-      default: throw ArgumentError('Unknown BetaToolChoiceNoneType: $value');
+      case 'none':
+        return BetaToolChoiceNoneType.none;
+      default:
+        throw ArgumentError('Unknown BetaToolChoiceNoneType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolChoiceNoneType.none: return 'none';
+      case BetaToolChoiceNoneType.none:
+        return 'none';
     }
   }
 
@@ -73,14 +82,17 @@ enum BetaToolChoiceToolType {
 
   static BetaToolChoiceToolType fromJson(String value) {
     switch (value) {
-      case 'tool': return BetaToolChoiceToolType.tool;
-      default: throw ArgumentError('Unknown BetaToolChoiceToolType: $value');
+      case 'tool':
+        return BetaToolChoiceToolType.tool;
+      default:
+        throw ArgumentError('Unknown BetaToolChoiceToolType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolChoiceToolType.tool: return 'tool';
+      case BetaToolChoiceToolType.tool:
+        return 'tool';
     }
   }
 
@@ -94,14 +106,18 @@ enum BetaToolSearchToolBM2520251119Name {
 
   static BetaToolSearchToolBM2520251119Name fromJson(String value) {
     switch (value) {
-      case 'tool_search_tool_bm25': return BetaToolSearchToolBM2520251119Name.toolSearchToolBm25;
-      default: throw ArgumentError('Unknown BetaToolSearchToolBM2520251119Name: $value');
+      case 'tool_search_tool_bm25':
+        return BetaToolSearchToolBM2520251119Name.toolSearchToolBm25;
+      default:
+        throw ArgumentError(
+            'Unknown BetaToolSearchToolBM2520251119Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolSearchToolBM2520251119Name.toolSearchToolBm25: return 'tool_search_tool_bm25';
+      case BetaToolSearchToolBM2520251119Name.toolSearchToolBm25:
+        return 'tool_search_tool_bm25';
     }
   }
 
@@ -111,24 +127,29 @@ enum BetaToolSearchToolBM2520251119Name {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaToolSearchToolBM2520251119Type {
-
   final String value;
 
   const BetaToolSearchToolBM2520251119Type._(this.value);
 
-  factory BetaToolSearchToolBM2520251119Type.fromJson(String value) => BetaToolSearchToolBM2520251119Type._(value);
+  factory BetaToolSearchToolBM2520251119Type.fromJson(String value) =>
+      BetaToolSearchToolBM2520251119Type._(value);
 
-  static const toolSearchToolBm2520251119 = BetaToolSearchToolBM2520251119Type._('tool_search_tool_bm25_20251119');
-  static const toolSearchToolBm25 = BetaToolSearchToolBM2520251119Type._('tool_search_tool_bm25');
+  static const toolSearchToolBm2520251119 =
+      BetaToolSearchToolBM2520251119Type._('tool_search_tool_bm25_20251119');
+  static const toolSearchToolBm25 =
+      BetaToolSearchToolBM2520251119Type._('tool_search_tool_bm25');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaToolSearchToolBM2520251119Type && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaToolSearchToolBM2520251119Type && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Name of the tool. This is how the tool will be called by the model and in `tool_use` blocks.
@@ -137,14 +158,18 @@ enum BetaToolSearchToolRegex20251119Name {
 
   static BetaToolSearchToolRegex20251119Name fromJson(String value) {
     switch (value) {
-      case 'tool_search_tool_regex': return BetaToolSearchToolRegex20251119Name.toolSearchToolRegex;
-      default: throw ArgumentError('Unknown BetaToolSearchToolRegex20251119Name: $value');
+      case 'tool_search_tool_regex':
+        return BetaToolSearchToolRegex20251119Name.toolSearchToolRegex;
+      default:
+        throw ArgumentError(
+            'Unknown BetaToolSearchToolRegex20251119Name: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolSearchToolRegex20251119Name.toolSearchToolRegex: return 'tool_search_tool_regex';
+      case BetaToolSearchToolRegex20251119Name.toolSearchToolRegex:
+        return 'tool_search_tool_regex';
     }
   }
 
@@ -154,24 +179,29 @@ enum BetaToolSearchToolRegex20251119Name {
 
 /// Required enumerated value serialized in the `type` wire field.
 final class BetaToolSearchToolRegex20251119Type {
-
   final String value;
 
   const BetaToolSearchToolRegex20251119Type._(this.value);
 
-  factory BetaToolSearchToolRegex20251119Type.fromJson(String value) => BetaToolSearchToolRegex20251119Type._(value);
+  factory BetaToolSearchToolRegex20251119Type.fromJson(String value) =>
+      BetaToolSearchToolRegex20251119Type._(value);
 
-  static const toolSearchToolRegex20251119 = BetaToolSearchToolRegex20251119Type._('tool_search_tool_regex_20251119');
-  static const toolSearchToolRegex = BetaToolSearchToolRegex20251119Type._('tool_search_tool_regex');
+  static const toolSearchToolRegex20251119 =
+      BetaToolSearchToolRegex20251119Type._('tool_search_tool_regex_20251119');
+  static const toolSearchToolRegex =
+      BetaToolSearchToolRegex20251119Type._('tool_search_tool_regex');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaToolSearchToolRegex20251119Type && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaToolSearchToolRegex20251119Type && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required `string` value serialized in the `type` wire field.
@@ -180,14 +210,17 @@ enum BetaToolUsesKeepType {
 
   static BetaToolUsesKeepType fromJson(String value) {
     switch (value) {
-      case 'tool_uses': return BetaToolUsesKeepType.toolUses;
-      default: throw ArgumentError('Unknown BetaToolUsesKeepType: $value');
+      case 'tool_uses':
+        return BetaToolUsesKeepType.toolUses;
+      default:
+        throw ArgumentError('Unknown BetaToolUsesKeepType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolUsesKeepType.toolUses: return 'tool_uses';
+      case BetaToolUsesKeepType.toolUses:
+        return 'tool_uses';
     }
   }
 
@@ -201,14 +234,17 @@ enum BetaToolUsesTriggerType {
 
   static BetaToolUsesTriggerType fromJson(String value) {
     switch (value) {
-      case 'tool_uses': return BetaToolUsesTriggerType.toolUses;
-      default: throw ArgumentError('Unknown BetaToolUsesTriggerType: $value');
+      case 'tool_uses':
+        return BetaToolUsesTriggerType.toolUses;
+      default:
+        throw ArgumentError('Unknown BetaToolUsesTriggerType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaToolUsesTriggerType.toolUses: return 'tool_uses';
+      case BetaToolUsesTriggerType.toolUses:
+        return 'tool_uses';
     }
   }
 
@@ -222,14 +258,17 @@ enum BetaTunnelType {
 
   static BetaTunnelType fromJson(String value) {
     switch (value) {
-      case 'tunnel': return BetaTunnelType.tunnel;
-      default: throw ArgumentError('Unknown BetaTunnelType: $value');
+      case 'tunnel':
+        return BetaTunnelType.tunnel;
+      default:
+        throw ArgumentError('Unknown BetaTunnelType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTunnelType.tunnel: return 'tunnel';
+      case BetaTunnelType.tunnel:
+        return 'tunnel';
     }
   }
 
@@ -243,14 +282,17 @@ enum BetaTunnelCertificateType {
 
   static BetaTunnelCertificateType fromJson(String value) {
     switch (value) {
-      case 'tunnel_certificate': return BetaTunnelCertificateType.tunnelCertificate;
-      default: throw ArgumentError('Unknown BetaTunnelCertificateType: $value');
+      case 'tunnel_certificate':
+        return BetaTunnelCertificateType.tunnelCertificate;
+      default:
+        throw ArgumentError('Unknown BetaTunnelCertificateType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTunnelCertificateType.tunnelCertificate: return 'tunnel_certificate';
+      case BetaTunnelCertificateType.tunnelCertificate:
+        return 'tunnel_certificate';
     }
   }
 
@@ -264,14 +306,17 @@ enum BetaTunnelTokenType {
 
   static BetaTunnelTokenType fromJson(String value) {
     switch (value) {
-      case 'tunnel_token': return BetaTunnelTokenType.tunnelToken;
-      default: throw ArgumentError('Unknown BetaTunnelTokenType: $value');
+      case 'tunnel_token':
+        return BetaTunnelTokenType.tunnelToken;
+      default:
+        throw ArgumentError('Unknown BetaTunnelTokenType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaTunnelTokenType.tunnelToken: return 'tunnel_token';
+      case BetaTunnelTokenType.tunnelToken:
+        return 'tunnel_token';
     }
   }
 

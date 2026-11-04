@@ -23,33 +23,69 @@ import '../types.dart';
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaManagedAgentsMemory>
-    createBetaMemoryStoresMemories(ClientConfig config,
-        {required String memoryStoreId,
-        required String path,
-        required String? content,
-        SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
-        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsMemory> createBetaMemoryStoresMemories(
+    ClientConfig config,
+    {required String memoryStoreId,
+    required String path,
+    required String? content,
+    SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
+    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('path', path, min: 2, max: 1024);
 
   return (await sdkRequest<BetaManagedAgentsMemory>('POST',
           '/v1/memory_stores/${Uri.encodeComponent(memoryStoreId.toString())}/memories?beta=true',
           config: config,
           query: {
-            'view': SdkQueryValue(SdkUtils.unwrapOptional(view), style: 'form', explode: true)
+            'view': SdkQueryValue(SdkUtils.unwrapOptional(view),
+                style: 'form', explode: true)
           },
           body: {'path': path, 'content': content},
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'createBetaMemoryStoresMemories',
-          fromJsonRaw: (value) => BetaManagedAgentsMemory.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaManagedAgentsMemory.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '401': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '403': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '404': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '408': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '409': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '412': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '413': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '429': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '431': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '499': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '500': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '501': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '503': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '504': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists memories in a memory store, with optional path filtering and hierarchical depth control. Use `path_prefix` to scope results and `depth` to choose recursive results or immediate children; `view` controls whether item content is populated. Pass the response's `next_page` value as `page` to fetch another page.
 ///
@@ -75,37 +111,76 @@ Future<BetaManagedAgentsMemory>
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaManagedAgentsListMemoriesResult>
-    listBetaMemoryStoresMemories(ClientConfig config,
-        {required String memoryStoreId,
-        SdkOptional<String> pathPrefix = const SdkOmitted(),
-        SdkOptional<int> depth = const SdkOmitted(),
-        SdkOptional<int> limit = const SdkOmitted(),
-        SdkOptional<String> page = const SdkOmitted(),
-        SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
-        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsListMemoriesResult> listBetaMemoryStoresMemories(
+    ClientConfig config,
+    {required String memoryStoreId,
+    SdkOptional<String> pathPrefix = const SdkOmitted(),
+    SdkOptional<int> depth = const SdkOmitted(),
+    SdkOptional<int> limit = const SdkOmitted(),
+    SdkOptional<String> page = const SdkOmitted(),
+    SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
+    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaManagedAgentsListMemoriesResult>('GET',
           '/v1/memory_stores/${Uri.encodeComponent(memoryStoreId.toString())}/memories?beta=true',
           config: config,
           query: {
-            'path_prefix': SdkQueryValue(SdkUtils.unwrapOptional(pathPrefix), style: 'form', explode: true),
-            'depth': SdkQueryValue(SdkUtils.unwrapOptional(depth), style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'view': SdkQueryValue(SdkUtils.unwrapOptional(view), style: 'form', explode: true)
+            'path_prefix': SdkQueryValue(SdkUtils.unwrapOptional(pathPrefix),
+                style: 'form', explode: true),
+            'depth': SdkQueryValue(SdkUtils.unwrapOptional(depth),
+                style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'view': SdkQueryValue(SdkUtils.unwrapOptional(view),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'listBetaMemoryStoresMemories',
-          fromJsonRaw: (value) => BetaManagedAgentsListMemoriesResult.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsListMemoriesResult.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '401': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '403': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '404': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '408': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '409': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '412': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '413': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '429': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '431': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '499': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '500': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '501': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '503': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '504': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// Lists memories in a memory store, with optional path filtering and hierarchical depth control. Use `path_prefix` to scope results and `depth` to choose recursive results or immediate children; `view` controls whether item content is populated. Pass the response's `next_page` value as `page` to fetch another page.
 ///
@@ -131,23 +206,85 @@ Future<BetaManagedAgentsListMemoriesResult>
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Stream<BetaManagedAgentsMemoryListItem> listBetaMemoryStoresMemoriesPaginated(ClientConfig config, {required String memoryStoreId, String? pathPrefix, int? depth, int? limit, String? page, BetaManagedAgentsMemoryView? view, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<BetaManagedAgentsMemoryListItem> listBetaMemoryStoresMemoriesPaginated(
+    ClientConfig config,
+    {required String memoryStoreId,
+    String? pathPrefix,
+    int? depth,
+    int? limit,
+    String? page,
+    BetaManagedAgentsMemoryView? view,
+    List<String>? anthropicBeta,
+    String? anthropicWorkspaceId,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaMemoryStoresMemories(config, memoryStoreId: memoryStoreId, pathPrefix: pathPrefix == null ? const SdkOmitted<String>() : SdkPresent<String>(pathPrefix), depth: depth == null ? const SdkOmitted<int>() : SdkPresent<int>(depth), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), view: view == null ? const SdkOmitted<BetaManagedAgentsMemoryView>() : SdkPresent<BetaManagedAgentsMemoryView>(view), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listBetaMemoryStoresMemories(config,
+        memoryStoreId: memoryStoreId,
+        pathPrefix: pathPrefix == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(pathPrefix),
+        depth: depth == null ? const SdkOmitted<int>() : SdkPresent<int>(depth),
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(sdkCursor),
+        view: view == null
+            ? const SdkOmitted<BetaManagedAgentsMemoryView>()
+            : SdkPresent<BetaManagedAgentsMemoryView>(view),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data.valueOrNull ?? [];
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage.valueOrNull;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaManagedAgentsListMemoriesResult, BetaManagedAgentsMemoryListItem>> listBetaMemoryStoresMemoriesPages(ClientConfig config, {required String memoryStoreId, String? pathPrefix, int? depth, int? limit, String? page, BetaManagedAgentsMemoryView? view, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<
+    SdkPage<BetaManagedAgentsListMemoriesResult,
+        BetaManagedAgentsMemoryListItem>> listBetaMemoryStoresMemoriesPages(
+    ClientConfig config,
+    {required String memoryStoreId,
+    String? pathPrefix,
+    int? depth,
+    int? limit,
+    String? page,
+    BetaManagedAgentsMemoryView? view,
+    List<String>? anthropicBeta,
+    String? anthropicWorkspaceId,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaMemoryStoresMemories(config, memoryStoreId: memoryStoreId, pathPrefix: pathPrefix == null ? const SdkOmitted<String>() : SdkPresent<String>(pathPrefix), depth: depth == null ? const SdkOmitted<int>() : SdkPresent<int>(depth), limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), view: view == null ? const SdkOmitted<BetaManagedAgentsMemoryView>() : SdkPresent<BetaManagedAgentsMemoryView>(view), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listBetaMemoryStoresMemories(config,
+        memoryStoreId: memoryStoreId,
+        pathPrefix: pathPrefix == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(pathPrefix),
+        depth: depth == null ? const SdkOmitted<int>() : SdkPresent<int>(depth),
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(sdkCursor),
+        view: view == null
+            ? const SdkOmitted<BetaManagedAgentsMemoryView>()
+            : SdkPresent<BetaManagedAgentsMemoryView>(view),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data.valueOrNull ?? [];
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage.valueOrNull;
@@ -157,7 +294,6 @@ Stream<SdkPage<BetaManagedAgentsListMemoriesResult, BetaManagedAgentsMemoryListI
     sdkCursor = sdkNext;
   }
 }
-
 
 /// Retrieves a specific memory from a memory store by its ID. Use `view` to choose whether the response includes the memory content; the response also includes content size and hash values regardless of that choice.
 ///
@@ -169,29 +305,65 @@ Stream<SdkPage<BetaManagedAgentsListMemoriesResult, BetaManagedAgentsMemoryListI
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaManagedAgentsMemory>
-    retrieveBetaMemoryStoresMemories(ClientConfig config,
-        {required String memoryStoreId,
-        required String memoryId,
-        SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
-        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsMemory> retrieveBetaMemoryStoresMemories(
+    ClientConfig config,
+    {required String memoryStoreId,
+    required String memoryId,
+    SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
+    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaManagedAgentsMemory>('GET',
           '/v1/memory_stores/${Uri.encodeComponent(memoryStoreId.toString())}/memories/${Uri.encodeComponent(memoryId.toString())}?beta=true',
           config: config,
           query: {
-            'view': SdkQueryValue(SdkUtils.unwrapOptional(view), style: 'form', explode: true)
+            'view': SdkQueryValue(SdkUtils.unwrapOptional(view),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'retrieveBetaMemoryStoresMemories',
-          fromJsonRaw: (value) => BetaManagedAgentsMemory.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaManagedAgentsMemory.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '401': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '403': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '404': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '408': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '409': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '412': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '413': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '429': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '431': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '499': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '500': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '501': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '503': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '504': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Updates a memory's content, path, or both within a memory store. Provide at least one of `content` or `path`; a path change renames the memory and does not overwrite another memory. Use `precondition` when you want the update to apply only if the memory's current state matches.
 ///
@@ -216,22 +388,24 @@ Future<BetaManagedAgentsMemory>
 ///   the update applies only if the memory's current state matches; on mismatch
 ///   the request returns `memory_precondition_failed_error` (HTTP 409). When
 ///   omitted, the update is unconditional.
-Future<BetaManagedAgentsMemory>
-    updateBetaMemoryStoresMemories(ClientConfig config,
-        {required String memoryStoreId,
-        required String memoryId,
-        SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
-        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-        SdkOptional<String?> content = const SdkOmitted(),
-        SdkOptional<String?> path = const SdkOmitted(),
-        SdkOptional<BetaManagedAgentsPrecondition> precondition = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsMemory> updateBetaMemoryStoresMemories(
+    ClientConfig config,
+    {required String memoryStoreId,
+    required String memoryId,
+    SdkOptional<BetaManagedAgentsMemoryView> view = const SdkOmitted(),
+    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+    SdkOptional<String?> content = const SdkOmitted(),
+    SdkOptional<String?> path = const SdkOmitted(),
+    SdkOptional<BetaManagedAgentsPrecondition> precondition =
+        const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaManagedAgentsMemory>('POST',
           '/v1/memory_stores/${Uri.encodeComponent(memoryStoreId.toString())}/memories/${Uri.encodeComponent(memoryId.toString())}?beta=true',
           config: config,
           query: {
-            'view': SdkQueryValue(SdkUtils.unwrapOptional(view), style: 'form', explode: true)
+            'view': SdkQueryValue(SdkUtils.unwrapOptional(view),
+                style: 'form', explode: true)
           },
           body: {
             'content': SdkUtils.unwrapOptional(content),
@@ -239,14 +413,49 @@ Future<BetaManagedAgentsMemory>
             'precondition': SdkUtils.unwrapOptional(precondition)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'updateBetaMemoryStoresMemories',
-          fromJsonRaw: (value) => BetaManagedAgentsMemory.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaManagedAgentsMemory.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '401': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '403': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '404': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '408': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '409': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '412': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '413': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '429': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '431': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '499': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '500': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '501': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '503': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '504': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes a memory from a memory store and returns a tombstone identifying the deleted memory. Supply `expected_content_sha256` when you want to guard against deleting content that has changed since you last read it; deleting the memory does not erase its retained version history.
 ///
@@ -258,25 +467,64 @@ Future<BetaManagedAgentsMemory>
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Future<BetaManagedAgentsDeletedMemory>
-    deleteBetaMemoryStoresMemories(ClientConfig config,
-        {required String memoryStoreId,
-        required String memoryId,
-        SdkOptional<String> expectedContentSha256 = const SdkOmitted(),
-        SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
-        SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<BetaManagedAgentsDeletedMemory> deleteBetaMemoryStoresMemories(
+    ClientConfig config,
+    {required String memoryStoreId,
+    required String memoryId,
+    SdkOptional<String> expectedContentSha256 = const SdkOmitted(),
+    SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
+    SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<BetaManagedAgentsDeletedMemory>('DELETE',
           '/v1/memory_stores/${Uri.encodeComponent(memoryStoreId.toString())}/memories/${Uri.encodeComponent(memoryId.toString())}?beta=true',
           config: config,
           query: {
-            'expected_content_sha256': SdkQueryValue(SdkUtils.unwrapOptional(expectedContentSha256), style: 'form', explode: true)
+            'expected_content_sha256': SdkQueryValue(
+                SdkUtils.unwrapOptional(expectedContentSha256),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'deleteBetaMemoryStoresMemories',
-          fromJsonRaw: (value) => BetaManagedAgentsDeletedMemory.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsDeletedMemory.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaManagedAgentsErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '401': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '403': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '404': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '408': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '409': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '412': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '413': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '429': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '431': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '499': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '500': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '501': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '503': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>),
+            '504': (value) => BetaManagedAgentsErrorResponse.fromJson(
+                value as Map<String, dynamic>)
+          }))
       .data;
 }

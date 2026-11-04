@@ -8,28 +8,38 @@ part of 'shared_beta_dream.dart';
 class BetaDreamError implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
 
   const BetaDreamError({required this.type_, required this.message});
 
-  BetaDreamError Function({String type_, String message}) get copyWith => _copyWith;
+  BetaDreamError Function({String type_, String message}) get copyWith =>
+      _copyWith;
 
-  BetaDreamError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaDreamError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-  );
+  BetaDreamError _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? message = sdkOmittedValue}) =>
+      BetaDreamError(
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+      );
 
-  factory BetaDreamError.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaDreamError(
-    type_: (json['type'] as String?)!,
-    message: (json['message'] as String?)!,
-  ), json);
+  factory BetaDreamError.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(
+      BetaDreamError(
+        type_: (json['type'] as String?)!,
+        message: (json['message'] as String?)!,
+      ),
+      json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_,
-    'message': message,
-  };
+        'type': type_,
+        'message': message,
+      };
 }

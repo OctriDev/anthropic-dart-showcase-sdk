@@ -6,24 +6,30 @@ part of 'shared_code.dart';
 // shared_code domain models
 /// Typed representation of the `CodeExecutionToolResultErrorCode` API schema.
 final class CodeExecutionToolResultErrorCode {
-
   final String value;
 
   const CodeExecutionToolResultErrorCode._(this.value);
 
-  factory CodeExecutionToolResultErrorCode.fromJson(String value) => CodeExecutionToolResultErrorCode._(value);
+  factory CodeExecutionToolResultErrorCode.fromJson(String value) =>
+      CodeExecutionToolResultErrorCode._(value);
 
-  static const invalidToolInput = CodeExecutionToolResultErrorCode._('invalid_tool_input');
+  static const invalidToolInput =
+      CodeExecutionToolResultErrorCode._('invalid_tool_input');
   static const unavailable = CodeExecutionToolResultErrorCode._('unavailable');
-  static const tooManyRequests = CodeExecutionToolResultErrorCode._('too_many_requests');
-  static const executionTimeExceeded = CodeExecutionToolResultErrorCode._('execution_time_exceeded');
+  static const tooManyRequests =
+      CodeExecutionToolResultErrorCode._('too_many_requests');
+  static const executionTimeExceeded =
+      CodeExecutionToolResultErrorCode._('execution_time_exceeded');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeExecutionToolResultErrorCode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeExecutionToolResultErrorCode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

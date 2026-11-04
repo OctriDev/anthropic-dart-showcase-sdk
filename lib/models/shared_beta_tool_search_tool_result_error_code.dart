@@ -6,24 +6,30 @@ part of 'shared_beta_tool.dart';
 // shared_beta_tool domain models
 /// Typed representation of the `BetaToolSearchToolResultErrorCode` API schema.
 final class BetaToolSearchToolResultErrorCode {
-
   final String value;
 
   const BetaToolSearchToolResultErrorCode._(this.value);
 
-  factory BetaToolSearchToolResultErrorCode.fromJson(String value) => BetaToolSearchToolResultErrorCode._(value);
+  factory BetaToolSearchToolResultErrorCode.fromJson(String value) =>
+      BetaToolSearchToolResultErrorCode._(value);
 
-  static const invalidToolInput = BetaToolSearchToolResultErrorCode._('invalid_tool_input');
+  static const invalidToolInput =
+      BetaToolSearchToolResultErrorCode._('invalid_tool_input');
   static const unavailable = BetaToolSearchToolResultErrorCode._('unavailable');
-  static const tooManyRequests = BetaToolSearchToolResultErrorCode._('too_many_requests');
-  static const executionTimeExceeded = BetaToolSearchToolResultErrorCode._('execution_time_exceeded');
+  static const tooManyRequests =
+      BetaToolSearchToolResultErrorCode._('too_many_requests');
+  static const executionTimeExceeded =
+      BetaToolSearchToolResultErrorCode._('execution_time_exceeded');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaToolSearchToolResultErrorCode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaToolSearchToolResultErrorCode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

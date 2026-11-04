@@ -5,26 +5,43 @@ part of 'shared_beta_managed_agents.dart';
 
 // shared_beta_managed_agents domain models
 /// The secret is substituted on any host the session's Environment network policy permits egress to.
-class BetaManagedAgentsUnrestrictedCredentialNetworkingResponse implements SdkJsonModel {
+class BetaManagedAgentsUnrestrictedCredentialNetworkingResponse
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType type_;
 
-  const BetaManagedAgentsUnrestrictedCredentialNetworkingResponse({required this.type_});
+  const BetaManagedAgentsUnrestrictedCredentialNetworkingResponse(
+      {required this.type_});
 
-  BetaManagedAgentsUnrestrictedCredentialNetworkingResponse Function({BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsUnrestrictedCredentialNetworkingResponse Function(
+          {BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsUnrestrictedCredentialNetworkingResponse _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsUnrestrictedCredentialNetworkingResponse(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType,
-  );
+  BetaManagedAgentsUnrestrictedCredentialNetworkingResponse _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsUnrestrictedCredentialNetworkingResponse(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType,
+      );
 
-  factory BetaManagedAgentsUnrestrictedCredentialNetworkingResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaManagedAgentsUnrestrictedCredentialNetworkingResponse(
-    type_: (json['type'] != null ? BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory BetaManagedAgentsUnrestrictedCredentialNetworkingResponse.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaManagedAgentsUnrestrictedCredentialNetworkingResponse(
+            type_: (json['type'] != null
+                ? BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType
+                    .fromJson(json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

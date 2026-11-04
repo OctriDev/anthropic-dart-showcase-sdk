@@ -10,48 +10,100 @@ sealed class BetaManagedAgentsActor {
   const BetaManagedAgentsActor();
   factory BetaManagedAgentsActor.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsSessionActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsActorBetaManagedAgentsSessionActor(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsApiActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsActorBetaManagedAgentsApiActor(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsUserActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsActorBetaManagedAgentsUserActor(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsServiceAccountActor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsSessionActor.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsActorBetaManagedAgentsSessionActor(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsApiActor.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsActorBetaManagedAgentsApiActor(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsUserActor.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsActorBetaManagedAgentsUserActor(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsServiceAccountActor.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsActorBetaManagedAgentsSessionActor(BetaManagedAgentsSessionActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsActorBetaManagedAgentsApiActor(BetaManagedAgentsApiActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsActorBetaManagedAgentsUserActor(BetaManagedAgentsUserActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor(BetaManagedAgentsServiceAccountActor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"session_actor", "api_actor", "user_actor", "service_account_actor"}.contains(json["type"])) { return UnknownBetaManagedAgentsActor(json); }
+    try {
+      return BetaManagedAgentsActorBetaManagedAgentsSessionActor(
+          BetaManagedAgentsSessionActor.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsActorBetaManagedAgentsApiActor(
+          BetaManagedAgentsApiActor.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsActorBetaManagedAgentsUserActor(
+          BetaManagedAgentsUserActor.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor(
+          BetaManagedAgentsServiceAccountActor.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "session_actor",
+          "api_actor",
+          "user_actor",
+          "service_account_actor"
+        }.contains(json["type"])) {
+      return UnknownBetaManagedAgentsActor(json);
+    }
     throw FormatException("No variant matched for BetaManagedAgentsActor");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsActorBetaManagedAgentsSessionActor extends BetaManagedAgentsActor {
+final class BetaManagedAgentsActorBetaManagedAgentsSessionActor
+    extends BetaManagedAgentsActor {
   final BetaManagedAgentsSessionActor value;
   const BetaManagedAgentsActorBetaManagedAgentsSessionActor(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsActorBetaManagedAgentsApiActor extends BetaManagedAgentsActor {
+final class BetaManagedAgentsActorBetaManagedAgentsApiActor
+    extends BetaManagedAgentsActor {
   final BetaManagedAgentsApiActor value;
   const BetaManagedAgentsActorBetaManagedAgentsApiActor(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsActorBetaManagedAgentsUserActor extends BetaManagedAgentsActor {
+final class BetaManagedAgentsActorBetaManagedAgentsUserActor
+    extends BetaManagedAgentsActor {
   final BetaManagedAgentsUserActor value;
   const BetaManagedAgentsActorBetaManagedAgentsUserActor(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor extends BetaManagedAgentsActor {
+final class BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor
+    extends BetaManagedAgentsActor {
   final BetaManagedAgentsServiceAccountActor value;
   const BetaManagedAgentsActorBetaManagedAgentsServiceAccountActor(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsActor] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaManagedAgentsActor extends BetaManagedAgentsActor {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsActor(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

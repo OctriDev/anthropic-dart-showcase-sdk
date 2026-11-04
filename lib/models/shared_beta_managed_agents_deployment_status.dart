@@ -6,22 +6,25 @@ part of 'shared_beta_managed_agents.dart';
 // shared_beta_managed_agents domain models
 /// Lifecycle status of a deployment.
 final class BetaManagedAgentsDeploymentStatus {
-
   final String value;
 
   const BetaManagedAgentsDeploymentStatus._(this.value);
 
-  factory BetaManagedAgentsDeploymentStatus.fromJson(String value) => BetaManagedAgentsDeploymentStatus._(value);
+  factory BetaManagedAgentsDeploymentStatus.fromJson(String value) =>
+      BetaManagedAgentsDeploymentStatus._(value);
 
   static const active = BetaManagedAgentsDeploymentStatus._('active');
   static const paused = BetaManagedAgentsDeploymentStatus._('paused');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsDeploymentStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsDeploymentStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

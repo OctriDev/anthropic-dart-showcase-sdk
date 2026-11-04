@@ -10,80 +10,200 @@ sealed class BetaManagedAgentsSessionErrorEventError {
   const BetaManagedAgentsSessionErrorEventError();
   factory BetaManagedAgentsSessionErrorEventError.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsUnknownError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsUnknownError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsModelOverloadedError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelOverloadedError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsModelRateLimitedError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRateLimitedError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsModelRequestFailedError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRequestFailedError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsMcpConnectionFailedError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpConnectionFailedError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsMcpAuthenticationFailedError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpAuthenticationFailedError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsBillingError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsBillingError(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsCredentialHostUnreachableError.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsCredentialHostUnreachableError(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsUnknownError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsUnknownError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsModelOverloadedError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelOverloadedError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsModelRateLimitedError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRateLimitedError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsModelRequestFailedError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRequestFailedError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsMcpConnectionFailedError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpConnectionFailedError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsMcpAuthenticationFailedError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpAuthenticationFailedError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsBillingError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsBillingError(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsCredentialHostUnreachableError.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsCredentialHostUnreachableError(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsUnknownError(BetaManagedAgentsUnknownError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelOverloadedError(BetaManagedAgentsModelOverloadedError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRateLimitedError(BetaManagedAgentsModelRateLimitedError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRequestFailedError(BetaManagedAgentsModelRequestFailedError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpConnectionFailedError(BetaManagedAgentsMcpConnectionFailedError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpAuthenticationFailedError(BetaManagedAgentsMcpAuthenticationFailedError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsBillingError(BetaManagedAgentsBillingError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsCredentialHostUnreachableError(BetaManagedAgentsCredentialHostUnreachableError.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"unknown_error", "model_overloaded_error", "model_rate_limited_error", "model_request_failed_error", "mcp_connection_failed_error", "mcp_authentication_failed_error", "billing_error", "credential_host_unreachable_error"}.contains(json["type"])) { return UnknownBetaManagedAgentsSessionErrorEventError(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsSessionErrorEventError");
+    try {
+      return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsUnknownError(
+          BetaManagedAgentsUnknownError.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelOverloadedError(
+          BetaManagedAgentsModelOverloadedError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRateLimitedError(
+          BetaManagedAgentsModelRateLimitedError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRequestFailedError(
+          BetaManagedAgentsModelRequestFailedError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpConnectionFailedError(
+          BetaManagedAgentsMcpConnectionFailedError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpAuthenticationFailedError(
+          BetaManagedAgentsMcpAuthenticationFailedError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsBillingError(
+          BetaManagedAgentsBillingError.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsCredentialHostUnreachableError(
+          BetaManagedAgentsCredentialHostUnreachableError.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "unknown_error",
+          "model_overloaded_error",
+          "model_rate_limited_error",
+          "model_request_failed_error",
+          "mcp_connection_failed_error",
+          "mcp_authentication_failed_error",
+          "billing_error",
+          "credential_host_unreachable_error"
+        }.contains(json["type"])) {
+      return UnknownBetaManagedAgentsSessionErrorEventError(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsSessionErrorEventError");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsUnknownError extends BetaManagedAgentsSessionErrorEventError {
+final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsUnknownError
+    extends BetaManagedAgentsSessionErrorEventError {
   final BetaManagedAgentsUnknownError value;
-  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsUnknownError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsUnknownError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelOverloadedError extends BetaManagedAgentsSessionErrorEventError {
+final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelOverloadedError
+    extends BetaManagedAgentsSessionErrorEventError {
   final BetaManagedAgentsModelOverloadedError value;
-  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelOverloadedError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelOverloadedError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRateLimitedError extends BetaManagedAgentsSessionErrorEventError {
+final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRateLimitedError
+    extends BetaManagedAgentsSessionErrorEventError {
   final BetaManagedAgentsModelRateLimitedError value;
-  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRateLimitedError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRateLimitedError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRequestFailedError extends BetaManagedAgentsSessionErrorEventError {
+final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRequestFailedError
+    extends BetaManagedAgentsSessionErrorEventError {
   final BetaManagedAgentsModelRequestFailedError value;
-  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRequestFailedError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsModelRequestFailedError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpConnectionFailedError extends BetaManagedAgentsSessionErrorEventError {
+final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpConnectionFailedError
+    extends BetaManagedAgentsSessionErrorEventError {
   final BetaManagedAgentsMcpConnectionFailedError value;
-  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpConnectionFailedError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpConnectionFailedError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpAuthenticationFailedError extends BetaManagedAgentsSessionErrorEventError {
+final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpAuthenticationFailedError
+    extends BetaManagedAgentsSessionErrorEventError {
   final BetaManagedAgentsMcpAuthenticationFailedError value;
-  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpAuthenticationFailedError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsMcpAuthenticationFailedError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsBillingError extends BetaManagedAgentsSessionErrorEventError {
+final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsBillingError
+    extends BetaManagedAgentsSessionErrorEventError {
   final BetaManagedAgentsBillingError value;
-  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsBillingError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsBillingError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsCredentialHostUnreachableError extends BetaManagedAgentsSessionErrorEventError {
+final class BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsCredentialHostUnreachableError
+    extends BetaManagedAgentsSessionErrorEventError {
   final BetaManagedAgentsCredentialHostUnreachableError value;
-  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsCredentialHostUnreachableError(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionErrorEventErrorBetaManagedAgentsCredentialHostUnreachableError(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSessionErrorEventError] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsSessionErrorEventError extends BetaManagedAgentsSessionErrorEventError {
+final class UnknownBetaManagedAgentsSessionErrorEventError
+    extends BetaManagedAgentsSessionErrorEventError {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSessionErrorEventError(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

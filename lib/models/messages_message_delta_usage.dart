@@ -9,16 +9,21 @@ sealed class MessageDeltaUsageCacheCreationInputTokens {
   static const String constructionSurface = 'named';
   const MessageDeltaUsageCacheCreationInputTokens();
   factory MessageDeltaUsageCacheCreationInputTokens.fromJson(Object? json) {
-    if (json is num) { return MessageDeltaUsageCacheCreationInputTokensInt(json.toInt()); }
-    throw FormatException("No variant matched for MessageDeltaUsageCacheCreationInputTokens");
+    if (json is num) {
+      return MessageDeltaUsageCacheCreationInputTokensInt(json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for MessageDeltaUsageCacheCreationInputTokens");
   }
   Object? toJson();
 }
 
-final class MessageDeltaUsageCacheCreationInputTokensInt extends MessageDeltaUsageCacheCreationInputTokens {
+final class MessageDeltaUsageCacheCreationInputTokensInt
+    extends MessageDeltaUsageCacheCreationInputTokens {
   final int value;
   const MessageDeltaUsageCacheCreationInputTokensInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class MessageDeltaUsageCacheReadInputTokens {
@@ -26,16 +31,21 @@ sealed class MessageDeltaUsageCacheReadInputTokens {
   static const String constructionSurface = 'named';
   const MessageDeltaUsageCacheReadInputTokens();
   factory MessageDeltaUsageCacheReadInputTokens.fromJson(Object? json) {
-    if (json is num) { return MessageDeltaUsageCacheReadInputTokensInt(json.toInt()); }
-    throw FormatException("No variant matched for MessageDeltaUsageCacheReadInputTokens");
+    if (json is num) {
+      return MessageDeltaUsageCacheReadInputTokensInt(json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for MessageDeltaUsageCacheReadInputTokens");
   }
   Object? toJson();
 }
 
-final class MessageDeltaUsageCacheReadInputTokensInt extends MessageDeltaUsageCacheReadInputTokens {
+final class MessageDeltaUsageCacheReadInputTokensInt
+    extends MessageDeltaUsageCacheReadInputTokens {
   final int value;
   const MessageDeltaUsageCacheReadInputTokensInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 sealed class MessageDeltaUsageInputTokens {
@@ -43,64 +53,134 @@ sealed class MessageDeltaUsageInputTokens {
   static const String constructionSurface = 'named';
   const MessageDeltaUsageInputTokens();
   factory MessageDeltaUsageInputTokens.fromJson(Object? json) {
-    if (json is num) { return MessageDeltaUsageInputTokensInt(json.toInt()); }
-    throw FormatException("No variant matched for MessageDeltaUsageInputTokens");
+    if (json is num) {
+      return MessageDeltaUsageInputTokensInt(json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for MessageDeltaUsageInputTokens");
   }
   Object? toJson();
 }
 
-final class MessageDeltaUsageInputTokensInt extends MessageDeltaUsageInputTokens {
+final class MessageDeltaUsageInputTokensInt
+    extends MessageDeltaUsageInputTokens {
   final int value;
   const MessageDeltaUsageInputTokensInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `MessageDeltaUsage` API schema.
 class MessageDeltaUsage implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The cumulative number of input tokens used to create the cache entry.
   final int? cacheCreationInputTokens;
+
   /// The cumulative number of input tokens read from the cache.
   final int? cacheReadInputTokens;
+
   /// The cumulative number of input tokens which were used.
   final int? inputTokens;
+
   /// The cumulative number of output tokens which were used.
   final int outputTokens;
+
   /// Breakdown of output tokens by category. `output_tokens` remains the inclusive, authoritative total used for billing. This object provides a read-only decomposition for observability — for example, how many of the billed output tokens were spent on internal reasoning that may have been summarized before being returned to you.
   final OutputTokensDetails? outputTokensDetails;
+
   /// The number of server tool requests.
   final ServerToolUsage? serverToolUse;
 
-  const MessageDeltaUsage({required this.cacheCreationInputTokens, required this.cacheReadInputTokens, required this.inputTokens, required this.outputTokens, required this.outputTokensDetails, required this.serverToolUse});
+  const MessageDeltaUsage(
+      {required this.cacheCreationInputTokens,
+      required this.cacheReadInputTokens,
+      required this.inputTokens,
+      required this.outputTokens,
+      required this.outputTokensDetails,
+      required this.serverToolUse});
 
-  MessageDeltaUsage Function({int? cacheCreationInputTokens, int? cacheReadInputTokens, int? inputTokens, int outputTokens, OutputTokensDetails? outputTokensDetails, ServerToolUsage? serverToolUse}) get copyWith => _copyWith;
+  MessageDeltaUsage Function(
+      {int? cacheCreationInputTokens,
+      int? cacheReadInputTokens,
+      int? inputTokens,
+      int outputTokens,
+      OutputTokensDetails? outputTokensDetails,
+      ServerToolUsage? serverToolUse}) get copyWith => _copyWith;
 
-  MessageDeltaUsage _copyWith({Object? cacheCreationInputTokens = sdkOmittedValue, Object? cacheReadInputTokens = sdkOmittedValue, Object? inputTokens = sdkOmittedValue, Object? outputTokens = sdkOmittedValue, Object? outputTokensDetails = sdkOmittedValue, Object? serverToolUse = sdkOmittedValue}) => MessageDeltaUsage(
-    cacheCreationInputTokens: identical(cacheCreationInputTokens, sdkOmittedValue) ? this.cacheCreationInputTokens : cacheCreationInputTokens as int?,
-    cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue) ? this.cacheReadInputTokens : cacheReadInputTokens as int?,
-    inputTokens: identical(inputTokens, sdkOmittedValue) ? this.inputTokens : inputTokens as int?,
-    outputTokens: identical(outputTokens, sdkOmittedValue) ? this.outputTokens : outputTokens as int,
-    outputTokensDetails: identical(outputTokensDetails, sdkOmittedValue) ? this.outputTokensDetails : outputTokensDetails as OutputTokensDetails?,
-    serverToolUse: identical(serverToolUse, sdkOmittedValue) ? this.serverToolUse : serverToolUse as ServerToolUsage?,
-  );
+  MessageDeltaUsage _copyWith(
+          {Object? cacheCreationInputTokens = sdkOmittedValue,
+          Object? cacheReadInputTokens = sdkOmittedValue,
+          Object? inputTokens = sdkOmittedValue,
+          Object? outputTokens = sdkOmittedValue,
+          Object? outputTokensDetails = sdkOmittedValue,
+          Object? serverToolUse = sdkOmittedValue}) =>
+      MessageDeltaUsage(
+        cacheCreationInputTokens:
+            identical(cacheCreationInputTokens, sdkOmittedValue)
+                ? this.cacheCreationInputTokens
+                : cacheCreationInputTokens as int?,
+        cacheReadInputTokens: identical(cacheReadInputTokens, sdkOmittedValue)
+            ? this.cacheReadInputTokens
+            : cacheReadInputTokens as int?,
+        inputTokens: identical(inputTokens, sdkOmittedValue)
+            ? this.inputTokens
+            : inputTokens as int?,
+        outputTokens: identical(outputTokens, sdkOmittedValue)
+            ? this.outputTokens
+            : outputTokens as int,
+        outputTokensDetails: identical(outputTokensDetails, sdkOmittedValue)
+            ? this.outputTokensDetails
+            : outputTokensDetails as OutputTokensDetails?,
+        serverToolUse: identical(serverToolUse, sdkOmittedValue)
+            ? this.serverToolUse
+            : serverToolUse as ServerToolUsage?,
+      );
 
-  factory MessageDeltaUsage.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(MessageDeltaUsage(
-    cacheCreationInputTokens: json.containsKey('cache_creation_input_tokens') ? (json['cache_creation_input_tokens'] as num?)?.toInt() : throw ArgumentError.value(null, 'cache_creation_input_tokens', 'Required property is missing'),
-    cacheReadInputTokens: json.containsKey('cache_read_input_tokens') ? (json['cache_read_input_tokens'] as num?)?.toInt() : throw ArgumentError.value(null, 'cache_read_input_tokens', 'Required property is missing'),
-    inputTokens: json.containsKey('input_tokens') ? (json['input_tokens'] as num?)?.toInt() : throw ArgumentError.value(null, 'input_tokens', 'Required property is missing'),
-    outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
-    outputTokensDetails: json.containsKey('output_tokens_details') ? json['output_tokens_details'] != null ? OutputTokensDetails.fromJson(json['output_tokens_details'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'output_tokens_details', 'Required property is missing'),
-    serverToolUse: json.containsKey('server_tool_use') ? json['server_tool_use'] != null ? ServerToolUsage.fromJson(json['server_tool_use'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'server_tool_use', 'Required property is missing'),
-  ), json);
+  factory MessageDeltaUsage.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          MessageDeltaUsage(
+            cacheCreationInputTokens:
+                json.containsKey('cache_creation_input_tokens')
+                    ? (json['cache_creation_input_tokens'] as num?)?.toInt()
+                    : throw ArgumentError.value(
+                        null,
+                        'cache_creation_input_tokens',
+                        'Required property is missing'),
+            cacheReadInputTokens: json.containsKey('cache_read_input_tokens')
+                ? (json['cache_read_input_tokens'] as num?)?.toInt()
+                : throw ArgumentError.value(null, 'cache_read_input_tokens',
+                    'Required property is missing'),
+            inputTokens: json.containsKey('input_tokens')
+                ? (json['input_tokens'] as num?)?.toInt()
+                : throw ArgumentError.value(
+                    null, 'input_tokens', 'Required property is missing'),
+            outputTokens: ((json['output_tokens'] as num?)?.toInt())!,
+            outputTokensDetails: json.containsKey('output_tokens_details')
+                ? json['output_tokens_details'] != null
+                    ? OutputTokensDetails.fromJson(
+                        json['output_tokens_details'] as Map<String, dynamic>)
+                    : null
+                : throw ArgumentError.value(null, 'output_tokens_details',
+                    'Required property is missing'),
+            serverToolUse: json.containsKey('server_tool_use')
+                ? json['server_tool_use'] != null
+                    ? ServerToolUsage.fromJson(
+                        json['server_tool_use'] as Map<String, dynamic>)
+                    : null
+                : throw ArgumentError.value(
+                    null, 'server_tool_use', 'Required property is missing'),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'cache_creation_input_tokens': cacheCreationInputTokens,
-    'cache_read_input_tokens': cacheReadInputTokens,
-    'input_tokens': inputTokens,
-    'output_tokens': outputTokens,
-    'output_tokens_details': outputTokensDetails?.toJson(),
-    'server_tool_use': serverToolUse?.toJson(),
-  };
+        'cache_creation_input_tokens': cacheCreationInputTokens,
+        'cache_read_input_tokens': cacheReadInputTokens,
+        'input_tokens': inputTokens,
+        'output_tokens': outputTokens,
+        'output_tokens_details': outputTokensDetails?.toJson(),
+        'server_tool_use': serverToolUse?.toJson(),
+      };
 }

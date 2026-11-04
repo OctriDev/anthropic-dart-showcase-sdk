@@ -8,6 +8,7 @@ part of 'shared_beta.dart';
 class BetaCapabilitySupport implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether this capability is supported by the model.
   final bool supported;
 
@@ -15,16 +16,22 @@ class BetaCapabilitySupport implements SdkJsonModel {
 
   BetaCapabilitySupport Function({bool supported}) get copyWith => _copyWith;
 
-  BetaCapabilitySupport _copyWith({Object? supported = sdkOmittedValue}) => BetaCapabilitySupport(
-    supported: identical(supported, sdkOmittedValue) ? this.supported : supported as bool,
-  );
+  BetaCapabilitySupport _copyWith({Object? supported = sdkOmittedValue}) =>
+      BetaCapabilitySupport(
+        supported: identical(supported, sdkOmittedValue)
+            ? this.supported
+            : supported as bool,
+      );
 
-  factory BetaCapabilitySupport.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaCapabilitySupport(
-    supported: (json['supported'] as bool?)!,
-  ), json);
+  factory BetaCapabilitySupport.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaCapabilitySupport(
+            supported: (json['supported'] as bool?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'supported': supported,
-  };
+        'supported': supported,
+      };
 }

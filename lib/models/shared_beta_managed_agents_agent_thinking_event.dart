@@ -8,33 +8,55 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsAgentThinkingEvent implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsAgentThinkingEventType type_;
+
   /// Unique identifier for this event.
   final String id;
+
   /// Timestamp when this thinking was produced.
   final String processedAt;
 
-  const BetaManagedAgentsAgentThinkingEvent({required this.type_, required this.id, required this.processedAt});
+  const BetaManagedAgentsAgentThinkingEvent(
+      {required this.type_, required this.id, required this.processedAt});
 
-  BetaManagedAgentsAgentThinkingEvent Function({BetaManagedAgentsAgentThinkingEventType type_, String id, String processedAt}) get copyWith => _copyWith;
+  BetaManagedAgentsAgentThinkingEvent Function(
+      {BetaManagedAgentsAgentThinkingEventType type_,
+      String id,
+      String processedAt}) get copyWith => _copyWith;
 
-  BetaManagedAgentsAgentThinkingEvent _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? processedAt = sdkOmittedValue}) => BetaManagedAgentsAgentThinkingEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsAgentThinkingEventType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    processedAt: identical(processedAt, sdkOmittedValue) ? this.processedAt : processedAt as String,
-  );
+  BetaManagedAgentsAgentThinkingEvent _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? processedAt = sdkOmittedValue}) =>
+      BetaManagedAgentsAgentThinkingEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsAgentThinkingEventType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        processedAt: identical(processedAt, sdkOmittedValue)
+            ? this.processedAt
+            : processedAt as String,
+      );
 
-  factory BetaManagedAgentsAgentThinkingEvent.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaManagedAgentsAgentThinkingEvent(
-    type_: (json['type'] != null ? BetaManagedAgentsAgentThinkingEventType.fromJson(json['type'] as String) : null)!,
-    id: (json['id'] as String?)!,
-    processedAt: (json['processed_at'] as String?)!,
-  ), json);
+  factory BetaManagedAgentsAgentThinkingEvent.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaManagedAgentsAgentThinkingEvent(
+            type_: (json['type'] != null
+                ? BetaManagedAgentsAgentThinkingEventType.fromJson(
+                    json['type'] as String)
+                : null)!,
+            id: (json['id'] as String?)!,
+            processedAt: (json['processed_at'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'id': id,
-    'processed_at': processedAt,
-  };
+        'type': type_.toJson(),
+        'id': id,
+        'processed_at': processedAt,
+      };
 }

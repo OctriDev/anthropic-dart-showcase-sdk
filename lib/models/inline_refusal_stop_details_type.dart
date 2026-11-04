@@ -10,14 +10,17 @@ enum RefusalStopDetailsType {
 
   static RefusalStopDetailsType fromJson(String value) {
     switch (value) {
-      case 'refusal': return RefusalStopDetailsType.refusal;
-      default: throw ArgumentError('Unknown RefusalStopDetailsType: $value');
+      case 'refusal':
+        return RefusalStopDetailsType.refusal;
+      default:
+        throw ArgumentError('Unknown RefusalStopDetailsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RefusalStopDetailsType.refusal: return 'refusal';
+      case RefusalStopDetailsType.refusal:
+        return 'refusal';
     }
   }
 
@@ -31,14 +34,18 @@ enum RequestBashCodeExecutionOutputBlockType {
 
   static RequestBashCodeExecutionOutputBlockType fromJson(String value) {
     switch (value) {
-      case 'bash_code_execution_output': return RequestBashCodeExecutionOutputBlockType.bashCodeExecutionOutput;
-      default: throw ArgumentError('Unknown RequestBashCodeExecutionOutputBlockType: $value');
+      case 'bash_code_execution_output':
+        return RequestBashCodeExecutionOutputBlockType.bashCodeExecutionOutput;
+      default:
+        throw ArgumentError(
+            'Unknown RequestBashCodeExecutionOutputBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestBashCodeExecutionOutputBlockType.bashCodeExecutionOutput: return 'bash_code_execution_output';
+      case RequestBashCodeExecutionOutputBlockType.bashCodeExecutionOutput:
+        return 'bash_code_execution_output';
     }
   }
 
@@ -52,14 +59,18 @@ enum RequestBashCodeExecutionResultBlockType {
 
   static RequestBashCodeExecutionResultBlockType fromJson(String value) {
     switch (value) {
-      case 'bash_code_execution_result': return RequestBashCodeExecutionResultBlockType.bashCodeExecutionResult;
-      default: throw ArgumentError('Unknown RequestBashCodeExecutionResultBlockType: $value');
+      case 'bash_code_execution_result':
+        return RequestBashCodeExecutionResultBlockType.bashCodeExecutionResult;
+      default:
+        throw ArgumentError(
+            'Unknown RequestBashCodeExecutionResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestBashCodeExecutionResultBlockType.bashCodeExecutionResult: return 'bash_code_execution_result';
+      case RequestBashCodeExecutionResultBlockType.bashCodeExecutionResult:
+        return 'bash_code_execution_result';
     }
   }
 
@@ -73,14 +84,20 @@ enum RequestBashCodeExecutionToolResultBlockType {
 
   static RequestBashCodeExecutionToolResultBlockType fromJson(String value) {
     switch (value) {
-      case 'bash_code_execution_tool_result': return RequestBashCodeExecutionToolResultBlockType.bashCodeExecutionToolResult;
-      default: throw ArgumentError('Unknown RequestBashCodeExecutionToolResultBlockType: $value');
+      case 'bash_code_execution_tool_result':
+        return RequestBashCodeExecutionToolResultBlockType
+            .bashCodeExecutionToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown RequestBashCodeExecutionToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestBashCodeExecutionToolResultBlockType.bashCodeExecutionToolResult: return 'bash_code_execution_tool_result';
+      case RequestBashCodeExecutionToolResultBlockType
+            .bashCodeExecutionToolResult:
+        return 'bash_code_execution_tool_result';
     }
   }
 
@@ -94,14 +111,20 @@ enum RequestBashCodeExecutionToolResultErrorType {
 
   static RequestBashCodeExecutionToolResultErrorType fromJson(String value) {
     switch (value) {
-      case 'bash_code_execution_tool_result_error': return RequestBashCodeExecutionToolResultErrorType.bashCodeExecutionToolResultError;
-      default: throw ArgumentError('Unknown RequestBashCodeExecutionToolResultErrorType: $value');
+      case 'bash_code_execution_tool_result_error':
+        return RequestBashCodeExecutionToolResultErrorType
+            .bashCodeExecutionToolResultError;
+      default:
+        throw ArgumentError(
+            'Unknown RequestBashCodeExecutionToolResultErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestBashCodeExecutionToolResultErrorType.bashCodeExecutionToolResultError: return 'bash_code_execution_tool_result_error';
+      case RequestBashCodeExecutionToolResultErrorType
+            .bashCodeExecutionToolResultError:
+        return 'bash_code_execution_tool_result_error';
     }
   }
 
@@ -115,14 +138,17 @@ enum RequestBrowserStateBlockType {
 
   static RequestBrowserStateBlockType fromJson(String value) {
     switch (value) {
-      case 'browser_state': return RequestBrowserStateBlockType.browserState;
-      default: throw ArgumentError('Unknown RequestBrowserStateBlockType: $value');
+      case 'browser_state':
+        return RequestBrowserStateBlockType.browserState;
+      default:
+        throw ArgumentError('Unknown RequestBrowserStateBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestBrowserStateBlockType.browserState: return 'browser_state';
+      case RequestBrowserStateBlockType.browserState:
+        return 'browser_state';
     }
   }
 
@@ -136,14 +162,17 @@ enum RequestCharLocationCitationType {
 
   static RequestCharLocationCitationType fromJson(String value) {
     switch (value) {
-      case 'char_location': return RequestCharLocationCitationType.charLocation;
-      default: throw ArgumentError('Unknown RequestCharLocationCitationType: $value');
+      case 'char_location':
+        return RequestCharLocationCitationType.charLocation;
+      default:
+        throw ArgumentError('Unknown RequestCharLocationCitationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestCharLocationCitationType.charLocation: return 'char_location';
+      case RequestCharLocationCitationType.charLocation:
+        return 'char_location';
     }
   }
 
@@ -157,14 +186,18 @@ enum RequestCodeExecutionOutputBlockType {
 
   static RequestCodeExecutionOutputBlockType fromJson(String value) {
     switch (value) {
-      case 'code_execution_output': return RequestCodeExecutionOutputBlockType.codeExecutionOutput;
-      default: throw ArgumentError('Unknown RequestCodeExecutionOutputBlockType: $value');
+      case 'code_execution_output':
+        return RequestCodeExecutionOutputBlockType.codeExecutionOutput;
+      default:
+        throw ArgumentError(
+            'Unknown RequestCodeExecutionOutputBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestCodeExecutionOutputBlockType.codeExecutionOutput: return 'code_execution_output';
+      case RequestCodeExecutionOutputBlockType.codeExecutionOutput:
+        return 'code_execution_output';
     }
   }
 
@@ -178,14 +211,18 @@ enum RequestCodeExecutionResultBlockType {
 
   static RequestCodeExecutionResultBlockType fromJson(String value) {
     switch (value) {
-      case 'code_execution_result': return RequestCodeExecutionResultBlockType.codeExecutionResult;
-      default: throw ArgumentError('Unknown RequestCodeExecutionResultBlockType: $value');
+      case 'code_execution_result':
+        return RequestCodeExecutionResultBlockType.codeExecutionResult;
+      default:
+        throw ArgumentError(
+            'Unknown RequestCodeExecutionResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestCodeExecutionResultBlockType.codeExecutionResult: return 'code_execution_result';
+      case RequestCodeExecutionResultBlockType.codeExecutionResult:
+        return 'code_execution_result';
     }
   }
 
@@ -199,14 +236,18 @@ enum RequestCodeExecutionToolResultBlockType {
 
   static RequestCodeExecutionToolResultBlockType fromJson(String value) {
     switch (value) {
-      case 'code_execution_tool_result': return RequestCodeExecutionToolResultBlockType.codeExecutionToolResult;
-      default: throw ArgumentError('Unknown RequestCodeExecutionToolResultBlockType: $value');
+      case 'code_execution_tool_result':
+        return RequestCodeExecutionToolResultBlockType.codeExecutionToolResult;
+      default:
+        throw ArgumentError(
+            'Unknown RequestCodeExecutionToolResultBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestCodeExecutionToolResultBlockType.codeExecutionToolResult: return 'code_execution_tool_result';
+      case RequestCodeExecutionToolResultBlockType.codeExecutionToolResult:
+        return 'code_execution_tool_result';
     }
   }
 
@@ -220,14 +261,19 @@ enum RequestCodeExecutionToolResultErrorType {
 
   static RequestCodeExecutionToolResultErrorType fromJson(String value) {
     switch (value) {
-      case 'code_execution_tool_result_error': return RequestCodeExecutionToolResultErrorType.codeExecutionToolResultError;
-      default: throw ArgumentError('Unknown RequestCodeExecutionToolResultErrorType: $value');
+      case 'code_execution_tool_result_error':
+        return RequestCodeExecutionToolResultErrorType
+            .codeExecutionToolResultError;
+      default:
+        throw ArgumentError(
+            'Unknown RequestCodeExecutionToolResultErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestCodeExecutionToolResultErrorType.codeExecutionToolResultError: return 'code_execution_tool_result_error';
+      case RequestCodeExecutionToolResultErrorType.codeExecutionToolResultError:
+        return 'code_execution_tool_result_error';
     }
   }
 
@@ -241,14 +287,17 @@ enum RequestContainerUploadBlockType {
 
   static RequestContainerUploadBlockType fromJson(String value) {
     switch (value) {
-      case 'container_upload': return RequestContainerUploadBlockType.containerUpload;
-      default: throw ArgumentError('Unknown RequestContainerUploadBlockType: $value');
+      case 'container_upload':
+        return RequestContainerUploadBlockType.containerUpload;
+      default:
+        throw ArgumentError('Unknown RequestContainerUploadBlockType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestContainerUploadBlockType.containerUpload: return 'container_upload';
+      case RequestContainerUploadBlockType.containerUpload:
+        return 'container_upload';
     }
   }
 
@@ -262,14 +311,18 @@ enum RequestContentBlockLocationCitationType {
 
   static RequestContentBlockLocationCitationType fromJson(String value) {
     switch (value) {
-      case 'content_block_location': return RequestContentBlockLocationCitationType.contentBlockLocation;
-      default: throw ArgumentError('Unknown RequestContentBlockLocationCitationType: $value');
+      case 'content_block_location':
+        return RequestContentBlockLocationCitationType.contentBlockLocation;
+      default:
+        throw ArgumentError(
+            'Unknown RequestContentBlockLocationCitationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RequestContentBlockLocationCitationType.contentBlockLocation: return 'content_block_location';
+      case RequestContentBlockLocationCitationType.contentBlockLocation:
+        return 'content_block_location';
     }
   }
 

@@ -6,22 +6,25 @@ part of 'shared_beta_user.dart';
 // shared_beta_user domain models
 /// How the platform uses the API on behalf of the entity this profile represents. `application`: the platform sells a product that uses the API behind the scenes, and the profile represents an individual end-user of that product. `passthrough`: the platform resells raw inference, and the profile identifies the resold-to company.
 final class BetaUserProfileAccessType {
-
   final String value;
 
   const BetaUserProfileAccessType._(this.value);
 
-  factory BetaUserProfileAccessType.fromJson(String value) => BetaUserProfileAccessType._(value);
+  factory BetaUserProfileAccessType.fromJson(String value) =>
+      BetaUserProfileAccessType._(value);
 
   static const application = BetaUserProfileAccessType._('application');
   static const passthrough = BetaUserProfileAccessType._('passthrough');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaUserProfileAccessType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaUserProfileAccessType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -9,44 +9,61 @@ sealed class BetaRotateTunnelTokenParamsReason {
   static const String constructionSurface = 'named';
   const BetaRotateTunnelTokenParamsReason();
   factory BetaRotateTunnelTokenParamsReason.fromJson(Object? json) {
-    if (json is String) { return BetaRotateTunnelTokenParamsReasonString(json); }
-    throw FormatException("No variant matched for BetaRotateTunnelTokenParamsReason");
+    if (json is String) {
+      return BetaRotateTunnelTokenParamsReasonString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRotateTunnelTokenParamsReason");
   }
   Object? toJson();
 }
 
-final class BetaRotateTunnelTokenParamsReasonString extends BetaRotateTunnelTokenParamsReason {
+final class BetaRotateTunnelTokenParamsReasonString
+    extends BetaRotateTunnelTokenParamsReason {
   final String value;
   const BetaRotateTunnelTokenParamsReasonString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaRotateTunnelTokenParams` API schema.
 class BetaRotateTunnelTokenParams implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional free-text reason for the rotation, recorded for audit.
   final SdkOptional<String?> reason;
 
   const BetaRotateTunnelTokenParams({this.reason = const SdkOmitted()});
 
-  BetaRotateTunnelTokenParams Function({SdkOptional<String?> reason}) get copyWith => _copyWith;
+  BetaRotateTunnelTokenParams Function({SdkOptional<String?> reason})
+      get copyWith => _copyWith;
 
-  BetaRotateTunnelTokenParams _copyWith({Object? reason = sdkOmittedValue}) => BetaRotateTunnelTokenParams(
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as SdkOptional<String?>,
-  );
+  BetaRotateTunnelTokenParams _copyWith({Object? reason = sdkOmittedValue}) =>
+      BetaRotateTunnelTokenParams(
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as SdkOptional<String?>,
+      );
 
-  factory BetaRotateTunnelTokenParams.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaRotateTunnelTokenParams(
-    reason: json.containsKey('reason') ? SdkPresent(json['reason'] as String?) : const SdkOmitted(),
-  ), json);
+  factory BetaRotateTunnelTokenParams.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaRotateTunnelTokenParams(
+            reason: json.containsKey('reason')
+                ? SdkPresent(json['reason'] as String?)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (reason) {
-      SdkPresent<String?>(value: final value) => {'reason': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (reason) {
+          SdkPresent<String?>(value: final value) => {
+              'reason': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class BetaRotateTunnelTokenRequestBodyReason {
@@ -54,42 +71,61 @@ sealed class BetaRotateTunnelTokenRequestBodyReason {
   static const String constructionSurface = 'named';
   const BetaRotateTunnelTokenRequestBodyReason();
   factory BetaRotateTunnelTokenRequestBodyReason.fromJson(Object? json) {
-    if (json is String) { return BetaRotateTunnelTokenRequestBodyReasonString(json); }
-    throw FormatException("No variant matched for BetaRotateTunnelTokenRequestBodyReason");
+    if (json is String) {
+      return BetaRotateTunnelTokenRequestBodyReasonString(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRotateTunnelTokenRequestBodyReason");
   }
   Object? toJson();
 }
 
-final class BetaRotateTunnelTokenRequestBodyReasonString extends BetaRotateTunnelTokenRequestBodyReason {
+final class BetaRotateTunnelTokenRequestBodyReasonString
+    extends BetaRotateTunnelTokenRequestBodyReason {
   final String value;
   const BetaRotateTunnelTokenRequestBodyReasonString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Typed representation of the `BetaRotateTunnelTokenRequestBody` API schema.
 class BetaRotateTunnelTokenRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional free-text reason for the rotation, recorded for audit.
   final SdkOptional<String?> reason;
 
   const BetaRotateTunnelTokenRequestBody({this.reason = const SdkOmitted()});
 
-  BetaRotateTunnelTokenRequestBody Function({SdkOptional<String?> reason}) get copyWith => _copyWith;
+  BetaRotateTunnelTokenRequestBody Function({SdkOptional<String?> reason})
+      get copyWith => _copyWith;
 
-  BetaRotateTunnelTokenRequestBody _copyWith({Object? reason = sdkOmittedValue}) => BetaRotateTunnelTokenRequestBody(
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as SdkOptional<String?>,
-  );
+  BetaRotateTunnelTokenRequestBody _copyWith(
+          {Object? reason = sdkOmittedValue}) =>
+      BetaRotateTunnelTokenRequestBody(
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as SdkOptional<String?>,
+      );
 
-  factory BetaRotateTunnelTokenRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaRotateTunnelTokenRequestBody(
-    reason: json.containsKey('reason') ? SdkPresent(json['reason'] as String?) : const SdkOmitted(),
-  ), json);
+  factory BetaRotateTunnelTokenRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaRotateTunnelTokenRequestBody(
+            reason: json.containsKey('reason')
+                ? SdkPresent(json['reason'] as String?)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (reason) {
-      SdkPresent<String?>(value: final value) => {'reason': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (reason) {
+          SdkPresent<String?>(value: final value) => {
+              'reason': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -9,21 +9,34 @@ sealed class BetaManagedAgentsModelParams {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsModelParams();
   factory BetaManagedAgentsModelParams.fromJson(Object? json) {
-    try { return BetaManagedAgentsModelParamsBetaManagedAgentsModel(BetaManagedAgentsModel.fromJson(json)); } catch (_) {}
-    try { return BetaManagedAgentsModelParamsBetaManagedAgentsModelConfigParams(BetaManagedAgentsModelConfigParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for BetaManagedAgentsModelParams");
+    try {
+      return BetaManagedAgentsModelParamsBetaManagedAgentsModel(
+          BetaManagedAgentsModel.fromJson(json));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelParamsBetaManagedAgentsModelConfigParams(
+          BetaManagedAgentsModelConfigParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsModelParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsModelParamsBetaManagedAgentsModel extends BetaManagedAgentsModelParams {
+final class BetaManagedAgentsModelParamsBetaManagedAgentsModel
+    extends BetaManagedAgentsModelParams {
   final BetaManagedAgentsModel value;
   const BetaManagedAgentsModelParamsBetaManagedAgentsModel(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelParamsBetaManagedAgentsModelConfigParams extends BetaManagedAgentsModelParams {
+final class BetaManagedAgentsModelParamsBetaManagedAgentsModelConfigParams
+    extends BetaManagedAgentsModelParams {
   final BetaManagedAgentsModelConfigParams value;
-  const BetaManagedAgentsModelParamsBetaManagedAgentsModelConfigParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsModelParamsBetaManagedAgentsModelConfigParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

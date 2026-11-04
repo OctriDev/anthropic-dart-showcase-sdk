@@ -8,50 +8,117 @@ sealed class BetaManagedAgentsSessionThreadStatusIdleEventStopReason {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsSessionThreadStatusIdleEventStopReason();
-  factory BetaManagedAgentsSessionThreadStatusIdleEventStopReason.fromJson(Object? json) {
+  factory BetaManagedAgentsSessionThreadStatusIdleEventStopReason.fromJson(
+      Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsSessionEndTurn.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionEndTurn(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSessionRequiresAction.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRequiresAction(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSessionRetriesExhausted.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRetriesExhausted(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsSessionBudgetReached.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionBudgetReached(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsSessionEndTurn.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionEndTurn(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsSessionRequiresAction.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRequiresAction(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsSessionRetriesExhausted.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRetriesExhausted(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsSessionBudgetReached.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionBudgetReached(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionEndTurn(BetaManagedAgentsSessionEndTurn.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRequiresAction(BetaManagedAgentsSessionRequiresAction.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRetriesExhausted(BetaManagedAgentsSessionRetriesExhausted.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionBudgetReached(BetaManagedAgentsSessionBudgetReached.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"end_turn", "requires_action", "retries_exhausted", "budget_reached"}.contains(json["type"])) { return UnknownBetaManagedAgentsSessionThreadStatusIdleEventStopReason(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsSessionThreadStatusIdleEventStopReason");
+    try {
+      return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionEndTurn(
+          BetaManagedAgentsSessionEndTurn.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRequiresAction(
+          BetaManagedAgentsSessionRequiresAction.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRetriesExhausted(
+          BetaManagedAgentsSessionRetriesExhausted.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionBudgetReached(
+          BetaManagedAgentsSessionBudgetReached.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "end_turn",
+          "requires_action",
+          "retries_exhausted",
+          "budget_reached"
+        }.contains(json["type"])) {
+      return UnknownBetaManagedAgentsSessionThreadStatusIdleEventStopReason(
+          json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsSessionThreadStatusIdleEventStopReason");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionEndTurn extends BetaManagedAgentsSessionThreadStatusIdleEventStopReason {
+final class BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionEndTurn
+    extends BetaManagedAgentsSessionThreadStatusIdleEventStopReason {
   final BetaManagedAgentsSessionEndTurn value;
-  const BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionEndTurn(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionEndTurn(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRequiresAction extends BetaManagedAgentsSessionThreadStatusIdleEventStopReason {
+final class BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRequiresAction
+    extends BetaManagedAgentsSessionThreadStatusIdleEventStopReason {
   final BetaManagedAgentsSessionRequiresAction value;
-  const BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRequiresAction(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRequiresAction(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRetriesExhausted extends BetaManagedAgentsSessionThreadStatusIdleEventStopReason {
+final class BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRetriesExhausted
+    extends BetaManagedAgentsSessionThreadStatusIdleEventStopReason {
   final BetaManagedAgentsSessionRetriesExhausted value;
-  const BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRetriesExhausted(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionRetriesExhausted(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionBudgetReached extends BetaManagedAgentsSessionThreadStatusIdleEventStopReason {
+final class BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionBudgetReached
+    extends BetaManagedAgentsSessionThreadStatusIdleEventStopReason {
   final BetaManagedAgentsSessionBudgetReached value;
-  const BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionBudgetReached(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionThreadStatusIdleEventStopReasonBetaManagedAgentsSessionBudgetReached(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSessionThreadStatusIdleEventStopReason] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsSessionThreadStatusIdleEventStopReason extends BetaManagedAgentsSessionThreadStatusIdleEventStopReason {
+final class UnknownBetaManagedAgentsSessionThreadStatusIdleEventStopReason
+    extends BetaManagedAgentsSessionThreadStatusIdleEventStopReason {
   final Map<String, dynamic> raw;
-  const UnknownBetaManagedAgentsSessionThreadStatusIdleEventStopReason(this.raw);
-  @override Object? toJson() => raw;
+  const UnknownBetaManagedAgentsSessionThreadStatusIdleEventStopReason(
+      this.raw);
+  @override
+  Object? toJson() => raw;
 }

@@ -10,32 +10,66 @@ sealed class BetaManagedAgentsSessionInitialEventParams {
   const BetaManagedAgentsSessionInitialEventParams();
   factory BetaManagedAgentsSessionInitialEventParams.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsUserMessageEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserMessageEventParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsUserMessageEventParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserMessageEventParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserMessageEventParams(BetaManagedAgentsUserMessageEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"user.message", "user.define_outcome"}.contains(json["type"])) { return UnknownBetaManagedAgentsSessionInitialEventParams(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsSessionInitialEventParams");
+    try {
+      return BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserMessageEventParams(
+          BetaManagedAgentsUserMessageEventParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(
+          BetaManagedAgentsUserDefineOutcomeEventParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"user.message", "user.define_outcome"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsSessionInitialEventParams(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsSessionInitialEventParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserMessageEventParams extends BetaManagedAgentsSessionInitialEventParams {
+final class BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserMessageEventParams
+    extends BetaManagedAgentsSessionInitialEventParams {
   final BetaManagedAgentsUserMessageEventParams value;
-  const BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserMessageEventParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserMessageEventParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams extends BetaManagedAgentsSessionInitialEventParams {
+final class BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams
+    extends BetaManagedAgentsSessionInitialEventParams {
   final BetaManagedAgentsUserDefineOutcomeEventParams value;
-  const BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionInitialEventParamsBetaManagedAgentsUserDefineOutcomeEventParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSessionInitialEventParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsSessionInitialEventParams extends BetaManagedAgentsSessionInitialEventParams {
+final class UnknownBetaManagedAgentsSessionInitialEventParams
+    extends BetaManagedAgentsSessionInitialEventParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSessionInitialEventParams(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

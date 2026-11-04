@@ -10,40 +10,85 @@ sealed class BetaRequestToolRemovalBlockTool {
   const BetaRequestToolRemovalBlockTool();
   factory BetaRequestToolRemovalBlockTool.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaToolChangeToolReference.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestToolRemovalBlockToolBetaToolChangeToolReference(value); } } catch (_) {}
-      try { final value = BetaToolChangeMCPToolReference.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolReference(value); } } catch (_) {}
-      try { final value = BetaToolChangeMCPToolsetReference.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolsetReference(value); } } catch (_) {}
+      try {
+        final value = BetaToolChangeToolReference.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestToolRemovalBlockToolBetaToolChangeToolReference(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaToolChangeMCPToolReference.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolReference(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaToolChangeMCPToolsetReference.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolsetReference(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaRequestToolRemovalBlockToolBetaToolChangeToolReference(BetaToolChangeToolReference.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolReference(BetaToolChangeMCPToolReference.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolsetReference(BetaToolChangeMCPToolsetReference.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"mcp_tool_reference", "mcp_toolset_reference", "tool_reference"}.contains(json["type"])) { return UnknownBetaRequestToolRemovalBlockTool(json); }
-    throw FormatException("No variant matched for BetaRequestToolRemovalBlockTool");
+    try {
+      return BetaRequestToolRemovalBlockToolBetaToolChangeToolReference(
+          BetaToolChangeToolReference.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolReference(
+          BetaToolChangeMCPToolReference.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolsetReference(
+          BetaToolChangeMCPToolsetReference.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"mcp_tool_reference", "mcp_toolset_reference", "tool_reference"}
+            .contains(json["type"])) {
+      return UnknownBetaRequestToolRemovalBlockTool(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaRequestToolRemovalBlockTool");
   }
   Object? toJson();
 }
 
-final class BetaRequestToolRemovalBlockToolBetaToolChangeToolReference extends BetaRequestToolRemovalBlockTool {
+final class BetaRequestToolRemovalBlockToolBetaToolChangeToolReference
+    extends BetaRequestToolRemovalBlockTool {
   final BetaToolChangeToolReference value;
   const BetaRequestToolRemovalBlockToolBetaToolChangeToolReference(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolReference extends BetaRequestToolRemovalBlockTool {
+final class BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolReference
+    extends BetaRequestToolRemovalBlockTool {
   final BetaToolChangeMCPToolReference value;
-  const BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolReference(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolReference(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolsetReference extends BetaRequestToolRemovalBlockTool {
+final class BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolsetReference
+    extends BetaRequestToolRemovalBlockTool {
   final BetaToolChangeMCPToolsetReference value;
-  const BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolsetReference(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaRequestToolRemovalBlockToolBetaToolChangeMCPToolsetReference(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaRequestToolRemovalBlockTool] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaRequestToolRemovalBlockTool extends BetaRequestToolRemovalBlockTool {
+final class UnknownBetaRequestToolRemovalBlockTool
+    extends BetaRequestToolRemovalBlockTool {
   final Map<String, dynamic> raw;
   const UnknownBetaRequestToolRemovalBlockTool(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

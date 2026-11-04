@@ -6,12 +6,12 @@ part of 'shared_beta_managed_agents.dart';
 // shared_beta_managed_agents domain models
 /// The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
 final class BetaManagedAgentsMemoryVersionOperation {
-
   final String value;
 
   const BetaManagedAgentsMemoryVersionOperation._(this.value);
 
-  factory BetaManagedAgentsMemoryVersionOperation.fromJson(String value) => BetaManagedAgentsMemoryVersionOperation._(value);
+  factory BetaManagedAgentsMemoryVersionOperation.fromJson(String value) =>
+      BetaManagedAgentsMemoryVersionOperation._(value);
 
   static const created = BetaManagedAgentsMemoryVersionOperation._('created');
   static const modified = BetaManagedAgentsMemoryVersionOperation._('modified');
@@ -19,10 +19,13 @@ final class BetaManagedAgentsMemoryVersionOperation {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BetaManagedAgentsMemoryVersionOperation && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BetaManagedAgentsMemoryVersionOperation && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

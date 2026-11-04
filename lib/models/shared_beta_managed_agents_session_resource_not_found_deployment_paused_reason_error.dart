@@ -5,26 +5,44 @@ part of 'shared_beta_managed_agents.dart';
 
 // shared_beta_managed_agents domain models
 /// A referenced resource no longer exists and its kind was not reported.
-class BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError implements SdkJsonModel {
+class BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
-  final BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonErrorType type_;
+  final BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonErrorType
+      type_;
 
-  const BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError({required this.type_});
+  const BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError(
+      {required this.type_});
 
-  BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError Function({BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError Function(
+      {BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonErrorType
+          type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonErrorType,
-  );
+  BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonErrorType,
+      );
 
-  factory BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError(
-    type_: (json['type'] != null ? BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError(
+            type_: (json['type'] != null
+                ? BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonErrorType
+                    .fromJson(json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

@@ -8,23 +8,37 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsTokenEndpointAuthNoneResponse implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTokenEndpointAuthNoneResponseType type_;
 
   const BetaManagedAgentsTokenEndpointAuthNoneResponse({required this.type_});
 
-  BetaManagedAgentsTokenEndpointAuthNoneResponse Function({BetaManagedAgentsTokenEndpointAuthNoneResponseType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsTokenEndpointAuthNoneResponse Function(
+          {BetaManagedAgentsTokenEndpointAuthNoneResponseType type_})
+      get copyWith => _copyWith;
 
-  BetaManagedAgentsTokenEndpointAuthNoneResponse _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsTokenEndpointAuthNoneResponse(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTokenEndpointAuthNoneResponseType,
-  );
+  BetaManagedAgentsTokenEndpointAuthNoneResponse _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsTokenEndpointAuthNoneResponse(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsTokenEndpointAuthNoneResponseType,
+      );
 
-  factory BetaManagedAgentsTokenEndpointAuthNoneResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaManagedAgentsTokenEndpointAuthNoneResponse(
-    type_: (json['type'] != null ? BetaManagedAgentsTokenEndpointAuthNoneResponseType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory BetaManagedAgentsTokenEndpointAuthNoneResponse.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaManagedAgentsTokenEndpointAuthNoneResponse(
+            type_: (json['type'] != null
+                ? BetaManagedAgentsTokenEndpointAuthNoneResponseType.fromJson(
+                    json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

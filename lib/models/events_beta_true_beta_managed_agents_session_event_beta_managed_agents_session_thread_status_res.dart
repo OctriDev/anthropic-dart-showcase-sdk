@@ -4,33 +4,47 @@
 part of 'events_beta_true.dart';
 
 // events_beta_true domain models
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent
+    extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionThreadStatusRescheduledEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionThreadStatusRescheduledEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent
+    extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionUpdatedEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionUpdatedEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent
+    extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSystemMessageEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSystemMessageEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent extends BetaManagedAgentsSessionEvent {
+final class BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent
+    extends BetaManagedAgentsSessionEvent {
   final BetaManagedAgentsSessionUsageEvent value;
-  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionEventBetaManagedAgentsSessionUsageEvent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSessionEvent] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsSessionEvent extends BetaManagedAgentsSessionEvent {
+final class UnknownBetaManagedAgentsSessionEvent
+    extends BetaManagedAgentsSessionEvent {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSessionEvent(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

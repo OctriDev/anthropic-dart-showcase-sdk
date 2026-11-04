@@ -10,265 +10,814 @@ sealed class BetaWebhookEventData {
   const BetaWebhookEventData();
   factory BetaWebhookEventData.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaWebhookSessionCreatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionCreatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionPendingEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionPendingEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionRunningEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionRunningEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionIdledEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionIdledEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionRequiresActionEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionRequiresActionEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionArchivedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionArchivedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionDeletedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionDeletedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionStatusRescheduledEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionStatusRescheduledEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionStatusRunStartedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionStatusRunStartedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionStatusIdledEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionStatusIdledEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionStatusTerminatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionStatusTerminatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionThreadCreatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionThreadCreatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionThreadIdledEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionThreadIdledEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionThreadTerminatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionThreadTerminatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionOutcomeEvaluationEndedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionOutcomeEvaluationEndedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookVaultCreatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookVaultCreatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookVaultArchivedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookVaultArchivedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookVaultDeletedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookVaultDeletedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookVaultCredentialCreatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookVaultCredentialCreatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookVaultCredentialArchivedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookVaultCredentialArchivedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookVaultCredentialDeletedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookVaultCredentialDeletedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookVaultCredentialRefreshFailedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookVaultCredentialRefreshFailedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionUpdatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionUpdatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookAgentCreatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookAgentCreatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookAgentArchivedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookAgentArchivedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookAgentDeletedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookAgentDeletedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookDeploymentPausedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookDeploymentPausedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookDeploymentRunFailedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookDeploymentRunFailedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookDeploymentCreatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookDeploymentCreatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookDeploymentUpdatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookDeploymentUpdatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookDeploymentUnpausedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookDeploymentUnpausedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookAgentUpdatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookAgentUpdatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookDeploymentArchivedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookDeploymentArchivedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookDeploymentRunStartedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookDeploymentRunStartedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookDeploymentDeletedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookDeploymentDeletedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookDeploymentRunSucceededEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookDeploymentRunSucceededEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookEnvironmentCreatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookEnvironmentCreatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookEnvironmentUpdatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookEnvironmentUpdatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookEnvironmentArchivedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookEnvironmentArchivedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookEnvironmentDeletedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookEnvironmentDeletedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookMemoryStoreCreatedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookMemoryStoreCreatedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookMemoryStoreArchivedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookMemoryStoreArchivedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookMemoryStoreDeletedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookMemoryStoreDeletedEventData(value); } } catch (_) {}
-      try { final value = BetaWebhookSessionBudgetReachedEventData.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaWebhookEventDataBetaWebhookSessionBudgetReachedEventData(value); } } catch (_) {}
+      try {
+        final value = BetaWebhookSessionCreatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionCreatedEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookSessionPendingEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionPendingEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookSessionRunningEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionRunningEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookSessionIdledEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionIdledEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookSessionRequiresActionEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionRequiresActionEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookSessionArchivedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionArchivedEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookSessionDeletedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionDeletedEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaWebhookSessionStatusRescheduledEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionStatusRescheduledEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaWebhookSessionStatusRunStartedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionStatusRunStartedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookSessionStatusIdledEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionStatusIdledEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaWebhookSessionStatusTerminatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionStatusTerminatedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookSessionThreadCreatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionThreadCreatedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookSessionThreadIdledEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionThreadIdledEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaWebhookSessionThreadTerminatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionThreadTerminatedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaWebhookSessionOutcomeEvaluationEndedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionOutcomeEvaluationEndedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookVaultCreatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookVaultCreatedEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookVaultArchivedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookVaultArchivedEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookVaultDeletedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookVaultDeletedEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookVaultCredentialCreatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookVaultCredentialCreatedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaWebhookVaultCredentialArchivedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookVaultCredentialArchivedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookVaultCredentialDeletedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookVaultCredentialDeletedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            BetaWebhookVaultCredentialRefreshFailedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookVaultCredentialRefreshFailedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookSessionUpdatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionUpdatedEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookAgentCreatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookAgentCreatedEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookAgentArchivedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookAgentArchivedEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookAgentDeletedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookAgentDeletedEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookDeploymentPausedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookDeploymentPausedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookDeploymentRunFailedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookDeploymentRunFailedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookDeploymentCreatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookDeploymentCreatedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookDeploymentUpdatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookDeploymentUpdatedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookDeploymentUnpausedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookDeploymentUnpausedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookAgentUpdatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookAgentUpdatedEventData(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookDeploymentArchivedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookDeploymentArchivedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookDeploymentRunStartedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookDeploymentRunStartedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookDeploymentDeletedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookDeploymentDeletedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookDeploymentRunSucceededEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookDeploymentRunSucceededEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookEnvironmentCreatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookEnvironmentCreatedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookEnvironmentUpdatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookEnvironmentUpdatedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookEnvironmentArchivedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookEnvironmentArchivedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookEnvironmentDeletedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookEnvironmentDeletedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookMemoryStoreCreatedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookMemoryStoreCreatedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookMemoryStoreArchivedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookMemoryStoreArchivedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookMemoryStoreDeletedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookMemoryStoreDeletedEventData(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaWebhookSessionBudgetReachedEventData.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaWebhookEventDataBetaWebhookSessionBudgetReachedEventData(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaWebhookEventDataBetaWebhookSessionCreatedEventData(BetaWebhookSessionCreatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionPendingEventData(BetaWebhookSessionPendingEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionRunningEventData(BetaWebhookSessionRunningEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionIdledEventData(BetaWebhookSessionIdledEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionRequiresActionEventData(BetaWebhookSessionRequiresActionEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionArchivedEventData(BetaWebhookSessionArchivedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionDeletedEventData(BetaWebhookSessionDeletedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionStatusRescheduledEventData(BetaWebhookSessionStatusRescheduledEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionStatusRunStartedEventData(BetaWebhookSessionStatusRunStartedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionStatusIdledEventData(BetaWebhookSessionStatusIdledEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionStatusTerminatedEventData(BetaWebhookSessionStatusTerminatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionThreadCreatedEventData(BetaWebhookSessionThreadCreatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionThreadIdledEventData(BetaWebhookSessionThreadIdledEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionThreadTerminatedEventData(BetaWebhookSessionThreadTerminatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionOutcomeEvaluationEndedEventData(BetaWebhookSessionOutcomeEvaluationEndedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookVaultCreatedEventData(BetaWebhookVaultCreatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookVaultArchivedEventData(BetaWebhookVaultArchivedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookVaultDeletedEventData(BetaWebhookVaultDeletedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookVaultCredentialCreatedEventData(BetaWebhookVaultCredentialCreatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookVaultCredentialArchivedEventData(BetaWebhookVaultCredentialArchivedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookVaultCredentialDeletedEventData(BetaWebhookVaultCredentialDeletedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookVaultCredentialRefreshFailedEventData(BetaWebhookVaultCredentialRefreshFailedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionUpdatedEventData(BetaWebhookSessionUpdatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookAgentCreatedEventData(BetaWebhookAgentCreatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookAgentArchivedEventData(BetaWebhookAgentArchivedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookAgentDeletedEventData(BetaWebhookAgentDeletedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookDeploymentPausedEventData(BetaWebhookDeploymentPausedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookDeploymentRunFailedEventData(BetaWebhookDeploymentRunFailedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookDeploymentCreatedEventData(BetaWebhookDeploymentCreatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookDeploymentUpdatedEventData(BetaWebhookDeploymentUpdatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookDeploymentUnpausedEventData(BetaWebhookDeploymentUnpausedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookAgentUpdatedEventData(BetaWebhookAgentUpdatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookDeploymentArchivedEventData(BetaWebhookDeploymentArchivedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookDeploymentRunStartedEventData(BetaWebhookDeploymentRunStartedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookDeploymentDeletedEventData(BetaWebhookDeploymentDeletedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookDeploymentRunSucceededEventData(BetaWebhookDeploymentRunSucceededEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookEnvironmentCreatedEventData(BetaWebhookEnvironmentCreatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookEnvironmentUpdatedEventData(BetaWebhookEnvironmentUpdatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookEnvironmentArchivedEventData(BetaWebhookEnvironmentArchivedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookEnvironmentDeletedEventData(BetaWebhookEnvironmentDeletedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookMemoryStoreCreatedEventData(BetaWebhookMemoryStoreCreatedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookMemoryStoreArchivedEventData(BetaWebhookMemoryStoreArchivedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookMemoryStoreDeletedEventData(BetaWebhookMemoryStoreDeletedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaWebhookEventDataBetaWebhookSessionBudgetReachedEventData(BetaWebhookSessionBudgetReachedEventData.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"session.created", "session.pending", "session.running", "session.idled", "session.requires_action", "session.archived", "session.deleted", "session.status_rescheduled", "session.status_run_started", "session.status_idled", "session.status_terminated", "session.thread_created", "session.thread_idled", "session.thread_terminated", "session.outcome_evaluation_ended", "vault.created", "vault.archived", "vault.deleted", "vault_credential.created", "vault_credential.archived", "vault_credential.deleted", "vault_credential.refresh_failed", "session.updated", "agent.created", "agent.archived", "agent.deleted", "deployment.paused", "deployment_run.failed", "deployment.created", "deployment.updated", "deployment.unpaused", "agent.updated", "deployment.archived", "deployment_run.started", "deployment.deleted", "deployment_run.succeeded", "environment.created", "environment.updated", "environment.archived", "environment.deleted", "memory_store.created", "memory_store.archived", "memory_store.deleted", "session.budget_reached"}.contains(json["type"])) { return UnknownBetaWebhookEventData(json); }
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionCreatedEventData(
+          BetaWebhookSessionCreatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionPendingEventData(
+          BetaWebhookSessionPendingEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionRunningEventData(
+          BetaWebhookSessionRunningEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionIdledEventData(
+          BetaWebhookSessionIdledEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionRequiresActionEventData(
+          BetaWebhookSessionRequiresActionEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionArchivedEventData(
+          BetaWebhookSessionArchivedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionDeletedEventData(
+          BetaWebhookSessionDeletedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionStatusRescheduledEventData(
+          BetaWebhookSessionStatusRescheduledEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionStatusRunStartedEventData(
+          BetaWebhookSessionStatusRunStartedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionStatusIdledEventData(
+          BetaWebhookSessionStatusIdledEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionStatusTerminatedEventData(
+          BetaWebhookSessionStatusTerminatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionThreadCreatedEventData(
+          BetaWebhookSessionThreadCreatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionThreadIdledEventData(
+          BetaWebhookSessionThreadIdledEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionThreadTerminatedEventData(
+          BetaWebhookSessionThreadTerminatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionOutcomeEvaluationEndedEventData(
+          BetaWebhookSessionOutcomeEvaluationEndedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookVaultCreatedEventData(
+          BetaWebhookVaultCreatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookVaultArchivedEventData(
+          BetaWebhookVaultArchivedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookVaultDeletedEventData(
+          BetaWebhookVaultDeletedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookVaultCredentialCreatedEventData(
+          BetaWebhookVaultCredentialCreatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookVaultCredentialArchivedEventData(
+          BetaWebhookVaultCredentialArchivedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookVaultCredentialDeletedEventData(
+          BetaWebhookVaultCredentialDeletedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookVaultCredentialRefreshFailedEventData(
+          BetaWebhookVaultCredentialRefreshFailedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionUpdatedEventData(
+          BetaWebhookSessionUpdatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookAgentCreatedEventData(
+          BetaWebhookAgentCreatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookAgentArchivedEventData(
+          BetaWebhookAgentArchivedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookAgentDeletedEventData(
+          BetaWebhookAgentDeletedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookDeploymentPausedEventData(
+          BetaWebhookDeploymentPausedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookDeploymentRunFailedEventData(
+          BetaWebhookDeploymentRunFailedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookDeploymentCreatedEventData(
+          BetaWebhookDeploymentCreatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookDeploymentUpdatedEventData(
+          BetaWebhookDeploymentUpdatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookDeploymentUnpausedEventData(
+          BetaWebhookDeploymentUnpausedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookAgentUpdatedEventData(
+          BetaWebhookAgentUpdatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookDeploymentArchivedEventData(
+          BetaWebhookDeploymentArchivedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookDeploymentRunStartedEventData(
+          BetaWebhookDeploymentRunStartedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookDeploymentDeletedEventData(
+          BetaWebhookDeploymentDeletedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookDeploymentRunSucceededEventData(
+          BetaWebhookDeploymentRunSucceededEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookEnvironmentCreatedEventData(
+          BetaWebhookEnvironmentCreatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookEnvironmentUpdatedEventData(
+          BetaWebhookEnvironmentUpdatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookEnvironmentArchivedEventData(
+          BetaWebhookEnvironmentArchivedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookEnvironmentDeletedEventData(
+          BetaWebhookEnvironmentDeletedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookMemoryStoreCreatedEventData(
+          BetaWebhookMemoryStoreCreatedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookMemoryStoreArchivedEventData(
+          BetaWebhookMemoryStoreArchivedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookMemoryStoreDeletedEventData(
+          BetaWebhookMemoryStoreDeletedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaWebhookEventDataBetaWebhookSessionBudgetReachedEventData(
+          BetaWebhookSessionBudgetReachedEventData.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "session.created",
+          "session.pending",
+          "session.running",
+          "session.idled",
+          "session.requires_action",
+          "session.archived",
+          "session.deleted",
+          "session.status_rescheduled",
+          "session.status_run_started",
+          "session.status_idled",
+          "session.status_terminated",
+          "session.thread_created",
+          "session.thread_idled",
+          "session.thread_terminated",
+          "session.outcome_evaluation_ended",
+          "vault.created",
+          "vault.archived",
+          "vault.deleted",
+          "vault_credential.created",
+          "vault_credential.archived",
+          "vault_credential.deleted",
+          "vault_credential.refresh_failed",
+          "session.updated",
+          "agent.created",
+          "agent.archived",
+          "agent.deleted",
+          "deployment.paused",
+          "deployment_run.failed",
+          "deployment.created",
+          "deployment.updated",
+          "deployment.unpaused",
+          "agent.updated",
+          "deployment.archived",
+          "deployment_run.started",
+          "deployment.deleted",
+          "deployment_run.succeeded",
+          "environment.created",
+          "environment.updated",
+          "environment.archived",
+          "environment.deleted",
+          "memory_store.created",
+          "memory_store.archived",
+          "memory_store.deleted",
+          "session.budget_reached"
+        }.contains(json["type"])) {
+      return UnknownBetaWebhookEventData(json);
+    }
     throw FormatException("No variant matched for BetaWebhookEventData");
   }
   Object? toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionCreatedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionCreatedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionCreatedEventData value;
   const BetaWebhookEventDataBetaWebhookSessionCreatedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionPendingEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionPendingEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionPendingEventData value;
   const BetaWebhookEventDataBetaWebhookSessionPendingEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionRunningEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionRunningEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionRunningEventData value;
   const BetaWebhookEventDataBetaWebhookSessionRunningEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionIdledEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionIdledEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionIdledEventData value;
   const BetaWebhookEventDataBetaWebhookSessionIdledEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionRequiresActionEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionRequiresActionEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionRequiresActionEventData value;
-  const BetaWebhookEventDataBetaWebhookSessionRequiresActionEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookSessionRequiresActionEventData(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionArchivedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionArchivedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionArchivedEventData value;
   const BetaWebhookEventDataBetaWebhookSessionArchivedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionDeletedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionDeletedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionDeletedEventData value;
   const BetaWebhookEventDataBetaWebhookSessionDeletedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionStatusRescheduledEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionStatusRescheduledEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionStatusRescheduledEventData value;
-  const BetaWebhookEventDataBetaWebhookSessionStatusRescheduledEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookSessionStatusRescheduledEventData(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionStatusRunStartedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionStatusRunStartedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionStatusRunStartedEventData value;
-  const BetaWebhookEventDataBetaWebhookSessionStatusRunStartedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookSessionStatusRunStartedEventData(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionStatusIdledEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionStatusIdledEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionStatusIdledEventData value;
   const BetaWebhookEventDataBetaWebhookSessionStatusIdledEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionStatusTerminatedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionStatusTerminatedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionStatusTerminatedEventData value;
-  const BetaWebhookEventDataBetaWebhookSessionStatusTerminatedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookSessionStatusTerminatedEventData(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionThreadCreatedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionThreadCreatedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionThreadCreatedEventData value;
-  const BetaWebhookEventDataBetaWebhookSessionThreadCreatedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookSessionThreadCreatedEventData(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionThreadIdledEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionThreadIdledEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionThreadIdledEventData value;
   const BetaWebhookEventDataBetaWebhookSessionThreadIdledEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionThreadTerminatedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionThreadTerminatedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionThreadTerminatedEventData value;
-  const BetaWebhookEventDataBetaWebhookSessionThreadTerminatedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookSessionThreadTerminatedEventData(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionOutcomeEvaluationEndedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionOutcomeEvaluationEndedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionOutcomeEvaluationEndedEventData value;
-  const BetaWebhookEventDataBetaWebhookSessionOutcomeEvaluationEndedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookSessionOutcomeEvaluationEndedEventData(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookVaultCreatedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookVaultCreatedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookVaultCreatedEventData value;
   const BetaWebhookEventDataBetaWebhookVaultCreatedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookVaultArchivedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookVaultArchivedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookVaultArchivedEventData value;
   const BetaWebhookEventDataBetaWebhookVaultArchivedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookVaultDeletedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookVaultDeletedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookVaultDeletedEventData value;
   const BetaWebhookEventDataBetaWebhookVaultDeletedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookVaultCredentialCreatedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookVaultCredentialCreatedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookVaultCredentialCreatedEventData value;
-  const BetaWebhookEventDataBetaWebhookVaultCredentialCreatedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookVaultCredentialCreatedEventData(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookVaultCredentialArchivedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookVaultCredentialArchivedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookVaultCredentialArchivedEventData value;
-  const BetaWebhookEventDataBetaWebhookVaultCredentialArchivedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookVaultCredentialArchivedEventData(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookVaultCredentialDeletedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookVaultCredentialDeletedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookVaultCredentialDeletedEventData value;
-  const BetaWebhookEventDataBetaWebhookVaultCredentialDeletedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookVaultCredentialDeletedEventData(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookVaultCredentialRefreshFailedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookVaultCredentialRefreshFailedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookVaultCredentialRefreshFailedEventData value;
-  const BetaWebhookEventDataBetaWebhookVaultCredentialRefreshFailedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaWebhookEventDataBetaWebhookVaultCredentialRefreshFailedEventData(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookSessionUpdatedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookSessionUpdatedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookSessionUpdatedEventData value;
   const BetaWebhookEventDataBetaWebhookSessionUpdatedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookAgentCreatedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookAgentCreatedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookAgentCreatedEventData value;
   const BetaWebhookEventDataBetaWebhookAgentCreatedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookAgentArchivedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookAgentArchivedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookAgentArchivedEventData value;
   const BetaWebhookEventDataBetaWebhookAgentArchivedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookAgentDeletedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookAgentDeletedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookAgentDeletedEventData value;
   const BetaWebhookEventDataBetaWebhookAgentDeletedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookDeploymentPausedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookDeploymentPausedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookDeploymentPausedEventData value;
   const BetaWebhookEventDataBetaWebhookDeploymentPausedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaWebhookEventDataBetaWebhookDeploymentRunFailedEventData extends BetaWebhookEventData {
+final class BetaWebhookEventDataBetaWebhookDeploymentRunFailedEventData
+    extends BetaWebhookEventData {
   final BetaWebhookDeploymentRunFailedEventData value;
   const BetaWebhookEventDataBetaWebhookDeploymentRunFailedEventData(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

@@ -8,23 +8,31 @@ part of 'shared_beta_response.dart';
 class BetaResponseCitationsConfig implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
 
   const BetaResponseCitationsConfig({required this.enabled});
 
-  BetaResponseCitationsConfig Function({bool enabled}) get copyWith => _copyWith;
+  BetaResponseCitationsConfig Function({bool enabled}) get copyWith =>
+      _copyWith;
 
-  BetaResponseCitationsConfig _copyWith({Object? enabled = sdkOmittedValue}) => BetaResponseCitationsConfig(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-  );
+  BetaResponseCitationsConfig _copyWith({Object? enabled = sdkOmittedValue}) =>
+      BetaResponseCitationsConfig(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+      );
 
-  factory BetaResponseCitationsConfig.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaResponseCitationsConfig(
-    enabled: (json['enabled'] as bool?)!,
-  ), json);
+  factory BetaResponseCitationsConfig.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaResponseCitationsConfig(
+            enabled: (json['enabled'] as bool?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-  };
+        'enabled': enabled,
+      };
 }

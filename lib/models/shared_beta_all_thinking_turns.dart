@@ -8,23 +8,33 @@ part of 'shared_beta.dart';
 class BetaAllThinkingTurns implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final BetaAllThinkingTurnsType type_;
 
   const BetaAllThinkingTurns({required this.type_});
 
-  BetaAllThinkingTurns Function({BetaAllThinkingTurnsType type_}) get copyWith => _copyWith;
+  BetaAllThinkingTurns Function({BetaAllThinkingTurnsType type_})
+      get copyWith => _copyWith;
 
-  BetaAllThinkingTurns _copyWith({Object? type_ = sdkOmittedValue}) => BetaAllThinkingTurns(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaAllThinkingTurnsType,
-  );
+  BetaAllThinkingTurns _copyWith({Object? type_ = sdkOmittedValue}) =>
+      BetaAllThinkingTurns(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaAllThinkingTurnsType,
+      );
 
-  factory BetaAllThinkingTurns.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaAllThinkingTurns(
-    type_: (json['type'] != null ? BetaAllThinkingTurnsType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory BetaAllThinkingTurns.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaAllThinkingTurns(
+            type_: (json['type'] != null
+                ? BetaAllThinkingTurnsType.fromJson(json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

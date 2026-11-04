@@ -8,28 +8,47 @@ part of 'credentials_beta_true.dart';
 class BetaManagedAgentsTokenEndpointAuthPostParam implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsTokenEndpointAuthPostParamType type_;
+
   /// OAuth client secret.
   final String clientSecret;
 
-  const BetaManagedAgentsTokenEndpointAuthPostParam({required this.type_, required this.clientSecret});
+  const BetaManagedAgentsTokenEndpointAuthPostParam(
+      {required this.type_, required this.clientSecret});
 
-  BetaManagedAgentsTokenEndpointAuthPostParam Function({BetaManagedAgentsTokenEndpointAuthPostParamType type_, String clientSecret}) get copyWith => _copyWith;
+  BetaManagedAgentsTokenEndpointAuthPostParam Function(
+      {BetaManagedAgentsTokenEndpointAuthPostParamType type_,
+      String clientSecret}) get copyWith => _copyWith;
 
-  BetaManagedAgentsTokenEndpointAuthPostParam _copyWith({Object? type_ = sdkOmittedValue, Object? clientSecret = sdkOmittedValue}) => BetaManagedAgentsTokenEndpointAuthPostParam(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsTokenEndpointAuthPostParamType,
-    clientSecret: identical(clientSecret, sdkOmittedValue) ? this.clientSecret : clientSecret as String,
-  );
+  BetaManagedAgentsTokenEndpointAuthPostParam _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? clientSecret = sdkOmittedValue}) =>
+      BetaManagedAgentsTokenEndpointAuthPostParam(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsTokenEndpointAuthPostParamType,
+        clientSecret: identical(clientSecret, sdkOmittedValue)
+            ? this.clientSecret
+            : clientSecret as String,
+      );
 
-  factory BetaManagedAgentsTokenEndpointAuthPostParam.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaManagedAgentsTokenEndpointAuthPostParam(
-    type_: (json['type'] != null ? BetaManagedAgentsTokenEndpointAuthPostParamType.fromJson(json['type'] as String) : null)!,
-    clientSecret: (json['client_secret'] as String?)!,
-  ), json);
+  factory BetaManagedAgentsTokenEndpointAuthPostParam.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaManagedAgentsTokenEndpointAuthPostParam(
+            type_: (json['type'] != null
+                ? BetaManagedAgentsTokenEndpointAuthPostParamType.fromJson(
+                    json['type'] as String)
+                : null)!,
+            clientSecret: (json['client_secret'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'client_secret': clientSecret,
-  };
+        'type': type_.toJson(),
+        'client_secret': clientSecret,
+      };
 }

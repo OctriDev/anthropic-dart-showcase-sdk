@@ -5,26 +5,44 @@ part of 'shared_beta_managed_agents.dart';
 
 // shared_beta_managed_agents domain models
 /// A memory store referenced by the deployment is archived.
-class BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError implements SdkJsonModel {
+class BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
-  final BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType type_;
+  final BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
+      type_;
 
-  const BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError({required this.type_});
+  const BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
+      {required this.type_});
 
-  BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError Function({BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError Function(
+      {BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
+          type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType,
-  );
+  BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType,
+      );
 
-  factory BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
-    type_: (json['type'] != null ? BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
+            type_: (json['type'] != null
+                ? BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType
+                    .fromJson(json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

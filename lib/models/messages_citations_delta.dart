@@ -8,28 +8,45 @@ part of 'messages.dart';
 class CitationsDelta implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required API value serialized in the `citation` wire field.
   final CitationsDeltaCitation citation;
+
   /// Required `string` value serialized in the `type` wire field.
   final CitationsDeltaType type_;
 
   const CitationsDelta({required this.citation, required this.type_});
 
-  CitationsDelta Function({CitationsDeltaCitation citation, CitationsDeltaType type_}) get copyWith => _copyWith;
+  CitationsDelta Function(
+      {CitationsDeltaCitation citation,
+      CitationsDeltaType type_}) get copyWith => _copyWith;
 
-  CitationsDelta _copyWith({Object? citation = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => CitationsDelta(
-    citation: identical(citation, sdkOmittedValue) ? this.citation : citation as CitationsDeltaCitation,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as CitationsDeltaType,
-  );
+  CitationsDelta _copyWith(
+          {Object? citation = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      CitationsDelta(
+        citation: identical(citation, sdkOmittedValue)
+            ? this.citation
+            : citation as CitationsDeltaCitation,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as CitationsDeltaType,
+      );
 
-  factory CitationsDelta.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(CitationsDelta(
-    citation: (json['citation'] != null ? CitationsDeltaCitation.fromJson(json['citation']) : null)!,
-    type_: (json['type'] != null ? CitationsDeltaType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory CitationsDelta.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(
+      CitationsDelta(
+        citation: (json['citation'] != null
+            ? CitationsDeltaCitation.fromJson(json['citation'])
+            : null)!,
+        type_: (json['type'] != null
+            ? CitationsDeltaType.fromJson(json['type'] as String)
+            : null)!,
+      ),
+      json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'citation': citation.toJson(),
-    'type': type_.toJson(),
-  };
+        'citation': citation.toJson(),
+        'type': type_.toJson(),
+      };
 }

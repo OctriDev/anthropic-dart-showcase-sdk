@@ -8,23 +8,34 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsRedactedBlock implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsRedactedBlockType type_;
 
   const BetaManagedAgentsRedactedBlock({required this.type_});
 
-  BetaManagedAgentsRedactedBlock Function({BetaManagedAgentsRedactedBlockType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsRedactedBlock Function(
+      {BetaManagedAgentsRedactedBlockType type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsRedactedBlock _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsRedactedBlock(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsRedactedBlockType,
-  );
+  BetaManagedAgentsRedactedBlock _copyWith({Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsRedactedBlock(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsRedactedBlockType,
+      );
 
-  factory BetaManagedAgentsRedactedBlock.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaManagedAgentsRedactedBlock(
-    type_: (json['type'] != null ? BetaManagedAgentsRedactedBlockType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory BetaManagedAgentsRedactedBlock.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaManagedAgentsRedactedBlock(
+            type_: (json['type'] != null
+                ? BetaManagedAgentsRedactedBlockType.fromJson(
+                    json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

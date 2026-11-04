@@ -8,6 +8,7 @@ part of 'shared.dart';
 class DirectCaller implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final DirectCallerType type_;
 
@@ -16,15 +17,21 @@ class DirectCaller implements SdkJsonModel {
   DirectCaller Function({DirectCallerType type_}) get copyWith => _copyWith;
 
   DirectCaller _copyWith({Object? type_ = sdkOmittedValue}) => DirectCaller(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as DirectCallerType,
-  );
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as DirectCallerType,
+      );
 
-  factory DirectCaller.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(DirectCaller(
-    type_: (json['type'] != null ? DirectCallerType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory DirectCaller.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(
+      DirectCaller(
+        type_: (json['type'] != null
+            ? DirectCallerType.fromJson(json['type'] as String)
+            : null)!,
+      ),
+      json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

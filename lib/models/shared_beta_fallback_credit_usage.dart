@@ -8,23 +8,33 @@ part of 'shared_beta_fallback.dart';
 class BetaFallbackCreditUsage implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether the fallback-credit reprice was applied to this response's billing. A union discriminated on `type`. `redeemed`: the retry is billed as if the conversation had been on the retry model all along — including when the resulting shift is zero because there was nothing to move. `not_applied`: no reprice was applied; the arm's `reason` says why.
   final BetaFallbackCreditUsageStatus status;
 
   const BetaFallbackCreditUsage({required this.status});
 
-  BetaFallbackCreditUsage Function({BetaFallbackCreditUsageStatus status}) get copyWith => _copyWith;
+  BetaFallbackCreditUsage Function({BetaFallbackCreditUsageStatus status})
+      get copyWith => _copyWith;
 
-  BetaFallbackCreditUsage _copyWith({Object? status = sdkOmittedValue}) => BetaFallbackCreditUsage(
-    status: identical(status, sdkOmittedValue) ? this.status : status as BetaFallbackCreditUsageStatus,
-  );
+  BetaFallbackCreditUsage _copyWith({Object? status = sdkOmittedValue}) =>
+      BetaFallbackCreditUsage(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as BetaFallbackCreditUsageStatus,
+      );
 
-  factory BetaFallbackCreditUsage.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaFallbackCreditUsage(
-    status: (json['status'] != null ? BetaFallbackCreditUsageStatus.fromJson(json['status']) : null)!,
-  ), json);
+  factory BetaFallbackCreditUsage.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaFallbackCreditUsage(
+            status: (json['status'] != null
+                ? BetaFallbackCreditUsageStatus.fromJson(json['status'])
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'status': status.toJson(),
-  };
+        'status': status.toJson(),
+      };
 }

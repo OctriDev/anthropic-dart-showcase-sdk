@@ -8,16 +8,23 @@ part of 'inline.dart';
 enum BetaManagedAgentsVaultArchivedDeploymentPausedReasonErrorType {
   vaultArchivedError;
 
-  static BetaManagedAgentsVaultArchivedDeploymentPausedReasonErrorType fromJson(String value) {
+  static BetaManagedAgentsVaultArchivedDeploymentPausedReasonErrorType fromJson(
+      String value) {
     switch (value) {
-      case 'vault_archived_error': return BetaManagedAgentsVaultArchivedDeploymentPausedReasonErrorType.vaultArchivedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsVaultArchivedDeploymentPausedReasonErrorType: $value');
+      case 'vault_archived_error':
+        return BetaManagedAgentsVaultArchivedDeploymentPausedReasonErrorType
+            .vaultArchivedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsVaultArchivedDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsVaultArchivedDeploymentPausedReasonErrorType.vaultArchivedError: return 'vault_archived_error';
+      case BetaManagedAgentsVaultArchivedDeploymentPausedReasonErrorType
+            .vaultArchivedError:
+        return 'vault_archived_error';
     }
   }
 
@@ -31,14 +38,18 @@ enum BetaManagedAgentsVaultArchivedRunErrorType {
 
   static BetaManagedAgentsVaultArchivedRunErrorType fromJson(String value) {
     switch (value) {
-      case 'vault_archived_error': return BetaManagedAgentsVaultArchivedRunErrorType.vaultArchivedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsVaultArchivedRunErrorType: $value');
+      case 'vault_archived_error':
+        return BetaManagedAgentsVaultArchivedRunErrorType.vaultArchivedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsVaultArchivedRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsVaultArchivedRunErrorType.vaultArchivedError: return 'vault_archived_error';
+      case BetaManagedAgentsVaultArchivedRunErrorType.vaultArchivedError:
+        return 'vault_archived_error';
     }
   }
 
@@ -50,16 +61,23 @@ enum BetaManagedAgentsVaultArchivedRunErrorType {
 enum BetaManagedAgentsVaultNotFoundDeploymentPausedReasonErrorType {
   vaultNotFoundError;
 
-  static BetaManagedAgentsVaultNotFoundDeploymentPausedReasonErrorType fromJson(String value) {
+  static BetaManagedAgentsVaultNotFoundDeploymentPausedReasonErrorType fromJson(
+      String value) {
     switch (value) {
-      case 'vault_not_found_error': return BetaManagedAgentsVaultNotFoundDeploymentPausedReasonErrorType.vaultNotFoundError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsVaultNotFoundDeploymentPausedReasonErrorType: $value');
+      case 'vault_not_found_error':
+        return BetaManagedAgentsVaultNotFoundDeploymentPausedReasonErrorType
+            .vaultNotFoundError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsVaultNotFoundDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsVaultNotFoundDeploymentPausedReasonErrorType.vaultNotFoundError: return 'vault_not_found_error';
+      case BetaManagedAgentsVaultNotFoundDeploymentPausedReasonErrorType
+            .vaultNotFoundError:
+        return 'vault_not_found_error';
     }
   }
 
@@ -73,14 +91,18 @@ enum BetaManagedAgentsVaultNotFoundRunErrorType {
 
   static BetaManagedAgentsVaultNotFoundRunErrorType fromJson(String value) {
     switch (value) {
-      case 'vault_not_found_error': return BetaManagedAgentsVaultNotFoundRunErrorType.vaultNotFoundError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsVaultNotFoundRunErrorType: $value');
+      case 'vault_not_found_error':
+        return BetaManagedAgentsVaultNotFoundRunErrorType.vaultNotFoundError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsVaultNotFoundRunErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsVaultNotFoundRunErrorType.vaultNotFoundError: return 'vault_not_found_error';
+      case BetaManagedAgentsVaultNotFoundRunErrorType.vaultNotFoundError:
+        return 'vault_not_found_error';
     }
   }
 
@@ -94,14 +116,18 @@ enum BetaManagedAgentsWebFetchToolConfigName {
 
   static BetaManagedAgentsWebFetchToolConfigName fromJson(String value) {
     switch (value) {
-      case 'web_fetch': return BetaManagedAgentsWebFetchToolConfigName.webFetch;
-      default: throw ArgumentError('Unknown BetaManagedAgentsWebFetchToolConfigName: $value');
+      case 'web_fetch':
+        return BetaManagedAgentsWebFetchToolConfigName.webFetch;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsWebFetchToolConfigName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWebFetchToolConfigName.webFetch: return 'web_fetch';
+      case BetaManagedAgentsWebFetchToolConfigName.webFetch:
+        return 'web_fetch';
     }
   }
 
@@ -115,14 +141,18 @@ enum BetaManagedAgentsWebFetchToolConfigType {
 
   static BetaManagedAgentsWebFetchToolConfigType fromJson(String value) {
     switch (value) {
-      case 'web_fetch': return BetaManagedAgentsWebFetchToolConfigType.webFetch;
-      default: throw ArgumentError('Unknown BetaManagedAgentsWebFetchToolConfigType: $value');
+      case 'web_fetch':
+        return BetaManagedAgentsWebFetchToolConfigType.webFetch;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsWebFetchToolConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWebFetchToolConfigType.webFetch: return 'web_fetch';
+      case BetaManagedAgentsWebFetchToolConfigType.webFetch:
+        return 'web_fetch';
     }
   }
 
@@ -136,14 +166,18 @@ enum BetaManagedAgentsWebFetchToolConfigParamsName {
 
   static BetaManagedAgentsWebFetchToolConfigParamsName fromJson(String value) {
     switch (value) {
-      case 'web_fetch': return BetaManagedAgentsWebFetchToolConfigParamsName.webFetch;
-      default: throw ArgumentError('Unknown BetaManagedAgentsWebFetchToolConfigParamsName: $value');
+      case 'web_fetch':
+        return BetaManagedAgentsWebFetchToolConfigParamsName.webFetch;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsWebFetchToolConfigParamsName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWebFetchToolConfigParamsName.webFetch: return 'web_fetch';
+      case BetaManagedAgentsWebFetchToolConfigParamsName.webFetch:
+        return 'web_fetch';
     }
   }
 
@@ -157,14 +191,18 @@ enum BetaManagedAgentsWebFetchToolConfigParamsType {
 
   static BetaManagedAgentsWebFetchToolConfigParamsType fromJson(String value) {
     switch (value) {
-      case 'web_fetch': return BetaManagedAgentsWebFetchToolConfigParamsType.webFetch;
-      default: throw ArgumentError('Unknown BetaManagedAgentsWebFetchToolConfigParamsType: $value');
+      case 'web_fetch':
+        return BetaManagedAgentsWebFetchToolConfigParamsType.webFetch;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsWebFetchToolConfigParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWebFetchToolConfigParamsType.webFetch: return 'web_fetch';
+      case BetaManagedAgentsWebFetchToolConfigParamsType.webFetch:
+        return 'web_fetch';
     }
   }
 
@@ -178,14 +216,18 @@ enum BetaManagedAgentsWebSearchToolConfigName {
 
   static BetaManagedAgentsWebSearchToolConfigName fromJson(String value) {
     switch (value) {
-      case 'web_search': return BetaManagedAgentsWebSearchToolConfigName.webSearch;
-      default: throw ArgumentError('Unknown BetaManagedAgentsWebSearchToolConfigName: $value');
+      case 'web_search':
+        return BetaManagedAgentsWebSearchToolConfigName.webSearch;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsWebSearchToolConfigName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWebSearchToolConfigName.webSearch: return 'web_search';
+      case BetaManagedAgentsWebSearchToolConfigName.webSearch:
+        return 'web_search';
     }
   }
 
@@ -199,14 +241,18 @@ enum BetaManagedAgentsWebSearchToolConfigType {
 
   static BetaManagedAgentsWebSearchToolConfigType fromJson(String value) {
     switch (value) {
-      case 'web_search': return BetaManagedAgentsWebSearchToolConfigType.webSearch;
-      default: throw ArgumentError('Unknown BetaManagedAgentsWebSearchToolConfigType: $value');
+      case 'web_search':
+        return BetaManagedAgentsWebSearchToolConfigType.webSearch;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsWebSearchToolConfigType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWebSearchToolConfigType.webSearch: return 'web_search';
+      case BetaManagedAgentsWebSearchToolConfigType.webSearch:
+        return 'web_search';
     }
   }
 
@@ -220,14 +266,18 @@ enum BetaManagedAgentsWebSearchToolConfigParamsName {
 
   static BetaManagedAgentsWebSearchToolConfigParamsName fromJson(String value) {
     switch (value) {
-      case 'web_search': return BetaManagedAgentsWebSearchToolConfigParamsName.webSearch;
-      default: throw ArgumentError('Unknown BetaManagedAgentsWebSearchToolConfigParamsName: $value');
+      case 'web_search':
+        return BetaManagedAgentsWebSearchToolConfigParamsName.webSearch;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsWebSearchToolConfigParamsName: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWebSearchToolConfigParamsName.webSearch: return 'web_search';
+      case BetaManagedAgentsWebSearchToolConfigParamsName.webSearch:
+        return 'web_search';
     }
   }
 
@@ -241,14 +291,18 @@ enum BetaManagedAgentsWebSearchToolConfigParamsType {
 
   static BetaManagedAgentsWebSearchToolConfigParamsType fromJson(String value) {
     switch (value) {
-      case 'web_search': return BetaManagedAgentsWebSearchToolConfigParamsType.webSearch;
-      default: throw ArgumentError('Unknown BetaManagedAgentsWebSearchToolConfigParamsType: $value');
+      case 'web_search':
+        return BetaManagedAgentsWebSearchToolConfigParamsType.webSearch;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsWebSearchToolConfigParamsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWebSearchToolConfigParamsType.webSearch: return 'web_search';
+      case BetaManagedAgentsWebSearchToolConfigParamsType.webSearch:
+        return 'web_search';
     }
   }
 
@@ -260,16 +314,23 @@ enum BetaManagedAgentsWebSearchToolConfigParamsType {
 enum BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType {
   workspaceArchivedError;
 
-  static BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType fromJson(String value) {
+  static BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType
+      fromJson(String value) {
     switch (value) {
-      case 'workspace_archived_error': return BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType.workspaceArchivedError;
-      default: throw ArgumentError('Unknown BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType: $value');
+      case 'workspace_archived_error':
+        return BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType
+            .workspaceArchivedError;
+      default:
+        throw ArgumentError(
+            'Unknown BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType.workspaceArchivedError: return 'workspace_archived_error';
+      case BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType
+            .workspaceArchivedError:
+        return 'workspace_archived_error';
     }
   }
 

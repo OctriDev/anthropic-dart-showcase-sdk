@@ -10,32 +10,57 @@ sealed class BetaManagedAgentsRubric {
   const BetaManagedAgentsRubric();
   factory BetaManagedAgentsRubric.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsFileRubric.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRubricBetaManagedAgentsFileRubric(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsTextRubric.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsRubricBetaManagedAgentsTextRubric(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsFileRubric.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRubricBetaManagedAgentsFileRubric(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsTextRubric.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsRubricBetaManagedAgentsTextRubric(value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsRubricBetaManagedAgentsFileRubric(BetaManagedAgentsFileRubric.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsRubricBetaManagedAgentsTextRubric(BetaManagedAgentsTextRubric.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"file", "text"}.contains(json["type"])) { return UnknownBetaManagedAgentsRubric(json); }
+    try {
+      return BetaManagedAgentsRubricBetaManagedAgentsFileRubric(
+          BetaManagedAgentsFileRubric.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsRubricBetaManagedAgentsTextRubric(
+          BetaManagedAgentsTextRubric.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"file", "text"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsRubric(json);
+    }
     throw FormatException("No variant matched for BetaManagedAgentsRubric");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsRubricBetaManagedAgentsFileRubric extends BetaManagedAgentsRubric {
+final class BetaManagedAgentsRubricBetaManagedAgentsFileRubric
+    extends BetaManagedAgentsRubric {
   final BetaManagedAgentsFileRubric value;
   const BetaManagedAgentsRubricBetaManagedAgentsFileRubric(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsRubricBetaManagedAgentsTextRubric extends BetaManagedAgentsRubric {
+final class BetaManagedAgentsRubricBetaManagedAgentsTextRubric
+    extends BetaManagedAgentsRubric {
   final BetaManagedAgentsTextRubric value;
   const BetaManagedAgentsRubricBetaManagedAgentsTextRubric(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsRubric] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaManagedAgentsRubric extends BetaManagedAgentsRubric {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsRubric(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

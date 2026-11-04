@@ -25,19 +25,54 @@ Future<BetaWorkspaceRateLimitListResponse>
           '/v1/organizations/workspaces/${Uri.encodeComponent(workspaceId.toString())}/rate_limits?beta=true',
           config: config,
           query: {
-            'group_type': SdkQueryValue(SdkUtils.unwrapOptional(groupType), style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'group_type': SdkQueryValue(SdkUtils.unwrapOptional(groupType),
+                style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listBetaOrganizationsWorkspacesRateLimits',
-          fromJsonRaw: (value) => BetaWorkspaceRateLimitListResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaWorkspaceRateLimitListResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// List rate-limit overrides configured for a workspace. Returns only the groups and limiter types that have a workspace-level override. Groups without overrides inherit the organization limits and are not listed; use `GET /v1/organizations/rate_limits` to see those. When `limit` is omitted, every matching entry is returned in a single page; when `limit` truncates the result, follow `next_page` to fetch the remaining entries.
 ///
@@ -47,23 +82,57 @@ Future<BetaWorkspaceRateLimitListResponse>
 ///   `1000`. When omitted, every remaining entry is returned in a single page and
 ///   `next_page` is `null`.
 /// [page] Opaque cursor from a previous response's `next_page`.
-Stream<BetaWorkspaceRateLimit> listBetaOrganizationsWorkspacesRateLimitsPaginated(ClientConfig config, {required String workspaceId, String? groupType, int? limit, String? page, RequestOptions? requestOptions}) async* {
+Stream<BetaWorkspaceRateLimit>
+    listBetaOrganizationsWorkspacesRateLimitsPaginated(ClientConfig config,
+        {required String workspaceId,
+        String? groupType,
+        int? limit,
+        String? page,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsWorkspacesRateLimits(config, workspaceId: workspaceId, groupType: groupType == null ? const SdkOmitted<String?>() : SdkPresent<String?>(groupType), limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsWorkspacesRateLimits(config,
+        workspaceId: workspaceId,
+        groupType: groupType == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(groupType),
+        limit:
+            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaWorkspaceRateLimitListResponse, BetaWorkspaceRateLimit>> listBetaOrganizationsWorkspacesRateLimitsPages(ClientConfig config, {required String workspaceId, String? groupType, int? limit, String? page, RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaWorkspaceRateLimitListResponse, BetaWorkspaceRateLimit>>
+    listBetaOrganizationsWorkspacesRateLimitsPages(ClientConfig config,
+        {required String workspaceId,
+        String? groupType,
+        int? limit,
+        String? page,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsWorkspacesRateLimits(config, workspaceId: workspaceId, groupType: groupType == null ? const SdkOmitted<String?>() : SdkPresent<String?>(groupType), limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsWorkspacesRateLimits(config,
+        workspaceId: workspaceId,
+        groupType: groupType == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(groupType),
+        limit:
+            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;

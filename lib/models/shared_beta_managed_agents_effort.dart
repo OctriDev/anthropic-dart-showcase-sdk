@@ -10,56 +10,112 @@ sealed class BetaManagedAgentsEffort {
   const BetaManagedAgentsEffort();
   factory BetaManagedAgentsEffort.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsEffortLow.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEffortBetaManagedAgentsEffortLow(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsEffortMedium.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEffortBetaManagedAgentsEffortMedium(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsEffortHigh.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEffortBetaManagedAgentsEffortHigh(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsEffortXhigh.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEffortBetaManagedAgentsEffortXhigh(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsEffortMax.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsEffortBetaManagedAgentsEffortMax(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsEffortLow.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsEffortBetaManagedAgentsEffortLow(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsEffortMedium.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsEffortBetaManagedAgentsEffortMedium(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsEffortHigh.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsEffortBetaManagedAgentsEffortHigh(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsEffortXhigh.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsEffortBetaManagedAgentsEffortXhigh(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsEffortMax.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsEffortBetaManagedAgentsEffortMax(value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsEffortBetaManagedAgentsEffortLow(BetaManagedAgentsEffortLow.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsEffortBetaManagedAgentsEffortMedium(BetaManagedAgentsEffortMedium.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsEffortBetaManagedAgentsEffortHigh(BetaManagedAgentsEffortHigh.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsEffortBetaManagedAgentsEffortXhigh(BetaManagedAgentsEffortXhigh.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsEffortBetaManagedAgentsEffortMax(BetaManagedAgentsEffortMax.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"low", "medium", "high", "xhigh", "max"}.contains(json["type"])) { return UnknownBetaManagedAgentsEffort(json); }
+    try {
+      return BetaManagedAgentsEffortBetaManagedAgentsEffortLow(
+          BetaManagedAgentsEffortLow.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsEffortBetaManagedAgentsEffortMedium(
+          BetaManagedAgentsEffortMedium.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsEffortBetaManagedAgentsEffortHigh(
+          BetaManagedAgentsEffortHigh.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsEffortBetaManagedAgentsEffortXhigh(
+          BetaManagedAgentsEffortXhigh.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsEffortBetaManagedAgentsEffortMax(
+          BetaManagedAgentsEffortMax.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"low", "medium", "high", "xhigh", "max"}
+            .contains(json["type"])) {
+      return UnknownBetaManagedAgentsEffort(json);
+    }
     throw FormatException("No variant matched for BetaManagedAgentsEffort");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsEffortBetaManagedAgentsEffortLow extends BetaManagedAgentsEffort {
+final class BetaManagedAgentsEffortBetaManagedAgentsEffortLow
+    extends BetaManagedAgentsEffort {
   final BetaManagedAgentsEffortLow value;
   const BetaManagedAgentsEffortBetaManagedAgentsEffortLow(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsEffortBetaManagedAgentsEffortMedium extends BetaManagedAgentsEffort {
+final class BetaManagedAgentsEffortBetaManagedAgentsEffortMedium
+    extends BetaManagedAgentsEffort {
   final BetaManagedAgentsEffortMedium value;
   const BetaManagedAgentsEffortBetaManagedAgentsEffortMedium(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsEffortBetaManagedAgentsEffortHigh extends BetaManagedAgentsEffort {
+final class BetaManagedAgentsEffortBetaManagedAgentsEffortHigh
+    extends BetaManagedAgentsEffort {
   final BetaManagedAgentsEffortHigh value;
   const BetaManagedAgentsEffortBetaManagedAgentsEffortHigh(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsEffortBetaManagedAgentsEffortXhigh extends BetaManagedAgentsEffort {
+final class BetaManagedAgentsEffortBetaManagedAgentsEffortXhigh
+    extends BetaManagedAgentsEffort {
   final BetaManagedAgentsEffortXhigh value;
   const BetaManagedAgentsEffortBetaManagedAgentsEffortXhigh(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsEffortBetaManagedAgentsEffortMax extends BetaManagedAgentsEffort {
+final class BetaManagedAgentsEffortBetaManagedAgentsEffortMax
+    extends BetaManagedAgentsEffort {
   final BetaManagedAgentsEffortMax value;
   const BetaManagedAgentsEffortBetaManagedAgentsEffortMax(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsEffort] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaManagedAgentsEffort extends BetaManagedAgentsEffort {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsEffort(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

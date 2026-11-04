@@ -10,64 +10,141 @@ sealed class RequestToolResultBlockContentItem {
   const RequestToolResultBlockContentItem();
   factory RequestToolResultBlockContentItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = RequestTextBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolResultBlockContentItemRequestTextBlock(value); } } catch (_) {}
-      try { final value = RequestImageBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolResultBlockContentItemRequestImageBlock(value); } } catch (_) {}
-      try { final value = RequestSearchResultBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolResultBlockContentItemRequestSearchResultBlock(value); } } catch (_) {}
-      try { final value = RequestDocumentBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolResultBlockContentItemRequestDocumentBlock(value); } } catch (_) {}
-      try { final value = RequestToolReferenceBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolResultBlockContentItemRequestToolReferenceBlock(value); } } catch (_) {}
-      try { final value = RequestBrowserStateBlock.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RequestToolResultBlockContentItemRequestBrowserStateBlock(value); } } catch (_) {}
+      try {
+        final value = RequestTextBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RequestToolResultBlockContentItemRequestTextBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RequestImageBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RequestToolResultBlockContentItemRequestImageBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RequestSearchResultBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RequestToolResultBlockContentItemRequestSearchResultBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = RequestDocumentBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RequestToolResultBlockContentItemRequestDocumentBlock(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RequestToolReferenceBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RequestToolResultBlockContentItemRequestToolReferenceBlock(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = RequestBrowserStateBlock.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RequestToolResultBlockContentItemRequestBrowserStateBlock(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return RequestToolResultBlockContentItemRequestTextBlock(RequestTextBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return RequestToolResultBlockContentItemRequestImageBlock(RequestImageBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return RequestToolResultBlockContentItemRequestSearchResultBlock(RequestSearchResultBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return RequestToolResultBlockContentItemRequestDocumentBlock(RequestDocumentBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return RequestToolResultBlockContentItemRequestToolReferenceBlock(RequestToolReferenceBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return RequestToolResultBlockContentItemRequestBrowserStateBlock(RequestBrowserStateBlock.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"browser_state", "document", "image", "search_result", "text", "tool_reference"}.contains(json["type"])) { return UnknownRequestToolResultBlockContentItem(json); }
-    throw FormatException("No variant matched for RequestToolResultBlockContentItem");
+    try {
+      return RequestToolResultBlockContentItemRequestTextBlock(
+          RequestTextBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return RequestToolResultBlockContentItemRequestImageBlock(
+          RequestImageBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return RequestToolResultBlockContentItemRequestSearchResultBlock(
+          RequestSearchResultBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return RequestToolResultBlockContentItemRequestDocumentBlock(
+          RequestDocumentBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return RequestToolResultBlockContentItemRequestToolReferenceBlock(
+          RequestToolReferenceBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return RequestToolResultBlockContentItemRequestBrowserStateBlock(
+          RequestBrowserStateBlock.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "browser_state",
+          "document",
+          "image",
+          "search_result",
+          "text",
+          "tool_reference"
+        }.contains(json["type"])) {
+      return UnknownRequestToolResultBlockContentItem(json);
+    }
+    throw FormatException(
+        "No variant matched for RequestToolResultBlockContentItem");
   }
   Object? toJson();
 }
 
-final class RequestToolResultBlockContentItemRequestTextBlock extends RequestToolResultBlockContentItem {
+final class RequestToolResultBlockContentItemRequestTextBlock
+    extends RequestToolResultBlockContentItem {
   final RequestTextBlock value;
   const RequestToolResultBlockContentItemRequestTextBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class RequestToolResultBlockContentItemRequestImageBlock extends RequestToolResultBlockContentItem {
+final class RequestToolResultBlockContentItemRequestImageBlock
+    extends RequestToolResultBlockContentItem {
   final RequestImageBlock value;
   const RequestToolResultBlockContentItemRequestImageBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class RequestToolResultBlockContentItemRequestSearchResultBlock extends RequestToolResultBlockContentItem {
+final class RequestToolResultBlockContentItemRequestSearchResultBlock
+    extends RequestToolResultBlockContentItem {
   final RequestSearchResultBlock value;
   const RequestToolResultBlockContentItemRequestSearchResultBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class RequestToolResultBlockContentItemRequestDocumentBlock extends RequestToolResultBlockContentItem {
+final class RequestToolResultBlockContentItemRequestDocumentBlock
+    extends RequestToolResultBlockContentItem {
   final RequestDocumentBlock value;
   const RequestToolResultBlockContentItemRequestDocumentBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class RequestToolResultBlockContentItemRequestToolReferenceBlock extends RequestToolResultBlockContentItem {
+final class RequestToolResultBlockContentItemRequestToolReferenceBlock
+    extends RequestToolResultBlockContentItem {
   final RequestToolReferenceBlock value;
   const RequestToolResultBlockContentItemRequestToolReferenceBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class RequestToolResultBlockContentItemRequestBrowserStateBlock extends RequestToolResultBlockContentItem {
+final class RequestToolResultBlockContentItemRequestBrowserStateBlock
+    extends RequestToolResultBlockContentItem {
   final RequestBrowserStateBlock value;
   const RequestToolResultBlockContentItemRequestBrowserStateBlock(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [RequestToolResultBlockContentItem] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownRequestToolResultBlockContentItem extends RequestToolResultBlockContentItem {
+final class UnknownRequestToolResultBlockContentItem
+    extends RequestToolResultBlockContentItem {
   final Map<String, dynamic> raw;
   const UnknownRequestToolResultBlockContentItem(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

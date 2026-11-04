@@ -9,21 +9,65 @@ sealed class BetaManagedAgentsModel {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsModel();
   factory BetaManagedAgentsModel.fromJson(Object? json) {
-    if (json is String) { return BetaManagedAgentsModelString(json); }
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant1(BetaManagedAgentsModelVariant1.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant2(BetaManagedAgentsModelVariant2.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant3(BetaManagedAgentsModelVariant3.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant4(BetaManagedAgentsModelVariant4.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant5(BetaManagedAgentsModelVariant5.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant6(BetaManagedAgentsModelVariant6.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant7(BetaManagedAgentsModelVariant7.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant8(BetaManagedAgentsModelVariant8.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant9(BetaManagedAgentsModelVariant9.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant10(BetaManagedAgentsModelVariant10.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant11(BetaManagedAgentsModelVariant11.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant12(BetaManagedAgentsModelVariant12.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant13(BetaManagedAgentsModelVariant13.fromJson(json as String)); } catch (_) {}
-    try { return BetaManagedAgentsModelBetaManagedAgentsModelVariant14(BetaManagedAgentsModelVariant14.fromJson(json as String)); } catch (_) {}
+    if (json is String) {
+      return BetaManagedAgentsModelString(json);
+    }
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant1(
+          BetaManagedAgentsModelVariant1.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant2(
+          BetaManagedAgentsModelVariant2.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant3(
+          BetaManagedAgentsModelVariant3.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant4(
+          BetaManagedAgentsModelVariant4.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant5(
+          BetaManagedAgentsModelVariant5.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant6(
+          BetaManagedAgentsModelVariant6.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant7(
+          BetaManagedAgentsModelVariant7.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant8(
+          BetaManagedAgentsModelVariant8.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant9(
+          BetaManagedAgentsModelVariant9.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant10(
+          BetaManagedAgentsModelVariant10.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant11(
+          BetaManagedAgentsModelVariant11.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant12(
+          BetaManagedAgentsModelVariant12.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant13(
+          BetaManagedAgentsModelVariant13.fromJson(json as String));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsModelBetaManagedAgentsModelVariant14(
+          BetaManagedAgentsModelVariant14.fromJson(json as String));
+    } catch (_) {}
     throw FormatException("No variant matched for BetaManagedAgentsModel");
   }
   Object? toJson();
@@ -32,89 +76,118 @@ sealed class BetaManagedAgentsModel {
 final class BetaManagedAgentsModelString extends BetaManagedAgentsModel {
   final String value;
   const BetaManagedAgentsModelString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant1 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant1
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant1 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant1(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant2 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant2
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant2 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant2(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant3 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant3
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant3 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant3(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant4 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant4
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant4 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant4(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant5 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant5
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant5 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant5(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant6 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant6
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant6 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant6(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant7 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant7
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant7 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant7(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant8 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant8
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant8 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant8(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant9 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant9
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant9 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant9(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant10 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant10
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant10 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant10(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant11 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant11
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant11 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant11(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant12 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant12
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant12 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant12(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant13 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant13
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant13 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant13(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsModelBetaManagedAgentsModelVariant14 extends BetaManagedAgentsModel {
+final class BetaManagedAgentsModelBetaManagedAgentsModelVariant14
+    extends BetaManagedAgentsModel {
   final BetaManagedAgentsModelVariant14 value;
   const BetaManagedAgentsModelBetaManagedAgentsModelVariant14(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

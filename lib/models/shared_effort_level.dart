@@ -6,7 +6,6 @@ part of 'shared.dart';
 // shared domain models
 /// All possible effort levels.
 final class EffortLevel {
-
   final String value;
 
   const EffortLevel._(this.value);
@@ -21,10 +20,13 @@ final class EffortLevel {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is EffortLevel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is EffortLevel && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

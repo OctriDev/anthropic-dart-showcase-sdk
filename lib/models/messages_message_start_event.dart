@@ -8,28 +8,45 @@ part of 'messages.dart';
 class MessageStartEvent implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `message` wire field.
   final Message message;
+
   /// Required `string` value serialized in the `type` wire field.
   final MessageStartEventType type_;
 
   const MessageStartEvent({required this.message, required this.type_});
 
-  MessageStartEvent Function({Message message, MessageStartEventType type_}) get copyWith => _copyWith;
+  MessageStartEvent Function({Message message, MessageStartEventType type_})
+      get copyWith => _copyWith;
 
-  MessageStartEvent _copyWith({Object? message = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => MessageStartEvent(
-    message: identical(message, sdkOmittedValue) ? this.message : message as Message,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as MessageStartEventType,
-  );
+  MessageStartEvent _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      MessageStartEvent(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as Message,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as MessageStartEventType,
+      );
 
-  factory MessageStartEvent.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(MessageStartEvent(
-    message: (json['message'] != null ? Message.fromJson(json['message'] as Map<String, dynamic>) : null)!,
-    type_: (json['type'] != null ? MessageStartEventType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory MessageStartEvent.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          MessageStartEvent(
+            message: (json['message'] != null
+                ? Message.fromJson(json['message'] as Map<String, dynamic>)
+                : null)!,
+            type_: (json['type'] != null
+                ? MessageStartEventType.fromJson(json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'message': message.toJson(),
-    'type': type_.toJson(),
-  };
+        'message': message.toJson(),
+        'type': type_.toJson(),
+      };
 }

@@ -8,28 +8,49 @@ part of 'connectors_beta_true.dart';
 class BetaAnalyticsConnectorsResponse implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `data` wire field.
   final List<BetaAnalyticsConnectorActivity> data;
+
   /// Opaque cursor for the next page, or null if no more results
   final String? nextPage;
 
-  const BetaAnalyticsConnectorsResponse({required this.data, required this.nextPage});
+  const BetaAnalyticsConnectorsResponse(
+      {required this.data, required this.nextPage});
 
-  BetaAnalyticsConnectorsResponse Function({List<BetaAnalyticsConnectorActivity> data, String? nextPage}) get copyWith => _copyWith;
+  BetaAnalyticsConnectorsResponse Function(
+      {List<BetaAnalyticsConnectorActivity> data,
+      String? nextPage}) get copyWith => _copyWith;
 
-  BetaAnalyticsConnectorsResponse _copyWith({Object? data = sdkOmittedValue, Object? nextPage = sdkOmittedValue}) => BetaAnalyticsConnectorsResponse(
-    data: identical(data, sdkOmittedValue) ? this.data : data as List<BetaAnalyticsConnectorActivity>,
-    nextPage: identical(nextPage, sdkOmittedValue) ? this.nextPage : nextPage as String?,
-  );
+  BetaAnalyticsConnectorsResponse _copyWith(
+          {Object? data = sdkOmittedValue,
+          Object? nextPage = sdkOmittedValue}) =>
+      BetaAnalyticsConnectorsResponse(
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as List<BetaAnalyticsConnectorActivity>,
+        nextPage: identical(nextPage, sdkOmittedValue)
+            ? this.nextPage
+            : nextPage as String?,
+      );
 
-  factory BetaAnalyticsConnectorsResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaAnalyticsConnectorsResponse(
-    data: ((json['data'] as List?)?.map((e) => BetaAnalyticsConnectorActivity.fromJson(e as Map<String, dynamic>)).toList())!,
-    nextPage: json.containsKey('next_page') ? json['next_page'] as String? : throw ArgumentError.value(null, 'next_page', 'Required property is missing'),
-  ), json);
+  factory BetaAnalyticsConnectorsResponse.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaAnalyticsConnectorsResponse(
+            data: ((json['data'] as List?)
+                ?.map((e) => BetaAnalyticsConnectorActivity.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!,
+            nextPage: json.containsKey('next_page')
+                ? json['next_page'] as String?
+                : throw ArgumentError.value(
+                    null, 'next_page', 'Required property is missing'),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'data': data.map((item) => item.toJson()).toList(),
-    'next_page': nextPage,
-  };
+        'data': data.map((item) => item.toJson()).toList(),
+        'next_page': nextPage,
+      };
 }

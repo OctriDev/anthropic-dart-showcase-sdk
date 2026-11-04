@@ -5,26 +5,44 @@ part of 'shared_beta_managed_agents.dart';
 
 // shared_beta_managed_agents domain models
 /// The deployment's environment no longer exists.
-class BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError implements SdkJsonModel {
+class BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
-  final BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType type_;
+  final BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType
+      type_;
 
-  const BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError({required this.type_});
+  const BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError(
+      {required this.type_});
 
-  BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError Function({BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType type_}) get copyWith => _copyWith;
+  BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError Function(
+      {BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType
+          type_}) get copyWith => _copyWith;
 
-  BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError _copyWith({Object? type_ = sdkOmittedValue}) => BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType,
-  );
+  BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType,
+      );
 
-  factory BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError(
-    type_: (json['type'] != null ? BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError(
+            type_: (json['type'] != null
+                ? BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonErrorType
+                    .fromJson(json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

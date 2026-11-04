@@ -8,28 +8,47 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsOrganizationDisabledRunError implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsOrganizationDisabledRunErrorType type_;
+
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsOrganizationDisabledRunError({required this.type_, required this.message});
+  const BetaManagedAgentsOrganizationDisabledRunError(
+      {required this.type_, required this.message});
 
-  BetaManagedAgentsOrganizationDisabledRunError Function({BetaManagedAgentsOrganizationDisabledRunErrorType type_, String message}) get copyWith => _copyWith;
+  BetaManagedAgentsOrganizationDisabledRunError Function(
+      {BetaManagedAgentsOrganizationDisabledRunErrorType type_,
+      String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsOrganizationDisabledRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsOrganizationDisabledRunError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsOrganizationDisabledRunErrorType,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-  );
+  BetaManagedAgentsOrganizationDisabledRunError _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? message = sdkOmittedValue}) =>
+      BetaManagedAgentsOrganizationDisabledRunError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsOrganizationDisabledRunErrorType,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+      );
 
-  factory BetaManagedAgentsOrganizationDisabledRunError.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaManagedAgentsOrganizationDisabledRunError(
-    type_: (json['type'] != null ? BetaManagedAgentsOrganizationDisabledRunErrorType.fromJson(json['type'] as String) : null)!,
-    message: (json['message'] as String?)!,
-  ), json);
+  factory BetaManagedAgentsOrganizationDisabledRunError.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaManagedAgentsOrganizationDisabledRunError(
+            type_: (json['type'] != null
+                ? BetaManagedAgentsOrganizationDisabledRunErrorType.fromJson(
+                    json['type'] as String)
+                : null)!,
+            message: (json['message'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'message': message,
-  };
+        'type': type_.toJson(),
+        'message': message,
+      };
 }

@@ -40,9 +40,11 @@ Future<BetaManagedAgentsSession> createBetaSessions(ClientConfig config,
     SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
     SdkOptional<String?> title = const SdkOmitted(),
     SdkOptional<Map<String, String>> metadata = const SdkOmitted(),
-    SdkOptional<List<BetaManagedAgentsSessionResourceParams>> resources = const SdkOmitted(),
+    SdkOptional<List<BetaManagedAgentsSessionResourceParams>> resources =
+        const SdkOmitted(),
     SdkOptional<List<String>> vaultIds = const SdkOmitted(),
-    SdkOptional<List<BetaManagedAgentsSessionInitialEventParams>> initialEvents = const SdkOmitted(),
+    SdkOptional<List<BetaManagedAgentsSessionInitialEventParams>>
+        initialEvents = const SdkOmitted(),
     SdkOptional<BetaManagedAgentsBudget> budget = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   validateLength('environment_id', environmentId, min: 1, max: 128);
@@ -61,14 +63,49 @@ Future<BetaManagedAgentsSession> createBetaSessions(ClientConfig config,
             'budget': SdkUtils.unwrapOptional(budget)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'createBetaSessions',
-          fromJsonRaw: (value) => BetaManagedAgentsSession.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaManagedAgentsSession.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists sessions with cursor-based pagination and optional filters for creation time, agent, memory store, deployment, and status. Use `include_archived` to include archived sessions and `order` to choose the creation-time sort direction. Pass a returned cursor in `page` to navigate between pages.
 ///
@@ -108,7 +145,8 @@ Future<BetaManagedAgentsListSessions> listBetaSessions(ClientConfig config,
     SdkOptional<BetaManagedAgentsListOrder> order = const SdkOmitted(),
     SdkOptional<String> memoryStoreId = const SdkOmitted(),
     SdkOptional<String> deploymentId = const SdkOmitted(),
-    SdkOptional<List<BetaManagedAgentsSessionStatus>> statuses = const SdkOmitted(),
+    SdkOptional<List<BetaManagedAgentsSessionStatus>> statuses =
+        const SdkOmitted(),
     SdkOptional<List<String>> anthropicBeta = const SdkOmitted(),
     SdkOptional<String> anthropicWorkspaceId = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -129,30 +167,93 @@ Future<BetaManagedAgentsListSessions> listBetaSessions(ClientConfig config,
           'GET', '/v1/sessions?beta=true',
           config: config,
           query: {
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'include_archived': SdkQueryValue(SdkUtils.unwrapOptional(includeArchived), style: 'form', explode: true),
-            'created_at[gte]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtGte), style: 'form', explode: true),
-            'created_at[gt]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtGt), style: 'form', explode: true),
-            'created_at[lte]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtLte), style: 'form', explode: true),
-            'created_at[lt]': SdkQueryValue(SdkUtils.unwrapOptional(createdAtLt), style: 'form', explode: true),
-            'agent_id': SdkQueryValue(SdkUtils.unwrapOptional(agentId), style: 'form', explode: true),
-            'agent_version': SdkQueryValue(SdkUtils.unwrapOptional(agentVersion), style: 'form', explode: true),
-            'order': SdkQueryValue(SdkUtils.unwrapOptional(order), style: 'form', explode: true),
-            'memory_store_id': SdkQueryValue(SdkUtils.unwrapOptional(memoryStoreId), style: 'form', explode: true),
-            'deployment_id': SdkQueryValue(SdkUtils.unwrapOptional(deploymentId), style: 'form', explode: true),
-            'statuses[]': SdkQueryValue(SdkUtils.unwrapOptional(statuses), style: 'form', explode: true)
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'include_archived': SdkQueryValue(
+                SdkUtils.unwrapOptional(includeArchived),
+                style: 'form',
+                explode: true),
+            'created_at[gte]': SdkQueryValue(
+                SdkUtils.unwrapOptional(createdAtGte),
+                style: 'form',
+                explode: true),
+            'created_at[gt]': SdkQueryValue(
+                SdkUtils.unwrapOptional(createdAtGt),
+                style: 'form',
+                explode: true),
+            'created_at[lte]': SdkQueryValue(
+                SdkUtils.unwrapOptional(createdAtLte),
+                style: 'form',
+                explode: true),
+            'created_at[lt]': SdkQueryValue(
+                SdkUtils.unwrapOptional(createdAtLt),
+                style: 'form',
+                explode: true),
+            'agent_id': SdkQueryValue(SdkUtils.unwrapOptional(agentId),
+                style: 'form', explode: true),
+            'agent_version': SdkQueryValue(
+                SdkUtils.unwrapOptional(agentVersion),
+                style: 'form',
+                explode: true),
+            'order': SdkQueryValue(SdkUtils.unwrapOptional(order),
+                style: 'form', explode: true),
+            'memory_store_id': SdkQueryValue(
+                SdkUtils.unwrapOptional(memoryStoreId),
+                style: 'form',
+                explode: true),
+            'deployment_id': SdkQueryValue(
+                SdkUtils.unwrapOptional(deploymentId),
+                style: 'form',
+                explode: true),
+            'statuses[]': SdkQueryValue(SdkUtils.unwrapOptional(statuses),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'listBetaSessions',
-          fromJsonRaw: (value) => BetaManagedAgentsListSessions.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsListSessions.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// Lists sessions with cursor-based pagination and optional filters for creation time, agent, memory store, deployment, and status. Use `include_archived` to include archived sessions and `order` to choose the creation-time sort direction. Pass a returned cursor in `page` to navigate between pages.
 ///
@@ -179,23 +280,146 @@ Future<BetaManagedAgentsListSessions> listBetaSessions(ClientConfig config,
 ///   `wrkspc_011CZkZaBF1tNoB5wlCeusgy`). Only needed for credentials that can act
 ///   on more than one Workspace. A credential that belongs to a specific
 ///   Workspace may omit it; if sent, it must match that Workspace.
-Stream<BetaManagedAgentsSession> listBetaSessionsPaginated(ClientConfig config, {int? limit, String? page, bool? includeArchived, String? createdAtGte, String? createdAtGt, String? createdAtLte, String? createdAtLt, String? agentId, int? agentVersion, BetaManagedAgentsListOrder? order, String? memoryStoreId, String? deploymentId, List<BetaManagedAgentsSessionStatus>? statuses, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<BetaManagedAgentsSession> listBetaSessionsPaginated(ClientConfig config,
+    {int? limit,
+    String? page,
+    bool? includeArchived,
+    String? createdAtGte,
+    String? createdAtGt,
+    String? createdAtLte,
+    String? createdAtLt,
+    String? agentId,
+    int? agentVersion,
+    BetaManagedAgentsListOrder? order,
+    String? memoryStoreId,
+    String? deploymentId,
+    List<BetaManagedAgentsSessionStatus>? statuses,
+    List<String>? anthropicBeta,
+    String? anthropicWorkspaceId,
+    RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaSessions(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), includeArchived: includeArchived == null ? const SdkOmitted<bool>() : SdkPresent<bool>(includeArchived), createdAtGte: createdAtGte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGte), createdAtGt: createdAtGt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGt), createdAtLte: createdAtLte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLte), createdAtLt: createdAtLt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLt), agentId: agentId == null ? const SdkOmitted<String>() : SdkPresent<String>(agentId), agentVersion: agentVersion == null ? const SdkOmitted<int>() : SdkPresent<int>(agentVersion), order: order == null ? const SdkOmitted<BetaManagedAgentsListOrder>() : SdkPresent<BetaManagedAgentsListOrder>(order), memoryStoreId: memoryStoreId == null ? const SdkOmitted<String>() : SdkPresent<String>(memoryStoreId), deploymentId: deploymentId == null ? const SdkOmitted<String>() : SdkPresent<String>(deploymentId), statuses: statuses == null ? const SdkOmitted<List<BetaManagedAgentsSessionStatus>>() : SdkPresent<List<BetaManagedAgentsSessionStatus>>(statuses), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listBetaSessions(config,
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(sdkCursor),
+        includeArchived: includeArchived == null
+            ? const SdkOmitted<bool>()
+            : SdkPresent<bool>(includeArchived),
+        createdAtGte: createdAtGte == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtGte),
+        createdAtGt: createdAtGt == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtGt),
+        createdAtLte: createdAtLte == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtLte),
+        createdAtLt: createdAtLt == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtLt),
+        agentId: agentId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(agentId),
+        agentVersion: agentVersion == null
+            ? const SdkOmitted<int>()
+            : SdkPresent<int>(agentVersion),
+        order: order == null
+            ? const SdkOmitted<BetaManagedAgentsListOrder>()
+            : SdkPresent<BetaManagedAgentsListOrder>(order),
+        memoryStoreId: memoryStoreId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(memoryStoreId),
+        deploymentId: deploymentId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(deploymentId),
+        statuses: statuses == null
+            ? const SdkOmitted<List<BetaManagedAgentsSessionStatus>>()
+            : SdkPresent<List<BetaManagedAgentsSessionStatus>>(statuses),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data.valueOrNull ?? [];
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage.valueOrNull;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaManagedAgentsListSessions, BetaManagedAgentsSession>> listBetaSessionsPages(ClientConfig config, {int? limit, String? page, bool? includeArchived, String? createdAtGte, String? createdAtGt, String? createdAtLte, String? createdAtLt, String? agentId, int? agentVersion, BetaManagedAgentsListOrder? order, String? memoryStoreId, String? deploymentId, List<BetaManagedAgentsSessionStatus>? statuses, List<String>? anthropicBeta, String? anthropicWorkspaceId, RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaManagedAgentsListSessions, BetaManagedAgentsSession>>
+    listBetaSessionsPages(ClientConfig config,
+        {int? limit,
+        String? page,
+        bool? includeArchived,
+        String? createdAtGte,
+        String? createdAtGt,
+        String? createdAtLte,
+        String? createdAtLt,
+        String? agentId,
+        int? agentVersion,
+        BetaManagedAgentsListOrder? order,
+        String? memoryStoreId,
+        String? deploymentId,
+        List<BetaManagedAgentsSessionStatus>? statuses,
+        List<String>? anthropicBeta,
+        String? anthropicWorkspaceId,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaSessions(config, limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit), page: sdkCursor == null ? const SdkOmitted<String>() : SdkPresent<String>(sdkCursor), includeArchived: includeArchived == null ? const SdkOmitted<bool>() : SdkPresent<bool>(includeArchived), createdAtGte: createdAtGte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGte), createdAtGt: createdAtGt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtGt), createdAtLte: createdAtLte == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLte), createdAtLt: createdAtLt == null ? const SdkOmitted<String>() : SdkPresent<String>(createdAtLt), agentId: agentId == null ? const SdkOmitted<String>() : SdkPresent<String>(agentId), agentVersion: agentVersion == null ? const SdkOmitted<int>() : SdkPresent<int>(agentVersion), order: order == null ? const SdkOmitted<BetaManagedAgentsListOrder>() : SdkPresent<BetaManagedAgentsListOrder>(order), memoryStoreId: memoryStoreId == null ? const SdkOmitted<String>() : SdkPresent<String>(memoryStoreId), deploymentId: deploymentId == null ? const SdkOmitted<String>() : SdkPresent<String>(deploymentId), statuses: statuses == null ? const SdkOmitted<List<BetaManagedAgentsSessionStatus>>() : SdkPresent<List<BetaManagedAgentsSessionStatus>>(statuses), anthropicBeta: anthropicBeta == null ? const SdkOmitted<List<String>>() : SdkPresent<List<String>>(anthropicBeta), anthropicWorkspaceId: anthropicWorkspaceId == null ? const SdkOmitted<String>() : SdkPresent<String>(anthropicWorkspaceId), requestOptions: requestOptions);
+    final sdkPage = await listBetaSessions(config,
+        limit: limit == null ? const SdkOmitted<int>() : SdkPresent<int>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(sdkCursor),
+        includeArchived: includeArchived == null
+            ? const SdkOmitted<bool>()
+            : SdkPresent<bool>(includeArchived),
+        createdAtGte: createdAtGte == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtGte),
+        createdAtGt: createdAtGt == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtGt),
+        createdAtLte: createdAtLte == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtLte),
+        createdAtLt: createdAtLt == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(createdAtLt),
+        agentId: agentId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(agentId),
+        agentVersion: agentVersion == null
+            ? const SdkOmitted<int>()
+            : SdkPresent<int>(agentVersion),
+        order: order == null
+            ? const SdkOmitted<BetaManagedAgentsListOrder>()
+            : SdkPresent<BetaManagedAgentsListOrder>(order),
+        memoryStoreId: memoryStoreId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(memoryStoreId),
+        deploymentId: deploymentId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(deploymentId),
+        statuses: statuses == null
+            ? const SdkOmitted<List<BetaManagedAgentsSessionStatus>>()
+            : SdkPresent<List<BetaManagedAgentsSessionStatus>>(statuses),
+        anthropicBeta: anthropicBeta == null
+            ? const SdkOmitted<List<String>>()
+            : SdkPresent<List<String>>(anthropicBeta),
+        anthropicWorkspaceId: anthropicWorkspaceId == null
+            ? const SdkOmitted<String>()
+            : SdkPresent<String>(anthropicWorkspaceId),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data.valueOrNull ?? [];
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage.valueOrNull;
@@ -205,7 +429,6 @@ Stream<SdkPage<BetaManagedAgentsListSessions, BetaManagedAgentsSession>> listBet
     sdkCursor = sdkNext;
   }
 }
-
 
 /// Retrieves a session by its identifier, including its status, agent snapshot, resources, usage, and timing statistics. Use `session_id` to select the session you need to inspect. The response includes the session's archive timestamp when it has been archived.
 ///
@@ -224,14 +447,49 @@ Future<BetaManagedAgentsSession> retrieveBetaSessions(ClientConfig config,
           '/v1/sessions/${Uri.encodeComponent(sessionId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'retrieveBetaSessions',
-          fromJsonRaw: (value) => BetaManagedAgentsSession.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaManagedAgentsSession.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Updates selected properties of a session while preserving fields you omit. Use `title`, `metadata`, `agent`, or `budget` as needed; `vault_ids` is reserved and requests that set it are rejected. Mid-session agent updates can change only `tools` and `mcp_servers`, require a session that is not running, and replace those arrays in full.
 ///
@@ -278,14 +536,49 @@ Future<BetaManagedAgentsSession> updateBetaSessions(ClientConfig config,
             'budget': SdkUtils.unwrapOptional(budget)
           },
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'updateBetaSessions',
-          fromJsonRaw: (value) => BetaManagedAgentsSession.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaManagedAgentsSession.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes a session permanently. Supply the session identifier for the session you want to remove. A successful response confirms deletion and includes the deleted session's identifier.
 ///
@@ -304,14 +597,49 @@ Future<BetaManagedAgentsDeletedSession> deleteBetaSessions(ClientConfig config,
           '/v1/sessions/${Uri.encodeComponent(sessionId.toString())}?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'deleteBetaSessions',
-          fromJsonRaw: (value) => BetaManagedAgentsDeletedSession.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaManagedAgentsDeletedSession.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Archives a session, marking it as archived while retaining its session record. Use this operation when the session should no longer be active; the response includes the session's `archived_at` value and other session details.
 ///
@@ -330,10 +658,46 @@ Future<BetaManagedAgentsSession> archiveBetaSessions(ClientConfig config,
           '/v1/sessions/${Uri.encodeComponent(sessionId.toString())}/archive?beta=true',
           config: config,
           decoder: SdkResponseDecoder.json,
-          extraHeaders: SdkUtils.serializeHeaders({'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta), 'anthropic-workspace-id': SdkUtils.unwrapOptional(anthropicWorkspaceId)}),
+          extraHeaders: SdkUtils.serializeHeaders({
+            'anthropic-beta': SdkUtils.unwrapOptional(anthropicBeta),
+            'anthropic-workspace-id':
+                SdkUtils.unwrapOptional(anthropicWorkspaceId)
+          }),
           operationId: 'archiveBetaSessions',
-          fromJsonRaw: (value) => BetaManagedAgentsSession.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              BetaManagedAgentsSession.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '401': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '403': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '404': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '408': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '409': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '412': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '413': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '429': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '431': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '499': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '500': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '501': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+        '504': (value) =>
+            BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }

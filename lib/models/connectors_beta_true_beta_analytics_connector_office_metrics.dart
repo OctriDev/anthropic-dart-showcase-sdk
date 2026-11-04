@@ -8,38 +8,80 @@ part of 'connectors_beta_true.dart';
 class BetaAnalyticsConnectorOfficeMetrics implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Office Agent activity metrics for a single connector on a given day within one Office product.
   final BetaAnalyticsConnectorOfficeProductMetrics excel;
+
   /// Office Agent activity metrics for a single connector on a given day within one Office product.
   final BetaAnalyticsConnectorOfficeProductMetrics outlook;
+
   /// Office Agent activity metrics for a single connector on a given day within one Office product.
   final BetaAnalyticsConnectorOfficeProductMetrics powerpoint;
+
   /// Office Agent activity metrics for a single connector on a given day within one Office product.
   final BetaAnalyticsConnectorOfficeProductMetrics word;
 
-  const BetaAnalyticsConnectorOfficeMetrics({required this.excel, required this.outlook, required this.powerpoint, required this.word});
+  const BetaAnalyticsConnectorOfficeMetrics(
+      {required this.excel,
+      required this.outlook,
+      required this.powerpoint,
+      required this.word});
 
-  BetaAnalyticsConnectorOfficeMetrics Function({BetaAnalyticsConnectorOfficeProductMetrics excel, BetaAnalyticsConnectorOfficeProductMetrics outlook, BetaAnalyticsConnectorOfficeProductMetrics powerpoint, BetaAnalyticsConnectorOfficeProductMetrics word}) get copyWith => _copyWith;
+  BetaAnalyticsConnectorOfficeMetrics Function(
+          {BetaAnalyticsConnectorOfficeProductMetrics excel,
+          BetaAnalyticsConnectorOfficeProductMetrics outlook,
+          BetaAnalyticsConnectorOfficeProductMetrics powerpoint,
+          BetaAnalyticsConnectorOfficeProductMetrics word})
+      get copyWith => _copyWith;
 
-  BetaAnalyticsConnectorOfficeMetrics _copyWith({Object? excel = sdkOmittedValue, Object? outlook = sdkOmittedValue, Object? powerpoint = sdkOmittedValue, Object? word = sdkOmittedValue}) => BetaAnalyticsConnectorOfficeMetrics(
-    excel: identical(excel, sdkOmittedValue) ? this.excel : excel as BetaAnalyticsConnectorOfficeProductMetrics,
-    outlook: identical(outlook, sdkOmittedValue) ? this.outlook : outlook as BetaAnalyticsConnectorOfficeProductMetrics,
-    powerpoint: identical(powerpoint, sdkOmittedValue) ? this.powerpoint : powerpoint as BetaAnalyticsConnectorOfficeProductMetrics,
-    word: identical(word, sdkOmittedValue) ? this.word : word as BetaAnalyticsConnectorOfficeProductMetrics,
-  );
+  BetaAnalyticsConnectorOfficeMetrics _copyWith(
+          {Object? excel = sdkOmittedValue,
+          Object? outlook = sdkOmittedValue,
+          Object? powerpoint = sdkOmittedValue,
+          Object? word = sdkOmittedValue}) =>
+      BetaAnalyticsConnectorOfficeMetrics(
+        excel: identical(excel, sdkOmittedValue)
+            ? this.excel
+            : excel as BetaAnalyticsConnectorOfficeProductMetrics,
+        outlook: identical(outlook, sdkOmittedValue)
+            ? this.outlook
+            : outlook as BetaAnalyticsConnectorOfficeProductMetrics,
+        powerpoint: identical(powerpoint, sdkOmittedValue)
+            ? this.powerpoint
+            : powerpoint as BetaAnalyticsConnectorOfficeProductMetrics,
+        word: identical(word, sdkOmittedValue)
+            ? this.word
+            : word as BetaAnalyticsConnectorOfficeProductMetrics,
+      );
 
-  factory BetaAnalyticsConnectorOfficeMetrics.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaAnalyticsConnectorOfficeMetrics(
-    excel: (json['excel'] != null ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(json['excel'] as Map<String, dynamic>) : null)!,
-    outlook: (json['outlook'] != null ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(json['outlook'] as Map<String, dynamic>) : null)!,
-    powerpoint: (json['powerpoint'] != null ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(json['powerpoint'] as Map<String, dynamic>) : null)!,
-    word: (json['word'] != null ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(json['word'] as Map<String, dynamic>) : null)!,
-  ), json);
+  factory BetaAnalyticsConnectorOfficeMetrics.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaAnalyticsConnectorOfficeMetrics(
+            excel: (json['excel'] != null
+                ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(
+                    json['excel'] as Map<String, dynamic>)
+                : null)!,
+            outlook: (json['outlook'] != null
+                ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(
+                    json['outlook'] as Map<String, dynamic>)
+                : null)!,
+            powerpoint: (json['powerpoint'] != null
+                ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(
+                    json['powerpoint'] as Map<String, dynamic>)
+                : null)!,
+            word: (json['word'] != null
+                ? BetaAnalyticsConnectorOfficeProductMetrics.fromJson(
+                    json['word'] as Map<String, dynamic>)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'excel': excel.toJson(),
-    'outlook': outlook.toJson(),
-    'powerpoint': powerpoint.toJson(),
-    'word': word.toJson(),
-  };
+        'excel': excel.toJson(),
+        'outlook': outlook.toJson(),
+        'powerpoint': powerpoint.toJson(),
+        'word': word.toJson(),
+      };
 }

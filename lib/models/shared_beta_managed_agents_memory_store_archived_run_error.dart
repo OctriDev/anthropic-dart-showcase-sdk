@@ -8,28 +8,47 @@ part of 'shared_beta_managed_agents.dart';
 class BetaManagedAgentsMemoryStoreArchivedRunError implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final BetaManagedAgentsMemoryStoreArchivedRunErrorType type_;
+
   /// Human-readable error description.
   final String message;
 
-  const BetaManagedAgentsMemoryStoreArchivedRunError({required this.type_, required this.message});
+  const BetaManagedAgentsMemoryStoreArchivedRunError(
+      {required this.type_, required this.message});
 
-  BetaManagedAgentsMemoryStoreArchivedRunError Function({BetaManagedAgentsMemoryStoreArchivedRunErrorType type_, String message}) get copyWith => _copyWith;
+  BetaManagedAgentsMemoryStoreArchivedRunError Function(
+      {BetaManagedAgentsMemoryStoreArchivedRunErrorType type_,
+      String message}) get copyWith => _copyWith;
 
-  BetaManagedAgentsMemoryStoreArchivedRunError _copyWith({Object? type_ = sdkOmittedValue, Object? message = sdkOmittedValue}) => BetaManagedAgentsMemoryStoreArchivedRunError(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as BetaManagedAgentsMemoryStoreArchivedRunErrorType,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-  );
+  BetaManagedAgentsMemoryStoreArchivedRunError _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? message = sdkOmittedValue}) =>
+      BetaManagedAgentsMemoryStoreArchivedRunError(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as BetaManagedAgentsMemoryStoreArchivedRunErrorType,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+      );
 
-  factory BetaManagedAgentsMemoryStoreArchivedRunError.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaManagedAgentsMemoryStoreArchivedRunError(
-    type_: (json['type'] != null ? BetaManagedAgentsMemoryStoreArchivedRunErrorType.fromJson(json['type'] as String) : null)!,
-    message: (json['message'] as String?)!,
-  ), json);
+  factory BetaManagedAgentsMemoryStoreArchivedRunError.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaManagedAgentsMemoryStoreArchivedRunError(
+            type_: (json['type'] != null
+                ? BetaManagedAgentsMemoryStoreArchivedRunErrorType.fromJson(
+                    json['type'] as String)
+                : null)!,
+            message: (json['message'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'message': message,
-  };
+        'type': type_.toJson(),
+        'message': message,
+      };
 }

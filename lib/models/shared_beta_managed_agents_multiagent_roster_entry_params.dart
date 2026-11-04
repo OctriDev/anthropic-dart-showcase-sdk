@@ -8,44 +8,90 @@ sealed class BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMultiagentRosterEntryParamsVariant1();
-  factory BetaManagedAgentsMultiagentRosterEntryParamsVariant1.fromJson(Object? json) {
+  factory BetaManagedAgentsMultiagentRosterEntryParamsVariant1.fromJson(
+      Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsAgentParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsMultiagentSelfParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsAdvisorParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsAgentParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsMultiagentSelfParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsAdvisorParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(BetaManagedAgentsMultiagentSelfParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(BetaManagedAgentsAdvisorParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"agent", "self", "advisor"}.contains(json["type"])) { return UnknownBetaManagedAgentsMultiagentRosterEntryParamsVariant1(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsMultiagentRosterEntryParamsVariant1");
+    try {
+      return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(
+          BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(
+          BetaManagedAgentsMultiagentSelfParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(
+          BetaManagedAgentsAdvisorParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"agent", "self", "advisor"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsMultiagentRosterEntryParamsVariant1(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsMultiagentRosterEntryParamsVariant1");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
+final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams
+    extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
   final BetaManagedAgentsAgentParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAgentParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
+final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams
+    extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
   final BetaManagedAgentsMultiagentSelfParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsMultiagentSelfParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
+final class BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams
+    extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
   final BetaManagedAgentsAdvisorParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsVariant1BetaManagedAgentsAdvisorParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMultiagentRosterEntryParamsVariant1] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMultiagentRosterEntryParamsVariant1 extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
+final class UnknownBetaManagedAgentsMultiagentRosterEntryParamsVariant1
+    extends BetaManagedAgentsMultiagentRosterEntryParamsVariant1 {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsMultiagentRosterEntryParamsVariant1(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }
 
 sealed class BetaManagedAgentsMultiagentRosterEntryParams {
@@ -53,40 +99,83 @@ sealed class BetaManagedAgentsMultiagentRosterEntryParams {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMultiagentRosterEntryParams();
   factory BetaManagedAgentsMultiagentRosterEntryParams.fromJson(Object? json) {
-    if (json is String) { return BetaManagedAgentsMultiagentRosterEntryParamsString(json); }
-    if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsAgentParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsMultiagentSelfParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsAdvisorParams.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(value); } } catch (_) {}
+    if (json is String) {
+      return BetaManagedAgentsMultiagentRosterEntryParamsString(json);
     }
-    try { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(BetaManagedAgentsMultiagentSelfParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(BetaManagedAgentsAdvisorParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for BetaManagedAgentsMultiagentRosterEntryParams");
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = BetaManagedAgentsAgentParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsMultiagentSelfParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsAdvisorParams.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(
+              value);
+        }
+      } catch (_) {}
+    }
+    try {
+      return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(
+          BetaManagedAgentsAgentParams.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(
+          BetaManagedAgentsMultiagentSelfParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(
+          BetaManagedAgentsAdvisorParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsMultiagentRosterEntryParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsString extends BetaManagedAgentsMultiagentRosterEntryParams {
+final class BetaManagedAgentsMultiagentRosterEntryParamsString
+    extends BetaManagedAgentsMultiagentRosterEntryParams {
   final String value;
   const BetaManagedAgentsMultiagentRosterEntryParamsString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams extends BetaManagedAgentsMultiagentRosterEntryParams {
+final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams
+    extends BetaManagedAgentsMultiagentRosterEntryParams {
   final BetaManagedAgentsAgentParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAgentParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams extends BetaManagedAgentsMultiagentRosterEntryParams {
+final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams
+    extends BetaManagedAgentsMultiagentRosterEntryParams {
   final BetaManagedAgentsMultiagentSelfParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsMultiagentSelfParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams extends BetaManagedAgentsMultiagentRosterEntryParams {
+final class BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams
+    extends BetaManagedAgentsMultiagentRosterEntryParams {
   final BetaManagedAgentsAdvisorParams value;
-  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentRosterEntryParamsBetaManagedAgentsAdvisorParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

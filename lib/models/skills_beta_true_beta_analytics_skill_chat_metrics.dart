@@ -8,23 +8,42 @@ part of 'skills_beta_true.dart';
 class BetaAnalyticsSkillChatMetrics implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Number of distinct conversations in which the skill was used. A skill counts as used only when it is explicitly activated — the model (or the user, via the skill's slash command) invokes it, reading its instructions into context as part of that activation. Skills that are merely installed or listed as available, or whose content reaches the context without an activation (preloaded, hook-injected, or read as a plain file), are not counted. Approximate (HLL, typical error &lt;2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
   final int? distinctConversationSkillUsedCount;
 
-  const BetaAnalyticsSkillChatMetrics({required this.distinctConversationSkillUsedCount});
+  const BetaAnalyticsSkillChatMetrics(
+      {required this.distinctConversationSkillUsedCount});
 
-  BetaAnalyticsSkillChatMetrics Function({int? distinctConversationSkillUsedCount}) get copyWith => _copyWith;
+  BetaAnalyticsSkillChatMetrics Function(
+      {int? distinctConversationSkillUsedCount}) get copyWith => _copyWith;
 
-  BetaAnalyticsSkillChatMetrics _copyWith({Object? distinctConversationSkillUsedCount = sdkOmittedValue}) => BetaAnalyticsSkillChatMetrics(
-    distinctConversationSkillUsedCount: identical(distinctConversationSkillUsedCount, sdkOmittedValue) ? this.distinctConversationSkillUsedCount : distinctConversationSkillUsedCount as int?,
-  );
+  BetaAnalyticsSkillChatMetrics _copyWith(
+          {Object? distinctConversationSkillUsedCount = sdkOmittedValue}) =>
+      BetaAnalyticsSkillChatMetrics(
+        distinctConversationSkillUsedCount:
+            identical(distinctConversationSkillUsedCount, sdkOmittedValue)
+                ? this.distinctConversationSkillUsedCount
+                : distinctConversationSkillUsedCount as int?,
+      );
 
-  factory BetaAnalyticsSkillChatMetrics.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaAnalyticsSkillChatMetrics(
-    distinctConversationSkillUsedCount: json.containsKey('distinct_conversation_skill_used_count') ? (json['distinct_conversation_skill_used_count'] as num?)?.toInt() : throw ArgumentError.value(null, 'distinct_conversation_skill_used_count', 'Required property is missing'),
-  ), json);
+  factory BetaAnalyticsSkillChatMetrics.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaAnalyticsSkillChatMetrics(
+            distinctConversationSkillUsedCount:
+                json.containsKey('distinct_conversation_skill_used_count')
+                    ? (json['distinct_conversation_skill_used_count'] as num?)
+                        ?.toInt()
+                    : throw ArgumentError.value(
+                        null,
+                        'distinct_conversation_skill_used_count',
+                        'Required property is missing'),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'distinct_conversation_skill_used_count': distinctConversationSkillUsedCount,
-  };
+        'distinct_conversation_skill_used_count':
+            distinctConversationSkillUsedCount,
+      };
 }

@@ -10,14 +10,17 @@ enum ModelVariant4 {
 
   static ModelVariant4 fromJson(String value) {
     switch (value) {
-      case 'claude-fable-5': return ModelVariant4.claudeFable5;
-      default: throw ArgumentError('Unknown ModelVariant4: $value');
+      case 'claude-fable-5':
+        return ModelVariant4.claudeFable5;
+      default:
+        throw ArgumentError('Unknown ModelVariant4: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant4.claudeFable5: return 'claude-fable-5';
+      case ModelVariant4.claudeFable5:
+        return 'claude-fable-5';
     }
   }
 
@@ -31,14 +34,17 @@ enum ModelVariant5 {
 
   static ModelVariant5 fromJson(String value) {
     switch (value) {
-      case 'claude-mythos-5': return ModelVariant5.claudeMythos5;
-      default: throw ArgumentError('Unknown ModelVariant5: $value');
+      case 'claude-mythos-5':
+        return ModelVariant5.claudeMythos5;
+      default:
+        throw ArgumentError('Unknown ModelVariant5: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant5.claudeMythos5: return 'claude-mythos-5';
+      case ModelVariant5.claudeMythos5:
+        return 'claude-mythos-5';
     }
   }
 
@@ -52,14 +58,17 @@ enum ModelVariant6 {
 
   static ModelVariant6 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-5': return ModelVariant6.claudeOpus5;
-      default: throw ArgumentError('Unknown ModelVariant6: $value');
+      case 'claude-opus-5':
+        return ModelVariant6.claudeOpus5;
+      default:
+        throw ArgumentError('Unknown ModelVariant6: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant6.claudeOpus5: return 'claude-opus-5';
+      case ModelVariant6.claudeOpus5:
+        return 'claude-opus-5';
     }
   }
 
@@ -73,14 +82,17 @@ enum ModelVariant7 {
 
   static ModelVariant7 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-4-8': return ModelVariant7.claudeOpus48;
-      default: throw ArgumentError('Unknown ModelVariant7: $value');
+      case 'claude-opus-4-8':
+        return ModelVariant7.claudeOpus48;
+      default:
+        throw ArgumentError('Unknown ModelVariant7: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant7.claudeOpus48: return 'claude-opus-4-8';
+      case ModelVariant7.claudeOpus48:
+        return 'claude-opus-4-8';
     }
   }
 
@@ -94,14 +106,17 @@ enum ModelVariant8 {
 
   static ModelVariant8 fromJson(String value) {
     switch (value) {
-      case 'claude-opus-4-7': return ModelVariant8.claudeOpus47;
-      default: throw ArgumentError('Unknown ModelVariant8: $value');
+      case 'claude-opus-4-7':
+        return ModelVariant8.claudeOpus47;
+      default:
+        throw ArgumentError('Unknown ModelVariant8: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant8.claudeOpus47: return 'claude-opus-4-7';
+      case ModelVariant8.claudeOpus47:
+        return 'claude-opus-4-7';
     }
   }
 
@@ -115,14 +130,17 @@ enum ModelVariant9 {
 
   static ModelVariant9 fromJson(String value) {
     switch (value) {
-      case 'claude-mythos-preview': return ModelVariant9.claudeMythosPreview;
-      default: throw ArgumentError('Unknown ModelVariant9: $value');
+      case 'claude-mythos-preview':
+        return ModelVariant9.claudeMythosPreview;
+      default:
+        throw ArgumentError('Unknown ModelVariant9: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelVariant9.claudeMythosPreview: return 'claude-mythos-preview';
+      case ModelVariant9.claudeMythosPreview:
+        return 'claude-mythos-preview';
     }
   }
 
@@ -136,14 +154,17 @@ enum ModelInfoType {
 
   static ModelInfoType fromJson(String value) {
     switch (value) {
-      case 'model': return ModelInfoType.model;
-      default: throw ArgumentError('Unknown ModelInfoType: $value');
+      case 'model':
+        return ModelInfoType.model;
+      default:
+        throw ArgumentError('Unknown ModelInfoType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ModelInfoType.model: return 'model';
+      case ModelInfoType.model:
+        return 'model';
     }
   }
 
@@ -157,14 +178,17 @@ enum NotFoundErrorType {
 
   static NotFoundErrorType fromJson(String value) {
     switch (value) {
-      case 'not_found_error': return NotFoundErrorType.notFoundError;
-      default: throw ArgumentError('Unknown NotFoundErrorType: $value');
+      case 'not_found_error':
+        return NotFoundErrorType.notFoundError;
+      default:
+        throw ArgumentError('Unknown NotFoundErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case NotFoundErrorType.notFoundError: return 'not_found_error';
+      case NotFoundErrorType.notFoundError:
+        return 'not_found_error';
     }
   }
 
@@ -178,14 +202,17 @@ enum OverloadedErrorType {
 
   static OverloadedErrorType fromJson(String value) {
     switch (value) {
-      case 'overloaded_error': return OverloadedErrorType.overloadedError;
-      default: throw ArgumentError('Unknown OverloadedErrorType: $value');
+      case 'overloaded_error':
+        return OverloadedErrorType.overloadedError;
+      default:
+        throw ArgumentError('Unknown OverloadedErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case OverloadedErrorType.overloadedError: return 'overloaded_error';
+      case OverloadedErrorType.overloadedError:
+        return 'overloaded_error';
     }
   }
 
@@ -199,14 +226,17 @@ enum PermissionErrorType {
 
   static PermissionErrorType fromJson(String value) {
     switch (value) {
-      case 'permission_error': return PermissionErrorType.permissionError;
-      default: throw ArgumentError('Unknown PermissionErrorType: $value');
+      case 'permission_error':
+        return PermissionErrorType.permissionError;
+      default:
+        throw ArgumentError('Unknown PermissionErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case PermissionErrorType.permissionError: return 'permission_error';
+      case PermissionErrorType.permissionError:
+        return 'permission_error';
     }
   }
 
@@ -220,14 +250,17 @@ enum PlainTextSourceMediaType {
 
   static PlainTextSourceMediaType fromJson(String value) {
     switch (value) {
-      case 'text/plain': return PlainTextSourceMediaType.textPlain;
-      default: throw ArgumentError('Unknown PlainTextSourceMediaType: $value');
+      case 'text/plain':
+        return PlainTextSourceMediaType.textPlain;
+      default:
+        throw ArgumentError('Unknown PlainTextSourceMediaType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case PlainTextSourceMediaType.textPlain: return 'text/plain';
+      case PlainTextSourceMediaType.textPlain:
+        return 'text/plain';
     }
   }
 
@@ -241,14 +274,17 @@ enum PlainTextSourceType {
 
   static PlainTextSourceType fromJson(String value) {
     switch (value) {
-      case 'text': return PlainTextSourceType.text;
-      default: throw ArgumentError('Unknown PlainTextSourceType: $value');
+      case 'text':
+        return PlainTextSourceType.text;
+      default:
+        throw ArgumentError('Unknown PlainTextSourceType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case PlainTextSourceType.text: return 'text';
+      case PlainTextSourceType.text:
+        return 'text';
     }
   }
 
@@ -262,14 +298,17 @@ enum RateLimitErrorType {
 
   static RateLimitErrorType fromJson(String value) {
     switch (value) {
-      case 'rate_limit_error': return RateLimitErrorType.rateLimitError;
-      default: throw ArgumentError('Unknown RateLimitErrorType: $value');
+      case 'rate_limit_error':
+        return RateLimitErrorType.rateLimitError;
+      default:
+        throw ArgumentError('Unknown RateLimitErrorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RateLimitErrorType.rateLimitError: return 'rate_limit_error';
+      case RateLimitErrorType.rateLimitError:
+        return 'rate_limit_error';
     }
   }
 

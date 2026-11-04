@@ -9,22 +9,36 @@ sealed class BetaManagedAgentsMultiagentParams {
   static const String constructionSurface = 'named';
   const BetaManagedAgentsMultiagentParams();
   factory BetaManagedAgentsMultiagentParams.fromJson(Object? json) {
-    try { return BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams(BetaManagedAgentsMultiagentCoordinatorParams.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"coordinator"}.contains(json["type"])) { return UnknownBetaManagedAgentsMultiagentParams(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsMultiagentParams");
+    try {
+      return BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams(
+          BetaManagedAgentsMultiagentCoordinatorParams.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"coordinator"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsMultiagentParams(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsMultiagentParams");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams extends BetaManagedAgentsMultiagentParams {
+final class BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams
+    extends BetaManagedAgentsMultiagentParams {
   final BetaManagedAgentsMultiagentCoordinatorParams value;
-  const BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsMultiagentParamsBetaManagedAgentsMultiagentCoordinatorParams(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsMultiagentParams] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsMultiagentParams extends BetaManagedAgentsMultiagentParams {
+final class UnknownBetaManagedAgentsMultiagentParams
+    extends BetaManagedAgentsMultiagentParams {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsMultiagentParams(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

@@ -10,176 +10,395 @@ sealed class CountMessageTokensParamsToolsItem {
   const CountMessageTokensParamsToolsItem();
   factory CountMessageTokensParamsToolsItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = Tool.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemTool(value); } } catch (_) {}
-      try { final value = BashTool20250124.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemBashTool20250124(value); } } catch (_) {}
-      try { final value = CodeExecutionTool20250522.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemCodeExecutionTool20250522(value); } } catch (_) {}
-      try { final value = CodeExecutionTool20250825.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemCodeExecutionTool20250825(value); } } catch (_) {}
-      try { final value = CodeExecutionTool20260120.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemCodeExecutionTool20260120(value); } } catch (_) {}
-      try { final value = CodeExecutionTool20260521.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemCodeExecutionTool20260521(value); } } catch (_) {}
-      try { final value = BrowserToolset20260801.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemBrowserToolset20260801(value); } } catch (_) {}
-      try { final value = MemoryTool20250818.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemMemoryTool20250818(value); } } catch (_) {}
-      try { final value = ComputerToolset20260801.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemComputerToolset20260801(value); } } catch (_) {}
-      try { final value = TextEditor20250124.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemTextEditor20250124(value); } } catch (_) {}
-      try { final value = TextEditor20250429.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemTextEditor20250429(value); } } catch (_) {}
-      try { final value = TextEditor20250728.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemTextEditor20250728(value); } } catch (_) {}
-      try { final value = WebSearchTool20250305.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebSearchTool20250305(value); } } catch (_) {}
-      try { final value = WebFetchTool20250910.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebFetchTool20250910(value); } } catch (_) {}
-      try { final value = WebSearchTool20260209.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebSearchTool20260209(value); } } catch (_) {}
-      try { final value = WebFetchTool20260209.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebFetchTool20260209(value); } } catch (_) {}
-      try { final value = WebFetchTool20260309.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebFetchTool20260309(value); } } catch (_) {}
-      try { final value = WebSearchTool20260318.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebSearchTool20260318(value); } } catch (_) {}
-      try { final value = WebFetchTool20260318.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemWebFetchTool20260318(value); } } catch (_) {}
-      try { final value = ToolSearchToolBM2520251119.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemToolSearchToolBM2520251119(value); } } catch (_) {}
-      try { final value = ToolSearchToolRegex20251119.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(value); } } catch (_) {}
+      try {
+        final value = Tool.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemTool(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BashTool20250124.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemBashTool20250124(value);
+        }
+      } catch (_) {}
+      try {
+        final value = CodeExecutionTool20250522.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemCodeExecutionTool20250522(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = CodeExecutionTool20250825.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemCodeExecutionTool20250825(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = CodeExecutionTool20260120.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemCodeExecutionTool20260120(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = CodeExecutionTool20260521.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemCodeExecutionTool20260521(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BrowserToolset20260801.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemBrowserToolset20260801(value);
+        }
+      } catch (_) {}
+      try {
+        final value = MemoryTool20250818.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemMemoryTool20250818(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ComputerToolset20260801.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemComputerToolset20260801(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = TextEditor20250124.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemTextEditor20250124(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TextEditor20250429.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemTextEditor20250429(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TextEditor20250728.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemTextEditor20250728(value);
+        }
+      } catch (_) {}
+      try {
+        final value = WebSearchTool20250305.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemWebSearchTool20250305(value);
+        }
+      } catch (_) {}
+      try {
+        final value = WebFetchTool20250910.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemWebFetchTool20250910(value);
+        }
+      } catch (_) {}
+      try {
+        final value = WebSearchTool20260209.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemWebSearchTool20260209(value);
+        }
+      } catch (_) {}
+      try {
+        final value = WebFetchTool20260209.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemWebFetchTool20260209(value);
+        }
+      } catch (_) {}
+      try {
+        final value = WebFetchTool20260309.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemWebFetchTool20260309(value);
+        }
+      } catch (_) {}
+      try {
+        final value = WebSearchTool20260318.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemWebSearchTool20260318(value);
+        }
+      } catch (_) {}
+      try {
+        final value = WebFetchTool20260318.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemWebFetchTool20260318(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ToolSearchToolBM2520251119.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemToolSearchToolBM2520251119(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = ToolSearchToolRegex20251119.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return CountMessageTokensParamsToolsItemTool(Tool.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemBashTool20250124(BashTool20250124.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemCodeExecutionTool20250522(CodeExecutionTool20250522.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemCodeExecutionTool20250825(CodeExecutionTool20250825.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemCodeExecutionTool20260120(CodeExecutionTool20260120.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemCodeExecutionTool20260521(CodeExecutionTool20260521.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemBrowserToolset20260801(BrowserToolset20260801.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemMemoryTool20250818(MemoryTool20250818.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemComputerToolset20260801(ComputerToolset20260801.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemTextEditor20250124(TextEditor20250124.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemTextEditor20250429(TextEditor20250429.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemTextEditor20250728(TextEditor20250728.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemWebSearchTool20250305(WebSearchTool20250305.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemWebFetchTool20250910(WebFetchTool20250910.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemWebSearchTool20260209(WebSearchTool20260209.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemWebFetchTool20260209(WebFetchTool20260209.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemWebFetchTool20260309(WebFetchTool20260309.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemWebSearchTool20260318(WebSearchTool20260318.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemWebFetchTool20260318(WebFetchTool20260318.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemToolSearchToolBM2520251119(ToolSearchToolBM2520251119.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(ToolSearchToolRegex20251119.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for CountMessageTokensParamsToolsItem");
+    try {
+      return CountMessageTokensParamsToolsItemTool(
+          Tool.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemBashTool20250124(
+          BashTool20250124.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemCodeExecutionTool20250522(
+          CodeExecutionTool20250522.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemCodeExecutionTool20250825(
+          CodeExecutionTool20250825.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemCodeExecutionTool20260120(
+          CodeExecutionTool20260120.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemCodeExecutionTool20260521(
+          CodeExecutionTool20260521.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemBrowserToolset20260801(
+          BrowserToolset20260801.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemMemoryTool20250818(
+          MemoryTool20250818.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemComputerToolset20260801(
+          ComputerToolset20260801.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemTextEditor20250124(
+          TextEditor20250124.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemTextEditor20250429(
+          TextEditor20250429.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemTextEditor20250728(
+          TextEditor20250728.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemWebSearchTool20250305(
+          WebSearchTool20250305.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemWebFetchTool20250910(
+          WebFetchTool20250910.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemWebSearchTool20260209(
+          WebSearchTool20260209.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemWebFetchTool20260209(
+          WebFetchTool20260209.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemWebFetchTool20260309(
+          WebFetchTool20260309.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemWebSearchTool20260318(
+          WebSearchTool20260318.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemWebFetchTool20260318(
+          WebFetchTool20260318.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemToolSearchToolBM2520251119(
+          ToolSearchToolBM2520251119.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(
+          ToolSearchToolRegex20251119.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for CountMessageTokensParamsToolsItem");
   }
   Object? toJson();
 }
 
-final class CountMessageTokensParamsToolsItemTool extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemTool
+    extends CountMessageTokensParamsToolsItem {
   final Tool value;
   const CountMessageTokensParamsToolsItemTool(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemBashTool20250124 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemBashTool20250124
+    extends CountMessageTokensParamsToolsItem {
   final BashTool20250124 value;
   const CountMessageTokensParamsToolsItemBashTool20250124(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemCodeExecutionTool20250522 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemCodeExecutionTool20250522
+    extends CountMessageTokensParamsToolsItem {
   final CodeExecutionTool20250522 value;
   const CountMessageTokensParamsToolsItemCodeExecutionTool20250522(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemCodeExecutionTool20250825 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemCodeExecutionTool20250825
+    extends CountMessageTokensParamsToolsItem {
   final CodeExecutionTool20250825 value;
   const CountMessageTokensParamsToolsItemCodeExecutionTool20250825(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemCodeExecutionTool20260120 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemCodeExecutionTool20260120
+    extends CountMessageTokensParamsToolsItem {
   final CodeExecutionTool20260120 value;
   const CountMessageTokensParamsToolsItemCodeExecutionTool20260120(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemCodeExecutionTool20260521 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemCodeExecutionTool20260521
+    extends CountMessageTokensParamsToolsItem {
   final CodeExecutionTool20260521 value;
   const CountMessageTokensParamsToolsItemCodeExecutionTool20260521(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemBrowserToolset20260801 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemBrowserToolset20260801
+    extends CountMessageTokensParamsToolsItem {
   final BrowserToolset20260801 value;
   const CountMessageTokensParamsToolsItemBrowserToolset20260801(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemMemoryTool20250818 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemMemoryTool20250818
+    extends CountMessageTokensParamsToolsItem {
   final MemoryTool20250818 value;
   const CountMessageTokensParamsToolsItemMemoryTool20250818(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemComputerToolset20260801 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemComputerToolset20260801
+    extends CountMessageTokensParamsToolsItem {
   final ComputerToolset20260801 value;
   const CountMessageTokensParamsToolsItemComputerToolset20260801(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemTextEditor20250124 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemTextEditor20250124
+    extends CountMessageTokensParamsToolsItem {
   final TextEditor20250124 value;
   const CountMessageTokensParamsToolsItemTextEditor20250124(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemTextEditor20250429 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemTextEditor20250429
+    extends CountMessageTokensParamsToolsItem {
   final TextEditor20250429 value;
   const CountMessageTokensParamsToolsItemTextEditor20250429(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemTextEditor20250728 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemTextEditor20250728
+    extends CountMessageTokensParamsToolsItem {
   final TextEditor20250728 value;
   const CountMessageTokensParamsToolsItemTextEditor20250728(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebSearchTool20250305 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebSearchTool20250305
+    extends CountMessageTokensParamsToolsItem {
   final WebSearchTool20250305 value;
   const CountMessageTokensParamsToolsItemWebSearchTool20250305(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebFetchTool20250910 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebFetchTool20250910
+    extends CountMessageTokensParamsToolsItem {
   final WebFetchTool20250910 value;
   const CountMessageTokensParamsToolsItemWebFetchTool20250910(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebSearchTool20260209 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebSearchTool20260209
+    extends CountMessageTokensParamsToolsItem {
   final WebSearchTool20260209 value;
   const CountMessageTokensParamsToolsItemWebSearchTool20260209(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebFetchTool20260209 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebFetchTool20260209
+    extends CountMessageTokensParamsToolsItem {
   final WebFetchTool20260209 value;
   const CountMessageTokensParamsToolsItemWebFetchTool20260209(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebFetchTool20260309 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebFetchTool20260309
+    extends CountMessageTokensParamsToolsItem {
   final WebFetchTool20260309 value;
   const CountMessageTokensParamsToolsItemWebFetchTool20260309(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebSearchTool20260318 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebSearchTool20260318
+    extends CountMessageTokensParamsToolsItem {
   final WebSearchTool20260318 value;
   const CountMessageTokensParamsToolsItemWebSearchTool20260318(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemWebFetchTool20260318 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemWebFetchTool20260318
+    extends CountMessageTokensParamsToolsItem {
   final WebFetchTool20260318 value;
   const CountMessageTokensParamsToolsItemWebFetchTool20260318(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemToolSearchToolBM2520251119 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemToolSearchToolBM2520251119
+    extends CountMessageTokensParamsToolsItem {
   final ToolSearchToolBM2520251119 value;
   const CountMessageTokensParamsToolsItemToolSearchToolBM2520251119(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class CountMessageTokensParamsToolsItemToolSearchToolRegex20251119 extends CountMessageTokensParamsToolsItem {
+final class CountMessageTokensParamsToolsItemToolSearchToolRegex20251119
+    extends CountMessageTokensParamsToolsItem {
   final ToolSearchToolRegex20251119 value;
-  const CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(this.value);
-  @override Object? toJson() => value.toJson();
+  const CountMessageTokensParamsToolsItemToolSearchToolRegex20251119(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

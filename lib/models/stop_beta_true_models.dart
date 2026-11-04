@@ -8,26 +8,38 @@ part of 'stop_beta_true.dart';
 class BetaSelfHostedWorkStopRequest implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// If true, immediately stop work without graceful shutdown
   final SdkOptional<bool> force;
 
   const BetaSelfHostedWorkStopRequest({this.force = const SdkOmitted()});
 
-  BetaSelfHostedWorkStopRequest Function({SdkOptional<bool> force}) get copyWith => _copyWith;
+  BetaSelfHostedWorkStopRequest Function({SdkOptional<bool> force})
+      get copyWith => _copyWith;
 
-  BetaSelfHostedWorkStopRequest _copyWith({Object? force = sdkOmittedValue}) => BetaSelfHostedWorkStopRequest(
-    force: identical(force, sdkOmittedValue) ? this.force : force as SdkOptional<bool>,
-  );
+  BetaSelfHostedWorkStopRequest _copyWith({Object? force = sdkOmittedValue}) =>
+      BetaSelfHostedWorkStopRequest(
+        force: identical(force, sdkOmittedValue)
+            ? this.force
+            : force as SdkOptional<bool>,
+      );
 
-  factory BetaSelfHostedWorkStopRequest.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(BetaSelfHostedWorkStopRequest(
-    force: json['force'] != null ? SdkPresent((json['force'] as bool?)!) : const SdkOmitted(),
-  ), json);
+  factory BetaSelfHostedWorkStopRequest.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          BetaSelfHostedWorkStopRequest(
+            force: json['force'] != null
+                ? SdkPresent((json['force'] as bool?)!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (force) {
-      SdkPresent<bool>(value: final value) => {'force': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (force) {
+          SdkPresent<bool>(value: final value) => {
+              'force': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

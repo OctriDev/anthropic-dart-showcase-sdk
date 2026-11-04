@@ -8,23 +8,33 @@ part of 'messages.dart';
 class MessageStopEvent implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final MessageStopEventType type_;
 
   const MessageStopEvent({required this.type_});
 
-  MessageStopEvent Function({MessageStopEventType type_}) get copyWith => _copyWith;
+  MessageStopEvent Function({MessageStopEventType type_}) get copyWith =>
+      _copyWith;
 
-  MessageStopEvent _copyWith({Object? type_ = sdkOmittedValue}) => MessageStopEvent(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as MessageStopEventType,
-  );
+  MessageStopEvent _copyWith({Object? type_ = sdkOmittedValue}) =>
+      MessageStopEvent(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as MessageStopEventType,
+      );
 
-  factory MessageStopEvent.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(MessageStopEvent(
-    type_: (json['type'] != null ? MessageStopEventType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory MessageStopEvent.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          MessageStopEvent(
+            type_: (json['type'] != null
+                ? MessageStopEventType.fromJson(json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

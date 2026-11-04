@@ -10,32 +10,64 @@ sealed class BetaManagedAgentsSessionThreadAgentEntry {
   const BetaManagedAgentsSessionThreadAgentEntry();
   factory BetaManagedAgentsSessionThreadAgentEntry.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaManagedAgentsSessionThreadAgent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsSessionThreadAgent(value); } } catch (_) {}
-      try { final value = BetaManagedAgentsAdvisor.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsAdvisor(value); } } catch (_) {}
+      try {
+        final value = BetaManagedAgentsSessionThreadAgent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsSessionThreadAgent(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaManagedAgentsAdvisor.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsAdvisor(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsSessionThreadAgent(BetaManagedAgentsSessionThreadAgent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsAdvisor(BetaManagedAgentsAdvisor.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"agent", "advisor"}.contains(json["type"])) { return UnknownBetaManagedAgentsSessionThreadAgentEntry(json); }
-    throw FormatException("No variant matched for BetaManagedAgentsSessionThreadAgentEntry");
+    try {
+      return BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsSessionThreadAgent(
+          BetaManagedAgentsSessionThreadAgent.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsAdvisor(
+          BetaManagedAgentsAdvisor.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {"agent", "advisor"}.contains(json["type"])) {
+      return UnknownBetaManagedAgentsSessionThreadAgentEntry(json);
+    }
+    throw FormatException(
+        "No variant matched for BetaManagedAgentsSessionThreadAgentEntry");
   }
   Object? toJson();
 }
 
-final class BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsSessionThreadAgent extends BetaManagedAgentsSessionThreadAgentEntry {
+final class BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsSessionThreadAgent
+    extends BetaManagedAgentsSessionThreadAgentEntry {
   final BetaManagedAgentsSessionThreadAgent value;
-  const BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsSessionThreadAgent(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsSessionThreadAgent(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsAdvisor extends BetaManagedAgentsSessionThreadAgentEntry {
+final class BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsAdvisor
+    extends BetaManagedAgentsSessionThreadAgentEntry {
   final BetaManagedAgentsAdvisor value;
-  const BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsAdvisor(this.value);
-  @override Object? toJson() => value.toJson();
+  const BetaManagedAgentsSessionThreadAgentEntryBetaManagedAgentsAdvisor(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaManagedAgentsSessionThreadAgentEntry] whose `type` names no branch this SDK knows, kept as received.
-final class UnknownBetaManagedAgentsSessionThreadAgentEntry extends BetaManagedAgentsSessionThreadAgentEntry {
+final class UnknownBetaManagedAgentsSessionThreadAgentEntry
+    extends BetaManagedAgentsSessionThreadAgentEntry {
   final Map<String, dynamic> raw;
   const UnknownBetaManagedAgentsSessionThreadAgentEntry(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

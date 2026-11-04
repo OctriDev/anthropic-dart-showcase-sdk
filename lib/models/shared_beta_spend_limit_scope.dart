@@ -10,18 +10,68 @@ sealed class BetaSpendLimitScope {
   const BetaSpendLimitScope();
   factory BetaSpendLimitScope.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = BetaUserScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendLimitScopeBetaUserScope(value); } } catch (_) {}
-      try { final value = BetaSeatTierScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendLimitScopeBetaSeatTierScope(value); } } catch (_) {}
-      try { final value = BetaRbacGroupScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendLimitScopeBetaRbacGroupScope(value); } } catch (_) {}
-      try { final value = BetaOrgServiceScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendLimitScopeBetaOrgServiceScope(value); } } catch (_) {}
-      try { final value = BetaOrganizationScope.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return BetaSpendLimitScopeBetaOrganizationScope(value); } } catch (_) {}
+      try {
+        final value = BetaUserScope.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaSpendLimitScopeBetaUserScope(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaSeatTierScope.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaSpendLimitScopeBetaSeatTierScope(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaRbacGroupScope.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaSpendLimitScopeBetaRbacGroupScope(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaOrgServiceScope.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaSpendLimitScopeBetaOrgServiceScope(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BetaOrganizationScope.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return BetaSpendLimitScopeBetaOrganizationScope(value);
+        }
+      } catch (_) {}
     }
-    try { return BetaSpendLimitScopeBetaUserScope(BetaUserScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaSpendLimitScopeBetaSeatTierScope(BetaSeatTierScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaSpendLimitScopeBetaRbacGroupScope(BetaRbacGroupScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaSpendLimitScopeBetaOrgServiceScope(BetaOrgServiceScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return BetaSpendLimitScopeBetaOrganizationScope(BetaOrganizationScope.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    if (json is Map<String, dynamic> && json["type"] is String && !const {"organization", "organization_service", "rbac_group", "seat_tier", "user"}.contains(json["type"])) { return UnknownBetaSpendLimitScope(json); }
+    try {
+      return BetaSpendLimitScopeBetaUserScope(
+          BetaUserScope.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaSpendLimitScopeBetaSeatTierScope(
+          BetaSeatTierScope.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaSpendLimitScopeBetaRbacGroupScope(
+          BetaRbacGroupScope.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaSpendLimitScopeBetaOrgServiceScope(
+          BetaOrgServiceScope.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return BetaSpendLimitScopeBetaOrganizationScope(
+          BetaOrganizationScope.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    if (json is Map<String, dynamic> &&
+        json["type"] is String &&
+        !const {
+          "organization",
+          "organization_service",
+          "rbac_group",
+          "seat_tier",
+          "user"
+        }.contains(json["type"])) {
+      return UnknownBetaSpendLimitScope(json);
+    }
     throw FormatException("No variant matched for BetaSpendLimitScope");
   }
   Object? toJson();
@@ -30,36 +80,43 @@ sealed class BetaSpendLimitScope {
 final class BetaSpendLimitScopeBetaUserScope extends BetaSpendLimitScope {
   final BetaUserScope value;
   const BetaSpendLimitScopeBetaUserScope(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class BetaSpendLimitScopeBetaSeatTierScope extends BetaSpendLimitScope {
   final BetaSeatTierScope value;
   const BetaSpendLimitScopeBetaSeatTierScope(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class BetaSpendLimitScopeBetaRbacGroupScope extends BetaSpendLimitScope {
   final BetaRbacGroupScope value;
   const BetaSpendLimitScopeBetaRbacGroupScope(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class BetaSpendLimitScopeBetaOrgServiceScope extends BetaSpendLimitScope {
   final BetaOrgServiceScope value;
   const BetaSpendLimitScopeBetaOrgServiceScope(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class BetaSpendLimitScopeBetaOrganizationScope extends BetaSpendLimitScope {
+final class BetaSpendLimitScopeBetaOrganizationScope
+    extends BetaSpendLimitScope {
   final BetaOrganizationScope value;
   const BetaSpendLimitScopeBetaOrganizationScope(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A [BetaSpendLimitScope] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownBetaSpendLimitScope extends BetaSpendLimitScope {
   final Map<String, dynamic> raw;
   const UnknownBetaSpendLimitScope(this.raw);
-  @override Object? toJson() => raw;
+  @override
+  Object? toJson() => raw;
 }

@@ -68,12 +68,14 @@ Future<BetaAnalyticsConnectorsResponse>
         SdkOptional<String?> endingDate = const SdkOmitted(),
         SdkOptional<int?> limit = const SdkOmitted(),
         SdkOptional<String?> page = const SdkOmitted(),
-        SdkOptional<List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?> groupBy = const SdkOmitted(),
+        SdkOptional<List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>
+            groupBy = const SdkOmitted(),
         SdkOptional<List<String>?> filter = const SdkOmitted(),
         SdkOptional<String?> orderBy = const SdkOmitted(),
         SdkOptional<String?> order = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  if (groupBy is SdkPresent<List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>) {
+  if (groupBy is SdkPresent<
+      List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>) {
     final groupByValue = groupBy.value;
     if (groupByValue != null) {
       validateItems('group_by[]', groupByValue, max: 100);
@@ -90,25 +92,68 @@ Future<BetaAnalyticsConnectorsResponse>
           'GET', '/v1/organizations/analytics/connectors?beta=true',
           config: config,
           query: {
-            'date': SdkQueryValue(SdkUtils.unwrapOptional(date), style: 'form', explode: true),
-            'starting_date': SdkQueryValue(SdkUtils.unwrapOptional(startingDate), style: 'form', explode: true),
-            'ending_date': SdkQueryValue(SdkUtils.unwrapOptional(endingDate), style: 'form', explode: true),
-            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'group_by[]': SdkQueryValue(SdkUtils.unwrapOptional(groupBy), style: 'form', explode: true),
-            'filter[]': SdkQueryValue(SdkUtils.unwrapOptional(filter), style: 'form', explode: true),
-            'order_by': SdkQueryValue(SdkUtils.unwrapOptional(orderBy), style: 'form', explode: true),
-            'order': SdkQueryValue(SdkUtils.unwrapOptional(order), style: 'form', explode: true)
+            'date': SdkQueryValue(SdkUtils.unwrapOptional(date),
+                style: 'form', explode: true),
+            'starting_date': SdkQueryValue(
+                SdkUtils.unwrapOptional(startingDate),
+                style: 'form',
+                explode: true),
+            'ending_date': SdkQueryValue(SdkUtils.unwrapOptional(endingDate),
+                style: 'form', explode: true),
+            'limit': SdkQueryValue(SdkUtils.unwrapOptional(limit),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'group_by[]': SdkQueryValue(SdkUtils.unwrapOptional(groupBy),
+                style: 'form', explode: true),
+            'filter[]': SdkQueryValue(SdkUtils.unwrapOptional(filter),
+                style: 'form', explode: true),
+            'order_by': SdkQueryValue(SdkUtils.unwrapOptional(orderBy),
+                style: 'form', explode: true),
+            'order': SdkQueryValue(SdkUtils.unwrapOptional(order),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listBetaOrganizationsAnalyticsConnectors',
-          fromJsonRaw: (value) => BetaAnalyticsConnectorsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BetaAnalyticsConnectorsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '401': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '403': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '404': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '408': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '409': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '412': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '413': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '429': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '431': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '499': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '500': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '501': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '503': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '504': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>), '529': (value) => BetaErrorResponse.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '408': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '413': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '429': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '431': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '499': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '500': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '501': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '504': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>),
+            '529': (value) =>
+                BetaErrorResponse.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
-
 
 /// Get per-connector usage for a given day, with cursor-based pagination. Returns connector usage metrics for the organization, sorted by connector name. Connector names are normalized from their various sources — for example, "Atlassian MCP server" and "mcp-atlassian" both appear as "atlassian". Use `group_by[]` to break usage out per member, per RBAC group, or per product surface, and `filter[]` to scope results; the parameter descriptions list the supported dimensions. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.
 ///
@@ -164,23 +209,107 @@ Future<BetaAnalyticsConnectorsResponse>
 ///   endpoint's sort column and to `desc` when `order_by` names a metric (a top-N
 ///   ranking). Applies to `order_by`, or to the endpoint's default sort field
 ///   when `order_by` is omitted.
-Stream<BetaAnalyticsConnectorActivity> listBetaOrganizationsAnalyticsConnectorsPaginated(ClientConfig config, {String? date, String? startingDate, String? endingDate, int? limit, String? page, List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>? groupBy, List<String>? filter, String? orderBy, String? order, RequestOptions? requestOptions}) async* {
+Stream<BetaAnalyticsConnectorActivity>
+    listBetaOrganizationsAnalyticsConnectorsPaginated(ClientConfig config,
+        {String? date,
+        String? startingDate,
+        String? endingDate,
+        int? limit,
+        String? page,
+        List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>? groupBy,
+        List<String>? filter,
+        String? orderBy,
+        String? order,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsAnalyticsConnectors(config, date: date == null ? const SdkOmitted<String?>() : SdkPresent<String?>(date), startingDate: startingDate == null ? const SdkOmitted<String?>() : SdkPresent<String?>(startingDate), endingDate: endingDate == null ? const SdkOmitted<String?>() : SdkPresent<String?>(endingDate), limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), groupBy: groupBy == null ? const SdkOmitted<List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>() : SdkPresent<List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>(groupBy), filter: filter == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(filter), orderBy: orderBy == null ? const SdkOmitted<String?>() : SdkPresent<String?>(orderBy), order: order == null ? const SdkOmitted<String?>() : SdkPresent<String?>(order), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsAnalyticsConnectors(config,
+        date: date == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(date),
+        startingDate: startingDate == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(startingDate),
+        endingDate: endingDate == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(endingDate),
+        limit:
+            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        groupBy: groupBy == null
+            ? const SdkOmitted<
+                List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>()
+            : SdkPresent<
+                    List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>(
+                groupBy),
+        filter: filter == null
+            ? const SdkOmitted<List<String>?>()
+            : SdkPresent<List<String>?>(filter),
+        orderBy: orderBy == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(orderBy),
+        order: order == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(order),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
-    for (final sdkItem in sdkItems) { yield sdkItem; }
+    for (final sdkItem in sdkItems) {
+      yield sdkItem;
+    }
     final sdkNext = sdkPage.nextPage;
     if (sdkNext == null) return;
     sdkCursor = sdkNext;
   }
 }
 
-Stream<SdkPage<BetaAnalyticsConnectorsResponse, BetaAnalyticsConnectorActivity>> listBetaOrganizationsAnalyticsConnectorsPages(ClientConfig config, {String? date, String? startingDate, String? endingDate, int? limit, String? page, List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>? groupBy, List<String>? filter, String? orderBy, String? order, RequestOptions? requestOptions}) async* {
+Stream<SdkPage<BetaAnalyticsConnectorsResponse, BetaAnalyticsConnectorActivity>>
+    listBetaOrganizationsAnalyticsConnectorsPages(ClientConfig config,
+        {String? date,
+        String? startingDate,
+        String? endingDate,
+        int? limit,
+        String? page,
+        List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>? groupBy,
+        List<String>? filter,
+        String? orderBy,
+        String? order,
+        RequestOptions? requestOptions}) async* {
   var sdkCursor = page;
   while (true) {
-    final sdkPage = await listBetaOrganizationsAnalyticsConnectors(config, date: date == null ? const SdkOmitted<String?>() : SdkPresent<String?>(date), startingDate: startingDate == null ? const SdkOmitted<String?>() : SdkPresent<String?>(startingDate), endingDate: endingDate == null ? const SdkOmitted<String?>() : SdkPresent<String?>(endingDate), limit: limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit), page: sdkCursor == null ? const SdkOmitted<String?>() : SdkPresent<String?>(sdkCursor), groupBy: groupBy == null ? const SdkOmitted<List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>() : SdkPresent<List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>(groupBy), filter: filter == null ? const SdkOmitted<List<String>?>() : SdkPresent<List<String>?>(filter), orderBy: orderBy == null ? const SdkOmitted<String?>() : SdkPresent<String?>(orderBy), order: order == null ? const SdkOmitted<String?>() : SdkPresent<String?>(order), requestOptions: requestOptions);
+    final sdkPage = await listBetaOrganizationsAnalyticsConnectors(config,
+        date: date == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(date),
+        startingDate: startingDate == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(startingDate),
+        endingDate: endingDate == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(endingDate),
+        limit:
+            limit == null ? const SdkOmitted<int?>() : SdkPresent<int?>(limit),
+        page: sdkCursor == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(sdkCursor),
+        groupBy: groupBy == null
+            ? const SdkOmitted<
+                List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>()
+            : SdkPresent<
+                    List<ListBetaOrganizationsAnalyticsConnectorsGroupByItem>?>(
+                groupBy),
+        filter: filter == null
+            ? const SdkOmitted<List<String>?>()
+            : SdkPresent<List<String>?>(filter),
+        orderBy: orderBy == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(orderBy),
+        order: order == null
+            ? const SdkOmitted<String?>()
+            : SdkPresent<String?>(order),
+        requestOptions: requestOptions);
     final sdkItems = sdkPage.data;
     if (sdkItems.isEmpty) return;
     final sdkNext = sdkPage.nextPage;
